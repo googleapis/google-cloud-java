@@ -133,6 +133,9 @@
             "UpdateAccount": {
               "methods": ["updateAccount", "updateAccount", "updateAccountCallable"]
             },
+            "UpdateConversionEvent": {
+              "methods": ["updateConversionEvent", "updateConversionEvent", "updateConversionEventCallable"]
+            },
             "UpdateCustomDimension": {
               "methods": ["updateCustomDimension", "updateCustomDimension", "updateCustomDimensionCallable"]
             },

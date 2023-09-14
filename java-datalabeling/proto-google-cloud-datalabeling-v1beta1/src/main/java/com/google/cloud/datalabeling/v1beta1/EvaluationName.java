@@ -154,7 +154,7 @@ public class EvaluationName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       EvaluationName that = ((EvaluationName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.dataset, that.dataset)

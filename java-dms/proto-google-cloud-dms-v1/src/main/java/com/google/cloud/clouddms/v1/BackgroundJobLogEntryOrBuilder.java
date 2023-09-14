@@ -147,10 +147,12 @@ public interface BackgroundJobLogEntryOrBuilder
    *
    *
    * <pre>
-   * Job completion state, i.e. the final state after the job completed.
+   * Output only. Job completion state, i.e. the final state after the job
+   * completed.
    * </pre>
    *
-   * <code>.google.cloud.clouddms.v1.BackgroundJobLogEntry.JobCompletionState completion_state = 5;
+   * <code>
+   * .google.cloud.clouddms.v1.BackgroundJobLogEntry.JobCompletionState completion_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The enum numeric value on the wire for completionState.
@@ -160,10 +162,12 @@ public interface BackgroundJobLogEntryOrBuilder
    *
    *
    * <pre>
-   * Job completion state, i.e. the final state after the job completed.
+   * Output only. Job completion state, i.e. the final state after the job
+   * completed.
    * </pre>
    *
-   * <code>.google.cloud.clouddms.v1.BackgroundJobLogEntry.JobCompletionState completion_state = 5;
+   * <code>
+   * .google.cloud.clouddms.v1.BackgroundJobLogEntry.JobCompletionState completion_state = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The completionState.
@@ -174,11 +178,11 @@ public interface BackgroundJobLogEntryOrBuilder
    *
    *
    * <pre>
-   * Job completion comment, such as how many entities were seeded,
+   * Output only. Job completion comment, such as how many entities were seeded,
    * how many warnings were found during conversion, and similar information.
    * </pre>
    *
-   * <code>string completion_comment = 6;</code>
+   * <code>string completion_comment = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The completionComment.
    */
@@ -187,11 +191,11 @@ public interface BackgroundJobLogEntryOrBuilder
    *
    *
    * <pre>
-   * Job completion comment, such as how many entities were seeded,
+   * Output only. Job completion comment, such as how many entities were seeded,
    * how many warnings were found during conversion, and similar information.
    * </pre>
    *
-   * <code>string completion_comment = 6;</code>
+   * <code>string completion_comment = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for completionComment.
    */
@@ -201,11 +205,11 @@ public interface BackgroundJobLogEntryOrBuilder
    *
    *
    * <pre>
-   * Whether the client requested the conversion workspace to be committed after
-   * a successful completion of the job.
+   * Output only. Whether the client requested the conversion workspace to be
+   * committed after a successful completion of the job.
    * </pre>
    *
-   * <code>bool request_autocommit = 7;</code>
+   * <code>bool request_autocommit = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The requestAutocommit.
    */
@@ -215,10 +219,11 @@ public interface BackgroundJobLogEntryOrBuilder
    *
    *
    * <pre>
-   * Seed job details.
+   * Output only. Seed job details.
    * </pre>
    *
-   * <code>.google.cloud.clouddms.v1.BackgroundJobLogEntry.SeedJobDetails seed_job_details = 100;
+   * <code>
+   * .google.cloud.clouddms.v1.BackgroundJobLogEntry.SeedJobDetails seed_job_details = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the seedJobDetails field is set.
@@ -228,10 +233,11 @@ public interface BackgroundJobLogEntryOrBuilder
    *
    *
    * <pre>
-   * Seed job details.
+   * Output only. Seed job details.
    * </pre>
    *
-   * <code>.google.cloud.clouddms.v1.BackgroundJobLogEntry.SeedJobDetails seed_job_details = 100;
+   * <code>
+   * .google.cloud.clouddms.v1.BackgroundJobLogEntry.SeedJobDetails seed_job_details = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The seedJobDetails.
@@ -241,10 +247,11 @@ public interface BackgroundJobLogEntryOrBuilder
    *
    *
    * <pre>
-   * Seed job details.
+   * Output only. Seed job details.
    * </pre>
    *
-   * <code>.google.cloud.clouddms.v1.BackgroundJobLogEntry.SeedJobDetails seed_job_details = 100;
+   * <code>
+   * .google.cloud.clouddms.v1.BackgroundJobLogEntry.SeedJobDetails seed_job_details = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.cloud.clouddms.v1.BackgroundJobLogEntry.SeedJobDetailsOrBuilder
@@ -254,11 +261,11 @@ public interface BackgroundJobLogEntryOrBuilder
    *
    *
    * <pre>
-   * Import rules job details.
+   * Output only. Import rules job details.
    * </pre>
    *
    * <code>
-   * .google.cloud.clouddms.v1.BackgroundJobLogEntry.ImportRulesJobDetails import_rules_job_details = 101;
+   * .google.cloud.clouddms.v1.BackgroundJobLogEntry.ImportRulesJobDetails import_rules_job_details = 101 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the importRulesJobDetails field is set.
@@ -268,11 +275,11 @@ public interface BackgroundJobLogEntryOrBuilder
    *
    *
    * <pre>
-   * Import rules job details.
+   * Output only. Import rules job details.
    * </pre>
    *
    * <code>
-   * .google.cloud.clouddms.v1.BackgroundJobLogEntry.ImportRulesJobDetails import_rules_job_details = 101;
+   * .google.cloud.clouddms.v1.BackgroundJobLogEntry.ImportRulesJobDetails import_rules_job_details = 101 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The importRulesJobDetails.
@@ -283,11 +290,11 @@ public interface BackgroundJobLogEntryOrBuilder
    *
    *
    * <pre>
-   * Import rules job details.
+   * Output only. Import rules job details.
    * </pre>
    *
    * <code>
-   * .google.cloud.clouddms.v1.BackgroundJobLogEntry.ImportRulesJobDetails import_rules_job_details = 101;
+   * .google.cloud.clouddms.v1.BackgroundJobLogEntry.ImportRulesJobDetails import_rules_job_details = 101 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.cloud.clouddms.v1.BackgroundJobLogEntry.ImportRulesJobDetailsOrBuilder
@@ -297,11 +304,11 @@ public interface BackgroundJobLogEntryOrBuilder
    *
    *
    * <pre>
-   * Convert job details.
+   * Output only. Convert job details.
    * </pre>
    *
    * <code>
-   * .google.cloud.clouddms.v1.BackgroundJobLogEntry.ConvertJobDetails convert_job_details = 102;
+   * .google.cloud.clouddms.v1.BackgroundJobLogEntry.ConvertJobDetails convert_job_details = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the convertJobDetails field is set.
@@ -311,11 +318,11 @@ public interface BackgroundJobLogEntryOrBuilder
    *
    *
    * <pre>
-   * Convert job details.
+   * Output only. Convert job details.
    * </pre>
    *
    * <code>
-   * .google.cloud.clouddms.v1.BackgroundJobLogEntry.ConvertJobDetails convert_job_details = 102;
+   * .google.cloud.clouddms.v1.BackgroundJobLogEntry.ConvertJobDetails convert_job_details = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The convertJobDetails.
@@ -325,11 +332,11 @@ public interface BackgroundJobLogEntryOrBuilder
    *
    *
    * <pre>
-   * Convert job details.
+   * Output only. Convert job details.
    * </pre>
    *
    * <code>
-   * .google.cloud.clouddms.v1.BackgroundJobLogEntry.ConvertJobDetails convert_job_details = 102;
+   * .google.cloud.clouddms.v1.BackgroundJobLogEntry.ConvertJobDetails convert_job_details = 102 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.cloud.clouddms.v1.BackgroundJobLogEntry.ConvertJobDetailsOrBuilder
@@ -339,10 +346,11 @@ public interface BackgroundJobLogEntryOrBuilder
    *
    *
    * <pre>
-   * Apply job details.
+   * Output only. Apply job details.
    * </pre>
    *
-   * <code>.google.cloud.clouddms.v1.BackgroundJobLogEntry.ApplyJobDetails apply_job_details = 103;
+   * <code>
+   * .google.cloud.clouddms.v1.BackgroundJobLogEntry.ApplyJobDetails apply_job_details = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the applyJobDetails field is set.
@@ -352,10 +360,11 @@ public interface BackgroundJobLogEntryOrBuilder
    *
    *
    * <pre>
-   * Apply job details.
+   * Output only. Apply job details.
    * </pre>
    *
-   * <code>.google.cloud.clouddms.v1.BackgroundJobLogEntry.ApplyJobDetails apply_job_details = 103;
+   * <code>
+   * .google.cloud.clouddms.v1.BackgroundJobLogEntry.ApplyJobDetails apply_job_details = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The applyJobDetails.
@@ -365,10 +374,11 @@ public interface BackgroundJobLogEntryOrBuilder
    *
    *
    * <pre>
-   * Apply job details.
+   * Output only. Apply job details.
    * </pre>
    *
-   * <code>.google.cloud.clouddms.v1.BackgroundJobLogEntry.ApplyJobDetails apply_job_details = 103;
+   * <code>
+   * .google.cloud.clouddms.v1.BackgroundJobLogEntry.ApplyJobDetails apply_job_details = 103 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.cloud.clouddms.v1.BackgroundJobLogEntry.ApplyJobDetailsOrBuilder

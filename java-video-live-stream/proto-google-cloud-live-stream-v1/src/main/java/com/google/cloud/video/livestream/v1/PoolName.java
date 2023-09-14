@@ -148,7 +148,7 @@ public class PoolName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       PoolName that = ((PoolName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)

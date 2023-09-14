@@ -237,7 +237,7 @@ public class BigQueryExportName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       BigQueryExportName that = ((BigQueryExportName) o);
       return Objects.equals(this.organization, that.organization)
           && Objects.equals(this.export, that.export)

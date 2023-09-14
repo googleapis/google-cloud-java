@@ -126,7 +126,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Ray cluster configuration.
+   * Optional. Ray cluster configuration.
    * Required when creating a dedicated RayCluster on the PersistentResource.
    * </pre>
    *
@@ -144,7 +144,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Ray cluster configuration.
+   * Optional. Ray cluster configuration.
    * Required when creating a dedicated RayCluster on the PersistentResource.
    * </pre>
    *
@@ -164,7 +164,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Ray cluster configuration.
+   * Optional. Ray cluster configuration.
    * Required when creating a dedicated RayCluster on the PersistentResource.
    * </pre>
    *
@@ -784,7 +784,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Ray cluster configuration.
+     * Optional. Ray cluster configuration.
      * Required when creating a dedicated RayCluster on the PersistentResource.
      * </pre>
      *
@@ -801,7 +801,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Ray cluster configuration.
+     * Optional. Ray cluster configuration.
      * Required when creating a dedicated RayCluster on the PersistentResource.
      * </pre>
      *
@@ -824,7 +824,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Ray cluster configuration.
+     * Optional. Ray cluster configuration.
      * Required when creating a dedicated RayCluster on the PersistentResource.
      * </pre>
      *
@@ -849,7 +849,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Ray cluster configuration.
+     * Optional. Ray cluster configuration.
      * Required when creating a dedicated RayCluster on the PersistentResource.
      * </pre>
      *
@@ -871,7 +871,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Ray cluster configuration.
+     * Optional. Ray cluster configuration.
      * Required when creating a dedicated RayCluster on the PersistentResource.
      * </pre>
      *
@@ -899,7 +899,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Ray cluster configuration.
+     * Optional. Ray cluster configuration.
      * Required when creating a dedicated RayCluster on the PersistentResource.
      * </pre>
      *
@@ -921,7 +921,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Ray cluster configuration.
+     * Optional. Ray cluster configuration.
      * Required when creating a dedicated RayCluster on the PersistentResource.
      * </pre>
      *
@@ -938,7 +938,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Ray cluster configuration.
+     * Optional. Ray cluster configuration.
      * Required when creating a dedicated RayCluster on the PersistentResource.
      * </pre>
      *
@@ -959,7 +959,7 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Ray cluster configuration.
+     * Optional. Ray cluster configuration.
      * Required when creating a dedicated RayCluster on the PersistentResource.
      * </pre>
      *

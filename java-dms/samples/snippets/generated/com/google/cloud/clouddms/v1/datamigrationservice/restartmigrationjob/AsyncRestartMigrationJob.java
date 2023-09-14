@@ -40,6 +40,7 @@ public class AsyncRestartMigrationJob {
       RestartMigrationJobRequest request =
           RestartMigrationJobRequest.newBuilder()
               .setName(MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+              .setSkipValidation(true)
               .build();
       ApiFuture<Operation> future =
           dataMigrationServiceClient.restartMigrationJobCallable().futureCall(request);

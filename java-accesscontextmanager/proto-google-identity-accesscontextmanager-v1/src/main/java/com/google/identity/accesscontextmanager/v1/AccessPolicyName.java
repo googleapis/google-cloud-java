@@ -127,7 +127,7 @@ public class AccessPolicyName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       AccessPolicyName that = ((AccessPolicyName) o);
       return Objects.equals(this.accessPolicy, that.accessPolicy);
     }

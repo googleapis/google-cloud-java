@@ -40,7 +40,7 @@ public class AsyncGetTransitionRouteGroup {
       GetTransitionRouteGroupRequest request =
           GetTransitionRouteGroupRequest.newBuilder()
               .setName(
-                  TransitionRouteGroupName.of(
+                  TransitionRouteGroupName.ofProjectLocationAgentFlowTransitionRouteGroupName(
                           "[PROJECT]",
                           "[LOCATION]",
                           "[AGENT]",

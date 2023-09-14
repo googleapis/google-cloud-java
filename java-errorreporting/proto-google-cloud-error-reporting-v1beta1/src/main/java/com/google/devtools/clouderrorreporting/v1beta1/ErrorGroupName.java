@@ -137,7 +137,7 @@ public class ErrorGroupName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       ErrorGroupName that = ((ErrorGroupName) o);
       return Objects.equals(this.project, that.project) && Objects.equals(this.group, that.group);
     }

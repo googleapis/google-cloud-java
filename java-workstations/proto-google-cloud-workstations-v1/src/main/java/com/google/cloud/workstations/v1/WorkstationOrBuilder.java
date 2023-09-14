@@ -27,7 +27,7 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Full name of this resource.
+   * Full name of this workstation.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -39,7 +39,7 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Full name of this resource.
+   * Full name of this workstation.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -52,10 +52,10 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Human-readable name for this resource.
+   * Optional. Human-readable name for this workstation.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The displayName.
    */
@@ -64,10 +64,10 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Human-readable name for this resource.
+   * Optional. Human-readable name for this workstation.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for displayName.
    */
@@ -77,7 +77,7 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Output only. A system-assigned unique identified for this resource.
+   * Output only. A system-assigned unique identifier for this workstation.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -89,7 +89,7 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Output only. A system-assigned unique identified for this resource.
+   * Output only. A system-assigned unique identifier for this workstation.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -102,8 +102,8 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Output only. Indicates whether this resource is currently being updated to
-   * match its intended state.
+   * Output only. Indicates whether this workstation is currently being updated
+   * to match its intended state.
    * </pre>
    *
    * <code>bool reconciling = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -116,20 +116,22 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getAnnotationsCount();
   /**
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsAnnotations(java.lang.String key);
   /** Use {@link #getAnnotationsMap()} instead. */
@@ -139,20 +141,22 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap();
   /**
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   /* nullable */
   java.lang.String getAnnotationsOrDefault(
@@ -163,10 +167,11 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getAnnotationsOrThrow(java.lang.String key);
 
@@ -174,22 +179,26 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation and that are also propagated to the
+   * underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 13;</code>
+   * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getLabelsCount();
   /**
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation and that are also propagated to the
+   * underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 13;</code>
+   * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsLabels(java.lang.String key);
   /** Use {@link #getLabelsMap()} instead. */
@@ -199,22 +208,26 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation and that are also propagated to the
+   * underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 13;</code>
+   * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation and that are also propagated to the
+   * underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 13;</code>
+   * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   /* nullable */
   java.lang.String getLabelsOrDefault(
@@ -225,11 +238,13 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation and that are also propagated to the
+   * underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 13;</code>
+   * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
 
@@ -237,7 +252,7 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was created.
+   * Output only. Time when this workstation was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -250,7 +265,7 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was created.
+   * Output only. Time when this workstation was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -263,7 +278,7 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was created.
+   * Output only. Time when this workstation was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -275,7 +290,7 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was most recently updated.
+   * Output only. Time when this workstation was most recently updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -288,7 +303,7 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was most recently updated.
+   * Output only. Time when this workstation was most recently updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -301,7 +316,7 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was most recently updated.
+   * Output only. Time when this workstation was most recently updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -313,7 +328,48 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was soft-deleted.
+   * Output only. Time when this workstation was most recently successfully
+   * started, regardless of the workstation's initial state.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the startTime field is set.
+   */
+  boolean hasStartTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time when this workstation was most recently successfully
+   * started, regardless of the workstation's initial state.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The startTime.
+   */
+  com.google.protobuf.Timestamp getStartTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time when this workstation was most recently successfully
+   * started, regardless of the workstation's initial state.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time when this workstation was soft-deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -326,7 +382,7 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was soft-deleted.
+   * Output only. Time when this workstation was soft-deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -339,7 +395,7 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Output only. Time when this resource was soft-deleted.
+   * Output only. Time when this workstation was soft-deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -351,11 +407,12 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Checksum computed by the server. May be sent on update and delete requests
-   * to make sure that the client has an up-to-date value before proceeding.
+   * Optional. Checksum computed by the server. May be sent on update and delete
+   * requests to make sure that the client has an up-to-date value before
+   * proceeding.
    * </pre>
    *
-   * <code>string etag = 9;</code>
+   * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -364,11 +421,12 @@ public interface WorkstationOrBuilder
    *
    *
    * <pre>
-   * Checksum computed by the server. May be sent on update and delete requests
-   * to make sure that the client has an up-to-date value before proceeding.
+   * Optional. Checksum computed by the server. May be sent on update and delete
+   * requests to make sure that the client has an up-to-date value before
+   * proceeding.
    * </pre>
    *
-   * <code>string etag = 9;</code>
+   * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */

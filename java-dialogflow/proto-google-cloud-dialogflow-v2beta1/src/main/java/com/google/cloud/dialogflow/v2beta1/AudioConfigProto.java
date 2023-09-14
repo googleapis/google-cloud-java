@@ -115,10 +115,11 @@ public final class AudioConfigProto {
           + "w.v2beta1.SynthesizeSpeechConfig\"Z\n\023Tele"
           + "phonyDtmfEvents\022C\n\013dtmf_events\030\001 \003(\0162..g"
           + "oogle.cloud.dialogflow.v2beta1.Telephony"
-          + "Dtmf\"v\n\022SpeechToTextConfig\022Q\n\024speech_mod"
-          + "el_variant\030\001 \001(\01623.google.cloud.dialogfl"
-          + "ow.v2beta1.SpeechModelVariant\022\r\n\005model\030\002"
-          + " \001(\t*\224\002\n\rTelephonyDtmf\022\036\n\032TELEPHONY_DTMF"
+          + "Dtmf\"\235\001\n\022SpeechToTextConfig\022Q\n\024speech_mo"
+          + "del_variant\030\001 \001(\01623.google.cloud.dialogf"
+          + "low.v2beta1.SpeechModelVariant\022\r\n\005model\030"
+          + "\002 \001(\t\022%\n\035use_timeout_based_endpointing\030\013"
+          + " \001(\010*\224\002\n\rTelephonyDtmf\022\036\n\032TELEPHONY_DTMF"
           + "_UNSPECIFIED\020\000\022\014\n\010DTMF_ONE\020\001\022\014\n\010DTMF_TWO"
           + "\020\002\022\016\n\nDTMF_THREE\020\003\022\r\n\tDTMF_FOUR\020\004\022\r\n\tDTM"
           + "F_FIVE\020\005\022\014\n\010DTMF_SIX\020\006\022\016\n\nDTMF_SEVEN\020\007\022\016"
@@ -244,7 +245,7 @@ public final class AudioConfigProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dialogflow_v2beta1_SpeechToTextConfig_descriptor,
             new java.lang.String[] {
-              "SpeechModelVariant", "Model",
+              "SpeechModelVariant", "Model", "UseTimeoutBasedEndpointing",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

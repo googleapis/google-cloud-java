@@ -107,6 +107,46 @@ public interface DocumentInfoOrBuilder
    *
    *
    * <pre>
+   * The [Document][google.cloud.discoveryengine.v1beta.Document] URI - only
+   * allowed for website data stores.
+   * </pre>
+   *
+   * <code>string uri = 6;</code>
+   *
+   * @return Whether the uri field is set.
+   */
+  boolean hasUri();
+  /**
+   *
+   *
+   * <pre>
+   * The [Document][google.cloud.discoveryengine.v1beta.Document] URI - only
+   * allowed for website data stores.
+   * </pre>
+   *
+   * <code>string uri = 6;</code>
+   *
+   * @return The uri.
+   */
+  java.lang.String getUri();
+  /**
+   *
+   *
+   * <pre>
+   * The [Document][google.cloud.discoveryengine.v1beta.Document] URI - only
+   * allowed for website data stores.
+   * </pre>
+   *
+   * <code>string uri = 6;</code>
+   *
+   * @return The bytes for uri.
+   */
+  com.google.protobuf.ByteString getUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Quantity of the Document associated with the user event. Defaults to 1.
    *
    * For example, this field will be 2 if two quantities of the same Document

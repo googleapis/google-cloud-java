@@ -130,6 +130,9 @@
             "ListMessages": {
               "methods": ["listMessages", "listMessages", "listMessages", "listMessagesPagedCallable", "listMessagesCallable"]
             },
+            "SearchKnowledge": {
+              "methods": ["searchKnowledge", "searchKnowledgeCallable"]
+            },
             "SuggestConversationSummary": {
               "methods": ["suggestConversationSummary", "suggestConversationSummary", "suggestConversationSummary", "suggestConversationSummaryCallable"]
             }

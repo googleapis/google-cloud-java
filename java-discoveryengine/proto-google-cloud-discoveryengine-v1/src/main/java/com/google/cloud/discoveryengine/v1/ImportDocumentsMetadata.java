@@ -22,8 +22,8 @@ package com.google.cloud.discoveryengine.v1;
  *
  *
  * <pre>
- * Metadata related to the progress of the ImportDocuments operation. This will
- * be returned by the google.longrunning.Operation.metadata field.
+ * Metadata related to the progress of the ImportDocuments operation. This is
+ * returned by the google.longrunning.Operation.metadata field.
  * </pre>
  *
  * Protobuf type {@code google.cloud.discoveryengine.v1.ImportDocumentsMetadata}
@@ -393,8 +393,8 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Metadata related to the progress of the ImportDocuments operation. This will
-   * be returned by the google.longrunning.Operation.metadata field.
+   * Metadata related to the progress of the ImportDocuments operation. This is
+   * returned by the google.longrunning.Operation.metadata field.
    * </pre>
    *
    * Protobuf type {@code google.cloud.discoveryengine.v1.ImportDocumentsMetadata}

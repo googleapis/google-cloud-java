@@ -143,7 +143,7 @@ public class AccessLevelName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       AccessLevelName that = ((AccessLevelName) o);
       return Objects.equals(this.accessPolicy, that.accessPolicy)
           && Objects.equals(this.accessLevel, that.accessLevel);

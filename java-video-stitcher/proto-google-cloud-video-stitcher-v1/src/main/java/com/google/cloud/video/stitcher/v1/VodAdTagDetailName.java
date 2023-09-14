@@ -183,7 +183,7 @@ public class VodAdTagDetailName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       VodAdTagDetailName that = ((VodAdTagDetailName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)

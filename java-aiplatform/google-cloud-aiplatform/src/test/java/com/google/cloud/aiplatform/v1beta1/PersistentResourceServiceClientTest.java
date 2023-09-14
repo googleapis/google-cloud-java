@@ -535,6 +535,71 @@ public class PersistentResourceServiceClientTest {
   }
 
   @Test
+  public void updatePersistentResourceTest() throws Exception {
+    PersistentResource expectedResponse =
+        PersistentResource.newBuilder()
+            .setName(
+                PersistentResourceName.of("[PROJECT]", "[LOCATION]", "[PERSISTENT_RESOURCE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .addAllResourcePools(new ArrayList<ResourcePool>())
+            .setError(Status.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllLabels(new HashMap<String, String>())
+            .setNetwork("network1843485230")
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
+            .setResourceRuntimeSpec(ResourceRuntimeSpec.newBuilder().build())
+            .setResourceRuntime(ResourceRuntime.newBuilder().build())
+            .addAllReservedIpRanges(new ArrayList<String>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updatePersistentResourceTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockPersistentResourceService.addResponse(resultOperation);
+
+    PersistentResource persistentResource = PersistentResource.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    PersistentResource actualResponse =
+        client.updatePersistentResourceAsync(persistentResource, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockPersistentResourceService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdatePersistentResourceRequest actualRequest =
+        ((UpdatePersistentResourceRequest) actualRequests.get(0));
+
+    Assert.assertEquals(persistentResource, actualRequest.getPersistentResource());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updatePersistentResourceExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockPersistentResourceService.addException(exception);
+
+    try {
+      PersistentResource persistentResource = PersistentResource.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updatePersistentResourceAsync(persistentResource, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

@@ -42,6 +42,8 @@ public class SyncApplyConversionWorkspace {
                   ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
                       .toString())
               .setFilter("filter-1274492040")
+              .setDryRun(true)
+              .setAutoCommit(true)
               .build();
       ConversionWorkspace response =
           dataMigrationServiceClient.applyConversionWorkspaceAsync(request).get();

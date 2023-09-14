@@ -44,6 +44,7 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
     tree_ = 0;
     commitId_ = "";
     filter_ = "";
+    view_ = 0;
   }
 
   @java.lang.Override
@@ -313,11 +314,11 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The maximum number of entities to return. The service may return
+   * Optional. The maximum number of entities to return. The service may return
    * fewer entities than the value specifies.
    * </pre>
    *
-   * <code>int32 page_size = 3;</code>
+   * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -334,7 +335,7 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The nextPageToken value received in the previous call to
+   * Optional. The nextPageToken value received in the previous call to
    * conversionWorkspace.describeDatabaseEntities, used in the subsequent
    * request to retrieve the next page of results. On first call this should be
    * left blank. When paginating, all other parameters provided to
@@ -342,7 +343,7 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
    * provided the page token.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -362,7 +363,7 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The nextPageToken value received in the previous call to
+   * Optional. The nextPageToken value received in the previous call to
    * conversionWorkspace.describeDatabaseEntities, used in the subsequent
    * request to retrieve the next page of results. On first call this should be
    * left blank. When paginating, all other parameters provided to
@@ -370,7 +371,7 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
    * provided the page token.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -393,10 +394,12 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The tree to fetch.
+   * Required. The tree to fetch.
    * </pre>
    *
-   * <code>.google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest.DBTreeType tree = 6;</code>
+   * <code>
+   * .google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest.DBTreeType tree = 6 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The enum numeric value on the wire for tree.
    */
@@ -408,10 +411,12 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The tree to fetch.
+   * Required. The tree to fetch.
    * </pre>
    *
-   * <code>.google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest.DBTreeType tree = 6;</code>
+   * <code>
+   * .google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest.DBTreeType tree = 6 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The tree.
    */
@@ -430,11 +435,12 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Whether to retrieve the latest committed version of the entities or the
-   * latest version. This field is ignored if a specific commit_id is specified.
+   * Optional. Whether to retrieve the latest committed version of the entities
+   * or the latest version. This field is ignored if a specific commit_id is
+   * specified.
    * </pre>
    *
-   * <code>bool uncommitted = 11;</code>
+   * <code>bool uncommitted = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The uncommitted.
    */
@@ -451,11 +457,11 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Request a specific commit ID. If not specified, the entities from the
-   * latest commit are returned.
+   * Optional. Request a specific commit ID. If not specified, the entities from
+   * the latest commit are returned.
    * </pre>
    *
-   * <code>string commit_id = 12;</code>
+   * <code>string commit_id = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The commitId.
    */
@@ -475,11 +481,11 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Request a specific commit ID. If not specified, the entities from the
-   * latest commit are returned.
+   * Optional. Request a specific commit ID. If not specified, the entities from
+   * the latest commit are returned.
    * </pre>
    *
-   * <code>string commit_id = 12;</code>
+   * <code>string commit_id = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for commitId.
    */
@@ -504,10 +510,10 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Filter the returned entities based on AIP-160 standard.
+   * Optional. Filter the returned entities based on AIP-160 standard.
    * </pre>
    *
-   * <code>string filter = 13;</code>
+   * <code>string filter = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -527,10 +533,10 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Filter the returned entities based on AIP-160 standard.
+   * Optional. Filter the returned entities based on AIP-160 standard.
    * </pre>
    *
-   * <code>string filter = 13;</code>
+   * <code>string filter = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -545,6 +551,45 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int VIEW_FIELD_NUMBER = 14;
+  private int view_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Results view based on AIP-157
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.DatabaseEntityView view = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for view.
+   */
+  @java.lang.Override
+  public int getViewValue() {
+    return view_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Results view based on AIP-157
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.DatabaseEntityView view = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The view.
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.DatabaseEntityView getView() {
+    com.google.cloud.clouddms.v1.DatabaseEntityView result =
+        com.google.cloud.clouddms.v1.DatabaseEntityView.forNumber(view_);
+    return result == null ? com.google.cloud.clouddms.v1.DatabaseEntityView.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -585,6 +630,11 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, filter_);
     }
+    if (view_
+        != com.google.cloud.clouddms.v1.DatabaseEntityView.DATABASE_ENTITY_VIEW_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(14, view_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -618,6 +668,11 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, filter_);
     }
+    if (view_
+        != com.google.cloud.clouddms.v1.DatabaseEntityView.DATABASE_ENTITY_VIEW_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, view_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -641,6 +696,7 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
     if (getUncommitted() != other.getUncommitted()) return false;
     if (!getCommitId().equals(other.getCommitId())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
+    if (view_ != other.view_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -666,6 +722,8 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
     hash = (53 * hash) + getCommitId().hashCode();
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + VIEW_FIELD_NUMBER;
+    hash = (53 * hash) + view_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -813,6 +871,7 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
       uncommitted_ = false;
       commitId_ = "";
       filter_ = "";
+      view_ = 0;
       return this;
     }
 
@@ -871,6 +930,9 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.view_ = view_;
       }
     }
 
@@ -950,6 +1012,9 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
         bitField0_ |= 0x00000040;
         onChanged();
       }
+      if (other.view_ != 0) {
+        setViewValue(other.getViewValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1018,6 +1083,12 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
                 bitField0_ |= 0x00000040;
                 break;
               } // case 106
+            case 112:
+              {
+                view_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 112
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1168,11 +1239,11 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The maximum number of entities to return. The service may return
+     * Optional. The maximum number of entities to return. The service may return
      * fewer entities than the value specifies.
      * </pre>
      *
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageSize.
      */
@@ -1184,11 +1255,11 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The maximum number of entities to return. The service may return
+     * Optional. The maximum number of entities to return. The service may return
      * fewer entities than the value specifies.
      * </pre>
      *
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -1204,11 +1275,11 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The maximum number of entities to return. The service may return
+     * Optional. The maximum number of entities to return. The service may return
      * fewer entities than the value specifies.
      * </pre>
      *
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1224,7 +1295,7 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The nextPageToken value received in the previous call to
+     * Optional. The nextPageToken value received in the previous call to
      * conversionWorkspace.describeDatabaseEntities, used in the subsequent
      * request to retrieve the next page of results. On first call this should be
      * left blank. When paginating, all other parameters provided to
@@ -1232,7 +1303,7 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      * provided the page token.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageToken.
      */
@@ -1251,7 +1322,7 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The nextPageToken value received in the previous call to
+     * Optional. The nextPageToken value received in the previous call to
      * conversionWorkspace.describeDatabaseEntities, used in the subsequent
      * request to retrieve the next page of results. On first call this should be
      * left blank. When paginating, all other parameters provided to
@@ -1259,7 +1330,7 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      * provided the page token.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for pageToken.
      */
@@ -1278,7 +1349,7 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The nextPageToken value received in the previous call to
+     * Optional. The nextPageToken value received in the previous call to
      * conversionWorkspace.describeDatabaseEntities, used in the subsequent
      * request to retrieve the next page of results. On first call this should be
      * left blank. When paginating, all other parameters provided to
@@ -1286,7 +1357,7 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      * provided the page token.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -1304,7 +1375,7 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The nextPageToken value received in the previous call to
+     * Optional. The nextPageToken value received in the previous call to
      * conversionWorkspace.describeDatabaseEntities, used in the subsequent
      * request to retrieve the next page of results. On first call this should be
      * left blank. When paginating, all other parameters provided to
@@ -1312,7 +1383,7 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      * provided the page token.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1326,7 +1397,7 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The nextPageToken value received in the previous call to
+     * Optional. The nextPageToken value received in the previous call to
      * conversionWorkspace.describeDatabaseEntities, used in the subsequent
      * request to retrieve the next page of results. On first call this should be
      * left blank. When paginating, all other parameters provided to
@@ -1334,7 +1405,7 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      * provided the page token.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.
@@ -1355,10 +1426,12 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The tree to fetch.
+     * Required. The tree to fetch.
      * </pre>
      *
-     * <code>.google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest.DBTreeType tree = 6;</code>
+     * <code>
+     * .google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest.DBTreeType tree = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The enum numeric value on the wire for tree.
      */
@@ -1370,10 +1443,12 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The tree to fetch.
+     * Required. The tree to fetch.
      * </pre>
      *
-     * <code>.google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest.DBTreeType tree = 6;</code>
+     * <code>
+     * .google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest.DBTreeType tree = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The enum numeric value on the wire for tree to set.
      * @return This builder for chaining.
@@ -1388,10 +1463,12 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The tree to fetch.
+     * Required. The tree to fetch.
      * </pre>
      *
-     * <code>.google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest.DBTreeType tree = 6;</code>
+     * <code>
+     * .google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest.DBTreeType tree = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return The tree.
      */
@@ -1407,10 +1484,12 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The tree to fetch.
+     * Required. The tree to fetch.
      * </pre>
      *
-     * <code>.google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest.DBTreeType tree = 6;</code>
+     * <code>
+     * .google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest.DBTreeType tree = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @param value The tree to set.
      * @return This builder for chaining.
@@ -1429,10 +1508,12 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * The tree to fetch.
+     * Required. The tree to fetch.
      * </pre>
      *
-     * <code>.google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest.DBTreeType tree = 6;</code>
+     * <code>
+     * .google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest.DBTreeType tree = 6 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1448,11 +1529,12 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Whether to retrieve the latest committed version of the entities or the
-     * latest version. This field is ignored if a specific commit_id is specified.
+     * Optional. Whether to retrieve the latest committed version of the entities
+     * or the latest version. This field is ignored if a specific commit_id is
+     * specified.
      * </pre>
      *
-     * <code>bool uncommitted = 11;</code>
+     * <code>bool uncommitted = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The uncommitted.
      */
@@ -1464,11 +1546,12 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Whether to retrieve the latest committed version of the entities or the
-     * latest version. This field is ignored if a specific commit_id is specified.
+     * Optional. Whether to retrieve the latest committed version of the entities
+     * or the latest version. This field is ignored if a specific commit_id is
+     * specified.
      * </pre>
      *
-     * <code>bool uncommitted = 11;</code>
+     * <code>bool uncommitted = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The uncommitted to set.
      * @return This builder for chaining.
@@ -1484,11 +1567,12 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Whether to retrieve the latest committed version of the entities or the
-     * latest version. This field is ignored if a specific commit_id is specified.
+     * Optional. Whether to retrieve the latest committed version of the entities
+     * or the latest version. This field is ignored if a specific commit_id is
+     * specified.
      * </pre>
      *
-     * <code>bool uncommitted = 11;</code>
+     * <code>bool uncommitted = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1504,11 +1588,11 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Request a specific commit ID. If not specified, the entities from the
-     * latest commit are returned.
+     * Optional. Request a specific commit ID. If not specified, the entities from
+     * the latest commit are returned.
      * </pre>
      *
-     * <code>string commit_id = 12;</code>
+     * <code>string commit_id = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The commitId.
      */
@@ -1527,11 +1611,11 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Request a specific commit ID. If not specified, the entities from the
-     * latest commit are returned.
+     * Optional. Request a specific commit ID. If not specified, the entities from
+     * the latest commit are returned.
      * </pre>
      *
-     * <code>string commit_id = 12;</code>
+     * <code>string commit_id = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for commitId.
      */
@@ -1550,11 +1634,11 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Request a specific commit ID. If not specified, the entities from the
-     * latest commit are returned.
+     * Optional. Request a specific commit ID. If not specified, the entities from
+     * the latest commit are returned.
      * </pre>
      *
-     * <code>string commit_id = 12;</code>
+     * <code>string commit_id = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The commitId to set.
      * @return This builder for chaining.
@@ -1572,11 +1656,11 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Request a specific commit ID. If not specified, the entities from the
-     * latest commit are returned.
+     * Optional. Request a specific commit ID. If not specified, the entities from
+     * the latest commit are returned.
      * </pre>
      *
-     * <code>string commit_id = 12;</code>
+     * <code>string commit_id = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1590,11 +1674,11 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Request a specific commit ID. If not specified, the entities from the
-     * latest commit are returned.
+     * Optional. Request a specific commit ID. If not specified, the entities from
+     * the latest commit are returned.
      * </pre>
      *
-     * <code>string commit_id = 12;</code>
+     * <code>string commit_id = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for commitId to set.
      * @return This builder for chaining.
@@ -1615,10 +1699,10 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Filter the returned entities based on AIP-160 standard.
+     * Optional. Filter the returned entities based on AIP-160 standard.
      * </pre>
      *
-     * <code>string filter = 13;</code>
+     * <code>string filter = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The filter.
      */
@@ -1637,10 +1721,10 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Filter the returned entities based on AIP-160 standard.
+     * Optional. Filter the returned entities based on AIP-160 standard.
      * </pre>
      *
-     * <code>string filter = 13;</code>
+     * <code>string filter = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for filter.
      */
@@ -1659,10 +1743,10 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Filter the returned entities based on AIP-160 standard.
+     * Optional. Filter the returned entities based on AIP-160 standard.
      * </pre>
      *
-     * <code>string filter = 13;</code>
+     * <code>string filter = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -1680,10 +1764,10 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Filter the returned entities based on AIP-160 standard.
+     * Optional. Filter the returned entities based on AIP-160 standard.
      * </pre>
      *
-     * <code>string filter = 13;</code>
+     * <code>string filter = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1697,10 +1781,10 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Filter the returned entities based on AIP-160 standard.
+     * Optional. Filter the returned entities based on AIP-160 standard.
      * </pre>
      *
-     * <code>string filter = 13;</code>
+     * <code>string filter = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
@@ -1712,6 +1796,106 @@ public final class DescribeDatabaseEntitiesRequest extends com.google.protobuf.G
       checkByteStringIsUtf8(value);
       filter_ = value;
       bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    private int view_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Results view based on AIP-157
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.DatabaseEntityView view = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for view.
+     */
+    @java.lang.Override
+    public int getViewValue() {
+      return view_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Results view based on AIP-157
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.DatabaseEntityView view = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for view to set.
+     * @return This builder for chaining.
+     */
+    public Builder setViewValue(int value) {
+      view_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Results view based on AIP-157
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.DatabaseEntityView view = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The view.
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.DatabaseEntityView getView() {
+      com.google.cloud.clouddms.v1.DatabaseEntityView result =
+          com.google.cloud.clouddms.v1.DatabaseEntityView.forNumber(view_);
+      return result == null ? com.google.cloud.clouddms.v1.DatabaseEntityView.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Results view based on AIP-157
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.DatabaseEntityView view = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The view to set.
+     * @return This builder for chaining.
+     */
+    public Builder setView(com.google.cloud.clouddms.v1.DatabaseEntityView value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      view_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Results view based on AIP-157
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.DatabaseEntityView view = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearView() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      view_ = 0;
       onChanged();
       return this;
     }

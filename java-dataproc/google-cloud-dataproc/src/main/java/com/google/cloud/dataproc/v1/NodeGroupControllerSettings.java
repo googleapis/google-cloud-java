@@ -29,6 +29,11 @@ import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.dataproc.v1.stub.NodeGroupControllerStubSettings;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import java.io.IOException;
 import java.util.List;
@@ -100,6 +105,22 @@ public class NodeGroupControllerSettings extends ClientSettings<NodeGroupControl
   /** Returns the object with the settings used for calls to getNodeGroup. */
   public UnaryCallSettings<GetNodeGroupRequest, NodeGroup> getNodeGroupSettings() {
     return ((NodeGroupControllerStubSettings) getStubSettings()).getNodeGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return ((NodeGroupControllerStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return ((NodeGroupControllerStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((NodeGroupControllerStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final NodeGroupControllerSettings create(NodeGroupControllerStubSettings stub)
@@ -244,6 +265,22 @@ public class NodeGroupControllerSettings extends ClientSettings<NodeGroupControl
     /** Returns the builder for the settings used for calls to getNodeGroup. */
     public UnaryCallSettings.Builder<GetNodeGroupRequest, NodeGroup> getNodeGroupSettings() {
       return getStubSettingsBuilder().getNodeGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

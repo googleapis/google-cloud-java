@@ -198,6 +198,7 @@ public class PagesClientHttpJsonTest {
             .addAllTransitionRouteGroups(new ArrayList<String>())
             .addAllTransitionRoutes(new ArrayList<TransitionRoute>())
             .addAllEventHandlers(new ArrayList<EventHandler>())
+            .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -249,6 +250,7 @@ public class PagesClientHttpJsonTest {
             .addAllTransitionRouteGroups(new ArrayList<String>())
             .addAllTransitionRoutes(new ArrayList<TransitionRoute>())
             .addAllEventHandlers(new ArrayList<EventHandler>())
+            .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -302,6 +304,7 @@ public class PagesClientHttpJsonTest {
             .addAllTransitionRouteGroups(new ArrayList<String>())
             .addAllTransitionRoutes(new ArrayList<TransitionRoute>())
             .addAllEventHandlers(new ArrayList<EventHandler>())
+            .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -355,6 +358,7 @@ public class PagesClientHttpJsonTest {
             .addAllTransitionRouteGroups(new ArrayList<String>())
             .addAllTransitionRoutes(new ArrayList<TransitionRoute>())
             .addAllEventHandlers(new ArrayList<EventHandler>())
+            .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -410,6 +414,7 @@ public class PagesClientHttpJsonTest {
             .addAllTransitionRouteGroups(new ArrayList<String>())
             .addAllTransitionRoutes(new ArrayList<TransitionRoute>())
             .addAllEventHandlers(new ArrayList<EventHandler>())
+            .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -423,6 +428,7 @@ public class PagesClientHttpJsonTest {
             .addAllTransitionRouteGroups(new ArrayList<String>())
             .addAllTransitionRoutes(new ArrayList<TransitionRoute>())
             .addAllEventHandlers(new ArrayList<EventHandler>())
+            .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -462,6 +468,7 @@ public class PagesClientHttpJsonTest {
               .addAllTransitionRouteGroups(new ArrayList<String>())
               .addAllTransitionRoutes(new ArrayList<TransitionRoute>())
               .addAllEventHandlers(new ArrayList<EventHandler>())
+              .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updatePage(page, updateMask);

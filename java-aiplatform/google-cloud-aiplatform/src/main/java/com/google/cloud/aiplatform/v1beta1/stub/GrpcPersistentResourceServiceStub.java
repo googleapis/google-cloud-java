@@ -36,6 +36,8 @@ import com.google.cloud.aiplatform.v1beta1.GetPersistentResourceRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPersistentResourcesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListPersistentResourcesResponse;
 import com.google.cloud.aiplatform.v1beta1.PersistentResource;
+import com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.UpdatePersistentResourceRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -110,6 +112,17 @@ public class GrpcPersistentResourceServiceStub extends PersistentResourceService
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<UpdatePersistentResourceRequest, Operation>
+      updatePersistentResourceMethodDescriptor =
+          MethodDescriptor.<UpdatePersistentResourceRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.PersistentResourceService/UpdatePersistentResource")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdatePersistentResourceRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -173,6 +186,13 @@ public class GrpcPersistentResourceServiceStub extends PersistentResourceService
       deletePersistentResourceCallable;
   private final OperationCallable<DeletePersistentResourceRequest, Empty, DeleteOperationMetadata>
       deletePersistentResourceOperationCallable;
+  private final UnaryCallable<UpdatePersistentResourceRequest, Operation>
+      updatePersistentResourceCallable;
+  private final OperationCallable<
+          UpdatePersistentResourceRequest,
+          PersistentResource,
+          UpdatePersistentResourceOperationMetadata>
+      updatePersistentResourceOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -272,6 +292,19 @@ public class GrpcPersistentResourceServiceStub extends PersistentResourceService
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<UpdatePersistentResourceRequest, Operation>
+        updatePersistentResourceTransportSettings =
+            GrpcCallSettings.<UpdatePersistentResourceRequest, Operation>newBuilder()
+                .setMethodDescriptor(updatePersistentResourceMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "persistent_resource.name",
+                          String.valueOf(request.getPersistentResource().getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -361,6 +394,17 @@ public class GrpcPersistentResourceServiceStub extends PersistentResourceService
             settings.deletePersistentResourceOperationSettings(),
             clientContext,
             operationsStub);
+    this.updatePersistentResourceCallable =
+        callableFactory.createUnaryCallable(
+            updatePersistentResourceTransportSettings,
+            settings.updatePersistentResourceSettings(),
+            clientContext);
+    this.updatePersistentResourceOperationCallable =
+        callableFactory.createOperationCallable(
+            updatePersistentResourceTransportSettings,
+            settings.updatePersistentResourceOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -433,6 +477,21 @@ public class GrpcPersistentResourceServiceStub extends PersistentResourceService
   public OperationCallable<DeletePersistentResourceRequest, Empty, DeleteOperationMetadata>
       deletePersistentResourceOperationCallable() {
     return deletePersistentResourceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdatePersistentResourceRequest, Operation>
+      updatePersistentResourceCallable() {
+    return updatePersistentResourceCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdatePersistentResourceRequest,
+          PersistentResource,
+          UpdatePersistentResourceOperationMetadata>
+      updatePersistentResourceOperationCallable() {
+    return updatePersistentResourceOperationCallable;
   }
 
   @Override

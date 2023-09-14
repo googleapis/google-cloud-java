@@ -20,6 +20,7 @@ import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.DescribeDa
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.FetchStaticIpsPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListConnectionProfilesPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListConversionWorkspacesPagedResponse;
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListMappingRulesPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListMigrationJobsPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListPrivateConnectionsPagedResponse;
 
@@ -38,10 +39,12 @@ import com.google.cloud.clouddms.v1.ConversionWorkspace;
 import com.google.cloud.clouddms.v1.ConvertConversionWorkspaceRequest;
 import com.google.cloud.clouddms.v1.CreateConnectionProfileRequest;
 import com.google.cloud.clouddms.v1.CreateConversionWorkspaceRequest;
+import com.google.cloud.clouddms.v1.CreateMappingRuleRequest;
 import com.google.cloud.clouddms.v1.CreateMigrationJobRequest;
 import com.google.cloud.clouddms.v1.CreatePrivateConnectionRequest;
 import com.google.cloud.clouddms.v1.DeleteConnectionProfileRequest;
 import com.google.cloud.clouddms.v1.DeleteConversionWorkspaceRequest;
+import com.google.cloud.clouddms.v1.DeleteMappingRuleRequest;
 import com.google.cloud.clouddms.v1.DeleteMigrationJobRequest;
 import com.google.cloud.clouddms.v1.DeletePrivateConnectionRequest;
 import com.google.cloud.clouddms.v1.DescribeConversionWorkspaceRevisionsRequest;
@@ -51,8 +54,10 @@ import com.google.cloud.clouddms.v1.DescribeDatabaseEntitiesResponse;
 import com.google.cloud.clouddms.v1.FetchStaticIpsRequest;
 import com.google.cloud.clouddms.v1.FetchStaticIpsResponse;
 import com.google.cloud.clouddms.v1.GenerateSshScriptRequest;
+import com.google.cloud.clouddms.v1.GenerateTcpProxyScriptRequest;
 import com.google.cloud.clouddms.v1.GetConnectionProfileRequest;
 import com.google.cloud.clouddms.v1.GetConversionWorkspaceRequest;
+import com.google.cloud.clouddms.v1.GetMappingRuleRequest;
 import com.google.cloud.clouddms.v1.GetMigrationJobRequest;
 import com.google.cloud.clouddms.v1.GetPrivateConnectionRequest;
 import com.google.cloud.clouddms.v1.ImportMappingRulesRequest;
@@ -60,10 +65,13 @@ import com.google.cloud.clouddms.v1.ListConnectionProfilesRequest;
 import com.google.cloud.clouddms.v1.ListConnectionProfilesResponse;
 import com.google.cloud.clouddms.v1.ListConversionWorkspacesRequest;
 import com.google.cloud.clouddms.v1.ListConversionWorkspacesResponse;
+import com.google.cloud.clouddms.v1.ListMappingRulesRequest;
+import com.google.cloud.clouddms.v1.ListMappingRulesResponse;
 import com.google.cloud.clouddms.v1.ListMigrationJobsRequest;
 import com.google.cloud.clouddms.v1.ListMigrationJobsResponse;
 import com.google.cloud.clouddms.v1.ListPrivateConnectionsRequest;
 import com.google.cloud.clouddms.v1.ListPrivateConnectionsResponse;
+import com.google.cloud.clouddms.v1.MappingRule;
 import com.google.cloud.clouddms.v1.MigrationJob;
 import com.google.cloud.clouddms.v1.OperationMetadata;
 import com.google.cloud.clouddms.v1.PrivateConnection;
@@ -77,6 +85,7 @@ import com.google.cloud.clouddms.v1.SeedConversionWorkspaceRequest;
 import com.google.cloud.clouddms.v1.SshScript;
 import com.google.cloud.clouddms.v1.StartMigrationJobRequest;
 import com.google.cloud.clouddms.v1.StopMigrationJobRequest;
+import com.google.cloud.clouddms.v1.TcpProxyScript;
 import com.google.cloud.clouddms.v1.UpdateConnectionProfileRequest;
 import com.google.cloud.clouddms.v1.UpdateConversionWorkspaceRequest;
 import com.google.cloud.clouddms.v1.UpdateMigrationJobRequest;
@@ -219,6 +228,17 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GenerateSshScriptRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SshScript.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GenerateTcpProxyScriptRequest, TcpProxyScript>
+      generateTcpProxyScriptMethodDescriptor =
+          MethodDescriptor.<GenerateTcpProxyScriptRequest, TcpProxyScript>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.clouddms.v1.DataMigrationService/GenerateTcpProxyScript")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GenerateTcpProxyScriptRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(TcpProxyScript.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<
@@ -385,6 +405,47 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateMappingRuleRequest, MappingRule>
+      createMappingRuleMethodDescriptor =
+          MethodDescriptor.<CreateMappingRuleRequest, MappingRule>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.clouddms.v1.DataMigrationService/CreateMappingRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateMappingRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(MappingRule.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteMappingRuleRequest, Empty>
+      deleteMappingRuleMethodDescriptor =
+          MethodDescriptor.<DeleteMappingRuleRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.clouddms.v1.DataMigrationService/DeleteMappingRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteMappingRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListMappingRulesRequest, ListMappingRulesResponse>
+      listMappingRulesMethodDescriptor =
+          MethodDescriptor.<ListMappingRulesRequest, ListMappingRulesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.clouddms.v1.DataMigrationService/ListMappingRules")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListMappingRulesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListMappingRulesResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetMappingRuleRequest, MappingRule>
+      getMappingRuleMethodDescriptor =
+          MethodDescriptor.<GetMappingRuleRequest, MappingRule>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.clouddms.v1.DataMigrationService/GetMappingRule")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetMappingRuleRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(MappingRule.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<SeedConversionWorkspaceRequest, Operation>
       seedConversionWorkspaceMethodDescriptor =
           MethodDescriptor.<SeedConversionWorkspaceRequest, Operation>newBuilder()
@@ -538,6 +599,8 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
   private final OperationCallable<RestartMigrationJobRequest, MigrationJob, OperationMetadata>
       restartMigrationJobOperationCallable;
   private final UnaryCallable<GenerateSshScriptRequest, SshScript> generateSshScriptCallable;
+  private final UnaryCallable<GenerateTcpProxyScriptRequest, TcpProxyScript>
+      generateTcpProxyScriptCallable;
   private final UnaryCallable<ListConnectionProfilesRequest, ListConnectionProfilesResponse>
       listConnectionProfilesCallable;
   private final UnaryCallable<ListConnectionProfilesRequest, ListConnectionProfilesPagedResponse>
@@ -594,6 +657,13 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
       deleteConversionWorkspaceCallable;
   private final OperationCallable<DeleteConversionWorkspaceRequest, Empty, OperationMetadata>
       deleteConversionWorkspaceOperationCallable;
+  private final UnaryCallable<CreateMappingRuleRequest, MappingRule> createMappingRuleCallable;
+  private final UnaryCallable<DeleteMappingRuleRequest, Empty> deleteMappingRuleCallable;
+  private final UnaryCallable<ListMappingRulesRequest, ListMappingRulesResponse>
+      listMappingRulesCallable;
+  private final UnaryCallable<ListMappingRulesRequest, ListMappingRulesPagedResponse>
+      listMappingRulesPagedCallable;
+  private final UnaryCallable<GetMappingRuleRequest, MappingRule> getMappingRuleCallable;
   private final UnaryCallable<SeedConversionWorkspaceRequest, Operation>
       seedConversionWorkspaceCallable;
   private final OperationCallable<
@@ -802,6 +872,17 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<GenerateTcpProxyScriptRequest, TcpProxyScript>
+        generateTcpProxyScriptTransportSettings =
+            GrpcCallSettings.<GenerateTcpProxyScriptRequest, TcpProxyScript>newBuilder()
+                .setMethodDescriptor(generateTcpProxyScriptMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("migration_job", String.valueOf(request.getMigrationJob()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListConnectionProfilesRequest, ListConnectionProfilesResponse>
         listConnectionProfilesTransportSettings =
             GrpcCallSettings
@@ -963,6 +1044,47 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<CreateMappingRuleRequest, MappingRule> createMappingRuleTransportSettings =
+        GrpcCallSettings.<CreateMappingRuleRequest, MappingRule>newBuilder()
+            .setMethodDescriptor(createMappingRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteMappingRuleRequest, Empty> deleteMappingRuleTransportSettings =
+        GrpcCallSettings.<DeleteMappingRuleRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteMappingRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListMappingRulesRequest, ListMappingRulesResponse>
+        listMappingRulesTransportSettings =
+            GrpcCallSettings.<ListMappingRulesRequest, ListMappingRulesResponse>newBuilder()
+                .setMethodDescriptor(listMappingRulesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetMappingRuleRequest, MappingRule> getMappingRuleTransportSettings =
+        GrpcCallSettings.<GetMappingRuleRequest, MappingRule>newBuilder()
+            .setMethodDescriptor(getMappingRuleMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<SeedConversionWorkspaceRequest, Operation>
         seedConversionWorkspaceTransportSettings =
             GrpcCallSettings.<SeedConversionWorkspaceRequest, Operation>newBuilder()
@@ -1197,6 +1319,11 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
             generateSshScriptTransportSettings,
             settings.generateSshScriptSettings(),
             clientContext);
+    this.generateTcpProxyScriptCallable =
+        callableFactory.createUnaryCallable(
+            generateTcpProxyScriptTransportSettings,
+            settings.generateTcpProxyScriptSettings(),
+            clientContext);
     this.listConnectionProfilesCallable =
         callableFactory.createUnaryCallable(
             listConnectionProfilesTransportSettings,
@@ -1330,6 +1457,25 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
             settings.deleteConversionWorkspaceOperationSettings(),
             clientContext,
             operationsStub);
+    this.createMappingRuleCallable =
+        callableFactory.createUnaryCallable(
+            createMappingRuleTransportSettings,
+            settings.createMappingRuleSettings(),
+            clientContext);
+    this.deleteMappingRuleCallable =
+        callableFactory.createUnaryCallable(
+            deleteMappingRuleTransportSettings,
+            settings.deleteMappingRuleSettings(),
+            clientContext);
+    this.listMappingRulesCallable =
+        callableFactory.createUnaryCallable(
+            listMappingRulesTransportSettings, settings.listMappingRulesSettings(), clientContext);
+    this.listMappingRulesPagedCallable =
+        callableFactory.createPagedCallable(
+            listMappingRulesTransportSettings, settings.listMappingRulesSettings(), clientContext);
+    this.getMappingRuleCallable =
+        callableFactory.createUnaryCallable(
+            getMappingRuleTransportSettings, settings.getMappingRuleSettings(), clientContext);
     this.seedConversionWorkspaceCallable =
         callableFactory.createUnaryCallable(
             seedConversionWorkspaceTransportSettings,
@@ -1553,6 +1699,12 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
   }
 
   @Override
+  public UnaryCallable<GenerateTcpProxyScriptRequest, TcpProxyScript>
+      generateTcpProxyScriptCallable() {
+    return generateTcpProxyScriptCallable;
+  }
+
+  @Override
   public UnaryCallable<ListConnectionProfilesRequest, ListConnectionProfilesResponse>
       listConnectionProfilesCallable() {
     return listConnectionProfilesCallable;
@@ -1700,6 +1852,33 @@ public class GrpcDataMigrationServiceStub extends DataMigrationServiceStub {
   public OperationCallable<DeleteConversionWorkspaceRequest, Empty, OperationMetadata>
       deleteConversionWorkspaceOperationCallable() {
     return deleteConversionWorkspaceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateMappingRuleRequest, MappingRule> createMappingRuleCallable() {
+    return createMappingRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteMappingRuleRequest, Empty> deleteMappingRuleCallable() {
+    return deleteMappingRuleCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMappingRulesRequest, ListMappingRulesResponse>
+      listMappingRulesCallable() {
+    return listMappingRulesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMappingRulesRequest, ListMappingRulesPagedResponse>
+      listMappingRulesPagedCallable() {
+    return listMappingRulesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetMappingRuleRequest, MappingRule> getMappingRuleCallable() {
+    return getMappingRuleCallable;
   }
 
   @Override

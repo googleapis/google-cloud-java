@@ -19,8 +19,17 @@
             "GetAutoscalingPolicy": {
               "methods": ["getAutoscalingPolicy", "getAutoscalingPolicy", "getAutoscalingPolicy", "getAutoscalingPolicyCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
             "ListAutoscalingPolicies": {
               "methods": ["listAutoscalingPolicies", "listAutoscalingPolicies", "listAutoscalingPolicies", "listAutoscalingPolicies", "listAutoscalingPoliciesPagedCallable", "listAutoscalingPoliciesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpdateAutoscalingPolicy": {
               "methods": ["updateAutoscalingPolicy", "updateAutoscalingPolicy", "updateAutoscalingPolicyCallable"]
@@ -43,8 +52,17 @@
             "GetBatch": {
               "methods": ["getBatch", "getBatch", "getBatch", "getBatchCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
             "ListBatches": {
               "methods": ["listBatches", "listBatches", "listBatches", "listBatchesPagedCallable", "listBatchesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -67,14 +85,23 @@
             "GetCluster": {
               "methods": ["getCluster", "getCluster", "getClusterCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
             "ListClusters": {
               "methods": ["listClusters", "listClusters", "listClusters", "listClustersPagedCallable", "listClustersCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
             },
             "StartCluster": {
               "methods": ["startClusterAsync", "startClusterOperationCallable", "startClusterCallable"]
             },
             "StopCluster": {
               "methods": ["stopClusterAsync", "stopClusterOperationCallable", "stopClusterCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpdateCluster": {
               "methods": ["updateClusterAsync", "updateClusterAsync", "updateClusterOperationCallable", "updateClusterCallable"]
@@ -94,17 +121,26 @@
             "DeleteJob": {
               "methods": ["deleteJob", "deleteJob", "deleteJobCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
             "GetJob": {
               "methods": ["getJob", "getJob", "getJobCallable"]
             },
             "ListJobs": {
               "methods": ["listJobs", "listJobs", "listJobs", "listJobsPagedCallable", "listJobsCallable"]
             },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
             "SubmitJob": {
               "methods": ["submitJob", "submitJob", "submitJobCallable"]
             },
             "SubmitJobAsOperation": {
               "methods": ["submitJobAsOperationAsync", "submitJobAsOperationAsync", "submitJobAsOperationOperationCallable", "submitJobAsOperationCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpdateJob": {
               "methods": ["updateJob", "updateJobCallable"]
@@ -121,11 +157,20 @@
             "CreateNodeGroup": {
               "methods": ["createNodeGroupAsync", "createNodeGroupAsync", "createNodeGroupAsync", "createNodeGroupOperationCallable", "createNodeGroupCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
             "GetNodeGroup": {
               "methods": ["getNodeGroup", "getNodeGroup", "getNodeGroup", "getNodeGroupCallable"]
             },
             "ResizeNodeGroup": {
               "methods": ["resizeNodeGroupAsync", "resizeNodeGroupAsync", "resizeNodeGroupOperationCallable", "resizeNodeGroupCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -142,6 +187,9 @@
             "DeleteWorkflowTemplate": {
               "methods": ["deleteWorkflowTemplate", "deleteWorkflowTemplate", "deleteWorkflowTemplate", "deleteWorkflowTemplateCallable"]
             },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
             "GetWorkflowTemplate": {
               "methods": ["getWorkflowTemplate", "getWorkflowTemplate", "getWorkflowTemplate", "getWorkflowTemplateCallable"]
             },
@@ -153,6 +201,12 @@
             },
             "ListWorkflowTemplates": {
               "methods": ["listWorkflowTemplates", "listWorkflowTemplates", "listWorkflowTemplates", "listWorkflowTemplates", "listWorkflowTemplatesPagedCallable", "listWorkflowTemplatesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpdateWorkflowTemplate": {
               "methods": ["updateWorkflowTemplate", "updateWorkflowTemplate", "updateWorkflowTemplateCallable"]

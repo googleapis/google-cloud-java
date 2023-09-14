@@ -27,37 +27,6 @@ public interface GenerateAccessTokenRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the workstation for which the access token should be
-   * generated.
-   * </pre>
-   *
-   * <code>
-   * string workstation = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @return The workstation.
-   */
-  java.lang.String getWorkstation();
-  /**
-   *
-   *
-   * <pre>
-   * Required. Name of the workstation for which the access token should be
-   * generated.
-   * </pre>
-   *
-   * <code>
-   * string workstation = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @return The bytes for workstation.
-   */
-  com.google.protobuf.ByteString getWorkstationBytes();
-
-  /**
-   *
-   *
-   * <pre>
    * Desired expiration time of the access token. This value must
    * be at most 24 hours in the future. If a value is not specified, the
    * token's expiration time will be set to a default value of 1 hour in the
@@ -138,6 +107,37 @@ public interface GenerateAccessTokenRequestOrBuilder
    * <code>.google.protobuf.Duration ttl = 3;</code>
    */
   com.google.protobuf.DurationOrBuilder getTtlOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. Name of the workstation for which the access token should be
+   * generated.
+   * </pre>
+   *
+   * <code>
+   * string workstation = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The workstation.
+   */
+  java.lang.String getWorkstation();
+  /**
+   *
+   *
+   * <pre>
+   * Required. Name of the workstation for which the access token should be
+   * generated.
+   * </pre>
+   *
+   * <code>
+   * string workstation = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for workstation.
+   */
+  com.google.protobuf.ByteString getWorkstationBytes();
 
   com.google.cloud.workstations.v1beta.GenerateAccessTokenRequest.ExpirationCase
       getExpirationCase();

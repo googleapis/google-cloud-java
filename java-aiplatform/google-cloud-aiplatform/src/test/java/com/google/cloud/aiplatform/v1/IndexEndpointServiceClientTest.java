@@ -123,6 +123,7 @@ public class IndexEndpointServiceClientTest {
             .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .setPublicEndpointEnabled(true)
             .setPublicEndpointDomainName("publicEndpointDomainName1244171053")
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -184,6 +185,7 @@ public class IndexEndpointServiceClientTest {
             .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .setPublicEndpointEnabled(true)
             .setPublicEndpointDomainName("publicEndpointDomainName1244171053")
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -245,6 +247,7 @@ public class IndexEndpointServiceClientTest {
             .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .setPublicEndpointEnabled(true)
             .setPublicEndpointDomainName("publicEndpointDomainName1244171053")
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockIndexEndpointService.addResponse(expectedResponse);
 
@@ -295,6 +298,7 @@ public class IndexEndpointServiceClientTest {
             .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .setPublicEndpointEnabled(true)
             .setPublicEndpointDomainName("publicEndpointDomainName1244171053")
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockIndexEndpointService.addResponse(expectedResponse);
 
@@ -433,6 +437,7 @@ public class IndexEndpointServiceClientTest {
             .setPrivateServiceConnectConfig(PrivateServiceConnectConfig.newBuilder().build())
             .setPublicEndpointEnabled(true)
             .setPublicEndpointDomainName("publicEndpointDomainName1244171053")
+            .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .build();
     mockIndexEndpointService.addResponse(expectedResponse);
 

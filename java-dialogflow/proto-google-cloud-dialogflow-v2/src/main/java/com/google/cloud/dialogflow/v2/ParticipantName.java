@@ -249,7 +249,7 @@ public class ParticipantName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       ParticipantName that = ((ParticipantName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.conversation, that.conversation)

@@ -143,7 +143,7 @@ public class ExpandedDataSetName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       ExpandedDataSetName that = ((ExpandedDataSetName) o);
       return Objects.equals(this.property, that.property)
           && Objects.equals(this.expandedDataSet, that.expandedDataSet);

@@ -45,6 +45,7 @@ public class AsyncConvertConversionWorkspaceLRO {
                       .toString())
               .setAutoCommit(true)
               .setFilter("filter-1274492040")
+              .setConvertFullPath(true)
               .build();
       OperationFuture<ConversionWorkspace, OperationMetadata> future =
           dataMigrationServiceClient

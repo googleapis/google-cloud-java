@@ -739,6 +739,9 @@ public class ClusterManagerClientTest {
             .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
             .setResourceLabels(ResourceLabels.newBuilder().build())
             .setWindowsNodeConfig(WindowsNodeConfig.newBuilder().build())
+            .setMachineType("machineType-218117087")
+            .setDiskType("diskType279771767")
+            .setDiskSizeGb(-757478089)
             .build();
 
     Operation actualResponse = client.updateNodePool(request);
@@ -773,6 +776,9 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(request.getLoggingConfig(), actualRequest.getLoggingConfig());
     Assert.assertEquals(request.getResourceLabels(), actualRequest.getResourceLabels());
     Assert.assertEquals(request.getWindowsNodeConfig(), actualRequest.getWindowsNodeConfig());
+    Assert.assertEquals(request.getMachineType(), actualRequest.getMachineType());
+    Assert.assertEquals(request.getDiskType(), actualRequest.getDiskType());
+    Assert.assertEquals(request.getDiskSizeGb(), actualRequest.getDiskSizeGb());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -811,6 +817,9 @@ public class ClusterManagerClientTest {
               .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
               .setResourceLabels(ResourceLabels.newBuilder().build())
               .setWindowsNodeConfig(WindowsNodeConfig.newBuilder().build())
+              .setMachineType("machineType-218117087")
+              .setDiskType("diskType279771767")
+              .setDiskSizeGb(-757478089)
               .build();
       client.updateNodePool(request);
       Assert.fail("No exception raised");

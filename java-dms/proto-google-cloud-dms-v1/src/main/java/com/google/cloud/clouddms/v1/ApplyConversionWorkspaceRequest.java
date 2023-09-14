@@ -222,15 +222,55 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
     }
   }
 
+  public static final int DRY_RUN_FIELD_NUMBER = 3;
+  private boolean dryRun_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Only validates the apply process, but doesn't change the
+   * destination database. Only works for PostgreSQL destination connection
+   * profile.
+   * </pre>
+   *
+   * <code>bool dry_run = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The dryRun.
+   */
+  @java.lang.Override
+  public boolean getDryRun() {
+    return dryRun_;
+  }
+
+  public static final int AUTO_COMMIT_FIELD_NUMBER = 4;
+  private boolean autoCommit_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether the conversion workspace is to be committed
+   * automatically after the apply.
+   * </pre>
+   *
+   * <code>bool auto_commit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The autoCommit.
+   */
+  @java.lang.Override
+  public boolean getAutoCommit() {
+    return autoCommit_;
+  }
+
   public static final int CONNECTION_PROFILE_FIELD_NUMBER = 100;
   /**
    *
    *
    * <pre>
-   * Fully qualified (Uri) name of the destination connection profile.
+   * Optional. Fully qualified (Uri) name of the destination connection
+   * profile.
    * </pre>
    *
-   * <code>string connection_profile = 100;</code>
+   * <code>string connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the connectionProfile field is set.
    */
@@ -241,10 +281,11 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Fully qualified (Uri) name of the destination connection profile.
+   * Optional. Fully qualified (Uri) name of the destination connection
+   * profile.
    * </pre>
    *
-   * <code>string connection_profile = 100;</code>
+   * <code>string connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The connectionProfile.
    */
@@ -268,10 +309,11 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Fully qualified (Uri) name of the destination connection profile.
+   * Optional. Fully qualified (Uri) name of the destination connection
+   * profile.
    * </pre>
    *
-   * <code>string connection_profile = 100;</code>
+   * <code>string connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for connectionProfile.
    */
@@ -312,6 +354,12 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, filter_);
     }
+    if (dryRun_ != false) {
+      output.writeBool(3, dryRun_);
+    }
+    if (autoCommit_ != false) {
+      output.writeBool(4, autoCommit_);
+    }
     if (destinationCase_ == 100) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 100, destination_);
     }
@@ -329,6 +377,12 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, filter_);
+    }
+    if (dryRun_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, dryRun_);
+    }
+    if (autoCommit_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, autoCommit_);
     }
     if (destinationCase_ == 100) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, destination_);
@@ -351,6 +405,8 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
 
     if (!getName().equals(other.getName())) return false;
     if (!getFilter().equals(other.getFilter())) return false;
+    if (getDryRun() != other.getDryRun()) return false;
+    if (getAutoCommit() != other.getAutoCommit()) return false;
     if (!getDestinationCase().equals(other.getDestinationCase())) return false;
     switch (destinationCase_) {
       case 100:
@@ -374,6 +430,10 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + DRY_RUN_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDryRun());
+    hash = (37 * hash) + AUTO_COMMIT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoCommit());
     switch (destinationCase_) {
       case 100:
         hash = (37 * hash) + CONNECTION_PROFILE_FIELD_NUMBER;
@@ -524,6 +584,8 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
       bitField0_ = 0;
       name_ = "";
       filter_ = "";
+      dryRun_ = false;
+      autoCommit_ = false;
       destinationCase_ = 0;
       destination_ = null;
       return this;
@@ -570,6 +632,12 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.dryRun_ = dryRun_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.autoCommit_ = autoCommit_;
       }
     }
 
@@ -636,6 +704,12 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.getDryRun() != false) {
+        setDryRun(other.getDryRun());
+      }
+      if (other.getAutoCommit() != false) {
+        setAutoCommit(other.getAutoCommit());
+      }
       switch (other.getDestinationCase()) {
         case CONNECTION_PROFILE:
           {
@@ -687,6 +761,18 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 24:
+              {
+                dryRun_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+            case 32:
+              {
+                autoCommit_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
             case 802:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -964,14 +1050,130 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
       return this;
     }
 
+    private boolean dryRun_;
     /**
      *
      *
      * <pre>
-     * Fully qualified (Uri) name of the destination connection profile.
+     * Optional. Only validates the apply process, but doesn't change the
+     * destination database. Only works for PostgreSQL destination connection
+     * profile.
      * </pre>
      *
-     * <code>string connection_profile = 100;</code>
+     * <code>bool dry_run = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The dryRun.
+     */
+    @java.lang.Override
+    public boolean getDryRun() {
+      return dryRun_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only validates the apply process, but doesn't change the
+     * destination database. Only works for PostgreSQL destination connection
+     * profile.
+     * </pre>
+     *
+     * <code>bool dry_run = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The dryRun to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDryRun(boolean value) {
+
+      dryRun_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Only validates the apply process, but doesn't change the
+     * destination database. Only works for PostgreSQL destination connection
+     * profile.
+     * </pre>
+     *
+     * <code>bool dry_run = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDryRun() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      dryRun_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean autoCommit_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether the conversion workspace is to be committed
+     * automatically after the apply.
+     * </pre>
+     *
+     * <code>bool auto_commit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The autoCommit.
+     */
+    @java.lang.Override
+    public boolean getAutoCommit() {
+      return autoCommit_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether the conversion workspace is to be committed
+     * automatically after the apply.
+     * </pre>
+     *
+     * <code>bool auto_commit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The autoCommit to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAutoCommit(boolean value) {
+
+      autoCommit_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether the conversion workspace is to be committed
+     * automatically after the apply.
+     * </pre>
+     *
+     * <code>bool auto_commit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAutoCommit() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      autoCommit_ = false;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Fully qualified (Uri) name of the destination connection
+     * profile.
+     * </pre>
+     *
+     * <code>string connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return Whether the connectionProfile field is set.
      */
@@ -983,10 +1185,11 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Fully qualified (Uri) name of the destination connection profile.
+     * Optional. Fully qualified (Uri) name of the destination connection
+     * profile.
      * </pre>
      *
-     * <code>string connection_profile = 100;</code>
+     * <code>string connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The connectionProfile.
      */
@@ -1011,10 +1214,11 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Fully qualified (Uri) name of the destination connection profile.
+     * Optional. Fully qualified (Uri) name of the destination connection
+     * profile.
      * </pre>
      *
-     * <code>string connection_profile = 100;</code>
+     * <code>string connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for connectionProfile.
      */
@@ -1039,10 +1243,11 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Fully qualified (Uri) name of the destination connection profile.
+     * Optional. Fully qualified (Uri) name of the destination connection
+     * profile.
      * </pre>
      *
-     * <code>string connection_profile = 100;</code>
+     * <code>string connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The connectionProfile to set.
      * @return This builder for chaining.
@@ -1060,10 +1265,11 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Fully qualified (Uri) name of the destination connection profile.
+     * Optional. Fully qualified (Uri) name of the destination connection
+     * profile.
      * </pre>
      *
-     * <code>string connection_profile = 100;</code>
+     * <code>string connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1079,10 +1285,11 @@ public final class ApplyConversionWorkspaceRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Fully qualified (Uri) name of the destination connection profile.
+     * Optional. Fully qualified (Uri) name of the destination connection
+     * profile.
      * </pre>
      *
-     * <code>string connection_profile = 100;</code>
+     * <code>string connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for connectionProfile to set.
      * @return This builder for chaining.

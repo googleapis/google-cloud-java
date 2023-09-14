@@ -154,7 +154,7 @@ public class TaxonomyName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       TaxonomyName that = ((TaxonomyName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)

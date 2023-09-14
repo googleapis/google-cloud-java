@@ -1446,9 +1446,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Determines how the ad should be tracked. If
-   * [gam_vod_config][google.cloud.video.stitcher.v1.VodSession.gam_vod_config]
-   * is set, the value must be `CLIENT` because the IMA SDK handles ad tracking.
+   * Required. Determines how the ad should be tracked.
    * </pre>
    *
    * <code>
@@ -1465,9 +1463,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Determines how the ad should be tracked. If
-   * [gam_vod_config][google.cloud.video.stitcher.v1.VodSession.gam_vod_config]
-   * is set, the value must be `CLIENT` because the IMA SDK handles ad tracking.
+   * Required. Determines how the ad should be tracked.
    * </pre>
    *
    * <code>
@@ -3322,9 +3318,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Determines how the ad should be tracked. If
-     * [gam_vod_config][google.cloud.video.stitcher.v1.VodSession.gam_vod_config]
-     * is set, the value must be `CLIENT` because the IMA SDK handles ad tracking.
+     * Required. Determines how the ad should be tracked.
      * </pre>
      *
      * <code>
@@ -3341,9 +3335,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Determines how the ad should be tracked. If
-     * [gam_vod_config][google.cloud.video.stitcher.v1.VodSession.gam_vod_config]
-     * is set, the value must be `CLIENT` because the IMA SDK handles ad tracking.
+     * Required. Determines how the ad should be tracked.
      * </pre>
      *
      * <code>
@@ -3363,9 +3355,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Determines how the ad should be tracked. If
-     * [gam_vod_config][google.cloud.video.stitcher.v1.VodSession.gam_vod_config]
-     * is set, the value must be `CLIENT` because the IMA SDK handles ad tracking.
+     * Required. Determines how the ad should be tracked.
      * </pre>
      *
      * <code>
@@ -3384,9 +3374,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Determines how the ad should be tracked. If
-     * [gam_vod_config][google.cloud.video.stitcher.v1.VodSession.gam_vod_config]
-     * is set, the value must be `CLIENT` because the IMA SDK handles ad tracking.
+     * Required. Determines how the ad should be tracked.
      * </pre>
      *
      * <code>
@@ -3409,9 +3397,7 @@ public final class VodSession extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Determines how the ad should be tracked. If
-     * [gam_vod_config][google.cloud.video.stitcher.v1.VodSession.gam_vod_config]
-     * is set, the value must be `CLIENT` because the IMA SDK handles ad tracking.
+     * Required. Determines how the ad should be tracked.
      * </pre>
      *
      * <code>

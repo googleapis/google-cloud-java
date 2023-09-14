@@ -194,4 +194,47 @@ public interface AgentAssistantFeedbackOrBuilder
    */
   com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.SummarizationFeedbackOrBuilder
       getSummarizationFeedbackOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for knowledge search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.KnowledgeSearchFeedback knowledge_search_feedback = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the knowledgeSearchFeedback field is set.
+   */
+  boolean hasKnowledgeSearchFeedback();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for knowledge search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.KnowledgeSearchFeedback knowledge_search_feedback = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The knowledgeSearchFeedback.
+   */
+  com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.KnowledgeSearchFeedback
+      getKnowledgeSearchFeedback();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Feedback for knowledge search.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.KnowledgeSearchFeedback knowledge_search_feedback = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2beta1.AgentAssistantFeedback.KnowledgeSearchFeedbackOrBuilder
+      getKnowledgeSearchFeedbackOrBuilder();
 }

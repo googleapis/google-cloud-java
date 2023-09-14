@@ -37,6 +37,9 @@ public class RecommenderConfigName implements ResourceName {
   private static final PathTemplate ORGANIZATION_LOCATION_RECOMMENDER =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/locations/{location}/recommenders/{recommender}/config");
+  private static final PathTemplate BILLING_ACCOUNT_LOCATION_RECOMMENDER =
+      PathTemplate.createWithoutUrlEncoding(
+          "billingAccounts/{billing_account}/locations/{location}/recommenders/{recommender}/config");
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
@@ -44,6 +47,7 @@ public class RecommenderConfigName implements ResourceName {
   private final String location;
   private final String recommender;
   private final String organization;
+  private final String billingAccount;
 
   @Deprecated
   protected RecommenderConfigName() {
@@ -51,6 +55,7 @@ public class RecommenderConfigName implements ResourceName {
     location = null;
     recommender = null;
     organization = null;
+    billingAccount = null;
   }
 
   private RecommenderConfigName(Builder builder) {
@@ -58,6 +63,7 @@ public class RecommenderConfigName implements ResourceName {
     location = Preconditions.checkNotNull(builder.getLocation());
     recommender = Preconditions.checkNotNull(builder.getRecommender());
     organization = null;
+    billingAccount = null;
     pathTemplate = PROJECT_LOCATION_RECOMMENDER;
   }
 
@@ -66,7 +72,17 @@ public class RecommenderConfigName implements ResourceName {
     location = Preconditions.checkNotNull(builder.getLocation());
     recommender = Preconditions.checkNotNull(builder.getRecommender());
     project = null;
+    billingAccount = null;
     pathTemplate = ORGANIZATION_LOCATION_RECOMMENDER;
+  }
+
+  private RecommenderConfigName(BillingAccountLocationRecommenderBuilder builder) {
+    billingAccount = Preconditions.checkNotNull(builder.getBillingAccount());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    recommender = Preconditions.checkNotNull(builder.getRecommender());
+    project = null;
+    organization = null;
+    pathTemplate = BILLING_ACCOUNT_LOCATION_RECOMMENDER;
   }
 
   public String getProject() {
@@ -85,6 +101,10 @@ public class RecommenderConfigName implements ResourceName {
     return organization;
   }
 
+  public String getBillingAccount() {
+    return billingAccount;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
   }
@@ -97,6 +117,12 @@ public class RecommenderConfigName implements ResourceName {
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationLocationRecommenderBuilder newOrganizationLocationRecommenderBuilder() {
     return new OrganizationLocationRecommenderBuilder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static BillingAccountLocationRecommenderBuilder
+      newBillingAccountLocationRecommenderBuilder() {
+    return new BillingAccountLocationRecommenderBuilder();
   }
 
   public Builder toBuilder() {
@@ -126,6 +152,16 @@ public class RecommenderConfigName implements ResourceName {
       String organization, String location, String recommender) {
     return newOrganizationLocationRecommenderBuilder()
         .setOrganization(organization)
+        .setLocation(location)
+        .setRecommender(recommender)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static RecommenderConfigName ofBillingAccountLocationRecommenderName(
+      String billingAccount, String location, String recommender) {
+    return newBillingAccountLocationRecommenderBuilder()
+        .setBillingAccount(billingAccount)
         .setLocation(location)
         .setRecommender(recommender)
         .build();
@@ -162,6 +198,17 @@ public class RecommenderConfigName implements ResourceName {
         .toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatBillingAccountLocationRecommenderName(
+      String billingAccount, String location, String recommender) {
+    return newBillingAccountLocationRecommenderBuilder()
+        .setBillingAccount(billingAccount)
+        .setLocation(location)
+        .setRecommender(recommender)
+        .build()
+        .toString();
+  }
+
   public static RecommenderConfigName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
@@ -174,6 +221,10 @@ public class RecommenderConfigName implements ResourceName {
       Map<String, String> matchMap = ORGANIZATION_LOCATION_RECOMMENDER.match(formattedString);
       return ofOrganizationLocationRecommenderName(
           matchMap.get("organization"), matchMap.get("location"), matchMap.get("recommender"));
+    } else if (BILLING_ACCOUNT_LOCATION_RECOMMENDER.matches(formattedString)) {
+      Map<String, String> matchMap = BILLING_ACCOUNT_LOCATION_RECOMMENDER.match(formattedString);
+      return ofBillingAccountLocationRecommenderName(
+          matchMap.get("billing_account"), matchMap.get("location"), matchMap.get("recommender"));
     }
     throw new ValidationException(
         "RecommenderConfigName.parse: formattedString not in valid format");
@@ -201,7 +252,8 @@ public class RecommenderConfigName implements ResourceName {
 
   public static boolean isParsableFrom(String formattedString) {
     return PROJECT_LOCATION_RECOMMENDER.matches(formattedString)
-        || ORGANIZATION_LOCATION_RECOMMENDER.matches(formattedString);
+        || ORGANIZATION_LOCATION_RECOMMENDER.matches(formattedString)
+        || BILLING_ACCOUNT_LOCATION_RECOMMENDER.matches(formattedString);
   }
 
   @Override
@@ -221,6 +273,9 @@ public class RecommenderConfigName implements ResourceName {
           }
           if (organization != null) {
             fieldMapBuilder.put("organization", organization);
+          }
+          if (billingAccount != null) {
+            fieldMapBuilder.put("billing_account", billingAccount);
           }
           fieldValuesMap = fieldMapBuilder.build();
         }
@@ -243,12 +298,13 @@ public class RecommenderConfigName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       RecommenderConfigName that = ((RecommenderConfigName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
           && Objects.equals(this.recommender, that.recommender)
-          && Objects.equals(this.organization, that.organization);
+          && Objects.equals(this.organization, that.organization)
+          && Objects.equals(this.billingAccount, that.billingAccount);
     }
     return false;
   }
@@ -266,6 +322,8 @@ public class RecommenderConfigName implements ResourceName {
     h ^= Objects.hashCode(recommender);
     h *= 1000003;
     h ^= Objects.hashCode(organization);
+    h *= 1000003;
+    h ^= Objects.hashCode(billingAccount);
     return h;
   }
 
@@ -353,6 +411,50 @@ public class RecommenderConfigName implements ResourceName {
     }
 
     public OrganizationLocationRecommenderBuilder setRecommender(String recommender) {
+      this.recommender = recommender;
+      return this;
+    }
+
+    public RecommenderConfigName build() {
+      return new RecommenderConfigName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * billingAccounts/{billing_account}/locations/{location}/recommenders/{recommender}/config.
+   */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class BillingAccountLocationRecommenderBuilder {
+    private String billingAccount;
+    private String location;
+    private String recommender;
+
+    protected BillingAccountLocationRecommenderBuilder() {}
+
+    public String getBillingAccount() {
+      return billingAccount;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getRecommender() {
+      return recommender;
+    }
+
+    public BillingAccountLocationRecommenderBuilder setBillingAccount(String billingAccount) {
+      this.billingAccount = billingAccount;
+      return this;
+    }
+
+    public BillingAccountLocationRecommenderBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public BillingAccountLocationRecommenderBuilder setRecommender(String recommender) {
       this.recommender = recommender;
       return this;
     }

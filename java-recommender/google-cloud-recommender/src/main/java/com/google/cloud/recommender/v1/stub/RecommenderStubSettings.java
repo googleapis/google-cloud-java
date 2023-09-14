@@ -56,6 +56,7 @@ import com.google.cloud.recommender.v1.ListRecommendationsRequest;
 import com.google.cloud.recommender.v1.ListRecommendationsResponse;
 import com.google.cloud.recommender.v1.MarkInsightAcceptedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationClaimedRequest;
+import com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationFailedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationSucceededRequest;
 import com.google.cloud.recommender.v1.Recommendation;
@@ -124,6 +125,8 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
       listRecommendationsSettings;
   private final UnaryCallSettings<GetRecommendationRequest, Recommendation>
       getRecommendationSettings;
+  private final UnaryCallSettings<MarkRecommendationDismissedRequest, Recommendation>
+      markRecommendationDismissedSettings;
   private final UnaryCallSettings<MarkRecommendationClaimedRequest, Recommendation>
       markRecommendationClaimedSettings;
   private final UnaryCallSettings<MarkRecommendationSucceededRequest, Recommendation>
@@ -281,6 +284,12 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
     return getRecommendationSettings;
   }
 
+  /** Returns the object with the settings used for calls to markRecommendationDismissed. */
+  public UnaryCallSettings<MarkRecommendationDismissedRequest, Recommendation>
+      markRecommendationDismissedSettings() {
+    return markRecommendationDismissedSettings;
+  }
+
   /** Returns the object with the settings used for calls to markRecommendationClaimed. */
   public UnaryCallSettings<MarkRecommendationClaimedRequest, Recommendation>
       markRecommendationClaimedSettings() {
@@ -434,6 +443,8 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
     markInsightAcceptedSettings = settingsBuilder.markInsightAcceptedSettings().build();
     listRecommendationsSettings = settingsBuilder.listRecommendationsSettings().build();
     getRecommendationSettings = settingsBuilder.getRecommendationSettings().build();
+    markRecommendationDismissedSettings =
+        settingsBuilder.markRecommendationDismissedSettings().build();
     markRecommendationClaimedSettings = settingsBuilder.markRecommendationClaimedSettings().build();
     markRecommendationSucceededSettings =
         settingsBuilder.markRecommendationSucceededSettings().build();
@@ -460,6 +471,8 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
         listRecommendationsSettings;
     private final UnaryCallSettings.Builder<GetRecommendationRequest, Recommendation>
         getRecommendationSettings;
+    private final UnaryCallSettings.Builder<MarkRecommendationDismissedRequest, Recommendation>
+        markRecommendationDismissedSettings;
     private final UnaryCallSettings.Builder<MarkRecommendationClaimedRequest, Recommendation>
         markRecommendationClaimedSettings;
     private final UnaryCallSettings.Builder<MarkRecommendationSucceededRequest, Recommendation>
@@ -533,6 +546,7 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
       listRecommendationsSettings =
           PagedCallSettings.newBuilder(LIST_RECOMMENDATIONS_PAGE_STR_FACT);
       getRecommendationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      markRecommendationDismissedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       markRecommendationClaimedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       markRecommendationSucceededSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       markRecommendationFailedSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -548,6 +562,7 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
               markInsightAcceptedSettings,
               listRecommendationsSettings,
               getRecommendationSettings,
+              markRecommendationDismissedSettings,
               markRecommendationClaimedSettings,
               markRecommendationSucceededSettings,
               markRecommendationFailedSettings,
@@ -566,6 +581,8 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
       markInsightAcceptedSettings = settings.markInsightAcceptedSettings.toBuilder();
       listRecommendationsSettings = settings.listRecommendationsSettings.toBuilder();
       getRecommendationSettings = settings.getRecommendationSettings.toBuilder();
+      markRecommendationDismissedSettings =
+          settings.markRecommendationDismissedSettings.toBuilder();
       markRecommendationClaimedSettings = settings.markRecommendationClaimedSettings.toBuilder();
       markRecommendationSucceededSettings =
           settings.markRecommendationSucceededSettings.toBuilder();
@@ -582,6 +599,7 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
               markInsightAcceptedSettings,
               listRecommendationsSettings,
               getRecommendationSettings,
+              markRecommendationDismissedSettings,
               markRecommendationClaimedSettings,
               markRecommendationSucceededSettings,
               markRecommendationFailedSettings,
@@ -642,6 +660,11 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
           .getRecommendationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .markRecommendationDismissedSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .markRecommendationClaimedSettings()
@@ -727,6 +750,12 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
     public UnaryCallSettings.Builder<GetRecommendationRequest, Recommendation>
         getRecommendationSettings() {
       return getRecommendationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to markRecommendationDismissed. */
+    public UnaryCallSettings.Builder<MarkRecommendationDismissedRequest, Recommendation>
+        markRecommendationDismissedSettings() {
+      return markRecommendationDismissedSettings;
     }
 
     /** Returns the builder for the settings used for calls to markRecommendationClaimed. */

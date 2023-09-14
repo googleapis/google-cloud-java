@@ -1642,7 +1642,7 @@ public class VideoStitcherServiceClientTest {
             .build();
     mockVideoStitcherService.addResponse(expectedResponse);
 
-    LiveSessionName parent = LiveSessionName.of("[PROJECT]", "[LOCATION]", "[LIVE_SESSION]");
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
     LiveSession liveSession = LiveSession.newBuilder().build();
 
     LiveSession actualResponse = client.createLiveSession(parent, liveSession);
@@ -1666,7 +1666,7 @@ public class VideoStitcherServiceClientTest {
     mockVideoStitcherService.addException(exception);
 
     try {
-      LiveSessionName parent = LiveSessionName.of("[PROJECT]", "[LOCATION]", "[LIVE_SESSION]");
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
       LiveSession liveSession = LiveSession.newBuilder().build();
       client.createLiveSession(parent, liveSession);
       Assert.fail("No exception raised");

@@ -82,10 +82,6 @@ public final class CheckCompatibilityRequest extends com.google.protobuf.Generat
    * `property` should be the same value as in your `runReport` request.
    *
    * Example: properties/1234
-   *
-   * Set the Property ID to 0 for compatibility checking on dimensions and
-   * metrics common to all properties. In this special mode, this method will
-   * not return custom dimensions and metrics.
    * </pre>
    *
    * <code>string property = 1;</code>
@@ -114,10 +110,6 @@ public final class CheckCompatibilityRequest extends com.google.protobuf.Generat
    * `property` should be the same value as in your `runReport` request.
    *
    * Example: properties/1234
-   *
-   * Set the Property ID to 0 for compatibility checking on dimensions and
-   * metrics common to all properties. In this special mode, this method will
-   * not return custom dimensions and metrics.
    * </pre>
    *
    * <code>string property = 1;</code>
@@ -1018,10 +1010,6 @@ public final class CheckCompatibilityRequest extends com.google.protobuf.Generat
      * `property` should be the same value as in your `runReport` request.
      *
      * Example: properties/1234
-     *
-     * Set the Property ID to 0 for compatibility checking on dimensions and
-     * metrics common to all properties. In this special mode, this method will
-     * not return custom dimensions and metrics.
      * </pre>
      *
      * <code>string property = 1;</code>
@@ -1049,10 +1037,6 @@ public final class CheckCompatibilityRequest extends com.google.protobuf.Generat
      * `property` should be the same value as in your `runReport` request.
      *
      * Example: properties/1234
-     *
-     * Set the Property ID to 0 for compatibility checking on dimensions and
-     * metrics common to all properties. In this special mode, this method will
-     * not return custom dimensions and metrics.
      * </pre>
      *
      * <code>string property = 1;</code>
@@ -1080,10 +1064,6 @@ public final class CheckCompatibilityRequest extends com.google.protobuf.Generat
      * `property` should be the same value as in your `runReport` request.
      *
      * Example: properties/1234
-     *
-     * Set the Property ID to 0 for compatibility checking on dimensions and
-     * metrics common to all properties. In this special mode, this method will
-     * not return custom dimensions and metrics.
      * </pre>
      *
      * <code>string property = 1;</code>
@@ -1110,10 +1090,6 @@ public final class CheckCompatibilityRequest extends com.google.protobuf.Generat
      * `property` should be the same value as in your `runReport` request.
      *
      * Example: properties/1234
-     *
-     * Set the Property ID to 0 for compatibility checking on dimensions and
-     * metrics common to all properties. In this special mode, this method will
-     * not return custom dimensions and metrics.
      * </pre>
      *
      * <code>string property = 1;</code>
@@ -1136,10 +1112,6 @@ public final class CheckCompatibilityRequest extends com.google.protobuf.Generat
      * `property` should be the same value as in your `runReport` request.
      *
      * Example: properties/1234
-     *
-     * Set the Property ID to 0 for compatibility checking on dimensions and
-     * metrics common to all properties. In this special mode, this method will
-     * not return custom dimensions and metrics.
      * </pre>
      *
      * <code>string property = 1;</code>

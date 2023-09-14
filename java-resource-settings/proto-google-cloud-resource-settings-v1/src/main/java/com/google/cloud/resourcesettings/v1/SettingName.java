@@ -259,7 +259,7 @@ public class SettingName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       SettingName that = ((SettingName) o);
       return Objects.equals(this.projectNumber, that.projectNumber)
           && Objects.equals(this.settingName, that.settingName)

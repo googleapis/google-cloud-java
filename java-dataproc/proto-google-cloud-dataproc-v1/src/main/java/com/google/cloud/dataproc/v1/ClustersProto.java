@@ -88,9 +88,25 @@ public final class ClustersProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataproc_v1_InstanceGroupConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataproc_v1_InstanceReference_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataproc_v1_InstanceReference_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dataproc_v1_ManagedGroupConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataproc_v1_ManagedGroupConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataproc_v1_InstanceFlexibilityPolicy_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataproc_v1_InstanceFlexibilityPolicy_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataproc_v1_InstanceFlexibilityPolicy_InstanceSelection_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataproc_v1_InstanceFlexibilityPolicy_InstanceSelection_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataproc_v1_InstanceFlexibilityPolicy_InstanceSelectionResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataproc_v1_InstanceFlexibilityPolicy_InstanceSelectionResult_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dataproc_v1_AcceleratorConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -295,7 +311,7 @@ public final class ClustersProto {
           + "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"-\n\021AutoscalingC"
           + "onfig\022\030\n\npolicy_uri\030\001 \001(\tB\004\342A\001\001\"5\n\020Encry"
           + "ptionConfig\022!\n\023gce_pd_kms_key_name\030\001 \001(\t"
-          + "B\004\342A\001\001\"\300\007\n\020GceClusterConfig\022\026\n\010zone_uri\030"
+          + "B\004\342A\001\001\"\306\007\n\020GceClusterConfig\022\026\n\010zone_uri\030"
           + "\001 \001(\tB\004\342A\001\001\022\031\n\013network_uri\030\002 \001(\tB\004\342A\001\001\022\034"
           + "\n\016subnetwork_uri\030\006 \001(\tB\004\342A\001\001\022#\n\020internal"
           + "_ip_only\030\007 \001(\010B\004\342A\001\001H\000\210\001\001\022l\n\032private_ipv"
@@ -303,240 +319,261 @@ public final class ClustersProto {
           + "aproc.v1.GceClusterConfig.PrivateIpv6Goo"
           + "gleAccessB\004\342A\001\001\022\035\n\017service_account\030\010 \001(\t"
           + "B\004\342A\001\001\022$\n\026service_account_scopes\030\003 \003(\tB\004"
-          + "\342A\001\001\022\014\n\004tags\030\004 \003(\t\022J\n\010metadata\030\005 \003(\01328.g"
+          + "\342A\001\001\022\014\n\004tags\030\004 \003(\t\022P\n\010metadata\030\005 \003(\01328.g"
           + "oogle.cloud.dataproc.v1.GceClusterConfig"
-          + ".MetadataEntry\022Q\n\024reservation_affinity\030\013"
-          + " \001(\0132-.google.cloud.dataproc.v1.Reservat"
-          + "ionAffinityB\004\342A\001\001\022N\n\023node_group_affinity"
-          + "\030\r \001(\0132+.google.cloud.dataproc.v1.NodeGr"
-          + "oupAffinityB\004\342A\001\001\022X\n\030shielded_instance_c"
-          + "onfig\030\016 \001(\01320.google.cloud.dataproc.v1.S"
-          + "hieldedInstanceConfigB\004\342A\001\001\022`\n\034confident"
-          + "ial_instance_config\030\017 \001(\01324.google.cloud"
-          + ".dataproc.v1.ConfidentialInstanceConfigB"
-          + "\004\342A\001\001\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005v"
-          + "alue\030\002 \001(\t:\0028\001\"\203\001\n\027PrivateIpv6GoogleAcce"
-          + "ss\022*\n&PRIVATE_IPV6_GOOGLE_ACCESS_UNSPECI"
-          + "FIED\020\000\022\033\n\027INHERIT_FROM_SUBNETWORK\020\001\022\014\n\010O"
-          + "UTBOUND\020\002\022\021\n\rBIDIRECTIONAL\020\003B\023\n\021_interna"
-          + "l_ip_only\"1\n\021NodeGroupAffinity\022\034\n\016node_g"
-          + "roup_uri\030\001 \001(\tB\004\342A\001\002\"\326\001\n\026ShieldedInstanc"
-          + "eConfig\022%\n\022enable_secure_boot\030\001 \001(\010B\004\342A\001"
-          + "\001H\000\210\001\001\022\036\n\013enable_vtpm\030\002 \001(\010B\004\342A\001\001H\001\210\001\001\022."
-          + "\n\033enable_integrity_monitoring\030\003 \001(\010B\004\342A\001"
-          + "\001H\002\210\001\001B\025\n\023_enable_secure_bootB\016\n\014_enable"
-          + "_vtpmB\036\n\034_enable_integrity_monitoring\"G\n"
-          + "\032ConfidentialInstanceConfig\022)\n\033enable_co"
-          + "nfidential_compute\030\001 \001(\010B\004\342A\001\001\"\341\004\n\023Insta"
-          + "nceGroupConfig\022\033\n\rnum_instances\030\001 \001(\005B\004\342"
-          + "A\001\001\022\034\n\016instance_names\030\002 \003(\tB\004\342A\001\003\022\027\n\tima"
-          + "ge_uri\030\003 \001(\tB\004\342A\001\001\022\036\n\020machine_type_uri\030\004"
-          + " \001(\tB\004\342A\001\001\022?\n\013disk_config\030\005 \001(\0132$.google"
-          + ".cloud.dataproc.v1.DiskConfigB\004\342A\001\001\022\034\n\016i"
-          + "s_preemptible\030\006 \001(\010B\004\342A\001\003\022Z\n\016preemptibil"
-          + "ity\030\n \001(\0162<.google.cloud.dataproc.v1.Ins"
-          + "tanceGroupConfig.PreemptibilityB\004\342A\001\001\022P\n"
-          + "\024managed_group_config\030\007 \001(\0132,.google.clo"
-          + "ud.dataproc.v1.ManagedGroupConfigB\004\342A\001\003\022"
-          + "G\n\014accelerators\030\010 \003(\0132+.google.cloud.dat"
-          + "aproc.v1.AcceleratorConfigB\004\342A\001\001\022\036\n\020min_"
-          + "cpu_platform\030\t \001(\tB\004\342A\001\001\"`\n\016Preemptibili"
-          + "ty\022\036\n\032PREEMPTIBILITY_UNSPECIFIED\020\000\022\023\n\017NO"
-          + "N_PREEMPTIBLE\020\001\022\017\n\013PREEMPTIBLE\020\002\022\010\n\004SPOT"
-          + "\020\003\"e\n\022ManagedGroupConfig\022$\n\026instance_tem"
-          + "plate_name\030\001 \001(\tB\004\342A\001\003\022)\n\033instance_group"
-          + "_manager_name\030\002 \001(\tB\004\342A\001\003\"L\n\021Accelerator"
-          + "Config\022\034\n\024accelerator_type_uri\030\001 \001(\t\022\031\n\021"
-          + "accelerator_count\030\002 \001(\005\"\214\001\n\nDiskConfig\022\034"
-          + "\n\016boot_disk_type\030\003 \001(\tB\004\342A\001\001\022\037\n\021boot_dis"
-          + "k_size_gb\030\001 \001(\005B\004\342A\001\001\022\034\n\016num_local_ssds\030"
-          + "\002 \001(\005B\004\342A\001\001\022!\n\023local_ssd_interface\030\004 \001(\t"
-          + "B\004\342A\001\001\"p\n\022AuxiliaryNodeGroup\022=\n\nnode_gro"
-          + "up\030\001 \001(\0132#.google.cloud.dataproc.v1.Node"
-          + "GroupB\004\342A\001\002\022\033\n\rnode_group_id\030\002 \001(\tB\004\342A\001\001"
-          + "\"\300\003\n\tNodeGroup\022\014\n\004name\030\001 \001(\t\022=\n\005roles\030\002 "
-          + "\003(\0162(.google.cloud.dataproc.v1.NodeGroup"
-          + ".RoleB\004\342A\001\002\022N\n\021node_group_config\030\003 \001(\0132-"
-          + ".google.cloud.dataproc.v1.InstanceGroupC"
-          + "onfigB\004\342A\001\001\022E\n\006labels\030\004 \003(\0132/.google.clo"
-          + "ud.dataproc.v1.NodeGroup.LabelsEntryB\004\342A"
-          + "\001\001\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
-          + "\002 \001(\t:\0028\001\"(\n\004Role\022\024\n\020ROLE_UNSPECIFIED\020\000\022"
-          + "\n\n\006DRIVER\020\001:v\352As\n!dataproc.googleapis.co"
-          + "m/NodeGroup\022Nprojects/{project}/regions/"
-          + "{region}/clusters/{cluster}/nodeGroups/{"
-          + "node_group}\"u\n\030NodeInitializationAction\022"
-          + "\035\n\017executable_file\030\001 \001(\tB\004\342A\001\002\022:\n\021execut"
-          + "ion_timeout\030\002 \001(\0132\031.google.protobuf.Dura"
-          + "tionB\004\342A\001\001\"\311\003\n\rClusterStatus\022B\n\005state\030\001 "
-          + "\001(\0162-.google.cloud.dataproc.v1.ClusterSt"
-          + "atus.StateB\004\342A\001\003\022\025\n\006detail\030\002 \001(\tB\005\342A\002\003\001\022"
-          + ":\n\020state_start_time\030\003 \001(\0132\032.google.proto"
-          + "buf.TimestampB\004\342A\001\003\022H\n\010substate\030\004 \001(\01620."
-          + "google.cloud.dataproc.v1.ClusterStatus.S"
-          + "ubstateB\004\342A\001\003\"\230\001\n\005State\022\013\n\007UNKNOWN\020\000\022\014\n\010"
-          + "CREATING\020\001\022\013\n\007RUNNING\020\002\022\t\n\005ERROR\020\003\022\027\n\023ER"
-          + "ROR_DUE_TO_UPDATE\020\t\022\014\n\010DELETING\020\004\022\014\n\010UPD"
-          + "ATING\020\005\022\014\n\010STOPPING\020\006\022\013\n\007STOPPED\020\007\022\014\n\010ST"
-          + "ARTING\020\010\"<\n\010Substate\022\017\n\013UNSPECIFIED\020\000\022\r\n"
-          + "\tUNHEALTHY\020\001\022\020\n\014STALE_STATUS\020\002\"\242\001\n\016Secur"
-          + "ityConfig\022G\n\017kerberos_config\030\001 \001(\0132(.goo"
-          + "gle.cloud.dataproc.v1.KerberosConfigB\004\342A"
-          + "\001\001\022G\n\017identity_config\030\002 \001(\0132(.google.clo"
-          + "ud.dataproc.v1.IdentityConfigB\004\342A\001\001\"\237\004\n\016"
-          + "KerberosConfig\022\035\n\017enable_kerberos\030\001 \001(\010B"
-          + "\004\342A\001\001\022)\n\033root_principal_password_uri\030\002 \001"
-          + "(\tB\004\342A\001\001\022\031\n\013kms_key_uri\030\003 \001(\tB\004\342A\001\001\022\032\n\014k"
-          + "eystore_uri\030\004 \001(\tB\004\342A\001\001\022\034\n\016truststore_ur"
-          + "i\030\005 \001(\tB\004\342A\001\001\022#\n\025keystore_password_uri\030\006"
-          + " \001(\tB\004\342A\001\001\022\036\n\020key_password_uri\030\007 \001(\tB\004\342A"
-          + "\001\001\022%\n\027truststore_password_uri\030\010 \001(\tB\004\342A\001"
-          + "\001\022%\n\027cross_realm_trust_realm\030\t \001(\tB\004\342A\001\001"
-          + "\022#\n\025cross_realm_trust_kdc\030\n \001(\tB\004\342A\001\001\022,\n"
-          + "\036cross_realm_trust_admin_server\030\013 \001(\tB\004\342"
-          + "A\001\001\0223\n%cross_realm_trust_shared_password"
-          + "_uri\030\014 \001(\tB\004\342A\001\001\022\034\n\016kdc_db_key_uri\030\r \001(\t"
-          + "B\004\342A\001\001\022 \n\022tgt_lifetime_hours\030\016 \001(\005B\004\342A\001\001"
-          + "\022\023\n\005realm\030\017 \001(\tB\004\342A\001\001\"\307\001\n\016IdentityConfig"
-          + "\022s\n\034user_service_account_mapping\030\001 \003(\0132G"
-          + ".google.cloud.dataproc.v1.IdentityConfig"
-          + ".UserServiceAccountMappingEntryB\004\342A\001\002\032@\n"
-          + "\036UserServiceAccountMappingEntry\022\013\n\003key\030\001"
-          + " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\374\001\n\016SoftwareConf"
-          + "ig\022\033\n\rimage_version\030\001 \001(\tB\004\342A\001\001\022R\n\nprope"
-          + "rties\030\002 \003(\01328.google.cloud.dataproc.v1.S"
-          + "oftwareConfig.PropertiesEntryB\004\342A\001\001\022F\n\023o"
-          + "ptional_components\030\003 \003(\0162#.google.cloud."
-          + "dataproc.v1.ComponentB\004\342A\001\001\0321\n\017Propertie"
-          + "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\207"
-          + "\002\n\017LifecycleConfig\0228\n\017idle_delete_ttl\030\001 "
-          + "\001(\0132\031.google.protobuf.DurationB\004\342A\001\001\022<\n\020"
-          + "auto_delete_time\030\002 \001(\0132\032.google.protobuf"
-          + ".TimestampB\004\342A\001\001H\000\022:\n\017auto_delete_ttl\030\003 "
-          + "\001(\0132\031.google.protobuf.DurationB\004\342A\001\001H\000\0229"
-          + "\n\017idle_start_time\030\004 \001(\0132\032.google.protobu"
-          + "f.TimestampB\004\342A\001\003B\005\n\003ttl\"`\n\017MetastoreCon"
-          + "fig\022M\n\032dataproc_metastore_service\030\001 \001(\tB"
-          + ")\342A\001\002\372A\"\n metastore.googleapis.com/Servi"
-          + "ce\"\232\002\n\016ClusterMetrics\022O\n\014hdfs_metrics\030\001 "
-          + "\003(\01329.google.cloud.dataproc.v1.ClusterMe"
-          + "trics.HdfsMetricsEntry\022O\n\014yarn_metrics\030\002"
-          + " \003(\01329.google.cloud.dataproc.v1.ClusterM"
-          + "etrics.YarnMetricsEntry\0322\n\020HdfsMetricsEn"
-          + "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001\0322\n\020Y"
-          + "arnMetricsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 "
-          + "\001(\003:\0028\001\"\225\003\n\024DataprocMetricConfig\022L\n\007metr"
-          + "ics\030\001 \003(\01325.google.cloud.dataproc.v1.Dat"
-          + "aprocMetricConfig.MetricB\004\342A\001\002\032\202\001\n\006Metri"
-          + "c\022X\n\rmetric_source\030\001 \001(\0162;.google.cloud."
-          + "dataproc.v1.DataprocMetricConfig.MetricS"
-          + "ourceB\004\342A\001\002\022\036\n\020metric_overrides\030\002 \003(\tB\004\342"
-          + "A\001\001\"\251\001\n\014MetricSource\022\035\n\031METRIC_SOURCE_UN"
-          + "SPECIFIED\020\000\022\035\n\031MONITORING_AGENT_DEFAULTS"
-          + "\020\001\022\010\n\004HDFS\020\002\022\t\n\005SPARK\020\003\022\010\n\004YARN\020\004\022\030\n\024SPA"
-          + "RK_HISTORY_SERVER\020\005\022\017\n\013HIVESERVER2\020\006\022\021\n\r"
-          + "HIVEMETASTORE\020\007\"\363\001\n\024CreateClusterRequest"
-          + "\022\030\n\nproject_id\030\001 \001(\tB\004\342A\001\002\022\024\n\006region\030\003 \001"
-          + "(\tB\004\342A\001\002\0228\n\007cluster\030\002 \001(\0132!.google.cloud"
-          + ".dataproc.v1.ClusterB\004\342A\001\002\022\030\n\nrequest_id"
-          + "\030\004 \001(\tB\004\342A\001\001\022W\n action_on_failed_primary"
-          + "_workers\030\005 \001(\0162\'.google.cloud.dataproc.v"
-          + "1.FailureActionB\004\342A\001\001\"\265\002\n\024UpdateClusterR"
-          + "equest\022\030\n\nproject_id\030\001 \001(\tB\004\342A\001\002\022\024\n\006regi"
-          + "on\030\005 \001(\tB\004\342A\001\002\022\032\n\014cluster_name\030\002 \001(\tB\004\342A"
-          + "\001\002\0228\n\007cluster\030\003 \001(\0132!.google.cloud.datap"
-          + "roc.v1.ClusterB\004\342A\001\002\022F\n\035graceful_decommi"
-          + "ssion_timeout\030\006 \001(\0132\031.google.protobuf.Du"
-          + "rationB\004\342A\001\001\0225\n\013update_mask\030\004 \001(\0132\032.goog"
-          + "le.protobuf.FieldMaskB\004\342A\001\002\022\030\n\nrequest_i"
-          + "d\030\007 \001(\tB\004\342A\001\001\"\226\001\n\022StopClusterRequest\022\030\n\n"
-          + "project_id\030\001 \001(\tB\004\342A\001\002\022\024\n\006region\030\002 \001(\tB\004"
-          + "\342A\001\002\022\032\n\014cluster_name\030\003 \001(\tB\004\342A\001\002\022\032\n\014clus"
-          + "ter_uuid\030\004 \001(\tB\004\342A\001\001\022\030\n\nrequest_id\030\005 \001(\t"
-          + "B\004\342A\001\001\"\227\001\n\023StartClusterRequest\022\030\n\nprojec"
-          + "t_id\030\001 \001(\tB\004\342A\001\002\022\024\n\006region\030\002 \001(\tB\004\342A\001\002\022\032"
-          + "\n\014cluster_name\030\003 \001(\tB\004\342A\001\002\022\032\n\014cluster_uu"
-          + "id\030\004 \001(\tB\004\342A\001\001\022\030\n\nrequest_id\030\005 \001(\tB\004\342A\001\001"
-          + "\"\230\001\n\024DeleteClusterRequest\022\030\n\nproject_id\030"
-          + "\001 \001(\tB\004\342A\001\002\022\024\n\006region\030\003 \001(\tB\004\342A\001\002\022\032\n\014clu"
-          + "ster_name\030\002 \001(\tB\004\342A\001\002\022\032\n\014cluster_uuid\030\004 "
-          + "\001(\tB\004\342A\001\001\022\030\n\nrequest_id\030\005 \001(\tB\004\342A\001\001\"_\n\021G"
-          + "etClusterRequest\022\030\n\nproject_id\030\001 \001(\tB\004\342A"
-          + "\001\002\022\024\n\006region\030\003 \001(\tB\004\342A\001\002\022\032\n\014cluster_name"
-          + "\030\002 \001(\tB\004\342A\001\002\"\216\001\n\023ListClustersRequest\022\030\n\n"
-          + "project_id\030\001 \001(\tB\004\342A\001\002\022\024\n\006region\030\004 \001(\tB\004"
-          + "\342A\001\002\022\024\n\006filter\030\005 \001(\tB\004\342A\001\001\022\027\n\tpage_size\030"
-          + "\002 \001(\005B\004\342A\001\001\022\030\n\npage_token\030\003 \001(\tB\004\342A\001\001\"p\n"
-          + "\024ListClustersResponse\0229\n\010clusters\030\001 \003(\0132"
-          + "!.google.cloud.dataproc.v1.ClusterB\004\342A\001\003"
-          + "\022\035\n\017next_page_token\030\002 \001(\tB\004\342A\001\003\"d\n\026Diagn"
-          + "oseClusterRequest\022\030\n\nproject_id\030\001 \001(\tB\004\342"
+          + ".MetadataEntryB\004\342A\001\001\022Q\n\024reservation_affi"
+          + "nity\030\013 \001(\0132-.google.cloud.dataproc.v1.Re"
+          + "servationAffinityB\004\342A\001\001\022N\n\023node_group_af"
+          + "finity\030\r \001(\0132+.google.cloud.dataproc.v1."
+          + "NodeGroupAffinityB\004\342A\001\001\022X\n\030shielded_inst"
+          + "ance_config\030\016 \001(\01320.google.cloud.datapro"
+          + "c.v1.ShieldedInstanceConfigB\004\342A\001\001\022`\n\034con"
+          + "fidential_instance_config\030\017 \001(\01324.google"
+          + ".cloud.dataproc.v1.ConfidentialInstanceC"
+          + "onfigB\004\342A\001\001\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001("
+          + "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\203\001\n\027PrivateIpv6Goog"
+          + "leAccess\022*\n&PRIVATE_IPV6_GOOGLE_ACCESS_U"
+          + "NSPECIFIED\020\000\022\033\n\027INHERIT_FROM_SUBNETWORK\020"
+          + "\001\022\014\n\010OUTBOUND\020\002\022\021\n\rBIDIRECTIONAL\020\003B\023\n\021_i"
+          + "nternal_ip_only\"1\n\021NodeGroupAffinity\022\034\n\016"
+          + "node_group_uri\030\001 \001(\tB\004\342A\001\002\"\326\001\n\026ShieldedI"
+          + "nstanceConfig\022%\n\022enable_secure_boot\030\001 \001("
+          + "\010B\004\342A\001\001H\000\210\001\001\022\036\n\013enable_vtpm\030\002 \001(\010B\004\342A\001\001H"
+          + "\001\210\001\001\022.\n\033enable_integrity_monitoring\030\003 \001("
+          + "\010B\004\342A\001\001H\002\210\001\001B\025\n\023_enable_secure_bootB\016\n\014_"
+          + "enable_vtpmB\036\n\034_enable_integrity_monitor"
+          + "ing\"G\n\032ConfidentialInstanceConfig\022)\n\033ena"
+          + "ble_confidential_compute\030\001 \001(\010B\004\342A\001\001\"\262\006\n"
+          + "\023InstanceGroupConfig\022\033\n\rnum_instances\030\001 "
+          + "\001(\005B\004\342A\001\001\022\034\n\016instance_names\030\002 \003(\tB\004\342A\001\003\022"
+          + "N\n\023instance_references\030\013 \003(\0132+.google.cl"
+          + "oud.dataproc.v1.InstanceReferenceB\004\342A\001\003\022"
+          + "\027\n\timage_uri\030\003 \001(\tB\004\342A\001\001\022\036\n\020machine_type"
+          + "_uri\030\004 \001(\tB\004\342A\001\001\022?\n\013disk_config\030\005 \001(\0132$."
+          + "google.cloud.dataproc.v1.DiskConfigB\004\342A\001"
+          + "\001\022\034\n\016is_preemptible\030\006 \001(\010B\004\342A\001\003\022Z\n\016preem"
+          + "ptibility\030\n \001(\0162<.google.cloud.dataproc."
+          + "v1.InstanceGroupConfig.PreemptibilityB\004\342"
+          + "A\001\001\022P\n\024managed_group_config\030\007 \001(\0132,.goog"
+          + "le.cloud.dataproc.v1.ManagedGroupConfigB"
+          + "\004\342A\001\003\022G\n\014accelerators\030\010 \003(\0132+.google.clo"
+          + "ud.dataproc.v1.AcceleratorConfigB\004\342A\001\001\022\036"
+          + "\n\020min_cpu_platform\030\t \001(\tB\004\342A\001\001\022\037\n\021min_nu"
+          + "m_instances\030\014 \001(\005B\004\342A\001\001\022^\n\033instance_flex"
+          + "ibility_policy\030\r \001(\01323.google.cloud.data"
+          + "proc.v1.InstanceFlexibilityPolicyB\004\342A\001\001\""
+          + "`\n\016Preemptibility\022\036\n\032PREEMPTIBILITY_UNSP"
+          + "ECIFIED\020\000\022\023\n\017NON_PREEMPTIBLE\020\001\022\017\n\013PREEMP"
+          + "TIBLE\020\002\022\010\n\004SPOT\020\003\"m\n\021InstanceReference\022\025"
+          + "\n\rinstance_name\030\001 \001(\t\022\023\n\013instance_id\030\002 \001"
+          + "(\t\022\022\n\npublic_key\030\003 \001(\t\022\030\n\020public_ecies_k"
+          + "ey\030\004 \001(\t\"\217\001\n\022ManagedGroupConfig\022$\n\026insta"
+          + "nce_template_name\030\001 \001(\tB\004\342A\001\003\022)\n\033instanc"
+          + "e_group_manager_name\030\002 \001(\tB\004\342A\001\003\022(\n\032inst"
+          + "ance_group_manager_uri\030\003 \001(\tB\004\342A\001\003\"\275\003\n\031I"
+          + "nstanceFlexibilityPolicy\022l\n\027instance_sel"
+          + "ection_list\030\002 \003(\0132E.google.cloud.datapro"
+          + "c.v1.InstanceFlexibilityPolicy.InstanceS"
+          + "electionB\004\342A\001\001\022u\n\032instance_selection_res"
+          + "ults\030\003 \003(\0132K.google.cloud.dataproc.v1.In"
+          + "stanceFlexibilityPolicy.InstanceSelectio"
+          + "nResultB\004\342A\001\003\032D\n\021InstanceSelection\022\033\n\rma"
+          + "chine_types\030\001 \003(\tB\004\342A\001\001\022\022\n\004rank\030\002 \001(\005B\004\342"
+          + "A\001\001\032u\n\027InstanceSelectionResult\022\037\n\014machin"
+          + "e_type\030\001 \001(\tB\004\342A\001\003H\000\210\001\001\022\033\n\010vm_count\030\002 \001("
+          + "\005B\004\342A\001\003H\001\210\001\001B\017\n\r_machine_typeB\013\n\t_vm_cou"
+          + "nt\"L\n\021AcceleratorConfig\022\034\n\024accelerator_t"
+          + "ype_uri\030\001 \001(\t\022\031\n\021accelerator_count\030\002 \001(\005"
+          + "\"\214\001\n\nDiskConfig\022\034\n\016boot_disk_type\030\003 \001(\tB"
+          + "\004\342A\001\001\022\037\n\021boot_disk_size_gb\030\001 \001(\005B\004\342A\001\001\022\034"
+          + "\n\016num_local_ssds\030\002 \001(\005B\004\342A\001\001\022!\n\023local_ss"
+          + "d_interface\030\004 \001(\tB\004\342A\001\001\"p\n\022AuxiliaryNode"
+          + "Group\022=\n\nnode_group\030\001 \001(\0132#.google.cloud"
+          + ".dataproc.v1.NodeGroupB\004\342A\001\002\022\033\n\rnode_gro"
+          + "up_id\030\002 \001(\tB\004\342A\001\001\"\300\003\n\tNodeGroup\022\014\n\004name\030"
+          + "\001 \001(\t\022=\n\005roles\030\002 \003(\0162(.google.cloud.data"
+          + "proc.v1.NodeGroup.RoleB\004\342A\001\002\022N\n\021node_gro"
+          + "up_config\030\003 \001(\0132-.google.cloud.dataproc."
+          + "v1.InstanceGroupConfigB\004\342A\001\001\022E\n\006labels\030\004"
+          + " \003(\0132/.google.cloud.dataproc.v1.NodeGrou"
+          + "p.LabelsEntryB\004\342A\001\001\032-\n\013LabelsEntry\022\013\n\003ke"
+          + "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"(\n\004Role\022\024\n\020RO"
+          + "LE_UNSPECIFIED\020\000\022\n\n\006DRIVER\020\001:v\352As\n!datap"
+          + "roc.googleapis.com/NodeGroup\022Nprojects/{"
+          + "project}/regions/{region}/clusters/{clus"
+          + "ter}/nodeGroups/{node_group}\"u\n\030NodeInit"
+          + "ializationAction\022\035\n\017executable_file\030\001 \001("
+          + "\tB\004\342A\001\002\022:\n\021execution_timeout\030\002 \001(\0132\031.goo"
+          + "gle.protobuf.DurationB\004\342A\001\001\"\330\003\n\rClusterS"
+          + "tatus\022B\n\005state\030\001 \001(\0162-.google.cloud.data"
+          + "proc.v1.ClusterStatus.StateB\004\342A\001\003\022\025\n\006det"
+          + "ail\030\002 \001(\tB\005\342A\002\003\001\022:\n\020state_start_time\030\003 \001"
+          + "(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022H\n\010"
+          + "substate\030\004 \001(\01620.google.cloud.dataproc.v"
+          + "1.ClusterStatus.SubstateB\004\342A\001\003\"\247\001\n\005State"
+          + "\022\013\n\007UNKNOWN\020\000\022\014\n\010CREATING\020\001\022\013\n\007RUNNING\020\002"
+          + "\022\t\n\005ERROR\020\003\022\027\n\023ERROR_DUE_TO_UPDATE\020\t\022\014\n\010"
+          + "DELETING\020\004\022\014\n\010UPDATING\020\005\022\014\n\010STOPPING\020\006\022\013"
+          + "\n\007STOPPED\020\007\022\014\n\010STARTING\020\010\022\r\n\tREPAIRING\020\n"
+          + "\"<\n\010Substate\022\017\n\013UNSPECIFIED\020\000\022\r\n\tUNHEALT"
+          + "HY\020\001\022\020\n\014STALE_STATUS\020\002\"\242\001\n\016SecurityConfi"
+          + "g\022G\n\017kerberos_config\030\001 \001(\0132(.google.clou"
+          + "d.dataproc.v1.KerberosConfigB\004\342A\001\001\022G\n\017id"
+          + "entity_config\030\002 \001(\0132(.google.cloud.datap"
+          + "roc.v1.IdentityConfigB\004\342A\001\001\"\237\004\n\016Kerberos"
+          + "Config\022\035\n\017enable_kerberos\030\001 \001(\010B\004\342A\001\001\022)\n"
+          + "\033root_principal_password_uri\030\002 \001(\tB\004\342A\001\001"
+          + "\022\031\n\013kms_key_uri\030\003 \001(\tB\004\342A\001\001\022\032\n\014keystore_"
+          + "uri\030\004 \001(\tB\004\342A\001\001\022\034\n\016truststore_uri\030\005 \001(\tB"
+          + "\004\342A\001\001\022#\n\025keystore_password_uri\030\006 \001(\tB\004\342A"
+          + "\001\001\022\036\n\020key_password_uri\030\007 \001(\tB\004\342A\001\001\022%\n\027tr"
+          + "uststore_password_uri\030\010 \001(\tB\004\342A\001\001\022%\n\027cro"
+          + "ss_realm_trust_realm\030\t \001(\tB\004\342A\001\001\022#\n\025cros"
+          + "s_realm_trust_kdc\030\n \001(\tB\004\342A\001\001\022,\n\036cross_r"
+          + "ealm_trust_admin_server\030\013 \001(\tB\004\342A\001\001\0223\n%c"
+          + "ross_realm_trust_shared_password_uri\030\014 \001"
+          + "(\tB\004\342A\001\001\022\034\n\016kdc_db_key_uri\030\r \001(\tB\004\342A\001\001\022 "
+          + "\n\022tgt_lifetime_hours\030\016 \001(\005B\004\342A\001\001\022\023\n\005real"
+          + "m\030\017 \001(\tB\004\342A\001\001\"\307\001\n\016IdentityConfig\022s\n\034user"
+          + "_service_account_mapping\030\001 \003(\0132G.google."
+          + "cloud.dataproc.v1.IdentityConfig.UserSer"
+          + "viceAccountMappingEntryB\004\342A\001\002\032@\n\036UserSer"
+          + "viceAccountMappingEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
+          + "value\030\002 \001(\t:\0028\001\"\374\001\n\016SoftwareConfig\022\033\n\rim"
+          + "age_version\030\001 \001(\tB\004\342A\001\001\022R\n\nproperties\030\002 "
+          + "\003(\01328.google.cloud.dataproc.v1.SoftwareC"
+          + "onfig.PropertiesEntryB\004\342A\001\001\022F\n\023optional_"
+          + "components\030\003 \003(\0162#.google.cloud.dataproc"
+          + ".v1.ComponentB\004\342A\001\001\0321\n\017PropertiesEntry\022\013"
+          + "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\207\002\n\017Lifec"
+          + "ycleConfig\0228\n\017idle_delete_ttl\030\001 \001(\0132\031.go"
+          + "ogle.protobuf.DurationB\004\342A\001\001\022<\n\020auto_del"
+          + "ete_time\030\002 \001(\0132\032.google.protobuf.Timesta"
+          + "mpB\004\342A\001\001H\000\022:\n\017auto_delete_ttl\030\003 \001(\0132\031.go"
+          + "ogle.protobuf.DurationB\004\342A\001\001H\000\0229\n\017idle_s"
+          + "tart_time\030\004 \001(\0132\032.google.protobuf.Timest"
+          + "ampB\004\342A\001\003B\005\n\003ttl\"`\n\017MetastoreConfig\022M\n\032d"
+          + "ataproc_metastore_service\030\001 \001(\tB)\342A\001\002\372A\""
+          + "\n metastore.googleapis.com/Service\"\232\002\n\016C"
+          + "lusterMetrics\022O\n\014hdfs_metrics\030\001 \003(\01329.go"
+          + "ogle.cloud.dataproc.v1.ClusterMetrics.Hd"
+          + "fsMetricsEntry\022O\n\014yarn_metrics\030\002 \003(\01329.g"
+          + "oogle.cloud.dataproc.v1.ClusterMetrics.Y"
+          + "arnMetricsEntry\0322\n\020HdfsMetricsEntry\022\013\n\003k"
+          + "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001\0322\n\020YarnMetri"
+          + "csEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001\""
+          + "\225\003\n\024DataprocMetricConfig\022L\n\007metrics\030\001 \003("
+          + "\01325.google.cloud.dataproc.v1.DataprocMet"
+          + "ricConfig.MetricB\004\342A\001\002\032\202\001\n\006Metric\022X\n\rmet"
+          + "ric_source\030\001 \001(\0162;.google.cloud.dataproc"
+          + ".v1.DataprocMetricConfig.MetricSourceB\004\342"
+          + "A\001\002\022\036\n\020metric_overrides\030\002 \003(\tB\004\342A\001\001\"\251\001\n\014"
+          + "MetricSource\022\035\n\031METRIC_SOURCE_UNSPECIFIE"
+          + "D\020\000\022\035\n\031MONITORING_AGENT_DEFAULTS\020\001\022\010\n\004HD"
+          + "FS\020\002\022\t\n\005SPARK\020\003\022\010\n\004YARN\020\004\022\030\n\024SPARK_HISTO"
+          + "RY_SERVER\020\005\022\017\n\013HIVESERVER2\020\006\022\021\n\rHIVEMETA"
+          + "STORE\020\007\"\363\001\n\024CreateClusterRequest\022\030\n\nproj"
+          + "ect_id\030\001 \001(\tB\004\342A\001\002\022\024\n\006region\030\003 \001(\tB\004\342A\001\002"
+          + "\0228\n\007cluster\030\002 \001(\0132!.google.cloud.datapro"
+          + "c.v1.ClusterB\004\342A\001\002\022\030\n\nrequest_id\030\004 \001(\tB\004"
+          + "\342A\001\001\022W\n action_on_failed_primary_workers"
+          + "\030\005 \001(\0162\'.google.cloud.dataproc.v1.Failur"
+          + "eActionB\004\342A\001\001\"\265\002\n\024UpdateClusterRequest\022\030"
+          + "\n\nproject_id\030\001 \001(\tB\004\342A\001\002\022\024\n\006region\030\005 \001(\t"
+          + "B\004\342A\001\002\022\032\n\014cluster_name\030\002 \001(\tB\004\342A\001\002\0228\n\007cl"
+          + "uster\030\003 \001(\0132!.google.cloud.dataproc.v1.C"
+          + "lusterB\004\342A\001\002\022F\n\035graceful_decommission_ti"
+          + "meout\030\006 \001(\0132\031.google.protobuf.DurationB\004"
+          + "\342A\001\001\0225\n\013update_mask\030\004 \001(\0132\032.google.proto"
+          + "buf.FieldMaskB\004\342A\001\002\022\030\n\nrequest_id\030\007 \001(\tB"
+          + "\004\342A\001\001\"\226\001\n\022StopClusterRequest\022\030\n\nproject_"
+          + "id\030\001 \001(\tB\004\342A\001\002\022\024\n\006region\030\002 \001(\tB\004\342A\001\002\022\032\n\014"
+          + "cluster_name\030\003 \001(\tB\004\342A\001\002\022\032\n\014cluster_uuid"
+          + "\030\004 \001(\tB\004\342A\001\001\022\030\n\nrequest_id\030\005 \001(\tB\004\342A\001\001\"\227"
+          + "\001\n\023StartClusterRequest\022\030\n\nproject_id\030\001 \001"
+          + "(\tB\004\342A\001\002\022\024\n\006region\030\002 \001(\tB\004\342A\001\002\022\032\n\014cluste"
+          + "r_name\030\003 \001(\tB\004\342A\001\002\022\032\n\014cluster_uuid\030\004 \001(\t"
+          + "B\004\342A\001\001\022\030\n\nrequest_id\030\005 \001(\tB\004\342A\001\001\"\230\001\n\024Del"
+          + "eteClusterRequest\022\030\n\nproject_id\030\001 \001(\tB\004\342"
           + "A\001\002\022\024\n\006region\030\003 \001(\tB\004\342A\001\002\022\032\n\014cluster_nam"
-          + "e\030\002 \001(\tB\004\342A\001\002\"2\n\026DiagnoseClusterResults\022"
-          + "\030\n\noutput_uri\030\001 \001(\tB\004\342A\001\003\"\373\001\n\023Reservatio"
-          + "nAffinity\022Z\n\030consume_reservation_type\030\001 "
-          + "\001(\01622.google.cloud.dataproc.v1.Reservati"
-          + "onAffinity.TypeB\004\342A\001\001\022\021\n\003key\030\002 \001(\tB\004\342A\001\001"
-          + "\022\024\n\006values\030\003 \003(\tB\004\342A\001\001\"_\n\004Type\022\024\n\020TYPE_U"
-          + "NSPECIFIED\020\000\022\022\n\016NO_RESERVATION\020\001\022\023\n\017ANY_"
-          + "RESERVATION\020\002\022\030\n\024SPECIFIC_RESERVATION\020\0032"
-          + "\344\020\n\021ClusterController\022\200\002\n\rCreateCluster\022"
-          + "..google.cloud.dataproc.v1.CreateCluster"
-          + "Request\032\035.google.longrunning.Operation\"\237"
-          + "\001\312A<\n\007Cluster\0221google.cloud.dataproc.v1."
-          + "ClusterOperationMetadata\332A\031project_id,re"
-          + "gion,cluster\202\323\344\223\002>\"3/v1/projects/{projec"
-          + "t_id}/regions/{region}/clusters:\007cluster"
-          + "\022\250\002\n\rUpdateCluster\022..google.cloud.datapr"
-          + "oc.v1.UpdateClusterRequest\032\035.google.long"
-          + "running.Operation\"\307\001\312A<\n\007Cluster\0221google"
-          + ".cloud.dataproc.v1.ClusterOperationMetad"
-          + "ata\332A2project_id,region,cluster_name,clu"
-          + "ster,update_mask\202\323\344\223\002M2B/v1/projects/{pr"
-          + "oject_id}/regions/{region}/clusters/{clu"
-          + "ster_name}:\007cluster\022\356\001\n\013StopCluster\022,.go"
-          + "ogle.cloud.dataproc.v1.StopClusterReques"
-          + "t\032\035.google.longrunning.Operation\"\221\001\312A<\n\007"
-          + "Cluster\0221google.cloud.dataproc.v1.Cluste"
-          + "rOperationMetadata\202\323\344\223\002L\"G/v1/projects/{"
-          + "project_id}/regions/{region}/clusters/{c"
-          + "luster_name}:stop:\001*\022\361\001\n\014StartCluster\022-."
-          + "google.cloud.dataproc.v1.StartClusterReq"
-          + "uest\032\035.google.longrunning.Operation\"\222\001\312A"
-          + "<\n\007Cluster\0221google.cloud.dataproc.v1.Clu"
-          + "sterOperationMetadata\202\323\344\223\002M\"H/v1/project"
-          + "s/{project_id}/regions/{region}/clusters"
-          + "/{cluster_name}:start:\001*\022\231\002\n\rDeleteClust"
-          + "er\022..google.cloud.dataproc.v1.DeleteClus"
-          + "terRequest\032\035.google.longrunning.Operatio"
-          + "n\"\270\001\312AJ\n\025google.protobuf.Empty\0221google.c"
-          + "loud.dataproc.v1.ClusterOperationMetadat"
-          + "a\332A\036project_id,region,cluster_name\202\323\344\223\002D"
-          + "*B/v1/projects/{project_id}/regions/{reg"
-          + "ion}/clusters/{cluster_name}\022\311\001\n\nGetClus"
-          + "ter\022+.google.cloud.dataproc.v1.GetCluste"
-          + "rRequest\032!.google.cloud.dataproc.v1.Clus"
-          + "ter\"k\332A\036project_id,region,cluster_name\202\323"
-          + "\344\223\002D\022B/v1/projects/{project_id}/regions/"
-          + "{region}/clusters/{cluster_name}\022\331\001\n\014Lis"
-          + "tClusters\022-.google.cloud.dataproc.v1.Lis"
-          + "tClustersRequest\032..google.cloud.dataproc"
-          + ".v1.ListClustersResponse\"j\332A\021project_id,"
-          + "region\332A\030project_id,region,filter\202\323\344\223\0025\022"
-          + "3/v1/projects/{project_id}/regions/{regi"
-          + "on}/clusters\022\252\002\n\017DiagnoseCluster\0220.googl"
-          + "e.cloud.dataproc.v1.DiagnoseClusterReque"
-          + "st\032\035.google.longrunning.Operation\"\305\001\312AK\n"
-          + "\026DiagnoseClusterResults\0221google.cloud.da"
-          + "taproc.v1.ClusterOperationMetadata\332A\036pro"
-          + "ject_id,region,cluster_name\202\323\344\223\002P\"K/v1/p"
-          + "rojects/{project_id}/regions/{region}/cl"
-          + "usters/{cluster_name}:diagnose:\001*\032K\312A\027da"
-          + "taproc.googleapis.com\322A.https://www.goog"
-          + "leapis.com/auth/cloud-platformBl\n\034com.go"
-          + "ogle.cloud.dataproc.v1B\rClustersProtoP\001Z"
-          + ";cloud.google.com/go/dataproc/v2/apiv1/d"
-          + "ataprocpb;dataprocpbb\006proto3"
+          + "e\030\002 \001(\tB\004\342A\001\002\022\032\n\014cluster_uuid\030\004 \001(\tB\004\342A\001"
+          + "\001\022\030\n\nrequest_id\030\005 \001(\tB\004\342A\001\001\"_\n\021GetCluste"
+          + "rRequest\022\030\n\nproject_id\030\001 \001(\tB\004\342A\001\002\022\024\n\006re"
+          + "gion\030\003 \001(\tB\004\342A\001\002\022\032\n\014cluster_name\030\002 \001(\tB\004"
+          + "\342A\001\002\"\216\001\n\023ListClustersRequest\022\030\n\nproject_"
+          + "id\030\001 \001(\tB\004\342A\001\002\022\024\n\006region\030\004 \001(\tB\004\342A\001\002\022\024\n\006"
+          + "filter\030\005 \001(\tB\004\342A\001\001\022\027\n\tpage_size\030\002 \001(\005B\004\342"
+          + "A\001\001\022\030\n\npage_token\030\003 \001(\tB\004\342A\001\001\"p\n\024ListClu"
+          + "stersResponse\0229\n\010clusters\030\001 \003(\0132!.google"
+          + ".cloud.dataproc.v1.ClusterB\004\342A\001\003\022\035\n\017next"
+          + "_page_token\030\002 \001(\tB\004\342A\001\003\"d\n\026DiagnoseClust"
+          + "erRequest\022\030\n\nproject_id\030\001 \001(\tB\004\342A\001\002\022\024\n\006r"
+          + "egion\030\003 \001(\tB\004\342A\001\002\022\032\n\014cluster_name\030\002 \001(\tB"
+          + "\004\342A\001\002\"2\n\026DiagnoseClusterResults\022\030\n\noutpu"
+          + "t_uri\030\001 \001(\tB\004\342A\001\003\"\373\001\n\023ReservationAffinit"
+          + "y\022Z\n\030consume_reservation_type\030\001 \001(\01622.go"
+          + "ogle.cloud.dataproc.v1.ReservationAffini"
+          + "ty.TypeB\004\342A\001\001\022\021\n\003key\030\002 \001(\tB\004\342A\001\001\022\024\n\006valu"
+          + "es\030\003 \003(\tB\004\342A\001\001\"_\n\004Type\022\024\n\020TYPE_UNSPECIFI"
+          + "ED\020\000\022\022\n\016NO_RESERVATION\020\001\022\023\n\017ANY_RESERVAT"
+          + "ION\020\002\022\030\n\024SPECIFIC_RESERVATION\020\0032\344\020\n\021Clus"
+          + "terController\022\200\002\n\rCreateCluster\022..google"
+          + ".cloud.dataproc.v1.CreateClusterRequest\032"
+          + "\035.google.longrunning.Operation\"\237\001\312A<\n\007Cl"
+          + "uster\0221google.cloud.dataproc.v1.ClusterO"
+          + "perationMetadata\332A\031project_id,region,clu"
+          + "ster\202\323\344\223\002>\"3/v1/projects/{project_id}/re"
+          + "gions/{region}/clusters:\007cluster\022\250\002\n\rUpd"
+          + "ateCluster\022..google.cloud.dataproc.v1.Up"
+          + "dateClusterRequest\032\035.google.longrunning."
+          + "Operation\"\307\001\312A<\n\007Cluster\0221google.cloud.d"
+          + "ataproc.v1.ClusterOperationMetadata\332A2pr"
+          + "oject_id,region,cluster_name,cluster,upd"
+          + "ate_mask\202\323\344\223\002M2B/v1/projects/{project_id"
+          + "}/regions/{region}/clusters/{cluster_nam"
+          + "e}:\007cluster\022\356\001\n\013StopCluster\022,.google.clo"
+          + "ud.dataproc.v1.StopClusterRequest\032\035.goog"
+          + "le.longrunning.Operation\"\221\001\312A<\n\007Cluster\022"
+          + "1google.cloud.dataproc.v1.ClusterOperati"
+          + "onMetadata\202\323\344\223\002L\"G/v1/projects/{project_"
+          + "id}/regions/{region}/clusters/{cluster_n"
+          + "ame}:stop:\001*\022\361\001\n\014StartCluster\022-.google.c"
+          + "loud.dataproc.v1.StartClusterRequest\032\035.g"
+          + "oogle.longrunning.Operation\"\222\001\312A<\n\007Clust"
+          + "er\0221google.cloud.dataproc.v1.ClusterOper"
+          + "ationMetadata\202\323\344\223\002M\"H/v1/projects/{proje"
+          + "ct_id}/regions/{region}/clusters/{cluste"
+          + "r_name}:start:\001*\022\231\002\n\rDeleteCluster\022..goo"
+          + "gle.cloud.dataproc.v1.DeleteClusterReque"
+          + "st\032\035.google.longrunning.Operation\"\270\001\312AJ\n"
+          + "\025google.protobuf.Empty\0221google.cloud.dat"
+          + "aproc.v1.ClusterOperationMetadata\332A\036proj"
+          + "ect_id,region,cluster_name\202\323\344\223\002D*B/v1/pr"
+          + "ojects/{project_id}/regions/{region}/clu"
+          + "sters/{cluster_name}\022\311\001\n\nGetCluster\022+.go"
+          + "ogle.cloud.dataproc.v1.GetClusterRequest"
+          + "\032!.google.cloud.dataproc.v1.Cluster\"k\332A\036"
+          + "project_id,region,cluster_name\202\323\344\223\002D\022B/v"
+          + "1/projects/{project_id}/regions/{region}"
+          + "/clusters/{cluster_name}\022\331\001\n\014ListCluster"
+          + "s\022-.google.cloud.dataproc.v1.ListCluster"
+          + "sRequest\032..google.cloud.dataproc.v1.List"
+          + "ClustersResponse\"j\332A\021project_id,region\332A"
+          + "\030project_id,region,filter\202\323\344\223\0025\0223/v1/pro"
+          + "jects/{project_id}/regions/{region}/clus"
+          + "ters\022\252\002\n\017DiagnoseCluster\0220.google.cloud."
+          + "dataproc.v1.DiagnoseClusterRequest\032\035.goo"
+          + "gle.longrunning.Operation\"\305\001\312AK\n\026Diagnos"
+          + "eClusterResults\0221google.cloud.dataproc.v"
+          + "1.ClusterOperationMetadata\332A\036project_id,"
+          + "region,cluster_name\202\323\344\223\002P\"K/v1/projects/"
+          + "{project_id}/regions/{region}/clusters/{"
+          + "cluster_name}:diagnose:\001*\032K\312A\027dataproc.g"
+          + "oogleapis.com\322A.https://www.googleapis.c"
+          + "om/auth/cloud-platformBl\n\034com.google.clo"
+          + "ud.dataproc.v1B\rClustersProtoP\001Z;cloud.g"
+          + "oogle.com/go/dataproc/v2/apiv1/dataprocp"
+          + "b;dataprocpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -718,6 +755,7 @@ public final class ClustersProto {
             new java.lang.String[] {
               "NumInstances",
               "InstanceNames",
+              "InstanceReferences",
               "ImageUri",
               "MachineTypeUri",
               "DiskConfig",
@@ -726,17 +764,55 @@ public final class ClustersProto {
               "ManagedGroupConfig",
               "Accelerators",
               "MinCpuPlatform",
+              "MinNumInstances",
+              "InstanceFlexibilityPolicy",
+            });
+    internal_static_google_cloud_dataproc_v1_InstanceReference_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_dataproc_v1_InstanceReference_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataproc_v1_InstanceReference_descriptor,
+            new java.lang.String[] {
+              "InstanceName", "InstanceId", "PublicKey", "PublicEciesKey",
             });
     internal_static_google_cloud_dataproc_v1_ManagedGroupConfig_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_dataproc_v1_ManagedGroupConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_ManagedGroupConfig_descriptor,
             new java.lang.String[] {
-              "InstanceTemplateName", "InstanceGroupManagerName",
+              "InstanceTemplateName", "InstanceGroupManagerName", "InstanceGroupManagerUri",
+            });
+    internal_static_google_cloud_dataproc_v1_InstanceFlexibilityPolicy_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_dataproc_v1_InstanceFlexibilityPolicy_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataproc_v1_InstanceFlexibilityPolicy_descriptor,
+            new java.lang.String[] {
+              "InstanceSelectionList", "InstanceSelectionResults",
+            });
+    internal_static_google_cloud_dataproc_v1_InstanceFlexibilityPolicy_InstanceSelection_descriptor =
+        internal_static_google_cloud_dataproc_v1_InstanceFlexibilityPolicy_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dataproc_v1_InstanceFlexibilityPolicy_InstanceSelection_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataproc_v1_InstanceFlexibilityPolicy_InstanceSelection_descriptor,
+            new java.lang.String[] {
+              "MachineTypes", "Rank",
+            });
+    internal_static_google_cloud_dataproc_v1_InstanceFlexibilityPolicy_InstanceSelectionResult_descriptor =
+        internal_static_google_cloud_dataproc_v1_InstanceFlexibilityPolicy_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_dataproc_v1_InstanceFlexibilityPolicy_InstanceSelectionResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataproc_v1_InstanceFlexibilityPolicy_InstanceSelectionResult_descriptor,
+            new java.lang.String[] {
+              "MachineType", "VmCount", "MachineType", "VmCount",
             });
     internal_static_google_cloud_dataproc_v1_AcceleratorConfig_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_dataproc_v1_AcceleratorConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_AcceleratorConfig_descriptor,
@@ -744,7 +820,7 @@ public final class ClustersProto {
               "AcceleratorTypeUri", "AcceleratorCount",
             });
     internal_static_google_cloud_dataproc_v1_DiskConfig_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_dataproc_v1_DiskConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_DiskConfig_descriptor,
@@ -752,7 +828,7 @@ public final class ClustersProto {
               "BootDiskType", "BootDiskSizeGb", "NumLocalSsds", "LocalSsdInterface",
             });
     internal_static_google_cloud_dataproc_v1_AuxiliaryNodeGroup_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_dataproc_v1_AuxiliaryNodeGroup_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_AuxiliaryNodeGroup_descriptor,
@@ -760,7 +836,7 @@ public final class ClustersProto {
               "NodeGroup", "NodeGroupId",
             });
     internal_static_google_cloud_dataproc_v1_NodeGroup_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_dataproc_v1_NodeGroup_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_NodeGroup_descriptor,
@@ -776,7 +852,7 @@ public final class ClustersProto {
               "Key", "Value",
             });
     internal_static_google_cloud_dataproc_v1_NodeInitializationAction_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_dataproc_v1_NodeInitializationAction_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_NodeInitializationAction_descriptor,
@@ -784,7 +860,7 @@ public final class ClustersProto {
               "ExecutableFile", "ExecutionTimeout",
             });
     internal_static_google_cloud_dataproc_v1_ClusterStatus_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_dataproc_v1_ClusterStatus_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_ClusterStatus_descriptor,
@@ -792,7 +868,7 @@ public final class ClustersProto {
               "State", "Detail", "StateStartTime", "Substate",
             });
     internal_static_google_cloud_dataproc_v1_SecurityConfig_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_dataproc_v1_SecurityConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_SecurityConfig_descriptor,
@@ -800,7 +876,7 @@ public final class ClustersProto {
               "KerberosConfig", "IdentityConfig",
             });
     internal_static_google_cloud_dataproc_v1_KerberosConfig_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_dataproc_v1_KerberosConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_KerberosConfig_descriptor,
@@ -822,7 +898,7 @@ public final class ClustersProto {
               "Realm",
             });
     internal_static_google_cloud_dataproc_v1_IdentityConfig_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_dataproc_v1_IdentityConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_IdentityConfig_descriptor,
@@ -838,7 +914,7 @@ public final class ClustersProto {
               "Key", "Value",
             });
     internal_static_google_cloud_dataproc_v1_SoftwareConfig_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_dataproc_v1_SoftwareConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_SoftwareConfig_descriptor,
@@ -854,7 +930,7 @@ public final class ClustersProto {
               "Key", "Value",
             });
     internal_static_google_cloud_dataproc_v1_LifecycleConfig_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_dataproc_v1_LifecycleConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_LifecycleConfig_descriptor,
@@ -862,7 +938,7 @@ public final class ClustersProto {
               "IdleDeleteTtl", "AutoDeleteTime", "AutoDeleteTtl", "IdleStartTime", "Ttl",
             });
     internal_static_google_cloud_dataproc_v1_MetastoreConfig_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_dataproc_v1_MetastoreConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_MetastoreConfig_descriptor,
@@ -870,7 +946,7 @@ public final class ClustersProto {
               "DataprocMetastoreService",
             });
     internal_static_google_cloud_dataproc_v1_ClusterMetrics_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_dataproc_v1_ClusterMetrics_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_ClusterMetrics_descriptor,
@@ -894,7 +970,7 @@ public final class ClustersProto {
               "Key", "Value",
             });
     internal_static_google_cloud_dataproc_v1_DataprocMetricConfig_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_dataproc_v1_DataprocMetricConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_DataprocMetricConfig_descriptor,
@@ -912,7 +988,7 @@ public final class ClustersProto {
               "MetricSource", "MetricOverrides",
             });
     internal_static_google_cloud_dataproc_v1_CreateClusterRequest_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_dataproc_v1_CreateClusterRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_CreateClusterRequest_descriptor,
@@ -920,7 +996,7 @@ public final class ClustersProto {
               "ProjectId", "Region", "Cluster", "RequestId", "ActionOnFailedPrimaryWorkers",
             });
     internal_static_google_cloud_dataproc_v1_UpdateClusterRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_dataproc_v1_UpdateClusterRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_UpdateClusterRequest_descriptor,
@@ -934,7 +1010,7 @@ public final class ClustersProto {
               "RequestId",
             });
     internal_static_google_cloud_dataproc_v1_StopClusterRequest_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_dataproc_v1_StopClusterRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_StopClusterRequest_descriptor,
@@ -942,7 +1018,7 @@ public final class ClustersProto {
               "ProjectId", "Region", "ClusterName", "ClusterUuid", "RequestId",
             });
     internal_static_google_cloud_dataproc_v1_StartClusterRequest_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_dataproc_v1_StartClusterRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_StartClusterRequest_descriptor,
@@ -950,7 +1026,7 @@ public final class ClustersProto {
               "ProjectId", "Region", "ClusterName", "ClusterUuid", "RequestId",
             });
     internal_static_google_cloud_dataproc_v1_DeleteClusterRequest_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_dataproc_v1_DeleteClusterRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_DeleteClusterRequest_descriptor,
@@ -958,7 +1034,7 @@ public final class ClustersProto {
               "ProjectId", "Region", "ClusterName", "ClusterUuid", "RequestId",
             });
     internal_static_google_cloud_dataproc_v1_GetClusterRequest_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_dataproc_v1_GetClusterRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_GetClusterRequest_descriptor,
@@ -966,7 +1042,7 @@ public final class ClustersProto {
               "ProjectId", "Region", "ClusterName",
             });
     internal_static_google_cloud_dataproc_v1_ListClustersRequest_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_dataproc_v1_ListClustersRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_ListClustersRequest_descriptor,
@@ -974,7 +1050,7 @@ public final class ClustersProto {
               "ProjectId", "Region", "Filter", "PageSize", "PageToken",
             });
     internal_static_google_cloud_dataproc_v1_ListClustersResponse_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_dataproc_v1_ListClustersResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_ListClustersResponse_descriptor,
@@ -982,7 +1058,7 @@ public final class ClustersProto {
               "Clusters", "NextPageToken",
             });
     internal_static_google_cloud_dataproc_v1_DiagnoseClusterRequest_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_dataproc_v1_DiagnoseClusterRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_DiagnoseClusterRequest_descriptor,
@@ -990,7 +1066,7 @@ public final class ClustersProto {
               "ProjectId", "Region", "ClusterName",
             });
     internal_static_google_cloud_dataproc_v1_DiagnoseClusterResults_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_dataproc_v1_DiagnoseClusterResults_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_DiagnoseClusterResults_descriptor,
@@ -998,7 +1074,7 @@ public final class ClustersProto {
               "OutputUri",
             });
     internal_static_google_cloud_dataproc_v1_ReservationAffinity_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_cloud_dataproc_v1_ReservationAffinity_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataproc_v1_ReservationAffinity_descriptor,

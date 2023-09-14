@@ -43,6 +43,8 @@ public class InsightTypeName implements ResourceName {
   private static final PathTemplate ORGANIZATION_LOCATION_INSIGHT_TYPE =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/locations/{location}/insightTypes/{insight_type}");
+  private static final PathTemplate INSIGHT_TYPE =
+      PathTemplate.createWithoutUrlEncoding("insightTypes/{insight_type}");
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
@@ -103,6 +105,16 @@ public class InsightTypeName implements ResourceName {
     pathTemplate = ORGANIZATION_LOCATION_INSIGHT_TYPE;
   }
 
+  private InsightTypeName(InsightTypeBuilder builder) {
+    insightType = Preconditions.checkNotNull(builder.getInsightType());
+    project = null;
+    location = null;
+    billingAccount = null;
+    folder = null;
+    organization = null;
+    pathTemplate = INSIGHT_TYPE;
+  }
+
   public String getProject() {
     return project;
   }
@@ -150,6 +162,11 @@ public class InsightTypeName implements ResourceName {
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationLocationInsightTypeBuilder newOrganizationLocationInsightTypeBuilder() {
     return new OrganizationLocationInsightTypeBuilder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static InsightTypeBuilder newInsightTypeBuilder() {
+    return new InsightTypeBuilder();
   }
 
   public Builder toBuilder() {
@@ -202,6 +219,11 @@ public class InsightTypeName implements ResourceName {
         .setLocation(location)
         .setInsightType(insightType)
         .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static InsightTypeName ofInsightTypeName(String insightType) {
+    return newInsightTypeBuilder().setInsightType(insightType).build();
   }
 
   public static String format(String project, String location, String insightType) {
@@ -257,6 +279,11 @@ public class InsightTypeName implements ResourceName {
         .toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatInsightTypeName(String insightType) {
+    return newInsightTypeBuilder().setInsightType(insightType).build().toString();
+  }
+
   public static InsightTypeName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
@@ -277,6 +304,9 @@ public class InsightTypeName implements ResourceName {
       Map<String, String> matchMap = ORGANIZATION_LOCATION_INSIGHT_TYPE.match(formattedString);
       return ofOrganizationLocationInsightTypeName(
           matchMap.get("organization"), matchMap.get("location"), matchMap.get("insight_type"));
+    } else if (INSIGHT_TYPE.matches(formattedString)) {
+      Map<String, String> matchMap = INSIGHT_TYPE.match(formattedString);
+      return ofInsightTypeName(matchMap.get("insight_type"));
     }
     throw new ValidationException("InsightTypeName.parse: formattedString not in valid format");
   }
@@ -305,7 +335,8 @@ public class InsightTypeName implements ResourceName {
     return PROJECT_LOCATION_INSIGHT_TYPE.matches(formattedString)
         || BILLING_ACCOUNT_LOCATION_INSIGHT_TYPE.matches(formattedString)
         || FOLDER_LOCATION_INSIGHT_TYPE.matches(formattedString)
-        || ORGANIZATION_LOCATION_INSIGHT_TYPE.matches(formattedString);
+        || ORGANIZATION_LOCATION_INSIGHT_TYPE.matches(formattedString)
+        || INSIGHT_TYPE.matches(formattedString);
   }
 
   @Override
@@ -353,7 +384,7 @@ public class InsightTypeName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       InsightTypeName that = ((InsightTypeName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
@@ -550,6 +581,27 @@ public class InsightTypeName implements ResourceName {
     }
 
     public OrganizationLocationInsightTypeBuilder setInsightType(String insightType) {
+      this.insightType = insightType;
+      return this;
+    }
+
+    public InsightTypeName build() {
+      return new InsightTypeName(this);
+    }
+  }
+
+  /** Builder for insightTypes/{insight_type}. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class InsightTypeBuilder {
+    private String insightType;
+
+    protected InsightTypeBuilder() {}
+
+    public String getInsightType() {
+      return insightType;
+    }
+
+    public InsightTypeBuilder setInsightType(String insightType) {
       this.insightType = insightType;
       return this;
     }

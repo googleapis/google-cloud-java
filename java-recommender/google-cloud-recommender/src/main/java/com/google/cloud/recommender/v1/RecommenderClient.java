@@ -1202,6 +1202,82 @@ public class RecommenderClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Mark the Recommendation State as Dismissed. Users can use this method to indicate to the
+   * Recommender API that an ACTIVE recommendation has to be marked back as DISMISSED.
+   *
+   * <p>MarkRecommendationDismissed can be applied to recommendations in ACTIVE state.
+   *
+   * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   MarkRecommendationDismissedRequest request =
+   *       MarkRecommendationDismissedRequest.newBuilder()
+   *           .setName(
+   *               RecommendationName.ofProjectLocationRecommenderRecommendationName(
+   *                       "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   Recommendation response = recommenderClient.markRecommendationDismissed(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Recommendation markRecommendationDismissed(
+      MarkRecommendationDismissedRequest request) {
+    return markRecommendationDismissedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Mark the Recommendation State as Dismissed. Users can use this method to indicate to the
+   * Recommender API that an ACTIVE recommendation has to be marked back as DISMISSED.
+   *
+   * <p>MarkRecommendationDismissed can be applied to recommendations in ACTIVE state.
+   *
+   * <p>Requires the recommender.&#42;.update IAM permission for the specified recommender.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   MarkRecommendationDismissedRequest request =
+   *       MarkRecommendationDismissedRequest.newBuilder()
+   *           .setName(
+   *               RecommendationName.ofProjectLocationRecommenderRecommendationName(
+   *                       "[PROJECT]", "[LOCATION]", "[RECOMMENDER]", "[RECOMMENDATION]")
+   *                   .toString())
+   *           .setEtag("etag3123477")
+   *           .build();
+   *   ApiFuture<Recommendation> future =
+   *       recommenderClient.markRecommendationDismissedCallable().futureCall(request);
+   *   // Do something.
+   *   Recommendation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<MarkRecommendationDismissedRequest, Recommendation>
+      markRecommendationDismissedCallable() {
+    return stub.markRecommendationDismissedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Marks the Recommendation State as Claimed. Users can use this method to indicate to the
    * Recommender API that they are starting to apply the recommendation themselves. This stops the
    * recommendation content from being updated. Associated insights are frozen and placed in the
@@ -1779,6 +1855,9 @@ public class RecommenderClient implements BackgroundResource {
    *     <ul>
    *       <li>`organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
    *     </ul>
+   *     <ul>
+   *       <li>`billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1822,6 +1901,9 @@ public class RecommenderClient implements BackgroundResource {
    *     </ul>
    *     <ul>
    *       <li>`organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *     </ul>
+   *     <ul>
+   *       <li>`billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2016,13 +2098,16 @@ public class RecommenderClient implements BackgroundResource {
    * @param name Required. Name of the InsightTypeConfig to get.
    *     <p>Acceptable formats:
    *     <ul>
-   *       <li>`projects/[PROJECT_NUMBER]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
+   *       <li>`projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config`
    *     </ul>
    *     <ul>
-   *       <li>`projects/[PROJECT_ID]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
+   *       <li>`projects/[PROJECT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config`
    *     </ul>
    *     <ul>
-   *       <li>`organizations/[ORGANIZATION_ID]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
+   *       <li>`organizations/[ORGANIZATION_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config`
+   *     </ul>
+   *     <ul>
+   *       <li>`billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config`
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2060,13 +2145,16 @@ public class RecommenderClient implements BackgroundResource {
    * @param name Required. Name of the InsightTypeConfig to get.
    *     <p>Acceptable formats:
    *     <ul>
-   *       <li>`projects/[PROJECT_NUMBER]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
+   *       <li>`projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config`
    *     </ul>
    *     <ul>
-   *       <li>`projects/[PROJECT_ID]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
+   *       <li>`projects/[PROJECT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config`
    *     </ul>
    *     <ul>
-   *       <li>`organizations/[ORGANIZATION_ID]/locations/global/recommenders/[INSIGHT_TYPE_ID]/config`
+   *       <li>`organizations/[ORGANIZATION_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config`
+   *     </ul>
+   *     <ul>
+   *       <li>`billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config`
    *     </ul>
    *
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

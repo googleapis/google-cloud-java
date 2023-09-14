@@ -31,7 +31,10 @@ public interface TransitionRouteGroupOrBuilder
    * [TransitionRouteGroups.CreateTransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroups.CreateTransitionRouteGroup]
    * populates the name automatically. Format: `projects/&lt;Project
    * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
-   * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
+   * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;` or
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+   * groups.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -47,7 +50,10 @@ public interface TransitionRouteGroupOrBuilder
    * [TransitionRouteGroups.CreateTransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroups.CreateTransitionRouteGroup]
    * populates the name automatically. Format: `projects/&lt;Project
    * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
-   * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
+   * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;` or
+   * `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+   * groups.
    * </pre>
    *
    * <code>string name = 1;</code>

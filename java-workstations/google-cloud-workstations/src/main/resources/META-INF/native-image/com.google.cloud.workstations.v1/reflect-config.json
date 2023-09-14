@@ -1170,6 +1170,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.workstations.v1.WorkstationConfig$ReadinessCheck",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.workstations.v1.WorkstationConfig$ReadinessCheck$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.iam.v1.AuditConfig",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

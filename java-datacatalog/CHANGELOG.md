@@ -1,5 +1,28 @@
 # Changelog
 
+## 1.30.0 (2023-09-11)
+
+### Features
+
+* fix typo ([#9779](https://github.com/googleapis/google-cloud-java/issues/9779)) ([1285e8d](https://github.com/googleapis/google-cloud-java/commit/1285e8d1ee812be4f64d2ecfc958ed2a1b291e37))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#9809](https://github.com/googleapis/google-cloud-java/issues/9809)) ([09dbd85](https://github.com/googleapis/google-cloud-java/commit/09dbd855f683b40a462c4f918511bee4671e0174))
+
+
+## 1.29.0 (2023-08-08)
+
+### Features
+
+* add support for admin_search in SearchCatalog() API method ([#9728](https://github.com/googleapis/google-cloud-java/issues/9728)) ([aee140e](https://github.com/googleapis/google-cloud-java/commit/aee140e0e4c22465129d4eab682c0112154be7fd))
+* Minor formatting ([#9718](https://github.com/googleapis/google-cloud-java/issues/9718)) ([5103a7a](https://github.com/googleapis/google-cloud-java/commit/5103a7aae963998b651a49a91a5411e425cccb71))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.14.0 ([#9722](https://github.com/googleapis/google-cloud-java/issues/9722)) ([c7011db](https://github.com/googleapis/google-cloud-java/commit/c7011dbd69189330de1c2946b736cd712d5c1f4e))
+
+
 ## 1.28.0 (2023-07-21)
 
 ### Dependencies

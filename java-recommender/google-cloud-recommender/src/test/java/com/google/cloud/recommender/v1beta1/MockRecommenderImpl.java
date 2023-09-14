@@ -309,4 +309,46 @@ public class MockRecommenderImpl extends RecommenderImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void listRecommenders(
+      ListRecommendersRequest request, StreamObserver<ListRecommendersResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListRecommendersResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListRecommendersResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListRecommenders, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListRecommendersResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listInsightTypes(
+      ListInsightTypesRequest request, StreamObserver<ListInsightTypesResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListInsightTypesResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListInsightTypesResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListInsightTypes, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListInsightTypesResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

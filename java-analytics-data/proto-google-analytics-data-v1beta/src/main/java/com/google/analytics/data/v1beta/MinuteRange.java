@@ -22,8 +22,8 @@ package com.google.analytics.data.v1beta;
  *
  *
  * <pre>
- * A contiguous set of minutes: startMinutesAgo, startMinutesAgo + 1, ...,
- * endMinutesAgo. Requests are allowed up to 2 minute ranges.
+ * A contiguous set of minutes: `startMinutesAgo`, `startMinutesAgo + 1`, ...,
+ * `endMinutesAgo`. Requests are allowed up to 2 minute ranges.
  * </pre>
  *
  * Protobuf type {@code google.analytics.data.v1beta.MinuteRange}
@@ -408,8 +408,8 @@ public final class MinuteRange extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A contiguous set of minutes: startMinutesAgo, startMinutesAgo + 1, ...,
-   * endMinutesAgo. Requests are allowed up to 2 minute ranges.
+   * A contiguous set of minutes: `startMinutesAgo`, `startMinutesAgo + 1`, ...,
+   * `endMinutesAgo`. Requests are allowed up to 2 minute ranges.
    * </pre>
    *
    * Protobuf type {@code google.analytics.data.v1beta.MinuteRange}

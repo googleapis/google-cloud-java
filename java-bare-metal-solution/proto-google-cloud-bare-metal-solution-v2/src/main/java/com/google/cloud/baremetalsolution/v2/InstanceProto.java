@@ -52,6 +52,10 @@ public final class InstanceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_baremetalsolution_v2_UpdateInstanceRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_baremetalsolution_v2_RenameInstanceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_baremetalsolution_v2_RenameInstanceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_baremetalsolution_v2_ResetInstanceRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_baremetalsolution_v2_ResetInstanceRequest_fieldAccessorTable;
@@ -60,9 +64,33 @@ public final class InstanceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_baremetalsolution_v2_StartInstanceRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_baremetalsolution_v2_StartInstanceResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_baremetalsolution_v2_StartInstanceResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_baremetalsolution_v2_StopInstanceRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_baremetalsolution_v2_StopInstanceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_baremetalsolution_v2_StopInstanceResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_baremetalsolution_v2_StopInstanceResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_baremetalsolution_v2_EnableInteractiveSerialConsoleRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_baremetalsolution_v2_EnableInteractiveSerialConsoleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_baremetalsolution_v2_EnableInteractiveSerialConsoleResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_baremetalsolution_v2_EnableInteractiveSerialConsoleResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_baremetalsolution_v2_DisableInteractiveSerialConsoleRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_baremetalsolution_v2_DisableInteractiveSerialConsoleRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_baremetalsolution_v2_DisableInteractiveSerialConsoleResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_baremetalsolution_v2_DisableInteractiveSerialConsoleResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_baremetalsolution_v2_DetachLunRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -75,14 +103,6 @@ public final class InstanceProto {
       internal_static_google_cloud_baremetalsolution_v2_ServerNetworkTemplate_LogicalInterface_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_baremetalsolution_v2_ServerNetworkTemplate_LogicalInterface_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_baremetalsolution_v2_StartInstanceResponse_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_baremetalsolution_v2_StartInstanceResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_baremetalsolution_v2_StopInstanceResponse_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_baremetalsolution_v2_StopInstanceResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -95,80 +115,101 @@ public final class InstanceProto {
       "\n0google/cloud/baremetalsolution/v2/inst"
           + "ance.proto\022!google.cloud.baremetalsoluti"
           + "on.v2\032\037google/api/field_behavior.proto\032\031"
-          + "google/api/resource.proto\032+google/cloud/"
-          + "baremetalsolution/v2/lun.proto\032/google/c"
-          + "loud/baremetalsolution/v2/network.proto\032"
-          + " google/protobuf/field_mask.proto\032\037googl"
-          + "e/protobuf/timestamp.proto\"\257\007\n\010Instance\022"
-          + "\022\n\004name\030\001 \001(\tB\004\342A\001\003\022\n\n\002id\030\013 \001(\t\0225\n\013creat"
-          + "e_time\030\002 \001(\0132\032.google.protobuf.Timestamp"
-          + "B\004\342A\001\003\0225\n\013update_time\030\003 \001(\0132\032.google.pro"
-          + "tobuf.TimestampB\004\342A\001\003\022\024\n\014machine_type\030\004 "
-          + "\001(\t\022@\n\005state\030\005 \001(\01621.google.cloud.bareme"
-          + "talsolution.v2.Instance.State\022\036\n\026hyperth"
-          + "reading_enabled\030\006 \001(\010\022G\n\006labels\030\007 \003(\01327."
-          + "google.cloud.baremetalsolution.v2.Instan"
-          + "ce.LabelsEntry\0224\n\004luns\030\010 \003(\0132&.google.cl"
-          + "oud.baremetalsolution.v2.Lun\022<\n\010networks"
-          + "\030\t \003(\0132*.google.cloud.baremetalsolution."
-          + "v2.Network\022*\n\"interactive_serial_console"
-          + "_enabled\030\n \001(\010\022\020\n\010os_image\030\014 \001(\t\022\021\n\003pod\030"
-          + "\r \001(\tB\004\342A\001\005\022U\n\020network_template\030\016 \001(\tB;\372"
-          + "A8\n6baremetalsolution.googleapis.com/Ser"
-          + "verNetworkTemplate\022O\n\022logical_interfaces"
-          + "\030\017 \003(\01323.google.cloud.baremetalsolution."
-          + "v2.LogicalInterface\032-\n\013LabelsEntry\022\013\n\003ke"
-          + "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"J\n\005State\022\025\n\021S"
-          + "TATE_UNSPECIFIED\020\000\022\020\n\014PROVISIONING\020\001\022\013\n\007"
-          + "RUNNING\020\002\022\013\n\007DELETED\020\003:l\352Ai\n)baremetalso"
-          + "lution.googleapis.com/Instance\022<projects"
-          + "/{project}/locations/{location}/instance"
-          + "s/{instance}\"V\n\022GetInstanceRequest\022@\n\004na"
-          + "me\030\001 \001(\tB2\342A\001\002\372A+\n)baremetalsolution.goo"
-          + "gleapis.com/Instance\"\211\001\n\024ListInstancesRe"
-          + "quest\022:\n\006parent\030\001 \001(\tB*\342A\001\002\372A#\n!location"
-          + "s.googleapis.com/Location\022\021\n\tpage_size\030\002"
-          + " \001(\005\022\022\n\npage_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t"
-          + "\"\205\001\n\025ListInstancesResponse\022>\n\tinstances\030"
-          + "\001 \003(\0132+.google.cloud.baremetalsolution.v"
-          + "2.Instance\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013u"
-          + "nreachable\030\003 \003(\t\"\215\001\n\025UpdateInstanceReque"
-          + "st\022C\n\010instance\030\001 \001(\0132+.google.cloud.bare"
-          + "metalsolution.v2.InstanceB\004\342A\001\002\022/\n\013updat"
-          + "e_mask\030\002 \001(\0132\032.google.protobuf.FieldMask"
-          + "\"X\n\024ResetInstanceRequest\022@\n\004name\030\001 \001(\tB2"
-          + "\342A\001\002\372A+\n)baremetalsolution.googleapis.co"
-          + "m/Instance\"X\n\024StartInstanceRequest\022@\n\004na"
-          + "me\030\001 \001(\tB2\342A\001\002\372A+\n)baremetalsolution.goo"
-          + "gleapis.com/Instance\"W\n\023StopInstanceRequ"
-          + "est\022@\n\004name\030\001 \001(\tB2\342A\001\002\372A+\n)baremetalsol"
-          + "ution.googleapis.com/Instance\"\224\001\n\020Detach"
-          + "LunRequest\022D\n\010instance\030\001 \001(\tB2\342A\001\002\372A+\n)b"
-          + "aremetalsolution.googleapis.com/Instance"
-          + "\022:\n\003lun\030\002 \001(\tB-\342A\001\002\372A&\n$baremetalsolutio"
-          + "n.googleapis.com/Lun\"\255\004\n\025ServerNetworkTe"
-          + "mplate\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\022!\n\031applicable"
-          + "_instance_types\030\002 \003(\t\022e\n\022logical_interfa"
-          + "ces\030\003 \003(\0132I.google.cloud.baremetalsoluti"
-          + "on.v2.ServerNetworkTemplate.LogicalInter"
-          + "face\032\335\001\n\020LogicalInterface\022\014\n\004name\030\001 \001(\t\022"
-          + "e\n\004type\030\002 \001(\0162W.google.cloud.baremetalso"
-          + "lution.v2.ServerNetworkTemplate.LogicalI"
-          + "nterface.InterfaceType\022\020\n\010required\030\003 \001(\010"
-          + "\"B\n\rInterfaceType\022\036\n\032INTERFACE_TYPE_UNSP"
-          + "ECIFIED\020\000\022\010\n\004BOND\020\001\022\007\n\003NIC\020\002:\225\001\352A\221\001\n6bar"
-          + "emetalsolution.googleapis.com/ServerNetw"
-          + "orkTemplate\022Wprojects/{project}/location"
-          + "s/{location}/serverNetworkTemplate/{serv"
-          + "er_network_template}\"\027\n\025StartInstanceRes"
-          + "ponse\"\026\n\024StopInstanceResponseB\374\001\n%com.go"
-          + "ogle.cloud.baremetalsolution.v2B\rInstanc"
-          + "eProtoP\001ZScloud.google.com/go/baremetals"
-          + "olution/apiv2/baremetalsolutionpb;bareme"
-          + "talsolutionpb\252\002!Google.Cloud.BareMetalSo"
-          + "lution.V2\312\002!Google\\Cloud\\BareMetalSoluti"
-          + "on\\V2\352\002$Google::Cloud::BareMetalSolution"
-          + "::V2b\006proto3"
+          + "google/api/resource.proto\032.google/cloud/"
+          + "baremetalsolution/v2/common.proto\032+googl"
+          + "e/cloud/baremetalsolution/v2/lun.proto\032/"
+          + "google/cloud/baremetalsolution/v2/networ"
+          + "k.proto\032.google/cloud/baremetalsolution/"
+          + "v2/volume.proto\032 google/protobuf/field_m"
+          + "ask.proto\032\037google/protobuf/timestamp.pro"
+          + "to\"\326\t\n\010Instance\022\022\n\004name\030\001 \001(\tB\004\342A\001\005\022\020\n\002i"
+          + "d\030\013 \001(\tB\004\342A\001\003\0225\n\013create_time\030\002 \001(\0132\032.goo"
+          + "gle.protobuf.TimestampB\004\342A\001\003\0225\n\013update_t"
+          + "ime\030\003 \001(\0132\032.google.protobuf.TimestampB\004\342"
+          + "A\001\003\022\032\n\014machine_type\030\004 \001(\tB\004\342A\001\005\022F\n\005state"
+          + "\030\005 \001(\01621.google.cloud.baremetalsolution."
+          + "v2.Instance.StateB\004\342A\001\003\022\036\n\026hyperthreadin"
+          + "g_enabled\030\006 \001(\010\022G\n\006labels\030\007 \003(\01327.google"
+          + ".cloud.baremetalsolution.v2.Instance.Lab"
+          + "elsEntry\022:\n\004luns\030\010 \003(\0132&.google.cloud.ba"
+          + "remetalsolution.v2.LunB\004\342A\001\005\022@\n\007volumes\030"
+          + "\020 \003(\0132).google.cloud.baremetalsolution.v"
+          + "2.VolumeB\004\342A\001\004\022B\n\010networks\030\t \003(\0132*.googl"
+          + "e.cloud.baremetalsolution.v2.NetworkB\004\342A"
+          + "\001\003\0220\n\"interactive_serial_console_enabled"
+          + "\030\n \001(\010B\004\342A\001\003\022\020\n\010os_image\030\014 \001(\t\022\021\n\003pod\030\r "
+          + "\001(\tB\004\342A\001\005\022U\n\020network_template\030\016 \001(\tB;\372A8"
+          + "\n6baremetalsolution.googleapis.com/Serve"
+          + "rNetworkTemplate\022O\n\022logical_interfaces\030\017"
+          + " \003(\01323.google.cloud.baremetalsolution.v2"
+          + ".LogicalInterface\022\030\n\nlogin_info\030\021 \001(\tB\004\342"
+          + "A\001\003\022L\n\020workload_profile\030\022 \001(\01622.google.c"
+          + "loud.baremetalsolution.v2.WorkloadProfil"
+          + "e\022\036\n\020firmware_version\030\023 \001(\tB\004\342A\001\003\032-\n\013Lab"
+          + "elsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
+          + "\"\202\001\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\020\n\014PRO"
+          + "VISIONING\020\001\022\013\n\007RUNNING\020\002\022\013\n\007DELETED\020\003\022\014\n"
+          + "\010UPDATING\020\004\022\014\n\010STARTING\020\005\022\014\n\010STOPPING\020\006\022"
+          + "\014\n\010SHUTDOWN\020\007:l\352Ai\n)baremetalsolution.go"
+          + "ogleapis.com/Instance\022<projects/{project"
+          + "}/locations/{location}/instances/{instan"
+          + "ce}\"V\n\022GetInstanceRequest\022@\n\004name\030\001 \001(\tB"
+          + "2\342A\001\002\372A+\n)baremetalsolution.googleapis.c"
+          + "om/Instance\"\211\001\n\024ListInstancesRequest\022:\n\006"
+          + "parent\030\001 \001(\tB*\342A\001\002\372A#\n!locations.googlea"
+          + "pis.com/Location\022\021\n\tpage_size\030\002 \001(\005\022\022\n\np"
+          + "age_token\030\003 \001(\t\022\016\n\006filter\030\004 \001(\t\"\205\001\n\025List"
+          + "InstancesResponse\022>\n\tinstances\030\001 \003(\0132+.g"
+          + "oogle.cloud.baremetalsolution.v2.Instanc"
+          + "e\022\027\n\017next_page_token\030\002 \001(\t\022\023\n\013unreachabl"
+          + "e\030\003 \003(\t\"\215\001\n\025UpdateInstanceRequest\022C\n\010ins"
+          + "tance\030\001 \001(\0132+.google.cloud.baremetalsolu"
+          + "tion.v2.InstanceB\004\342A\001\002\022/\n\013update_mask\030\002 "
+          + "\001(\0132\032.google.protobuf.FieldMask\"x\n\025Renam"
+          + "eInstanceRequest\022@\n\004name\030\001 \001(\tB2\342A\001\002\372A+\n"
+          + ")baremetalsolution.googleapis.com/Instan"
+          + "ce\022\035\n\017new_instance_id\030\002 \001(\tB\004\342A\001\002\"X\n\024Res"
+          + "etInstanceRequest\022@\n\004name\030\001 \001(\tB2\342A\001\002\372A+"
+          + "\n)baremetalsolution.googleapis.com/Insta"
+          + "nce\"X\n\024StartInstanceRequest\022@\n\004name\030\001 \001("
+          + "\tB2\342A\001\002\372A+\n)baremetalsolution.googleapis"
+          + ".com/Instance\"\027\n\025StartInstanceResponse\"W"
+          + "\n\023StopInstanceRequest\022@\n\004name\030\001 \001(\tB2\342A\001"
+          + "\002\372A+\n)baremetalsolution.googleapis.com/I"
+          + "nstance\"\026\n\024StopInstanceResponse\"i\n%Enabl"
+          + "eInteractiveSerialConsoleRequest\022@\n\004name"
+          + "\030\001 \001(\tB2\342A\001\002\372A+\n)baremetalsolution.googl"
+          + "eapis.com/Instance\"(\n&EnableInteractiveS"
+          + "erialConsoleResponse\"j\n&DisableInteracti"
+          + "veSerialConsoleRequest\022@\n\004name\030\001 \001(\tB2\342A"
+          + "\001\002\372A+\n)baremetalsolution.googleapis.com/"
+          + "Instance\")\n\'DisableInteractiveSerialCons"
+          + "oleResponse\"\251\001\n\020DetachLunRequest\022D\n\010inst"
+          + "ance\030\001 \001(\tB2\342A\001\002\372A+\n)baremetalsolution.g"
+          + "oogleapis.com/Instance\022:\n\003lun\030\002 \001(\tB-\342A\001"
+          + "\002\372A&\n$baremetalsolution.googleapis.com/L"
+          + "un\022\023\n\013skip_reboot\030\003 \001(\010\"\255\004\n\025ServerNetwor"
+          + "kTemplate\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\022!\n\031applica"
+          + "ble_instance_types\030\002 \003(\t\022e\n\022logical_inte"
+          + "rfaces\030\003 \003(\0132I.google.cloud.baremetalsol"
+          + "ution.v2.ServerNetworkTemplate.LogicalIn"
+          + "terface\032\335\001\n\020LogicalInterface\022\014\n\004name\030\001 \001"
+          + "(\t\022e\n\004type\030\002 \001(\0162W.google.cloud.baremeta"
+          + "lsolution.v2.ServerNetworkTemplate.Logic"
+          + "alInterface.InterfaceType\022\020\n\010required\030\003 "
+          + "\001(\010\"B\n\rInterfaceType\022\036\n\032INTERFACE_TYPE_U"
+          + "NSPECIFIED\020\000\022\010\n\004BOND\020\001\022\007\n\003NIC\020\002:\225\001\352A\221\001\n6"
+          + "baremetalsolution.googleapis.com/ServerN"
+          + "etworkTemplate\022Wprojects/{project}/locat"
+          + "ions/{location}/serverNetworkTemplate/{s"
+          + "erver_network_template}B\374\001\n%com.google.c"
+          + "loud.baremetalsolution.v2B\rInstanceProto"
+          + "P\001ZScloud.google.com/go/baremetalsolutio"
+          + "n/apiv2/baremetalsolutionpb;baremetalsol"
+          + "utionpb\252\002!Google.Cloud.BareMetalSolution"
+          + ".V2\312\002!Google\\Cloud\\BareMetalSolution\\V2\352"
+          + "\002$Google::Cloud::BareMetalSolution::V2b\006"
+          + "proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -176,8 +217,10 @@ public final class InstanceProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.baremetalsolution.v2.CommonProto.getDescriptor(),
               com.google.cloud.baremetalsolution.v2.LunProto.getDescriptor(),
               com.google.cloud.baremetalsolution.v2.NetworkProto.getDescriptor(),
+              com.google.cloud.baremetalsolution.v2.VolumeProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -196,12 +239,16 @@ public final class InstanceProto {
               "HyperthreadingEnabled",
               "Labels",
               "Luns",
+              "Volumes",
               "Networks",
               "InteractiveSerialConsoleEnabled",
               "OsImage",
               "Pod",
               "NetworkTemplate",
               "LogicalInterfaces",
+              "LoginInfo",
+              "WorkloadProfile",
+              "FirmwareVersion",
             });
     internal_static_google_cloud_baremetalsolution_v2_Instance_LabelsEntry_descriptor =
         internal_static_google_cloud_baremetalsolution_v2_Instance_descriptor
@@ -245,8 +292,16 @@ public final class InstanceProto {
             new java.lang.String[] {
               "Instance", "UpdateMask",
             });
-    internal_static_google_cloud_baremetalsolution_v2_ResetInstanceRequest_descriptor =
+    internal_static_google_cloud_baremetalsolution_v2_RenameInstanceRequest_descriptor =
         getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_baremetalsolution_v2_RenameInstanceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_baremetalsolution_v2_RenameInstanceRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "NewInstanceId",
+            });
+    internal_static_google_cloud_baremetalsolution_v2_ResetInstanceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_baremetalsolution_v2_ResetInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_baremetalsolution_v2_ResetInstanceRequest_descriptor,
@@ -254,31 +309,71 @@ public final class InstanceProto {
               "Name",
             });
     internal_static_google_cloud_baremetalsolution_v2_StartInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_baremetalsolution_v2_StartInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_baremetalsolution_v2_StartInstanceRequest_descriptor,
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_cloud_baremetalsolution_v2_StartInstanceResponse_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_baremetalsolution_v2_StartInstanceResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_baremetalsolution_v2_StartInstanceResponse_descriptor,
+            new java.lang.String[] {});
     internal_static_google_cloud_baremetalsolution_v2_StopInstanceRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_baremetalsolution_v2_StopInstanceRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_baremetalsolution_v2_StopInstanceRequest_descriptor,
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_cloud_baremetalsolution_v2_StopInstanceResponse_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_baremetalsolution_v2_StopInstanceResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_baremetalsolution_v2_StopInstanceResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_baremetalsolution_v2_EnableInteractiveSerialConsoleRequest_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_baremetalsolution_v2_EnableInteractiveSerialConsoleRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_baremetalsolution_v2_EnableInteractiveSerialConsoleRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_baremetalsolution_v2_EnableInteractiveSerialConsoleResponse_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_baremetalsolution_v2_EnableInteractiveSerialConsoleResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_baremetalsolution_v2_EnableInteractiveSerialConsoleResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_baremetalsolution_v2_DisableInteractiveSerialConsoleRequest_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_baremetalsolution_v2_DisableInteractiveSerialConsoleRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_baremetalsolution_v2_DisableInteractiveSerialConsoleRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_baremetalsolution_v2_DisableInteractiveSerialConsoleResponse_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_baremetalsolution_v2_DisableInteractiveSerialConsoleResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_baremetalsolution_v2_DisableInteractiveSerialConsoleResponse_descriptor,
+            new java.lang.String[] {});
     internal_static_google_cloud_baremetalsolution_v2_DetachLunRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_baremetalsolution_v2_DetachLunRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_baremetalsolution_v2_DetachLunRequest_descriptor,
             new java.lang.String[] {
-              "Instance", "Lun",
+              "Instance", "Lun", "SkipReboot",
             });
     internal_static_google_cloud_baremetalsolution_v2_ServerNetworkTemplate_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_baremetalsolution_v2_ServerNetworkTemplate_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_baremetalsolution_v2_ServerNetworkTemplate_descriptor,
@@ -295,18 +390,6 @@ public final class InstanceProto {
             new java.lang.String[] {
               "Name", "Type", "Required",
             });
-    internal_static_google_cloud_baremetalsolution_v2_StartInstanceResponse_descriptor =
-        getDescriptor().getMessageTypes().get(10);
-    internal_static_google_cloud_baremetalsolution_v2_StartInstanceResponse_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_baremetalsolution_v2_StartInstanceResponse_descriptor,
-            new java.lang.String[] {});
-    internal_static_google_cloud_baremetalsolution_v2_StopInstanceResponse_descriptor =
-        getDescriptor().getMessageTypes().get(11);
-    internal_static_google_cloud_baremetalsolution_v2_StopInstanceResponse_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_baremetalsolution_v2_StopInstanceResponse_descriptor,
-            new java.lang.String[] {});
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
@@ -316,8 +399,10 @@ public final class InstanceProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.baremetalsolution.v2.CommonProto.getDescriptor();
     com.google.cloud.baremetalsolution.v2.LunProto.getDescriptor();
     com.google.cloud.baremetalsolution.v2.NetworkProto.getDescriptor();
+    com.google.cloud.baremetalsolution.v2.VolumeProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

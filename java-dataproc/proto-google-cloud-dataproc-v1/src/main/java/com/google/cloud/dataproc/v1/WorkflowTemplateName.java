@@ -243,7 +243,7 @@ public class WorkflowTemplateName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       WorkflowTemplateName that = ((WorkflowTemplateName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.region, that.region)

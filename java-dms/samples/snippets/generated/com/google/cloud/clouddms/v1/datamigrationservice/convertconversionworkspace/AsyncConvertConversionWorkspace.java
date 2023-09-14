@@ -44,6 +44,7 @@ public class AsyncConvertConversionWorkspace {
                       .toString())
               .setAutoCommit(true)
               .setFilter("filter-1274492040")
+              .setConvertFullPath(true)
               .build();
       ApiFuture<Operation> future =
           dataMigrationServiceClient.convertConversionWorkspaceCallable().futureCall(request);

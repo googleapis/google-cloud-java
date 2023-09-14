@@ -89,6 +89,43 @@ public interface DistanceLimitOrBuilder
    *
    *
    * <pre>
+   * Cost per kilometer incurred, increasing up to `soft_max_meters`, with
+   * formula:
+   * ```
+   *   min(distance_meters, soft_max_meters) / 1000.0 *
+   *   cost_per_kilometer_below_soft_max.
+   * ```
+   * This cost is not supported in `route_distance_limit`.
+   * </pre>
+   *
+   * <code>optional double cost_per_kilometer_below_soft_max = 4;</code>
+   *
+   * @return Whether the costPerKilometerBelowSoftMax field is set.
+   */
+  boolean hasCostPerKilometerBelowSoftMax();
+  /**
+   *
+   *
+   * <pre>
+   * Cost per kilometer incurred, increasing up to `soft_max_meters`, with
+   * formula:
+   * ```
+   *   min(distance_meters, soft_max_meters) / 1000.0 *
+   *   cost_per_kilometer_below_soft_max.
+   * ```
+   * This cost is not supported in `route_distance_limit`.
+   * </pre>
+   *
+   * <code>optional double cost_per_kilometer_below_soft_max = 4;</code>
+   *
+   * @return The costPerKilometerBelowSoftMax.
+   */
+  double getCostPerKilometerBelowSoftMax();
+
+  /**
+   *
+   *
+   * <pre>
    * Cost per kilometer incurred if distance is above `soft_max_meters` limit.
    * The additional cost is 0 if the distance is under the limit, otherwise the
    * formula used to compute the cost is the following:

@@ -651,6 +651,8 @@ public final class NotificationChannelServiceGrpc {
      *
      * <pre>
      * Lists the notification channels that have been created for the project.
+     * To list the types of notification channels that are supported, use
+     * the `ListNotificationChannelDescriptors` method.
      * </pre>
      */
     default void listNotificationChannels(
@@ -686,6 +688,10 @@ public final class NotificationChannelServiceGrpc {
      * <pre>
      * Creates a new notification channel, representing a single notification
      * endpoint such as an email address, SMS number, or PagerDuty service.
+     * Design your application to single-thread API calls that modify the state of
+     * notification channels in a single project. This includes calls to
+     * CreateNotificationChannel, DeleteNotificationChannel and
+     * UpdateNotificationChannel.
      * </pre>
      */
     default void createNotificationChannel(
@@ -702,6 +708,10 @@ public final class NotificationChannelServiceGrpc {
      * <pre>
      * Updates a notification channel. Fields not specified in the field mask
      * remain unchanged.
+     * Design your application to single-thread API calls that modify the state of
+     * notification channels in a single project. This includes calls to
+     * CreateNotificationChannel, DeleteNotificationChannel and
+     * UpdateNotificationChannel.
      * </pre>
      */
     default void updateNotificationChannel(
@@ -717,6 +727,10 @@ public final class NotificationChannelServiceGrpc {
      *
      * <pre>
      * Deletes a notification channel.
+     * Design your application to single-thread API calls that modify the state of
+     * notification channels in a single project. This includes calls to
+     * CreateNotificationChannel, DeleteNotificationChannel and
+     * UpdateNotificationChannel.
      * </pre>
      */
     default void deleteNotificationChannel(
@@ -874,6 +888,8 @@ public final class NotificationChannelServiceGrpc {
      *
      * <pre>
      * Lists the notification channels that have been created for the project.
+     * To list the types of notification channels that are supported, use
+     * the `ListNotificationChannelDescriptors` method.
      * </pre>
      */
     public void listNotificationChannels(
@@ -913,6 +929,10 @@ public final class NotificationChannelServiceGrpc {
      * <pre>
      * Creates a new notification channel, representing a single notification
      * endpoint such as an email address, SMS number, or PagerDuty service.
+     * Design your application to single-thread API calls that modify the state of
+     * notification channels in a single project. This includes calls to
+     * CreateNotificationChannel, DeleteNotificationChannel and
+     * UpdateNotificationChannel.
      * </pre>
      */
     public void createNotificationChannel(
@@ -931,6 +951,10 @@ public final class NotificationChannelServiceGrpc {
      * <pre>
      * Updates a notification channel. Fields not specified in the field mask
      * remain unchanged.
+     * Design your application to single-thread API calls that modify the state of
+     * notification channels in a single project. This includes calls to
+     * CreateNotificationChannel, DeleteNotificationChannel and
+     * UpdateNotificationChannel.
      * </pre>
      */
     public void updateNotificationChannel(
@@ -948,6 +972,10 @@ public final class NotificationChannelServiceGrpc {
      *
      * <pre>
      * Deletes a notification channel.
+     * Design your application to single-thread API calls that modify the state of
+     * notification channels in a single project. This includes calls to
+     * CreateNotificationChannel, DeleteNotificationChannel and
+     * UpdateNotificationChannel.
      * </pre>
      */
     public void deleteNotificationChannel(
@@ -1089,6 +1117,8 @@ public final class NotificationChannelServiceGrpc {
      *
      * <pre>
      * Lists the notification channels that have been created for the project.
+     * To list the types of notification channels that are supported, use
+     * the `ListNotificationChannelDescriptors` method.
      * </pre>
      */
     public com.google.monitoring.v3.ListNotificationChannelsResponse listNotificationChannels(
@@ -1120,6 +1150,10 @@ public final class NotificationChannelServiceGrpc {
      * <pre>
      * Creates a new notification channel, representing a single notification
      * endpoint such as an email address, SMS number, or PagerDuty service.
+     * Design your application to single-thread API calls that modify the state of
+     * notification channels in a single project. This includes calls to
+     * CreateNotificationChannel, DeleteNotificationChannel and
+     * UpdateNotificationChannel.
      * </pre>
      */
     public com.google.monitoring.v3.NotificationChannel createNotificationChannel(
@@ -1134,6 +1168,10 @@ public final class NotificationChannelServiceGrpc {
      * <pre>
      * Updates a notification channel. Fields not specified in the field mask
      * remain unchanged.
+     * Design your application to single-thread API calls that modify the state of
+     * notification channels in a single project. This includes calls to
+     * CreateNotificationChannel, DeleteNotificationChannel and
+     * UpdateNotificationChannel.
      * </pre>
      */
     public com.google.monitoring.v3.NotificationChannel updateNotificationChannel(
@@ -1147,6 +1185,10 @@ public final class NotificationChannelServiceGrpc {
      *
      * <pre>
      * Deletes a notification channel.
+     * Design your application to single-thread API calls that modify the state of
+     * notification channels in a single project. This includes calls to
+     * CreateNotificationChannel, DeleteNotificationChannel and
+     * UpdateNotificationChannel.
      * </pre>
      */
     public com.google.protobuf.Empty deleteNotificationChannel(
@@ -1285,6 +1327,8 @@ public final class NotificationChannelServiceGrpc {
      *
      * <pre>
      * Lists the notification channels that have been created for the project.
+     * To list the types of notification channels that are supported, use
+     * the `ListNotificationChannelDescriptors` method.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1318,6 +1362,10 @@ public final class NotificationChannelServiceGrpc {
      * <pre>
      * Creates a new notification channel, representing a single notification
      * endpoint such as an email address, SMS number, or PagerDuty service.
+     * Design your application to single-thread API calls that modify the state of
+     * notification channels in a single project. This includes calls to
+     * CreateNotificationChannel, DeleteNotificationChannel and
+     * UpdateNotificationChannel.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1334,6 +1382,10 @@ public final class NotificationChannelServiceGrpc {
      * <pre>
      * Updates a notification channel. Fields not specified in the field mask
      * remain unchanged.
+     * Design your application to single-thread API calls that modify the state of
+     * notification channels in a single project. This includes calls to
+     * CreateNotificationChannel, DeleteNotificationChannel and
+     * UpdateNotificationChannel.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -1349,6 +1401,10 @@ public final class NotificationChannelServiceGrpc {
      *
      * <pre>
      * Deletes a notification channel.
+     * Design your application to single-thread API calls that modify the state of
+     * notification channels in a single project. This includes calls to
+     * CreateNotificationChannel, DeleteNotificationChannel and
+     * UpdateNotificationChannel.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>

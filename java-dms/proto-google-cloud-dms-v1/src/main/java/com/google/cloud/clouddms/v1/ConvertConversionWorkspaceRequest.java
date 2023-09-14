@@ -123,11 +123,11 @@ public final class ConvertConversionWorkspaceRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Specifies whether the conversion workspace is to be committed automatically
-   * after the conversion.
+   * Optional. Specifies whether the conversion workspace is to be committed
+   * automatically after the conversion.
    * </pre>
    *
-   * <code>bool auto_commit = 4;</code>
+   * <code>bool auto_commit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The autoCommit.
    */
@@ -144,11 +144,11 @@ public final class ConvertConversionWorkspaceRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Filter the entities to convert. Leaving this field empty will convert all
-   * of the entities. Supports Google AIP-160 style filtering.
+   * Optional. Filter the entities to convert. Leaving this field empty will
+   * convert all of the entities. Supports Google AIP-160 style filtering.
    * </pre>
    *
-   * <code>string filter = 5;</code>
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -168,11 +168,11 @@ public final class ConvertConversionWorkspaceRequest extends com.google.protobuf
    *
    *
    * <pre>
-   * Filter the entities to convert. Leaving this field empty will convert all
-   * of the entities. Supports Google AIP-160 style filtering.
+   * Optional. Filter the entities to convert. Leaving this field empty will
+   * convert all of the entities. Supports Google AIP-160 style filtering.
    * </pre>
    *
-   * <code>string filter = 5;</code>
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
@@ -187,6 +187,26 @@ public final class ConvertConversionWorkspaceRequest extends com.google.protobuf
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int CONVERT_FULL_PATH_FIELD_NUMBER = 6;
+  private boolean convertFullPath_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Automatically convert the full entity path for each entity
+   * specified by the filter. For example, if the filter specifies a table, that
+   * table schema (and database if there is one) will also be converted.
+   * </pre>
+   *
+   * <code>bool convert_full_path = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The convertFullPath.
+   */
+  @java.lang.Override
+  public boolean getConvertFullPath() {
+    return convertFullPath_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -212,6 +232,9 @@ public final class ConvertConversionWorkspaceRequest extends com.google.protobuf
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, filter_);
     }
+    if (convertFullPath_ != false) {
+      output.writeBool(6, convertFullPath_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -229,6 +252,9 @@ public final class ConvertConversionWorkspaceRequest extends com.google.protobuf
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(filter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, filter_);
+    }
+    if (convertFullPath_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, convertFullPath_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -249,6 +275,7 @@ public final class ConvertConversionWorkspaceRequest extends com.google.protobuf
     if (!getName().equals(other.getName())) return false;
     if (getAutoCommit() != other.getAutoCommit()) return false;
     if (!getFilter().equals(other.getFilter())) return false;
+    if (getConvertFullPath() != other.getConvertFullPath()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -266,6 +293,8 @@ public final class ConvertConversionWorkspaceRequest extends com.google.protobuf
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoCommit());
     hash = (37 * hash) + FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFilter().hashCode();
+    hash = (37 * hash) + CONVERT_FULL_PATH_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getConvertFullPath());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -409,6 +438,7 @@ public final class ConvertConversionWorkspaceRequest extends com.google.protobuf
       name_ = "";
       autoCommit_ = false;
       filter_ = "";
+      convertFullPath_ = false;
       return this;
     }
 
@@ -455,6 +485,9 @@ public final class ConvertConversionWorkspaceRequest extends com.google.protobuf
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.filter_ = filter_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.convertFullPath_ = convertFullPath_;
       }
     }
 
@@ -518,6 +551,9 @@ public final class ConvertConversionWorkspaceRequest extends com.google.protobuf
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.getConvertFullPath() != false) {
+        setConvertFullPath(other.getConvertFullPath());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -562,6 +598,12 @@ public final class ConvertConversionWorkspaceRequest extends com.google.protobuf
                 bitField0_ |= 0x00000004;
                 break;
               } // case 42
+            case 48:
+              {
+                convertFullPath_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -697,11 +739,11 @@ public final class ConvertConversionWorkspaceRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Specifies whether the conversion workspace is to be committed automatically
-     * after the conversion.
+     * Optional. Specifies whether the conversion workspace is to be committed
+     * automatically after the conversion.
      * </pre>
      *
-     * <code>bool auto_commit = 4;</code>
+     * <code>bool auto_commit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The autoCommit.
      */
@@ -713,11 +755,11 @@ public final class ConvertConversionWorkspaceRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Specifies whether the conversion workspace is to be committed automatically
-     * after the conversion.
+     * Optional. Specifies whether the conversion workspace is to be committed
+     * automatically after the conversion.
      * </pre>
      *
-     * <code>bool auto_commit = 4;</code>
+     * <code>bool auto_commit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The autoCommit to set.
      * @return This builder for chaining.
@@ -733,11 +775,11 @@ public final class ConvertConversionWorkspaceRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Specifies whether the conversion workspace is to be committed automatically
-     * after the conversion.
+     * Optional. Specifies whether the conversion workspace is to be committed
+     * automatically after the conversion.
      * </pre>
      *
-     * <code>bool auto_commit = 4;</code>
+     * <code>bool auto_commit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -753,11 +795,11 @@ public final class ConvertConversionWorkspaceRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Filter the entities to convert. Leaving this field empty will convert all
-     * of the entities. Supports Google AIP-160 style filtering.
+     * Optional. Filter the entities to convert. Leaving this field empty will
+     * convert all of the entities. Supports Google AIP-160 style filtering.
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The filter.
      */
@@ -776,11 +818,11 @@ public final class ConvertConversionWorkspaceRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Filter the entities to convert. Leaving this field empty will convert all
-     * of the entities. Supports Google AIP-160 style filtering.
+     * Optional. Filter the entities to convert. Leaving this field empty will
+     * convert all of the entities. Supports Google AIP-160 style filtering.
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for filter.
      */
@@ -799,11 +841,11 @@ public final class ConvertConversionWorkspaceRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Filter the entities to convert. Leaving this field empty will convert all
-     * of the entities. Supports Google AIP-160 style filtering.
+     * Optional. Filter the entities to convert. Leaving this field empty will
+     * convert all of the entities. Supports Google AIP-160 style filtering.
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The filter to set.
      * @return This builder for chaining.
@@ -821,11 +863,11 @@ public final class ConvertConversionWorkspaceRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Filter the entities to convert. Leaving this field empty will convert all
-     * of the entities. Supports Google AIP-160 style filtering.
+     * Optional. Filter the entities to convert. Leaving this field empty will
+     * convert all of the entities. Supports Google AIP-160 style filtering.
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -839,11 +881,11 @@ public final class ConvertConversionWorkspaceRequest extends com.google.protobuf
      *
      *
      * <pre>
-     * Filter the entities to convert. Leaving this field empty will convert all
-     * of the entities. Supports Google AIP-160 style filtering.
+     * Optional. Filter the entities to convert. Leaving this field empty will
+     * convert all of the entities. Supports Google AIP-160 style filtering.
      * </pre>
      *
-     * <code>string filter = 5;</code>
+     * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for filter to set.
      * @return This builder for chaining.
@@ -855,6 +897,65 @@ public final class ConvertConversionWorkspaceRequest extends com.google.protobuf
       checkByteStringIsUtf8(value);
       filter_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private boolean convertFullPath_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automatically convert the full entity path for each entity
+     * specified by the filter. For example, if the filter specifies a table, that
+     * table schema (and database if there is one) will also be converted.
+     * </pre>
+     *
+     * <code>bool convert_full_path = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The convertFullPath.
+     */
+    @java.lang.Override
+    public boolean getConvertFullPath() {
+      return convertFullPath_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automatically convert the full entity path for each entity
+     * specified by the filter. For example, if the filter specifies a table, that
+     * table schema (and database if there is one) will also be converted.
+     * </pre>
+     *
+     * <code>bool convert_full_path = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The convertFullPath to set.
+     * @return This builder for chaining.
+     */
+    public Builder setConvertFullPath(boolean value) {
+
+      convertFullPath_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Automatically convert the full entity path for each entity
+     * specified by the filter. For example, if the filter specifies a table, that
+     * table schema (and database if there is one) will also be converted.
+     * </pre>
+     *
+     * <code>bool convert_full_path = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearConvertFullPath() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      convertFullPath_ = false;
       onChanged();
       return this;
     }

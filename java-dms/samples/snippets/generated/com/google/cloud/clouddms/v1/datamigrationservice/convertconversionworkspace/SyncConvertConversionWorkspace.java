@@ -43,6 +43,7 @@ public class SyncConvertConversionWorkspace {
                       .toString())
               .setAutoCommit(true)
               .setFilter("filter-1274492040")
+              .setConvertFullPath(true)
               .build();
       ConversionWorkspace response =
           dataMigrationServiceClient.convertConversionWorkspaceAsync(request).get();

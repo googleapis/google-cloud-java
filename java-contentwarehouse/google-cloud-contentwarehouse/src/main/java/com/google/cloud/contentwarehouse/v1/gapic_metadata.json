@@ -83,6 +83,18 @@
         }
       }
     },
+    "PipelineService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PipelineServiceClient",
+          "rpcs": {
+            "RunPipeline": {
+              "methods": ["runPipelineAsync", "runPipelineAsync", "runPipelineAsync", "runPipelineOperationCallable", "runPipelineCallable"]
+            }
+          }
+        }
+      }
+    },
     "RuleSetService": {
       "clients": {
         "grpc": {

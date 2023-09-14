@@ -41,6 +41,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     ipAddress_ = "";
     instance_ = "";
     forwardingRule_ = "";
+    forwardingRuleTarget_ = 0;
+    loadBalancerId_ = "";
+    loadBalancerType_ = 0;
     gkeMasterCluster_ = "";
     cloudSqlInstance_ = "";
     network_ = "";
@@ -235,6 +238,2232 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.networkmanagement.v1.Endpoint.NetworkType)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Type of the target of a forwarding rule.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget}
+   */
+  public enum ForwardingRuleTarget implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Forwarding rule target is unknown.
+     * </pre>
+     *
+     * <code>FORWARDING_RULE_TARGET_UNSPECIFIED = 0;</code>
+     */
+    FORWARDING_RULE_TARGET_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine instance for protocol forwarding.
+     * </pre>
+     *
+     * <code>INSTANCE = 1;</code>
+     */
+    INSTANCE(1),
+    /**
+     *
+     *
+     * <pre>
+     * Load Balancer. The specific type can be found from [load_balancer_type]
+     * [google.cloud.networkmanagement.v1.Endpoint.load_balancer_type].
+     * </pre>
+     *
+     * <code>LOAD_BALANCER = 2;</code>
+     */
+    LOAD_BALANCER(2),
+    /**
+     *
+     *
+     * <pre>
+     * Classic Cloud VPN Gateway.
+     * </pre>
+     *
+     * <code>VPN_GATEWAY = 3;</code>
+     */
+    VPN_GATEWAY(3),
+    /**
+     *
+     *
+     * <pre>
+     * Forwarding Rule is a Private Service Connect endpoint.
+     * </pre>
+     *
+     * <code>PSC = 4;</code>
+     */
+    PSC(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Forwarding rule target is unknown.
+     * </pre>
+     *
+     * <code>FORWARDING_RULE_TARGET_UNSPECIFIED = 0;</code>
+     */
+    public static final int FORWARDING_RULE_TARGET_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine instance for protocol forwarding.
+     * </pre>
+     *
+     * <code>INSTANCE = 1;</code>
+     */
+    public static final int INSTANCE_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Load Balancer. The specific type can be found from [load_balancer_type]
+     * [google.cloud.networkmanagement.v1.Endpoint.load_balancer_type].
+     * </pre>
+     *
+     * <code>LOAD_BALANCER = 2;</code>
+     */
+    public static final int LOAD_BALANCER_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Classic Cloud VPN Gateway.
+     * </pre>
+     *
+     * <code>VPN_GATEWAY = 3;</code>
+     */
+    public static final int VPN_GATEWAY_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Forwarding Rule is a Private Service Connect endpoint.
+     * </pre>
+     *
+     * <code>PSC = 4;</code>
+     */
+    public static final int PSC_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ForwardingRuleTarget valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static ForwardingRuleTarget forNumber(int value) {
+      switch (value) {
+        case 0:
+          return FORWARDING_RULE_TARGET_UNSPECIFIED;
+        case 1:
+          return INSTANCE;
+        case 2:
+          return LOAD_BALANCER;
+        case 3:
+          return VPN_GATEWAY;
+        case 4:
+          return PSC;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<ForwardingRuleTarget>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<ForwardingRuleTarget>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ForwardingRuleTarget>() {
+              public ForwardingRuleTarget findValueByNumber(int number) {
+                return ForwardingRuleTarget.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.networkmanagement.v1.Endpoint.getDescriptor().getEnumTypes().get(1);
+    }
+
+    private static final ForwardingRuleTarget[] VALUES = values();
+
+    public static ForwardingRuleTarget valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private ForwardingRuleTarget(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget)
+  }
+
+  public interface CloudFunctionEndpointOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Function](https://cloud.google.com/functions) name.
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
+     * @return The uri.
+     */
+    java.lang.String getUri();
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Function](https://cloud.google.com/functions) name.
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
+     * @return The bytes for uri.
+     */
+    com.google.protobuf.ByteString getUriBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Wrapper for Cloud Function attributes.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint}
+   */
+  public static final class CloudFunctionEndpoint extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint)
+      CloudFunctionEndpointOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use CloudFunctionEndpoint.newBuilder() to construct.
+    private CloudFunctionEndpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private CloudFunctionEndpoint() {
+      uri_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CloudFunctionEndpoint();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.networkmanagement.v1.TestOuterClass
+          .internal_static_google_cloud_networkmanagement_v1_Endpoint_CloudFunctionEndpoint_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.networkmanagement.v1.TestOuterClass
+          .internal_static_google_cloud_networkmanagement_v1_Endpoint_CloudFunctionEndpoint_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint.class,
+              com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint.Builder.class);
+    }
+
+    public static final int URI_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object uri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Function](https://cloud.google.com/functions) name.
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
+     * @return The uri.
+     */
+    @java.lang.Override
+    public java.lang.String getUri() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uri_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Function](https://cloud.google.com/functions) name.
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
+     * @return The bytes for uri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getUriBytes() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        uri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint other =
+          (com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint) obj;
+
+      if (!getUri().equals(other.getUri())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + URI_FIELD_NUMBER;
+      hash = (53 * hash) + getUri().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Wrapper for Cloud Function attributes.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint)
+        com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpointOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.networkmanagement.v1.TestOuterClass
+            .internal_static_google_cloud_networkmanagement_v1_Endpoint_CloudFunctionEndpoint_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.networkmanagement.v1.TestOuterClass
+            .internal_static_google_cloud_networkmanagement_v1_Endpoint_CloudFunctionEndpoint_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint.class,
+                com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        uri_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.networkmanagement.v1.TestOuterClass
+            .internal_static_google_cloud_networkmanagement_v1_Endpoint_CloudFunctionEndpoint_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint
+          getDefaultInstanceForType() {
+        return com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint build() {
+        com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint buildPartial() {
+        com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint result =
+            new com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uri_ = uri_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint) {
+          return mergeFrom(
+              (com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint other) {
+        if (other
+            == com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint
+                .getDefaultInstance()) return this;
+        if (!other.getUri().isEmpty()) {
+          uri_ = other.uri_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  uri_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object uri_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * A [Cloud Function](https://cloud.google.com/functions) name.
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The uri.
+       */
+      public java.lang.String getUri() {
+        java.lang.Object ref = uri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A [Cloud Function](https://cloud.google.com/functions) name.
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The bytes for uri.
+       */
+      public com.google.protobuf.ByteString getUriBytes() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          uri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A [Cloud Function](https://cloud.google.com/functions) name.
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @param value The uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        uri_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A [Cloud Function](https://cloud.google.com/functions) name.
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUri() {
+        uri_ = getDefaultInstance().getUri();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A [Cloud Function](https://cloud.google.com/functions) name.
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @param value The bytes for uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        uri_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint)
+    private static final com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint();
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CloudFunctionEndpoint> PARSER =
+        new com.google.protobuf.AbstractParser<CloudFunctionEndpoint>() {
+          @java.lang.Override
+          public CloudFunctionEndpoint parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<CloudFunctionEndpoint> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CloudFunctionEndpoint> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface AppEngineVersionEndpointOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * An [App Engine](https://cloud.google.com/appengine) [service
+     * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions)
+     * name.
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
+     * @return The uri.
+     */
+    java.lang.String getUri();
+    /**
+     *
+     *
+     * <pre>
+     * An [App Engine](https://cloud.google.com/appengine) [service
+     * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions)
+     * name.
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
+     * @return The bytes for uri.
+     */
+    com.google.protobuf.ByteString getUriBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Wrapper for the App Engine service version attributes.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint}
+   */
+  public static final class AppEngineVersionEndpoint extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint)
+      AppEngineVersionEndpointOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use AppEngineVersionEndpoint.newBuilder() to construct.
+    private AppEngineVersionEndpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AppEngineVersionEndpoint() {
+      uri_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AppEngineVersionEndpoint();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.networkmanagement.v1.TestOuterClass
+          .internal_static_google_cloud_networkmanagement_v1_Endpoint_AppEngineVersionEndpoint_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.networkmanagement.v1.TestOuterClass
+          .internal_static_google_cloud_networkmanagement_v1_Endpoint_AppEngineVersionEndpoint_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint.class,
+              com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint.Builder
+                  .class);
+    }
+
+    public static final int URI_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object uri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * An [App Engine](https://cloud.google.com/appengine) [service
+     * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions)
+     * name.
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
+     * @return The uri.
+     */
+    @java.lang.Override
+    public java.lang.String getUri() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uri_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An [App Engine](https://cloud.google.com/appengine) [service
+     * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions)
+     * name.
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
+     * @return The bytes for uri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getUriBytes() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        uri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint other =
+          (com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint) obj;
+
+      if (!getUri().equals(other.getUri())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + URI_FIELD_NUMBER;
+      hash = (53 * hash) + getUri().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Wrapper for the App Engine service version attributes.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint)
+        com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpointOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.networkmanagement.v1.TestOuterClass
+            .internal_static_google_cloud_networkmanagement_v1_Endpoint_AppEngineVersionEndpoint_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.networkmanagement.v1.TestOuterClass
+            .internal_static_google_cloud_networkmanagement_v1_Endpoint_AppEngineVersionEndpoint_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint.class,
+                com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        uri_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.networkmanagement.v1.TestOuterClass
+            .internal_static_google_cloud_networkmanagement_v1_Endpoint_AppEngineVersionEndpoint_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint
+          getDefaultInstanceForType() {
+        return com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint build() {
+        com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint
+          buildPartial() {
+        com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint result =
+            new com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uri_ = uri_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint) {
+          return mergeFrom(
+              (com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint other) {
+        if (other
+            == com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint
+                .getDefaultInstance()) return this;
+        if (!other.getUri().isEmpty()) {
+          uri_ = other.uri_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  uri_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object uri_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * An [App Engine](https://cloud.google.com/appengine) [service
+       * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions)
+       * name.
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The uri.
+       */
+      public java.lang.String getUri() {
+        java.lang.Object ref = uri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An [App Engine](https://cloud.google.com/appengine) [service
+       * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions)
+       * name.
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The bytes for uri.
+       */
+      public com.google.protobuf.ByteString getUriBytes() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          uri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An [App Engine](https://cloud.google.com/appengine) [service
+       * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions)
+       * name.
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @param value The uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        uri_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An [App Engine](https://cloud.google.com/appengine) [service
+       * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions)
+       * name.
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUri() {
+        uri_ = getDefaultInstance().getUri();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * An [App Engine](https://cloud.google.com/appengine) [service
+       * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions)
+       * name.
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @param value The bytes for uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        uri_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint)
+    private static final com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint();
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AppEngineVersionEndpoint> PARSER =
+        new com.google.protobuf.AbstractParser<AppEngineVersionEndpoint>() {
+          @java.lang.Override
+          public AppEngineVersionEndpoint parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AppEngineVersionEndpoint> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AppEngineVersionEndpoint> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface CloudRunRevisionEndpointOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Run](https://cloud.google.com/run)
+     * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+     * URI. The format is:
+     * projects/{project}/locations/{location}/revisions/{revision}
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
+     * @return The uri.
+     */
+    java.lang.String getUri();
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Run](https://cloud.google.com/run)
+     * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+     * URI. The format is:
+     * projects/{project}/locations/{location}/revisions/{revision}
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
+     * @return The bytes for uri.
+     */
+    com.google.protobuf.ByteString getUriBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Wrapper for Cloud Run revision attributes.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint}
+   */
+  public static final class CloudRunRevisionEndpoint extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint)
+      CloudRunRevisionEndpointOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use CloudRunRevisionEndpoint.newBuilder() to construct.
+    private CloudRunRevisionEndpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private CloudRunRevisionEndpoint() {
+      uri_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CloudRunRevisionEndpoint();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.networkmanagement.v1.TestOuterClass
+          .internal_static_google_cloud_networkmanagement_v1_Endpoint_CloudRunRevisionEndpoint_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.networkmanagement.v1.TestOuterClass
+          .internal_static_google_cloud_networkmanagement_v1_Endpoint_CloudRunRevisionEndpoint_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint.class,
+              com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint.Builder
+                  .class);
+    }
+
+    public static final int URI_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object uri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Run](https://cloud.google.com/run)
+     * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+     * URI. The format is:
+     * projects/{project}/locations/{location}/revisions/{revision}
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
+     * @return The uri.
+     */
+    @java.lang.Override
+    public java.lang.String getUri() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uri_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Run](https://cloud.google.com/run)
+     * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+     * URI. The format is:
+     * projects/{project}/locations/{location}/revisions/{revision}
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
+     * @return The bytes for uri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getUriBytes() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        uri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint other =
+          (com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint) obj;
+
+      if (!getUri().equals(other.getUri())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + URI_FIELD_NUMBER;
+      hash = (53 * hash) + getUri().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Wrapper for Cloud Run revision attributes.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint)
+        com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpointOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.networkmanagement.v1.TestOuterClass
+            .internal_static_google_cloud_networkmanagement_v1_Endpoint_CloudRunRevisionEndpoint_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.networkmanagement.v1.TestOuterClass
+            .internal_static_google_cloud_networkmanagement_v1_Endpoint_CloudRunRevisionEndpoint_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint.class,
+                com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        uri_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.networkmanagement.v1.TestOuterClass
+            .internal_static_google_cloud_networkmanagement_v1_Endpoint_CloudRunRevisionEndpoint_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint
+          getDefaultInstanceForType() {
+        return com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint build() {
+        com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint
+          buildPartial() {
+        com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint result =
+            new com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uri_ = uri_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint) {
+          return mergeFrom(
+              (com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint other) {
+        if (other
+            == com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint
+                .getDefaultInstance()) return this;
+        if (!other.getUri().isEmpty()) {
+          uri_ = other.uri_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  uri_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object uri_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * A [Cloud Run](https://cloud.google.com/run)
+       * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+       * URI. The format is:
+       * projects/{project}/locations/{location}/revisions/{revision}
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The uri.
+       */
+      public java.lang.String getUri() {
+        java.lang.Object ref = uri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          uri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A [Cloud Run](https://cloud.google.com/run)
+       * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+       * URI. The format is:
+       * projects/{project}/locations/{location}/revisions/{revision}
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return The bytes for uri.
+       */
+      public com.google.protobuf.ByteString getUriBytes() {
+        java.lang.Object ref = uri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          uri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A [Cloud Run](https://cloud.google.com/run)
+       * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+       * URI. The format is:
+       * projects/{project}/locations/{location}/revisions/{revision}
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @param value The uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        uri_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A [Cloud Run](https://cloud.google.com/run)
+       * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+       * URI. The format is:
+       * projects/{project}/locations/{location}/revisions/{revision}
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearUri() {
+        uri_ = getDefaultInstance().getUri();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A [Cloud Run](https://cloud.google.com/run)
+       * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+       * URI. The format is:
+       * projects/{project}/locations/{location}/revisions/{revision}
+       * </pre>
+       *
+       * <code>string uri = 1;</code>
+       *
+       * @param value The bytes for uri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        uri_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint)
+    private static final com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint();
+    }
+
+    public static com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CloudRunRevisionEndpoint> PARSER =
+        new com.google.protobuf.AbstractParser<CloudRunRevisionEndpoint>() {
+          @java.lang.Override
+          public CloudRunRevisionEndpoint parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<CloudRunRevisionEndpoint> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CloudRunRevisionEndpoint> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   public static final int IP_ADDRESS_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -245,7 +2474,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The IP address of the endpoint, which can be an external or internal IP.
    * An IPv6 address is only allowed when the test's destination is a
-   * [global load balancer VIP](/load-balancing/docs/load-balancing-overview).
+   * [global load balancer
+   * VIP](https://cloud.google.com/load-balancing/docs/load-balancing-overview).
    * </pre>
    *
    * <code>string ip_address = 1;</code>
@@ -270,7 +2500,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * The IP address of the endpoint, which can be an external or internal IP.
    * An IPv6 address is only allowed when the test's destination is a
-   * [global load balancer VIP](/load-balancing/docs/load-balancing-overview).
+   * [global load balancer
+   * VIP](https://cloud.google.com/load-balancing/docs/load-balancing-overview).
    * </pre>
    *
    * <code>string ip_address = 1;</code>
@@ -421,6 +2652,196 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int FORWARDING_RULE_TARGET_FIELD_NUMBER = 14;
+  private int forwardingRuleTarget_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the type of the target of the forwarding rule.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget forwarding_rule_target = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the forwardingRuleTarget field is set.
+   */
+  @java.lang.Override
+  public boolean hasForwardingRuleTarget() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the type of the target of the forwarding rule.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget forwarding_rule_target = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for forwardingRuleTarget.
+   */
+  @java.lang.Override
+  public int getForwardingRuleTargetValue() {
+    return forwardingRuleTarget_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the type of the target of the forwarding rule.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget forwarding_rule_target = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The forwardingRuleTarget.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget
+      getForwardingRuleTarget() {
+    com.google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget result =
+        com.google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget.forNumber(
+            forwardingRuleTarget_);
+    return result == null
+        ? com.google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int LOAD_BALANCER_ID_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object loadBalancerId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. ID of the load balancer the forwarding rule points to. Empty
+   * for forwarding rules not related to load balancers.
+   * </pre>
+   *
+   * <code>optional string load_balancer_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the loadBalancerId field is set.
+   */
+  @java.lang.Override
+  public boolean hasLoadBalancerId() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. ID of the load balancer the forwarding rule points to. Empty
+   * for forwarding rules not related to load balancers.
+   * </pre>
+   *
+   * <code>optional string load_balancer_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The loadBalancerId.
+   */
+  @java.lang.Override
+  public java.lang.String getLoadBalancerId() {
+    java.lang.Object ref = loadBalancerId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      loadBalancerId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. ID of the load balancer the forwarding rule points to. Empty
+   * for forwarding rules not related to load balancers.
+   * </pre>
+   *
+   * <code>optional string load_balancer_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for loadBalancerId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLoadBalancerIdBytes() {
+    java.lang.Object ref = loadBalancerId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      loadBalancerId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LOAD_BALANCER_TYPE_FIELD_NUMBER = 16;
+  private int loadBalancerType_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Type of the load balancer the forwarding rule points to.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkmanagement.v1.LoadBalancerType load_balancer_type = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the loadBalancerType field is set.
+   */
+  @java.lang.Override
+  public boolean hasLoadBalancerType() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Type of the load balancer the forwarding rule points to.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkmanagement.v1.LoadBalancerType load_balancer_type = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for loadBalancerType.
+   */
+  @java.lang.Override
+  public int getLoadBalancerTypeValue() {
+    return loadBalancerType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Type of the load balancer the forwarding rule points to.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkmanagement.v1.LoadBalancerType load_balancer_type = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The loadBalancerType.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.LoadBalancerType getLoadBalancerType() {
+    com.google.cloud.networkmanagement.v1.LoadBalancerType result =
+        com.google.cloud.networkmanagement.v1.LoadBalancerType.forNumber(loadBalancerType_);
+    return result == null
+        ? com.google.cloud.networkmanagement.v1.LoadBalancerType.UNRECOGNIZED
+        : result;
+  }
+
   public static final int GKE_MASTER_CLUSTER_FIELD_NUMBER = 7;
 
   @SuppressWarnings("serial")
@@ -523,6 +2944,186 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int CLOUD_FUNCTION_FIELD_NUMBER = 10;
+  private com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloudFunction_;
+  /**
+   *
+   *
+   * <pre>
+   * A [Cloud Function](https://cloud.google.com/functions).
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloud_function = 10;
+   * </code>
+   *
+   * @return Whether the cloudFunction field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudFunction() {
+    return cloudFunction_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A [Cloud Function](https://cloud.google.com/functions).
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloud_function = 10;
+   * </code>
+   *
+   * @return The cloudFunction.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint getCloudFunction() {
+    return cloudFunction_ == null
+        ? com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint.getDefaultInstance()
+        : cloudFunction_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A [Cloud Function](https://cloud.google.com/functions).
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloud_function = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpointOrBuilder
+      getCloudFunctionOrBuilder() {
+    return cloudFunction_ == null
+        ? com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint.getDefaultInstance()
+        : cloudFunction_;
+  }
+
+  public static final int APP_ENGINE_VERSION_FIELD_NUMBER = 11;
+  private com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint appEngineVersion_;
+  /**
+   *
+   *
+   * <pre>
+   * An [App Engine](https://cloud.google.com/appengine) [service
+   * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint app_engine_version = 11;
+   * </code>
+   *
+   * @return Whether the appEngineVersion field is set.
+   */
+  @java.lang.Override
+  public boolean hasAppEngineVersion() {
+    return appEngineVersion_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An [App Engine](https://cloud.google.com/appengine) [service
+   * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint app_engine_version = 11;
+   * </code>
+   *
+   * @return The appEngineVersion.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint
+      getAppEngineVersion() {
+    return appEngineVersion_ == null
+        ? com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint
+            .getDefaultInstance()
+        : appEngineVersion_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * An [App Engine](https://cloud.google.com/appengine) [service
+   * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint app_engine_version = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpointOrBuilder
+      getAppEngineVersionOrBuilder() {
+    return appEngineVersion_ == null
+        ? com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint
+            .getDefaultInstance()
+        : appEngineVersion_;
+  }
+
+  public static final int CLOUD_RUN_REVISION_FIELD_NUMBER = 12;
+  private com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint cloudRunRevision_;
+  /**
+   *
+   *
+   * <pre>
+   * A [Cloud Run](https://cloud.google.com/run)
+   * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint cloud_run_revision = 12;
+   * </code>
+   *
+   * @return Whether the cloudRunRevision field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudRunRevision() {
+    return cloudRunRevision_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A [Cloud Run](https://cloud.google.com/run)
+   * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint cloud_run_revision = 12;
+   * </code>
+   *
+   * @return The cloudRunRevision.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint
+      getCloudRunRevision() {
+    return cloudRunRevision_ == null
+        ? com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint
+            .getDefaultInstance()
+        : cloudRunRevision_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A [Cloud Run](https://cloud.google.com/run)
+   * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint cloud_run_revision = 12;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpointOrBuilder
+      getCloudRunRevisionOrBuilder() {
+    return cloudRunRevision_ == null
+        ? com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint
+            .getDefaultInstance()
+        : cloudRunRevision_;
   }
 
   public static final int NETWORK_FIELD_NUMBER = 4;
@@ -724,8 +3325,26 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudSqlInstance_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, cloudSqlInstance_);
     }
+    if (cloudFunction_ != null) {
+      output.writeMessage(10, getCloudFunction());
+    }
+    if (appEngineVersion_ != null) {
+      output.writeMessage(11, getAppEngineVersion());
+    }
+    if (cloudRunRevision_ != null) {
+      output.writeMessage(12, getCloudRunRevision());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(forwardingRule_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, forwardingRule_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeEnum(14, forwardingRuleTarget_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, loadBalancerId_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeEnum(16, loadBalancerType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -762,8 +3381,26 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cloudSqlInstance_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, cloudSqlInstance_);
     }
+    if (cloudFunction_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getCloudFunction());
+    }
+    if (appEngineVersion_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getAppEngineVersion());
+    }
+    if (cloudRunRevision_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getCloudRunRevision());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(forwardingRule_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, forwardingRule_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, forwardingRuleTarget_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, loadBalancerId_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(16, loadBalancerType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -785,8 +3422,32 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     if (getPort() != other.getPort()) return false;
     if (!getInstance().equals(other.getInstance())) return false;
     if (!getForwardingRule().equals(other.getForwardingRule())) return false;
+    if (hasForwardingRuleTarget() != other.hasForwardingRuleTarget()) return false;
+    if (hasForwardingRuleTarget()) {
+      if (forwardingRuleTarget_ != other.forwardingRuleTarget_) return false;
+    }
+    if (hasLoadBalancerId() != other.hasLoadBalancerId()) return false;
+    if (hasLoadBalancerId()) {
+      if (!getLoadBalancerId().equals(other.getLoadBalancerId())) return false;
+    }
+    if (hasLoadBalancerType() != other.hasLoadBalancerType()) return false;
+    if (hasLoadBalancerType()) {
+      if (loadBalancerType_ != other.loadBalancerType_) return false;
+    }
     if (!getGkeMasterCluster().equals(other.getGkeMasterCluster())) return false;
     if (!getCloudSqlInstance().equals(other.getCloudSqlInstance())) return false;
+    if (hasCloudFunction() != other.hasCloudFunction()) return false;
+    if (hasCloudFunction()) {
+      if (!getCloudFunction().equals(other.getCloudFunction())) return false;
+    }
+    if (hasAppEngineVersion() != other.hasAppEngineVersion()) return false;
+    if (hasAppEngineVersion()) {
+      if (!getAppEngineVersion().equals(other.getAppEngineVersion())) return false;
+    }
+    if (hasCloudRunRevision() != other.hasCloudRunRevision()) return false;
+    if (hasCloudRunRevision()) {
+      if (!getCloudRunRevision().equals(other.getCloudRunRevision())) return false;
+    }
     if (!getNetwork().equals(other.getNetwork())) return false;
     if (networkType_ != other.networkType_) return false;
     if (!getProjectId().equals(other.getProjectId())) return false;
@@ -809,10 +3470,34 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getInstance().hashCode();
     hash = (37 * hash) + FORWARDING_RULE_FIELD_NUMBER;
     hash = (53 * hash) + getForwardingRule().hashCode();
+    if (hasForwardingRuleTarget()) {
+      hash = (37 * hash) + FORWARDING_RULE_TARGET_FIELD_NUMBER;
+      hash = (53 * hash) + forwardingRuleTarget_;
+    }
+    if (hasLoadBalancerId()) {
+      hash = (37 * hash) + LOAD_BALANCER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getLoadBalancerId().hashCode();
+    }
+    if (hasLoadBalancerType()) {
+      hash = (37 * hash) + LOAD_BALANCER_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + loadBalancerType_;
+    }
     hash = (37 * hash) + GKE_MASTER_CLUSTER_FIELD_NUMBER;
     hash = (53 * hash) + getGkeMasterCluster().hashCode();
     hash = (37 * hash) + CLOUD_SQL_INSTANCE_FIELD_NUMBER;
     hash = (53 * hash) + getCloudSqlInstance().hashCode();
+    if (hasCloudFunction()) {
+      hash = (37 * hash) + CLOUD_FUNCTION_FIELD_NUMBER;
+      hash = (53 * hash) + getCloudFunction().hashCode();
+    }
+    if (hasAppEngineVersion()) {
+      hash = (37 * hash) + APP_ENGINE_VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getAppEngineVersion().hashCode();
+    }
+    if (hasCloudRunRevision()) {
+      hash = (37 * hash) + CLOUD_RUN_REVISION_FIELD_NUMBER;
+      hash = (53 * hash) + getCloudRunRevision().hashCode();
+    }
     hash = (37 * hash) + NETWORK_FIELD_NUMBER;
     hash = (53 * hash) + getNetwork().hashCode();
     hash = (37 * hash) + NETWORK_TYPE_FIELD_NUMBER;
@@ -962,8 +3647,26 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       port_ = 0;
       instance_ = "";
       forwardingRule_ = "";
+      forwardingRuleTarget_ = 0;
+      loadBalancerId_ = "";
+      loadBalancerType_ = 0;
       gkeMasterCluster_ = "";
       cloudSqlInstance_ = "";
+      cloudFunction_ = null;
+      if (cloudFunctionBuilder_ != null) {
+        cloudFunctionBuilder_.dispose();
+        cloudFunctionBuilder_ = null;
+      }
+      appEngineVersion_ = null;
+      if (appEngineVersionBuilder_ != null) {
+        appEngineVersionBuilder_.dispose();
+        appEngineVersionBuilder_ = null;
+      }
+      cloudRunRevision_ = null;
+      if (cloudRunRevisionBuilder_ != null) {
+        cloudRunRevisionBuilder_.dispose();
+        cloudRunRevisionBuilder_ = null;
+      }
       network_ = "";
       networkType_ = 0;
       projectId_ = "";
@@ -1015,21 +3718,47 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.forwardingRule_ = forwardingRule_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.gkeMasterCluster_ = gkeMasterCluster_;
+        result.forwardingRuleTarget_ = forwardingRuleTarget_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.cloudSqlInstance_ = cloudSqlInstance_;
+        result.loadBalancerId_ = loadBalancerId_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.network_ = network_;
+        result.loadBalancerType_ = loadBalancerType_;
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.networkType_ = networkType_;
+        result.gkeMasterCluster_ = gkeMasterCluster_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.cloudSqlInstance_ = cloudSqlInstance_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.cloudFunction_ =
+            cloudFunctionBuilder_ == null ? cloudFunction_ : cloudFunctionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.appEngineVersion_ =
+            appEngineVersionBuilder_ == null ? appEngineVersion_ : appEngineVersionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.cloudRunRevision_ =
+            cloudRunRevisionBuilder_ == null ? cloudRunRevision_ : cloudRunRevisionBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.networkType_ = networkType_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.projectId_ = projectId_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -1095,19 +3824,39 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.hasForwardingRuleTarget()) {
+        setForwardingRuleTarget(other.getForwardingRuleTarget());
+      }
+      if (other.hasLoadBalancerId()) {
+        loadBalancerId_ = other.loadBalancerId_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (other.hasLoadBalancerType()) {
+        setLoadBalancerType(other.getLoadBalancerType());
+      }
       if (!other.getGkeMasterCluster().isEmpty()) {
         gkeMasterCluster_ = other.gkeMasterCluster_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getCloudSqlInstance().isEmpty()) {
         cloudSqlInstance_ = other.cloudSqlInstance_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000100;
         onChanged();
+      }
+      if (other.hasCloudFunction()) {
+        mergeCloudFunction(other.getCloudFunction());
+      }
+      if (other.hasAppEngineVersion()) {
+        mergeAppEngineVersion(other.getAppEngineVersion());
+      }
+      if (other.hasCloudRunRevision()) {
+        mergeCloudRunRevision(other.getCloudRunRevision());
       }
       if (!other.getNetwork().isEmpty()) {
         network_ = other.network_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       if (other.networkType_ != 0) {
@@ -1115,7 +3864,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1165,39 +3914,77 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 network_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 34
             case 40:
               {
                 networkType_ = input.readEnum();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 40
             case 50:
               {
                 projectId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 50
             case 58:
               {
                 gkeMasterCluster_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
               {
                 cloudSqlInstance_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
+            case 82:
+              {
+                input.readMessage(getCloudFunctionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    getAppEngineVersionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(
+                    getCloudRunRevisionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
             case 106:
               {
                 forwardingRule_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000008;
                 break;
               } // case 106
+            case 112:
+              {
+                forwardingRuleTarget_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 112
+            case 122:
+              {
+                loadBalancerId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 122
+            case 128:
+              {
+                loadBalancerType_ = input.readEnum();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 128
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1224,7 +4011,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The IP address of the endpoint, which can be an external or internal IP.
      * An IPv6 address is only allowed when the test's destination is a
-     * [global load balancer VIP](/load-balancing/docs/load-balancing-overview).
+     * [global load balancer
+     * VIP](https://cloud.google.com/load-balancing/docs/load-balancing-overview).
      * </pre>
      *
      * <code>string ip_address = 1;</code>
@@ -1248,7 +4036,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The IP address of the endpoint, which can be an external or internal IP.
      * An IPv6 address is only allowed when the test's destination is a
-     * [global load balancer VIP](/load-balancing/docs/load-balancing-overview).
+     * [global load balancer
+     * VIP](https://cloud.google.com/load-balancing/docs/load-balancing-overview).
      * </pre>
      *
      * <code>string ip_address = 1;</code>
@@ -1272,7 +4061,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The IP address of the endpoint, which can be an external or internal IP.
      * An IPv6 address is only allowed when the test's destination is a
-     * [global load balancer VIP](/load-balancing/docs/load-balancing-overview).
+     * [global load balancer
+     * VIP](https://cloud.google.com/load-balancing/docs/load-balancing-overview).
      * </pre>
      *
      * <code>string ip_address = 1;</code>
@@ -1295,7 +4085,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The IP address of the endpoint, which can be an external or internal IP.
      * An IPv6 address is only allowed when the test's destination is a
-     * [global load balancer VIP](/load-balancing/docs/load-balancing-overview).
+     * [global load balancer
+     * VIP](https://cloud.google.com/load-balancing/docs/load-balancing-overview).
      * </pre>
      *
      * <code>string ip_address = 1;</code>
@@ -1314,7 +4105,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * The IP address of the endpoint, which can be an external or internal IP.
      * An IPv6 address is only allowed when the test's destination is a
-     * [global load balancer VIP](/load-balancing/docs/load-balancing-overview).
+     * [global load balancer
+     * VIP](https://cloud.google.com/load-balancing/docs/load-balancing-overview).
      * </pre>
      *
      * <code>string ip_address = 1;</code>
@@ -1626,6 +4418,380 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private int forwardingRuleTarget_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the type of the target of the forwarding rule.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget forwarding_rule_target = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the forwardingRuleTarget field is set.
+     */
+    @java.lang.Override
+    public boolean hasForwardingRuleTarget() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the type of the target of the forwarding rule.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget forwarding_rule_target = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for forwardingRuleTarget.
+     */
+    @java.lang.Override
+    public int getForwardingRuleTargetValue() {
+      return forwardingRuleTarget_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the type of the target of the forwarding rule.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget forwarding_rule_target = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for forwardingRuleTarget to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForwardingRuleTargetValue(int value) {
+      forwardingRuleTarget_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the type of the target of the forwarding rule.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget forwarding_rule_target = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The forwardingRuleTarget.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget
+        getForwardingRuleTarget() {
+      com.google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget result =
+          com.google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget.forNumber(
+              forwardingRuleTarget_);
+      return result == null
+          ? com.google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the type of the target of the forwarding rule.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget forwarding_rule_target = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The forwardingRuleTarget to set.
+     * @return This builder for chaining.
+     */
+    public Builder setForwardingRuleTarget(
+        com.google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      forwardingRuleTarget_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Specifies the type of the target of the forwarding rule.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget forwarding_rule_target = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearForwardingRuleTarget() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      forwardingRuleTarget_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object loadBalancerId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. ID of the load balancer the forwarding rule points to. Empty
+     * for forwarding rules not related to load balancers.
+     * </pre>
+     *
+     * <code>optional string load_balancer_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the loadBalancerId field is set.
+     */
+    public boolean hasLoadBalancerId() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. ID of the load balancer the forwarding rule points to. Empty
+     * for forwarding rules not related to load balancers.
+     * </pre>
+     *
+     * <code>optional string load_balancer_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The loadBalancerId.
+     */
+    public java.lang.String getLoadBalancerId() {
+      java.lang.Object ref = loadBalancerId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        loadBalancerId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. ID of the load balancer the forwarding rule points to. Empty
+     * for forwarding rules not related to load balancers.
+     * </pre>
+     *
+     * <code>optional string load_balancer_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for loadBalancerId.
+     */
+    public com.google.protobuf.ByteString getLoadBalancerIdBytes() {
+      java.lang.Object ref = loadBalancerId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        loadBalancerId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. ID of the load balancer the forwarding rule points to. Empty
+     * for forwarding rules not related to load balancers.
+     * </pre>
+     *
+     * <code>optional string load_balancer_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The loadBalancerId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoadBalancerId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      loadBalancerId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. ID of the load balancer the forwarding rule points to. Empty
+     * for forwarding rules not related to load balancers.
+     * </pre>
+     *
+     * <code>optional string load_balancer_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLoadBalancerId() {
+      loadBalancerId_ = getDefaultInstance().getLoadBalancerId();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. ID of the load balancer the forwarding rule points to. Empty
+     * for forwarding rules not related to load balancers.
+     * </pre>
+     *
+     * <code>optional string load_balancer_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for loadBalancerId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoadBalancerIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      loadBalancerId_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private int loadBalancerType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Type of the load balancer the forwarding rule points to.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1.LoadBalancerType load_balancer_type = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the loadBalancerType field is set.
+     */
+    @java.lang.Override
+    public boolean hasLoadBalancerType() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Type of the load balancer the forwarding rule points to.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1.LoadBalancerType load_balancer_type = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for loadBalancerType.
+     */
+    @java.lang.Override
+    public int getLoadBalancerTypeValue() {
+      return loadBalancerType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Type of the load balancer the forwarding rule points to.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1.LoadBalancerType load_balancer_type = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for loadBalancerType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoadBalancerTypeValue(int value) {
+      loadBalancerType_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Type of the load balancer the forwarding rule points to.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1.LoadBalancerType load_balancer_type = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The loadBalancerType.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1.LoadBalancerType getLoadBalancerType() {
+      com.google.cloud.networkmanagement.v1.LoadBalancerType result =
+          com.google.cloud.networkmanagement.v1.LoadBalancerType.forNumber(loadBalancerType_);
+      return result == null
+          ? com.google.cloud.networkmanagement.v1.LoadBalancerType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Type of the load balancer the forwarding rule points to.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1.LoadBalancerType load_balancer_type = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The loadBalancerType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLoadBalancerType(
+        com.google.cloud.networkmanagement.v1.LoadBalancerType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000040;
+      loadBalancerType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Type of the load balancer the forwarding rule points to.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1.LoadBalancerType load_balancer_type = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLoadBalancerType() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      loadBalancerType_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object gkeMasterCluster_ = "";
     /**
      *
@@ -1691,7 +4857,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       gkeMasterCluster_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1709,7 +4875,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearGkeMasterCluster() {
       gkeMasterCluster_ = getDefaultInstance().getGkeMasterCluster();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -1732,7 +4898,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       gkeMasterCluster_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -1799,7 +4965,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       cloudSqlInstance_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1816,7 +4982,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCloudSqlInstance() {
       cloudSqlInstance_ = getDefaultInstance().getCloudSqlInstance();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -1838,9 +5004,655 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       cloudSqlInstance_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloudFunction_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint,
+            com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint.Builder,
+            com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpointOrBuilder>
+        cloudFunctionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Function](https://cloud.google.com/functions).
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloud_function = 10;
+     * </code>
+     *
+     * @return Whether the cloudFunction field is set.
+     */
+    public boolean hasCloudFunction() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Function](https://cloud.google.com/functions).
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloud_function = 10;
+     * </code>
+     *
+     * @return The cloudFunction.
+     */
+    public com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint getCloudFunction() {
+      if (cloudFunctionBuilder_ == null) {
+        return cloudFunction_ == null
+            ? com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint
+                .getDefaultInstance()
+            : cloudFunction_;
+      } else {
+        return cloudFunctionBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Function](https://cloud.google.com/functions).
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloud_function = 10;
+     * </code>
+     */
+    public Builder setCloudFunction(
+        com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint value) {
+      if (cloudFunctionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cloudFunction_ = value;
+      } else {
+        cloudFunctionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Function](https://cloud.google.com/functions).
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloud_function = 10;
+     * </code>
+     */
+    public Builder setCloudFunction(
+        com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint.Builder
+            builderForValue) {
+      if (cloudFunctionBuilder_ == null) {
+        cloudFunction_ = builderForValue.build();
+      } else {
+        cloudFunctionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Function](https://cloud.google.com/functions).
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloud_function = 10;
+     * </code>
+     */
+    public Builder mergeCloudFunction(
+        com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint value) {
+      if (cloudFunctionBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && cloudFunction_ != null
+            && cloudFunction_
+                != com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint
+                    .getDefaultInstance()) {
+          getCloudFunctionBuilder().mergeFrom(value);
+        } else {
+          cloudFunction_ = value;
+        }
+      } else {
+        cloudFunctionBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Function](https://cloud.google.com/functions).
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloud_function = 10;
+     * </code>
+     */
+    public Builder clearCloudFunction() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      cloudFunction_ = null;
+      if (cloudFunctionBuilder_ != null) {
+        cloudFunctionBuilder_.dispose();
+        cloudFunctionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Function](https://cloud.google.com/functions).
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloud_function = 10;
+     * </code>
+     */
+    public com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint.Builder
+        getCloudFunctionBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getCloudFunctionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Function](https://cloud.google.com/functions).
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloud_function = 10;
+     * </code>
+     */
+    public com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpointOrBuilder
+        getCloudFunctionOrBuilder() {
+      if (cloudFunctionBuilder_ != null) {
+        return cloudFunctionBuilder_.getMessageOrBuilder();
+      } else {
+        return cloudFunction_ == null
+            ? com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint
+                .getDefaultInstance()
+            : cloudFunction_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Function](https://cloud.google.com/functions).
+     * </pre>
+     *
+     * <code>.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloud_function = 10;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint,
+            com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint.Builder,
+            com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpointOrBuilder>
+        getCloudFunctionFieldBuilder() {
+      if (cloudFunctionBuilder_ == null) {
+        cloudFunctionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint,
+                com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint.Builder,
+                com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpointOrBuilder>(
+                getCloudFunction(), getParentForChildren(), isClean());
+        cloudFunction_ = null;
+      }
+      return cloudFunctionBuilder_;
+    }
+
+    private com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint
+        appEngineVersion_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint,
+            com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint.Builder,
+            com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpointOrBuilder>
+        appEngineVersionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * An [App Engine](https://cloud.google.com/appengine) [service
+     * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint app_engine_version = 11;
+     * </code>
+     *
+     * @return Whether the appEngineVersion field is set.
+     */
+    public boolean hasAppEngineVersion() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An [App Engine](https://cloud.google.com/appengine) [service
+     * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint app_engine_version = 11;
+     * </code>
+     *
+     * @return The appEngineVersion.
+     */
+    public com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint
+        getAppEngineVersion() {
+      if (appEngineVersionBuilder_ == null) {
+        return appEngineVersion_ == null
+            ? com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint
+                .getDefaultInstance()
+            : appEngineVersion_;
+      } else {
+        return appEngineVersionBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An [App Engine](https://cloud.google.com/appengine) [service
+     * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint app_engine_version = 11;
+     * </code>
+     */
+    public Builder setAppEngineVersion(
+        com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint value) {
+      if (appEngineVersionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        appEngineVersion_ = value;
+      } else {
+        appEngineVersionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An [App Engine](https://cloud.google.com/appengine) [service
+     * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint app_engine_version = 11;
+     * </code>
+     */
+    public Builder setAppEngineVersion(
+        com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint.Builder
+            builderForValue) {
+      if (appEngineVersionBuilder_ == null) {
+        appEngineVersion_ = builderForValue.build();
+      } else {
+        appEngineVersionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An [App Engine](https://cloud.google.com/appengine) [service
+     * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint app_engine_version = 11;
+     * </code>
+     */
+    public Builder mergeAppEngineVersion(
+        com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint value) {
+      if (appEngineVersionBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && appEngineVersion_ != null
+            && appEngineVersion_
+                != com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint
+                    .getDefaultInstance()) {
+          getAppEngineVersionBuilder().mergeFrom(value);
+        } else {
+          appEngineVersion_ = value;
+        }
+      } else {
+        appEngineVersionBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An [App Engine](https://cloud.google.com/appengine) [service
+     * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint app_engine_version = 11;
+     * </code>
+     */
+    public Builder clearAppEngineVersion() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      appEngineVersion_ = null;
+      if (appEngineVersionBuilder_ != null) {
+        appEngineVersionBuilder_.dispose();
+        appEngineVersionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An [App Engine](https://cloud.google.com/appengine) [service
+     * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint app_engine_version = 11;
+     * </code>
+     */
+    public com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint.Builder
+        getAppEngineVersionBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getAppEngineVersionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An [App Engine](https://cloud.google.com/appengine) [service
+     * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint app_engine_version = 11;
+     * </code>
+     */
+    public com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpointOrBuilder
+        getAppEngineVersionOrBuilder() {
+      if (appEngineVersionBuilder_ != null) {
+        return appEngineVersionBuilder_.getMessageOrBuilder();
+      } else {
+        return appEngineVersion_ == null
+            ? com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint
+                .getDefaultInstance()
+            : appEngineVersion_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * An [App Engine](https://cloud.google.com/appengine) [service
+     * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint app_engine_version = 11;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint,
+            com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint.Builder,
+            com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpointOrBuilder>
+        getAppEngineVersionFieldBuilder() {
+      if (appEngineVersionBuilder_ == null) {
+        appEngineVersionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint,
+                com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint.Builder,
+                com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpointOrBuilder>(
+                getAppEngineVersion(), getParentForChildren(), isClean());
+        appEngineVersion_ = null;
+      }
+      return appEngineVersionBuilder_;
+    }
+
+    private com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint
+        cloudRunRevision_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint,
+            com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint.Builder,
+            com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpointOrBuilder>
+        cloudRunRevisionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Run](https://cloud.google.com/run)
+     * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint cloud_run_revision = 12;
+     * </code>
+     *
+     * @return Whether the cloudRunRevision field is set.
+     */
+    public boolean hasCloudRunRevision() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Run](https://cloud.google.com/run)
+     * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint cloud_run_revision = 12;
+     * </code>
+     *
+     * @return The cloudRunRevision.
+     */
+    public com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint
+        getCloudRunRevision() {
+      if (cloudRunRevisionBuilder_ == null) {
+        return cloudRunRevision_ == null
+            ? com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint
+                .getDefaultInstance()
+            : cloudRunRevision_;
+      } else {
+        return cloudRunRevisionBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Run](https://cloud.google.com/run)
+     * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint cloud_run_revision = 12;
+     * </code>
+     */
+    public Builder setCloudRunRevision(
+        com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint value) {
+      if (cloudRunRevisionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cloudRunRevision_ = value;
+      } else {
+        cloudRunRevisionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Run](https://cloud.google.com/run)
+     * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint cloud_run_revision = 12;
+     * </code>
+     */
+    public Builder setCloudRunRevision(
+        com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint.Builder
+            builderForValue) {
+      if (cloudRunRevisionBuilder_ == null) {
+        cloudRunRevision_ = builderForValue.build();
+      } else {
+        cloudRunRevisionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Run](https://cloud.google.com/run)
+     * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint cloud_run_revision = 12;
+     * </code>
+     */
+    public Builder mergeCloudRunRevision(
+        com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint value) {
+      if (cloudRunRevisionBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && cloudRunRevision_ != null
+            && cloudRunRevision_
+                != com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint
+                    .getDefaultInstance()) {
+          getCloudRunRevisionBuilder().mergeFrom(value);
+        } else {
+          cloudRunRevision_ = value;
+        }
+      } else {
+        cloudRunRevisionBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Run](https://cloud.google.com/run)
+     * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint cloud_run_revision = 12;
+     * </code>
+     */
+    public Builder clearCloudRunRevision() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      cloudRunRevision_ = null;
+      if (cloudRunRevisionBuilder_ != null) {
+        cloudRunRevisionBuilder_.dispose();
+        cloudRunRevisionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Run](https://cloud.google.com/run)
+     * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint cloud_run_revision = 12;
+     * </code>
+     */
+    public com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint.Builder
+        getCloudRunRevisionBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getCloudRunRevisionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Run](https://cloud.google.com/run)
+     * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint cloud_run_revision = 12;
+     * </code>
+     */
+    public com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpointOrBuilder
+        getCloudRunRevisionOrBuilder() {
+      if (cloudRunRevisionBuilder_ != null) {
+        return cloudRunRevisionBuilder_.getMessageOrBuilder();
+      } else {
+        return cloudRunRevision_ == null
+            ? com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint
+                .getDefaultInstance()
+            : cloudRunRevision_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A [Cloud Run](https://cloud.google.com/run)
+     * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint cloud_run_revision = 12;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint,
+            com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint.Builder,
+            com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpointOrBuilder>
+        getCloudRunRevisionFieldBuilder() {
+      if (cloudRunRevisionBuilder_ == null) {
+        cloudRunRevisionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint,
+                com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint.Builder,
+                com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpointOrBuilder>(
+                getCloudRunRevision(), getParentForChildren(), isClean());
+        cloudRunRevision_ = null;
+      }
+      return cloudRunRevisionBuilder_;
     }
 
     private java.lang.Object network_ = "";
@@ -1905,7 +5717,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       network_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -1922,7 +5734,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearNetwork() {
       network_ = getDefaultInstance().getNetwork();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -1944,7 +5756,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       network_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -1983,7 +5795,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setNetworkTypeValue(int value) {
       networkType_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -2027,7 +5839,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00002000;
       networkType_ = value.getNumber();
       onChanged();
       return this;
@@ -2046,7 +5858,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearNetworkType() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00002000);
       networkType_ = 0;
       onChanged();
       return this;
@@ -2138,7 +5950,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       projectId_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -2163,7 +5975,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearProjectId() {
       projectId_ = getDefaultInstance().getProjectId();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00004000);
       onChanged();
       return this;
     }
@@ -2193,7 +6005,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       projectId_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }

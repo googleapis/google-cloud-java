@@ -44,6 +44,7 @@ import com.google.cloud.recommender.v1.ListRecommendationsRequest;
 import com.google.cloud.recommender.v1.ListRecommendationsResponse;
 import com.google.cloud.recommender.v1.MarkInsightAcceptedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationClaimedRequest;
+import com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationFailedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationSucceededRequest;
 import com.google.cloud.recommender.v1.Recommendation;
@@ -268,6 +269,48 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<MarkRecommendationDismissedRequest, Recommendation>
+      markRecommendationDismissedMethodDescriptor =
+          ApiMethodDescriptor.<MarkRecommendationDismissedRequest, Recommendation>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.recommender.v1.Recommender/MarkRecommendationDismissed")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<MarkRecommendationDismissedRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/recommenders/*/recommendations/*}:markDismissed",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<MarkRecommendationDismissedRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setAdditionalPaths(
+                          "/v1/{name=billingAccounts/*/locations/*/recommenders/*/recommendations/*}:markDismissed",
+                          "/v1/{name=folders/*/locations/*/recommenders/*/recommendations/*}:markDismissed",
+                          "/v1/{name=organizations/*/locations/*/recommenders/*/recommendations/*}:markDismissed")
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<MarkRecommendationDismissedRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Recommendation>newBuilder()
+                      .setDefaultInstance(Recommendation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<MarkRecommendationClaimedRequest, Recommendation>
       markRecommendationClaimedMethodDescriptor =
           ApiMethodDescriptor.<MarkRecommendationClaimedRequest, Recommendation>newBuilder()
@@ -411,7 +454,8 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1/{name=organizations/*/locations/*/recommenders/*/config}")
+                          "/v1/{name=organizations/*/locations/*/recommenders/*/config}",
+                          "/v1/{name=billingAccounts/*/locations/*/recommenders/*/config}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -450,7 +494,8 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1/{recommenderConfig.name=organizations/*/locations/*/recommenders/*/config}")
+                          "/v1/{recommenderConfig.name=organizations/*/locations/*/recommenders/*/config}",
+                          "/v1/{recommenderConfig.name=billingAccounts/*/locations/*/recommenders/*/config}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -493,7 +538,8 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1/{name=organizations/*/locations/*/insightTypes/*/config}")
+                          "/v1/{name=organizations/*/locations/*/insightTypes/*/config}",
+                          "/v1/{name=billingAccounts/*/locations/*/insightTypes/*/config}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -532,7 +578,8 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                             return fields;
                           })
                       .setAdditionalPaths(
-                          "/v1/{insightTypeConfig.name=organizations/*/locations/*/insightTypes/*/config}")
+                          "/v1/{insightTypeConfig.name=organizations/*/locations/*/insightTypes/*/config}",
+                          "/v1/{insightTypeConfig.name=billingAccounts/*/locations/*/insightTypes/*/config}")
                       .setQueryParamsExtractor(
                           request -> {
                             Map<String, List<String>> fields = new HashMap<>();
@@ -567,6 +614,8 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
   private final UnaryCallable<ListRecommendationsRequest, ListRecommendationsPagedResponse>
       listRecommendationsPagedCallable;
   private final UnaryCallable<GetRecommendationRequest, Recommendation> getRecommendationCallable;
+  private final UnaryCallable<MarkRecommendationDismissedRequest, Recommendation>
+      markRecommendationDismissedCallable;
   private final UnaryCallable<MarkRecommendationClaimedRequest, Recommendation>
       markRecommendationClaimedCallable;
   private final UnaryCallable<MarkRecommendationSucceededRequest, Recommendation>
@@ -674,6 +723,18 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
         getRecommendationTransportSettings =
             HttpJsonCallSettings.<GetRecommendationRequest, Recommendation>newBuilder()
                 .setMethodDescriptor(getRecommendationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<MarkRecommendationDismissedRequest, Recommendation>
+        markRecommendationDismissedTransportSettings =
+            HttpJsonCallSettings.<MarkRecommendationDismissedRequest, Recommendation>newBuilder()
+                .setMethodDescriptor(markRecommendationDismissedMethodDescriptor)
                 .setTypeRegistry(typeRegistry)
                 .setParamsExtractor(
                     request -> {
@@ -800,6 +861,11 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
             getRecommendationTransportSettings,
             settings.getRecommendationSettings(),
             clientContext);
+    this.markRecommendationDismissedCallable =
+        callableFactory.createUnaryCallable(
+            markRecommendationDismissedTransportSettings,
+            settings.markRecommendationDismissedSettings(),
+            clientContext);
     this.markRecommendationClaimedCallable =
         callableFactory.createUnaryCallable(
             markRecommendationClaimedTransportSettings,
@@ -848,6 +914,7 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
     methodDescriptors.add(markInsightAcceptedMethodDescriptor);
     methodDescriptors.add(listRecommendationsMethodDescriptor);
     methodDescriptors.add(getRecommendationMethodDescriptor);
+    methodDescriptors.add(markRecommendationDismissedMethodDescriptor);
     methodDescriptors.add(markRecommendationClaimedMethodDescriptor);
     methodDescriptors.add(markRecommendationSucceededMethodDescriptor);
     methodDescriptors.add(markRecommendationFailedMethodDescriptor);
@@ -893,6 +960,12 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
   @Override
   public UnaryCallable<GetRecommendationRequest, Recommendation> getRecommendationCallable() {
     return getRecommendationCallable;
+  }
+
+  @Override
+  public UnaryCallable<MarkRecommendationDismissedRequest, Recommendation>
+      markRecommendationDismissedCallable() {
+    return markRecommendationDismissedCallable;
   }
 
   @Override

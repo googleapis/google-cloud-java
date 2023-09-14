@@ -41,6 +41,7 @@ public class AsyncDetachLun {
           DetachLunRequest.newBuilder()
               .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
               .setLun(LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]").toString())
+              .setSkipReboot(true)
               .build();
       ApiFuture<Operation> future = bareMetalSolutionClient.detachLunCallable().futureCall(request);
       // Do something.

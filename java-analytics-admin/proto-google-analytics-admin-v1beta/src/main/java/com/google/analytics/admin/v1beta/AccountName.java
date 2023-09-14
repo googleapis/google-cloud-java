@@ -127,7 +127,7 @@ public class AccountName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       AccountName that = ((AccountName) o);
       return Objects.equals(this.account, that.account);
     }

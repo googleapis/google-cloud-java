@@ -45,6 +45,8 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
     tree_ = 0;
     entityType_ = 0;
     mappings_ = java.util.Collections.emptyList();
+    entityDdl_ = java.util.Collections.emptyList();
+    issues_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -256,6 +258,7 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    DATABASE(101),
     SCHEMA(102),
     TABLE(103),
     VIEW(104),
@@ -264,6 +267,8 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
     DATABASE_FUNCTION(107),
     SYNONYM(108),
     DATABASE_PACKAGE(109),
+    UDT(110),
+    MATERIALIZED_VIEW(111),
     ENTITYBODY_NOT_SET(0);
     private final int value;
 
@@ -282,6 +287,8 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
 
     public static EntityBodyCase forNumber(int value) {
       switch (value) {
+        case 101:
+          return DATABASE;
         case 102:
           return SCHEMA;
         case 103:
@@ -298,6 +305,10 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
           return SYNONYM;
         case 109:
           return DATABASE_PACKAGE;
+        case 110:
+          return UDT;
+        case 111:
+          return MATERIALIZED_VIEW;
         case 0:
           return ENTITYBODY_NOT_SET;
         default:
@@ -582,6 +593,209 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public com.google.cloud.clouddms.v1.EntityMappingOrBuilder getMappingsOrBuilder(int index) {
     return mappings_.get(index);
+  }
+
+  public static final int ENTITY_DDL_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.clouddms.v1.EntityDdl> entityDdl_;
+  /**
+   *
+   *
+   * <pre>
+   * Details about the entity DDL script. Multiple DDL scripts are provided for
+   * child entities such as a table entity will have one DDL for the table with
+   * additional DDLs for each index, constraint and such.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.clouddms.v1.EntityDdl> getEntityDdlList() {
+    return entityDdl_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details about the entity DDL script. Multiple DDL scripts are provided for
+   * child entities such as a table entity will have one DDL for the table with
+   * additional DDLs for each index, constraint and such.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.clouddms.v1.EntityDdlOrBuilder>
+      getEntityDdlOrBuilderList() {
+    return entityDdl_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details about the entity DDL script. Multiple DDL scripts are provided for
+   * child entities such as a table entity will have one DDL for the table with
+   * additional DDLs for each index, constraint and such.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+   */
+  @java.lang.Override
+  public int getEntityDdlCount() {
+    return entityDdl_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details about the entity DDL script. Multiple DDL scripts are provided for
+   * child entities such as a table entity will have one DDL for the table with
+   * additional DDLs for each index, constraint and such.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.EntityDdl getEntityDdl(int index) {
+    return entityDdl_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details about the entity DDL script. Multiple DDL scripts are provided for
+   * child entities such as a table entity will have one DDL for the table with
+   * additional DDLs for each index, constraint and such.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.EntityDdlOrBuilder getEntityDdlOrBuilder(int index) {
+    return entityDdl_.get(index);
+  }
+
+  public static final int ISSUES_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.clouddms.v1.EntityIssue> issues_;
+  /**
+   *
+   *
+   * <pre>
+   * Details about the various issues found for the entity.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.clouddms.v1.EntityIssue> getIssuesList() {
+    return issues_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details about the various issues found for the entity.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.clouddms.v1.EntityIssueOrBuilder>
+      getIssuesOrBuilderList() {
+    return issues_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details about the various issues found for the entity.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+   */
+  @java.lang.Override
+  public int getIssuesCount() {
+    return issues_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details about the various issues found for the entity.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.EntityIssue getIssues(int index) {
+    return issues_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Details about the various issues found for the entity.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.EntityIssueOrBuilder getIssuesOrBuilder(int index) {
+    return issues_.get(index);
+  }
+
+  public static final int DATABASE_FIELD_NUMBER = 101;
+  /**
+   *
+   *
+   * <pre>
+   * Database.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.DatabaseInstanceEntity database = 101;</code>
+   *
+   * @return Whether the database field is set.
+   */
+  @java.lang.Override
+  public boolean hasDatabase() {
+    return entityBodyCase_ == 101;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Database.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.DatabaseInstanceEntity database = 101;</code>
+   *
+   * @return The database.
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.DatabaseInstanceEntity getDatabase() {
+    if (entityBodyCase_ == 101) {
+      return (com.google.cloud.clouddms.v1.DatabaseInstanceEntity) entityBody_;
+    }
+    return com.google.cloud.clouddms.v1.DatabaseInstanceEntity.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Database.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.DatabaseInstanceEntity database = 101;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.DatabaseInstanceEntityOrBuilder getDatabaseOrBuilder() {
+    if (entityBodyCase_ == 101) {
+      return (com.google.cloud.clouddms.v1.DatabaseInstanceEntity) entityBody_;
+    }
+    return com.google.cloud.clouddms.v1.DatabaseInstanceEntity.getDefaultInstance();
   }
 
   public static final int SCHEMA_FIELD_NUMBER = 102;
@@ -992,6 +1206,109 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.clouddms.v1.PackageEntity.getDefaultInstance();
   }
 
+  public static final int UDT_FIELD_NUMBER = 110;
+  /**
+   *
+   *
+   * <pre>
+   * UDT.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.UDTEntity udt = 110;</code>
+   *
+   * @return Whether the udt field is set.
+   */
+  @java.lang.Override
+  public boolean hasUdt() {
+    return entityBodyCase_ == 110;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * UDT.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.UDTEntity udt = 110;</code>
+   *
+   * @return The udt.
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.UDTEntity getUdt() {
+    if (entityBodyCase_ == 110) {
+      return (com.google.cloud.clouddms.v1.UDTEntity) entityBody_;
+    }
+    return com.google.cloud.clouddms.v1.UDTEntity.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * UDT.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.UDTEntity udt = 110;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.UDTEntityOrBuilder getUdtOrBuilder() {
+    if (entityBodyCase_ == 110) {
+      return (com.google.cloud.clouddms.v1.UDTEntity) entityBody_;
+    }
+    return com.google.cloud.clouddms.v1.UDTEntity.getDefaultInstance();
+  }
+
+  public static final int MATERIALIZED_VIEW_FIELD_NUMBER = 111;
+  /**
+   *
+   *
+   * <pre>
+   * Materialized view.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.MaterializedViewEntity materialized_view = 111;</code>
+   *
+   * @return Whether the materializedView field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaterializedView() {
+    return entityBodyCase_ == 111;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Materialized view.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.MaterializedViewEntity materialized_view = 111;</code>
+   *
+   * @return The materializedView.
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.MaterializedViewEntity getMaterializedView() {
+    if (entityBodyCase_ == 111) {
+      return (com.google.cloud.clouddms.v1.MaterializedViewEntity) entityBody_;
+    }
+    return com.google.cloud.clouddms.v1.MaterializedViewEntity.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Materialized view.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.MaterializedViewEntity materialized_view = 111;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.MaterializedViewEntityOrBuilder
+      getMaterializedViewOrBuilder() {
+    if (entityBodyCase_ == 111) {
+      return (com.google.cloud.clouddms.v1.MaterializedViewEntity) entityBody_;
+    }
+    return com.google.cloud.clouddms.v1.MaterializedViewEntity.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1024,6 +1341,15 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < mappings_.size(); i++) {
       output.writeMessage(5, mappings_.get(i));
     }
+    for (int i = 0; i < entityDdl_.size(); i++) {
+      output.writeMessage(6, entityDdl_.get(i));
+    }
+    for (int i = 0; i < issues_.size(); i++) {
+      output.writeMessage(7, issues_.get(i));
+    }
+    if (entityBodyCase_ == 101) {
+      output.writeMessage(101, (com.google.cloud.clouddms.v1.DatabaseInstanceEntity) entityBody_);
+    }
     if (entityBodyCase_ == 102) {
       output.writeMessage(102, (com.google.cloud.clouddms.v1.SchemaEntity) entityBody_);
     }
@@ -1047,6 +1373,12 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
     }
     if (entityBodyCase_ == 109) {
       output.writeMessage(109, (com.google.cloud.clouddms.v1.PackageEntity) entityBody_);
+    }
+    if (entityBodyCase_ == 110) {
+      output.writeMessage(110, (com.google.cloud.clouddms.v1.UDTEntity) entityBody_);
+    }
+    if (entityBodyCase_ == 111) {
+      output.writeMessage(111, (com.google.cloud.clouddms.v1.MaterializedViewEntity) entityBody_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1074,6 +1406,17 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < mappings_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, mappings_.get(i));
+    }
+    for (int i = 0; i < entityDdl_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, entityDdl_.get(i));
+    }
+    for (int i = 0; i < issues_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, issues_.get(i));
+    }
+    if (entityBodyCase_ == 101) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              101, (com.google.cloud.clouddms.v1.DatabaseInstanceEntity) entityBody_);
     }
     if (entityBodyCase_ == 102) {
       size +=
@@ -1115,6 +1458,16 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               109, (com.google.cloud.clouddms.v1.PackageEntity) entityBody_);
     }
+    if (entityBodyCase_ == 110) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              110, (com.google.cloud.clouddms.v1.UDTEntity) entityBody_);
+    }
+    if (entityBodyCase_ == 111) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              111, (com.google.cloud.clouddms.v1.MaterializedViewEntity) entityBody_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1136,8 +1489,13 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
     if (tree_ != other.tree_) return false;
     if (entityType_ != other.entityType_) return false;
     if (!getMappingsList().equals(other.getMappingsList())) return false;
+    if (!getEntityDdlList().equals(other.getEntityDdlList())) return false;
+    if (!getIssuesList().equals(other.getIssuesList())) return false;
     if (!getEntityBodyCase().equals(other.getEntityBodyCase())) return false;
     switch (entityBodyCase_) {
+      case 101:
+        if (!getDatabase().equals(other.getDatabase())) return false;
+        break;
       case 102:
         if (!getSchema().equals(other.getSchema())) return false;
         break;
@@ -1161,6 +1519,12 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
         break;
       case 109:
         if (!getDatabasePackage().equals(other.getDatabasePackage())) return false;
+        break;
+      case 110:
+        if (!getUdt().equals(other.getUdt())) return false;
+        break;
+      case 111:
+        if (!getMaterializedView().equals(other.getMaterializedView())) return false;
         break;
       case 0:
       default:
@@ -1188,7 +1552,19 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + MAPPINGS_FIELD_NUMBER;
       hash = (53 * hash) + getMappingsList().hashCode();
     }
+    if (getEntityDdlCount() > 0) {
+      hash = (37 * hash) + ENTITY_DDL_FIELD_NUMBER;
+      hash = (53 * hash) + getEntityDdlList().hashCode();
+    }
+    if (getIssuesCount() > 0) {
+      hash = (37 * hash) + ISSUES_FIELD_NUMBER;
+      hash = (53 * hash) + getIssuesList().hashCode();
+    }
     switch (entityBodyCase_) {
+      case 101:
+        hash = (37 * hash) + DATABASE_FIELD_NUMBER;
+        hash = (53 * hash) + getDatabase().hashCode();
+        break;
       case 102:
         hash = (37 * hash) + SCHEMA_FIELD_NUMBER;
         hash = (53 * hash) + getSchema().hashCode();
@@ -1220,6 +1596,14 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
       case 109:
         hash = (37 * hash) + DATABASE_PACKAGE_FIELD_NUMBER;
         hash = (53 * hash) + getDatabasePackage().hashCode();
+        break;
+      case 110:
+        hash = (37 * hash) + UDT_FIELD_NUMBER;
+        hash = (53 * hash) + getUdt().hashCode();
+        break;
+      case 111:
+        hash = (37 * hash) + MATERIALIZED_VIEW_FIELD_NUMBER;
+        hash = (53 * hash) + getMaterializedView().hashCode();
         break;
       case 0:
       default:
@@ -1376,6 +1760,23 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
         mappingsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000010);
+      if (entityDdlBuilder_ == null) {
+        entityDdl_ = java.util.Collections.emptyList();
+      } else {
+        entityDdl_ = null;
+        entityDdlBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
+      if (issuesBuilder_ == null) {
+        issues_ = java.util.Collections.emptyList();
+      } else {
+        issues_ = null;
+        issuesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000040);
+      if (databaseBuilder_ != null) {
+        databaseBuilder_.clear();
+      }
       if (schemaBuilder_ != null) {
         schemaBuilder_.clear();
       }
@@ -1399,6 +1800,12 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
       }
       if (databasePackageBuilder_ != null) {
         databasePackageBuilder_.clear();
+      }
+      if (udtBuilder_ != null) {
+        udtBuilder_.clear();
+      }
+      if (materializedViewBuilder_ != null) {
+        materializedViewBuilder_.clear();
       }
       entityBodyCase_ = 0;
       entityBody_ = null;
@@ -1448,6 +1855,24 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.mappings_ = mappingsBuilder_.build();
       }
+      if (entityDdlBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          entityDdl_ = java.util.Collections.unmodifiableList(entityDdl_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.entityDdl_ = entityDdl_;
+      } else {
+        result.entityDdl_ = entityDdlBuilder_.build();
+      }
+      if (issuesBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          issues_ = java.util.Collections.unmodifiableList(issues_);
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.issues_ = issues_;
+      } else {
+        result.issues_ = issuesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.clouddms.v1.DatabaseEntity result) {
@@ -1469,6 +1894,9 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
     private void buildPartialOneofs(com.google.cloud.clouddms.v1.DatabaseEntity result) {
       result.entityBodyCase_ = entityBodyCase_;
       result.entityBody_ = this.entityBody_;
+      if (entityBodyCase_ == 101 && databaseBuilder_ != null) {
+        result.entityBody_ = databaseBuilder_.build();
+      }
       if (entityBodyCase_ == 102 && schemaBuilder_ != null) {
         result.entityBody_ = schemaBuilder_.build();
       }
@@ -1492,6 +1920,12 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
       }
       if (entityBodyCase_ == 109 && databasePackageBuilder_ != null) {
         result.entityBody_ = databasePackageBuilder_.build();
+      }
+      if (entityBodyCase_ == 110 && udtBuilder_ != null) {
+        result.entityBody_ = udtBuilder_.build();
+      }
+      if (entityBodyCase_ == 111 && materializedViewBuilder_ != null) {
+        result.entityBody_ = materializedViewBuilder_.build();
       }
     }
 
@@ -1583,7 +2017,66 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (entityDdlBuilder_ == null) {
+        if (!other.entityDdl_.isEmpty()) {
+          if (entityDdl_.isEmpty()) {
+            entityDdl_ = other.entityDdl_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureEntityDdlIsMutable();
+            entityDdl_.addAll(other.entityDdl_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.entityDdl_.isEmpty()) {
+          if (entityDdlBuilder_.isEmpty()) {
+            entityDdlBuilder_.dispose();
+            entityDdlBuilder_ = null;
+            entityDdl_ = other.entityDdl_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            entityDdlBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getEntityDdlFieldBuilder()
+                    : null;
+          } else {
+            entityDdlBuilder_.addAllMessages(other.entityDdl_);
+          }
+        }
+      }
+      if (issuesBuilder_ == null) {
+        if (!other.issues_.isEmpty()) {
+          if (issues_.isEmpty()) {
+            issues_ = other.issues_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureIssuesIsMutable();
+            issues_.addAll(other.issues_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.issues_.isEmpty()) {
+          if (issuesBuilder_.isEmpty()) {
+            issuesBuilder_.dispose();
+            issuesBuilder_ = null;
+            issues_ = other.issues_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            issuesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getIssuesFieldBuilder()
+                    : null;
+          } else {
+            issuesBuilder_.addAllMessages(other.issues_);
+          }
+        }
+      }
       switch (other.getEntityBodyCase()) {
+        case DATABASE:
+          {
+            mergeDatabase(other.getDatabase());
+            break;
+          }
         case SCHEMA:
           {
             mergeSchema(other.getSchema());
@@ -1622,6 +2115,16 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
         case DATABASE_PACKAGE:
           {
             mergeDatabasePackage(other.getDatabasePackage());
+            break;
+          }
+        case UDT:
+          {
+            mergeUdt(other.getUdt());
+            break;
+          }
+        case MATERIALIZED_VIEW:
+          {
+            mergeMaterializedView(other.getMaterializedView());
             break;
           }
         case ENTITYBODY_NOT_SET:
@@ -1692,6 +2195,38 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 42
+            case 50:
+              {
+                com.google.cloud.clouddms.v1.EntityDdl m =
+                    input.readMessage(
+                        com.google.cloud.clouddms.v1.EntityDdl.parser(), extensionRegistry);
+                if (entityDdlBuilder_ == null) {
+                  ensureEntityDdlIsMutable();
+                  entityDdl_.add(m);
+                } else {
+                  entityDdlBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
+            case 58:
+              {
+                com.google.cloud.clouddms.v1.EntityIssue m =
+                    input.readMessage(
+                        com.google.cloud.clouddms.v1.EntityIssue.parser(), extensionRegistry);
+                if (issuesBuilder_ == null) {
+                  ensureIssuesIsMutable();
+                  issues_.add(m);
+                } else {
+                  issuesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
+            case 810:
+              {
+                input.readMessage(getDatabaseFieldBuilder().getBuilder(), extensionRegistry);
+                entityBodyCase_ = 101;
+                break;
+              } // case 810
             case 818:
               {
                 input.readMessage(getSchemaFieldBuilder().getBuilder(), extensionRegistry);
@@ -1741,6 +2276,19 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
                 entityBodyCase_ = 109;
                 break;
               } // case 874
+            case 882:
+              {
+                input.readMessage(getUdtFieldBuilder().getBuilder(), extensionRegistry);
+                entityBodyCase_ = 110;
+                break;
+              } // case 882
+            case 890:
+              {
+                input.readMessage(
+                    getMaterializedViewFieldBuilder().getBuilder(), extensionRegistry);
+                entityBodyCase_ = 111;
+                break;
+              } // case 890
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2605,6 +3153,949 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
         mappings_ = null;
       }
       return mappingsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.clouddms.v1.EntityDdl> entityDdl_ =
+        java.util.Collections.emptyList();
+
+    private void ensureEntityDdlIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        entityDdl_ = new java.util.ArrayList<com.google.cloud.clouddms.v1.EntityDdl>(entityDdl_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.clouddms.v1.EntityDdl,
+            com.google.cloud.clouddms.v1.EntityDdl.Builder,
+            com.google.cloud.clouddms.v1.EntityDdlOrBuilder>
+        entityDdlBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Details about the entity DDL script. Multiple DDL scripts are provided for
+     * child entities such as a table entity will have one DDL for the table with
+     * additional DDLs for each index, constraint and such.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+     */
+    public java.util.List<com.google.cloud.clouddms.v1.EntityDdl> getEntityDdlList() {
+      if (entityDdlBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(entityDdl_);
+      } else {
+        return entityDdlBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the entity DDL script. Multiple DDL scripts are provided for
+     * child entities such as a table entity will have one DDL for the table with
+     * additional DDLs for each index, constraint and such.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+     */
+    public int getEntityDdlCount() {
+      if (entityDdlBuilder_ == null) {
+        return entityDdl_.size();
+      } else {
+        return entityDdlBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the entity DDL script. Multiple DDL scripts are provided for
+     * child entities such as a table entity will have one DDL for the table with
+     * additional DDLs for each index, constraint and such.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+     */
+    public com.google.cloud.clouddms.v1.EntityDdl getEntityDdl(int index) {
+      if (entityDdlBuilder_ == null) {
+        return entityDdl_.get(index);
+      } else {
+        return entityDdlBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the entity DDL script. Multiple DDL scripts are provided for
+     * child entities such as a table entity will have one DDL for the table with
+     * additional DDLs for each index, constraint and such.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+     */
+    public Builder setEntityDdl(int index, com.google.cloud.clouddms.v1.EntityDdl value) {
+      if (entityDdlBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEntityDdlIsMutable();
+        entityDdl_.set(index, value);
+        onChanged();
+      } else {
+        entityDdlBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the entity DDL script. Multiple DDL scripts are provided for
+     * child entities such as a table entity will have one DDL for the table with
+     * additional DDLs for each index, constraint and such.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+     */
+    public Builder setEntityDdl(
+        int index, com.google.cloud.clouddms.v1.EntityDdl.Builder builderForValue) {
+      if (entityDdlBuilder_ == null) {
+        ensureEntityDdlIsMutable();
+        entityDdl_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        entityDdlBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the entity DDL script. Multiple DDL scripts are provided for
+     * child entities such as a table entity will have one DDL for the table with
+     * additional DDLs for each index, constraint and such.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+     */
+    public Builder addEntityDdl(com.google.cloud.clouddms.v1.EntityDdl value) {
+      if (entityDdlBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEntityDdlIsMutable();
+        entityDdl_.add(value);
+        onChanged();
+      } else {
+        entityDdlBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the entity DDL script. Multiple DDL scripts are provided for
+     * child entities such as a table entity will have one DDL for the table with
+     * additional DDLs for each index, constraint and such.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+     */
+    public Builder addEntityDdl(int index, com.google.cloud.clouddms.v1.EntityDdl value) {
+      if (entityDdlBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureEntityDdlIsMutable();
+        entityDdl_.add(index, value);
+        onChanged();
+      } else {
+        entityDdlBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the entity DDL script. Multiple DDL scripts are provided for
+     * child entities such as a table entity will have one DDL for the table with
+     * additional DDLs for each index, constraint and such.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+     */
+    public Builder addEntityDdl(com.google.cloud.clouddms.v1.EntityDdl.Builder builderForValue) {
+      if (entityDdlBuilder_ == null) {
+        ensureEntityDdlIsMutable();
+        entityDdl_.add(builderForValue.build());
+        onChanged();
+      } else {
+        entityDdlBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the entity DDL script. Multiple DDL scripts are provided for
+     * child entities such as a table entity will have one DDL for the table with
+     * additional DDLs for each index, constraint and such.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+     */
+    public Builder addEntityDdl(
+        int index, com.google.cloud.clouddms.v1.EntityDdl.Builder builderForValue) {
+      if (entityDdlBuilder_ == null) {
+        ensureEntityDdlIsMutable();
+        entityDdl_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        entityDdlBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the entity DDL script. Multiple DDL scripts are provided for
+     * child entities such as a table entity will have one DDL for the table with
+     * additional DDLs for each index, constraint and such.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+     */
+    public Builder addAllEntityDdl(
+        java.lang.Iterable<? extends com.google.cloud.clouddms.v1.EntityDdl> values) {
+      if (entityDdlBuilder_ == null) {
+        ensureEntityDdlIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, entityDdl_);
+        onChanged();
+      } else {
+        entityDdlBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the entity DDL script. Multiple DDL scripts are provided for
+     * child entities such as a table entity will have one DDL for the table with
+     * additional DDLs for each index, constraint and such.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+     */
+    public Builder clearEntityDdl() {
+      if (entityDdlBuilder_ == null) {
+        entityDdl_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        entityDdlBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the entity DDL script. Multiple DDL scripts are provided for
+     * child entities such as a table entity will have one DDL for the table with
+     * additional DDLs for each index, constraint and such.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+     */
+    public Builder removeEntityDdl(int index) {
+      if (entityDdlBuilder_ == null) {
+        ensureEntityDdlIsMutable();
+        entityDdl_.remove(index);
+        onChanged();
+      } else {
+        entityDdlBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the entity DDL script. Multiple DDL scripts are provided for
+     * child entities such as a table entity will have one DDL for the table with
+     * additional DDLs for each index, constraint and such.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+     */
+    public com.google.cloud.clouddms.v1.EntityDdl.Builder getEntityDdlBuilder(int index) {
+      return getEntityDdlFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the entity DDL script. Multiple DDL scripts are provided for
+     * child entities such as a table entity will have one DDL for the table with
+     * additional DDLs for each index, constraint and such.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+     */
+    public com.google.cloud.clouddms.v1.EntityDdlOrBuilder getEntityDdlOrBuilder(int index) {
+      if (entityDdlBuilder_ == null) {
+        return entityDdl_.get(index);
+      } else {
+        return entityDdlBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the entity DDL script. Multiple DDL scripts are provided for
+     * child entities such as a table entity will have one DDL for the table with
+     * additional DDLs for each index, constraint and such.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+     */
+    public java.util.List<? extends com.google.cloud.clouddms.v1.EntityDdlOrBuilder>
+        getEntityDdlOrBuilderList() {
+      if (entityDdlBuilder_ != null) {
+        return entityDdlBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(entityDdl_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the entity DDL script. Multiple DDL scripts are provided for
+     * child entities such as a table entity will have one DDL for the table with
+     * additional DDLs for each index, constraint and such.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+     */
+    public com.google.cloud.clouddms.v1.EntityDdl.Builder addEntityDdlBuilder() {
+      return getEntityDdlFieldBuilder()
+          .addBuilder(com.google.cloud.clouddms.v1.EntityDdl.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the entity DDL script. Multiple DDL scripts are provided for
+     * child entities such as a table entity will have one DDL for the table with
+     * additional DDLs for each index, constraint and such.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+     */
+    public com.google.cloud.clouddms.v1.EntityDdl.Builder addEntityDdlBuilder(int index) {
+      return getEntityDdlFieldBuilder()
+          .addBuilder(index, com.google.cloud.clouddms.v1.EntityDdl.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the entity DDL script. Multiple DDL scripts are provided for
+     * child entities such as a table entity will have one DDL for the table with
+     * additional DDLs for each index, constraint and such.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+     */
+    public java.util.List<com.google.cloud.clouddms.v1.EntityDdl.Builder>
+        getEntityDdlBuilderList() {
+      return getEntityDdlFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.clouddms.v1.EntityDdl,
+            com.google.cloud.clouddms.v1.EntityDdl.Builder,
+            com.google.cloud.clouddms.v1.EntityDdlOrBuilder>
+        getEntityDdlFieldBuilder() {
+      if (entityDdlBuilder_ == null) {
+        entityDdlBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.clouddms.v1.EntityDdl,
+                com.google.cloud.clouddms.v1.EntityDdl.Builder,
+                com.google.cloud.clouddms.v1.EntityDdlOrBuilder>(
+                entityDdl_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+        entityDdl_ = null;
+      }
+      return entityDdlBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.clouddms.v1.EntityIssue> issues_ =
+        java.util.Collections.emptyList();
+
+    private void ensureIssuesIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        issues_ = new java.util.ArrayList<com.google.cloud.clouddms.v1.EntityIssue>(issues_);
+        bitField0_ |= 0x00000040;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.clouddms.v1.EntityIssue,
+            com.google.cloud.clouddms.v1.EntityIssue.Builder,
+            com.google.cloud.clouddms.v1.EntityIssueOrBuilder>
+        issuesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Details about the various issues found for the entity.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+     */
+    public java.util.List<com.google.cloud.clouddms.v1.EntityIssue> getIssuesList() {
+      if (issuesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(issues_);
+      } else {
+        return issuesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the various issues found for the entity.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+     */
+    public int getIssuesCount() {
+      if (issuesBuilder_ == null) {
+        return issues_.size();
+      } else {
+        return issuesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the various issues found for the entity.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+     */
+    public com.google.cloud.clouddms.v1.EntityIssue getIssues(int index) {
+      if (issuesBuilder_ == null) {
+        return issues_.get(index);
+      } else {
+        return issuesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the various issues found for the entity.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+     */
+    public Builder setIssues(int index, com.google.cloud.clouddms.v1.EntityIssue value) {
+      if (issuesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureIssuesIsMutable();
+        issues_.set(index, value);
+        onChanged();
+      } else {
+        issuesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the various issues found for the entity.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+     */
+    public Builder setIssues(
+        int index, com.google.cloud.clouddms.v1.EntityIssue.Builder builderForValue) {
+      if (issuesBuilder_ == null) {
+        ensureIssuesIsMutable();
+        issues_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        issuesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the various issues found for the entity.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+     */
+    public Builder addIssues(com.google.cloud.clouddms.v1.EntityIssue value) {
+      if (issuesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureIssuesIsMutable();
+        issues_.add(value);
+        onChanged();
+      } else {
+        issuesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the various issues found for the entity.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+     */
+    public Builder addIssues(int index, com.google.cloud.clouddms.v1.EntityIssue value) {
+      if (issuesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureIssuesIsMutable();
+        issues_.add(index, value);
+        onChanged();
+      } else {
+        issuesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the various issues found for the entity.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+     */
+    public Builder addIssues(com.google.cloud.clouddms.v1.EntityIssue.Builder builderForValue) {
+      if (issuesBuilder_ == null) {
+        ensureIssuesIsMutable();
+        issues_.add(builderForValue.build());
+        onChanged();
+      } else {
+        issuesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the various issues found for the entity.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+     */
+    public Builder addIssues(
+        int index, com.google.cloud.clouddms.v1.EntityIssue.Builder builderForValue) {
+      if (issuesBuilder_ == null) {
+        ensureIssuesIsMutable();
+        issues_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        issuesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the various issues found for the entity.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+     */
+    public Builder addAllIssues(
+        java.lang.Iterable<? extends com.google.cloud.clouddms.v1.EntityIssue> values) {
+      if (issuesBuilder_ == null) {
+        ensureIssuesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, issues_);
+        onChanged();
+      } else {
+        issuesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the various issues found for the entity.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+     */
+    public Builder clearIssues() {
+      if (issuesBuilder_ == null) {
+        issues_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+      } else {
+        issuesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the various issues found for the entity.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+     */
+    public Builder removeIssues(int index) {
+      if (issuesBuilder_ == null) {
+        ensureIssuesIsMutable();
+        issues_.remove(index);
+        onChanged();
+      } else {
+        issuesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the various issues found for the entity.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+     */
+    public com.google.cloud.clouddms.v1.EntityIssue.Builder getIssuesBuilder(int index) {
+      return getIssuesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the various issues found for the entity.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+     */
+    public com.google.cloud.clouddms.v1.EntityIssueOrBuilder getIssuesOrBuilder(int index) {
+      if (issuesBuilder_ == null) {
+        return issues_.get(index);
+      } else {
+        return issuesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the various issues found for the entity.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+     */
+    public java.util.List<? extends com.google.cloud.clouddms.v1.EntityIssueOrBuilder>
+        getIssuesOrBuilderList() {
+      if (issuesBuilder_ != null) {
+        return issuesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(issues_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the various issues found for the entity.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+     */
+    public com.google.cloud.clouddms.v1.EntityIssue.Builder addIssuesBuilder() {
+      return getIssuesFieldBuilder()
+          .addBuilder(com.google.cloud.clouddms.v1.EntityIssue.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the various issues found for the entity.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+     */
+    public com.google.cloud.clouddms.v1.EntityIssue.Builder addIssuesBuilder(int index) {
+      return getIssuesFieldBuilder()
+          .addBuilder(index, com.google.cloud.clouddms.v1.EntityIssue.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Details about the various issues found for the entity.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+     */
+    public java.util.List<com.google.cloud.clouddms.v1.EntityIssue.Builder> getIssuesBuilderList() {
+      return getIssuesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.clouddms.v1.EntityIssue,
+            com.google.cloud.clouddms.v1.EntityIssue.Builder,
+            com.google.cloud.clouddms.v1.EntityIssueOrBuilder>
+        getIssuesFieldBuilder() {
+      if (issuesBuilder_ == null) {
+        issuesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.clouddms.v1.EntityIssue,
+                com.google.cloud.clouddms.v1.EntityIssue.Builder,
+                com.google.cloud.clouddms.v1.EntityIssueOrBuilder>(
+                issues_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
+        issues_ = null;
+      }
+      return issuesBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.DatabaseInstanceEntity,
+            com.google.cloud.clouddms.v1.DatabaseInstanceEntity.Builder,
+            com.google.cloud.clouddms.v1.DatabaseInstanceEntityOrBuilder>
+        databaseBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Database.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.DatabaseInstanceEntity database = 101;</code>
+     *
+     * @return Whether the database field is set.
+     */
+    @java.lang.Override
+    public boolean hasDatabase() {
+      return entityBodyCase_ == 101;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Database.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.DatabaseInstanceEntity database = 101;</code>
+     *
+     * @return The database.
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.DatabaseInstanceEntity getDatabase() {
+      if (databaseBuilder_ == null) {
+        if (entityBodyCase_ == 101) {
+          return (com.google.cloud.clouddms.v1.DatabaseInstanceEntity) entityBody_;
+        }
+        return com.google.cloud.clouddms.v1.DatabaseInstanceEntity.getDefaultInstance();
+      } else {
+        if (entityBodyCase_ == 101) {
+          return databaseBuilder_.getMessage();
+        }
+        return com.google.cloud.clouddms.v1.DatabaseInstanceEntity.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Database.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.DatabaseInstanceEntity database = 101;</code>
+     */
+    public Builder setDatabase(com.google.cloud.clouddms.v1.DatabaseInstanceEntity value) {
+      if (databaseBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        entityBody_ = value;
+        onChanged();
+      } else {
+        databaseBuilder_.setMessage(value);
+      }
+      entityBodyCase_ = 101;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Database.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.DatabaseInstanceEntity database = 101;</code>
+     */
+    public Builder setDatabase(
+        com.google.cloud.clouddms.v1.DatabaseInstanceEntity.Builder builderForValue) {
+      if (databaseBuilder_ == null) {
+        entityBody_ = builderForValue.build();
+        onChanged();
+      } else {
+        databaseBuilder_.setMessage(builderForValue.build());
+      }
+      entityBodyCase_ = 101;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Database.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.DatabaseInstanceEntity database = 101;</code>
+     */
+    public Builder mergeDatabase(com.google.cloud.clouddms.v1.DatabaseInstanceEntity value) {
+      if (databaseBuilder_ == null) {
+        if (entityBodyCase_ == 101
+            && entityBody_
+                != com.google.cloud.clouddms.v1.DatabaseInstanceEntity.getDefaultInstance()) {
+          entityBody_ =
+              com.google.cloud.clouddms.v1.DatabaseInstanceEntity.newBuilder(
+                      (com.google.cloud.clouddms.v1.DatabaseInstanceEntity) entityBody_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          entityBody_ = value;
+        }
+        onChanged();
+      } else {
+        if (entityBodyCase_ == 101) {
+          databaseBuilder_.mergeFrom(value);
+        } else {
+          databaseBuilder_.setMessage(value);
+        }
+      }
+      entityBodyCase_ = 101;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Database.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.DatabaseInstanceEntity database = 101;</code>
+     */
+    public Builder clearDatabase() {
+      if (databaseBuilder_ == null) {
+        if (entityBodyCase_ == 101) {
+          entityBodyCase_ = 0;
+          entityBody_ = null;
+          onChanged();
+        }
+      } else {
+        if (entityBodyCase_ == 101) {
+          entityBodyCase_ = 0;
+          entityBody_ = null;
+        }
+        databaseBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Database.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.DatabaseInstanceEntity database = 101;</code>
+     */
+    public com.google.cloud.clouddms.v1.DatabaseInstanceEntity.Builder getDatabaseBuilder() {
+      return getDatabaseFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Database.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.DatabaseInstanceEntity database = 101;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.DatabaseInstanceEntityOrBuilder getDatabaseOrBuilder() {
+      if ((entityBodyCase_ == 101) && (databaseBuilder_ != null)) {
+        return databaseBuilder_.getMessageOrBuilder();
+      } else {
+        if (entityBodyCase_ == 101) {
+          return (com.google.cloud.clouddms.v1.DatabaseInstanceEntity) entityBody_;
+        }
+        return com.google.cloud.clouddms.v1.DatabaseInstanceEntity.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Database.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.DatabaseInstanceEntity database = 101;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.DatabaseInstanceEntity,
+            com.google.cloud.clouddms.v1.DatabaseInstanceEntity.Builder,
+            com.google.cloud.clouddms.v1.DatabaseInstanceEntityOrBuilder>
+        getDatabaseFieldBuilder() {
+      if (databaseBuilder_ == null) {
+        if (!(entityBodyCase_ == 101)) {
+          entityBody_ = com.google.cloud.clouddms.v1.DatabaseInstanceEntity.getDefaultInstance();
+        }
+        databaseBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.clouddms.v1.DatabaseInstanceEntity,
+                com.google.cloud.clouddms.v1.DatabaseInstanceEntity.Builder,
+                com.google.cloud.clouddms.v1.DatabaseInstanceEntityOrBuilder>(
+                (com.google.cloud.clouddms.v1.DatabaseInstanceEntity) entityBody_,
+                getParentForChildren(),
+                isClean());
+        entityBody_ = null;
+      }
+      entityBodyCase_ = 101;
+      onChanged();
+      return databaseBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -4275,6 +5766,427 @@ public final class DatabaseEntity extends com.google.protobuf.GeneratedMessageV3
       entityBodyCase_ = 109;
       onChanged();
       return databasePackageBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.UDTEntity,
+            com.google.cloud.clouddms.v1.UDTEntity.Builder,
+            com.google.cloud.clouddms.v1.UDTEntityOrBuilder>
+        udtBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * UDT.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.UDTEntity udt = 110;</code>
+     *
+     * @return Whether the udt field is set.
+     */
+    @java.lang.Override
+    public boolean hasUdt() {
+      return entityBodyCase_ == 110;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * UDT.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.UDTEntity udt = 110;</code>
+     *
+     * @return The udt.
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.UDTEntity getUdt() {
+      if (udtBuilder_ == null) {
+        if (entityBodyCase_ == 110) {
+          return (com.google.cloud.clouddms.v1.UDTEntity) entityBody_;
+        }
+        return com.google.cloud.clouddms.v1.UDTEntity.getDefaultInstance();
+      } else {
+        if (entityBodyCase_ == 110) {
+          return udtBuilder_.getMessage();
+        }
+        return com.google.cloud.clouddms.v1.UDTEntity.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * UDT.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.UDTEntity udt = 110;</code>
+     */
+    public Builder setUdt(com.google.cloud.clouddms.v1.UDTEntity value) {
+      if (udtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        entityBody_ = value;
+        onChanged();
+      } else {
+        udtBuilder_.setMessage(value);
+      }
+      entityBodyCase_ = 110;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * UDT.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.UDTEntity udt = 110;</code>
+     */
+    public Builder setUdt(com.google.cloud.clouddms.v1.UDTEntity.Builder builderForValue) {
+      if (udtBuilder_ == null) {
+        entityBody_ = builderForValue.build();
+        onChanged();
+      } else {
+        udtBuilder_.setMessage(builderForValue.build());
+      }
+      entityBodyCase_ = 110;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * UDT.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.UDTEntity udt = 110;</code>
+     */
+    public Builder mergeUdt(com.google.cloud.clouddms.v1.UDTEntity value) {
+      if (udtBuilder_ == null) {
+        if (entityBodyCase_ == 110
+            && entityBody_ != com.google.cloud.clouddms.v1.UDTEntity.getDefaultInstance()) {
+          entityBody_ =
+              com.google.cloud.clouddms.v1.UDTEntity.newBuilder(
+                      (com.google.cloud.clouddms.v1.UDTEntity) entityBody_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          entityBody_ = value;
+        }
+        onChanged();
+      } else {
+        if (entityBodyCase_ == 110) {
+          udtBuilder_.mergeFrom(value);
+        } else {
+          udtBuilder_.setMessage(value);
+        }
+      }
+      entityBodyCase_ = 110;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * UDT.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.UDTEntity udt = 110;</code>
+     */
+    public Builder clearUdt() {
+      if (udtBuilder_ == null) {
+        if (entityBodyCase_ == 110) {
+          entityBodyCase_ = 0;
+          entityBody_ = null;
+          onChanged();
+        }
+      } else {
+        if (entityBodyCase_ == 110) {
+          entityBodyCase_ = 0;
+          entityBody_ = null;
+        }
+        udtBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * UDT.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.UDTEntity udt = 110;</code>
+     */
+    public com.google.cloud.clouddms.v1.UDTEntity.Builder getUdtBuilder() {
+      return getUdtFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * UDT.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.UDTEntity udt = 110;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.UDTEntityOrBuilder getUdtOrBuilder() {
+      if ((entityBodyCase_ == 110) && (udtBuilder_ != null)) {
+        return udtBuilder_.getMessageOrBuilder();
+      } else {
+        if (entityBodyCase_ == 110) {
+          return (com.google.cloud.clouddms.v1.UDTEntity) entityBody_;
+        }
+        return com.google.cloud.clouddms.v1.UDTEntity.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * UDT.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.UDTEntity udt = 110;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.UDTEntity,
+            com.google.cloud.clouddms.v1.UDTEntity.Builder,
+            com.google.cloud.clouddms.v1.UDTEntityOrBuilder>
+        getUdtFieldBuilder() {
+      if (udtBuilder_ == null) {
+        if (!(entityBodyCase_ == 110)) {
+          entityBody_ = com.google.cloud.clouddms.v1.UDTEntity.getDefaultInstance();
+        }
+        udtBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.clouddms.v1.UDTEntity,
+                com.google.cloud.clouddms.v1.UDTEntity.Builder,
+                com.google.cloud.clouddms.v1.UDTEntityOrBuilder>(
+                (com.google.cloud.clouddms.v1.UDTEntity) entityBody_,
+                getParentForChildren(),
+                isClean());
+        entityBody_ = null;
+      }
+      entityBodyCase_ = 110;
+      onChanged();
+      return udtBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.MaterializedViewEntity,
+            com.google.cloud.clouddms.v1.MaterializedViewEntity.Builder,
+            com.google.cloud.clouddms.v1.MaterializedViewEntityOrBuilder>
+        materializedViewBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Materialized view.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.MaterializedViewEntity materialized_view = 111;</code>
+     *
+     * @return Whether the materializedView field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaterializedView() {
+      return entityBodyCase_ == 111;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Materialized view.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.MaterializedViewEntity materialized_view = 111;</code>
+     *
+     * @return The materializedView.
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.MaterializedViewEntity getMaterializedView() {
+      if (materializedViewBuilder_ == null) {
+        if (entityBodyCase_ == 111) {
+          return (com.google.cloud.clouddms.v1.MaterializedViewEntity) entityBody_;
+        }
+        return com.google.cloud.clouddms.v1.MaterializedViewEntity.getDefaultInstance();
+      } else {
+        if (entityBodyCase_ == 111) {
+          return materializedViewBuilder_.getMessage();
+        }
+        return com.google.cloud.clouddms.v1.MaterializedViewEntity.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Materialized view.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.MaterializedViewEntity materialized_view = 111;</code>
+     */
+    public Builder setMaterializedView(com.google.cloud.clouddms.v1.MaterializedViewEntity value) {
+      if (materializedViewBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        entityBody_ = value;
+        onChanged();
+      } else {
+        materializedViewBuilder_.setMessage(value);
+      }
+      entityBodyCase_ = 111;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Materialized view.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.MaterializedViewEntity materialized_view = 111;</code>
+     */
+    public Builder setMaterializedView(
+        com.google.cloud.clouddms.v1.MaterializedViewEntity.Builder builderForValue) {
+      if (materializedViewBuilder_ == null) {
+        entityBody_ = builderForValue.build();
+        onChanged();
+      } else {
+        materializedViewBuilder_.setMessage(builderForValue.build());
+      }
+      entityBodyCase_ = 111;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Materialized view.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.MaterializedViewEntity materialized_view = 111;</code>
+     */
+    public Builder mergeMaterializedView(
+        com.google.cloud.clouddms.v1.MaterializedViewEntity value) {
+      if (materializedViewBuilder_ == null) {
+        if (entityBodyCase_ == 111
+            && entityBody_
+                != com.google.cloud.clouddms.v1.MaterializedViewEntity.getDefaultInstance()) {
+          entityBody_ =
+              com.google.cloud.clouddms.v1.MaterializedViewEntity.newBuilder(
+                      (com.google.cloud.clouddms.v1.MaterializedViewEntity) entityBody_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          entityBody_ = value;
+        }
+        onChanged();
+      } else {
+        if (entityBodyCase_ == 111) {
+          materializedViewBuilder_.mergeFrom(value);
+        } else {
+          materializedViewBuilder_.setMessage(value);
+        }
+      }
+      entityBodyCase_ = 111;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Materialized view.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.MaterializedViewEntity materialized_view = 111;</code>
+     */
+    public Builder clearMaterializedView() {
+      if (materializedViewBuilder_ == null) {
+        if (entityBodyCase_ == 111) {
+          entityBodyCase_ = 0;
+          entityBody_ = null;
+          onChanged();
+        }
+      } else {
+        if (entityBodyCase_ == 111) {
+          entityBodyCase_ = 0;
+          entityBody_ = null;
+        }
+        materializedViewBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Materialized view.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.MaterializedViewEntity materialized_view = 111;</code>
+     */
+    public com.google.cloud.clouddms.v1.MaterializedViewEntity.Builder
+        getMaterializedViewBuilder() {
+      return getMaterializedViewFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Materialized view.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.MaterializedViewEntity materialized_view = 111;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.MaterializedViewEntityOrBuilder
+        getMaterializedViewOrBuilder() {
+      if ((entityBodyCase_ == 111) && (materializedViewBuilder_ != null)) {
+        return materializedViewBuilder_.getMessageOrBuilder();
+      } else {
+        if (entityBodyCase_ == 111) {
+          return (com.google.cloud.clouddms.v1.MaterializedViewEntity) entityBody_;
+        }
+        return com.google.cloud.clouddms.v1.MaterializedViewEntity.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Materialized view.
+     * </pre>
+     *
+     * <code>.google.cloud.clouddms.v1.MaterializedViewEntity materialized_view = 111;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.MaterializedViewEntity,
+            com.google.cloud.clouddms.v1.MaterializedViewEntity.Builder,
+            com.google.cloud.clouddms.v1.MaterializedViewEntityOrBuilder>
+        getMaterializedViewFieldBuilder() {
+      if (materializedViewBuilder_ == null) {
+        if (!(entityBodyCase_ == 111)) {
+          entityBody_ = com.google.cloud.clouddms.v1.MaterializedViewEntity.getDefaultInstance();
+        }
+        materializedViewBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.clouddms.v1.MaterializedViewEntity,
+                com.google.cloud.clouddms.v1.MaterializedViewEntity.Builder,
+                com.google.cloud.clouddms.v1.MaterializedViewEntityOrBuilder>(
+                (com.google.cloud.clouddms.v1.MaterializedViewEntity) entityBody_,
+                getParentForChildren(),
+                isClean());
+        entityBody_ = null;
+      }
+      entityBodyCase_ = 111;
+      onChanged();
+      return materializedViewBuilder_;
     }
 
     @java.lang.Override

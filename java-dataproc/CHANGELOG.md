@@ -1,5 +1,27 @@
 # Changelog
 
+## 4.21.0 (2023-09-11)
+
+### Features
+
+* support min_num_instances for primary worker and InstanceFlexibilityPolicy for secondary worker ([#9775](https://github.com/googleapis/google-cloud-java/issues/9775)) ([6e23c3a](https://github.com/googleapis/google-cloud-java/commit/6e23c3a406e19af410a1a1dd0d0487329875040e))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#9809](https://github.com/googleapis/google-cloud-java/issues/9809)) ([09dbd85](https://github.com/googleapis/google-cloud-java/commit/09dbd855f683b40a462c4f918511bee4671e0174))
+
+
+## 4.20.0 (2023-08-08)
+
+### Features
+
+* Minor formatting ([#9721](https://github.com/googleapis/google-cloud-java/issues/9721)) ([c14b376](https://github.com/googleapis/google-cloud-java/commit/c14b376c59298b2e7069c0e275f0e2d113087553))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.14.0 ([#9722](https://github.com/googleapis/google-cloud-java/issues/9722)) ([c7011db](https://github.com/googleapis/google-cloud-java/commit/c7011dbd69189330de1c2946b736cd712d5c1f4e))
+
+
 ## 4.19.0 (2023-07-21)
 
 ### Dependencies

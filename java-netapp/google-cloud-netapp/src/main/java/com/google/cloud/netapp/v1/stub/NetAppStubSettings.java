@@ -18,6 +18,7 @@ package com.google.cloud.netapp.v1.stub;
 
 import static com.google.cloud.netapp.v1.NetAppClient.ListActiveDirectoriesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListKmsConfigsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListLocationsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListReplicationsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListStoragePoolsPagedResponse;
@@ -52,6 +53,10 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.netapp.v1.ActiveDirectory;
 import com.google.cloud.netapp.v1.CreateActiveDirectoryRequest;
 import com.google.cloud.netapp.v1.CreateKmsConfigRequest;
@@ -259,6 +264,10 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
   private final OperationCallSettings<
           ReverseReplicationDirectionRequest, Replication, OperationMetadata>
       reverseReplicationDirectionOperationSettings;
+  private final PagedCallSettings<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings;
+  private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
 
   private static final PagedListDescriptor<
           ListStoragePoolsRequest, ListStoragePoolsResponse, StoragePool>
@@ -490,6 +499,42 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
             }
           };
 
+  private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
+      LIST_LOCATIONS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListLocationsRequest injectToken(ListLocationsRequest payload, String token) {
+              return ListLocationsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListLocationsRequest injectPageSize(ListLocationsRequest payload, int pageSize) {
+              return ListLocationsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListLocationsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListLocationsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<Location> extractResources(ListLocationsResponse payload) {
+              return payload.getLocationsList() == null
+                  ? ImmutableList.<Location>of()
+                  : payload.getLocationsList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListStoragePoolsRequest, ListStoragePoolsResponse, ListStoragePoolsPagedResponse>
       LIST_STORAGE_POOLS_PAGE_STR_FACT =
@@ -600,6 +645,23 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
                       PageContext.create(
                           callable, LIST_REPLICATIONS_PAGE_STR_DESC, request, context);
               return ListReplicationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      LIST_LOCATIONS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>() {
+            @Override
+            public ApiFuture<ListLocationsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListLocationsRequest, ListLocationsResponse> callable,
+                ListLocationsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListLocationsResponse> futureResponse) {
+              PageContext<ListLocationsRequest, ListLocationsResponse, Location> pageContext =
+                  PageContext.create(callable, LIST_LOCATIONS_PAGE_STR_DESC, request, context);
+              return ListLocationsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -939,6 +1001,17 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     return reverseReplicationDirectionOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return listLocationsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return getLocationSettings;
+  }
+
   public NetAppStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -1114,6 +1187,8 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
         settingsBuilder.reverseReplicationDirectionSettings().build();
     reverseReplicationDirectionOperationSettings =
         settingsBuilder.reverseReplicationDirectionOperationSettings().build();
+    listLocationsSettings = settingsBuilder.listLocationsSettings().build();
+    getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
 
   /** Builder for NetAppStubSettings. */
@@ -1250,6 +1325,10 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
     private final OperationCallSettings.Builder<
             ReverseReplicationDirectionRequest, Replication, OperationMetadata>
         reverseReplicationDirectionOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings;
+    private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -1261,6 +1340,7 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
       definitions.put(
           "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -1288,6 +1368,8 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("no_retry_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -1358,6 +1440,8 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
       resumeReplicationOperationSettings = OperationCallSettings.newBuilder();
       reverseReplicationDirectionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       reverseReplicationDirectionOperationSettings = OperationCallSettings.newBuilder();
+      listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
+      getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1396,7 +1480,9 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               updateReplicationSettings,
               stopReplicationSettings,
               resumeReplicationSettings,
-              reverseReplicationDirectionSettings);
+              reverseReplicationDirectionSettings,
+              listLocationsSettings,
+              getLocationSettings);
       initDefaults(this);
     }
 
@@ -1467,6 +1553,8 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           settings.reverseReplicationDirectionSettings.toBuilder();
       reverseReplicationDirectionOperationSettings =
           settings.reverseReplicationDirectionOperationSettings.toBuilder();
+      listLocationsSettings = settings.listLocationsSettings.toBuilder();
+      getLocationSettings = settings.getLocationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -1505,7 +1593,9 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
               updateReplicationSettings,
               stopReplicationSettings,
               resumeReplicationSettings,
-              reverseReplicationDirectionSettings);
+              reverseReplicationDirectionSettings,
+              listLocationsSettings,
+              getLocationSettings);
     }
 
     private static Builder createDefault() {
@@ -1714,6 +1804,16 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
           .reverseReplicationDirectionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .listLocationsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getLocationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .createStoragePoolOperationSettings()
@@ -2678,6 +2778,18 @@ public class NetAppStubSettings extends StubSettings<NetAppStubSettings> {
             ReverseReplicationDirectionRequest, Replication, OperationMetadata>
         reverseReplicationDirectionOperationSettings() {
       return reverseReplicationDirectionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return listLocationsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getLocationSettings;
     }
 
     @Override

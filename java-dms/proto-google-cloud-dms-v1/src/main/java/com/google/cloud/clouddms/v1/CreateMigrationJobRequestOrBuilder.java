@@ -128,8 +128,8 @@ public interface CreateMigrationJobRequestOrBuilder
    *
    *
    * <pre>
-   * A unique ID used to identify the request. If the server receives two
-   * requests with the same ID, then the second request is ignored.
+   * Optional. A unique ID used to identify the request. If the server receives
+   * two requests with the same ID, then the second request is ignored.
    *
    * It is recommended to always set this value to a UUID.
    *
@@ -137,7 +137,7 @@ public interface CreateMigrationJobRequestOrBuilder
    * (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
-   * <code>string request_id = 4;</code>
+   * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The requestId.
    */
@@ -146,8 +146,8 @@ public interface CreateMigrationJobRequestOrBuilder
    *
    *
    * <pre>
-   * A unique ID used to identify the request. If the server receives two
-   * requests with the same ID, then the second request is ignored.
+   * Optional. A unique ID used to identify the request. If the server receives
+   * two requests with the same ID, then the second request is ignored.
    *
    * It is recommended to always set this value to a UUID.
    *
@@ -155,7 +155,7 @@ public interface CreateMigrationJobRequestOrBuilder
    * (_), and hyphens (-). The maximum length is 40 characters.
    * </pre>
    *
-   * <code>string request_id = 4;</code>
+   * <code>string request_id = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for requestId.
    */

@@ -184,7 +184,7 @@ public class AgentName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       AgentName that = ((AgentName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location);

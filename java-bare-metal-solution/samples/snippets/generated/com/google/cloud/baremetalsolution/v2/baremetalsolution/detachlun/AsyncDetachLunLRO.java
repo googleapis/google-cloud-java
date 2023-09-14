@@ -42,6 +42,7 @@ public class AsyncDetachLunLRO {
           DetachLunRequest.newBuilder()
               .setInstance(InstanceName.of("[PROJECT]", "[LOCATION]", "[INSTANCE]").toString())
               .setLun(LunName.of("[PROJECT]", "[LOCATION]", "[VOLUME]", "[LUN]").toString())
+              .setSkipReboot(true)
               .build();
       OperationFuture<Instance, OperationMetadata> future =
           bareMetalSolutionClient.detachLunOperationCallable().futureCall(request);

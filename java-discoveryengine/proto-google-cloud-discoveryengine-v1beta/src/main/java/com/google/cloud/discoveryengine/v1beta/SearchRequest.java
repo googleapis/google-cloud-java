@@ -48,6 +48,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     orderBy_ = "";
     facetSpecs_ = java.util.Collections.emptyList();
     userPseudoId_ = "";
+    rankingExpression_ = "";
   }
 
   @java.lang.Override
@@ -8020,6 +8021,21 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.discoveryengine.v1beta.SearchRequest.QueryExpansionSpec.Condition
         getCondition();
+
+    /**
+     *
+     *
+     * <pre>
+     * Whether to pin unexpanded results. If this field is set to true,
+     * unexpanded products are always at the top of the search results, followed
+     * by the expanded results.
+     * </pre>
+     *
+     * <code>bool pin_unexpanded_results = 2;</code>
+     *
+     * @return The pinUnexpandedResults.
+     */
+    boolean getPinUnexpandedResults();
   }
   /**
    *
@@ -8282,6 +8298,26 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           : result;
     }
 
+    public static final int PIN_UNEXPANDED_RESULTS_FIELD_NUMBER = 2;
+    private boolean pinUnexpandedResults_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Whether to pin unexpanded results. If this field is set to true,
+     * unexpanded products are always at the top of the search results, followed
+     * by the expanded results.
+     * </pre>
+     *
+     * <code>bool pin_unexpanded_results = 2;</code>
+     *
+     * @return The pinUnexpandedResults.
+     */
+    @java.lang.Override
+    public boolean getPinUnexpandedResults() {
+      return pinUnexpandedResults_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -8302,6 +8338,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               .getNumber()) {
         output.writeEnum(1, condition_);
       }
+      if (pinUnexpandedResults_ != false) {
+        output.writeBool(2, pinUnexpandedResults_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -8316,6 +8355,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               .CONDITION_UNSPECIFIED
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, condition_);
+      }
+      if (pinUnexpandedResults_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, pinUnexpandedResults_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -8335,6 +8377,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.discoveryengine.v1beta.SearchRequest.QueryExpansionSpec) obj;
 
       if (condition_ != other.condition_) return false;
+      if (getPinUnexpandedResults() != other.getPinUnexpandedResults()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -8348,6 +8391,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CONDITION_FIELD_NUMBER;
       hash = (53 * hash) + condition_;
+      hash = (37 * hash) + PIN_UNEXPANDED_RESULTS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPinUnexpandedResults());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -8500,6 +8545,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         condition_ = 0;
+        pinUnexpandedResults_ = false;
         return this;
       }
 
@@ -8543,6 +8589,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.condition_ = condition_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.pinUnexpandedResults_ = pinUnexpandedResults_;
         }
       }
 
@@ -8601,6 +8650,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (other.condition_ != 0) {
           setConditionValue(other.getConditionValue());
         }
+        if (other.getPinUnexpandedResults() != false) {
+          setPinUnexpandedResults(other.getPinUnexpandedResults());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -8633,6 +8685,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 8
+              case 16:
+                {
+                  pinUnexpandedResults_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8760,6 +8818,65 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       public Builder clearCondition() {
         bitField0_ = (bitField0_ & ~0x00000001);
         condition_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean pinUnexpandedResults_;
+      /**
+       *
+       *
+       * <pre>
+       * Whether to pin unexpanded results. If this field is set to true,
+       * unexpanded products are always at the top of the search results, followed
+       * by the expanded results.
+       * </pre>
+       *
+       * <code>bool pin_unexpanded_results = 2;</code>
+       *
+       * @return The pinUnexpandedResults.
+       */
+      @java.lang.Override
+      public boolean getPinUnexpandedResults() {
+        return pinUnexpandedResults_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether to pin unexpanded results. If this field is set to true,
+       * unexpanded products are always at the top of the search results, followed
+       * by the expanded results.
+       * </pre>
+       *
+       * <code>bool pin_unexpanded_results = 2;</code>
+       *
+       * @param value The pinUnexpandedResults to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPinUnexpandedResults(boolean value) {
+
+        pinUnexpandedResults_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Whether to pin unexpanded results. If this field is set to true,
+       * unexpanded products are always at the top of the search results, followed
+       * by the expanded results.
+       * </pre>
+       *
+       * <code>bool pin_unexpanded_results = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPinUnexpandedResults() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        pinUnexpandedResults_ = false;
         onChanged();
         return this;
       }
@@ -9885,7 +10002,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=299
+       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=304
        * @return The maxSnippetCount.
        */
       @java.lang.Deprecated
@@ -9903,7 +10020,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=303
+       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=308
        * @return The referenceOnly.
        */
       @java.lang.Deprecated
@@ -9984,7 +10101,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=299
+       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=304
        * @return The maxSnippetCount.
        */
       @java.lang.Override
@@ -10007,7 +10124,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        *
        * @deprecated
        *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=303
+       *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=308
        * @return The referenceOnly.
        */
       @java.lang.Override
@@ -10485,7 +10602,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=299
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=304
          * @return The maxSnippetCount.
          */
         @java.lang.Override
@@ -10506,7 +10623,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=299
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=304
          * @param value The maxSnippetCount to set.
          * @return This builder for chaining.
          */
@@ -10531,7 +10648,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.max_snippet_count
-         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=299
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=304
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -10555,7 +10672,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=303
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=308
          * @return The referenceOnly.
          */
         @java.lang.Override
@@ -10575,7 +10692,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=303
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=308
          * @param value The referenceOnly to set.
          * @return This builder for chaining.
          */
@@ -10599,7 +10716,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          *
          * @deprecated
          *     google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SnippetSpec.reference_only
-         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=303
+         *     is deprecated. See google/cloud/discoveryengine/v1beta/search_service.proto;l=308
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -10835,6 +10952,33 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return The ignoreNonSummarySeekingQuery.
        */
       boolean getIgnoreNonSummarySeekingQuery();
+
+      /**
+       *
+       *
+       * <pre>
+       * Language code for Summary. Use language tags defined by
+       * [BCP47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+       * </pre>
+       *
+       * <code>string language_code = 6;</code>
+       *
+       * @return The languageCode.
+       */
+      java.lang.String getLanguageCode();
+      /**
+       *
+       *
+       * <pre>
+       * Language code for Summary. Use language tags defined by
+       * [BCP47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+       * </pre>
+       *
+       * <code>string language_code = 6;</code>
+       *
+       * @return The bytes for languageCode.
+       */
+      com.google.protobuf.ByteString getLanguageCodeBytes();
     }
     /**
      *
@@ -10857,7 +11001,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         super(builder);
       }
 
-      private SummarySpec() {}
+      private SummarySpec() {
+        languageCode_ = "";
+      }
 
       @java.lang.Override
       @SuppressWarnings({"unused"})
@@ -10993,6 +11139,59 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         return ignoreNonSummarySeekingQuery_;
       }
 
+      public static final int LANGUAGE_CODE_FIELD_NUMBER = 6;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object languageCode_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Language code for Summary. Use language tags defined by
+       * [BCP47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+       * </pre>
+       *
+       * <code>string language_code = 6;</code>
+       *
+       * @return The languageCode.
+       */
+      @java.lang.Override
+      public java.lang.String getLanguageCode() {
+        java.lang.Object ref = languageCode_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          languageCode_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Language code for Summary. Use language tags defined by
+       * [BCP47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+       * </pre>
+       *
+       * <code>string language_code = 6;</code>
+       *
+       * @return The bytes for languageCode.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getLanguageCodeBytes() {
+        java.lang.Object ref = languageCode_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          languageCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
       private byte memoizedIsInitialized = -1;
 
       @java.lang.Override
@@ -11019,6 +11218,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (ignoreNonSummarySeekingQuery_ != false) {
           output.writeBool(4, ignoreNonSummarySeekingQuery_);
         }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 6, languageCode_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -11041,6 +11243,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           size +=
               com.google.protobuf.CodedOutputStream.computeBoolSize(
                   4, ignoreNonSummarySeekingQuery_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, languageCode_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -11066,6 +11271,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (getIgnoreAdversarialQuery() != other.getIgnoreAdversarialQuery()) return false;
         if (getIgnoreNonSummarySeekingQuery() != other.getIgnoreNonSummarySeekingQuery())
           return false;
+        if (!getLanguageCode().equals(other.getLanguageCode())) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -11087,6 +11293,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         hash =
             (53 * hash)
                 + com.google.protobuf.Internal.hashBoolean(getIgnoreNonSummarySeekingQuery());
+        hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+        hash = (53 * hash) + getLanguageCode().hashCode();
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -11260,6 +11468,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           includeCitations_ = false;
           ignoreAdversarialQuery_ = false;
           ignoreNonSummarySeekingQuery_ = false;
+          languageCode_ = "";
           return this;
         }
 
@@ -11316,6 +11525,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           if (((from_bitField0_ & 0x00000008) != 0)) {
             result.ignoreNonSummarySeekingQuery_ = ignoreNonSummarySeekingQuery_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.languageCode_ = languageCode_;
           }
         }
 
@@ -11387,6 +11599,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           if (other.getIgnoreNonSummarySeekingQuery() != false) {
             setIgnoreNonSummarySeekingQuery(other.getIgnoreNonSummarySeekingQuery());
           }
+          if (!other.getLanguageCode().isEmpty()) {
+            languageCode_ = other.languageCode_;
+            bitField0_ |= 0x00000010;
+            onChanged();
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -11437,6 +11654,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000008;
                     break;
                   } // case 32
+                case 50:
+                  {
+                    languageCode_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000010;
+                    break;
+                  } // case 50
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11785,6 +12008,117 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private java.lang.Object languageCode_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Language code for Summary. Use language tags defined by
+         * [BCP47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+         * </pre>
+         *
+         * <code>string language_code = 6;</code>
+         *
+         * @return The languageCode.
+         */
+        public java.lang.String getLanguageCode() {
+          java.lang.Object ref = languageCode_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            languageCode_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Language code for Summary. Use language tags defined by
+         * [BCP47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+         * </pre>
+         *
+         * <code>string language_code = 6;</code>
+         *
+         * @return The bytes for languageCode.
+         */
+        public com.google.protobuf.ByteString getLanguageCodeBytes() {
+          java.lang.Object ref = languageCode_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            languageCode_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Language code for Summary. Use language tags defined by
+         * [BCP47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+         * </pre>
+         *
+         * <code>string language_code = 6;</code>
+         *
+         * @param value The languageCode to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLanguageCode(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          languageCode_ = value;
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Language code for Summary. Use language tags defined by
+         * [BCP47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+         * </pre>
+         *
+         * <code>string language_code = 6;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearLanguageCode() {
+          languageCode_ = getDefaultInstance().getLanguageCode();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Language code for Summary. Use language tags defined by
+         * [BCP47][https://www.rfc-editor.org/rfc/bcp/bcp47.txt].
+         * </pre>
+         *
+         * <code>string language_code = 6;</code>
+         *
+         * @param value The bytes for languageCode to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          languageCode_ = value;
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+
         @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -11907,9 +12241,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * If the number of matching segments is less than
        * `max_extractive_segment_count`, return all of the segments. Otherwise,
        * return the `max_extractive_segment_count`.
-       *
-       * Currently one segment is returned for each
-       * [SearchResult][google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult].
        * </pre>
        *
        * <code>int32 max_extractive_segment_count = 2;</code>
@@ -11917,6 +12248,50 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * @return The maxExtractiveSegmentCount.
        */
       int getMaxExtractiveSegmentCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to return the confidence score from the extractive
+       * segments in each search result. The default value is `false`.
+       * </pre>
+       *
+       * <code>bool return_extractive_segment_score = 3;</code>
+       *
+       * @return The returnExtractiveSegmentScore.
+       */
+      boolean getReturnExtractiveSegmentScore();
+
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to also include the adjacent from each selected
+       * segments.
+       * Return at most `num_previous_segments` segments before each selected
+       * segments.
+       * </pre>
+       *
+       * <code>int32 num_previous_segments = 4;</code>
+       *
+       * @return The numPreviousSegments.
+       */
+      int getNumPreviousSegments();
+
+      /**
+       *
+       *
+       * <pre>
+       * Return at most `num_next_segments` segments after each selected
+       * segments.
+       * </pre>
+       *
+       * <code>int32 num_next_segments = 5;</code>
+       *
+       * @return The numNextSegments.
+       */
+      int getNumNextSegments();
     }
     /**
      *
@@ -12017,9 +12392,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
        * If the number of matching segments is less than
        * `max_extractive_segment_count`, return all of the segments. Otherwise,
        * return the `max_extractive_segment_count`.
-       *
-       * Currently one segment is returned for each
-       * [SearchResult][google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult].
        * </pre>
        *
        * <code>int32 max_extractive_segment_count = 2;</code>
@@ -12029,6 +12401,65 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public int getMaxExtractiveSegmentCount() {
         return maxExtractiveSegmentCount_;
+      }
+
+      public static final int RETURN_EXTRACTIVE_SEGMENT_SCORE_FIELD_NUMBER = 3;
+      private boolean returnExtractiveSegmentScore_ = false;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to return the confidence score from the extractive
+       * segments in each search result. The default value is `false`.
+       * </pre>
+       *
+       * <code>bool return_extractive_segment_score = 3;</code>
+       *
+       * @return The returnExtractiveSegmentScore.
+       */
+      @java.lang.Override
+      public boolean getReturnExtractiveSegmentScore() {
+        return returnExtractiveSegmentScore_;
+      }
+
+      public static final int NUM_PREVIOUS_SEGMENTS_FIELD_NUMBER = 4;
+      private int numPreviousSegments_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Specifies whether to also include the adjacent from each selected
+       * segments.
+       * Return at most `num_previous_segments` segments before each selected
+       * segments.
+       * </pre>
+       *
+       * <code>int32 num_previous_segments = 4;</code>
+       *
+       * @return The numPreviousSegments.
+       */
+      @java.lang.Override
+      public int getNumPreviousSegments() {
+        return numPreviousSegments_;
+      }
+
+      public static final int NUM_NEXT_SEGMENTS_FIELD_NUMBER = 5;
+      private int numNextSegments_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Return at most `num_next_segments` segments after each selected
+       * segments.
+       * </pre>
+       *
+       * <code>int32 num_next_segments = 5;</code>
+       *
+       * @return The numNextSegments.
+       */
+      @java.lang.Override
+      public int getNumNextSegments() {
+        return numNextSegments_;
       }
 
       private byte memoizedIsInitialized = -1;
@@ -12051,6 +12482,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (maxExtractiveSegmentCount_ != 0) {
           output.writeInt32(2, maxExtractiveSegmentCount_);
         }
+        if (returnExtractiveSegmentScore_ != false) {
+          output.writeBool(3, returnExtractiveSegmentScore_);
+        }
+        if (numPreviousSegments_ != 0) {
+          output.writeInt32(4, numPreviousSegments_);
+        }
+        if (numNextSegments_ != 0) {
+          output.writeInt32(5, numNextSegments_);
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -12067,6 +12507,17 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         if (maxExtractiveSegmentCount_ != 0) {
           size +=
               com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxExtractiveSegmentCount_);
+        }
+        if (returnExtractiveSegmentScore_ != false) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeBoolSize(
+                  3, returnExtractiveSegmentScore_);
+        }
+        if (numPreviousSegments_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, numPreviousSegments_);
+        }
+        if (numNextSegments_ != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, numNextSegments_);
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -12093,6 +12544,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
 
         if (getMaxExtractiveAnswerCount() != other.getMaxExtractiveAnswerCount()) return false;
         if (getMaxExtractiveSegmentCount() != other.getMaxExtractiveSegmentCount()) return false;
+        if (getReturnExtractiveSegmentScore() != other.getReturnExtractiveSegmentScore())
+          return false;
+        if (getNumPreviousSegments() != other.getNumPreviousSegments()) return false;
+        if (getNumNextSegments() != other.getNumNextSegments()) return false;
         if (!getUnknownFields().equals(other.getUnknownFields())) return false;
         return true;
       }
@@ -12108,6 +12563,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getMaxExtractiveAnswerCount();
         hash = (37 * hash) + MAX_EXTRACTIVE_SEGMENT_COUNT_FIELD_NUMBER;
         hash = (53 * hash) + getMaxExtractiveSegmentCount();
+        hash = (37 * hash) + RETURN_EXTRACTIVE_SEGMENT_SCORE_FIELD_NUMBER;
+        hash =
+            (53 * hash)
+                + com.google.protobuf.Internal.hashBoolean(getReturnExtractiveSegmentScore());
+        hash = (37 * hash) + NUM_PREVIOUS_SEGMENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getNumPreviousSegments();
+        hash = (37 * hash) + NUM_NEXT_SEGMENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getNumNextSegments();
         hash = (29 * hash) + getUnknownFields().hashCode();
         memoizedHashCode = hash;
         return hash;
@@ -12280,6 +12743,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           bitField0_ = 0;
           maxExtractiveAnswerCount_ = 0;
           maxExtractiveSegmentCount_ = 0;
+          returnExtractiveSegmentScore_ = false;
+          numPreviousSegments_ = 0;
+          numNextSegments_ = 0;
           return this;
         }
 
@@ -12336,6 +12802,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           }
           if (((from_bitField0_ & 0x00000002) != 0)) {
             result.maxExtractiveSegmentCount_ = maxExtractiveSegmentCount_;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.returnExtractiveSegmentScore_ = returnExtractiveSegmentScore_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.numPreviousSegments_ = numPreviousSegments_;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.numNextSegments_ = numNextSegments_;
           }
         }
 
@@ -12403,6 +12878,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
           if (other.getMaxExtractiveSegmentCount() != 0) {
             setMaxExtractiveSegmentCount(other.getMaxExtractiveSegmentCount());
           }
+          if (other.getReturnExtractiveSegmentScore() != false) {
+            setReturnExtractiveSegmentScore(other.getReturnExtractiveSegmentScore());
+          }
+          if (other.getNumPreviousSegments() != 0) {
+            setNumPreviousSegments(other.getNumPreviousSegments());
+          }
+          if (other.getNumNextSegments() != 0) {
+            setNumNextSegments(other.getNumNextSegments());
+          }
           this.mergeUnknownFields(other.getUnknownFields());
           onChanged();
           return this;
@@ -12441,6 +12925,24 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                     bitField0_ |= 0x00000002;
                     break;
                   } // case 16
+                case 24:
+                  {
+                    returnExtractiveSegmentScore_ = input.readBool();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 24
+                case 32:
+                  {
+                    numPreviousSegments_ = input.readInt32();
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 32
+                case 40:
+                  {
+                    numNextSegments_ = input.readInt32();
+                    bitField0_ |= 0x00000010;
+                    break;
+                  } // case 40
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -12571,9 +13073,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * If the number of matching segments is less than
          * `max_extractive_segment_count`, return all of the segments. Otherwise,
          * return the `max_extractive_segment_count`.
-         *
-         * Currently one segment is returned for each
-         * [SearchResult][google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult].
          * </pre>
          *
          * <code>int32 max_extractive_segment_count = 2;</code>
@@ -12605,9 +13104,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * If the number of matching segments is less than
          * `max_extractive_segment_count`, return all of the segments. Otherwise,
          * return the `max_extractive_segment_count`.
-         *
-         * Currently one segment is returned for each
-         * [SearchResult][google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult].
          * </pre>
          *
          * <code>int32 max_extractive_segment_count = 2;</code>
@@ -12643,9 +13139,6 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
          * If the number of matching segments is less than
          * `max_extractive_segment_count`, return all of the segments. Otherwise,
          * return the `max_extractive_segment_count`.
-         *
-         * Currently one segment is returned for each
-         * [SearchResult][google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult].
          * </pre>
          *
          * <code>int32 max_extractive_segment_count = 2;</code>
@@ -12655,6 +13148,180 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         public Builder clearMaxExtractiveSegmentCount() {
           bitField0_ = (bitField0_ & ~0x00000002);
           maxExtractiveSegmentCount_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private boolean returnExtractiveSegmentScore_;
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to return the confidence score from the extractive
+         * segments in each search result. The default value is `false`.
+         * </pre>
+         *
+         * <code>bool return_extractive_segment_score = 3;</code>
+         *
+         * @return The returnExtractiveSegmentScore.
+         */
+        @java.lang.Override
+        public boolean getReturnExtractiveSegmentScore() {
+          return returnExtractiveSegmentScore_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to return the confidence score from the extractive
+         * segments in each search result. The default value is `false`.
+         * </pre>
+         *
+         * <code>bool return_extractive_segment_score = 3;</code>
+         *
+         * @param value The returnExtractiveSegmentScore to set.
+         * @return This builder for chaining.
+         */
+        public Builder setReturnExtractiveSegmentScore(boolean value) {
+
+          returnExtractiveSegmentScore_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to return the confidence score from the extractive
+         * segments in each search result. The default value is `false`.
+         * </pre>
+         *
+         * <code>bool return_extractive_segment_score = 3;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearReturnExtractiveSegmentScore() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          returnExtractiveSegmentScore_ = false;
+          onChanged();
+          return this;
+        }
+
+        private int numPreviousSegments_;
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to also include the adjacent from each selected
+         * segments.
+         * Return at most `num_previous_segments` segments before each selected
+         * segments.
+         * </pre>
+         *
+         * <code>int32 num_previous_segments = 4;</code>
+         *
+         * @return The numPreviousSegments.
+         */
+        @java.lang.Override
+        public int getNumPreviousSegments() {
+          return numPreviousSegments_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to also include the adjacent from each selected
+         * segments.
+         * Return at most `num_previous_segments` segments before each selected
+         * segments.
+         * </pre>
+         *
+         * <code>int32 num_previous_segments = 4;</code>
+         *
+         * @param value The numPreviousSegments to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNumPreviousSegments(int value) {
+
+          numPreviousSegments_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Specifies whether to also include the adjacent from each selected
+         * segments.
+         * Return at most `num_previous_segments` segments before each selected
+         * segments.
+         * </pre>
+         *
+         * <code>int32 num_previous_segments = 4;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearNumPreviousSegments() {
+          bitField0_ = (bitField0_ & ~0x00000008);
+          numPreviousSegments_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int numNextSegments_;
+        /**
+         *
+         *
+         * <pre>
+         * Return at most `num_next_segments` segments after each selected
+         * segments.
+         * </pre>
+         *
+         * <code>int32 num_next_segments = 5;</code>
+         *
+         * @return The numNextSegments.
+         */
+        @java.lang.Override
+        public int getNumNextSegments() {
+          return numNextSegments_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Return at most `num_next_segments` segments after each selected
+         * segments.
+         * </pre>
+         *
+         * <code>int32 num_next_segments = 5;</code>
+         *
+         * @param value The numNextSegments to set.
+         * @return This builder for chaining.
+         */
+        public Builder setNumNextSegments(int value) {
+
+          numNextSegments_ = value;
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Return at most `num_next_segments` segments after each selected
+         * segments.
+         * </pre>
+         *
+         * <code>int32 num_next_segments = 5;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearNumNextSegments() {
+          bitField0_ = (bitField0_ & ~0x00000010);
+          numNextSegments_ = 0;
           onChanged();
           return this;
         }
@@ -14138,6 +14805,2112 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface EmbeddingSpecOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The embedding vector used for retrieval. Limit to 1.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+     * </code>
+     */
+    java.util.List<
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector>
+        getEmbeddingVectorsList();
+    /**
+     *
+     *
+     * <pre>
+     * The embedding vector used for retrieval. Limit to 1.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+        getEmbeddingVectors(int index);
+    /**
+     *
+     *
+     * <pre>
+     * The embedding vector used for retrieval. Limit to 1.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+     * </code>
+     */
+    int getEmbeddingVectorsCount();
+    /**
+     *
+     *
+     * <pre>
+     * The embedding vector used for retrieval. Limit to 1.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+                    .EmbeddingVectorOrBuilder>
+        getEmbeddingVectorsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * The embedding vector used for retrieval. Limit to 1.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVectorOrBuilder
+        getEmbeddingVectorsOrBuilder(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The specification that uses customized query embedding vector to do
+   * semantic document retrieval.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec}
+   */
+  public static final class EmbeddingSpec extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec)
+      EmbeddingSpecOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use EmbeddingSpec.newBuilder() to construct.
+    private EmbeddingSpec(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private EmbeddingSpec() {
+      embeddingVectors_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new EmbeddingSpec();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_EmbeddingSpec_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_EmbeddingSpec_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.class,
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.Builder.class);
+    }
+
+    public interface EmbeddingVectorOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Embedding field path in schema.
+       * </pre>
+       *
+       * <code>string field_path = 1;</code>
+       *
+       * @return The fieldPath.
+       */
+      java.lang.String getFieldPath();
+      /**
+       *
+       *
+       * <pre>
+       * Embedding field path in schema.
+       * </pre>
+       *
+       * <code>string field_path = 1;</code>
+       *
+       * @return The bytes for fieldPath.
+       */
+      com.google.protobuf.ByteString getFieldPathBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Query embedding vector.
+       * </pre>
+       *
+       * <code>repeated float vector = 2;</code>
+       *
+       * @return A list containing the vector.
+       */
+      java.util.List<java.lang.Float> getVectorList();
+      /**
+       *
+       *
+       * <pre>
+       * Query embedding vector.
+       * </pre>
+       *
+       * <code>repeated float vector = 2;</code>
+       *
+       * @return The count of vector.
+       */
+      int getVectorCount();
+      /**
+       *
+       *
+       * <pre>
+       * Query embedding vector.
+       * </pre>
+       *
+       * <code>repeated float vector = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The vector at the given index.
+       */
+      float getVector(int index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Embedding vector.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector}
+     */
+    public static final class EmbeddingVector extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector)
+        EmbeddingVectorOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use EmbeddingVector.newBuilder() to construct.
+      private EmbeddingVector(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private EmbeddingVector() {
+        fieldPath_ = "";
+        vector_ = emptyFloatList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new EmbeddingVector();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_EmbeddingSpec_EmbeddingVector_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_EmbeddingSpec_EmbeddingVector_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+                    .class,
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+                    .Builder.class);
+      }
+
+      public static final int FIELD_PATH_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object fieldPath_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Embedding field path in schema.
+       * </pre>
+       *
+       * <code>string field_path = 1;</code>
+       *
+       * @return The fieldPath.
+       */
+      @java.lang.Override
+      public java.lang.String getFieldPath() {
+        java.lang.Object ref = fieldPath_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          fieldPath_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Embedding field path in schema.
+       * </pre>
+       *
+       * <code>string field_path = 1;</code>
+       *
+       * @return The bytes for fieldPath.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getFieldPathBytes() {
+        java.lang.Object ref = fieldPath_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          fieldPath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int VECTOR_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.Internal.FloatList vector_;
+      /**
+       *
+       *
+       * <pre>
+       * Query embedding vector.
+       * </pre>
+       *
+       * <code>repeated float vector = 2;</code>
+       *
+       * @return A list containing the vector.
+       */
+      @java.lang.Override
+      public java.util.List<java.lang.Float> getVectorList() {
+        return vector_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Query embedding vector.
+       * </pre>
+       *
+       * <code>repeated float vector = 2;</code>
+       *
+       * @return The count of vector.
+       */
+      public int getVectorCount() {
+        return vector_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Query embedding vector.
+       * </pre>
+       *
+       * <code>repeated float vector = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The vector at the given index.
+       */
+      public float getVector(int index) {
+        return vector_.getFloat(index);
+      }
+
+      private int vectorMemoizedSerializedSize = -1;
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getSerializedSize();
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldPath_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fieldPath_);
+        }
+        if (getVectorList().size() > 0) {
+          output.writeUInt32NoTag(18);
+          output.writeUInt32NoTag(vectorMemoizedSerializedSize);
+        }
+        for (int i = 0; i < vector_.size(); i++) {
+          output.writeFloatNoTag(vector_.getFloat(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fieldPath_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fieldPath_);
+        }
+        {
+          int dataSize = 0;
+          dataSize = 4 * getVectorList().size();
+          size += dataSize;
+          if (!getVectorList().isEmpty()) {
+            size += 1;
+            size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+          }
+          vectorMemoizedSerializedSize = dataSize;
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector other =
+            (com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector)
+                obj;
+
+        if (!getFieldPath().equals(other.getFieldPath())) return false;
+        if (!getVectorList().equals(other.getVectorList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + FIELD_PATH_FIELD_NUMBER;
+        hash = (53 * hash) + getFieldPath().hashCode();
+        if (getVectorCount() > 0) {
+          hash = (37 * hash) + VECTOR_FIELD_NUMBER;
+          hash = (53 * hash) + getVectorList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+              .EmbeddingVector
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+              .EmbeddingVector
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+              .EmbeddingVector
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+              .EmbeddingVector
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+              .EmbeddingVector
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+              .EmbeddingVector
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+              .EmbeddingVector
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+              .EmbeddingVector
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+              .EmbeddingVector
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+              .EmbeddingVector
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+              .EmbeddingVector
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+              .EmbeddingVector
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Embedding vector.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector)
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+              .EmbeddingVectorOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_EmbeddingSpec_EmbeddingVector_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_EmbeddingSpec_EmbeddingVector_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+                      .EmbeddingVector.class,
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+                      .EmbeddingVector.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          fieldPath_ = "";
+          vector_ = emptyFloatList();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_EmbeddingSpec_EmbeddingVector_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+            build() {
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+              result =
+                  new com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+                      .EmbeddingVector(this);
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+                result) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            vector_.makeImmutable();
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.vector_ = vector_;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.fieldPath_ = fieldPath_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+                        .EmbeddingVector)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+                other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+                  .getDefaultInstance()) return this;
+          if (!other.getFieldPath().isEmpty()) {
+            fieldPath_ = other.fieldPath_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (!other.vector_.isEmpty()) {
+            if (vector_.isEmpty()) {
+              vector_ = other.vector_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureVectorIsMutable();
+              vector_.addAll(other.vector_);
+            }
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    fieldPath_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 21:
+                  {
+                    float v = input.readFloat();
+                    ensureVectorIsMutable();
+                    vector_.addFloat(v);
+                    break;
+                  } // case 21
+                case 18:
+                  {
+                    int length = input.readRawVarint32();
+                    int limit = input.pushLimit(length);
+                    ensureVectorIsMutable();
+                    while (input.getBytesUntilLimit() > 0) {
+                      vector_.addFloat(input.readFloat());
+                    }
+                    input.popLimit(limit);
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object fieldPath_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Embedding field path in schema.
+         * </pre>
+         *
+         * <code>string field_path = 1;</code>
+         *
+         * @return The fieldPath.
+         */
+        public java.lang.String getFieldPath() {
+          java.lang.Object ref = fieldPath_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            fieldPath_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Embedding field path in schema.
+         * </pre>
+         *
+         * <code>string field_path = 1;</code>
+         *
+         * @return The bytes for fieldPath.
+         */
+        public com.google.protobuf.ByteString getFieldPathBytes() {
+          java.lang.Object ref = fieldPath_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            fieldPath_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Embedding field path in schema.
+         * </pre>
+         *
+         * <code>string field_path = 1;</code>
+         *
+         * @param value The fieldPath to set.
+         * @return This builder for chaining.
+         */
+        public Builder setFieldPath(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          fieldPath_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Embedding field path in schema.
+         * </pre>
+         *
+         * <code>string field_path = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearFieldPath() {
+          fieldPath_ = getDefaultInstance().getFieldPath();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Embedding field path in schema.
+         * </pre>
+         *
+         * <code>string field_path = 1;</code>
+         *
+         * @param value The bytes for fieldPath to set.
+         * @return This builder for chaining.
+         */
+        public Builder setFieldPathBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          fieldPath_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.Internal.FloatList vector_ = emptyFloatList();
+
+        private void ensureVectorIsMutable() {
+          if (!((bitField0_ & 0x00000002) != 0)) {
+            vector_ = mutableCopy(vector_);
+            bitField0_ |= 0x00000002;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Query embedding vector.
+         * </pre>
+         *
+         * <code>repeated float vector = 2;</code>
+         *
+         * @return A list containing the vector.
+         */
+        public java.util.List<java.lang.Float> getVectorList() {
+          return ((bitField0_ & 0x00000002) != 0)
+              ? java.util.Collections.unmodifiableList(vector_)
+              : vector_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Query embedding vector.
+         * </pre>
+         *
+         * <code>repeated float vector = 2;</code>
+         *
+         * @return The count of vector.
+         */
+        public int getVectorCount() {
+          return vector_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Query embedding vector.
+         * </pre>
+         *
+         * <code>repeated float vector = 2;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The vector at the given index.
+         */
+        public float getVector(int index) {
+          return vector_.getFloat(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Query embedding vector.
+         * </pre>
+         *
+         * <code>repeated float vector = 2;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The vector to set.
+         * @return This builder for chaining.
+         */
+        public Builder setVector(int index, float value) {
+
+          ensureVectorIsMutable();
+          vector_.setFloat(index, value);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Query embedding vector.
+         * </pre>
+         *
+         * <code>repeated float vector = 2;</code>
+         *
+         * @param value The vector to add.
+         * @return This builder for chaining.
+         */
+        public Builder addVector(float value) {
+
+          ensureVectorIsMutable();
+          vector_.addFloat(value);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Query embedding vector.
+         * </pre>
+         *
+         * <code>repeated float vector = 2;</code>
+         *
+         * @param values The vector to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllVector(java.lang.Iterable<? extends java.lang.Float> values) {
+          ensureVectorIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, vector_);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Query embedding vector.
+         * </pre>
+         *
+         * <code>repeated float vector = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearVector() {
+          vector_ = emptyFloatList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector)
+      private static final com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+              .EmbeddingVector
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+                .EmbeddingVector();
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+              .EmbeddingVector
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<EmbeddingVector> PARSER =
+          new com.google.protobuf.AbstractParser<EmbeddingVector>() {
+            @java.lang.Override
+            public EmbeddingVector parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<EmbeddingVector> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<EmbeddingVector> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int EMBEDDING_VECTORS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector>
+        embeddingVectors_;
+    /**
+     *
+     *
+     * <pre>
+     * The embedding vector used for retrieval. Limit to 1.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector>
+        getEmbeddingVectorsList() {
+      return embeddingVectors_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The embedding vector used for retrieval. Limit to 1.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+                    .EmbeddingVectorOrBuilder>
+        getEmbeddingVectorsOrBuilderList() {
+      return embeddingVectors_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The embedding vector used for retrieval. Limit to 1.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public int getEmbeddingVectorsCount() {
+      return embeddingVectors_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The embedding vector used for retrieval. Limit to 1.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+        getEmbeddingVectors(int index) {
+      return embeddingVectors_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The embedding vector used for retrieval. Limit to 1.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+            .EmbeddingVectorOrBuilder
+        getEmbeddingVectorsOrBuilder(int index) {
+      return embeddingVectors_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < embeddingVectors_.size(); i++) {
+        output.writeMessage(1, embeddingVectors_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < embeddingVectors_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, embeddingVectors_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec other =
+          (com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec) obj;
+
+      if (!getEmbeddingVectorsList().equals(other.getEmbeddingVectorsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getEmbeddingVectorsCount() > 0) {
+        hash = (37 * hash) + EMBEDDING_VECTORS_FIELD_NUMBER;
+        hash = (53 * hash) + getEmbeddingVectorsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The specification that uses customized query embedding vector to do
+     * semantic document retrieval.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec)
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpecOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_EmbeddingSpec_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_EmbeddingSpec_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.class,
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (embeddingVectorsBuilder_ == null) {
+          embeddingVectors_ = java.util.Collections.emptyList();
+        } else {
+          embeddingVectors_ = null;
+          embeddingVectorsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchRequest_EmbeddingSpec_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec build() {
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec buildPartial() {
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec result =
+            new com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec result) {
+        if (embeddingVectorsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            embeddingVectors_ = java.util.Collections.unmodifiableList(embeddingVectors_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.embeddingVectors_ = embeddingVectors_;
+        } else {
+          result.embeddingVectors_ = embeddingVectorsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec) {
+          return mergeFrom(
+              (com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+                .getDefaultInstance()) return this;
+        if (embeddingVectorsBuilder_ == null) {
+          if (!other.embeddingVectors_.isEmpty()) {
+            if (embeddingVectors_.isEmpty()) {
+              embeddingVectors_ = other.embeddingVectors_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureEmbeddingVectorsIsMutable();
+              embeddingVectors_.addAll(other.embeddingVectors_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.embeddingVectors_.isEmpty()) {
+            if (embeddingVectorsBuilder_.isEmpty()) {
+              embeddingVectorsBuilder_.dispose();
+              embeddingVectorsBuilder_ = null;
+              embeddingVectors_ = other.embeddingVectors_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              embeddingVectorsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getEmbeddingVectorsFieldBuilder()
+                      : null;
+            } else {
+              embeddingVectorsBuilder_.addAllMessages(other.embeddingVectors_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+                          .EmbeddingVector
+                      m =
+                          input.readMessage(
+                              com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+                                  .EmbeddingVector.parser(),
+                              extensionRegistry);
+                  if (embeddingVectorsBuilder_ == null) {
+                    ensureEmbeddingVectorsIsMutable();
+                    embeddingVectors_.add(m);
+                  } else {
+                    embeddingVectorsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.util.List<
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector>
+          embeddingVectors_ = java.util.Collections.emptyList();
+
+      private void ensureEmbeddingVectorsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          embeddingVectors_ =
+              new java.util.ArrayList<
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+                      .EmbeddingVector>(embeddingVectors_);
+          bitField0_ |= 0x00000001;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector,
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+                  .Builder,
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+                  .EmbeddingVectorOrBuilder>
+          embeddingVectorsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * The embedding vector used for retrieval. Limit to 1.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector>
+          getEmbeddingVectorsList() {
+        if (embeddingVectorsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(embeddingVectors_);
+        } else {
+          return embeddingVectorsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The embedding vector used for retrieval. Limit to 1.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+       * </code>
+       */
+      public int getEmbeddingVectorsCount() {
+        if (embeddingVectorsBuilder_ == null) {
+          return embeddingVectors_.size();
+        } else {
+          return embeddingVectorsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The embedding vector used for retrieval. Limit to 1.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+          getEmbeddingVectors(int index) {
+        if (embeddingVectorsBuilder_ == null) {
+          return embeddingVectors_.get(index);
+        } else {
+          return embeddingVectorsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The embedding vector used for retrieval. Limit to 1.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+       * </code>
+       */
+      public Builder setEmbeddingVectors(
+          int index,
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+              value) {
+        if (embeddingVectorsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEmbeddingVectorsIsMutable();
+          embeddingVectors_.set(index, value);
+          onChanged();
+        } else {
+          embeddingVectorsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The embedding vector used for retrieval. Limit to 1.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+       * </code>
+       */
+      public Builder setEmbeddingVectors(
+          int index,
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+                  .Builder
+              builderForValue) {
+        if (embeddingVectorsBuilder_ == null) {
+          ensureEmbeddingVectorsIsMutable();
+          embeddingVectors_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          embeddingVectorsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The embedding vector used for retrieval. Limit to 1.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+       * </code>
+       */
+      public Builder addEmbeddingVectors(
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+              value) {
+        if (embeddingVectorsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEmbeddingVectorsIsMutable();
+          embeddingVectors_.add(value);
+          onChanged();
+        } else {
+          embeddingVectorsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The embedding vector used for retrieval. Limit to 1.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+       * </code>
+       */
+      public Builder addEmbeddingVectors(
+          int index,
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+              value) {
+        if (embeddingVectorsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEmbeddingVectorsIsMutable();
+          embeddingVectors_.add(index, value);
+          onChanged();
+        } else {
+          embeddingVectorsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The embedding vector used for retrieval. Limit to 1.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+       * </code>
+       */
+      public Builder addEmbeddingVectors(
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+                  .Builder
+              builderForValue) {
+        if (embeddingVectorsBuilder_ == null) {
+          ensureEmbeddingVectorsIsMutable();
+          embeddingVectors_.add(builderForValue.build());
+          onChanged();
+        } else {
+          embeddingVectorsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The embedding vector used for retrieval. Limit to 1.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+       * </code>
+       */
+      public Builder addEmbeddingVectors(
+          int index,
+          com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+                  .Builder
+              builderForValue) {
+        if (embeddingVectorsBuilder_ == null) {
+          ensureEmbeddingVectorsIsMutable();
+          embeddingVectors_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          embeddingVectorsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The embedding vector used for retrieval. Limit to 1.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+       * </code>
+       */
+      public Builder addAllEmbeddingVectors(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+                          .EmbeddingVector>
+              values) {
+        if (embeddingVectorsBuilder_ == null) {
+          ensureEmbeddingVectorsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, embeddingVectors_);
+          onChanged();
+        } else {
+          embeddingVectorsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The embedding vector used for retrieval. Limit to 1.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+       * </code>
+       */
+      public Builder clearEmbeddingVectors() {
+        if (embeddingVectorsBuilder_ == null) {
+          embeddingVectors_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          embeddingVectorsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The embedding vector used for retrieval. Limit to 1.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+       * </code>
+       */
+      public Builder removeEmbeddingVectors(int index) {
+        if (embeddingVectorsBuilder_ == null) {
+          ensureEmbeddingVectorsIsMutable();
+          embeddingVectors_.remove(index);
+          onChanged();
+        } else {
+          embeddingVectorsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The embedding vector used for retrieval. Limit to 1.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+              .Builder
+          getEmbeddingVectorsBuilder(int index) {
+        return getEmbeddingVectorsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The embedding vector used for retrieval. Limit to 1.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+              .EmbeddingVectorOrBuilder
+          getEmbeddingVectorsOrBuilder(int index) {
+        if (embeddingVectorsBuilder_ == null) {
+          return embeddingVectors_.get(index);
+        } else {
+          return embeddingVectorsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The embedding vector used for retrieval. Limit to 1.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+                      .EmbeddingVectorOrBuilder>
+          getEmbeddingVectorsOrBuilderList() {
+        if (embeddingVectorsBuilder_ != null) {
+          return embeddingVectorsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(embeddingVectors_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The embedding vector used for retrieval. Limit to 1.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+              .Builder
+          addEmbeddingVectorsBuilder() {
+        return getEmbeddingVectorsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The embedding vector used for retrieval. Limit to 1.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+              .Builder
+          addEmbeddingVectorsBuilder(int index) {
+        return getEmbeddingVectorsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The embedding vector used for retrieval. Limit to 1.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector embedding_vectors = 1;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+                  .Builder>
+          getEmbeddingVectorsBuilderList() {
+        return getEmbeddingVectorsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector,
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.EmbeddingVector
+                  .Builder,
+              com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+                  .EmbeddingVectorOrBuilder>
+          getEmbeddingVectorsFieldBuilder() {
+        if (embeddingVectorsBuilder_ == null) {
+          embeddingVectorsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+                      .EmbeddingVector,
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+                      .EmbeddingVector.Builder,
+                  com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+                      .EmbeddingVectorOrBuilder>(
+                  embeddingVectors_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          embeddingVectors_ = null;
+        }
+        return embeddingVectorsBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec)
+    private static final com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec();
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<EmbeddingSpec> PARSER =
+        new com.google.protobuf.AbstractParser<EmbeddingSpec>() {
+          @java.lang.Override
+          public EmbeddingSpec parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<EmbeddingSpec> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<EmbeddingSpec> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int SERVING_CONFIG_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -15200,6 +17973,168 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         : contentSearchSpec_;
   }
 
+  public static final int EMBEDDING_SPEC_FIELD_NUMBER = 23;
+  private com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec embeddingSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Uses the provided embedding to do additional semantic document retrieval.
+   * The retrieval is based on the dot product of
+   * [SearchRequest.embedding_spec.embedding_vectors.vector][] and the document
+   * embedding that is provided in
+   * [SearchRequest.embedding_spec.embedding_vectors.field_path][].
+   *
+   * If [SearchRequest.embedding_spec.embedding_vectors.field_path][] is not
+   * provided, it will use [ServingConfig.embedding_config.field_paths][].
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec embedding_spec = 23;
+   * </code>
+   *
+   * @return Whether the embeddingSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasEmbeddingSpec() {
+    return embeddingSpec_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Uses the provided embedding to do additional semantic document retrieval.
+   * The retrieval is based on the dot product of
+   * [SearchRequest.embedding_spec.embedding_vectors.vector][] and the document
+   * embedding that is provided in
+   * [SearchRequest.embedding_spec.embedding_vectors.field_path][].
+   *
+   * If [SearchRequest.embedding_spec.embedding_vectors.field_path][] is not
+   * provided, it will use [ServingConfig.embedding_config.field_paths][].
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec embedding_spec = 23;
+   * </code>
+   *
+   * @return The embeddingSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec getEmbeddingSpec() {
+    return embeddingSpec_ == null
+        ? com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.getDefaultInstance()
+        : embeddingSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Uses the provided embedding to do additional semantic document retrieval.
+   * The retrieval is based on the dot product of
+   * [SearchRequest.embedding_spec.embedding_vectors.vector][] and the document
+   * embedding that is provided in
+   * [SearchRequest.embedding_spec.embedding_vectors.field_path][].
+   *
+   * If [SearchRequest.embedding_spec.embedding_vectors.field_path][] is not
+   * provided, it will use [ServingConfig.embedding_config.field_paths][].
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec embedding_spec = 23;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpecOrBuilder
+      getEmbeddingSpecOrBuilder() {
+    return embeddingSpec_ == null
+        ? com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.getDefaultInstance()
+        : embeddingSpec_;
+  }
+
+  public static final int RANKING_EXPRESSION_FIELD_NUMBER = 26;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rankingExpression_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The ranking expression controls the customized ranking on retrieval
+   * documents. This overrides [ServingConfig.ranking_expression][].
+   * The ranking expression is a single function or multiple functions that are
+   * joint by "+".
+   *   * ranking_expression = function, { " + ", function };
+   * Supported functions:
+   *   * double * relevance_score
+   *   * double * dotProduct(embedding_field_path)
+   * Function variables:
+   *   `relevance_score`: pre-defined keywords, used for measure relevance
+   *   between query and document.
+   *   `embedding_field_path`: the document embedding field
+   *   used with query embedding vector.
+   *   `dotProduct`: embedding function between embedding_field_path and query
+   *   embedding vector.
+   *
+   *  Example ranking expression:
+   *    If document has an embedding field doc_embedding, the ranking expression
+   *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
+   * </pre>
+   *
+   * <code>string ranking_expression = 26;</code>
+   *
+   * @return The rankingExpression.
+   */
+  @java.lang.Override
+  public java.lang.String getRankingExpression() {
+    java.lang.Object ref = rankingExpression_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      rankingExpression_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The ranking expression controls the customized ranking on retrieval
+   * documents. This overrides [ServingConfig.ranking_expression][].
+   * The ranking expression is a single function or multiple functions that are
+   * joint by "+".
+   *   * ranking_expression = function, { " + ", function };
+   * Supported functions:
+   *   * double * relevance_score
+   *   * double * dotProduct(embedding_field_path)
+   * Function variables:
+   *   `relevance_score`: pre-defined keywords, used for measure relevance
+   *   between query and document.
+   *   `embedding_field_path`: the document embedding field
+   *   used with query embedding vector.
+   *   `dotProduct`: embedding function between embedding_field_path and query
+   *   embedding vector.
+   *
+   *  Example ranking expression:
+   *    If document has an embedding field doc_embedding, the ranking expression
+   *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
+   * </pre>
+   *
+   * <code>string ranking_expression = 26;</code>
+   *
+   * @return The bytes for rankingExpression.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRankingExpressionBytes() {
+    java.lang.Object ref = rankingExpression_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      rankingExpression_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SAFE_SEARCH_FIELD_NUMBER = 20;
   private boolean safeSearch_ = false;
   /**
@@ -15451,8 +18386,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetUserLabels(), UserLabelsDefaultEntryHolder.defaultEntry, 22);
+    if (embeddingSpec_ != null) {
+      output.writeMessage(23, getEmbeddingSpec());
+    }
     if (contentSearchSpec_ != null) {
       output.writeMessage(24, getContentSearchSpec());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rankingExpression_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 26, rankingExpression_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -15532,8 +18473,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, userLabels__);
     }
+    if (embeddingSpec_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getEmbeddingSpec());
+    }
     if (contentSearchSpec_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getContentSearchSpec());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rankingExpression_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, rankingExpression_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -15586,6 +18533,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasContentSearchSpec()) {
       if (!getContentSearchSpec().equals(other.getContentSearchSpec())) return false;
     }
+    if (hasEmbeddingSpec() != other.hasEmbeddingSpec()) return false;
+    if (hasEmbeddingSpec()) {
+      if (!getEmbeddingSpec().equals(other.getEmbeddingSpec())) return false;
+    }
+    if (!getRankingExpression().equals(other.getRankingExpression())) return false;
     if (getSafeSearch() != other.getSafeSearch()) return false;
     if (!internalGetUserLabels().equals(other.internalGetUserLabels())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -15649,6 +18601,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CONTENT_SEARCH_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getContentSearchSpec().hashCode();
     }
+    if (hasEmbeddingSpec()) {
+      hash = (37 * hash) + EMBEDDING_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getEmbeddingSpec().hashCode();
+    }
+    hash = (37 * hash) + RANKING_EXPRESSION_FIELD_NUMBER;
+    hash = (53 * hash) + getRankingExpression().hashCode();
     hash = (37 * hash) + SAFE_SEARCH_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSafeSearch());
     if (!internalGetUserLabels().getMap().isEmpty()) {
@@ -15868,6 +18826,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         contentSearchSpecBuilder_.dispose();
         contentSearchSpecBuilder_ = null;
       }
+      embeddingSpec_ = null;
+      if (embeddingSpecBuilder_ != null) {
+        embeddingSpecBuilder_.dispose();
+        embeddingSpecBuilder_ = null;
+      }
+      rankingExpression_ = "";
       safeSearch_ = false;
       internalGetMutableUserLabels().clear();
       return this;
@@ -15979,9 +18943,16 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 : contentSearchSpecBuilder_.build();
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.safeSearch_ = safeSearch_;
+        result.embeddingSpec_ =
+            embeddingSpecBuilder_ == null ? embeddingSpec_ : embeddingSpecBuilder_.build();
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.rankingExpression_ = rankingExpression_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.safeSearch_ = safeSearch_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.userLabels_ = internalGetUserLabels();
         result.userLabels_.makeImmutable();
       }
@@ -16121,11 +19092,19 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (other.hasContentSearchSpec()) {
         mergeContentSearchSpec(other.getContentSearchSpec());
       }
+      if (other.hasEmbeddingSpec()) {
+        mergeEmbeddingSpec(other.getEmbeddingSpec());
+      }
+      if (!other.getRankingExpression().isEmpty()) {
+        rankingExpression_ = other.rankingExpression_;
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
       if (other.getSafeSearch() != false) {
         setSafeSearch(other.getSafeSearch());
       }
       internalGetMutableUserLabels().mergeFrom(other.internalGetUserLabels());
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -16261,7 +19240,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
             case 160:
               {
                 safeSearch_ = input.readBool();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 160
             case 170:
@@ -16279,9 +19258,15 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableUserLabels()
                     .getMutableMap()
                     .put(userLabels__.getKey(), userLabels__.getValue());
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 178
+            case 186:
+              {
+                input.readMessage(getEmbeddingSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 186
             case 194:
               {
                 input.readMessage(
@@ -16289,6 +19274,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00010000;
                 break;
               } // case 194
+            case 210:
+              {
+                rankingExpression_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 210
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -19288,6 +22279,467 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       return contentSearchSpecBuilder_;
     }
 
+    private com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec embeddingSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec,
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.Builder,
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpecOrBuilder>
+        embeddingSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Uses the provided embedding to do additional semantic document retrieval.
+     * The retrieval is based on the dot product of
+     * [SearchRequest.embedding_spec.embedding_vectors.vector][] and the document
+     * embedding that is provided in
+     * [SearchRequest.embedding_spec.embedding_vectors.field_path][].
+     *
+     * If [SearchRequest.embedding_spec.embedding_vectors.field_path][] is not
+     * provided, it will use [ServingConfig.embedding_config.field_paths][].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec embedding_spec = 23;
+     * </code>
+     *
+     * @return Whether the embeddingSpec field is set.
+     */
+    public boolean hasEmbeddingSpec() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Uses the provided embedding to do additional semantic document retrieval.
+     * The retrieval is based on the dot product of
+     * [SearchRequest.embedding_spec.embedding_vectors.vector][] and the document
+     * embedding that is provided in
+     * [SearchRequest.embedding_spec.embedding_vectors.field_path][].
+     *
+     * If [SearchRequest.embedding_spec.embedding_vectors.field_path][] is not
+     * provided, it will use [ServingConfig.embedding_config.field_paths][].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec embedding_spec = 23;
+     * </code>
+     *
+     * @return The embeddingSpec.
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec getEmbeddingSpec() {
+      if (embeddingSpecBuilder_ == null) {
+        return embeddingSpec_ == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+                .getDefaultInstance()
+            : embeddingSpec_;
+      } else {
+        return embeddingSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Uses the provided embedding to do additional semantic document retrieval.
+     * The retrieval is based on the dot product of
+     * [SearchRequest.embedding_spec.embedding_vectors.vector][] and the document
+     * embedding that is provided in
+     * [SearchRequest.embedding_spec.embedding_vectors.field_path][].
+     *
+     * If [SearchRequest.embedding_spec.embedding_vectors.field_path][] is not
+     * provided, it will use [ServingConfig.embedding_config.field_paths][].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec embedding_spec = 23;
+     * </code>
+     */
+    public Builder setEmbeddingSpec(
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec value) {
+      if (embeddingSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        embeddingSpec_ = value;
+      } else {
+        embeddingSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Uses the provided embedding to do additional semantic document retrieval.
+     * The retrieval is based on the dot product of
+     * [SearchRequest.embedding_spec.embedding_vectors.vector][] and the document
+     * embedding that is provided in
+     * [SearchRequest.embedding_spec.embedding_vectors.field_path][].
+     *
+     * If [SearchRequest.embedding_spec.embedding_vectors.field_path][] is not
+     * provided, it will use [ServingConfig.embedding_config.field_paths][].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec embedding_spec = 23;
+     * </code>
+     */
+    public Builder setEmbeddingSpec(
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.Builder
+            builderForValue) {
+      if (embeddingSpecBuilder_ == null) {
+        embeddingSpec_ = builderForValue.build();
+      } else {
+        embeddingSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Uses the provided embedding to do additional semantic document retrieval.
+     * The retrieval is based on the dot product of
+     * [SearchRequest.embedding_spec.embedding_vectors.vector][] and the document
+     * embedding that is provided in
+     * [SearchRequest.embedding_spec.embedding_vectors.field_path][].
+     *
+     * If [SearchRequest.embedding_spec.embedding_vectors.field_path][] is not
+     * provided, it will use [ServingConfig.embedding_config.field_paths][].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec embedding_spec = 23;
+     * </code>
+     */
+    public Builder mergeEmbeddingSpec(
+        com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec value) {
+      if (embeddingSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && embeddingSpec_ != null
+            && embeddingSpec_
+                != com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+                    .getDefaultInstance()) {
+          getEmbeddingSpecBuilder().mergeFrom(value);
+        } else {
+          embeddingSpec_ = value;
+        }
+      } else {
+        embeddingSpecBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Uses the provided embedding to do additional semantic document retrieval.
+     * The retrieval is based on the dot product of
+     * [SearchRequest.embedding_spec.embedding_vectors.vector][] and the document
+     * embedding that is provided in
+     * [SearchRequest.embedding_spec.embedding_vectors.field_path][].
+     *
+     * If [SearchRequest.embedding_spec.embedding_vectors.field_path][] is not
+     * provided, it will use [ServingConfig.embedding_config.field_paths][].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec embedding_spec = 23;
+     * </code>
+     */
+    public Builder clearEmbeddingSpec() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      embeddingSpec_ = null;
+      if (embeddingSpecBuilder_ != null) {
+        embeddingSpecBuilder_.dispose();
+        embeddingSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Uses the provided embedding to do additional semantic document retrieval.
+     * The retrieval is based on the dot product of
+     * [SearchRequest.embedding_spec.embedding_vectors.vector][] and the document
+     * embedding that is provided in
+     * [SearchRequest.embedding_spec.embedding_vectors.field_path][].
+     *
+     * If [SearchRequest.embedding_spec.embedding_vectors.field_path][] is not
+     * provided, it will use [ServingConfig.embedding_config.field_paths][].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec embedding_spec = 23;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.Builder
+        getEmbeddingSpecBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getEmbeddingSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Uses the provided embedding to do additional semantic document retrieval.
+     * The retrieval is based on the dot product of
+     * [SearchRequest.embedding_spec.embedding_vectors.vector][] and the document
+     * embedding that is provided in
+     * [SearchRequest.embedding_spec.embedding_vectors.field_path][].
+     *
+     * If [SearchRequest.embedding_spec.embedding_vectors.field_path][] is not
+     * provided, it will use [ServingConfig.embedding_config.field_paths][].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec embedding_spec = 23;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpecOrBuilder
+        getEmbeddingSpecOrBuilder() {
+      if (embeddingSpecBuilder_ != null) {
+        return embeddingSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return embeddingSpec_ == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec
+                .getDefaultInstance()
+            : embeddingSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Uses the provided embedding to do additional semantic document retrieval.
+     * The retrieval is based on the dot product of
+     * [SearchRequest.embedding_spec.embedding_vectors.vector][] and the document
+     * embedding that is provided in
+     * [SearchRequest.embedding_spec.embedding_vectors.field_path][].
+     *
+     * If [SearchRequest.embedding_spec.embedding_vectors.field_path][] is not
+     * provided, it will use [ServingConfig.embedding_config.field_paths][].
+     * </pre>
+     *
+     * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec embedding_spec = 23;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec,
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.Builder,
+            com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpecOrBuilder>
+        getEmbeddingSpecFieldBuilder() {
+      if (embeddingSpecBuilder_ == null) {
+        embeddingSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec,
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec.Builder,
+                com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpecOrBuilder>(
+                getEmbeddingSpec(), getParentForChildren(), isClean());
+        embeddingSpec_ = null;
+      }
+      return embeddingSpecBuilder_;
+    }
+
+    private java.lang.Object rankingExpression_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The ranking expression controls the customized ranking on retrieval
+     * documents. This overrides [ServingConfig.ranking_expression][].
+     * The ranking expression is a single function or multiple functions that are
+     * joint by "+".
+     *   * ranking_expression = function, { " + ", function };
+     * Supported functions:
+     *   * double * relevance_score
+     *   * double * dotProduct(embedding_field_path)
+     * Function variables:
+     *   `relevance_score`: pre-defined keywords, used for measure relevance
+     *   between query and document.
+     *   `embedding_field_path`: the document embedding field
+     *   used with query embedding vector.
+     *   `dotProduct`: embedding function between embedding_field_path and query
+     *   embedding vector.
+     *
+     *  Example ranking expression:
+     *    If document has an embedding field doc_embedding, the ranking expression
+     *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
+     * </pre>
+     *
+     * <code>string ranking_expression = 26;</code>
+     *
+     * @return The rankingExpression.
+     */
+    public java.lang.String getRankingExpression() {
+      java.lang.Object ref = rankingExpression_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rankingExpression_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ranking expression controls the customized ranking on retrieval
+     * documents. This overrides [ServingConfig.ranking_expression][].
+     * The ranking expression is a single function or multiple functions that are
+     * joint by "+".
+     *   * ranking_expression = function, { " + ", function };
+     * Supported functions:
+     *   * double * relevance_score
+     *   * double * dotProduct(embedding_field_path)
+     * Function variables:
+     *   `relevance_score`: pre-defined keywords, used for measure relevance
+     *   between query and document.
+     *   `embedding_field_path`: the document embedding field
+     *   used with query embedding vector.
+     *   `dotProduct`: embedding function between embedding_field_path and query
+     *   embedding vector.
+     *
+     *  Example ranking expression:
+     *    If document has an embedding field doc_embedding, the ranking expression
+     *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
+     * </pre>
+     *
+     * <code>string ranking_expression = 26;</code>
+     *
+     * @return The bytes for rankingExpression.
+     */
+    public com.google.protobuf.ByteString getRankingExpressionBytes() {
+      java.lang.Object ref = rankingExpression_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        rankingExpression_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ranking expression controls the customized ranking on retrieval
+     * documents. This overrides [ServingConfig.ranking_expression][].
+     * The ranking expression is a single function or multiple functions that are
+     * joint by "+".
+     *   * ranking_expression = function, { " + ", function };
+     * Supported functions:
+     *   * double * relevance_score
+     *   * double * dotProduct(embedding_field_path)
+     * Function variables:
+     *   `relevance_score`: pre-defined keywords, used for measure relevance
+     *   between query and document.
+     *   `embedding_field_path`: the document embedding field
+     *   used with query embedding vector.
+     *   `dotProduct`: embedding function between embedding_field_path and query
+     *   embedding vector.
+     *
+     *  Example ranking expression:
+     *    If document has an embedding field doc_embedding, the ranking expression
+     *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
+     * </pre>
+     *
+     * <code>string ranking_expression = 26;</code>
+     *
+     * @param value The rankingExpression to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRankingExpression(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      rankingExpression_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ranking expression controls the customized ranking on retrieval
+     * documents. This overrides [ServingConfig.ranking_expression][].
+     * The ranking expression is a single function or multiple functions that are
+     * joint by "+".
+     *   * ranking_expression = function, { " + ", function };
+     * Supported functions:
+     *   * double * relevance_score
+     *   * double * dotProduct(embedding_field_path)
+     * Function variables:
+     *   `relevance_score`: pre-defined keywords, used for measure relevance
+     *   between query and document.
+     *   `embedding_field_path`: the document embedding field
+     *   used with query embedding vector.
+     *   `dotProduct`: embedding function between embedding_field_path and query
+     *   embedding vector.
+     *
+     *  Example ranking expression:
+     *    If document has an embedding field doc_embedding, the ranking expression
+     *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
+     * </pre>
+     *
+     * <code>string ranking_expression = 26;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRankingExpression() {
+      rankingExpression_ = getDefaultInstance().getRankingExpression();
+      bitField0_ = (bitField0_ & ~0x00040000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The ranking expression controls the customized ranking on retrieval
+     * documents. This overrides [ServingConfig.ranking_expression][].
+     * The ranking expression is a single function or multiple functions that are
+     * joint by "+".
+     *   * ranking_expression = function, { " + ", function };
+     * Supported functions:
+     *   * double * relevance_score
+     *   * double * dotProduct(embedding_field_path)
+     * Function variables:
+     *   `relevance_score`: pre-defined keywords, used for measure relevance
+     *   between query and document.
+     *   `embedding_field_path`: the document embedding field
+     *   used with query embedding vector.
+     *   `dotProduct`: embedding function between embedding_field_path and query
+     *   embedding vector.
+     *
+     *  Example ranking expression:
+     *    If document has an embedding field doc_embedding, the ranking expression
+     *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
+     * </pre>
+     *
+     * <code>string ranking_expression = 26;</code>
+     *
+     * @param value The bytes for rankingExpression to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRankingExpressionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      rankingExpression_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
     private boolean safeSearch_;
     /**
      *
@@ -19321,7 +22773,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setSafeSearch(boolean value) {
 
       safeSearch_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -19338,7 +22790,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSafeSearch() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       safeSearch_ = false;
       onChanged();
       return this;
@@ -19364,7 +22816,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (!userLabels_.isMutable()) {
         userLabels_ = userLabels_.copy();
       }
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return userLabels_;
     }
@@ -19513,7 +22965,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearUserLabels() {
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       internalGetMutableUserLabels().getMutableMap().clear();
       return this;
     }
@@ -19552,7 +23004,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableUserLabels() {
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       return internalGetMutableUserLabels().getMutableMap();
     }
     /**
@@ -19588,7 +23040,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableUserLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       return this;
     }
     /**
@@ -19618,7 +23070,7 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllUserLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableUserLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       return this;
     }
 

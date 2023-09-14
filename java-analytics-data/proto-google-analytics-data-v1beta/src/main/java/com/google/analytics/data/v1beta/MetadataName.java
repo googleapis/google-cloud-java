@@ -127,7 +127,7 @@ public class MetadataName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       MetadataName that = ((MetadataName) o);
       return Objects.equals(this.property, that.property);
     }

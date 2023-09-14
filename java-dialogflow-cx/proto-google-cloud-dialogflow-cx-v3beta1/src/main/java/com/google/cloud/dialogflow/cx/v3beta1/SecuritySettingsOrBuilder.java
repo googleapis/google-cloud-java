@@ -302,6 +302,52 @@ public interface SecuritySettingsOrBuilder
    *
    *
    * <pre>
+   * Specifies the retention behavior defined by
+   * [SecuritySettings.RetentionStrategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.RetentionStrategy].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.RetentionStrategy retention_strategy = 7;
+   * </code>
+   *
+   * @return Whether the retentionStrategy field is set.
+   */
+  boolean hasRetentionStrategy();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the retention behavior defined by
+   * [SecuritySettings.RetentionStrategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.RetentionStrategy].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.RetentionStrategy retention_strategy = 7;
+   * </code>
+   *
+   * @return The enum numeric value on the wire for retentionStrategy.
+   */
+  int getRetentionStrategyValue();
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the retention behavior defined by
+   * [SecuritySettings.RetentionStrategy][google.cloud.dialogflow.cx.v3beta1.SecuritySettings.RetentionStrategy].
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.SecuritySettings.RetentionStrategy retention_strategy = 7;
+   * </code>
+   *
+   * @return The retentionStrategy.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.SecuritySettings.RetentionStrategy getRetentionStrategy();
+
+  /**
+   *
+   *
+   * <pre>
    * List of types of data to remove when retention settings triggers purge.
    * </pre>
    *

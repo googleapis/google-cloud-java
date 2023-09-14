@@ -1157,7 +1157,7 @@ public interface VehicleOrBuilder
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=1443
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1454
    * @return A list containing the breakRuleIndices.
    */
   @java.lang.Deprecated
@@ -1177,7 +1177,7 @@ public interface VehicleOrBuilder
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=1443
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1454
    * @return The count of breakRuleIndices.
    */
   @java.lang.Deprecated
@@ -1197,7 +1197,7 @@ public interface VehicleOrBuilder
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=1443
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1454
    * @param index The index of the element to return.
    * @return The breakRuleIndices at the given index.
    */

@@ -1,5 +1,24 @@
 # Changelog
 
+## 2.26.0 (2023-09-11)
+
+### Features
+
+* Add MarkRecommendationDismissed method ([#9791](https://github.com/googleapis/google-cloud-java/issues/9791)) ([b6c0df2](https://github.com/googleapis/google-cloud-java/commit/b6c0df298b039b4408e22224b1f45eabb433b412))
+* ListRecommenders and ListInsightTypes RPC methods ([#9798](https://github.com/googleapis/google-cloud-java/issues/9798)) ([aeb0588](https://github.com/googleapis/google-cloud-java/commit/aeb0588ccafcc245ad5f87bd3183ee88b5776c90))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#9809](https://github.com/googleapis/google-cloud-java/issues/9809)) ([09dbd85](https://github.com/googleapis/google-cloud-java/commit/09dbd855f683b40a462c4f918511bee4671e0174))
+
+
+## 2.25.0 (2023-08-08)
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.14.0 ([#9722](https://github.com/googleapis/google-cloud-java/issues/9722)) ([c7011db](https://github.com/googleapis/google-cloud-java/commit/c7011dbd69189330de1c2946b736cd712d5c1f4e))
+
+
 ## 2.24.0 (2023-07-21)
 
 ### Dependencies

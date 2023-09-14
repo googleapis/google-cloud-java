@@ -1,5 +1,31 @@
 # Changelog
 
+## 4.30.0 (2023-09-11)
+
+### Features
+
+* added baseline model version used to generate the summary ([411a707](https://github.com/googleapis/google-cloud-java/commit/411a707e2bf040ffeab897518d2d4781512012ca))
+* added baseline model version used to generate the summary ([411a707](https://github.com/googleapis/google-cloud-java/commit/411a707e2bf040ffeab897518d2d4781512012ca))
+* added speech endpointing setting ([411a707](https://github.com/googleapis/google-cloud-java/commit/411a707e2bf040ffeab897518d2d4781512012ca))
+* added speech endpointing setting ([#9760](https://github.com/googleapis/google-cloud-java/issues/9760)) ([411a707](https://github.com/googleapis/google-cloud-java/commit/411a707e2bf040ffeab897518d2d4781512012ca))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#9809](https://github.com/googleapis/google-cloud-java/issues/9809)) ([09dbd85](https://github.com/googleapis/google-cloud-java/commit/09dbd855f683b40a462c4f918511bee4671e0174))
+
+
+## 4.29.0 (2023-08-08)
+
+### Features
+
+* Minor formatting ([#9719](https://github.com/googleapis/google-cloud-java/issues/9719)) ([c26f79b](https://github.com/googleapis/google-cloud-java/commit/c26f79b5ac3d78a2dde25f26178cb6a5ebea5da1))
+* Minor formatting ([#9731](https://github.com/googleapis/google-cloud-java/issues/9731)) ([c5ac114](https://github.com/googleapis/google-cloud-java/commit/c5ac114500fb68eb0e9e0e1bd7a91a3bebce9a1b))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.14.0 ([#9722](https://github.com/googleapis/google-cloud-java/issues/9722)) ([c7011db](https://github.com/googleapis/google-cloud-java/commit/c7011dbd69189330de1c2946b736cd712d5c1f4e))
+
+
 ## 4.28.0 (2023-07-21)
 
 ### Dependencies

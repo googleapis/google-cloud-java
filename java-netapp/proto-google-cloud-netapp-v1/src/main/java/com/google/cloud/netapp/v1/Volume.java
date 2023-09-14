@@ -55,6 +55,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     activeDirectory_ = "";
     kmsConfig_ = "";
     encryptionType_ = 0;
+    restrictedActions_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -1791,6 +1792,116 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     return hasReplication_;
   }
 
+  public static final int RESTRICTED_ACTIONS_FIELD_NUMBER = 31;
+
+  @SuppressWarnings("serial")
+  private java.util.List<java.lang.Integer> restrictedActions_;
+
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+          java.lang.Integer, com.google.cloud.netapp.v1.RestrictedAction>
+      restrictedActions_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer, com.google.cloud.netapp.v1.RestrictedAction>() {
+            public com.google.cloud.netapp.v1.RestrictedAction convert(java.lang.Integer from) {
+              com.google.cloud.netapp.v1.RestrictedAction result =
+                  com.google.cloud.netapp.v1.RestrictedAction.forNumber(from);
+              return result == null
+                  ? com.google.cloud.netapp.v1.RestrictedAction.UNRECOGNIZED
+                  : result;
+            }
+          };
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of actions that are restricted on this volume.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.RestrictedAction restricted_actions = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the restrictedActions.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.netapp.v1.RestrictedAction> getRestrictedActionsList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, com.google.cloud.netapp.v1.RestrictedAction>(
+        restrictedActions_, restrictedActions_converter_);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of actions that are restricted on this volume.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.RestrictedAction restricted_actions = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The count of restrictedActions.
+   */
+  @java.lang.Override
+  public int getRestrictedActionsCount() {
+    return restrictedActions_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of actions that are restricted on this volume.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.RestrictedAction restricted_actions = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The restrictedActions at the given index.
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.RestrictedAction getRestrictedActions(int index) {
+    return restrictedActions_converter_.convert(restrictedActions_.get(index));
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of actions that are restricted on this volume.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.RestrictedAction restricted_actions = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for restrictedActions.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getRestrictedActionsValueList() {
+    return restrictedActions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. List of actions that are restricted on this volume.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.netapp.v1.RestrictedAction restricted_actions = 31 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of restrictedActions at the given index.
+   */
+  @java.lang.Override
+  public int getRestrictedActionsValue(int index) {
+    return restrictedActions_.get(index);
+  }
+
+  private int restrictedActionsMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1902,6 +2013,13 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
     if (hasReplication_ != false) {
       output.writeBool(29, hasReplication_);
+    }
+    if (getRestrictedActionsList().size() > 0) {
+      output.writeUInt32NoTag(250);
+      output.writeUInt32NoTag(restrictedActionsMemoizedSerializedSize);
+    }
+    for (int i = 0; i < restrictedActions_.size(); i++) {
+      output.writeEnumNoTag(restrictedActions_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -2027,6 +2145,19 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     if (hasReplication_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(29, hasReplication_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < restrictedActions_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(restrictedActions_.get(i));
+      }
+      size += dataSize;
+      if (!getRestrictedActionsList().isEmpty()) {
+        size += 2;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      restrictedActionsMemoizedSerializedSize = dataSize;
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2084,6 +2215,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     if (!getKmsConfig().equals(other.getKmsConfig())) return false;
     if (encryptionType_ != other.encryptionType_) return false;
     if (getHasReplication() != other.getHasReplication()) return false;
+    if (!restrictedActions_.equals(other.restrictedActions_)) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2172,6 +2304,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + encryptionType_;
     hash = (37 * hash) + HAS_REPLICATION_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHasReplication());
+    if (getRestrictedActionsCount() > 0) {
+      hash = (37 * hash) + RESTRICTED_ACTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + restrictedActions_.hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2383,6 +2519,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       kmsConfig_ = "";
       encryptionType_ = 0;
       hasReplication_ = false;
+      restrictedActions_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x20000000);
       return this;
     }
 
@@ -2437,6 +2575,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.mountOptions_ = mountOptionsBuilder_.build();
       }
+      if (((bitField0_ & 0x20000000) != 0)) {
+        restrictedActions_ = java.util.Collections.unmodifiableList(restrictedActions_);
+        bitField0_ = (bitField0_ & ~0x20000000);
+      }
+      result.restrictedActions_ = restrictedActions_;
     }
 
     private void buildPartial0(com.google.cloud.netapp.v1.Volume result) {
@@ -2716,6 +2859,16 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (other.getHasReplication() != false) {
         setHasReplication(other.getHasReplication());
       }
+      if (!other.restrictedActions_.isEmpty()) {
+        if (restrictedActions_.isEmpty()) {
+          restrictedActions_ = other.restrictedActions_;
+          bitField0_ = (bitField0_ & ~0x20000000);
+        } else {
+          ensureRestrictedActionsIsMutable();
+          restrictedActions_.addAll(other.restrictedActions_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2956,6 +3109,25 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x10000000;
                 break;
               } // case 232
+            case 248:
+              {
+                int tmpRaw = input.readEnum();
+                ensureRestrictedActionsIsMutable();
+                restrictedActions_.add(tmpRaw);
+                break;
+              } // case 248
+            case 250:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureRestrictedActionsIsMutable();
+                  restrictedActions_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 250
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6722,6 +6894,253 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public Builder clearHasReplication() {
       bitField0_ = (bitField0_ & ~0x10000000);
       hasReplication_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<java.lang.Integer> restrictedActions_ =
+        java.util.Collections.emptyList();
+
+    private void ensureRestrictedActionsIsMutable() {
+      if (!((bitField0_ & 0x20000000) != 0)) {
+        restrictedActions_ = new java.util.ArrayList<java.lang.Integer>(restrictedActions_);
+        bitField0_ |= 0x20000000;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of actions that are restricted on this volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.RestrictedAction restricted_actions = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the restrictedActions.
+     */
+    public java.util.List<com.google.cloud.netapp.v1.RestrictedAction> getRestrictedActionsList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.google.cloud.netapp.v1.RestrictedAction>(
+          restrictedActions_, restrictedActions_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of actions that are restricted on this volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.RestrictedAction restricted_actions = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of restrictedActions.
+     */
+    public int getRestrictedActionsCount() {
+      return restrictedActions_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of actions that are restricted on this volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.RestrictedAction restricted_actions = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The restrictedActions at the given index.
+     */
+    public com.google.cloud.netapp.v1.RestrictedAction getRestrictedActions(int index) {
+      return restrictedActions_converter_.convert(restrictedActions_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of actions that are restricted on this volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.RestrictedAction restricted_actions = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The restrictedActions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRestrictedActions(
+        int index, com.google.cloud.netapp.v1.RestrictedAction value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRestrictedActionsIsMutable();
+      restrictedActions_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of actions that are restricted on this volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.RestrictedAction restricted_actions = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The restrictedActions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRestrictedActions(com.google.cloud.netapp.v1.RestrictedAction value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRestrictedActionsIsMutable();
+      restrictedActions_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of actions that are restricted on this volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.RestrictedAction restricted_actions = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The restrictedActions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRestrictedActions(
+        java.lang.Iterable<? extends com.google.cloud.netapp.v1.RestrictedAction> values) {
+      ensureRestrictedActionsIsMutable();
+      for (com.google.cloud.netapp.v1.RestrictedAction value : values) {
+        restrictedActions_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of actions that are restricted on this volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.RestrictedAction restricted_actions = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRestrictedActions() {
+      restrictedActions_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x20000000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of actions that are restricted on this volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.RestrictedAction restricted_actions = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for restrictedActions.
+     */
+    public java.util.List<java.lang.Integer> getRestrictedActionsValueList() {
+      return java.util.Collections.unmodifiableList(restrictedActions_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of actions that are restricted on this volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.RestrictedAction restricted_actions = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of restrictedActions at the given index.
+     */
+    public int getRestrictedActionsValue(int index) {
+      return restrictedActions_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of actions that are restricted on this volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.RestrictedAction restricted_actions = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for restrictedActions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRestrictedActionsValue(int index, int value) {
+      ensureRestrictedActionsIsMutable();
+      restrictedActions_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of actions that are restricted on this volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.RestrictedAction restricted_actions = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for restrictedActions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRestrictedActionsValue(int value) {
+      ensureRestrictedActionsIsMutable();
+      restrictedActions_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of actions that are restricted on this volume.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.netapp.v1.RestrictedAction restricted_actions = 31 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for restrictedActions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRestrictedActionsValue(java.lang.Iterable<java.lang.Integer> values) {
+      ensureRestrictedActionsIsMutable();
+      for (int value : values) {
+        restrictedActions_.add(value);
+      }
       onChanged();
       return this;
     }

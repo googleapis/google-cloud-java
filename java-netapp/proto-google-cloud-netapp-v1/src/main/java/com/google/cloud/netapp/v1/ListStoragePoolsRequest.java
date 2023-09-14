@@ -18,7 +18,15 @@
 
 package com.google.cloud.netapp.v1;
 
-/** Protobuf type {@code google.cloud.netapp.v1.ListStoragePoolsRequest} */
+/**
+ *
+ *
+ * <pre>
+ * ListStoragePoolsRequest lists Storage Pools.
+ * </pre>
+ *
+ * Protobuf type {@code google.cloud.netapp.v1.ListStoragePoolsRequest}
+ */
 public final class ListStoragePoolsRequest extends com.google.protobuf.GeneratedMessageV3
     implements
     // @@protoc_insertion_point(message_implements:google.cloud.netapp.v1.ListStoragePoolsRequest)
@@ -480,7 +488,15 @@ public final class ListStoragePoolsRequest extends com.google.protobuf.Generated
     Builder builder = new Builder(parent);
     return builder;
   }
-  /** Protobuf type {@code google.cloud.netapp.v1.ListStoragePoolsRequest} */
+  /**
+   *
+   *
+   * <pre>
+   * ListStoragePoolsRequest lists Storage Pools.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.netapp.v1.ListStoragePoolsRequest}
+   */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
       // @@protoc_insertion_point(builder_implements:google.cloud.netapp.v1.ListStoragePoolsRequest)

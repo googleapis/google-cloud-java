@@ -175,7 +175,7 @@ public class RestoreName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       RestoreName that = ((RestoreName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)

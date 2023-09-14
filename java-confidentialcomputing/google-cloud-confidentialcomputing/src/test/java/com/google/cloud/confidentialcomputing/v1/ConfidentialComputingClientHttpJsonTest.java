@@ -35,7 +35,9 @@ import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Any;
 import com.google.protobuf.Timestamp;
+import com.google.rpc.Status;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -187,6 +189,7 @@ public class ConfidentialComputingClientHttpJsonTest {
     VerifyAttestationResponse expectedResponse =
         VerifyAttestationResponse.newBuilder()
             .setOidcClaimsToken("oidcClaimsToken-566980887")
+            .addAllPartialErrors(new ArrayList<Status>())
             .build();
     mockService.addResponse(expectedResponse);
 

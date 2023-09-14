@@ -1,5 +1,30 @@
 # Changelog
 
+## 3.25.0 (2023-09-11)
+
+### Features
+
+* add encryption_spec to index.proto and index_endpoint.proto ([#9805](https://github.com/googleapis/google-cloud-java/issues/9805)) ([1ce4fa6](https://github.com/googleapis/google-cloud-java/commit/1ce4fa6f87735c2b9d4351b0d8c542afc48e8aec))
+* add NVIDIA_H100_80GB and TPU_V5_LITEPOD to AcceleratorType ([48ac78c](https://github.com/googleapis/google-cloud-java/commit/48ac78c692cd145c8aafb6497b27054d069ed6ca))
+* add UpdatePersistentResourceRequest and add resource_pool_images and head_node_resource_pool_id to RaySpec ([#9769](https://github.com/googleapis/google-cloud-java/issues/9769)) ([48ac78c](https://github.com/googleapis/google-cloud-java/commit/48ac78c692cd145c8aafb6497b27054d069ed6ca))
+* update field_behavior for `name` to be IMMUTABLE instead of OUTPUT_ONLY in Context, ModelMonitor, Schedule, DeploymentResourcePool ([48ac78c](https://github.com/googleapis/google-cloud-java/commit/48ac78c692cd145c8aafb6497b27054d069ed6ca))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#9809](https://github.com/googleapis/google-cloud-java/issues/9809)) ([09dbd85](https://github.com/googleapis/google-cloud-java/commit/09dbd855f683b40a462c4f918511bee4671e0174))
+
+
+## 3.24.0 (2023-08-08)
+
+### Features
+
+* add RaySepc to ResourceRuntimeSpec, and add ResourceRuntime to PersistentResource ([#9674](https://github.com/googleapis/google-cloud-java/issues/9674)) ([f7a6838](https://github.com/googleapis/google-cloud-java/commit/f7a683858ec4ff81e92828b39a683d6117c6b936))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.14.0 ([#9722](https://github.com/googleapis/google-cloud-java/issues/9722)) ([c7011db](https://github.com/googleapis/google-cloud-java/commit/c7011dbd69189330de1c2946b736cd712d5c1f4e))
+
+
 ## 3.23.0 (2023-07-21)
 
 ### Features

@@ -100,4 +100,18 @@ public interface SpeechToTextConfigOrBuilder
    * @return The bytes for model.
    */
   com.google.protobuf.ByteString getModelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Use timeout based endpointing, interpreting endpointer sensitivy as
+   * seconds of timeout value.
+   * </pre>
+   *
+   * <code>bool use_timeout_based_endpointing = 11;</code>
+   *
+   * @return The useTimeoutBasedEndpointing.
+   */
+  boolean getUseTimeoutBasedEndpointing();
 }

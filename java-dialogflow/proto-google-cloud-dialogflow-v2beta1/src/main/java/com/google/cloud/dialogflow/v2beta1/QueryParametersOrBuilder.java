@@ -545,4 +545,37 @@ public interface QueryParametersOrBuilder
    * <code>map&lt;string, string&gt; webhook_headers = 14;</code>
    */
   java.lang.String getWebhookHeadersOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * The platform of the virtual agent response messages.
+   *
+   * If not empty, only emits messages from this platform in the response.
+   * Valid values are the enum names of
+   * [platform][google.cloud.dialogflow.v2beta1.Intent.Message.platform].
+   * </pre>
+   *
+   * <code>string platform = 18;</code>
+   *
+   * @return The platform.
+   */
+  java.lang.String getPlatform();
+  /**
+   *
+   *
+   * <pre>
+   * The platform of the virtual agent response messages.
+   *
+   * If not empty, only emits messages from this platform in the response.
+   * Valid values are the enum names of
+   * [platform][google.cloud.dialogflow.v2beta1.Intent.Message.platform].
+   * </pre>
+   *
+   * <code>string platform = 18;</code>
+   *
+   * @return The bytes for platform.
+   */
+  com.google.protobuf.ByteString getPlatformBytes();
 }

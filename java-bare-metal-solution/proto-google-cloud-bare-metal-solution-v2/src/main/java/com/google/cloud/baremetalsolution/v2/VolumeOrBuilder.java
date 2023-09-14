@@ -148,6 +148,19 @@ public interface VolumeOrBuilder
    *
    *
    * <pre>
+   * Originally requested size, in GiB.
+   * </pre>
+   *
+   * <code>int64 originally_requested_size_gib = 16;</code>
+   *
+   * @return The originallyRequestedSizeGib.
+   */
+  long getOriginallyRequestedSizeGib();
+
+  /**
+   *
+   *
+   * <pre>
    * The current size of this storage volume, in GiB, including space reserved
    * for snapshots. This size might be different than the requested size if the
    * storage volume has been configured with auto grow or auto shrink.
@@ -172,6 +185,19 @@ public interface VolumeOrBuilder
    * @return The emergencySizeGib.
    */
   long getEmergencySizeGib();
+
+  /**
+   *
+   *
+   * <pre>
+   * Maximum size volume can be expanded to in case of evergency, in GiB.
+   * </pre>
+   *
+   * <code>int64 max_size_gib = 17;</code>
+   *
+   * @return The maxSizeGib.
+   */
+  long getMaxSizeGib();
 
   /**
    *
@@ -369,4 +395,249 @@ public interface VolumeOrBuilder
    * @return The bytes for pod.
    */
   com.google.protobuf.ByteString getPodBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Storage protocol for the Volume.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.baremetalsolution.v2.Volume.Protocol protocol = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for protocol.
+   */
+  int getProtocolValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Storage protocol for the Volume.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.baremetalsolution.v2.Volume.Protocol protocol = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The protocol.
+   */
+  com.google.cloud.baremetalsolution.v2.Volume.Protocol getProtocol();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether this volume is a boot volume. A boot volume is one
+   * which contains a boot LUN.
+   * </pre>
+   *
+   * <code>bool boot_volume = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bootVolume.
+   */
+  boolean getBootVolume();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Performance tier of the Volume.
+   * Default is SHARED.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.baremetalsolution.v2.VolumePerformanceTier performance_tier = 20 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for performanceTier.
+   */
+  int getPerformanceTierValue();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Performance tier of the Volume.
+   * Default is SHARED.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.baremetalsolution.v2.VolumePerformanceTier performance_tier = 20 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The performanceTier.
+   */
+  com.google.cloud.baremetalsolution.v2.VolumePerformanceTier getPerformanceTier();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. User-specified notes for new Volume.
+   * Used to provision Volumes that require manual intervention.
+   * </pre>
+   *
+   * <code>string notes = 21 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The notes.
+   */
+  java.lang.String getNotes();
+  /**
+   *
+   *
+   * <pre>
+   * Input only. User-specified notes for new Volume.
+   * Used to provision Volumes that require manual intervention.
+   * </pre>
+   *
+   * <code>string notes = 21 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The bytes for notes.
+   */
+  com.google.protobuf.ByteString getNotesBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The workload profile for the volume.
+   * </pre>
+   *
+   * <code>.google.cloud.baremetalsolution.v2.Volume.WorkloadProfile workload_profile = 22;</code>
+   *
+   * @return The enum numeric value on the wire for workloadProfile.
+   */
+  int getWorkloadProfileValue();
+  /**
+   *
+   *
+   * <pre>
+   * The workload profile for the volume.
+   * </pre>
+   *
+   * <code>.google.cloud.baremetalsolution.v2.Volume.WorkloadProfile workload_profile = 22;</code>
+   *
+   * @return The workloadProfile.
+   */
+  com.google.cloud.baremetalsolution.v2.Volume.WorkloadProfile getWorkloadProfile();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time after which volume will be fully deleted.
+   * It is filled only for volumes in COOLOFF state.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the expireTime field is set.
+   */
+  boolean hasExpireTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time after which volume will be fully deleted.
+   * It is filled only for volumes in COOLOFF state.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The expireTime.
+   */
+  com.google.protobuf.Timestamp getExpireTime();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time after which volume will be fully deleted.
+   * It is filled only for volumes in COOLOFF state.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instances this Volume is attached to.
+   * This field is set only in Get requests.
+   * </pre>
+   *
+   * <code>
+   * repeated string instances = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the instances.
+   */
+  java.util.List<java.lang.String> getInstancesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instances this Volume is attached to.
+   * This field is set only in Get requests.
+   * </pre>
+   *
+   * <code>
+   * repeated string instances = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of instances.
+   */
+  int getInstancesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instances this Volume is attached to.
+   * This field is set only in Get requests.
+   * </pre>
+   *
+   * <code>
+   * repeated string instances = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The instances at the given index.
+   */
+  java.lang.String getInstances(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instances this Volume is attached to.
+   * This field is set only in Get requests.
+   * </pre>
+   *
+   * <code>
+   * repeated string instances = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the instances at the given index.
+   */
+  com.google.protobuf.ByteString getInstancesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Is the Volume attached at at least one instance.
+   * This field is a lightweight counterpart of `instances` field.
+   * It is filled in List responses as well.
+   * </pre>
+   *
+   * <code>bool attached = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The attached.
+   */
+  boolean getAttached();
 }

@@ -44,6 +44,8 @@ public class AsyncApplyConversionWorkspaceLRO {
                   ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
                       .toString())
               .setFilter("filter-1274492040")
+              .setDryRun(true)
+              .setAutoCommit(true)
               .build();
       OperationFuture<ConversionWorkspace, OperationMetadata> future =
           dataMigrationServiceClient

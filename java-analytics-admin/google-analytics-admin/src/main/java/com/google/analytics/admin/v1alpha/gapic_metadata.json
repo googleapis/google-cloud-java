@@ -106,6 +106,9 @@
             "CreateProperty": {
               "methods": ["createProperty", "createProperty", "createPropertyCallable"]
             },
+            "CreateSKAdNetworkConversionValueSchema": {
+              "methods": ["createSKAdNetworkConversionValueSchema", "createSKAdNetworkConversionValueSchema", "createSKAdNetworkConversionValueSchema", "createSKAdNetworkConversionValueSchemaCallable"]
+            },
             "CreateSearchAds360Link": {
               "methods": ["createSearchAds360Link", "createSearchAds360Link", "createSearchAds360Link", "createSearchAds360LinkCallable"]
             },
@@ -156,6 +159,9 @@
             },
             "DeleteProperty": {
               "methods": ["deleteProperty", "deleteProperty", "deleteProperty", "deletePropertyCallable"]
+            },
+            "DeleteSKAdNetworkConversionValueSchema": {
+              "methods": ["deleteSKAdNetworkConversionValueSchema", "deleteSKAdNetworkConversionValueSchema", "deleteSKAdNetworkConversionValueSchema", "deleteSKAdNetworkConversionValueSchemaCallable"]
             },
             "DeleteSearchAds360Link": {
               "methods": ["deleteSearchAds360Link", "deleteSearchAds360Link", "deleteSearchAds360Link", "deleteSearchAds360LinkCallable"]
@@ -235,6 +241,9 @@
             "GetProperty": {
               "methods": ["getProperty", "getProperty", "getProperty", "getPropertyCallable"]
             },
+            "GetSKAdNetworkConversionValueSchema": {
+              "methods": ["getSKAdNetworkConversionValueSchema", "getSKAdNetworkConversionValueSchema", "getSKAdNetworkConversionValueSchema", "getSKAdNetworkConversionValueSchemaCallable"]
+            },
             "GetSearchAds360Link": {
               "methods": ["getSearchAds360Link", "getSearchAds360Link", "getSearchAds360Link", "getSearchAds360LinkCallable"]
             },
@@ -301,6 +310,9 @@
             "ListProperties": {
               "methods": ["listProperties", "listPropertiesPagedCallable", "listPropertiesCallable"]
             },
+            "ListSKAdNetworkConversionValueSchemas": {
+              "methods": ["listSKAdNetworkConversionValueSchemas", "listSKAdNetworkConversionValueSchemas", "listSKAdNetworkConversionValueSchemas", "listSKAdNetworkConversionValueSchemasPagedCallable", "listSKAdNetworkConversionValueSchemasCallable"]
+            },
             "ListSearchAds360Links": {
               "methods": ["listSearchAds360Links", "listSearchAds360Links", "listSearchAds360Links", "listSearchAds360LinksPagedCallable", "listSearchAds360LinksCallable"]
             },
@@ -333,6 +345,9 @@
             },
             "UpdateChannelGroup": {
               "methods": ["updateChannelGroup", "updateChannelGroup", "updateChannelGroupCallable"]
+            },
+            "UpdateConversionEvent": {
+              "methods": ["updateConversionEvent", "updateConversionEvent", "updateConversionEventCallable"]
             },
             "UpdateCustomDimension": {
               "methods": ["updateCustomDimension", "updateCustomDimension", "updateCustomDimensionCallable"]
@@ -369,6 +384,9 @@
             },
             "UpdateProperty": {
               "methods": ["updateProperty", "updateProperty", "updatePropertyCallable"]
+            },
+            "UpdateSKAdNetworkConversionValueSchema": {
+              "methods": ["updateSKAdNetworkConversionValueSchema", "updateSKAdNetworkConversionValueSchema", "updateSKAdNetworkConversionValueSchemaCallable"]
             },
             "UpdateSearchAds360Link": {
               "methods": ["updateSearchAds360Link", "updateSearchAds360Link", "updateSearchAds360LinkCallable"]

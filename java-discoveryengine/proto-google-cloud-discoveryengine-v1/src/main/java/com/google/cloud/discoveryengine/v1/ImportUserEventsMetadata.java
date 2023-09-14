@@ -22,7 +22,7 @@ package com.google.cloud.discoveryengine.v1;
  *
  *
  * <pre>
- * Metadata related to the progress of the Import operation. This will be
+ * Metadata related to the progress of the Import operation. This is
  * returned by the google.longrunning.Operation.metadata field.
  * </pre>
  *
@@ -393,7 +393,7 @@ public final class ImportUserEventsMetadata extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Metadata related to the progress of the Import operation. This will be
+   * Metadata related to the progress of the Import operation. This is
    * returned by the google.longrunning.Operation.metadata field.
    * </pre>
    *

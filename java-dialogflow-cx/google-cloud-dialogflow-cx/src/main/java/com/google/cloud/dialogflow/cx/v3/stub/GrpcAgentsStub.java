@@ -33,12 +33,15 @@ import com.google.cloud.dialogflow.cx.v3.CreateAgentRequest;
 import com.google.cloud.dialogflow.cx.v3.DeleteAgentRequest;
 import com.google.cloud.dialogflow.cx.v3.ExportAgentRequest;
 import com.google.cloud.dialogflow.cx.v3.ExportAgentResponse;
+import com.google.cloud.dialogflow.cx.v3.GenerativeSettings;
 import com.google.cloud.dialogflow.cx.v3.GetAgentRequest;
 import com.google.cloud.dialogflow.cx.v3.GetAgentValidationResultRequest;
+import com.google.cloud.dialogflow.cx.v3.GetGenerativeSettingsRequest;
 import com.google.cloud.dialogflow.cx.v3.ListAgentsRequest;
 import com.google.cloud.dialogflow.cx.v3.ListAgentsResponse;
 import com.google.cloud.dialogflow.cx.v3.RestoreAgentRequest;
 import com.google.cloud.dialogflow.cx.v3.UpdateAgentRequest;
+import com.google.cloud.dialogflow.cx.v3.UpdateGenerativeSettingsRequest;
 import com.google.cloud.dialogflow.cx.v3.ValidateAgentRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -142,6 +145,26 @@ public class GrpcAgentsStub extends AgentsStub {
                   ProtoUtils.marshaller(AgentValidationResult.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetGenerativeSettingsRequest, GenerativeSettings>
+      getGenerativeSettingsMethodDescriptor =
+          MethodDescriptor.<GetGenerativeSettingsRequest, GenerativeSettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.cx.v3.Agents/GetGenerativeSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetGenerativeSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(GenerativeSettings.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateGenerativeSettingsRequest, GenerativeSettings>
+      updateGenerativeSettingsMethodDescriptor =
+          MethodDescriptor.<UpdateGenerativeSettingsRequest, GenerativeSettings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.cx.v3.Agents/UpdateGenerativeSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateGenerativeSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(GenerativeSettings.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -175,6 +198,10 @@ public class GrpcAgentsStub extends AgentsStub {
   private final UnaryCallable<ValidateAgentRequest, AgentValidationResult> validateAgentCallable;
   private final UnaryCallable<GetAgentValidationResultRequest, AgentValidationResult>
       getAgentValidationResultCallable;
+  private final UnaryCallable<GetGenerativeSettingsRequest, GenerativeSettings>
+      getGenerativeSettingsCallable;
+  private final UnaryCallable<UpdateGenerativeSettingsRequest, GenerativeSettings>
+      updateGenerativeSettingsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -310,6 +337,30 @@ public class GrpcAgentsStub extends AgentsStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<GetGenerativeSettingsRequest, GenerativeSettings>
+        getGenerativeSettingsTransportSettings =
+            GrpcCallSettings.<GetGenerativeSettingsRequest, GenerativeSettings>newBuilder()
+                .setMethodDescriptor(getGenerativeSettingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateGenerativeSettingsRequest, GenerativeSettings>
+        updateGenerativeSettingsTransportSettings =
+            GrpcCallSettings.<UpdateGenerativeSettingsRequest, GenerativeSettings>newBuilder()
+                .setMethodDescriptor(updateGenerativeSettingsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "generative_settings.name",
+                          String.valueOf(request.getGenerativeSettings().getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -374,6 +425,16 @@ public class GrpcAgentsStub extends AgentsStub {
         callableFactory.createUnaryCallable(
             getAgentValidationResultTransportSettings,
             settings.getAgentValidationResultSettings(),
+            clientContext);
+    this.getGenerativeSettingsCallable =
+        callableFactory.createUnaryCallable(
+            getGenerativeSettingsTransportSettings,
+            settings.getGenerativeSettingsSettings(),
+            clientContext);
+    this.updateGenerativeSettingsCallable =
+        callableFactory.createUnaryCallable(
+            updateGenerativeSettingsTransportSettings,
+            settings.updateGenerativeSettingsSettings(),
             clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
@@ -453,6 +514,18 @@ public class GrpcAgentsStub extends AgentsStub {
   public UnaryCallable<GetAgentValidationResultRequest, AgentValidationResult>
       getAgentValidationResultCallable() {
     return getAgentValidationResultCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetGenerativeSettingsRequest, GenerativeSettings>
+      getGenerativeSettingsCallable() {
+    return getGenerativeSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateGenerativeSettingsRequest, GenerativeSettings>
+      updateGenerativeSettingsCallable() {
+    return updateGenerativeSettingsCallable;
   }
 
   @Override

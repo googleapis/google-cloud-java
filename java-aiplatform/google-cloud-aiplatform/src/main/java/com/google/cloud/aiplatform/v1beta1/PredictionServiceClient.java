@@ -790,6 +790,138 @@ public class PredictionServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Perform a token counting.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   EndpointName endpoint =
+   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
+   *   List<Value> instances = new ArrayList<>();
+   *   CountTokensResponse response = predictionServiceClient.countTokens(endpoint, instances);
+   * }
+   * }</pre>
+   *
+   * @param endpoint Required. The name of the Endpoint requested to perform token counting. Format:
+   *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
+   * @param instances Required. The instances that are the input to token counting call. Schema is
+   *     identical to the prediction schema of the underlying model.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CountTokensResponse countTokens(EndpointName endpoint, List<Value> instances) {
+    CountTokensRequest request =
+        CountTokensRequest.newBuilder()
+            .setEndpoint(endpoint == null ? null : endpoint.toString())
+            .addAllInstances(instances)
+            .build();
+    return countTokens(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform a token counting.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   String endpoint =
+   *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *           .toString();
+   *   List<Value> instances = new ArrayList<>();
+   *   CountTokensResponse response = predictionServiceClient.countTokens(endpoint, instances);
+   * }
+   * }</pre>
+   *
+   * @param endpoint Required. The name of the Endpoint requested to perform token counting. Format:
+   *     `projects/{project}/locations/{location}/endpoints/{endpoint}`
+   * @param instances Required. The instances that are the input to token counting call. Schema is
+   *     identical to the prediction schema of the underlying model.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CountTokensResponse countTokens(String endpoint, List<Value> instances) {
+    CountTokensRequest request =
+        CountTokensRequest.newBuilder().setEndpoint(endpoint).addAllInstances(instances).build();
+    return countTokens(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform a token counting.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   CountTokensRequest request =
+   *       CountTokensRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .addAllInstances(new ArrayList<Value>())
+   *           .build();
+   *   CountTokensResponse response = predictionServiceClient.countTokens(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CountTokensResponse countTokens(CountTokensRequest request) {
+    return countTokensCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Perform a token counting.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+   *   CountTokensRequest request =
+   *       CountTokensRequest.newBuilder()
+   *           .setEndpoint(
+   *               EndpointName.ofProjectLocationEndpointName(
+   *                       "[PROJECT]", "[LOCATION]", "[ENDPOINT]")
+   *                   .toString())
+   *           .addAllInstances(new ArrayList<Value>())
+   *           .build();
+   *   ApiFuture<CountTokensResponse> future =
+   *       predictionServiceClient.countTokensCallable().futureCall(request);
+   *   // Do something.
+   *   CountTokensResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CountTokensRequest, CountTokensResponse> countTokensCallable() {
+    return stub.countTokensCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:

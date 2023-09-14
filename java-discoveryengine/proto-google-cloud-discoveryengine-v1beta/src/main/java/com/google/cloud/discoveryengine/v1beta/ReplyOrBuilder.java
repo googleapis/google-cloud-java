@@ -27,25 +27,33 @@ public interface ReplyOrBuilder
    *
    *
    * <pre>
+   * DEPRECATED: use `summary` instead.
    * Text reply.
    * </pre>
    *
-   * <code>string reply = 1;</code>
+   * <code>string reply = 1 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.discoveryengine.v1beta.Reply.reply is deprecated. See
+   *     google/cloud/discoveryengine/v1beta/conversation.proto;l=95
    * @return The reply.
    */
+  @java.lang.Deprecated
   java.lang.String getReply();
   /**
    *
    *
    * <pre>
+   * DEPRECATED: use `summary` instead.
    * Text reply.
    * </pre>
    *
-   * <code>string reply = 1;</code>
+   * <code>string reply = 1 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.discoveryengine.v1beta.Reply.reply is deprecated. See
+   *     google/cloud/discoveryengine/v1beta/conversation.proto;l=95
    * @return The bytes for reply.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getReplyBytes();
 
   /**
@@ -55,8 +63,11 @@ public interface ReplyOrBuilder
    * References in the reply.
    * </pre>
    *
-   * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   java.util.List<com.google.cloud.discoveryengine.v1beta.Reply.Reference> getReferencesList();
   /**
    *
@@ -65,8 +76,11 @@ public interface ReplyOrBuilder
    * References in the reply.
    * </pre>
    *
-   * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.discoveryengine.v1beta.Reply.Reference getReferences(int index);
   /**
    *
@@ -75,8 +89,11 @@ public interface ReplyOrBuilder
    * References in the reply.
    * </pre>
    *
-   * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   int getReferencesCount();
   /**
    *
@@ -85,8 +102,11 @@ public interface ReplyOrBuilder
    * References in the reply.
    * </pre>
    *
-   * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   java.util.List<? extends com.google.cloud.discoveryengine.v1beta.Reply.ReferenceOrBuilder>
       getReferencesOrBuilderList();
   /**
@@ -96,8 +116,46 @@ public interface ReplyOrBuilder
    * References in the reply.
    * </pre>
    *
-   * <code>repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2;</code>
+   * <code>
+   * repeated .google.cloud.discoveryengine.v1beta.Reply.Reference references = 2 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.discoveryengine.v1beta.Reply.ReferenceOrBuilder getReferencesOrBuilder(
       int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Summary based on search results.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.Summary summary = 3;</code>
+   *
+   * @return Whether the summary field is set.
+   */
+  boolean hasSummary();
+  /**
+   *
+   *
+   * <pre>
+   * Summary based on search results.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.Summary summary = 3;</code>
+   *
+   * @return The summary.
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary getSummary();
+  /**
+   *
+   *
+   * <pre>
+   * Summary based on search results.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchResponse.Summary summary = 3;</code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchResponse.SummaryOrBuilder getSummaryOrBuilder();
 }

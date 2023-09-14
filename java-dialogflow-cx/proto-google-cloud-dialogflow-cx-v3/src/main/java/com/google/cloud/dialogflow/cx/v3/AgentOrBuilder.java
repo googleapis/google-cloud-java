@@ -383,7 +383,7 @@ public interface AgentOrBuilder
    * <code>bool enable_stackdriver_logging = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3.Agent.enable_stackdriver_logging is deprecated. See
-   *     google/cloud/dialogflow/cx/v3/agent.proto;l=285
+   *     google/cloud/dialogflow/cx/v3/agent.proto;l=314
    * @return The enableStackdriverLogging.
    */
   @java.lang.Deprecated
@@ -535,4 +535,46 @@ public interface AgentOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3.TextToSpeechSettingsOrBuilder
       getTextToSpeechSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Gen App Builder-related agent-level settings.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.dialogflow.cx.v3.Agent.GenAppBuilderSettings gen_app_builder_settings = 33;
+   * </code>
+   *
+   * @return Whether the genAppBuilderSettings field is set.
+   */
+  boolean hasGenAppBuilderSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Gen App Builder-related agent-level settings.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.dialogflow.cx.v3.Agent.GenAppBuilderSettings gen_app_builder_settings = 33;
+   * </code>
+   *
+   * @return The genAppBuilderSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3.Agent.GenAppBuilderSettings getGenAppBuilderSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Gen App Builder-related agent-level settings.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.dialogflow.cx.v3.Agent.GenAppBuilderSettings gen_app_builder_settings = 33;
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.Agent.GenAppBuilderSettingsOrBuilder
+      getGenAppBuilderSettingsOrBuilder();
 }

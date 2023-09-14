@@ -79,6 +79,8 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
    * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
    *
    * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *
+   * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
    * </pre>
    *
    * <code>
@@ -112,6 +114,8 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
    * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
    *
    * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+   *
+   * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
    * </pre>
    *
    * <code>
@@ -490,6 +494,8 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
      * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
      *
      * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+     *
+     * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
      * </pre>
      *
      * <code>
@@ -522,6 +528,8 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
      * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
      *
      * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+     *
+     * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
      * </pre>
      *
      * <code>
@@ -554,6 +562,8 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
      * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
      *
      * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+     *
+     * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
      * </pre>
      *
      * <code>
@@ -585,6 +595,8 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
      * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
      *
      * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+     *
+     * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
      * </pre>
      *
      * <code>
@@ -612,6 +624,8 @@ public final class GetRecommenderConfigRequest extends com.google.protobuf.Gener
      * * `projects/[PROJECT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
      *
      * * `organizations/[ORGANIZATION_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
+     *
+     * * `billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config`
      * </pre>
      *
      * <code>

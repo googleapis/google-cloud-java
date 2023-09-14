@@ -135,6 +135,16 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      * <code>CONVERSATION_SUMMARIZATION = 8;</code>
      */
     CONVERSATION_SUMMARIZATION(8),
+    /**
+     *
+     *
+     * <pre>
+     * Run knowledge search with text input from agent or text generated query.
+     * </pre>
+     *
+     * <code>KNOWLEDGE_SEARCH = 14;</code>
+     */
+    KNOWLEDGE_SEARCH(14),
     UNRECOGNIZED(-1),
     ;
 
@@ -199,6 +209,16 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
      * <code>CONVERSATION_SUMMARIZATION = 8;</code>
      */
     public static final int CONVERSATION_SUMMARIZATION_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * Run knowledge search with text input from agent or text generated query.
+     * </pre>
+     *
+     * <code>KNOWLEDGE_SEARCH = 14;</code>
+     */
+    public static final int KNOWLEDGE_SEARCH_VALUE = 14;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -236,6 +256,8 @@ public final class SuggestionFeature extends com.google.protobuf.GeneratedMessag
           return DIALOGFLOW_ASSIST;
         case 8:
           return CONVERSATION_SUMMARIZATION;
+        case 14:
+          return KNOWLEDGE_SEARCH;
         default:
           return null;
       }

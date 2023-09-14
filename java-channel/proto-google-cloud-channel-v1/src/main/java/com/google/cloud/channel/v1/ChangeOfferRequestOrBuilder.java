@@ -231,4 +231,37 @@ public interface ChangeOfferRequestOrBuilder
    * @return The bytes for requestId.
    */
   com.google.protobuf.ByteString getRequestIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The billing account resource name that is used to pay for this
+   * entitlement when setting up billing on a trial subscription.
+   *
+   * This field is only relevant for multi-currency accounts. It should be
+   * left empty for single currency accounts.
+   * </pre>
+   *
+   * <code>string billing_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The billingAccount.
+   */
+  java.lang.String getBillingAccount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The billing account resource name that is used to pay for this
+   * entitlement when setting up billing on a trial subscription.
+   *
+   * This field is only relevant for multi-currency accounts. It should be
+   * left empty for single currency accounts.
+   * </pre>
+   *
+   * <code>string billing_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for billingAccount.
+   */
+  com.google.protobuf.ByteString getBillingAccountBytes();
 }

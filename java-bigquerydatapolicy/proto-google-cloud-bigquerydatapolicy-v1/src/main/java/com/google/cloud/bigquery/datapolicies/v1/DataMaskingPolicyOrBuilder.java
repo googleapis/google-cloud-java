@@ -67,6 +67,49 @@ public interface DataMaskingPolicyOrBuilder
   com.google.cloud.bigquery.datapolicies.v1.DataMaskingPolicy.PredefinedExpression
       getPredefinedExpression();
 
+  /**
+   *
+   *
+   * <pre>
+   * The name of the BigQuery routine that contains the custom masking
+   * routine, in the format of
+   * `projects/{project_number}/datasets/{dataset_id}/routines/{routine_id}`.
+   * </pre>
+   *
+   * <code>string routine = 3;</code>
+   *
+   * @return Whether the routine field is set.
+   */
+  boolean hasRoutine();
+  /**
+   *
+   *
+   * <pre>
+   * The name of the BigQuery routine that contains the custom masking
+   * routine, in the format of
+   * `projects/{project_number}/datasets/{dataset_id}/routines/{routine_id}`.
+   * </pre>
+   *
+   * <code>string routine = 3;</code>
+   *
+   * @return The routine.
+   */
+  java.lang.String getRoutine();
+  /**
+   *
+   *
+   * <pre>
+   * The name of the BigQuery routine that contains the custom masking
+   * routine, in the format of
+   * `projects/{project_number}/datasets/{dataset_id}/routines/{routine_id}`.
+   * </pre>
+   *
+   * <code>string routine = 3;</code>
+   *
+   * @return The bytes for routine.
+   */
+  com.google.protobuf.ByteString getRoutineBytes();
+
   com.google.cloud.bigquery.datapolicies.v1.DataMaskingPolicy.MaskingExpressionCase
       getMaskingExpressionCase();
 }

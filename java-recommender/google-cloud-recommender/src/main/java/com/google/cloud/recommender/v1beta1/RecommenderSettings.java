@@ -16,8 +16,10 @@
 
 package com.google.cloud.recommender.v1beta1;
 
+import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListInsightTypesPagedResponse;
 import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListInsightsPagedResponse;
 import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListRecommendationsPagedResponse;
+import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListRecommendersPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -144,6 +146,20 @@ public class RecommenderSettings extends ClientSettings<RecommenderSettings> {
   public UnaryCallSettings<UpdateInsightTypeConfigRequest, InsightTypeConfig>
       updateInsightTypeConfigSettings() {
     return ((RecommenderStubSettings) getStubSettings()).updateInsightTypeConfigSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listRecommenders. */
+  public PagedCallSettings<
+          ListRecommendersRequest, ListRecommendersResponse, ListRecommendersPagedResponse>
+      listRecommendersSettings() {
+    return ((RecommenderStubSettings) getStubSettings()).listRecommendersSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listInsightTypes. */
+  public PagedCallSettings<
+          ListInsightTypesRequest, ListInsightTypesResponse, ListInsightTypesPagedResponse>
+      listInsightTypesSettings() {
+    return ((RecommenderStubSettings) getStubSettings()).listInsightTypesSettings();
   }
 
   public static final RecommenderSettings create(RecommenderStubSettings stub) throws IOException {
@@ -333,6 +349,20 @@ public class RecommenderSettings extends ClientSettings<RecommenderSettings> {
     public UnaryCallSettings.Builder<UpdateInsightTypeConfigRequest, InsightTypeConfig>
         updateInsightTypeConfigSettings() {
       return getStubSettingsBuilder().updateInsightTypeConfigSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listRecommenders. */
+    public PagedCallSettings.Builder<
+            ListRecommendersRequest, ListRecommendersResponse, ListRecommendersPagedResponse>
+        listRecommendersSettings() {
+      return getStubSettingsBuilder().listRecommendersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listInsightTypes. */
+    public PagedCallSettings.Builder<
+            ListInsightTypesRequest, ListInsightTypesResponse, ListInsightTypesPagedResponse>
+        listInsightTypesSettings() {
+      return getStubSettingsBuilder().listInsightTypesSettings();
     }
 
     @Override

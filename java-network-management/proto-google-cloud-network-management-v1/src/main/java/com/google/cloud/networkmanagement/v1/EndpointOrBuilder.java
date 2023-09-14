@@ -29,7 +29,8 @@ public interface EndpointOrBuilder
    * <pre>
    * The IP address of the endpoint, which can be an external or internal IP.
    * An IPv6 address is only allowed when the test's destination is a
-   * [global load balancer VIP](/load-balancing/docs/load-balancing-overview).
+   * [global load balancer
+   * VIP](https://cloud.google.com/load-balancing/docs/load-balancing-overview).
    * </pre>
    *
    * <code>string ip_address = 1;</code>
@@ -43,7 +44,8 @@ public interface EndpointOrBuilder
    * <pre>
    * The IP address of the endpoint, which can be an external or internal IP.
    * An IPv6 address is only allowed when the test's destination is a
-   * [global load balancer VIP](/load-balancing/docs/load-balancing-overview).
+   * [global load balancer
+   * VIP](https://cloud.google.com/load-balancing/docs/load-balancing-overview).
    * </pre>
    *
    * <code>string ip_address = 1;</code>
@@ -130,6 +132,135 @@ public interface EndpointOrBuilder
    *
    *
    * <pre>
+   * Output only. Specifies the type of the target of the forwarding rule.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget forwarding_rule_target = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the forwardingRuleTarget field is set.
+   */
+  boolean hasForwardingRuleTarget();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the type of the target of the forwarding rule.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget forwarding_rule_target = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for forwardingRuleTarget.
+   */
+  int getForwardingRuleTargetValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Specifies the type of the target of the forwarding rule.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget forwarding_rule_target = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The forwardingRuleTarget.
+   */
+  com.google.cloud.networkmanagement.v1.Endpoint.ForwardingRuleTarget getForwardingRuleTarget();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. ID of the load balancer the forwarding rule points to. Empty
+   * for forwarding rules not related to load balancers.
+   * </pre>
+   *
+   * <code>optional string load_balancer_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the loadBalancerId field is set.
+   */
+  boolean hasLoadBalancerId();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. ID of the load balancer the forwarding rule points to. Empty
+   * for forwarding rules not related to load balancers.
+   * </pre>
+   *
+   * <code>optional string load_balancer_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The loadBalancerId.
+   */
+  java.lang.String getLoadBalancerId();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. ID of the load balancer the forwarding rule points to. Empty
+   * for forwarding rules not related to load balancers.
+   * </pre>
+   *
+   * <code>optional string load_balancer_id = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for loadBalancerId.
+   */
+  com.google.protobuf.ByteString getLoadBalancerIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Type of the load balancer the forwarding rule points to.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkmanagement.v1.LoadBalancerType load_balancer_type = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the loadBalancerType field is set.
+   */
+  boolean hasLoadBalancerType();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Type of the load balancer the forwarding rule points to.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkmanagement.v1.LoadBalancerType load_balancer_type = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for loadBalancerType.
+   */
+  int getLoadBalancerTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Type of the load balancer the forwarding rule points to.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkmanagement.v1.LoadBalancerType load_balancer_type = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The loadBalancerType.
+   */
+  com.google.cloud.networkmanagement.v1.LoadBalancerType getLoadBalancerType();
+
+  /**
+   *
+   *
+   * <pre>
    * A cluster URI for [Google Kubernetes Engine
    * master](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
    * </pre>
@@ -177,6 +308,135 @@ public interface EndpointOrBuilder
    * @return The bytes for cloudSqlInstance.
    */
   com.google.protobuf.ByteString getCloudSqlInstanceBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * A [Cloud Function](https://cloud.google.com/functions).
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloud_function = 10;
+   * </code>
+   *
+   * @return Whether the cloudFunction field is set.
+   */
+  boolean hasCloudFunction();
+  /**
+   *
+   *
+   * <pre>
+   * A [Cloud Function](https://cloud.google.com/functions).
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloud_function = 10;
+   * </code>
+   *
+   * @return The cloudFunction.
+   */
+  com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint getCloudFunction();
+  /**
+   *
+   *
+   * <pre>
+   * A [Cloud Function](https://cloud.google.com/functions).
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpoint cloud_function = 10;
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1.Endpoint.CloudFunctionEndpointOrBuilder
+      getCloudFunctionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * An [App Engine](https://cloud.google.com/appengine) [service
+   * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint app_engine_version = 11;
+   * </code>
+   *
+   * @return Whether the appEngineVersion field is set.
+   */
+  boolean hasAppEngineVersion();
+  /**
+   *
+   *
+   * <pre>
+   * An [App Engine](https://cloud.google.com/appengine) [service
+   * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint app_engine_version = 11;
+   * </code>
+   *
+   * @return The appEngineVersion.
+   */
+  com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint getAppEngineVersion();
+  /**
+   *
+   *
+   * <pre>
+   * An [App Engine](https://cloud.google.com/appengine) [service
+   * version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpoint app_engine_version = 11;
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1.Endpoint.AppEngineVersionEndpointOrBuilder
+      getAppEngineVersionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A [Cloud Run](https://cloud.google.com/run)
+   * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint cloud_run_revision = 12;
+   * </code>
+   *
+   * @return Whether the cloudRunRevision field is set.
+   */
+  boolean hasCloudRunRevision();
+  /**
+   *
+   *
+   * <pre>
+   * A [Cloud Run](https://cloud.google.com/run)
+   * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint cloud_run_revision = 12;
+   * </code>
+   *
+   * @return The cloudRunRevision.
+   */
+  com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint getCloudRunRevision();
+  /**
+   *
+   *
+   * <pre>
+   * A [Cloud Run](https://cloud.google.com/run)
+   * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint cloud_run_revision = 12;
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpointOrBuilder
+      getCloudRunRevisionOrBuilder();
 
   /**
    *

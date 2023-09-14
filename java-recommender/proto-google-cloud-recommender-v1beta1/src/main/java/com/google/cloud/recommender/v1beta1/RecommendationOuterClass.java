@@ -83,6 +83,10 @@ public final class RecommendationOuterClass {
       internal_static_google_cloud_recommender_v1beta1_RecommendationStateInfo_StateMetadataEntry_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_recommender_v1beta1_RecommendationStateInfo_StateMetadataEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recommender_v1beta1_RecommenderType_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recommender_v1beta1_RecommenderType_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -178,11 +182,8 @@ public final class RecommendationOuterClass {
           + "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"a\n\005Stat"
           + "e\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006ACTIVE\020\001\022\013\n\007"
           + "CLAIMED\020\006\022\r\n\tSUCCEEDED\020\003\022\n\n\006FAILED\020\004\022\r\n\t"
-          + "DISMISSED\020\005B\355\003\n$com.google.cloud.recomme"
-          + "nder.v1beta1P\001ZFcloud.google.com/go/reco"
-          + "mmender/apiv1beta1/recommenderpb;recomme"
-          + "nderpb\242\002\004CREC\252\002 Google.Cloud.Recommender"
-          + ".V1Beta1\352A\317\002\n&recommender.googleapis.com"
+          + "DISMISSED\020\005\"\221\003\n\017RecommenderType\022\014\n\004name\030"
+          + "\001 \001(\t:\357\002\352A\353\002\n&recommender.googleapis.com"
           + "/Recommender\022Bprojects/{project}/locatio"
           + "ns/{location}/recommenders/{recommender}"
           + "\022QbillingAccounts/{billing_account}/loca"
@@ -190,7 +191,12 @@ public final class RecommendationOuterClass {
           + "er}\022@folders/{folder}/locations/{locatio"
           + "n}/recommenders/{recommender}\022Lorganizat"
           + "ions/{organization}/locations/{location}"
-          + "/recommenders/{recommender}b\006proto3"
+          + "/recommenders/{recommender}\022\032recommender"
+          + "s/{recommender}B\232\001\n$com.google.cloud.rec"
+          + "ommender.v1beta1P\001ZFcloud.google.com/go/"
+          + "recommender/apiv1beta1/recommenderpb;rec"
+          + "ommenderpb\242\002\004CREC\252\002 Google.Cloud.Recomme"
+          + "nder.V1Beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -347,10 +353,17 @@ public final class RecommendationOuterClass {
             new java.lang.String[] {
               "Key", "Value",
             });
+    internal_static_google_cloud_recommender_v1beta1_RecommenderType_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_recommender_v1beta1_RecommenderType_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recommender_v1beta1_RecommenderType_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ResourceProto.resource);
-    registry.add(com.google.api.ResourceProto.resourceDefinition);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.ResourceProto.getDescriptor();

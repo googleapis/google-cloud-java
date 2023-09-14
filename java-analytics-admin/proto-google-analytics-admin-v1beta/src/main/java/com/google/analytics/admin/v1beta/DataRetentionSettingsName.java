@@ -128,7 +128,7 @@ public class DataRetentionSettingsName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       DataRetentionSettingsName that = ((DataRetentionSettingsName) o);
       return Objects.equals(this.property, that.property);
     }

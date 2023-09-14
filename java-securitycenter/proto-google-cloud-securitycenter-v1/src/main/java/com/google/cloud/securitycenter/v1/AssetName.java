@@ -236,7 +236,7 @@ public class AssetName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       AssetName that = ((AssetName) o);
       return Objects.equals(this.organization, that.organization)
           && Objects.equals(this.asset, that.asset)

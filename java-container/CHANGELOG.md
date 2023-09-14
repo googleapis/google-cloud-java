@@ -1,5 +1,31 @@
 # Changelog
 
+## 2.27.0 (2023-09-11)
+
+### Features
+
+* add APIs for GKE OOTB metrics packages ([b3fbe12](https://github.com/googleapis/google-cloud-java/commit/b3fbe124daa80410502cf6ef4c194285ba4cd272))
+* add APIs for GKE OOTB metrics packages ([b3fbe12](https://github.com/googleapis/google-cloud-java/commit/b3fbe124daa80410502cf6ef4c194285ba4cd272))
+* Add preview support for monitoring a cluster's pods for compliance with a provided Binary Authorization platform policy via Binary Authorization Continuous Validation ([b3fbe12](https://github.com/googleapis/google-cloud-java/commit/b3fbe124daa80410502cf6ef4c194285ba4cd272))
+* add support for NodeConfig Update ([b3fbe12](https://github.com/googleapis/google-cloud-java/commit/b3fbe124daa80410502cf6ef4c194285ba4cd272))
+* add UpdateNodePoolRequest.machine_type, disk_type, disk_size_gb ([#9745](https://github.com/googleapis/google-cloud-java/issues/9745)) ([b3fbe12](https://github.com/googleapis/google-cloud-java/commit/b3fbe124daa80410502cf6ef4c194285ba4cd272))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#9809](https://github.com/googleapis/google-cloud-java/issues/9809)) ([09dbd85](https://github.com/googleapis/google-cloud-java/commit/09dbd855f683b40a462c4f918511bee4671e0174))
+
+
+## 2.26.0 (2023-08-08)
+
+### Features
+
+* add policy_name to PlacementPolicy message within a node pool ([#9676](https://github.com/googleapis/google-cloud-java/issues/9676)) ([a0715a8](https://github.com/googleapis/google-cloud-java/commit/a0715a816cb259e4518d97b243cfd357a3581078))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.14.0 ([#9722](https://github.com/googleapis/google-cloud-java/issues/9722)) ([c7011db](https://github.com/googleapis/google-cloud-java/commit/c7011dbd69189330de1c2946b736cd712d5c1f4e))
+
+
 ## 2.25.0 (2023-07-21)
 
 ### Features

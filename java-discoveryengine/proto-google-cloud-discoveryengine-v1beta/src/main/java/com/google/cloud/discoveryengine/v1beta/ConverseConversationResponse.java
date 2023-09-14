@@ -40,6 +40,7 @@ public final class ConverseConversationResponse extends com.google.protobuf.Gene
   }
 
   private ConverseConversationResponse() {
+    relatedQuestions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     searchResults_ = java.util.Collections.emptyList();
   }
 
@@ -164,6 +165,70 @@ public final class ConverseConversationResponse extends com.google.protobuf.Gene
         : conversation_;
   }
 
+  public static final int RELATED_QUESTIONS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList relatedQuestions_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Suggested related questions.
+   * </pre>
+   *
+   * <code>repeated string related_questions = 6;</code>
+   *
+   * @return A list containing the relatedQuestions.
+   */
+  public com.google.protobuf.ProtocolStringList getRelatedQuestionsList() {
+    return relatedQuestions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Suggested related questions.
+   * </pre>
+   *
+   * <code>repeated string related_questions = 6;</code>
+   *
+   * @return The count of relatedQuestions.
+   */
+  public int getRelatedQuestionsCount() {
+    return relatedQuestions_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Suggested related questions.
+   * </pre>
+   *
+   * <code>repeated string related_questions = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The relatedQuestions at the given index.
+   */
+  public java.lang.String getRelatedQuestions(int index) {
+    return relatedQuestions_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Suggested related questions.
+   * </pre>
+   *
+   * <code>repeated string related_questions = 6;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the relatedQuestions at the given index.
+   */
+  public com.google.protobuf.ByteString getRelatedQuestionsBytes(int index) {
+    return relatedQuestions_.getByteString(index);
+  }
+
   public static final int SEARCH_RESULTS_FIELD_NUMBER = 3;
 
   @SuppressWarnings("serial")
@@ -273,6 +338,9 @@ public final class ConverseConversationResponse extends com.google.protobuf.Gene
     for (int i = 0; i < searchResults_.size(); i++) {
       output.writeMessage(3, searchResults_.get(i));
     }
+    for (int i = 0; i < relatedQuestions_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, relatedQuestions_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -290,6 +358,14 @@ public final class ConverseConversationResponse extends com.google.protobuf.Gene
     }
     for (int i = 0; i < searchResults_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, searchResults_.get(i));
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < relatedQuestions_.size(); i++) {
+        dataSize += computeStringSizeNoTag(relatedQuestions_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getRelatedQuestionsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -315,6 +391,7 @@ public final class ConverseConversationResponse extends com.google.protobuf.Gene
     if (hasConversation()) {
       if (!getConversation().equals(other.getConversation())) return false;
     }
+    if (!getRelatedQuestionsList().equals(other.getRelatedQuestionsList())) return false;
     if (!getSearchResultsList().equals(other.getSearchResultsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -334,6 +411,10 @@ public final class ConverseConversationResponse extends com.google.protobuf.Gene
     if (hasConversation()) {
       hash = (37 * hash) + CONVERSATION_FIELD_NUMBER;
       hash = (53 * hash) + getConversation().hashCode();
+    }
+    if (getRelatedQuestionsCount() > 0) {
+      hash = (37 * hash) + RELATED_QUESTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getRelatedQuestionsList().hashCode();
     }
     if (getSearchResultsCount() > 0) {
       hash = (37 * hash) + SEARCH_RESULTS_FIELD_NUMBER;
@@ -493,13 +574,14 @@ public final class ConverseConversationResponse extends com.google.protobuf.Gene
         conversationBuilder_.dispose();
         conversationBuilder_ = null;
       }
+      relatedQuestions_ = com.google.protobuf.LazyStringArrayList.emptyList();
       if (searchResultsBuilder_ == null) {
         searchResults_ = java.util.Collections.emptyList();
       } else {
         searchResults_ = null;
         searchResultsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -540,9 +622,9 @@ public final class ConverseConversationResponse extends com.google.protobuf.Gene
     private void buildPartialRepeatedFields(
         com.google.cloud.discoveryengine.v1beta.ConverseConversationResponse result) {
       if (searchResultsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           searchResults_ = java.util.Collections.unmodifiableList(searchResults_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.searchResults_ = searchResults_;
       } else {
@@ -559,6 +641,10 @@ public final class ConverseConversationResponse extends com.google.protobuf.Gene
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.conversation_ =
             conversationBuilder_ == null ? conversation_ : conversationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        relatedQuestions_.makeImmutable();
+        result.relatedQuestions_ = relatedQuestions_;
       }
     }
 
@@ -617,11 +703,21 @@ public final class ConverseConversationResponse extends com.google.protobuf.Gene
       if (other.hasConversation()) {
         mergeConversation(other.getConversation());
       }
+      if (!other.relatedQuestions_.isEmpty()) {
+        if (relatedQuestions_.isEmpty()) {
+          relatedQuestions_ = other.relatedQuestions_;
+          bitField0_ |= 0x00000004;
+        } else {
+          ensureRelatedQuestionsIsMutable();
+          relatedQuestions_.addAll(other.relatedQuestions_);
+        }
+        onChanged();
+      }
       if (searchResultsBuilder_ == null) {
         if (!other.searchResults_.isEmpty()) {
           if (searchResults_.isEmpty()) {
             searchResults_ = other.searchResults_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureSearchResultsIsMutable();
             searchResults_.addAll(other.searchResults_);
@@ -634,7 +730,7 @@ public final class ConverseConversationResponse extends com.google.protobuf.Gene
             searchResultsBuilder_.dispose();
             searchResultsBuilder_ = null;
             searchResults_ = other.searchResults_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             searchResultsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSearchResultsFieldBuilder()
@@ -697,6 +793,13 @@ public final class ConverseConversationResponse extends com.google.protobuf.Gene
                 }
                 break;
               } // case 26
+            case 50:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureRelatedQuestionsIsMutable();
+                relatedQuestions_.add(s);
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1085,16 +1188,190 @@ public final class ConverseConversationResponse extends com.google.protobuf.Gene
       return conversationBuilder_;
     }
 
+    private com.google.protobuf.LazyStringArrayList relatedQuestions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureRelatedQuestionsIsMutable() {
+      if (!relatedQuestions_.isModifiable()) {
+        relatedQuestions_ = new com.google.protobuf.LazyStringArrayList(relatedQuestions_);
+      }
+      bitField0_ |= 0x00000004;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggested related questions.
+     * </pre>
+     *
+     * <code>repeated string related_questions = 6;</code>
+     *
+     * @return A list containing the relatedQuestions.
+     */
+    public com.google.protobuf.ProtocolStringList getRelatedQuestionsList() {
+      relatedQuestions_.makeImmutable();
+      return relatedQuestions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggested related questions.
+     * </pre>
+     *
+     * <code>repeated string related_questions = 6;</code>
+     *
+     * @return The count of relatedQuestions.
+     */
+    public int getRelatedQuestionsCount() {
+      return relatedQuestions_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggested related questions.
+     * </pre>
+     *
+     * <code>repeated string related_questions = 6;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The relatedQuestions at the given index.
+     */
+    public java.lang.String getRelatedQuestions(int index) {
+      return relatedQuestions_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggested related questions.
+     * </pre>
+     *
+     * <code>repeated string related_questions = 6;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the relatedQuestions at the given index.
+     */
+    public com.google.protobuf.ByteString getRelatedQuestionsBytes(int index) {
+      return relatedQuestions_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggested related questions.
+     * </pre>
+     *
+     * <code>repeated string related_questions = 6;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The relatedQuestions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRelatedQuestions(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRelatedQuestionsIsMutable();
+      relatedQuestions_.set(index, value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggested related questions.
+     * </pre>
+     *
+     * <code>repeated string related_questions = 6;</code>
+     *
+     * @param value The relatedQuestions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRelatedQuestions(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureRelatedQuestionsIsMutable();
+      relatedQuestions_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggested related questions.
+     * </pre>
+     *
+     * <code>repeated string related_questions = 6;</code>
+     *
+     * @param values The relatedQuestions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllRelatedQuestions(java.lang.Iterable<java.lang.String> values) {
+      ensureRelatedQuestionsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, relatedQuestions_);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggested related questions.
+     * </pre>
+     *
+     * <code>repeated string related_questions = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRelatedQuestions() {
+      relatedQuestions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggested related questions.
+     * </pre>
+     *
+     * <code>repeated string related_questions = 6;</code>
+     *
+     * @param value The bytes of the relatedQuestions to add.
+     * @return This builder for chaining.
+     */
+    public Builder addRelatedQuestionsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureRelatedQuestionsIsMutable();
+      relatedQuestions_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult>
         searchResults_ = java.util.Collections.emptyList();
 
     private void ensureSearchResultsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         searchResults_ =
             new java.util.ArrayList<
                 com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult>(
                 searchResults_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -1344,7 +1621,7 @@ public final class ConverseConversationResponse extends com.google.protobuf.Gene
     public Builder clearSearchResults() {
       if (searchResultsBuilder_ == null) {
         searchResults_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         searchResultsBuilder_.clear();
@@ -1492,7 +1769,7 @@ public final class ConverseConversationResponse extends com.google.protobuf.Gene
                 com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.Builder,
                 com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResultOrBuilder>(
                 searchResults_,
-                ((bitField0_ & 0x00000004) != 0),
+                ((bitField0_ & 0x00000008) != 0),
                 getParentForChildren(),
                 isClean());
         searchResults_ = null;

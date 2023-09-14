@@ -20,6 +20,7 @@ package com.google.cloud.clouddms.v1.samples;
 import com.google.cloud.clouddms.v1.ConversionWorkspaceName;
 import com.google.cloud.clouddms.v1.DataMigrationServiceClient;
 import com.google.cloud.clouddms.v1.DatabaseEntity;
+import com.google.cloud.clouddms.v1.DatabaseEntityView;
 import com.google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest;
 
 public class SyncDescribeDatabaseEntities {
@@ -46,6 +47,7 @@ public class SyncDescribeDatabaseEntities {
               .setUncommitted(true)
               .setCommitId("commitId-602292046")
               .setFilter("filter-1274492040")
+              .setView(DatabaseEntityView.forNumber(0))
               .build();
       for (DatabaseEntity element :
           dataMigrationServiceClient.describeDatabaseEntities(request).iterateAll()) {

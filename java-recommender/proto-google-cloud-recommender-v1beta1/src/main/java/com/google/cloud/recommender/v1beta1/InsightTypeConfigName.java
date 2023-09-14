@@ -243,7 +243,7 @@ public class InsightTypeConfigName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       InsightTypeConfigName that = ((InsightTypeConfigName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)

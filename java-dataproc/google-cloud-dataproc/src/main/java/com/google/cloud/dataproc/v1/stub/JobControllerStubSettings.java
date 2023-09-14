@@ -60,6 +60,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -120,6 +125,10 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
   private final UnaryCallSettings<UpdateJobRequest, Job> updateJobSettings;
   private final UnaryCallSettings<CancelJobRequest, Job> cancelJobSettings;
   private final UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<ListJobsRequest, ListJobsResponse, Job>
       LIST_JOBS_PAGE_STR_DESC =
@@ -213,6 +222,22 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
   /** Returns the object with the settings used for calls to deleteJob. */
   public UnaryCallSettings<DeleteJobRequest, Empty> deleteJobSettings() {
     return deleteJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
   }
 
   public JobControllerStub createStub() throws IOException {
@@ -330,6 +355,9 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
     updateJobSettings = settingsBuilder.updateJobSettings().build();
     cancelJobSettings = settingsBuilder.cancelJobSettings().build();
     deleteJobSettings = settingsBuilder.deleteJobSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for JobControllerStubSettings. */
@@ -347,6 +375,10 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
     private final UnaryCallSettings.Builder<UpdateJobRequest, Job> updateJobSettings;
     private final UnaryCallSettings.Builder<CancelJobRequest, Job> cancelJobSettings;
     private final UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -363,6 +395,7 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
                   StatusCode.Code.DEADLINE_EXCEEDED,
                   StatusCode.Code.INTERNAL,
                   StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -393,6 +426,8 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
               .setTotalTimeout(Duration.ofMillis(900000L))
               .build();
       definitions.put("retry_policy_2_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -411,6 +446,9 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
       updateJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       cancelJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -420,7 +458,10 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
               listJobsSettings,
               updateJobSettings,
               cancelJobSettings,
-              deleteJobSettings);
+              deleteJobSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -436,6 +477,9 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
       updateJobSettings = settings.updateJobSettings.toBuilder();
       cancelJobSettings = settings.cancelJobSettings.toBuilder();
       deleteJobSettings = settings.deleteJobSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -445,7 +489,10 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
               listJobsSettings,
               updateJobSettings,
               cancelJobSettings,
-              deleteJobSettings);
+              deleteJobSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -509,6 +556,21 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
           .deleteJobSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_7_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_7_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .submitJobAsOperationOperationSettings()
@@ -592,6 +654,22 @@ public class JobControllerStubSettings extends StubSettings<JobControllerStubSet
     /** Returns the builder for the settings used for calls to deleteJob. */
     public UnaryCallSettings.Builder<DeleteJobRequest, Empty> deleteJobSettings() {
       return deleteJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

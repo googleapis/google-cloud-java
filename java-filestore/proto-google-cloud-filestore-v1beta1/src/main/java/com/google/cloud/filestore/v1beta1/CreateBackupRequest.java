@@ -73,7 +73,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The backup's project and location, in the format
    * `projects/{project_id}/locations/{location}`. In Filestore,
-   * backup locations map to GCP regions, for example **us-west1**.
+   * backup locations map to Google Cloud regions, for example **us-west1**.
    * </pre>
    *
    * <code>
@@ -100,7 +100,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The backup's project and location, in the format
    * `projects/{project_id}/locations/{location}`. In Filestore,
-   * backup locations map to GCP regions, for example **us-west1**.
+   * backup locations map to Google Cloud regions, for example **us-west1**.
    * </pre>
    *
    * <code>
@@ -642,7 +642,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The backup's project and location, in the format
      * `projects/{project_id}/locations/{location}`. In Filestore,
-     * backup locations map to GCP regions, for example **us-west1**.
+     * backup locations map to Google Cloud regions, for example **us-west1**.
      * </pre>
      *
      * <code>
@@ -668,7 +668,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The backup's project and location, in the format
      * `projects/{project_id}/locations/{location}`. In Filestore,
-     * backup locations map to GCP regions, for example **us-west1**.
+     * backup locations map to Google Cloud regions, for example **us-west1**.
      * </pre>
      *
      * <code>
@@ -694,7 +694,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The backup's project and location, in the format
      * `projects/{project_id}/locations/{location}`. In Filestore,
-     * backup locations map to GCP regions, for example **us-west1**.
+     * backup locations map to Google Cloud regions, for example **us-west1**.
      * </pre>
      *
      * <code>
@@ -719,7 +719,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The backup's project and location, in the format
      * `projects/{project_id}/locations/{location}`. In Filestore,
-     * backup locations map to GCP regions, for example **us-west1**.
+     * backup locations map to Google Cloud regions, for example **us-west1**.
      * </pre>
      *
      * <code>
@@ -740,7 +740,7 @@ public final class CreateBackupRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The backup's project and location, in the format
      * `projects/{project_id}/locations/{location}`. In Filestore,
-     * backup locations map to GCP regions, for example **us-west1**.
+     * backup locations map to Google Cloud regions, for example **us-west1**.
      * </pre>
      *
      * <code>

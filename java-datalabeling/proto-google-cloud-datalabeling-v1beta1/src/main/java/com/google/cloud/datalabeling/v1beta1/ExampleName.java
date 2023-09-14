@@ -183,7 +183,7 @@ public class ExampleName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       ExampleName that = ((ExampleName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.dataset, that.dataset)

@@ -43,6 +43,7 @@ public class AsyncDeleteConversionWorkspace {
                   ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
                       .toString())
               .setRequestId("requestId693933066")
+              .setForce(true)
               .build();
       ApiFuture<Operation> future =
           dataMigrationServiceClient.deleteConversionWorkspaceCallable().futureCall(request);

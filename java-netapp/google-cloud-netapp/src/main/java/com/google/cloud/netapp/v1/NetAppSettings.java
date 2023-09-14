@@ -18,6 +18,7 @@ package com.google.cloud.netapp.v1;
 
 import static com.google.cloud.netapp.v1.NetAppClient.ListActiveDirectoriesPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListKmsConfigsPagedResponse;
+import static com.google.cloud.netapp.v1.NetAppClient.ListLocationsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListReplicationsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListSnapshotsPagedResponse;
 import static com.google.cloud.netapp.v1.NetAppClient.ListStoragePoolsPagedResponse;
@@ -36,6 +37,10 @@ import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.netapp.v1.stub.NetAppStubSettings;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -416,6 +421,17 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
   public OperationCallSettings<ReverseReplicationDirectionRequest, Replication, OperationMetadata>
       reverseReplicationDirectionOperationSettings() {
     return ((NetAppStubSettings) getStubSettings()).reverseReplicationDirectionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((NetAppStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((NetAppStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final NetAppSettings create(NetAppStubSettings stub) throws IOException {
@@ -878,6 +894,18 @@ public class NetAppSettings extends ClientSettings<NetAppSettings> {
             ReverseReplicationDirectionRequest, Replication, OperationMetadata>
         reverseReplicationDirectionOperationSettings() {
       return getStubSettingsBuilder().reverseReplicationDirectionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

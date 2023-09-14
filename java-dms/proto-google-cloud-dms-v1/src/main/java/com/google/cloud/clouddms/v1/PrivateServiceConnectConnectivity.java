@@ -22,8 +22,8 @@ package com.google.cloud.clouddms.v1;
  *
  *
  * <pre>
- * Private Service Connect connectivity
- * (https://cloud.google.com/vpc/docs/private-service-connect#service-attachments)
+ * [Private Service Connect
+ * connectivity](https://cloud.google.com/vpc/docs/private-service-connect#service-attachments)
  * </pre>
  *
  * Protobuf type {@code google.cloud.clouddms.v1.PrivateServiceConnectConnectivity}
@@ -283,8 +283,8 @@ public final class PrivateServiceConnectConnectivity extends com.google.protobuf
    *
    *
    * <pre>
-   * Private Service Connect connectivity
-   * (https://cloud.google.com/vpc/docs/private-service-connect#service-attachments)
+   * [Private Service Connect
+   * connectivity](https://cloud.google.com/vpc/docs/private-service-connect#service-attachments)
    * </pre>
    *
    * Protobuf type {@code google.cloud.clouddms.v1.PrivateServiceConnectConnectivity}

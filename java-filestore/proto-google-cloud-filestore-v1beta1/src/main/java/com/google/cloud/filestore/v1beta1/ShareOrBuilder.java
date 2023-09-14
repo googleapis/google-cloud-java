@@ -300,4 +300,61 @@ public interface ShareOrBuilder
    * <code>map&lt;string, string&gt; labels = 8;</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Full name of the Cloud Filestore Backup resource that this
+   * Share is restored from, in the format of
+   * projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+   * Empty, if the Share is created from scratch and not restored from a
+   * backup.
+   * </pre>
+   *
+   * <code>
+   * string backup = 9 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the backup field is set.
+   */
+  boolean hasBackup();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Full name of the Cloud Filestore Backup resource that this
+   * Share is restored from, in the format of
+   * projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+   * Empty, if the Share is created from scratch and not restored from a
+   * backup.
+   * </pre>
+   *
+   * <code>
+   * string backup = 9 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The backup.
+   */
+  java.lang.String getBackup();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Full name of the Cloud Filestore Backup resource that this
+   * Share is restored from, in the format of
+   * projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+   * Empty, if the Share is created from scratch and not restored from a
+   * backup.
+   * </pre>
+   *
+   * <code>
+   * string backup = 9 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for backup.
+   */
+  com.google.protobuf.ByteString getBackupBytes();
+
+  com.google.cloud.filestore.v1beta1.Share.SourceCase getSourceCase();
 }

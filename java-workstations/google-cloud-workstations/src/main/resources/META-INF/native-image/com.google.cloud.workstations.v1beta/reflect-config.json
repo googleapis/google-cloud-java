@@ -1053,6 +1053,42 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.workstations.v1beta.WorkstationConfig$EphemeralDirectory",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.workstations.v1beta.WorkstationConfig$EphemeralDirectory$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.workstations.v1beta.WorkstationConfig$EphemeralDirectory$GcePersistentDisk",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.workstations.v1beta.WorkstationConfig$EphemeralDirectory$GcePersistentDisk$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.workstations.v1beta.WorkstationConfig$Host",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

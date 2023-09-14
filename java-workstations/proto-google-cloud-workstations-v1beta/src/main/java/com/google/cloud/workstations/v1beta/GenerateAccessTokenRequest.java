@@ -111,63 +111,6 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     return ExpirationCase.forNumber(expirationCase_);
   }
 
-  public static final int WORKSTATION_FIELD_NUMBER = 1;
-
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object workstation_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * Required. Name of the workstation for which the access token should be
-   * generated.
-   * </pre>
-   *
-   * <code>
-   * string workstation = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @return The workstation.
-   */
-  @java.lang.Override
-  public java.lang.String getWorkstation() {
-    java.lang.Object ref = workstation_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      workstation_ = s;
-      return s;
-    }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * Required. Name of the workstation for which the access token should be
-   * generated.
-   * </pre>
-   *
-   * <code>
-   * string workstation = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
-   *
-   * @return The bytes for workstation.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getWorkstationBytes() {
-    java.lang.Object ref = workstation_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      workstation_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int EXPIRE_TIME_FIELD_NUMBER = 2;
   /**
    *
@@ -283,6 +226,63 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       return (com.google.protobuf.Duration) expiration_;
     }
     return com.google.protobuf.Duration.getDefaultInstance();
+  }
+
+  public static final int WORKSTATION_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object workstation_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Required. Name of the workstation for which the access token should be
+   * generated.
+   * </pre>
+   *
+   * <code>
+   * string workstation = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The workstation.
+   */
+  @java.lang.Override
+  public java.lang.String getWorkstation() {
+    java.lang.Object ref = workstation_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      workstation_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Required. Name of the workstation for which the access token should be
+   * generated.
+   * </pre>
+   *
+   * <code>
+   * string workstation = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for workstation.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getWorkstationBytes() {
+    java.lang.Object ref = workstation_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      workstation_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -523,13 +523,13 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      workstation_ = "";
       if (expireTimeBuilder_ != null) {
         expireTimeBuilder_.clear();
       }
       if (ttlBuilder_ != null) {
         ttlBuilder_.clear();
       }
+      workstation_ = "";
       expirationCase_ = 0;
       expiration_ = null;
       return this;
@@ -571,7 +571,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     private void buildPartial0(
         com.google.cloud.workstations.v1beta.GenerateAccessTokenRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000001) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.workstation_ = workstation_;
       }
     }
@@ -638,7 +638,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
         return this;
       if (!other.getWorkstation().isEmpty()) {
         workstation_ = other.workstation_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       switch (other.getExpirationCase()) {
@@ -686,7 +686,7 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
             case 10:
               {
                 workstation_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
@@ -733,127 +733,6 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
     }
 
     private int bitField0_;
-
-    private java.lang.Object workstation_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * Required. Name of the workstation for which the access token should be
-     * generated.
-     * </pre>
-     *
-     * <code>
-     * string workstation = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @return The workstation.
-     */
-    public java.lang.String getWorkstation() {
-      java.lang.Object ref = workstation_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        workstation_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Name of the workstation for which the access token should be
-     * generated.
-     * </pre>
-     *
-     * <code>
-     * string workstation = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @return The bytes for workstation.
-     */
-    public com.google.protobuf.ByteString getWorkstationBytes() {
-      java.lang.Object ref = workstation_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        workstation_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Name of the workstation for which the access token should be
-     * generated.
-     * </pre>
-     *
-     * <code>
-     * string workstation = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @param value The workstation to set.
-     * @return This builder for chaining.
-     */
-    public Builder setWorkstation(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      workstation_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Name of the workstation for which the access token should be
-     * generated.
-     * </pre>
-     *
-     * <code>
-     * string workstation = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearWorkstation() {
-      workstation_ = getDefaultInstance().getWorkstation();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * Required. Name of the workstation for which the access token should be
-     * generated.
-     * </pre>
-     *
-     * <code>
-     * string workstation = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
-     *
-     * @param value The bytes for workstation to set.
-     * @return This builder for chaining.
-     */
-    public Builder setWorkstationBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      workstation_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1308,6 +1187,127 @@ public final class GenerateAccessTokenRequest extends com.google.protobuf.Genera
       expirationCase_ = 3;
       onChanged();
       return ttlBuilder_;
+    }
+
+    private java.lang.Object workstation_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Required. Name of the workstation for which the access token should be
+     * generated.
+     * </pre>
+     *
+     * <code>
+     * string workstation = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The workstation.
+     */
+    public java.lang.String getWorkstation() {
+      java.lang.Object ref = workstation_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        workstation_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Name of the workstation for which the access token should be
+     * generated.
+     * </pre>
+     *
+     * <code>
+     * string workstation = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for workstation.
+     */
+    public com.google.protobuf.ByteString getWorkstationBytes() {
+      java.lang.Object ref = workstation_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        workstation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Name of the workstation for which the access token should be
+     * generated.
+     * </pre>
+     *
+     * <code>
+     * string workstation = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The workstation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkstation(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      workstation_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Name of the workstation for which the access token should be
+     * generated.
+     * </pre>
+     *
+     * <code>
+     * string workstation = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWorkstation() {
+      workstation_ = getDefaultInstance().getWorkstation();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Required. Name of the workstation for which the access token should be
+     * generated.
+     * </pre>
+     *
+     * <code>
+     * string workstation = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for workstation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkstationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      workstation_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

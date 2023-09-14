@@ -333,6 +333,16 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      * <code>TARGET_POOL = 2;</code>
      */
     TARGET_POOL(2),
+    /**
+     *
+     *
+     * <pre>
+     * Target Instance as the load balancer's backend.
+     * </pre>
+     *
+     * <code>TARGET_INSTANCE = 3;</code>
+     */
+    TARGET_INSTANCE(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -366,6 +376,16 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
      * <code>TARGET_POOL = 2;</code>
      */
     public static final int TARGET_POOL_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Target Instance as the load balancer's backend.
+     * </pre>
+     *
+     * <code>TARGET_INSTANCE = 3;</code>
+     */
+    public static final int TARGET_INSTANCE_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -397,6 +417,8 @@ public final class LoadBalancerInfo extends com.google.protobuf.GeneratedMessage
           return BACKEND_SERVICE;
         case 2:
           return TARGET_POOL;
+        case 3:
+          return TARGET_INSTANCE;
         default:
           return null;
       }

@@ -256,6 +256,52 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.filestore.v1beta1.Share.State)
   }
 
+  private int sourceCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object source_;
+
+  public enum SourceCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    BACKUP(9),
+    SOURCE_NOT_SET(0);
+    private final int value;
+
+    private SourceCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static SourceCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static SourceCase forNumber(int value) {
+      switch (value) {
+        case 9:
+          return BACKUP;
+        case 0:
+          return SOURCE_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public SourceCase getSourceCase() {
+    return SourceCase.forNumber(sourceCase_);
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -702,6 +748,94 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int BACKUP_FIELD_NUMBER = 9;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Full name of the Cloud Filestore Backup resource that this
+   * Share is restored from, in the format of
+   * projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+   * Empty, if the Share is created from scratch and not restored from a
+   * backup.
+   * </pre>
+   *
+   * <code>
+   * string backup = 9 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the backup field is set.
+   */
+  public boolean hasBackup() {
+    return sourceCase_ == 9;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Full name of the Cloud Filestore Backup resource that this
+   * Share is restored from, in the format of
+   * projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+   * Empty, if the Share is created from scratch and not restored from a
+   * backup.
+   * </pre>
+   *
+   * <code>
+   * string backup = 9 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The backup.
+   */
+  public java.lang.String getBackup() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 9) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (sourceCase_ == 9) {
+        source_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Full name of the Cloud Filestore Backup resource that this
+   * Share is restored from, in the format of
+   * projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+   * Empty, if the Share is created from scratch and not restored from a
+   * backup.
+   * </pre>
+   *
+   * <code>
+   * string backup = 9 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for backup.
+   */
+  public com.google.protobuf.ByteString getBackupBytes() {
+    java.lang.Object ref = "";
+    if (sourceCase_ == 9) {
+      ref = source_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (sourceCase_ == 9) {
+        source_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -739,6 +873,9 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 8);
+    if (sourceCase_ == 9) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, source_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -779,6 +916,9 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, labels__);
     }
+    if (sourceCase_ == 9) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, source_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -805,6 +945,14 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       if (!getCreateTime().equals(other.getCreateTime())) return false;
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (!getSourceCase().equals(other.getSourceCase())) return false;
+    switch (sourceCase_) {
+      case 9:
+        if (!getBackup().equals(other.getBackup())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -837,6 +985,14 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    switch (sourceCase_) {
+      case 9:
+        hash = (37 * hash) + BACKUP_FIELD_NUMBER;
+        hash = (53 * hash) + getBackup().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1015,6 +1171,8 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      sourceCase_ = 0;
+      source_ = null;
       return this;
     }
 
@@ -1046,6 +1204,7 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -1086,6 +1245,11 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.filestore.v1beta1.Share result) {
+      result.sourceCase_ = sourceCase_;
+      result.source_ = this.source_;
     }
 
     @java.lang.Override
@@ -1186,6 +1350,19 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       bitField0_ |= 0x00000080;
+      switch (other.getSourceCase()) {
+        case BACKUP:
+          {
+            sourceCase_ = 9;
+            source_ = other.source_;
+            onChanged();
+            break;
+          }
+        case SOURCE_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1274,6 +1451,13 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
+            case 74:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                sourceCase_ = 9;
+                source_ = s;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1288,6 +1472,20 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int sourceCase_ = 0;
+    private java.lang.Object source_;
+
+    public SourceCase getSourceCase() {
+      return SourceCase.forNumber(sourceCase_);
+    }
+
+    public Builder clearSource() {
+      sourceCase_ = 0;
+      source_ = null;
+      onChanged();
       return this;
     }
 
@@ -2542,6 +2740,176 @@ public final class Share extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
       bitField0_ |= 0x00000080;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Full name of the Cloud Filestore Backup resource that this
+     * Share is restored from, in the format of
+     * projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+     * Empty, if the Share is created from scratch and not restored from a
+     * backup.
+     * </pre>
+     *
+     * <code>
+     * string backup = 9 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the backup field is set.
+     */
+    @java.lang.Override
+    public boolean hasBackup() {
+      return sourceCase_ == 9;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Full name of the Cloud Filestore Backup resource that this
+     * Share is restored from, in the format of
+     * projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+     * Empty, if the Share is created from scratch and not restored from a
+     * backup.
+     * </pre>
+     *
+     * <code>
+     * string backup = 9 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The backup.
+     */
+    @java.lang.Override
+    public java.lang.String getBackup() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 9) {
+        ref = source_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (sourceCase_ == 9) {
+          source_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Full name of the Cloud Filestore Backup resource that this
+     * Share is restored from, in the format of
+     * projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+     * Empty, if the Share is created from scratch and not restored from a
+     * backup.
+     * </pre>
+     *
+     * <code>
+     * string backup = 9 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for backup.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getBackupBytes() {
+      java.lang.Object ref = "";
+      if (sourceCase_ == 9) {
+        ref = source_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (sourceCase_ == 9) {
+          source_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Full name of the Cloud Filestore Backup resource that this
+     * Share is restored from, in the format of
+     * projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+     * Empty, if the Share is created from scratch and not restored from a
+     * backup.
+     * </pre>
+     *
+     * <code>
+     * string backup = 9 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The backup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackup(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceCase_ = 9;
+      source_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Full name of the Cloud Filestore Backup resource that this
+     * Share is restored from, in the format of
+     * projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+     * Empty, if the Share is created from scratch and not restored from a
+     * backup.
+     * </pre>
+     *
+     * <code>
+     * string backup = 9 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBackup() {
+      if (sourceCase_ == 9) {
+        sourceCase_ = 0;
+        source_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Full name of the Cloud Filestore Backup resource that this
+     * Share is restored from, in the format of
+     * projects/{project_id}/locations/{location_id}/backups/{backup_id}.
+     * Empty, if the Share is created from scratch and not restored from a
+     * backup.
+     * </pre>
+     *
+     * <code>
+     * string backup = 9 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for backup to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceCase_ = 9;
+      source_ = value;
+      onChanged();
       return this;
     }
 

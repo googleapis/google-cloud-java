@@ -343,7 +343,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *     `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
    *     <p>For global (non-regionalized) requests, use `location-id` `global`. For example,
    *     `projects/{project-number-or-id}/locations/global/models/general/nmt`.
-   *     <p>If not provided, the default Google model (NMT) will be used.
+   *     <p>If not provided, the default Google model (NMT) will be used
    * @param mimeType Optional. The format of the source text, for example, "text/html",
    *     "text/plain". If left blank, the MIME type defaults to "text/html".
    * @param sourceLanguageCode Optional. The ISO-639 language code of the input text if known, for
@@ -417,7 +417,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *     `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`,
    *     <p>For global (non-regionalized) requests, use `location-id` `global`. For example,
    *     `projects/{project-number-or-id}/locations/global/models/general/nmt`.
-   *     <p>If not provided, the default Google model (NMT) will be used.
+   *     <p>If not provided, the default Google model (NMT) will be used
    * @param mimeType Optional. The format of the source text, for example, "text/html",
    *     "text/plain". If left blank, the MIME type defaults to "text/html".
    * @param sourceLanguageCode Optional. The ISO-639 language code of the input text if known, for
@@ -880,6 +880,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .setCustomizedAttribution("customizedAttribution557650238")
    *           .setIsTranslateNativePdfOnly(true)
    *           .setEnableShadowRemovalNativePdf(true)
+   *           .setEnableRotationCorrection(true)
    *           .build();
    *   TranslateDocumentResponse response = translationServiceClient.translateDocument(request);
    * }
@@ -918,6 +919,7 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .setCustomizedAttribution("customizedAttribution557650238")
    *           .setIsTranslateNativePdfOnly(true)
    *           .setEnableShadowRemovalNativePdf(true)
+   *           .setEnableRotationCorrection(true)
    *           .build();
    *   ApiFuture<TranslateDocumentResponse> future =
    *       translationServiceClient.translateDocumentCallable().futureCall(request);
@@ -1219,6 +1221,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
    *           .putAllFormatConversions(new HashMap<String, String>())
    *           .setCustomizedAttribution("customizedAttribution557650238")
+   *           .setEnableShadowRemovalNativePdf(true)
+   *           .setEnableRotationCorrection(true)
    *           .build();
    *   BatchTranslateDocumentResponse response =
    *       translationServiceClient.batchTranslateDocumentAsync(request).get();
@@ -1263,6 +1267,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
    *           .putAllFormatConversions(new HashMap<String, String>())
    *           .setCustomizedAttribution("customizedAttribution557650238")
+   *           .setEnableShadowRemovalNativePdf(true)
+   *           .setEnableRotationCorrection(true)
    *           .build();
    *   OperationFuture<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata> future =
    *       translationServiceClient.batchTranslateDocumentOperationCallable().futureCall(request);
@@ -1309,6 +1315,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
    *           .putAllFormatConversions(new HashMap<String, String>())
    *           .setCustomizedAttribution("customizedAttribution557650238")
+   *           .setEnableShadowRemovalNativePdf(true)
+   *           .setEnableRotationCorrection(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       translationServiceClient.batchTranslateDocumentCallable().futureCall(request);

@@ -645,7 +645,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * No speech timeout settings observed at runtime.
+   * No speech timeout settings for the stream.
    * </pre>
    *
    * <code>.google.protobuf.Duration no_speech_timeout = 15;</code>
@@ -660,7 +660,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * No speech timeout settings observed at runtime.
+   * No speech timeout settings for the stream.
    * </pre>
    *
    * <code>.google.protobuf.Duration no_speech_timeout = 15;</code>
@@ -677,7 +677,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * No speech timeout settings observed at runtime.
+   * No speech timeout settings for the stream.
    * </pre>
    *
    * <code>.google.protobuf.Duration no_speech_timeout = 15;</code>
@@ -687,6 +687,56 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
     return noSpeechTimeout_ == null
         ? com.google.protobuf.Duration.getDefaultInstance()
         : noSpeechTimeout_;
+  }
+
+  public static final int ENDPOINTING_TIMEOUT_FIELD_NUMBER = 19;
+  private com.google.protobuf.Duration endpointingTimeout_;
+  /**
+   *
+   *
+   * <pre>
+   * Speech endpointing timeout settings for the stream.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration endpointing_timeout = 19;</code>
+   *
+   * @return Whether the endpointingTimeout field is set.
+   */
+  @java.lang.Override
+  public boolean hasEndpointingTimeout() {
+    return endpointingTimeout_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Speech endpointing timeout settings for the stream.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration endpointing_timeout = 19;</code>
+   *
+   * @return The endpointingTimeout.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Duration getEndpointingTimeout() {
+    return endpointingTimeout_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : endpointingTimeout_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Speech endpointing timeout settings for the stream.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration endpointing_timeout = 19;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.DurationOrBuilder getEndpointingTimeoutOrBuilder() {
+    return endpointingTimeout_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : endpointingTimeout_;
   }
 
   public static final int IS_INPUT_TEXT_FIELD_NUMBER = 16;
@@ -872,6 +922,9 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
     if (clientHalfCloseStreamingTimeOffset_ != null) {
       output.writeMessage(18, getClientHalfCloseStreamingTimeOffset());
     }
+    if (endpointingTimeout_ != null) {
+      output.writeMessage(19, getEndpointingTimeout());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -948,6 +1001,9 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               18, getClientHalfCloseStreamingTimeOffset());
     }
+    if (endpointingTimeout_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getEndpointingTimeout());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -994,6 +1050,10 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
     if (hasNoSpeechTimeout() != other.hasNoSpeechTimeout()) return false;
     if (hasNoSpeechTimeout()) {
       if (!getNoSpeechTimeout().equals(other.getNoSpeechTimeout())) return false;
+    }
+    if (hasEndpointingTimeout() != other.hasEndpointingTimeout()) return false;
+    if (hasEndpointingTimeout()) {
+      if (!getEndpointingTimeout().equals(other.getEndpointingTimeout())) return false;
     }
     if (getIsInputText() != other.getIsInputText()) return false;
     if (hasClientHalfCloseTimeOffset() != other.hasClientHalfCloseTimeOffset()) return false;
@@ -1061,6 +1121,10 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
     if (hasNoSpeechTimeout()) {
       hash = (37 * hash) + NO_SPEECH_TIMEOUT_FIELD_NUMBER;
       hash = (53 * hash) + getNoSpeechTimeout().hashCode();
+    }
+    if (hasEndpointingTimeout()) {
+      hash = (37 * hash) + ENDPOINTING_TIMEOUT_FIELD_NUMBER;
+      hash = (53 * hash) + getEndpointingTimeout().hashCode();
     }
     hash = (37 * hash) + IS_INPUT_TEXT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsInputText());
@@ -1271,6 +1335,11 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
         noSpeechTimeoutBuilder_.dispose();
         noSpeechTimeoutBuilder_ = null;
       }
+      endpointingTimeout_ = null;
+      if (endpointingTimeoutBuilder_ != null) {
+        endpointingTimeoutBuilder_.dispose();
+        endpointingTimeoutBuilder_ = null;
+      }
       isInputText_ = false;
       clientHalfCloseTimeOffset_ = null;
       if (clientHalfCloseTimeOffsetBuilder_ != null) {
@@ -1406,15 +1475,21 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
             noSpeechTimeoutBuilder_ == null ? noSpeechTimeout_ : noSpeechTimeoutBuilder_.build();
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.isInputText_ = isInputText_;
+        result.endpointingTimeout_ =
+            endpointingTimeoutBuilder_ == null
+                ? endpointingTimeout_
+                : endpointingTimeoutBuilder_.build();
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.isInputText_ = isInputText_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.clientHalfCloseTimeOffset_ =
             clientHalfCloseTimeOffsetBuilder_ == null
                 ? clientHalfCloseTimeOffset_
                 : clientHalfCloseTimeOffsetBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.clientHalfCloseStreamingTimeOffset_ =
             clientHalfCloseStreamingTimeOffsetBuilder_ == null
                 ? clientHalfCloseStreamingTimeOffset_
@@ -1610,6 +1685,9 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
       if (other.hasNoSpeechTimeout()) {
         mergeNoSpeechTimeout(other.getNoSpeechTimeout());
       }
+      if (other.hasEndpointingTimeout()) {
+        mergeEndpointingTimeout(other.getEndpointingTimeout());
+      }
       if (other.getIsInputText() != false) {
         setIsInputText(other.getIsInputText());
       }
@@ -1759,14 +1837,14 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
             case 128:
               {
                 isInputText_ = input.readBool();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 128
             case 138:
               {
                 input.readMessage(
                     getClientHalfCloseTimeOffsetFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 138
             case 146:
@@ -1774,9 +1852,16 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
                 input.readMessage(
                     getClientHalfCloseStreamingTimeOffsetFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 146
+            case 154:
+              {
+                input.readMessage(
+                    getEndpointingTimeoutFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 154
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4187,7 +4272,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * No speech timeout settings observed at runtime.
+     * No speech timeout settings for the stream.
      * </pre>
      *
      * <code>.google.protobuf.Duration no_speech_timeout = 15;</code>
@@ -4201,7 +4286,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * No speech timeout settings observed at runtime.
+     * No speech timeout settings for the stream.
      * </pre>
      *
      * <code>.google.protobuf.Duration no_speech_timeout = 15;</code>
@@ -4221,7 +4306,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * No speech timeout settings observed at runtime.
+     * No speech timeout settings for the stream.
      * </pre>
      *
      * <code>.google.protobuf.Duration no_speech_timeout = 15;</code>
@@ -4243,7 +4328,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * No speech timeout settings observed at runtime.
+     * No speech timeout settings for the stream.
      * </pre>
      *
      * <code>.google.protobuf.Duration no_speech_timeout = 15;</code>
@@ -4262,7 +4347,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * No speech timeout settings observed at runtime.
+     * No speech timeout settings for the stream.
      * </pre>
      *
      * <code>.google.protobuf.Duration no_speech_timeout = 15;</code>
@@ -4287,7 +4372,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * No speech timeout settings observed at runtime.
+     * No speech timeout settings for the stream.
      * </pre>
      *
      * <code>.google.protobuf.Duration no_speech_timeout = 15;</code>
@@ -4306,7 +4391,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * No speech timeout settings observed at runtime.
+     * No speech timeout settings for the stream.
      * </pre>
      *
      * <code>.google.protobuf.Duration no_speech_timeout = 15;</code>
@@ -4320,7 +4405,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * No speech timeout settings observed at runtime.
+     * No speech timeout settings for the stream.
      * </pre>
      *
      * <code>.google.protobuf.Duration no_speech_timeout = 15;</code>
@@ -4338,7 +4423,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * No speech timeout settings observed at runtime.
+     * No speech timeout settings for the stream.
      * </pre>
      *
      * <code>.google.protobuf.Duration no_speech_timeout = 15;</code>
@@ -4358,6 +4443,189 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
         noSpeechTimeout_ = null;
       }
       return noSpeechTimeoutBuilder_;
+    }
+
+    private com.google.protobuf.Duration endpointingTimeout_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        endpointingTimeoutBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Speech endpointing timeout settings for the stream.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration endpointing_timeout = 19;</code>
+     *
+     * @return Whether the endpointingTimeout field is set.
+     */
+    public boolean hasEndpointingTimeout() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech endpointing timeout settings for the stream.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration endpointing_timeout = 19;</code>
+     *
+     * @return The endpointingTimeout.
+     */
+    public com.google.protobuf.Duration getEndpointingTimeout() {
+      if (endpointingTimeoutBuilder_ == null) {
+        return endpointingTimeout_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : endpointingTimeout_;
+      } else {
+        return endpointingTimeoutBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech endpointing timeout settings for the stream.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration endpointing_timeout = 19;</code>
+     */
+    public Builder setEndpointingTimeout(com.google.protobuf.Duration value) {
+      if (endpointingTimeoutBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        endpointingTimeout_ = value;
+      } else {
+        endpointingTimeoutBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech endpointing timeout settings for the stream.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration endpointing_timeout = 19;</code>
+     */
+    public Builder setEndpointingTimeout(com.google.protobuf.Duration.Builder builderForValue) {
+      if (endpointingTimeoutBuilder_ == null) {
+        endpointingTimeout_ = builderForValue.build();
+      } else {
+        endpointingTimeoutBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech endpointing timeout settings for the stream.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration endpointing_timeout = 19;</code>
+     */
+    public Builder mergeEndpointingTimeout(com.google.protobuf.Duration value) {
+      if (endpointingTimeoutBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && endpointingTimeout_ != null
+            && endpointingTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          getEndpointingTimeoutBuilder().mergeFrom(value);
+        } else {
+          endpointingTimeout_ = value;
+        }
+      } else {
+        endpointingTimeoutBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech endpointing timeout settings for the stream.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration endpointing_timeout = 19;</code>
+     */
+    public Builder clearEndpointingTimeout() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      endpointingTimeout_ = null;
+      if (endpointingTimeoutBuilder_ != null) {
+        endpointingTimeoutBuilder_.dispose();
+        endpointingTimeoutBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech endpointing timeout settings for the stream.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration endpointing_timeout = 19;</code>
+     */
+    public com.google.protobuf.Duration.Builder getEndpointingTimeoutBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getEndpointingTimeoutFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech endpointing timeout settings for the stream.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration endpointing_timeout = 19;</code>
+     */
+    public com.google.protobuf.DurationOrBuilder getEndpointingTimeoutOrBuilder() {
+      if (endpointingTimeoutBuilder_ != null) {
+        return endpointingTimeoutBuilder_.getMessageOrBuilder();
+      } else {
+        return endpointingTimeout_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : endpointingTimeout_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Speech endpointing timeout settings for the stream.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration endpointing_timeout = 19;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        getEndpointingTimeoutFieldBuilder() {
+      if (endpointingTimeoutBuilder_ == null) {
+        endpointingTimeoutBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getEndpointingTimeout(), getParentForChildren(), isClean());
+        endpointingTimeout_ = null;
+      }
+      return endpointingTimeoutBuilder_;
     }
 
     private boolean isInputText_;
@@ -4391,7 +4659,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
     public Builder setIsInputText(boolean value) {
 
       isInputText_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4407,7 +4675,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearIsInputText() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       isInputText_ = false;
       onChanged();
       return this;
@@ -4431,7 +4699,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
      * @return Whether the clientHalfCloseTimeOffset field is set.
      */
     public boolean hasClientHalfCloseTimeOffset() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      *
@@ -4471,7 +4739,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
       } else {
         clientHalfCloseTimeOffsetBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4491,7 +4759,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
       } else {
         clientHalfCloseTimeOffsetBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4506,7 +4774,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
      */
     public Builder mergeClientHalfCloseTimeOffset(com.google.protobuf.Duration value) {
       if (clientHalfCloseTimeOffsetBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && clientHalfCloseTimeOffset_ != null
             && clientHalfCloseTimeOffset_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getClientHalfCloseTimeOffsetBuilder().mergeFrom(value);
@@ -4516,7 +4784,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
       } else {
         clientHalfCloseTimeOffsetBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4530,7 +4798,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
      * <code>.google.protobuf.Duration client_half_close_time_offset = 17;</code>
      */
     public Builder clearClientHalfCloseTimeOffset() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       clientHalfCloseTimeOffset_ = null;
       if (clientHalfCloseTimeOffsetBuilder_ != null) {
         clientHalfCloseTimeOffsetBuilder_.dispose();
@@ -4549,7 +4817,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
      * <code>.google.protobuf.Duration client_half_close_time_offset = 17;</code>
      */
     public com.google.protobuf.Duration.Builder getClientHalfCloseTimeOffsetBuilder() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getClientHalfCloseTimeOffsetFieldBuilder().getBuilder();
     }
@@ -4615,7 +4883,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
      * @return Whether the clientHalfCloseStreamingTimeOffset field is set.
      */
     public boolean hasClientHalfCloseStreamingTimeOffset() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      *
@@ -4655,7 +4923,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
       } else {
         clientHalfCloseStreamingTimeOffsetBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4675,7 +4943,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
       } else {
         clientHalfCloseStreamingTimeOffsetBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4690,7 +4958,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
      */
     public Builder mergeClientHalfCloseStreamingTimeOffset(com.google.protobuf.Duration value) {
       if (clientHalfCloseStreamingTimeOffsetBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00020000) != 0)
             && clientHalfCloseStreamingTimeOffset_ != null
             && clientHalfCloseStreamingTimeOffset_
                 != com.google.protobuf.Duration.getDefaultInstance()) {
@@ -4701,7 +4969,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
       } else {
         clientHalfCloseStreamingTimeOffsetBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -4715,7 +4983,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
      * <code>.google.protobuf.Duration client_half_close_streaming_time_offset = 18;</code>
      */
     public Builder clearClientHalfCloseStreamingTimeOffset() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       clientHalfCloseStreamingTimeOffset_ = null;
       if (clientHalfCloseStreamingTimeOffsetBuilder_ != null) {
         clientHalfCloseStreamingTimeOffsetBuilder_.dispose();
@@ -4734,7 +5002,7 @@ public final class CloudConversationDebuggingInfo extends com.google.protobuf.Ge
      * <code>.google.protobuf.Duration client_half_close_streaming_time_offset = 18;</code>
      */
     public com.google.protobuf.Duration.Builder getClientHalfCloseStreamingTimeOffsetBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return getClientHalfCloseStreamingTimeOffsetFieldBuilder().getBuilder();
     }

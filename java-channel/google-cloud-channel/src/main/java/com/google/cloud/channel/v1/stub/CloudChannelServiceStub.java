@@ -98,6 +98,8 @@ import com.google.cloud.channel.v1.LookupOfferRequest;
 import com.google.cloud.channel.v1.Offer;
 import com.google.cloud.channel.v1.OperationMetadata;
 import com.google.cloud.channel.v1.ProvisionCloudIdentityRequest;
+import com.google.cloud.channel.v1.QueryEligibleBillingAccountsRequest;
+import com.google.cloud.channel.v1.QueryEligibleBillingAccountsResponse;
 import com.google.cloud.channel.v1.RegisterSubscriberRequest;
 import com.google.cloud.channel.v1.RegisterSubscriberResponse;
 import com.google.cloud.channel.v1.StartPaidServiceRequest;
@@ -483,6 +485,12 @@ public abstract class CloudChannelServiceStub implements BackgroundResource {
   public UnaryCallable<ListPurchasableOffersRequest, ListPurchasableOffersResponse>
       listPurchasableOffersCallable() {
     throw new UnsupportedOperationException("Not implemented: listPurchasableOffersCallable()");
+  }
+
+  public UnaryCallable<QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+      queryEligibleBillingAccountsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: queryEligibleBillingAccountsCallable()");
   }
 
   public UnaryCallable<RegisterSubscriberRequest, RegisterSubscriberResponse>

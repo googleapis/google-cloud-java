@@ -196,7 +196,7 @@ public class JobName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       JobName that = ((JobName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.tenant, that.tenant)

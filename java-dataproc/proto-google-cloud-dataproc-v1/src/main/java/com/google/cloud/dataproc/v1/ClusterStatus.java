@@ -179,6 +179,16 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>STARTING = 8;</code>
      */
     STARTING(8),
+    /**
+     *
+     *
+     * <pre>
+     * The cluster is being repaired. It is not ready for use.
+     * </pre>
+     *
+     * <code>REPAIRING = 10;</code>
+     */
+    REPAIRING(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -287,6 +297,16 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
      * <code>STARTING = 8;</code>
      */
     public static final int STARTING_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * The cluster is being repaired. It is not ready for use.
+     * </pre>
+     *
+     * <code>REPAIRING = 10;</code>
+     */
+    public static final int REPAIRING_VALUE = 10;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -332,6 +352,8 @@ public final class ClusterStatus extends com.google.protobuf.GeneratedMessageV3
           return STOPPED;
         case 8:
           return STARTING;
+        case 10:
+          return REPAIRING;
         default:
           return null;
       }

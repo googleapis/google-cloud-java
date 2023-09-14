@@ -40,9 +40,11 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
   private NfsShare() {
     name_ = "";
     nfsShareId_ = "";
+    id_ = "";
     state_ = 0;
     volume_ = "";
     allowedClients_ = java.util.Collections.emptyList();
+    storageType_ = 0;
   }
 
   @java.lang.Override
@@ -107,6 +109,36 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      * <code>PROVISIONED = 1;</code>
      */
     PROVISIONED(1),
+    /**
+     *
+     *
+     * <pre>
+     * The NFS Share is being created.
+     * </pre>
+     *
+     * <code>CREATING = 2;</code>
+     */
+    CREATING(2),
+    /**
+     *
+     *
+     * <pre>
+     * The NFS Share is being updated.
+     * </pre>
+     *
+     * <code>UPDATING = 3;</code>
+     */
+    UPDATING(3),
+    /**
+     *
+     *
+     * <pre>
+     * The NFS Share has been requested to be deleted.
+     * </pre>
+     *
+     * <code>DELETING = 4;</code>
+     */
+    DELETING(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -130,6 +162,36 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      * <code>PROVISIONED = 1;</code>
      */
     public static final int PROVISIONED_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The NFS Share is being created.
+     * </pre>
+     *
+     * <code>CREATING = 2;</code>
+     */
+    public static final int CREATING_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * The NFS Share is being updated.
+     * </pre>
+     *
+     * <code>UPDATING = 3;</code>
+     */
+    public static final int UPDATING_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * The NFS Share has been requested to be deleted.
+     * </pre>
+     *
+     * <code>DELETING = 4;</code>
+     */
+    public static final int DELETING_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -159,6 +221,12 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
           return STATE_UNSPECIFIED;
         case 1:
           return PROVISIONED;
+        case 2:
+          return CREATING;
+        case 3:
+          return UPDATING;
+        case 4:
+          return DELETING;
         default:
           return null;
       }
@@ -371,6 +439,163 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.baremetalsolution.v2.NfsShare.MountPermissions)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * The storage type for a volume.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.baremetalsolution.v2.NfsShare.StorageType}
+   */
+  public enum StorageType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The storage type for this volume is unknown.
+     * </pre>
+     *
+     * <code>STORAGE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    STORAGE_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The storage type for this volume is SSD.
+     * </pre>
+     *
+     * <code>SSD = 1;</code>
+     */
+    SSD(1),
+    /**
+     *
+     *
+     * <pre>
+     * This storage type for this volume is HDD.
+     * </pre>
+     *
+     * <code>HDD = 2;</code>
+     */
+    HDD(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The storage type for this volume is unknown.
+     * </pre>
+     *
+     * <code>STORAGE_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int STORAGE_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The storage type for this volume is SSD.
+     * </pre>
+     *
+     * <code>SSD = 1;</code>
+     */
+    public static final int SSD_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * This storage type for this volume is HDD.
+     * </pre>
+     *
+     * <code>HDD = 2;</code>
+     */
+    public static final int HDD_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static StorageType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static StorageType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return STORAGE_TYPE_UNSPECIFIED;
+        case 1:
+          return SSD;
+        case 2:
+          return HDD;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<StorageType> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<StorageType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<StorageType>() {
+          public StorageType findValueByNumber(int number) {
+            return StorageType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.baremetalsolution.v2.NfsShare.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final StorageType[] VALUES = values();
+
+    public static StorageType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private StorageType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.baremetalsolution.v2.NfsShare.StorageType)
+  }
+
   public interface AllowedClientOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.baremetalsolution.v2.NfsShare.AllowedClient)
@@ -405,10 +630,11 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP address of the share on this network.
+     * Output only. The IP address of the share on this network. Assigned
+     * automatically during provisioning based on the network's services_cidr.
      * </pre>
      *
-     * <code>string share_ip = 2;</code>
+     * <code>string share_ip = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The shareIp.
      */
@@ -417,10 +643,11 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP address of the share on this network.
+     * Output only. The IP address of the share on this network. Assigned
+     * automatically during provisioning based on the network's services_cidr.
      * </pre>
      *
-     * <code>string share_ip = 2;</code>
+     * <code>string share_ip = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for shareIp.
      */
@@ -518,6 +745,35 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      * @return The noRootSquash.
      */
     boolean getNoRootSquash();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The path to access NFS, in format shareIP:/InstanceID
+     * InstanceID is the generated ID instead of customer provided name.
+     * example like "10.0.0.0:/g123456789-nfs001"
+     * </pre>
+     *
+     * <code>string nfs_path = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The nfsPath.
+     */
+    java.lang.String getNfsPath();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The path to access NFS, in format shareIP:/InstanceID
+     * InstanceID is the generated ID instead of customer provided name.
+     * example like "10.0.0.0:/g123456789-nfs001"
+     * </pre>
+     *
+     * <code>string nfs_path = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for nfsPath.
+     */
+    com.google.protobuf.ByteString getNfsPathBytes();
   }
   /**
    *
@@ -543,6 +799,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       shareIp_ = "";
       allowedClientsCidr_ = "";
       mountPermissions_ = 0;
+      nfsPath_ = "";
     }
 
     @java.lang.Override
@@ -625,10 +882,11 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP address of the share on this network.
+     * Output only. The IP address of the share on this network. Assigned
+     * automatically during provisioning based on the network's services_cidr.
      * </pre>
      *
-     * <code>string share_ip = 2;</code>
+     * <code>string share_ip = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The shareIp.
      */
@@ -648,10 +906,11 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The IP address of the share on this network.
+     * Output only. The IP address of the share on this network. Assigned
+     * automatically during provisioning based on the network's services_cidr.
      * </pre>
      *
-     * <code>string share_ip = 2;</code>
+     * <code>string share_ip = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for shareIp.
      */
@@ -815,6 +1074,61 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       return noRootSquash_;
     }
 
+    public static final int NFS_PATH_FIELD_NUMBER = 8;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object nfsPath_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The path to access NFS, in format shareIP:/InstanceID
+     * InstanceID is the generated ID instead of customer provided name.
+     * example like "10.0.0.0:/g123456789-nfs001"
+     * </pre>
+     *
+     * <code>string nfs_path = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The nfsPath.
+     */
+    @java.lang.Override
+    public java.lang.String getNfsPath() {
+      java.lang.Object ref = nfsPath_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        nfsPath_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The path to access NFS, in format shareIP:/InstanceID
+     * InstanceID is the generated ID instead of customer provided name.
+     * example like "10.0.0.0:/g123456789-nfs001"
+     * </pre>
+     *
+     * <code>string nfs_path = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for nfsPath.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNfsPathBytes() {
+      java.lang.Object ref = nfsPath_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        nfsPath_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -853,6 +1167,9 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       if (noRootSquash_ != false) {
         output.writeBool(7, noRootSquash_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nfsPath_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, nfsPath_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -886,6 +1203,9 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       if (noRootSquash_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, noRootSquash_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nfsPath_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, nfsPath_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -909,6 +1229,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       if (getAllowDev() != other.getAllowDev()) return false;
       if (getAllowSuid() != other.getAllowSuid()) return false;
       if (getNoRootSquash() != other.getNoRootSquash()) return false;
+      if (!getNfsPath().equals(other.getNfsPath())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -934,6 +1255,8 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAllowSuid());
       hash = (37 * hash) + NO_ROOT_SQUASH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getNoRootSquash());
+      hash = (37 * hash) + NFS_PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getNfsPath().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1083,6 +1406,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         allowDev_ = false;
         allowSuid_ = false;
         noRootSquash_ = false;
+        nfsPath_ = "";
         return this;
       }
 
@@ -1141,6 +1465,9 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
           result.noRootSquash_ = noRootSquash_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.nfsPath_ = nfsPath_;
         }
       }
 
@@ -1220,6 +1547,11 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         if (other.getNoRootSquash() != false) {
           setNoRootSquash(other.getNoRootSquash());
         }
+        if (!other.getNfsPath().isEmpty()) {
+          nfsPath_ = other.nfsPath_;
+          bitField0_ |= 0x00000080;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1288,6 +1620,12 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000040;
                   break;
                 } // case 56
+              case 66:
+                {
+                  nfsPath_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000080;
+                  break;
+                } // case 66
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1418,10 +1756,11 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The IP address of the share on this network.
+       * Output only. The IP address of the share on this network. Assigned
+       * automatically during provisioning based on the network's services_cidr.
        * </pre>
        *
-       * <code>string share_ip = 2;</code>
+       * <code>string share_ip = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The shareIp.
        */
@@ -1440,10 +1779,11 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The IP address of the share on this network.
+       * Output only. The IP address of the share on this network. Assigned
+       * automatically during provisioning based on the network's services_cidr.
        * </pre>
        *
-       * <code>string share_ip = 2;</code>
+       * <code>string share_ip = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for shareIp.
        */
@@ -1462,10 +1802,11 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The IP address of the share on this network.
+       * Output only. The IP address of the share on this network. Assigned
+       * automatically during provisioning based on the network's services_cidr.
        * </pre>
        *
-       * <code>string share_ip = 2;</code>
+       * <code>string share_ip = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The shareIp to set.
        * @return This builder for chaining.
@@ -1483,10 +1824,11 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The IP address of the share on this network.
+       * Output only. The IP address of the share on this network. Assigned
+       * automatically during provisioning based on the network's services_cidr.
        * </pre>
        *
-       * <code>string share_ip = 2;</code>
+       * <code>string share_ip = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return This builder for chaining.
        */
@@ -1500,10 +1842,11 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The IP address of the share on this network.
+       * Output only. The IP address of the share on this network. Assigned
+       * automatically during provisioning based on the network's services_cidr.
        * </pre>
        *
-       * <code>string share_ip = 2;</code>
+       * <code>string share_ip = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @param value The bytes for shareIp to set.
        * @return This builder for chaining.
@@ -1889,6 +2232,122 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private java.lang.Object nfsPath_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The path to access NFS, in format shareIP:/InstanceID
+       * InstanceID is the generated ID instead of customer provided name.
+       * example like "10.0.0.0:/g123456789-nfs001"
+       * </pre>
+       *
+       * <code>string nfs_path = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The nfsPath.
+       */
+      public java.lang.String getNfsPath() {
+        java.lang.Object ref = nfsPath_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          nfsPath_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The path to access NFS, in format shareIP:/InstanceID
+       * InstanceID is the generated ID instead of customer provided name.
+       * example like "10.0.0.0:/g123456789-nfs001"
+       * </pre>
+       *
+       * <code>string nfs_path = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for nfsPath.
+       */
+      public com.google.protobuf.ByteString getNfsPathBytes() {
+        java.lang.Object ref = nfsPath_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          nfsPath_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The path to access NFS, in format shareIP:/InstanceID
+       * InstanceID is the generated ID instead of customer provided name.
+       * example like "10.0.0.0:/g123456789-nfs001"
+       * </pre>
+       *
+       * <code>string nfs_path = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The nfsPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNfsPath(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        nfsPath_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The path to access NFS, in format shareIP:/InstanceID
+       * InstanceID is the generated ID instead of customer provided name.
+       * example like "10.0.0.0:/g123456789-nfs001"
+       * </pre>
+       *
+       * <code>string nfs_path = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNfsPath() {
+        nfsPath_ = getDefaultInstance().getNfsPath();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The path to access NFS, in format shareIP:/InstanceID
+       * InstanceID is the generated ID instead of customer provided name.
+       * example like "10.0.0.0:/g123456789-nfs001"
+       * </pre>
+       *
+       * <code>string nfs_path = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for nfsPath to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNfsPathBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        nfsPath_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1964,10 +2423,10 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The name of the NFS share.
+   * Immutable. The name of the NFS share.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The name.
    */
@@ -1987,10 +2446,10 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The name of the NFS share.
+   * Immutable. The name of the NFS share.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The bytes for name.
    */
@@ -2016,6 +2475,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. An identifier for the NFS share, generated by the backend.
+   * This field will be deprecated in the future, use `id` instead.
    * </pre>
    *
    * <code>string nfs_share_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2039,6 +2499,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. An identifier for the NFS share, generated by the backend.
+   * This field will be deprecated in the future, use `id` instead.
    * </pre>
    *
    * <code>string nfs_share_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2058,16 +2519,71 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int ID_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object id_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An identifier for the NFS share, generated by the backend.
+   * This is the same value as nfs_share_id and will replace it in the future.
+   * </pre>
+   *
+   * <code>string id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The id.
+   */
+  @java.lang.Override
+  public java.lang.String getId() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      id_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. An identifier for the NFS share, generated by the backend.
+   * This is the same value as nfs_share_id and will replace it in the future.
+   * </pre>
+   *
+   * <code>string id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for id.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getIdBytes() {
+    java.lang.Object ref = id_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      id_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_ = 0;
   /**
    *
    *
    * <pre>
-   * The state of the NFS share.
+   * Output only. The state of the NFS share.
    * </pre>
    *
-   * <code>.google.cloud.baremetalsolution.v2.NfsShare.State state = 3;</code>
+   * <code>
+   * .google.cloud.baremetalsolution.v2.NfsShare.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for state.
    */
@@ -2079,10 +2595,12 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The state of the NFS share.
+   * Output only. The state of the NFS share.
    * </pre>
    *
-   * <code>.google.cloud.baremetalsolution.v2.NfsShare.State state = 3;</code>
+   * <code>
+   * .google.cloud.baremetalsolution.v2.NfsShare.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The state.
    */
@@ -2103,10 +2621,13 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The volume containing the share.
+   * Output only. The underlying volume of the share. Created automatically
+   * during provisioning.
    * </pre>
    *
-   * <code>string volume = 4 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string volume = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The volume.
    */
@@ -2126,10 +2647,13 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The volume containing the share.
+   * Output only. The underlying volume of the share. Created automatically
+   * during provisioning.
    * </pre>
    *
-   * <code>string volume = 4 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string volume = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for volume.
    */
@@ -2328,6 +2852,65 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int REQUESTED_SIZE_GIB_FIELD_NUMBER = 7;
+  private long requestedSizeGib_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * The requested size, in GiB.
+   * </pre>
+   *
+   * <code>int64 requested_size_gib = 7;</code>
+   *
+   * @return The requestedSizeGib.
+   */
+  @java.lang.Override
+  public long getRequestedSizeGib() {
+    return requestedSizeGib_;
+  }
+
+  public static final int STORAGE_TYPE_FIELD_NUMBER = 9;
+  private int storageType_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The storage type of the underlying volume.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.baremetalsolution.v2.NfsShare.StorageType storage_type = 9 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for storageType.
+   */
+  @java.lang.Override
+  public int getStorageTypeValue() {
+    return storageType_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The storage type of the underlying volume.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.baremetalsolution.v2.NfsShare.StorageType storage_type = 9 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The storageType.
+   */
+  @java.lang.Override
+  public com.google.cloud.baremetalsolution.v2.NfsShare.StorageType getStorageType() {
+    com.google.cloud.baremetalsolution.v2.NfsShare.StorageType result =
+        com.google.cloud.baremetalsolution.v2.NfsShare.StorageType.forNumber(storageType_);
+    return result == null
+        ? com.google.cloud.baremetalsolution.v2.NfsShare.StorageType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2360,6 +2943,17 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 6);
+    if (requestedSizeGib_ != 0L) {
+      output.writeInt64(7, requestedSizeGib_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, id_);
+    }
+    if (storageType_
+        != com.google.cloud.baremetalsolution.v2.NfsShare.StorageType.STORAGE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(9, storageType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2395,6 +2989,17 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, labels__);
     }
+    if (requestedSizeGib_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(7, requestedSizeGib_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, id_);
+    }
+    if (storageType_
+        != com.google.cloud.baremetalsolution.v2.NfsShare.StorageType.STORAGE_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, storageType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2413,10 +3018,13 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
 
     if (!getName().equals(other.getName())) return false;
     if (!getNfsShareId().equals(other.getNfsShareId())) return false;
+    if (!getId().equals(other.getId())) return false;
     if (state_ != other.state_) return false;
     if (!getVolume().equals(other.getVolume())) return false;
     if (!getAllowedClientsList().equals(other.getAllowedClientsList())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (getRequestedSizeGib() != other.getRequestedSizeGib()) return false;
+    if (storageType_ != other.storageType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2432,6 +3040,8 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + NFS_SHARE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getNfsShareId().hashCode();
+    hash = (37 * hash) + ID_FIELD_NUMBER;
+    hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
     hash = (37 * hash) + VOLUME_FIELD_NUMBER;
@@ -2444,6 +3054,10 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
+    hash = (37 * hash) + REQUESTED_SIZE_GIB_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRequestedSizeGib());
+    hash = (37 * hash) + STORAGE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + storageType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2605,6 +3219,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       name_ = "";
       nfsShareId_ = "";
+      id_ = "";
       state_ = 0;
       volume_ = "";
       if (allowedClientsBuilder_ == null) {
@@ -2613,8 +3228,10 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         allowedClients_ = null;
         allowedClientsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       internalGetMutableLabels().clear();
+      requestedSizeGib_ = 0L;
+      storageType_ = 0;
       return this;
     }
 
@@ -2652,9 +3269,9 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.baremetalsolution.v2.NfsShare result) {
       if (allowedClientsBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           allowedClients_ = java.util.Collections.unmodifiableList(allowedClients_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.allowedClients_ = allowedClients_;
       } else {
@@ -2671,14 +3288,23 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         result.nfsShareId_ = nfsShareId_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.state_ = state_;
+        result.id_ = id_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.state_ = state_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.volume_ = volume_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.requestedSizeGib_ = requestedSizeGib_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.storageType_ = storageType_;
       }
     }
 
@@ -2737,19 +3363,24 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getId().isEmpty()) {
+        id_ = other.id_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
       }
       if (!other.getVolume().isEmpty()) {
         volume_ = other.volume_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (allowedClientsBuilder_ == null) {
         if (!other.allowedClients_.isEmpty()) {
           if (allowedClients_.isEmpty()) {
             allowedClients_ = other.allowedClients_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureAllowedClientsIsMutable();
             allowedClients_.addAll(other.allowedClients_);
@@ -2762,7 +3393,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
             allowedClientsBuilder_.dispose();
             allowedClientsBuilder_ = null;
             allowedClients_ = other.allowedClients_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             allowedClientsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAllowedClientsFieldBuilder()
@@ -2773,7 +3404,13 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         }
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
+      if (other.getRequestedSizeGib() != 0L) {
+        setRequestedSizeGib(other.getRequestedSizeGib());
+      }
+      if (other.storageType_ != 0) {
+        setStorageTypeValue(other.getStorageTypeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2815,13 +3452,13 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
             case 34:
               {
                 volume_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
@@ -2847,9 +3484,27 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
+            case 56:
+              {
+                requestedSizeGib_ = input.readInt64();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 56
+            case 66:
+              {
+                id_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 66
+            case 72:
+              {
+                storageType_ = input.readEnum();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2874,10 +3529,10 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the NFS share.
+     * Immutable. The name of the NFS share.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The name.
      */
@@ -2896,10 +3551,10 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the NFS share.
+     * Immutable. The name of the NFS share.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The bytes for name.
      */
@@ -2918,10 +3573,10 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the NFS share.
+     * Immutable. The name of the NFS share.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2939,10 +3594,10 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the NFS share.
+     * Immutable. The name of the NFS share.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return This builder for chaining.
      */
@@ -2956,10 +3611,10 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the NFS share.
+     * Immutable. The name of the NFS share.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2981,6 +3636,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An identifier for the NFS share, generated by the backend.
+     * This field will be deprecated in the future, use `id` instead.
      * </pre>
      *
      * <code>string nfs_share_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3003,6 +3659,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An identifier for the NFS share, generated by the backend.
+     * This field will be deprecated in the future, use `id` instead.
      * </pre>
      *
      * <code>string nfs_share_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3025,6 +3682,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An identifier for the NFS share, generated by the backend.
+     * This field will be deprecated in the future, use `id` instead.
      * </pre>
      *
      * <code>string nfs_share_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3046,6 +3704,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An identifier for the NFS share, generated by the backend.
+     * This field will be deprecated in the future, use `id` instead.
      * </pre>
      *
      * <code>string nfs_share_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3063,6 +3722,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. An identifier for the NFS share, generated by the backend.
+     * This field will be deprecated in the future, use `id` instead.
      * </pre>
      *
      * <code>string nfs_share_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3081,15 +3741,128 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An identifier for the NFS share, generated by the backend.
+     * This is the same value as nfs_share_id and will replace it in the future.
+     * </pre>
+     *
+     * <code>string id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The id.
+     */
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An identifier for the NFS share, generated by the backend.
+     * This is the same value as nfs_share_id and will replace it in the future.
+     * </pre>
+     *
+     * <code>string id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for id.
+     */
+    public com.google.protobuf.ByteString getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An identifier for the NFS share, generated by the backend.
+     * This is the same value as nfs_share_id and will replace it in the future.
+     * </pre>
+     *
+     * <code>string id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      id_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An identifier for the NFS share, generated by the backend.
+     * This is the same value as nfs_share_id and will replace it in the future.
+     * </pre>
+     *
+     * <code>string id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearId() {
+      id_ = getDefaultInstance().getId();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. An identifier for the NFS share, generated by the backend.
+     * This is the same value as nfs_share_id and will replace it in the future.
+     * </pre>
+     *
+     * <code>string id = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for id to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      id_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private int state_ = 0;
     /**
      *
      *
      * <pre>
-     * The state of the NFS share.
+     * Output only. The state of the NFS share.
      * </pre>
      *
-     * <code>.google.cloud.baremetalsolution.v2.NfsShare.State state = 3;</code>
+     * <code>
+     * .google.cloud.baremetalsolution.v2.NfsShare.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The enum numeric value on the wire for state.
      */
@@ -3101,17 +3874,19 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The state of the NFS share.
+     * Output only. The state of the NFS share.
      * </pre>
      *
-     * <code>.google.cloud.baremetalsolution.v2.NfsShare.State state = 3;</code>
+     * <code>
+     * .google.cloud.baremetalsolution.v2.NfsShare.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The enum numeric value on the wire for state to set.
      * @return This builder for chaining.
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3119,10 +3894,12 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The state of the NFS share.
+     * Output only. The state of the NFS share.
      * </pre>
      *
-     * <code>.google.cloud.baremetalsolution.v2.NfsShare.State state = 3;</code>
+     * <code>
+     * .google.cloud.baremetalsolution.v2.NfsShare.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The state.
      */
@@ -3138,10 +3915,12 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The state of the NFS share.
+     * Output only. The state of the NFS share.
      * </pre>
      *
-     * <code>.google.cloud.baremetalsolution.v2.NfsShare.State state = 3;</code>
+     * <code>
+     * .google.cloud.baremetalsolution.v2.NfsShare.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The state to set.
      * @return This builder for chaining.
@@ -3150,7 +3929,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3159,15 +3938,17 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The state of the NFS share.
+     * Output only. The state of the NFS share.
      * </pre>
      *
-     * <code>.google.cloud.baremetalsolution.v2.NfsShare.State state = 3;</code>
+     * <code>
+     * .google.cloud.baremetalsolution.v2.NfsShare.State state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       state_ = 0;
       onChanged();
       return this;
@@ -3178,10 +3959,13 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The volume containing the share.
+     * Output only. The underlying volume of the share. Created automatically
+     * during provisioning.
      * </pre>
      *
-     * <code>string volume = 4 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string volume = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The volume.
      */
@@ -3200,10 +3984,13 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The volume containing the share.
+     * Output only. The underlying volume of the share. Created automatically
+     * during provisioning.
      * </pre>
      *
-     * <code>string volume = 4 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string volume = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for volume.
      */
@@ -3222,10 +4009,13 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The volume containing the share.
+     * Output only. The underlying volume of the share. Created automatically
+     * during provisioning.
      * </pre>
      *
-     * <code>string volume = 4 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string volume = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The volume to set.
      * @return This builder for chaining.
@@ -3235,7 +4025,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       volume_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3243,16 +4033,19 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The volume containing the share.
+     * Output only. The underlying volume of the share. Created automatically
+     * during provisioning.
      * </pre>
      *
-     * <code>string volume = 4 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string volume = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
     public Builder clearVolume() {
       volume_ = getDefaultInstance().getVolume();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3260,10 +4053,13 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The volume containing the share.
+     * Output only. The underlying volume of the share. Created automatically
+     * during provisioning.
      * </pre>
      *
-     * <code>string volume = 4 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string volume = 4 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for volume to set.
      * @return This builder for chaining.
@@ -3274,7 +4070,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       volume_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3283,11 +4079,11 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         allowedClients_ = java.util.Collections.emptyList();
 
     private void ensureAllowedClientsIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         allowedClients_ =
             new java.util.ArrayList<com.google.cloud.baremetalsolution.v2.NfsShare.AllowedClient>(
                 allowedClients_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -3522,7 +4318,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     public Builder clearAllowedClients() {
       if (allowedClientsBuilder_ == null) {
         allowedClients_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         allowedClientsBuilder_.clear();
@@ -3660,7 +4456,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.baremetalsolution.v2.NfsShare.AllowedClient.Builder,
                 com.google.cloud.baremetalsolution.v2.NfsShare.AllowedClientOrBuilder>(
                 allowedClients_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         allowedClients_ = null;
@@ -3685,7 +4481,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return labels_;
     }
@@ -3770,7 +4566,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3793,7 +4589,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -3813,7 +4609,7 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       return this;
     }
     /**
@@ -3827,7 +4623,163 @@ public final class NfsShare extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
+      return this;
+    }
+
+    private long requestedSizeGib_;
+    /**
+     *
+     *
+     * <pre>
+     * The requested size, in GiB.
+     * </pre>
+     *
+     * <code>int64 requested_size_gib = 7;</code>
+     *
+     * @return The requestedSizeGib.
+     */
+    @java.lang.Override
+    public long getRequestedSizeGib() {
+      return requestedSizeGib_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The requested size, in GiB.
+     * </pre>
+     *
+     * <code>int64 requested_size_gib = 7;</code>
+     *
+     * @param value The requestedSizeGib to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestedSizeGib(long value) {
+
+      requestedSizeGib_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The requested size, in GiB.
+     * </pre>
+     *
+     * <code>int64 requested_size_gib = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestedSizeGib() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      requestedSizeGib_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private int storageType_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The storage type of the underlying volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.baremetalsolution.v2.NfsShare.StorageType storage_type = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for storageType.
+     */
+    @java.lang.Override
+    public int getStorageTypeValue() {
+      return storageType_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The storage type of the underlying volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.baremetalsolution.v2.NfsShare.StorageType storage_type = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for storageType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStorageTypeValue(int value) {
+      storageType_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The storage type of the underlying volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.baremetalsolution.v2.NfsShare.StorageType storage_type = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The storageType.
+     */
+    @java.lang.Override
+    public com.google.cloud.baremetalsolution.v2.NfsShare.StorageType getStorageType() {
+      com.google.cloud.baremetalsolution.v2.NfsShare.StorageType result =
+          com.google.cloud.baremetalsolution.v2.NfsShare.StorageType.forNumber(storageType_);
+      return result == null
+          ? com.google.cloud.baremetalsolution.v2.NfsShare.StorageType.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The storage type of the underlying volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.baremetalsolution.v2.NfsShare.StorageType storage_type = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The storageType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setStorageType(
+        com.google.cloud.baremetalsolution.v2.NfsShare.StorageType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000100;
+      storageType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The storage type of the underlying volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.baremetalsolution.v2.NfsShare.StorageType storage_type = 9 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearStorageType() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      storageType_ = 0;
+      onChanged();
       return this;
     }
 

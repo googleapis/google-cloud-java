@@ -852,5 +852,50 @@ public interface MigrationJobOrBuilder
    */
   com.google.protobuf.ByteString getCmekKeyNameBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data dump parallelism settings used by the migration.
+   * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the performanceConfig field is set.
+   */
+  boolean hasPerformanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data dump parallelism settings used by the migration.
+   * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The performanceConfig.
+   */
+  com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig getPerformanceConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data dump parallelism settings used by the migration.
+   * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfigOrBuilder
+      getPerformanceConfigOrBuilder();
+
   com.google.cloud.clouddms.v1.MigrationJob.ConnectivityCase getConnectivityCase();
 }

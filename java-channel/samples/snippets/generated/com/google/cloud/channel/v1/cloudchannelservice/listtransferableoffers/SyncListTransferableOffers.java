@@ -41,6 +41,7 @@ public class SyncListTransferableOffers {
               .setPageToken("pageToken873572522")
               .setSku("sku113949")
               .setLanguageCode("languageCode-2092349083")
+              .setBillingAccount("billingAccount708726578")
               .build();
       for (TransferableOffer element :
           cloudChannelServiceClient.listTransferableOffers(request).iterateAll()) {

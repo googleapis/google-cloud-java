@@ -41,6 +41,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
     matchingDocuments_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
     histogramQueryResults_ = java.util.Collections.emptyList();
+    questionAnswer_ = "";
   }
 
   @java.lang.Override
@@ -1779,6 +1780,59 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
     return histogramQueryResults_.get(index);
   }
 
+  public static final int QUESTION_ANSWER_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object questionAnswer_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Experimental.
+   * Question answer from the query against the document.
+   * </pre>
+   *
+   * <code>string question_answer = 7;</code>
+   *
+   * @return The questionAnswer.
+   */
+  @java.lang.Override
+  public java.lang.String getQuestionAnswer() {
+    java.lang.Object ref = questionAnswer_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      questionAnswer_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Experimental.
+   * Question answer from the query against the document.
+   * </pre>
+   *
+   * <code>string question_answer = 7;</code>
+   *
+   * @return The bytes for questionAnswer.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getQuestionAnswerBytes() {
+    java.lang.Object ref = questionAnswer_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      questionAnswer_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1808,6 +1862,9 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
     for (int i = 0; i < histogramQueryResults_.size(); i++) {
       output.writeMessage(6, histogramQueryResults_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(questionAnswer_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, questionAnswer_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1835,6 +1892,9 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, histogramQueryResults_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(questionAnswer_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, questionAnswer_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1859,6 +1919,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       if (!getMetadata().equals(other.getMetadata())) return false;
     }
     if (!getHistogramQueryResultsList().equals(other.getHistogramQueryResultsList())) return false;
+    if (!getQuestionAnswer().equals(other.getQuestionAnswer())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1886,6 +1947,8 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       hash = (37 * hash) + HISTOGRAM_QUERY_RESULTS_FIELD_NUMBER;
       hash = (53 * hash) + getHistogramQueryResultsList().hashCode();
     }
+    hash = (37 * hash) + QUESTION_ANSWER_FIELD_NUMBER;
+    hash = (53 * hash) + getQuestionAnswer().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2047,6 +2110,7 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         histogramQueryResultsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000010);
+      questionAnswer_ = "";
       return this;
     }
 
@@ -2116,6 +2180,9 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.questionAnswer_ = questionAnswer_;
       }
     }
 
@@ -2231,6 +2298,11 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
           }
         }
       }
+      if (!other.getQuestionAnswer().isEmpty()) {
+        questionAnswer_ = other.questionAnswer_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2304,6 +2376,12 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
                 }
                 break;
               } // case 50
+            case 58:
+              {
+                questionAnswer_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3567,6 +3645,117 @@ public final class SearchDocumentsResponse extends com.google.protobuf.Generated
         histogramQueryResults_ = null;
       }
       return histogramQueryResultsBuilder_;
+    }
+
+    private java.lang.Object questionAnswer_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Experimental.
+     * Question answer from the query against the document.
+     * </pre>
+     *
+     * <code>string question_answer = 7;</code>
+     *
+     * @return The questionAnswer.
+     */
+    public java.lang.String getQuestionAnswer() {
+      java.lang.Object ref = questionAnswer_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        questionAnswer_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental.
+     * Question answer from the query against the document.
+     * </pre>
+     *
+     * <code>string question_answer = 7;</code>
+     *
+     * @return The bytes for questionAnswer.
+     */
+    public com.google.protobuf.ByteString getQuestionAnswerBytes() {
+      java.lang.Object ref = questionAnswer_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        questionAnswer_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental.
+     * Question answer from the query against the document.
+     * </pre>
+     *
+     * <code>string question_answer = 7;</code>
+     *
+     * @param value The questionAnswer to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQuestionAnswer(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      questionAnswer_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental.
+     * Question answer from the query against the document.
+     * </pre>
+     *
+     * <code>string question_answer = 7;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearQuestionAnswer() {
+      questionAnswer_ = getDefaultInstance().getQuestionAnswer();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Experimental.
+     * Question answer from the query against the document.
+     * </pre>
+     *
+     * <code>string question_answer = 7;</code>
+     *
+     * @param value The bytes for questionAnswer to set.
+     * @return This builder for chaining.
+     */
+    public Builder setQuestionAnswerBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      questionAnswer_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

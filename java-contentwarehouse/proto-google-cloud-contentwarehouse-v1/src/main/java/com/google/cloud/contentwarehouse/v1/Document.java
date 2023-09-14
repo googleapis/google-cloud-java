@@ -1191,6 +1191,83 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DISPOSITION_TIME_FIELD_NUMBER = 22;
+  private com.google.protobuf.Timestamp dispositionTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If linked to a Collection with RetentionPolicy, the date when
+   * the document becomes mutable.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp disposition_time = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dispositionTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasDispositionTime() {
+    return dispositionTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If linked to a Collection with RetentionPolicy, the date when
+   * the document becomes mutable.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp disposition_time = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dispositionTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getDispositionTime() {
+    return dispositionTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : dispositionTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. If linked to a Collection with RetentionPolicy, the date when
+   * the document becomes mutable.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp disposition_time = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getDispositionTimeOrBuilder() {
+    return dispositionTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : dispositionTime_;
+  }
+
+  public static final int LEGAL_HOLD_FIELD_NUMBER = 23;
+  private boolean legalHold_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates if the document has a legal hold on it.
+   * </pre>
+   *
+   * <code>bool legal_hold = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The legalHold.
+   */
+  @java.lang.Override
+  public boolean getLegalHold() {
+    return legalHold_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1273,6 +1350,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (textExtractionEnabled_ != false) {
       output.writeBool(21, textExtractionEnabled_);
     }
+    if (dispositionTime_ != null) {
+      output.writeMessage(22, getDispositionTime());
+    }
+    if (legalHold_ != false) {
+      output.writeBool(23, legalHold_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1354,6 +1437,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (textExtractionEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(21, textExtractionEnabled_);
     }
+    if (dispositionTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getDispositionTime());
+    }
+    if (legalHold_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(23, legalHold_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1393,6 +1482,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     if (getTextExtractionEnabled() != other.getTextExtractionEnabled()) return false;
     if (!getCreator().equals(other.getCreator())) return false;
     if (!getUpdater().equals(other.getUpdater())) return false;
+    if (hasDispositionTime() != other.hasDispositionTime()) return false;
+    if (hasDispositionTime()) {
+      if (!getDispositionTime().equals(other.getDispositionTime())) return false;
+    }
+    if (getLegalHold() != other.getLegalHold()) return false;
     if (!getStructuredContentCase().equals(other.getStructuredContentCase())) return false;
     switch (structuredContentCase_) {
       case 15:
@@ -1466,6 +1560,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getCreator().hashCode();
     hash = (37 * hash) + UPDATER_FIELD_NUMBER;
     hash = (53 * hash) + getUpdater().hashCode();
+    if (hasDispositionTime()) {
+      hash = (37 * hash) + DISPOSITION_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getDispositionTime().hashCode();
+    }
+    hash = (37 * hash) + LEGAL_HOLD_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getLegalHold());
     switch (structuredContentCase_) {
       case 15:
         hash = (37 * hash) + PLAIN_TEXT_FIELD_NUMBER;
@@ -1663,6 +1763,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       textExtractionEnabled_ = false;
       creator_ = "";
       updater_ = "";
+      dispositionTime_ = null;
+      if (dispositionTimeBuilder_ != null) {
+        dispositionTimeBuilder_.dispose();
+        dispositionTimeBuilder_ = null;
+      }
+      legalHold_ = false;
       structuredContentCase_ = 0;
       structuredContent_ = null;
       rawDocumentCase_ = 0;
@@ -1764,6 +1870,13 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
         result.updater_ = updater_;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.dispositionTime_ =
+            dispositionTimeBuilder_ == null ? dispositionTime_ : dispositionTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.legalHold_ = legalHold_;
       }
     }
 
@@ -1914,6 +2027,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         updater_ = other.updater_;
         bitField0_ |= 0x00100000;
         onChanged();
+      }
+      if (other.hasDispositionTime()) {
+        mergeDispositionTime(other.getDispositionTime());
+      }
+      if (other.getLegalHold() != false) {
+        setLegalHold(other.getLegalHold());
       }
       switch (other.getStructuredContentCase()) {
         case PLAIN_TEXT:
@@ -2112,6 +2231,18 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00040000;
                 break;
               } // case 168
+            case 178:
+              {
+                input.readMessage(getDispositionTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 178
+            case 184:
+              {
+                legalHold_ = input.readBool();
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 184
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4859,6 +4990,269 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       updater_ = value;
       bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp dispositionTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        dispositionTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If linked to a Collection with RetentionPolicy, the date when
+     * the document becomes mutable.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp disposition_time = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the dispositionTime field is set.
+     */
+    public boolean hasDispositionTime() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If linked to a Collection with RetentionPolicy, the date when
+     * the document becomes mutable.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp disposition_time = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The dispositionTime.
+     */
+    public com.google.protobuf.Timestamp getDispositionTime() {
+      if (dispositionTimeBuilder_ == null) {
+        return dispositionTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : dispositionTime_;
+      } else {
+        return dispositionTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If linked to a Collection with RetentionPolicy, the date when
+     * the document becomes mutable.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp disposition_time = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDispositionTime(com.google.protobuf.Timestamp value) {
+      if (dispositionTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dispositionTime_ = value;
+      } else {
+        dispositionTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If linked to a Collection with RetentionPolicy, the date when
+     * the document becomes mutable.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp disposition_time = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDispositionTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (dispositionTimeBuilder_ == null) {
+        dispositionTime_ = builderForValue.build();
+      } else {
+        dispositionTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If linked to a Collection with RetentionPolicy, the date when
+     * the document becomes mutable.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp disposition_time = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeDispositionTime(com.google.protobuf.Timestamp value) {
+      if (dispositionTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00200000) != 0)
+            && dispositionTime_ != null
+            && dispositionTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getDispositionTimeBuilder().mergeFrom(value);
+        } else {
+          dispositionTime_ = value;
+        }
+      } else {
+        dispositionTimeBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If linked to a Collection with RetentionPolicy, the date when
+     * the document becomes mutable.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp disposition_time = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDispositionTime() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      dispositionTime_ = null;
+      if (dispositionTimeBuilder_ != null) {
+        dispositionTimeBuilder_.dispose();
+        dispositionTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If linked to a Collection with RetentionPolicy, the date when
+     * the document becomes mutable.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp disposition_time = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getDispositionTimeBuilder() {
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return getDispositionTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If linked to a Collection with RetentionPolicy, the date when
+     * the document becomes mutable.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp disposition_time = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getDispositionTimeOrBuilder() {
+      if (dispositionTimeBuilder_ != null) {
+        return dispositionTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return dispositionTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : dispositionTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. If linked to a Collection with RetentionPolicy, the date when
+     * the document becomes mutable.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp disposition_time = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getDispositionTimeFieldBuilder() {
+      if (dispositionTimeBuilder_ == null) {
+        dispositionTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getDispositionTime(), getParentForChildren(), isClean());
+        dispositionTime_ = null;
+      }
+      return dispositionTimeBuilder_;
+    }
+
+    private boolean legalHold_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates if the document has a legal hold on it.
+     * </pre>
+     *
+     * <code>bool legal_hold = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The legalHold.
+     */
+    @java.lang.Override
+    public boolean getLegalHold() {
+      return legalHold_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates if the document has a legal hold on it.
+     * </pre>
+     *
+     * <code>bool legal_hold = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The legalHold to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLegalHold(boolean value) {
+
+      legalHold_ = value;
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates if the document has a legal hold on it.
+     * </pre>
+     *
+     * <code>bool legal_hold = 23 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLegalHold() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      legalHold_ = false;
       onChanged();
       return this;
     }

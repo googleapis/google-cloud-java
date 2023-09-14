@@ -86,7 +86,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Unique name of the resource using the form:
-   *     `projects/{project_id}/locations/global/connectivityTests/{test_id}`
+   *     `projects/{project_id}/locations/global/connectivityTests/{test}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -110,7 +110,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. Unique name of the resource using the form:
-   *     `projects/{project_id}/locations/global/connectivityTests/{test_id}`
+   *     `projects/{project_id}/locations/global/connectivityTests/{test}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -842,6 +842,72 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
         : reachabilityDetails_;
   }
 
+  public static final int PROBING_DETAILS_FIELD_NUMBER = 14;
+  private com.google.cloud.networkmanagement.v1.ProbingDetails probingDetails_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The probing details of this test from the latest run, present
+   * for applicable tests only. The details are updated when creating a new
+   * test, updating an existing test, or triggering a one-time rerun of an
+   * existing test.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.ProbingDetails probing_details = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the probingDetails field is set.
+   */
+  @java.lang.Override
+  public boolean hasProbingDetails() {
+    return probingDetails_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The probing details of this test from the latest run, present
+   * for applicable tests only. The details are updated when creating a new
+   * test, updating an existing test, or triggering a one-time rerun of an
+   * existing test.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.ProbingDetails probing_details = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The probingDetails.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.ProbingDetails getProbingDetails() {
+    return probingDetails_ == null
+        ? com.google.cloud.networkmanagement.v1.ProbingDetails.getDefaultInstance()
+        : probingDetails_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The probing details of this test from the latest run, present
+   * for applicable tests only. The details are updated when creating a new
+   * test, updating an existing test, or triggering a one-time rerun of an
+   * existing test.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.ProbingDetails probing_details = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1.ProbingDetailsOrBuilder
+      getProbingDetailsOrBuilder() {
+    return probingDetails_ == null
+        ? com.google.cloud.networkmanagement.v1.ProbingDetails.getDefaultInstance()
+        : probingDetails_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -887,6 +953,9 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     }
     if (reachabilityDetails_ != null) {
       output.writeMessage(12, getReachabilityDetails());
+    }
+    if (probingDetails_ != null) {
+      output.writeMessage(14, getProbingDetails());
     }
     getUnknownFields().writeTo(output);
   }
@@ -943,6 +1012,9 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(12, getReachabilityDetails());
     }
+    if (probingDetails_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getProbingDetails());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -984,6 +1056,10 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     if (hasReachabilityDetails() != other.hasReachabilityDetails()) return false;
     if (hasReachabilityDetails()) {
       if (!getReachabilityDetails().equals(other.getReachabilityDetails())) return false;
+    }
+    if (hasProbingDetails() != other.hasProbingDetails()) return false;
+    if (hasProbingDetails()) {
+      if (!getProbingDetails().equals(other.getProbingDetails())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1031,6 +1107,10 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
     if (hasReachabilityDetails()) {
       hash = (37 * hash) + REACHABILITY_DETAILS_FIELD_NUMBER;
       hash = (53 * hash) + getReachabilityDetails().hashCode();
+    }
+    if (hasProbingDetails()) {
+      hash = (37 * hash) + PROBING_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getProbingDetails().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1223,6 +1303,11 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
         reachabilityDetailsBuilder_.dispose();
         reachabilityDetailsBuilder_ = null;
       }
+      probingDetails_ = null;
+      if (probingDetailsBuilder_ != null) {
+        probingDetailsBuilder_.dispose();
+        probingDetailsBuilder_ = null;
+      }
       return this;
     }
 
@@ -1297,6 +1382,10 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
             reachabilityDetailsBuilder_ == null
                 ? reachabilityDetails_
                 : reachabilityDetailsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.probingDetails_ =
+            probingDetailsBuilder_ == null ? probingDetails_ : probingDetailsBuilder_.build();
       }
     }
 
@@ -1392,6 +1481,9 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
       }
       if (other.hasReachabilityDetails()) {
         mergeReachabilityDetails(other.getReachabilityDetails());
+      }
+      if (other.hasProbingDetails()) {
+        mergeProbingDetails(other.getProbingDetails());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1493,6 +1585,12 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000400;
                 break;
               } // case 98
+            case 114:
+              {
+                input.readMessage(getProbingDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1518,7 +1616,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Unique name of the resource using the form:
-     *     `projects/{project_id}/locations/global/connectivityTests/{test_id}`
+     *     `projects/{project_id}/locations/global/connectivityTests/{test}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1541,7 +1639,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Unique name of the resource using the form:
-     *     `projects/{project_id}/locations/global/connectivityTests/{test_id}`
+     *     `projects/{project_id}/locations/global/connectivityTests/{test}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1564,7 +1662,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Unique name of the resource using the form:
-     *     `projects/{project_id}/locations/global/connectivityTests/{test_id}`
+     *     `projects/{project_id}/locations/global/connectivityTests/{test}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1586,7 +1684,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Unique name of the resource using the form:
-     *     `projects/{project_id}/locations/global/connectivityTests/{test_id}`
+     *     `projects/{project_id}/locations/global/connectivityTests/{test}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1604,7 +1702,7 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. Unique name of the resource using the form:
-     *     `projects/{project_id}/locations/global/connectivityTests/{test_id}`
+     *     `projects/{project_id}/locations/global/connectivityTests/{test}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3664,6 +3762,237 @@ public final class ConnectivityTest extends com.google.protobuf.GeneratedMessage
         reachabilityDetails_ = null;
       }
       return reachabilityDetailsBuilder_;
+    }
+
+    private com.google.cloud.networkmanagement.v1.ProbingDetails probingDetails_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.ProbingDetails,
+            com.google.cloud.networkmanagement.v1.ProbingDetails.Builder,
+            com.google.cloud.networkmanagement.v1.ProbingDetailsOrBuilder>
+        probingDetailsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The probing details of this test from the latest run, present
+     * for applicable tests only. The details are updated when creating a new
+     * test, updating an existing test, or triggering a one-time rerun of an
+     * existing test.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.ProbingDetails probing_details = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the probingDetails field is set.
+     */
+    public boolean hasProbingDetails() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The probing details of this test from the latest run, present
+     * for applicable tests only. The details are updated when creating a new
+     * test, updating an existing test, or triggering a one-time rerun of an
+     * existing test.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.ProbingDetails probing_details = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The probingDetails.
+     */
+    public com.google.cloud.networkmanagement.v1.ProbingDetails getProbingDetails() {
+      if (probingDetailsBuilder_ == null) {
+        return probingDetails_ == null
+            ? com.google.cloud.networkmanagement.v1.ProbingDetails.getDefaultInstance()
+            : probingDetails_;
+      } else {
+        return probingDetailsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The probing details of this test from the latest run, present
+     * for applicable tests only. The details are updated when creating a new
+     * test, updating an existing test, or triggering a one-time rerun of an
+     * existing test.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.ProbingDetails probing_details = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setProbingDetails(com.google.cloud.networkmanagement.v1.ProbingDetails value) {
+      if (probingDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        probingDetails_ = value;
+      } else {
+        probingDetailsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The probing details of this test from the latest run, present
+     * for applicable tests only. The details are updated when creating a new
+     * test, updating an existing test, or triggering a one-time rerun of an
+     * existing test.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.ProbingDetails probing_details = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setProbingDetails(
+        com.google.cloud.networkmanagement.v1.ProbingDetails.Builder builderForValue) {
+      if (probingDetailsBuilder_ == null) {
+        probingDetails_ = builderForValue.build();
+      } else {
+        probingDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The probing details of this test from the latest run, present
+     * for applicable tests only. The details are updated when creating a new
+     * test, updating an existing test, or triggering a one-time rerun of an
+     * existing test.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.ProbingDetails probing_details = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeProbingDetails(com.google.cloud.networkmanagement.v1.ProbingDetails value) {
+      if (probingDetailsBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && probingDetails_ != null
+            && probingDetails_
+                != com.google.cloud.networkmanagement.v1.ProbingDetails.getDefaultInstance()) {
+          getProbingDetailsBuilder().mergeFrom(value);
+        } else {
+          probingDetails_ = value;
+        }
+      } else {
+        probingDetailsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The probing details of this test from the latest run, present
+     * for applicable tests only. The details are updated when creating a new
+     * test, updating an existing test, or triggering a one-time rerun of an
+     * existing test.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.ProbingDetails probing_details = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearProbingDetails() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      probingDetails_ = null;
+      if (probingDetailsBuilder_ != null) {
+        probingDetailsBuilder_.dispose();
+        probingDetailsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The probing details of this test from the latest run, present
+     * for applicable tests only. The details are updated when creating a new
+     * test, updating an existing test, or triggering a one-time rerun of an
+     * existing test.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.ProbingDetails probing_details = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.networkmanagement.v1.ProbingDetails.Builder getProbingDetailsBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getProbingDetailsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The probing details of this test from the latest run, present
+     * for applicable tests only. The details are updated when creating a new
+     * test, updating an existing test, or triggering a one-time rerun of an
+     * existing test.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.ProbingDetails probing_details = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.networkmanagement.v1.ProbingDetailsOrBuilder
+        getProbingDetailsOrBuilder() {
+      if (probingDetailsBuilder_ != null) {
+        return probingDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        return probingDetails_ == null
+            ? com.google.cloud.networkmanagement.v1.ProbingDetails.getDefaultInstance()
+            : probingDetails_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The probing details of this test from the latest run, present
+     * for applicable tests only. The details are updated when creating a new
+     * test, updating an existing test, or triggering a one-time rerun of an
+     * existing test.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.networkmanagement.v1.ProbingDetails probing_details = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.networkmanagement.v1.ProbingDetails,
+            com.google.cloud.networkmanagement.v1.ProbingDetails.Builder,
+            com.google.cloud.networkmanagement.v1.ProbingDetailsOrBuilder>
+        getProbingDetailsFieldBuilder() {
+      if (probingDetailsBuilder_ == null) {
+        probingDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.networkmanagement.v1.ProbingDetails,
+                com.google.cloud.networkmanagement.v1.ProbingDetails.Builder,
+                com.google.cloud.networkmanagement.v1.ProbingDetailsOrBuilder>(
+                getProbingDetails(), getParentForChildren(), isClean());
+        probingDetails_ = null;
+      }
+      return probingDetailsBuilder_;
     }
 
     @java.lang.Override

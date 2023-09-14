@@ -113,26 +113,26 @@ public final class UserEventProto {
           + "ncy\030\002 \001(\tB\004\342A\001\002\022\026\n\016transaction_id\030\003 \001(\t\022"
           + "\020\n\003tax\030\004 \001(\002H\001\210\001\001\022\021\n\004cost\030\005 \001(\002H\002\210\001\001\022\033\n\016"
           + "discount_value\030\006 \001(\002H\003\210\001\001B\010\n\006_valueB\006\n\004_"
-          + "taxB\007\n\005_costB\021\n\017_discount_value\"\266\001\n\014Docu"
-          + "mentInfo\022\022\n\002id\030\001 \001(\tB\004\342A\001\002H\000\022@\n\004name\030\002 \001"
-          + "(\tB0\342A\001\002\372A)\n\'discoveryengine.googleapis."
-          + "com/DocumentH\000\022\025\n\010quantity\030\003 \001(\005H\001\210\001\001\022\025\n"
-          + "\rpromotion_ids\030\004 \003(\tB\025\n\023document_descrip"
-          + "torB\013\n\t_quantity\"\225\001\n\tPanelInfo\022\026\n\010panel_"
-          + "id\030\002 \001(\tB\004\342A\001\002\022\024\n\014display_name\030\003 \001(\t\022\033\n\016"
-          + "panel_position\030\004 \001(\005H\000\210\001\001\022\031\n\014total_panel"
-          + "s\030\005 \001(\005H\001\210\001\001B\021\n\017_panel_positionB\017\n\r_tota"
-          + "l_panels\"\215\001\n\tMediaInfo\022:\n\027media_progress"
-          + "_duration\030\001 \001(\0132\031.google.protobuf.Durati"
-          + "on\022&\n\031media_progress_percentage\030\002 \001(\002H\000\210"
-          + "\001\001B\034\n\032_media_progress_percentageB\201\002\n#com"
-          + ".google.cloud.discoveryengine.v1B\016UserEv"
-          + "entProtoP\001ZMcloud.google.com/go/discover"
-          + "yengine/apiv1/discoveryenginepb;discover"
-          + "yenginepb\242\002\017DISCOVERYENGINE\252\002\037Google.Clo"
-          + "ud.DiscoveryEngine.V1\312\002\037Google\\Cloud\\Dis"
-          + "coveryEngine\\V1\352\002\"Google::Cloud::Discove"
-          + "ryEngine::V1b\006proto3"
+          + "taxB\007\n\005_costB\021\n\017_discount_value\"\273\001\n\014Docu"
+          + "mentInfo\022\014\n\002id\030\001 \001(\tH\000\022<\n\004name\030\002 \001(\tB,\372A"
+          + ")\n\'discoveryengine.googleapis.com/Docume"
+          + "ntH\000\022\r\n\003uri\030\006 \001(\tH\000\022\025\n\010quantity\030\003 \001(\005H\001\210"
+          + "\001\001\022\025\n\rpromotion_ids\030\004 \003(\tB\025\n\023document_de"
+          + "scriptorB\013\n\t_quantity\"\225\001\n\tPanelInfo\022\026\n\010p"
+          + "anel_id\030\002 \001(\tB\004\342A\001\002\022\024\n\014display_name\030\003 \001("
+          + "\t\022\033\n\016panel_position\030\004 \001(\005H\000\210\001\001\022\031\n\014total_"
+          + "panels\030\005 \001(\005H\001\210\001\001B\021\n\017_panel_positionB\017\n\r"
+          + "_total_panels\"\215\001\n\tMediaInfo\022:\n\027media_pro"
+          + "gress_duration\030\001 \001(\0132\031.google.protobuf.D"
+          + "uration\022&\n\031media_progress_percentage\030\002 \001"
+          + "(\002H\000\210\001\001B\034\n\032_media_progress_percentageB\201\002"
+          + "\n#com.google.cloud.discoveryengine.v1B\016U"
+          + "serEventProtoP\001ZMcloud.google.com/go/dis"
+          + "coveryengine/apiv1/discoveryenginepb;dis"
+          + "coveryenginepb\242\002\017DISCOVERYENGINE\252\002\037Googl"
+          + "e.Cloud.DiscoveryEngine.V1\312\002\037Google\\Clou"
+          + "d\\DiscoveryEngine\\V1\352\002\"Google::Cloud::Di"
+          + "scoveryEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -226,7 +226,7 @@ public final class UserEventProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_DocumentInfo_descriptor,
             new java.lang.String[] {
-              "Id", "Name", "Quantity", "PromotionIds", "DocumentDescriptor", "Quantity",
+              "Id", "Name", "Uri", "Quantity", "PromotionIds", "DocumentDescriptor", "Quantity",
             });
     internal_static_google_cloud_discoveryengine_v1_PanelInfo_descriptor =
         getDescriptor().getMessageTypes().get(6);

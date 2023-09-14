@@ -22,9 +22,15 @@ package com.google.cloud.workstations.v1;
  *
  *
  * <pre>
- * A set of configuration options describing how a workstation will be run.
- * Workstation configurations are intended to be shared across multiple
- * workstations.
+ * A workstation configuration resource in the Cloud Workstations API.
+ *
+ * Workstation configurations act as templates for workstations. The workstation
+ * configuration defines details such as the workstation virtual machine (VM)
+ * instance type, persistent storage, container image defining environment,
+ * which IDE or Code Editor to use, and more. Administrators and platform teams
+ * can also use [Identity and Access Management
+ * (IAM)](https://cloud.google.com/iam/docs/overview) rules to grant access to
+ * teams or to individual developers.
  * </pre>
  *
  * Protobuf type {@code google.cloud.workstations.v1.WorkstationConfig}
@@ -45,6 +51,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     uid_ = "";
     etag_ = "";
     persistentDirectories_ = java.util.Collections.emptyList();
+    readinessChecks_ = java.util.Collections.emptyList();
+    replicaZones_ = com.google.protobuf.LazyStringArrayList.emptyList();
     conditions_ = java.util.Collections.emptyList();
   }
 
@@ -179,10 +187,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The name of a Compute Engine machine type.
+       * Optional. The type of machine to use for VM instances—for example,
+       * `"e2-standard-4"`. For more information about machine types that
+       * Cloud Workstations supports, see the list of
+       * [available machine
+       * types](https://cloud.google.com/workstations/docs/available-machine-types).
        * </pre>
        *
-       * <code>string machine_type = 1;</code>
+       * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The machineType.
        */
@@ -191,10 +203,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The name of a Compute Engine machine type.
+       * Optional. The type of machine to use for VM instances—for example,
+       * `"e2-standard-4"`. For more information about machine types that
+       * Cloud Workstations supports, see the list of
+       * [available machine
+       * types](https://cloud.google.com/workstations/docs/available-machine-types).
        * </pre>
        *
-       * <code>string machine_type = 1;</code>
+       * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for machineType.
        */
@@ -204,14 +220,26 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Email address of the service account used on VM instances
-       * used to support this configuration. If not set, VMs run with a
-       * Google-managed service account. This service account must have
-       * permission to pull the specified container image; otherwise, the image
-       * must be publicly accessible.
+       * Optional. The email address of the service account for Cloud
+       * Workstations VMs created with this configuration. When specified, be
+       * sure that the service account has `logginglogEntries.create` permission
+       * on the project so it can write logs out to Cloud Logging. If using a
+       * custom container image, the service account must have permissions to
+       * pull the specified image.
+       *
+       * If you as the administrator want to be able to `ssh` into the
+       * underlying VM, you need to set this value to a service account
+       * for which you have the `iam.serviceAccounts.actAs` permission.
+       * Conversely, if you don't want anyone to be able to `ssh` into the
+       * underlying VM, use a service account where no one has that
+       * permission.
+       *
+       * If not set, VMs run with a service account provided by the
+       * Cloud Workstations service, and the image must be publicly
+       * accessible.
        * </pre>
        *
-       * <code>string service_account = 2;</code>
+       * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The serviceAccount.
        */
@@ -220,14 +248,26 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Email address of the service account used on VM instances
-       * used to support this configuration. If not set, VMs run with a
-       * Google-managed service account. This service account must have
-       * permission to pull the specified container image; otherwise, the image
-       * must be publicly accessible.
+       * Optional. The email address of the service account for Cloud
+       * Workstations VMs created with this configuration. When specified, be
+       * sure that the service account has `logginglogEntries.create` permission
+       * on the project so it can write logs out to Cloud Logging. If using a
+       * custom container image, the service account must have permissions to
+       * pull the specified image.
+       *
+       * If you as the administrator want to be able to `ssh` into the
+       * underlying VM, you need to set this value to a service account
+       * for which you have the `iam.serviceAccounts.actAs` permission.
+       * Conversely, if you don't want anyone to be able to `ssh` into the
+       * underlying VM, use a service account where no one has that
+       * permission.
+       *
+       * If not set, VMs run with a service account provided by the
+       * Cloud Workstations service, and the image must be publicly
+       * accessible.
        * </pre>
        *
-       * <code>string service_account = 2;</code>
+       * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for serviceAccount.
        */
@@ -237,11 +277,87 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Network tags to add to the Compute Engine machines backing the
-       * Workstations.
+       * Optional. Scopes to grant to the
+       * [service_account][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.service_account].
+       * Various scopes are automatically added based on feature usage. When
+       * specified, users of workstations under this configuration must have
+       * `iam.serviceAccounts.actAs` on the service account.
        * </pre>
        *
-       * <code>repeated string tags = 4;</code>
+       * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the serviceAccountScopes.
+       */
+      java.util.List<java.lang.String> getServiceAccountScopesList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Scopes to grant to the
+       * [service_account][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.service_account].
+       * Various scopes are automatically added based on feature usage. When
+       * specified, users of workstations under this configuration must have
+       * `iam.serviceAccounts.actAs` on the service account.
+       * </pre>
+       *
+       * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of serviceAccountScopes.
+       */
+      int getServiceAccountScopesCount();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Scopes to grant to the
+       * [service_account][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.service_account].
+       * Various scopes are automatically added based on feature usage. When
+       * specified, users of workstations under this configuration must have
+       * `iam.serviceAccounts.actAs` on the service account.
+       * </pre>
+       *
+       * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The serviceAccountScopes at the given index.
+       */
+      java.lang.String getServiceAccountScopes(int index);
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Scopes to grant to the
+       * [service_account][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.service_account].
+       * Various scopes are automatically added based on feature usage. When
+       * specified, users of workstations under this configuration must have
+       * `iam.serviceAccounts.actAs` on the service account.
+       * </pre>
+       *
+       * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the serviceAccountScopes at the given index.
+       */
+      com.google.protobuf.ByteString getServiceAccountScopesBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Network tags to add to the Compute Engine VMs backing the
+       * workstations. This option applies
+       * [network
+       * tags](https://cloud.google.com/vpc/docs/add-remove-network-tags) to VMs
+       * created with this configuration. These network tags enable the creation
+       * of [firewall
+       * rules](https://cloud.google.com/workstations/docs/configure-firewall-rules).
+       * </pre>
+       *
+       * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return A list containing the tags.
        */
@@ -250,11 +366,16 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Network tags to add to the Compute Engine machines backing the
-       * Workstations.
+       * Optional. Network tags to add to the Compute Engine VMs backing the
+       * workstations. This option applies
+       * [network
+       * tags](https://cloud.google.com/vpc/docs/add-remove-network-tags) to VMs
+       * created with this configuration. These network tags enable the creation
+       * of [firewall
+       * rules](https://cloud.google.com/workstations/docs/configure-firewall-rules).
        * </pre>
        *
-       * <code>repeated string tags = 4;</code>
+       * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The count of tags.
        */
@@ -263,11 +384,16 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Network tags to add to the Compute Engine machines backing the
-       * Workstations.
+       * Optional. Network tags to add to the Compute Engine VMs backing the
+       * workstations. This option applies
+       * [network
+       * tags](https://cloud.google.com/vpc/docs/add-remove-network-tags) to VMs
+       * created with this configuration. These network tags enable the creation
+       * of [firewall
+       * rules](https://cloud.google.com/workstations/docs/configure-firewall-rules).
        * </pre>
        *
-       * <code>repeated string tags = 4;</code>
+       * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the element to return.
        * @return The tags at the given index.
@@ -277,11 +403,16 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Network tags to add to the Compute Engine machines backing the
-       * Workstations.
+       * Optional. Network tags to add to the Compute Engine VMs backing the
+       * workstations. This option applies
+       * [network
+       * tags](https://cloud.google.com/vpc/docs/add-remove-network-tags) to VMs
+       * created with this configuration. These network tags enable the creation
+       * of [firewall
+       * rules](https://cloud.google.com/workstations/docs/configure-firewall-rules).
        * </pre>
        *
-       * <code>repeated string tags = 4;</code>
+       * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the value to return.
        * @return The bytes of the tags at the given index.
@@ -292,10 +423,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Number of instances to pool for faster workstation startup.
+       * Optional. The number of VMs that the system should keep idle so that
+       * new workstations can be started quickly for new users. Defaults to `0`
+       * in the API.
        * </pre>
        *
-       * <code>int32 pool_size = 5;</code>
+       * <code>int32 pool_size = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The poolSize.
        */
@@ -319,10 +452,17 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Whether instances have no public IP address.
+       * Optional. When set to true, disables public IP addresses for VMs. If
+       * you disable public IP addresses, you must set up Private Google Access
+       * or Cloud NAT on your network. If you use Private Google Access and you
+       * use `private.googleapis.com` or `restricted.googleapis.com` for
+       * Container Registry and Artifact Registry, make sure that you set
+       * up DNS records for domains `*.gcr.io` and `*.pkg.dev`.
+       * Defaults to false (VMs have public IP addresses).
        * </pre>
        *
-       * <code>bool disable_public_ip_addresses = 6;</code>
+       * <code>bool disable_public_ip_addresses = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The disablePublicIpAddresses.
        */
@@ -332,10 +472,44 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Whether to enable nested virtualization on instances.
+       * Optional. Whether to enable nested virtualization on Cloud Workstations
+       * VMs created under this workstation configuration.
+       *
+       * Nested virtualization lets you run virtual machine (VM) instances
+       * inside your workstation. Before enabling nested virtualization,
+       * consider the following important considerations. Cloud Workstations
+       * instances are subject to the [same restrictions as Compute Engine
+       * instances](https://cloud.google.com/compute/docs/instances/nested-virtualization/overview#restrictions):
+       *
+       * * **Organization policy**: projects, folders, or
+       * organizations may be restricted from creating nested VMs if the
+       * **Disable VM nested virtualization** constraint is enforced in
+       * the organization policy. For more information, see the
+       * Compute Engine section,
+       * [Checking whether nested virtualization is
+       * allowed](https://cloud.google.com/compute/docs/instances/nested-virtualization/managing-constraint#checking_whether_nested_virtualization_is_allowed).
+       * * **Performance**: nested VMs might experience a 10% or greater
+       * decrease in performance for workloads that are CPU-bound and
+       * possibly greater than a 10% decrease for workloads that are
+       * input/output bound.
+       * * **Machine Type**: nested virtualization can only be enabled on
+       * workstation configurations that specify a
+       * [machine_type][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.machine_type]
+       * in the N1 or N2 machine series.
+       * * **GPUs**: nested virtualization may not be enabled on workstation
+       * configurations with accelerators.
+       * * **Operating System**: Because
+       * [Container-Optimized
+       * OS](https://cloud.google.com/compute/docs/images/os-details#container-optimized_os_cos)
+       * does not support nested virtualization, when nested virtualization is
+       * enabled, the underlying Compute Engine VM instances boot from an
+       * [Ubuntu
+       * LTS](https://cloud.google.com/compute/docs/images/os-details#ubuntu_lts)
+       * image.
        * </pre>
        *
-       * <code>bool enable_nested_virtualization = 7;</code>
+       * <code>bool enable_nested_virtualization = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The enableNestedVirtualization.
        */
@@ -345,11 +519,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * A set of Compute Engine Shielded instance options.
+       * Optional. A set of Compute Engine Shielded instance options.
        * </pre>
        *
        * <code>
-       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8;
+       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return Whether the shieldedInstanceConfig field is set.
@@ -359,11 +533,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * A set of Compute Engine Shielded instance options.
+       * Optional. A set of Compute Engine Shielded instance options.
        * </pre>
        *
        * <code>
-       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8;
+       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The shieldedInstanceConfig.
@@ -374,11 +548,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * A set of Compute Engine Shielded instance options.
+       * Optional. A set of Compute Engine Shielded instance options.
        * </pre>
        *
        * <code>
-       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8;
+       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance
@@ -389,11 +563,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * A set of Compute Engine Confidential VM instance options.
+       * Optional. A set of Compute Engine Confidential VM instance options.
        * </pre>
        *
        * <code>
-       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10;
+       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return Whether the confidentialInstanceConfig field is set.
@@ -403,11 +577,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * A set of Compute Engine Confidential VM instance options.
+       * Optional. A set of Compute Engine Confidential VM instance options.
        * </pre>
        *
        * <code>
-       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10;
+       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The confidentialInstanceConfig.
@@ -419,11 +593,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * A set of Compute Engine Confidential VM instance options.
+       * Optional. A set of Compute Engine Confidential VM instance options.
        * </pre>
        *
        * <code>
-       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10;
+       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance
@@ -434,10 +608,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Size of the boot disk in GB. Defaults to 50.
+       * Optional. The size of the boot disk for the VM in gigabytes (GB).
+       * The minimum boot disk size is `30` GB. Defaults to `50` GB.
        * </pre>
        *
-       * <code>int32 boot_disk_size_gb = 9;</code>
+       * <code>int32 boot_disk_size_gb = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bootDiskSizeGb.
        */
@@ -465,6 +640,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       private GceInstance() {
         machineType_ = "";
         serviceAccount_ = "";
+        serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
         tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       }
 
@@ -498,10 +674,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Whether the instance has Secure Boot enabled.
+         * Optional. Whether the instance has Secure Boot enabled.
          * </pre>
          *
-         * <code>bool enable_secure_boot = 1;</code>
+         * <code>bool enable_secure_boot = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The enableSecureBoot.
          */
@@ -511,10 +687,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Whether the instance has the vTPM enabled.
+         * Optional. Whether the instance has the vTPM enabled.
          * </pre>
          *
-         * <code>bool enable_vtpm = 2;</code>
+         * <code>bool enable_vtpm = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The enableVtpm.
          */
@@ -524,10 +700,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Whether the instance has integrity monitoring enabled.
+         * Optional. Whether the instance has integrity monitoring enabled.
          * </pre>
          *
-         * <code>bool enable_integrity_monitoring = 3;</code>
+         * <code>bool enable_integrity_monitoring = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          *
          * @return The enableIntegrityMonitoring.
          */
@@ -586,10 +763,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Whether the instance has Secure Boot enabled.
+         * Optional. Whether the instance has Secure Boot enabled.
          * </pre>
          *
-         * <code>bool enable_secure_boot = 1;</code>
+         * <code>bool enable_secure_boot = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The enableSecureBoot.
          */
@@ -604,10 +781,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Whether the instance has the vTPM enabled.
+         * Optional. Whether the instance has the vTPM enabled.
          * </pre>
          *
-         * <code>bool enable_vtpm = 2;</code>
+         * <code>bool enable_vtpm = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The enableVtpm.
          */
@@ -622,10 +799,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Whether the instance has integrity monitoring enabled.
+         * Optional. Whether the instance has integrity monitoring enabled.
          * </pre>
          *
-         * <code>bool enable_integrity_monitoring = 3;</code>
+         * <code>bool enable_integrity_monitoring = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          *
          * @return The enableIntegrityMonitoring.
          */
@@ -1094,10 +1272,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Whether the instance has Secure Boot enabled.
+           * Optional. Whether the instance has Secure Boot enabled.
            * </pre>
            *
-           * <code>bool enable_secure_boot = 1;</code>
+           * <code>bool enable_secure_boot = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
            *
            * @return The enableSecureBoot.
            */
@@ -1109,10 +1287,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Whether the instance has Secure Boot enabled.
+           * Optional. Whether the instance has Secure Boot enabled.
            * </pre>
            *
-           * <code>bool enable_secure_boot = 1;</code>
+           * <code>bool enable_secure_boot = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
            *
            * @param value The enableSecureBoot to set.
            * @return This builder for chaining.
@@ -1128,10 +1306,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Whether the instance has Secure Boot enabled.
+           * Optional. Whether the instance has Secure Boot enabled.
            * </pre>
            *
-           * <code>bool enable_secure_boot = 1;</code>
+           * <code>bool enable_secure_boot = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
            *
            * @return This builder for chaining.
            */
@@ -1147,10 +1325,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Whether the instance has the vTPM enabled.
+           * Optional. Whether the instance has the vTPM enabled.
            * </pre>
            *
-           * <code>bool enable_vtpm = 2;</code>
+           * <code>bool enable_vtpm = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
            *
            * @return The enableVtpm.
            */
@@ -1162,10 +1340,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Whether the instance has the vTPM enabled.
+           * Optional. Whether the instance has the vTPM enabled.
            * </pre>
            *
-           * <code>bool enable_vtpm = 2;</code>
+           * <code>bool enable_vtpm = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
            *
            * @param value The enableVtpm to set.
            * @return This builder for chaining.
@@ -1181,10 +1359,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Whether the instance has the vTPM enabled.
+           * Optional. Whether the instance has the vTPM enabled.
            * </pre>
            *
-           * <code>bool enable_vtpm = 2;</code>
+           * <code>bool enable_vtpm = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
            *
            * @return This builder for chaining.
            */
@@ -1200,10 +1378,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Whether the instance has integrity monitoring enabled.
+           * Optional. Whether the instance has integrity monitoring enabled.
            * </pre>
            *
-           * <code>bool enable_integrity_monitoring = 3;</code>
+           * <code>bool enable_integrity_monitoring = 3 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            *
            * @return The enableIntegrityMonitoring.
            */
@@ -1215,10 +1394,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Whether the instance has integrity monitoring enabled.
+           * Optional. Whether the instance has integrity monitoring enabled.
            * </pre>
            *
-           * <code>bool enable_integrity_monitoring = 3;</code>
+           * <code>bool enable_integrity_monitoring = 3 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            *
            * @param value The enableIntegrityMonitoring to set.
            * @return This builder for chaining.
@@ -1234,10 +1414,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Whether the instance has integrity monitoring enabled.
+           * Optional. Whether the instance has integrity monitoring enabled.
            * </pre>
            *
-           * <code>bool enable_integrity_monitoring = 3;</code>
+           * <code>bool enable_integrity_monitoring = 3 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            *
            * @return This builder for chaining.
            */
@@ -1329,10 +1510,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Whether the instance has confidential compute enabled.
+         * Optional. Whether the instance has confidential compute enabled.
          * </pre>
          *
-         * <code>bool enable_confidential_compute = 1;</code>
+         * <code>bool enable_confidential_compute = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          *
          * @return The enableConfidentialCompute.
          */
@@ -1391,10 +1573,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Whether the instance has confidential compute enabled.
+         * Optional. Whether the instance has confidential compute enabled.
          * </pre>
          *
-         * <code>bool enable_confidential_compute = 1;</code>
+         * <code>bool enable_confidential_compute = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          *
          * @return The enableConfidentialCompute.
          */
@@ -1819,10 +2002,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Whether the instance has confidential compute enabled.
+           * Optional. Whether the instance has confidential compute enabled.
            * </pre>
            *
-           * <code>bool enable_confidential_compute = 1;</code>
+           * <code>bool enable_confidential_compute = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            *
            * @return The enableConfidentialCompute.
            */
@@ -1834,10 +2018,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Whether the instance has confidential compute enabled.
+           * Optional. Whether the instance has confidential compute enabled.
            * </pre>
            *
-           * <code>bool enable_confidential_compute = 1;</code>
+           * <code>bool enable_confidential_compute = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            *
            * @param value The enableConfidentialCompute to set.
            * @return This builder for chaining.
@@ -1853,10 +2038,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Whether the instance has confidential compute enabled.
+           * Optional. Whether the instance has confidential compute enabled.
            * </pre>
            *
-           * <code>bool enable_confidential_compute = 1;</code>
+           * <code>bool enable_confidential_compute = 1 [(.google.api.field_behavior) = OPTIONAL];
+           * </code>
            *
            * @return This builder for chaining.
            */
@@ -1947,10 +2133,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The name of a Compute Engine machine type.
+       * Optional. The type of machine to use for VM instances—for example,
+       * `"e2-standard-4"`. For more information about machine types that
+       * Cloud Workstations supports, see the list of
+       * [available machine
+       * types](https://cloud.google.com/workstations/docs/available-machine-types).
        * </pre>
        *
-       * <code>string machine_type = 1;</code>
+       * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The machineType.
        */
@@ -1970,10 +2160,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The name of a Compute Engine machine type.
+       * Optional. The type of machine to use for VM instances—for example,
+       * `"e2-standard-4"`. For more information about machine types that
+       * Cloud Workstations supports, see the list of
+       * [available machine
+       * types](https://cloud.google.com/workstations/docs/available-machine-types).
        * </pre>
        *
-       * <code>string machine_type = 1;</code>
+       * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for machineType.
        */
@@ -1998,14 +2192,26 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Email address of the service account used on VM instances
-       * used to support this configuration. If not set, VMs run with a
-       * Google-managed service account. This service account must have
-       * permission to pull the specified container image; otherwise, the image
-       * must be publicly accessible.
+       * Optional. The email address of the service account for Cloud
+       * Workstations VMs created with this configuration. When specified, be
+       * sure that the service account has `logginglogEntries.create` permission
+       * on the project so it can write logs out to Cloud Logging. If using a
+       * custom container image, the service account must have permissions to
+       * pull the specified image.
+       *
+       * If you as the administrator want to be able to `ssh` into the
+       * underlying VM, you need to set this value to a service account
+       * for which you have the `iam.serviceAccounts.actAs` permission.
+       * Conversely, if you don't want anyone to be able to `ssh` into the
+       * underlying VM, use a service account where no one has that
+       * permission.
+       *
+       * If not set, VMs run with a service account provided by the
+       * Cloud Workstations service, and the image must be publicly
+       * accessible.
        * </pre>
        *
-       * <code>string service_account = 2;</code>
+       * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The serviceAccount.
        */
@@ -2025,14 +2231,26 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Email address of the service account used on VM instances
-       * used to support this configuration. If not set, VMs run with a
-       * Google-managed service account. This service account must have
-       * permission to pull the specified container image; otherwise, the image
-       * must be publicly accessible.
+       * Optional. The email address of the service account for Cloud
+       * Workstations VMs created with this configuration. When specified, be
+       * sure that the service account has `logginglogEntries.create` permission
+       * on the project so it can write logs out to Cloud Logging. If using a
+       * custom container image, the service account must have permissions to
+       * pull the specified image.
+       *
+       * If you as the administrator want to be able to `ssh` into the
+       * underlying VM, you need to set this value to a service account
+       * for which you have the `iam.serviceAccounts.actAs` permission.
+       * Conversely, if you don't want anyone to be able to `ssh` into the
+       * underlying VM, use a service account where no one has that
+       * permission.
+       *
+       * If not set, VMs run with a service account provided by the
+       * Cloud Workstations service, and the image must be publicly
+       * accessible.
        * </pre>
        *
-       * <code>string service_account = 2;</code>
+       * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for serviceAccount.
        */
@@ -2049,6 +2267,90 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
       }
 
+      public static final int SERVICE_ACCOUNT_SCOPES_FIELD_NUMBER = 3;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList serviceAccountScopes_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Scopes to grant to the
+       * [service_account][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.service_account].
+       * Various scopes are automatically added based on feature usage. When
+       * specified, users of workstations under this configuration must have
+       * `iam.serviceAccounts.actAs` on the service account.
+       * </pre>
+       *
+       * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the serviceAccountScopes.
+       */
+      public com.google.protobuf.ProtocolStringList getServiceAccountScopesList() {
+        return serviceAccountScopes_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Scopes to grant to the
+       * [service_account][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.service_account].
+       * Various scopes are automatically added based on feature usage. When
+       * specified, users of workstations under this configuration must have
+       * `iam.serviceAccounts.actAs` on the service account.
+       * </pre>
+       *
+       * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of serviceAccountScopes.
+       */
+      public int getServiceAccountScopesCount() {
+        return serviceAccountScopes_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Scopes to grant to the
+       * [service_account][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.service_account].
+       * Various scopes are automatically added based on feature usage. When
+       * specified, users of workstations under this configuration must have
+       * `iam.serviceAccounts.actAs` on the service account.
+       * </pre>
+       *
+       * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The serviceAccountScopes at the given index.
+       */
+      public java.lang.String getServiceAccountScopes(int index) {
+        return serviceAccountScopes_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Scopes to grant to the
+       * [service_account][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.service_account].
+       * Various scopes are automatically added based on feature usage. When
+       * specified, users of workstations under this configuration must have
+       * `iam.serviceAccounts.actAs` on the service account.
+       * </pre>
+       *
+       * <code>repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the serviceAccountScopes at the given index.
+       */
+      public com.google.protobuf.ByteString getServiceAccountScopesBytes(int index) {
+        return serviceAccountScopes_.getByteString(index);
+      }
+
       public static final int TAGS_FIELD_NUMBER = 4;
 
       @SuppressWarnings("serial")
@@ -2058,11 +2360,16 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Network tags to add to the Compute Engine machines backing the
-       * Workstations.
+       * Optional. Network tags to add to the Compute Engine VMs backing the
+       * workstations. This option applies
+       * [network
+       * tags](https://cloud.google.com/vpc/docs/add-remove-network-tags) to VMs
+       * created with this configuration. These network tags enable the creation
+       * of [firewall
+       * rules](https://cloud.google.com/workstations/docs/configure-firewall-rules).
        * </pre>
        *
-       * <code>repeated string tags = 4;</code>
+       * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return A list containing the tags.
        */
@@ -2073,11 +2380,16 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Network tags to add to the Compute Engine machines backing the
-       * Workstations.
+       * Optional. Network tags to add to the Compute Engine VMs backing the
+       * workstations. This option applies
+       * [network
+       * tags](https://cloud.google.com/vpc/docs/add-remove-network-tags) to VMs
+       * created with this configuration. These network tags enable the creation
+       * of [firewall
+       * rules](https://cloud.google.com/workstations/docs/configure-firewall-rules).
        * </pre>
        *
-       * <code>repeated string tags = 4;</code>
+       * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The count of tags.
        */
@@ -2088,11 +2400,16 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Network tags to add to the Compute Engine machines backing the
-       * Workstations.
+       * Optional. Network tags to add to the Compute Engine VMs backing the
+       * workstations. This option applies
+       * [network
+       * tags](https://cloud.google.com/vpc/docs/add-remove-network-tags) to VMs
+       * created with this configuration. These network tags enable the creation
+       * of [firewall
+       * rules](https://cloud.google.com/workstations/docs/configure-firewall-rules).
        * </pre>
        *
-       * <code>repeated string tags = 4;</code>
+       * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the element to return.
        * @return The tags at the given index.
@@ -2104,11 +2421,16 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Network tags to add to the Compute Engine machines backing the
-       * Workstations.
+       * Optional. Network tags to add to the Compute Engine VMs backing the
+       * workstations. This option applies
+       * [network
+       * tags](https://cloud.google.com/vpc/docs/add-remove-network-tags) to VMs
+       * created with this configuration. These network tags enable the creation
+       * of [firewall
+       * rules](https://cloud.google.com/workstations/docs/configure-firewall-rules).
        * </pre>
        *
-       * <code>repeated string tags = 4;</code>
+       * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the value to return.
        * @return The bytes of the tags at the given index.
@@ -2123,10 +2445,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Number of instances to pool for faster workstation startup.
+       * Optional. The number of VMs that the system should keep idle so that
+       * new workstations can be started quickly for new users. Defaults to `0`
+       * in the API.
        * </pre>
        *
-       * <code>int32 pool_size = 5;</code>
+       * <code>int32 pool_size = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The poolSize.
        */
@@ -2160,10 +2484,17 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Whether instances have no public IP address.
+       * Optional. When set to true, disables public IP addresses for VMs. If
+       * you disable public IP addresses, you must set up Private Google Access
+       * or Cloud NAT on your network. If you use Private Google Access and you
+       * use `private.googleapis.com` or `restricted.googleapis.com` for
+       * Container Registry and Artifact Registry, make sure that you set
+       * up DNS records for domains `*.gcr.io` and `*.pkg.dev`.
+       * Defaults to false (VMs have public IP addresses).
        * </pre>
        *
-       * <code>bool disable_public_ip_addresses = 6;</code>
+       * <code>bool disable_public_ip_addresses = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The disablePublicIpAddresses.
        */
@@ -2178,10 +2509,44 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Whether to enable nested virtualization on instances.
+       * Optional. Whether to enable nested virtualization on Cloud Workstations
+       * VMs created under this workstation configuration.
+       *
+       * Nested virtualization lets you run virtual machine (VM) instances
+       * inside your workstation. Before enabling nested virtualization,
+       * consider the following important considerations. Cloud Workstations
+       * instances are subject to the [same restrictions as Compute Engine
+       * instances](https://cloud.google.com/compute/docs/instances/nested-virtualization/overview#restrictions):
+       *
+       * * **Organization policy**: projects, folders, or
+       * organizations may be restricted from creating nested VMs if the
+       * **Disable VM nested virtualization** constraint is enforced in
+       * the organization policy. For more information, see the
+       * Compute Engine section,
+       * [Checking whether nested virtualization is
+       * allowed](https://cloud.google.com/compute/docs/instances/nested-virtualization/managing-constraint#checking_whether_nested_virtualization_is_allowed).
+       * * **Performance**: nested VMs might experience a 10% or greater
+       * decrease in performance for workloads that are CPU-bound and
+       * possibly greater than a 10% decrease for workloads that are
+       * input/output bound.
+       * * **Machine Type**: nested virtualization can only be enabled on
+       * workstation configurations that specify a
+       * [machine_type][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.machine_type]
+       * in the N1 or N2 machine series.
+       * * **GPUs**: nested virtualization may not be enabled on workstation
+       * configurations with accelerators.
+       * * **Operating System**: Because
+       * [Container-Optimized
+       * OS](https://cloud.google.com/compute/docs/images/os-details#container-optimized_os_cos)
+       * does not support nested virtualization, when nested virtualization is
+       * enabled, the underlying Compute Engine VM instances boot from an
+       * [Ubuntu
+       * LTS](https://cloud.google.com/compute/docs/images/os-details#ubuntu_lts)
+       * image.
        * </pre>
        *
-       * <code>bool enable_nested_virtualization = 7;</code>
+       * <code>bool enable_nested_virtualization = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The enableNestedVirtualization.
        */
@@ -2198,11 +2563,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * A set of Compute Engine Shielded instance options.
+       * Optional. A set of Compute Engine Shielded instance options.
        * </pre>
        *
        * <code>
-       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8;
+       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return Whether the shieldedInstanceConfig field is set.
@@ -2215,11 +2580,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * A set of Compute Engine Shielded instance options.
+       * Optional. A set of Compute Engine Shielded instance options.
        * </pre>
        *
        * <code>
-       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8;
+       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The shieldedInstanceConfig.
@@ -2237,11 +2602,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * A set of Compute Engine Shielded instance options.
+       * Optional. A set of Compute Engine Shielded instance options.
        * </pre>
        *
        * <code>
-       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8;
+       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       @java.lang.Override
@@ -2262,11 +2627,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * A set of Compute Engine Confidential VM instance options.
+       * Optional. A set of Compute Engine Confidential VM instance options.
        * </pre>
        *
        * <code>
-       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10;
+       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return Whether the confidentialInstanceConfig field is set.
@@ -2279,11 +2644,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * A set of Compute Engine Confidential VM instance options.
+       * Optional. A set of Compute Engine Confidential VM instance options.
        * </pre>
        *
        * <code>
-       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10;
+       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The confidentialInstanceConfig.
@@ -2301,11 +2666,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * A set of Compute Engine Confidential VM instance options.
+       * Optional. A set of Compute Engine Confidential VM instance options.
        * </pre>
        *
        * <code>
-       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10;
+       * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        */
       @java.lang.Override
@@ -2324,10 +2689,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Size of the boot disk in GB. Defaults to 50.
+       * Optional. The size of the boot disk for the VM in gigabytes (GB).
+       * The minimum boot disk size is `30` GB. Defaults to `50` GB.
        * </pre>
        *
-       * <code>int32 boot_disk_size_gb = 9;</code>
+       * <code>int32 boot_disk_size_gb = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bootDiskSizeGb.
        */
@@ -2355,6 +2721,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 2, serviceAccount_);
+        }
+        for (int i = 0; i < serviceAccountScopes_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(
+              output, 3, serviceAccountScopes_.getRaw(i));
         }
         for (int i = 0; i < tags_.size(); i++) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tags_.getRaw(i));
@@ -2394,6 +2764,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         }
         if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceAccount_)) {
           size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, serviceAccount_);
+        }
+        {
+          int dataSize = 0;
+          for (int i = 0; i < serviceAccountScopes_.size(); i++) {
+            dataSize += computeStringSizeNoTag(serviceAccountScopes_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getServiceAccountScopesList().size();
         }
         {
           int dataSize = 0;
@@ -2448,6 +2826,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
 
         if (!getMachineType().equals(other.getMachineType())) return false;
         if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+        if (!getServiceAccountScopesList().equals(other.getServiceAccountScopesList()))
+          return false;
         if (!getTagsList().equals(other.getTagsList())) return false;
         if (getPoolSize() != other.getPoolSize()) return false;
         if (getPooledInstances() != other.getPooledInstances()) return false;
@@ -2478,6 +2858,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         hash = (53 * hash) + getMachineType().hashCode();
         hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
         hash = (53 * hash) + getServiceAccount().hashCode();
+        if (getServiceAccountScopesCount() > 0) {
+          hash = (37 * hash) + SERVICE_ACCOUNT_SCOPES_FIELD_NUMBER;
+          hash = (53 * hash) + getServiceAccountScopesList().hashCode();
+        }
         if (getTagsCount() > 0) {
           hash = (37 * hash) + TAGS_FIELD_NUMBER;
           hash = (53 * hash) + getTagsList().hashCode();
@@ -2650,6 +3034,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           bitField0_ = 0;
           machineType_ = "";
           serviceAccount_ = "";
+          serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
           tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
           poolSize_ = 0;
           pooledInstances_ = 0;
@@ -2713,34 +3098,38 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             result.serviceAccount_ = serviceAccount_;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
+            serviceAccountScopes_.makeImmutable();
+            result.serviceAccountScopes_ = serviceAccountScopes_;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
             tags_.makeImmutable();
             result.tags_ = tags_;
           }
-          if (((from_bitField0_ & 0x00000008) != 0)) {
+          if (((from_bitField0_ & 0x00000010) != 0)) {
             result.poolSize_ = poolSize_;
           }
-          if (((from_bitField0_ & 0x00000010) != 0)) {
+          if (((from_bitField0_ & 0x00000020) != 0)) {
             result.pooledInstances_ = pooledInstances_;
           }
-          if (((from_bitField0_ & 0x00000020) != 0)) {
+          if (((from_bitField0_ & 0x00000040) != 0)) {
             result.disablePublicIpAddresses_ = disablePublicIpAddresses_;
           }
-          if (((from_bitField0_ & 0x00000040) != 0)) {
+          if (((from_bitField0_ & 0x00000080) != 0)) {
             result.enableNestedVirtualization_ = enableNestedVirtualization_;
           }
-          if (((from_bitField0_ & 0x00000080) != 0)) {
+          if (((from_bitField0_ & 0x00000100) != 0)) {
             result.shieldedInstanceConfig_ =
                 shieldedInstanceConfigBuilder_ == null
                     ? shieldedInstanceConfig_
                     : shieldedInstanceConfigBuilder_.build();
           }
-          if (((from_bitField0_ & 0x00000100) != 0)) {
+          if (((from_bitField0_ & 0x00000200) != 0)) {
             result.confidentialInstanceConfig_ =
                 confidentialInstanceConfigBuilder_ == null
                     ? confidentialInstanceConfig_
                     : confidentialInstanceConfigBuilder_.build();
           }
-          if (((from_bitField0_ & 0x00000200) != 0)) {
+          if (((from_bitField0_ & 0x00000400) != 0)) {
             result.bootDiskSizeGb_ = bootDiskSizeGb_;
           }
         }
@@ -2807,10 +3196,20 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             bitField0_ |= 0x00000002;
             onChanged();
           }
+          if (!other.serviceAccountScopes_.isEmpty()) {
+            if (serviceAccountScopes_.isEmpty()) {
+              serviceAccountScopes_ = other.serviceAccountScopes_;
+              bitField0_ |= 0x00000004;
+            } else {
+              ensureServiceAccountScopesIsMutable();
+              serviceAccountScopes_.addAll(other.serviceAccountScopes_);
+            }
+            onChanged();
+          }
           if (!other.tags_.isEmpty()) {
             if (tags_.isEmpty()) {
               tags_ = other.tags_;
-              bitField0_ |= 0x00000004;
+              bitField0_ |= 0x00000008;
             } else {
               ensureTagsIsMutable();
               tags_.addAll(other.tags_);
@@ -2876,6 +3275,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
                     bitField0_ |= 0x00000002;
                     break;
                   } // case 18
+                case 26:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureServiceAccountScopesIsMutable();
+                    serviceAccountScopes_.add(s);
+                    break;
+                  } // case 26
                 case 34:
                   {
                     java.lang.String s = input.readStringRequireUtf8();
@@ -2886,32 +3292,32 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
                 case 40:
                   {
                     poolSize_ = input.readInt32();
-                    bitField0_ |= 0x00000008;
+                    bitField0_ |= 0x00000010;
                     break;
                   } // case 40
                 case 48:
                   {
                     disablePublicIpAddresses_ = input.readBool();
-                    bitField0_ |= 0x00000020;
+                    bitField0_ |= 0x00000040;
                     break;
                   } // case 48
                 case 56:
                   {
                     enableNestedVirtualization_ = input.readBool();
-                    bitField0_ |= 0x00000040;
+                    bitField0_ |= 0x00000080;
                     break;
                   } // case 56
                 case 66:
                   {
                     input.readMessage(
                         getShieldedInstanceConfigFieldBuilder().getBuilder(), extensionRegistry);
-                    bitField0_ |= 0x00000080;
+                    bitField0_ |= 0x00000100;
                     break;
                   } // case 66
                 case 72:
                   {
                     bootDiskSizeGb_ = input.readInt32();
-                    bitField0_ |= 0x00000200;
+                    bitField0_ |= 0x00000400;
                     break;
                   } // case 72
                 case 82:
@@ -2919,13 +3325,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
                     input.readMessage(
                         getConfidentialInstanceConfigFieldBuilder().getBuilder(),
                         extensionRegistry);
-                    bitField0_ |= 0x00000100;
+                    bitField0_ |= 0x00000200;
                     break;
                   } // case 82
                 case 96:
                   {
                     pooledInstances_ = input.readInt32();
-                    bitField0_ |= 0x00000010;
+                    bitField0_ |= 0x00000020;
                     break;
                   } // case 96
                 default:
@@ -2952,10 +3358,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The name of a Compute Engine machine type.
+         * Optional. The type of machine to use for VM instances—for example,
+         * `"e2-standard-4"`. For more information about machine types that
+         * Cloud Workstations supports, see the list of
+         * [available machine
+         * types](https://cloud.google.com/workstations/docs/available-machine-types).
          * </pre>
          *
-         * <code>string machine_type = 1;</code>
+         * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The machineType.
          */
@@ -2974,10 +3384,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The name of a Compute Engine machine type.
+         * Optional. The type of machine to use for VM instances—for example,
+         * `"e2-standard-4"`. For more information about machine types that
+         * Cloud Workstations supports, see the list of
+         * [available machine
+         * types](https://cloud.google.com/workstations/docs/available-machine-types).
          * </pre>
          *
-         * <code>string machine_type = 1;</code>
+         * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The bytes for machineType.
          */
@@ -2996,10 +3410,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The name of a Compute Engine machine type.
+         * Optional. The type of machine to use for VM instances—for example,
+         * `"e2-standard-4"`. For more information about machine types that
+         * Cloud Workstations supports, see the list of
+         * [available machine
+         * types](https://cloud.google.com/workstations/docs/available-machine-types).
          * </pre>
          *
-         * <code>string machine_type = 1;</code>
+         * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The machineType to set.
          * @return This builder for chaining.
@@ -3017,10 +3435,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The name of a Compute Engine machine type.
+         * Optional. The type of machine to use for VM instances—for example,
+         * `"e2-standard-4"`. For more information about machine types that
+         * Cloud Workstations supports, see the list of
+         * [available machine
+         * types](https://cloud.google.com/workstations/docs/available-machine-types).
          * </pre>
          *
-         * <code>string machine_type = 1;</code>
+         * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return This builder for chaining.
          */
@@ -3034,10 +3456,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The name of a Compute Engine machine type.
+         * Optional. The type of machine to use for VM instances—for example,
+         * `"e2-standard-4"`. For more information about machine types that
+         * Cloud Workstations supports, see the list of
+         * [available machine
+         * types](https://cloud.google.com/workstations/docs/available-machine-types).
          * </pre>
          *
-         * <code>string machine_type = 1;</code>
+         * <code>string machine_type = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The bytes for machineType to set.
          * @return This builder for chaining.
@@ -3058,14 +3484,26 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Email address of the service account used on VM instances
-         * used to support this configuration. If not set, VMs run with a
-         * Google-managed service account. This service account must have
-         * permission to pull the specified container image; otherwise, the image
-         * must be publicly accessible.
+         * Optional. The email address of the service account for Cloud
+         * Workstations VMs created with this configuration. When specified, be
+         * sure that the service account has `logginglogEntries.create` permission
+         * on the project so it can write logs out to Cloud Logging. If using a
+         * custom container image, the service account must have permissions to
+         * pull the specified image.
+         *
+         * If you as the administrator want to be able to `ssh` into the
+         * underlying VM, you need to set this value to a service account
+         * for which you have the `iam.serviceAccounts.actAs` permission.
+         * Conversely, if you don't want anyone to be able to `ssh` into the
+         * underlying VM, use a service account where no one has that
+         * permission.
+         *
+         * If not set, VMs run with a service account provided by the
+         * Cloud Workstations service, and the image must be publicly
+         * accessible.
          * </pre>
          *
-         * <code>string service_account = 2;</code>
+         * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The serviceAccount.
          */
@@ -3084,14 +3522,26 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Email address of the service account used on VM instances
-         * used to support this configuration. If not set, VMs run with a
-         * Google-managed service account. This service account must have
-         * permission to pull the specified container image; otherwise, the image
-         * must be publicly accessible.
+         * Optional. The email address of the service account for Cloud
+         * Workstations VMs created with this configuration. When specified, be
+         * sure that the service account has `logginglogEntries.create` permission
+         * on the project so it can write logs out to Cloud Logging. If using a
+         * custom container image, the service account must have permissions to
+         * pull the specified image.
+         *
+         * If you as the administrator want to be able to `ssh` into the
+         * underlying VM, you need to set this value to a service account
+         * for which you have the `iam.serviceAccounts.actAs` permission.
+         * Conversely, if you don't want anyone to be able to `ssh` into the
+         * underlying VM, use a service account where no one has that
+         * permission.
+         *
+         * If not set, VMs run with a service account provided by the
+         * Cloud Workstations service, and the image must be publicly
+         * accessible.
          * </pre>
          *
-         * <code>string service_account = 2;</code>
+         * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The bytes for serviceAccount.
          */
@@ -3110,14 +3560,26 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Email address of the service account used on VM instances
-         * used to support this configuration. If not set, VMs run with a
-         * Google-managed service account. This service account must have
-         * permission to pull the specified container image; otherwise, the image
-         * must be publicly accessible.
+         * Optional. The email address of the service account for Cloud
+         * Workstations VMs created with this configuration. When specified, be
+         * sure that the service account has `logginglogEntries.create` permission
+         * on the project so it can write logs out to Cloud Logging. If using a
+         * custom container image, the service account must have permissions to
+         * pull the specified image.
+         *
+         * If you as the administrator want to be able to `ssh` into the
+         * underlying VM, you need to set this value to a service account
+         * for which you have the `iam.serviceAccounts.actAs` permission.
+         * Conversely, if you don't want anyone to be able to `ssh` into the
+         * underlying VM, use a service account where no one has that
+         * permission.
+         *
+         * If not set, VMs run with a service account provided by the
+         * Cloud Workstations service, and the image must be publicly
+         * accessible.
          * </pre>
          *
-         * <code>string service_account = 2;</code>
+         * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The serviceAccount to set.
          * @return This builder for chaining.
@@ -3135,14 +3597,26 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Email address of the service account used on VM instances
-         * used to support this configuration. If not set, VMs run with a
-         * Google-managed service account. This service account must have
-         * permission to pull the specified container image; otherwise, the image
-         * must be publicly accessible.
+         * Optional. The email address of the service account for Cloud
+         * Workstations VMs created with this configuration. When specified, be
+         * sure that the service account has `logginglogEntries.create` permission
+         * on the project so it can write logs out to Cloud Logging. If using a
+         * custom container image, the service account must have permissions to
+         * pull the specified image.
+         *
+         * If you as the administrator want to be able to `ssh` into the
+         * underlying VM, you need to set this value to a service account
+         * for which you have the `iam.serviceAccounts.actAs` permission.
+         * Conversely, if you don't want anyone to be able to `ssh` into the
+         * underlying VM, use a service account where no one has that
+         * permission.
+         *
+         * If not set, VMs run with a service account provided by the
+         * Cloud Workstations service, and the image must be publicly
+         * accessible.
          * </pre>
          *
-         * <code>string service_account = 2;</code>
+         * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return This builder for chaining.
          */
@@ -3156,14 +3630,26 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Email address of the service account used on VM instances
-         * used to support this configuration. If not set, VMs run with a
-         * Google-managed service account. This service account must have
-         * permission to pull the specified container image; otherwise, the image
-         * must be publicly accessible.
+         * Optional. The email address of the service account for Cloud
+         * Workstations VMs created with this configuration. When specified, be
+         * sure that the service account has `logginglogEntries.create` permission
+         * on the project so it can write logs out to Cloud Logging. If using a
+         * custom container image, the service account must have permissions to
+         * pull the specified image.
+         *
+         * If you as the administrator want to be able to `ssh` into the
+         * underlying VM, you need to set this value to a service account
+         * for which you have the `iam.serviceAccounts.actAs` permission.
+         * Conversely, if you don't want anyone to be able to `ssh` into the
+         * underlying VM, use a service account where no one has that
+         * permission.
+         *
+         * If not set, VMs run with a service account provided by the
+         * Cloud Workstations service, and the image must be publicly
+         * accessible.
          * </pre>
          *
-         * <code>string service_account = 2;</code>
+         * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The bytes for serviceAccount to set.
          * @return This builder for chaining.
@@ -3179,12 +3665,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           return this;
         }
 
-        private com.google.protobuf.LazyStringArrayList tags_ =
+        private com.google.protobuf.LazyStringArrayList serviceAccountScopes_ =
             com.google.protobuf.LazyStringArrayList.emptyList();
 
-        private void ensureTagsIsMutable() {
-          if (!tags_.isModifiable()) {
-            tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+        private void ensureServiceAccountScopesIsMutable() {
+          if (!serviceAccountScopes_.isModifiable()) {
+            serviceAccountScopes_ =
+                new com.google.protobuf.LazyStringArrayList(serviceAccountScopes_);
           }
           bitField0_ |= 0x00000004;
         }
@@ -3192,11 +3679,244 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Network tags to add to the Compute Engine machines backing the
-         * Workstations.
+         * Optional. Scopes to grant to the
+         * [service_account][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.service_account].
+         * Various scopes are automatically added based on feature usage. When
+         * specified, users of workstations under this configuration must have
+         * `iam.serviceAccounts.actAs` on the service account.
          * </pre>
          *
-         * <code>repeated string tags = 4;</code>
+         * <code>
+         * repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return A list containing the serviceAccountScopes.
+         */
+        public com.google.protobuf.ProtocolStringList getServiceAccountScopesList() {
+          serviceAccountScopes_.makeImmutable();
+          return serviceAccountScopes_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Scopes to grant to the
+         * [service_account][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.service_account].
+         * Various scopes are automatically added based on feature usage. When
+         * specified, users of workstations under this configuration must have
+         * `iam.serviceAccounts.actAs` on the service account.
+         * </pre>
+         *
+         * <code>
+         * repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The count of serviceAccountScopes.
+         */
+        public int getServiceAccountScopesCount() {
+          return serviceAccountScopes_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Scopes to grant to the
+         * [service_account][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.service_account].
+         * Various scopes are automatically added based on feature usage. When
+         * specified, users of workstations under this configuration must have
+         * `iam.serviceAccounts.actAs` on the service account.
+         * </pre>
+         *
+         * <code>
+         * repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the element to return.
+         * @return The serviceAccountScopes at the given index.
+         */
+        public java.lang.String getServiceAccountScopes(int index) {
+          return serviceAccountScopes_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Scopes to grant to the
+         * [service_account][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.service_account].
+         * Various scopes are automatically added based on feature usage. When
+         * specified, users of workstations under this configuration must have
+         * `iam.serviceAccounts.actAs` on the service account.
+         * </pre>
+         *
+         * <code>
+         * repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the serviceAccountScopes at the given index.
+         */
+        public com.google.protobuf.ByteString getServiceAccountScopesBytes(int index) {
+          return serviceAccountScopes_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Scopes to grant to the
+         * [service_account][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.service_account].
+         * Various scopes are automatically added based on feature usage. When
+         * specified, users of workstations under this configuration must have
+         * `iam.serviceAccounts.actAs` on the service account.
+         * </pre>
+         *
+         * <code>
+         * repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param index The index to set the value at.
+         * @param value The serviceAccountScopes to set.
+         * @return This builder for chaining.
+         */
+        public Builder setServiceAccountScopes(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureServiceAccountScopesIsMutable();
+          serviceAccountScopes_.set(index, value);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Scopes to grant to the
+         * [service_account][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.service_account].
+         * Various scopes are automatically added based on feature usage. When
+         * specified, users of workstations under this configuration must have
+         * `iam.serviceAccounts.actAs` on the service account.
+         * </pre>
+         *
+         * <code>
+         * repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The serviceAccountScopes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addServiceAccountScopes(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureServiceAccountScopesIsMutable();
+          serviceAccountScopes_.add(value);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Scopes to grant to the
+         * [service_account][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.service_account].
+         * Various scopes are automatically added based on feature usage. When
+         * specified, users of workstations under this configuration must have
+         * `iam.serviceAccounts.actAs` on the service account.
+         * </pre>
+         *
+         * <code>
+         * repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param values The serviceAccountScopes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllServiceAccountScopes(java.lang.Iterable<java.lang.String> values) {
+          ensureServiceAccountScopesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, serviceAccountScopes_);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Scopes to grant to the
+         * [service_account][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.service_account].
+         * Various scopes are automatically added based on feature usage. When
+         * specified, users of workstations under this configuration must have
+         * `iam.serviceAccounts.actAs` on the service account.
+         * </pre>
+         *
+         * <code>
+         * repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearServiceAccountScopes() {
+          serviceAccountScopes_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Scopes to grant to the
+         * [service_account][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.service_account].
+         * Various scopes are automatically added based on feature usage. When
+         * specified, users of workstations under this configuration must have
+         * `iam.serviceAccounts.actAs` on the service account.
+         * </pre>
+         *
+         * <code>
+         * repeated string service_account_scopes = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The bytes of the serviceAccountScopes to add.
+         * @return This builder for chaining.
+         */
+        public Builder addServiceAccountScopesBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureServiceAccountScopesIsMutable();
+          serviceAccountScopes_.add(value);
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.LazyStringArrayList tags_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureTagsIsMutable() {
+          if (!tags_.isModifiable()) {
+            tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+          }
+          bitField0_ |= 0x00000008;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Network tags to add to the Compute Engine VMs backing the
+         * workstations. This option applies
+         * [network
+         * tags](https://cloud.google.com/vpc/docs/add-remove-network-tags) to VMs
+         * created with this configuration. These network tags enable the creation
+         * of [firewall
+         * rules](https://cloud.google.com/workstations/docs/configure-firewall-rules).
+         * </pre>
+         *
+         * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return A list containing the tags.
          */
@@ -3208,11 +3928,16 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Network tags to add to the Compute Engine machines backing the
-         * Workstations.
+         * Optional. Network tags to add to the Compute Engine VMs backing the
+         * workstations. This option applies
+         * [network
+         * tags](https://cloud.google.com/vpc/docs/add-remove-network-tags) to VMs
+         * created with this configuration. These network tags enable the creation
+         * of [firewall
+         * rules](https://cloud.google.com/workstations/docs/configure-firewall-rules).
          * </pre>
          *
-         * <code>repeated string tags = 4;</code>
+         * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The count of tags.
          */
@@ -3223,11 +3948,16 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Network tags to add to the Compute Engine machines backing the
-         * Workstations.
+         * Optional. Network tags to add to the Compute Engine VMs backing the
+         * workstations. This option applies
+         * [network
+         * tags](https://cloud.google.com/vpc/docs/add-remove-network-tags) to VMs
+         * created with this configuration. These network tags enable the creation
+         * of [firewall
+         * rules](https://cloud.google.com/workstations/docs/configure-firewall-rules).
          * </pre>
          *
-         * <code>repeated string tags = 4;</code>
+         * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param index The index of the element to return.
          * @return The tags at the given index.
@@ -3239,11 +3969,16 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Network tags to add to the Compute Engine machines backing the
-         * Workstations.
+         * Optional. Network tags to add to the Compute Engine VMs backing the
+         * workstations. This option applies
+         * [network
+         * tags](https://cloud.google.com/vpc/docs/add-remove-network-tags) to VMs
+         * created with this configuration. These network tags enable the creation
+         * of [firewall
+         * rules](https://cloud.google.com/workstations/docs/configure-firewall-rules).
          * </pre>
          *
-         * <code>repeated string tags = 4;</code>
+         * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param index The index of the value to return.
          * @return The bytes of the tags at the given index.
@@ -3255,11 +3990,16 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Network tags to add to the Compute Engine machines backing the
-         * Workstations.
+         * Optional. Network tags to add to the Compute Engine VMs backing the
+         * workstations. This option applies
+         * [network
+         * tags](https://cloud.google.com/vpc/docs/add-remove-network-tags) to VMs
+         * created with this configuration. These network tags enable the creation
+         * of [firewall
+         * rules](https://cloud.google.com/workstations/docs/configure-firewall-rules).
          * </pre>
          *
-         * <code>repeated string tags = 4;</code>
+         * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param index The index to set the value at.
          * @param value The tags to set.
@@ -3271,7 +4011,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           }
           ensureTagsIsMutable();
           tags_.set(index, value);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -3279,11 +4019,16 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Network tags to add to the Compute Engine machines backing the
-         * Workstations.
+         * Optional. Network tags to add to the Compute Engine VMs backing the
+         * workstations. This option applies
+         * [network
+         * tags](https://cloud.google.com/vpc/docs/add-remove-network-tags) to VMs
+         * created with this configuration. These network tags enable the creation
+         * of [firewall
+         * rules](https://cloud.google.com/workstations/docs/configure-firewall-rules).
          * </pre>
          *
-         * <code>repeated string tags = 4;</code>
+         * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The tags to add.
          * @return This builder for chaining.
@@ -3294,7 +4039,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           }
           ensureTagsIsMutable();
           tags_.add(value);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -3302,11 +4047,16 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Network tags to add to the Compute Engine machines backing the
-         * Workstations.
+         * Optional. Network tags to add to the Compute Engine VMs backing the
+         * workstations. This option applies
+         * [network
+         * tags](https://cloud.google.com/vpc/docs/add-remove-network-tags) to VMs
+         * created with this configuration. These network tags enable the creation
+         * of [firewall
+         * rules](https://cloud.google.com/workstations/docs/configure-firewall-rules).
          * </pre>
          *
-         * <code>repeated string tags = 4;</code>
+         * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param values The tags to add.
          * @return This builder for chaining.
@@ -3314,7 +4064,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
           ensureTagsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -3322,17 +4072,22 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Network tags to add to the Compute Engine machines backing the
-         * Workstations.
+         * Optional. Network tags to add to the Compute Engine VMs backing the
+         * workstations. This option applies
+         * [network
+         * tags](https://cloud.google.com/vpc/docs/add-remove-network-tags) to VMs
+         * created with this configuration. These network tags enable the creation
+         * of [firewall
+         * rules](https://cloud.google.com/workstations/docs/configure-firewall-rules).
          * </pre>
          *
-         * <code>repeated string tags = 4;</code>
+         * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return This builder for chaining.
          */
         public Builder clearTags() {
           tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
           ;
           onChanged();
           return this;
@@ -3341,11 +4096,16 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Network tags to add to the Compute Engine machines backing the
-         * Workstations.
+         * Optional. Network tags to add to the Compute Engine VMs backing the
+         * workstations. This option applies
+         * [network
+         * tags](https://cloud.google.com/vpc/docs/add-remove-network-tags) to VMs
+         * created with this configuration. These network tags enable the creation
+         * of [firewall
+         * rules](https://cloud.google.com/workstations/docs/configure-firewall-rules).
          * </pre>
          *
-         * <code>repeated string tags = 4;</code>
+         * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The bytes of the tags to add.
          * @return This builder for chaining.
@@ -3357,7 +4117,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           checkByteStringIsUtf8(value);
           ensureTagsIsMutable();
           tags_.add(value);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -3367,10 +4127,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Number of instances to pool for faster workstation startup.
+         * Optional. The number of VMs that the system should keep idle so that
+         * new workstations can be started quickly for new users. Defaults to `0`
+         * in the API.
          * </pre>
          *
-         * <code>int32 pool_size = 5;</code>
+         * <code>int32 pool_size = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The poolSize.
          */
@@ -3382,10 +4144,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Number of instances to pool for faster workstation startup.
+         * Optional. The number of VMs that the system should keep idle so that
+         * new workstations can be started quickly for new users. Defaults to `0`
+         * in the API.
          * </pre>
          *
-         * <code>int32 pool_size = 5;</code>
+         * <code>int32 pool_size = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The poolSize to set.
          * @return This builder for chaining.
@@ -3393,7 +4157,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public Builder setPoolSize(int value) {
 
           poolSize_ = value;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
           onChanged();
           return this;
         }
@@ -3401,15 +4165,17 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Number of instances to pool for faster workstation startup.
+         * Optional. The number of VMs that the system should keep idle so that
+         * new workstations can be started quickly for new users. Defaults to `0`
+         * in the API.
          * </pre>
          *
-         * <code>int32 pool_size = 5;</code>
+         * <code>int32 pool_size = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return This builder for chaining.
          */
         public Builder clearPoolSize() {
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000010);
           poolSize_ = 0;
           onChanged();
           return this;
@@ -3448,7 +4214,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public Builder setPooledInstances(int value) {
 
           pooledInstances_ = value;
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           onChanged();
           return this;
         }
@@ -3465,7 +4231,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          * @return This builder for chaining.
          */
         public Builder clearPooledInstances() {
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
           pooledInstances_ = 0;
           onChanged();
           return this;
@@ -3476,10 +4242,17 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Whether instances have no public IP address.
+         * Optional. When set to true, disables public IP addresses for VMs. If
+         * you disable public IP addresses, you must set up Private Google Access
+         * or Cloud NAT on your network. If you use Private Google Access and you
+         * use `private.googleapis.com` or `restricted.googleapis.com` for
+         * Container Registry and Artifact Registry, make sure that you set
+         * up DNS records for domains `*.gcr.io` and `*.pkg.dev`.
+         * Defaults to false (VMs have public IP addresses).
          * </pre>
          *
-         * <code>bool disable_public_ip_addresses = 6;</code>
+         * <code>bool disable_public_ip_addresses = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          *
          * @return The disablePublicIpAddresses.
          */
@@ -3491,10 +4264,17 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Whether instances have no public IP address.
+         * Optional. When set to true, disables public IP addresses for VMs. If
+         * you disable public IP addresses, you must set up Private Google Access
+         * or Cloud NAT on your network. If you use Private Google Access and you
+         * use `private.googleapis.com` or `restricted.googleapis.com` for
+         * Container Registry and Artifact Registry, make sure that you set
+         * up DNS records for domains `*.gcr.io` and `*.pkg.dev`.
+         * Defaults to false (VMs have public IP addresses).
          * </pre>
          *
-         * <code>bool disable_public_ip_addresses = 6;</code>
+         * <code>bool disable_public_ip_addresses = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          *
          * @param value The disablePublicIpAddresses to set.
          * @return This builder for chaining.
@@ -3502,7 +4282,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public Builder setDisablePublicIpAddresses(boolean value) {
 
           disablePublicIpAddresses_ = value;
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
           return this;
         }
@@ -3510,15 +4290,22 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Whether instances have no public IP address.
+         * Optional. When set to true, disables public IP addresses for VMs. If
+         * you disable public IP addresses, you must set up Private Google Access
+         * or Cloud NAT on your network. If you use Private Google Access and you
+         * use `private.googleapis.com` or `restricted.googleapis.com` for
+         * Container Registry and Artifact Registry, make sure that you set
+         * up DNS records for domains `*.gcr.io` and `*.pkg.dev`.
+         * Defaults to false (VMs have public IP addresses).
          * </pre>
          *
-         * <code>bool disable_public_ip_addresses = 6;</code>
+         * <code>bool disable_public_ip_addresses = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          *
          * @return This builder for chaining.
          */
         public Builder clearDisablePublicIpAddresses() {
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
           disablePublicIpAddresses_ = false;
           onChanged();
           return this;
@@ -3529,10 +4316,44 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Whether to enable nested virtualization on instances.
+         * Optional. Whether to enable nested virtualization on Cloud Workstations
+         * VMs created under this workstation configuration.
+         *
+         * Nested virtualization lets you run virtual machine (VM) instances
+         * inside your workstation. Before enabling nested virtualization,
+         * consider the following important considerations. Cloud Workstations
+         * instances are subject to the [same restrictions as Compute Engine
+         * instances](https://cloud.google.com/compute/docs/instances/nested-virtualization/overview#restrictions):
+         *
+         * * **Organization policy**: projects, folders, or
+         * organizations may be restricted from creating nested VMs if the
+         * **Disable VM nested virtualization** constraint is enforced in
+         * the organization policy. For more information, see the
+         * Compute Engine section,
+         * [Checking whether nested virtualization is
+         * allowed](https://cloud.google.com/compute/docs/instances/nested-virtualization/managing-constraint#checking_whether_nested_virtualization_is_allowed).
+         * * **Performance**: nested VMs might experience a 10% or greater
+         * decrease in performance for workloads that are CPU-bound and
+         * possibly greater than a 10% decrease for workloads that are
+         * input/output bound.
+         * * **Machine Type**: nested virtualization can only be enabled on
+         * workstation configurations that specify a
+         * [machine_type][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.machine_type]
+         * in the N1 or N2 machine series.
+         * * **GPUs**: nested virtualization may not be enabled on workstation
+         * configurations with accelerators.
+         * * **Operating System**: Because
+         * [Container-Optimized
+         * OS](https://cloud.google.com/compute/docs/images/os-details#container-optimized_os_cos)
+         * does not support nested virtualization, when nested virtualization is
+         * enabled, the underlying Compute Engine VM instances boot from an
+         * [Ubuntu
+         * LTS](https://cloud.google.com/compute/docs/images/os-details#ubuntu_lts)
+         * image.
          * </pre>
          *
-         * <code>bool enable_nested_virtualization = 7;</code>
+         * <code>bool enable_nested_virtualization = 7 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          *
          * @return The enableNestedVirtualization.
          */
@@ -3544,10 +4365,44 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Whether to enable nested virtualization on instances.
+         * Optional. Whether to enable nested virtualization on Cloud Workstations
+         * VMs created under this workstation configuration.
+         *
+         * Nested virtualization lets you run virtual machine (VM) instances
+         * inside your workstation. Before enabling nested virtualization,
+         * consider the following important considerations. Cloud Workstations
+         * instances are subject to the [same restrictions as Compute Engine
+         * instances](https://cloud.google.com/compute/docs/instances/nested-virtualization/overview#restrictions):
+         *
+         * * **Organization policy**: projects, folders, or
+         * organizations may be restricted from creating nested VMs if the
+         * **Disable VM nested virtualization** constraint is enforced in
+         * the organization policy. For more information, see the
+         * Compute Engine section,
+         * [Checking whether nested virtualization is
+         * allowed](https://cloud.google.com/compute/docs/instances/nested-virtualization/managing-constraint#checking_whether_nested_virtualization_is_allowed).
+         * * **Performance**: nested VMs might experience a 10% or greater
+         * decrease in performance for workloads that are CPU-bound and
+         * possibly greater than a 10% decrease for workloads that are
+         * input/output bound.
+         * * **Machine Type**: nested virtualization can only be enabled on
+         * workstation configurations that specify a
+         * [machine_type][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.machine_type]
+         * in the N1 or N2 machine series.
+         * * **GPUs**: nested virtualization may not be enabled on workstation
+         * configurations with accelerators.
+         * * **Operating System**: Because
+         * [Container-Optimized
+         * OS](https://cloud.google.com/compute/docs/images/os-details#container-optimized_os_cos)
+         * does not support nested virtualization, when nested virtualization is
+         * enabled, the underlying Compute Engine VM instances boot from an
+         * [Ubuntu
+         * LTS](https://cloud.google.com/compute/docs/images/os-details#ubuntu_lts)
+         * image.
          * </pre>
          *
-         * <code>bool enable_nested_virtualization = 7;</code>
+         * <code>bool enable_nested_virtualization = 7 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          *
          * @param value The enableNestedVirtualization to set.
          * @return This builder for chaining.
@@ -3555,7 +4410,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public Builder setEnableNestedVirtualization(boolean value) {
 
           enableNestedVirtualization_ = value;
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000080;
           onChanged();
           return this;
         }
@@ -3563,15 +4418,49 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Whether to enable nested virtualization on instances.
+         * Optional. Whether to enable nested virtualization on Cloud Workstations
+         * VMs created under this workstation configuration.
+         *
+         * Nested virtualization lets you run virtual machine (VM) instances
+         * inside your workstation. Before enabling nested virtualization,
+         * consider the following important considerations. Cloud Workstations
+         * instances are subject to the [same restrictions as Compute Engine
+         * instances](https://cloud.google.com/compute/docs/instances/nested-virtualization/overview#restrictions):
+         *
+         * * **Organization policy**: projects, folders, or
+         * organizations may be restricted from creating nested VMs if the
+         * **Disable VM nested virtualization** constraint is enforced in
+         * the organization policy. For more information, see the
+         * Compute Engine section,
+         * [Checking whether nested virtualization is
+         * allowed](https://cloud.google.com/compute/docs/instances/nested-virtualization/managing-constraint#checking_whether_nested_virtualization_is_allowed).
+         * * **Performance**: nested VMs might experience a 10% or greater
+         * decrease in performance for workloads that are CPU-bound and
+         * possibly greater than a 10% decrease for workloads that are
+         * input/output bound.
+         * * **Machine Type**: nested virtualization can only be enabled on
+         * workstation configurations that specify a
+         * [machine_type][google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.machine_type]
+         * in the N1 or N2 machine series.
+         * * **GPUs**: nested virtualization may not be enabled on workstation
+         * configurations with accelerators.
+         * * **Operating System**: Because
+         * [Container-Optimized
+         * OS](https://cloud.google.com/compute/docs/images/os-details#container-optimized_os_cos)
+         * does not support nested virtualization, when nested virtualization is
+         * enabled, the underlying Compute Engine VM instances boot from an
+         * [Ubuntu
+         * LTS](https://cloud.google.com/compute/docs/images/os-details#ubuntu_lts)
+         * image.
          * </pre>
          *
-         * <code>bool enable_nested_virtualization = 7;</code>
+         * <code>bool enable_nested_virtualization = 7 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
          *
          * @return This builder for chaining.
          */
         public Builder clearEnableNestedVirtualization() {
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
           enableNestedVirtualization_ = false;
           onChanged();
           return this;
@@ -3592,27 +4481,27 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * A set of Compute Engine Shielded instance options.
+         * Optional. A set of Compute Engine Shielded instance options.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8;
+         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          *
          * @return Whether the shieldedInstanceConfig field is set.
          */
         public boolean hasShieldedInstanceConfig() {
-          return ((bitField0_ & 0x00000080) != 0);
+          return ((bitField0_ & 0x00000100) != 0);
         }
         /**
          *
          *
          * <pre>
-         * A set of Compute Engine Shielded instance options.
+         * Optional. A set of Compute Engine Shielded instance options.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8;
+         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          *
          * @return The shieldedInstanceConfig.
@@ -3633,11 +4522,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * A set of Compute Engine Shielded instance options.
+         * Optional. A set of Compute Engine Shielded instance options.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8;
+         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public Builder setShieldedInstanceConfig(
@@ -3652,7 +4541,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           } else {
             shieldedInstanceConfigBuilder_.setMessage(value);
           }
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
           onChanged();
           return this;
         }
@@ -3660,11 +4549,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * A set of Compute Engine Shielded instance options.
+         * Optional. A set of Compute Engine Shielded instance options.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8;
+         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public Builder setShieldedInstanceConfig(
@@ -3676,7 +4565,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           } else {
             shieldedInstanceConfigBuilder_.setMessage(builderForValue.build());
           }
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
           onChanged();
           return this;
         }
@@ -3684,11 +4573,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * A set of Compute Engine Shielded instance options.
+         * Optional. A set of Compute Engine Shielded instance options.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8;
+         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public Builder mergeShieldedInstanceConfig(
@@ -3696,7 +4585,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
                     .GceShieldedInstanceConfig
                 value) {
           if (shieldedInstanceConfigBuilder_ == null) {
-            if (((bitField0_ & 0x00000080) != 0)
+            if (((bitField0_ & 0x00000100) != 0)
                 && shieldedInstanceConfig_ != null
                 && shieldedInstanceConfig_
                     != com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance
@@ -3708,7 +4597,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           } else {
             shieldedInstanceConfigBuilder_.mergeFrom(value);
           }
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
           onChanged();
           return this;
         }
@@ -3716,15 +4605,15 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * A set of Compute Engine Shielded instance options.
+         * Optional. A set of Compute Engine Shielded instance options.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8;
+         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public Builder clearShieldedInstanceConfig() {
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
           shieldedInstanceConfig_ = null;
           if (shieldedInstanceConfigBuilder_ != null) {
             shieldedInstanceConfigBuilder_.dispose();
@@ -3737,17 +4626,17 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * A set of Compute Engine Shielded instance options.
+         * Optional. A set of Compute Engine Shielded instance options.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8;
+         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance
                 .GceShieldedInstanceConfig.Builder
             getShieldedInstanceConfigBuilder() {
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
           onChanged();
           return getShieldedInstanceConfigFieldBuilder().getBuilder();
         }
@@ -3755,11 +4644,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * A set of Compute Engine Shielded instance options.
+         * Optional. A set of Compute Engine Shielded instance options.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8;
+         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance
@@ -3778,11 +4667,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * A set of Compute Engine Shielded instance options.
+         * Optional. A set of Compute Engine Shielded instance options.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8;
+         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceShieldedInstanceConfig shielded_instance_config = 8 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
@@ -3823,27 +4712,27 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * A set of Compute Engine Confidential VM instance options.
+         * Optional. A set of Compute Engine Confidential VM instance options.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10;
+         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          *
          * @return Whether the confidentialInstanceConfig field is set.
          */
         public boolean hasConfidentialInstanceConfig() {
-          return ((bitField0_ & 0x00000100) != 0);
+          return ((bitField0_ & 0x00000200) != 0);
         }
         /**
          *
          *
          * <pre>
-         * A set of Compute Engine Confidential VM instance options.
+         * Optional. A set of Compute Engine Confidential VM instance options.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10;
+         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          *
          * @return The confidentialInstanceConfig.
@@ -3864,11 +4753,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * A set of Compute Engine Confidential VM instance options.
+         * Optional. A set of Compute Engine Confidential VM instance options.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10;
+         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public Builder setConfidentialInstanceConfig(
@@ -3883,7 +4772,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           } else {
             confidentialInstanceConfigBuilder_.setMessage(value);
           }
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000200;
           onChanged();
           return this;
         }
@@ -3891,11 +4780,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * A set of Compute Engine Confidential VM instance options.
+         * Optional. A set of Compute Engine Confidential VM instance options.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10;
+         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public Builder setConfidentialInstanceConfig(
@@ -3907,7 +4796,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           } else {
             confidentialInstanceConfigBuilder_.setMessage(builderForValue.build());
           }
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000200;
           onChanged();
           return this;
         }
@@ -3915,11 +4804,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * A set of Compute Engine Confidential VM instance options.
+         * Optional. A set of Compute Engine Confidential VM instance options.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10;
+         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public Builder mergeConfidentialInstanceConfig(
@@ -3927,7 +4816,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
                     .GceConfidentialInstanceConfig
                 value) {
           if (confidentialInstanceConfigBuilder_ == null) {
-            if (((bitField0_ & 0x00000100) != 0)
+            if (((bitField0_ & 0x00000200) != 0)
                 && confidentialInstanceConfig_ != null
                 && confidentialInstanceConfig_
                     != com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance
@@ -3939,7 +4828,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
           } else {
             confidentialInstanceConfigBuilder_.mergeFrom(value);
           }
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000200;
           onChanged();
           return this;
         }
@@ -3947,15 +4836,15 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * A set of Compute Engine Confidential VM instance options.
+         * Optional. A set of Compute Engine Confidential VM instance options.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10;
+         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public Builder clearConfidentialInstanceConfig() {
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
           confidentialInstanceConfig_ = null;
           if (confidentialInstanceConfigBuilder_ != null) {
             confidentialInstanceConfigBuilder_.dispose();
@@ -3968,17 +4857,17 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * A set of Compute Engine Confidential VM instance options.
+         * Optional. A set of Compute Engine Confidential VM instance options.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10;
+         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance
                 .GceConfidentialInstanceConfig.Builder
             getConfidentialInstanceConfigBuilder() {
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000200;
           onChanged();
           return getConfidentialInstanceConfigFieldBuilder().getBuilder();
         }
@@ -3986,11 +4875,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * A set of Compute Engine Confidential VM instance options.
+         * Optional. A set of Compute Engine Confidential VM instance options.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10;
+         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         public com.google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance
@@ -4009,11 +4898,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * A set of Compute Engine Confidential VM instance options.
+         * Optional. A set of Compute Engine Confidential VM instance options.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10;
+         * .google.cloud.workstations.v1.WorkstationConfig.Host.GceInstance.GceConfidentialInstanceConfig confidential_instance_config = 10 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
@@ -4044,10 +4933,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Size of the boot disk in GB. Defaults to 50.
+         * Optional. The size of the boot disk for the VM in gigabytes (GB).
+         * The minimum boot disk size is `30` GB. Defaults to `50` GB.
          * </pre>
          *
-         * <code>int32 boot_disk_size_gb = 9;</code>
+         * <code>int32 boot_disk_size_gb = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The bootDiskSizeGb.
          */
@@ -4059,10 +4949,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Size of the boot disk in GB. Defaults to 50.
+         * Optional. The size of the boot disk for the VM in gigabytes (GB).
+         * The minimum boot disk size is `30` GB. Defaults to `50` GB.
          * </pre>
          *
-         * <code>int32 boot_disk_size_gb = 9;</code>
+         * <code>int32 boot_disk_size_gb = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The bootDiskSizeGb to set.
          * @return This builder for chaining.
@@ -4070,7 +4961,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         public Builder setBootDiskSizeGb(int value) {
 
           bootDiskSizeGb_ = value;
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000400;
           onChanged();
           return this;
         }
@@ -4078,15 +4969,16 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Size of the boot disk in GB. Defaults to 50.
+         * Optional. The size of the boot disk for the VM in gigabytes (GB).
+         * The minimum boot disk size is `30` GB. Defaults to `50` GB.
          * </pre>
          *
-         * <code>int32 boot_disk_size_gb = 9;</code>
+         * <code>int32 boot_disk_size_gb = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return This builder for chaining.
          */
         public Builder clearBootDiskSizeGb() {
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
           bootDiskSizeGb_ = 0;
           onChanged();
           return this;
@@ -5005,10 +5897,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Location of this directory in the running workstation.
+     * Optional. Location of this directory in the running workstation.
      * </pre>
      *
-     * <code>string mount_path = 1;</code>
+     * <code>string mount_path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The mountPath.
      */
@@ -5017,10 +5909,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Location of this directory in the running workstation.
+     * Optional. Location of this directory in the running workstation.
      * </pre>
      *
-     * <code>string mount_path = 1;</code>
+     * <code>string mount_path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for mountPath.
      */
@@ -5082,11 +5974,19 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Size of the disk in GB. Must be empty if source_snapshot is set.
-       * Defaults to 200.
+       * Optional. The GB capacity of a persistent home directory for each
+       * workstation created with this configuration. Must be empty if
+       * [source_snapshot][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.source_snapshot]
+       * is set.
+       *
+       * Valid values are `10`, `50`, `100`, `200`, `500`, or `1000`.
+       * Defaults to `200`. If less than `200` GB, the
+       * [disk_type][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.disk_type]
+       * must be
+       * `"pd-balanced"` or `"pd-ssd"`.
        * </pre>
        *
-       * <code>int32 size_gb = 1;</code>
+       * <code>int32 size_gb = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The sizeGb.
        */
@@ -5096,12 +5996,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Type of file system that the disk should be formatted with. The
-       * workstation image must support this file system type. Must be empty
-       * if source_snapshot is set. Defaults to ext4.
+       * Optional. Type of file system that the disk should be formatted with.
+       * The workstation image must support this file system type. Must be empty
+       * if
+       * [source_snapshot][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.source_snapshot]
+       * is set. Defaults to `"ext4"`.
        * </pre>
        *
-       * <code>string fs_type = 2;</code>
+       * <code>string fs_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The fsType.
        */
@@ -5110,12 +6012,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Type of file system that the disk should be formatted with. The
-       * workstation image must support this file system type. Must be empty
-       * if source_snapshot is set. Defaults to ext4.
+       * Optional. Type of file system that the disk should be formatted with.
+       * The workstation image must support this file system type. Must be empty
+       * if
+       * [source_snapshot][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.source_snapshot]
+       * is set. Defaults to `"ext4"`.
        * </pre>
        *
-       * <code>string fs_type = 2;</code>
+       * <code>string fs_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for fsType.
        */
@@ -5125,10 +6029,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Type of the disk to use. Defaults to pd-standard.
+       * Optional. The [type of the persistent
+       * disk](https://cloud.google.com/compute/docs/disks#disk-types) for the
+       * home directory. Defaults to `"pd-standard"`.
        * </pre>
        *
-       * <code>string disk_type = 3;</code>
+       * <code>string disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The diskType.
        */
@@ -5137,10 +6043,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Type of the disk to use. Defaults to pd-standard.
+       * Optional. The [type of the persistent
+       * disk](https://cloud.google.com/compute/docs/disks#disk-types) for the
+       * home directory. Defaults to `"pd-standard"`.
        * </pre>
        *
-       * <code>string disk_type = 3;</code>
+       * <code>string disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for diskType.
        */
@@ -5150,11 +6058,15 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Name of the snapshot to use as the source for the disk. If set,
-       * size_gb and fs_type must be empty.
+       * Optional. Name of the snapshot to use as the source for the disk. If
+       * set,
+       * [size_gb][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.size_gb]
+       * and
+       * [fs_type][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.fs_type]
+       * must be empty.
        * </pre>
        *
-       * <code>string source_snapshot = 5;</code>
+       * <code>string source_snapshot = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The sourceSnapshot.
        */
@@ -5163,11 +6075,15 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Name of the snapshot to use as the source for the disk. If set,
-       * size_gb and fs_type must be empty.
+       * Optional. Name of the snapshot to use as the source for the disk. If
+       * set,
+       * [size_gb][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.size_gb]
+       * and
+       * [fs_type][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.fs_type]
+       * must be empty.
        * </pre>
        *
-       * <code>string source_snapshot = 5;</code>
+       * <code>string source_snapshot = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for sourceSnapshot.
        */
@@ -5177,12 +6093,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * What should happen to the disk after the workstation is deleted.
-       * Defaults to DELETE.
+       * Optional. Whether the persistent disk should be deleted when the
+       * workstation is deleted. Valid values are `DELETE` and `RETAIN`.
+       * Defaults to `DELETE`.
        * </pre>
        *
        * <code>
-       * .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.ReclaimPolicy reclaim_policy = 4;
+       * .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.ReclaimPolicy reclaim_policy = 4 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The enum numeric value on the wire for reclaimPolicy.
@@ -5192,12 +6109,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * What should happen to the disk after the workstation is deleted.
-       * Defaults to DELETE.
+       * Optional. Whether the persistent disk should be deleted when the
+       * workstation is deleted. Valid values are `DELETE` and `RETAIN`.
+       * Defaults to `DELETE`.
        * </pre>
        *
        * <code>
-       * .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.ReclaimPolicy reclaim_policy = 4;
+       * .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.ReclaimPolicy reclaim_policy = 4 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The reclaimPolicy.
@@ -5211,7 +6129,15 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * A PersistentDirectory backed by a Compute Engine regional persistent
-     * disk.
+     * disk. The
+     * [persistent_directories][google.cloud.workstations.v1.WorkstationConfig.persistent_directories]
+     * field is repeated, but it may contain only one entry. It creates a
+     * [persistent
+     * disk](https://cloud.google.com/compute/docs/disks/persistent-disks) that
+     * mounts to the workstation VM at `/home` when the session starts and
+     * detaches when the session ends. If this field is empty, workstations
+     * created with this configuration do not have a persistent home
+     * directory.
      * </pre>
      *
      * Protobuf type {@code
@@ -5284,7 +6210,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The persistent disk will be deleted with the workstation.
+         * Delete the persistent disk when deleting the workstation.
          * </pre>
          *
          * <code>DELETE = 1;</code>
@@ -5294,8 +6220,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The persistent disk will be remain after the workstation is deleted,
-         * and the administrator must manually delete the disk.
+         * Keep the persistent disk when deleting the workstation.
+         * An administrator must manually delete the disk.
          * </pre>
          *
          * <code>RETAIN = 2;</code>
@@ -5318,7 +6244,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The persistent disk will be deleted with the workstation.
+         * Delete the persistent disk when deleting the workstation.
          * </pre>
          *
          * <code>DELETE = 1;</code>
@@ -5328,8 +6254,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The persistent disk will be remain after the workstation is deleted,
-         * and the administrator must manually delete the disk.
+         * Keep the persistent disk when deleting the workstation.
+         * An administrator must manually delete the disk.
          * </pre>
          *
          * <code>RETAIN = 2;</code>
@@ -5432,11 +6358,19 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Size of the disk in GB. Must be empty if source_snapshot is set.
-       * Defaults to 200.
+       * Optional. The GB capacity of a persistent home directory for each
+       * workstation created with this configuration. Must be empty if
+       * [source_snapshot][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.source_snapshot]
+       * is set.
+       *
+       * Valid values are `10`, `50`, `100`, `200`, `500`, or `1000`.
+       * Defaults to `200`. If less than `200` GB, the
+       * [disk_type][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.disk_type]
+       * must be
+       * `"pd-balanced"` or `"pd-ssd"`.
        * </pre>
        *
-       * <code>int32 size_gb = 1;</code>
+       * <code>int32 size_gb = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The sizeGb.
        */
@@ -5453,12 +6387,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Type of file system that the disk should be formatted with. The
-       * workstation image must support this file system type. Must be empty
-       * if source_snapshot is set. Defaults to ext4.
+       * Optional. Type of file system that the disk should be formatted with.
+       * The workstation image must support this file system type. Must be empty
+       * if
+       * [source_snapshot][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.source_snapshot]
+       * is set. Defaults to `"ext4"`.
        * </pre>
        *
-       * <code>string fs_type = 2;</code>
+       * <code>string fs_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The fsType.
        */
@@ -5478,12 +6414,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Type of file system that the disk should be formatted with. The
-       * workstation image must support this file system type. Must be empty
-       * if source_snapshot is set. Defaults to ext4.
+       * Optional. Type of file system that the disk should be formatted with.
+       * The workstation image must support this file system type. Must be empty
+       * if
+       * [source_snapshot][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.source_snapshot]
+       * is set. Defaults to `"ext4"`.
        * </pre>
        *
-       * <code>string fs_type = 2;</code>
+       * <code>string fs_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for fsType.
        */
@@ -5508,10 +6446,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Type of the disk to use. Defaults to pd-standard.
+       * Optional. The [type of the persistent
+       * disk](https://cloud.google.com/compute/docs/disks#disk-types) for the
+       * home directory. Defaults to `"pd-standard"`.
        * </pre>
        *
-       * <code>string disk_type = 3;</code>
+       * <code>string disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The diskType.
        */
@@ -5531,10 +6471,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Type of the disk to use. Defaults to pd-standard.
+       * Optional. The [type of the persistent
+       * disk](https://cloud.google.com/compute/docs/disks#disk-types) for the
+       * home directory. Defaults to `"pd-standard"`.
        * </pre>
        *
-       * <code>string disk_type = 3;</code>
+       * <code>string disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for diskType.
        */
@@ -5559,11 +6501,15 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Name of the snapshot to use as the source for the disk. If set,
-       * size_gb and fs_type must be empty.
+       * Optional. Name of the snapshot to use as the source for the disk. If
+       * set,
+       * [size_gb][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.size_gb]
+       * and
+       * [fs_type][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.fs_type]
+       * must be empty.
        * </pre>
        *
-       * <code>string source_snapshot = 5;</code>
+       * <code>string source_snapshot = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The sourceSnapshot.
        */
@@ -5583,11 +6529,15 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Name of the snapshot to use as the source for the disk. If set,
-       * size_gb and fs_type must be empty.
+       * Optional. Name of the snapshot to use as the source for the disk. If
+       * set,
+       * [size_gb][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.size_gb]
+       * and
+       * [fs_type][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.fs_type]
+       * must be empty.
        * </pre>
        *
-       * <code>string source_snapshot = 5;</code>
+       * <code>string source_snapshot = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for sourceSnapshot.
        */
@@ -5610,12 +6560,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * What should happen to the disk after the workstation is deleted.
-       * Defaults to DELETE.
+       * Optional. Whether the persistent disk should be deleted when the
+       * workstation is deleted. Valid values are `DELETE` and `RETAIN`.
+       * Defaults to `DELETE`.
        * </pre>
        *
        * <code>
-       * .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.ReclaimPolicy reclaim_policy = 4;
+       * .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.ReclaimPolicy reclaim_policy = 4 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The enum numeric value on the wire for reclaimPolicy.
@@ -5628,12 +6579,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * What should happen to the disk after the workstation is deleted.
-       * Defaults to DELETE.
+       * Optional. Whether the persistent disk should be deleted when the
+       * workstation is deleted. Valid values are `DELETE` and `RETAIN`.
+       * Defaults to `DELETE`.
        * </pre>
        *
        * <code>
-       * .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.ReclaimPolicy reclaim_policy = 4;
+       * .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.ReclaimPolicy reclaim_policy = 4 [(.google.api.field_behavior) = OPTIONAL];
        * </code>
        *
        * @return The reclaimPolicy.
@@ -5890,7 +6842,15 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * A PersistentDirectory backed by a Compute Engine regional persistent
-       * disk.
+       * disk. The
+       * [persistent_directories][google.cloud.workstations.v1.WorkstationConfig.persistent_directories]
+       * field is repeated, but it may contain only one entry. It creates a
+       * [persistent
+       * disk](https://cloud.google.com/compute/docs/disks/persistent-disks) that
+       * mounts to the workstation VM at `/home` when the session starts and
+       * detaches when the session ends. If this field is empty, workstations
+       * created with this configuration do not have a persistent home
+       * directory.
        * </pre>
        *
        * Protobuf type {@code
@@ -6163,11 +7123,19 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Size of the disk in GB. Must be empty if source_snapshot is set.
-         * Defaults to 200.
+         * Optional. The GB capacity of a persistent home directory for each
+         * workstation created with this configuration. Must be empty if
+         * [source_snapshot][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.source_snapshot]
+         * is set.
+         *
+         * Valid values are `10`, `50`, `100`, `200`, `500`, or `1000`.
+         * Defaults to `200`. If less than `200` GB, the
+         * [disk_type][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.disk_type]
+         * must be
+         * `"pd-balanced"` or `"pd-ssd"`.
          * </pre>
          *
-         * <code>int32 size_gb = 1;</code>
+         * <code>int32 size_gb = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The sizeGb.
          */
@@ -6179,11 +7147,19 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Size of the disk in GB. Must be empty if source_snapshot is set.
-         * Defaults to 200.
+         * Optional. The GB capacity of a persistent home directory for each
+         * workstation created with this configuration. Must be empty if
+         * [source_snapshot][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.source_snapshot]
+         * is set.
+         *
+         * Valid values are `10`, `50`, `100`, `200`, `500`, or `1000`.
+         * Defaults to `200`. If less than `200` GB, the
+         * [disk_type][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.disk_type]
+         * must be
+         * `"pd-balanced"` or `"pd-ssd"`.
          * </pre>
          *
-         * <code>int32 size_gb = 1;</code>
+         * <code>int32 size_gb = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The sizeGb to set.
          * @return This builder for chaining.
@@ -6199,11 +7175,19 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Size of the disk in GB. Must be empty if source_snapshot is set.
-         * Defaults to 200.
+         * Optional. The GB capacity of a persistent home directory for each
+         * workstation created with this configuration. Must be empty if
+         * [source_snapshot][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.source_snapshot]
+         * is set.
+         *
+         * Valid values are `10`, `50`, `100`, `200`, `500`, or `1000`.
+         * Defaults to `200`. If less than `200` GB, the
+         * [disk_type][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.disk_type]
+         * must be
+         * `"pd-balanced"` or `"pd-ssd"`.
          * </pre>
          *
-         * <code>int32 size_gb = 1;</code>
+         * <code>int32 size_gb = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return This builder for chaining.
          */
@@ -6219,12 +7203,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Type of file system that the disk should be formatted with. The
-         * workstation image must support this file system type. Must be empty
-         * if source_snapshot is set. Defaults to ext4.
+         * Optional. Type of file system that the disk should be formatted with.
+         * The workstation image must support this file system type. Must be empty
+         * if
+         * [source_snapshot][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.source_snapshot]
+         * is set. Defaults to `"ext4"`.
          * </pre>
          *
-         * <code>string fs_type = 2;</code>
+         * <code>string fs_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The fsType.
          */
@@ -6243,12 +7229,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Type of file system that the disk should be formatted with. The
-         * workstation image must support this file system type. Must be empty
-         * if source_snapshot is set. Defaults to ext4.
+         * Optional. Type of file system that the disk should be formatted with.
+         * The workstation image must support this file system type. Must be empty
+         * if
+         * [source_snapshot][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.source_snapshot]
+         * is set. Defaults to `"ext4"`.
          * </pre>
          *
-         * <code>string fs_type = 2;</code>
+         * <code>string fs_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The bytes for fsType.
          */
@@ -6267,12 +7255,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Type of file system that the disk should be formatted with. The
-         * workstation image must support this file system type. Must be empty
-         * if source_snapshot is set. Defaults to ext4.
+         * Optional. Type of file system that the disk should be formatted with.
+         * The workstation image must support this file system type. Must be empty
+         * if
+         * [source_snapshot][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.source_snapshot]
+         * is set. Defaults to `"ext4"`.
          * </pre>
          *
-         * <code>string fs_type = 2;</code>
+         * <code>string fs_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The fsType to set.
          * @return This builder for chaining.
@@ -6290,12 +7280,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Type of file system that the disk should be formatted with. The
-         * workstation image must support this file system type. Must be empty
-         * if source_snapshot is set. Defaults to ext4.
+         * Optional. Type of file system that the disk should be formatted with.
+         * The workstation image must support this file system type. Must be empty
+         * if
+         * [source_snapshot][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.source_snapshot]
+         * is set. Defaults to `"ext4"`.
          * </pre>
          *
-         * <code>string fs_type = 2;</code>
+         * <code>string fs_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return This builder for chaining.
          */
@@ -6309,12 +7301,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Type of file system that the disk should be formatted with. The
-         * workstation image must support this file system type. Must be empty
-         * if source_snapshot is set. Defaults to ext4.
+         * Optional. Type of file system that the disk should be formatted with.
+         * The workstation image must support this file system type. Must be empty
+         * if
+         * [source_snapshot][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.source_snapshot]
+         * is set. Defaults to `"ext4"`.
          * </pre>
          *
-         * <code>string fs_type = 2;</code>
+         * <code>string fs_type = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The bytes for fsType to set.
          * @return This builder for chaining.
@@ -6335,10 +7329,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Type of the disk to use. Defaults to pd-standard.
+         * Optional. The [type of the persistent
+         * disk](https://cloud.google.com/compute/docs/disks#disk-types) for the
+         * home directory. Defaults to `"pd-standard"`.
          * </pre>
          *
-         * <code>string disk_type = 3;</code>
+         * <code>string disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The diskType.
          */
@@ -6357,10 +7353,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Type of the disk to use. Defaults to pd-standard.
+         * Optional. The [type of the persistent
+         * disk](https://cloud.google.com/compute/docs/disks#disk-types) for the
+         * home directory. Defaults to `"pd-standard"`.
          * </pre>
          *
-         * <code>string disk_type = 3;</code>
+         * <code>string disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The bytes for diskType.
          */
@@ -6379,10 +7377,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Type of the disk to use. Defaults to pd-standard.
+         * Optional. The [type of the persistent
+         * disk](https://cloud.google.com/compute/docs/disks#disk-types) for the
+         * home directory. Defaults to `"pd-standard"`.
          * </pre>
          *
-         * <code>string disk_type = 3;</code>
+         * <code>string disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The diskType to set.
          * @return This builder for chaining.
@@ -6400,10 +7400,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Type of the disk to use. Defaults to pd-standard.
+         * Optional. The [type of the persistent
+         * disk](https://cloud.google.com/compute/docs/disks#disk-types) for the
+         * home directory. Defaults to `"pd-standard"`.
          * </pre>
          *
-         * <code>string disk_type = 3;</code>
+         * <code>string disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return This builder for chaining.
          */
@@ -6417,10 +7419,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Type of the disk to use. Defaults to pd-standard.
+         * Optional. The [type of the persistent
+         * disk](https://cloud.google.com/compute/docs/disks#disk-types) for the
+         * home directory. Defaults to `"pd-standard"`.
          * </pre>
          *
-         * <code>string disk_type = 3;</code>
+         * <code>string disk_type = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The bytes for diskType to set.
          * @return This builder for chaining.
@@ -6441,11 +7445,15 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Name of the snapshot to use as the source for the disk. If set,
-         * size_gb and fs_type must be empty.
+         * Optional. Name of the snapshot to use as the source for the disk. If
+         * set,
+         * [size_gb][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.size_gb]
+         * and
+         * [fs_type][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.fs_type]
+         * must be empty.
          * </pre>
          *
-         * <code>string source_snapshot = 5;</code>
+         * <code>string source_snapshot = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The sourceSnapshot.
          */
@@ -6464,11 +7472,15 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Name of the snapshot to use as the source for the disk. If set,
-         * size_gb and fs_type must be empty.
+         * Optional. Name of the snapshot to use as the source for the disk. If
+         * set,
+         * [size_gb][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.size_gb]
+         * and
+         * [fs_type][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.fs_type]
+         * must be empty.
          * </pre>
          *
-         * <code>string source_snapshot = 5;</code>
+         * <code>string source_snapshot = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return The bytes for sourceSnapshot.
          */
@@ -6487,11 +7499,15 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Name of the snapshot to use as the source for the disk. If set,
-         * size_gb and fs_type must be empty.
+         * Optional. Name of the snapshot to use as the source for the disk. If
+         * set,
+         * [size_gb][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.size_gb]
+         * and
+         * [fs_type][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.fs_type]
+         * must be empty.
          * </pre>
          *
-         * <code>string source_snapshot = 5;</code>
+         * <code>string source_snapshot = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The sourceSnapshot to set.
          * @return This builder for chaining.
@@ -6509,11 +7525,15 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Name of the snapshot to use as the source for the disk. If set,
-         * size_gb and fs_type must be empty.
+         * Optional. Name of the snapshot to use as the source for the disk. If
+         * set,
+         * [size_gb][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.size_gb]
+         * and
+         * [fs_type][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.fs_type]
+         * must be empty.
          * </pre>
          *
-         * <code>string source_snapshot = 5;</code>
+         * <code>string source_snapshot = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @return This builder for chaining.
          */
@@ -6527,11 +7547,15 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Name of the snapshot to use as the source for the disk. If set,
-         * size_gb and fs_type must be empty.
+         * Optional. Name of the snapshot to use as the source for the disk. If
+         * set,
+         * [size_gb][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.size_gb]
+         * and
+         * [fs_type][google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.fs_type]
+         * must be empty.
          * </pre>
          *
-         * <code>string source_snapshot = 5;</code>
+         * <code>string source_snapshot = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
          *
          * @param value The bytes for sourceSnapshot to set.
          * @return This builder for chaining.
@@ -6552,12 +7576,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * What should happen to the disk after the workstation is deleted.
-         * Defaults to DELETE.
+         * Optional. Whether the persistent disk should be deleted when the
+         * workstation is deleted. Valid values are `DELETE` and `RETAIN`.
+         * Defaults to `DELETE`.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.ReclaimPolicy reclaim_policy = 4;
+         * .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.ReclaimPolicy reclaim_policy = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          *
          * @return The enum numeric value on the wire for reclaimPolicy.
@@ -6570,12 +7595,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * What should happen to the disk after the workstation is deleted.
-         * Defaults to DELETE.
+         * Optional. Whether the persistent disk should be deleted when the
+         * workstation is deleted. Valid values are `DELETE` and `RETAIN`.
+         * Defaults to `DELETE`.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.ReclaimPolicy reclaim_policy = 4;
+         * .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.ReclaimPolicy reclaim_policy = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          *
          * @param value The enum numeric value on the wire for reclaimPolicy to set.
@@ -6591,12 +7617,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * What should happen to the disk after the workstation is deleted.
-         * Defaults to DELETE.
+         * Optional. Whether the persistent disk should be deleted when the
+         * workstation is deleted. Valid values are `DELETE` and `RETAIN`.
+         * Defaults to `DELETE`.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.ReclaimPolicy reclaim_policy = 4;
+         * .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.ReclaimPolicy reclaim_policy = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          *
          * @return The reclaimPolicy.
@@ -6619,12 +7646,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * What should happen to the disk after the workstation is deleted.
-         * Defaults to DELETE.
+         * Optional. Whether the persistent disk should be deleted when the
+         * workstation is deleted. Valid values are `DELETE` and `RETAIN`.
+         * Defaults to `DELETE`.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.ReclaimPolicy reclaim_policy = 4;
+         * .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.ReclaimPolicy reclaim_policy = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          *
          * @param value The reclaimPolicy to set.
@@ -6646,12 +7674,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * What should happen to the disk after the workstation is deleted.
-         * Defaults to DELETE.
+         * Optional. Whether the persistent disk should be deleted when the
+         * workstation is deleted. Valid values are `DELETE` and `RETAIN`.
+         * Defaults to `DELETE`.
          * </pre>
          *
          * <code>
-         * .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.ReclaimPolicy reclaim_policy = 4;
+         * .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.GceRegionalPersistentDisk.ReclaimPolicy reclaim_policy = 4 [(.google.api.field_behavior) = OPTIONAL];
          * </code>
          *
          * @return This builder for chaining.
@@ -6856,10 +7885,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Location of this directory in the running workstation.
+     * Optional. Location of this directory in the running workstation.
      * </pre>
      *
-     * <code>string mount_path = 1;</code>
+     * <code>string mount_path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The mountPath.
      */
@@ -6879,10 +7908,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Location of this directory in the running workstation.
+     * Optional. Location of this directory in the running workstation.
      * </pre>
      *
-     * <code>string mount_path = 1;</code>
+     * <code>string mount_path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for mountPath.
      */
@@ -7606,10 +8635,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Location of this directory in the running workstation.
+       * Optional. Location of this directory in the running workstation.
        * </pre>
        *
-       * <code>string mount_path = 1;</code>
+       * <code>string mount_path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The mountPath.
        */
@@ -7628,10 +8657,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Location of this directory in the running workstation.
+       * Optional. Location of this directory in the running workstation.
        * </pre>
        *
-       * <code>string mount_path = 1;</code>
+       * <code>string mount_path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for mountPath.
        */
@@ -7650,10 +8679,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Location of this directory in the running workstation.
+       * Optional. Location of this directory in the running workstation.
        * </pre>
        *
-       * <code>string mount_path = 1;</code>
+       * <code>string mount_path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The mountPath to set.
        * @return This builder for chaining.
@@ -7671,10 +8700,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Location of this directory in the running workstation.
+       * Optional. Location of this directory in the running workstation.
        * </pre>
        *
-       * <code>string mount_path = 1;</code>
+       * <code>string mount_path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -7688,10 +8717,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Location of this directory in the running workstation.
+       * Optional. Location of this directory in the running workstation.
        * </pre>
        *
-       * <code>string mount_path = 1;</code>
+       * <code>string mount_path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for mountPath to set.
        * @return This builder for chaining.
@@ -7784,11 +8813,21 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Docker image defining the container. This image must be accessible by the
-     * service account specified in the workstation configuration.
+     * Optional. A Docker container image that defines a custom environment.
+     *
+     * Cloud Workstations provides a number of
+     * [preconfigured
+     * images](https://cloud.google.com/workstations/docs/preconfigured-base-images),
+     * but you can create your own
+     * [custom container
+     * images](https://cloud.google.com/workstations/docs/custom-container-images).
+     * If using a private image, the `host.gceInstance.serviceAccount` field
+     * must be specified in the workstation configuration and must have
+     * permission to pull the specified image. Otherwise, the image must be
+     * publicly accessible.
      * </pre>
      *
-     * <code>string image = 1;</code>
+     * <code>string image = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The image.
      */
@@ -7797,11 +8836,21 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Docker image defining the container. This image must be accessible by the
-     * service account specified in the workstation configuration.
+     * Optional. A Docker container image that defines a custom environment.
+     *
+     * Cloud Workstations provides a number of
+     * [preconfigured
+     * images](https://cloud.google.com/workstations/docs/preconfigured-base-images),
+     * but you can create your own
+     * [custom container
+     * images](https://cloud.google.com/workstations/docs/custom-container-images).
+     * If using a private image, the `host.gceInstance.serviceAccount` field
+     * must be specified in the workstation configuration and must have
+     * permission to pull the specified image. Otherwise, the image must be
+     * publicly accessible.
      * </pre>
      *
-     * <code>string image = 1;</code>
+     * <code>string image = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for image.
      */
@@ -7811,10 +8860,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If set, overrides the default ENTRYPOINT specified by the image.
+     * Optional. If set, overrides the default ENTRYPOINT specified by the
+     * image.
      * </pre>
      *
-     * <code>repeated string command = 2;</code>
+     * <code>repeated string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the command.
      */
@@ -7823,10 +8873,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If set, overrides the default ENTRYPOINT specified by the image.
+     * Optional. If set, overrides the default ENTRYPOINT specified by the
+     * image.
      * </pre>
      *
-     * <code>repeated string command = 2;</code>
+     * <code>repeated string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of command.
      */
@@ -7835,10 +8886,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If set, overrides the default ENTRYPOINT specified by the image.
+     * Optional. If set, overrides the default ENTRYPOINT specified by the
+     * image.
      * </pre>
      *
-     * <code>repeated string command = 2;</code>
+     * <code>repeated string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The command at the given index.
@@ -7848,10 +8900,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If set, overrides the default ENTRYPOINT specified by the image.
+     * Optional. If set, overrides the default ENTRYPOINT specified by the
+     * image.
      * </pre>
      *
-     * <code>repeated string command = 2;</code>
+     * <code>repeated string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the command at the given index.
@@ -7862,10 +8915,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Arguments passed to the entrypoint.
+     * Optional. Arguments passed to the entrypoint.
      * </pre>
      *
-     * <code>repeated string args = 3;</code>
+     * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the args.
      */
@@ -7874,10 +8927,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Arguments passed to the entrypoint.
+     * Optional. Arguments passed to the entrypoint.
      * </pre>
      *
-     * <code>repeated string args = 3;</code>
+     * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of args.
      */
@@ -7886,10 +8939,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Arguments passed to the entrypoint.
+     * Optional. Arguments passed to the entrypoint.
      * </pre>
      *
-     * <code>repeated string args = 3;</code>
+     * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The args at the given index.
@@ -7899,10 +8952,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Arguments passed to the entrypoint.
+     * Optional. Arguments passed to the entrypoint.
      * </pre>
      *
-     * <code>repeated string args = 3;</code>
+     * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the args at the given index.
@@ -7913,20 +8966,20 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Environment variables passed to the container's entrypoint.
+     * Optional. Environment variables passed to the container's entrypoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; env = 4;</code>
+     * <code>map&lt;string, string&gt; env = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     int getEnvCount();
     /**
      *
      *
      * <pre>
-     * Environment variables passed to the container's entrypoint.
+     * Optional. Environment variables passed to the container's entrypoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; env = 4;</code>
+     * <code>map&lt;string, string&gt; env = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     boolean containsEnv(java.lang.String key);
     /** Use {@link #getEnvMap()} instead. */
@@ -7936,20 +8989,20 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Environment variables passed to the container's entrypoint.
+     * Optional. Environment variables passed to the container's entrypoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; env = 4;</code>
+     * <code>map&lt;string, string&gt; env = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     java.util.Map<java.lang.String, java.lang.String> getEnvMap();
     /**
      *
      *
      * <pre>
-     * Environment variables passed to the container's entrypoint.
+     * Optional. Environment variables passed to the container's entrypoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; env = 4;</code>
+     * <code>map&lt;string, string&gt; env = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     /* nullable */
     java.lang.String getEnvOrDefault(
@@ -7960,10 +9013,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Environment variables passed to the container's entrypoint.
+     * Optional. Environment variables passed to the container's entrypoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; env = 4;</code>
+     * <code>map&lt;string, string&gt; env = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     java.lang.String getEnvOrThrow(java.lang.String key);
 
@@ -7971,10 +9024,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If set, overrides the default DIR specified by the image.
+     * Optional. If set, overrides the default DIR specified by the image.
      * </pre>
      *
-     * <code>string working_dir = 5;</code>
+     * <code>string working_dir = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The workingDir.
      */
@@ -7983,10 +9036,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If set, overrides the default DIR specified by the image.
+     * Optional. If set, overrides the default DIR specified by the image.
      * </pre>
      *
-     * <code>string working_dir = 5;</code>
+     * <code>string working_dir = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for workingDir.
      */
@@ -7996,10 +9049,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If set, overrides the USER specified in the image with the given uid.
+     * Optional. If set, overrides the USER specified in the image with the
+     * given uid.
      * </pre>
      *
-     * <code>int32 run_as_user = 6;</code>
+     * <code>int32 run_as_user = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The runAsUser.
      */
@@ -8071,11 +9125,21 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Docker image defining the container. This image must be accessible by the
-     * service account specified in the workstation configuration.
+     * Optional. A Docker container image that defines a custom environment.
+     *
+     * Cloud Workstations provides a number of
+     * [preconfigured
+     * images](https://cloud.google.com/workstations/docs/preconfigured-base-images),
+     * but you can create your own
+     * [custom container
+     * images](https://cloud.google.com/workstations/docs/custom-container-images).
+     * If using a private image, the `host.gceInstance.serviceAccount` field
+     * must be specified in the workstation configuration and must have
+     * permission to pull the specified image. Otherwise, the image must be
+     * publicly accessible.
      * </pre>
      *
-     * <code>string image = 1;</code>
+     * <code>string image = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The image.
      */
@@ -8095,11 +9159,21 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Docker image defining the container. This image must be accessible by the
-     * service account specified in the workstation configuration.
+     * Optional. A Docker container image that defines a custom environment.
+     *
+     * Cloud Workstations provides a number of
+     * [preconfigured
+     * images](https://cloud.google.com/workstations/docs/preconfigured-base-images),
+     * but you can create your own
+     * [custom container
+     * images](https://cloud.google.com/workstations/docs/custom-container-images).
+     * If using a private image, the `host.gceInstance.serviceAccount` field
+     * must be specified in the workstation configuration and must have
+     * permission to pull the specified image. Otherwise, the image must be
+     * publicly accessible.
      * </pre>
      *
-     * <code>string image = 1;</code>
+     * <code>string image = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for image.
      */
@@ -8125,10 +9199,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If set, overrides the default ENTRYPOINT specified by the image.
+     * Optional. If set, overrides the default ENTRYPOINT specified by the
+     * image.
      * </pre>
      *
-     * <code>repeated string command = 2;</code>
+     * <code>repeated string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the command.
      */
@@ -8139,10 +9214,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If set, overrides the default ENTRYPOINT specified by the image.
+     * Optional. If set, overrides the default ENTRYPOINT specified by the
+     * image.
      * </pre>
      *
-     * <code>repeated string command = 2;</code>
+     * <code>repeated string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of command.
      */
@@ -8153,10 +9229,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If set, overrides the default ENTRYPOINT specified by the image.
+     * Optional. If set, overrides the default ENTRYPOINT specified by the
+     * image.
      * </pre>
      *
-     * <code>repeated string command = 2;</code>
+     * <code>repeated string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The command at the given index.
@@ -8168,10 +9245,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If set, overrides the default ENTRYPOINT specified by the image.
+     * Optional. If set, overrides the default ENTRYPOINT specified by the
+     * image.
      * </pre>
      *
-     * <code>repeated string command = 2;</code>
+     * <code>repeated string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the command at the given index.
@@ -8189,10 +9267,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Arguments passed to the entrypoint.
+     * Optional. Arguments passed to the entrypoint.
      * </pre>
      *
-     * <code>repeated string args = 3;</code>
+     * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the args.
      */
@@ -8203,10 +9281,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Arguments passed to the entrypoint.
+     * Optional. Arguments passed to the entrypoint.
      * </pre>
      *
-     * <code>repeated string args = 3;</code>
+     * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of args.
      */
@@ -8217,10 +9295,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Arguments passed to the entrypoint.
+     * Optional. Arguments passed to the entrypoint.
      * </pre>
      *
-     * <code>repeated string args = 3;</code>
+     * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The args at the given index.
@@ -8232,10 +9310,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Arguments passed to the entrypoint.
+     * Optional. Arguments passed to the entrypoint.
      * </pre>
      *
-     * <code>repeated string args = 3;</code>
+     * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the args at the given index.
@@ -8274,10 +9352,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Environment variables passed to the container's entrypoint.
+     * Optional. Environment variables passed to the container's entrypoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; env = 4;</code>
+     * <code>map&lt;string, string&gt; env = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public boolean containsEnv(java.lang.String key) {
@@ -8296,10 +9374,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Environment variables passed to the container's entrypoint.
+     * Optional. Environment variables passed to the container's entrypoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; env = 4;</code>
+     * <code>map&lt;string, string&gt; env = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getEnvMap() {
@@ -8309,10 +9387,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Environment variables passed to the container's entrypoint.
+     * Optional. Environment variables passed to the container's entrypoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; env = 4;</code>
+     * <code>map&lt;string, string&gt; env = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getEnvOrDefault(
@@ -8329,10 +9407,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Environment variables passed to the container's entrypoint.
+     * Optional. Environment variables passed to the container's entrypoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; env = 4;</code>
+     * <code>map&lt;string, string&gt; env = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.lang.String getEnvOrThrow(java.lang.String key) {
@@ -8354,10 +9432,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If set, overrides the default DIR specified by the image.
+     * Optional. If set, overrides the default DIR specified by the image.
      * </pre>
      *
-     * <code>string working_dir = 5;</code>
+     * <code>string working_dir = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The workingDir.
      */
@@ -8377,10 +9455,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If set, overrides the default DIR specified by the image.
+     * Optional. If set, overrides the default DIR specified by the image.
      * </pre>
      *
-     * <code>string working_dir = 5;</code>
+     * <code>string working_dir = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for workingDir.
      */
@@ -8403,10 +9481,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * If set, overrides the USER specified in the image with the given uid.
+     * Optional. If set, overrides the USER specified in the image with the
+     * given uid.
      * </pre>
      *
-     * <code>int32 run_as_user = 6;</code>
+     * <code>int32 run_as_user = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The runAsUser.
      */
@@ -8945,11 +10024,21 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Docker image defining the container. This image must be accessible by the
-       * service account specified in the workstation configuration.
+       * Optional. A Docker container image that defines a custom environment.
+       *
+       * Cloud Workstations provides a number of
+       * [preconfigured
+       * images](https://cloud.google.com/workstations/docs/preconfigured-base-images),
+       * but you can create your own
+       * [custom container
+       * images](https://cloud.google.com/workstations/docs/custom-container-images).
+       * If using a private image, the `host.gceInstance.serviceAccount` field
+       * must be specified in the workstation configuration and must have
+       * permission to pull the specified image. Otherwise, the image must be
+       * publicly accessible.
        * </pre>
        *
-       * <code>string image = 1;</code>
+       * <code>string image = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The image.
        */
@@ -8968,11 +10057,21 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Docker image defining the container. This image must be accessible by the
-       * service account specified in the workstation configuration.
+       * Optional. A Docker container image that defines a custom environment.
+       *
+       * Cloud Workstations provides a number of
+       * [preconfigured
+       * images](https://cloud.google.com/workstations/docs/preconfigured-base-images),
+       * but you can create your own
+       * [custom container
+       * images](https://cloud.google.com/workstations/docs/custom-container-images).
+       * If using a private image, the `host.gceInstance.serviceAccount` field
+       * must be specified in the workstation configuration and must have
+       * permission to pull the specified image. Otherwise, the image must be
+       * publicly accessible.
        * </pre>
        *
-       * <code>string image = 1;</code>
+       * <code>string image = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for image.
        */
@@ -8991,11 +10090,21 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Docker image defining the container. This image must be accessible by the
-       * service account specified in the workstation configuration.
+       * Optional. A Docker container image that defines a custom environment.
+       *
+       * Cloud Workstations provides a number of
+       * [preconfigured
+       * images](https://cloud.google.com/workstations/docs/preconfigured-base-images),
+       * but you can create your own
+       * [custom container
+       * images](https://cloud.google.com/workstations/docs/custom-container-images).
+       * If using a private image, the `host.gceInstance.serviceAccount` field
+       * must be specified in the workstation configuration and must have
+       * permission to pull the specified image. Otherwise, the image must be
+       * publicly accessible.
        * </pre>
        *
-       * <code>string image = 1;</code>
+       * <code>string image = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The image to set.
        * @return This builder for chaining.
@@ -9013,11 +10122,21 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Docker image defining the container. This image must be accessible by the
-       * service account specified in the workstation configuration.
+       * Optional. A Docker container image that defines a custom environment.
+       *
+       * Cloud Workstations provides a number of
+       * [preconfigured
+       * images](https://cloud.google.com/workstations/docs/preconfigured-base-images),
+       * but you can create your own
+       * [custom container
+       * images](https://cloud.google.com/workstations/docs/custom-container-images).
+       * If using a private image, the `host.gceInstance.serviceAccount` field
+       * must be specified in the workstation configuration and must have
+       * permission to pull the specified image. Otherwise, the image must be
+       * publicly accessible.
        * </pre>
        *
-       * <code>string image = 1;</code>
+       * <code>string image = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -9031,11 +10150,21 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Docker image defining the container. This image must be accessible by the
-       * service account specified in the workstation configuration.
+       * Optional. A Docker container image that defines a custom environment.
+       *
+       * Cloud Workstations provides a number of
+       * [preconfigured
+       * images](https://cloud.google.com/workstations/docs/preconfigured-base-images),
+       * but you can create your own
+       * [custom container
+       * images](https://cloud.google.com/workstations/docs/custom-container-images).
+       * If using a private image, the `host.gceInstance.serviceAccount` field
+       * must be specified in the workstation configuration and must have
+       * permission to pull the specified image. Otherwise, the image must be
+       * publicly accessible.
        * </pre>
        *
-       * <code>string image = 1;</code>
+       * <code>string image = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for image to set.
        * @return This builder for chaining.
@@ -9064,10 +10193,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * If set, overrides the default ENTRYPOINT specified by the image.
+       * Optional. If set, overrides the default ENTRYPOINT specified by the
+       * image.
        * </pre>
        *
-       * <code>repeated string command = 2;</code>
+       * <code>repeated string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return A list containing the command.
        */
@@ -9079,10 +10209,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * If set, overrides the default ENTRYPOINT specified by the image.
+       * Optional. If set, overrides the default ENTRYPOINT specified by the
+       * image.
        * </pre>
        *
-       * <code>repeated string command = 2;</code>
+       * <code>repeated string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The count of command.
        */
@@ -9093,10 +10224,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * If set, overrides the default ENTRYPOINT specified by the image.
+       * Optional. If set, overrides the default ENTRYPOINT specified by the
+       * image.
        * </pre>
        *
-       * <code>repeated string command = 2;</code>
+       * <code>repeated string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the element to return.
        * @return The command at the given index.
@@ -9108,10 +10240,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * If set, overrides the default ENTRYPOINT specified by the image.
+       * Optional. If set, overrides the default ENTRYPOINT specified by the
+       * image.
        * </pre>
        *
-       * <code>repeated string command = 2;</code>
+       * <code>repeated string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the value to return.
        * @return The bytes of the command at the given index.
@@ -9123,10 +10256,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * If set, overrides the default ENTRYPOINT specified by the image.
+       * Optional. If set, overrides the default ENTRYPOINT specified by the
+       * image.
        * </pre>
        *
-       * <code>repeated string command = 2;</code>
+       * <code>repeated string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index to set the value at.
        * @param value The command to set.
@@ -9146,10 +10280,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * If set, overrides the default ENTRYPOINT specified by the image.
+       * Optional. If set, overrides the default ENTRYPOINT specified by the
+       * image.
        * </pre>
        *
-       * <code>repeated string command = 2;</code>
+       * <code>repeated string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The command to add.
        * @return This builder for chaining.
@@ -9168,10 +10303,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * If set, overrides the default ENTRYPOINT specified by the image.
+       * Optional. If set, overrides the default ENTRYPOINT specified by the
+       * image.
        * </pre>
        *
-       * <code>repeated string command = 2;</code>
+       * <code>repeated string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param values The command to add.
        * @return This builder for chaining.
@@ -9187,10 +10323,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * If set, overrides the default ENTRYPOINT specified by the image.
+       * Optional. If set, overrides the default ENTRYPOINT specified by the
+       * image.
        * </pre>
        *
-       * <code>repeated string command = 2;</code>
+       * <code>repeated string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -9205,10 +10342,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * If set, overrides the default ENTRYPOINT specified by the image.
+       * Optional. If set, overrides the default ENTRYPOINT specified by the
+       * image.
        * </pre>
        *
-       * <code>repeated string command = 2;</code>
+       * <code>repeated string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes of the command to add.
        * @return This builder for chaining.
@@ -9238,10 +10376,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Arguments passed to the entrypoint.
+       * Optional. Arguments passed to the entrypoint.
        * </pre>
        *
-       * <code>repeated string args = 3;</code>
+       * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return A list containing the args.
        */
@@ -9253,10 +10391,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Arguments passed to the entrypoint.
+       * Optional. Arguments passed to the entrypoint.
        * </pre>
        *
-       * <code>repeated string args = 3;</code>
+       * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The count of args.
        */
@@ -9267,10 +10405,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Arguments passed to the entrypoint.
+       * Optional. Arguments passed to the entrypoint.
        * </pre>
        *
-       * <code>repeated string args = 3;</code>
+       * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the element to return.
        * @return The args at the given index.
@@ -9282,10 +10420,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Arguments passed to the entrypoint.
+       * Optional. Arguments passed to the entrypoint.
        * </pre>
        *
-       * <code>repeated string args = 3;</code>
+       * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index of the value to return.
        * @return The bytes of the args at the given index.
@@ -9297,10 +10435,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Arguments passed to the entrypoint.
+       * Optional. Arguments passed to the entrypoint.
        * </pre>
        *
-       * <code>repeated string args = 3;</code>
+       * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param index The index to set the value at.
        * @param value The args to set.
@@ -9320,10 +10458,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Arguments passed to the entrypoint.
+       * Optional. Arguments passed to the entrypoint.
        * </pre>
        *
-       * <code>repeated string args = 3;</code>
+       * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The args to add.
        * @return This builder for chaining.
@@ -9342,10 +10480,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Arguments passed to the entrypoint.
+       * Optional. Arguments passed to the entrypoint.
        * </pre>
        *
-       * <code>repeated string args = 3;</code>
+       * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param values The args to add.
        * @return This builder for chaining.
@@ -9361,10 +10499,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Arguments passed to the entrypoint.
+       * Optional. Arguments passed to the entrypoint.
        * </pre>
        *
-       * <code>repeated string args = 3;</code>
+       * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -9379,10 +10517,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Arguments passed to the entrypoint.
+       * Optional. Arguments passed to the entrypoint.
        * </pre>
        *
-       * <code>repeated string args = 3;</code>
+       * <code>repeated string args = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes of the args to add.
        * @return This builder for chaining.
@@ -9428,10 +10566,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Environment variables passed to the container's entrypoint.
+       * Optional. Environment variables passed to the container's entrypoint.
        * </pre>
        *
-       * <code>map&lt;string, string&gt; env = 4;</code>
+       * <code>map&lt;string, string&gt; env = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       @java.lang.Override
       public boolean containsEnv(java.lang.String key) {
@@ -9450,10 +10588,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Environment variables passed to the container's entrypoint.
+       * Optional. Environment variables passed to the container's entrypoint.
        * </pre>
        *
-       * <code>map&lt;string, string&gt; env = 4;</code>
+       * <code>map&lt;string, string&gt; env = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       @java.lang.Override
       public java.util.Map<java.lang.String, java.lang.String> getEnvMap() {
@@ -9463,10 +10601,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Environment variables passed to the container's entrypoint.
+       * Optional. Environment variables passed to the container's entrypoint.
        * </pre>
        *
-       * <code>map&lt;string, string&gt; env = 4;</code>
+       * <code>map&lt;string, string&gt; env = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       @java.lang.Override
       public /* nullable */ java.lang.String getEnvOrDefault(
@@ -9483,10 +10621,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Environment variables passed to the container's entrypoint.
+       * Optional. Environment variables passed to the container's entrypoint.
        * </pre>
        *
-       * <code>map&lt;string, string&gt; env = 4;</code>
+       * <code>map&lt;string, string&gt; env = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       @java.lang.Override
       public java.lang.String getEnvOrThrow(java.lang.String key) {
@@ -9509,10 +10647,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Environment variables passed to the container's entrypoint.
+       * Optional. Environment variables passed to the container's entrypoint.
        * </pre>
        *
-       * <code>map&lt;string, string&gt; env = 4;</code>
+       * <code>map&lt;string, string&gt; env = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder removeEnv(java.lang.String key) {
         if (key == null) {
@@ -9531,10 +10669,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Environment variables passed to the container's entrypoint.
+       * Optional. Environment variables passed to the container's entrypoint.
        * </pre>
        *
-       * <code>map&lt;string, string&gt; env = 4;</code>
+       * <code>map&lt;string, string&gt; env = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder putEnv(java.lang.String key, java.lang.String value) {
         if (key == null) {
@@ -9551,10 +10689,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Environment variables passed to the container's entrypoint.
+       * Optional. Environment variables passed to the container's entrypoint.
        * </pre>
        *
-       * <code>map&lt;string, string&gt; env = 4;</code>
+       * <code>map&lt;string, string&gt; env = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
        */
       public Builder putAllEnv(java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableEnv().getMutableMap().putAll(values);
@@ -9567,10 +10705,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * If set, overrides the default DIR specified by the image.
+       * Optional. If set, overrides the default DIR specified by the image.
        * </pre>
        *
-       * <code>string working_dir = 5;</code>
+       * <code>string working_dir = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The workingDir.
        */
@@ -9589,10 +10727,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * If set, overrides the default DIR specified by the image.
+       * Optional. If set, overrides the default DIR specified by the image.
        * </pre>
        *
-       * <code>string working_dir = 5;</code>
+       * <code>string working_dir = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for workingDir.
        */
@@ -9611,10 +10749,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * If set, overrides the default DIR specified by the image.
+       * Optional. If set, overrides the default DIR specified by the image.
        * </pre>
        *
-       * <code>string working_dir = 5;</code>
+       * <code>string working_dir = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The workingDir to set.
        * @return This builder for chaining.
@@ -9632,10 +10770,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * If set, overrides the default DIR specified by the image.
+       * Optional. If set, overrides the default DIR specified by the image.
        * </pre>
        *
-       * <code>string working_dir = 5;</code>
+       * <code>string working_dir = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -9649,10 +10787,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * If set, overrides the default DIR specified by the image.
+       * Optional. If set, overrides the default DIR specified by the image.
        * </pre>
        *
-       * <code>string working_dir = 5;</code>
+       * <code>string working_dir = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for workingDir to set.
        * @return This builder for chaining.
@@ -9673,10 +10811,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * If set, overrides the USER specified in the image with the given uid.
+       * Optional. If set, overrides the USER specified in the image with the
+       * given uid.
        * </pre>
        *
-       * <code>int32 run_as_user = 6;</code>
+       * <code>int32 run_as_user = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The runAsUser.
        */
@@ -9688,10 +10827,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * If set, overrides the USER specified in the image with the given uid.
+       * Optional. If set, overrides the USER specified in the image with the
+       * given uid.
        * </pre>
        *
-       * <code>int32 run_as_user = 6;</code>
+       * <code>int32 run_as_user = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The runAsUser to set.
        * @return This builder for chaining.
@@ -9707,10 +10847,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * If set, overrides the USER specified in the image with the given uid.
+       * Optional. If set, overrides the USER specified in the image with the
+       * given uid.
        * </pre>
        *
-       * <code>int32 run_as_user = 6;</code>
+       * <code>int32 run_as_user = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -9798,7 +10939,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Immutable. The name of the Google Cloud KMS encryption key. For example,
-     * `projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME`.
+     * `"projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME"`.
+     * The key must be in the same region as the workstation configuration.
      * </pre>
      *
      * <code>string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -9811,7 +10953,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Immutable. The name of the Google Cloud KMS encryption key. For example,
-     * `projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME`.
+     * `"projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME"`.
+     * The key must be in the same region as the workstation configuration.
      * </pre>
      *
      * <code>string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -9861,8 +11004,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A customer-managed encryption key for the Compute Engine resources
-   * of this workstation configuration.
+   * A customer-managed encryption key (CMEK) for the Compute Engine
+   * resources of the associated workstation configuration. Specify the name of
+   * your Cloud KMS encryption key and the default service account.
+   * We recommend that you use a separate service account and follow
+   * [Cloud KMS best
+   * practices](https://cloud.google.com/kms/docs/separation-of-duties).
    * </pre>
    *
    * Protobuf type {@code google.cloud.workstations.v1.WorkstationConfig.CustomerEncryptionKey}
@@ -9913,7 +11060,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Immutable. The name of the Google Cloud KMS encryption key. For example,
-     * `projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME`.
+     * `"projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME"`.
+     * The key must be in the same region as the workstation configuration.
      * </pre>
      *
      * <code>string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -9937,7 +11085,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Immutable. The name of the Google Cloud KMS encryption key. For example,
-     * `projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME`.
+     * `"projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME"`.
+     * The key must be in the same region as the workstation configuration.
      * </pre>
      *
      * <code>string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -10201,8 +11350,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * A customer-managed encryption key for the Compute Engine resources
-     * of this workstation configuration.
+     * A customer-managed encryption key (CMEK) for the Compute Engine
+     * resources of the associated workstation configuration. Specify the name of
+     * your Cloud KMS encryption key and the default service account.
+     * We recommend that you use a separate service account and follow
+     * [Cloud KMS best
+     * practices](https://cloud.google.com/kms/docs/separation-of-duties).
      * </pre>
      *
      * Protobuf type {@code google.cloud.workstations.v1.WorkstationConfig.CustomerEncryptionKey}
@@ -10416,7 +11569,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Immutable. The name of the Google Cloud KMS encryption key. For example,
-       * `projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME`.
+       * `"projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME"`.
+       * The key must be in the same region as the workstation configuration.
        * </pre>
        *
        * <code>string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -10439,7 +11593,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Immutable. The name of the Google Cloud KMS encryption key. For example,
-       * `projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME`.
+       * `"projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME"`.
+       * The key must be in the same region as the workstation configuration.
        * </pre>
        *
        * <code>string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -10462,7 +11617,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Immutable. The name of the Google Cloud KMS encryption key. For example,
-       * `projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME`.
+       * `"projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME"`.
+       * The key must be in the same region as the workstation configuration.
        * </pre>
        *
        * <code>string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -10484,7 +11640,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Immutable. The name of the Google Cloud KMS encryption key. For example,
-       * `projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME`.
+       * `"projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME"`.
+       * The key must be in the same region as the workstation configuration.
        * </pre>
        *
        * <code>string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -10502,7 +11659,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
        *
        * <pre>
        * Immutable. The name of the Google Cloud KMS encryption key. For example,
-       * `projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME`.
+       * `"projects/PROJECT_ID/locations/REGION/keyRings/KEY_RING/cryptoKeys/KEY_NAME"`.
+       * The key must be in the same region as the workstation configuration.
        * </pre>
        *
        * <code>string kms_key = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -10725,6 +11883,765 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public interface ReadinessCheckOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Path to which the request should be sent.
+     * </pre>
+     *
+     * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The path.
+     */
+    java.lang.String getPath();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Path to which the request should be sent.
+     * </pre>
+     *
+     * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for path.
+     */
+    com.google.protobuf.ByteString getPathBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Port to which the request should be sent.
+     * </pre>
+     *
+     * <code>int32 port = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The port.
+     */
+    int getPort();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A readiness check to be performed on a workstation.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck}
+   */
+  public static final class ReadinessCheck extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck)
+      ReadinessCheckOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use ReadinessCheck.newBuilder() to construct.
+    private ReadinessCheck(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ReadinessCheck() {
+      path_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ReadinessCheck();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.workstations.v1.WorkstationsProto
+          .internal_static_google_cloud_workstations_v1_WorkstationConfig_ReadinessCheck_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.workstations.v1.WorkstationsProto
+          .internal_static_google_cloud_workstations_v1_WorkstationConfig_ReadinessCheck_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck.class,
+              com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck.Builder.class);
+    }
+
+    public static final int PATH_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object path_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Path to which the request should be sent.
+     * </pre>
+     *
+     * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The path.
+     */
+    @java.lang.Override
+    public java.lang.String getPath() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        path_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Path to which the request should be sent.
+     * </pre>
+     *
+     * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for path.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPathBytes() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        path_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PORT_FIELD_NUMBER = 2;
+    private int port_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Port to which the request should be sent.
+     * </pre>
+     *
+     * <code>int32 port = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The port.
+     */
+    @java.lang.Override
+    public int getPort() {
+      return port_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, path_);
+      }
+      if (port_ != 0) {
+        output.writeInt32(2, port_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, path_);
+      }
+      if (port_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, port_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck other =
+          (com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck) obj;
+
+      if (!getPath().equals(other.getPath())) return false;
+      if (getPort() != other.getPort()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getPath().hashCode();
+      hash = (37 * hash) + PORT_FIELD_NUMBER;
+      hash = (53 * hash) + getPort();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A readiness check to be performed on a workstation.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck)
+        com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheckOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.workstations.v1.WorkstationsProto
+            .internal_static_google_cloud_workstations_v1_WorkstationConfig_ReadinessCheck_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.workstations.v1.WorkstationsProto
+            .internal_static_google_cloud_workstations_v1_WorkstationConfig_ReadinessCheck_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck.class,
+                com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        path_ = "";
+        port_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.workstations.v1.WorkstationsProto
+            .internal_static_google_cloud_workstations_v1_WorkstationConfig_ReadinessCheck_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck
+          getDefaultInstanceForType() {
+        return com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck build() {
+        com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck buildPartial() {
+        com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck result =
+            new com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.path_ = path_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.port_ = port_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck) {
+          return mergeFrom(
+              (com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck other) {
+        if (other
+            == com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck
+                .getDefaultInstance()) return this;
+        if (!other.getPath().isEmpty()) {
+          path_ = other.path_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getPort() != 0) {
+          setPort(other.getPort());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  path_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  port_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object path_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Path to which the request should be sent.
+       * </pre>
+       *
+       * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The path.
+       */
+      public java.lang.String getPath() {
+        java.lang.Object ref = path_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          path_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Path to which the request should be sent.
+       * </pre>
+       *
+       * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for path.
+       */
+      public com.google.protobuf.ByteString getPathBytes() {
+        java.lang.Object ref = path_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          path_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Path to which the request should be sent.
+       * </pre>
+       *
+       * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The path to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPath(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        path_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Path to which the request should be sent.
+       * </pre>
+       *
+       * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPath() {
+        path_ = getDefaultInstance().getPath();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Path to which the request should be sent.
+       * </pre>
+       *
+       * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for path to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPathBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        path_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int port_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Port to which the request should be sent.
+       * </pre>
+       *
+       * <code>int32 port = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The port.
+       */
+      @java.lang.Override
+      public int getPort() {
+        return port_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Port to which the request should be sent.
+       * </pre>
+       *
+       * <code>int32 port = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The port to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPort(int value) {
+
+        port_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Port to which the request should be sent.
+       * </pre>
+       *
+       * <code>int32 port = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPort() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        port_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck)
+    private static final com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck();
+    }
+
+    public static com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReadinessCheck> PARSER =
+        new com.google.protobuf.AbstractParser<ReadinessCheck>() {
+          @java.lang.Override
+          public ReadinessCheck parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ReadinessCheck> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ReadinessCheck> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -10733,7 +12650,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Full name of this resource.
+   * Full name of this workstation configuration.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -10756,7 +12673,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Full name of this resource.
+   * Full name of this workstation configuration.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -10784,10 +12701,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Human-readable name for this resource.
+   * Optional. Human-readable name for this workstation configuration.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The displayName.
    */
@@ -10807,10 +12724,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Human-readable name for this resource.
+   * Optional. Human-readable name for this workstation configuration.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for displayName.
    */
@@ -10835,7 +12752,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. A system-assigned unique identified for this resource.
+   * Output only. A system-assigned unique identifier for this workstation
+   * configuration.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -10858,7 +12776,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. A system-assigned unique identified for this resource.
+   * Output only. A system-assigned unique identifier for this workstation
+   * configuration.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -10884,8 +12803,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Indicates whether this resource is currently being updated to
-   * match its intended state.
+   * Output only. Indicates whether this workstation configuration is currently
+   * being updated to match its intended state.
    * </pre>
    *
    * <code>bool reconciling = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -10928,10 +12847,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public boolean containsAnnotations(java.lang.String key) {
@@ -10950,10 +12870,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -10963,10 +12884,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -10983,10 +12905,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -11030,11 +12953,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation configuration and that are also propagated
+   * to the underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 18;</code>
+   * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -11053,11 +12978,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation configuration and that are also propagated
+   * to the underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 18;</code>
+   * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -11067,11 +12994,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation configuration and that are also propagated
+   * to the underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 18;</code>
+   * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -11088,11 +13017,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation configuration and that are also propagated
+   * to the underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 18;</code>
+   * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -11112,7 +13043,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Time when this resource was created.
+   * Output only. Time when this workstation configuration was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -11128,7 +13059,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Time when this resource was created.
+   * Output only. Time when this workstation configuration was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -11144,7 +13075,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Time when this resource was created.
+   * Output only. Time when this workstation configuration was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -11161,7 +13092,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Time when this resource was most recently updated.
+   * Output only. Time when this workstation configuration was most recently
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -11177,7 +13109,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Time when this resource was most recently updated.
+   * Output only. Time when this workstation configuration was most recently
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -11193,7 +13126,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Time when this resource was most recently updated.
+   * Output only. Time when this workstation configuration was most recently
+   * updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -11210,7 +13144,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Time when this resource was soft-deleted.
+   * Output only. Time when this workstation configuration was soft-deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -11226,7 +13160,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Time when this resource was soft-deleted.
+   * Output only. Time when this workstation configuration was soft-deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -11242,7 +13176,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Output only. Time when this resource was soft-deleted.
+   * Output only. Time when this workstation configuration was soft-deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -11261,11 +13195,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Checksum computed by the server. May be sent on update and delete requests
-   * to make sure that the client has an up-to-date value before proceeding.
+   * Optional. Checksum computed by the server. May be sent on update and delete
+   * requests to make sure that the client has an up-to-date value before
+   * proceeding.
    * </pre>
    *
-   * <code>string etag = 9;</code>
+   * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -11285,11 +13220,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Checksum computed by the server. May be sent on update and delete requests
-   * to make sure that the client has an up-to-date value before proceeding.
+   * Optional. Checksum computed by the server. May be sent on update and delete
+   * requests to make sure that the client has an up-to-date value before
+   * proceeding.
    * </pre>
    *
-   * <code>string etag = 9;</code>
+   * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */
@@ -11312,12 +13248,19 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * How long to wait before automatically stopping an instance that hasn't
-   * received any user traffic. A value of 0 indicates that this instance
-   * should never time out due to idleness. Defaults to 20 minutes.
+   * Optional. Number of seconds to wait before automatically stopping a
+   * workstation after it last received user traffic.
+   *
+   * A value of `"0s"` indicates that Cloud Workstations VMs created with this
+   * configuration should never time out due to idleness.
+   * Provide
+   * [duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#duration)
+   * terminated by `s` for seconds—for example, `"7200s"` (2 hours).
+   * The default is `"1200s"` (20 minutes).
    * </pre>
    *
-   * <code>.google.protobuf.Duration idle_timeout = 10;</code>
+   * <code>.google.protobuf.Duration idle_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the idleTimeout field is set.
    */
@@ -11329,12 +13272,19 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * How long to wait before automatically stopping an instance that hasn't
-   * received any user traffic. A value of 0 indicates that this instance
-   * should never time out due to idleness. Defaults to 20 minutes.
+   * Optional. Number of seconds to wait before automatically stopping a
+   * workstation after it last received user traffic.
+   *
+   * A value of `"0s"` indicates that Cloud Workstations VMs created with this
+   * configuration should never time out due to idleness.
+   * Provide
+   * [duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#duration)
+   * terminated by `s` for seconds—for example, `"7200s"` (2 hours).
+   * The default is `"1200s"` (20 minutes).
    * </pre>
    *
-   * <code>.google.protobuf.Duration idle_timeout = 10;</code>
+   * <code>.google.protobuf.Duration idle_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The idleTimeout.
    */
@@ -11346,12 +13296,19 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * How long to wait before automatically stopping an instance that hasn't
-   * received any user traffic. A value of 0 indicates that this instance
-   * should never time out due to idleness. Defaults to 20 minutes.
+   * Optional. Number of seconds to wait before automatically stopping a
+   * workstation after it last received user traffic.
+   *
+   * A value of `"0s"` indicates that Cloud Workstations VMs created with this
+   * configuration should never time out due to idleness.
+   * Provide
+   * [duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#duration)
+   * terminated by `s` for seconds—for example, `"7200s"` (2 hours).
+   * The default is `"1200s"` (20 minutes).
    * </pre>
    *
-   * <code>.google.protobuf.Duration idle_timeout = 10;</code>
+   * <code>.google.protobuf.Duration idle_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getIdleTimeoutOrBuilder() {
@@ -11364,13 +13321,32 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * How long to wait before automatically stopping a workstation after it
-   * started. A value of 0 indicates that workstations using this configuration
-   * should never time out. Must be greater than 0 and less than 24 hours if
-   * encryption_key is set. Defaults to 12 hours.
+   * Optional. Number of seconds that a workstation can run until it is
+   * automatically shut down. We recommend that workstations be shut down daily
+   * to reduce costs and so that security updates can be applied upon restart.
+   * The
+   * [idle_timeout][google.cloud.workstations.v1.WorkstationConfig.idle_timeout]
+   * and
+   * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+   * fields are independent of each other. Note that the
+   * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+   * field shuts down VMs after the specified time, regardless of whether or not
+   * the VMs are idle.
+   *
+   * Provide duration terminated by `s` for seconds—for example, `"54000s"`
+   * (15 hours). Defaults to `"43200s"` (12 hours). A value of `"0s"` indicates
+   * that workstations using this configuration should never time out. If
+   * [encryption_key][google.cloud.workstations.v1.WorkstationConfig.encryption_key]
+   * is set, it must be greater than `"0s"` and less than
+   * `"86400s"` (24 hours).
+   *
+   * Warning: A value of `"0s"` indicates that Cloud Workstations VMs created
+   * with this configuration have no maximum running time. This is strongly
+   * discouraged because you incur costs and will not pick up security updates.
    * </pre>
    *
-   * <code>.google.protobuf.Duration running_timeout = 11;</code>
+   * <code>.google.protobuf.Duration running_timeout = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the runningTimeout field is set.
    */
@@ -11382,13 +13358,32 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * How long to wait before automatically stopping a workstation after it
-   * started. A value of 0 indicates that workstations using this configuration
-   * should never time out. Must be greater than 0 and less than 24 hours if
-   * encryption_key is set. Defaults to 12 hours.
+   * Optional. Number of seconds that a workstation can run until it is
+   * automatically shut down. We recommend that workstations be shut down daily
+   * to reduce costs and so that security updates can be applied upon restart.
+   * The
+   * [idle_timeout][google.cloud.workstations.v1.WorkstationConfig.idle_timeout]
+   * and
+   * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+   * fields are independent of each other. Note that the
+   * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+   * field shuts down VMs after the specified time, regardless of whether or not
+   * the VMs are idle.
+   *
+   * Provide duration terminated by `s` for seconds—for example, `"54000s"`
+   * (15 hours). Defaults to `"43200s"` (12 hours). A value of `"0s"` indicates
+   * that workstations using this configuration should never time out. If
+   * [encryption_key][google.cloud.workstations.v1.WorkstationConfig.encryption_key]
+   * is set, it must be greater than `"0s"` and less than
+   * `"86400s"` (24 hours).
+   *
+   * Warning: A value of `"0s"` indicates that Cloud Workstations VMs created
+   * with this configuration have no maximum running time. This is strongly
+   * discouraged because you incur costs and will not pick up security updates.
    * </pre>
    *
-   * <code>.google.protobuf.Duration running_timeout = 11;</code>
+   * <code>.google.protobuf.Duration running_timeout = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The runningTimeout.
    */
@@ -11402,13 +13397,32 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * How long to wait before automatically stopping a workstation after it
-   * started. A value of 0 indicates that workstations using this configuration
-   * should never time out. Must be greater than 0 and less than 24 hours if
-   * encryption_key is set. Defaults to 12 hours.
+   * Optional. Number of seconds that a workstation can run until it is
+   * automatically shut down. We recommend that workstations be shut down daily
+   * to reduce costs and so that security updates can be applied upon restart.
+   * The
+   * [idle_timeout][google.cloud.workstations.v1.WorkstationConfig.idle_timeout]
+   * and
+   * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+   * fields are independent of each other. Note that the
+   * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+   * field shuts down VMs after the specified time, regardless of whether or not
+   * the VMs are idle.
+   *
+   * Provide duration terminated by `s` for seconds—for example, `"54000s"`
+   * (15 hours). Defaults to `"43200s"` (12 hours). A value of `"0s"` indicates
+   * that workstations using this configuration should never time out. If
+   * [encryption_key][google.cloud.workstations.v1.WorkstationConfig.encryption_key]
+   * is set, it must be greater than `"0s"` and less than
+   * `"86400s"` (24 hours).
+   *
+   * Warning: A value of `"0s"` indicates that Cloud Workstations VMs created
+   * with this configuration have no maximum running time. This is strongly
+   * discouraged because you incur costs and will not pick up security updates.
    * </pre>
    *
-   * <code>.google.protobuf.Duration running_timeout = 11;</code>
+   * <code>.google.protobuf.Duration running_timeout = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.protobuf.DurationOrBuilder getRunningTimeoutOrBuilder() {
@@ -11423,10 +13437,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Runtime host for the workstation.
+   * Optional. Runtime host for the workstation.
    * </pre>
    *
-   * <code>.google.cloud.workstations.v1.WorkstationConfig.Host host = 12;</code>
+   * <code>
+   * .google.cloud.workstations.v1.WorkstationConfig.Host host = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the host field is set.
    */
@@ -11438,10 +13454,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Runtime host for the workstation.
+   * Optional. Runtime host for the workstation.
    * </pre>
    *
-   * <code>.google.cloud.workstations.v1.WorkstationConfig.Host host = 12;</code>
+   * <code>
+   * .google.cloud.workstations.v1.WorkstationConfig.Host host = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The host.
    */
@@ -11455,10 +13473,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Runtime host for the workstation.
+   * Optional. Runtime host for the workstation.
    * </pre>
    *
-   * <code>.google.cloud.workstations.v1.WorkstationConfig.Host host = 12;</code>
+   * <code>
+   * .google.cloud.workstations.v1.WorkstationConfig.Host host = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.workstations.v1.WorkstationConfig.HostOrBuilder getHostOrBuilder() {
@@ -11476,11 +13496,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Directories to persist across workstation sessions.
+   * Optional. Directories to persist across workstation sessions.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+   * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -11492,11 +13512,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Directories to persist across workstation sessions.
+   * Optional. Directories to persist across workstation sessions.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+   * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -11509,11 +13529,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Directories to persist across workstation sessions.
+   * Optional. Directories to persist across workstation sessions.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+   * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -11524,11 +13544,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Directories to persist across workstation sessions.
+   * Optional. Directories to persist across workstation sessions.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+   * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -11540,11 +13560,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Directories to persist across workstation sessions.
+   * Optional. Directories to persist across workstation sessions.
    * </pre>
    *
    * <code>
-   * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+   * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -11559,11 +13579,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Container that will be run for each workstation using this configuration
-   * when that workstation is started.
+   * Optional. Container that runs upon startup for each workstation using this
+   * workstation configuration.
    * </pre>
    *
-   * <code>.google.cloud.workstations.v1.WorkstationConfig.Container container = 14;</code>
+   * <code>
+   * .google.cloud.workstations.v1.WorkstationConfig.Container container = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the container field is set.
    */
@@ -11575,11 +13597,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Container that will be run for each workstation using this configuration
-   * when that workstation is started.
+   * Optional. Container that runs upon startup for each workstation using this
+   * workstation configuration.
    * </pre>
    *
-   * <code>.google.cloud.workstations.v1.WorkstationConfig.Container container = 14;</code>
+   * <code>
+   * .google.cloud.workstations.v1.WorkstationConfig.Container container = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The container.
    */
@@ -11593,11 +13617,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Container that will be run for each workstation using this configuration
-   * when that workstation is started.
+   * Optional. Container that runs upon startup for each workstation using this
+   * workstation configuration.
    * </pre>
    *
-   * <code>.google.cloud.workstations.v1.WorkstationConfig.Container container = 14;</code>
+   * <code>
+   * .google.cloud.workstations.v1.WorkstationConfig.Container container = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.workstations.v1.WorkstationConfig.ContainerOrBuilder
@@ -11614,7 +13640,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Immutable. Encrypts resources of this workstation configuration using a
-   * customer-managed encryption key.
+   * customer-managed encryption key (CMEK).
    *
    * If specified, the boot disk of the Compute Engine instance and the
    * persistent disk are encrypted using this encryption key. If
@@ -11625,10 +13651,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    * instance is stopped, the system attempts to recreate the
    * persistent disk with the new version of the key. Be sure to keep
    * older versions of the key until the persistent disk is recreated.
-   * Otherwise, data on the persistent disk will be lost.
+   * Otherwise, data on the persistent disk might be lost.
    *
-   * If the encryption key is revoked, the workstation session will
-   * automatically be stopped within 7 hours.
+   * If the encryption key is revoked, the workstation session automatically
+   * stops within 7 hours.
    *
    * Immutable after the workstation configuration is created.
    * </pre>
@@ -11648,7 +13674,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Immutable. Encrypts resources of this workstation configuration using a
-   * customer-managed encryption key.
+   * customer-managed encryption key (CMEK).
    *
    * If specified, the boot disk of the Compute Engine instance and the
    * persistent disk are encrypted using this encryption key. If
@@ -11659,10 +13685,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    * instance is stopped, the system attempts to recreate the
    * persistent disk with the new version of the key. Be sure to keep
    * older versions of the key until the persistent disk is recreated.
-   * Otherwise, data on the persistent disk will be lost.
+   * Otherwise, data on the persistent disk might be lost.
    *
-   * If the encryption key is revoked, the workstation session will
-   * automatically be stopped within 7 hours.
+   * If the encryption key is revoked, the workstation session automatically
+   * stops within 7 hours.
    *
    * Immutable after the workstation configuration is created.
    * </pre>
@@ -11686,7 +13712,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Immutable. Encrypts resources of this workstation configuration using a
-   * customer-managed encryption key.
+   * customer-managed encryption key (CMEK).
    *
    * If specified, the boot disk of the Compute Engine instance and the
    * persistent disk are encrypted using this encryption key. If
@@ -11697,10 +13723,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    * instance is stopped, the system attempts to recreate the
    * persistent disk with the new version of the key. Be sure to keep
    * older versions of the key until the persistent disk is recreated.
-   * Otherwise, data on the persistent disk will be lost.
+   * Otherwise, data on the persistent disk might be lost.
    *
-   * If the encryption key is revoked, the workstation session will
-   * automatically be stopped within 7 hours.
+   * If the encryption key is revoked, the workstation session automatically
+   * stops within 7 hours.
    *
    * Immutable after the workstation configuration is created.
    * </pre>
@@ -11718,6 +13744,198 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         : encryptionKey_;
   }
 
+  public static final int READINESS_CHECKS_FIELD_NUMBER = 19;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck>
+      readinessChecks_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Readiness checks to perform when starting a workstation using
+   * this workstation configuration. Mark a workstation as running only after
+   * all specified readiness checks return 200 status codes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck>
+      getReadinessChecksList() {
+    return readinessChecks_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Readiness checks to perform when starting a workstation using
+   * this workstation configuration. Mark a workstation as running only after
+   * all specified readiness checks return 200 status codes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheckOrBuilder>
+      getReadinessChecksOrBuilderList() {
+    return readinessChecks_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Readiness checks to perform when starting a workstation using
+   * this workstation configuration. Mark a workstation as running only after
+   * all specified readiness checks return 200 status codes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getReadinessChecksCount() {
+    return readinessChecks_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Readiness checks to perform when starting a workstation using
+   * this workstation configuration. Mark a workstation as running only after
+   * all specified readiness checks return 200 status codes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck getReadinessChecks(
+      int index) {
+    return readinessChecks_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Readiness checks to perform when starting a workstation using
+   * this workstation configuration. Mark a workstation as running only after
+   * all specified readiness checks return 200 status codes.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheckOrBuilder
+      getReadinessChecksOrBuilder(int index) {
+    return readinessChecks_.get(index);
+  }
+
+  public static final int REPLICA_ZONES_FIELD_NUMBER = 23;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList replicaZones_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Specifies the zones used to replicate the VM and disk
+   * resources within the region. If set, exactly two zones within the
+   * workstation cluster's region must be specified—for example,
+   * `['us-central1-a', 'us-central1-f']`. If this field is empty, two default
+   * zones within the region are used.
+   *
+   * Immutable after the workstation configuration is created.
+   * </pre>
+   *
+   * <code>
+   * repeated string replica_zones = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return A list containing the replicaZones.
+   */
+  public com.google.protobuf.ProtocolStringList getReplicaZonesList() {
+    return replicaZones_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Specifies the zones used to replicate the VM and disk
+   * resources within the region. If set, exactly two zones within the
+   * workstation cluster's region must be specified—for example,
+   * `['us-central1-a', 'us-central1-f']`. If this field is empty, two default
+   * zones within the region are used.
+   *
+   * Immutable after the workstation configuration is created.
+   * </pre>
+   *
+   * <code>
+   * repeated string replica_zones = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The count of replicaZones.
+   */
+  public int getReplicaZonesCount() {
+    return replicaZones_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Specifies the zones used to replicate the VM and disk
+   * resources within the region. If set, exactly two zones within the
+   * workstation cluster's region must be specified—for example,
+   * `['us-central1-a', 'us-central1-f']`. If this field is empty, two default
+   * zones within the region are used.
+   *
+   * Immutable after the workstation configuration is created.
+   * </pre>
+   *
+   * <code>
+   * repeated string replica_zones = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The replicaZones at the given index.
+   */
+  public java.lang.String getReplicaZones(int index) {
+    return replicaZones_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. Specifies the zones used to replicate the VM and disk
+   * resources within the region. If set, exactly two zones within the
+   * workstation cluster's region must be specified—for example,
+   * `['us-central1-a', 'us-central1-f']`. If this field is empty, two default
+   * zones within the region are used.
+   *
+   * Immutable after the workstation configuration is created.
+   * </pre>
+   *
+   * <code>
+   * repeated string replica_zones = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the replicaZones at the given index.
+   */
+  public com.google.protobuf.ByteString getReplicaZonesBytes(int index) {
+    return replicaZones_.getByteString(index);
+  }
+
   public static final int DEGRADED_FIELD_NUMBER = 15;
   private boolean degraded_ = false;
   /**
@@ -11726,7 +13944,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Output only. Whether this resource is degraded, in which case it may
    * require user action to restore full functionality. See also the
-   * `conditions` field.
+   * [conditions][google.cloud.workstations.v1.WorkstationConfig.conditions]
+   * field.
    * </pre>
    *
    * <code>bool degraded = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -11879,6 +14098,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 18);
+    for (int i = 0; i < readinessChecks_.size(); i++) {
+      output.writeMessage(19, readinessChecks_.get(i));
+    }
+    for (int i = 0; i < replicaZones_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 23, replicaZones_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -11958,6 +14183,17 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, labels__);
     }
+    for (int i = 0; i < readinessChecks_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, readinessChecks_.get(i));
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < replicaZones_.size(); i++) {
+        dataSize += computeStringSizeNoTag(replicaZones_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getReplicaZonesList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -12014,6 +14250,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     if (hasEncryptionKey()) {
       if (!getEncryptionKey().equals(other.getEncryptionKey())) return false;
     }
+    if (!getReadinessChecksList().equals(other.getReadinessChecksList())) return false;
+    if (!getReplicaZonesList().equals(other.getReplicaZonesList())) return false;
     if (getDegraded() != other.getDegraded()) return false;
     if (!getConditionsList().equals(other.getConditionsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -12080,6 +14318,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     if (hasEncryptionKey()) {
       hash = (37 * hash) + ENCRYPTION_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getEncryptionKey().hashCode();
+    }
+    if (getReadinessChecksCount() > 0) {
+      hash = (37 * hash) + READINESS_CHECKS_FIELD_NUMBER;
+      hash = (53 * hash) + getReadinessChecksList().hashCode();
+    }
+    if (getReplicaZonesCount() > 0) {
+      hash = (37 * hash) + REPLICA_ZONES_FIELD_NUMBER;
+      hash = (53 * hash) + getReplicaZonesList().hashCode();
     }
     hash = (37 * hash) + DEGRADED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDegraded());
@@ -12191,9 +14437,15 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * A set of configuration options describing how a workstation will be run.
-   * Workstation configurations are intended to be shared across multiple
-   * workstations.
+   * A workstation configuration resource in the Cloud Workstations API.
+   *
+   * Workstation configurations act as templates for workstations. The workstation
+   * configuration defines details such as the workstation virtual machine (VM)
+   * instance type, persistent storage, container image defining environment,
+   * which IDE or Code Editor to use, and more. Administrators and platform teams
+   * can also use [Identity and Access Management
+   * (IAM)](https://cloud.google.com/iam/docs/overview) rules to grant access to
+   * teams or to individual developers.
    * </pre>
    *
    * Protobuf type {@code google.cloud.workstations.v1.WorkstationConfig}
@@ -12306,6 +14558,14 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         encryptionKeyBuilder_.dispose();
         encryptionKeyBuilder_ = null;
       }
+      if (readinessChecksBuilder_ == null) {
+        readinessChecks_ = java.util.Collections.emptyList();
+      } else {
+        readinessChecks_ = null;
+        readinessChecksBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00010000);
+      replicaZones_ = com.google.protobuf.LazyStringArrayList.emptyList();
       degraded_ = false;
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
@@ -12313,7 +14573,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         conditions_ = null;
         conditionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       return this;
     }
 
@@ -12360,10 +14620,19 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       } else {
         result.persistentDirectories_ = persistentDirectoriesBuilder_.build();
       }
+      if (readinessChecksBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)) {
+          readinessChecks_ = java.util.Collections.unmodifiableList(readinessChecks_);
+          bitField0_ = (bitField0_ & ~0x00010000);
+        }
+        result.readinessChecks_ = readinessChecks_;
+      } else {
+        result.readinessChecks_ = readinessChecksBuilder_.build();
+      }
       if (conditionsBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)) {
+        if (((bitField0_ & 0x00080000) != 0)) {
           conditions_ = java.util.Collections.unmodifiableList(conditions_);
-          bitField0_ = (bitField0_ & ~0x00020000);
+          bitField0_ = (bitField0_ & ~0x00080000);
         }
         result.conditions_ = conditions_;
       } else {
@@ -12423,7 +14692,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         result.encryptionKey_ =
             encryptionKeyBuilder_ == null ? encryptionKey_ : encryptionKeyBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        replicaZones_.makeImmutable();
+        result.replicaZones_ = replicaZones_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.degraded_ = degraded_;
       }
     }
@@ -12552,6 +14825,43 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       if (other.hasEncryptionKey()) {
         mergeEncryptionKey(other.getEncryptionKey());
       }
+      if (readinessChecksBuilder_ == null) {
+        if (!other.readinessChecks_.isEmpty()) {
+          if (readinessChecks_.isEmpty()) {
+            readinessChecks_ = other.readinessChecks_;
+            bitField0_ = (bitField0_ & ~0x00010000);
+          } else {
+            ensureReadinessChecksIsMutable();
+            readinessChecks_.addAll(other.readinessChecks_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.readinessChecks_.isEmpty()) {
+          if (readinessChecksBuilder_.isEmpty()) {
+            readinessChecksBuilder_.dispose();
+            readinessChecksBuilder_ = null;
+            readinessChecks_ = other.readinessChecks_;
+            bitField0_ = (bitField0_ & ~0x00010000);
+            readinessChecksBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getReadinessChecksFieldBuilder()
+                    : null;
+          } else {
+            readinessChecksBuilder_.addAllMessages(other.readinessChecks_);
+          }
+        }
+      }
+      if (!other.replicaZones_.isEmpty()) {
+        if (replicaZones_.isEmpty()) {
+          replicaZones_ = other.replicaZones_;
+          bitField0_ |= 0x00020000;
+        } else {
+          ensureReplicaZonesIsMutable();
+          replicaZones_.addAll(other.replicaZones_);
+        }
+        onChanged();
+      }
       if (other.getDegraded() != false) {
         setDegraded(other.getDegraded());
       }
@@ -12559,7 +14869,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
         if (!other.conditions_.isEmpty()) {
           if (conditions_.isEmpty()) {
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00080000);
           } else {
             ensureConditionsIsMutable();
             conditions_.addAll(other.conditions_);
@@ -12572,7 +14882,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             conditionsBuilder_.dispose();
             conditionsBuilder_ = null;
             conditions_ = other.conditions_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00080000);
             conditionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getConditionsFieldBuilder()
@@ -12710,7 +15020,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
             case 120:
               {
                 degraded_ = input.readBool();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 120
             case 130:
@@ -12743,6 +15053,27 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000020;
                 break;
               } // case 146
+            case 154:
+              {
+                com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck m =
+                    input.readMessage(
+                        com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck.parser(),
+                        extensionRegistry);
+                if (readinessChecksBuilder_ == null) {
+                  ensureReadinessChecksIsMutable();
+                  readinessChecks_.add(m);
+                } else {
+                  readinessChecksBuilder_.addMessage(m);
+                }
+                break;
+              } // case 154
+            case 186:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureReplicaZonesIsMutable();
+                replicaZones_.add(s);
+                break;
+              } // case 186
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -12767,7 +15098,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Full name of this resource.
+     * Full name of this workstation configuration.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -12789,7 +15120,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Full name of this resource.
+     * Full name of this workstation configuration.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -12811,7 +15142,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Full name of this resource.
+     * Full name of this workstation configuration.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -12832,7 +15163,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Full name of this resource.
+     * Full name of this workstation configuration.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -12849,7 +15180,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Full name of this resource.
+     * Full name of this workstation configuration.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -12873,10 +15204,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Human-readable name for this resource.
+     * Optional. Human-readable name for this workstation configuration.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The displayName.
      */
@@ -12895,10 +15226,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Human-readable name for this resource.
+     * Optional. Human-readable name for this workstation configuration.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for displayName.
      */
@@ -12917,10 +15248,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Human-readable name for this resource.
+     * Optional. Human-readable name for this workstation configuration.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -12938,10 +15269,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Human-readable name for this resource.
+     * Optional. Human-readable name for this workstation configuration.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -12955,10 +15286,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Human-readable name for this resource.
+     * Optional. Human-readable name for this workstation configuration.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -12979,7 +15310,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. A system-assigned unique identified for this resource.
+     * Output only. A system-assigned unique identifier for this workstation
+     * configuration.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -13001,7 +15333,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. A system-assigned unique identified for this resource.
+     * Output only. A system-assigned unique identifier for this workstation
+     * configuration.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -13023,7 +15356,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. A system-assigned unique identified for this resource.
+     * Output only. A system-assigned unique identifier for this workstation
+     * configuration.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -13044,7 +15378,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. A system-assigned unique identified for this resource.
+     * Output only. A system-assigned unique identifier for this workstation
+     * configuration.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -13061,7 +15396,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. A system-assigned unique identified for this resource.
+     * Output only. A system-assigned unique identifier for this workstation
+     * configuration.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -13085,8 +15421,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Indicates whether this resource is currently being updated to
-     * match its intended state.
+     * Output only. Indicates whether this workstation configuration is currently
+     * being updated to match its intended state.
      * </pre>
      *
      * <code>bool reconciling = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -13101,8 +15437,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Indicates whether this resource is currently being updated to
-     * match its intended state.
+     * Output only. Indicates whether this workstation configuration is currently
+     * being updated to match its intended state.
      * </pre>
      *
      * <code>bool reconciling = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -13121,8 +15457,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Indicates whether this resource is currently being updated to
-     * match its intended state.
+     * Output only. Indicates whether this workstation configuration is currently
+     * being updated to match its intended state.
      * </pre>
      *
      * <code>bool reconciling = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -13168,10 +15504,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Client-specified annotations.
+     * Optional. Client-specified annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public boolean containsAnnotations(java.lang.String key) {
@@ -13190,10 +15527,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Client-specified annotations.
+     * Optional. Client-specified annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -13203,10 +15541,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Client-specified annotations.
+     * Optional. Client-specified annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -13223,10 +15562,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Client-specified annotations.
+     * Optional. Client-specified annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -13249,10 +15589,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Client-specified annotations.
+     * Optional. Client-specified annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeAnnotations(java.lang.String key) {
       if (key == null) {
@@ -13271,10 +15612,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Client-specified annotations.
+     * Optional. Client-specified annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAnnotations(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -13291,10 +15633,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Client-specified annotations.
+     * Optional. Client-specified annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
@@ -13331,11 +15674,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Client-specified labels that are applied to the resource and that are also
-     * propagated to the underlying Compute Engine resources.
+     * Optional.
+     * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+     * are applied to the workstation configuration and that are also propagated
+     * to the underlying Compute Engine resources.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 18;</code>
+     * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -13354,11 +15699,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Client-specified labels that are applied to the resource and that are also
-     * propagated to the underlying Compute Engine resources.
+     * Optional.
+     * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+     * are applied to the workstation configuration and that are also propagated
+     * to the underlying Compute Engine resources.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 18;</code>
+     * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -13368,11 +15715,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Client-specified labels that are applied to the resource and that are also
-     * propagated to the underlying Compute Engine resources.
+     * Optional.
+     * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+     * are applied to the workstation configuration and that are also propagated
+     * to the underlying Compute Engine resources.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 18;</code>
+     * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -13389,11 +15738,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Client-specified labels that are applied to the resource and that are also
-     * propagated to the underlying Compute Engine resources.
+     * Optional.
+     * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+     * are applied to the workstation configuration and that are also propagated
+     * to the underlying Compute Engine resources.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 18;</code>
+     * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -13416,11 +15767,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Client-specified labels that are applied to the resource and that are also
-     * propagated to the underlying Compute Engine resources.
+     * Optional.
+     * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+     * are applied to the workstation configuration and that are also propagated
+     * to the underlying Compute Engine resources.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 18;</code>
+     * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -13439,11 +15792,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Client-specified labels that are applied to the resource and that are also
-     * propagated to the underlying Compute Engine resources.
+     * Optional.
+     * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+     * are applied to the workstation configuration and that are also propagated
+     * to the underlying Compute Engine resources.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 18;</code>
+     * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -13460,11 +15815,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Client-specified labels that are applied to the resource and that are also
-     * propagated to the underlying Compute Engine resources.
+     * Optional.
+     * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+     * are applied to the workstation configuration and that are also propagated
+     * to the underlying Compute Engine resources.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 18;</code>
+     * <code>map&lt;string, string&gt; labels = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -13482,7 +15839,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation configuration was created.
      * </pre>
      *
      * <code>
@@ -13498,7 +15855,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation configuration was created.
      * </pre>
      *
      * <code>
@@ -13520,7 +15877,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation configuration was created.
      * </pre>
      *
      * <code>
@@ -13544,7 +15901,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation configuration was created.
      * </pre>
      *
      * <code>
@@ -13565,7 +15922,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation configuration was created.
      * </pre>
      *
      * <code>
@@ -13592,7 +15949,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation configuration was created.
      * </pre>
      *
      * <code>
@@ -13613,7 +15970,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation configuration was created.
      * </pre>
      *
      * <code>
@@ -13629,7 +15986,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation configuration was created.
      * </pre>
      *
      * <code>
@@ -13649,7 +16006,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation configuration was created.
      * </pre>
      *
      * <code>
@@ -13683,7 +16040,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation configuration was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -13699,7 +16057,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation configuration was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -13721,7 +16080,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation configuration was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -13745,7 +16105,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation configuration was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -13766,7 +16127,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation configuration was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -13793,7 +16155,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation configuration was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -13814,7 +16177,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation configuration was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -13830,7 +16194,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation configuration was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -13850,7 +16215,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation configuration was most recently
+     * updated.
      * </pre>
      *
      * <code>
@@ -13884,7 +16250,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation configuration was soft-deleted.
      * </pre>
      *
      * <code>
@@ -13900,7 +16266,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation configuration was soft-deleted.
      * </pre>
      *
      * <code>
@@ -13922,7 +16288,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation configuration was soft-deleted.
      * </pre>
      *
      * <code>
@@ -13946,7 +16312,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation configuration was soft-deleted.
      * </pre>
      *
      * <code>
@@ -13967,7 +16333,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation configuration was soft-deleted.
      * </pre>
      *
      * <code>
@@ -13994,7 +16360,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation configuration was soft-deleted.
      * </pre>
      *
      * <code>
@@ -14015,7 +16381,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation configuration was soft-deleted.
      * </pre>
      *
      * <code>
@@ -14031,7 +16397,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation configuration was soft-deleted.
      * </pre>
      *
      * <code>
@@ -14051,7 +16417,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation configuration was soft-deleted.
      * </pre>
      *
      * <code>
@@ -14080,11 +16446,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Checksum computed by the server. May be sent on update and delete requests
-     * to make sure that the client has an up-to-date value before proceeding.
+     * Optional. Checksum computed by the server. May be sent on update and delete
+     * requests to make sure that the client has an up-to-date value before
+     * proceeding.
      * </pre>
      *
-     * <code>string etag = 9;</code>
+     * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The etag.
      */
@@ -14103,11 +16470,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Checksum computed by the server. May be sent on update and delete requests
-     * to make sure that the client has an up-to-date value before proceeding.
+     * Optional. Checksum computed by the server. May be sent on update and delete
+     * requests to make sure that the client has an up-to-date value before
+     * proceeding.
      * </pre>
      *
-     * <code>string etag = 9;</code>
+     * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for etag.
      */
@@ -14126,11 +16494,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Checksum computed by the server. May be sent on update and delete requests
-     * to make sure that the client has an up-to-date value before proceeding.
+     * Optional. Checksum computed by the server. May be sent on update and delete
+     * requests to make sure that the client has an up-to-date value before
+     * proceeding.
      * </pre>
      *
-     * <code>string etag = 9;</code>
+     * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The etag to set.
      * @return This builder for chaining.
@@ -14148,11 +16517,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Checksum computed by the server. May be sent on update and delete requests
-     * to make sure that the client has an up-to-date value before proceeding.
+     * Optional. Checksum computed by the server. May be sent on update and delete
+     * requests to make sure that the client has an up-to-date value before
+     * proceeding.
      * </pre>
      *
-     * <code>string etag = 9;</code>
+     * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -14166,11 +16536,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Checksum computed by the server. May be sent on update and delete requests
-     * to make sure that the client has an up-to-date value before proceeding.
+     * Optional. Checksum computed by the server. May be sent on update and delete
+     * requests to make sure that the client has an up-to-date value before
+     * proceeding.
      * </pre>
      *
-     * <code>string etag = 9;</code>
+     * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for etag to set.
      * @return This builder for chaining.
@@ -14196,12 +16567,19 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * How long to wait before automatically stopping an instance that hasn't
-     * received any user traffic. A value of 0 indicates that this instance
-     * should never time out due to idleness. Defaults to 20 minutes.
+     * Optional. Number of seconds to wait before automatically stopping a
+     * workstation after it last received user traffic.
+     *
+     * A value of `"0s"` indicates that Cloud Workstations VMs created with this
+     * configuration should never time out due to idleness.
+     * Provide
+     * [duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#duration)
+     * terminated by `s` for seconds—for example, `"7200s"` (2 hours).
+     * The default is `"1200s"` (20 minutes).
      * </pre>
      *
-     * <code>.google.protobuf.Duration idle_timeout = 10;</code>
+     * <code>.google.protobuf.Duration idle_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the idleTimeout field is set.
      */
@@ -14212,12 +16590,19 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * How long to wait before automatically stopping an instance that hasn't
-     * received any user traffic. A value of 0 indicates that this instance
-     * should never time out due to idleness. Defaults to 20 minutes.
+     * Optional. Number of seconds to wait before automatically stopping a
+     * workstation after it last received user traffic.
+     *
+     * A value of `"0s"` indicates that Cloud Workstations VMs created with this
+     * configuration should never time out due to idleness.
+     * Provide
+     * [duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#duration)
+     * terminated by `s` for seconds—for example, `"7200s"` (2 hours).
+     * The default is `"1200s"` (20 minutes).
      * </pre>
      *
-     * <code>.google.protobuf.Duration idle_timeout = 10;</code>
+     * <code>.google.protobuf.Duration idle_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The idleTimeout.
      */
@@ -14234,12 +16619,19 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * How long to wait before automatically stopping an instance that hasn't
-     * received any user traffic. A value of 0 indicates that this instance
-     * should never time out due to idleness. Defaults to 20 minutes.
+     * Optional. Number of seconds to wait before automatically stopping a
+     * workstation after it last received user traffic.
+     *
+     * A value of `"0s"` indicates that Cloud Workstations VMs created with this
+     * configuration should never time out due to idleness.
+     * Provide
+     * [duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#duration)
+     * terminated by `s` for seconds—for example, `"7200s"` (2 hours).
+     * The default is `"1200s"` (20 minutes).
      * </pre>
      *
-     * <code>.google.protobuf.Duration idle_timeout = 10;</code>
+     * <code>.google.protobuf.Duration idle_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setIdleTimeout(com.google.protobuf.Duration value) {
       if (idleTimeoutBuilder_ == null) {
@@ -14258,12 +16650,19 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * How long to wait before automatically stopping an instance that hasn't
-     * received any user traffic. A value of 0 indicates that this instance
-     * should never time out due to idleness. Defaults to 20 minutes.
+     * Optional. Number of seconds to wait before automatically stopping a
+     * workstation after it last received user traffic.
+     *
+     * A value of `"0s"` indicates that Cloud Workstations VMs created with this
+     * configuration should never time out due to idleness.
+     * Provide
+     * [duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#duration)
+     * terminated by `s` for seconds—for example, `"7200s"` (2 hours).
+     * The default is `"1200s"` (20 minutes).
      * </pre>
      *
-     * <code>.google.protobuf.Duration idle_timeout = 10;</code>
+     * <code>.google.protobuf.Duration idle_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setIdleTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (idleTimeoutBuilder_ == null) {
@@ -14279,12 +16678,19 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * How long to wait before automatically stopping an instance that hasn't
-     * received any user traffic. A value of 0 indicates that this instance
-     * should never time out due to idleness. Defaults to 20 minutes.
+     * Optional. Number of seconds to wait before automatically stopping a
+     * workstation after it last received user traffic.
+     *
+     * A value of `"0s"` indicates that Cloud Workstations VMs created with this
+     * configuration should never time out due to idleness.
+     * Provide
+     * [duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#duration)
+     * terminated by `s` for seconds—for example, `"7200s"` (2 hours).
+     * The default is `"1200s"` (20 minutes).
      * </pre>
      *
-     * <code>.google.protobuf.Duration idle_timeout = 10;</code>
+     * <code>.google.protobuf.Duration idle_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeIdleTimeout(com.google.protobuf.Duration value) {
       if (idleTimeoutBuilder_ == null) {
@@ -14306,12 +16712,19 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * How long to wait before automatically stopping an instance that hasn't
-     * received any user traffic. A value of 0 indicates that this instance
-     * should never time out due to idleness. Defaults to 20 minutes.
+     * Optional. Number of seconds to wait before automatically stopping a
+     * workstation after it last received user traffic.
+     *
+     * A value of `"0s"` indicates that Cloud Workstations VMs created with this
+     * configuration should never time out due to idleness.
+     * Provide
+     * [duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#duration)
+     * terminated by `s` for seconds—for example, `"7200s"` (2 hours).
+     * The default is `"1200s"` (20 minutes).
      * </pre>
      *
-     * <code>.google.protobuf.Duration idle_timeout = 10;</code>
+     * <code>.google.protobuf.Duration idle_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearIdleTimeout() {
       bitField0_ = (bitField0_ & ~0x00000400);
@@ -14327,12 +16740,19 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * How long to wait before automatically stopping an instance that hasn't
-     * received any user traffic. A value of 0 indicates that this instance
-     * should never time out due to idleness. Defaults to 20 minutes.
+     * Optional. Number of seconds to wait before automatically stopping a
+     * workstation after it last received user traffic.
+     *
+     * A value of `"0s"` indicates that Cloud Workstations VMs created with this
+     * configuration should never time out due to idleness.
+     * Provide
+     * [duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#duration)
+     * terminated by `s` for seconds—for example, `"7200s"` (2 hours).
+     * The default is `"1200s"` (20 minutes).
      * </pre>
      *
-     * <code>.google.protobuf.Duration idle_timeout = 10;</code>
+     * <code>.google.protobuf.Duration idle_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.Duration.Builder getIdleTimeoutBuilder() {
       bitField0_ |= 0x00000400;
@@ -14343,12 +16763,19 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * How long to wait before automatically stopping an instance that hasn't
-     * received any user traffic. A value of 0 indicates that this instance
-     * should never time out due to idleness. Defaults to 20 minutes.
+     * Optional. Number of seconds to wait before automatically stopping a
+     * workstation after it last received user traffic.
+     *
+     * A value of `"0s"` indicates that Cloud Workstations VMs created with this
+     * configuration should never time out due to idleness.
+     * Provide
+     * [duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#duration)
+     * terminated by `s` for seconds—for example, `"7200s"` (2 hours).
+     * The default is `"1200s"` (20 minutes).
      * </pre>
      *
-     * <code>.google.protobuf.Duration idle_timeout = 10;</code>
+     * <code>.google.protobuf.Duration idle_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.DurationOrBuilder getIdleTimeoutOrBuilder() {
       if (idleTimeoutBuilder_ != null) {
@@ -14363,12 +16790,19 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * How long to wait before automatically stopping an instance that hasn't
-     * received any user traffic. A value of 0 indicates that this instance
-     * should never time out due to idleness. Defaults to 20 minutes.
+     * Optional. Number of seconds to wait before automatically stopping a
+     * workstation after it last received user traffic.
+     *
+     * A value of `"0s"` indicates that Cloud Workstations VMs created with this
+     * configuration should never time out due to idleness.
+     * Provide
+     * [duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#duration)
+     * terminated by `s` for seconds—for example, `"7200s"` (2 hours).
+     * The default is `"1200s"` (20 minutes).
      * </pre>
      *
-     * <code>.google.protobuf.Duration idle_timeout = 10;</code>
+     * <code>.google.protobuf.Duration idle_timeout = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
@@ -14397,13 +16831,33 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * How long to wait before automatically stopping a workstation after it
-     * started. A value of 0 indicates that workstations using this configuration
-     * should never time out. Must be greater than 0 and less than 24 hours if
-     * encryption_key is set. Defaults to 12 hours.
+     * Optional. Number of seconds that a workstation can run until it is
+     * automatically shut down. We recommend that workstations be shut down daily
+     * to reduce costs and so that security updates can be applied upon restart.
+     * The
+     * [idle_timeout][google.cloud.workstations.v1.WorkstationConfig.idle_timeout]
+     * and
+     * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+     * fields are independent of each other. Note that the
+     * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+     * field shuts down VMs after the specified time, regardless of whether or not
+     * the VMs are idle.
+     *
+     * Provide duration terminated by `s` for seconds—for example, `"54000s"`
+     * (15 hours). Defaults to `"43200s"` (12 hours). A value of `"0s"` indicates
+     * that workstations using this configuration should never time out. If
+     * [encryption_key][google.cloud.workstations.v1.WorkstationConfig.encryption_key]
+     * is set, it must be greater than `"0s"` and less than
+     * `"86400s"` (24 hours).
+     *
+     * Warning: A value of `"0s"` indicates that Cloud Workstations VMs created
+     * with this configuration have no maximum running time. This is strongly
+     * discouraged because you incur costs and will not pick up security updates.
      * </pre>
      *
-     * <code>.google.protobuf.Duration running_timeout = 11;</code>
+     * <code>
+     * .google.protobuf.Duration running_timeout = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the runningTimeout field is set.
      */
@@ -14414,13 +16868,33 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * How long to wait before automatically stopping a workstation after it
-     * started. A value of 0 indicates that workstations using this configuration
-     * should never time out. Must be greater than 0 and less than 24 hours if
-     * encryption_key is set. Defaults to 12 hours.
+     * Optional. Number of seconds that a workstation can run until it is
+     * automatically shut down. We recommend that workstations be shut down daily
+     * to reduce costs and so that security updates can be applied upon restart.
+     * The
+     * [idle_timeout][google.cloud.workstations.v1.WorkstationConfig.idle_timeout]
+     * and
+     * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+     * fields are independent of each other. Note that the
+     * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+     * field shuts down VMs after the specified time, regardless of whether or not
+     * the VMs are idle.
+     *
+     * Provide duration terminated by `s` for seconds—for example, `"54000s"`
+     * (15 hours). Defaults to `"43200s"` (12 hours). A value of `"0s"` indicates
+     * that workstations using this configuration should never time out. If
+     * [encryption_key][google.cloud.workstations.v1.WorkstationConfig.encryption_key]
+     * is set, it must be greater than `"0s"` and less than
+     * `"86400s"` (24 hours).
+     *
+     * Warning: A value of `"0s"` indicates that Cloud Workstations VMs created
+     * with this configuration have no maximum running time. This is strongly
+     * discouraged because you incur costs and will not pick up security updates.
      * </pre>
      *
-     * <code>.google.protobuf.Duration running_timeout = 11;</code>
+     * <code>
+     * .google.protobuf.Duration running_timeout = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The runningTimeout.
      */
@@ -14437,13 +16911,33 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * How long to wait before automatically stopping a workstation after it
-     * started. A value of 0 indicates that workstations using this configuration
-     * should never time out. Must be greater than 0 and less than 24 hours if
-     * encryption_key is set. Defaults to 12 hours.
+     * Optional. Number of seconds that a workstation can run until it is
+     * automatically shut down. We recommend that workstations be shut down daily
+     * to reduce costs and so that security updates can be applied upon restart.
+     * The
+     * [idle_timeout][google.cloud.workstations.v1.WorkstationConfig.idle_timeout]
+     * and
+     * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+     * fields are independent of each other. Note that the
+     * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+     * field shuts down VMs after the specified time, regardless of whether or not
+     * the VMs are idle.
+     *
+     * Provide duration terminated by `s` for seconds—for example, `"54000s"`
+     * (15 hours). Defaults to `"43200s"` (12 hours). A value of `"0s"` indicates
+     * that workstations using this configuration should never time out. If
+     * [encryption_key][google.cloud.workstations.v1.WorkstationConfig.encryption_key]
+     * is set, it must be greater than `"0s"` and less than
+     * `"86400s"` (24 hours).
+     *
+     * Warning: A value of `"0s"` indicates that Cloud Workstations VMs created
+     * with this configuration have no maximum running time. This is strongly
+     * discouraged because you incur costs and will not pick up security updates.
      * </pre>
      *
-     * <code>.google.protobuf.Duration running_timeout = 11;</code>
+     * <code>
+     * .google.protobuf.Duration running_timeout = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setRunningTimeout(com.google.protobuf.Duration value) {
       if (runningTimeoutBuilder_ == null) {
@@ -14462,13 +16956,33 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * How long to wait before automatically stopping a workstation after it
-     * started. A value of 0 indicates that workstations using this configuration
-     * should never time out. Must be greater than 0 and less than 24 hours if
-     * encryption_key is set. Defaults to 12 hours.
+     * Optional. Number of seconds that a workstation can run until it is
+     * automatically shut down. We recommend that workstations be shut down daily
+     * to reduce costs and so that security updates can be applied upon restart.
+     * The
+     * [idle_timeout][google.cloud.workstations.v1.WorkstationConfig.idle_timeout]
+     * and
+     * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+     * fields are independent of each other. Note that the
+     * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+     * field shuts down VMs after the specified time, regardless of whether or not
+     * the VMs are idle.
+     *
+     * Provide duration terminated by `s` for seconds—for example, `"54000s"`
+     * (15 hours). Defaults to `"43200s"` (12 hours). A value of `"0s"` indicates
+     * that workstations using this configuration should never time out. If
+     * [encryption_key][google.cloud.workstations.v1.WorkstationConfig.encryption_key]
+     * is set, it must be greater than `"0s"` and less than
+     * `"86400s"` (24 hours).
+     *
+     * Warning: A value of `"0s"` indicates that Cloud Workstations VMs created
+     * with this configuration have no maximum running time. This is strongly
+     * discouraged because you incur costs and will not pick up security updates.
      * </pre>
      *
-     * <code>.google.protobuf.Duration running_timeout = 11;</code>
+     * <code>
+     * .google.protobuf.Duration running_timeout = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setRunningTimeout(com.google.protobuf.Duration.Builder builderForValue) {
       if (runningTimeoutBuilder_ == null) {
@@ -14484,13 +16998,33 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * How long to wait before automatically stopping a workstation after it
-     * started. A value of 0 indicates that workstations using this configuration
-     * should never time out. Must be greater than 0 and less than 24 hours if
-     * encryption_key is set. Defaults to 12 hours.
+     * Optional. Number of seconds that a workstation can run until it is
+     * automatically shut down. We recommend that workstations be shut down daily
+     * to reduce costs and so that security updates can be applied upon restart.
+     * The
+     * [idle_timeout][google.cloud.workstations.v1.WorkstationConfig.idle_timeout]
+     * and
+     * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+     * fields are independent of each other. Note that the
+     * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+     * field shuts down VMs after the specified time, regardless of whether or not
+     * the VMs are idle.
+     *
+     * Provide duration terminated by `s` for seconds—for example, `"54000s"`
+     * (15 hours). Defaults to `"43200s"` (12 hours). A value of `"0s"` indicates
+     * that workstations using this configuration should never time out. If
+     * [encryption_key][google.cloud.workstations.v1.WorkstationConfig.encryption_key]
+     * is set, it must be greater than `"0s"` and less than
+     * `"86400s"` (24 hours).
+     *
+     * Warning: A value of `"0s"` indicates that Cloud Workstations VMs created
+     * with this configuration have no maximum running time. This is strongly
+     * discouraged because you incur costs and will not pick up security updates.
      * </pre>
      *
-     * <code>.google.protobuf.Duration running_timeout = 11;</code>
+     * <code>
+     * .google.protobuf.Duration running_timeout = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeRunningTimeout(com.google.protobuf.Duration value) {
       if (runningTimeoutBuilder_ == null) {
@@ -14512,13 +17046,33 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * How long to wait before automatically stopping a workstation after it
-     * started. A value of 0 indicates that workstations using this configuration
-     * should never time out. Must be greater than 0 and less than 24 hours if
-     * encryption_key is set. Defaults to 12 hours.
+     * Optional. Number of seconds that a workstation can run until it is
+     * automatically shut down. We recommend that workstations be shut down daily
+     * to reduce costs and so that security updates can be applied upon restart.
+     * The
+     * [idle_timeout][google.cloud.workstations.v1.WorkstationConfig.idle_timeout]
+     * and
+     * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+     * fields are independent of each other. Note that the
+     * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+     * field shuts down VMs after the specified time, regardless of whether or not
+     * the VMs are idle.
+     *
+     * Provide duration terminated by `s` for seconds—for example, `"54000s"`
+     * (15 hours). Defaults to `"43200s"` (12 hours). A value of `"0s"` indicates
+     * that workstations using this configuration should never time out. If
+     * [encryption_key][google.cloud.workstations.v1.WorkstationConfig.encryption_key]
+     * is set, it must be greater than `"0s"` and less than
+     * `"86400s"` (24 hours).
+     *
+     * Warning: A value of `"0s"` indicates that Cloud Workstations VMs created
+     * with this configuration have no maximum running time. This is strongly
+     * discouraged because you incur costs and will not pick up security updates.
      * </pre>
      *
-     * <code>.google.protobuf.Duration running_timeout = 11;</code>
+     * <code>
+     * .google.protobuf.Duration running_timeout = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearRunningTimeout() {
       bitField0_ = (bitField0_ & ~0x00000800);
@@ -14534,13 +17088,33 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * How long to wait before automatically stopping a workstation after it
-     * started. A value of 0 indicates that workstations using this configuration
-     * should never time out. Must be greater than 0 and less than 24 hours if
-     * encryption_key is set. Defaults to 12 hours.
+     * Optional. Number of seconds that a workstation can run until it is
+     * automatically shut down. We recommend that workstations be shut down daily
+     * to reduce costs and so that security updates can be applied upon restart.
+     * The
+     * [idle_timeout][google.cloud.workstations.v1.WorkstationConfig.idle_timeout]
+     * and
+     * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+     * fields are independent of each other. Note that the
+     * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+     * field shuts down VMs after the specified time, regardless of whether or not
+     * the VMs are idle.
+     *
+     * Provide duration terminated by `s` for seconds—for example, `"54000s"`
+     * (15 hours). Defaults to `"43200s"` (12 hours). A value of `"0s"` indicates
+     * that workstations using this configuration should never time out. If
+     * [encryption_key][google.cloud.workstations.v1.WorkstationConfig.encryption_key]
+     * is set, it must be greater than `"0s"` and less than
+     * `"86400s"` (24 hours).
+     *
+     * Warning: A value of `"0s"` indicates that Cloud Workstations VMs created
+     * with this configuration have no maximum running time. This is strongly
+     * discouraged because you incur costs and will not pick up security updates.
      * </pre>
      *
-     * <code>.google.protobuf.Duration running_timeout = 11;</code>
+     * <code>
+     * .google.protobuf.Duration running_timeout = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.Duration.Builder getRunningTimeoutBuilder() {
       bitField0_ |= 0x00000800;
@@ -14551,13 +17125,33 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * How long to wait before automatically stopping a workstation after it
-     * started. A value of 0 indicates that workstations using this configuration
-     * should never time out. Must be greater than 0 and less than 24 hours if
-     * encryption_key is set. Defaults to 12 hours.
+     * Optional. Number of seconds that a workstation can run until it is
+     * automatically shut down. We recommend that workstations be shut down daily
+     * to reduce costs and so that security updates can be applied upon restart.
+     * The
+     * [idle_timeout][google.cloud.workstations.v1.WorkstationConfig.idle_timeout]
+     * and
+     * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+     * fields are independent of each other. Note that the
+     * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+     * field shuts down VMs after the specified time, regardless of whether or not
+     * the VMs are idle.
+     *
+     * Provide duration terminated by `s` for seconds—for example, `"54000s"`
+     * (15 hours). Defaults to `"43200s"` (12 hours). A value of `"0s"` indicates
+     * that workstations using this configuration should never time out. If
+     * [encryption_key][google.cloud.workstations.v1.WorkstationConfig.encryption_key]
+     * is set, it must be greater than `"0s"` and less than
+     * `"86400s"` (24 hours).
+     *
+     * Warning: A value of `"0s"` indicates that Cloud Workstations VMs created
+     * with this configuration have no maximum running time. This is strongly
+     * discouraged because you incur costs and will not pick up security updates.
      * </pre>
      *
-     * <code>.google.protobuf.Duration running_timeout = 11;</code>
+     * <code>
+     * .google.protobuf.Duration running_timeout = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.protobuf.DurationOrBuilder getRunningTimeoutOrBuilder() {
       if (runningTimeoutBuilder_ != null) {
@@ -14572,13 +17166,33 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * How long to wait before automatically stopping a workstation after it
-     * started. A value of 0 indicates that workstations using this configuration
-     * should never time out. Must be greater than 0 and less than 24 hours if
-     * encryption_key is set. Defaults to 12 hours.
+     * Optional. Number of seconds that a workstation can run until it is
+     * automatically shut down. We recommend that workstations be shut down daily
+     * to reduce costs and so that security updates can be applied upon restart.
+     * The
+     * [idle_timeout][google.cloud.workstations.v1.WorkstationConfig.idle_timeout]
+     * and
+     * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+     * fields are independent of each other. Note that the
+     * [running_timeout][google.cloud.workstations.v1.WorkstationConfig.running_timeout]
+     * field shuts down VMs after the specified time, regardless of whether or not
+     * the VMs are idle.
+     *
+     * Provide duration terminated by `s` for seconds—for example, `"54000s"`
+     * (15 hours). Defaults to `"43200s"` (12 hours). A value of `"0s"` indicates
+     * that workstations using this configuration should never time out. If
+     * [encryption_key][google.cloud.workstations.v1.WorkstationConfig.encryption_key]
+     * is set, it must be greater than `"0s"` and less than
+     * `"86400s"` (24 hours).
+     *
+     * Warning: A value of `"0s"` indicates that Cloud Workstations VMs created
+     * with this configuration have no maximum running time. This is strongly
+     * discouraged because you incur costs and will not pick up security updates.
      * </pre>
      *
-     * <code>.google.protobuf.Duration running_timeout = 11;</code>
+     * <code>
+     * .google.protobuf.Duration running_timeout = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Duration,
@@ -14607,10 +17221,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Runtime host for the workstation.
+     * Optional. Runtime host for the workstation.
      * </pre>
      *
-     * <code>.google.cloud.workstations.v1.WorkstationConfig.Host host = 12;</code>
+     * <code>
+     * .google.cloud.workstations.v1.WorkstationConfig.Host host = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the host field is set.
      */
@@ -14621,10 +17237,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Runtime host for the workstation.
+     * Optional. Runtime host for the workstation.
      * </pre>
      *
-     * <code>.google.cloud.workstations.v1.WorkstationConfig.Host host = 12;</code>
+     * <code>
+     * .google.cloud.workstations.v1.WorkstationConfig.Host host = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The host.
      */
@@ -14641,10 +17259,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Runtime host for the workstation.
+     * Optional. Runtime host for the workstation.
      * </pre>
      *
-     * <code>.google.cloud.workstations.v1.WorkstationConfig.Host host = 12;</code>
+     * <code>
+     * .google.cloud.workstations.v1.WorkstationConfig.Host host = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setHost(com.google.cloud.workstations.v1.WorkstationConfig.Host value) {
       if (hostBuilder_ == null) {
@@ -14663,10 +17283,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Runtime host for the workstation.
+     * Optional. Runtime host for the workstation.
      * </pre>
      *
-     * <code>.google.cloud.workstations.v1.WorkstationConfig.Host host = 12;</code>
+     * <code>
+     * .google.cloud.workstations.v1.WorkstationConfig.Host host = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setHost(
         com.google.cloud.workstations.v1.WorkstationConfig.Host.Builder builderForValue) {
@@ -14683,10 +17305,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Runtime host for the workstation.
+     * Optional. Runtime host for the workstation.
      * </pre>
      *
-     * <code>.google.cloud.workstations.v1.WorkstationConfig.Host host = 12;</code>
+     * <code>
+     * .google.cloud.workstations.v1.WorkstationConfig.Host host = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeHost(com.google.cloud.workstations.v1.WorkstationConfig.Host value) {
       if (hostBuilder_ == null) {
@@ -14709,10 +17333,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Runtime host for the workstation.
+     * Optional. Runtime host for the workstation.
      * </pre>
      *
-     * <code>.google.cloud.workstations.v1.WorkstationConfig.Host host = 12;</code>
+     * <code>
+     * .google.cloud.workstations.v1.WorkstationConfig.Host host = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearHost() {
       bitField0_ = (bitField0_ & ~0x00001000);
@@ -14728,10 +17354,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Runtime host for the workstation.
+     * Optional. Runtime host for the workstation.
      * </pre>
      *
-     * <code>.google.cloud.workstations.v1.WorkstationConfig.Host host = 12;</code>
+     * <code>
+     * .google.cloud.workstations.v1.WorkstationConfig.Host host = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.workstations.v1.WorkstationConfig.Host.Builder getHostBuilder() {
       bitField0_ |= 0x00001000;
@@ -14742,10 +17370,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Runtime host for the workstation.
+     * Optional. Runtime host for the workstation.
      * </pre>
      *
-     * <code>.google.cloud.workstations.v1.WorkstationConfig.Host host = 12;</code>
+     * <code>
+     * .google.cloud.workstations.v1.WorkstationConfig.Host host = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.workstations.v1.WorkstationConfig.HostOrBuilder getHostOrBuilder() {
       if (hostBuilder_ != null) {
@@ -14760,10 +17390,12 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Runtime host for the workstation.
+     * Optional. Runtime host for the workstation.
      * </pre>
      *
-     * <code>.google.cloud.workstations.v1.WorkstationConfig.Host host = 12;</code>
+     * <code>
+     * .google.cloud.workstations.v1.WorkstationConfig.Host host = 12 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.workstations.v1.WorkstationConfig.Host,
@@ -14805,11 +17437,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Directories to persist across workstation sessions.
+     * Optional. Directories to persist across workstation sessions.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<com.google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory>
@@ -14824,11 +17456,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Directories to persist across workstation sessions.
+     * Optional. Directories to persist across workstation sessions.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public int getPersistentDirectoriesCount() {
@@ -14842,11 +17474,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Directories to persist across workstation sessions.
+     * Optional. Directories to persist across workstation sessions.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory
@@ -14861,11 +17493,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Directories to persist across workstation sessions.
+     * Optional. Directories to persist across workstation sessions.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setPersistentDirectories(
@@ -14886,11 +17518,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Directories to persist across workstation sessions.
+     * Optional. Directories to persist across workstation sessions.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setPersistentDirectories(
@@ -14910,11 +17542,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Directories to persist across workstation sessions.
+     * Optional. Directories to persist across workstation sessions.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addPersistentDirectories(
@@ -14935,11 +17567,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Directories to persist across workstation sessions.
+     * Optional. Directories to persist across workstation sessions.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addPersistentDirectories(
@@ -14960,11 +17592,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Directories to persist across workstation sessions.
+     * Optional. Directories to persist across workstation sessions.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addPersistentDirectories(
@@ -14983,11 +17615,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Directories to persist across workstation sessions.
+     * Optional. Directories to persist across workstation sessions.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addPersistentDirectories(
@@ -15007,11 +17639,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Directories to persist across workstation sessions.
+     * Optional. Directories to persist across workstation sessions.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder addAllPersistentDirectories(
@@ -15031,11 +17663,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Directories to persist across workstation sessions.
+     * Optional. Directories to persist across workstation sessions.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearPersistentDirectories() {
@@ -15052,11 +17684,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Directories to persist across workstation sessions.
+     * Optional. Directories to persist across workstation sessions.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder removePersistentDirectories(int index) {
@@ -15073,11 +17705,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Directories to persist across workstation sessions.
+     * Optional. Directories to persist across workstation sessions.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.Builder
@@ -15088,11 +17720,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Directories to persist across workstation sessions.
+     * Optional. Directories to persist across workstation sessions.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.workstations.v1.WorkstationConfig.PersistentDirectoryOrBuilder
@@ -15107,11 +17739,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Directories to persist across workstation sessions.
+     * Optional. Directories to persist across workstation sessions.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<
@@ -15128,11 +17760,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Directories to persist across workstation sessions.
+     * Optional. Directories to persist across workstation sessions.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.Builder
@@ -15146,11 +17778,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Directories to persist across workstation sessions.
+     * Optional. Directories to persist across workstation sessions.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory.Builder
@@ -15165,11 +17797,11 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Directories to persist across workstation sessions.
+     * Optional. Directories to persist across workstation sessions.
      * </pre>
      *
      * <code>
-     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13;
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.PersistentDirectory persistent_directories = 13 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public java.util.List<
@@ -15208,11 +17840,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Container that will be run for each workstation using this configuration
-     * when that workstation is started.
+     * Optional. Container that runs upon startup for each workstation using this
+     * workstation configuration.
      * </pre>
      *
-     * <code>.google.cloud.workstations.v1.WorkstationConfig.Container container = 14;</code>
+     * <code>
+     * .google.cloud.workstations.v1.WorkstationConfig.Container container = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the container field is set.
      */
@@ -15223,11 +17857,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Container that will be run for each workstation using this configuration
-     * when that workstation is started.
+     * Optional. Container that runs upon startup for each workstation using this
+     * workstation configuration.
      * </pre>
      *
-     * <code>.google.cloud.workstations.v1.WorkstationConfig.Container container = 14;</code>
+     * <code>
+     * .google.cloud.workstations.v1.WorkstationConfig.Container container = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The container.
      */
@@ -15244,11 +17880,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Container that will be run for each workstation using this configuration
-     * when that workstation is started.
+     * Optional. Container that runs upon startup for each workstation using this
+     * workstation configuration.
      * </pre>
      *
-     * <code>.google.cloud.workstations.v1.WorkstationConfig.Container container = 14;</code>
+     * <code>
+     * .google.cloud.workstations.v1.WorkstationConfig.Container container = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setContainer(
         com.google.cloud.workstations.v1.WorkstationConfig.Container value) {
@@ -15268,11 +17906,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Container that will be run for each workstation using this configuration
-     * when that workstation is started.
+     * Optional. Container that runs upon startup for each workstation using this
+     * workstation configuration.
      * </pre>
      *
-     * <code>.google.cloud.workstations.v1.WorkstationConfig.Container container = 14;</code>
+     * <code>
+     * .google.cloud.workstations.v1.WorkstationConfig.Container container = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder setContainer(
         com.google.cloud.workstations.v1.WorkstationConfig.Container.Builder builderForValue) {
@@ -15289,11 +17929,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Container that will be run for each workstation using this configuration
-     * when that workstation is started.
+     * Optional. Container that runs upon startup for each workstation using this
+     * workstation configuration.
      * </pre>
      *
-     * <code>.google.cloud.workstations.v1.WorkstationConfig.Container container = 14;</code>
+     * <code>
+     * .google.cloud.workstations.v1.WorkstationConfig.Container container = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder mergeContainer(
         com.google.cloud.workstations.v1.WorkstationConfig.Container value) {
@@ -15318,11 +17960,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Container that will be run for each workstation using this configuration
-     * when that workstation is started.
+     * Optional. Container that runs upon startup for each workstation using this
+     * workstation configuration.
      * </pre>
      *
-     * <code>.google.cloud.workstations.v1.WorkstationConfig.Container container = 14;</code>
+     * <code>
+     * .google.cloud.workstations.v1.WorkstationConfig.Container container = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder clearContainer() {
       bitField0_ = (bitField0_ & ~0x00004000);
@@ -15338,11 +17982,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Container that will be run for each workstation using this configuration
-     * when that workstation is started.
+     * Optional. Container that runs upon startup for each workstation using this
+     * workstation configuration.
      * </pre>
      *
-     * <code>.google.cloud.workstations.v1.WorkstationConfig.Container container = 14;</code>
+     * <code>
+     * .google.cloud.workstations.v1.WorkstationConfig.Container container = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.workstations.v1.WorkstationConfig.Container.Builder
         getContainerBuilder() {
@@ -15354,11 +18000,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Container that will be run for each workstation using this configuration
-     * when that workstation is started.
+     * Optional. Container that runs upon startup for each workstation using this
+     * workstation configuration.
      * </pre>
      *
-     * <code>.google.cloud.workstations.v1.WorkstationConfig.Container container = 14;</code>
+     * <code>
+     * .google.cloud.workstations.v1.WorkstationConfig.Container container = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public com.google.cloud.workstations.v1.WorkstationConfig.ContainerOrBuilder
         getContainerOrBuilder() {
@@ -15374,11 +18022,13 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Container that will be run for each workstation using this configuration
-     * when that workstation is started.
+     * Optional. Container that runs upon startup for each workstation using this
+     * workstation configuration.
      * </pre>
      *
-     * <code>.google.cloud.workstations.v1.WorkstationConfig.Container container = 14;</code>
+     * <code>
+     * .google.cloud.workstations.v1.WorkstationConfig.Container container = 14 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.workstations.v1.WorkstationConfig.Container,
@@ -15408,7 +18058,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Immutable. Encrypts resources of this workstation configuration using a
-     * customer-managed encryption key.
+     * customer-managed encryption key (CMEK).
      *
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
@@ -15419,10 +18069,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * instance is stopped, the system attempts to recreate the
      * persistent disk with the new version of the key. Be sure to keep
      * older versions of the key until the persistent disk is recreated.
-     * Otherwise, data on the persistent disk will be lost.
+     * Otherwise, data on the persistent disk might be lost.
      *
-     * If the encryption key is revoked, the workstation session will
-     * automatically be stopped within 7 hours.
+     * If the encryption key is revoked, the workstation session automatically
+     * stops within 7 hours.
      *
      * Immutable after the workstation configuration is created.
      * </pre>
@@ -15441,7 +18091,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Immutable. Encrypts resources of this workstation configuration using a
-     * customer-managed encryption key.
+     * customer-managed encryption key (CMEK).
      *
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
@@ -15452,10 +18102,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * instance is stopped, the system attempts to recreate the
      * persistent disk with the new version of the key. Be sure to keep
      * older versions of the key until the persistent disk is recreated.
-     * Otherwise, data on the persistent disk will be lost.
+     * Otherwise, data on the persistent disk might be lost.
      *
-     * If the encryption key is revoked, the workstation session will
-     * automatically be stopped within 7 hours.
+     * If the encryption key is revoked, the workstation session automatically
+     * stops within 7 hours.
      *
      * Immutable after the workstation configuration is created.
      * </pre>
@@ -15482,7 +18132,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Immutable. Encrypts resources of this workstation configuration using a
-     * customer-managed encryption key.
+     * customer-managed encryption key (CMEK).
      *
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
@@ -15493,10 +18143,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * instance is stopped, the system attempts to recreate the
      * persistent disk with the new version of the key. Be sure to keep
      * older versions of the key until the persistent disk is recreated.
-     * Otherwise, data on the persistent disk will be lost.
+     * Otherwise, data on the persistent disk might be lost.
      *
-     * If the encryption key is revoked, the workstation session will
-     * automatically be stopped within 7 hours.
+     * If the encryption key is revoked, the workstation session automatically
+     * stops within 7 hours.
      *
      * Immutable after the workstation configuration is created.
      * </pre>
@@ -15524,7 +18174,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Immutable. Encrypts resources of this workstation configuration using a
-     * customer-managed encryption key.
+     * customer-managed encryption key (CMEK).
      *
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
@@ -15535,10 +18185,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * instance is stopped, the system attempts to recreate the
      * persistent disk with the new version of the key. Be sure to keep
      * older versions of the key until the persistent disk is recreated.
-     * Otherwise, data on the persistent disk will be lost.
+     * Otherwise, data on the persistent disk might be lost.
      *
-     * If the encryption key is revoked, the workstation session will
-     * automatically be stopped within 7 hours.
+     * If the encryption key is revoked, the workstation session automatically
+     * stops within 7 hours.
      *
      * Immutable after the workstation configuration is created.
      * </pre>
@@ -15564,7 +18214,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Immutable. Encrypts resources of this workstation configuration using a
-     * customer-managed encryption key.
+     * customer-managed encryption key (CMEK).
      *
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
@@ -15575,10 +18225,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * instance is stopped, the system attempts to recreate the
      * persistent disk with the new version of the key. Be sure to keep
      * older versions of the key until the persistent disk is recreated.
-     * Otherwise, data on the persistent disk will be lost.
+     * Otherwise, data on the persistent disk might be lost.
      *
-     * If the encryption key is revoked, the workstation session will
-     * automatically be stopped within 7 hours.
+     * If the encryption key is revoked, the workstation session automatically
+     * stops within 7 hours.
      *
      * Immutable after the workstation configuration is created.
      * </pre>
@@ -15611,7 +18261,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Immutable. Encrypts resources of this workstation configuration using a
-     * customer-managed encryption key.
+     * customer-managed encryption key (CMEK).
      *
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
@@ -15622,10 +18272,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * instance is stopped, the system attempts to recreate the
      * persistent disk with the new version of the key. Be sure to keep
      * older versions of the key until the persistent disk is recreated.
-     * Otherwise, data on the persistent disk will be lost.
+     * Otherwise, data on the persistent disk might be lost.
      *
-     * If the encryption key is revoked, the workstation session will
-     * automatically be stopped within 7 hours.
+     * If the encryption key is revoked, the workstation session automatically
+     * stops within 7 hours.
      *
      * Immutable after the workstation configuration is created.
      * </pre>
@@ -15649,7 +18299,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Immutable. Encrypts resources of this workstation configuration using a
-     * customer-managed encryption key.
+     * customer-managed encryption key (CMEK).
      *
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
@@ -15660,10 +18310,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * instance is stopped, the system attempts to recreate the
      * persistent disk with the new version of the key. Be sure to keep
      * older versions of the key until the persistent disk is recreated.
-     * Otherwise, data on the persistent disk will be lost.
+     * Otherwise, data on the persistent disk might be lost.
      *
-     * If the encryption key is revoked, the workstation session will
-     * automatically be stopped within 7 hours.
+     * If the encryption key is revoked, the workstation session automatically
+     * stops within 7 hours.
      *
      * Immutable after the workstation configuration is created.
      * </pre>
@@ -15683,7 +18333,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Immutable. Encrypts resources of this workstation configuration using a
-     * customer-managed encryption key.
+     * customer-managed encryption key (CMEK).
      *
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
@@ -15694,10 +18344,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * instance is stopped, the system attempts to recreate the
      * persistent disk with the new version of the key. Be sure to keep
      * older versions of the key until the persistent disk is recreated.
-     * Otherwise, data on the persistent disk will be lost.
+     * Otherwise, data on the persistent disk might be lost.
      *
-     * If the encryption key is revoked, the workstation session will
-     * automatically be stopped within 7 hours.
+     * If the encryption key is revoked, the workstation session automatically
+     * stops within 7 hours.
      *
      * Immutable after the workstation configuration is created.
      * </pre>
@@ -15722,7 +18372,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Immutable. Encrypts resources of this workstation configuration using a
-     * customer-managed encryption key.
+     * customer-managed encryption key (CMEK).
      *
      * If specified, the boot disk of the Compute Engine instance and the
      * persistent disk are encrypted using this encryption key. If
@@ -15733,10 +18383,10 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * instance is stopped, the system attempts to recreate the
      * persistent disk with the new version of the key. Be sure to keep
      * older versions of the key until the persistent disk is recreated.
-     * Otherwise, data on the persistent disk will be lost.
+     * Otherwise, data on the persistent disk might be lost.
      *
-     * If the encryption key is revoked, the workstation session will
-     * automatically be stopped within 7 hours.
+     * If the encryption key is revoked, the workstation session automatically
+     * stops within 7 hours.
      *
      * Immutable after the workstation configuration is created.
      * </pre>
@@ -15762,6 +18412,699 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
       return encryptionKeyBuilder_;
     }
 
+    private java.util.List<com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck>
+        readinessChecks_ = java.util.Collections.emptyList();
+
+    private void ensureReadinessChecksIsMutable() {
+      if (!((bitField0_ & 0x00010000) != 0)) {
+        readinessChecks_ =
+            new java.util.ArrayList<
+                com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck>(
+                readinessChecks_);
+        bitField0_ |= 0x00010000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck,
+            com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck.Builder,
+            com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheckOrBuilder>
+        readinessChecksBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Readiness checks to perform when starting a workstation using
+     * this workstation configuration. Mark a workstation as running only after
+     * all specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck>
+        getReadinessChecksList() {
+      if (readinessChecksBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(readinessChecks_);
+      } else {
+        return readinessChecksBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Readiness checks to perform when starting a workstation using
+     * this workstation configuration. Mark a workstation as running only after
+     * all specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getReadinessChecksCount() {
+      if (readinessChecksBuilder_ == null) {
+        return readinessChecks_.size();
+      } else {
+        return readinessChecksBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Readiness checks to perform when starting a workstation using
+     * this workstation configuration. Mark a workstation as running only after
+     * all specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck getReadinessChecks(
+        int index) {
+      if (readinessChecksBuilder_ == null) {
+        return readinessChecks_.get(index);
+      } else {
+        return readinessChecksBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Readiness checks to perform when starting a workstation using
+     * this workstation configuration. Mark a workstation as running only after
+     * all specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setReadinessChecks(
+        int index, com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck value) {
+      if (readinessChecksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureReadinessChecksIsMutable();
+        readinessChecks_.set(index, value);
+        onChanged();
+      } else {
+        readinessChecksBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Readiness checks to perform when starting a workstation using
+     * this workstation configuration. Mark a workstation as running only after
+     * all specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setReadinessChecks(
+        int index,
+        com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck.Builder builderForValue) {
+      if (readinessChecksBuilder_ == null) {
+        ensureReadinessChecksIsMutable();
+        readinessChecks_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        readinessChecksBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Readiness checks to perform when starting a workstation using
+     * this workstation configuration. Mark a workstation as running only after
+     * all specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addReadinessChecks(
+        com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck value) {
+      if (readinessChecksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureReadinessChecksIsMutable();
+        readinessChecks_.add(value);
+        onChanged();
+      } else {
+        readinessChecksBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Readiness checks to perform when starting a workstation using
+     * this workstation configuration. Mark a workstation as running only after
+     * all specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addReadinessChecks(
+        int index, com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck value) {
+      if (readinessChecksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureReadinessChecksIsMutable();
+        readinessChecks_.add(index, value);
+        onChanged();
+      } else {
+        readinessChecksBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Readiness checks to perform when starting a workstation using
+     * this workstation configuration. Mark a workstation as running only after
+     * all specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addReadinessChecks(
+        com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck.Builder builderForValue) {
+      if (readinessChecksBuilder_ == null) {
+        ensureReadinessChecksIsMutable();
+        readinessChecks_.add(builderForValue.build());
+        onChanged();
+      } else {
+        readinessChecksBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Readiness checks to perform when starting a workstation using
+     * this workstation configuration. Mark a workstation as running only after
+     * all specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addReadinessChecks(
+        int index,
+        com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck.Builder builderForValue) {
+      if (readinessChecksBuilder_ == null) {
+        ensureReadinessChecksIsMutable();
+        readinessChecks_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        readinessChecksBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Readiness checks to perform when starting a workstation using
+     * this workstation configuration. Mark a workstation as running only after
+     * all specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllReadinessChecks(
+        java.lang.Iterable<
+                ? extends com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck>
+            values) {
+      if (readinessChecksBuilder_ == null) {
+        ensureReadinessChecksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, readinessChecks_);
+        onChanged();
+      } else {
+        readinessChecksBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Readiness checks to perform when starting a workstation using
+     * this workstation configuration. Mark a workstation as running only after
+     * all specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearReadinessChecks() {
+      if (readinessChecksBuilder_ == null) {
+        readinessChecks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00010000);
+        onChanged();
+      } else {
+        readinessChecksBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Readiness checks to perform when starting a workstation using
+     * this workstation configuration. Mark a workstation as running only after
+     * all specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeReadinessChecks(int index) {
+      if (readinessChecksBuilder_ == null) {
+        ensureReadinessChecksIsMutable();
+        readinessChecks_.remove(index);
+        onChanged();
+      } else {
+        readinessChecksBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Readiness checks to perform when starting a workstation using
+     * this workstation configuration. Mark a workstation as running only after
+     * all specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck.Builder
+        getReadinessChecksBuilder(int index) {
+      return getReadinessChecksFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Readiness checks to perform when starting a workstation using
+     * this workstation configuration. Mark a workstation as running only after
+     * all specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheckOrBuilder
+        getReadinessChecksOrBuilder(int index) {
+      if (readinessChecksBuilder_ == null) {
+        return readinessChecks_.get(index);
+      } else {
+        return readinessChecksBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Readiness checks to perform when starting a workstation using
+     * this workstation configuration. Mark a workstation as running only after
+     * all specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheckOrBuilder>
+        getReadinessChecksOrBuilderList() {
+      if (readinessChecksBuilder_ != null) {
+        return readinessChecksBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(readinessChecks_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Readiness checks to perform when starting a workstation using
+     * this workstation configuration. Mark a workstation as running only after
+     * all specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck.Builder
+        addReadinessChecksBuilder() {
+      return getReadinessChecksFieldBuilder()
+          .addBuilder(
+              com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Readiness checks to perform when starting a workstation using
+     * this workstation configuration. Mark a workstation as running only after
+     * all specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck.Builder
+        addReadinessChecksBuilder(int index) {
+      return getReadinessChecksFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck
+                  .getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Readiness checks to perform when starting a workstation using
+     * this workstation configuration. Mark a workstation as running only after
+     * all specified readiness checks return 200 status codes.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck readiness_checks = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck.Builder>
+        getReadinessChecksBuilderList() {
+      return getReadinessChecksFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck,
+            com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck.Builder,
+            com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheckOrBuilder>
+        getReadinessChecksFieldBuilder() {
+      if (readinessChecksBuilder_ == null) {
+        readinessChecksBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck,
+                com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheck.Builder,
+                com.google.cloud.workstations.v1.WorkstationConfig.ReadinessCheckOrBuilder>(
+                readinessChecks_,
+                ((bitField0_ & 0x00010000) != 0),
+                getParentForChildren(),
+                isClean());
+        readinessChecks_ = null;
+      }
+      return readinessChecksBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList replicaZones_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureReplicaZonesIsMutable() {
+      if (!replicaZones_.isModifiable()) {
+        replicaZones_ = new com.google.protobuf.LazyStringArrayList(replicaZones_);
+      }
+      bitField0_ |= 0x00020000;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies the zones used to replicate the VM and disk
+     * resources within the region. If set, exactly two zones within the
+     * workstation cluster's region must be specified—for example,
+     * `['us-central1-a', 'us-central1-f']`. If this field is empty, two default
+     * zones within the region are used.
+     *
+     * Immutable after the workstation configuration is created.
+     * </pre>
+     *
+     * <code>
+     * repeated string replica_zones = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return A list containing the replicaZones.
+     */
+    public com.google.protobuf.ProtocolStringList getReplicaZonesList() {
+      replicaZones_.makeImmutable();
+      return replicaZones_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies the zones used to replicate the VM and disk
+     * resources within the region. If set, exactly two zones within the
+     * workstation cluster's region must be specified—for example,
+     * `['us-central1-a', 'us-central1-f']`. If this field is empty, two default
+     * zones within the region are used.
+     *
+     * Immutable after the workstation configuration is created.
+     * </pre>
+     *
+     * <code>
+     * repeated string replica_zones = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The count of replicaZones.
+     */
+    public int getReplicaZonesCount() {
+      return replicaZones_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies the zones used to replicate the VM and disk
+     * resources within the region. If set, exactly two zones within the
+     * workstation cluster's region must be specified—for example,
+     * `['us-central1-a', 'us-central1-f']`. If this field is empty, two default
+     * zones within the region are used.
+     *
+     * Immutable after the workstation configuration is created.
+     * </pre>
+     *
+     * <code>
+     * repeated string replica_zones = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The replicaZones at the given index.
+     */
+    public java.lang.String getReplicaZones(int index) {
+      return replicaZones_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies the zones used to replicate the VM and disk
+     * resources within the region. If set, exactly two zones within the
+     * workstation cluster's region must be specified—for example,
+     * `['us-central1-a', 'us-central1-f']`. If this field is empty, two default
+     * zones within the region are used.
+     *
+     * Immutable after the workstation configuration is created.
+     * </pre>
+     *
+     * <code>
+     * repeated string replica_zones = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the replicaZones at the given index.
+     */
+    public com.google.protobuf.ByteString getReplicaZonesBytes(int index) {
+      return replicaZones_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies the zones used to replicate the VM and disk
+     * resources within the region. If set, exactly two zones within the
+     * workstation cluster's region must be specified—for example,
+     * `['us-central1-a', 'us-central1-f']`. If this field is empty, two default
+     * zones within the region are used.
+     *
+     * Immutable after the workstation configuration is created.
+     * </pre>
+     *
+     * <code>
+     * repeated string replica_zones = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The replicaZones to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReplicaZones(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureReplicaZonesIsMutable();
+      replicaZones_.set(index, value);
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies the zones used to replicate the VM and disk
+     * resources within the region. If set, exactly two zones within the
+     * workstation cluster's region must be specified—for example,
+     * `['us-central1-a', 'us-central1-f']`. If this field is empty, two default
+     * zones within the region are used.
+     *
+     * Immutable after the workstation configuration is created.
+     * </pre>
+     *
+     * <code>
+     * repeated string replica_zones = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The replicaZones to add.
+     * @return This builder for chaining.
+     */
+    public Builder addReplicaZones(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureReplicaZonesIsMutable();
+      replicaZones_.add(value);
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies the zones used to replicate the VM and disk
+     * resources within the region. If set, exactly two zones within the
+     * workstation cluster's region must be specified—for example,
+     * `['us-central1-a', 'us-central1-f']`. If this field is empty, two default
+     * zones within the region are used.
+     *
+     * Immutable after the workstation configuration is created.
+     * </pre>
+     *
+     * <code>
+     * repeated string replica_zones = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param values The replicaZones to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllReplicaZones(java.lang.Iterable<java.lang.String> values) {
+      ensureReplicaZonesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, replicaZones_);
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies the zones used to replicate the VM and disk
+     * resources within the region. If set, exactly two zones within the
+     * workstation cluster's region must be specified—for example,
+     * `['us-central1-a', 'us-central1-f']`. If this field is empty, two default
+     * zones within the region are used.
+     *
+     * Immutable after the workstation configuration is created.
+     * </pre>
+     *
+     * <code>
+     * repeated string replica_zones = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReplicaZones() {
+      replicaZones_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00020000);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. Specifies the zones used to replicate the VM and disk
+     * resources within the region. If set, exactly two zones within the
+     * workstation cluster's region must be specified—for example,
+     * `['us-central1-a', 'us-central1-f']`. If this field is empty, two default
+     * zones within the region are used.
+     *
+     * Immutable after the workstation configuration is created.
+     * </pre>
+     *
+     * <code>
+     * repeated string replica_zones = 23 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The bytes of the replicaZones to add.
+     * @return This builder for chaining.
+     */
+    public Builder addReplicaZonesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureReplicaZonesIsMutable();
+      replicaZones_.add(value);
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
     private boolean degraded_;
     /**
      *
@@ -15769,7 +19112,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Output only. Whether this resource is degraded, in which case it may
      * require user action to restore full functionality. See also the
-     * `conditions` field.
+     * [conditions][google.cloud.workstations.v1.WorkstationConfig.conditions]
+     * field.
      * </pre>
      *
      * <code>bool degraded = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -15786,7 +19130,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Output only. Whether this resource is degraded, in which case it may
      * require user action to restore full functionality. See also the
-     * `conditions` field.
+     * [conditions][google.cloud.workstations.v1.WorkstationConfig.conditions]
+     * field.
      * </pre>
      *
      * <code>bool degraded = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -15797,7 +19142,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public Builder setDegraded(boolean value) {
 
       degraded_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -15807,7 +19152,8 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Output only. Whether this resource is degraded, in which case it may
      * require user action to restore full functionality. See also the
-     * `conditions` field.
+     * [conditions][google.cloud.workstations.v1.WorkstationConfig.conditions]
+     * field.
      * </pre>
      *
      * <code>bool degraded = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -15815,7 +19161,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
      * @return This builder for chaining.
      */
     public Builder clearDegraded() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       degraded_ = false;
       onChanged();
       return this;
@@ -15824,9 +19170,9 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     private java.util.List<com.google.rpc.Status> conditions_ = java.util.Collections.emptyList();
 
     private void ensureConditionsIsMutable() {
-      if (!((bitField0_ & 0x00020000) != 0)) {
+      if (!((bitField0_ & 0x00080000) != 0)) {
         conditions_ = new java.util.ArrayList<com.google.rpc.Status>(conditions_);
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00080000;
       }
     }
 
@@ -16058,7 +19404,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
     public Builder clearConditions() {
       if (conditionsBuilder_ == null) {
         conditions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         onChanged();
       } else {
         conditionsBuilder_.clear();
@@ -16189,7 +19535,7 @@ public final class WorkstationConfig extends com.google.protobuf.GeneratedMessag
                 com.google.rpc.Status,
                 com.google.rpc.Status.Builder,
                 com.google.rpc.StatusOrBuilder>(
-                conditions_, ((bitField0_ & 0x00020000) != 0), getParentForChildren(), isClean());
+                conditions_, ((bitField0_ & 0x00080000) != 0), getParentForChildren(), isClean());
         conditions_ = null;
       }
       return conditionsBuilder_;

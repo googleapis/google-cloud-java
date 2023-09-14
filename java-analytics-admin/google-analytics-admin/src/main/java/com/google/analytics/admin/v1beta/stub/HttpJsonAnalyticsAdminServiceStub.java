@@ -94,6 +94,7 @@ import com.google.analytics.admin.v1beta.RunAccessReportResponse;
 import com.google.analytics.admin.v1beta.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1beta.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1beta.UpdateAccountRequest;
+import com.google.analytics.admin.v1beta.UpdateConversionEventRequest;
 import com.google.analytics.admin.v1beta.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1beta.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1beta.UpdateDataRetentionSettingsRequest;
@@ -1160,6 +1161,48 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventMethodDescriptor =
+          ApiMethodDescriptor.<UpdateConversionEventRequest, ConversionEvent>newBuilder()
+              .setFullMethodName(
+                  "google.analytics.admin.v1beta.AnalyticsAdminService/UpdateConversionEvent")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateConversionEventRequest>newBuilder()
+                      .setPath(
+                          "/v1beta/{conversionEvent.name=properties/*/conversionEvents/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateConversionEventRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields,
+                                "conversionEvent.name",
+                                request.getConversionEvent().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateConversionEventRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("conversionEvent", request.getConversionEvent(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ConversionEvent>newBuilder()
+                      .setDefaultInstance(ConversionEvent.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<GetConversionEventRequest, ConversionEvent>
       getConversionEventMethodDescriptor =
           ApiMethodDescriptor.<GetConversionEventRequest, ConversionEvent>newBuilder()
@@ -2015,6 +2058,8 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
       searchChangeHistoryEventsPagedCallable;
   private final UnaryCallable<CreateConversionEventRequest, ConversionEvent>
       createConversionEventCallable;
+  private final UnaryCallable<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventCallable;
   private final UnaryCallable<GetConversionEventRequest, ConversionEvent>
       getConversionEventCallable;
   private final UnaryCallable<DeleteConversionEventRequest, Empty> deleteConversionEventCallable;
@@ -2397,6 +2442,20 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<UpdateConversionEventRequest, ConversionEvent>
+        updateConversionEventTransportSettings =
+            HttpJsonCallSettings.<UpdateConversionEventRequest, ConversionEvent>newBuilder()
+                .setMethodDescriptor(updateConversionEventMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "conversion_event.name",
+                          String.valueOf(request.getConversionEvent().getName()));
                       return builder.build();
                     })
                 .build();
@@ -2806,6 +2865,11 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
             createConversionEventTransportSettings,
             settings.createConversionEventSettings(),
             clientContext);
+    this.updateConversionEventCallable =
+        callableFactory.createUnaryCallable(
+            updateConversionEventTransportSettings,
+            settings.updateConversionEventSettings(),
+            clientContext);
     this.getConversionEventCallable =
         callableFactory.createUnaryCallable(
             getConversionEventTransportSettings,
@@ -2950,6 +3014,7 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
     methodDescriptors.add(acknowledgeUserDataCollectionMethodDescriptor);
     methodDescriptors.add(searchChangeHistoryEventsMethodDescriptor);
     methodDescriptors.add(createConversionEventMethodDescriptor);
+    methodDescriptors.add(updateConversionEventMethodDescriptor);
     methodDescriptors.add(getConversionEventMethodDescriptor);
     methodDescriptors.add(deleteConversionEventMethodDescriptor);
     methodDescriptors.add(listConversionEventsMethodDescriptor);
@@ -3163,6 +3228,12 @@ public class HttpJsonAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub
   public UnaryCallable<CreateConversionEventRequest, ConversionEvent>
       createConversionEventCallable() {
     return createConversionEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventCallable() {
+    return updateConversionEventCallable;
   }
 
   @Override

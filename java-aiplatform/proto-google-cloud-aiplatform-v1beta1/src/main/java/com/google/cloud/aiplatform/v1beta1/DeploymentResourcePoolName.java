@@ -168,7 +168,7 @@ public class DeploymentResourcePoolName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       DeploymentResourcePoolName that = ((DeploymentResourcePoolName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)

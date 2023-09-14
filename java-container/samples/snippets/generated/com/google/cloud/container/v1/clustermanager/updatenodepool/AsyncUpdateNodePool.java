@@ -77,6 +77,9 @@ public class AsyncUpdateNodePool {
               .setLoggingConfig(NodePoolLoggingConfig.newBuilder().build())
               .setResourceLabels(ResourceLabels.newBuilder().build())
               .setWindowsNodeConfig(WindowsNodeConfig.newBuilder().build())
+              .setMachineType("machineType-218117087")
+              .setDiskType("diskType279771767")
+              .setDiskSizeGb(-757478089)
               .build();
       ApiFuture<Operation> future =
           clusterManagerClient.updateNodePoolCallable().futureCall(request);

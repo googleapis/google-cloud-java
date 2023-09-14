@@ -27,8 +27,9 @@ public interface ListAlertPoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
-   * whose alert policies are to be listed. The format is:
+   * Required. The
+   * [project](https://cloud.google.com/monitoring/api/v3#project_name) whose
+   * alert policies are to be listed. The format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]
    *
@@ -50,8 +51,9 @@ public interface ListAlertPoliciesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The [project](https://cloud.google.com/monitoring/api/v3#project_name)
-   * whose alert policies are to be listed. The format is:
+   * Required. The
+   * [project](https://cloud.google.com/monitoring/api/v3#project_name) whose
+   * alert policies are to be listed. The format is:
    *
    *     projects/[PROJECT_ID_OR_NUMBER]
    *

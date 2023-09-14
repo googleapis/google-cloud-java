@@ -44,6 +44,7 @@ public class AsyncDeleteConversionWorkspaceLRO {
                   ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
                       .toString())
               .setRequestId("requestId693933066")
+              .setForce(true)
               .build();
       OperationFuture<Empty, OperationMetadata> future =
           dataMigrationServiceClient

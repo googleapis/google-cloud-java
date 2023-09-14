@@ -43,6 +43,8 @@ public class AsyncApplyConversionWorkspace {
                   ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
                       .toString())
               .setFilter("filter-1274492040")
+              .setDryRun(true)
+              .setAutoCommit(true)
               .build();
       ApiFuture<Operation> future =
           dataMigrationServiceClient.applyConversionWorkspaceCallable().futureCall(request);

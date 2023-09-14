@@ -295,7 +295,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Full name of this resource.
+   * Full name of this workstation.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -318,7 +318,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Full name of this resource.
+   * Full name of this workstation.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -346,10 +346,10 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Human-readable name for this resource.
+   * Optional. Human-readable name for this workstation.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The displayName.
    */
@@ -369,10 +369,10 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Human-readable name for this resource.
+   * Optional. Human-readable name for this workstation.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for displayName.
    */
@@ -397,7 +397,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A system-assigned unique identified for this resource.
+   * Output only. A system-assigned unique identifier for this workstation.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -420,7 +420,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A system-assigned unique identified for this resource.
+   * Output only. A system-assigned unique identifier for this workstation.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -446,8 +446,8 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Indicates whether this resource is currently being updated to
-   * match its intended state.
+   * Output only. Indicates whether this workstation is currently being updated
+   * to match its intended state.
    * </pre>
    *
    * <code>bool reconciling = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -490,10 +490,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public boolean containsAnnotations(java.lang.String key) {
@@ -512,10 +513,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -525,10 +527,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -545,10 +548,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -592,11 +596,13 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation and that are also propagated to the
+   * underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 13;</code>
+   * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -615,11 +621,13 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation and that are also propagated to the
+   * underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 13;</code>
+   * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -629,11 +637,13 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation and that are also propagated to the
+   * underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 13;</code>
+   * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -650,11 +660,13 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation and that are also propagated to the
+   * underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 13;</code>
+   * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -674,7 +686,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time when this resource was created.
+   * Output only. Time when this workstation was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -690,7 +702,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time when this resource was created.
+   * Output only. Time when this workstation was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -706,7 +718,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time when this resource was created.
+   * Output only. Time when this workstation was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -723,7 +735,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time when this resource was most recently updated.
+   * Output only. Time when this workstation was most recently updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -739,7 +751,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time when this resource was most recently updated.
+   * Output only. Time when this workstation was most recently updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -755,7 +767,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time when this resource was most recently updated.
+   * Output only. Time when this workstation was most recently updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -766,13 +778,65 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
 
+  public static final int START_TIME_FIELD_NUMBER = 14;
+  private com.google.protobuf.Timestamp startTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time when this workstation was most recently successfully
+   * started, regardless of the workstation's initial state.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the startTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasStartTime() {
+    return startTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time when this workstation was most recently successfully
+   * started, regardless of the workstation's initial state.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The startTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getStartTime() {
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time when this workstation was most recently successfully
+   * started, regardless of the workstation's initial state.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp start_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+    return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+  }
+
   public static final int DELETE_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp deleteTime_;
   /**
    *
    *
    * <pre>
-   * Output only. Time when this resource was soft-deleted.
+   * Output only. Time when this workstation was soft-deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -788,7 +852,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time when this resource was soft-deleted.
+   * Output only. Time when this workstation was soft-deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -804,7 +868,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Time when this resource was soft-deleted.
+   * Output only. Time when this workstation was soft-deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -823,11 +887,12 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Checksum computed by the server. May be sent on update and delete requests
-   * to make sure that the client has an up-to-date value before proceeding.
+   * Optional. Checksum computed by the server. May be sent on update and delete
+   * requests to make sure that the client has an up-to-date value before
+   * proceeding.
    * </pre>
    *
-   * <code>string etag = 9;</code>
+   * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -847,11 +912,12 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Checksum computed by the server. May be sent on update and delete requests
-   * to make sure that the client has an up-to-date value before proceeding.
+   * Optional. Checksum computed by the server. May be sent on update and delete
+   * requests to make sure that the client has an up-to-date value before
+   * proceeding.
    * </pre>
    *
-   * <code>string etag = 9;</code>
+   * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */
@@ -998,10 +1064,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Environment variables passed to the workstation container's entrypoint.
+   * Optional. Environment variables passed to the workstation container's
+   * entrypoint.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; env = 12;</code>
+   * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public boolean containsEnv(java.lang.String key) {
@@ -1020,10 +1087,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Environment variables passed to the workstation container's entrypoint.
+   * Optional. Environment variables passed to the workstation container's
+   * entrypoint.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; env = 12;</code>
+   * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getEnvMap() {
@@ -1033,10 +1101,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Environment variables passed to the workstation container's entrypoint.
+   * Optional. Environment variables passed to the workstation container's
+   * entrypoint.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; env = 12;</code>
+   * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getEnvOrDefault(
@@ -1053,10 +1122,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Environment variables passed to the workstation container's entrypoint.
+   * Optional. Environment variables passed to the workstation container's
+   * entrypoint.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; env = 12;</code>
+   * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.lang.String getEnvOrThrow(java.lang.String key) {
@@ -1121,6 +1191,9 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
         output, internalGetEnv(), EnvDefaultEntryHolder.defaultEntry, 12);
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 13);
+    if (startTime_ != null) {
+      output.writeMessage(14, getStartTime());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1191,6 +1264,9 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, labels__);
     }
+    if (startTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getStartTime());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1220,6 +1296,10 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime() != other.hasUpdateTime()) return false;
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
+    }
+    if (hasStartTime() != other.hasStartTime()) return false;
+    if (hasStartTime()) {
+      if (!getStartTime().equals(other.getStartTime())) return false;
     }
     if (hasDeleteTime() != other.hasDeleteTime()) return false;
     if (hasDeleteTime()) {
@@ -1263,6 +1343,10 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
+    }
+    if (hasStartTime()) {
+      hash = (37 * hash) + START_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getStartTime().hashCode();
     }
     if (hasDeleteTime()) {
       hash = (37 * hash) + DELETE_TIME_FIELD_NUMBER;
@@ -1461,6 +1545,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_.dispose();
         updateTimeBuilder_ = null;
       }
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
+        startTimeBuilder_ = null;
+      }
       deleteTime_ = null;
       if (deleteTimeBuilder_ != null) {
         deleteTimeBuilder_.dispose();
@@ -1533,18 +1622,21 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.deleteTime_ = deleteTimeBuilder_ == null ? deleteTime_ : deleteTimeBuilder_.build();
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
-        result.etag_ = etag_;
+        result.deleteTime_ = deleteTimeBuilder_ == null ? deleteTime_ : deleteTimeBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.state_ = state_;
+        result.etag_ = etag_;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
-        result.host_ = host_;
+        result.state_ = state_;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.host_ = host_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.env_ = internalGetEnv();
         result.env_.makeImmutable();
       }
@@ -1624,12 +1716,15 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
+      if (other.hasStartTime()) {
+        mergeStartTime(other.getStartTime());
+      }
       if (other.hasDeleteTime()) {
         mergeDeleteTime(other.getDeleteTime());
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (other.state_ != 0) {
@@ -1637,11 +1732,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getHost().isEmpty()) {
         host_ = other.host_;
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       internalGetMutableEnv().mergeFrom(other.internalGetEnv());
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1719,25 +1814,25 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
             case 66:
               {
                 input.readMessage(getDeleteTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 66
             case 74:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 74
             case 80:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 80
             case 90:
               {
                 host_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 90
             case 98:
@@ -1746,7 +1841,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
                     input.readMessage(
                         EnvDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableEnv().getMutableMap().put(env__.getKey(), env__.getValue());
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 98
             case 106:
@@ -1761,6 +1856,12 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 106
+            case 114:
+              {
+                input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1785,7 +1886,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full name of this resource.
+     * Full name of this workstation.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1807,7 +1908,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full name of this resource.
+     * Full name of this workstation.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1829,7 +1930,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full name of this resource.
+     * Full name of this workstation.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1850,7 +1951,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full name of this resource.
+     * Full name of this workstation.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1867,7 +1968,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Full name of this resource.
+     * Full name of this workstation.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -1891,10 +1992,10 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human-readable name for this resource.
+     * Optional. Human-readable name for this workstation.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The displayName.
      */
@@ -1913,10 +2014,10 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human-readable name for this resource.
+     * Optional. Human-readable name for this workstation.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for displayName.
      */
@@ -1935,10 +2036,10 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human-readable name for this resource.
+     * Optional. Human-readable name for this workstation.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -1956,10 +2057,10 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human-readable name for this resource.
+     * Optional. Human-readable name for this workstation.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1973,10 +2074,10 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Human-readable name for this resource.
+     * Optional. Human-readable name for this workstation.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -1997,7 +2098,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A system-assigned unique identified for this resource.
+     * Output only. A system-assigned unique identifier for this workstation.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2019,7 +2120,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A system-assigned unique identified for this resource.
+     * Output only. A system-assigned unique identifier for this workstation.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2041,7 +2142,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A system-assigned unique identified for this resource.
+     * Output only. A system-assigned unique identifier for this workstation.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2062,7 +2163,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A system-assigned unique identified for this resource.
+     * Output only. A system-assigned unique identifier for this workstation.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2079,7 +2180,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A system-assigned unique identified for this resource.
+     * Output only. A system-assigned unique identifier for this workstation.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2103,8 +2204,8 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Indicates whether this resource is currently being updated to
-     * match its intended state.
+     * Output only. Indicates whether this workstation is currently being updated
+     * to match its intended state.
      * </pre>
      *
      * <code>bool reconciling = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2119,8 +2220,8 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Indicates whether this resource is currently being updated to
-     * match its intended state.
+     * Output only. Indicates whether this workstation is currently being updated
+     * to match its intended state.
      * </pre>
      *
      * <code>bool reconciling = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2139,8 +2240,8 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Indicates whether this resource is currently being updated to
-     * match its intended state.
+     * Output only. Indicates whether this workstation is currently being updated
+     * to match its intended state.
      * </pre>
      *
      * <code>bool reconciling = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2186,10 +2287,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Client-specified annotations.
+     * Optional. Client-specified annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public boolean containsAnnotations(java.lang.String key) {
@@ -2208,10 +2310,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Client-specified annotations.
+     * Optional. Client-specified annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -2221,10 +2324,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Client-specified annotations.
+     * Optional. Client-specified annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -2241,10 +2345,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Client-specified annotations.
+     * Optional. Client-specified annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -2267,10 +2372,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Client-specified annotations.
+     * Optional. Client-specified annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeAnnotations(java.lang.String key) {
       if (key == null) {
@@ -2289,10 +2395,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Client-specified annotations.
+     * Optional. Client-specified annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAnnotations(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -2309,10 +2416,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Client-specified annotations.
+     * Optional. Client-specified annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
@@ -2349,11 +2457,13 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Client-specified labels that are applied to the resource and that are also
-     * propagated to the underlying Compute Engine resources.
+     * Optional.
+     * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+     * are applied to the workstation and that are also propagated to the
+     * underlying Compute Engine resources.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 13;</code>
+     * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -2372,11 +2482,13 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Client-specified labels that are applied to the resource and that are also
-     * propagated to the underlying Compute Engine resources.
+     * Optional.
+     * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+     * are applied to the workstation and that are also propagated to the
+     * underlying Compute Engine resources.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 13;</code>
+     * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -2386,11 +2498,13 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Client-specified labels that are applied to the resource and that are also
-     * propagated to the underlying Compute Engine resources.
+     * Optional.
+     * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+     * are applied to the workstation and that are also propagated to the
+     * underlying Compute Engine resources.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 13;</code>
+     * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -2407,11 +2521,13 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Client-specified labels that are applied to the resource and that are also
-     * propagated to the underlying Compute Engine resources.
+     * Optional.
+     * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+     * are applied to the workstation and that are also propagated to the
+     * underlying Compute Engine resources.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 13;</code>
+     * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -2434,11 +2550,13 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Client-specified labels that are applied to the resource and that are also
-     * propagated to the underlying Compute Engine resources.
+     * Optional.
+     * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+     * are applied to the workstation and that are also propagated to the
+     * underlying Compute Engine resources.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 13;</code>
+     * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -2457,11 +2575,13 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Client-specified labels that are applied to the resource and that are also
-     * propagated to the underlying Compute Engine resources.
+     * Optional.
+     * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+     * are applied to the workstation and that are also propagated to the
+     * underlying Compute Engine resources.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 13;</code>
+     * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -2478,11 +2598,13 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Client-specified labels that are applied to the resource and that are also
-     * propagated to the underlying Compute Engine resources.
+     * Optional.
+     * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+     * are applied to the workstation and that are also propagated to the
+     * underlying Compute Engine resources.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 13;</code>
+     * <code>map&lt;string, string&gt; labels = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -2500,7 +2622,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation was created.
      * </pre>
      *
      * <code>
@@ -2516,7 +2638,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation was created.
      * </pre>
      *
      * <code>
@@ -2538,7 +2660,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation was created.
      * </pre>
      *
      * <code>
@@ -2562,7 +2684,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation was created.
      * </pre>
      *
      * <code>
@@ -2583,7 +2705,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation was created.
      * </pre>
      *
      * <code>
@@ -2610,7 +2732,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation was created.
      * </pre>
      *
      * <code>
@@ -2631,7 +2753,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation was created.
      * </pre>
      *
      * <code>
@@ -2647,7 +2769,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation was created.
      * </pre>
      *
      * <code>
@@ -2667,7 +2789,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation was created.
      * </pre>
      *
      * <code>
@@ -2701,7 +2823,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation was most recently updated.
      * </pre>
      *
      * <code>
@@ -2717,7 +2839,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation was most recently updated.
      * </pre>
      *
      * <code>
@@ -2739,7 +2861,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation was most recently updated.
      * </pre>
      *
      * <code>
@@ -2763,7 +2885,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation was most recently updated.
      * </pre>
      *
      * <code>
@@ -2784,7 +2906,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation was most recently updated.
      * </pre>
      *
      * <code>
@@ -2811,7 +2933,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation was most recently updated.
      * </pre>
      *
      * <code>
@@ -2832,7 +2954,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation was most recently updated.
      * </pre>
      *
      * <code>
@@ -2848,7 +2970,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation was most recently updated.
      * </pre>
      *
      * <code>
@@ -2868,7 +2990,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation was most recently updated.
      * </pre>
      *
      * <code>
@@ -2892,6 +3014,212 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
       return updateTimeBuilder_;
     }
 
+    private com.google.protobuf.Timestamp startTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        startTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time when this workstation was most recently successfully
+     * started, regardless of the workstation's initial state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp start_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the startTime field is set.
+     */
+    public boolean hasStartTime() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time when this workstation was most recently successfully
+     * started, regardless of the workstation's initial state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp start_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The startTime.
+     */
+    public com.google.protobuf.Timestamp getStartTime() {
+      if (startTimeBuilder_ == null) {
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+      } else {
+        return startTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time when this workstation was most recently successfully
+     * started, regardless of the workstation's initial state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp start_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setStartTime(com.google.protobuf.Timestamp value) {
+      if (startTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        startTime_ = value;
+      } else {
+        startTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time when this workstation was most recently successfully
+     * started, regardless of the workstation's initial state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp start_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (startTimeBuilder_ == null) {
+        startTime_ = builderForValue.build();
+      } else {
+        startTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time when this workstation was most recently successfully
+     * started, regardless of the workstation's initial state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp start_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
+      if (startTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && startTime_ != null
+            && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getStartTimeBuilder().mergeFrom(value);
+        } else {
+          startTime_ = value;
+        }
+      } else {
+        startTimeBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time when this workstation was most recently successfully
+     * started, regardless of the workstation's initial state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp start_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearStartTime() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      startTime_ = null;
+      if (startTimeBuilder_ != null) {
+        startTimeBuilder_.dispose();
+        startTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time when this workstation was most recently successfully
+     * started, regardless of the workstation's initial state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp start_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getStartTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time when this workstation was most recently successfully
+     * started, regardless of the workstation's initial state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp start_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
+      if (startTimeBuilder_ != null) {
+        return startTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time when this workstation was most recently successfully
+     * started, regardless of the workstation's initial state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp start_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getStartTimeFieldBuilder() {
+      if (startTimeBuilder_ == null) {
+        startTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getStartTime(), getParentForChildren(), isClean());
+        startTime_ = null;
+      }
+      return startTimeBuilder_;
+    }
+
     private com.google.protobuf.Timestamp deleteTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -2902,7 +3230,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation was soft-deleted.
      * </pre>
      *
      * <code>
@@ -2912,13 +3240,13 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the deleteTime field is set.
      */
     public boolean hasDeleteTime() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation was soft-deleted.
      * </pre>
      *
      * <code>
@@ -2940,7 +3268,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation was soft-deleted.
      * </pre>
      *
      * <code>
@@ -2956,7 +3284,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
       } else {
         deleteTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2964,7 +3292,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation was soft-deleted.
      * </pre>
      *
      * <code>
@@ -2977,7 +3305,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
       } else {
         deleteTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -2985,7 +3313,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation was soft-deleted.
      * </pre>
      *
      * <code>
@@ -2994,7 +3322,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDeleteTime(com.google.protobuf.Timestamp value) {
       if (deleteTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && deleteTime_ != null
             && deleteTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getDeleteTimeBuilder().mergeFrom(value);
@@ -3004,7 +3332,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
       } else {
         deleteTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3012,7 +3340,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation was soft-deleted.
      * </pre>
      *
      * <code>
@@ -3020,7 +3348,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDeleteTime() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       deleteTime_ = null;
       if (deleteTimeBuilder_ != null) {
         deleteTimeBuilder_.dispose();
@@ -3033,7 +3361,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation was soft-deleted.
      * </pre>
      *
      * <code>
@@ -3041,7 +3369,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getDeleteTimeBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getDeleteTimeFieldBuilder().getBuilder();
     }
@@ -3049,7 +3377,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation was soft-deleted.
      * </pre>
      *
      * <code>
@@ -3069,7 +3397,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation was soft-deleted.
      * </pre>
      *
      * <code>
@@ -3098,11 +3426,12 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Checksum computed by the server. May be sent on update and delete requests
-     * to make sure that the client has an up-to-date value before proceeding.
+     * Optional. Checksum computed by the server. May be sent on update and delete
+     * requests to make sure that the client has an up-to-date value before
+     * proceeding.
      * </pre>
      *
-     * <code>string etag = 9;</code>
+     * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The etag.
      */
@@ -3121,11 +3450,12 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Checksum computed by the server. May be sent on update and delete requests
-     * to make sure that the client has an up-to-date value before proceeding.
+     * Optional. Checksum computed by the server. May be sent on update and delete
+     * requests to make sure that the client has an up-to-date value before
+     * proceeding.
      * </pre>
      *
-     * <code>string etag = 9;</code>
+     * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for etag.
      */
@@ -3144,11 +3474,12 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Checksum computed by the server. May be sent on update and delete requests
-     * to make sure that the client has an up-to-date value before proceeding.
+     * Optional. Checksum computed by the server. May be sent on update and delete
+     * requests to make sure that the client has an up-to-date value before
+     * proceeding.
      * </pre>
      *
-     * <code>string etag = 9;</code>
+     * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The etag to set.
      * @return This builder for chaining.
@@ -3158,7 +3489,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3166,17 +3497,18 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Checksum computed by the server. May be sent on update and delete requests
-     * to make sure that the client has an up-to-date value before proceeding.
+     * Optional. Checksum computed by the server. May be sent on update and delete
+     * requests to make sure that the client has an up-to-date value before
+     * proceeding.
      * </pre>
      *
-     * <code>string etag = 9;</code>
+     * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3184,11 +3516,12 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Checksum computed by the server. May be sent on update and delete requests
-     * to make sure that the client has an up-to-date value before proceeding.
+     * Optional. Checksum computed by the server. May be sent on update and delete
+     * requests to make sure that the client has an up-to-date value before
+     * proceeding.
      * </pre>
      *
-     * <code>string etag = 9;</code>
+     * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for etag to set.
      * @return This builder for chaining.
@@ -3199,7 +3532,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3238,7 +3571,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3281,7 +3614,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -3300,7 +3633,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       state_ = 0;
       onChanged();
       return this;
@@ -3380,7 +3713,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       host_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3401,7 +3734,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearHost() {
       host_ = getDefaultInstance().getHost();
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       onChanged();
       return this;
     }
@@ -3427,7 +3760,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       host_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3449,7 +3782,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
       if (!env_.isMutable()) {
         env_ = env_.copy();
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return env_;
     }
@@ -3461,10 +3794,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Environment variables passed to the workstation container's entrypoint.
+     * Optional. Environment variables passed to the workstation container's
+     * entrypoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; env = 12;</code>
+     * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public boolean containsEnv(java.lang.String key) {
@@ -3483,10 +3817,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Environment variables passed to the workstation container's entrypoint.
+     * Optional. Environment variables passed to the workstation container's
+     * entrypoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; env = 12;</code>
+     * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getEnvMap() {
@@ -3496,10 +3831,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Environment variables passed to the workstation container's entrypoint.
+     * Optional. Environment variables passed to the workstation container's
+     * entrypoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; env = 12;</code>
+     * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getEnvOrDefault(
@@ -3516,10 +3852,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Environment variables passed to the workstation container's entrypoint.
+     * Optional. Environment variables passed to the workstation container's
+     * entrypoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; env = 12;</code>
+     * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.lang.String getEnvOrThrow(java.lang.String key) {
@@ -3534,7 +3871,7 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearEnv() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       internalGetMutableEnv().getMutableMap().clear();
       return this;
     }
@@ -3542,10 +3879,11 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Environment variables passed to the workstation container's entrypoint.
+     * Optional. Environment variables passed to the workstation container's
+     * entrypoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; env = 12;</code>
+     * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeEnv(java.lang.String key) {
       if (key == null) {
@@ -3557,17 +3895,18 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableEnv() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       return internalGetMutableEnv().getMutableMap();
     }
     /**
      *
      *
      * <pre>
-     * Environment variables passed to the workstation container's entrypoint.
+     * Optional. Environment variables passed to the workstation container's
+     * entrypoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; env = 12;</code>
+     * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putEnv(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -3577,21 +3916,22 @@ public final class Workstation extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableEnv().getMutableMap().put(key, value);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       return this;
     }
     /**
      *
      *
      * <pre>
-     * Environment variables passed to the workstation container's entrypoint.
+     * Optional. Environment variables passed to the workstation container's
+     * entrypoint.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; env = 12;</code>
+     * <code>map&lt;string, string&gt; env = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllEnv(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableEnv().getMutableMap().putAll(values);
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       return this;
     }
 

@@ -235,6 +235,49 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
+       * Optional. Fields to specify in case of multi-node request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams multi_node_params = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the multiNodeParams field is set.
+       */
+      boolean hasMultiNodeParams();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Fields to specify in case of multi-node request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams multi_node_params = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The multiNodeParams.
+       */
+      com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+          getMultiNodeParams();
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Fields to specify in case of multi-node request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams multi_node_params = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParamsOrBuilder
+          getMultiNodeParamsOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
        * Required. The node.
        * </pre>
        *
@@ -314,6 +357,837 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             .ensureFieldAccessorsInitialized(
                 com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.class,
                 com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.Builder.class);
+      }
+
+      public interface MultiNodeParamsOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Required. Number of nodes with this spec. The system will attempt
+         * to provison "node_count" nodes as part of the request.
+         * This needs to be &gt; 1.
+         * </pre>
+         *
+         * <code>int32 node_count = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The nodeCount.
+         */
+        int getNodeCount();
+
+        /**
+         *
+         *
+         * <pre>
+         * Prefix of node_ids in case of multi-node request
+         * Should follow the `^[A-Za-z0-9_.~+%-]+$` regex format.
+         * If node_count = 3 and node_id_prefix = "np", node ids of nodes
+         * created will be "np-0", "np-1", "np-2". If this field is not
+         * provided we use queued_resource_id as the node_id_prefix.
+         * </pre>
+         *
+         * <code>string node_id_prefix = 2;</code>
+         *
+         * @return The nodeIdPrefix.
+         */
+        java.lang.String getNodeIdPrefix();
+        /**
+         *
+         *
+         * <pre>
+         * Prefix of node_ids in case of multi-node request
+         * Should follow the `^[A-Za-z0-9_.~+%-]+$` regex format.
+         * If node_count = 3 and node_id_prefix = "np", node ids of nodes
+         * created will be "np-0", "np-1", "np-2". If this field is not
+         * provided we use queued_resource_id as the node_id_prefix.
+         * </pre>
+         *
+         * <code>string node_id_prefix = 2;</code>
+         *
+         * @return The bytes for nodeIdPrefix.
+         */
+        com.google.protobuf.ByteString getNodeIdPrefixBytes();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Parameters to specify for multi-node QueuedResource requests. This
+       * field must be populated in case of multi-node requests instead of
+       * node_id. It's an error to specify both node_id and multi_node_params.
+       * </pre>
+       *
+       * Protobuf type {@code google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams}
+       */
+      public static final class MultiNodeParams extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams)
+          MultiNodeParamsOrBuilder {
+        private static final long serialVersionUID = 0L;
+        // Use MultiNodeParams.newBuilder() to construct.
+        private MultiNodeParams(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private MultiNodeParams() {
+          nodeIdPrefix_ = "";
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new MultiNodeParams();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.tpu.v2alpha1.CloudTpuProto
+              .internal_static_google_cloud_tpu_v2alpha1_QueuedResource_Tpu_NodeSpec_MultiNodeParams_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.tpu.v2alpha1.CloudTpuProto
+              .internal_static_google_cloud_tpu_v2alpha1_QueuedResource_Tpu_NodeSpec_MultiNodeParams_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.class,
+                  com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.Builder
+                      .class);
+        }
+
+        public static final int NODE_COUNT_FIELD_NUMBER = 1;
+        private int nodeCount_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Required. Number of nodes with this spec. The system will attempt
+         * to provison "node_count" nodes as part of the request.
+         * This needs to be &gt; 1.
+         * </pre>
+         *
+         * <code>int32 node_count = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+         *
+         * @return The nodeCount.
+         */
+        @java.lang.Override
+        public int getNodeCount() {
+          return nodeCount_;
+        }
+
+        public static final int NODE_ID_PREFIX_FIELD_NUMBER = 2;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object nodeIdPrefix_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Prefix of node_ids in case of multi-node request
+         * Should follow the `^[A-Za-z0-9_.~+%-]+$` regex format.
+         * If node_count = 3 and node_id_prefix = "np", node ids of nodes
+         * created will be "np-0", "np-1", "np-2". If this field is not
+         * provided we use queued_resource_id as the node_id_prefix.
+         * </pre>
+         *
+         * <code>string node_id_prefix = 2;</code>
+         *
+         * @return The nodeIdPrefix.
+         */
+        @java.lang.Override
+        public java.lang.String getNodeIdPrefix() {
+          java.lang.Object ref = nodeIdPrefix_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            nodeIdPrefix_ = s;
+            return s;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Prefix of node_ids in case of multi-node request
+         * Should follow the `^[A-Za-z0-9_.~+%-]+$` regex format.
+         * If node_count = 3 and node_id_prefix = "np", node ids of nodes
+         * created will be "np-0", "np-1", "np-2". If this field is not
+         * provided we use queued_resource_id as the node_id_prefix.
+         * </pre>
+         *
+         * <code>string node_id_prefix = 2;</code>
+         *
+         * @return The bytes for nodeIdPrefix.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getNodeIdPrefixBytes() {
+          java.lang.Object ref = nodeIdPrefix_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            nodeIdPrefix_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (nodeCount_ != 0) {
+            output.writeInt32(1, nodeCount_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeIdPrefix_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 2, nodeIdPrefix_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (nodeCount_ != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, nodeCount_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(nodeIdPrefix_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nodeIdPrefix_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams other =
+              (com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams) obj;
+
+          if (getNodeCount() != other.getNodeCount()) return false;
+          if (!getNodeIdPrefix().equals(other.getNodeIdPrefix())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + NODE_COUNT_FIELD_NUMBER;
+          hash = (53 * hash) + getNodeCount();
+          hash = (37 * hash) + NODE_ID_PREFIX_FIELD_NUMBER;
+          hash = (53 * hash) + getNodeIdPrefix().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Parameters to specify for multi-node QueuedResource requests. This
+         * field must be populated in case of multi-node requests instead of
+         * node_id. It's an error to specify both node_id and multi_node_params.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams)
+            com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParamsOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.tpu.v2alpha1.CloudTpuProto
+                .internal_static_google_cloud_tpu_v2alpha1_QueuedResource_Tpu_NodeSpec_MultiNodeParams_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.tpu.v2alpha1.CloudTpuProto
+                .internal_static_google_cloud_tpu_v2alpha1_QueuedResource_Tpu_NodeSpec_MultiNodeParams_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.class,
+                    com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+                        .Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            nodeCount_ = 0;
+            nodeIdPrefix_ = "";
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.tpu.v2alpha1.CloudTpuProto
+                .internal_static_google_cloud_tpu_v2alpha1_QueuedResource_Tpu_NodeSpec_MultiNodeParams_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+              getDefaultInstanceForType() {
+            return com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+                .getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams build() {
+            com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams result =
+                buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+              buildPartial() {
+            com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams result =
+                new com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.nodeCount_ = nodeCount_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.nodeIdPrefix_ = nodeIdPrefix_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams) {
+              return mergeFrom(
+                  (com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams other) {
+            if (other
+                == com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+                    .getDefaultInstance()) return this;
+            if (other.getNodeCount() != 0) {
+              setNodeCount(other.getNodeCount());
+            }
+            if (!other.getNodeIdPrefix().isEmpty()) {
+              nodeIdPrefix_ = other.nodeIdPrefix_;
+              bitField0_ |= 0x00000002;
+              onChanged();
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 8:
+                    {
+                      nodeCount_ = input.readInt32();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 8
+                  case 18:
+                    {
+                      nodeIdPrefix_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 18
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private int nodeCount_;
+          /**
+           *
+           *
+           * <pre>
+           * Required. Number of nodes with this spec. The system will attempt
+           * to provison "node_count" nodes as part of the request.
+           * This needs to be &gt; 1.
+           * </pre>
+           *
+           * <code>int32 node_count = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return The nodeCount.
+           */
+          @java.lang.Override
+          public int getNodeCount() {
+            return nodeCount_;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Number of nodes with this spec. The system will attempt
+           * to provison "node_count" nodes as part of the request.
+           * This needs to be &gt; 1.
+           * </pre>
+           *
+           * <code>int32 node_count = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @param value The nodeCount to set.
+           * @return This builder for chaining.
+           */
+          public Builder setNodeCount(int value) {
+
+            nodeCount_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Required. Number of nodes with this spec. The system will attempt
+           * to provison "node_count" nodes as part of the request.
+           * This needs to be &gt; 1.
+           * </pre>
+           *
+           * <code>int32 node_count = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearNodeCount() {
+            bitField0_ = (bitField0_ & ~0x00000001);
+            nodeCount_ = 0;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object nodeIdPrefix_ = "";
+          /**
+           *
+           *
+           * <pre>
+           * Prefix of node_ids in case of multi-node request
+           * Should follow the `^[A-Za-z0-9_.~+%-]+$` regex format.
+           * If node_count = 3 and node_id_prefix = "np", node ids of nodes
+           * created will be "np-0", "np-1", "np-2". If this field is not
+           * provided we use queued_resource_id as the node_id_prefix.
+           * </pre>
+           *
+           * <code>string node_id_prefix = 2;</code>
+           *
+           * @return The nodeIdPrefix.
+           */
+          public java.lang.String getNodeIdPrefix() {
+            java.lang.Object ref = nodeIdPrefix_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              nodeIdPrefix_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Prefix of node_ids in case of multi-node request
+           * Should follow the `^[A-Za-z0-9_.~+%-]+$` regex format.
+           * If node_count = 3 and node_id_prefix = "np", node ids of nodes
+           * created will be "np-0", "np-1", "np-2". If this field is not
+           * provided we use queued_resource_id as the node_id_prefix.
+           * </pre>
+           *
+           * <code>string node_id_prefix = 2;</code>
+           *
+           * @return The bytes for nodeIdPrefix.
+           */
+          public com.google.protobuf.ByteString getNodeIdPrefixBytes() {
+            java.lang.Object ref = nodeIdPrefix_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              nodeIdPrefix_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Prefix of node_ids in case of multi-node request
+           * Should follow the `^[A-Za-z0-9_.~+%-]+$` regex format.
+           * If node_count = 3 and node_id_prefix = "np", node ids of nodes
+           * created will be "np-0", "np-1", "np-2". If this field is not
+           * provided we use queued_resource_id as the node_id_prefix.
+           * </pre>
+           *
+           * <code>string node_id_prefix = 2;</code>
+           *
+           * @param value The nodeIdPrefix to set.
+           * @return This builder for chaining.
+           */
+          public Builder setNodeIdPrefix(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            nodeIdPrefix_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Prefix of node_ids in case of multi-node request
+           * Should follow the `^[A-Za-z0-9_.~+%-]+$` regex format.
+           * If node_count = 3 and node_id_prefix = "np", node ids of nodes
+           * created will be "np-0", "np-1", "np-2". If this field is not
+           * provided we use queued_resource_id as the node_id_prefix.
+           * </pre>
+           *
+           * <code>string node_id_prefix = 2;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearNodeIdPrefix() {
+            nodeIdPrefix_ = getDefaultInstance().getNodeIdPrefix();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+            return this;
+          }
+          /**
+           *
+           *
+           * <pre>
+           * Prefix of node_ids in case of multi-node request
+           * Should follow the `^[A-Za-z0-9_.~+%-]+$` regex format.
+           * If node_count = 3 and node_id_prefix = "np", node ids of nodes
+           * created will be "np-0", "np-1", "np-2". If this field is not
+           * provided we use queued_resource_id as the node_id_prefix.
+           * </pre>
+           *
+           * <code>string node_id_prefix = 2;</code>
+           *
+           * @param value The bytes for nodeIdPrefix to set.
+           * @return This builder for chaining.
+           */
+          public Builder setNodeIdPrefixBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            nodeIdPrefix_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams)
+        private static final com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec
+                .MultiNodeParams
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams();
+        }
+
+        public static com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<MultiNodeParams> PARSER =
+            new com.google.protobuf.AbstractParser<MultiNodeParams>() {
+              @java.lang.Override
+              public MultiNodeParams parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<MultiNodeParams> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<MultiNodeParams> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
       }
 
       public static final int PARENT_FIELD_NUMBER = 1;
@@ -428,6 +1302,67 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         }
       }
 
+      public static final int MULTI_NODE_PARAMS_FIELD_NUMBER = 6;
+      private com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+          multiNodeParams_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Fields to specify in case of multi-node request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams multi_node_params = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the multiNodeParams field is set.
+       */
+      @java.lang.Override
+      public boolean hasMultiNodeParams() {
+        return multiNodeParams_ != null;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Fields to specify in case of multi-node request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams multi_node_params = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The multiNodeParams.
+       */
+      @java.lang.Override
+      public com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+          getMultiNodeParams() {
+        return multiNodeParams_ == null
+            ? com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+                .getDefaultInstance()
+            : multiNodeParams_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Fields to specify in case of multi-node request.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams multi_node_params = 6 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParamsOrBuilder
+          getMultiNodeParamsOrBuilder() {
+        return multiNodeParams_ == null
+            ? com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+                .getDefaultInstance()
+            : multiNodeParams_;
+      }
+
       public static final int NODE_FIELD_NUMBER = 3;
       private com.google.cloud.tpu.v2alpha1.Node node_;
       /**
@@ -500,6 +1435,9 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         if (node_ != null) {
           output.writeMessage(3, getNode());
         }
+        if (multiNodeParams_ != null) {
+          output.writeMessage(6, getMultiNodeParams());
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -517,6 +1455,9 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         }
         if (node_ != null) {
           size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getNode());
+        }
+        if (multiNodeParams_ != null) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getMultiNodeParams());
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
@@ -536,6 +1477,10 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
 
         if (!getParent().equals(other.getParent())) return false;
         if (!getNodeId().equals(other.getNodeId())) return false;
+        if (hasMultiNodeParams() != other.hasMultiNodeParams()) return false;
+        if (hasMultiNodeParams()) {
+          if (!getMultiNodeParams().equals(other.getMultiNodeParams())) return false;
+        }
         if (hasNode() != other.hasNode()) return false;
         if (hasNode()) {
           if (!getNode().equals(other.getNode())) return false;
@@ -555,6 +1500,10 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
         hash = (53 * hash) + getParent().hashCode();
         hash = (37 * hash) + NODE_ID_FIELD_NUMBER;
         hash = (53 * hash) + getNodeId().hashCode();
+        if (hasMultiNodeParams()) {
+          hash = (37 * hash) + MULTI_NODE_PARAMS_FIELD_NUMBER;
+          hash = (53 * hash) + getMultiNodeParams().hashCode();
+        }
         if (hasNode()) {
           hash = (37 * hash) + NODE_FIELD_NUMBER;
           hash = (53 * hash) + getNode().hashCode();
@@ -705,6 +1654,11 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           bitField0_ = 0;
           parent_ = "";
           nodeId_ = "";
+          multiNodeParams_ = null;
+          if (multiNodeParamsBuilder_ != null) {
+            multiNodeParamsBuilder_.dispose();
+            multiNodeParamsBuilder_ = null;
+          }
           node_ = null;
           if (nodeBuilder_ != null) {
             nodeBuilder_.dispose();
@@ -755,6 +1709,12 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             result.nodeId_ = nodeId_;
           }
           if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.multiNodeParams_ =
+                multiNodeParamsBuilder_ == null
+                    ? multiNodeParams_
+                    : multiNodeParamsBuilder_.build();
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
             result.node_ = nodeBuilder_ == null ? node_ : nodeBuilder_.build();
           }
         }
@@ -818,6 +1778,9 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
             bitField0_ |= 0x00000002;
             onChanged();
           }
+          if (other.hasMultiNodeParams()) {
+            mergeMultiNodeParams(other.getMultiNodeParams());
+          }
           if (other.hasNode()) {
             mergeNode(other.getNode());
           }
@@ -862,9 +1825,16 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
                 case 26:
                   {
                     input.readMessage(getNodeFieldBuilder().getBuilder(), extensionRegistry);
-                    bitField0_ |= 0x00000004;
+                    bitField0_ |= 0x00000008;
                     break;
                   } // case 26
+                case 50:
+                  {
+                    input.readMessage(
+                        getMultiNodeParamsFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 50
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1121,6 +2091,221 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        private com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+            multiNodeParams_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams,
+                com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.Builder,
+                com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParamsOrBuilder>
+            multiNodeParamsBuilder_;
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Fields to specify in case of multi-node request.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams multi_node_params = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the multiNodeParams field is set.
+         */
+        public boolean hasMultiNodeParams() {
+          return ((bitField0_ & 0x00000004) != 0);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Fields to specify in case of multi-node request.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams multi_node_params = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The multiNodeParams.
+         */
+        public com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+            getMultiNodeParams() {
+          if (multiNodeParamsBuilder_ == null) {
+            return multiNodeParams_ == null
+                ? com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+                    .getDefaultInstance()
+                : multiNodeParams_;
+          } else {
+            return multiNodeParamsBuilder_.getMessage();
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Fields to specify in case of multi-node request.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams multi_node_params = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setMultiNodeParams(
+            com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams value) {
+          if (multiNodeParamsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            multiNodeParams_ = value;
+          } else {
+            multiNodeParamsBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Fields to specify in case of multi-node request.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams multi_node_params = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setMultiNodeParams(
+            com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.Builder
+                builderForValue) {
+          if (multiNodeParamsBuilder_ == null) {
+            multiNodeParams_ = builderForValue.build();
+          } else {
+            multiNodeParamsBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Fields to specify in case of multi-node request.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams multi_node_params = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder mergeMultiNodeParams(
+            com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams value) {
+          if (multiNodeParamsBuilder_ == null) {
+            if (((bitField0_ & 0x00000004) != 0)
+                && multiNodeParams_ != null
+                && multiNodeParams_
+                    != com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+                        .getDefaultInstance()) {
+              getMultiNodeParamsBuilder().mergeFrom(value);
+            } else {
+              multiNodeParams_ = value;
+            }
+          } else {
+            multiNodeParamsBuilder_.mergeFrom(value);
+          }
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Fields to specify in case of multi-node request.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams multi_node_params = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder clearMultiNodeParams() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          multiNodeParams_ = null;
+          if (multiNodeParamsBuilder_ != null) {
+            multiNodeParamsBuilder_.dispose();
+            multiNodeParamsBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Fields to specify in case of multi-node request.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams multi_node_params = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.Builder
+            getMultiNodeParamsBuilder() {
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return getMultiNodeParamsFieldBuilder().getBuilder();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Fields to specify in case of multi-node request.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams multi_node_params = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParamsOrBuilder
+            getMultiNodeParamsOrBuilder() {
+          if (multiNodeParamsBuilder_ != null) {
+            return multiNodeParamsBuilder_.getMessageOrBuilder();
+          } else {
+            return multiNodeParams_ == null
+                ? com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+                    .getDefaultInstance()
+                : multiNodeParams_;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Optional. Fields to specify in case of multi-node request.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams multi_node_params = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams,
+                com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams.Builder,
+                com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParamsOrBuilder>
+            getMultiNodeParamsFieldBuilder() {
+          if (multiNodeParamsBuilder_ == null) {
+            multiNodeParamsBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams,
+                    com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec.MultiNodeParams
+                        .Builder,
+                    com.google.cloud.tpu.v2alpha1.QueuedResource.Tpu.NodeSpec
+                        .MultiNodeParamsOrBuilder>(
+                    getMultiNodeParams(), getParentForChildren(), isClean());
+            multiNodeParams_ = null;
+          }
+          return multiNodeParamsBuilder_;
+        }
+
         private com.google.cloud.tpu.v2alpha1.Node node_;
         private com.google.protobuf.SingleFieldBuilderV3<
                 com.google.cloud.tpu.v2alpha1.Node,
@@ -1140,7 +2325,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
          * @return Whether the node field is set.
          */
         public boolean hasNode() {
-          return ((bitField0_ & 0x00000004) != 0);
+          return ((bitField0_ & 0x00000008) != 0);
         }
         /**
          *
@@ -1180,7 +2365,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           } else {
             nodeBuilder_.setMessage(value);
           }
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -1200,7 +2385,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           } else {
             nodeBuilder_.setMessage(builderForValue.build());
           }
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -1216,7 +2401,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder mergeNode(com.google.cloud.tpu.v2alpha1.Node value) {
           if (nodeBuilder_ == null) {
-            if (((bitField0_ & 0x00000004) != 0)
+            if (((bitField0_ & 0x00000008) != 0)
                 && node_ != null
                 && node_ != com.google.cloud.tpu.v2alpha1.Node.getDefaultInstance()) {
               getNodeBuilder().mergeFrom(value);
@@ -1226,7 +2411,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
           } else {
             nodeBuilder_.mergeFrom(value);
           }
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
           return this;
         }
@@ -1241,7 +2426,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
          * </code>
          */
         public Builder clearNode() {
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
           node_ = null;
           if (nodeBuilder_ != null) {
             nodeBuilder_.dispose();
@@ -1261,7 +2446,7 @@ public final class QueuedResource extends com.google.protobuf.GeneratedMessageV3
          * </code>
          */
         public com.google.cloud.tpu.v2alpha1.Node.Builder getNodeBuilder() {
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
           return getNodeFieldBuilder().getBuilder();
         }

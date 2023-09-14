@@ -19,7 +19,7 @@ package com.google.cloud.billing.v1.samples;
 // [START cloudbilling_v1_generated_CloudBilling_GetProjectBillingInfo_String_sync]
 import com.google.cloud.billing.v1.CloudBillingClient;
 import com.google.cloud.billing.v1.ProjectBillingInfo;
-import com.google.cloud.billing.v1.ProjectBillingInfoName;
+import com.google.cloud.billing.v1.ProjectName;
 
 public class SyncGetProjectBillingInfoString {
 
@@ -34,7 +34,7 @@ public class SyncGetProjectBillingInfoString {
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (CloudBillingClient cloudBillingClient = CloudBillingClient.create()) {
-      String name = ProjectBillingInfoName.of("[PROJECT]").toString();
+      String name = ProjectName.of("[PROJECT]").toString();
       ProjectBillingInfo response = cloudBillingClient.getProjectBillingInfo(name);
     }
   }

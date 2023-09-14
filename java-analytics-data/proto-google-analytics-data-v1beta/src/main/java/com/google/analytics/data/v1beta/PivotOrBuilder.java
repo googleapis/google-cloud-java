@@ -180,7 +180,7 @@ public interface PivotOrBuilder
    * single pivot requests.
    *
    * The product of the `limit` for each `pivot` in a `RunPivotReportRequest`
-   * must not exceed 100,000. For example, a two pivot request with `limit:
+   * must not exceed 250,000. For example, a two pivot request with `limit:
    * 1000` in each pivot will fail because the product is `1,000,000`.
    * </pre>
    *

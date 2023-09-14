@@ -97,6 +97,57 @@ public interface ConverseConversationResponseOrBuilder
    *
    *
    * <pre>
+   * Suggested related questions.
+   * </pre>
+   *
+   * <code>repeated string related_questions = 6;</code>
+   *
+   * @return A list containing the relatedQuestions.
+   */
+  java.util.List<java.lang.String> getRelatedQuestionsList();
+  /**
+   *
+   *
+   * <pre>
+   * Suggested related questions.
+   * </pre>
+   *
+   * <code>repeated string related_questions = 6;</code>
+   *
+   * @return The count of relatedQuestions.
+   */
+  int getRelatedQuestionsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Suggested related questions.
+   * </pre>
+   *
+   * <code>repeated string related_questions = 6;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The relatedQuestions at the given index.
+   */
+  java.lang.String getRelatedQuestions(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Suggested related questions.
+   * </pre>
+   *
+   * <code>repeated string related_questions = 6;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the relatedQuestions at the given index.
+   */
+  com.google.protobuf.ByteString getRelatedQuestionsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Search Results.
    * </pre>
    *

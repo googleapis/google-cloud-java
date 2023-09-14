@@ -54,11 +54,11 @@ public interface ConvertConversionWorkspaceRequestOrBuilder
    *
    *
    * <pre>
-   * Specifies whether the conversion workspace is to be committed automatically
-   * after the conversion.
+   * Optional. Specifies whether the conversion workspace is to be committed
+   * automatically after the conversion.
    * </pre>
    *
-   * <code>bool auto_commit = 4;</code>
+   * <code>bool auto_commit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The autoCommit.
    */
@@ -68,11 +68,11 @@ public interface ConvertConversionWorkspaceRequestOrBuilder
    *
    *
    * <pre>
-   * Filter the entities to convert. Leaving this field empty will convert all
-   * of the entities. Supports Google AIP-160 style filtering.
+   * Optional. Filter the entities to convert. Leaving this field empty will
+   * convert all of the entities. Supports Google AIP-160 style filtering.
    * </pre>
    *
-   * <code>string filter = 5;</code>
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -81,13 +81,28 @@ public interface ConvertConversionWorkspaceRequestOrBuilder
    *
    *
    * <pre>
-   * Filter the entities to convert. Leaving this field empty will convert all
-   * of the entities. Supports Google AIP-160 style filtering.
+   * Optional. Filter the entities to convert. Leaving this field empty will
+   * convert all of the entities. Supports Google AIP-160 style filtering.
    * </pre>
    *
-   * <code>string filter = 5;</code>
+   * <code>string filter = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Automatically convert the full entity path for each entity
+   * specified by the filter. For example, if the filter specifies a table, that
+   * table schema (and database if there is one) will also be converted.
+   * </pre>
+   *
+   * <code>bool convert_full_path = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The convertFullPath.
+   */
+  boolean getConvertFullPath();
 }

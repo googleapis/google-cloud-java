@@ -52,6 +52,33 @@ public interface TransitionRouteOrBuilder
    *
    *
    * <pre>
+   * Optional. The description of the transition route. The maximum length is
+   * 500 characters.
+   * </pre>
+   *
+   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The description of the transition route. The maximum length is
+   * 500 characters.
+   * </pre>
+   *
+   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The unique identifier of an [Intent][google.cloud.dialogflow.cx.v3.Intent].
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
    * ID&gt;/intents/&lt;Intent ID&gt;`.

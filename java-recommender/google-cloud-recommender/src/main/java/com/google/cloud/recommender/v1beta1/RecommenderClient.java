@@ -2130,6 +2130,210 @@ public class RecommenderClient implements BackgroundResource {
     return stub.updateInsightTypeConfigCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all available Recommenders. No IAM permissions are required.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   ListRecommendersRequest request =
+   *       ListRecommendersRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (RecommenderType element : recommenderClient.listRecommenders(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRecommendersPagedResponse listRecommenders(ListRecommendersRequest request) {
+    return listRecommendersPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all available Recommenders. No IAM permissions are required.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   ListRecommendersRequest request =
+   *       ListRecommendersRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<RecommenderType> future =
+   *       recommenderClient.listRecommendersPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (RecommenderType element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRecommendersRequest, ListRecommendersPagedResponse>
+      listRecommendersPagedCallable() {
+    return stub.listRecommendersPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all available Recommenders. No IAM permissions are required.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   ListRecommendersRequest request =
+   *       ListRecommendersRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListRecommendersResponse response =
+   *         recommenderClient.listRecommendersCallable().call(request);
+   *     for (RecommenderType element : response.getRecommendersList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRecommendersRequest, ListRecommendersResponse>
+      listRecommendersCallable() {
+    return stub.listRecommendersCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists available InsightTypes. No IAM permissions are required.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   ListInsightTypesRequest request =
+   *       ListInsightTypesRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (InsightType element : recommenderClient.listInsightTypes(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListInsightTypesPagedResponse listInsightTypes(ListInsightTypesRequest request) {
+    return listInsightTypesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists available InsightTypes. No IAM permissions are required.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   ListInsightTypesRequest request =
+   *       ListInsightTypesRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<InsightType> future =
+   *       recommenderClient.listInsightTypesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (InsightType element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListInsightTypesRequest, ListInsightTypesPagedResponse>
+      listInsightTypesPagedCallable() {
+    return stub.listInsightTypesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists available InsightTypes. No IAM permissions are required.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (RecommenderClient recommenderClient = RecommenderClient.create()) {
+   *   ListInsightTypesRequest request =
+   *       ListInsightTypesRequest.newBuilder()
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListInsightTypesResponse response =
+   *         recommenderClient.listInsightTypesCallable().call(request);
+   *     for (InsightType element : response.getInsightTypesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListInsightTypesRequest, ListInsightTypesResponse>
+      listInsightTypesCallable() {
+    return stub.listInsightTypesCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -2316,6 +2520,163 @@ public class RecommenderClient implements BackgroundResource {
     protected ListRecommendationsFixedSizeCollection createCollection(
         List<ListRecommendationsPage> pages, int collectionSize) {
       return new ListRecommendationsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListRecommendersPagedResponse
+      extends AbstractPagedListResponse<
+          ListRecommendersRequest,
+          ListRecommendersResponse,
+          RecommenderType,
+          ListRecommendersPage,
+          ListRecommendersFixedSizeCollection> {
+
+    public static ApiFuture<ListRecommendersPagedResponse> createAsync(
+        PageContext<ListRecommendersRequest, ListRecommendersResponse, RecommenderType> context,
+        ApiFuture<ListRecommendersResponse> futureResponse) {
+      ApiFuture<ListRecommendersPage> futurePage =
+          ListRecommendersPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListRecommendersPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListRecommendersPagedResponse(ListRecommendersPage page) {
+      super(page, ListRecommendersFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListRecommendersPage
+      extends AbstractPage<
+          ListRecommendersRequest,
+          ListRecommendersResponse,
+          RecommenderType,
+          ListRecommendersPage> {
+
+    private ListRecommendersPage(
+        PageContext<ListRecommendersRequest, ListRecommendersResponse, RecommenderType> context,
+        ListRecommendersResponse response) {
+      super(context, response);
+    }
+
+    private static ListRecommendersPage createEmptyPage() {
+      return new ListRecommendersPage(null, null);
+    }
+
+    @Override
+    protected ListRecommendersPage createPage(
+        PageContext<ListRecommendersRequest, ListRecommendersResponse, RecommenderType> context,
+        ListRecommendersResponse response) {
+      return new ListRecommendersPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListRecommendersPage> createPageAsync(
+        PageContext<ListRecommendersRequest, ListRecommendersResponse, RecommenderType> context,
+        ApiFuture<ListRecommendersResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListRecommendersFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRecommendersRequest,
+          ListRecommendersResponse,
+          RecommenderType,
+          ListRecommendersPage,
+          ListRecommendersFixedSizeCollection> {
+
+    private ListRecommendersFixedSizeCollection(
+        List<ListRecommendersPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListRecommendersFixedSizeCollection createEmptyCollection() {
+      return new ListRecommendersFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListRecommendersFixedSizeCollection createCollection(
+        List<ListRecommendersPage> pages, int collectionSize) {
+      return new ListRecommendersFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListInsightTypesPagedResponse
+      extends AbstractPagedListResponse<
+          ListInsightTypesRequest,
+          ListInsightTypesResponse,
+          InsightType,
+          ListInsightTypesPage,
+          ListInsightTypesFixedSizeCollection> {
+
+    public static ApiFuture<ListInsightTypesPagedResponse> createAsync(
+        PageContext<ListInsightTypesRequest, ListInsightTypesResponse, InsightType> context,
+        ApiFuture<ListInsightTypesResponse> futureResponse) {
+      ApiFuture<ListInsightTypesPage> futurePage =
+          ListInsightTypesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListInsightTypesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListInsightTypesPagedResponse(ListInsightTypesPage page) {
+      super(page, ListInsightTypesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListInsightTypesPage
+      extends AbstractPage<
+          ListInsightTypesRequest, ListInsightTypesResponse, InsightType, ListInsightTypesPage> {
+
+    private ListInsightTypesPage(
+        PageContext<ListInsightTypesRequest, ListInsightTypesResponse, InsightType> context,
+        ListInsightTypesResponse response) {
+      super(context, response);
+    }
+
+    private static ListInsightTypesPage createEmptyPage() {
+      return new ListInsightTypesPage(null, null);
+    }
+
+    @Override
+    protected ListInsightTypesPage createPage(
+        PageContext<ListInsightTypesRequest, ListInsightTypesResponse, InsightType> context,
+        ListInsightTypesResponse response) {
+      return new ListInsightTypesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListInsightTypesPage> createPageAsync(
+        PageContext<ListInsightTypesRequest, ListInsightTypesResponse, InsightType> context,
+        ApiFuture<ListInsightTypesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListInsightTypesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListInsightTypesRequest,
+          ListInsightTypesResponse,
+          InsightType,
+          ListInsightTypesPage,
+          ListInsightTypesFixedSizeCollection> {
+
+    private ListInsightTypesFixedSizeCollection(
+        List<ListInsightTypesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListInsightTypesFixedSizeCollection createEmptyCollection() {
+      return new ListInsightTypesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListInsightTypesFixedSizeCollection createCollection(
+        List<ListInsightTypesPage> pages, int collectionSize) {
+      return new ListInsightTypesFixedSizeCollection(pages, collectionSize);
     }
   }
 }

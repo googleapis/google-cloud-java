@@ -1594,14 +1594,17 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * The index of the logical interface mapping to the index of the hardware
-   * bond or nic on the chosen network template.
+   * bond or nic on the chosen network template. This field is deprecated.
    * </pre>
    *
-   * <code>int32 interface_index = 3;</code>
+   * <code>int32 interface_index = 3 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.baremetalsolution.v2.LogicalInterface.interface_index is deprecated.
+   *     See google/cloud/baremetalsolution/v2/network.proto;l=243
    * @return The interfaceIndex.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public int getInterfaceIndex() {
     return interfaceIndex_;
   }
@@ -2593,14 +2596,17 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The index of the logical interface mapping to the index of the hardware
-     * bond or nic on the chosen network template.
+     * bond or nic on the chosen network template. This field is deprecated.
      * </pre>
      *
-     * <code>int32 interface_index = 3;</code>
+     * <code>int32 interface_index = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.baremetalsolution.v2.LogicalInterface.interface_index is deprecated.
+     *     See google/cloud/baremetalsolution/v2/network.proto;l=243
      * @return The interfaceIndex.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public int getInterfaceIndex() {
       return interfaceIndex_;
     }
@@ -2609,14 +2615,17 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The index of the logical interface mapping to the index of the hardware
-     * bond or nic on the chosen network template.
+     * bond or nic on the chosen network template. This field is deprecated.
      * </pre>
      *
-     * <code>int32 interface_index = 3;</code>
+     * <code>int32 interface_index = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.baremetalsolution.v2.LogicalInterface.interface_index is deprecated.
+     *     See google/cloud/baremetalsolution/v2/network.proto;l=243
      * @param value The interfaceIndex to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setInterfaceIndex(int value) {
 
       interfaceIndex_ = value;
@@ -2629,13 +2638,16 @@ public final class LogicalInterface extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * The index of the logical interface mapping to the index of the hardware
-     * bond or nic on the chosen network template.
+     * bond or nic on the chosen network template. This field is deprecated.
      * </pre>
      *
-     * <code>int32 interface_index = 3;</code>
+     * <code>int32 interface_index = 3 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.baremetalsolution.v2.LogicalInterface.interface_index is deprecated.
+     *     See google/cloud/baremetalsolution/v2/network.proto;l=243
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearInterfaceIndex() {
       bitField0_ = (bitField0_ & ~0x00000004);
       interfaceIndex_ = 0;

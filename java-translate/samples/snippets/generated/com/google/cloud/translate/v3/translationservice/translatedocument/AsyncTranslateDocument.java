@@ -52,6 +52,7 @@ public class AsyncTranslateDocument {
               .setCustomizedAttribution("customizedAttribution557650238")
               .setIsTranslateNativePdfOnly(true)
               .setEnableShadowRemovalNativePdf(true)
+              .setEnableRotationCorrection(true)
               .build();
       ApiFuture<TranslateDocumentResponse> future =
           translationServiceClient.translateDocumentCallable().futureCall(request);

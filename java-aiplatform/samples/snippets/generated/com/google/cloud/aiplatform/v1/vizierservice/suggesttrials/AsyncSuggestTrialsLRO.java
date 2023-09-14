@@ -22,7 +22,9 @@ import com.google.cloud.aiplatform.v1.StudyName;
 import com.google.cloud.aiplatform.v1.SuggestTrialsMetadata;
 import com.google.cloud.aiplatform.v1.SuggestTrialsRequest;
 import com.google.cloud.aiplatform.v1.SuggestTrialsResponse;
+import com.google.cloud.aiplatform.v1.TrialContext;
 import com.google.cloud.aiplatform.v1.VizierServiceClient;
+import java.util.ArrayList;
 
 public class AsyncSuggestTrialsLRO {
 
@@ -42,6 +44,7 @@ public class AsyncSuggestTrialsLRO {
               .setParent(StudyName.of("[PROJECT]", "[LOCATION]", "[STUDY]").toString())
               .setSuggestionCount(390130452)
               .setClientId("clientId908408390")
+              .addAllContexts(new ArrayList<TrialContext>())
               .build();
       OperationFuture<SuggestTrialsResponse, SuggestTrialsMetadata> future =
           vizierServiceClient.suggestTrialsOperationCallable().futureCall(request);

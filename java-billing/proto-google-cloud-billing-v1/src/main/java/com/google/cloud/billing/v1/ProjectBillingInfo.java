@@ -77,7 +77,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
    * Output only. The resource name for the `ProjectBillingInfo`; has the form
    * `projects/{project_id}/billingInfo`. For example, the resource name for the
    * billing information for project `tokyo-rain-123` would be
-   * `projects/tokyo-rain-123/billingInfo`. This field is read-only.
+   * `projects/tokyo-rain-123/billingInfo`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -103,7 +103,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
    * Output only. The resource name for the `ProjectBillingInfo`; has the form
    * `projects/{project_id}/billingInfo`. For example, the resource name for the
    * billing information for project `tokyo-rain-123` would be
-   * `projects/tokyo-rain-123/billingInfo`. This field is read-only.
+   * `projects/tokyo-rain-123/billingInfo`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -133,8 +133,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Output only. The ID of the project that this `ProjectBillingInfo`
    * represents, such as `tokyo-rain-123`. This is a convenience field so that
-   * you don't need to parse the `name` field to obtain a project ID. This field
-   * is read-only.
+   * you don't need to parse the `name` field to obtain a project ID.
    * </pre>
    *
    * <code>string project_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -159,8 +158,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Output only. The ID of the project that this `ProjectBillingInfo`
    * represents, such as `tokyo-rain-123`. This is a convenience field so that
-   * you don't need to parse the `name` field to obtain a project ID. This field
-   * is read-only.
+   * you don't need to parse the `name` field to obtain a project ID.
    * </pre>
    *
    * <code>string project_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -242,7 +240,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
    * Output only. True if the project is associated with an open billing
    * account, to which usage on the project is charged. False if the project is
    * associated with a closed billing account, or no billing account at all, and
-   * therefore cannot use paid services. This field is read-only.
+   * therefore cannot use paid services.
    * </pre>
    *
    * <code>bool billing_enabled = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -675,7 +673,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
      * Output only. The resource name for the `ProjectBillingInfo`; has the form
      * `projects/{project_id}/billingInfo`. For example, the resource name for the
      * billing information for project `tokyo-rain-123` would be
-     * `projects/tokyo-rain-123/billingInfo`. This field is read-only.
+     * `projects/tokyo-rain-123/billingInfo`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -700,7 +698,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
      * Output only. The resource name for the `ProjectBillingInfo`; has the form
      * `projects/{project_id}/billingInfo`. For example, the resource name for the
      * billing information for project `tokyo-rain-123` would be
-     * `projects/tokyo-rain-123/billingInfo`. This field is read-only.
+     * `projects/tokyo-rain-123/billingInfo`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -725,7 +723,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
      * Output only. The resource name for the `ProjectBillingInfo`; has the form
      * `projects/{project_id}/billingInfo`. For example, the resource name for the
      * billing information for project `tokyo-rain-123` would be
-     * `projects/tokyo-rain-123/billingInfo`. This field is read-only.
+     * `projects/tokyo-rain-123/billingInfo`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -749,7 +747,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
      * Output only. The resource name for the `ProjectBillingInfo`; has the form
      * `projects/{project_id}/billingInfo`. For example, the resource name for the
      * billing information for project `tokyo-rain-123` would be
-     * `projects/tokyo-rain-123/billingInfo`. This field is read-only.
+     * `projects/tokyo-rain-123/billingInfo`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -769,7 +767,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
      * Output only. The resource name for the `ProjectBillingInfo`; has the form
      * `projects/{project_id}/billingInfo`. For example, the resource name for the
      * billing information for project `tokyo-rain-123` would be
-     * `projects/tokyo-rain-123/billingInfo`. This field is read-only.
+     * `projects/tokyo-rain-123/billingInfo`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -795,8 +793,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The ID of the project that this `ProjectBillingInfo`
      * represents, such as `tokyo-rain-123`. This is a convenience field so that
-     * you don't need to parse the `name` field to obtain a project ID. This field
-     * is read-only.
+     * you don't need to parse the `name` field to obtain a project ID.
      * </pre>
      *
      * <code>string project_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -820,8 +817,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The ID of the project that this `ProjectBillingInfo`
      * represents, such as `tokyo-rain-123`. This is a convenience field so that
-     * you don't need to parse the `name` field to obtain a project ID. This field
-     * is read-only.
+     * you don't need to parse the `name` field to obtain a project ID.
      * </pre>
      *
      * <code>string project_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -845,8 +841,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The ID of the project that this `ProjectBillingInfo`
      * represents, such as `tokyo-rain-123`. This is a convenience field so that
-     * you don't need to parse the `name` field to obtain a project ID. This field
-     * is read-only.
+     * you don't need to parse the `name` field to obtain a project ID.
      * </pre>
      *
      * <code>string project_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -869,8 +864,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The ID of the project that this `ProjectBillingInfo`
      * represents, such as `tokyo-rain-123`. This is a convenience field so that
-     * you don't need to parse the `name` field to obtain a project ID. This field
-     * is read-only.
+     * you don't need to parse the `name` field to obtain a project ID.
      * </pre>
      *
      * <code>string project_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -889,8 +883,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. The ID of the project that this `ProjectBillingInfo`
      * represents, such as `tokyo-rain-123`. This is a convenience field so that
-     * you don't need to parse the `name` field to obtain a project ID. This field
-     * is read-only.
+     * you don't need to parse the `name` field to obtain a project ID.
      * </pre>
      *
      * <code>string project_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1028,7 +1021,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
      * Output only. True if the project is associated with an open billing
      * account, to which usage on the project is charged. False if the project is
      * associated with a closed billing account, or no billing account at all, and
-     * therefore cannot use paid services. This field is read-only.
+     * therefore cannot use paid services.
      * </pre>
      *
      * <code>bool billing_enabled = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1046,7 +1039,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
      * Output only. True if the project is associated with an open billing
      * account, to which usage on the project is charged. False if the project is
      * associated with a closed billing account, or no billing account at all, and
-     * therefore cannot use paid services. This field is read-only.
+     * therefore cannot use paid services.
      * </pre>
      *
      * <code>bool billing_enabled = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1068,7 +1061,7 @@ public final class ProjectBillingInfo extends com.google.protobuf.GeneratedMessa
      * Output only. True if the project is associated with an open billing
      * account, to which usage on the project is charged. False if the project is
      * associated with a closed billing account, or no billing account at all, and
-     * therefore cannot use paid services. This field is read-only.
+     * therefore cannot use paid services.
      * </pre>
      *
      * <code>bool billing_enabled = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

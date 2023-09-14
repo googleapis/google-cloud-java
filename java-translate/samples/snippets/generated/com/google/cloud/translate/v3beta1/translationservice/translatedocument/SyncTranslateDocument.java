@@ -48,6 +48,10 @@ public class SyncTranslateDocument {
               .setModel("model104069929")
               .setGlossaryConfig(TranslateTextGlossaryConfig.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
+              .setCustomizedAttribution("customizedAttribution557650238")
+              .setIsTranslateNativePdfOnly(true)
+              .setEnableShadowRemovalNativePdf(true)
+              .setEnableRotationCorrection(true)
               .build();
       TranslateDocumentResponse response = translationServiceClient.translateDocument(request);
     }

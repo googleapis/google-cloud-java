@@ -80,6 +80,7 @@ public interface UpdateNfsShareRequestOrBuilder
    * The list of fields to update.
    * The only currently supported fields are:
    *   `labels`
+   *   `allowed_clients`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -94,6 +95,7 @@ public interface UpdateNfsShareRequestOrBuilder
    * The list of fields to update.
    * The only currently supported fields are:
    *   `labels`
+   *   `allowed_clients`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -108,6 +110,7 @@ public interface UpdateNfsShareRequestOrBuilder
    * The list of fields to update.
    * The only currently supported fields are:
    *   `labels`
+   *   `allowed_clients`
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
