@@ -137,7 +137,7 @@ public class SubscriptionName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       SubscriptionName that = ((SubscriptionName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.subscription, that.subscription);
