@@ -58,3 +58,5 @@ perl -0pe 's/<dependencies>.*<\/dependencies>/<dependencies>\nBOM_ARTIFACT_LIST\
 awk -v "dependencyManagements=$bom_lines" '{gsub(/BOM_ARTIFACT_LIST/,dependencyManagements)}1' \
     "${GENERATION_DIR}/bom.pom.xml" > gapic-libraries-bom/pom.xml
 rm ${GENERATION_DIR}/bom.pom.xml
+
+
