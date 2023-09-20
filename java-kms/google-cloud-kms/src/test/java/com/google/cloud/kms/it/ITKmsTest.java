@@ -72,7 +72,7 @@ public class ITKmsTest {
           GetKeyRingRequest.newBuilder().setName(kmsKeyRingResourcePath).build();
       requestParamsHeader.put(requestParamsKey, "name=" + kmsKeyRingResourcePath);
       KeyManagementServiceGrpc.KeyManagementServiceBlockingStub stubForGetKeyRing =
-          MetadataUtils.attachHeaders(kmsStub, requestParamsHeader);
+          kmsStub.withInterceptors(MetadataUtils.newAttachHeadersInterceptor(requestParamsHeader));
       return stubForGetKeyRing.getKeyRing(getKeyRingRequest);
     } catch (StatusRuntimeException ex) {
       if (ex.getStatus().getCode() == Status.Code.NOT_FOUND) {
@@ -85,7 +85,8 @@ public class ITKmsTest {
                 .build();
         requestParamsHeader.put(requestParamsKey, "parent=" + keyRingParent);
         KeyManagementServiceGrpc.KeyManagementServiceBlockingStub stubForCreateKeyRing =
-            MetadataUtils.attachHeaders(kmsStub, requestParamsHeader);
+            kmsStub.withInterceptors(
+                MetadataUtils.newAttachHeadersInterceptor(requestParamsHeader));
         return stubForCreateKeyRing.createKeyRing(createKeyRingRequest);
       } else {
         throw ex;
