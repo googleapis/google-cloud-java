@@ -25,12 +25,12 @@ for bom_directory in $(find . -maxdepth 3 -name 'google-*-bom' | sort --dictiona
     # Let's avoid adding com.google.maps and com.google.shopping for now. We may decide to
     # add them later. It's more difficult to remove them later without impacting users.
     bom_lines+="      <dependency>\n\
-        ${groupId_line}\n\
-        ${artifactId_line}\n\
-        ${version_line}\n\
-          <type>pom</type>\n\
-          <scope>import</scope>\n\
-        </dependency>\n"
+      ${groupId_line}\n\
+      ${artifactId_line}\n\
+      ${version_line}\n\
+        <type>pom</type>\n\
+        <scope>import</scope>\n\
+      </dependency>\n"
   fi
 done
 
