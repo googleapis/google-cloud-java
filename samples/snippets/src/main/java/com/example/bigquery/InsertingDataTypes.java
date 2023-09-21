@@ -30,6 +30,7 @@ import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.TableDefinition;
 import com.google.cloud.bigquery.TableId;
 import com.google.cloud.bigquery.TableInfo;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,10 +54,7 @@ public class InsertingDataTypes {
       // Inserting data types
       Field name = Field.of("name", StandardSQLTypeName.STRING);
       Field age = Field.of("age", StandardSQLTypeName.INT64);
-      Field school =
-          Field.newBuilder("school", StandardSQLTypeName.BYTES)
-              .setMode(Field.Mode.REPEATED)
-              .build();
+      Field school = Field.of("school", StandardSQLTypeName.BYTES);
       Field location = Field.of("location", StandardSQLTypeName.GEOGRAPHY);
       Field measurements =
           Field.newBuilder("measurements", StandardSQLTypeName.FLOAT64)
@@ -86,7 +84,7 @@ public class InsertingDataTypes {
       Map<String, Object> rowContent = new HashMap<>();
       rowContent.put("name", "Tom");
       rowContent.put("age", 30);
-      rowContent.put("school", "Test University".getBytes());
+      rowContent.put("school", Base64.getEncoder().encodeToString("Test University".getBytes()));
       rowContent.put("location", "POINT(1 2)");
       rowContent.put("measurements", new Float[] {50.05f, 100.5f});
       rowContent.put("datesTime", datesTimeContent);
