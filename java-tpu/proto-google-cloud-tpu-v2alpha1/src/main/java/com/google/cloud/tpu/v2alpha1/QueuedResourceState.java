@@ -174,6 +174,24 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      * <code>SUSPENDED = 8;</code>
      */
     SUSPENDED(8),
+    /**
+     *
+     *
+     * <pre>
+     * The QueuedResource request has passed initial validation and has been
+     * persisted in the queue. It will remain in this state until there are
+     * sufficient free resources to begin provisioning your request. Wait times
+     * will vary significantly depending on demand levels. When demand is high,
+     * not all requests can be immediately provisioned. If you
+     * need more reliable obtainability of TPUs consider purchasing a
+     * reservation. To put a limit on how long you are willing to wait, use
+     * [timing
+     * constraints](https://cloud.google.com/tpu/docs/queued-resources#request_a_queued_resource_before_a_specified_time).
+     * </pre>
+     *
+     * <code>WAITING_FOR_RESOURCES = 9;</code>
+     */
+    WAITING_FOR_RESOURCES(9),
     UNRECOGNIZED(-1),
     ;
 
@@ -278,6 +296,24 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
      * <code>SUSPENDED = 8;</code>
      */
     public static final int SUSPENDED_VALUE = 8;
+    /**
+     *
+     *
+     * <pre>
+     * The QueuedResource request has passed initial validation and has been
+     * persisted in the queue. It will remain in this state until there are
+     * sufficient free resources to begin provisioning your request. Wait times
+     * will vary significantly depending on demand levels. When demand is high,
+     * not all requests can be immediately provisioned. If you
+     * need more reliable obtainability of TPUs consider purchasing a
+     * reservation. To put a limit on how long you are willing to wait, use
+     * [timing
+     * constraints](https://cloud.google.com/tpu/docs/queued-resources#request_a_queued_resource_before_a_specified_time).
+     * </pre>
+     *
+     * <code>WAITING_FOR_RESOURCES = 9;</code>
+     */
+    public static final int WAITING_FOR_RESOURCES_VALUE = 9;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -321,6 +357,8 @@ public final class QueuedResourceState extends com.google.protobuf.GeneratedMess
           return SUSPENDING;
         case 8:
           return SUSPENDED;
+        case 9:
+          return WAITING_FOR_RESOURCES;
         default:
           return null;
       }
