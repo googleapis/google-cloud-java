@@ -950,6 +950,48 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
+   * Optional. Client connection specific configurations
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clientConnectionConfig field is set.
+   */
+  boolean hasClientConnectionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client connection specific configurations
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clientConnectionConfig.
+   */
+  com.google.cloud.alloydb.v1alpha.Instance.ClientConnectionConfig getClientConnectionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client connection specific configurations
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1alpha.Instance.ClientConnectionConfigOrBuilder
+      getClientConnectionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Reserved for future use.
    * </pre>
    *

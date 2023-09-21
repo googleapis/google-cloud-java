@@ -432,13 +432,14 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. The database engine major version. This is an output-only
-   * field and it's populated at the Cluster creation time. This field cannot be
-   * changed after cluster creation.
+   * Optional. The database engine major version. This is an optional field and
+   * it is populated at the Cluster creation time. If a database version is not
+   * supplied at cluster creation time, then a default database version will
+   * be used.
    * </pre>
    *
    * <code>
-   * .google.cloud.alloydb.v1.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.alloydb.v1.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The enum numeric value on the wire for databaseVersion.
@@ -448,18 +449,42 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Output only. The database engine major version. This is an output-only
-   * field and it's populated at the Cluster creation time. This field cannot be
-   * changed after cluster creation.
+   * Optional. The database engine major version. This is an optional field and
+   * it is populated at the Cluster creation time. If a database version is not
+   * supplied at cluster creation time, then a default database version will
+   * be used.
    * </pre>
    *
    * <code>
-   * .google.cloud.alloydb.v1.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.alloydb.v1.DatabaseVersion database_version = 9 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The databaseVersion.
    */
   com.google.cloud.alloydb.v1.DatabaseVersion getDatabaseVersion();
+
+  /**
+   * <code>
+   * .google.cloud.alloydb.v1.Cluster.NetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the networkConfig field is set.
+   */
+  boolean hasNetworkConfig();
+  /**
+   * <code>
+   * .google.cloud.alloydb.v1.Cluster.NetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The networkConfig.
+   */
+  com.google.cloud.alloydb.v1.Cluster.NetworkConfig getNetworkConfig();
+  /**
+   * <code>
+   * .google.cloud.alloydb.v1.Cluster.NetworkConfig network_config = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1.Cluster.NetworkConfigOrBuilder getNetworkConfigOrBuilder();
 
   /**
    *
@@ -468,16 +493,19 @@ public interface ClusterOrBuilder
    * Required. The resource link for the VPC network in which cluster resources
    * are created and from which they are accessible via Private IP. The network
    * must belong to the same project as the cluster. It is specified in the
-   * form: "projects/{project_number}/global/networks/{network_id}". This is
-   * required to create a cluster. It can be updated, but it cannot be removed.
+   * form: "projects/{project}/global/networks/{network_id}". This is required
+   * to create a cluster. Deprecated, use network_config.network instead.
    * </pre>
    *
    * <code>
-   * string network = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string network = 10 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
+   * @deprecated google.cloud.alloydb.v1.Cluster.network is deprecated. See
+   *     google/cloud/alloydb/v1/resources.proto;l=543
    * @return The network.
    */
+  @java.lang.Deprecated
   java.lang.String getNetwork();
   /**
    *
@@ -486,16 +514,19 @@ public interface ClusterOrBuilder
    * Required. The resource link for the VPC network in which cluster resources
    * are created and from which they are accessible via Private IP. The network
    * must belong to the same project as the cluster. It is specified in the
-   * form: "projects/{project_number}/global/networks/{network_id}". This is
-   * required to create a cluster. It can be updated, but it cannot be removed.
+   * form: "projects/{project}/global/networks/{network_id}". This is required
+   * to create a cluster. Deprecated, use network_config.network instead.
    * </pre>
    *
    * <code>
-   * string network = 10 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * string network = 10 [deprecated = true, (.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
+   * @deprecated google.cloud.alloydb.v1.Cluster.network is deprecated. See
+   *     google/cloud/alloydb/v1/resources.proto;l=543
    * @return The bytes for network.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getNetworkBytes();
 
   /**
@@ -715,7 +746,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1/resources.proto;l=550
+   *     google/cloud/alloydb/v1/resources.proto;l=578
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Deprecated
@@ -730,7 +761,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1/resources.proto;l=550
+   *     google/cloud/alloydb/v1/resources.proto;l=578
    * @return The sslConfig.
    */
   @java.lang.Deprecated

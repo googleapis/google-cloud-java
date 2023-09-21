@@ -741,4 +741,37 @@ public interface BackupOrBuilder
    * @return The satisfiesPzs.
    */
   boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The database engine major version of the cluster this backup
+   * was created from. Any restored cluster created from this backup will have
+   * the same database version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for databaseVersion.
+   */
+  int getDatabaseVersionValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The database engine major version of the cluster this backup
+   * was created from. Any restored cluster created from this backup will have
+   * the same database version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The databaseVersion.
+   */
+  com.google.cloud.alloydb.v1alpha.DatabaseVersion getDatabaseVersion();
 }

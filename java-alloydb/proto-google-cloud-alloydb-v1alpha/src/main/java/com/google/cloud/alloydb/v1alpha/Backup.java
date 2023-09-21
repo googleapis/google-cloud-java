@@ -47,6 +47,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     clusterUid_ = "";
     clusterName_ = "";
     etag_ = "";
+    databaseVersion_ = 0;
   }
 
   @java.lang.Override
@@ -2269,6 +2270,49 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     return satisfiesPzs_;
   }
 
+  public static final int DATABASE_VERSION_FIELD_NUMBER = 22;
+  private int databaseVersion_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The database engine major version of the cluster this backup
+   * was created from. Any restored cluster created from this backup will have
+   * the same database version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for databaseVersion.
+   */
+  @java.lang.Override
+  public int getDatabaseVersionValue() {
+    return databaseVersion_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The database engine major version of the cluster this backup
+   * was created from. Any restored cluster created from this backup will have
+   * the same database version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The databaseVersion.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1alpha.DatabaseVersion getDatabaseVersion() {
+    com.google.cloud.alloydb.v1alpha.DatabaseVersion result =
+        com.google.cloud.alloydb.v1alpha.DatabaseVersion.forNumber(databaseVersion_);
+    return result == null ? com.google.cloud.alloydb.v1alpha.DatabaseVersion.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2343,6 +2387,11 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     }
     if (satisfiesPzs_ != false) {
       output.writeBool(21, satisfiesPzs_);
+    }
+    if (databaseVersion_
+        != com.google.cloud.alloydb.v1alpha.DatabaseVersion.DATABASE_VERSION_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(22, databaseVersion_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2430,6 +2479,11 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzs_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(21, satisfiesPzs_);
     }
+    if (databaseVersion_
+        != com.google.cloud.alloydb.v1alpha.DatabaseVersion.DATABASE_VERSION_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(22, databaseVersion_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2487,6 +2541,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       if (!getExpiryQuantity().equals(other.getExpiryQuantity())) return false;
     }
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (databaseVersion_ != other.databaseVersion_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2558,6 +2613,8 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    hash = (37 * hash) + DATABASE_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + databaseVersion_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2770,6 +2827,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         expiryQuantityBuilder_ = null;
       }
       satisfiesPzs_ = false;
+      databaseVersion_ = 0;
       return this;
     }
 
@@ -2873,6 +2931,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
         result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.databaseVersion_ = databaseVersion_;
       }
     }
 
@@ -2995,6 +3056,9 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getSatisfiesPzs() != false) {
         setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.databaseVersion_ != 0) {
+        setDatabaseVersionValue(other.getDatabaseVersionValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3161,6 +3225,12 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00100000;
                 break;
               } // case 168
+            case 176:
+              {
+                databaseVersion_ = input.readEnum();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 176
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6166,6 +6236,118 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSatisfiesPzs() {
       bitField0_ = (bitField0_ & ~0x00100000);
       satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int databaseVersion_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The database engine major version of the cluster this backup
+     * was created from. Any restored cluster created from this backup will have
+     * the same database version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for databaseVersion.
+     */
+    @java.lang.Override
+    public int getDatabaseVersionValue() {
+      return databaseVersion_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The database engine major version of the cluster this backup
+     * was created from. Any restored cluster created from this backup will have
+     * the same database version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for databaseVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatabaseVersionValue(int value) {
+      databaseVersion_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The database engine major version of the cluster this backup
+     * was created from. Any restored cluster created from this backup will have
+     * the same database version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The databaseVersion.
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1alpha.DatabaseVersion getDatabaseVersion() {
+      com.google.cloud.alloydb.v1alpha.DatabaseVersion result =
+          com.google.cloud.alloydb.v1alpha.DatabaseVersion.forNumber(databaseVersion_);
+      return result == null
+          ? com.google.cloud.alloydb.v1alpha.DatabaseVersion.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The database engine major version of the cluster this backup
+     * was created from. Any restored cluster created from this backup will have
+     * the same database version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The databaseVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatabaseVersion(com.google.cloud.alloydb.v1alpha.DatabaseVersion value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00200000;
+      databaseVersion_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The database engine major version of the cluster this backup
+     * was created from. Any restored cluster created from this backup will have
+     * the same database version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDatabaseVersion() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      databaseVersion_ = 0;
       onChanged();
       return this;
     }

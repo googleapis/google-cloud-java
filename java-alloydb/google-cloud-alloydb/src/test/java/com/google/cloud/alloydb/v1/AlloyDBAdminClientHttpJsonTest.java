@@ -204,6 +204,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -268,6 +269,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -332,6 +334,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -405,6 +408,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -478,6 +482,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -510,6 +515,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -562,6 +568,7 @@ public class AlloyDBAdminClientHttpJsonTest {
               .setDeleteTime(Timestamp.newBuilder().build())
               .putAllLabels(new HashMap<String, String>())
               .setDatabaseVersion(DatabaseVersion.forNumber(0))
+              .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
               .setNetwork("network1843485230")
               .setEtag("etag3123477")
               .putAllAnnotations(new HashMap<String, String>())
@@ -685,6 +692,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -754,6 +762,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -823,6 +832,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -906,6 +916,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -979,6 +990,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -1163,6 +1175,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1225,6 +1238,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1289,6 +1303,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1360,6 +1375,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1431,6 +1447,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1503,6 +1520,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1634,6 +1652,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1664,6 +1683,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1714,6 +1734,7 @@ public class AlloyDBAdminClientHttpJsonTest {
               .setReconciling(true)
               .setEtag("etag3123477")
               .putAllAnnotations(new HashMap<String, String>())
+              .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateInstanceAsync(instance, updateMask).get();
@@ -1837,6 +1858,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1904,6 +1926,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1973,6 +1996,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2042,6 +2066,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2113,6 +2138,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2180,6 +2206,7 @@ public class AlloyDBAdminClientHttpJsonTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2347,6 +2374,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2407,6 +2436,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2467,6 +2498,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2536,6 +2569,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2605,6 +2640,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2633,6 +2670,8 @@ public class AlloyDBAdminClientHttpJsonTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2681,6 +2720,8 @@ public class AlloyDBAdminClientHttpJsonTest {
               .putAllAnnotations(new HashMap<String, String>())
               .setSizeBytes(-1796325715)
               .setExpiryTime(Timestamp.newBuilder().build())
+              .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+              .setDatabaseVersion(DatabaseVersion.forNumber(0))
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateBackupAsync(backup, updateMask).get();

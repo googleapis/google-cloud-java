@@ -56,8 +56,9 @@ public interface ConnectionInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. The IP address for the Instance.
-   * This is the connection endpoint for an end-user application.
+   * Output only. The private network IP address for the Instance. This is the
+   * default IP for the instance and is always created (even if enable_public_ip
+   * is set). This is the connection endpoint for an end-user application.
    * </pre>
    *
    * <code>string ip_address = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -69,8 +70,9 @@ public interface ConnectionInfoOrBuilder
    *
    *
    * <pre>
-   * Output only. The IP address for the Instance.
-   * This is the connection endpoint for an end-user application.
+   * Output only. The private network IP address for the Instance. This is the
+   * default IP for the instance and is always created (even if enable_public_ip
+   * is set). This is the connection endpoint for an end-user application.
    * </pre>
    *
    * <code>string ip_address = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -92,7 +94,7 @@ public interface ConnectionInfoOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=894
+   *     google/cloud/alloydb/v1beta/resources.proto;l=912
    * @return A list containing the pemCertificateChain.
    */
   @java.lang.Deprecated
@@ -110,7 +112,7 @@ public interface ConnectionInfoOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=894
+   *     google/cloud/alloydb/v1beta/resources.proto;l=912
    * @return The count of pemCertificateChain.
    */
   @java.lang.Deprecated
@@ -128,7 +130,7 @@ public interface ConnectionInfoOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=894
+   *     google/cloud/alloydb/v1beta/resources.proto;l=912
    * @param index The index of the element to return.
    * @return The pemCertificateChain at the given index.
    */
@@ -147,7 +149,7 @@ public interface ConnectionInfoOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.ConnectionInfo.pem_certificate_chain is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=894
+   *     google/cloud/alloydb/v1beta/resources.proto;l=912
    * @param index The index of the value to return.
    * @return The bytes of the pemCertificateChain at the given index.
    */

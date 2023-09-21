@@ -1099,6 +1099,7 @@ public class AlloyDBAdminClientTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .build();
     mockAlloyDBAdmin.addResponse(expectedResponse);
@@ -1157,6 +1158,7 @@ public class AlloyDBAdminClientTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .build();
     mockAlloyDBAdmin.addResponse(expectedResponse);
@@ -1215,6 +1217,7 @@ public class AlloyDBAdminClientTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
@@ -1287,6 +1290,7 @@ public class AlloyDBAdminClientTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
@@ -1359,6 +1363,7 @@ public class AlloyDBAdminClientTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
@@ -1433,6 +1438,7 @@ public class AlloyDBAdminClientTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
@@ -1566,6 +1572,7 @@ public class AlloyDBAdminClientTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
@@ -1719,6 +1726,7 @@ public class AlloyDBAdminClientTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
@@ -1785,6 +1793,7 @@ public class AlloyDBAdminClientTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
@@ -1851,6 +1860,7 @@ public class AlloyDBAdminClientTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
@@ -1920,6 +1930,7 @@ public class AlloyDBAdminClientTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
@@ -1989,6 +2000,7 @@ public class AlloyDBAdminClientTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
@@ -2055,6 +2067,7 @@ public class AlloyDBAdminClientTest {
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
             .setUpdatePolicy(Instance.UpdatePolicy.newBuilder().build())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
@@ -2208,6 +2221,7 @@ public class AlloyDBAdminClientTest {
             .setExpiryTime(Timestamp.newBuilder().build())
             .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     mockAlloyDBAdmin.addResponse(expectedResponse);
 
@@ -2264,6 +2278,7 @@ public class AlloyDBAdminClientTest {
             .setExpiryTime(Timestamp.newBuilder().build())
             .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     mockAlloyDBAdmin.addResponse(expectedResponse);
 
@@ -2320,6 +2335,7 @@ public class AlloyDBAdminClientTest {
             .setExpiryTime(Timestamp.newBuilder().build())
             .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2390,6 +2406,7 @@ public class AlloyDBAdminClientTest {
             .setExpiryTime(Timestamp.newBuilder().build())
             .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2460,6 +2477,7 @@ public class AlloyDBAdminClientTest {
             .setExpiryTime(Timestamp.newBuilder().build())
             .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
