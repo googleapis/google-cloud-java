@@ -43,6 +43,27 @@
           }
         }
       }
+    },
+    "PolicyBasedRoutingService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PolicyBasedRoutingServiceClient",
+          "rpcs": {
+            "CreatePolicyBasedRoute": {
+              "methods": ["createPolicyBasedRouteAsync", "createPolicyBasedRouteAsync", "createPolicyBasedRouteAsync", "createPolicyBasedRouteOperationCallable", "createPolicyBasedRouteCallable"]
+            },
+            "DeletePolicyBasedRoute": {
+              "methods": ["deletePolicyBasedRouteAsync", "deletePolicyBasedRouteAsync", "deletePolicyBasedRouteAsync", "deletePolicyBasedRouteOperationCallable", "deletePolicyBasedRouteCallable"]
+            },
+            "GetPolicyBasedRoute": {
+              "methods": ["getPolicyBasedRoute", "getPolicyBasedRoute", "getPolicyBasedRoute", "getPolicyBasedRouteCallable"]
+            },
+            "ListPolicyBasedRoutes": {
+              "methods": ["listPolicyBasedRoutes", "listPolicyBasedRoutes", "listPolicyBasedRoutes", "listPolicyBasedRoutesPagedCallable", "listPolicyBasedRoutesCallable"]
+            }
+          }
+        }
+      }
     }
   }
 }
