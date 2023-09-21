@@ -67,6 +67,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Time the sample was collected.
+   * If omitted, the frame report time will be used.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp sample_time = 1;</code>
@@ -82,6 +83,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Time the sample was collected.
+   * If omitted, the frame report time will be used.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp sample_time = 1;</code>
@@ -97,6 +99,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Time the sample was collected.
+   * If omitted, the frame report time will be used.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp sample_time = 1;</code>
@@ -791,6 +794,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Time the sample was collected.
+     * If omitted, the frame report time will be used.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp sample_time = 1;</code>
@@ -805,6 +809,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Time the sample was collected.
+     * If omitted, the frame report time will be used.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp sample_time = 1;</code>
@@ -825,6 +830,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Time the sample was collected.
+     * If omitted, the frame report time will be used.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp sample_time = 1;</code>
@@ -847,6 +853,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Time the sample was collected.
+     * If omitted, the frame report time will be used.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp sample_time = 1;</code>
@@ -866,6 +873,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Time the sample was collected.
+     * If omitted, the frame report time will be used.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp sample_time = 1;</code>
@@ -891,6 +899,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Time the sample was collected.
+     * If omitted, the frame report time will be used.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp sample_time = 1;</code>
@@ -910,6 +919,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Time the sample was collected.
+     * If omitted, the frame report time will be used.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp sample_time = 1;</code>
@@ -924,6 +934,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Time the sample was collected.
+     * If omitted, the frame report time will be used.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp sample_time = 1;</code>
@@ -942,6 +953,7 @@ public final class PerformanceSample extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Time the sample was collected.
+     * If omitted, the frame report time will be used.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp sample_time = 1;</code>

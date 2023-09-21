@@ -10486,6 +10486,5678 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface VmwareEngineFindingOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Set of regions in which the assets were allocated
+     * </pre>
+     *
+     * <code>repeated string allocated_regions = 1;</code>
+     *
+     * @return A list containing the allocatedRegions.
+     */
+    java.util.List<java.lang.String> getAllocatedRegionsList();
+    /**
+     *
+     *
+     * <pre>
+     * Set of regions in which the assets were allocated
+     * </pre>
+     *
+     * <code>repeated string allocated_regions = 1;</code>
+     *
+     * @return The count of allocatedRegions.
+     */
+    int getAllocatedRegionsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Set of regions in which the assets were allocated
+     * </pre>
+     *
+     * <code>repeated string allocated_regions = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The allocatedRegions at the given index.
+     */
+    java.lang.String getAllocatedRegions(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Set of regions in which the assets were allocated
+     * </pre>
+     *
+     * <code>repeated string allocated_regions = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the allocatedRegions at the given index.
+     */
+    com.google.protobuf.ByteString getAllocatedRegionsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Count of assets which are allocated
+     * </pre>
+     *
+     * <code>int64 allocated_asset_count = 2;</code>
+     *
+     * @return The allocatedAssetCount.
+     */
+    long getAllocatedAssetCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Set of per-nodetype allocation records
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+     * </code>
+     */
+    java.util.List<com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation>
+        getNodeAllocationsList();
+    /**
+     *
+     *
+     * <pre>
+     * Set of per-nodetype allocation records
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+     * </code>
+     */
+    com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation getNodeAllocations(
+        int index);
+    /**
+     *
+     *
+     * <pre>
+     * Set of per-nodetype allocation records
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+     * </code>
+     */
+    int getNodeAllocationsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Set of per-nodetype allocation records
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocationOrBuilder>
+        getNodeAllocationsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Set of per-nodetype allocation records
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+     * </code>
+     */
+    com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocationOrBuilder
+        getNodeAllocationsOrBuilder(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A set of findings that applies to assets destined for VMWare Engine.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding}
+   */
+  public static final class VmwareEngineFinding extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding)
+      VmwareEngineFindingOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use VmwareEngineFinding.newBuilder() to construct.
+    private VmwareEngineFinding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private VmwareEngineFinding() {
+      allocatedRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      nodeAllocations_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new VmwareEngineFinding();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+          .internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareEngineFinding_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+          .internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareEngineFinding_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding.class,
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding.Builder.class);
+    }
+
+    public static final int ALLOCATED_REGIONS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList allocatedRegions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * Set of regions in which the assets were allocated
+     * </pre>
+     *
+     * <code>repeated string allocated_regions = 1;</code>
+     *
+     * @return A list containing the allocatedRegions.
+     */
+    public com.google.protobuf.ProtocolStringList getAllocatedRegionsList() {
+      return allocatedRegions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set of regions in which the assets were allocated
+     * </pre>
+     *
+     * <code>repeated string allocated_regions = 1;</code>
+     *
+     * @return The count of allocatedRegions.
+     */
+    public int getAllocatedRegionsCount() {
+      return allocatedRegions_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set of regions in which the assets were allocated
+     * </pre>
+     *
+     * <code>repeated string allocated_regions = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The allocatedRegions at the given index.
+     */
+    public java.lang.String getAllocatedRegions(int index) {
+      return allocatedRegions_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set of regions in which the assets were allocated
+     * </pre>
+     *
+     * <code>repeated string allocated_regions = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the allocatedRegions at the given index.
+     */
+    public com.google.protobuf.ByteString getAllocatedRegionsBytes(int index) {
+      return allocatedRegions_.getByteString(index);
+    }
+
+    public static final int ALLOCATED_ASSET_COUNT_FIELD_NUMBER = 2;
+    private long allocatedAssetCount_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Count of assets which are allocated
+     * </pre>
+     *
+     * <code>int64 allocated_asset_count = 2;</code>
+     *
+     * @return The allocatedAssetCount.
+     */
+    @java.lang.Override
+    public long getAllocatedAssetCount() {
+      return allocatedAssetCount_;
+    }
+
+    public static final int NODE_ALLOCATIONS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private java.util.List<com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation>
+        nodeAllocations_;
+    /**
+     *
+     *
+     * <pre>
+     * Set of per-nodetype allocation records
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation>
+        getNodeAllocationsList() {
+      return nodeAllocations_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set of per-nodetype allocation records
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocationOrBuilder>
+        getNodeAllocationsOrBuilderList() {
+      return nodeAllocations_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set of per-nodetype allocation records
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public int getNodeAllocationsCount() {
+      return nodeAllocations_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set of per-nodetype allocation records
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation
+        getNodeAllocations(int index) {
+      return nodeAllocations_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set of per-nodetype allocation records
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocationOrBuilder
+        getNodeAllocationsOrBuilder(int index) {
+      return nodeAllocations_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < allocatedRegions_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, allocatedRegions_.getRaw(i));
+      }
+      if (allocatedAssetCount_ != 0L) {
+        output.writeInt64(2, allocatedAssetCount_);
+      }
+      for (int i = 0; i < nodeAllocations_.size(); i++) {
+        output.writeMessage(3, nodeAllocations_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < allocatedRegions_.size(); i++) {
+          dataSize += computeStringSizeNoTag(allocatedRegions_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getAllocatedRegionsList().size();
+      }
+      if (allocatedAssetCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, allocatedAssetCount_);
+      }
+      for (int i = 0; i < nodeAllocations_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(3, nodeAllocations_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding other =
+          (com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding) obj;
+
+      if (!getAllocatedRegionsList().equals(other.getAllocatedRegionsList())) return false;
+      if (getAllocatedAssetCount() != other.getAllocatedAssetCount()) return false;
+      if (!getNodeAllocationsList().equals(other.getNodeAllocationsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getAllocatedRegionsCount() > 0) {
+        hash = (37 * hash) + ALLOCATED_REGIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getAllocatedRegionsList().hashCode();
+      }
+      hash = (37 * hash) + ALLOCATED_ASSET_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAllocatedAssetCount());
+      if (getNodeAllocationsCount() > 0) {
+        hash = (37 * hash) + NODE_ALLOCATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getNodeAllocationsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A set of findings that applies to assets destined for VMWare Engine.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding)
+        com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFindingOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+            .internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareEngineFinding_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+            .internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareEngineFinding_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding.class,
+                com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        allocatedRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        allocatedAssetCount_ = 0L;
+        if (nodeAllocationsBuilder_ == null) {
+          nodeAllocations_ = java.util.Collections.emptyList();
+        } else {
+          nodeAllocations_ = null;
+          nodeAllocationsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+            .internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareEngineFinding_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding
+          getDefaultInstanceForType() {
+        return com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding build() {
+        com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding buildPartial() {
+        com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding result =
+            new com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding result) {
+        if (nodeAllocationsBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            nodeAllocations_ = java.util.Collections.unmodifiableList(nodeAllocations_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.nodeAllocations_ = nodeAllocations_;
+        } else {
+          result.nodeAllocations_ = nodeAllocationsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          allocatedRegions_.makeImmutable();
+          result.allocatedRegions_ = allocatedRegions_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.allocatedAssetCount_ = allocatedAssetCount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding) {
+          return mergeFrom(
+              (com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding other) {
+        if (other
+            == com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding
+                .getDefaultInstance()) return this;
+        if (!other.allocatedRegions_.isEmpty()) {
+          if (allocatedRegions_.isEmpty()) {
+            allocatedRegions_ = other.allocatedRegions_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureAllocatedRegionsIsMutable();
+            allocatedRegions_.addAll(other.allocatedRegions_);
+          }
+          onChanged();
+        }
+        if (other.getAllocatedAssetCount() != 0L) {
+          setAllocatedAssetCount(other.getAllocatedAssetCount());
+        }
+        if (nodeAllocationsBuilder_ == null) {
+          if (!other.nodeAllocations_.isEmpty()) {
+            if (nodeAllocations_.isEmpty()) {
+              nodeAllocations_ = other.nodeAllocations_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureNodeAllocationsIsMutable();
+              nodeAllocations_.addAll(other.nodeAllocations_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.nodeAllocations_.isEmpty()) {
+            if (nodeAllocationsBuilder_.isEmpty()) {
+              nodeAllocationsBuilder_.dispose();
+              nodeAllocationsBuilder_ = null;
+              nodeAllocations_ = other.nodeAllocations_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              nodeAllocationsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getNodeAllocationsFieldBuilder()
+                      : null;
+            } else {
+              nodeAllocationsBuilder_.addAllMessages(other.nodeAllocations_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureAllocatedRegionsIsMutable();
+                  allocatedRegions_.add(s);
+                  break;
+                } // case 10
+              case 16:
+                {
+                  allocatedAssetCount_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 26:
+                {
+                  com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation m =
+                      input.readMessage(
+                          com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation
+                              .parser(),
+                          extensionRegistry);
+                  if (nodeAllocationsBuilder_ == null) {
+                    ensureNodeAllocationsIsMutable();
+                    nodeAllocations_.add(m);
+                  } else {
+                    nodeAllocationsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringArrayList allocatedRegions_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureAllocatedRegionsIsMutable() {
+        if (!allocatedRegions_.isModifiable()) {
+          allocatedRegions_ = new com.google.protobuf.LazyStringArrayList(allocatedRegions_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of regions in which the assets were allocated
+       * </pre>
+       *
+       * <code>repeated string allocated_regions = 1;</code>
+       *
+       * @return A list containing the allocatedRegions.
+       */
+      public com.google.protobuf.ProtocolStringList getAllocatedRegionsList() {
+        allocatedRegions_.makeImmutable();
+        return allocatedRegions_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of regions in which the assets were allocated
+       * </pre>
+       *
+       * <code>repeated string allocated_regions = 1;</code>
+       *
+       * @return The count of allocatedRegions.
+       */
+      public int getAllocatedRegionsCount() {
+        return allocatedRegions_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of regions in which the assets were allocated
+       * </pre>
+       *
+       * <code>repeated string allocated_regions = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The allocatedRegions at the given index.
+       */
+      public java.lang.String getAllocatedRegions(int index) {
+        return allocatedRegions_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of regions in which the assets were allocated
+       * </pre>
+       *
+       * <code>repeated string allocated_regions = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the allocatedRegions at the given index.
+       */
+      public com.google.protobuf.ByteString getAllocatedRegionsBytes(int index) {
+        return allocatedRegions_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of regions in which the assets were allocated
+       * </pre>
+       *
+       * <code>repeated string allocated_regions = 1;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The allocatedRegions to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllocatedRegions(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAllocatedRegionsIsMutable();
+        allocatedRegions_.set(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of regions in which the assets were allocated
+       * </pre>
+       *
+       * <code>repeated string allocated_regions = 1;</code>
+       *
+       * @param value The allocatedRegions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllocatedRegions(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAllocatedRegionsIsMutable();
+        allocatedRegions_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of regions in which the assets were allocated
+       * </pre>
+       *
+       * <code>repeated string allocated_regions = 1;</code>
+       *
+       * @param values The allocatedRegions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllAllocatedRegions(java.lang.Iterable<java.lang.String> values) {
+        ensureAllocatedRegionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allocatedRegions_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of regions in which the assets were allocated
+       * </pre>
+       *
+       * <code>repeated string allocated_regions = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAllocatedRegions() {
+        allocatedRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of regions in which the assets were allocated
+       * </pre>
+       *
+       * <code>repeated string allocated_regions = 1;</code>
+       *
+       * @param value The bytes of the allocatedRegions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllocatedRegionsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureAllocatedRegionsIsMutable();
+        allocatedRegions_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private long allocatedAssetCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Count of assets which are allocated
+       * </pre>
+       *
+       * <code>int64 allocated_asset_count = 2;</code>
+       *
+       * @return The allocatedAssetCount.
+       */
+      @java.lang.Override
+      public long getAllocatedAssetCount() {
+        return allocatedAssetCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Count of assets which are allocated
+       * </pre>
+       *
+       * <code>int64 allocated_asset_count = 2;</code>
+       *
+       * @param value The allocatedAssetCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllocatedAssetCount(long value) {
+
+        allocatedAssetCount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Count of assets which are allocated
+       * </pre>
+       *
+       * <code>int64 allocated_asset_count = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAllocatedAssetCount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        allocatedAssetCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation>
+          nodeAllocations_ = java.util.Collections.emptyList();
+
+      private void ensureNodeAllocationsIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          nodeAllocations_ =
+              new java.util.ArrayList<
+                  com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation>(
+                  nodeAllocations_);
+          bitField0_ |= 0x00000004;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation,
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation.Builder,
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocationOrBuilder>
+          nodeAllocationsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public java.util.List<com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation>
+          getNodeAllocationsList() {
+        if (nodeAllocationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(nodeAllocations_);
+        } else {
+          return nodeAllocationsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public int getNodeAllocationsCount() {
+        if (nodeAllocationsBuilder_ == null) {
+          return nodeAllocations_.size();
+        } else {
+          return nodeAllocationsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation
+          getNodeAllocations(int index) {
+        if (nodeAllocationsBuilder_ == null) {
+          return nodeAllocations_.get(index);
+        } else {
+          return nodeAllocationsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public Builder setNodeAllocations(
+          int index, com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation value) {
+        if (nodeAllocationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNodeAllocationsIsMutable();
+          nodeAllocations_.set(index, value);
+          onChanged();
+        } else {
+          nodeAllocationsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public Builder setNodeAllocations(
+          int index,
+          com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation.Builder
+              builderForValue) {
+        if (nodeAllocationsBuilder_ == null) {
+          ensureNodeAllocationsIsMutable();
+          nodeAllocations_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          nodeAllocationsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public Builder addNodeAllocations(
+          com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation value) {
+        if (nodeAllocationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNodeAllocationsIsMutable();
+          nodeAllocations_.add(value);
+          onChanged();
+        } else {
+          nodeAllocationsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public Builder addNodeAllocations(
+          int index, com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation value) {
+        if (nodeAllocationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNodeAllocationsIsMutable();
+          nodeAllocations_.add(index, value);
+          onChanged();
+        } else {
+          nodeAllocationsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public Builder addNodeAllocations(
+          com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation.Builder
+              builderForValue) {
+        if (nodeAllocationsBuilder_ == null) {
+          ensureNodeAllocationsIsMutable();
+          nodeAllocations_.add(builderForValue.build());
+          onChanged();
+        } else {
+          nodeAllocationsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public Builder addNodeAllocations(
+          int index,
+          com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation.Builder
+              builderForValue) {
+        if (nodeAllocationsBuilder_ == null) {
+          ensureNodeAllocationsIsMutable();
+          nodeAllocations_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          nodeAllocationsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public Builder addAllNodeAllocations(
+          java.lang.Iterable<
+                  ? extends com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation>
+              values) {
+        if (nodeAllocationsBuilder_ == null) {
+          ensureNodeAllocationsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, nodeAllocations_);
+          onChanged();
+        } else {
+          nodeAllocationsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public Builder clearNodeAllocations() {
+        if (nodeAllocationsBuilder_ == null) {
+          nodeAllocations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          nodeAllocationsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public Builder removeNodeAllocations(int index) {
+        if (nodeAllocationsBuilder_ == null) {
+          ensureNodeAllocationsIsMutable();
+          nodeAllocations_.remove(index);
+          onChanged();
+        } else {
+          nodeAllocationsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation.Builder
+          getNodeAllocationsBuilder(int index) {
+        return getNodeAllocationsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocationOrBuilder
+          getNodeAllocationsOrBuilder(int index) {
+        if (nodeAllocationsBuilder_ == null) {
+          return nodeAllocations_.get(index);
+        } else {
+          return nodeAllocationsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocationOrBuilder>
+          getNodeAllocationsOrBuilderList() {
+        if (nodeAllocationsBuilder_ != null) {
+          return nodeAllocationsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(nodeAllocations_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation.Builder
+          addNodeAllocationsBuilder() {
+        return getNodeAllocationsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation.Builder
+          addNodeAllocationsBuilder(int index) {
+        return getNodeAllocationsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation.Builder>
+          getNodeAllocationsBuilderList() {
+        return getNodeAllocationsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation,
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation.Builder,
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocationOrBuilder>
+          getNodeAllocationsFieldBuilder() {
+        if (nodeAllocationsBuilder_ == null) {
+          nodeAllocationsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation,
+                  com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation.Builder,
+                  com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocationOrBuilder>(
+                  nodeAllocations_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          nodeAllocations_ = null;
+        }
+        return nodeAllocationsBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding)
+    private static final com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding();
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<VmwareEngineFinding> PARSER =
+        new com.google.protobuf.AbstractParser<VmwareEngineFinding>() {
+          @java.lang.Override
+          public VmwareEngineFinding parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<VmwareEngineFinding> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<VmwareEngineFinding> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface VmwareNodeAllocationOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * VMWare node type, e.g. "ve1-standard-72"
+     * </pre>
+     *
+     * <code>.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode vmware_node = 1;</code>
+     *
+     * @return Whether the vmwareNode field is set.
+     */
+    boolean hasVmwareNode();
+    /**
+     *
+     *
+     * <pre>
+     * VMWare node type, e.g. "ve1-standard-72"
+     * </pre>
+     *
+     * <code>.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode vmware_node = 1;</code>
+     *
+     * @return The vmwareNode.
+     */
+    com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode getVmwareNode();
+    /**
+     *
+     *
+     * <pre>
+     * VMWare node type, e.g. "ve1-standard-72"
+     * </pre>
+     *
+     * <code>.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode vmware_node = 1;</code>
+     */
+    com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeOrBuilder getVmwareNodeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Count of this node type to be provisioned
+     * </pre>
+     *
+     * <code>int64 node_count = 2;</code>
+     *
+     * @return The nodeCount.
+     */
+    long getNodeCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Count of assets allocated to these nodes
+     * </pre>
+     *
+     * <code>int64 allocated_asset_count = 3;</code>
+     *
+     * @return The allocatedAssetCount.
+     */
+    long getAllocatedAssetCount();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents assets allocated to a specific VMWare Node type.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation}
+   */
+  public static final class VmwareNodeAllocation extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation)
+      VmwareNodeAllocationOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use VmwareNodeAllocation.newBuilder() to construct.
+    private VmwareNodeAllocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private VmwareNodeAllocation() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new VmwareNodeAllocation();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+          .internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareNodeAllocation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+          .internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareNodeAllocation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation.class,
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation.Builder.class);
+    }
+
+    public static final int VMWARE_NODE_FIELD_NUMBER = 1;
+    private com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode vmwareNode_;
+    /**
+     *
+     *
+     * <pre>
+     * VMWare node type, e.g. "ve1-standard-72"
+     * </pre>
+     *
+     * <code>.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode vmware_node = 1;</code>
+     *
+     * @return Whether the vmwareNode field is set.
+     */
+    @java.lang.Override
+    public boolean hasVmwareNode() {
+      return vmwareNode_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * VMWare node type, e.g. "ve1-standard-72"
+     * </pre>
+     *
+     * <code>.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode vmware_node = 1;</code>
+     *
+     * @return The vmwareNode.
+     */
+    @java.lang.Override
+    public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode getVmwareNode() {
+      return vmwareNode_ == null
+          ? com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode.getDefaultInstance()
+          : vmwareNode_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * VMWare node type, e.g. "ve1-standard-72"
+     * </pre>
+     *
+     * <code>.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode vmware_node = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeOrBuilder
+        getVmwareNodeOrBuilder() {
+      return vmwareNode_ == null
+          ? com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode.getDefaultInstance()
+          : vmwareNode_;
+    }
+
+    public static final int NODE_COUNT_FIELD_NUMBER = 2;
+    private long nodeCount_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Count of this node type to be provisioned
+     * </pre>
+     *
+     * <code>int64 node_count = 2;</code>
+     *
+     * @return The nodeCount.
+     */
+    @java.lang.Override
+    public long getNodeCount() {
+      return nodeCount_;
+    }
+
+    public static final int ALLOCATED_ASSET_COUNT_FIELD_NUMBER = 3;
+    private long allocatedAssetCount_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Count of assets allocated to these nodes
+     * </pre>
+     *
+     * <code>int64 allocated_asset_count = 3;</code>
+     *
+     * @return The allocatedAssetCount.
+     */
+    @java.lang.Override
+    public long getAllocatedAssetCount() {
+      return allocatedAssetCount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (vmwareNode_ != null) {
+        output.writeMessage(1, getVmwareNode());
+      }
+      if (nodeCount_ != 0L) {
+        output.writeInt64(2, nodeCount_);
+      }
+      if (allocatedAssetCount_ != 0L) {
+        output.writeInt64(3, allocatedAssetCount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (vmwareNode_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getVmwareNode());
+      }
+      if (nodeCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, nodeCount_);
+      }
+      if (allocatedAssetCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, allocatedAssetCount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation other =
+          (com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation) obj;
+
+      if (hasVmwareNode() != other.hasVmwareNode()) return false;
+      if (hasVmwareNode()) {
+        if (!getVmwareNode().equals(other.getVmwareNode())) return false;
+      }
+      if (getNodeCount() != other.getNodeCount()) return false;
+      if (getAllocatedAssetCount() != other.getAllocatedAssetCount()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasVmwareNode()) {
+        hash = (37 * hash) + VMWARE_NODE_FIELD_NUMBER;
+        hash = (53 * hash) + getVmwareNode().hashCode();
+      }
+      hash = (37 * hash) + NODE_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getNodeCount());
+      hash = (37 * hash) + ALLOCATED_ASSET_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAllocatedAssetCount());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents assets allocated to a specific VMWare Node type.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation)
+        com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+            .internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareNodeAllocation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+            .internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareNodeAllocation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation.class,
+                com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        vmwareNode_ = null;
+        if (vmwareNodeBuilder_ != null) {
+          vmwareNodeBuilder_.dispose();
+          vmwareNodeBuilder_ = null;
+        }
+        nodeCount_ = 0L;
+        allocatedAssetCount_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+            .internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareNodeAllocation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation
+          getDefaultInstanceForType() {
+        return com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation build() {
+        com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation buildPartial() {
+        com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation result =
+            new com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.vmwareNode_ =
+              vmwareNodeBuilder_ == null ? vmwareNode_ : vmwareNodeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.nodeCount_ = nodeCount_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.allocatedAssetCount_ = allocatedAssetCount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation) {
+          return mergeFrom(
+              (com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation other) {
+        if (other
+            == com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation
+                .getDefaultInstance()) return this;
+        if (other.hasVmwareNode()) {
+          mergeVmwareNode(other.getVmwareNode());
+        }
+        if (other.getNodeCount() != 0L) {
+          setNodeCount(other.getNodeCount());
+        }
+        if (other.getAllocatedAssetCount() != 0L) {
+          setAllocatedAssetCount(other.getAllocatedAssetCount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getVmwareNodeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  nodeCount_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  allocatedAssetCount_ = input.readInt64();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode vmwareNode_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode,
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode.Builder,
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeOrBuilder>
+          vmwareNodeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * VMWare node type, e.g. "ve1-standard-72"
+       * </pre>
+       *
+       * <code>.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode vmware_node = 1;</code>
+       *
+       * @return Whether the vmwareNode field is set.
+       */
+      public boolean hasVmwareNode() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * VMWare node type, e.g. "ve1-standard-72"
+       * </pre>
+       *
+       * <code>.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode vmware_node = 1;</code>
+       *
+       * @return The vmwareNode.
+       */
+      public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode getVmwareNode() {
+        if (vmwareNodeBuilder_ == null) {
+          return vmwareNode_ == null
+              ? com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode.getDefaultInstance()
+              : vmwareNode_;
+        } else {
+          return vmwareNodeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * VMWare node type, e.g. "ve1-standard-72"
+       * </pre>
+       *
+       * <code>.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode vmware_node = 1;</code>
+       */
+      public Builder setVmwareNode(
+          com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode value) {
+        if (vmwareNodeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          vmwareNode_ = value;
+        } else {
+          vmwareNodeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * VMWare node type, e.g. "ve1-standard-72"
+       * </pre>
+       *
+       * <code>.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode vmware_node = 1;</code>
+       */
+      public Builder setVmwareNode(
+          com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode.Builder builderForValue) {
+        if (vmwareNodeBuilder_ == null) {
+          vmwareNode_ = builderForValue.build();
+        } else {
+          vmwareNodeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * VMWare node type, e.g. "ve1-standard-72"
+       * </pre>
+       *
+       * <code>.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode vmware_node = 1;</code>
+       */
+      public Builder mergeVmwareNode(
+          com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode value) {
+        if (vmwareNodeBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && vmwareNode_ != null
+              && vmwareNode_
+                  != com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode
+                      .getDefaultInstance()) {
+            getVmwareNodeBuilder().mergeFrom(value);
+          } else {
+            vmwareNode_ = value;
+          }
+        } else {
+          vmwareNodeBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * VMWare node type, e.g. "ve1-standard-72"
+       * </pre>
+       *
+       * <code>.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode vmware_node = 1;</code>
+       */
+      public Builder clearVmwareNode() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        vmwareNode_ = null;
+        if (vmwareNodeBuilder_ != null) {
+          vmwareNodeBuilder_.dispose();
+          vmwareNodeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * VMWare node type, e.g. "ve1-standard-72"
+       * </pre>
+       *
+       * <code>.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode vmware_node = 1;</code>
+       */
+      public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode.Builder
+          getVmwareNodeBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getVmwareNodeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * VMWare node type, e.g. "ve1-standard-72"
+       * </pre>
+       *
+       * <code>.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode vmware_node = 1;</code>
+       */
+      public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeOrBuilder
+          getVmwareNodeOrBuilder() {
+        if (vmwareNodeBuilder_ != null) {
+          return vmwareNodeBuilder_.getMessageOrBuilder();
+        } else {
+          return vmwareNode_ == null
+              ? com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode.getDefaultInstance()
+              : vmwareNode_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * VMWare node type, e.g. "ve1-standard-72"
+       * </pre>
+       *
+       * <code>.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode vmware_node = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode,
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode.Builder,
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeOrBuilder>
+          getVmwareNodeFieldBuilder() {
+        if (vmwareNodeBuilder_ == null) {
+          vmwareNodeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode,
+                  com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode.Builder,
+                  com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeOrBuilder>(
+                  getVmwareNode(), getParentForChildren(), isClean());
+          vmwareNode_ = null;
+        }
+        return vmwareNodeBuilder_;
+      }
+
+      private long nodeCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Count of this node type to be provisioned
+       * </pre>
+       *
+       * <code>int64 node_count = 2;</code>
+       *
+       * @return The nodeCount.
+       */
+      @java.lang.Override
+      public long getNodeCount() {
+        return nodeCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Count of this node type to be provisioned
+       * </pre>
+       *
+       * <code>int64 node_count = 2;</code>
+       *
+       * @param value The nodeCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNodeCount(long value) {
+
+        nodeCount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Count of this node type to be provisioned
+       * </pre>
+       *
+       * <code>int64 node_count = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNodeCount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        nodeCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long allocatedAssetCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Count of assets allocated to these nodes
+       * </pre>
+       *
+       * <code>int64 allocated_asset_count = 3;</code>
+       *
+       * @return The allocatedAssetCount.
+       */
+      @java.lang.Override
+      public long getAllocatedAssetCount() {
+        return allocatedAssetCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Count of assets allocated to these nodes
+       * </pre>
+       *
+       * <code>int64 allocated_asset_count = 3;</code>
+       *
+       * @param value The allocatedAssetCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllocatedAssetCount(long value) {
+
+        allocatedAssetCount_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Count of assets allocated to these nodes
+       * </pre>
+       *
+       * <code>int64 allocated_asset_count = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAllocatedAssetCount() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        allocatedAssetCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation)
+    private static final com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation();
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<VmwareNodeAllocation> PARSER =
+        new com.google.protobuf.AbstractParser<VmwareNodeAllocation>() {
+          @java.lang.Override
+          public VmwareNodeAllocation parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<VmwareNodeAllocation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<VmwareNodeAllocation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeAllocation
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface VmwareNodeOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.migrationcenter.v1.ReportSummary.VmwareNode)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Code to identify VMware Engine node series, e.g. "ve1-standard-72". Based
+     * on the displayName of
+     * cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.nodeTypes
+     * </pre>
+     *
+     * <code>string code = 1;</code>
+     *
+     * @return The code.
+     */
+    java.lang.String getCode();
+    /**
+     *
+     *
+     * <pre>
+     * Code to identify VMware Engine node series, e.g. "ve1-standard-72". Based
+     * on the displayName of
+     * cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.nodeTypes
+     * </pre>
+     *
+     * <code>string code = 1;</code>
+     *
+     * @return The bytes for code.
+     */
+    com.google.protobuf.ByteString getCodeBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A VMWare Engine Node
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.migrationcenter.v1.ReportSummary.VmwareNode}
+   */
+  public static final class VmwareNode extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportSummary.VmwareNode)
+      VmwareNodeOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use VmwareNode.newBuilder() to construct.
+    private VmwareNode(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private VmwareNode() {
+      code_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new VmwareNode();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+          .internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareNode_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+          .internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareNode_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode.class,
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode.Builder.class);
+    }
+
+    public static final int CODE_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object code_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Code to identify VMware Engine node series, e.g. "ve1-standard-72". Based
+     * on the displayName of
+     * cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.nodeTypes
+     * </pre>
+     *
+     * <code>string code = 1;</code>
+     *
+     * @return The code.
+     */
+    @java.lang.Override
+    public java.lang.String getCode() {
+      java.lang.Object ref = code_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        code_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Code to identify VMware Engine node series, e.g. "ve1-standard-72". Based
+     * on the displayName of
+     * cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.nodeTypes
+     * </pre>
+     *
+     * <code>string code = 1;</code>
+     *
+     * @return The bytes for code.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCodeBytes() {
+      java.lang.Object ref = code_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        code_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, code_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(code_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, code_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode other =
+          (com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode) obj;
+
+      if (!getCode().equals(other.getCode())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getCode().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A VMWare Engine Node
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.migrationcenter.v1.ReportSummary.VmwareNode}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.migrationcenter.v1.ReportSummary.VmwareNode)
+        com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNodeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+            .internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareNode_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+            .internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareNode_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode.class,
+                com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode.Builder.class);
+      }
+
+      // Construct using com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        code_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+            .internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareNode_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode
+          getDefaultInstanceForType() {
+        return com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode build() {
+        com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode buildPartial() {
+        com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode result =
+            new com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.code_ = code_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode) {
+          return mergeFrom((com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode other) {
+        if (other
+            == com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode.getDefaultInstance())
+          return this;
+        if (!other.getCode().isEmpty()) {
+          code_ = other.code_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  code_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object code_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Code to identify VMware Engine node series, e.g. "ve1-standard-72". Based
+       * on the displayName of
+       * cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.nodeTypes
+       * </pre>
+       *
+       * <code>string code = 1;</code>
+       *
+       * @return The code.
+       */
+      public java.lang.String getCode() {
+        java.lang.Object ref = code_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          code_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Code to identify VMware Engine node series, e.g. "ve1-standard-72". Based
+       * on the displayName of
+       * cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.nodeTypes
+       * </pre>
+       *
+       * <code>string code = 1;</code>
+       *
+       * @return The bytes for code.
+       */
+      public com.google.protobuf.ByteString getCodeBytes() {
+        java.lang.Object ref = code_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          code_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Code to identify VMware Engine node series, e.g. "ve1-standard-72". Based
+       * on the displayName of
+       * cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.nodeTypes
+       * </pre>
+       *
+       * <code>string code = 1;</code>
+       *
+       * @param value The code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCode(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        code_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Code to identify VMware Engine node series, e.g. "ve1-standard-72". Based
+       * on the displayName of
+       * cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.nodeTypes
+       * </pre>
+       *
+       * <code>string code = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCode() {
+        code_ = getDefaultInstance().getCode();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Code to identify VMware Engine node series, e.g. "ve1-standard-72". Based
+       * on the displayName of
+       * cloud.google.com/vmware-engine/docs/reference/rest/v1/projects.locations.nodeTypes
+       * </pre>
+       *
+       * <code>string code = 1;</code>
+       *
+       * @param value The bytes for code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCodeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        code_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.migrationcenter.v1.ReportSummary.VmwareNode)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.migrationcenter.v1.ReportSummary.VmwareNode)
+    private static final com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode();
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<VmwareNode> PARSER =
+        new com.google.protobuf.AbstractParser<VmwareNode>() {
+          @java.lang.Override
+          public VmwareNode parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<VmwareNode> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<VmwareNode> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareNode
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface SoleTenantFindingOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Set of regions in which the assets are allocated
+     * </pre>
+     *
+     * <code>repeated string allocated_regions = 1;</code>
+     *
+     * @return A list containing the allocatedRegions.
+     */
+    java.util.List<java.lang.String> getAllocatedRegionsList();
+    /**
+     *
+     *
+     * <pre>
+     * Set of regions in which the assets are allocated
+     * </pre>
+     *
+     * <code>repeated string allocated_regions = 1;</code>
+     *
+     * @return The count of allocatedRegions.
+     */
+    int getAllocatedRegionsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Set of regions in which the assets are allocated
+     * </pre>
+     *
+     * <code>repeated string allocated_regions = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The allocatedRegions at the given index.
+     */
+    java.lang.String getAllocatedRegions(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Set of regions in which the assets are allocated
+     * </pre>
+     *
+     * <code>repeated string allocated_regions = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the allocatedRegions at the given index.
+     */
+    com.google.protobuf.ByteString getAllocatedRegionsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Count of assets which are allocated
+     * </pre>
+     *
+     * <code>int64 allocated_asset_count = 2;</code>
+     *
+     * @return The allocatedAssetCount.
+     */
+    long getAllocatedAssetCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Set of per-nodetype allocation records
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+     * </code>
+     */
+    java.util.List<com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation>
+        getNodeAllocationsList();
+    /**
+     *
+     *
+     * <pre>
+     * Set of per-nodetype allocation records
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+     * </code>
+     */
+    com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation getNodeAllocations(
+        int index);
+    /**
+     *
+     *
+     * <pre>
+     * Set of per-nodetype allocation records
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+     * </code>
+     */
+    int getNodeAllocationsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Set of per-nodetype allocation records
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocationOrBuilder>
+        getNodeAllocationsOrBuilderList();
+    /**
+     *
+     *
+     * <pre>
+     * Set of per-nodetype allocation records
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+     * </code>
+     */
+    com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocationOrBuilder
+        getNodeAllocationsOrBuilder(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A set of findings that applies to assets destined for Sole-Tenant nodes.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding}
+   */
+  public static final class SoleTenantFinding extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding)
+      SoleTenantFindingOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SoleTenantFinding.newBuilder() to construct.
+    private SoleTenantFinding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SoleTenantFinding() {
+      allocatedRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      nodeAllocations_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SoleTenantFinding();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+          .internal_static_google_cloud_migrationcenter_v1_ReportSummary_SoleTenantFinding_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+          .internal_static_google_cloud_migrationcenter_v1_ReportSummary_SoleTenantFinding_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding.class,
+              com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding.Builder.class);
+    }
+
+    public static final int ALLOCATED_REGIONS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList allocatedRegions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * Set of regions in which the assets are allocated
+     * </pre>
+     *
+     * <code>repeated string allocated_regions = 1;</code>
+     *
+     * @return A list containing the allocatedRegions.
+     */
+    public com.google.protobuf.ProtocolStringList getAllocatedRegionsList() {
+      return allocatedRegions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set of regions in which the assets are allocated
+     * </pre>
+     *
+     * <code>repeated string allocated_regions = 1;</code>
+     *
+     * @return The count of allocatedRegions.
+     */
+    public int getAllocatedRegionsCount() {
+      return allocatedRegions_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set of regions in which the assets are allocated
+     * </pre>
+     *
+     * <code>repeated string allocated_regions = 1;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The allocatedRegions at the given index.
+     */
+    public java.lang.String getAllocatedRegions(int index) {
+      return allocatedRegions_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set of regions in which the assets are allocated
+     * </pre>
+     *
+     * <code>repeated string allocated_regions = 1;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the allocatedRegions at the given index.
+     */
+    public com.google.protobuf.ByteString getAllocatedRegionsBytes(int index) {
+      return allocatedRegions_.getByteString(index);
+    }
+
+    public static final int ALLOCATED_ASSET_COUNT_FIELD_NUMBER = 2;
+    private long allocatedAssetCount_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Count of assets which are allocated
+     * </pre>
+     *
+     * <code>int64 allocated_asset_count = 2;</code>
+     *
+     * @return The allocatedAssetCount.
+     */
+    @java.lang.Override
+    public long getAllocatedAssetCount() {
+      return allocatedAssetCount_;
+    }
+
+    public static final int NODE_ALLOCATIONS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation>
+        nodeAllocations_;
+    /**
+     *
+     *
+     * <pre>
+     * Set of per-nodetype allocation records
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation>
+        getNodeAllocationsList() {
+      return nodeAllocations_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set of per-nodetype allocation records
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocationOrBuilder>
+        getNodeAllocationsOrBuilderList() {
+      return nodeAllocations_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set of per-nodetype allocation records
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public int getNodeAllocationsCount() {
+      return nodeAllocations_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set of per-nodetype allocation records
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+        getNodeAllocations(int index) {
+      return nodeAllocations_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Set of per-nodetype allocation records
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocationOrBuilder
+        getNodeAllocationsOrBuilder(int index) {
+      return nodeAllocations_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < allocatedRegions_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, allocatedRegions_.getRaw(i));
+      }
+      if (allocatedAssetCount_ != 0L) {
+        output.writeInt64(2, allocatedAssetCount_);
+      }
+      for (int i = 0; i < nodeAllocations_.size(); i++) {
+        output.writeMessage(3, nodeAllocations_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < allocatedRegions_.size(); i++) {
+          dataSize += computeStringSizeNoTag(allocatedRegions_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getAllocatedRegionsList().size();
+      }
+      if (allocatedAssetCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, allocatedAssetCount_);
+      }
+      for (int i = 0; i < nodeAllocations_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(3, nodeAllocations_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding other =
+          (com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding) obj;
+
+      if (!getAllocatedRegionsList().equals(other.getAllocatedRegionsList())) return false;
+      if (getAllocatedAssetCount() != other.getAllocatedAssetCount()) return false;
+      if (!getNodeAllocationsList().equals(other.getNodeAllocationsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getAllocatedRegionsCount() > 0) {
+        hash = (37 * hash) + ALLOCATED_REGIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getAllocatedRegionsList().hashCode();
+      }
+      hash = (37 * hash) + ALLOCATED_ASSET_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAllocatedAssetCount());
+      if (getNodeAllocationsCount() > 0) {
+        hash = (37 * hash) + NODE_ALLOCATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getNodeAllocationsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A set of findings that applies to assets destined for Sole-Tenant nodes.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding)
+        com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFindingOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+            .internal_static_google_cloud_migrationcenter_v1_ReportSummary_SoleTenantFinding_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+            .internal_static_google_cloud_migrationcenter_v1_ReportSummary_SoleTenantFinding_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding.class,
+                com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        allocatedRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        allocatedAssetCount_ = 0L;
+        if (nodeAllocationsBuilder_ == null) {
+          nodeAllocations_ = java.util.Collections.emptyList();
+        } else {
+          nodeAllocations_ = null;
+          nodeAllocationsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+            .internal_static_google_cloud_migrationcenter_v1_ReportSummary_SoleTenantFinding_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding
+          getDefaultInstanceForType() {
+        return com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding build() {
+        com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding buildPartial() {
+        com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding result =
+            new com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(
+          com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding result) {
+        if (nodeAllocationsBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)) {
+            nodeAllocations_ = java.util.Collections.unmodifiableList(nodeAllocations_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.nodeAllocations_ = nodeAllocations_;
+        } else {
+          result.nodeAllocations_ = nodeAllocationsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(
+          com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          allocatedRegions_.makeImmutable();
+          result.allocatedRegions_ = allocatedRegions_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.allocatedAssetCount_ = allocatedAssetCount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding) {
+          return mergeFrom(
+              (com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding other) {
+        if (other
+            == com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding
+                .getDefaultInstance()) return this;
+        if (!other.allocatedRegions_.isEmpty()) {
+          if (allocatedRegions_.isEmpty()) {
+            allocatedRegions_ = other.allocatedRegions_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureAllocatedRegionsIsMutable();
+            allocatedRegions_.addAll(other.allocatedRegions_);
+          }
+          onChanged();
+        }
+        if (other.getAllocatedAssetCount() != 0L) {
+          setAllocatedAssetCount(other.getAllocatedAssetCount());
+        }
+        if (nodeAllocationsBuilder_ == null) {
+          if (!other.nodeAllocations_.isEmpty()) {
+            if (nodeAllocations_.isEmpty()) {
+              nodeAllocations_ = other.nodeAllocations_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureNodeAllocationsIsMutable();
+              nodeAllocations_.addAll(other.nodeAllocations_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.nodeAllocations_.isEmpty()) {
+            if (nodeAllocationsBuilder_.isEmpty()) {
+              nodeAllocationsBuilder_.dispose();
+              nodeAllocationsBuilder_ = null;
+              nodeAllocations_ = other.nodeAllocations_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              nodeAllocationsBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getNodeAllocationsFieldBuilder()
+                      : null;
+            } else {
+              nodeAllocationsBuilder_.addAllMessages(other.nodeAllocations_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureAllocatedRegionsIsMutable();
+                  allocatedRegions_.add(s);
+                  break;
+                } // case 10
+              case 16:
+                {
+                  allocatedAssetCount_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 26:
+                {
+                  com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation m =
+                      input.readMessage(
+                          com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+                              .parser(),
+                          extensionRegistry);
+                  if (nodeAllocationsBuilder_ == null) {
+                    ensureNodeAllocationsIsMutable();
+                    nodeAllocations_.add(m);
+                  } else {
+                    nodeAllocationsBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringArrayList allocatedRegions_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureAllocatedRegionsIsMutable() {
+        if (!allocatedRegions_.isModifiable()) {
+          allocatedRegions_ = new com.google.protobuf.LazyStringArrayList(allocatedRegions_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of regions in which the assets are allocated
+       * </pre>
+       *
+       * <code>repeated string allocated_regions = 1;</code>
+       *
+       * @return A list containing the allocatedRegions.
+       */
+      public com.google.protobuf.ProtocolStringList getAllocatedRegionsList() {
+        allocatedRegions_.makeImmutable();
+        return allocatedRegions_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of regions in which the assets are allocated
+       * </pre>
+       *
+       * <code>repeated string allocated_regions = 1;</code>
+       *
+       * @return The count of allocatedRegions.
+       */
+      public int getAllocatedRegionsCount() {
+        return allocatedRegions_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of regions in which the assets are allocated
+       * </pre>
+       *
+       * <code>repeated string allocated_regions = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The allocatedRegions at the given index.
+       */
+      public java.lang.String getAllocatedRegions(int index) {
+        return allocatedRegions_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of regions in which the assets are allocated
+       * </pre>
+       *
+       * <code>repeated string allocated_regions = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the allocatedRegions at the given index.
+       */
+      public com.google.protobuf.ByteString getAllocatedRegionsBytes(int index) {
+        return allocatedRegions_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of regions in which the assets are allocated
+       * </pre>
+       *
+       * <code>repeated string allocated_regions = 1;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The allocatedRegions to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllocatedRegions(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAllocatedRegionsIsMutable();
+        allocatedRegions_.set(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of regions in which the assets are allocated
+       * </pre>
+       *
+       * <code>repeated string allocated_regions = 1;</code>
+       *
+       * @param value The allocatedRegions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllocatedRegions(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAllocatedRegionsIsMutable();
+        allocatedRegions_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of regions in which the assets are allocated
+       * </pre>
+       *
+       * <code>repeated string allocated_regions = 1;</code>
+       *
+       * @param values The allocatedRegions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllAllocatedRegions(java.lang.Iterable<java.lang.String> values) {
+        ensureAllocatedRegionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, allocatedRegions_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of regions in which the assets are allocated
+       * </pre>
+       *
+       * <code>repeated string allocated_regions = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAllocatedRegions() {
+        allocatedRegions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of regions in which the assets are allocated
+       * </pre>
+       *
+       * <code>repeated string allocated_regions = 1;</code>
+       *
+       * @param value The bytes of the allocatedRegions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllocatedRegionsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureAllocatedRegionsIsMutable();
+        allocatedRegions_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private long allocatedAssetCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Count of assets which are allocated
+       * </pre>
+       *
+       * <code>int64 allocated_asset_count = 2;</code>
+       *
+       * @return The allocatedAssetCount.
+       */
+      @java.lang.Override
+      public long getAllocatedAssetCount() {
+        return allocatedAssetCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Count of assets which are allocated
+       * </pre>
+       *
+       * <code>int64 allocated_asset_count = 2;</code>
+       *
+       * @param value The allocatedAssetCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllocatedAssetCount(long value) {
+
+        allocatedAssetCount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Count of assets which are allocated
+       * </pre>
+       *
+       * <code>int64 allocated_asset_count = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAllocatedAssetCount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        allocatedAssetCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<
+              com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation>
+          nodeAllocations_ = java.util.Collections.emptyList();
+
+      private void ensureNodeAllocationsIsMutable() {
+        if (!((bitField0_ & 0x00000004) != 0)) {
+          nodeAllocations_ =
+              new java.util.ArrayList<
+                  com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation>(
+                  nodeAllocations_);
+          bitField0_ |= 0x00000004;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation,
+              com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation.Builder,
+              com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocationOrBuilder>
+          nodeAllocationsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation>
+          getNodeAllocationsList() {
+        if (nodeAllocationsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(nodeAllocations_);
+        } else {
+          return nodeAllocationsBuilder_.getMessageList();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public int getNodeAllocationsCount() {
+        if (nodeAllocationsBuilder_ == null) {
+          return nodeAllocations_.size();
+        } else {
+          return nodeAllocationsBuilder_.getCount();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+          getNodeAllocations(int index) {
+        if (nodeAllocationsBuilder_ == null) {
+          return nodeAllocations_.get(index);
+        } else {
+          return nodeAllocationsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public Builder setNodeAllocations(
+          int index,
+          com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation value) {
+        if (nodeAllocationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNodeAllocationsIsMutable();
+          nodeAllocations_.set(index, value);
+          onChanged();
+        } else {
+          nodeAllocationsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public Builder setNodeAllocations(
+          int index,
+          com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation.Builder
+              builderForValue) {
+        if (nodeAllocationsBuilder_ == null) {
+          ensureNodeAllocationsIsMutable();
+          nodeAllocations_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          nodeAllocationsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public Builder addNodeAllocations(
+          com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation value) {
+        if (nodeAllocationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNodeAllocationsIsMutable();
+          nodeAllocations_.add(value);
+          onChanged();
+        } else {
+          nodeAllocationsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public Builder addNodeAllocations(
+          int index,
+          com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation value) {
+        if (nodeAllocationsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNodeAllocationsIsMutable();
+          nodeAllocations_.add(index, value);
+          onChanged();
+        } else {
+          nodeAllocationsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public Builder addNodeAllocations(
+          com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation.Builder
+              builderForValue) {
+        if (nodeAllocationsBuilder_ == null) {
+          ensureNodeAllocationsIsMutable();
+          nodeAllocations_.add(builderForValue.build());
+          onChanged();
+        } else {
+          nodeAllocationsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public Builder addNodeAllocations(
+          int index,
+          com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation.Builder
+              builderForValue) {
+        if (nodeAllocationsBuilder_ == null) {
+          ensureNodeAllocationsIsMutable();
+          nodeAllocations_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          nodeAllocationsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public Builder addAllNodeAllocations(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation>
+              values) {
+        if (nodeAllocationsBuilder_ == null) {
+          ensureNodeAllocationsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, nodeAllocations_);
+          onChanged();
+        } else {
+          nodeAllocationsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public Builder clearNodeAllocations() {
+        if (nodeAllocationsBuilder_ == null) {
+          nodeAllocations_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          nodeAllocationsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public Builder removeNodeAllocations(int index) {
+        if (nodeAllocationsBuilder_ == null) {
+          ensureNodeAllocationsIsMutable();
+          nodeAllocations_.remove(index);
+          onChanged();
+        } else {
+          nodeAllocationsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation.Builder
+          getNodeAllocationsBuilder(int index) {
+        return getNodeAllocationsFieldBuilder().getBuilder(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocationOrBuilder
+          getNodeAllocationsOrBuilder(int index) {
+        if (nodeAllocationsBuilder_ == null) {
+          return nodeAllocations_.get(index);
+        } else {
+          return nodeAllocationsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.migrationcenter.v1.ReportSummary
+                      .SoleTenantNodeAllocationOrBuilder>
+          getNodeAllocationsOrBuilderList() {
+        if (nodeAllocationsBuilder_ != null) {
+          return nodeAllocationsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(nodeAllocations_);
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation.Builder
+          addNodeAllocationsBuilder() {
+        return getNodeAllocationsFieldBuilder()
+            .addBuilder(
+                com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation.Builder
+          addNodeAllocationsBuilder(int index) {
+        return getNodeAllocationsFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+                    .getDefaultInstance());
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Set of per-nodetype allocation records
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation node_allocations = 3;
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation.Builder>
+          getNodeAllocationsBuilderList() {
+        return getNodeAllocationsFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation,
+              com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation.Builder,
+              com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocationOrBuilder>
+          getNodeAllocationsFieldBuilder() {
+        if (nodeAllocationsBuilder_ == null) {
+          nodeAllocationsBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation,
+                  com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+                      .Builder,
+                  com.google.cloud.migrationcenter.v1.ReportSummary
+                      .SoleTenantNodeAllocationOrBuilder>(
+                  nodeAllocations_,
+                  ((bitField0_ & 0x00000004) != 0),
+                  getParentForChildren(),
+                  isClean());
+          nodeAllocations_ = null;
+        }
+        return nodeAllocationsBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding)
+    private static final com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding();
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SoleTenantFinding> PARSER =
+        new com.google.protobuf.AbstractParser<SoleTenantFinding>() {
+          @java.lang.Override
+          public SoleTenantFinding parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SoleTenantFinding> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SoleTenantFinding> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface SoleTenantNodeAllocationOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Sole Tenant node type, e.g. "m3-node-128-3904"
+     * </pre>
+     *
+     * <code>.google.cloud.migrationcenter.v1.SoleTenantNodeType node = 1;</code>
+     *
+     * @return Whether the node field is set.
+     */
+    boolean hasNode();
+    /**
+     *
+     *
+     * <pre>
+     * Sole Tenant node type, e.g. "m3-node-128-3904"
+     * </pre>
+     *
+     * <code>.google.cloud.migrationcenter.v1.SoleTenantNodeType node = 1;</code>
+     *
+     * @return The node.
+     */
+    com.google.cloud.migrationcenter.v1.SoleTenantNodeType getNode();
+    /**
+     *
+     *
+     * <pre>
+     * Sole Tenant node type, e.g. "m3-node-128-3904"
+     * </pre>
+     *
+     * <code>.google.cloud.migrationcenter.v1.SoleTenantNodeType node = 1;</code>
+     */
+    com.google.cloud.migrationcenter.v1.SoleTenantNodeTypeOrBuilder getNodeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Count of this node type to be provisioned
+     * </pre>
+     *
+     * <code>int64 node_count = 2;</code>
+     *
+     * @return The nodeCount.
+     */
+    long getNodeCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Count of assets allocated to these nodes
+     * </pre>
+     *
+     * <code>int64 allocated_asset_count = 3;</code>
+     *
+     * @return The allocatedAssetCount.
+     */
+    long getAllocatedAssetCount();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents the assets allocated to a specific Sole-Tenant node type.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation}
+   */
+  public static final class SoleTenantNodeAllocation extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation)
+      SoleTenantNodeAllocationOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use SoleTenantNodeAllocation.newBuilder() to construct.
+    private SoleTenantNodeAllocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private SoleTenantNodeAllocation() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new SoleTenantNodeAllocation();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+          .internal_static_google_cloud_migrationcenter_v1_ReportSummary_SoleTenantNodeAllocation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+          .internal_static_google_cloud_migrationcenter_v1_ReportSummary_SoleTenantNodeAllocation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation.class,
+              com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation.Builder
+                  .class);
+    }
+
+    public static final int NODE_FIELD_NUMBER = 1;
+    private com.google.cloud.migrationcenter.v1.SoleTenantNodeType node_;
+    /**
+     *
+     *
+     * <pre>
+     * Sole Tenant node type, e.g. "m3-node-128-3904"
+     * </pre>
+     *
+     * <code>.google.cloud.migrationcenter.v1.SoleTenantNodeType node = 1;</code>
+     *
+     * @return Whether the node field is set.
+     */
+    @java.lang.Override
+    public boolean hasNode() {
+      return node_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sole Tenant node type, e.g. "m3-node-128-3904"
+     * </pre>
+     *
+     * <code>.google.cloud.migrationcenter.v1.SoleTenantNodeType node = 1;</code>
+     *
+     * @return The node.
+     */
+    @java.lang.Override
+    public com.google.cloud.migrationcenter.v1.SoleTenantNodeType getNode() {
+      return node_ == null
+          ? com.google.cloud.migrationcenter.v1.SoleTenantNodeType.getDefaultInstance()
+          : node_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Sole Tenant node type, e.g. "m3-node-128-3904"
+     * </pre>
+     *
+     * <code>.google.cloud.migrationcenter.v1.SoleTenantNodeType node = 1;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.migrationcenter.v1.SoleTenantNodeTypeOrBuilder getNodeOrBuilder() {
+      return node_ == null
+          ? com.google.cloud.migrationcenter.v1.SoleTenantNodeType.getDefaultInstance()
+          : node_;
+    }
+
+    public static final int NODE_COUNT_FIELD_NUMBER = 2;
+    private long nodeCount_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Count of this node type to be provisioned
+     * </pre>
+     *
+     * <code>int64 node_count = 2;</code>
+     *
+     * @return The nodeCount.
+     */
+    @java.lang.Override
+    public long getNodeCount() {
+      return nodeCount_;
+    }
+
+    public static final int ALLOCATED_ASSET_COUNT_FIELD_NUMBER = 3;
+    private long allocatedAssetCount_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Count of assets allocated to these nodes
+     * </pre>
+     *
+     * <code>int64 allocated_asset_count = 3;</code>
+     *
+     * @return The allocatedAssetCount.
+     */
+    @java.lang.Override
+    public long getAllocatedAssetCount() {
+      return allocatedAssetCount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (node_ != null) {
+        output.writeMessage(1, getNode());
+      }
+      if (nodeCount_ != 0L) {
+        output.writeInt64(2, nodeCount_);
+      }
+      if (allocatedAssetCount_ != 0L) {
+        output.writeInt64(3, allocatedAssetCount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (node_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getNode());
+      }
+      if (nodeCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, nodeCount_);
+      }
+      if (allocatedAssetCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, allocatedAssetCount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation other =
+          (com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation) obj;
+
+      if (hasNode() != other.hasNode()) return false;
+      if (hasNode()) {
+        if (!getNode().equals(other.getNode())) return false;
+      }
+      if (getNodeCount() != other.getNodeCount()) return false;
+      if (getAllocatedAssetCount() != other.getAllocatedAssetCount()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasNode()) {
+        hash = (37 * hash) + NODE_FIELD_NUMBER;
+        hash = (53 * hash) + getNode().hashCode();
+      }
+      hash = (37 * hash) + NODE_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getNodeCount());
+      hash = (37 * hash) + ALLOCATED_ASSET_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAllocatedAssetCount());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents the assets allocated to a specific Sole-Tenant node type.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation)
+        com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+            .internal_static_google_cloud_migrationcenter_v1_ReportSummary_SoleTenantNodeAllocation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+            .internal_static_google_cloud_migrationcenter_v1_ReportSummary_SoleTenantNodeAllocation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation.class,
+                com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        node_ = null;
+        if (nodeBuilder_ != null) {
+          nodeBuilder_.dispose();
+          nodeBuilder_ = null;
+        }
+        nodeCount_ = 0L;
+        allocatedAssetCount_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.migrationcenter.v1.MigrationCenterProto
+            .internal_static_google_cloud_migrationcenter_v1_ReportSummary_SoleTenantNodeAllocation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+          getDefaultInstanceForType() {
+        return com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation build() {
+        com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+          buildPartial() {
+        com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation result =
+            new com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.node_ = nodeBuilder_ == null ? node_ : nodeBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.nodeCount_ = nodeCount_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.allocatedAssetCount_ = allocatedAssetCount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation) {
+          return mergeFrom(
+              (com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation other) {
+        if (other
+            == com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+                .getDefaultInstance()) return this;
+        if (other.hasNode()) {
+          mergeNode(other.getNode());
+        }
+        if (other.getNodeCount() != 0L) {
+          setNodeCount(other.getNodeCount());
+        }
+        if (other.getAllocatedAssetCount() != 0L) {
+          setAllocatedAssetCount(other.getAllocatedAssetCount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getNodeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  nodeCount_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  allocatedAssetCount_ = input.readInt64();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.cloud.migrationcenter.v1.SoleTenantNodeType node_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.migrationcenter.v1.SoleTenantNodeType,
+              com.google.cloud.migrationcenter.v1.SoleTenantNodeType.Builder,
+              com.google.cloud.migrationcenter.v1.SoleTenantNodeTypeOrBuilder>
+          nodeBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Sole Tenant node type, e.g. "m3-node-128-3904"
+       * </pre>
+       *
+       * <code>.google.cloud.migrationcenter.v1.SoleTenantNodeType node = 1;</code>
+       *
+       * @return Whether the node field is set.
+       */
+      public boolean hasNode() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sole Tenant node type, e.g. "m3-node-128-3904"
+       * </pre>
+       *
+       * <code>.google.cloud.migrationcenter.v1.SoleTenantNodeType node = 1;</code>
+       *
+       * @return The node.
+       */
+      public com.google.cloud.migrationcenter.v1.SoleTenantNodeType getNode() {
+        if (nodeBuilder_ == null) {
+          return node_ == null
+              ? com.google.cloud.migrationcenter.v1.SoleTenantNodeType.getDefaultInstance()
+              : node_;
+        } else {
+          return nodeBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sole Tenant node type, e.g. "m3-node-128-3904"
+       * </pre>
+       *
+       * <code>.google.cloud.migrationcenter.v1.SoleTenantNodeType node = 1;</code>
+       */
+      public Builder setNode(com.google.cloud.migrationcenter.v1.SoleTenantNodeType value) {
+        if (nodeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          node_ = value;
+        } else {
+          nodeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sole Tenant node type, e.g. "m3-node-128-3904"
+       * </pre>
+       *
+       * <code>.google.cloud.migrationcenter.v1.SoleTenantNodeType node = 1;</code>
+       */
+      public Builder setNode(
+          com.google.cloud.migrationcenter.v1.SoleTenantNodeType.Builder builderForValue) {
+        if (nodeBuilder_ == null) {
+          node_ = builderForValue.build();
+        } else {
+          nodeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sole Tenant node type, e.g. "m3-node-128-3904"
+       * </pre>
+       *
+       * <code>.google.cloud.migrationcenter.v1.SoleTenantNodeType node = 1;</code>
+       */
+      public Builder mergeNode(com.google.cloud.migrationcenter.v1.SoleTenantNodeType value) {
+        if (nodeBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && node_ != null
+              && node_
+                  != com.google.cloud.migrationcenter.v1.SoleTenantNodeType.getDefaultInstance()) {
+            getNodeBuilder().mergeFrom(value);
+          } else {
+            node_ = value;
+          }
+        } else {
+          nodeBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sole Tenant node type, e.g. "m3-node-128-3904"
+       * </pre>
+       *
+       * <code>.google.cloud.migrationcenter.v1.SoleTenantNodeType node = 1;</code>
+       */
+      public Builder clearNode() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        node_ = null;
+        if (nodeBuilder_ != null) {
+          nodeBuilder_.dispose();
+          nodeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sole Tenant node type, e.g. "m3-node-128-3904"
+       * </pre>
+       *
+       * <code>.google.cloud.migrationcenter.v1.SoleTenantNodeType node = 1;</code>
+       */
+      public com.google.cloud.migrationcenter.v1.SoleTenantNodeType.Builder getNodeBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getNodeFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sole Tenant node type, e.g. "m3-node-128-3904"
+       * </pre>
+       *
+       * <code>.google.cloud.migrationcenter.v1.SoleTenantNodeType node = 1;</code>
+       */
+      public com.google.cloud.migrationcenter.v1.SoleTenantNodeTypeOrBuilder getNodeOrBuilder() {
+        if (nodeBuilder_ != null) {
+          return nodeBuilder_.getMessageOrBuilder();
+        } else {
+          return node_ == null
+              ? com.google.cloud.migrationcenter.v1.SoleTenantNodeType.getDefaultInstance()
+              : node_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Sole Tenant node type, e.g. "m3-node-128-3904"
+       * </pre>
+       *
+       * <code>.google.cloud.migrationcenter.v1.SoleTenantNodeType node = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.migrationcenter.v1.SoleTenantNodeType,
+              com.google.cloud.migrationcenter.v1.SoleTenantNodeType.Builder,
+              com.google.cloud.migrationcenter.v1.SoleTenantNodeTypeOrBuilder>
+          getNodeFieldBuilder() {
+        if (nodeBuilder_ == null) {
+          nodeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.migrationcenter.v1.SoleTenantNodeType,
+                  com.google.cloud.migrationcenter.v1.SoleTenantNodeType.Builder,
+                  com.google.cloud.migrationcenter.v1.SoleTenantNodeTypeOrBuilder>(
+                  getNode(), getParentForChildren(), isClean());
+          node_ = null;
+        }
+        return nodeBuilder_;
+      }
+
+      private long nodeCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Count of this node type to be provisioned
+       * </pre>
+       *
+       * <code>int64 node_count = 2;</code>
+       *
+       * @return The nodeCount.
+       */
+      @java.lang.Override
+      public long getNodeCount() {
+        return nodeCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Count of this node type to be provisioned
+       * </pre>
+       *
+       * <code>int64 node_count = 2;</code>
+       *
+       * @param value The nodeCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNodeCount(long value) {
+
+        nodeCount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Count of this node type to be provisioned
+       * </pre>
+       *
+       * <code>int64 node_count = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNodeCount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        nodeCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long allocatedAssetCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Count of assets allocated to these nodes
+       * </pre>
+       *
+       * <code>int64 allocated_asset_count = 3;</code>
+       *
+       * @return The allocatedAssetCount.
+       */
+      @java.lang.Override
+      public long getAllocatedAssetCount() {
+        return allocatedAssetCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Count of assets allocated to these nodes
+       * </pre>
+       *
+       * <code>int64 allocated_asset_count = 3;</code>
+       *
+       * @param value The allocatedAssetCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllocatedAssetCount(long value) {
+
+        allocatedAssetCount_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Count of assets allocated to these nodes
+       * </pre>
+       *
+       * <code>int64 allocated_asset_count = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAllocatedAssetCount() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        allocatedAssetCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation)
+    private static final com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation();
+    }
+
+    public static com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SoleTenantNodeAllocation> PARSER =
+        new com.google.protobuf.AbstractParser<SoleTenantNodeAllocation>() {
+          @java.lang.Override
+          public SoleTenantNodeAllocation parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<SoleTenantNodeAllocation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SoleTenantNodeAllocation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantNodeAllocation
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface GroupPreferenceSetFindingOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.migrationcenter.v1.ReportSummary.GroupPreferenceSetFinding)
@@ -10832,6 +16504,90 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.migrationcenter.v1.ReportSummary.ComputeEngineFindingOrBuilder
         getComputeEngineFindingOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A set of findings that applies to VMWare machines in the input.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding vmware_engine_finding = 11;
+     * </code>
+     *
+     * @return Whether the vmwareEngineFinding field is set.
+     */
+    boolean hasVmwareEngineFinding();
+    /**
+     *
+     *
+     * <pre>
+     * A set of findings that applies to VMWare machines in the input.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding vmware_engine_finding = 11;
+     * </code>
+     *
+     * @return The vmwareEngineFinding.
+     */
+    com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding getVmwareEngineFinding();
+    /**
+     *
+     *
+     * <pre>
+     * A set of findings that applies to VMWare machines in the input.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding vmware_engine_finding = 11;
+     * </code>
+     */
+    com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFindingOrBuilder
+        getVmwareEngineFindingOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A set of findings that applies to Sole-Tenant machines in the input.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding sole_tenant_finding = 12;
+     * </code>
+     *
+     * @return Whether the soleTenantFinding field is set.
+     */
+    boolean hasSoleTenantFinding();
+    /**
+     *
+     *
+     * <pre>
+     * A set of findings that applies to Sole-Tenant machines in the input.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding sole_tenant_finding = 12;
+     * </code>
+     *
+     * @return The soleTenantFinding.
+     */
+    com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding getSoleTenantFinding();
+    /**
+     *
+     *
+     * <pre>
+     * A set of findings that applies to Sole-Tenant machines in the input.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding sole_tenant_finding = 12;
+     * </code>
+     */
+    com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFindingOrBuilder
+        getSoleTenantFindingOrBuilder();
   }
   /**
    *
@@ -11396,6 +17152,125 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           : computeEngineFinding_;
     }
 
+    public static final int VMWARE_ENGINE_FINDING_FIELD_NUMBER = 11;
+    private com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding
+        vmwareEngineFinding_;
+    /**
+     *
+     *
+     * <pre>
+     * A set of findings that applies to VMWare machines in the input.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding vmware_engine_finding = 11;
+     * </code>
+     *
+     * @return Whether the vmwareEngineFinding field is set.
+     */
+    @java.lang.Override
+    public boolean hasVmwareEngineFinding() {
+      return vmwareEngineFinding_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A set of findings that applies to VMWare machines in the input.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding vmware_engine_finding = 11;
+     * </code>
+     *
+     * @return The vmwareEngineFinding.
+     */
+    @java.lang.Override
+    public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding
+        getVmwareEngineFinding() {
+      return vmwareEngineFinding_ == null
+          ? com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding
+              .getDefaultInstance()
+          : vmwareEngineFinding_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A set of findings that applies to VMWare machines in the input.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding vmware_engine_finding = 11;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFindingOrBuilder
+        getVmwareEngineFindingOrBuilder() {
+      return vmwareEngineFinding_ == null
+          ? com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding
+              .getDefaultInstance()
+          : vmwareEngineFinding_;
+    }
+
+    public static final int SOLE_TENANT_FINDING_FIELD_NUMBER = 12;
+    private com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding soleTenantFinding_;
+    /**
+     *
+     *
+     * <pre>
+     * A set of findings that applies to Sole-Tenant machines in the input.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding sole_tenant_finding = 12;
+     * </code>
+     *
+     * @return Whether the soleTenantFinding field is set.
+     */
+    @java.lang.Override
+    public boolean hasSoleTenantFinding() {
+      return soleTenantFinding_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A set of findings that applies to Sole-Tenant machines in the input.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding sole_tenant_finding = 12;
+     * </code>
+     *
+     * @return The soleTenantFinding.
+     */
+    @java.lang.Override
+    public com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding
+        getSoleTenantFinding() {
+      return soleTenantFinding_ == null
+          ? com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding.getDefaultInstance()
+          : soleTenantFinding_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A set of findings that applies to Sole-Tenant machines in the input.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding sole_tenant_finding = 12;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFindingOrBuilder
+        getSoleTenantFindingOrBuilder() {
+      return soleTenantFinding_ == null
+          ? com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding.getDefaultInstance()
+          : soleTenantFinding_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -11439,6 +17314,12 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       }
       if (computeEngineFinding_ != null) {
         output.writeMessage(10, getComputeEngineFinding());
+      }
+      if (vmwareEngineFinding_ != null) {
+        output.writeMessage(11, getVmwareEngineFinding());
+      }
+      if (soleTenantFinding_ != null) {
+        output.writeMessage(12, getSoleTenantFinding());
       }
       getUnknownFields().writeTo(output);
     }
@@ -11485,6 +17366,14 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       if (computeEngineFinding_ != null) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(10, getComputeEngineFinding());
+      }
+      if (vmwareEngineFinding_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(11, getVmwareEngineFinding());
+      }
+      if (soleTenantFinding_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(12, getSoleTenantFinding());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -11538,6 +17427,14 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       if (hasComputeEngineFinding()) {
         if (!getComputeEngineFinding().equals(other.getComputeEngineFinding())) return false;
       }
+      if (hasVmwareEngineFinding() != other.hasVmwareEngineFinding()) return false;
+      if (hasVmwareEngineFinding()) {
+        if (!getVmwareEngineFinding().equals(other.getVmwareEngineFinding())) return false;
+      }
+      if (hasSoleTenantFinding() != other.hasSoleTenantFinding()) return false;
+      if (hasSoleTenantFinding()) {
+        if (!getSoleTenantFinding().equals(other.getSoleTenantFinding())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -11584,6 +17481,14 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
       if (hasComputeEngineFinding()) {
         hash = (37 * hash) + COMPUTE_ENGINE_FINDING_FIELD_NUMBER;
         hash = (53 * hash) + getComputeEngineFinding().hashCode();
+      }
+      if (hasVmwareEngineFinding()) {
+        hash = (37 * hash) + VMWARE_ENGINE_FINDING_FIELD_NUMBER;
+        hash = (53 * hash) + getVmwareEngineFinding().hashCode();
+      }
+      if (hasSoleTenantFinding()) {
+        hash = (37 * hash) + SOLE_TENANT_FINDING_FIELD_NUMBER;
+        hash = (53 * hash) + getSoleTenantFinding().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -11777,6 +17682,16 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
           computeEngineFindingBuilder_.dispose();
           computeEngineFindingBuilder_ = null;
         }
+        vmwareEngineFinding_ = null;
+        if (vmwareEngineFindingBuilder_ != null) {
+          vmwareEngineFindingBuilder_.dispose();
+          vmwareEngineFindingBuilder_ = null;
+        }
+        soleTenantFinding_ = null;
+        if (soleTenantFindingBuilder_ != null) {
+          soleTenantFindingBuilder_.dispose();
+          soleTenantFindingBuilder_ = null;
+        }
         return this;
       }
 
@@ -11872,6 +17787,18 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
                   ? computeEngineFinding_
                   : computeEngineFindingBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.vmwareEngineFinding_ =
+              vmwareEngineFindingBuilder_ == null
+                  ? vmwareEngineFinding_
+                  : vmwareEngineFindingBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.soleTenantFinding_ =
+              soleTenantFindingBuilder_ == null
+                  ? soleTenantFinding_
+                  : soleTenantFindingBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -11960,6 +17887,12 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         }
         if (other.hasComputeEngineFinding()) {
           mergeComputeEngineFinding(other.getComputeEngineFinding());
+        }
+        if (other.hasVmwareEngineFinding()) {
+          mergeVmwareEngineFinding(other.getVmwareEngineFinding());
+        }
+        if (other.hasSoleTenantFinding()) {
+          mergeSoleTenantFinding(other.getSoleTenantFinding());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -12055,6 +17988,20 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000200;
                   break;
                 } // case 82
+              case 90:
+                {
+                  input.readMessage(
+                      getVmwareEngineFindingFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000400;
+                  break;
+                } // case 90
+              case 98:
+                {
+                  input.readMessage(
+                      getSoleTenantFindingFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000800;
+                  break;
+                } // case 98
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13772,6 +19719,432 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
         return computeEngineFindingBuilder_;
       }
 
+      private com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding
+          vmwareEngineFinding_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding,
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding.Builder,
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFindingOrBuilder>
+          vmwareEngineFindingBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A set of findings that applies to VMWare machines in the input.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding vmware_engine_finding = 11;
+       * </code>
+       *
+       * @return Whether the vmwareEngineFinding field is set.
+       */
+      public boolean hasVmwareEngineFinding() {
+        return ((bitField0_ & 0x00000400) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A set of findings that applies to VMWare machines in the input.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding vmware_engine_finding = 11;
+       * </code>
+       *
+       * @return The vmwareEngineFinding.
+       */
+      public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding
+          getVmwareEngineFinding() {
+        if (vmwareEngineFindingBuilder_ == null) {
+          return vmwareEngineFinding_ == null
+              ? com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding
+                  .getDefaultInstance()
+              : vmwareEngineFinding_;
+        } else {
+          return vmwareEngineFindingBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A set of findings that applies to VMWare machines in the input.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding vmware_engine_finding = 11;
+       * </code>
+       */
+      public Builder setVmwareEngineFinding(
+          com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding value) {
+        if (vmwareEngineFindingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          vmwareEngineFinding_ = value;
+        } else {
+          vmwareEngineFindingBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A set of findings that applies to VMWare machines in the input.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding vmware_engine_finding = 11;
+       * </code>
+       */
+      public Builder setVmwareEngineFinding(
+          com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding.Builder
+              builderForValue) {
+        if (vmwareEngineFindingBuilder_ == null) {
+          vmwareEngineFinding_ = builderForValue.build();
+        } else {
+          vmwareEngineFindingBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A set of findings that applies to VMWare machines in the input.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding vmware_engine_finding = 11;
+       * </code>
+       */
+      public Builder mergeVmwareEngineFinding(
+          com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding value) {
+        if (vmwareEngineFindingBuilder_ == null) {
+          if (((bitField0_ & 0x00000400) != 0)
+              && vmwareEngineFinding_ != null
+              && vmwareEngineFinding_
+                  != com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding
+                      .getDefaultInstance()) {
+            getVmwareEngineFindingBuilder().mergeFrom(value);
+          } else {
+            vmwareEngineFinding_ = value;
+          }
+        } else {
+          vmwareEngineFindingBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A set of findings that applies to VMWare machines in the input.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding vmware_engine_finding = 11;
+       * </code>
+       */
+      public Builder clearVmwareEngineFinding() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        vmwareEngineFinding_ = null;
+        if (vmwareEngineFindingBuilder_ != null) {
+          vmwareEngineFindingBuilder_.dispose();
+          vmwareEngineFindingBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A set of findings that applies to VMWare machines in the input.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding vmware_engine_finding = 11;
+       * </code>
+       */
+      public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding.Builder
+          getVmwareEngineFindingBuilder() {
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return getVmwareEngineFindingFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A set of findings that applies to VMWare machines in the input.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding vmware_engine_finding = 11;
+       * </code>
+       */
+      public com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFindingOrBuilder
+          getVmwareEngineFindingOrBuilder() {
+        if (vmwareEngineFindingBuilder_ != null) {
+          return vmwareEngineFindingBuilder_.getMessageOrBuilder();
+        } else {
+          return vmwareEngineFinding_ == null
+              ? com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding
+                  .getDefaultInstance()
+              : vmwareEngineFinding_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A set of findings that applies to VMWare machines in the input.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding vmware_engine_finding = 11;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding,
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding.Builder,
+              com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFindingOrBuilder>
+          getVmwareEngineFindingFieldBuilder() {
+        if (vmwareEngineFindingBuilder_ == null) {
+          vmwareEngineFindingBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding,
+                  com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFinding.Builder,
+                  com.google.cloud.migrationcenter.v1.ReportSummary.VmwareEngineFindingOrBuilder>(
+                  getVmwareEngineFinding(), getParentForChildren(), isClean());
+          vmwareEngineFinding_ = null;
+        }
+        return vmwareEngineFindingBuilder_;
+      }
+
+      private com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding
+          soleTenantFinding_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding,
+              com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding.Builder,
+              com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFindingOrBuilder>
+          soleTenantFindingBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A set of findings that applies to Sole-Tenant machines in the input.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding sole_tenant_finding = 12;
+       * </code>
+       *
+       * @return Whether the soleTenantFinding field is set.
+       */
+      public boolean hasSoleTenantFinding() {
+        return ((bitField0_ & 0x00000800) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A set of findings that applies to Sole-Tenant machines in the input.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding sole_tenant_finding = 12;
+       * </code>
+       *
+       * @return The soleTenantFinding.
+       */
+      public com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding
+          getSoleTenantFinding() {
+        if (soleTenantFindingBuilder_ == null) {
+          return soleTenantFinding_ == null
+              ? com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding
+                  .getDefaultInstance()
+              : soleTenantFinding_;
+        } else {
+          return soleTenantFindingBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A set of findings that applies to Sole-Tenant machines in the input.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding sole_tenant_finding = 12;
+       * </code>
+       */
+      public Builder setSoleTenantFinding(
+          com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding value) {
+        if (soleTenantFindingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          soleTenantFinding_ = value;
+        } else {
+          soleTenantFindingBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A set of findings that applies to Sole-Tenant machines in the input.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding sole_tenant_finding = 12;
+       * </code>
+       */
+      public Builder setSoleTenantFinding(
+          com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding.Builder
+              builderForValue) {
+        if (soleTenantFindingBuilder_ == null) {
+          soleTenantFinding_ = builderForValue.build();
+        } else {
+          soleTenantFindingBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A set of findings that applies to Sole-Tenant machines in the input.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding sole_tenant_finding = 12;
+       * </code>
+       */
+      public Builder mergeSoleTenantFinding(
+          com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding value) {
+        if (soleTenantFindingBuilder_ == null) {
+          if (((bitField0_ & 0x00000800) != 0)
+              && soleTenantFinding_ != null
+              && soleTenantFinding_
+                  != com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding
+                      .getDefaultInstance()) {
+            getSoleTenantFindingBuilder().mergeFrom(value);
+          } else {
+            soleTenantFinding_ = value;
+          }
+        } else {
+          soleTenantFindingBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A set of findings that applies to Sole-Tenant machines in the input.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding sole_tenant_finding = 12;
+       * </code>
+       */
+      public Builder clearSoleTenantFinding() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        soleTenantFinding_ = null;
+        if (soleTenantFindingBuilder_ != null) {
+          soleTenantFindingBuilder_.dispose();
+          soleTenantFindingBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A set of findings that applies to Sole-Tenant machines in the input.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding sole_tenant_finding = 12;
+       * </code>
+       */
+      public com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding.Builder
+          getSoleTenantFindingBuilder() {
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return getSoleTenantFindingFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A set of findings that applies to Sole-Tenant machines in the input.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding sole_tenant_finding = 12;
+       * </code>
+       */
+      public com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFindingOrBuilder
+          getSoleTenantFindingOrBuilder() {
+        if (soleTenantFindingBuilder_ != null) {
+          return soleTenantFindingBuilder_.getMessageOrBuilder();
+        } else {
+          return soleTenantFinding_ == null
+              ? com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding
+                  .getDefaultInstance()
+              : soleTenantFinding_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A set of findings that applies to Sole-Tenant machines in the input.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding sole_tenant_finding = 12;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding,
+              com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding.Builder,
+              com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFindingOrBuilder>
+          getSoleTenantFindingFieldBuilder() {
+        if (soleTenantFindingBuilder_ == null) {
+          soleTenantFindingBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding,
+                  com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFinding.Builder,
+                  com.google.cloud.migrationcenter.v1.ReportSummary.SoleTenantFindingOrBuilder>(
+                  getSoleTenantFinding(), getParentForChildren(), isClean());
+          soleTenantFinding_ = null;
+        }
+        return soleTenantFindingBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -13941,14 +20314,17 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Count of the number of assets in this group which are also included
-     * in another group within the same report.
+     * This field is deprecated, do not rely on it having a value.
      * </pre>
      *
-     * <code>int64 overlapping_asset_count = 4;</code>
+     * <code>int64 overlapping_asset_count = 4 [deprecated = true];</code>
      *
+     * @deprecated
+     *     google.cloud.migrationcenter.v1.ReportSummary.GroupFinding.overlapping_asset_count is
+     *     deprecated. See google/cloud/migrationcenter/v1/migrationcenter.proto;l=4038
      * @return The overlappingAssetCount.
      */
+    @java.lang.Deprecated
     long getOverlappingAssetCount();
 
     /**
@@ -14234,15 +20610,18 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Count of the number of assets in this group which are also included
-     * in another group within the same report.
+     * This field is deprecated, do not rely on it having a value.
      * </pre>
      *
-     * <code>int64 overlapping_asset_count = 4;</code>
+     * <code>int64 overlapping_asset_count = 4 [deprecated = true];</code>
      *
+     * @deprecated
+     *     google.cloud.migrationcenter.v1.ReportSummary.GroupFinding.overlapping_asset_count is
+     *     deprecated. See google/cloud/migrationcenter/v1/migrationcenter.proto;l=4038
      * @return The overlappingAssetCount.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public long getOverlappingAssetCount() {
       return overlappingAssetCount_;
     }
@@ -15277,15 +21656,18 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Count of the number of assets in this group which are also included
-       * in another group within the same report.
+       * This field is deprecated, do not rely on it having a value.
        * </pre>
        *
-       * <code>int64 overlapping_asset_count = 4;</code>
+       * <code>int64 overlapping_asset_count = 4 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.migrationcenter.v1.ReportSummary.GroupFinding.overlapping_asset_count is
+       *     deprecated. See google/cloud/migrationcenter/v1/migrationcenter.proto;l=4038
        * @return The overlappingAssetCount.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public long getOverlappingAssetCount() {
         return overlappingAssetCount_;
       }
@@ -15293,15 +21675,18 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Count of the number of assets in this group which are also included
-       * in another group within the same report.
+       * This field is deprecated, do not rely on it having a value.
        * </pre>
        *
-       * <code>int64 overlapping_asset_count = 4;</code>
+       * <code>int64 overlapping_asset_count = 4 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.migrationcenter.v1.ReportSummary.GroupFinding.overlapping_asset_count is
+       *     deprecated. See google/cloud/migrationcenter/v1/migrationcenter.proto;l=4038
        * @param value The overlappingAssetCount to set.
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder setOverlappingAssetCount(long value) {
 
         overlappingAssetCount_ = value;
@@ -15313,14 +21698,17 @@ public final class ReportSummary extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Count of the number of assets in this group which are also included
-       * in another group within the same report.
+       * This field is deprecated, do not rely on it having a value.
        * </pre>
        *
-       * <code>int64 overlapping_asset_count = 4;</code>
+       * <code>int64 overlapping_asset_count = 4 [deprecated = true];</code>
        *
+       * @deprecated
+       *     google.cloud.migrationcenter.v1.ReportSummary.GroupFinding.overlapping_asset_count is
+       *     deprecated. See google/cloud/migrationcenter/v1/migrationcenter.proto;l=4038
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder clearOverlappingAssetCount() {
         bitField0_ = (bitField0_ & ~0x00000008);
         overlappingAssetCount_ = 0L;

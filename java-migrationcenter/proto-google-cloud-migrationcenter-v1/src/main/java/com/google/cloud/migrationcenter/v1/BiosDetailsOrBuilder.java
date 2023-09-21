@@ -28,24 +28,32 @@ public interface BiosDetailsOrBuilder
    *
    * <pre>
    * BIOS name.
+   * This fields is deprecated. Please use the `id` field instead.
    * </pre>
    *
-   * <code>string bios_name = 1;</code>
+   * <code>string bios_name = 1 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.migrationcenter.v1.BiosDetails.bios_name is deprecated. See
+   *     google/cloud/migrationcenter/v1/migrationcenter.proto;l=2509
    * @return The biosName.
    */
+  @java.lang.Deprecated
   java.lang.String getBiosName();
   /**
    *
    *
    * <pre>
    * BIOS name.
+   * This fields is deprecated. Please use the `id` field instead.
    * </pre>
    *
-   * <code>string bios_name = 1;</code>
+   * <code>string bios_name = 1 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.migrationcenter.v1.BiosDetails.bios_name is deprecated. See
+   *     google/cloud/migrationcenter/v1/migrationcenter.proto;l=2509
    * @return The bytes for biosName.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getBiosNameBytes();
 
   /**

@@ -564,6 +564,10 @@ public final class MigrationCenterProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_migrationcenter_v1_Insight_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_migrationcenter_v1_GenericInsight_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_migrationcenter_v1_GenericInsight_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_migrationcenter_v1_MigrationInsight_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_migrationcenter_v1_MigrationInsight_fieldAccessorTable;
@@ -572,13 +576,17 @@ public final class MigrationCenterProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_migrationcenter_v1_ComputeEngineMigrationTarget_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_migrationcenter_v1_FitDescriptor_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_migrationcenter_v1_FitDescriptor_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_migrationcenter_v1_ComputeEngineShapeDescriptor_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_migrationcenter_v1_ComputeEngineShapeDescriptor_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_migrationcenter_v1_ComputeStorageDescriptor_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_migrationcenter_v1_ComputeStorageDescriptor_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_migrationcenter_v1_FitDescriptor_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_migrationcenter_v1_FitDescriptor_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_migrationcenter_v1_Aggregation_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -680,6 +688,18 @@ public final class MigrationCenterProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_migrationcenter_v1_MachineSeries_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_migrationcenter_v1_VmwareEnginePreferences_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_migrationcenter_v1_VmwareEnginePreferences_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_migrationcenter_v1_SoleTenancyPreferences_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_migrationcenter_v1_SoleTenancyPreferences_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_migrationcenter_v1_SoleTenantNodeType_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_migrationcenter_v1_SoleTenantNodeType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_migrationcenter_v1_RegionPreferences_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_migrationcenter_v1_RegionPreferences_fieldAccessorTable;
@@ -723,6 +743,26 @@ public final class MigrationCenterProto {
       internal_static_google_cloud_migrationcenter_v1_ReportSummary_ComputeEngineFinding_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_migrationcenter_v1_ReportSummary_ComputeEngineFinding_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareEngineFinding_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareEngineFinding_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareNodeAllocation_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareNodeAllocation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareNode_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareNode_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_migrationcenter_v1_ReportSummary_SoleTenantFinding_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_migrationcenter_v1_ReportSummary_SoleTenantFinding_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_migrationcenter_v1_ReportSummary_SoleTenantNodeAllocation_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_migrationcenter_v1_ReportSummary_SoleTenantNodeAllocation_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_migrationcenter_v1_ReportSummary_GroupPreferenceSetFinding_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -1173,232 +1213,237 @@ public final class MigrationCenterProto {
           + "irmwareType\022\035\n\031FIRMWARE_TYPE_UNSPECIFIED"
           + "\020\000\022\010\n\004BIOS\020\001\022\007\n\003EFI\020\002\"S\n\021CpuHyperThreadi"
           + "ng\022#\n\037CPU_HYPER_THREADING_UNSPECIFIED\020\000\022"
-          + "\014\n\010DISABLED\020\001\022\013\n\007ENABLED\020\002\"\221\001\n\013BiosDetai"
-          + "ls\022\021\n\tbios_name\030\001 \001(\t\022\n\n\002id\030\002 \001(\t\022\024\n\014man"
-          + "ufacturer\030\003 \001(\t\022\017\n\007version\030\004 \001(\t\022\'\n\014rele"
-          + "ase_date\030\005 \001(\0132\021.google.type.Date\022\023\n\013smb"
-          + "ios_uuid\030\006 \001(\t\"\262\001\n\025MachineNetworkDetails"
-          + "\022\032\n\022primary_ip_address\030\001 \001(\t\022\031\n\021public_i"
-          + "p_address\030\002 \001(\t\022\033\n\023primary_mac_address\030\003"
-          + " \001(\t\022E\n\010adapters\030\004 \001(\01323.google.cloud.mi"
-          + "grationcenter.v1.NetworkAdapterList\"]\n\022N"
-          + "etworkAdapterList\022G\n\007entries\030\001 \003(\01326.goo"
-          + "gle.cloud.migrationcenter.v1.NetworkAdap"
-          + "terDetails\"\212\001\n\025NetworkAdapterDetails\022\024\n\014"
-          + "adapter_type\030\001 \001(\t\022\023\n\013mac_address\030\002 \001(\t\022"
-          + "F\n\taddresses\030\003 \001(\01323.google.cloud.migrat"
-          + "ioncenter.v1.NetworkAddressList\"V\n\022Netwo"
-          + "rkAddressList\022@\n\007entries\030\001 \003(\0132/.google."
-          + "cloud.migrationcenter.v1.NetworkAddress\""
-          + "\242\002\n\016NetworkAddress\022\022\n\nip_address\030\001 \001(\t\022\023"
-          + "\n\013subnet_mask\030\002 \001(\t\022\r\n\005bcast\030\003 \001(\t\022\014\n\004fq"
-          + "dn\030\004 \001(\t\022U\n\nassignment\030\005 \001(\0162A.google.cl"
-          + "oud.migrationcenter.v1.NetworkAddress.Ad"
-          + "dressAssignment\"s\n\021AddressAssignment\022\"\n\036"
-          + "ADDRESS_ASSIGNMENT_UNSPECIFIED\020\000\022\035\n\031ADDR"
-          + "ESS_ASSIGNMENT_STATIC\020\001\022\033\n\027ADDRESS_ASSIG"
-          + "NMENT_DHCP\020\002\"\213\001\n\022MachineDiskDetails\022\034\n\024t"
-          + "otal_capacity_bytes\030\001 \001(\003\022\030\n\020total_free_"
-          + "bytes\030\002 \001(\003\022=\n\005disks\030\003 \001(\0132..google.clou"
-          + "d.migrationcenter.v1.DiskEntryList\"L\n\rDi"
-          + "skEntryList\022;\n\007entries\030\001 \003(\0132*.google.cl"
-          + "oud.migrationcenter.v1.DiskEntry\"\340\003\n\tDis"
-          + "kEntry\022\026\n\016capacity_bytes\030\001 \001(\003\022\022\n\nfree_b"
-          + "ytes\030\002 \001(\003\022\022\n\ndisk_label\030\003 \001(\t\022\027\n\017disk_l"
-          + "abel_type\030\004 \001(\t\022P\n\016interface_type\030\005 \001(\0162"
-          + "8.google.cloud.migrationcenter.v1.DiskEn"
-          + "try.InterfaceType\022F\n\npartitions\030\006 \001(\01322."
+          + "\014\n\010DISABLED\020\001\022\013\n\007ENABLED\020\002\"\225\001\n\013BiosDetai"
+          + "ls\022\025\n\tbios_name\030\001 \001(\tB\002\030\001\022\n\n\002id\030\002 \001(\t\022\024\n"
+          + "\014manufacturer\030\003 \001(\t\022\017\n\007version\030\004 \001(\t\022\'\n\014"
+          + "release_date\030\005 \001(\0132\021.google.type.Date\022\023\n"
+          + "\013smbios_uuid\030\006 \001(\t\"\262\001\n\025MachineNetworkDet"
+          + "ails\022\032\n\022primary_ip_address\030\001 \001(\t\022\031\n\021publ"
+          + "ic_ip_address\030\002 \001(\t\022\033\n\023primary_mac_addre"
+          + "ss\030\003 \001(\t\022E\n\010adapters\030\004 \001(\01323.google.clou"
+          + "d.migrationcenter.v1.NetworkAdapterList\""
+          + "]\n\022NetworkAdapterList\022G\n\007entries\030\001 \003(\01326"
+          + ".google.cloud.migrationcenter.v1.Network"
+          + "AdapterDetails\"\212\001\n\025NetworkAdapterDetails"
+          + "\022\024\n\014adapter_type\030\001 \001(\t\022\023\n\013mac_address\030\002 "
+          + "\001(\t\022F\n\taddresses\030\003 \001(\01323.google.cloud.mi"
+          + "grationcenter.v1.NetworkAddressList\"V\n\022N"
+          + "etworkAddressList\022@\n\007entries\030\001 \003(\0132/.goo"
+          + "gle.cloud.migrationcenter.v1.NetworkAddr"
+          + "ess\"\242\002\n\016NetworkAddress\022\022\n\nip_address\030\001 \001"
+          + "(\t\022\023\n\013subnet_mask\030\002 \001(\t\022\r\n\005bcast\030\003 \001(\t\022\014"
+          + "\n\004fqdn\030\004 \001(\t\022U\n\nassignment\030\005 \001(\0162A.googl"
+          + "e.cloud.migrationcenter.v1.NetworkAddres"
+          + "s.AddressAssignment\"s\n\021AddressAssignment"
+          + "\022\"\n\036ADDRESS_ASSIGNMENT_UNSPECIFIED\020\000\022\035\n\031"
+          + "ADDRESS_ASSIGNMENT_STATIC\020\001\022\033\n\027ADDRESS_A"
+          + "SSIGNMENT_DHCP\020\002\"\213\001\n\022MachineDiskDetails\022"
+          + "\034\n\024total_capacity_bytes\030\001 \001(\003\022\030\n\020total_f"
+          + "ree_bytes\030\002 \001(\003\022=\n\005disks\030\003 \001(\0132..google."
+          + "cloud.migrationcenter.v1.DiskEntryList\"L"
+          + "\n\rDiskEntryList\022;\n\007entries\030\001 \003(\0132*.googl"
+          + "e.cloud.migrationcenter.v1.DiskEntry\"\340\003\n"
+          + "\tDiskEntry\022\026\n\016capacity_bytes\030\001 \001(\003\022\022\n\nfr"
+          + "ee_bytes\030\002 \001(\003\022\022\n\ndisk_label\030\003 \001(\t\022\027\n\017di"
+          + "sk_label_type\030\004 \001(\t\022P\n\016interface_type\030\005 "
+          + "\001(\01628.google.cloud.migrationcenter.v1.Di"
+          + "skEntry.InterfaceType\022F\n\npartitions\030\006 \001("
+          + "\01322.google.cloud.migrationcenter.v1.Disk"
+          + "PartitionList\022\022\n\nhw_address\030\007 \001(\t\022C\n\006vmw"
+          + "are\030\024 \001(\01321.google.cloud.migrationcenter"
+          + ".v1.VmwareDiskConfigH\000\"r\n\rInterfaceType\022"
+          + "\036\n\032INTERFACE_TYPE_UNSPECIFIED\020\000\022\007\n\003IDE\020\001"
+          + "\022\010\n\004SATA\020\002\022\007\n\003SAS\020\003\022\010\n\004SCSI\020\004\022\010\n\004NVME\020\005\022"
+          + "\006\n\002FC\020\006\022\t\n\005ISCSI\020\007B\023\n\021platform_specific\""
+          + "T\n\021DiskPartitionList\022?\n\007entries\030\001 \003(\0132.."
           + "google.cloud.migrationcenter.v1.DiskPart"
-          + "itionList\022\022\n\nhw_address\030\007 \001(\t\022C\n\006vmware\030"
-          + "\024 \001(\01321.google.cloud.migrationcenter.v1."
-          + "VmwareDiskConfigH\000\"r\n\rInterfaceType\022\036\n\032I"
-          + "NTERFACE_TYPE_UNSPECIFIED\020\000\022\007\n\003IDE\020\001\022\010\n\004"
-          + "SATA\020\002\022\007\n\003SAS\020\003\022\010\n\004SCSI\020\004\022\010\n\004NVME\020\005\022\006\n\002F"
-          + "C\020\006\022\t\n\005ISCSI\020\007B\023\n\021platform_specific\"T\n\021D"
-          + "iskPartitionList\022?\n\007entries\030\001 \003(\0132..goog"
-          + "le.cloud.migrationcenter.v1.DiskPartitio"
-          + "n\"\315\001\n\rDiskPartition\022\014\n\004type\030\001 \001(\t\022\023\n\013fil"
-          + "e_system\030\002 \001(\t\022\023\n\013mount_point\030\003 \001(\t\022\026\n\016c"
-          + "apacity_bytes\030\004 \001(\003\022\022\n\nfree_bytes\030\005 \001(\003\022"
-          + "\014\n\004uuid\030\006 \001(\t\022J\n\016sub_partitions\030\007 \001(\01322."
-          + "google.cloud.migrationcenter.v1.DiskPart"
-          + "itionList\"\206\006\n\020VmwareDiskConfig\022S\n\014backin"
-          + "g_type\030\001 \001(\0162=.google.cloud.migrationcen"
-          + "ter.v1.VmwareDiskConfig.BackingType\022\016\n\006s"
-          + "hared\030\002 \001(\010\022M\n\tvmdk_mode\030\003 \001(\0162:.google."
-          + "cloud.migrationcenter.v1.VmwareDiskConfi"
-          + "g.VmdkMode\022]\n\021rdm_compatibility\030\004 \001(\0162B."
-          + "google.cloud.migrationcenter.v1.VmwareDi"
-          + "skConfig.RdmCompatibility\"\377\001\n\013BackingTyp"
-          + "e\022\034\n\030BACKING_TYPE_UNSPECIFIED\020\000\022\030\n\024BACKI"
-          + "NG_TYPE_FLAT_V1\020\001\022\030\n\024BACKING_TYPE_FLAT_V"
-          + "2\020\002\022\025\n\021BACKING_TYPE_PMEM\020\003\022\027\n\023BACKING_TY"
-          + "PE_RDM_V1\020\004\022\027\n\023BACKING_TYPE_RDM_V2\020\005\022\031\n\025"
-          + "BACKING_TYPE_SESPARSE\020\006\022\034\n\030BACKING_TYPE_"
-          + "SESPARSE_V1\020\007\022\034\n\030BACKING_TYPE_SESPARSE_V"
-          + "2\020\010\"o\n\010VmdkMode\022\031\n\025VMDK_MODE_UNSPECIFIED"
-          + "\020\000\022\r\n\tDEPENDENT\020\001\022\032\n\026INDEPENDENT_PERSIST"
-          + "ENT\020\002\022\035\n\031INDEPENDENT_NONPERSISTENT\020\003\"l\n\020"
-          + "RdmCompatibility\022!\n\035RDM_COMPATIBILITY_UN"
-          + "SPECIFIED\020\000\022\032\n\026PHYSICAL_COMPATIBILITY\020\001\022"
-          + "\031\n\025VIRTUAL_COMPATIBILITY\020\002\"\206\002\n\016GuestOsDe"
-          + "tails\022\017\n\007os_name\030\001 \001(\t\022F\n\006family\030\002 \001(\01626"
-          + ".google.cloud.migrationcenter.v1.Operati"
-          + "ngSystemFamily\022\017\n\007version\030\003 \001(\t\022C\n\006confi"
-          + "g\030\004 \001(\01323.google.cloud.migrationcenter.v"
-          + "1.GuestConfigDetails\022E\n\007runtime\030\005 \001(\01324."
-          + "google.cloud.migrationcenter.v1.GuestRun"
-          + "timeDetails\"\305\003\n\022GuestConfigDetails\022\r\n\005is"
-          + "sue\030\001 \001(\t\022>\n\005fstab\030\002 \001(\0132/.google.cloud."
-          + "migrationcenter.v1.FstabEntryList\022>\n\005hos"
-          + "ts\030\003 \001(\0132/.google.cloud.migrationcenter."
-          + "v1.HostsEntryList\022C\n\013nfs_exports\030\004 \001(\0132."
-          + ".google.cloud.migrationcenter.v1.NfsExpo"
-          + "rtList\022U\n\014selinux_mode\030\005 \001(\0162?.google.cl"
-          + "oud.migrationcenter.v1.GuestConfigDetail"
-          + "s.SeLinuxMode\"\203\001\n\013SeLinuxMode\022\035\n\031SE_LINU"
-          + "X_MODE_UNSPECIFIED\020\000\022\032\n\026SE_LINUX_MODE_DI"
-          + "SABLED\020\001\022\034\n\030SE_LINUX_MODE_PERMISSIVE\020\002\022\033"
-          + "\n\027SE_LINUX_MODE_ENFORCING\020\003\"N\n\016FstabEntr"
-          + "yList\022<\n\007entries\030\001 \003(\0132+.google.cloud.mi"
-          + "grationcenter.v1.FstabEntry\"g\n\nFstabEntr"
-          + "y\022\014\n\004spec\030\001 \001(\t\022\014\n\004file\030\002 \001(\t\022\017\n\007vfstype"
-          + "\030\003 \001(\t\022\016\n\006mntops\030\004 \001(\t\022\014\n\004freq\030\005 \001(\005\022\016\n\006"
-          + "passno\030\006 \001(\005\"N\n\016HostsEntryList\022<\n\007entrie"
-          + "s\030\001 \003(\0132+.google.cloud.migrationcenter.v"
-          + "1.HostsEntry\",\n\nHostsEntry\022\n\n\002ip\030\001 \001(\t\022\022"
-          + "\n\nhost_names\030\002 \003(\t\"L\n\rNfsExportList\022;\n\007e"
-          + "ntries\030\001 \003(\0132*.google.cloud.migrationcen"
-          + "ter.v1.NfsExport\"4\n\tNfsExport\022\030\n\020export_"
-          + "directory\030\001 \001(\t\022\r\n\005hosts\030\002 \003(\t\"\343\003\n\023Guest"
-          + "RuntimeDetails\022E\n\010services\030\001 \001(\01323.googl"
-          + "e.cloud.migrationcenter.v1.RunningServic"
-          + "eList\022F\n\tprocesses\030\002 \001(\01323.google.cloud."
-          + "migrationcenter.v1.RunningProcessList\022D\n"
-          + "\007network\030\003 \001(\01323.google.cloud.migrationc"
-          + "enter.v1.RuntimeNetworkInfo\0222\n\016last_boot"
-          + "_time\030\004 \001(\0132\032.google.protobuf.Timestamp\022"
-          + "\016\n\006domain\030\005 \001(\t\022\024\n\014machine_name\030\006 \001(\t\022V\n"
-          + "\016installed_apps\030\007 \001(\0132>.google.cloud.mig"
-          + "rationcenter.v1.GuestInstalledApplicatio"
-          + "nList\022E\n\016open_file_list\030\010 \001(\0132-.google.c"
-          + "loud.migrationcenter.v1.OpenFileList\"V\n\022"
-          + "RunningServiceList\022@\n\007entries\030\001 \003(\0132/.go"
-          + "ogle.cloud.migrationcenter.v1.RunningSer"
-          + "vice\"\223\003\n\016RunningService\022\024\n\014service_name\030"
-          + "\001 \001(\t\022D\n\005state\030\002 \001(\01625.google.cloud.migr"
-          + "ationcenter.v1.RunningService.State\022M\n\ns"
-          + "tart_mode\030\003 \001(\01629.google.cloud.migration"
-          + "center.v1.RunningService.StartMode\022\020\n\010ex"
-          + "e_path\030\004 \001(\t\022\017\n\007cmdline\030\005 \001(\t\022\013\n\003pid\030\006 \001"
-          + "(\003\"C\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006AC"
-          + "TIVE\020\001\022\n\n\006PAUSED\020\002\022\013\n\007STOPPED\020\003\"a\n\tStart"
-          + "Mode\022\032\n\026START_MODE_UNSPECIFIED\020\000\022\010\n\004BOOT"
-          + "\020\001\022\n\n\006SYSTEM\020\002\022\010\n\004AUTO\020\003\022\n\n\006MANUAL\020\004\022\014\n\010"
-          + "DISABLED\020\005\"V\n\022RunningProcessList\022@\n\007entr"
-          + "ies\030\001 \003(\0132/.google.cloud.migrationcenter"
-          + ".v1.RunningProcess\"\326\001\n\016RunningProcess\022\013\n"
-          + "\003pid\030\001 \001(\003\022\020\n\010exe_path\030\002 \001(\t\022\017\n\007cmdline\030"
-          + "\003 \001(\t\022\014\n\004user\030\004 \001(\t\022S\n\nattributes\030d \003(\0132"
-          + "?.google.cloud.migrationcenter.v1.Runnin"
-          + "gProcess.AttributesEntry\0321\n\017AttributesEn"
-          + "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\220\001\n\022"
-          + "RuntimeNetworkInfo\022-\n\tscan_time\030\001 \001(\0132\032."
-          + "google.protobuf.Timestamp\022K\n\013connections"
-          + "\030\002 \001(\01326.google.cloud.migrationcenter.v1"
-          + ".NetworkConnectionList\"\\\n\025NetworkConnect"
-          + "ionList\022C\n\007entries\030\001 \003(\01322.google.cloud."
-          + "migrationcenter.v1.NetworkConnection\"\313\002\n"
-          + "\021NetworkConnection\022\020\n\010protocol\030\001 \001(\t\022\030\n\020"
-          + "local_ip_address\030\002 \001(\t\022\022\n\nlocal_port\030\003 \001"
-          + "(\005\022\031\n\021remote_ip_address\030\004 \001(\t\022\023\n\013remote_"
-          + "port\030\005 \001(\005\022G\n\005state\030\006 \001(\01628.google.cloud"
-          + ".migrationcenter.v1.NetworkConnection.St"
-          + "ate\022\013\n\003pid\030\007 \001(\003\022\024\n\014process_name\030\010 \001(\t\"Z"
-          + "\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007OPENIN"
-          + "G\020\001\022\010\n\004OPEN\020\002\022\n\n\006LISTEN\020\003\022\013\n\007CLOSING\020\004\022\n"
-          + "\n\006CLOSED\020\005\"l\n\035GuestInstalledApplicationL"
-          + "ist\022K\n\007entries\030\001 \003(\0132:.google.cloud.migr"
-          + "ationcenter.v1.GuestInstalledApplication"
-          + "\"\226\001\n\031GuestInstalledApplication\022\030\n\020applic"
-          + "ation_name\030\001 \001(\t\022\016\n\006vendor\030\002 \001(\t\0220\n\014inst"
-          + "all_time\030\003 \001(\0132\032.google.protobuf.Timesta"
-          + "mp\022\014\n\004path\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\"Q\n\014Ope"
-          + "nFileList\022A\n\007entries\030\001 \003(\01320.google.clou"
-          + "d.migrationcenter.v1.OpenFileDetails\"V\n\017"
-          + "OpenFileDetails\022\017\n\007command\030\001 \001(\t\022\014\n\004user"
-          + "\030\002 \001(\t\022\021\n\tfile_type\030\003 \001(\t\022\021\n\tfile_path\030\004"
-          + " \001(\t\"\307\003\n\017PlatformDetails\022P\n\016vmware_detai"
-          + "ls\030\001 \001(\01326.google.cloud.migrationcenter."
-          + "v1.VmwarePlatformDetailsH\000\022Q\n\017aws_ec2_de"
-          + "tails\030\002 \001(\01326.google.cloud.migrationcent"
-          + "er.v1.AwsEc2PlatformDetailsH\000\022S\n\020azure_v"
-          + "m_details\030\003 \001(\01327.google.cloud.migration"
-          + "center.v1.AzureVmPlatformDetailsH\000\022R\n\017ge"
-          + "neric_details\030\004 \001(\01327.google.cloud.migra"
-          + "tioncenter.v1.GenericPlatformDetailsH\000\022T"
-          + "\n\020physical_details\030\005 \001(\01328.google.cloud."
-          + "migrationcenter.v1.PhysicalPlatformDetai"
-          + "lsH\000B\020\n\016vendor_details\"\227\001\n\025VmwarePlatfor"
-          + "mDetails\022\027\n\017vcenter_version\030\001 \001(\t\022\023\n\013esx"
-          + "_version\030\002 \001(\t\022\014\n\004osid\030\003 \001(\t\022\026\n\016vcenter_"
-          + "folder\030\004 \001(\t\022\023\n\013vcenter_uri\030\005 \001(\t\022\025\n\rvce"
-          + "nter_vm_id\030\006 \001(\t\"E\n\025AwsEc2PlatformDetail"
-          + "s\022\032\n\022machine_type_label\030\001 \001(\t\022\020\n\010locatio"
-          + "n\030\002 \001(\t\"b\n\026AzureVmPlatformDetails\022\032\n\022mac"
-          + "hine_type_label\030\001 \001(\t\022\020\n\010location\030\002 \001(\t\022"
-          + "\032\n\022provisioning_state\030\003 \001(\t\"*\n\026GenericPl"
-          + "atformDetails\022\020\n\010location\030\001 \001(\t\"+\n\027Physi"
-          + "calPlatformDetails\022\020\n\010location\030\001 \001(\t\"0\n\021"
-          + "MemoryUsageSample\022\033\n\023utilized_percentage"
-          + "\030\001 \001(\002\"-\n\016CpuUsageSample\022\033\n\023utilized_per"
-          + "centage\030\001 \001(\002\"M\n\022NetworkUsageSample\022\033\n\023a"
-          + "verage_ingress_bps\030\001 \001(\002\022\032\n\022average_egre"
-          + "ss_bps\030\002 \001(\002\"\'\n\017DiskUsageSample\022\024\n\014avera"
-          + "ge_iops\030\001 \001(\002\"\314\002\n\021PerformanceSample\022/\n\013s"
-          + "ample_time\030\001 \001(\0132\032.google.protobuf.Times"
-          + "tamp\022B\n\006memory\030\002 \001(\01322.google.cloud.migr"
-          + "ationcenter.v1.MemoryUsageSample\022<\n\003cpu\030"
-          + "\003 \001(\0132/.google.cloud.migrationcenter.v1."
-          + "CpuUsageSample\022D\n\007network\030\004 \001(\01323.google"
-          + ".cloud.migrationcenter.v1.NetworkUsageSa"
-          + "mple\022>\n\004disk\030\005 \001(\01320.google.cloud.migrat"
-          + "ioncenter.v1.DiskUsageSample\"\201\001\n\024AssetPe"
-          + "rformanceData\022i\n!daily_resource_usage_ag"
-          + "gregations\030\001 \003(\0132>.google.cloud.migratio"
+          + "ition\"\315\001\n\rDiskPartition\022\014\n\004type\030\001 \001(\t\022\023\n"
+          + "\013file_system\030\002 \001(\t\022\023\n\013mount_point\030\003 \001(\t\022"
+          + "\026\n\016capacity_bytes\030\004 \001(\003\022\022\n\nfree_bytes\030\005 "
+          + "\001(\003\022\014\n\004uuid\030\006 \001(\t\022J\n\016sub_partitions\030\007 \001("
+          + "\01322.google.cloud.migrationcenter.v1.Disk"
+          + "PartitionList\"\206\006\n\020VmwareDiskConfig\022S\n\014ba"
+          + "cking_type\030\001 \001(\0162=.google.cloud.migratio"
+          + "ncenter.v1.VmwareDiskConfig.BackingType\022"
+          + "\016\n\006shared\030\002 \001(\010\022M\n\tvmdk_mode\030\003 \001(\0162:.goo"
+          + "gle.cloud.migrationcenter.v1.VmwareDiskC"
+          + "onfig.VmdkMode\022]\n\021rdm_compatibility\030\004 \001("
+          + "\0162B.google.cloud.migrationcenter.v1.Vmwa"
+          + "reDiskConfig.RdmCompatibility\"\377\001\n\013Backin"
+          + "gType\022\034\n\030BACKING_TYPE_UNSPECIFIED\020\000\022\030\n\024B"
+          + "ACKING_TYPE_FLAT_V1\020\001\022\030\n\024BACKING_TYPE_FL"
+          + "AT_V2\020\002\022\025\n\021BACKING_TYPE_PMEM\020\003\022\027\n\023BACKIN"
+          + "G_TYPE_RDM_V1\020\004\022\027\n\023BACKING_TYPE_RDM_V2\020\005"
+          + "\022\031\n\025BACKING_TYPE_SESPARSE\020\006\022\034\n\030BACKING_T"
+          + "YPE_SESPARSE_V1\020\007\022\034\n\030BACKING_TYPE_SESPAR"
+          + "SE_V2\020\010\"o\n\010VmdkMode\022\031\n\025VMDK_MODE_UNSPECI"
+          + "FIED\020\000\022\r\n\tDEPENDENT\020\001\022\032\n\026INDEPENDENT_PER"
+          + "SISTENT\020\002\022\035\n\031INDEPENDENT_NONPERSISTENT\020\003"
+          + "\"l\n\020RdmCompatibility\022!\n\035RDM_COMPATIBILIT"
+          + "Y_UNSPECIFIED\020\000\022\032\n\026PHYSICAL_COMPATIBILIT"
+          + "Y\020\001\022\031\n\025VIRTUAL_COMPATIBILITY\020\002\"\206\002\n\016Guest"
+          + "OsDetails\022\017\n\007os_name\030\001 \001(\t\022F\n\006family\030\002 \001"
+          + "(\01626.google.cloud.migrationcenter.v1.Ope"
+          + "ratingSystemFamily\022\017\n\007version\030\003 \001(\t\022C\n\006c"
+          + "onfig\030\004 \001(\01323.google.cloud.migrationcent"
+          + "er.v1.GuestConfigDetails\022E\n\007runtime\030\005 \001("
+          + "\01324.google.cloud.migrationcenter.v1.Gues"
+          + "tRuntimeDetails\"\305\003\n\022GuestConfigDetails\022\r"
+          + "\n\005issue\030\001 \001(\t\022>\n\005fstab\030\002 \001(\0132/.google.cl"
+          + "oud.migrationcenter.v1.FstabEntryList\022>\n"
+          + "\005hosts\030\003 \001(\0132/.google.cloud.migrationcen"
+          + "ter.v1.HostsEntryList\022C\n\013nfs_exports\030\004 \001"
+          + "(\0132..google.cloud.migrationcenter.v1.Nfs"
+          + "ExportList\022U\n\014selinux_mode\030\005 \001(\0162?.googl"
+          + "e.cloud.migrationcenter.v1.GuestConfigDe"
+          + "tails.SeLinuxMode\"\203\001\n\013SeLinuxMode\022\035\n\031SE_"
+          + "LINUX_MODE_UNSPECIFIED\020\000\022\032\n\026SE_LINUX_MOD"
+          + "E_DISABLED\020\001\022\034\n\030SE_LINUX_MODE_PERMISSIVE"
+          + "\020\002\022\033\n\027SE_LINUX_MODE_ENFORCING\020\003\"N\n\016Fstab"
+          + "EntryList\022<\n\007entries\030\001 \003(\0132+.google.clou"
+          + "d.migrationcenter.v1.FstabEntry\"g\n\nFstab"
+          + "Entry\022\014\n\004spec\030\001 \001(\t\022\014\n\004file\030\002 \001(\t\022\017\n\007vfs"
+          + "type\030\003 \001(\t\022\016\n\006mntops\030\004 \001(\t\022\014\n\004freq\030\005 \001(\005"
+          + "\022\016\n\006passno\030\006 \001(\005\"N\n\016HostsEntryList\022<\n\007en"
+          + "tries\030\001 \003(\0132+.google.cloud.migrationcent"
+          + "er.v1.HostsEntry\",\n\nHostsEntry\022\n\n\002ip\030\001 \001"
+          + "(\t\022\022\n\nhost_names\030\002 \003(\t\"L\n\rNfsExportList\022"
+          + ";\n\007entries\030\001 \003(\0132*.google.cloud.migratio"
+          + "ncenter.v1.NfsExport\"4\n\tNfsExport\022\030\n\020exp"
+          + "ort_directory\030\001 \001(\t\022\r\n\005hosts\030\002 \003(\t\"\343\003\n\023G"
+          + "uestRuntimeDetails\022E\n\010services\030\001 \001(\01323.g"
+          + "oogle.cloud.migrationcenter.v1.RunningSe"
+          + "rviceList\022F\n\tprocesses\030\002 \001(\01323.google.cl"
+          + "oud.migrationcenter.v1.RunningProcessLis"
+          + "t\022D\n\007network\030\003 \001(\01323.google.cloud.migrat"
+          + "ioncenter.v1.RuntimeNetworkInfo\0222\n\016last_"
+          + "boot_time\030\004 \001(\0132\032.google.protobuf.Timest"
+          + "amp\022\016\n\006domain\030\005 \001(\t\022\024\n\014machine_name\030\006 \001("
+          + "\t\022V\n\016installed_apps\030\007 \001(\0132>.google.cloud"
+          + ".migrationcenter.v1.GuestInstalledApplic"
+          + "ationList\022E\n\016open_file_list\030\010 \001(\0132-.goog"
+          + "le.cloud.migrationcenter.v1.OpenFileList"
+          + "\"V\n\022RunningServiceList\022@\n\007entries\030\001 \003(\0132"
+          + "/.google.cloud.migrationcenter.v1.Runnin"
+          + "gService\"\223\003\n\016RunningService\022\024\n\014service_n"
+          + "ame\030\001 \001(\t\022D\n\005state\030\002 \001(\01625.google.cloud."
+          + "migrationcenter.v1.RunningService.State\022"
+          + "M\n\nstart_mode\030\003 \001(\01629.google.cloud.migra"
+          + "tioncenter.v1.RunningService.StartMode\022\020"
+          + "\n\010exe_path\030\004 \001(\t\022\017\n\007cmdline\030\005 \001(\t\022\013\n\003pid"
+          + "\030\006 \001(\003\"C\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n"
+          + "\n\006ACTIVE\020\001\022\n\n\006PAUSED\020\002\022\013\n\007STOPPED\020\003\"a\n\tS"
+          + "tartMode\022\032\n\026START_MODE_UNSPECIFIED\020\000\022\010\n\004"
+          + "BOOT\020\001\022\n\n\006SYSTEM\020\002\022\010\n\004AUTO\020\003\022\n\n\006MANUAL\020\004"
+          + "\022\014\n\010DISABLED\020\005\"V\n\022RunningProcessList\022@\n\007"
+          + "entries\030\001 \003(\0132/.google.cloud.migrationce"
+          + "nter.v1.RunningProcess\"\326\001\n\016RunningProces"
+          + "s\022\013\n\003pid\030\001 \001(\003\022\020\n\010exe_path\030\002 \001(\t\022\017\n\007cmdl"
+          + "ine\030\003 \001(\t\022\014\n\004user\030\004 \001(\t\022S\n\nattributes\030d "
+          + "\003(\0132?.google.cloud.migrationcenter.v1.Ru"
+          + "nningProcess.AttributesEntry\0321\n\017Attribut"
+          + "esEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\""
+          + "\220\001\n\022RuntimeNetworkInfo\022-\n\tscan_time\030\001 \001("
+          + "\0132\032.google.protobuf.Timestamp\022K\n\013connect"
+          + "ions\030\002 \001(\01326.google.cloud.migrationcente"
+          + "r.v1.NetworkConnectionList\"\\\n\025NetworkCon"
+          + "nectionList\022C\n\007entries\030\001 \003(\01322.google.cl"
+          + "oud.migrationcenter.v1.NetworkConnection"
+          + "\"\313\002\n\021NetworkConnection\022\020\n\010protocol\030\001 \001(\t"
+          + "\022\030\n\020local_ip_address\030\002 \001(\t\022\022\n\nlocal_port"
+          + "\030\003 \001(\005\022\031\n\021remote_ip_address\030\004 \001(\t\022\023\n\013rem"
+          + "ote_port\030\005 \001(\005\022G\n\005state\030\006 \001(\01628.google.c"
+          + "loud.migrationcenter.v1.NetworkConnectio"
+          + "n.State\022\013\n\003pid\030\007 \001(\003\022\024\n\014process_name\030\010 \001"
+          + "(\t\"Z\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\013\n\007OP"
+          + "ENING\020\001\022\010\n\004OPEN\020\002\022\n\n\006LISTEN\020\003\022\013\n\007CLOSING"
+          + "\020\004\022\n\n\006CLOSED\020\005\"l\n\035GuestInstalledApplicat"
+          + "ionList\022K\n\007entries\030\001 \003(\0132:.google.cloud."
+          + "migrationcenter.v1.GuestInstalledApplica"
+          + "tion\"\226\001\n\031GuestInstalledApplication\022\030\n\020ap"
+          + "plication_name\030\001 \001(\t\022\016\n\006vendor\030\002 \001(\t\0220\n\014"
+          + "install_time\030\003 \001(\0132\032.google.protobuf.Tim"
+          + "estamp\022\014\n\004path\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\"Q\n"
+          + "\014OpenFileList\022A\n\007entries\030\001 \003(\01320.google."
+          + "cloud.migrationcenter.v1.OpenFileDetails"
+          + "\"V\n\017OpenFileDetails\022\017\n\007command\030\001 \001(\t\022\014\n\004"
+          + "user\030\002 \001(\t\022\021\n\tfile_type\030\003 \001(\t\022\021\n\tfile_pa"
+          + "th\030\004 \001(\t\"\307\003\n\017PlatformDetails\022P\n\016vmware_d"
+          + "etails\030\001 \001(\01326.google.cloud.migrationcen"
+          + "ter.v1.VmwarePlatformDetailsH\000\022Q\n\017aws_ec"
+          + "2_details\030\002 \001(\01326.google.cloud.migration"
+          + "center.v1.AwsEc2PlatformDetailsH\000\022S\n\020azu"
+          + "re_vm_details\030\003 \001(\01327.google.cloud.migra"
+          + "tioncenter.v1.AzureVmPlatformDetailsH\000\022R"
+          + "\n\017generic_details\030\004 \001(\01327.google.cloud.m"
+          + "igrationcenter.v1.GenericPlatformDetails"
+          + "H\000\022T\n\020physical_details\030\005 \001(\01328.google.cl"
+          + "oud.migrationcenter.v1.PhysicalPlatformD"
+          + "etailsH\000B\020\n\016vendor_details\"\227\001\n\025VmwarePla"
+          + "tformDetails\022\027\n\017vcenter_version\030\001 \001(\t\022\023\n"
+          + "\013esx_version\030\002 \001(\t\022\014\n\004osid\030\003 \001(\t\022\026\n\016vcen"
+          + "ter_folder\030\004 \001(\t\022\023\n\013vcenter_uri\030\005 \001(\t\022\025\n"
+          + "\rvcenter_vm_id\030\006 \001(\t\"E\n\025AwsEc2PlatformDe"
+          + "tails\022\032\n\022machine_type_label\030\001 \001(\t\022\020\n\010loc"
+          + "ation\030\002 \001(\t\"b\n\026AzureVmPlatformDetails\022\032\n"
+          + "\022machine_type_label\030\001 \001(\t\022\020\n\010location\030\002 "
+          + "\001(\t\022\032\n\022provisioning_state\030\003 \001(\t\"*\n\026Gener"
+          + "icPlatformDetails\022\020\n\010location\030\001 \001(\t\"+\n\027P"
+          + "hysicalPlatformDetails\022\020\n\010location\030\001 \001(\t"
+          + "\"0\n\021MemoryUsageSample\022\033\n\023utilized_percen"
+          + "tage\030\001 \001(\002\"-\n\016CpuUsageSample\022\033\n\023utilized"
+          + "_percentage\030\001 \001(\002\"M\n\022NetworkUsageSample\022"
+          + "\033\n\023average_ingress_bps\030\001 \001(\002\022\032\n\022average_"
+          + "egress_bps\030\002 \001(\002\"\'\n\017DiskUsageSample\022\024\n\014a"
+          + "verage_iops\030\001 \001(\002\"\314\002\n\021PerformanceSample\022"
+          + "/\n\013sample_time\030\001 \001(\0132\032.google.protobuf.T"
+          + "imestamp\022B\n\006memory\030\002 \001(\01322.google.cloud."
+          + "migrationcenter.v1.MemoryUsageSample\022<\n\003"
+          + "cpu\030\003 \001(\0132/.google.cloud.migrationcenter"
+          + ".v1.CpuUsageSample\022D\n\007network\030\004 \001(\01323.go"
+          + "ogle.cloud.migrationcenter.v1.NetworkUsa"
+          + "geSample\022>\n\004disk\030\005 \001(\01320.google.cloud.mi"
+          + "grationcenter.v1.DiskUsageSample\"\201\001\n\024Ass"
+          + "etPerformanceData\022i\n!daily_resource_usag"
+          + "e_aggregations\030\001 \003(\0132>.google.cloud.migr"
+          + "ationcenter.v1.DailyResourceUsageAggrega"
+          + "tion\"\347\007\n\035DailyResourceUsageAggregation\022\037"
+          + "\n\004date\030\001 \001(\0132\021.google.type.Date\022O\n\003cpu\030\002"
+          + " \001(\0132B.google.cloud.migrationcenter.v1.D"
+          + "ailyResourceUsageAggregation.CPU\022U\n\006memo"
+          + "ry\030\003 \001(\0132E.google.cloud.migrationcenter."
+          + "v1.DailyResourceUsageAggregation.Memory\022"
+          + "W\n\007network\030\004 \001(\0132F.google.cloud.migratio"
           + "ncenter.v1.DailyResourceUsageAggregation"
-          + "\"\347\007\n\035DailyResourceUsageAggregation\022\037\n\004da"
-          + "te\030\001 \001(\0132\021.google.type.Date\022O\n\003cpu\030\002 \001(\013"
-          + "2B.google.cloud.migrationcenter.v1.Daily"
-          + "ResourceUsageAggregation.CPU\022U\n\006memory\030\003"
-          + " \001(\0132E.google.cloud.migrationcenter.v1.D"
-          + "ailyResourceUsageAggregation.Memory\022W\n\007n"
-          + "etwork\030\004 \001(\0132F.google.cloud.migrationcen"
-          + "ter.v1.DailyResourceUsageAggregation.Net"
-          + "work\022Q\n\004disk\030\005 \001(\0132C.google.cloud.migrat"
-          + "ioncenter.v1.DailyResourceUsageAggregati"
-          + "on.Disk\032W\n\005Stats\022\017\n\007average\030\001 \001(\002\022\016\n\006med"
-          + "ian\030\002 \001(\002\022\037\n\027nintey_fifth_percentile\030\003 \001"
-          + "(\002\022\014\n\004peak\030\004 \001(\002\032k\n\003CPU\022d\n\026utilization_p"
-          + "ercentage\030\001 \001(\0132D.google.cloud.migration"
-          + "center.v1.DailyResourceUsageAggregation."
-          + "Stats\032n\n\006Memory\022d\n\026utilization_percentag"
-          + "e\030\001 \001(\0132D.google.cloud.migrationcenter.v"
-          + "1.DailyResourceUsageAggregation.Stats\032\276\001"
-          + "\n\007Network\022Y\n\013ingress_bps\030\001 \001(\0132D.google."
-          + "cloud.migrationcenter.v1.DailyResourceUs"
-          + "ageAggregation.Stats\022X\n\negress_bps\030\002 \001(\013"
-          + "2D.google.cloud.migrationcenter.v1.Daily"
-          + "ResourceUsageAggregation.Stats\032Z\n\004Disk\022R"
-          + "\n\004iops\030\001 \001(\0132D.google.cloud.migrationcen"
-          + "ter.v1.DailyResourceUsageAggregation.Sta"
-          + "ts\"\206\001\n\013InsightList\022@\n\010insights\030\001 \003(\0132(.g"
-          + "oogle.cloud.migrationcenter.v1.InsightB\004"
-          + "\342A\001\003\0225\n\013update_time\030\002 \001(\0132\032.google.proto"
-          + "buf.TimestampB\004\342A\001\003\"j\n\007Insight\022T\n\021migrat"
-          + "ion_insight\030\001 \001(\01321.google.cloud.migrati"
-          + "oncenter.v1.MigrationInsightB\004\342A\001\003H\000B\t\n\007"
-          + "insight\"\317\001\n\020MigrationInsight\022A\n\003fit\030\001 \001("
+          + ".Network\022Q\n\004disk\030\005 \001(\0132C.google.cloud.mi"
+          + "grationcenter.v1.DailyResourceUsageAggre"
+          + "gation.Disk\032W\n\005Stats\022\017\n\007average\030\001 \001(\002\022\016\n"
+          + "\006median\030\002 \001(\002\022\037\n\027nintey_fifth_percentile"
+          + "\030\003 \001(\002\022\014\n\004peak\030\004 \001(\002\032k\n\003CPU\022d\n\026utilizati"
+          + "on_percentage\030\001 \001(\0132D.google.cloud.migra"
+          + "tioncenter.v1.DailyResourceUsageAggregat"
+          + "ion.Stats\032n\n\006Memory\022d\n\026utilization_perce"
+          + "ntage\030\001 \001(\0132D.google.cloud.migrationcent"
+          + "er.v1.DailyResourceUsageAggregation.Stat"
+          + "s\032\276\001\n\007Network\022Y\n\013ingress_bps\030\001 \001(\0132D.goo"
+          + "gle.cloud.migrationcenter.v1.DailyResour"
+          + "ceUsageAggregation.Stats\022X\n\negress_bps\030\002"
+          + " \001(\0132D.google.cloud.migrationcenter.v1.D"
+          + "ailyResourceUsageAggregation.Stats\032Z\n\004Di"
+          + "sk\022R\n\004iops\030\001 \001(\0132D.google.cloud.migratio"
+          + "ncenter.v1.DailyResourceUsageAggregation"
+          + ".Stats\"\206\001\n\013InsightList\022@\n\010insights\030\001 \003(\013"
+          + "2(.google.cloud.migrationcenter.v1.Insig"
+          + "htB\004\342A\001\003\0225\n\013update_time\030\002 \001(\0132\032.google.p"
+          + "rotobuf.TimestampB\004\342A\001\003\"\274\001\n\007Insight\022T\n\021m"
+          + "igration_insight\030\001 \001(\01321.google.cloud.mi"
+          + "grationcenter.v1.MigrationInsightB\004\342A\001\003H"
+          + "\000\022P\n\017generic_insight\030\002 \001(\0132/.google.clou"
+          + "d.migrationcenter.v1.GenericInsightB\004\342A\001"
+          + "\003H\000B\t\n\007insight\"o\n\016GenericInsight\022\030\n\nmess"
+          + "age_id\030\001 \001(\003B\004\342A\001\003\022\035\n\017default_message\030\002 "
+          + "\001(\tB\004\342A\001\003\022$\n\026additional_information\030\003 \003("
+          + "\tB\004\342A\001\003\"\317\001\n\020MigrationInsight\022A\n\003fit\030\001 \001("
           + "\0132..google.cloud.migrationcenter.v1.FitD"
           + "escriptorB\004\342A\001\003\022d\n\025compute_engine_target"
           + "\030\n \001(\0132=.google.cloud.migrationcenter.v1"
@@ -1406,459 +1451,528 @@ public final class MigrationCenterProto {
           + "\020migration_target\"l\n\034ComputeEngineMigrat"
           + "ionTarget\022L\n\005shape\030\001 \001(\0132=.google.cloud."
           + "migrationcenter.v1.ComputeEngineShapeDes"
-          + "criptor\"\254\001\n\rFitDescriptor\022J\n\tfit_level\030\001"
-          + " \001(\01627.google.cloud.migrationcenter.v1.F"
-          + "itDescriptor.FitLevel\"O\n\010FitLevel\022\031\n\025FIT"
-          + "_LEVEL_UNSPECIFIED\020\000\022\007\n\003FIT\020\001\022\n\n\006NO_FIT\020"
-          + "\002\022\023\n\017REQUIRES_EFFORT\020\003\"\220\001\n\034ComputeEngine"
-          + "ShapeDescriptor\022\021\n\tmemory_mb\030\001 \001(\005\022\033\n\023ph"
-          + "ysical_core_count\030\002 \001(\005\022\032\n\022logical_core_"
-          + "count\030\003 \001(\005\022\016\n\006series\030\004 \001(\t\022\024\n\014machine_t"
-          + "ype\030\005 \001(\t\"\224\003\n\013Aggregation\022\r\n\005field\030\001 \001(\t"
-          + "\022C\n\005count\030\002 \001(\01322.google.cloud.migration"
-          + "center.v1.Aggregation.CountH\000\022?\n\003sum\030\003 \001"
-          + "(\01320.google.cloud.migrationcenter.v1.Agg"
-          + "regation.SumH\000\022K\n\thistogram\030\004 \001(\01326.goog"
-          + "le.cloud.migrationcenter.v1.Aggregation."
-          + "HistogramH\000\022K\n\tfrequency\030\005 \001(\01326.google."
-          + "cloud.migrationcenter.v1.Aggregation.Fre"
-          + "quencyH\000\032\007\n\005Count\032\005\n\003Sum\032!\n\tHistogram\022\024\n"
-          + "\014lower_bounds\030\001 \003(\001\032\013\n\tFrequencyB\026\n\024aggr"
-          + "egation_function\"\320\005\n\021AggregationResult\022\r"
-          + "\n\005field\030\001 \001(\t\022I\n\005count\030\002 \001(\01328.google.cl"
-          + "oud.migrationcenter.v1.AggregationResult"
-          + ".CountH\000\022E\n\003sum\030\003 \001(\01326.google.cloud.mig"
-          + "rationcenter.v1.AggregationResult.SumH\000\022"
-          + "Q\n\thistogram\030\004 \001(\0132<.google.cloud.migrat"
-          + "ioncenter.v1.AggregationResult.Histogram"
-          + "H\000\022Q\n\tfrequency\030\005 \001(\0132<.google.cloud.mig"
-          + "rationcenter.v1.AggregationResult.Freque"
-          + "ncyH\000\032\026\n\005Count\022\r\n\005value\030\001 \001(\003\032\024\n\003Sum\022\r\n\005"
-          + "value\030\001 \001(\001\032\244\001\n\tHistogram\022T\n\007buckets\030\001 \003"
-          + "(\0132C.google.cloud.migrationcenter.v1.Agg"
-          + "regationResult.Histogram.Bucket\032A\n\006Bucke"
-          + "t\022\023\n\013lower_bound\030\001 \001(\001\022\023\n\013upper_bound\030\002 "
-          + "\001(\001\022\r\n\005count\030\003 \001(\003\032\224\001\n\tFrequency\022X\n\006valu"
-          + "es\030\001 \003(\0132H.google.cloud.migrationcenter."
-          + "v1.AggregationResult.Frequency.ValuesEnt"
-          + "ry\032-\n\013ValuesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
-          + "\002 \001(\003:\0028\001B\010\n\006result\"\311\001\n\024FileValidationRe"
-          + "port\022\021\n\tfile_name\030\001 \001(\t\022C\n\nrow_errors\030\002 "
-          + "\003(\0132/.google.cloud.migrationcenter.v1.Im"
-          + "portRowError\022\026\n\016partial_report\030\003 \001(\010\022A\n\013"
-          + "file_errors\030\004 \003(\0132,.google.cloud.migrati"
-          + "oncenter.v1.ImportError\"\245\001\n\020ValidationRe"
-          + "port\022O\n\020file_validations\030\001 \003(\01325.google."
-          + "cloud.migrationcenter.v1.FileValidationR"
-          + "eport\022@\n\njob_errors\030\002 \003(\0132,.google.cloud"
-          + ".migrationcenter.v1.ImportError\"\221\001\n\017Exec"
-          + "utionReport\022\027\n\017frames_reported\030\001 \001(\005\022K\n\020"
-          + "execution_errors\030\002 \001(\01321.google.cloud.mi"
-          + "grationcenter.v1.ValidationReport\022\030\n\020tot"
-          + "al_rows_count\030\003 \001(\005\"\265\001\n\013ImportError\022\025\n\re"
-          + "rror_details\030\001 \001(\t\022G\n\010severity\030\002 \001(\01625.g"
-          + "oogle.cloud.migrationcenter.v1.ImportErr"
-          + "or.Severity\"F\n\010Severity\022\030\n\024SEVERITY_UNSP"
-          + "ECIFIED\020\000\022\t\n\005ERROR\020\001\022\013\n\007WARNING\020\002\022\010\n\004INF"
-          + "O\020\003\"\210\001\n\016ImportRowError\022\026\n\nrow_number\030\001 \001"
-          + "(\005B\002\030\001\022\017\n\007vm_name\030\002 \001(\t\022\017\n\007vm_uuid\030\003 \001(\t"
-          + "\022<\n\006errors\030\004 \003(\0132,.google.cloud.migratio"
-          + "ncenter.v1.ImportError\"\356\001\n\016UploadFileInf"
-          + "o\022\030\n\nsigned_uri\030\001 \001(\tB\004\342A\001\003\022S\n\007headers\030\002"
-          + " \003(\0132<.google.cloud.migrationcenter.v1.U"
-          + "ploadFileInfo.HeadersEntryB\004\342A\001\003\022=\n\023uri_"
-          + "expiration_time\030\003 \001(\0132\032.google.protobuf."
-          + "TimestampB\004\342A\001\003\032.\n\014HeadersEntry\022\013\n\003key\030\001"
-          + " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"M\n\tAssetList\022@\n\t"
-          + "asset_ids\030\001 \003(\tB-\342A\001\002\372A&\n$migrationcente"
-          + "r.googleapis.com/Asset\"7\n\023FrameViolation"
-          + "Entry\022\r\n\005field\030\001 \001(\t\022\021\n\tviolation\030\002 \001(\t\""
-          + "\367\002\n\031VirtualMachinePreferences\022N\n\022region_"
-          + "preferences\030\003 \001(\01322.google.cloud.migrati"
-          + "oncenter.v1.RegionPreferences\022H\n\017commitm"
-          + "ent_plan\030\004 \001(\0162/.google.cloud.migrationc"
-          + "enter.v1.CommitmentPlan\022a\n\034sizing_optimi"
-          + "zation_strategy\030\005 \001(\0162;.google.cloud.mig"
-          + "rationcenter.v1.SizingOptimizationStrate"
-          + "gy\022]\n\032compute_engine_preferences\030\006 \001(\01329"
-          + ".google.cloud.migrationcenter.v1.Compute"
-          + "EnginePreferences\"\260\001\n\030ComputeEnginePrefe"
-          + "rences\022P\n\023machine_preferences\030\002 \001(\01323.go"
-          + "ogle.cloud.migrationcenter.v1.MachinePre"
-          + "ferences\022B\n\014license_type\030\003 \001(\0162,.google."
-          + "cloud.migrationcenter.v1.LicenseType\"d\n\022"
-          + "MachinePreferences\022N\n\026allowed_machine_se"
-          + "ries\030\001 \003(\0132..google.cloud.migrationcente"
-          + "r.v1.MachineSeries\"\035\n\rMachineSeries\022\014\n\004c"
-          + "ode\030\001 \001(\t\".\n\021RegionPreferences\022\031\n\021prefer"
-          + "red_regions\030\001 \003(\t\"\311\001\n\010Settings\022\022\n\004name\030\001"
-          + " \001(\tB\004\342A\001\003\022I\n\016preference_set\030\002 \001(\tB1\372A.\n"
-          + ",migrationcenter.googleapis.com/Preferen"
-          + "ceSet:^\352A[\n\'migrationcenter.googleapis.c"
-          + "om/Settings\0220projects/{project}/location"
-          + "s/{location}/settings\"\375\023\n\rReportSummary\022"
-          + "\\\n\020all_assets_stats\030\001 \001(\0132B.google.cloud"
-          + ".migrationcenter.v1.ReportSummary.AssetA"
-          + "ggregateStats\022S\n\016group_findings\030\002 \003(\0132;."
-          + "google.cloud.migrationcenter.v1.ReportSu"
-          + "mmary.GroupFinding\032\217\001\n\tChartData\022W\n\013data"
-          + "_points\030\001 \003(\0132B.google.cloud.migrationce"
-          + "nter.v1.ReportSummary.ChartData.DataPoin"
-          + "t\032)\n\tDataPoint\022\r\n\005label\030\001 \001(\t\022\r\n\005value\030\002"
-          + " \001(\001\0322\n\024UtilizationChartData\022\014\n\004used\030\001 \001"
-          + "(\003\022\014\n\004free\030\002 \001(\003\032\262\001\n\022HistogramChartData\022"
-          + "Y\n\007buckets\030\001 \003(\0132H.google.cloud.migratio"
-          + "ncenter.v1.ReportSummary.HistogramChartD"
-          + "ata.Bucket\032A\n\006Bucket\022\023\n\013lower_bound\030\001 \001("
-          + "\003\022\023\n\013upper_bound\030\002 \001(\003\022\r\n\005count\030\003 \001(\003\032\304\005"
-          + "\n\023AssetAggregateStats\022\032\n\022total_memory_by"
-          + "tes\030\001 \001(\003\022\033\n\023total_storage_bytes\030\002 \001(\003\022\023"
-          + "\n\013total_cores\030\003 \001(\003\022\024\n\014total_assets\030\004 \001("
-          + "\003\022e\n\030memory_utilization_chart\030\005 \001(\0132C.go"
-          + "ogle.cloud.migrationcenter.v1.ReportSumm"
-          + "ary.UtilizationChartData\022f\n\031storage_util"
-          + "ization_chart\030\006 \001(\0132C.google.cloud.migra"
-          + "tioncenter.v1.ReportSummary.UtilizationC"
-          + "hartData\022R\n\020operating_system\030\007 \001(\01328.goo"
-          + "gle.cloud.migrationcenter.v1.ReportSumma"
-          + "ry.ChartData\022_\n\024core_count_histogram\030\010 \001"
-          + "(\0132A.google.cloud.migrationcenter.v1.Rep"
-          + "ortSummary.HistogramChartData\022a\n\026memory_"
-          + "bytes_histogram\030\t \001(\0132A.google.cloud.mig"
-          + "rationcenter.v1.ReportSummary.HistogramC"
-          + "hartData\022b\n\027storage_bytes_histogram\030\n \001("
-          + "\0132A.google.cloud.migrationcenter.v1.Repo"
-          + "rtSummary.HistogramChartData\032\200\001\n\027Machine"
-          + "SeriesAllocation\022F\n\016machine_series\030\001 \001(\013"
-          + "2..google.cloud.migrationcenter.v1.Machi"
-          + "neSeries\022\035\n\025allocated_asset_count\030\002 \001(\003\032"
-          + "\217\002\n\024ComputeEngineFinding\022\031\n\021allocated_re"
-          + "gions\030\001 \003(\t\022\035\n\025allocated_asset_count\030\002 \001"
-          + "(\003\022j\n\032machine_series_allocations\030\003 \003(\0132F"
-          + ".google.cloud.migrationcenter.v1.ReportS"
-          + "ummary.MachineSeriesAllocation\022Q\n\024alloca"
-          + "ted_disk_types\030\004 \003(\01623.google.cloud.migr"
-          + "ationcenter.v1.PersistentDiskType\032\266\004\n\031Gr"
-          + "oupPreferenceSetFinding\022\024\n\014display_name\030",
-      "\001 \001(\t\022\023\n\013description\030\002 \001(\t\022W\n\023machine_pr"
-          + "eferences\030\003 \001(\0132:.google.cloud.migration"
-          + "center.v1.VirtualMachinePreferences\022.\n\022m"
-          + "onthly_cost_total\030\004 \001(\0132\022.google.type.Mo"
-          + "ney\0220\n\024monthly_cost_compute\030\005 \001(\0132\022.goog"
-          + "le.type.Money\0223\n\027monthly_cost_os_license"
-          + "\030\006 \001(\0132\022.google.type.Money\0227\n\033monthly_co"
-          + "st_network_egress\030\007 \001(\0132\022.google.type.Mo"
-          + "ney\0220\n\024monthly_cost_storage\030\010 \001(\0132\022.goog"
-          + "le.type.Money\022.\n\022monthly_cost_other\030\t \001("
-          + "\0132\022.google.type.Money\022c\n\026compute_engine_"
-          + "finding\030\n \001(\0132C.google.cloud.migrationce"
-          + "nter.v1.ReportSummary.ComputeEngineFindi"
-          + "ng\032\250\002\n\014GroupFinding\022\024\n\014display_name\030\001 \001("
-          + "\t\022\023\n\013description\030\002 \001(\t\022a\n\025asset_aggregat"
-          + "e_stats\030\003 \001(\0132B.google.cloud.migrationce"
-          + "nter.v1.ReportSummary.AssetAggregateStat"
-          + "s\022\037\n\027overlapping_asset_count\030\004 \001(\003\022i\n\027pr"
-          + "eference_set_findings\030\005 \003(\0132H.google.clo"
-          + "ud.migrationcenter.v1.ReportSummary.Grou"
-          + "pPreferenceSetFinding*R\n\tAssetView\022\032\n\026AS"
-          + "SET_VIEW_UNSPECIFIED\020\000\022\024\n\020ASSET_VIEW_BAS"
-          + "IC\020\001\022\023\n\017ASSET_VIEW_FULL\020\002*n\n\025OperatingSy"
-          + "stemFamily\022\025\n\021OS_FAMILY_UNKNOWN\020\000\022\025\n\021OS_"
-          + "FAMILY_WINDOWS\020\001\022\023\n\017OS_FAMILY_LINUX\020\002\022\022\n"
-          + "\016OS_FAMILY_UNIX\020\003*\363\001\n\017ImportJobFormat\022!\n"
-          + "\035IMPORT_JOB_FORMAT_UNSPECIFIED\020\000\022\"\n\036IMPO"
-          + "RT_JOB_FORMAT_RVTOOLS_XLSX\020\001\022!\n\035IMPORT_J"
-          + "OB_FORMAT_RVTOOLS_CSV\020\002\022&\n\"IMPORT_JOB_FO"
-          + "RMAT_EXPORTED_AWS_CSV\020\004\022(\n$IMPORT_JOB_FO"
-          + "RMAT_EXPORTED_AZURE_CSV\020\005\022$\n IMPORT_JOB_"
-          + "FORMAT_STRATOZONE_CSV\020\006*e\n\rImportJobView"
-          + "\022\037\n\033IMPORT_JOB_VIEW_UNSPECIFIED\020\000\022\031\n\025IMP"
-          + "ORT_JOB_VIEW_BASIC\020\001\022\030\n\024IMPORT_JOB_VIEW_"
-          + "FULL\020\002*i\n\016ErrorFrameView\022 \n\034ERROR_FRAME_"
-          + "VIEW_UNSPECIFIED\020\000\022\032\n\026ERROR_FRAME_VIEW_B"
-          + "ASIC\020\001\022\031\n\025ERROR_FRAME_VIEW_FULL\020\002*\236\001\n\022Pe"
-          + "rsistentDiskType\022$\n PERSISTENT_DISK_TYPE"
-          + "_UNSPECIFIED\020\000\022!\n\035PERSISTENT_DISK_TYPE_S"
-          + "TANDARD\020\001\022!\n\035PERSISTENT_DISK_TYPE_BALANC"
-          + "ED\020\002\022\034\n\030PERSISTENT_DISK_TYPE_SSD\020\003*n\n\013Li"
-          + "censeType\022\034\n\030LICENSE_TYPE_UNSPECIFIED\020\000\022"
-          + "\030\n\024LICENSE_TYPE_DEFAULT\020\001\022\'\n#LICENSE_TYP"
-          + "E_BRING_YOUR_OWN_LICENSE\020\002*\323\001\n\032SizingOpt"
-          + "imizationStrategy\022,\n(SIZING_OPTIMIZATION"
-          + "_STRATEGY_UNSPECIFIED\020\000\022/\n+SIZING_OPTIMI"
-          + "ZATION_STRATEGY_SAME_AS_SOURCE\020\001\022)\n%SIZI"
-          + "NG_OPTIMIZATION_STRATEGY_MODERATE\020\002\022+\n\'S"
-          + "IZING_OPTIMIZATION_STRATEGY_AGGRESSIVE\020\003"
-          + "*\212\001\n\016CommitmentPlan\022\037\n\033COMMITMENT_PLAN_U"
-          + "NSPECIFIED\020\000\022\030\n\024COMMITMENT_PLAN_NONE\020\001\022\034"
-          + "\n\030COMMITMENT_PLAN_ONE_YEAR\020\002\022\037\n\033COMMITME"
-          + "NT_PLAN_THREE_YEARS\020\003*p\n\nReportView\022\033\n\027R"
-          + "EPORT_VIEW_UNSPECIFIED\020\000\022\025\n\021REPORT_VIEW_"
-          + "BASIC\020\001\022\024\n\020REPORT_VIEW_FULL\020\002\022\030\n\024REPORT_"
-          + "VIEW_STANDARD\020\0032\254P\n\017MigrationCenter\022\262\001\n\n"
-          + "ListAssets\0222.google.cloud.migrationcente"
-          + "r.v1.ListAssetsRequest\0323.google.cloud.mi"
-          + "grationcenter.v1.ListAssetsResponse\";\332A\006"
-          + "parent\202\323\344\223\002,\022*/v1/{parent=projects/*/loc"
-          + "ations/*}/assets\022\237\001\n\010GetAsset\0220.google.c"
-          + "loud.migrationcenter.v1.GetAssetRequest\032"
-          + "&.google.cloud.migrationcenter.v1.Asset\""
-          + "9\332A\004name\202\323\344\223\002,\022*/v1/{name=projects/*/loc"
-          + "ations/*/assets/*}\022\277\001\n\013UpdateAsset\0223.goo"
-          + "gle.cloud.migrationcenter.v1.UpdateAsset"
-          + "Request\032&.google.cloud.migrationcenter.v"
-          + "1.Asset\"S\332A\021asset,update_mask\202\323\344\223\002920/v1"
-          + "/{asset.name=projects/*/locations/*/asse"
-          + "ts/*}:\005asset\022\337\001\n\021BatchUpdateAssets\0229.goo"
-          + "gle.cloud.migrationcenter.v1.BatchUpdate"
-          + "AssetsRequest\032:.google.cloud.migrationce"
-          + "nter.v1.BatchUpdateAssetsResponse\"S\332A\017pa"
-          + "rent,requests\202\323\344\223\002;\"6/v1/{parent=project"
-          + "s/*/locations/*}/assets:batchUpdate:\001*\022\225"
-          + "\001\n\013DeleteAsset\0223.google.cloud.migrationc"
-          + "enter.v1.DeleteAssetRequest\032\026.google.pro"
-          + "tobuf.Empty\"9\332A\004name\202\323\344\223\002,**/v1/{name=pr"
-          + "ojects/*/locations/*/assets/*}\022\270\001\n\021Batch"
-          + "DeleteAssets\0229.google.cloud.migrationcen"
-          + "ter.v1.BatchDeleteAssetsRequest\032\026.google"
-          + ".protobuf.Empty\"P\332A\014parent,names\202\323\344\223\002;\"6"
-          + "/v1/{parent=projects/*/locations/*}/asse"
-          + "ts:batchDelete:\001*\022\330\001\n\021ReportAssetFrames\022"
-          + "9.google.cloud.migrationcenter.v1.Report"
-          + "AssetFramesRequest\032:.google.cloud.migrat"
-          + "ioncenter.v1.ReportAssetFramesResponse\"L"
-          + "\202\323\344\223\002F\"</v1/{parent=projects/*/locations"
-          + "/*}/assets:reportAssetFrames:\006frames\022\335\001\n"
-          + "\025AggregateAssetsValues\022=.google.cloud.mi"
-          + "grationcenter.v1.AggregateAssetsValuesRe"
-          + "quest\032>.google.cloud.migrationcenter.v1."
-          + "AggregateAssetsValuesResponse\"E\202\323\344\223\002?\":/"
+          + "criptor\"\334\001\n\034ComputeEngineShapeDescriptor"
+          + "\022\021\n\tmemory_mb\030\001 \001(\005\022\033\n\023physical_core_cou"
+          + "nt\030\002 \001(\005\022\032\n\022logical_core_count\030\003 \001(\005\022\016\n\006"
+          + "series\030\004 \001(\t\022\024\n\014machine_type\030\005 \001(\t\022J\n\007st"
+          + "orage\030\006 \003(\01329.google.cloud.migrationcent"
+          + "er.v1.ComputeStorageDescriptor\"n\n\030Comput"
+          + "eStorageDescriptor\022A\n\004type\030\001 \001(\01623.googl"
+          + "e.cloud.migrationcenter.v1.PersistentDis"
+          + "kType\022\017\n\007size_gb\030\002 \001(\005\"\254\001\n\rFitDescriptor"
+          + "\022J\n\tfit_level\030\001 \001(\01627.google.cloud.migra"
+          + "tioncenter.v1.FitDescriptor.FitLevel\"O\n\010"
+          + "FitLevel\022\031\n\025FIT_LEVEL_UNSPECIFIED\020\000\022\007\n\003F"
+          + "IT\020\001\022\n\n\006NO_FIT\020\002\022\023\n\017REQUIRES_EFFORT\020\003\"\224\003"
+          + "\n\013Aggregation\022\r\n\005field\030\001 \001(\t\022C\n\005count\030\002 "
+          + "\001(\01322.google.cloud.migrationcenter.v1.Ag"
+          + "gregation.CountH\000\022?\n\003sum\030\003 \001(\01320.google."
+          + "cloud.migrationcenter.v1.Aggregation.Sum"
+          + "H\000\022K\n\thistogram\030\004 \001(\01326.google.cloud.mig"
+          + "rationcenter.v1.Aggregation.HistogramH\000\022"
+          + "K\n\tfrequency\030\005 \001(\01326.google.cloud.migrat"
+          + "ioncenter.v1.Aggregation.FrequencyH\000\032\007\n\005"
+          + "Count\032\005\n\003Sum\032!\n\tHistogram\022\024\n\014lower_bound"
+          + "s\030\001 \003(\001\032\013\n\tFrequencyB\026\n\024aggregation_func"
+          + "tion\"\320\005\n\021AggregationResult\022\r\n\005field\030\001 \001("
+          + "\t\022I\n\005count\030\002 \001(\01328.google.cloud.migratio"
+          + "ncenter.v1.AggregationResult.CountH\000\022E\n\003"
+          + "sum\030\003 \001(\01326.google.cloud.migrationcenter"
+          + ".v1.AggregationResult.SumH\000\022Q\n\thistogram"
+          + "\030\004 \001(\0132<.google.cloud.migrationcenter.v1"
+          + ".AggregationResult.HistogramH\000\022Q\n\tfreque"
+          + "ncy\030\005 \001(\0132<.google.cloud.migrationcenter"
+          + ".v1.AggregationResult.FrequencyH\000\032\026\n\005Cou"
+          + "nt\022\r\n\005value\030\001 \001(\003\032\024\n\003Sum\022\r\n\005value\030\001 \001(\001\032"
+          + "\244\001\n\tHistogram\022T\n\007buckets\030\001 \003(\0132C.google."
+          + "cloud.migrationcenter.v1.AggregationResu"
+          + "lt.Histogram.Bucket\032A\n\006Bucket\022\023\n\013lower_b"
+          + "ound\030\001 \001(\001\022\023\n\013upper_bound\030\002 \001(\001\022\r\n\005count"
+          + "\030\003 \001(\003\032\224\001\n\tFrequency\022X\n\006values\030\001 \003(\0132H.g"
+          + "oogle.cloud.migrationcenter.v1.Aggregati"
+          + "onResult.Frequency.ValuesEntry\032-\n\013Values"
+          + "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\003:\0028\001B\010\n"
+          + "\006result\"\311\001\n\024FileValidationReport\022\021\n\tfile"
+          + "_name\030\001 \001(\t\022C\n\nrow_errors\030\002 \003(\0132/.google"
+          + ".cloud.migrationcenter.v1.ImportRowError"
+          + "\022\026\n\016partial_report\030\003 \001(\010\022A\n\013file_errors\030"
+          + "\004 \003(\0132,.google.cloud.migrationcenter.v1."
+          + "ImportError\"\245\001\n\020ValidationReport\022O\n\020file"
+          + "_validations\030\001 \003(\01325.google.cloud.migrat"
+          + "ioncenter.v1.FileValidationReport\022@\n\njob"
+          + "_errors\030\002 \003(\0132,.google.cloud.migrationce"
+          + "nter.v1.ImportError\"\227\001\n\017ExecutionReport\022"
+          + "\027\n\017frames_reported\030\001 \001(\005\022K\n\020execution_er"
+          + "rors\030\002 \001(\01321.google.cloud.migrationcente"
+          + "r.v1.ValidationReport\022\036\n\020total_rows_coun"
+          + "t\030\003 \001(\005B\004\342A\001\003\"\265\001\n\013ImportError\022\025\n\rerror_d"
+          + "etails\030\001 \001(\t\022G\n\010severity\030\002 \001(\01625.google."
+          + "cloud.migrationcenter.v1.ImportError.Sev"
+          + "erity\"F\n\010Severity\022\030\n\024SEVERITY_UNSPECIFIE"
+          + "D\020\000\022\t\n\005ERROR\020\001\022\013\n\007WARNING\020\002\022\010\n\004INFO\020\003\"\210\001"
+          + "\n\016ImportRowError\022\026\n\nrow_number\030\001 \001(\005B\002\030\001"
+          + "\022\017\n\007vm_name\030\002 \001(\t\022\017\n\007vm_uuid\030\003 \001(\t\022<\n\006er"
+          + "rors\030\004 \003(\0132,.google.cloud.migrationcente"
+          + "r.v1.ImportError\"\356\001\n\016UploadFileInfo\022\030\n\ns"
+          + "igned_uri\030\001 \001(\tB\004\342A\001\003\022S\n\007headers\030\002 \003(\0132<"
+          + ".google.cloud.migrationcenter.v1.UploadF"
+          + "ileInfo.HeadersEntryB\004\342A\001\003\022=\n\023uri_expira"
+          + "tion_time\030\003 \001(\0132\032.google.protobuf.Timest"
+          + "ampB\004\342A\001\003\032.\n\014HeadersEntry\022\013\n\003key\030\001 \001(\t\022\r"
+          + "\n\005value\030\002 \001(\t:\0028\001\"M\n\tAssetList\022@\n\tasset_"
+          + "ids\030\001 \003(\tB-\342A\001\002\372A&\n$migrationcenter.goog"
+          + "leapis.com/Asset\"7\n\023FrameViolationEntry\022"
+          + "\r\n\005field\030\001 \001(\t\022\021\n\tviolation\030\002 \001(\t\"\207\005\n\031Vi"
+          + "rtualMachinePreferences\022V\n\016target_produc"
+          + "t\030\002 \001(\0162>.google.cloud.migrationcenter.v"
+          + "1.ComputeMigrationTargetProduct\022N\n\022regio"
+          + "n_preferences\030\003 \001(\01322.google.cloud.migra"
+          + "tioncenter.v1.RegionPreferences\022H\n\017commi"
+          + "tment_plan\030\004 \001(\0162/.google.cloud.migratio"
+          + "ncenter.v1.CommitmentPlan\022a\n\034sizing_opti"
+          + "mization_strategy\030\005 \001(\0162;.google.cloud.m"
+          + "igrationcenter.v1.SizingOptimizationStra"
+          + "tegy\022]\n\032compute_engine_preferences\030\006 \001(\013"
+          + "29.google.cloud.migrationcenter.v1.Compu"
+          + "teEnginePreferences\022[\n\031vmware_engine_pre"
+          + "ferences\030\007 \001(\01328.google.cloud.migrationc"
+          + "enter.v1.VmwareEnginePreferences\022Y\n\030sole"
+          + "_tenancy_preferences\030\010 \001(\01327.google.clou"
+          + "d.migrationcenter.v1.SoleTenancyPreferen"
+          + "ces\"\260\001\n\030ComputeEnginePreferences\022P\n\023mach"
+          + "ine_preferences\030\002 \001(\01323.google.cloud.mig"
+          + "rationcenter.v1.MachinePreferences\022B\n\014li"
+          + "cense_type\030\003 \001(\0162,.google.cloud.migratio"
+          + "ncenter.v1.LicenseType\"d\n\022MachinePrefere"
+          + "nces\022N\n\026allowed_machine_series\030\001 \003(\0132..g"
+          + "oogle.cloud.migrationcenter.v1.MachineSe"
+          + "ries\"\035\n\rMachineSeries\022\014\n\004code\030\001 \001(\t\"\314\003\n\027"
+          + "VmwareEnginePreferences\022\034\n\024cpu_overcommi"
+          + "t_ratio\030\001 \001(\001\022\037\n\027memory_overcommit_ratio"
+          + "\030\002 \001(\001\022/\n\'storage_deduplication_compress"
+          + "ion_ratio\030\003 \001(\001\022`\n\017commitment_plan\030\004 \001(\016"
+          + "2G.google.cloud.migrationcenter.v1.Vmwar"
+          + "eEnginePreferences.CommitmentPlan\"\336\001\n\016Co"
+          + "mmitmentPlan\022\037\n\033COMMITMENT_PLAN_UNSPECIF"
+          + "IED\020\000\022\r\n\tON_DEMAND\020\001\022&\n\"COMMITMENT_1_YEA"
+          + "R_MONTHLY_PAYMENTS\020\002\022&\n\"COMMITMENT_3_YEA"
+          + "R_MONTHLY_PAYMENTS\020\003\022%\n!COMMITMENT_1_YEA"
+          + "R_UPFRONT_PAYMENT\020\004\022%\n!COMMITMENT_3_YEAR"
+          + "_UPFRONT_PAYMENT\020\005\"\215\005\n\026SoleTenancyPrefer"
+          + "ences\022\034\n\024cpu_overcommit_ratio\030\001 \001(\001\022n\n\027h"
+          + "ost_maintenance_policy\030\002 \001(\0162M.google.cl"
+          + "oud.migrationcenter.v1.SoleTenancyPrefer"
+          + "ences.HostMaintenancePolicy\022_\n\017commitmen"
+          + "t_plan\030\003 \001(\0162F.google.cloud.migrationcen"
+          + "ter.v1.SoleTenancyPreferences.Commitment"
+          + "Plan\022G\n\nnode_types\030\004 \003(\01323.google.cloud."
+          + "migrationcenter.v1.SoleTenantNodeType\"\312\001"
+          + "\n\025HostMaintenancePolicy\022\'\n#HOST_MAINTENA"
+          + "NCE_POLICY_UNSPECIFIED\020\000\022#\n\037HOST_MAINTEN"
+          + "ANCE_POLICY_DEFAULT\020\001\022,\n(HOST_MAINTENANC"
+          + "E_POLICY_RESTART_IN_PLACE\020\002\0225\n1HOST_MAIN"
+          + "TENANCE_POLICY_MIGRATE_WITHIN_NODE_GROUP"
+          + "\020\003\"n\n\016CommitmentPlan\022\037\n\033COMMITMENT_PLAN_"
+          + "UNSPECIFIED\020\000\022\r\n\tON_DEMAND\020\001\022\025\n\021COMMITME"
+          + "NT_1_YEAR\020\002\022\025\n\021COMMITMENT_3_YEAR\020\003\"\'\n\022So"
+          + "leTenantNodeType\022\021\n\tnode_name\030\001 \001(\t\".\n\021R"
+          + "egionPreferences\022\031\n\021preferred_regions\030\001 "
+          + "\003(\t\"\311\001\n\010Settings\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\022I\n\016"
+          + "preference_set\030\002 \001(\tB1\372A.\n,migrationcent"
+          + "er.googleapis.com/PreferenceSet:^\352A[\n\'mi",
+      "grationcenter.googleapis.com/Settings\0220p"
+          + "rojects/{project}/locations/{location}/s"
+          + "ettings\"\362\032\n\rReportSummary\022\\\n\020all_assets_"
+          + "stats\030\001 \001(\0132B.google.cloud.migrationcent"
+          + "er.v1.ReportSummary.AssetAggregateStats\022"
+          + "S\n\016group_findings\030\002 \003(\0132;.google.cloud.m"
+          + "igrationcenter.v1.ReportSummary.GroupFin"
+          + "ding\032\217\001\n\tChartData\022W\n\013data_points\030\001 \003(\0132"
+          + "B.google.cloud.migrationcenter.v1.Report"
+          + "Summary.ChartData.DataPoint\032)\n\tDataPoint"
+          + "\022\r\n\005label\030\001 \001(\t\022\r\n\005value\030\002 \001(\001\0322\n\024Utiliz"
+          + "ationChartData\022\014\n\004used\030\001 \001(\003\022\014\n\004free\030\002 \001"
+          + "(\003\032\262\001\n\022HistogramChartData\022Y\n\007buckets\030\001 \003"
+          + "(\0132H.google.cloud.migrationcenter.v1.Rep"
+          + "ortSummary.HistogramChartData.Bucket\032A\n\006"
+          + "Bucket\022\023\n\013lower_bound\030\001 \001(\003\022\023\n\013upper_bou"
+          + "nd\030\002 \001(\003\022\r\n\005count\030\003 \001(\003\032\304\005\n\023AssetAggrega"
+          + "teStats\022\032\n\022total_memory_bytes\030\001 \001(\003\022\033\n\023t"
+          + "otal_storage_bytes\030\002 \001(\003\022\023\n\013total_cores\030"
+          + "\003 \001(\003\022\024\n\014total_assets\030\004 \001(\003\022e\n\030memory_ut"
+          + "ilization_chart\030\005 \001(\0132C.google.cloud.mig"
+          + "rationcenter.v1.ReportSummary.Utilizatio"
+          + "nChartData\022f\n\031storage_utilization_chart\030"
+          + "\006 \001(\0132C.google.cloud.migrationcenter.v1."
+          + "ReportSummary.UtilizationChartData\022R\n\020op"
+          + "erating_system\030\007 \001(\01328.google.cloud.migr"
+          + "ationcenter.v1.ReportSummary.ChartData\022_"
+          + "\n\024core_count_histogram\030\010 \001(\0132A.google.cl"
+          + "oud.migrationcenter.v1.ReportSummary.His"
+          + "togramChartData\022a\n\026memory_bytes_histogra"
+          + "m\030\t \001(\0132A.google.cloud.migrationcenter.v"
+          + "1.ReportSummary.HistogramChartData\022b\n\027st"
+          + "orage_bytes_histogram\030\n \001(\0132A.google.clo"
+          + "ud.migrationcenter.v1.ReportSummary.Hist"
+          + "ogramChartData\032\200\001\n\027MachineSeriesAllocati"
+          + "on\022F\n\016machine_series\030\001 \001(\0132..google.clou"
+          + "d.migrationcenter.v1.MachineSeries\022\035\n\025al"
+          + "located_asset_count\030\002 \001(\003\032\217\002\n\024ComputeEng"
+          + "ineFinding\022\031\n\021allocated_regions\030\001 \003(\t\022\035\n"
+          + "\025allocated_asset_count\030\002 \001(\003\022j\n\032machine_"
+          + "series_allocations\030\003 \003(\0132F.google.cloud."
+          + "migrationcenter.v1.ReportSummary.Machine"
+          + "SeriesAllocation\022Q\n\024allocated_disk_types"
+          + "\030\004 \003(\01623.google.cloud.migrationcenter.v1"
+          + ".PersistentDiskType\032\256\001\n\023VmwareEngineFind"
+          + "ing\022\031\n\021allocated_regions\030\001 \003(\t\022\035\n\025alloca"
+          + "ted_asset_count\030\002 \001(\003\022]\n\020node_allocation"
+          + "s\030\003 \003(\0132C.google.cloud.migrationcenter.v"
+          + "1.ReportSummary.VmwareNodeAllocation\032\231\001\n"
+          + "\024VmwareNodeAllocation\022N\n\013vmware_node\030\001 \001"
+          + "(\01329.google.cloud.migrationcenter.v1.Rep"
+          + "ortSummary.VmwareNode\022\022\n\nnode_count\030\002 \001("
+          + "\003\022\035\n\025allocated_asset_count\030\003 \001(\003\032\032\n\nVmwa"
+          + "reNode\022\014\n\004code\030\001 \001(\t\032\260\001\n\021SoleTenantFindi"
+          + "ng\022\031\n\021allocated_regions\030\001 \003(\t\022\035\n\025allocat"
+          + "ed_asset_count\030\002 \001(\003\022a\n\020node_allocations"
+          + "\030\003 \003(\0132G.google.cloud.migrationcenter.v1"
+          + ".ReportSummary.SoleTenantNodeAllocation\032"
+          + "\220\001\n\030SoleTenantNodeAllocation\022A\n\004node\030\001 \001"
+          + "(\01323.google.cloud.migrationcenter.v1.Sol"
+          + "eTenantNodeType\022\022\n\nnode_count\030\002 \001(\003\022\035\n\025a"
+          + "llocated_asset_count\030\003 \001(\003\032\370\005\n\031GroupPref"
+          + "erenceSetFinding\022\024\n\014display_name\030\001 \001(\t\022\023"
+          + "\n\013description\030\002 \001(\t\022W\n\023machine_preferenc"
+          + "es\030\003 \001(\0132:.google.cloud.migrationcenter."
+          + "v1.VirtualMachinePreferences\022.\n\022monthly_"
+          + "cost_total\030\004 \001(\0132\022.google.type.Money\0220\n\024"
+          + "monthly_cost_compute\030\005 \001(\0132\022.google.type"
+          + ".Money\0223\n\027monthly_cost_os_license\030\006 \001(\0132"
+          + "\022.google.type.Money\0227\n\033monthly_cost_netw"
+          + "ork_egress\030\007 \001(\0132\022.google.type.Money\0220\n\024"
+          + "monthly_cost_storage\030\010 \001(\0132\022.google.type"
+          + ".Money\022.\n\022monthly_cost_other\030\t \001(\0132\022.goo"
+          + "gle.type.Money\022c\n\026compute_engine_finding"
+          + "\030\n \001(\0132C.google.cloud.migrationcenter.v1"
+          + ".ReportSummary.ComputeEngineFinding\022a\n\025v"
+          + "mware_engine_finding\030\013 \001(\0132B.google.clou"
+          + "d.migrationcenter.v1.ReportSummary.Vmwar"
+          + "eEngineFinding\022]\n\023sole_tenant_finding\030\014 "
+          + "\001(\0132@.google.cloud.migrationcenter.v1.Re"
+          + "portSummary.SoleTenantFinding\032\254\002\n\014GroupF"
+          + "inding\022\024\n\014display_name\030\001 \001(\t\022\023\n\013descript"
+          + "ion\030\002 \001(\t\022a\n\025asset_aggregate_stats\030\003 \001(\013"
+          + "2B.google.cloud.migrationcenter.v1.Repor"
+          + "tSummary.AssetAggregateStats\022#\n\027overlapp"
+          + "ing_asset_count\030\004 \001(\003B\002\030\001\022i\n\027preference_"
+          + "set_findings\030\005 \003(\0132H.google.cloud.migrat"
+          + "ioncenter.v1.ReportSummary.GroupPreferen"
+          + "ceSetFinding*R\n\tAssetView\022\032\n\026ASSET_VIEW_"
+          + "UNSPECIFIED\020\000\022\024\n\020ASSET_VIEW_BASIC\020\001\022\023\n\017A"
+          + "SSET_VIEW_FULL\020\002*n\n\025OperatingSystemFamil"
+          + "y\022\025\n\021OS_FAMILY_UNKNOWN\020\000\022\025\n\021OS_FAMILY_WI"
+          + "NDOWS\020\001\022\023\n\017OS_FAMILY_LINUX\020\002\022\022\n\016OS_FAMIL"
+          + "Y_UNIX\020\003*\363\001\n\017ImportJobFormat\022!\n\035IMPORT_J"
+          + "OB_FORMAT_UNSPECIFIED\020\000\022\"\n\036IMPORT_JOB_FO"
+          + "RMAT_RVTOOLS_XLSX\020\001\022!\n\035IMPORT_JOB_FORMAT"
+          + "_RVTOOLS_CSV\020\002\022&\n\"IMPORT_JOB_FORMAT_EXPO"
+          + "RTED_AWS_CSV\020\004\022(\n$IMPORT_JOB_FORMAT_EXPO"
+          + "RTED_AZURE_CSV\020\005\022$\n IMPORT_JOB_FORMAT_ST"
+          + "RATOZONE_CSV\020\006*e\n\rImportJobView\022\037\n\033IMPOR"
+          + "T_JOB_VIEW_UNSPECIFIED\020\000\022\031\n\025IMPORT_JOB_V"
+          + "IEW_BASIC\020\001\022\030\n\024IMPORT_JOB_VIEW_FULL\020\002*i\n"
+          + "\016ErrorFrameView\022 \n\034ERROR_FRAME_VIEW_UNSP"
+          + "ECIFIED\020\000\022\032\n\026ERROR_FRAME_VIEW_BASIC\020\001\022\031\n"
+          + "\025ERROR_FRAME_VIEW_FULL\020\002*\236\001\n\022PersistentD"
+          + "iskType\022$\n PERSISTENT_DISK_TYPE_UNSPECIF"
+          + "IED\020\000\022!\n\035PERSISTENT_DISK_TYPE_STANDARD\020\001"
+          + "\022!\n\035PERSISTENT_DISK_TYPE_BALANCED\020\002\022\034\n\030P"
+          + "ERSISTENT_DISK_TYPE_SSD\020\003*n\n\013LicenseType"
+          + "\022\034\n\030LICENSE_TYPE_UNSPECIFIED\020\000\022\030\n\024LICENS"
+          + "E_TYPE_DEFAULT\020\001\022\'\n#LICENSE_TYPE_BRING_Y"
+          + "OUR_OWN_LICENSE\020\002*\323\001\n\032SizingOptimization"
+          + "Strategy\022,\n(SIZING_OPTIMIZATION_STRATEGY"
+          + "_UNSPECIFIED\020\000\022/\n+SIZING_OPTIMIZATION_ST"
+          + "RATEGY_SAME_AS_SOURCE\020\001\022)\n%SIZING_OPTIMI"
+          + "ZATION_STRATEGY_MODERATE\020\002\022+\n\'SIZING_OPT"
+          + "IMIZATION_STRATEGY_AGGRESSIVE\020\003*\212\001\n\016Comm"
+          + "itmentPlan\022\037\n\033COMMITMENT_PLAN_UNSPECIFIE"
+          + "D\020\000\022\030\n\024COMMITMENT_PLAN_NONE\020\001\022\034\n\030COMMITM"
+          + "ENT_PLAN_ONE_YEAR\020\002\022\037\n\033COMMITMENT_PLAN_T"
+          + "HREE_YEARS\020\003*\355\001\n\035ComputeMigrationTargetP"
+          + "roduct\0220\n,COMPUTE_MIGRATION_TARGET_PRODU"
+          + "CT_UNSPECIFIED\020\000\0223\n/COMPUTE_MIGRATION_TA"
+          + "RGET_PRODUCT_COMPUTE_ENGINE\020\001\0222\n.COMPUTE"
+          + "_MIGRATION_TARGET_PRODUCT_VMWARE_ENGINE\020"
+          + "\002\0221\n-COMPUTE_MIGRATION_TARGET_PRODUCT_SO"
+          + "LE_TENANCY\020\003*p\n\nReportView\022\033\n\027REPORT_VIE"
+          + "W_UNSPECIFIED\020\000\022\025\n\021REPORT_VIEW_BASIC\020\001\022\024"
+          + "\n\020REPORT_VIEW_FULL\020\002\022\030\n\024REPORT_VIEW_STAN"
+          + "DARD\020\0032\254P\n\017MigrationCenter\022\262\001\n\nListAsset"
+          + "s\0222.google.cloud.migrationcenter.v1.List"
+          + "AssetsRequest\0323.google.cloud.migrationce"
+          + "nter.v1.ListAssetsResponse\";\332A\006parent\202\323\344"
+          + "\223\002,\022*/v1/{parent=projects/*/locations/*}"
+          + "/assets\022\237\001\n\010GetAsset\0220.google.cloud.migr"
+          + "ationcenter.v1.GetAssetRequest\032&.google."
+          + "cloud.migrationcenter.v1.Asset\"9\332A\004name\202"
+          + "\323\344\223\002,\022*/v1/{name=projects/*/locations/*/"
+          + "assets/*}\022\277\001\n\013UpdateAsset\0223.google.cloud"
+          + ".migrationcenter.v1.UpdateAssetRequest\032&"
+          + ".google.cloud.migrationcenter.v1.Asset\"S"
+          + "\332A\021asset,update_mask\202\323\344\223\002920/v1/{asset.n"
+          + "ame=projects/*/locations/*/assets/*}:\005as"
+          + "set\022\337\001\n\021BatchUpdateAssets\0229.google.cloud"
+          + ".migrationcenter.v1.BatchUpdateAssetsReq"
+          + "uest\032:.google.cloud.migrationcenter.v1.B"
+          + "atchUpdateAssetsResponse\"S\332A\017parent,requ"
+          + "ests\202\323\344\223\002;\"6/v1/{parent=projects/*/locat"
+          + "ions/*}/assets:batchUpdate:\001*\022\225\001\n\013Delete"
+          + "Asset\0223.google.cloud.migrationcenter.v1."
+          + "DeleteAssetRequest\032\026.google.protobuf.Emp"
+          + "ty\"9\332A\004name\202\323\344\223\002,**/v1/{name=projects/*/"
+          + "locations/*/assets/*}\022\270\001\n\021BatchDeleteAss"
+          + "ets\0229.google.cloud.migrationcenter.v1.Ba"
+          + "tchDeleteAssetsRequest\032\026.google.protobuf"
+          + ".Empty\"P\332A\014parent,names\202\323\344\223\002;\"6/v1/{pare"
+          + "nt=projects/*/locations/*}/assets:batchD"
+          + "elete:\001*\022\330\001\n\021ReportAssetFrames\0229.google."
+          + "cloud.migrationcenter.v1.ReportAssetFram"
+          + "esRequest\032:.google.cloud.migrationcenter"
+          + ".v1.ReportAssetFramesResponse\"L\202\323\344\223\002F\"</"
           + "v1/{parent=projects/*/locations/*}/asset"
-          + "s:aggregateValues:\001*\022\361\001\n\017CreateImportJob"
-          + "\0227.google.cloud.migrationcenter.v1.Creat"
-          + "eImportJobRequest\032\035.google.longrunning.O"
-          + "peration\"\205\001\312A\036\n\tImportJob\022\021OperationMeta"
-          + "data\332A\037parent,import_job,import_job_id\202\323"
-          + "\344\223\002<\"./v1/{parent=projects/*/locations/*"
-          + "}/importJobs:\nimport_job\022\302\001\n\016ListImportJ"
-          + "obs\0226.google.cloud.migrationcenter.v1.Li"
-          + "stImportJobsRequest\0327.google.cloud.migra"
-          + "tioncenter.v1.ListImportJobsResponse\"?\332A"
-          + "\006parent\202\323\344\223\0020\022./v1/{parent=projects/*/lo"
-          + "cations/*}/importJobs\022\257\001\n\014GetImportJob\0224"
-          + ".google.cloud.migrationcenter.v1.GetImpo"
-          + "rtJobRequest\032*.google.cloud.migrationcen"
-          + "ter.v1.ImportJob\"=\332A\004name\202\323\344\223\0020\022./v1/{na"
-          + "me=projects/*/locations/*/importJobs/*}\022"
-          + "\325\001\n\017DeleteImportJob\0227.google.cloud.migra"
-          + "tioncenter.v1.DeleteImportJobRequest\032\035.g"
-          + "oogle.longrunning.Operation\"j\312A*\n\025google"
-          + ".protobuf.Empty\022\021OperationMetadata\332A\004nam"
-          + "e\202\323\344\223\0020*./v1/{name=projects/*/locations/"
-          + "*/importJobs/*}\022\363\001\n\017UpdateImportJob\0227.go"
-          + "ogle.cloud.migrationcenter.v1.UpdateImpo"
-          + "rtJobRequest\032\035.google.longrunning.Operat"
-          + "ion\"\207\001\312A\036\n\tImportJob\022\021OperationMetadata\332"
-          + "A\026import_job,update_mask\202\323\344\223\002G29/v1/{imp"
-          + "ort_job.name=projects/*/locations/*/impo"
-          + "rtJobs/*}:\nimport_job\022\345\001\n\021ValidateImport"
-          + "Job\0229.google.cloud.migrationcenter.v1.Va"
-          + "lidateImportJobRequest\032\035.google.longrunn"
-          + "ing.Operation\"v\312A*\n\025google.protobuf.Empt"
-          + "y\022\021OperationMetadata\332A\004name\202\323\344\223\002<\"7/v1/{"
-          + "name=projects/*/locations/*/importJobs/*"
-          + "}:validate:\001*\022\326\001\n\014RunImportJob\0224.google."
-          + "cloud.migrationcenter.v1.RunImportJobReq"
-          + "uest\032\035.google.longrunning.Operation\"q\312A*"
+          + "s:reportAssetFrames:\006frames\022\335\001\n\025Aggregat"
+          + "eAssetsValues\022=.google.cloud.migrationce"
+          + "nter.v1.AggregateAssetsValuesRequest\032>.g"
+          + "oogle.cloud.migrationcenter.v1.Aggregate"
+          + "AssetsValuesResponse\"E\202\323\344\223\002?\":/v1/{paren"
+          + "t=projects/*/locations/*}/assets:aggrega"
+          + "teValues:\001*\022\361\001\n\017CreateImportJob\0227.google"
+          + ".cloud.migrationcenter.v1.CreateImportJo"
+          + "bRequest\032\035.google.longrunning.Operation\""
+          + "\205\001\312A\036\n\tImportJob\022\021OperationMetadata\332A\037pa"
+          + "rent,import_job,import_job_id\202\323\344\223\002<\"./v1"
+          + "/{parent=projects/*/locations/*}/importJ"
+          + "obs:\nimport_job\022\302\001\n\016ListImportJobs\0226.goo"
+          + "gle.cloud.migrationcenter.v1.ListImportJ"
+          + "obsRequest\0327.google.cloud.migrationcente"
+          + "r.v1.ListImportJobsResponse\"?\332A\006parent\202\323"
+          + "\344\223\0020\022./v1/{parent=projects/*/locations/*"
+          + "}/importJobs\022\257\001\n\014GetImportJob\0224.google.c"
+          + "loud.migrationcenter.v1.GetImportJobRequ"
+          + "est\032*.google.cloud.migrationcenter.v1.Im"
+          + "portJob\"=\332A\004name\202\323\344\223\0020\022./v1/{name=projec"
+          + "ts/*/locations/*/importJobs/*}\022\325\001\n\017Delet"
+          + "eImportJob\0227.google.cloud.migrationcente"
+          + "r.v1.DeleteImportJobRequest\032\035.google.lon"
+          + "grunning.Operation\"j\312A*\n\025google.protobuf"
+          + ".Empty\022\021OperationMetadata\332A\004name\202\323\344\223\0020*."
+          + "/v1/{name=projects/*/locations/*/importJ"
+          + "obs/*}\022\363\001\n\017UpdateImportJob\0227.google.clou"
+          + "d.migrationcenter.v1.UpdateImportJobRequ"
+          + "est\032\035.google.longrunning.Operation\"\207\001\312A\036"
+          + "\n\tImportJob\022\021OperationMetadata\332A\026import_"
+          + "job,update_mask\202\323\344\223\002G29/v1/{import_job.n"
+          + "ame=projects/*/locations/*/importJobs/*}"
+          + ":\nimport_job\022\345\001\n\021ValidateImportJob\0229.goo"
+          + "gle.cloud.migrationcenter.v1.ValidateImp"
+          + "ortJobRequest\032\035.google.longrunning.Opera"
+          + "tion\"v\312A*\n\025google.protobuf.Empty\022\021Operat"
+          + "ionMetadata\332A\004name\202\323\344\223\002<\"7/v1/{name=proj"
+          + "ects/*/locations/*/importJobs/*}:validat"
+          + "e:\001*\022\326\001\n\014RunImportJob\0224.google.cloud.mig"
+          + "rationcenter.v1.RunImportJobRequest\032\035.go"
+          + "ogle.longrunning.Operation\"q\312A*\n\025google."
+          + "protobuf.Empty\022\021OperationMetadata\332A\004name"
+          + "\202\323\344\223\0027\"2/v1/{name=projects/*/locations/*"
+          + "/importJobs/*}:run:\001*\022\320\001\n\021GetImportDataF"
+          + "ile\0229.google.cloud.migrationcenter.v1.Ge"
+          + "tImportDataFileRequest\032/.google.cloud.mi"
+          + "grationcenter.v1.ImportDataFile\"O\332A\004name"
+          + "\202\323\344\223\002B\022@/v1/{name=projects/*/locations/*"
+          + "/importJobs/*/importDataFiles/*}\022\343\001\n\023Lis"
+          + "tImportDataFiles\022;.google.cloud.migratio"
+          + "ncenter.v1.ListImportDataFilesRequest\032<."
+          + "google.cloud.migrationcenter.v1.ListImpo"
+          + "rtDataFilesResponse\"Q\332A\006parent\202\323\344\223\002B\022@/v"
+          + "1/{parent=projects/*/locations/*/importJ"
+          + "obs/*}/importDataFiles\022\244\002\n\024CreateImportD"
+          + "ataFile\022<.google.cloud.migrationcenter.v"
+          + "1.CreateImportDataFileRequest\032\035.google.l"
+          + "ongrunning.Operation\"\256\001\312A#\n\016ImportDataFi"
+          + "le\022\021OperationMetadata\332A+parent,import_da"
+          + "ta_file,import_data_file_id\202\323\344\223\002T\"@/v1/{"
+          + "parent=projects/*/locations/*/importJobs"
+          + "/*}/importDataFiles:\020import_data_file\022\361\001"
+          + "\n\024DeleteImportDataFile\022<.google.cloud.mi"
+          + "grationcenter.v1.DeleteImportDataFileReq"
+          + "uest\032\035.google.longrunning.Operation\"|\312A*"
           + "\n\025google.protobuf.Empty\022\021OperationMetada"
-          + "ta\332A\004name\202\323\344\223\0027\"2/v1/{name=projects/*/lo"
-          + "cations/*/importJobs/*}:run:\001*\022\320\001\n\021GetIm"
-          + "portDataFile\0229.google.cloud.migrationcen"
-          + "ter.v1.GetImportDataFileRequest\032/.google"
-          + ".cloud.migrationcenter.v1.ImportDataFile"
-          + "\"O\332A\004name\202\323\344\223\002B\022@/v1/{name=projects/*/lo"
+          + "ta\332A\004name\202\323\344\223\002B*@/v1/{name=projects/*/lo"
           + "cations/*/importJobs/*/importDataFiles/*"
-          + "}\022\343\001\n\023ListImportDataFiles\022;.google.cloud"
-          + ".migrationcenter.v1.ListImportDataFilesR"
-          + "equest\032<.google.cloud.migrationcenter.v1"
-          + ".ListImportDataFilesResponse\"Q\332A\006parent\202"
-          + "\323\344\223\002B\022@/v1/{parent=projects/*/locations/"
-          + "*/importJobs/*}/importDataFiles\022\244\002\n\024Crea"
-          + "teImportDataFile\022<.google.cloud.migratio"
-          + "ncenter.v1.CreateImportDataFileRequest\032\035"
-          + ".google.longrunning.Operation\"\256\001\312A#\n\016Imp"
-          + "ortDataFile\022\021OperationMetadata\332A+parent,"
-          + "import_data_file,import_data_file_id\202\323\344\223"
-          + "\002T\"@/v1/{parent=projects/*/locations/*/i"
-          + "mportJobs/*}/importDataFiles:\020import_dat"
-          + "a_file\022\361\001\n\024DeleteImportDataFile\022<.google"
-          + ".cloud.migrationcenter.v1.DeleteImportDa"
-          + "taFileRequest\032\035.google.longrunning.Opera"
-          + "tion\"|\312A*\n\025google.protobuf.Empty\022\021Operat"
-          + "ionMetadata\332A\004name\202\323\344\223\002B*@/v1/{name=proj"
-          + "ects/*/locations/*/importJobs/*/importDa"
-          + "taFiles/*}\022\262\001\n\nListGroups\0222.google.cloud"
-          + ".migrationcenter.v1.ListGroupsRequest\0323."
-          + "google.cloud.migrationcenter.v1.ListGrou"
-          + "psResponse\";\332A\006parent\202\323\344\223\002,\022*/v1/{parent"
-          + "=projects/*/locations/*}/groups\022\237\001\n\010GetG"
-          + "roup\0220.google.cloud.migrationcenter.v1.G"
-          + "etGroupRequest\032&.google.cloud.migrationc"
-          + "enter.v1.Group\"9\332A\004name\202\323\344\223\002,\022*/v1/{name"
-          + "=projects/*/locations/*/groups/*}\022\321\001\n\013Cr"
-          + "eateGroup\0223.google.cloud.migrationcenter"
-          + ".v1.CreateGroupRequest\032\035.google.longrunn"
-          + "ing.Operation\"n\312A\032\n\005Group\022\021OperationMeta"
-          + "data\332A\025parent,group,group_id\202\323\344\223\0023\"*/v1/"
-          + "{parent=projects/*/locations/*}/groups:\005"
-          + "group\022\323\001\n\013UpdateGroup\0223.google.cloud.mig"
-          + "rationcenter.v1.UpdateGroupRequest\032\035.goo"
-          + "gle.longrunning.Operation\"p\312A\032\n\005Group\022\021O"
-          + "perationMetadata\332A\021group,update_mask\202\323\344\223"
-          + "\002920/v1/{group.name=projects/*/locations"
-          + "/*/groups/*}:\005group\022\311\001\n\013DeleteGroup\0223.go"
-          + "ogle.cloud.migrationcenter.v1.DeleteGrou"
-          + "pRequest\032\035.google.longrunning.Operation\""
-          + "f\312A*\n\025google.protobuf.Empty\022\021OperationMe"
-          + "tadata\332A\004name\202\323\344\223\002,**/v1/{name=projects/"
-          + "*/locations/*/groups/*}\022\322\001\n\020AddAssetsToG"
-          + "roup\0228.google.cloud.migrationcenter.v1.A"
-          + "ddAssetsToGroupRequest\032\035.google.longrunn"
-          + "ing.Operation\"e\312A\032\n\005Group\022\021OperationMeta"
-          + "data\332A\005group\202\323\344\223\002:\"5/v1/{group=projects/"
-          + "*/locations/*/groups/*}:addAssets:\001*\022\337\001\n"
-          + "\025RemoveAssetsFromGroup\022=.google.cloud.mi"
-          + "grationcenter.v1.RemoveAssetsFromGroupRe"
-          + "quest\032\035.google.longrunning.Operation\"h\312A"
-          + "\032\n\005Group\022\021OperationMetadata\332A\005group\202\323\344\223\002"
-          + "=\"8/v1/{group=projects/*/locations/*/gro"
-          + "ups/*}:removeAssets:\001*\022\320\001\n\017ListErrorFram"
-          + "es\0227.google.cloud.migrationcenter.v1.Lis"
-          + "tErrorFramesRequest\0328.google.cloud.migra"
-          + "tioncenter.v1.ListErrorFramesResponse\"J\332"
-          + "A\006parent\202\323\344\223\002;\0229/v1/{parent=projects/*/l"
-          + "ocations/*/sources/*}/errorFrames\022\275\001\n\rGe"
-          + "tErrorFrame\0225.google.cloud.migrationcent"
-          + "er.v1.GetErrorFrameRequest\032+.google.clou"
-          + "d.migrationcenter.v1.ErrorFrame\"H\332A\004name"
-          + "\202\323\344\223\002;\0229/v1/{name=projects/*/locations/*"
-          + "/sources/*/errorFrames/*}\022\266\001\n\013ListSource"
+          + "}\022\262\001\n\nListGroups\0222.google.cloud.migratio"
+          + "ncenter.v1.ListGroupsRequest\0323.google.cl"
+          + "oud.migrationcenter.v1.ListGroupsRespons"
+          + "e\";\332A\006parent\202\323\344\223\002,\022*/v1/{parent=projects"
+          + "/*/locations/*}/groups\022\237\001\n\010GetGroup\0220.go"
+          + "ogle.cloud.migrationcenter.v1.GetGroupRe"
+          + "quest\032&.google.cloud.migrationcenter.v1."
+          + "Group\"9\332A\004name\202\323\344\223\002,\022*/v1/{name=projects"
+          + "/*/locations/*/groups/*}\022\321\001\n\013CreateGroup"
+          + "\0223.google.cloud.migrationcenter.v1.Creat"
+          + "eGroupRequest\032\035.google.longrunning.Opera"
+          + "tion\"n\312A\032\n\005Group\022\021OperationMetadata\332A\025pa"
+          + "rent,group,group_id\202\323\344\223\0023\"*/v1/{parent=p"
+          + "rojects/*/locations/*}/groups:\005group\022\323\001\n"
+          + "\013UpdateGroup\0223.google.cloud.migrationcen"
+          + "ter.v1.UpdateGroupRequest\032\035.google.longr"
+          + "unning.Operation\"p\312A\032\n\005Group\022\021OperationM"
+          + "etadata\332A\021group,update_mask\202\323\344\223\002920/v1/{"
+          + "group.name=projects/*/locations/*/groups"
+          + "/*}:\005group\022\311\001\n\013DeleteGroup\0223.google.clou"
+          + "d.migrationcenter.v1.DeleteGroupRequest\032"
+          + "\035.google.longrunning.Operation\"f\312A*\n\025goo"
+          + "gle.protobuf.Empty\022\021OperationMetadata\332A\004"
+          + "name\202\323\344\223\002,**/v1/{name=projects/*/locatio"
+          + "ns/*/groups/*}\022\322\001\n\020AddAssetsToGroup\0228.go"
+          + "ogle.cloud.migrationcenter.v1.AddAssetsT"
+          + "oGroupRequest\032\035.google.longrunning.Opera"
+          + "tion\"e\312A\032\n\005Group\022\021OperationMetadata\332A\005gr"
+          + "oup\202\323\344\223\002:\"5/v1/{group=projects/*/locatio"
+          + "ns/*/groups/*}:addAssets:\001*\022\337\001\n\025RemoveAs"
+          + "setsFromGroup\022=.google.cloud.migrationce"
+          + "nter.v1.RemoveAssetsFromGroupRequest\032\035.g"
+          + "oogle.longrunning.Operation\"h\312A\032\n\005Group\022"
+          + "\021OperationMetadata\332A\005group\202\323\344\223\002=\"8/v1/{g"
+          + "roup=projects/*/locations/*/groups/*}:re"
+          + "moveAssets:\001*\022\320\001\n\017ListErrorFrames\0227.goog"
+          + "le.cloud.migrationcenter.v1.ListErrorFra"
+          + "mesRequest\0328.google.cloud.migrationcente"
+          + "r.v1.ListErrorFramesResponse\"J\332A\006parent\202"
+          + "\323\344\223\002;\0229/v1/{parent=projects/*/locations/"
+          + "*/sources/*}/errorFrames\022\275\001\n\rGetErrorFra"
+          + "me\0225.google.cloud.migrationcenter.v1.Get"
+          + "ErrorFrameRequest\032+.google.cloud.migrati"
+          + "oncenter.v1.ErrorFrame\"H\332A\004name\202\323\344\223\002;\0229/"
+          + "v1/{name=projects/*/locations/*/sources/"
+          + "*/errorFrames/*}\022\266\001\n\013ListSources\0223.googl"
+          + "e.cloud.migrationcenter.v1.ListSourcesRe"
+          + "quest\0324.google.cloud.migrationcenter.v1."
+          + "ListSourcesResponse\"<\332A\006parent\202\323\344\223\002-\022+/v"
+          + "1/{parent=projects/*/locations/*}/source"
+          + "s\022\243\001\n\tGetSource\0221.google.cloud.migration"
+          + "center.v1.GetSourceRequest\032\'.google.clou"
+          + "d.migrationcenter.v1.Source\":\332A\004name\202\323\344\223"
+          + "\002-\022+/v1/{name=projects/*/locations/*/sou"
+          + "rces/*}\022\330\001\n\014CreateSource\0224.google.cloud."
+          + "migrationcenter.v1.CreateSourceRequest\032\035"
+          + ".google.longrunning.Operation\"s\312A\033\n\006Sour"
+          + "ce\022\021OperationMetadata\332A\027parent,source,so"
+          + "urce_id\202\323\344\223\0025\"+/v1/{parent=projects/*/lo"
+          + "cations/*}/sources:\006source\022\332\001\n\014UpdateSou"
+          + "rce\0224.google.cloud.migrationcenter.v1.Up"
+          + "dateSourceRequest\032\035.google.longrunning.O"
+          + "peration\"u\312A\033\n\006Source\022\021OperationMetadata"
+          + "\332A\022source,update_mask\202\323\344\223\002<22/v1/{source"
+          + ".name=projects/*/locations/*/sources/*}:"
+          + "\006source\022\314\001\n\014DeleteSource\0224.google.cloud."
+          + "migrationcenter.v1.DeleteSourceRequest\032\035"
+          + ".google.longrunning.Operation\"g\312A*\n\025goog"
+          + "le.protobuf.Empty\022\021OperationMetadata\332A\004n"
+          + "ame\202\323\344\223\002-*+/v1/{name=projects/*/location"
+          + "s/*/sources/*}\022\322\001\n\022ListPreferenceSets\022:."
+          + "google.cloud.migrationcenter.v1.ListPref"
+          + "erenceSetsRequest\032;.google.cloud.migrati"
+          + "oncenter.v1.ListPreferenceSetsResponse\"C"
+          + "\332A\006parent\202\323\344\223\0024\0222/v1/{parent=projects/*/"
+          + "locations/*}/preferenceSets\022\277\001\n\020GetPrefe"
+          + "renceSet\0228.google.cloud.migrationcenter."
+          + "v1.GetPreferenceSetRequest\032..google.clou"
+          + "d.migrationcenter.v1.PreferenceSet\"A\332A\004n"
+          + "ame\202\323\344\223\0024\0222/v1/{name=projects/*/location"
+          + "s/*/preferenceSets/*}\022\215\002\n\023CreatePreferen"
+          + "ceSet\022;.google.cloud.migrationcenter.v1."
+          + "CreatePreferenceSetRequest\032\035.google.long"
+          + "running.Operation\"\231\001\312A\"\n\rPreferenceSet\022\021"
+          + "OperationMetadata\332A\'parent,preference_se"
+          + "t,preference_set_id\202\323\344\223\002D\"2/v1/{parent=p"
+          + "rojects/*/locations/*}/preferenceSets:\016p"
+          + "reference_set\022\217\002\n\023UpdatePreferenceSet\022;."
+          + "google.cloud.migrationcenter.v1.UpdatePr"
+          + "eferenceSetRequest\032\035.google.longrunning."
+          + "Operation\"\233\001\312A\"\n\rPreferenceSet\022\021Operatio"
+          + "nMetadata\332A\032preference_set,update_mask\202\323"
+          + "\344\223\002S2A/v1/{preference_set.name=projects/"
+          + "*/locations/*/preferenceSets/*}:\016prefere"
+          + "nce_set\022\341\001\n\023DeletePreferenceSet\022;.google"
+          + ".cloud.migrationcenter.v1.DeletePreferen"
+          + "ceSetRequest\032\035.google.longrunning.Operat"
+          + "ion\"n\312A*\n\025google.protobuf.Empty\022\021Operati"
+          + "onMetadata\332A\004name\202\323\344\223\0024*2/v1/{name=proje"
+          + "cts/*/locations/*/preferenceSets/*}\022\250\001\n\013"
+          + "GetSettings\0223.google.cloud.migrationcent"
+          + "er.v1.GetSettingsRequest\032).google.cloud."
+          + "migrationcenter.v1.Settings\"9\332A\004name\202\323\344\223"
+          + "\002,\022*/v1/{name=projects/*/locations/*/set"
+          + "tings}\022\345\001\n\016UpdateSettings\0226.google.cloud"
+          + ".migrationcenter.v1.UpdateSettingsReques"
+          + "t\032\035.google.longrunning.Operation\"|\312A\035\n\010S"
+          + "ettings\022\021OperationMetadata\332A\024settings,up"
+          + "date_mask\202\323\344\223\002?23/v1/{settings.name=proj"
+          + "ects/*/locations/*/settings}:\010settings\022\206"
+          + "\002\n\022CreateReportConfig\022:.google.cloud.mig"
+          + "rationcenter.v1.CreateReportConfigReques"
+          + "t\032\035.google.longrunning.Operation\"\224\001\312A!\n\014"
+          + "ReportConfig\022\021OperationMetadata\332A%parent"
+          + ",report_config,report_config_id\202\323\344\223\002B\"1/"
+          + "v1/{parent=projects/*/locations/*}/repor"
+          + "tConfigs:\rreport_config\022\273\001\n\017GetReportCon"
+          + "fig\0227.google.cloud.migrationcenter.v1.Ge"
+          + "tReportConfigRequest\032-.google.cloud.migr"
+          + "ationcenter.v1.ReportConfig\"@\332A\004name\202\323\344\223"
+          + "\0023\0221/v1/{name=projects/*/locations/*/rep"
+          + "ortConfigs/*}\022\316\001\n\021ListReportConfigs\0229.go"
+          + "ogle.cloud.migrationcenter.v1.ListReport"
+          + "ConfigsRequest\032:.google.cloud.migrationc"
+          + "enter.v1.ListReportConfigsResponse\"B\332A\006p"
+          + "arent\202\323\344\223\0023\0221/v1/{parent=projects/*/loca"
+          + "tions/*}/reportConfigs\022\336\001\n\022DeleteReportC"
+          + "onfig\022:.google.cloud.migrationcenter.v1."
+          + "DeleteReportConfigRequest\032\035.google.longr"
+          + "unning.Operation\"m\312A*\n\025google.protobuf.E"
+          + "mpty\022\021OperationMetadata\332A\004name\202\323\344\223\0023*1/v"
+          + "1/{name=projects/*/locations/*/reportCon"
+          + "figs/*}\022\351\001\n\014CreateReport\0224.google.cloud."
+          + "migrationcenter.v1.CreateReportRequest\032\035"
+          + ".google.longrunning.Operation\"\203\001\312A\033\n\006Rep"
+          + "ort\022\021OperationMetadata\332A\027parent,report,r"
+          + "eport_id\202\323\344\223\002E\";/v1/{parent=projects/*/l"
+          + "ocations/*/reportConfigs/*}/reports:\006rep"
+          + "ort\022\263\001\n\tGetReport\0221.google.cloud.migrati"
+          + "oncenter.v1.GetReportRequest\032\'.google.cl"
+          + "oud.migrationcenter.v1.Report\"J\332A\004name\202\323"
+          + "\344\223\002=\022;/v1/{name=projects/*/locations/*/r"
+          + "eportConfigs/*/reports/*}\022\306\001\n\013ListReport"
           + "s\0223.google.cloud.migrationcenter.v1.List"
-          + "SourcesRequest\0324.google.cloud.migrationc"
-          + "enter.v1.ListSourcesResponse\"<\332A\006parent\202"
-          + "\323\344\223\002-\022+/v1/{parent=projects/*/locations/"
-          + "*}/sources\022\243\001\n\tGetSource\0221.google.cloud."
-          + "migrationcenter.v1.GetSourceRequest\032\'.go"
-          + "ogle.cloud.migrationcenter.v1.Source\":\332A"
-          + "\004name\202\323\344\223\002-\022+/v1/{name=projects/*/locati"
-          + "ons/*/sources/*}\022\330\001\n\014CreateSource\0224.goog"
-          + "le.cloud.migrationcenter.v1.CreateSource"
-          + "Request\032\035.google.longrunning.Operation\"s"
-          + "\312A\033\n\006Source\022\021OperationMetadata\332A\027parent,"
-          + "source,source_id\202\323\344\223\0025\"+/v1/{parent=proj"
-          + "ects/*/locations/*}/sources:\006source\022\332\001\n\014"
-          + "UpdateSource\0224.google.cloud.migrationcen"
-          + "ter.v1.UpdateSourceRequest\032\035.google.long"
-          + "running.Operation\"u\312A\033\n\006Source\022\021Operatio"
-          + "nMetadata\332A\022source,update_mask\202\323\344\223\002<22/v"
-          + "1/{source.name=projects/*/locations/*/so"
-          + "urces/*}:\006source\022\314\001\n\014DeleteSource\0224.goog"
-          + "le.cloud.migrationcenter.v1.DeleteSource"
-          + "Request\032\035.google.longrunning.Operation\"g"
-          + "\312A*\n\025google.protobuf.Empty\022\021OperationMet"
-          + "adata\332A\004name\202\323\344\223\002-*+/v1/{name=projects/*"
-          + "/locations/*/sources/*}\022\322\001\n\022ListPreferen"
-          + "ceSets\022:.google.cloud.migrationcenter.v1"
-          + ".ListPreferenceSetsRequest\032;.google.clou"
-          + "d.migrationcenter.v1.ListPreferenceSetsR"
-          + "esponse\"C\332A\006parent\202\323\344\223\0024\0222/v1/{parent=pr"
-          + "ojects/*/locations/*}/preferenceSets\022\277\001\n"
-          + "\020GetPreferenceSet\0228.google.cloud.migrati"
-          + "oncenter.v1.GetPreferenceSetRequest\032..go"
-          + "ogle.cloud.migrationcenter.v1.Preference"
-          + "Set\"A\332A\004name\202\323\344\223\0024\0222/v1/{name=projects/*"
-          + "/locations/*/preferenceSets/*}\022\215\002\n\023Creat"
-          + "ePreferenceSet\022;.google.cloud.migrationc"
-          + "enter.v1.CreatePreferenceSetRequest\032\035.go"
-          + "ogle.longrunning.Operation\"\231\001\312A\"\n\rPrefer"
-          + "enceSet\022\021OperationMetadata\332A\'parent,pref"
-          + "erence_set,preference_set_id\202\323\344\223\002D\"2/v1/"
-          + "{parent=projects/*/locations/*}/preferen"
-          + "ceSets:\016preference_set\022\217\002\n\023UpdatePrefere"
-          + "nceSet\022;.google.cloud.migrationcenter.v1"
-          + ".UpdatePreferenceSetRequest\032\035.google.lon"
-          + "grunning.Operation\"\233\001\312A\"\n\rPreferenceSet\022"
-          + "\021OperationMetadata\332A\032preference_set,upda"
-          + "te_mask\202\323\344\223\002S2A/v1/{preference_set.name="
-          + "projects/*/locations/*/preferenceSets/*}"
-          + ":\016preference_set\022\341\001\n\023DeletePreferenceSet"
-          + "\022;.google.cloud.migrationcenter.v1.Delet"
-          + "ePreferenceSetRequest\032\035.google.longrunni"
-          + "ng.Operation\"n\312A*\n\025google.protobuf.Empty"
-          + "\022\021OperationMetadata\332A\004name\202\323\344\223\0024*2/v1/{n"
-          + "ame=projects/*/locations/*/preferenceSet"
-          + "s/*}\022\250\001\n\013GetSettings\0223.google.cloud.migr"
-          + "ationcenter.v1.GetSettingsRequest\032).goog"
-          + "le.cloud.migrationcenter.v1.Settings\"9\332A"
-          + "\004name\202\323\344\223\002,\022*/v1/{name=projects/*/locati"
-          + "ons/*/settings}\022\345\001\n\016UpdateSettings\0226.goo"
-          + "gle.cloud.migrationcenter.v1.UpdateSetti"
-          + "ngsRequest\032\035.google.longrunning.Operatio"
-          + "n\"|\312A\035\n\010Settings\022\021OperationMetadata\332A\024se"
-          + "ttings,update_mask\202\323\344\223\002?23/v1/{settings."
-          + "name=projects/*/locations/*/settings}:\010s"
-          + "ettings\022\206\002\n\022CreateReportConfig\022:.google."
-          + "cloud.migrationcenter.v1.CreateReportCon"
-          + "figRequest\032\035.google.longrunning.Operatio"
-          + "n\"\224\001\312A!\n\014ReportConfig\022\021OperationMetadata"
-          + "\332A%parent,report_config,report_config_id"
-          + "\202\323\344\223\002B\"1/v1/{parent=projects/*/locations"
-          + "/*}/reportConfigs:\rreport_config\022\273\001\n\017Get"
-          + "ReportConfig\0227.google.cloud.migrationcen"
-          + "ter.v1.GetReportConfigRequest\032-.google.c"
-          + "loud.migrationcenter.v1.ReportConfig\"@\332A"
-          + "\004name\202\323\344\223\0023\0221/v1/{name=projects/*/locati"
-          + "ons/*/reportConfigs/*}\022\316\001\n\021ListReportCon"
-          + "figs\0229.google.cloud.migrationcenter.v1.L"
-          + "istReportConfigsRequest\032:.google.cloud.m"
-          + "igrationcenter.v1.ListReportConfigsRespo"
-          + "nse\"B\332A\006parent\202\323\344\223\0023\0221/v1/{parent=projec"
-          + "ts/*/locations/*}/reportConfigs\022\336\001\n\022Dele"
-          + "teReportConfig\022:.google.cloud.migrationc"
-          + "enter.v1.DeleteReportConfigRequest\032\035.goo"
-          + "gle.longrunning.Operation\"m\312A*\n\025google.p"
-          + "rotobuf.Empty\022\021OperationMetadata\332A\004name\202"
-          + "\323\344\223\0023*1/v1/{name=projects/*/locations/*/"
-          + "reportConfigs/*}\022\351\001\n\014CreateReport\0224.goog"
-          + "le.cloud.migrationcenter.v1.CreateReport"
-          + "Request\032\035.google.longrunning.Operation\"\203"
-          + "\001\312A\033\n\006Report\022\021OperationMetadata\332A\027parent"
-          + ",report,report_id\202\323\344\223\002E\";/v1/{parent=pro"
-          + "jects/*/locations/*/reportConfigs/*}/rep"
-          + "orts:\006report\022\263\001\n\tGetReport\0221.google.clou"
-          + "d.migrationcenter.v1.GetReportRequest\032\'."
-          + "google.cloud.migrationcenter.v1.Report\"J"
-          + "\332A\004name\202\323\344\223\002=\022;/v1/{name=projects/*/loca"
-          + "tions/*/reportConfigs/*/reports/*}\022\306\001\n\013L"
-          + "istReports\0223.google.cloud.migrationcente"
-          + "r.v1.ListReportsRequest\0324.google.cloud.m"
-          + "igrationcenter.v1.ListReportsResponse\"L\332"
-          + "A\006parent\202\323\344\223\002=\022;/v1/{parent=projects/*/l"
-          + "ocations/*/reportConfigs/*}/reports\022\334\001\n\014"
-          + "DeleteReport\0224.google.cloud.migrationcen"
-          + "ter.v1.DeleteReportRequest\032\035.google.long"
-          + "running.Operation\"w\312A*\n\025google.protobuf."
-          + "Empty\022\021OperationMetadata\332A\004name\202\323\344\223\002=*;/"
-          + "v1/{name=projects/*/locations/*/reportCo"
-          + "nfigs/*/reports/*}\032R\312A\036migrationcenter.g"
-          + "oogleapis.com\322A.https://www.googleapis.c"
-          + "om/auth/cloud-platformB\365\001\n#com.google.cl"
-          + "oud.migrationcenter.v1B\024MigrationCenterP"
-          + "rotoP\001ZMcloud.google.com/go/migrationcen"
-          + "ter/apiv1/migrationcenterpb;migrationcen"
-          + "terpb\252\002\037Google.Cloud.MigrationCenter.V1\312"
-          + "\002\037Google\\Cloud\\MigrationCenter\\V1\352\002\"Goog"
-          + "le::Cloud::MigrationCenter::V1b\006proto3"
+          + "ReportsRequest\0324.google.cloud.migrationc"
+          + "enter.v1.ListReportsResponse\"L\332A\006parent\202"
+          + "\323\344\223\002=\022;/v1/{parent=projects/*/locations/"
+          + "*/reportConfigs/*}/reports\022\334\001\n\014DeleteRep"
+          + "ort\0224.google.cloud.migrationcenter.v1.De"
+          + "leteReportRequest\032\035.google.longrunning.O"
+          + "peration\"w\312A*\n\025google.protobuf.Empty\022\021Op"
+          + "erationMetadata\332A\004name\202\323\344\223\002=*;/v1/{name="
+          + "projects/*/locations/*/reportConfigs/*/r"
+          + "eports/*}\032R\312A\036migrationcenter.googleapis"
+          + ".com\322A.https://www.googleapis.com/auth/c"
+          + "loud-platformB\365\001\n#com.google.cloud.migra"
+          + "tioncenter.v1B\024MigrationCenterProtoP\001ZMc"
+          + "loud.google.com/go/migrationcenter/apiv1"
+          + "/migrationcenterpb;migrationcenterpb\252\002\037G"
+          + "oogle.Cloud.MigrationCenter.V1\312\002\037Google\\"
+          + "Cloud\\MigrationCenter\\V1\352\002\"Google::Cloud"
+          + "::MigrationCenter::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -3072,10 +3186,18 @@ public final class MigrationCenterProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_Insight_descriptor,
             new java.lang.String[] {
-              "MigrationInsight", "Insight",
+              "MigrationInsight", "GenericInsight", "Insight",
+            });
+    internal_static_google_cloud_migrationcenter_v1_GenericInsight_descriptor =
+        getDescriptor().getMessageTypes().get(121);
+    internal_static_google_cloud_migrationcenter_v1_GenericInsight_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_migrationcenter_v1_GenericInsight_descriptor,
+            new java.lang.String[] {
+              "MessageId", "DefaultMessage", "AdditionalInformation",
             });
     internal_static_google_cloud_migrationcenter_v1_MigrationInsight_descriptor =
-        getDescriptor().getMessageTypes().get(121);
+        getDescriptor().getMessageTypes().get(122);
     internal_static_google_cloud_migrationcenter_v1_MigrationInsight_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_MigrationInsight_descriptor,
@@ -3083,20 +3205,12 @@ public final class MigrationCenterProto {
               "Fit", "ComputeEngineTarget", "MigrationTarget",
             });
     internal_static_google_cloud_migrationcenter_v1_ComputeEngineMigrationTarget_descriptor =
-        getDescriptor().getMessageTypes().get(122);
+        getDescriptor().getMessageTypes().get(123);
     internal_static_google_cloud_migrationcenter_v1_ComputeEngineMigrationTarget_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_ComputeEngineMigrationTarget_descriptor,
             new java.lang.String[] {
               "Shape",
-            });
-    internal_static_google_cloud_migrationcenter_v1_FitDescriptor_descriptor =
-        getDescriptor().getMessageTypes().get(123);
-    internal_static_google_cloud_migrationcenter_v1_FitDescriptor_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_migrationcenter_v1_FitDescriptor_descriptor,
-            new java.lang.String[] {
-              "FitLevel",
             });
     internal_static_google_cloud_migrationcenter_v1_ComputeEngineShapeDescriptor_descriptor =
         getDescriptor().getMessageTypes().get(124);
@@ -3104,10 +3218,31 @@ public final class MigrationCenterProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_ComputeEngineShapeDescriptor_descriptor,
             new java.lang.String[] {
-              "MemoryMb", "PhysicalCoreCount", "LogicalCoreCount", "Series", "MachineType",
+              "MemoryMb",
+              "PhysicalCoreCount",
+              "LogicalCoreCount",
+              "Series",
+              "MachineType",
+              "Storage",
+            });
+    internal_static_google_cloud_migrationcenter_v1_ComputeStorageDescriptor_descriptor =
+        getDescriptor().getMessageTypes().get(125);
+    internal_static_google_cloud_migrationcenter_v1_ComputeStorageDescriptor_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_migrationcenter_v1_ComputeStorageDescriptor_descriptor,
+            new java.lang.String[] {
+              "Type", "SizeGb",
+            });
+    internal_static_google_cloud_migrationcenter_v1_FitDescriptor_descriptor =
+        getDescriptor().getMessageTypes().get(126);
+    internal_static_google_cloud_migrationcenter_v1_FitDescriptor_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_migrationcenter_v1_FitDescriptor_descriptor,
+            new java.lang.String[] {
+              "FitLevel",
             });
     internal_static_google_cloud_migrationcenter_v1_Aggregation_descriptor =
-        getDescriptor().getMessageTypes().get(125);
+        getDescriptor().getMessageTypes().get(127);
     internal_static_google_cloud_migrationcenter_v1_Aggregation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_Aggregation_descriptor,
@@ -3149,7 +3284,7 @@ public final class MigrationCenterProto {
             internal_static_google_cloud_migrationcenter_v1_Aggregation_Frequency_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_migrationcenter_v1_AggregationResult_descriptor =
-        getDescriptor().getMessageTypes().get(126);
+        getDescriptor().getMessageTypes().get(128);
     internal_static_google_cloud_migrationcenter_v1_AggregationResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_AggregationResult_descriptor,
@@ -3217,7 +3352,7 @@ public final class MigrationCenterProto {
               "Key", "Value",
             });
     internal_static_google_cloud_migrationcenter_v1_FileValidationReport_descriptor =
-        getDescriptor().getMessageTypes().get(127);
+        getDescriptor().getMessageTypes().get(129);
     internal_static_google_cloud_migrationcenter_v1_FileValidationReport_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_FileValidationReport_descriptor,
@@ -3225,7 +3360,7 @@ public final class MigrationCenterProto {
               "FileName", "RowErrors", "PartialReport", "FileErrors",
             });
     internal_static_google_cloud_migrationcenter_v1_ValidationReport_descriptor =
-        getDescriptor().getMessageTypes().get(128);
+        getDescriptor().getMessageTypes().get(130);
     internal_static_google_cloud_migrationcenter_v1_ValidationReport_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_ValidationReport_descriptor,
@@ -3233,7 +3368,7 @@ public final class MigrationCenterProto {
               "FileValidations", "JobErrors",
             });
     internal_static_google_cloud_migrationcenter_v1_ExecutionReport_descriptor =
-        getDescriptor().getMessageTypes().get(129);
+        getDescriptor().getMessageTypes().get(131);
     internal_static_google_cloud_migrationcenter_v1_ExecutionReport_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_ExecutionReport_descriptor,
@@ -3241,7 +3376,7 @@ public final class MigrationCenterProto {
               "FramesReported", "ExecutionErrors", "TotalRowsCount",
             });
     internal_static_google_cloud_migrationcenter_v1_ImportError_descriptor =
-        getDescriptor().getMessageTypes().get(130);
+        getDescriptor().getMessageTypes().get(132);
     internal_static_google_cloud_migrationcenter_v1_ImportError_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_ImportError_descriptor,
@@ -3249,7 +3384,7 @@ public final class MigrationCenterProto {
               "ErrorDetails", "Severity",
             });
     internal_static_google_cloud_migrationcenter_v1_ImportRowError_descriptor =
-        getDescriptor().getMessageTypes().get(131);
+        getDescriptor().getMessageTypes().get(133);
     internal_static_google_cloud_migrationcenter_v1_ImportRowError_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_ImportRowError_descriptor,
@@ -3257,7 +3392,7 @@ public final class MigrationCenterProto {
               "RowNumber", "VmName", "VmUuid", "Errors",
             });
     internal_static_google_cloud_migrationcenter_v1_UploadFileInfo_descriptor =
-        getDescriptor().getMessageTypes().get(132);
+        getDescriptor().getMessageTypes().get(134);
     internal_static_google_cloud_migrationcenter_v1_UploadFileInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_UploadFileInfo_descriptor,
@@ -3275,7 +3410,7 @@ public final class MigrationCenterProto {
               "Key", "Value",
             });
     internal_static_google_cloud_migrationcenter_v1_AssetList_descriptor =
-        getDescriptor().getMessageTypes().get(133);
+        getDescriptor().getMessageTypes().get(135);
     internal_static_google_cloud_migrationcenter_v1_AssetList_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_AssetList_descriptor,
@@ -3283,7 +3418,7 @@ public final class MigrationCenterProto {
               "AssetIds",
             });
     internal_static_google_cloud_migrationcenter_v1_FrameViolationEntry_descriptor =
-        getDescriptor().getMessageTypes().get(134);
+        getDescriptor().getMessageTypes().get(136);
     internal_static_google_cloud_migrationcenter_v1_FrameViolationEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_FrameViolationEntry_descriptor,
@@ -3291,18 +3426,21 @@ public final class MigrationCenterProto {
               "Field", "Violation",
             });
     internal_static_google_cloud_migrationcenter_v1_VirtualMachinePreferences_descriptor =
-        getDescriptor().getMessageTypes().get(135);
+        getDescriptor().getMessageTypes().get(137);
     internal_static_google_cloud_migrationcenter_v1_VirtualMachinePreferences_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_VirtualMachinePreferences_descriptor,
             new java.lang.String[] {
+              "TargetProduct",
               "RegionPreferences",
               "CommitmentPlan",
               "SizingOptimizationStrategy",
               "ComputeEnginePreferences",
+              "VmwareEnginePreferences",
+              "SoleTenancyPreferences",
             });
     internal_static_google_cloud_migrationcenter_v1_ComputeEnginePreferences_descriptor =
-        getDescriptor().getMessageTypes().get(136);
+        getDescriptor().getMessageTypes().get(138);
     internal_static_google_cloud_migrationcenter_v1_ComputeEnginePreferences_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_ComputeEnginePreferences_descriptor,
@@ -3310,7 +3448,7 @@ public final class MigrationCenterProto {
               "MachinePreferences", "LicenseType",
             });
     internal_static_google_cloud_migrationcenter_v1_MachinePreferences_descriptor =
-        getDescriptor().getMessageTypes().get(137);
+        getDescriptor().getMessageTypes().get(139);
     internal_static_google_cloud_migrationcenter_v1_MachinePreferences_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_MachinePreferences_descriptor,
@@ -3318,15 +3456,42 @@ public final class MigrationCenterProto {
               "AllowedMachineSeries",
             });
     internal_static_google_cloud_migrationcenter_v1_MachineSeries_descriptor =
-        getDescriptor().getMessageTypes().get(138);
+        getDescriptor().getMessageTypes().get(140);
     internal_static_google_cloud_migrationcenter_v1_MachineSeries_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_MachineSeries_descriptor,
             new java.lang.String[] {
               "Code",
             });
+    internal_static_google_cloud_migrationcenter_v1_VmwareEnginePreferences_descriptor =
+        getDescriptor().getMessageTypes().get(141);
+    internal_static_google_cloud_migrationcenter_v1_VmwareEnginePreferences_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_migrationcenter_v1_VmwareEnginePreferences_descriptor,
+            new java.lang.String[] {
+              "CpuOvercommitRatio",
+              "MemoryOvercommitRatio",
+              "StorageDeduplicationCompressionRatio",
+              "CommitmentPlan",
+            });
+    internal_static_google_cloud_migrationcenter_v1_SoleTenancyPreferences_descriptor =
+        getDescriptor().getMessageTypes().get(142);
+    internal_static_google_cloud_migrationcenter_v1_SoleTenancyPreferences_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_migrationcenter_v1_SoleTenancyPreferences_descriptor,
+            new java.lang.String[] {
+              "CpuOvercommitRatio", "HostMaintenancePolicy", "CommitmentPlan", "NodeTypes",
+            });
+    internal_static_google_cloud_migrationcenter_v1_SoleTenantNodeType_descriptor =
+        getDescriptor().getMessageTypes().get(143);
+    internal_static_google_cloud_migrationcenter_v1_SoleTenantNodeType_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_migrationcenter_v1_SoleTenantNodeType_descriptor,
+            new java.lang.String[] {
+              "NodeName",
+            });
     internal_static_google_cloud_migrationcenter_v1_RegionPreferences_descriptor =
-        getDescriptor().getMessageTypes().get(139);
+        getDescriptor().getMessageTypes().get(144);
     internal_static_google_cloud_migrationcenter_v1_RegionPreferences_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_RegionPreferences_descriptor,
@@ -3334,7 +3499,7 @@ public final class MigrationCenterProto {
               "PreferredRegions",
             });
     internal_static_google_cloud_migrationcenter_v1_Settings_descriptor =
-        getDescriptor().getMessageTypes().get(140);
+        getDescriptor().getMessageTypes().get(145);
     internal_static_google_cloud_migrationcenter_v1_Settings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_Settings_descriptor,
@@ -3342,7 +3507,7 @@ public final class MigrationCenterProto {
               "Name", "PreferenceSet",
             });
     internal_static_google_cloud_migrationcenter_v1_ReportSummary_descriptor =
-        getDescriptor().getMessageTypes().get(141);
+        getDescriptor().getMessageTypes().get(146);
     internal_static_google_cloud_migrationcenter_v1_ReportSummary_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_ReportSummary_descriptor,
@@ -3441,10 +3606,60 @@ public final class MigrationCenterProto {
               "MachineSeriesAllocations",
               "AllocatedDiskTypes",
             });
-    internal_static_google_cloud_migrationcenter_v1_ReportSummary_GroupPreferenceSetFinding_descriptor =
+    internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareEngineFinding_descriptor =
         internal_static_google_cloud_migrationcenter_v1_ReportSummary_descriptor
             .getNestedTypes()
             .get(6);
+    internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareEngineFinding_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareEngineFinding_descriptor,
+            new java.lang.String[] {
+              "AllocatedRegions", "AllocatedAssetCount", "NodeAllocations",
+            });
+    internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareNodeAllocation_descriptor =
+        internal_static_google_cloud_migrationcenter_v1_ReportSummary_descriptor
+            .getNestedTypes()
+            .get(7);
+    internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareNodeAllocation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareNodeAllocation_descriptor,
+            new java.lang.String[] {
+              "VmwareNode", "NodeCount", "AllocatedAssetCount",
+            });
+    internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareNode_descriptor =
+        internal_static_google_cloud_migrationcenter_v1_ReportSummary_descriptor
+            .getNestedTypes()
+            .get(8);
+    internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareNode_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_migrationcenter_v1_ReportSummary_VmwareNode_descriptor,
+            new java.lang.String[] {
+              "Code",
+            });
+    internal_static_google_cloud_migrationcenter_v1_ReportSummary_SoleTenantFinding_descriptor =
+        internal_static_google_cloud_migrationcenter_v1_ReportSummary_descriptor
+            .getNestedTypes()
+            .get(9);
+    internal_static_google_cloud_migrationcenter_v1_ReportSummary_SoleTenantFinding_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_migrationcenter_v1_ReportSummary_SoleTenantFinding_descriptor,
+            new java.lang.String[] {
+              "AllocatedRegions", "AllocatedAssetCount", "NodeAllocations",
+            });
+    internal_static_google_cloud_migrationcenter_v1_ReportSummary_SoleTenantNodeAllocation_descriptor =
+        internal_static_google_cloud_migrationcenter_v1_ReportSummary_descriptor
+            .getNestedTypes()
+            .get(10);
+    internal_static_google_cloud_migrationcenter_v1_ReportSummary_SoleTenantNodeAllocation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_migrationcenter_v1_ReportSummary_SoleTenantNodeAllocation_descriptor,
+            new java.lang.String[] {
+              "Node", "NodeCount", "AllocatedAssetCount",
+            });
+    internal_static_google_cloud_migrationcenter_v1_ReportSummary_GroupPreferenceSetFinding_descriptor =
+        internal_static_google_cloud_migrationcenter_v1_ReportSummary_descriptor
+            .getNestedTypes()
+            .get(11);
     internal_static_google_cloud_migrationcenter_v1_ReportSummary_GroupPreferenceSetFinding_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_ReportSummary_GroupPreferenceSetFinding_descriptor,
@@ -3459,11 +3674,13 @@ public final class MigrationCenterProto {
               "MonthlyCostStorage",
               "MonthlyCostOther",
               "ComputeEngineFinding",
+              "VmwareEngineFinding",
+              "SoleTenantFinding",
             });
     internal_static_google_cloud_migrationcenter_v1_ReportSummary_GroupFinding_descriptor =
         internal_static_google_cloud_migrationcenter_v1_ReportSummary_descriptor
             .getNestedTypes()
-            .get(7);
+            .get(12);
     internal_static_google_cloud_migrationcenter_v1_ReportSummary_GroupFinding_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_migrationcenter_v1_ReportSummary_GroupFinding_descriptor,

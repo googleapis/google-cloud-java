@@ -33,7 +33,7 @@ public interface ImportRowErrorOrBuilder
    * <code>int32 row_number = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.migrationcenter.v1.ImportRowError.row_number is deprecated. See
-   *     google/cloud/migrationcenter/v1/migrationcenter.proto;l=3535
+   *     google/cloud/migrationcenter/v1/migrationcenter.proto;l=3572
    * @return The rowNumber.
    */
   @java.lang.Deprecated

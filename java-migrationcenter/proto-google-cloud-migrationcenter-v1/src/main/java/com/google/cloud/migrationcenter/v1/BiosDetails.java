@@ -75,13 +75,17 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * BIOS name.
+   * This fields is deprecated. Please use the `id` field instead.
    * </pre>
    *
-   * <code>string bios_name = 1;</code>
+   * <code>string bios_name = 1 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.migrationcenter.v1.BiosDetails.bios_name is deprecated. See
+   *     google/cloud/migrationcenter/v1/migrationcenter.proto;l=2509
    * @return The biosName.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public java.lang.String getBiosName() {
     java.lang.Object ref = biosName_;
     if (ref instanceof java.lang.String) {
@@ -98,13 +102,17 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * BIOS name.
+   * This fields is deprecated. Please use the `id` field instead.
    * </pre>
    *
-   * <code>string bios_name = 1;</code>
+   * <code>string bios_name = 1 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.migrationcenter.v1.BiosDetails.bios_name is deprecated. See
+   *     google/cloud/migrationcenter/v1/migrationcenter.proto;l=2509
    * @return The bytes for biosName.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.protobuf.ByteString getBiosNameBytes() {
     java.lang.Object ref = biosName_;
     if (ref instanceof java.lang.String) {
@@ -843,12 +851,16 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BIOS name.
+     * This fields is deprecated. Please use the `id` field instead.
      * </pre>
      *
-     * <code>string bios_name = 1;</code>
+     * <code>string bios_name = 1 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.migrationcenter.v1.BiosDetails.bios_name is deprecated. See
+     *     google/cloud/migrationcenter/v1/migrationcenter.proto;l=2509
      * @return The biosName.
      */
+    @java.lang.Deprecated
     public java.lang.String getBiosName() {
       java.lang.Object ref = biosName_;
       if (!(ref instanceof java.lang.String)) {
@@ -865,12 +877,16 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BIOS name.
+     * This fields is deprecated. Please use the `id` field instead.
      * </pre>
      *
-     * <code>string bios_name = 1;</code>
+     * <code>string bios_name = 1 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.migrationcenter.v1.BiosDetails.bios_name is deprecated. See
+     *     google/cloud/migrationcenter/v1/migrationcenter.proto;l=2509
      * @return The bytes for biosName.
      */
+    @java.lang.Deprecated
     public com.google.protobuf.ByteString getBiosNameBytes() {
       java.lang.Object ref = biosName_;
       if (ref instanceof String) {
@@ -887,13 +903,17 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BIOS name.
+     * This fields is deprecated. Please use the `id` field instead.
      * </pre>
      *
-     * <code>string bios_name = 1;</code>
+     * <code>string bios_name = 1 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.migrationcenter.v1.BiosDetails.bios_name is deprecated. See
+     *     google/cloud/migrationcenter/v1/migrationcenter.proto;l=2509
      * @param value The biosName to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setBiosName(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
@@ -908,12 +928,16 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BIOS name.
+     * This fields is deprecated. Please use the `id` field instead.
      * </pre>
      *
-     * <code>string bios_name = 1;</code>
+     * <code>string bios_name = 1 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.migrationcenter.v1.BiosDetails.bios_name is deprecated. See
+     *     google/cloud/migrationcenter/v1/migrationcenter.proto;l=2509
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder clearBiosName() {
       biosName_ = getDefaultInstance().getBiosName();
       bitField0_ = (bitField0_ & ~0x00000001);
@@ -925,13 +949,17 @@ public final class BiosDetails extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * BIOS name.
+     * This fields is deprecated. Please use the `id` field instead.
      * </pre>
      *
-     * <code>string bios_name = 1;</code>
+     * <code>string bios_name = 1 [deprecated = true];</code>
      *
+     * @deprecated google.cloud.migrationcenter.v1.BiosDetails.bios_name is deprecated. See
+     *     google/cloud/migrationcenter/v1/migrationcenter.proto;l=2509
      * @param value The bytes for biosName to set.
      * @return This builder for chaining.
      */
+    @java.lang.Deprecated
     public Builder setBiosNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();

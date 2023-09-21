@@ -64,5 +64,46 @@ public interface InsightOrBuilder
    */
   com.google.cloud.migrationcenter.v1.MigrationInsightOrBuilder getMigrationInsightOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A generic insight about an asset
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.migrationcenter.v1.GenericInsight generic_insight = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the genericInsight field is set.
+   */
+  boolean hasGenericInsight();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A generic insight about an asset
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.migrationcenter.v1.GenericInsight generic_insight = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The genericInsight.
+   */
+  com.google.cloud.migrationcenter.v1.GenericInsight getGenericInsight();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A generic insight about an asset
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.migrationcenter.v1.GenericInsight generic_insight = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.migrationcenter.v1.GenericInsightOrBuilder getGenericInsightOrBuilder();
+
   com.google.cloud.migrationcenter.v1.Insight.InsightCase getInsightCase();
 }
