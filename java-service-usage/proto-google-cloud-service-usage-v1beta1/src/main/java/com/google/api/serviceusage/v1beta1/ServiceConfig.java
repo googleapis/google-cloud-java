@@ -528,7 +528,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Defines the monitored resources used by this service. This is required
-   * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+   * by the [Service.monitoring][google.api.Service.monitoring] and
+   * [Service.logging][google.api.Service.logging] configurations.
    * </pre>
    *
    * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -542,7 +543,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Defines the monitored resources used by this service. This is required
-   * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+   * by the [Service.monitoring][google.api.Service.monitoring] and
+   * [Service.logging][google.api.Service.logging] configurations.
    * </pre>
    *
    * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -557,7 +559,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Defines the monitored resources used by this service. This is required
-   * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+   * by the [Service.monitoring][google.api.Service.monitoring] and
+   * [Service.logging][google.api.Service.logging] configurations.
    * </pre>
    *
    * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -571,7 +574,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Defines the monitored resources used by this service. This is required
-   * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+   * by the [Service.monitoring][google.api.Service.monitoring] and
+   * [Service.logging][google.api.Service.logging] configurations.
    * </pre>
    *
    * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -585,7 +589,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Defines the monitored resources used by this service. This is required
-   * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+   * by the [Service.monitoring][google.api.Service.monitoring] and
+   * [Service.logging][google.api.Service.logging] configurations.
    * </pre>
    *
    * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -3063,7 +3068,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the monitored resources used by this service. This is required
-     * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+     * by the [Service.monitoring][google.api.Service.monitoring] and
+     * [Service.logging][google.api.Service.logging] configurations.
      * </pre>
      *
      * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -3080,7 +3086,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the monitored resources used by this service. This is required
-     * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+     * by the [Service.monitoring][google.api.Service.monitoring] and
+     * [Service.logging][google.api.Service.logging] configurations.
      * </pre>
      *
      * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -3097,7 +3104,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the monitored resources used by this service. This is required
-     * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+     * by the [Service.monitoring][google.api.Service.monitoring] and
+     * [Service.logging][google.api.Service.logging] configurations.
      * </pre>
      *
      * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -3114,7 +3122,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the monitored resources used by this service. This is required
-     * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+     * by the [Service.monitoring][google.api.Service.monitoring] and
+     * [Service.logging][google.api.Service.logging] configurations.
      * </pre>
      *
      * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -3138,7 +3147,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the monitored resources used by this service. This is required
-     * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+     * by the [Service.monitoring][google.api.Service.monitoring] and
+     * [Service.logging][google.api.Service.logging] configurations.
      * </pre>
      *
      * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -3159,7 +3169,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the monitored resources used by this service. This is required
-     * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+     * by the [Service.monitoring][google.api.Service.monitoring] and
+     * [Service.logging][google.api.Service.logging] configurations.
      * </pre>
      *
      * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -3182,7 +3193,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the monitored resources used by this service. This is required
-     * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+     * by the [Service.monitoring][google.api.Service.monitoring] and
+     * [Service.logging][google.api.Service.logging] configurations.
      * </pre>
      *
      * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -3206,7 +3218,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the monitored resources used by this service. This is required
-     * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+     * by the [Service.monitoring][google.api.Service.monitoring] and
+     * [Service.logging][google.api.Service.logging] configurations.
      * </pre>
      *
      * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -3227,7 +3240,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the monitored resources used by this service. This is required
-     * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+     * by the [Service.monitoring][google.api.Service.monitoring] and
+     * [Service.logging][google.api.Service.logging] configurations.
      * </pre>
      *
      * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -3248,7 +3262,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the monitored resources used by this service. This is required
-     * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+     * by the [Service.monitoring][google.api.Service.monitoring] and
+     * [Service.logging][google.api.Service.logging] configurations.
      * </pre>
      *
      * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -3269,7 +3284,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the monitored resources used by this service. This is required
-     * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+     * by the [Service.monitoring][google.api.Service.monitoring] and
+     * [Service.logging][google.api.Service.logging] configurations.
      * </pre>
      *
      * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -3289,7 +3305,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the monitored resources used by this service. This is required
-     * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+     * by the [Service.monitoring][google.api.Service.monitoring] and
+     * [Service.logging][google.api.Service.logging] configurations.
      * </pre>
      *
      * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -3309,7 +3326,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the monitored resources used by this service. This is required
-     * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+     * by the [Service.monitoring][google.api.Service.monitoring] and
+     * [Service.logging][google.api.Service.logging] configurations.
      * </pre>
      *
      * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -3323,7 +3341,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the monitored resources used by this service. This is required
-     * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+     * by the [Service.monitoring][google.api.Service.monitoring] and
+     * [Service.logging][google.api.Service.logging] configurations.
      * </pre>
      *
      * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -3341,7 +3360,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the monitored resources used by this service. This is required
-     * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+     * by the [Service.monitoring][google.api.Service.monitoring] and
+     * [Service.logging][google.api.Service.logging] configurations.
      * </pre>
      *
      * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -3359,7 +3379,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the monitored resources used by this service. This is required
-     * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+     * by the [Service.monitoring][google.api.Service.monitoring] and
+     * [Service.logging][google.api.Service.logging] configurations.
      * </pre>
      *
      * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -3373,7 +3394,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the monitored resources used by this service. This is required
-     * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+     * by the [Service.monitoring][google.api.Service.monitoring] and
+     * [Service.logging][google.api.Service.logging] configurations.
      * </pre>
      *
      * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>
@@ -3388,7 +3410,8 @@ public final class ServiceConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines the monitored resources used by this service. This is required
-     * by the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.
+     * by the [Service.monitoring][google.api.Service.monitoring] and
+     * [Service.logging][google.api.Service.logging] configurations.
      * </pre>
      *
      * <code>repeated .google.api.MonitoredResourceDescriptor monitored_resources = 25;</code>

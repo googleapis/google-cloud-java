@@ -485,6 +485,7 @@ public class ServiceUsageClientHttpJsonTest {
             .setIsPrecise(true)
             .setAllowsAdminOverrides(true)
             .addAllQuotaBuckets(new ArrayList<QuotaBucket>())
+            .addAllSupportedLocations(new ArrayList<String>())
             .build();
     mockService.addResponse(expectedResponse);
 
