@@ -112,6 +112,16 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>DOCUMENT = 3;</code>
      */
     DOCUMENT(3),
+    /**
+     *
+     *
+     * <pre>
+     * Returns only root folders
+     * </pre>
+     *
+     * <code>ROOT_FOLDER = 4;</code>
+     */
+    ROOT_FOLDER(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -155,6 +165,16 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>DOCUMENT = 3;</code>
      */
     public static final int DOCUMENT_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Returns only root folders
+     * </pre>
+     *
+     * <code>ROOT_FOLDER = 4;</code>
+     */
+    public static final int ROOT_FOLDER_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -188,6 +208,8 @@ public final class FileTypeFilter extends com.google.protobuf.GeneratedMessageV3
           return FOLDER;
         case 3:
           return DOCUMENT;
+        case 4:
+          return ROOT_FOLDER;
         default:
           return null;
       }

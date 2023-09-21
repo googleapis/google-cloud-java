@@ -118,40 +118,44 @@ public final class PipelinesProto {
           + "s\030\002 \001(\0132\022.google.rpc.StatusB\023\n\021pipeline_"
           + "metadata\"S\n\rProcessorInfo\022\026\n\016processor_n"
           + "ame\030\001 \001(\t\022\025\n\rdocument_type\030\002 \001(\t\022\023\n\013sche"
-          + "ma_name\030\003 \001(\t\"\211\001\n\024IngestPipelineConfig\0222"
+          + "ma_name\030\003 \001(\t\"\323\001\n\024IngestPipelineConfig\0222"
           + "\n\023document_acl_policy\030\001 \001(\0132\025.google.iam"
           + ".v1.Policy\022\'\n\037enable_document_text_extra"
-          + "ction\030\002 \001(\010\022\024\n\006folder\030\003 \001(\tB\004\342A\001\001\"\314\001\n\021Gc"
-          + "sIngestPipeline\022\022\n\ninput_path\030\001 \001(\t\022\023\n\013s"
-          + "chema_name\030\002 \001(\t\022\026\n\016processor_type\030\003 \001(\t"
-          + "\022\037\n\027skip_ingested_documents\030\004 \001(\010\022U\n\017pip"
-          + "eline_config\030\005 \001(\01326.google.cloud.conten"
-          + "twarehouse.v1.IngestPipelineConfigB\004\342A\001\001"
-          + "\"\203\003\n$GcsIngestWithDocAiProcessorsPipelin"
-          + "e\022\022\n\ninput_path\030\001 \001(\t\022V\n\035split_classify_"
-          + "processor_info\030\002 \001(\0132/.google.cloud.cont"
-          + "entwarehouse.v1.ProcessorInfo\022P\n\027extract"
-          + "_processor_infos\030\003 \003(\0132/.google.cloud.co"
-          + "ntentwarehouse.v1.ProcessorInfo\022%\n\035proce"
-          + "ssor_results_folder_path\030\004 \001(\t\022\037\n\027skip_i"
-          + "ngested_documents\030\005 \001(\010\022U\n\017pipeline_conf"
-          + "ig\030\006 \001(\01326.google.cloud.contentwarehouse"
-          + ".v1.IngestPipelineConfigB\004\342A\001\001\"\200\001\n\023Expor"
-          + "tToCdwPipeline\022\021\n\tdocuments\030\001 \003(\t\022\032\n\022exp"
-          + "ort_folder_path\030\002 \001(\t\022\034\n\016doc_ai_dataset\030"
-          + "\003 \001(\tB\004\342A\001\001\022\034\n\024training_split_ratio\030\004 \001("
-          + "\002\"\271\001\n\030ProcessWithDocAiPipeline\022\021\n\tdocume"
-          + "nts\030\001 \003(\t\022\032\n\022export_folder_path\030\002 \001(\t\022G\n"
-          + "\016processor_info\030\003 \001(\0132/.google.cloud.con"
-          + "tentwarehouse.v1.ProcessorInfo\022%\n\035proces"
-          + "sor_results_folder_path\030\004 \001(\tB\366\001\n$com.go"
-          + "ogle.cloud.contentwarehouse.v1B\016Pipeline"
-          + "sProtoP\001ZPcloud.google.com/go/contentwar"
-          + "ehouse/apiv1/contentwarehousepb;contentw"
-          + "arehousepb\252\002 Google.Cloud.ContentWarehou"
-          + "se.V1\312\002 Google\\Cloud\\ContentWarehouse\\V1"
-          + "\352\002#Google::Cloud::ContentWarehouse::V1b\006"
-          + "proto3"
+          + "ction\030\002 \001(\010\022\024\n\006folder\030\003 \001(\tB\004\342A\001\001\022H\n\016clo"
+          + "ud_function\030\004 \001(\tB0\372A-\n+cloudfunctions.g"
+          + "oogleapis.com/CloudFunction\"\314\001\n\021GcsInges"
+          + "tPipeline\022\022\n\ninput_path\030\001 \001(\t\022\023\n\013schema_"
+          + "name\030\002 \001(\t\022\026\n\016processor_type\030\003 \001(\t\022\037\n\027sk"
+          + "ip_ingested_documents\030\004 \001(\010\022U\n\017pipeline_"
+          + "config\030\005 \001(\01326.google.cloud.contentwareh"
+          + "ouse.v1.IngestPipelineConfigB\004\342A\001\001\"\203\003\n$G"
+          + "csIngestWithDocAiProcessorsPipeline\022\022\n\ni"
+          + "nput_path\030\001 \001(\t\022V\n\035split_classify_proces"
+          + "sor_info\030\002 \001(\0132/.google.cloud.contentwar"
+          + "ehouse.v1.ProcessorInfo\022P\n\027extract_proce"
+          + "ssor_infos\030\003 \003(\0132/.google.cloud.contentw"
+          + "arehouse.v1.ProcessorInfo\022%\n\035processor_r"
+          + "esults_folder_path\030\004 \001(\t\022\037\n\027skip_ingeste"
+          + "d_documents\030\005 \001(\010\022U\n\017pipeline_config\030\006 \001"
+          + "(\01326.google.cloud.contentwarehouse.v1.In"
+          + "gestPipelineConfigB\004\342A\001\001\"\200\001\n\023ExportToCdw"
+          + "Pipeline\022\021\n\tdocuments\030\001 \003(\t\022\032\n\022export_fo"
+          + "lder_path\030\002 \001(\t\022\034\n\016doc_ai_dataset\030\003 \001(\tB"
+          + "\004\342A\001\001\022\034\n\024training_split_ratio\030\004 \001(\002\"\271\001\n\030"
+          + "ProcessWithDocAiPipeline\022\021\n\tdocuments\030\001 "
+          + "\003(\t\022\032\n\022export_folder_path\030\002 \001(\t\022G\n\016proce"
+          + "ssor_info\030\003 \001(\0132/.google.cloud.contentwa"
+          + "rehouse.v1.ProcessorInfo\022%\n\035processor_re"
+          + "sults_folder_path\030\004 \001(\tB\344\002\n$com.google.c"
+          + "loud.contentwarehouse.v1B\016PipelinesProto"
+          + "P\001ZPcloud.google.com/go/contentwarehouse"
+          + "/apiv1/contentwarehousepb;contentwarehou"
+          + "sepb\252\002 Google.Cloud.ContentWarehouse.V1\312"
+          + "\002 Google\\Cloud\\ContentWarehouse\\V1\352\002#Goo"
+          + "gle::Cloud::ContentWarehouse::V1\352Ak\n+clo"
+          + "udfunctions.googleapis.com/CloudFunction"
+          + "\022<projects/{project}/locations/{location"
+          + "}/functions/{function}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -238,7 +242,7 @@ public final class PipelinesProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_contentwarehouse_v1_IngestPipelineConfig_descriptor,
             new java.lang.String[] {
-              "DocumentAclPolicy", "EnableDocumentTextExtraction", "Folder",
+              "DocumentAclPolicy", "EnableDocumentTextExtraction", "Folder", "CloudFunction",
             });
     internal_static_google_cloud_contentwarehouse_v1_GcsIngestPipeline_descriptor =
         getDescriptor().getMessageTypes().get(4);
@@ -280,6 +284,8 @@ public final class PipelinesProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
