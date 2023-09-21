@@ -952,22 +952,20 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. The minimum number of instances to create.
-   * If min_num_instances is set, min_num_instances is used for a criteria to
-   * decide the cluster. Cluster creation will be failed by being an error state
-   * if the total number of instances created is less than the
-   * min_num_instances.
-   * For example, given that num_instances = 5 and min_num_instances = 3,
-   * * if 4 instances are created and then registered successfully but one
-   * instance is failed, the failed VM will be deleted and the cluster will be
-   * resized to 4 instances in running state.
-   * * if 2 instances are created successfully and 3 instances are failed,
-   * the cluster will be in an error state and does not delete failed VMs for
-   * debugging.
-   * * if 2 instance are created and then registered successfully but 3
-   * instances are failed to initialize, the cluster will be in an error state
-   * and does not delete failed VMs for debugging.
-   * NB: This can only be set for primary workers now.
+   * Optional. The minimum number of primary worker instances to create.
+   * If `min_num_instances` is set, cluster creation will succeed if
+   * the number of primary workers created is at least equal to the
+   * `min_num_instances` number.
+   *
+   * Example: Cluster creation request with `num_instances` = `5` and
+   * `min_num_instances` = `3`:
+   *
+   * *  If 4 VMs are created and 1 instance fails,
+   *    the failed VM is deleted. The cluster is
+   *    resized to 4 instances and placed in a `RUNNING` state.
+   * *  If 2 instances are created and 3 instances fail,
+   *    the cluster in placed in an `ERROR` state. The failed VMs
+   *    are not deleted.
    * </pre>
    *
    * <code>int32 min_num_instances = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3955,22 +3953,20 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The minimum number of instances to create.
-     * If min_num_instances is set, min_num_instances is used for a criteria to
-     * decide the cluster. Cluster creation will be failed by being an error state
-     * if the total number of instances created is less than the
-     * min_num_instances.
-     * For example, given that num_instances = 5 and min_num_instances = 3,
-     * * if 4 instances are created and then registered successfully but one
-     * instance is failed, the failed VM will be deleted and the cluster will be
-     * resized to 4 instances in running state.
-     * * if 2 instances are created successfully and 3 instances are failed,
-     * the cluster will be in an error state and does not delete failed VMs for
-     * debugging.
-     * * if 2 instance are created and then registered successfully but 3
-     * instances are failed to initialize, the cluster will be in an error state
-     * and does not delete failed VMs for debugging.
-     * NB: This can only be set for primary workers now.
+     * Optional. The minimum number of primary worker instances to create.
+     * If `min_num_instances` is set, cluster creation will succeed if
+     * the number of primary workers created is at least equal to the
+     * `min_num_instances` number.
+     *
+     * Example: Cluster creation request with `num_instances` = `5` and
+     * `min_num_instances` = `3`:
+     *
+     * *  If 4 VMs are created and 1 instance fails,
+     *    the failed VM is deleted. The cluster is
+     *    resized to 4 instances and placed in a `RUNNING` state.
+     * *  If 2 instances are created and 3 instances fail,
+     *    the cluster in placed in an `ERROR` state. The failed VMs
+     *    are not deleted.
      * </pre>
      *
      * <code>int32 min_num_instances = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3985,22 +3981,20 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The minimum number of instances to create.
-     * If min_num_instances is set, min_num_instances is used for a criteria to
-     * decide the cluster. Cluster creation will be failed by being an error state
-     * if the total number of instances created is less than the
-     * min_num_instances.
-     * For example, given that num_instances = 5 and min_num_instances = 3,
-     * * if 4 instances are created and then registered successfully but one
-     * instance is failed, the failed VM will be deleted and the cluster will be
-     * resized to 4 instances in running state.
-     * * if 2 instances are created successfully and 3 instances are failed,
-     * the cluster will be in an error state and does not delete failed VMs for
-     * debugging.
-     * * if 2 instance are created and then registered successfully but 3
-     * instances are failed to initialize, the cluster will be in an error state
-     * and does not delete failed VMs for debugging.
-     * NB: This can only be set for primary workers now.
+     * Optional. The minimum number of primary worker instances to create.
+     * If `min_num_instances` is set, cluster creation will succeed if
+     * the number of primary workers created is at least equal to the
+     * `min_num_instances` number.
+     *
+     * Example: Cluster creation request with `num_instances` = `5` and
+     * `min_num_instances` = `3`:
+     *
+     * *  If 4 VMs are created and 1 instance fails,
+     *    the failed VM is deleted. The cluster is
+     *    resized to 4 instances and placed in a `RUNNING` state.
+     * *  If 2 instances are created and 3 instances fail,
+     *    the cluster in placed in an `ERROR` state. The failed VMs
+     *    are not deleted.
      * </pre>
      *
      * <code>int32 min_num_instances = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4019,22 +4013,20 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The minimum number of instances to create.
-     * If min_num_instances is set, min_num_instances is used for a criteria to
-     * decide the cluster. Cluster creation will be failed by being an error state
-     * if the total number of instances created is less than the
-     * min_num_instances.
-     * For example, given that num_instances = 5 and min_num_instances = 3,
-     * * if 4 instances are created and then registered successfully but one
-     * instance is failed, the failed VM will be deleted and the cluster will be
-     * resized to 4 instances in running state.
-     * * if 2 instances are created successfully and 3 instances are failed,
-     * the cluster will be in an error state and does not delete failed VMs for
-     * debugging.
-     * * if 2 instance are created and then registered successfully but 3
-     * instances are failed to initialize, the cluster will be in an error state
-     * and does not delete failed VMs for debugging.
-     * NB: This can only be set for primary workers now.
+     * Optional. The minimum number of primary worker instances to create.
+     * If `min_num_instances` is set, cluster creation will succeed if
+     * the number of primary workers created is at least equal to the
+     * `min_num_instances` number.
+     *
+     * Example: Cluster creation request with `num_instances` = `5` and
+     * `min_num_instances` = `3`:
+     *
+     * *  If 4 VMs are created and 1 instance fails,
+     *    the failed VM is deleted. The cluster is
+     *    resized to 4 instances and placed in a `RUNNING` state.
+     * *  If 2 instances are created and 3 instances fail,
+     *    the cluster in placed in an `ERROR` state. The failed VMs
+     *    are not deleted.
      * </pre>
      *
      * <code>int32 min_num_instances = 12 [(.google.api.field_behavior) = OPTIONAL];</code>

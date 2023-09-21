@@ -1239,6 +1239,10 @@ public class ClusterControllerClient implements BackgroundResource {
    *           .setProjectId("projectId-894832108")
    *           .setRegion("region-934795532")
    *           .setClusterName("clusterName-1141738587")
+   *           .setTarballGcsDir("tarballGcsDir-1602093510")
+   *           .setDiagnosisInterval(Interval.newBuilder().build())
+   *           .addAllJobs(new ArrayList<String>())
+   *           .addAllYarnApplicationIds(new ArrayList<String>())
    *           .build();
    *   DiagnoseClusterResults response = clusterControllerClient.diagnoseClusterAsync(request).get();
    * }
@@ -1275,6 +1279,10 @@ public class ClusterControllerClient implements BackgroundResource {
    *           .setProjectId("projectId-894832108")
    *           .setRegion("region-934795532")
    *           .setClusterName("clusterName-1141738587")
+   *           .setTarballGcsDir("tarballGcsDir-1602093510")
+   *           .setDiagnosisInterval(Interval.newBuilder().build())
+   *           .addAllJobs(new ArrayList<String>())
+   *           .addAllYarnApplicationIds(new ArrayList<String>())
    *           .build();
    *   OperationFuture<DiagnoseClusterResults, ClusterOperationMetadata> future =
    *       clusterControllerClient.diagnoseClusterOperationCallable().futureCall(request);
@@ -1312,6 +1320,10 @@ public class ClusterControllerClient implements BackgroundResource {
    *           .setProjectId("projectId-894832108")
    *           .setRegion("region-934795532")
    *           .setClusterName("clusterName-1141738587")
+   *           .setTarballGcsDir("tarballGcsDir-1602093510")
+   *           .setDiagnosisInterval(Interval.newBuilder().build())
+   *           .addAllJobs(new ArrayList<String>())
+   *           .addAllYarnApplicationIds(new ArrayList<String>())
    *           .build();
    *   ApiFuture<Operation> future =
    *       clusterControllerClient.diagnoseClusterCallable().futureCall(request);
