@@ -71,9 +71,9 @@ public interface ListBillingAccountsRequestOrBuilder
    *
    * <pre>
    * Options for how to filter the returned billing accounts.
-   * Currently this only supports filtering for
+   * This only supports filtering for
    * [subaccounts](https://cloud.google.com/billing/docs/concepts) under a
-   * single provided reseller billing account.
+   * single provided parent billing account.
    * (e.g. "master_billing_account=billingAccounts/012345-678901-ABCDEF").
    * Boolean algebra and other fields are not currently supported.
    * </pre>
@@ -88,9 +88,9 @@ public interface ListBillingAccountsRequestOrBuilder
    *
    * <pre>
    * Options for how to filter the returned billing accounts.
-   * Currently this only supports filtering for
+   * This only supports filtering for
    * [subaccounts](https://cloud.google.com/billing/docs/concepts) under a
-   * single provided reseller billing account.
+   * single provided parent billing account.
    * (e.g. "master_billing_account=billingAccounts/012345-678901-ABCDEF").
    * Boolean algebra and other fields are not currently supported.
    * </pre>

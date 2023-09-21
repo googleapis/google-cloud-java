@@ -613,7 +613,7 @@ public final class CloudBillingGrpc {
      * typically given to billing account
      * [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
      * This method will return an error if the parent account has not been
-     * provisioned as a reseller account.
+     * provisioned for subaccounts.
      * </pre>
      */
     default void createBillingAccount(
@@ -864,7 +864,7 @@ public final class CloudBillingGrpc {
      * typically given to billing account
      * [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
      * This method will return an error if the parent account has not been
-     * provisioned as a reseller account.
+     * provisioned for subaccounts.
      * </pre>
      */
     public void createBillingAccount(
@@ -1103,7 +1103,7 @@ public final class CloudBillingGrpc {
      * typically given to billing account
      * [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
      * This method will return an error if the parent account has not been
-     * provisioned as a reseller account.
+     * provisioned for subaccounts.
      * </pre>
      */
     public com.google.cloud.billing.v1.BillingAccount createBillingAccount(
@@ -1318,7 +1318,7 @@ public final class CloudBillingGrpc {
      * typically given to billing account
      * [administrators](https://cloud.google.com/billing/docs/how-to/billing-access).
      * This method will return an error if the parent account has not been
-     * provisioned as a reseller account.
+     * provisioned for subaccounts.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
