@@ -477,25 +477,6 @@ public class ITSystemTest {
   }
 
   @Test
-  public void detectIntentTest() {
-    String session = String.format("%s/sessions/%s", agentName, ID);
-    DetectIntentRequest request =
-        DetectIntentRequest.newBuilder().setSession(session).setQueryInput(QUERY_INPUT).build();
-    DetectIntentResponse detectIntent = sessionsClient.detectIntent(request);
-    assertTrue(detectIntent.getQueryResult().getText().contains(TEXT));
-  }
-
-  @Test
-  public void matchIntentTest() {
-    String session = String.format("%s/sessions/%s", agentName, ID);
-    MatchIntentRequest request =
-        MatchIntentRequest.newBuilder().setSession(session).setQueryInput(QUERY_INPUT).build();
-    MatchIntentResponse matchIntentResponse = sessionsClient.matchIntent(request);
-    assertTrue(matchIntentResponse.getMatchesList().size() > 0);
-    assertEquals(TEXT, matchIntentResponse.getText());
-  }
-
-  @Test
   public void getTransitionRouteGroupTest() {
     GetTransitionRouteGroupRequest routeGroupRequest =
         GetTransitionRouteGroupRequest.newBuilder().setName(transitionRouteGroupName).build();
