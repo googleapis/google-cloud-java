@@ -2354,6 +2354,26 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         : hostMaintenancePolicy_;
   }
 
+  public static final int ENABLE_CONFIDENTIAL_STORAGE_FIELD_NUMBER = 46;
+  private boolean enableConfidentialStorage_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enable confidential storage on Hyperdisk.
+   * boot_disk_kms_key is required when enable_confidential_storage is true.
+   * This is only available for private preview.
+   * </pre>
+   *
+   * <code>bool enable_confidential_storage = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableConfidentialStorage.
+   */
+  @java.lang.Override
+  public boolean getEnableConfidentialStorage() {
+    return enableConfidentialStorage_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2472,6 +2492,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     }
     if (hostMaintenancePolicy_ != null) {
       output.writeMessage(44, getHostMaintenancePolicy());
+    }
+    if (enableConfidentialStorage_ != false) {
+      output.writeBool(46, enableConfidentialStorage_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2632,6 +2655,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(44, getHostMaintenancePolicy());
     }
+    if (enableConfidentialStorage_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(46, enableConfidentialStorage_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2739,6 +2765,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasHostMaintenancePolicy()) {
       if (!getHostMaintenancePolicy().equals(other.getHostMaintenancePolicy())) return false;
     }
+    if (getEnableConfidentialStorage() != other.getEnableConfidentialStorage()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2872,6 +2899,8 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + HOST_MAINTENANCE_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getHostMaintenancePolicy().hashCode();
     }
+    hash = (37 * hash) + ENABLE_CONFIDENTIAL_STORAGE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableConfidentialStorage());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3193,6 +3222,7 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         hostMaintenancePolicyBuilder_.dispose();
         hostMaintenancePolicyBuilder_ = null;
       }
+      enableConfidentialStorage_ = false;
       return this;
     }
 
@@ -3402,6 +3432,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
             hostMaintenancePolicyBuilder_ == null
                 ? hostMaintenancePolicy_
                 : hostMaintenancePolicyBuilder_.build();
+      }
+      if (((from_bitField1_ & 0x00000010) != 0)) {
+        result.enableConfidentialStorage_ = enableConfidentialStorage_;
       }
     }
 
@@ -3630,6 +3663,9 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasHostMaintenancePolicy()) {
         mergeHostMaintenancePolicy(other.getHostMaintenancePolicy());
+      }
+      if (other.getEnableConfidentialStorage() != false) {
+        setEnableConfidentialStorage(other.getEnableConfidentialStorage());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3919,6 +3955,12 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00000008;
                 break;
               } // case 354
+            case 368:
+              {
+                enableConfidentialStorage_ = input.readBool();
+                bitField1_ |= 0x00000010;
+                break;
+              } // case 368
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10585,6 +10627,65 @@ public final class NodeConfig extends com.google.protobuf.GeneratedMessageV3
         hostMaintenancePolicy_ = null;
       }
       return hostMaintenancePolicyBuilder_;
+    }
+
+    private boolean enableConfidentialStorage_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enable confidential storage on Hyperdisk.
+     * boot_disk_kms_key is required when enable_confidential_storage is true.
+     * This is only available for private preview.
+     * </pre>
+     *
+     * <code>bool enable_confidential_storage = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableConfidentialStorage.
+     */
+    @java.lang.Override
+    public boolean getEnableConfidentialStorage() {
+      return enableConfidentialStorage_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enable confidential storage on Hyperdisk.
+     * boot_disk_kms_key is required when enable_confidential_storage is true.
+     * This is only available for private preview.
+     * </pre>
+     *
+     * <code>bool enable_confidential_storage = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableConfidentialStorage to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableConfidentialStorage(boolean value) {
+
+      enableConfidentialStorage_ = value;
+      bitField1_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enable confidential storage on Hyperdisk.
+     * boot_disk_kms_key is required when enable_confidential_storage is true.
+     * This is only available for private preview.
+     * </pre>
+     *
+     * <code>bool enable_confidential_storage = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableConfidentialStorage() {
+      bitField1_ = (bitField1_ & ~0x00000010);
+      enableConfidentialStorage_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

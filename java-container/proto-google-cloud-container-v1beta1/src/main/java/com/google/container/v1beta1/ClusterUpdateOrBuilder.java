@@ -1641,35 +1641,51 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * Deprecated: Use DesiredSecurityPostureConfig instead.
    * Enable/Disable Protect API features for the cluster.
    * </pre>
    *
-   * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+   * <code>
+   * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2524
    * @return Whether the desiredProtectConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasDesiredProtectConfig();
   /**
    *
    *
    * <pre>
+   * Deprecated: Use DesiredSecurityPostureConfig instead.
    * Enable/Disable Protect API features for the cluster.
    * </pre>
    *
-   * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+   * <code>
+   * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2524
    * @return The desiredProtectConfig.
    */
+  @java.lang.Deprecated
   com.google.container.v1beta1.ProtectConfig getDesiredProtectConfig();
   /**
    *
    *
    * <pre>
+   * Deprecated: Use DesiredSecurityPostureConfig instead.
    * Enable/Disable Protect API features for the cluster.
    * </pre>
    *
-   * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+   * <code>
+   * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.container.v1beta1.ProtectConfigOrBuilder getDesiredProtectConfigOrBuilder();
 
   /**

@@ -2388,14 +2388,20 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Deprecated: Use DesiredSecurityPostureConfig instead.
    * Enable/Disable Protect API features for the cluster.
    * </pre>
    *
-   * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+   * <code>
+   * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2524
    * @return Whether the desiredProtectConfig field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasDesiredProtectConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
@@ -2403,14 +2409,20 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Deprecated: Use DesiredSecurityPostureConfig instead.
    * Enable/Disable Protect API features for the cluster.
    * </pre>
    *
-   * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+   * <code>
+   * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2524
    * @return The desiredProtectConfig.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.container.v1beta1.ProtectConfig getDesiredProtectConfig() {
     return desiredProtectConfig_ == null
         ? com.google.container.v1beta1.ProtectConfig.getDefaultInstance()
@@ -2420,12 +2432,16 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Deprecated: Use DesiredSecurityPostureConfig instead.
    * Enable/Disable Protect API features for the cluster.
    * </pre>
    *
-   * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+   * <code>
+   * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.container.v1beta1.ProtectConfigOrBuilder getDesiredProtectConfigOrBuilder() {
     return desiredProtectConfig_ == null
         ? com.google.container.v1beta1.ProtectConfig.getDefaultInstance()
@@ -13187,13 +13203,19 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: Use DesiredSecurityPostureConfig instead.
      * Enable/Disable Protect API features for the cluster.
      * </pre>
      *
-     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
+     *     google/container/v1beta1/cluster_service.proto;l=2524
      * @return Whether the desiredProtectConfig field is set.
      */
+    @java.lang.Deprecated
     public boolean hasDesiredProtectConfig() {
       return ((bitField1_ & 0x00000400) != 0);
     }
@@ -13201,13 +13223,19 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: Use DesiredSecurityPostureConfig instead.
      * Enable/Disable Protect API features for the cluster.
      * </pre>
      *
-     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
+     *     google/container/v1beta1/cluster_service.proto;l=2524
      * @return The desiredProtectConfig.
      */
+    @java.lang.Deprecated
     public com.google.container.v1beta1.ProtectConfig getDesiredProtectConfig() {
       if (desiredProtectConfigBuilder_ == null) {
         return desiredProtectConfig_ == null
@@ -13221,11 +13249,15 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: Use DesiredSecurityPostureConfig instead.
      * Enable/Disable Protect API features for the cluster.
      * </pre>
      *
-     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setDesiredProtectConfig(com.google.container.v1beta1.ProtectConfig value) {
       if (desiredProtectConfigBuilder_ == null) {
         if (value == null) {
@@ -13243,11 +13275,15 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: Use DesiredSecurityPostureConfig instead.
      * Enable/Disable Protect API features for the cluster.
      * </pre>
      *
-     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setDesiredProtectConfig(
         com.google.container.v1beta1.ProtectConfig.Builder builderForValue) {
       if (desiredProtectConfigBuilder_ == null) {
@@ -13263,11 +13299,15 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: Use DesiredSecurityPostureConfig instead.
      * Enable/Disable Protect API features for the cluster.
      * </pre>
      *
-     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeDesiredProtectConfig(com.google.container.v1beta1.ProtectConfig value) {
       if (desiredProtectConfigBuilder_ == null) {
         if (((bitField1_ & 0x00000400) != 0)
@@ -13289,11 +13329,15 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: Use DesiredSecurityPostureConfig instead.
      * Enable/Disable Protect API features for the cluster.
      * </pre>
      *
-     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearDesiredProtectConfig() {
       bitField1_ = (bitField1_ & ~0x00000400);
       desiredProtectConfig_ = null;
@@ -13308,11 +13352,15 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: Use DesiredSecurityPostureConfig instead.
      * Enable/Disable Protect API features for the cluster.
      * </pre>
      *
-     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1beta1.ProtectConfig.Builder getDesiredProtectConfigBuilder() {
       bitField1_ |= 0x00000400;
       onChanged();
@@ -13322,11 +13370,15 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: Use DesiredSecurityPostureConfig instead.
      * Enable/Disable Protect API features for the cluster.
      * </pre>
      *
-     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1beta1.ProtectConfigOrBuilder getDesiredProtectConfigOrBuilder() {
       if (desiredProtectConfigBuilder_ != null) {
         return desiredProtectConfigBuilder_.getMessageOrBuilder();
@@ -13340,10 +13392,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: Use DesiredSecurityPostureConfig instead.
      * Enable/Disable Protect API features for the cluster.
      * </pre>
      *
-     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1beta1.ProtectConfig,

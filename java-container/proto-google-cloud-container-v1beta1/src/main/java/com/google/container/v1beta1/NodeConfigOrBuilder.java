@@ -1648,4 +1648,19 @@ public interface NodeConfigOrBuilder
    * <code>.google.container.v1beta1.HostMaintenancePolicy host_maintenance_policy = 44;</code>
    */
   com.google.container.v1beta1.HostMaintenancePolicyOrBuilder getHostMaintenancePolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enable confidential storage on Hyperdisk.
+   * boot_disk_kms_key is required when enable_confidential_storage is true.
+   * This is only available for private preview.
+   * </pre>
+   *
+   * <code>bool enable_confidential_storage = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableConfidentialStorage.
+   */
+  boolean getEnableConfidentialStorage();
 }
