@@ -36,6 +36,10 @@ public final class DocumentAiProcessor {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1_ProcessorVersion_DeprecationInfo_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1_ProcessorVersionAlias_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1_ProcessorVersionAlias_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_documentai_v1_Processor_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1_Processor_fieldAccessorTable;
@@ -78,26 +82,31 @@ public final class DocumentAiProcessor {
           + "googleapis.com/ProcessorVersion\022dproject"
           + "s/{project}/locations/{location}/process"
           + "ors/{processor}/processorVersions/{proce"
-          + "ssor_version}\"\254\004\n\tProcessor\022\023\n\004name\030\001 \001("
-          + "\tB\005\342A\002\005\003\022\014\n\004type\030\002 \001(\t\022\024\n\014display_name\030\003"
-          + " \001(\t\022@\n\005state\030\004 \001(\0162+.google.cloud.docum"
-          + "entai.v1.Processor.StateB\004\342A\001\003\022R\n\031defaul"
-          + "t_processor_version\030\t \001(\tB/\372A,\n*document"
-          + "ai.googleapis.com/ProcessorVersion\022\037\n\020pr"
-          + "ocess_endpoint\030\006 \001(\tB\005\342A\002\003\005\022/\n\013create_ti"
-          + "me\030\007 \001(\0132\032.google.protobuf.Timestamp\022\024\n\014"
-          + "kms_key_name\030\010 \001(\t\"~\n\005State\022\025\n\021STATE_UNS"
-          + "PECIFIED\020\000\022\013\n\007ENABLED\020\001\022\014\n\010DISABLED\020\002\022\014\n"
-          + "\010ENABLING\020\003\022\r\n\tDISABLING\020\004\022\014\n\010CREATING\020\005"
-          + "\022\n\n\006FAILED\020\006\022\014\n\010DELETING\020\007:h\352Ae\n#documen"
-          + "tai.googleapis.com/Processor\022>projects/{"
-          + "project}/locations/{location}/processors"
-          + "/{processor}B\321\001\n\036com.google.cloud.docume"
-          + "ntai.v1B\023DocumentAiProcessorP\001Z>cloud.go"
-          + "ogle.com/go/documentai/apiv1/documentaip"
-          + "b;documentaipb\252\002\032Google.Cloud.DocumentAI"
-          + ".V1\312\002\032Google\\Cloud\\DocumentAI\\V1\352\002\035Googl"
-          + "e::Cloud::DocumentAI::V1b\006proto3"
+          + "ssor_version}\"r\n\025ProcessorVersionAlias\022\r"
+          + "\n\005alias\030\001 \001(\t\022J\n\021processor_version\030\002 \001(\t"
+          + "B/\372A,\n*documentai.googleapis.com/Process"
+          + "orVersion\"\210\005\n\tProcessor\022\023\n\004name\030\001 \001(\tB\005\342"
+          + "A\002\005\003\022\014\n\004type\030\002 \001(\t\022\024\n\014display_name\030\003 \001(\t"
+          + "\022@\n\005state\030\004 \001(\0162+.google.cloud.documenta"
+          + "i.v1.Processor.StateB\004\342A\001\003\022R\n\031default_pr"
+          + "ocessor_version\030\t \001(\tB/\372A,\n*documentai.g"
+          + "oogleapis.com/ProcessorVersion\022Z\n\031proces"
+          + "sor_version_aliases\030\n \003(\01321.google.cloud"
+          + ".documentai.v1.ProcessorVersionAliasB\004\342A"
+          + "\001\003\022\037\n\020process_endpoint\030\006 \001(\tB\005\342A\002\003\005\022/\n\013c"
+          + "reate_time\030\007 \001(\0132\032.google.protobuf.Times"
+          + "tamp\022\024\n\014kms_key_name\030\010 \001(\t\"~\n\005State\022\025\n\021S"
+          + "TATE_UNSPECIFIED\020\000\022\013\n\007ENABLED\020\001\022\014\n\010DISAB"
+          + "LED\020\002\022\014\n\010ENABLING\020\003\022\r\n\tDISABLING\020\004\022\014\n\010CR"
+          + "EATING\020\005\022\n\n\006FAILED\020\006\022\014\n\010DELETING\020\007:h\352Ae\n"
+          + "#documentai.googleapis.com/Processor\022>pr"
+          + "ojects/{project}/locations/{location}/pr"
+          + "ocessors/{processor}B\321\001\n\036com.google.clou"
+          + "d.documentai.v1B\023DocumentAiProcessorP\001Z>"
+          + "cloud.google.com/go/documentai/apiv1/doc"
+          + "umentaipb;documentaipb\252\002\032Google.Cloud.Do"
+          + "cumentAI.V1\312\002\032Google\\Cloud\\DocumentAI\\V1"
+          + "\352\002\035Google::Cloud::DocumentAI::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -136,8 +145,16 @@ public final class DocumentAiProcessor {
             new java.lang.String[] {
               "DeprecationTime", "ReplacementProcessorVersion",
             });
-    internal_static_google_cloud_documentai_v1_Processor_descriptor =
+    internal_static_google_cloud_documentai_v1_ProcessorVersionAlias_descriptor =
         getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_documentai_v1_ProcessorVersionAlias_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1_ProcessorVersionAlias_descriptor,
+            new java.lang.String[] {
+              "Alias", "ProcessorVersion",
+            });
+    internal_static_google_cloud_documentai_v1_Processor_descriptor =
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_documentai_v1_Processor_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1_Processor_descriptor,
@@ -147,6 +164,7 @@ public final class DocumentAiProcessor {
               "DisplayName",
               "State",
               "DefaultProcessorVersion",
+              "ProcessorVersionAliases",
               "ProcessEndpoint",
               "CreateTime",
               "KmsKeyName",

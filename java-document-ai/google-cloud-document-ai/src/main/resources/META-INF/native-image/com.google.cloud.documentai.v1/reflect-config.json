@@ -2367,6 +2367,24 @@
     "allPublicClasses": true
   },
   {
+    "name": "com.google.cloud.documentai.v1.ProcessorVersionAlias",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
+    "name": "com.google.cloud.documentai.v1.ProcessorVersionAlias$Builder",
+    "queryAllDeclaredConstructors": true,
+    "queryAllPublicConstructors": true,
+    "queryAllDeclaredMethods": true,
+    "allPublicMethods": true,
+    "allDeclaredClasses": true,
+    "allPublicClasses": true
+  },
+  {
     "name": "com.google.cloud.documentai.v1.RawDocument",
     "queryAllDeclaredConstructors": true,
     "queryAllPublicConstructors": true,

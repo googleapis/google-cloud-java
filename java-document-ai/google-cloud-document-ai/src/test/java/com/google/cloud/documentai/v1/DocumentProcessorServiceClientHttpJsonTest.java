@@ -674,6 +674,7 @@ public class DocumentProcessorServiceClientHttpJsonTest {
                 ProcessorVersionName.of(
                         "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
                     .toString())
+            .addAllProcessorVersionAliases(new ArrayList<ProcessorVersionAlias>())
             .setProcessEndpoint("processEndpoint-891502300")
             .setCreateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
@@ -727,6 +728,7 @@ public class DocumentProcessorServiceClientHttpJsonTest {
                 ProcessorVersionName.of(
                         "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
                     .toString())
+            .addAllProcessorVersionAliases(new ArrayList<ProcessorVersionAlias>())
             .setProcessEndpoint("processEndpoint-891502300")
             .setCreateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
@@ -1390,6 +1392,7 @@ public class DocumentProcessorServiceClientHttpJsonTest {
                 ProcessorVersionName.of(
                         "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
                     .toString())
+            .addAllProcessorVersionAliases(new ArrayList<ProcessorVersionAlias>())
             .setProcessEndpoint("processEndpoint-891502300")
             .setCreateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
@@ -1445,6 +1448,7 @@ public class DocumentProcessorServiceClientHttpJsonTest {
                 ProcessorVersionName.of(
                         "[PROJECT]", "[LOCATION]", "[PROCESSOR]", "[PROCESSOR_VERSION]")
                     .toString())
+            .addAllProcessorVersionAliases(new ArrayList<ProcessorVersionAlias>())
             .setProcessEndpoint("processEndpoint-891502300")
             .setCreateTime(Timestamp.newBuilder().build())
             .setKmsKeyName("kmsKeyName412586233")
