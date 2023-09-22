@@ -674,3 +674,4 @@ proto-google-cloud-infra-manager-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-infra-manager-v1:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-notebooks-v2:1.22.0:1.23.0-SNAPSHOT
 grpc-google-cloud-notebooks-v2:1.22.0:1.23.0-SNAPSHOT
+proto-google-cloud-alloydb-connectors-v1beta:0.2.0:0.3.0-SNAPSHOT
