@@ -36,12 +36,12 @@ deep-copy-regex:
 - source: "/google/cloud/policytroubleshooter/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-policy-troubleshooter/$1/samples/snippets/generated"
 - source: "/google/cloud/policytroubleshooter/iam/v3/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-policy-troubleshooter/$1/proto-google-cloud-policy-troubleshooter-$1/src"
+  dest: "/owl-bot-staging/java-policy-troubleshooter/v3/proto-google-cloud-policy-troubleshooter-v3/src"
 - source: "/google/cloud/policytroubleshooter/iam/v3/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-policy-troubleshooter/$1/grpc-google-cloud-policy-troubleshooter-$1/src"
+  dest: "/owl-bot-staging/java-policy-troubleshooter/v3/grpc-google-cloud-policy-troubleshooter-v3/src"
 - source: "/google/cloud/policytroubleshooter/iam/v3/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-policy-troubleshooter/$1/google-cloud-policy-troubleshooter/src"
+  dest: "/owl-bot-staging/java-policy-troubleshooter/v3/google-cloud-policy-troubleshooter/src"
 - source: "/google/cloud/policytroubleshooter/iam/v3/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/java-policy-troubleshooter/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-policy-troubleshooter/v3/samples/snippets/generated"
 
 api-name: policytroubleshooter
