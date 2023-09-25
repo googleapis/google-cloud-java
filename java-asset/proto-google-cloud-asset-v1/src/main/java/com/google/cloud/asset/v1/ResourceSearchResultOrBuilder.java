@@ -614,7 +614,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>string kms_key = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=437
+   *     google/cloud/asset/v1/assets.proto;l=471
    * @return The kmsKey.
    */
   @java.lang.Deprecated
@@ -645,7 +645,7 @@ public interface ResourceSearchResultOrBuilder
    * <code>string kms_key = 10 [deprecated = true];</code>
    *
    * @deprecated google.cloud.asset.v1.ResourceSearchResult.kms_key is deprecated. See
-   *     google/cloud/asset/v1/assets.proto;l=437
+   *     google/cloud/asset/v1/assets.proto;l=471
    * @return The bytes for kmsKey.
    */
   @java.lang.Deprecated
@@ -1315,6 +1315,9 @@ public interface ResourceSearchResultOrBuilder
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
    * To search against the `tagKeys`:
    *
@@ -1327,15 +1330,21 @@ public interface ResourceSearchResultOrBuilder
    *     - `env`
    * </pre>
    *
-   * <code>repeated string tag_keys = 23;</code>
+   * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=604
    * @return A list containing the tagKeys.
    */
+  @java.lang.Deprecated
   java.util.List<java.lang.String> getTagKeysList();
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
    * To search against the `tagKeys`:
    *
@@ -1348,15 +1357,21 @@ public interface ResourceSearchResultOrBuilder
    *     - `env`
    * </pre>
    *
-   * <code>repeated string tag_keys = 23;</code>
+   * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=604
    * @return The count of tagKeys.
    */
+  @java.lang.Deprecated
   int getTagKeysCount();
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
    * To search against the `tagKeys`:
    *
@@ -1369,16 +1384,22 @@ public interface ResourceSearchResultOrBuilder
    *     - `env`
    * </pre>
    *
-   * <code>repeated string tag_keys = 23;</code>
+   * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=604
    * @param index The index of the element to return.
    * @return The tagKeys at the given index.
    */
+  @java.lang.Deprecated
   java.lang.String getTagKeys(int index);
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagKey namespaced names, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
    * To search against the `tagKeys`:
    *
@@ -1391,17 +1412,23 @@ public interface ResourceSearchResultOrBuilder
    *     - `env`
    * </pre>
    *
-   * <code>repeated string tag_keys = 23;</code>
+   * <code>repeated string tag_keys = 23 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_keys is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=604
    * @param index The index of the value to return.
    * @return The bytes of the tagKeys at the given index.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getTagKeysBytes(int index);
 
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue namespaced names, in the format of
    * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
    * To search against the `tagValues`:
@@ -1416,15 +1443,21 @@ public interface ResourceSearchResultOrBuilder
    *     - `prod`
    * </pre>
    *
-   * <code>repeated string tag_values = 25;</code>
+   * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=621
    * @return A list containing the tagValues.
    */
+  @java.lang.Deprecated
   java.util.List<java.lang.String> getTagValuesList();
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue namespaced names, in the format of
    * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
    * To search against the `tagValues`:
@@ -1439,15 +1472,21 @@ public interface ResourceSearchResultOrBuilder
    *     - `prod`
    * </pre>
    *
-   * <code>repeated string tag_values = 25;</code>
+   * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=621
    * @return The count of tagValues.
    */
+  @java.lang.Deprecated
   int getTagValuesCount();
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue namespaced names, in the format of
    * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
    * To search against the `tagValues`:
@@ -1462,16 +1501,22 @@ public interface ResourceSearchResultOrBuilder
    *     - `prod`
    * </pre>
    *
-   * <code>repeated string tag_values = 25;</code>
+   * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=621
    * @param index The index of the element to return.
    * @return The tagValues at the given index.
    */
+  @java.lang.Deprecated
   java.lang.String getTagValues(int index);
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue namespaced names, in the format of
    * {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
    * To search against the `tagValues`:
@@ -1486,95 +1531,371 @@ public interface ResourceSearchResultOrBuilder
    *     - `prod`
    * </pre>
    *
-   * <code>repeated string tag_values = 25;</code>
+   * <code>repeated string tag_values = 25 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_values is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=621
    * @param index The index of the value to return.
    * @return The bytes of the tagValues at the given index.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getTagValuesBytes(int index);
 
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
    * To search against the `tagValueIds`:
    *
    * * Use a field query. Example:
-   *     - `tagValueIds:"456"`
    *     - `tagValueIds="tagValues/456"`
    *
    * * Use a free text query. Example:
    *     - `456`
    * </pre>
    *
-   * <code>repeated string tag_value_ids = 26;</code>
+   * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=634
    * @return A list containing the tagValueIds.
    */
+  @java.lang.Deprecated
   java.util.List<java.lang.String> getTagValueIdsList();
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
    * To search against the `tagValueIds`:
    *
    * * Use a field query. Example:
-   *     - `tagValueIds:"456"`
    *     - `tagValueIds="tagValues/456"`
    *
    * * Use a free text query. Example:
    *     - `456`
    * </pre>
    *
-   * <code>repeated string tag_value_ids = 26;</code>
+   * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=634
    * @return The count of tagValueIds.
    */
+  @java.lang.Deprecated
   int getTagValueIdsCount();
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
    * To search against the `tagValueIds`:
    *
    * * Use a field query. Example:
-   *     - `tagValueIds:"456"`
    *     - `tagValueIds="tagValues/456"`
    *
    * * Use a free text query. Example:
    *     - `456`
    * </pre>
    *
-   * <code>repeated string tag_value_ids = 26;</code>
+   * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=634
    * @param index The index of the element to return.
    * @return The tagValueIds at the given index.
    */
+  @java.lang.Deprecated
   java.lang.String getTagValueIds(int index);
   /**
    *
    *
    * <pre>
+   * This field is only present for the purpose of backward compatibility.
+   * Please use the `tags` field instead.
+   *
    * TagValue IDs, in the format of tagValues/{TAG_VALUE_ID}.
    * To search against the `tagValueIds`:
    *
    * * Use a field query. Example:
-   *     - `tagValueIds:"456"`
    *     - `tagValueIds="tagValues/456"`
    *
    * * Use a free text query. Example:
    *     - `456`
    * </pre>
    *
-   * <code>repeated string tag_value_ids = 26;</code>
+   * <code>repeated string tag_value_ids = 26 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.asset.v1.ResourceSearchResult.tag_value_ids is deprecated. See
+   *     google/cloud/asset/v1/assets.proto;l=634
    * @param index The index of the value to return.
    * @return The bytes of the tagValueIds at the given index.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getTagValueIdsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The tags directly attached to this resource.
+   *
+   * To search against the `tags`:
+   *
+   * * Use a field query. Example:
+   *     - `tagKeys:"123456789/env*"`
+   *     - `tagKeys="123456789/env"`
+   *     - `tagKeys:"env"`
+   *     - `tagValues:"env"`
+   *     - `tagValues:"env/prod"`
+   *     - `tagValues:"123456789/env/prod*"`
+   *     - `tagValues="123456789/env/prod"`
+   *     - `tagValueIds="tagValues/456"`
+   *
+   * * Use a free text query. Example:
+   *     - `env/prod`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+   */
+  java.util.List<com.google.cloud.asset.v1.Tag> getTagsList();
+  /**
+   *
+   *
+   * <pre>
+   * The tags directly attached to this resource.
+   *
+   * To search against the `tags`:
+   *
+   * * Use a field query. Example:
+   *     - `tagKeys:"123456789/env*"`
+   *     - `tagKeys="123456789/env"`
+   *     - `tagKeys:"env"`
+   *     - `tagValues:"env"`
+   *     - `tagValues:"env/prod"`
+   *     - `tagValues:"123456789/env/prod*"`
+   *     - `tagValues="123456789/env/prod"`
+   *     - `tagValueIds="tagValues/456"`
+   *
+   * * Use a free text query. Example:
+   *     - `env/prod`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+   */
+  com.google.cloud.asset.v1.Tag getTags(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The tags directly attached to this resource.
+   *
+   * To search against the `tags`:
+   *
+   * * Use a field query. Example:
+   *     - `tagKeys:"123456789/env*"`
+   *     - `tagKeys="123456789/env"`
+   *     - `tagKeys:"env"`
+   *     - `tagValues:"env"`
+   *     - `tagValues:"env/prod"`
+   *     - `tagValues:"123456789/env/prod*"`
+   *     - `tagValues="123456789/env/prod"`
+   *     - `tagValueIds="tagValues/456"`
+   *
+   * * Use a free text query. Example:
+   *     - `env/prod`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+   */
+  int getTagsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The tags directly attached to this resource.
+   *
+   * To search against the `tags`:
+   *
+   * * Use a field query. Example:
+   *     - `tagKeys:"123456789/env*"`
+   *     - `tagKeys="123456789/env"`
+   *     - `tagKeys:"env"`
+   *     - `tagValues:"env"`
+   *     - `tagValues:"env/prod"`
+   *     - `tagValues:"123456789/env/prod*"`
+   *     - `tagValues="123456789/env/prod"`
+   *     - `tagValueIds="tagValues/456"`
+   *
+   * * Use a free text query. Example:
+   *     - `env/prod`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+   */
+  java.util.List<? extends com.google.cloud.asset.v1.TagOrBuilder> getTagsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * The tags directly attached to this resource.
+   *
+   * To search against the `tags`:
+   *
+   * * Use a field query. Example:
+   *     - `tagKeys:"123456789/env*"`
+   *     - `tagKeys="123456789/env"`
+   *     - `tagKeys:"env"`
+   *     - `tagValues:"env"`
+   *     - `tagValues:"env/prod"`
+   *     - `tagValues:"123456789/env/prod*"`
+   *     - `tagValues="123456789/env/prod"`
+   *     - `tagValueIds="tagValues/456"`
+   *
+   * * Use a free text query. Example:
+   *     - `env/prod`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.Tag tags = 29;</code>
+   */
+  com.google.cloud.asset.v1.TagOrBuilder getTagsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * The effective tags on this resource. All of the tags that are both attached
+   * to and inherited by a resource are collectively called the effective
+   * tags. For more information, see [tag
+   * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+   *
+   * To search against the `effective_tags`:
+   *
+   * * Use a field query. Example:
+   *     - `effectiveTagKeys:"123456789/env*"`
+   *     - `effectiveTagKeys="123456789/env"`
+   *     - `effectiveTagKeys:"env"`
+   *     - `effectiveTagValues:"env"`
+   *     - `effectiveTagValues:"env/prod"`
+   *     - `effectiveTagValues:"123456789/env/prod*"`
+   *     - `effectiveTagValues="123456789/env/prod"`
+   *     - `effectiveTagValueIds="tagValues/456"`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+   */
+  java.util.List<com.google.cloud.asset.v1.EffectiveTagDetails> getEffectiveTagsList();
+  /**
+   *
+   *
+   * <pre>
+   * The effective tags on this resource. All of the tags that are both attached
+   * to and inherited by a resource are collectively called the effective
+   * tags. For more information, see [tag
+   * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+   *
+   * To search against the `effective_tags`:
+   *
+   * * Use a field query. Example:
+   *     - `effectiveTagKeys:"123456789/env*"`
+   *     - `effectiveTagKeys="123456789/env"`
+   *     - `effectiveTagKeys:"env"`
+   *     - `effectiveTagValues:"env"`
+   *     - `effectiveTagValues:"env/prod"`
+   *     - `effectiveTagValues:"123456789/env/prod*"`
+   *     - `effectiveTagValues="123456789/env/prod"`
+   *     - `effectiveTagValueIds="tagValues/456"`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+   */
+  com.google.cloud.asset.v1.EffectiveTagDetails getEffectiveTags(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The effective tags on this resource. All of the tags that are both attached
+   * to and inherited by a resource are collectively called the effective
+   * tags. For more information, see [tag
+   * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+   *
+   * To search against the `effective_tags`:
+   *
+   * * Use a field query. Example:
+   *     - `effectiveTagKeys:"123456789/env*"`
+   *     - `effectiveTagKeys="123456789/env"`
+   *     - `effectiveTagKeys:"env"`
+   *     - `effectiveTagValues:"env"`
+   *     - `effectiveTagValues:"env/prod"`
+   *     - `effectiveTagValues:"123456789/env/prod*"`
+   *     - `effectiveTagValues="123456789/env/prod"`
+   *     - `effectiveTagValueIds="tagValues/456"`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+   */
+  int getEffectiveTagsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The effective tags on this resource. All of the tags that are both attached
+   * to and inherited by a resource are collectively called the effective
+   * tags. For more information, see [tag
+   * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+   *
+   * To search against the `effective_tags`:
+   *
+   * * Use a field query. Example:
+   *     - `effectiveTagKeys:"123456789/env*"`
+   *     - `effectiveTagKeys="123456789/env"`
+   *     - `effectiveTagKeys:"env"`
+   *     - `effectiveTagValues:"env"`
+   *     - `effectiveTagValues:"env/prod"`
+   *     - `effectiveTagValues:"123456789/env/prod*"`
+   *     - `effectiveTagValues="123456789/env/prod"`
+   *     - `effectiveTagValueIds="tagValues/456"`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+   */
+  java.util.List<? extends com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder>
+      getEffectiveTagsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * The effective tags on this resource. All of the tags that are both attached
+   * to and inherited by a resource are collectively called the effective
+   * tags. For more information, see [tag
+   * inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+   *
+   * To search against the `effective_tags`:
+   *
+   * * Use a field query. Example:
+   *     - `effectiveTagKeys:"123456789/env*"`
+   *     - `effectiveTagKeys="123456789/env"`
+   *     - `effectiveTagKeys:"env"`
+   *     - `effectiveTagValues:"env"`
+   *     - `effectiveTagValues:"env/prod"`
+   *     - `effectiveTagValues:"123456789/env/prod*"`
+   *     - `effectiveTagValues="123456789/env/prod"`
+   *     - `effectiveTagValueIds="tagValues/456"`
+   * </pre>
+   *
+   * <code>repeated .google.cloud.asset.v1.EffectiveTagDetails effective_tags = 30;</code>
+   */
+  com.google.cloud.asset.v1.EffectiveTagDetailsOrBuilder getEffectiveTagsOrBuilder(int index);
 
   /**
    *
@@ -1614,4 +1935,122 @@ public interface ResourceSearchResultOrBuilder
    * @return The bytes for parentAssetType.
    */
   com.google.protobuf.ByteString getParentAssetTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The actual content of Security Command Center security marks associated
+   * with the asset.
+   *
+   *
+   * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
+   * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
+   * returned in the following `security_marks` map. In that case, the prefix
+   * "staging." will be added to the keys of all the staging marks.
+   * To search against SCC SecurityMarks field:
+   *
+   *   * Use a field query:
+   *     - query by a given key value pair. Example: `sccSecurityMarks.foo=bar`
+   *     - query by a given key's existence. Example: `sccSecurityMarks.foo:*`
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
+   */
+  int getSccSecurityMarksCount();
+  /**
+   *
+   *
+   * <pre>
+   * The actual content of Security Command Center security marks associated
+   * with the asset.
+   *
+   *
+   * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
+   * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
+   * returned in the following `security_marks` map. In that case, the prefix
+   * "staging." will be added to the keys of all the staging marks.
+   * To search against SCC SecurityMarks field:
+   *
+   *   * Use a field query:
+   *     - query by a given key value pair. Example: `sccSecurityMarks.foo=bar`
+   *     - query by a given key's existence. Example: `sccSecurityMarks.foo:*`
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
+   */
+  boolean containsSccSecurityMarks(java.lang.String key);
+  /** Use {@link #getSccSecurityMarksMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getSccSecurityMarks();
+  /**
+   *
+   *
+   * <pre>
+   * The actual content of Security Command Center security marks associated
+   * with the asset.
+   *
+   *
+   * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
+   * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
+   * returned in the following `security_marks` map. In that case, the prefix
+   * "staging." will be added to the keys of all the staging marks.
+   * To search against SCC SecurityMarks field:
+   *
+   *   * Use a field query:
+   *     - query by a given key value pair. Example: `sccSecurityMarks.foo=bar`
+   *     - query by a given key's existence. Example: `sccSecurityMarks.foo:*`
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getSccSecurityMarksMap();
+  /**
+   *
+   *
+   * <pre>
+   * The actual content of Security Command Center security marks associated
+   * with the asset.
+   *
+   *
+   * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
+   * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
+   * returned in the following `security_marks` map. In that case, the prefix
+   * "staging." will be added to the keys of all the staging marks.
+   * To search against SCC SecurityMarks field:
+   *
+   *   * Use a field query:
+   *     - query by a given key value pair. Example: `sccSecurityMarks.foo=bar`
+   *     - query by a given key's existence. Example: `sccSecurityMarks.foo:*`
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
+   */
+  /* nullable */
+  java.lang.String getSccSecurityMarksOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * The actual content of Security Command Center security marks associated
+   * with the asset.
+   *
+   *
+   * Note that both staging &amp; prod SecurityMarks are attached on prod resources.
+   * In CAS preprod/prod, both staging &amp; prod SecurityMarks are ingested and
+   * returned in the following `security_marks` map. In that case, the prefix
+   * "staging." will be added to the keys of all the staging marks.
+   * To search against SCC SecurityMarks field:
+   *
+   *   * Use a field query:
+   *     - query by a given key value pair. Example: `sccSecurityMarks.foo=bar`
+   *     - query by a given key's existence. Example: `sccSecurityMarks.foo:*`
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; scc_security_marks = 32;</code>
+   */
+  java.lang.String getSccSecurityMarksOrThrow(java.lang.String key);
 }

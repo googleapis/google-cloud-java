@@ -2391,17 +2391,17 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The identity name in any form of members appear in
+     * The identity of members, formatted as appear in an
      * [IAM policy
-     * binding](https://cloud.google.com/iam/reference/rest/v1/Binding), such
-     * as:
+     * binding](https://cloud.google.com/iam/reference/rest/v1/Binding). For
+     * example, they might be formatted like the following:
+     *
      * - user:foo&#64;google.com
      * - group:group1&#64;google.com
      * - serviceAccount:s1&#64;prj1.iam.gserviceaccount.com
      * - projectOwner:some_project_id
      * - domain:google.com
      * - allUsers
-     * - etc.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2413,17 +2413,17 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The identity name in any form of members appear in
+     * The identity of members, formatted as appear in an
      * [IAM policy
-     * binding](https://cloud.google.com/iam/reference/rest/v1/Binding), such
-     * as:
+     * binding](https://cloud.google.com/iam/reference/rest/v1/Binding). For
+     * example, they might be formatted like the following:
+     *
      * - user:foo&#64;google.com
      * - group:group1&#64;google.com
      * - serviceAccount:s1&#64;prj1.iam.gserviceaccount.com
      * - projectOwner:some_project_id
      * - domain:google.com
      * - allUsers
-     * - etc.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2519,17 +2519,17 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The identity name in any form of members appear in
+     * The identity of members, formatted as appear in an
      * [IAM policy
-     * binding](https://cloud.google.com/iam/reference/rest/v1/Binding), such
-     * as:
+     * binding](https://cloud.google.com/iam/reference/rest/v1/Binding). For
+     * example, they might be formatted like the following:
+     *
      * - user:foo&#64;google.com
      * - group:group1&#64;google.com
      * - serviceAccount:s1&#64;prj1.iam.gserviceaccount.com
      * - projectOwner:some_project_id
      * - domain:google.com
      * - allUsers
-     * - etc.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -2552,17 +2552,17 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The identity name in any form of members appear in
+     * The identity of members, formatted as appear in an
      * [IAM policy
-     * binding](https://cloud.google.com/iam/reference/rest/v1/Binding), such
-     * as:
+     * binding](https://cloud.google.com/iam/reference/rest/v1/Binding). For
+     * example, they might be formatted like the following:
+     *
      * - user:foo&#64;google.com
      * - group:group1&#64;google.com
      * - serviceAccount:s1&#64;prj1.iam.gserviceaccount.com
      * - projectOwner:some_project_id
      * - domain:google.com
      * - allUsers
-     * - etc.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3019,17 +3019,17 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * The identity name in any form of members appear in
+       * The identity of members, formatted as appear in an
        * [IAM policy
-       * binding](https://cloud.google.com/iam/reference/rest/v1/Binding), such
-       * as:
+       * binding](https://cloud.google.com/iam/reference/rest/v1/Binding). For
+       * example, they might be formatted like the following:
+       *
        * - user:foo&#64;google.com
        * - group:group1&#64;google.com
        * - serviceAccount:s1&#64;prj1.iam.gserviceaccount.com
        * - projectOwner:some_project_id
        * - domain:google.com
        * - allUsers
-       * - etc.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -3051,17 +3051,17 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * The identity name in any form of members appear in
+       * The identity of members, formatted as appear in an
        * [IAM policy
-       * binding](https://cloud.google.com/iam/reference/rest/v1/Binding), such
-       * as:
+       * binding](https://cloud.google.com/iam/reference/rest/v1/Binding). For
+       * example, they might be formatted like the following:
+       *
        * - user:foo&#64;google.com
        * - group:group1&#64;google.com
        * - serviceAccount:s1&#64;prj1.iam.gserviceaccount.com
        * - projectOwner:some_project_id
        * - domain:google.com
        * - allUsers
-       * - etc.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -3083,17 +3083,17 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * The identity name in any form of members appear in
+       * The identity of members, formatted as appear in an
        * [IAM policy
-       * binding](https://cloud.google.com/iam/reference/rest/v1/Binding), such
-       * as:
+       * binding](https://cloud.google.com/iam/reference/rest/v1/Binding). For
+       * example, they might be formatted like the following:
+       *
        * - user:foo&#64;google.com
        * - group:group1&#64;google.com
        * - serviceAccount:s1&#64;prj1.iam.gserviceaccount.com
        * - projectOwner:some_project_id
        * - domain:google.com
        * - allUsers
-       * - etc.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -3114,17 +3114,17 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * The identity name in any form of members appear in
+       * The identity of members, formatted as appear in an
        * [IAM policy
-       * binding](https://cloud.google.com/iam/reference/rest/v1/Binding), such
-       * as:
+       * binding](https://cloud.google.com/iam/reference/rest/v1/Binding). For
+       * example, they might be formatted like the following:
+       *
        * - user:foo&#64;google.com
        * - group:group1&#64;google.com
        * - serviceAccount:s1&#64;prj1.iam.gserviceaccount.com
        * - projectOwner:some_project_id
        * - domain:google.com
        * - allUsers
-       * - etc.
        * </pre>
        *
        * <code>string name = 1;</code>
@@ -3141,17 +3141,17 @@ public final class IamPolicyAnalysisResult extends com.google.protobuf.Generated
        *
        *
        * <pre>
-       * The identity name in any form of members appear in
+       * The identity of members, formatted as appear in an
        * [IAM policy
-       * binding](https://cloud.google.com/iam/reference/rest/v1/Binding), such
-       * as:
+       * binding](https://cloud.google.com/iam/reference/rest/v1/Binding). For
+       * example, they might be formatted like the following:
+       *
        * - user:foo&#64;google.com
        * - group:group1&#64;google.com
        * - serviceAccount:s1&#64;prj1.iam.gserviceaccount.com
        * - projectOwner:some_project_id
        * - domain:google.com
        * - allUsers
-       * - etc.
        * </pre>
        *
        * <code>string name = 1;</code>

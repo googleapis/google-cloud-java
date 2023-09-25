@@ -66,8 +66,8 @@ public interface QueryAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A SQL statement that's compatible with [BigQuery Standard
-   * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
+   * Optional. A SQL statement that's compatible with [BigQuery
+   * SQL](https://cloud.google.com/bigquery/docs/introduction-sql).
    * </pre>
    *
    * <code>string statement = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -79,8 +79,8 @@ public interface QueryAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A SQL statement that's compatible with [BigQuery Standard
-   * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
+   * Optional. A SQL statement that's compatible with [BigQuery
+   * SQL](https://cloud.google.com/bigquery/docs/introduction-sql).
    * </pre>
    *
    * <code>string statement = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -92,8 +92,8 @@ public interface QueryAssetsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. A SQL statement that's compatible with [BigQuery Standard
-   * SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
+   * Optional. A SQL statement that's compatible with [BigQuery
+   * SQL](https://cloud.google.com/bigquery/docs/introduction-sql).
    * </pre>
    *
    * <code>string statement = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
