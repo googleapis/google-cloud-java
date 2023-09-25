@@ -1206,6 +1206,22 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
+   * Optional. Override the traffic tag threshold limit. Garbage collection will
+   * start cleaning up non-serving tagged traffic targets based on creation
+   * item. The default value is 2000.
+   * </pre>
+   *
+   * <code>int64 traffic_tags_cleanup_threshold = 39 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The trafficTagsCleanupThreshold.
+   */
+  long getTrafficTagsCleanupThreshold();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Returns true if the Service is currently being acted upon by
    * the system to bring it into the desired state.
    *

@@ -1796,6 +1796,27 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     return satisfiesPzs_;
   }
 
+  public static final int TRAFFIC_TAGS_CLEANUP_THRESHOLD_FIELD_NUMBER = 39;
+  private long trafficTagsCleanupThreshold_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Override the traffic tag threshold limit. Garbage collection will
+   * start cleaning up non-serving tagged traffic targets based on creation
+   * item. The default value is 2000.
+   * </pre>
+   *
+   * <code>int64 traffic_tags_cleanup_threshold = 39 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The trafficTagsCleanupThreshold.
+   */
+  @java.lang.Override
+  public long getTrafficTagsCleanupThreshold() {
+    return trafficTagsCleanupThreshold_;
+  }
+
   public static final int RECONCILING_FIELD_NUMBER = 98;
   private boolean reconciling_ = false;
   /**
@@ -1985,6 +2006,9 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzs_ != false) {
       output.writeBool(38, satisfiesPzs_);
     }
+    if (trafficTagsCleanupThreshold_ != 0L) {
+      output.writeInt64(39, trafficTagsCleanupThreshold_);
+    }
     if (reconciling_ != false) {
       output.writeBool(98, reconciling_);
     }
@@ -2105,6 +2129,10 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (satisfiesPzs_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(38, satisfiesPzs_);
     }
+    if (trafficTagsCleanupThreshold_ != 0L) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt64Size(39, trafficTagsCleanupThreshold_);
+    }
     if (reconciling_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(98, reconciling_);
     }
@@ -2175,6 +2203,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     if (!getUri().equals(other.getUri())) return false;
     if (!getCustomAudiencesList().equals(other.getCustomAudiencesList())) return false;
     if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (getTrafficTagsCleanupThreshold() != other.getTrafficTagsCleanupThreshold()) return false;
     if (getReconciling() != other.getReconciling()) return false;
     if (!getEtag().equals(other.getEtag())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -2270,6 +2299,8 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    hash = (37 * hash) + TRAFFIC_TAGS_CLEANUP_THRESHOLD_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTrafficTagsCleanupThreshold());
     hash = (37 * hash) + RECONCILING_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getReconciling());
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
@@ -2513,6 +2544,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       uri_ = "";
       customAudiences_ = com.google.protobuf.LazyStringArrayList.emptyList();
       satisfiesPzs_ = false;
+      trafficTagsCleanupThreshold_ = 0L;
       reconciling_ = false;
       etag_ = "";
       return this;
@@ -2666,9 +2698,12 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         result.satisfiesPzs_ = satisfiesPzs_;
       }
       if (((from_bitField0_ & 0x10000000) != 0)) {
-        result.reconciling_ = reconciling_;
+        result.trafficTagsCleanupThreshold_ = trafficTagsCleanupThreshold_;
       }
       if (((from_bitField0_ & 0x20000000) != 0)) {
+        result.reconciling_ = reconciling_;
+      }
+      if (((from_bitField0_ & 0x40000000) != 0)) {
         result.etag_ = etag_;
       }
     }
@@ -2899,12 +2934,15 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       if (other.getSatisfiesPzs() != false) {
         setSatisfiesPzs(other.getSatisfiesPzs());
       }
+      if (other.getTrafficTagsCleanupThreshold() != 0L) {
+        setTrafficTagsCleanupThreshold(other.getTrafficTagsCleanupThreshold());
+      }
       if (other.getReconciling() != false) {
         setReconciling(other.getReconciling());
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x20000000;
+        bitField0_ |= 0x40000000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3137,16 +3175,22 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x08000000;
                 break;
               } // case 304
+            case 312:
+              {
+                trafficTagsCleanupThreshold_ = input.readInt64();
+                bitField0_ |= 0x10000000;
+                break;
+              } // case 312
             case 784:
               {
                 reconciling_ = input.readBool();
-                bitField0_ |= 0x10000000;
+                bitField0_ |= 0x20000000;
                 break;
               } // case 784
             case 794:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x20000000;
+                bitField0_ |= 0x40000000;
                 break;
               } // case 794
             default:
@@ -8088,6 +8132,68 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private long trafficTagsCleanupThreshold_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Override the traffic tag threshold limit. Garbage collection will
+     * start cleaning up non-serving tagged traffic targets based on creation
+     * item. The default value is 2000.
+     * </pre>
+     *
+     * <code>int64 traffic_tags_cleanup_threshold = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The trafficTagsCleanupThreshold.
+     */
+    @java.lang.Override
+    public long getTrafficTagsCleanupThreshold() {
+      return trafficTagsCleanupThreshold_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Override the traffic tag threshold limit. Garbage collection will
+     * start cleaning up non-serving tagged traffic targets based on creation
+     * item. The default value is 2000.
+     * </pre>
+     *
+     * <code>int64 traffic_tags_cleanup_threshold = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The trafficTagsCleanupThreshold to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrafficTagsCleanupThreshold(long value) {
+
+      trafficTagsCleanupThreshold_ = value;
+      bitField0_ |= 0x10000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Override the traffic tag threshold limit. Garbage collection will
+     * start cleaning up non-serving tagged traffic targets based on creation
+     * item. The default value is 2000.
+     * </pre>
+     *
+     * <code>int64 traffic_tags_cleanup_threshold = 39 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTrafficTagsCleanupThreshold() {
+      bitField0_ = (bitField0_ & ~0x10000000);
+      trafficTagsCleanupThreshold_ = 0L;
+      onChanged();
+      return this;
+    }
+
     private boolean reconciling_;
     /**
      *
@@ -8161,7 +8267,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
     public Builder setReconciling(boolean value) {
 
       reconciling_ = value;
-      bitField0_ |= 0x10000000;
+      bitField0_ |= 0x20000000;
       onChanged();
       return this;
     }
@@ -8198,7 +8304,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearReconciling() {
-      bitField0_ = (bitField0_ & ~0x10000000);
+      bitField0_ = (bitField0_ & ~0x20000000);
       reconciling_ = false;
       onChanged();
       return this;
@@ -8269,7 +8375,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }
@@ -8287,7 +8393,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x20000000);
+      bitField0_ = (bitField0_ & ~0x40000000);
       onChanged();
       return this;
     }
@@ -8310,7 +8416,7 @@ public final class Service extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x20000000;
+      bitField0_ |= 0x40000000;
       onChanged();
       return this;
     }

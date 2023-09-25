@@ -44,6 +44,10 @@ public final class ExecutionProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_run_v2_DeleteExecutionRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_run_v2_CancelExecutionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_run_v2_CancelExecutionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_run_v2_Execution_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_run_v2_Execution_fieldAccessorTable;
@@ -83,58 +87,66 @@ public final class ExecutionProto {
           + "xecution\022\027\n\017next_page_token\030\002 \001(\t\"r\n\026Del"
           + "eteExecutionRequest\0223\n\004name\030\001 \001(\tB%\342A\001\002\372"
           + "A\036\n\034run.googleapis.com/Execution\022\025\n\rvali"
-          + "date_only\030\002 \001(\010\022\014\n\004etag\030\003 \001(\t\"\234\n\n\tExecut"
-          + "ion\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\022\021\n\003uid\030\002 \001(\tB\004\342A"
-          + "\001\003\022\030\n\ngeneration\030\003 \001(\003B\004\342A\001\003\022@\n\006labels\030\004"
-          + " \003(\0132*.google.cloud.run.v2.Execution.Lab"
-          + "elsEntryB\004\342A\001\003\022J\n\013annotations\030\005 \003(\0132/.go"
-          + "ogle.cloud.run.v2.Execution.AnnotationsE"
-          + "ntryB\004\342A\001\003\0225\n\013create_time\030\006 \001(\0132\032.google"
-          + ".protobuf.TimestampB\004\342A\001\003\0224\n\nstart_time\030"
-          + "\026 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022"
-          + "9\n\017completion_time\030\007 \001(\0132\032.google.protob"
-          + "uf.TimestampB\004\342A\001\003\0225\n\013update_time\030\010 \001(\0132"
-          + "\032.google.protobuf.TimestampB\004\342A\001\003\0225\n\013del"
-          + "ete_time\030\t \001(\0132\032.google.protobuf.Timesta"
-          + "mpB\004\342A\001\003\0225\n\013expire_time\030\n \001(\0132\032.google.p"
-          + "rotobuf.TimestampB\004\342A\001\003\022-\n\014launch_stage\030"
-          + "\013 \001(\0162\027.google.api.LaunchStage\022,\n\003job\030\014 "
-          + "\001(\tB\037\342A\001\003\372A\030\n\026run.googleapis.com/Job\022\031\n\013"
-          + "parallelism\030\r \001(\005B\004\342A\001\003\022\030\n\ntask_count\030\016 "
-          + "\001(\005B\004\342A\001\003\0229\n\010template\030\017 \001(\0132!.google.clo"
-          + "ud.run.v2.TaskTemplateB\004\342A\001\003\022\031\n\013reconcil"
-          + "ing\030\020 \001(\010B\004\342A\001\003\0228\n\nconditions\030\021 \003(\0132\036.go"
-          + "ogle.cloud.run.v2.ConditionB\004\342A\001\003\022!\n\023obs"
-          + "erved_generation\030\022 \001(\003B\004\342A\001\003\022\033\n\rrunning_"
-          + "count\030\023 \001(\005B\004\342A\001\003\022\035\n\017succeeded_count\030\024 \001"
-          + "(\005B\004\342A\001\003\022\032\n\014failed_count\030\025 \001(\005B\004\342A\001\003\022\035\n\017"
-          + "cancelled_count\030\030 \001(\005B\004\342A\001\003\022\033\n\rretried_c"
-          + "ount\030\031 \001(\005B\004\342A\001\003\022\025\n\007log_uri\030\032 \001(\tB\004\342A\001\003\022"
-          + "\033\n\rsatisfies_pzs\030\033 \001(\010B\004\342A\001\003\022\022\n\004etag\030c \001"
-          + "(\tB\004\342A\001\003\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
-          + "value\030\002 \001(\t:\0028\001\0322\n\020AnnotationsEntry\022\013\n\003k"
-          + "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:o\352Al\n\034run.go"
-          + "ogleapis.com/Execution\022Iprojects/{projec"
-          + "t}/locations/{location}/jobs/{job}/execu"
-          + "tions/{execution}R\001\0012\350\004\n\nExecutions\022\236\001\n\014"
-          + "GetExecution\022(.google.cloud.run.v2.GetEx"
-          + "ecutionRequest\032\036.google.cloud.run.v2.Exe"
-          + "cution\"D\332A\004name\202\323\344\223\0027\0225/v2/{name=project"
-          + "s/*/locations/*/jobs/*/executions/*}\022\261\001\n"
-          + "\016ListExecutions\022*.google.cloud.run.v2.Li"
-          + "stExecutionsRequest\032+.google.cloud.run.v"
-          + "2.ListExecutionsResponse\"F\332A\006parent\202\323\344\223\002"
-          + "7\0225/v2/{parent=projects/*/locations/*/jo"
-          + "bs/*}/executions\022\274\001\n\017DeleteExecution\022+.g"
-          + "oogle.cloud.run.v2.DeleteExecutionReques"
-          + "t\032\035.google.longrunning.Operation\"]\312A\026\n\tE"
-          + "xecution\022\tExecution\332A\004name\202\323\344\223\0027*5/v2/{n"
-          + "ame=projects/*/locations/*/jobs/*/execut"
-          + "ions/*}\032F\312A\022run.googleapis.com\322A.https:/"
-          + "/www.googleapis.com/auth/cloud-platformB"
-          + "V\n\027com.google.cloud.run.v2B\016ExecutionPro"
-          + "toP\001Z)cloud.google.com/go/run/apiv2/runp"
-          + "b;runpbb\006proto3"
+          + "date_only\030\002 \001(\010\022\014\n\004etag\030\003 \001(\t\"r\n\026CancelE"
+          + "xecutionRequest\0223\n\004name\030\001 \001(\tB%\342A\001\002\372A\036\n\034"
+          + "run.googleapis.com/Execution\022\025\n\rvalidate"
+          + "_only\030\002 \001(\010\022\014\n\004etag\030\003 \001(\t\"\234\n\n\tExecution\022"
+          + "\022\n\004name\030\001 \001(\tB\004\342A\001\003\022\021\n\003uid\030\002 \001(\tB\004\342A\001\003\022\030"
+          + "\n\ngeneration\030\003 \001(\003B\004\342A\001\003\022@\n\006labels\030\004 \003(\013"
+          + "2*.google.cloud.run.v2.Execution.LabelsE"
+          + "ntryB\004\342A\001\003\022J\n\013annotations\030\005 \003(\0132/.google"
+          + ".cloud.run.v2.Execution.AnnotationsEntry"
+          + "B\004\342A\001\003\0225\n\013create_time\030\006 \001(\0132\032.google.pro"
+          + "tobuf.TimestampB\004\342A\001\003\0224\n\nstart_time\030\026 \001("
+          + "\0132\032.google.protobuf.TimestampB\004\342A\001\003\0229\n\017c"
+          + "ompletion_time\030\007 \001(\0132\032.google.protobuf.T"
+          + "imestampB\004\342A\001\003\0225\n\013update_time\030\010 \001(\0132\032.go"
+          + "ogle.protobuf.TimestampB\004\342A\001\003\0225\n\013delete_"
+          + "time\030\t \001(\0132\032.google.protobuf.TimestampB\004"
+          + "\342A\001\003\0225\n\013expire_time\030\n \001(\0132\032.google.proto"
+          + "buf.TimestampB\004\342A\001\003\022-\n\014launch_stage\030\013 \001("
+          + "\0162\027.google.api.LaunchStage\022,\n\003job\030\014 \001(\tB"
+          + "\037\342A\001\003\372A\030\n\026run.googleapis.com/Job\022\031\n\013para"
+          + "llelism\030\r \001(\005B\004\342A\001\003\022\030\n\ntask_count\030\016 \001(\005B"
+          + "\004\342A\001\003\0229\n\010template\030\017 \001(\0132!.google.cloud.r"
+          + "un.v2.TaskTemplateB\004\342A\001\003\022\031\n\013reconciling\030"
+          + "\020 \001(\010B\004\342A\001\003\0228\n\nconditions\030\021 \003(\0132\036.google"
+          + ".cloud.run.v2.ConditionB\004\342A\001\003\022!\n\023observe"
+          + "d_generation\030\022 \001(\003B\004\342A\001\003\022\033\n\rrunning_coun"
+          + "t\030\023 \001(\005B\004\342A\001\003\022\035\n\017succeeded_count\030\024 \001(\005B\004"
+          + "\342A\001\003\022\032\n\014failed_count\030\025 \001(\005B\004\342A\001\003\022\035\n\017canc"
+          + "elled_count\030\030 \001(\005B\004\342A\001\003\022\033\n\rretried_count"
+          + "\030\031 \001(\005B\004\342A\001\003\022\025\n\007log_uri\030\032 \001(\tB\004\342A\001\003\022\033\n\rs"
+          + "atisfies_pzs\030\033 \001(\010B\004\342A\001\003\022\022\n\004etag\030c \001(\tB\004"
+          + "\342A\001\003\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu"
+          + "e\030\002 \001(\t:\0028\001\0322\n\020AnnotationsEntry\022\013\n\003key\030\001"
+          + " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:o\352Al\n\034run.google"
+          + "apis.com/Execution\022Iprojects/{project}/l"
+          + "ocations/{location}/jobs/{job}/execution"
+          + "s/{execution}R\001\0012\261\006\n\nExecutions\022\236\001\n\014GetE"
+          + "xecution\022(.google.cloud.run.v2.GetExecut"
+          + "ionRequest\032\036.google.cloud.run.v2.Executi"
+          + "on\"D\332A\004name\202\323\344\223\0027\0225/v2/{name=projects/*/"
+          + "locations/*/jobs/*/executions/*}\022\261\001\n\016Lis"
+          + "tExecutions\022*.google.cloud.run.v2.ListEx"
+          + "ecutionsRequest\032+.google.cloud.run.v2.Li"
+          + "stExecutionsResponse\"F\332A\006parent\202\323\344\223\0027\0225/"
+          + "v2/{parent=projects/*/locations/*/jobs/*"
+          + "}/executions\022\274\001\n\017DeleteExecution\022+.googl"
+          + "e.cloud.run.v2.DeleteExecutionRequest\032\035."
+          + "google.longrunning.Operation\"]\312A\026\n\tExecu"
+          + "tion\022\tExecution\332A\004name\202\323\344\223\0027*5/v2/{name="
+          + "projects/*/locations/*/jobs/*/executions"
+          + "/*}\022\306\001\n\017CancelExecution\022+.google.cloud.r"
+          + "un.v2.CancelExecutionRequest\032\035.google.lo"
+          + "ngrunning.Operation\"g\312A\026\n\tExecution\022\tExe"
+          + "cution\332A\004name\202\323\344\223\002A\"</v2/{name=projects/"
+          + "*/locations/*/jobs/*/executions/*}:cance"
+          + "l:\001*\032F\312A\022run.googleapis.com\322A.https://ww"
+          + "w.googleapis.com/auth/cloud-platformBV\n\027"
+          + "com.google.cloud.run.v2B\016ExecutionProtoP"
+          + "\001Z)cloud.google.com/go/run/apiv2/runpb;r"
+          + "unpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -182,8 +194,16 @@ public final class ExecutionProto {
             new java.lang.String[] {
               "Name", "ValidateOnly", "Etag",
             });
-    internal_static_google_cloud_run_v2_Execution_descriptor =
+    internal_static_google_cloud_run_v2_CancelExecutionRequest_descriptor =
         getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_run_v2_CancelExecutionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_run_v2_CancelExecutionRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "ValidateOnly", "Etag",
+            });
+    internal_static_google_cloud_run_v2_Execution_descriptor =
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_run_v2_Execution_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_run_v2_Execution_descriptor,

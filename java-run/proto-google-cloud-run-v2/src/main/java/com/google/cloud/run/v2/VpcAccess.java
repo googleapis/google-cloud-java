@@ -22,10 +22,8 @@ package com.google.cloud.run.v2;
  *
  *
  * <pre>
- * VPC Access settings. For more information on creating a VPC Connector, visit
- * https://cloud.google.com/vpc/docs/configure-serverless-vpc-access For
- * information on how to configure Cloud Run with an existing VPC Connector,
- * visit https://cloud.google.com/run/docs/configuring/connecting-vpc
+ * VPC Access settings. For more information on sending traffic to a VPC
+ * network, visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
  * </pre>
  *
  * Protobuf type {@code google.cloud.run.v2.VpcAccess}
@@ -43,6 +41,7 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
   private VpcAccess() {
     connector_ = "";
     egress_ = 0;
+    networkInterfaces_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -223,6 +222,1254 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.run.v2.VpcAccess.VpcEgress)
   }
 
+  public interface NetworkInterfaceOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.run.v2.VpcAccess.NetworkInterface)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The VPC network that the Cloud Run resource will be able to send traffic
+     * to. At least one of network or subnetwork must be specified. If both
+     * network and subnetwork are specified, the given VPC subnetwork must
+     * belong to the given VPC network. If network is not specified, it will be
+     * looked up from the subnetwork.
+     * </pre>
+     *
+     * <code>string network = 1;</code>
+     *
+     * @return The network.
+     */
+    java.lang.String getNetwork();
+    /**
+     *
+     *
+     * <pre>
+     * The VPC network that the Cloud Run resource will be able to send traffic
+     * to. At least one of network or subnetwork must be specified. If both
+     * network and subnetwork are specified, the given VPC subnetwork must
+     * belong to the given VPC network. If network is not specified, it will be
+     * looked up from the subnetwork.
+     * </pre>
+     *
+     * <code>string network = 1;</code>
+     *
+     * @return The bytes for network.
+     */
+    com.google.protobuf.ByteString getNetworkBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The VPC subnetwork that the Cloud Run resource will get IPs from. At
+     * least one of network or subnetwork must be specified. If both
+     * network and subnetwork are specified, the given VPC subnetwork must
+     * belong to the given VPC network. If subnetwork is not specified, the
+     * subnetwork with the same name with the network will be used.
+     * </pre>
+     *
+     * <code>string subnetwork = 2;</code>
+     *
+     * @return The subnetwork.
+     */
+    java.lang.String getSubnetwork();
+    /**
+     *
+     *
+     * <pre>
+     * The VPC subnetwork that the Cloud Run resource will get IPs from. At
+     * least one of network or subnetwork must be specified. If both
+     * network and subnetwork are specified, the given VPC subnetwork must
+     * belong to the given VPC network. If subnetwork is not specified, the
+     * subnetwork with the same name with the network will be used.
+     * </pre>
+     *
+     * <code>string subnetwork = 2;</code>
+     *
+     * @return The bytes for subnetwork.
+     */
+    com.google.protobuf.ByteString getSubnetworkBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Network tags applied to this Cloud Run resource.
+     * </pre>
+     *
+     * <code>repeated string tags = 3;</code>
+     *
+     * @return A list containing the tags.
+     */
+    java.util.List<java.lang.String> getTagsList();
+    /**
+     *
+     *
+     * <pre>
+     * Network tags applied to this Cloud Run resource.
+     * </pre>
+     *
+     * <code>repeated string tags = 3;</code>
+     *
+     * @return The count of tags.
+     */
+    int getTagsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Network tags applied to this Cloud Run resource.
+     * </pre>
+     *
+     * <code>repeated string tags = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    java.lang.String getTags(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Network tags applied to this Cloud Run resource.
+     * </pre>
+     *
+     * <code>repeated string tags = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    com.google.protobuf.ByteString getTagsBytes(int index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Direct VPC egress settings.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.run.v2.VpcAccess.NetworkInterface}
+   */
+  public static final class NetworkInterface extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.run.v2.VpcAccess.NetworkInterface)
+      NetworkInterfaceOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use NetworkInterface.newBuilder() to construct.
+    private NetworkInterface(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private NetworkInterface() {
+      network_ = "";
+      subnetwork_ = "";
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new NetworkInterface();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.run.v2.VendorSettingsProto
+          .internal_static_google_cloud_run_v2_VpcAccess_NetworkInterface_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.run.v2.VendorSettingsProto
+          .internal_static_google_cloud_run_v2_VpcAccess_NetworkInterface_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.run.v2.VpcAccess.NetworkInterface.class,
+              com.google.cloud.run.v2.VpcAccess.NetworkInterface.Builder.class);
+    }
+
+    public static final int NETWORK_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object network_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The VPC network that the Cloud Run resource will be able to send traffic
+     * to. At least one of network or subnetwork must be specified. If both
+     * network and subnetwork are specified, the given VPC subnetwork must
+     * belong to the given VPC network. If network is not specified, it will be
+     * looked up from the subnetwork.
+     * </pre>
+     *
+     * <code>string network = 1;</code>
+     *
+     * @return The network.
+     */
+    @java.lang.Override
+    public java.lang.String getNetwork() {
+      java.lang.Object ref = network_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        network_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The VPC network that the Cloud Run resource will be able to send traffic
+     * to. At least one of network or subnetwork must be specified. If both
+     * network and subnetwork are specified, the given VPC subnetwork must
+     * belong to the given VPC network. If network is not specified, it will be
+     * looked up from the subnetwork.
+     * </pre>
+     *
+     * <code>string network = 1;</code>
+     *
+     * @return The bytes for network.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNetworkBytes() {
+      java.lang.Object ref = network_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        network_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SUBNETWORK_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object subnetwork_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The VPC subnetwork that the Cloud Run resource will get IPs from. At
+     * least one of network or subnetwork must be specified. If both
+     * network and subnetwork are specified, the given VPC subnetwork must
+     * belong to the given VPC network. If subnetwork is not specified, the
+     * subnetwork with the same name with the network will be used.
+     * </pre>
+     *
+     * <code>string subnetwork = 2;</code>
+     *
+     * @return The subnetwork.
+     */
+    @java.lang.Override
+    public java.lang.String getSubnetwork() {
+      java.lang.Object ref = subnetwork_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        subnetwork_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The VPC subnetwork that the Cloud Run resource will get IPs from. At
+     * least one of network or subnetwork must be specified. If both
+     * network and subnetwork are specified, the given VPC subnetwork must
+     * belong to the given VPC network. If subnetwork is not specified, the
+     * subnetwork with the same name with the network will be used.
+     * </pre>
+     *
+     * <code>string subnetwork = 2;</code>
+     *
+     * @return The bytes for subnetwork.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSubnetworkBytes() {
+      java.lang.Object ref = subnetwork_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        subnetwork_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TAGS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * Network tags applied to this Cloud Run resource.
+     * </pre>
+     *
+     * <code>repeated string tags = 3;</code>
+     *
+     * @return A list containing the tags.
+     */
+    public com.google.protobuf.ProtocolStringList getTagsList() {
+      return tags_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Network tags applied to this Cloud Run resource.
+     * </pre>
+     *
+     * <code>repeated string tags = 3;</code>
+     *
+     * @return The count of tags.
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Network tags applied to this Cloud Run resource.
+     * </pre>
+     *
+     * <code>repeated string tags = 3;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Network tags applied to this Cloud Run resource.
+     * </pre>
+     *
+     * <code>repeated string tags = 3;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    public com.google.protobuf.ByteString getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, network_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetwork_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, subnetwork_);
+      }
+      for (int i = 0; i < tags_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tags_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, network_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subnetwork_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, subnetwork_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < tags_.size(); i++) {
+          dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getTagsList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.run.v2.VpcAccess.NetworkInterface)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.run.v2.VpcAccess.NetworkInterface other =
+          (com.google.cloud.run.v2.VpcAccess.NetworkInterface) obj;
+
+      if (!getNetwork().equals(other.getNetwork())) return false;
+      if (!getSubnetwork().equals(other.getSubnetwork())) return false;
+      if (!getTagsList().equals(other.getTagsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getNetwork().hashCode();
+      hash = (37 * hash) + SUBNETWORK_FIELD_NUMBER;
+      hash = (53 * hash) + getSubnetwork().hashCode();
+      if (getTagsCount() > 0) {
+        hash = (37 * hash) + TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + getTagsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.run.v2.VpcAccess.NetworkInterface parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.run.v2.VpcAccess.NetworkInterface parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.run.v2.VpcAccess.NetworkInterface parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.run.v2.VpcAccess.NetworkInterface parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.run.v2.VpcAccess.NetworkInterface parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.run.v2.VpcAccess.NetworkInterface parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.run.v2.VpcAccess.NetworkInterface parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.run.v2.VpcAccess.NetworkInterface parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.run.v2.VpcAccess.NetworkInterface parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.run.v2.VpcAccess.NetworkInterface parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.run.v2.VpcAccess.NetworkInterface parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.run.v2.VpcAccess.NetworkInterface parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.run.v2.VpcAccess.NetworkInterface prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direct VPC egress settings.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.run.v2.VpcAccess.NetworkInterface}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.run.v2.VpcAccess.NetworkInterface)
+        com.google.cloud.run.v2.VpcAccess.NetworkInterfaceOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.run.v2.VendorSettingsProto
+            .internal_static_google_cloud_run_v2_VpcAccess_NetworkInterface_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.run.v2.VendorSettingsProto
+            .internal_static_google_cloud_run_v2_VpcAccess_NetworkInterface_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.run.v2.VpcAccess.NetworkInterface.class,
+                com.google.cloud.run.v2.VpcAccess.NetworkInterface.Builder.class);
+      }
+
+      // Construct using com.google.cloud.run.v2.VpcAccess.NetworkInterface.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        network_ = "";
+        subnetwork_ = "";
+        tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.run.v2.VendorSettingsProto
+            .internal_static_google_cloud_run_v2_VpcAccess_NetworkInterface_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.run.v2.VpcAccess.NetworkInterface getDefaultInstanceForType() {
+        return com.google.cloud.run.v2.VpcAccess.NetworkInterface.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.run.v2.VpcAccess.NetworkInterface build() {
+        com.google.cloud.run.v2.VpcAccess.NetworkInterface result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.run.v2.VpcAccess.NetworkInterface buildPartial() {
+        com.google.cloud.run.v2.VpcAccess.NetworkInterface result =
+            new com.google.cloud.run.v2.VpcAccess.NetworkInterface(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.run.v2.VpcAccess.NetworkInterface result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.network_ = network_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.subnetwork_ = subnetwork_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          tags_.makeImmutable();
+          result.tags_ = tags_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.run.v2.VpcAccess.NetworkInterface) {
+          return mergeFrom((com.google.cloud.run.v2.VpcAccess.NetworkInterface) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.run.v2.VpcAccess.NetworkInterface other) {
+        if (other == com.google.cloud.run.v2.VpcAccess.NetworkInterface.getDefaultInstance())
+          return this;
+        if (!other.getNetwork().isEmpty()) {
+          network_ = other.network_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getSubnetwork().isEmpty()) {
+          subnetwork_ = other.subnetwork_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.tags_.isEmpty()) {
+          if (tags_.isEmpty()) {
+            tags_ = other.tags_;
+            bitField0_ |= 0x00000004;
+          } else {
+            ensureTagsIsMutable();
+            tags_.addAll(other.tags_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  network_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 18:
+                {
+                  subnetwork_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureTagsIsMutable();
+                  tags_.add(s);
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object network_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The VPC network that the Cloud Run resource will be able to send traffic
+       * to. At least one of network or subnetwork must be specified. If both
+       * network and subnetwork are specified, the given VPC subnetwork must
+       * belong to the given VPC network. If network is not specified, it will be
+       * looked up from the subnetwork.
+       * </pre>
+       *
+       * <code>string network = 1;</code>
+       *
+       * @return The network.
+       */
+      public java.lang.String getNetwork() {
+        java.lang.Object ref = network_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          network_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The VPC network that the Cloud Run resource will be able to send traffic
+       * to. At least one of network or subnetwork must be specified. If both
+       * network and subnetwork are specified, the given VPC subnetwork must
+       * belong to the given VPC network. If network is not specified, it will be
+       * looked up from the subnetwork.
+       * </pre>
+       *
+       * <code>string network = 1;</code>
+       *
+       * @return The bytes for network.
+       */
+      public com.google.protobuf.ByteString getNetworkBytes() {
+        java.lang.Object ref = network_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          network_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The VPC network that the Cloud Run resource will be able to send traffic
+       * to. At least one of network or subnetwork must be specified. If both
+       * network and subnetwork are specified, the given VPC subnetwork must
+       * belong to the given VPC network. If network is not specified, it will be
+       * looked up from the subnetwork.
+       * </pre>
+       *
+       * <code>string network = 1;</code>
+       *
+       * @param value The network to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNetwork(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        network_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The VPC network that the Cloud Run resource will be able to send traffic
+       * to. At least one of network or subnetwork must be specified. If both
+       * network and subnetwork are specified, the given VPC subnetwork must
+       * belong to the given VPC network. If network is not specified, it will be
+       * looked up from the subnetwork.
+       * </pre>
+       *
+       * <code>string network = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearNetwork() {
+        network_ = getDefaultInstance().getNetwork();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The VPC network that the Cloud Run resource will be able to send traffic
+       * to. At least one of network or subnetwork must be specified. If both
+       * network and subnetwork are specified, the given VPC subnetwork must
+       * belong to the given VPC network. If network is not specified, it will be
+       * looked up from the subnetwork.
+       * </pre>
+       *
+       * <code>string network = 1;</code>
+       *
+       * @param value The bytes for network to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNetworkBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        network_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object subnetwork_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The VPC subnetwork that the Cloud Run resource will get IPs from. At
+       * least one of network or subnetwork must be specified. If both
+       * network and subnetwork are specified, the given VPC subnetwork must
+       * belong to the given VPC network. If subnetwork is not specified, the
+       * subnetwork with the same name with the network will be used.
+       * </pre>
+       *
+       * <code>string subnetwork = 2;</code>
+       *
+       * @return The subnetwork.
+       */
+      public java.lang.String getSubnetwork() {
+        java.lang.Object ref = subnetwork_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          subnetwork_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The VPC subnetwork that the Cloud Run resource will get IPs from. At
+       * least one of network or subnetwork must be specified. If both
+       * network and subnetwork are specified, the given VPC subnetwork must
+       * belong to the given VPC network. If subnetwork is not specified, the
+       * subnetwork with the same name with the network will be used.
+       * </pre>
+       *
+       * <code>string subnetwork = 2;</code>
+       *
+       * @return The bytes for subnetwork.
+       */
+      public com.google.protobuf.ByteString getSubnetworkBytes() {
+        java.lang.Object ref = subnetwork_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          subnetwork_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The VPC subnetwork that the Cloud Run resource will get IPs from. At
+       * least one of network or subnetwork must be specified. If both
+       * network and subnetwork are specified, the given VPC subnetwork must
+       * belong to the given VPC network. If subnetwork is not specified, the
+       * subnetwork with the same name with the network will be used.
+       * </pre>
+       *
+       * <code>string subnetwork = 2;</code>
+       *
+       * @param value The subnetwork to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSubnetwork(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        subnetwork_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The VPC subnetwork that the Cloud Run resource will get IPs from. At
+       * least one of network or subnetwork must be specified. If both
+       * network and subnetwork are specified, the given VPC subnetwork must
+       * belong to the given VPC network. If subnetwork is not specified, the
+       * subnetwork with the same name with the network will be used.
+       * </pre>
+       *
+       * <code>string subnetwork = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSubnetwork() {
+        subnetwork_ = getDefaultInstance().getSubnetwork();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The VPC subnetwork that the Cloud Run resource will get IPs from. At
+       * least one of network or subnetwork must be specified. If both
+       * network and subnetwork are specified, the given VPC subnetwork must
+       * belong to the given VPC network. If subnetwork is not specified, the
+       * subnetwork with the same name with the network will be used.
+       * </pre>
+       *
+       * <code>string subnetwork = 2;</code>
+       *
+       * @param value The bytes for subnetwork to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSubnetworkBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        subnetwork_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList tags_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureTagsIsMutable() {
+        if (!tags_.isModifiable()) {
+          tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+        }
+        bitField0_ |= 0x00000004;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Network tags applied to this Cloud Run resource.
+       * </pre>
+       *
+       * <code>repeated string tags = 3;</code>
+       *
+       * @return A list containing the tags.
+       */
+      public com.google.protobuf.ProtocolStringList getTagsList() {
+        tags_.makeImmutable();
+        return tags_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Network tags applied to this Cloud Run resource.
+       * </pre>
+       *
+       * <code>repeated string tags = 3;</code>
+       *
+       * @return The count of tags.
+       */
+      public int getTagsCount() {
+        return tags_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Network tags applied to this Cloud Run resource.
+       * </pre>
+       *
+       * <code>repeated string tags = 3;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The tags at the given index.
+       */
+      public java.lang.String getTags(int index) {
+        return tags_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Network tags applied to this Cloud Run resource.
+       * </pre>
+       *
+       * <code>repeated string tags = 3;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the tags at the given index.
+       */
+      public com.google.protobuf.ByteString getTagsBytes(int index) {
+        return tags_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Network tags applied to this Cloud Run resource.
+       * </pre>
+       *
+       * <code>repeated string tags = 3;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The tags to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTags(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTagsIsMutable();
+        tags_.set(index, value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Network tags applied to this Cloud Run resource.
+       * </pre>
+       *
+       * <code>repeated string tags = 3;</code>
+       *
+       * @param value The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTags(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTagsIsMutable();
+        tags_.add(value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Network tags applied to this Cloud Run resource.
+       * </pre>
+       *
+       * <code>repeated string tags = 3;</code>
+       *
+       * @param values The tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
+        ensureTagsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Network tags applied to this Cloud Run resource.
+       * </pre>
+       *
+       * <code>repeated string tags = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTags() {
+        tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Network tags applied to this Cloud Run resource.
+       * </pre>
+       *
+       * <code>repeated string tags = 3;</code>
+       *
+       * @param value The bytes of the tags to add.
+       * @return This builder for chaining.
+       */
+      public Builder addTagsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureTagsIsMutable();
+        tags_.add(value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.run.v2.VpcAccess.NetworkInterface)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.run.v2.VpcAccess.NetworkInterface)
+    private static final com.google.cloud.run.v2.VpcAccess.NetworkInterface DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.run.v2.VpcAccess.NetworkInterface();
+    }
+
+    public static com.google.cloud.run.v2.VpcAccess.NetworkInterface getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<NetworkInterface> PARSER =
+        new com.google.protobuf.AbstractParser<NetworkInterface>() {
+          @java.lang.Override
+          public NetworkInterface parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<NetworkInterface> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<NetworkInterface> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.run.v2.VpcAccess.NetworkInterface getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int CONNECTOR_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -234,6 +1481,8 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
    * VPC Access connector name.
    * Format: projects/{project}/locations/{location}/connectors/{connector},
    * where {project} can be project id or number.
+   * For more information on sending traffic to a VPC network via a connector,
+   * visit https://cloud.google.com/run/docs/configuring/vpc-connectors.
    * </pre>
    *
    * <code>string connector = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -259,6 +1508,8 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
    * VPC Access connector name.
    * Format: projects/{project}/locations/{location}/connectors/{connector},
    * where {project} can be project id or number.
+   * For more information on sending traffic to a VPC network via a connector,
+   * visit https://cloud.google.com/run/docs/configuring/vpc-connectors.
    * </pre>
    *
    * <code>string connector = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -284,7 +1535,8 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Traffic VPC egress settings.
+   * Traffic VPC egress settings. If not provided, it defaults to
+   * PRIVATE_RANGES_ONLY.
    * </pre>
    *
    * <code>.google.cloud.run.v2.VpcAccess.VpcEgress egress = 2;</code>
@@ -299,7 +1551,8 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Traffic VPC egress settings.
+   * Traffic VPC egress settings. If not provided, it defaults to
+   * PRIVATE_RANGES_ONLY.
    * </pre>
    *
    * <code>.google.cloud.run.v2.VpcAccess.VpcEgress egress = 2;</code>
@@ -311,6 +1564,84 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.run.v2.VpcAccess.VpcEgress result =
         com.google.cloud.run.v2.VpcAccess.VpcEgress.forNumber(egress_);
     return result == null ? com.google.cloud.run.v2.VpcAccess.VpcEgress.UNRECOGNIZED : result;
+  }
+
+  public static final int NETWORK_INTERFACES_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.run.v2.VpcAccess.NetworkInterface> networkInterfaces_;
+  /**
+   *
+   *
+   * <pre>
+   * Direct VPC egress settings. Currently only single network interface is
+   * supported.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.run.v2.VpcAccess.NetworkInterface>
+      getNetworkInterfacesList() {
+    return networkInterfaces_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Direct VPC egress settings. Currently only single network interface is
+   * supported.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.run.v2.VpcAccess.NetworkInterfaceOrBuilder>
+      getNetworkInterfacesOrBuilderList() {
+    return networkInterfaces_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Direct VPC egress settings. Currently only single network interface is
+   * supported.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+   */
+  @java.lang.Override
+  public int getNetworkInterfacesCount() {
+    return networkInterfaces_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Direct VPC egress settings. Currently only single network interface is
+   * supported.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.VpcAccess.NetworkInterface getNetworkInterfaces(int index) {
+    return networkInterfaces_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Direct VPC egress settings. Currently only single network interface is
+   * supported.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.run.v2.VpcAccess.NetworkInterfaceOrBuilder getNetworkInterfacesOrBuilder(
+      int index) {
+    return networkInterfaces_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -333,6 +1664,9 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
     if (egress_ != com.google.cloud.run.v2.VpcAccess.VpcEgress.VPC_EGRESS_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, egress_);
     }
+    for (int i = 0; i < networkInterfaces_.size(); i++) {
+      output.writeMessage(3, networkInterfaces_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -347,6 +1681,10 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
     }
     if (egress_ != com.google.cloud.run.v2.VpcAccess.VpcEgress.VPC_EGRESS_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, egress_);
+    }
+    for (int i = 0; i < networkInterfaces_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(3, networkInterfaces_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -365,6 +1703,7 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
 
     if (!getConnector().equals(other.getConnector())) return false;
     if (egress_ != other.egress_) return false;
+    if (!getNetworkInterfacesList().equals(other.getNetworkInterfacesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -380,6 +1719,10 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getConnector().hashCode();
     hash = (37 * hash) + EGRESS_FIELD_NUMBER;
     hash = (53 * hash) + egress_;
+    if (getNetworkInterfacesCount() > 0) {
+      hash = (37 * hash) + NETWORK_INTERFACES_FIELD_NUMBER;
+      hash = (53 * hash) + getNetworkInterfacesList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -483,10 +1826,8 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * VPC Access settings. For more information on creating a VPC Connector, visit
-   * https://cloud.google.com/vpc/docs/configure-serverless-vpc-access For
-   * information on how to configure Cloud Run with an existing VPC Connector,
-   * visit https://cloud.google.com/run/docs/configuring/connecting-vpc
+   * VPC Access settings. For more information on sending traffic to a VPC
+   * network, visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
    * </pre>
    *
    * Protobuf type {@code google.cloud.run.v2.VpcAccess}
@@ -523,6 +1864,13 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       connector_ = "";
       egress_ = 0;
+      if (networkInterfacesBuilder_ == null) {
+        networkInterfaces_ = java.util.Collections.emptyList();
+      } else {
+        networkInterfaces_ = null;
+        networkInterfacesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -549,11 +1897,24 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.run.v2.VpcAccess buildPartial() {
       com.google.cloud.run.v2.VpcAccess result = new com.google.cloud.run.v2.VpcAccess(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.run.v2.VpcAccess result) {
+      if (networkInterfacesBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          networkInterfaces_ = java.util.Collections.unmodifiableList(networkInterfaces_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.networkInterfaces_ = networkInterfaces_;
+      } else {
+        result.networkInterfaces_ = networkInterfacesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.run.v2.VpcAccess result) {
@@ -619,6 +1980,33 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       if (other.egress_ != 0) {
         setEgressValue(other.getEgressValue());
       }
+      if (networkInterfacesBuilder_ == null) {
+        if (!other.networkInterfaces_.isEmpty()) {
+          if (networkInterfaces_.isEmpty()) {
+            networkInterfaces_ = other.networkInterfaces_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureNetworkInterfacesIsMutable();
+            networkInterfaces_.addAll(other.networkInterfaces_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.networkInterfaces_.isEmpty()) {
+          if (networkInterfacesBuilder_.isEmpty()) {
+            networkInterfacesBuilder_.dispose();
+            networkInterfacesBuilder_ = null;
+            networkInterfaces_ = other.networkInterfaces_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            networkInterfacesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getNetworkInterfacesFieldBuilder()
+                    : null;
+          } else {
+            networkInterfacesBuilder_.addAllMessages(other.networkInterfaces_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -657,6 +2045,20 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 26:
+              {
+                com.google.cloud.run.v2.VpcAccess.NetworkInterface m =
+                    input.readMessage(
+                        com.google.cloud.run.v2.VpcAccess.NetworkInterface.parser(),
+                        extensionRegistry);
+                if (networkInterfacesBuilder_ == null) {
+                  ensureNetworkInterfacesIsMutable();
+                  networkInterfaces_.add(m);
+                } else {
+                  networkInterfacesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -684,6 +2086,8 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      * VPC Access connector name.
      * Format: projects/{project}/locations/{location}/connectors/{connector},
      * where {project} can be project id or number.
+     * For more information on sending traffic to a VPC network via a connector,
+     * visit https://cloud.google.com/run/docs/configuring/vpc-connectors.
      * </pre>
      *
      * <code>string connector = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -708,6 +2112,8 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      * VPC Access connector name.
      * Format: projects/{project}/locations/{location}/connectors/{connector},
      * where {project} can be project id or number.
+     * For more information on sending traffic to a VPC network via a connector,
+     * visit https://cloud.google.com/run/docs/configuring/vpc-connectors.
      * </pre>
      *
      * <code>string connector = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -732,6 +2138,8 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      * VPC Access connector name.
      * Format: projects/{project}/locations/{location}/connectors/{connector},
      * where {project} can be project id or number.
+     * For more information on sending traffic to a VPC network via a connector,
+     * visit https://cloud.google.com/run/docs/configuring/vpc-connectors.
      * </pre>
      *
      * <code>string connector = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -755,6 +2163,8 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      * VPC Access connector name.
      * Format: projects/{project}/locations/{location}/connectors/{connector},
      * where {project} can be project id or number.
+     * For more information on sending traffic to a VPC network via a connector,
+     * visit https://cloud.google.com/run/docs/configuring/vpc-connectors.
      * </pre>
      *
      * <code>string connector = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -774,6 +2184,8 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      * VPC Access connector name.
      * Format: projects/{project}/locations/{location}/connectors/{connector},
      * where {project} can be project id or number.
+     * For more information on sending traffic to a VPC network via a connector,
+     * visit https://cloud.google.com/run/docs/configuring/vpc-connectors.
      * </pre>
      *
      * <code>string connector = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -797,7 +2209,8 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Traffic VPC egress settings.
+     * Traffic VPC egress settings. If not provided, it defaults to
+     * PRIVATE_RANGES_ONLY.
      * </pre>
      *
      * <code>.google.cloud.run.v2.VpcAccess.VpcEgress egress = 2;</code>
@@ -812,7 +2225,8 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Traffic VPC egress settings.
+     * Traffic VPC egress settings. If not provided, it defaults to
+     * PRIVATE_RANGES_ONLY.
      * </pre>
      *
      * <code>.google.cloud.run.v2.VpcAccess.VpcEgress egress = 2;</code>
@@ -830,7 +2244,8 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Traffic VPC egress settings.
+     * Traffic VPC egress settings. If not provided, it defaults to
+     * PRIVATE_RANGES_ONLY.
      * </pre>
      *
      * <code>.google.cloud.run.v2.VpcAccess.VpcEgress egress = 2;</code>
@@ -847,7 +2262,8 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Traffic VPC egress settings.
+     * Traffic VPC egress settings. If not provided, it defaults to
+     * PRIVATE_RANGES_ONLY.
      * </pre>
      *
      * <code>.google.cloud.run.v2.VpcAccess.VpcEgress egress = 2;</code>
@@ -868,7 +2284,8 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Traffic VPC egress settings.
+     * Traffic VPC egress settings. If not provided, it defaults to
+     * PRIVATE_RANGES_ONLY.
      * </pre>
      *
      * <code>.google.cloud.run.v2.VpcAccess.VpcEgress egress = 2;</code>
@@ -880,6 +2297,387 @@ public final class VpcAccess extends com.google.protobuf.GeneratedMessageV3
       egress_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.run.v2.VpcAccess.NetworkInterface> networkInterfaces_ =
+        java.util.Collections.emptyList();
+
+    private void ensureNetworkInterfacesIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        networkInterfaces_ =
+            new java.util.ArrayList<com.google.cloud.run.v2.VpcAccess.NetworkInterface>(
+                networkInterfaces_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.run.v2.VpcAccess.NetworkInterface,
+            com.google.cloud.run.v2.VpcAccess.NetworkInterface.Builder,
+            com.google.cloud.run.v2.VpcAccess.NetworkInterfaceOrBuilder>
+        networkInterfacesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Direct VPC egress settings. Currently only single network interface is
+     * supported.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     */
+    public java.util.List<com.google.cloud.run.v2.VpcAccess.NetworkInterface>
+        getNetworkInterfacesList() {
+      if (networkInterfacesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(networkInterfaces_);
+      } else {
+        return networkInterfacesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direct VPC egress settings. Currently only single network interface is
+     * supported.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     */
+    public int getNetworkInterfacesCount() {
+      if (networkInterfacesBuilder_ == null) {
+        return networkInterfaces_.size();
+      } else {
+        return networkInterfacesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direct VPC egress settings. Currently only single network interface is
+     * supported.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     */
+    public com.google.cloud.run.v2.VpcAccess.NetworkInterface getNetworkInterfaces(int index) {
+      if (networkInterfacesBuilder_ == null) {
+        return networkInterfaces_.get(index);
+      } else {
+        return networkInterfacesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direct VPC egress settings. Currently only single network interface is
+     * supported.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     */
+    public Builder setNetworkInterfaces(
+        int index, com.google.cloud.run.v2.VpcAccess.NetworkInterface value) {
+      if (networkInterfacesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNetworkInterfacesIsMutable();
+        networkInterfaces_.set(index, value);
+        onChanged();
+      } else {
+        networkInterfacesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direct VPC egress settings. Currently only single network interface is
+     * supported.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     */
+    public Builder setNetworkInterfaces(
+        int index, com.google.cloud.run.v2.VpcAccess.NetworkInterface.Builder builderForValue) {
+      if (networkInterfacesBuilder_ == null) {
+        ensureNetworkInterfacesIsMutable();
+        networkInterfaces_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        networkInterfacesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direct VPC egress settings. Currently only single network interface is
+     * supported.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     */
+    public Builder addNetworkInterfaces(com.google.cloud.run.v2.VpcAccess.NetworkInterface value) {
+      if (networkInterfacesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNetworkInterfacesIsMutable();
+        networkInterfaces_.add(value);
+        onChanged();
+      } else {
+        networkInterfacesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direct VPC egress settings. Currently only single network interface is
+     * supported.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     */
+    public Builder addNetworkInterfaces(
+        int index, com.google.cloud.run.v2.VpcAccess.NetworkInterface value) {
+      if (networkInterfacesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureNetworkInterfacesIsMutable();
+        networkInterfaces_.add(index, value);
+        onChanged();
+      } else {
+        networkInterfacesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direct VPC egress settings. Currently only single network interface is
+     * supported.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     */
+    public Builder addNetworkInterfaces(
+        com.google.cloud.run.v2.VpcAccess.NetworkInterface.Builder builderForValue) {
+      if (networkInterfacesBuilder_ == null) {
+        ensureNetworkInterfacesIsMutable();
+        networkInterfaces_.add(builderForValue.build());
+        onChanged();
+      } else {
+        networkInterfacesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direct VPC egress settings. Currently only single network interface is
+     * supported.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     */
+    public Builder addNetworkInterfaces(
+        int index, com.google.cloud.run.v2.VpcAccess.NetworkInterface.Builder builderForValue) {
+      if (networkInterfacesBuilder_ == null) {
+        ensureNetworkInterfacesIsMutable();
+        networkInterfaces_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        networkInterfacesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direct VPC egress settings. Currently only single network interface is
+     * supported.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     */
+    public Builder addAllNetworkInterfaces(
+        java.lang.Iterable<? extends com.google.cloud.run.v2.VpcAccess.NetworkInterface> values) {
+      if (networkInterfacesBuilder_ == null) {
+        ensureNetworkInterfacesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, networkInterfaces_);
+        onChanged();
+      } else {
+        networkInterfacesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direct VPC egress settings. Currently only single network interface is
+     * supported.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     */
+    public Builder clearNetworkInterfaces() {
+      if (networkInterfacesBuilder_ == null) {
+        networkInterfaces_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        networkInterfacesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direct VPC egress settings. Currently only single network interface is
+     * supported.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     */
+    public Builder removeNetworkInterfaces(int index) {
+      if (networkInterfacesBuilder_ == null) {
+        ensureNetworkInterfacesIsMutable();
+        networkInterfaces_.remove(index);
+        onChanged();
+      } else {
+        networkInterfacesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direct VPC egress settings. Currently only single network interface is
+     * supported.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     */
+    public com.google.cloud.run.v2.VpcAccess.NetworkInterface.Builder getNetworkInterfacesBuilder(
+        int index) {
+      return getNetworkInterfacesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direct VPC egress settings. Currently only single network interface is
+     * supported.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     */
+    public com.google.cloud.run.v2.VpcAccess.NetworkInterfaceOrBuilder
+        getNetworkInterfacesOrBuilder(int index) {
+      if (networkInterfacesBuilder_ == null) {
+        return networkInterfaces_.get(index);
+      } else {
+        return networkInterfacesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direct VPC egress settings. Currently only single network interface is
+     * supported.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     */
+    public java.util.List<? extends com.google.cloud.run.v2.VpcAccess.NetworkInterfaceOrBuilder>
+        getNetworkInterfacesOrBuilderList() {
+      if (networkInterfacesBuilder_ != null) {
+        return networkInterfacesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(networkInterfaces_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direct VPC egress settings. Currently only single network interface is
+     * supported.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     */
+    public com.google.cloud.run.v2.VpcAccess.NetworkInterface.Builder
+        addNetworkInterfacesBuilder() {
+      return getNetworkInterfacesFieldBuilder()
+          .addBuilder(com.google.cloud.run.v2.VpcAccess.NetworkInterface.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direct VPC egress settings. Currently only single network interface is
+     * supported.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     */
+    public com.google.cloud.run.v2.VpcAccess.NetworkInterface.Builder addNetworkInterfacesBuilder(
+        int index) {
+      return getNetworkInterfacesFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.run.v2.VpcAccess.NetworkInterface.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Direct VPC egress settings. Currently only single network interface is
+     * supported.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+     */
+    public java.util.List<com.google.cloud.run.v2.VpcAccess.NetworkInterface.Builder>
+        getNetworkInterfacesBuilderList() {
+      return getNetworkInterfacesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.run.v2.VpcAccess.NetworkInterface,
+            com.google.cloud.run.v2.VpcAccess.NetworkInterface.Builder,
+            com.google.cloud.run.v2.VpcAccess.NetworkInterfaceOrBuilder>
+        getNetworkInterfacesFieldBuilder() {
+      if (networkInterfacesBuilder_ == null) {
+        networkInterfacesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.run.v2.VpcAccess.NetworkInterface,
+                com.google.cloud.run.v2.VpcAccess.NetworkInterface.Builder,
+                com.google.cloud.run.v2.VpcAccess.NetworkInterfaceOrBuilder>(
+                networkInterfaces_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        networkInterfaces_ = null;
+      }
+      return networkInterfacesBuilder_;
     }
 
     @java.lang.Override

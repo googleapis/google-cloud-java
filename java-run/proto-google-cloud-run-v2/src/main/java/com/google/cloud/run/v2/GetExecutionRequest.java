@@ -72,8 +72,8 @@ public final class GetExecutionRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The full name of the Execution.
    * Format:
-   * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-   * where {project} can be project id or number.
+   * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+   * where `{project}` can be project id or number.
    * </pre>
    *
    * <code>
@@ -100,8 +100,8 @@ public final class GetExecutionRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Required. The full name of the Execution.
    * Format:
-   * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-   * where {project} can be project id or number.
+   * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+   * where `{project}` can be project id or number.
    * </pre>
    *
    * <code>
@@ -471,8 +471,8 @@ public final class GetExecutionRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The full name of the Execution.
      * Format:
-     * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-     * where {project} can be project id or number.
+     * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -498,8 +498,8 @@ public final class GetExecutionRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The full name of the Execution.
      * Format:
-     * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-     * where {project} can be project id or number.
+     * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -525,8 +525,8 @@ public final class GetExecutionRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The full name of the Execution.
      * Format:
-     * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-     * where {project} can be project id or number.
+     * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -551,8 +551,8 @@ public final class GetExecutionRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The full name of the Execution.
      * Format:
-     * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-     * where {project} can be project id or number.
+     * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -573,8 +573,8 @@ public final class GetExecutionRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * Required. The full name of the Execution.
      * Format:
-     * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-     * where {project} can be project id or number.
+     * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>

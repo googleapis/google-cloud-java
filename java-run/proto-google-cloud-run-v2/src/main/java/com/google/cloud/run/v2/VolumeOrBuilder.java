@@ -124,5 +124,40 @@ public interface VolumeOrBuilder
    */
   com.google.cloud.run.v2.CloudSqlInstanceOrBuilder getCloudSqlInstanceOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Ephemeral storage used as a shared volume.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.EmptyDirVolumeSource empty_dir = 4;</code>
+   *
+   * @return Whether the emptyDir field is set.
+   */
+  boolean hasEmptyDir();
+  /**
+   *
+   *
+   * <pre>
+   * Ephemeral storage used as a shared volume.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.EmptyDirVolumeSource empty_dir = 4;</code>
+   *
+   * @return The emptyDir.
+   */
+  com.google.cloud.run.v2.EmptyDirVolumeSource getEmptyDir();
+  /**
+   *
+   *
+   * <pre>
+   * Ephemeral storage used as a shared volume.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.EmptyDirVolumeSource empty_dir = 4;</code>
+   */
+  com.google.cloud.run.v2.EmptyDirVolumeSourceOrBuilder getEmptyDirOrBuilder();
+
   com.google.cloud.run.v2.Volume.VolumeTypeCase getVolumeTypeCase();
 }

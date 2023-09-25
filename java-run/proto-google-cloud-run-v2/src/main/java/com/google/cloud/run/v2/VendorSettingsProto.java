@@ -32,6 +32,10 @@ public final class VendorSettingsProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_run_v2_VpcAccess_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_run_v2_VpcAccess_NetworkInterface_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_run_v2_VpcAccess_NetworkInterface_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_run_v2_BinaryAuthorization_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_run_v2_BinaryAuthorization_fieldAccessorTable;
@@ -49,35 +53,40 @@ public final class VendorSettingsProto {
   static {
     java.lang.String[] descriptorData = {
       "\n)google/cloud/run/v2/vendor_settings.pr"
-          + "oto\022\023google.cloud.run.v2\032\031google/api/res"
-          + "ource.proto\"\324\001\n\tVpcAccess\022:\n\tconnector\030\001"
-          + " \001(\tB\'\372A$\n\"vpcaccess.googleapis.com/Conn"
-          + "ector\0228\n\006egress\030\002 \001(\0162(.google.cloud.run"
-          + ".v2.VpcAccess.VpcEgress\"Q\n\tVpcEgress\022\032\n\026"
-          + "VPC_EGRESS_UNSPECIFIED\020\000\022\017\n\013ALL_TRAFFIC\020"
-          + "\001\022\027\n\023PRIVATE_RANGES_ONLY\020\002\"a\n\023BinaryAuth"
-          + "orization\022\025\n\013use_default\030\001 \001(\010H\000\022 \n\030brea"
-          + "kglass_justification\030\002 \001(\tB\021\n\017binauthz_m"
-          + "ethod\"I\n\017RevisionScaling\022\032\n\022min_instance"
-          + "_count\030\001 \001(\005\022\032\n\022max_instance_count\030\002 \001(\005"
-          + "*\231\001\n\016IngressTraffic\022\037\n\033INGRESS_TRAFFIC_U"
-          + "NSPECIFIED\020\000\022\027\n\023INGRESS_TRAFFIC_ALL\020\001\022!\n"
-          + "\035INGRESS_TRAFFIC_INTERNAL_ONLY\020\002\022*\n&INGR"
-          + "ESS_TRAFFIC_INTERNAL_LOAD_BALANCER\020\003*}\n\024"
-          + "ExecutionEnvironment\022%\n!EXECUTION_ENVIRO"
-          + "NMENT_UNSPECIFIED\020\000\022\036\n\032EXECUTION_ENVIRON"
-          + "MENT_GEN1\020\001\022\036\n\032EXECUTION_ENVIRONMENT_GEN"
-          + "2\020\002*p\n\035EncryptionKeyRevocationAction\0220\n,"
-          + "ENCRYPTION_KEY_REVOCATION_ACTION_UNSPECI"
-          + "FIED\020\000\022\017\n\013PREVENT_NEW\020\001\022\014\n\010SHUTDOWN\020\002B[\n"
-          + "\027com.google.cloud.run.v2B\023VendorSettings"
-          + "ProtoP\001Z)cloud.google.com/go/run/apiv2/r"
-          + "unpb;runpbb\006proto3"
+          + "oto\022\023google.cloud.run.v2\032\037google/api/fie"
+          + "ld_behavior.proto\032\031google/api/resource.p"
+          + "roto\"\350\002\n\tVpcAccess\022:\n\tconnector\030\001 \001(\tB\'\372"
+          + "A$\n\"vpcaccess.googleapis.com/Connector\0228"
+          + "\n\006egress\030\002 \001(\0162(.google.cloud.run.v2.Vpc"
+          + "Access.VpcEgress\022K\n\022network_interfaces\030\003"
+          + " \003(\0132/.google.cloud.run.v2.VpcAccess.Net"
+          + "workInterface\032E\n\020NetworkInterface\022\017\n\007net"
+          + "work\030\001 \001(\t\022\022\n\nsubnetwork\030\002 \001(\t\022\014\n\004tags\030\003"
+          + " \003(\t\"Q\n\tVpcEgress\022\032\n\026VPC_EGRESS_UNSPECIF"
+          + "IED\020\000\022\017\n\013ALL_TRAFFIC\020\001\022\027\n\023PRIVATE_RANGES"
+          + "_ONLY\020\002\"a\n\023BinaryAuthorization\022\025\n\013use_de"
+          + "fault\030\001 \001(\010H\000\022 \n\030breakglass_justificatio"
+          + "n\030\002 \001(\tB\021\n\017binauthz_method\"I\n\017RevisionSc"
+          + "aling\022\032\n\022min_instance_count\030\001 \001(\005\022\032\n\022max"
+          + "_instance_count\030\002 \001(\005*\231\001\n\016IngressTraffic"
+          + "\022\037\n\033INGRESS_TRAFFIC_UNSPECIFIED\020\000\022\027\n\023ING"
+          + "RESS_TRAFFIC_ALL\020\001\022!\n\035INGRESS_TRAFFIC_IN"
+          + "TERNAL_ONLY\020\002\022*\n&INGRESS_TRAFFIC_INTERNA"
+          + "L_LOAD_BALANCER\020\003*}\n\024ExecutionEnvironmen"
+          + "t\022%\n!EXECUTION_ENVIRONMENT_UNSPECIFIED\020\000"
+          + "\022\036\n\032EXECUTION_ENVIRONMENT_GEN1\020\001\022\036\n\032EXEC"
+          + "UTION_ENVIRONMENT_GEN2\020\002*p\n\035EncryptionKe"
+          + "yRevocationAction\0220\n,ENCRYPTION_KEY_REVO"
+          + "CATION_ACTION_UNSPECIFIED\020\000\022\017\n\013PREVENT_N"
+          + "EW\020\001\022\014\n\010SHUTDOWN\020\002B[\n\027com.google.cloud.r"
+          + "un.v2B\023VendorSettingsProtoP\001Z)cloud.goog"
+          + "le.com/go/run/apiv2/runpb;runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
+              com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
             });
     internal_static_google_cloud_run_v2_VpcAccess_descriptor =
@@ -86,7 +95,15 @@ public final class VendorSettingsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_run_v2_VpcAccess_descriptor,
             new java.lang.String[] {
-              "Connector", "Egress",
+              "Connector", "Egress", "NetworkInterfaces",
+            });
+    internal_static_google_cloud_run_v2_VpcAccess_NetworkInterface_descriptor =
+        internal_static_google_cloud_run_v2_VpcAccess_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_run_v2_VpcAccess_NetworkInterface_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_run_v2_VpcAccess_NetworkInterface_descriptor,
+            new java.lang.String[] {
+              "Network", "Subnetwork", "Tags",
             });
     internal_static_google_cloud_run_v2_BinaryAuthorization_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -109,6 +126,7 @@ public final class VendorSettingsProto {
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
+    com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
   }
 

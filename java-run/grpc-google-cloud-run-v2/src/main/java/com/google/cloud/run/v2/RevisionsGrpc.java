@@ -32,7 +32,7 @@ public final class RevisionsGrpc {
 
   private RevisionsGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.run.v2.Revisions";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.run.v2.Revisions";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -555,9 +555,9 @@ public final class RevisionsGrpc {
   private static final class RevisionsMethodDescriptorSupplier
       extends RevisionsBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    RevisionsMethodDescriptorSupplier(String methodName) {
+    RevisionsMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

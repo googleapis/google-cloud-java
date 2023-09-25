@@ -25,19 +25,19 @@ package com.google.cloud.run.v2;
  * Request message for deleting an Execution.
  * </pre>
  *
- * Protobuf type {@code google.cloud.run.v2.DeleteExecutionRequest}
+ * Protobuf type {@code google.cloud.run.v2.CancelExecutionRequest}
  */
-public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedMessageV3
+public final class CancelExecutionRequest extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.run.v2.DeleteExecutionRequest)
-    DeleteExecutionRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.run.v2.CancelExecutionRequest)
+    CancelExecutionRequestOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use DeleteExecutionRequest.newBuilder() to construct.
-  private DeleteExecutionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use CancelExecutionRequest.newBuilder() to construct.
+  private CancelExecutionRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private DeleteExecutionRequest() {
+  private CancelExecutionRequest() {
     name_ = "";
     etag_ = "";
   }
@@ -45,22 +45,22 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new DeleteExecutionRequest();
+    return new CancelExecutionRequest();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.run.v2.ExecutionProto
-        .internal_static_google_cloud_run_v2_DeleteExecutionRequest_descriptor;
+        .internal_static_google_cloud_run_v2_CancelExecutionRequest_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.run.v2.ExecutionProto
-        .internal_static_google_cloud_run_v2_DeleteExecutionRequest_fieldAccessorTable
+        .internal_static_google_cloud_run_v2_CancelExecutionRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.run.v2.DeleteExecutionRequest.class,
-            com.google.cloud.run.v2.DeleteExecutionRequest.Builder.class);
+            com.google.cloud.run.v2.CancelExecutionRequest.class,
+            com.google.cloud.run.v2.CancelExecutionRequest.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -71,7 +71,7 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The name of the Execution to delete.
+   * Required. The name of the Execution to cancel.
    * Format:
    * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
    * where `{project}` can be project id or number.
@@ -99,7 +99,7 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The name of the Execution to delete.
+   * Required. The name of the Execution to cancel.
    * Format:
    * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
    * where `{project}` can be project id or number.
@@ -131,7 +131,7 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
    *
    * <pre>
    * Indicates that the request should be validated without actually
-   * deleting any resources.
+   * cancelling any resources.
    * </pre>
    *
    * <code>bool validate_only = 2;</code>
@@ -247,11 +247,11 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.run.v2.DeleteExecutionRequest)) {
+    if (!(obj instanceof com.google.cloud.run.v2.CancelExecutionRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.run.v2.DeleteExecutionRequest other =
-        (com.google.cloud.run.v2.DeleteExecutionRequest) obj;
+    com.google.cloud.run.v2.CancelExecutionRequest other =
+        (com.google.cloud.run.v2.CancelExecutionRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
     if (getValidateOnly() != other.getValidateOnly()) return false;
@@ -278,71 +278,71 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
     return hash;
   }
 
-  public static com.google.cloud.run.v2.DeleteExecutionRequest parseFrom(java.nio.ByteBuffer data)
+  public static com.google.cloud.run.v2.CancelExecutionRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.run.v2.DeleteExecutionRequest parseFrom(
+  public static com.google.cloud.run.v2.CancelExecutionRequest parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.run.v2.DeleteExecutionRequest parseFrom(
+  public static com.google.cloud.run.v2.CancelExecutionRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.run.v2.DeleteExecutionRequest parseFrom(
+  public static com.google.cloud.run.v2.CancelExecutionRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.run.v2.DeleteExecutionRequest parseFrom(byte[] data)
+  public static com.google.cloud.run.v2.CancelExecutionRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.run.v2.DeleteExecutionRequest parseFrom(
+  public static com.google.cloud.run.v2.CancelExecutionRequest parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.run.v2.DeleteExecutionRequest parseFrom(java.io.InputStream input)
+  public static com.google.cloud.run.v2.CancelExecutionRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.run.v2.DeleteExecutionRequest parseFrom(
+  public static com.google.cloud.run.v2.CancelExecutionRequest parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.run.v2.DeleteExecutionRequest parseDelimitedFrom(
+  public static com.google.cloud.run.v2.CancelExecutionRequest parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.run.v2.DeleteExecutionRequest parseDelimitedFrom(
+  public static com.google.cloud.run.v2.CancelExecutionRequest parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.run.v2.DeleteExecutionRequest parseFrom(
+  public static com.google.cloud.run.v2.CancelExecutionRequest parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.run.v2.DeleteExecutionRequest parseFrom(
+  public static com.google.cloud.run.v2.CancelExecutionRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -359,7 +359,7 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.run.v2.DeleteExecutionRequest prototype) {
+  public static Builder newBuilder(com.google.cloud.run.v2.CancelExecutionRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -380,28 +380,28 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
    * Request message for deleting an Execution.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.run.v2.DeleteExecutionRequest}
+   * Protobuf type {@code google.cloud.run.v2.CancelExecutionRequest}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.run.v2.DeleteExecutionRequest)
-      com.google.cloud.run.v2.DeleteExecutionRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.run.v2.CancelExecutionRequest)
+      com.google.cloud.run.v2.CancelExecutionRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.run.v2.ExecutionProto
-          .internal_static_google_cloud_run_v2_DeleteExecutionRequest_descriptor;
+          .internal_static_google_cloud_run_v2_CancelExecutionRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.run.v2.ExecutionProto
-          .internal_static_google_cloud_run_v2_DeleteExecutionRequest_fieldAccessorTable
+          .internal_static_google_cloud_run_v2_CancelExecutionRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.run.v2.DeleteExecutionRequest.class,
-              com.google.cloud.run.v2.DeleteExecutionRequest.Builder.class);
+              com.google.cloud.run.v2.CancelExecutionRequest.class,
+              com.google.cloud.run.v2.CancelExecutionRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.run.v2.DeleteExecutionRequest.newBuilder()
+    // Construct using com.google.cloud.run.v2.CancelExecutionRequest.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -421,17 +421,17 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.run.v2.ExecutionProto
-          .internal_static_google_cloud_run_v2_DeleteExecutionRequest_descriptor;
+          .internal_static_google_cloud_run_v2_CancelExecutionRequest_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.run.v2.DeleteExecutionRequest getDefaultInstanceForType() {
-      return com.google.cloud.run.v2.DeleteExecutionRequest.getDefaultInstance();
+    public com.google.cloud.run.v2.CancelExecutionRequest getDefaultInstanceForType() {
+      return com.google.cloud.run.v2.CancelExecutionRequest.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.run.v2.DeleteExecutionRequest build() {
-      com.google.cloud.run.v2.DeleteExecutionRequest result = buildPartial();
+    public com.google.cloud.run.v2.CancelExecutionRequest build() {
+      com.google.cloud.run.v2.CancelExecutionRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -439,9 +439,9 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
     }
 
     @java.lang.Override
-    public com.google.cloud.run.v2.DeleteExecutionRequest buildPartial() {
-      com.google.cloud.run.v2.DeleteExecutionRequest result =
-          new com.google.cloud.run.v2.DeleteExecutionRequest(this);
+    public com.google.cloud.run.v2.CancelExecutionRequest buildPartial() {
+      com.google.cloud.run.v2.CancelExecutionRequest result =
+          new com.google.cloud.run.v2.CancelExecutionRequest(this);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -449,7 +449,7 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
       return result;
     }
 
-    private void buildPartial0(com.google.cloud.run.v2.DeleteExecutionRequest result) {
+    private void buildPartial0(com.google.cloud.run.v2.CancelExecutionRequest result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
@@ -497,16 +497,16 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.run.v2.DeleteExecutionRequest) {
-        return mergeFrom((com.google.cloud.run.v2.DeleteExecutionRequest) other);
+      if (other instanceof com.google.cloud.run.v2.CancelExecutionRequest) {
+        return mergeFrom((com.google.cloud.run.v2.CancelExecutionRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.run.v2.DeleteExecutionRequest other) {
-      if (other == com.google.cloud.run.v2.DeleteExecutionRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.cloud.run.v2.CancelExecutionRequest other) {
+      if (other == com.google.cloud.run.v2.CancelExecutionRequest.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         bitField0_ |= 0x00000001;
@@ -588,7 +588,7 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the Execution to delete.
+     * Required. The name of the Execution to cancel.
      * Format:
      * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
      * where `{project}` can be project id or number.
@@ -615,7 +615,7 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the Execution to delete.
+     * Required. The name of the Execution to cancel.
      * Format:
      * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
      * where `{project}` can be project id or number.
@@ -642,7 +642,7 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the Execution to delete.
+     * Required. The name of the Execution to cancel.
      * Format:
      * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
      * where `{project}` can be project id or number.
@@ -668,7 +668,7 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the Execution to delete.
+     * Required. The name of the Execution to cancel.
      * Format:
      * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
      * where `{project}` can be project id or number.
@@ -690,7 +690,7 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The name of the Execution to delete.
+     * Required. The name of the Execution to cancel.
      * Format:
      * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
      * where `{project}` can be project id or number.
@@ -720,7 +720,7 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Indicates that the request should be validated without actually
-     * deleting any resources.
+     * cancelling any resources.
      * </pre>
      *
      * <code>bool validate_only = 2;</code>
@@ -736,7 +736,7 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Indicates that the request should be validated without actually
-     * deleting any resources.
+     * cancelling any resources.
      * </pre>
      *
      * <code>bool validate_only = 2;</code>
@@ -756,7 +756,7 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      *
      * <pre>
      * Indicates that the request should be validated without actually
-     * deleting any resources.
+     * cancelling any resources.
      * </pre>
      *
      * <code>bool validate_only = 2;</code>
@@ -892,24 +892,24 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.run.v2.DeleteExecutionRequest)
+    // @@protoc_insertion_point(builder_scope:google.cloud.run.v2.CancelExecutionRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.run.v2.DeleteExecutionRequest)
-  private static final com.google.cloud.run.v2.DeleteExecutionRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.run.v2.CancelExecutionRequest)
+  private static final com.google.cloud.run.v2.CancelExecutionRequest DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.run.v2.DeleteExecutionRequest();
+    DEFAULT_INSTANCE = new com.google.cloud.run.v2.CancelExecutionRequest();
   }
 
-  public static com.google.cloud.run.v2.DeleteExecutionRequest getDefaultInstance() {
+  public static com.google.cloud.run.v2.CancelExecutionRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DeleteExecutionRequest> PARSER =
-      new com.google.protobuf.AbstractParser<DeleteExecutionRequest>() {
+  private static final com.google.protobuf.Parser<CancelExecutionRequest> PARSER =
+      new com.google.protobuf.AbstractParser<CancelExecutionRequest>() {
         @java.lang.Override
-        public DeleteExecutionRequest parsePartialFrom(
+        public CancelExecutionRequest parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -928,17 +928,17 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
         }
       };
 
-  public static com.google.protobuf.Parser<DeleteExecutionRequest> parser() {
+  public static com.google.protobuf.Parser<CancelExecutionRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<DeleteExecutionRequest> getParserForType() {
+  public com.google.protobuf.Parser<CancelExecutionRequest> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.run.v2.DeleteExecutionRequest getDefaultInstanceForType() {
+  public com.google.cloud.run.v2.CancelExecutionRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

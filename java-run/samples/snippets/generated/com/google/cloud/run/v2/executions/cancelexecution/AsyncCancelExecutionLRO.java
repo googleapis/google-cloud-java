@@ -16,38 +16,38 @@
 
 package com.google.cloud.run.v2.samples;
 
-// [START run_v2_generated_Jobs_RunJob_LRO_async]
+// [START run_v2_generated_Executions_CancelExecution_LRO_async]
 import com.google.api.gax.longrunning.OperationFuture;
+import com.google.cloud.run.v2.CancelExecutionRequest;
 import com.google.cloud.run.v2.Execution;
-import com.google.cloud.run.v2.JobName;
-import com.google.cloud.run.v2.JobsClient;
-import com.google.cloud.run.v2.RunJobRequest;
+import com.google.cloud.run.v2.ExecutionName;
+import com.google.cloud.run.v2.ExecutionsClient;
 
-public class AsyncRunJobLRO {
+public class AsyncCancelExecutionLRO {
 
   public static void main(String[] args) throws Exception {
-    asyncRunJobLRO();
+    asyncCancelExecutionLRO();
   }
 
-  public static void asyncRunJobLRO() throws Exception {
+  public static void asyncCancelExecutionLRO() throws Exception {
     // This snippet has been automatically generated and should be regarded as a code template only.
     // It will require modifications to work:
     // - It may require correct/in-range values for request initialization.
     // - It may require specifying regional endpoints when creating the service client as shown in
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-    try (JobsClient jobsClient = JobsClient.create()) {
-      RunJobRequest request =
-          RunJobRequest.newBuilder()
-              .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+    try (ExecutionsClient executionsClient = ExecutionsClient.create()) {
+      CancelExecutionRequest request =
+          CancelExecutionRequest.newBuilder()
+              .setName(
+                  ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]").toString())
               .setValidateOnly(true)
               .setEtag("etag3123477")
-              .setOverrides(RunJobRequest.Overrides.newBuilder().build())
               .build();
       OperationFuture<Execution, Execution> future =
-          jobsClient.runJobOperationCallable().futureCall(request);
+          executionsClient.cancelExecutionOperationCallable().futureCall(request);
       // Do something.
       Execution response = future.get();
     }
   }
 }
-// [END run_v2_generated_Jobs_RunJob_LRO_async]
+// [END run_v2_generated_Executions_CancelExecution_LRO_async]

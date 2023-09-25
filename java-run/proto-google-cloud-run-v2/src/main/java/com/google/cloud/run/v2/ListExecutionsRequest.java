@@ -73,8 +73,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The Execution from which the Executions should be listed.
    * To list all Executions across Jobs, use "-" instead of Job name.
-   * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
-   * can be project id or number.
+   * Format: `projects/{project}/locations/{location}/jobs/{job}`, where
+   * `{project}` can be project id or number.
    * </pre>
    *
    * <code>
@@ -101,8 +101,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Required. The Execution from which the Executions should be listed.
    * To list all Executions across Jobs, use "-" instead of Job name.
-   * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
-   * can be project id or number.
+   * Format: `projects/{project}/locations/{location}/jobs/{job}`, where
+   * `{project}` can be project id or number.
    * </pre>
    *
    * <code>
@@ -629,8 +629,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The Execution from which the Executions should be listed.
      * To list all Executions across Jobs, use "-" instead of Job name.
-     * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
-     * can be project id or number.
+     * Format: `projects/{project}/locations/{location}/jobs/{job}`, where
+     * `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -656,8 +656,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The Execution from which the Executions should be listed.
      * To list all Executions across Jobs, use "-" instead of Job name.
-     * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
-     * can be project id or number.
+     * Format: `projects/{project}/locations/{location}/jobs/{job}`, where
+     * `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -683,8 +683,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The Execution from which the Executions should be listed.
      * To list all Executions across Jobs, use "-" instead of Job name.
-     * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
-     * can be project id or number.
+     * Format: `projects/{project}/locations/{location}/jobs/{job}`, where
+     * `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -709,8 +709,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The Execution from which the Executions should be listed.
      * To list all Executions across Jobs, use "-" instead of Job name.
-     * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
-     * can be project id or number.
+     * Format: `projects/{project}/locations/{location}/jobs/{job}`, where
+     * `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -731,8 +731,8 @@ public final class ListExecutionsRequest extends com.google.protobuf.GeneratedMe
      * <pre>
      * Required. The Execution from which the Executions should be listed.
      * To list all Executions across Jobs, use "-" instead of Job name.
-     * Format: projects/{project}/locations/{location}/jobs/{job}, where {project}
-     * can be project id or number.
+     * Format: `projects/{project}/locations/{location}/jobs/{job}`, where
+     * `{project}` can be project id or number.
      * </pre>
      *
      * <code>

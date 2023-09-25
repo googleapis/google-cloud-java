@@ -47,6 +47,7 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.run.v2.CancelExecutionRequest;
 import com.google.cloud.run.v2.DeleteExecutionRequest;
 import com.google.cloud.run.v2.Execution;
 import com.google.cloud.run.v2.GetExecutionRequest;
@@ -111,6 +112,9 @@ public class ExecutionsStubSettings extends StubSettings<ExecutionsStubSettings>
   private final UnaryCallSettings<DeleteExecutionRequest, Operation> deleteExecutionSettings;
   private final OperationCallSettings<DeleteExecutionRequest, Execution, Execution>
       deleteExecutionOperationSettings;
+  private final UnaryCallSettings<CancelExecutionRequest, Operation> cancelExecutionSettings;
+  private final OperationCallSettings<CancelExecutionRequest, Execution, Execution>
+      cancelExecutionOperationSettings;
 
   private static final PagedListDescriptor<ListExecutionsRequest, ListExecutionsResponse, Execution>
       LIST_EXECUTIONS_PAGE_STR_DESC =
@@ -187,6 +191,17 @@ public class ExecutionsStubSettings extends StubSettings<ExecutionsStubSettings>
   public OperationCallSettings<DeleteExecutionRequest, Execution, Execution>
       deleteExecutionOperationSettings() {
     return deleteExecutionOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelExecution. */
+  public UnaryCallSettings<CancelExecutionRequest, Operation> cancelExecutionSettings() {
+    return cancelExecutionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelExecution. */
+  public OperationCallSettings<CancelExecutionRequest, Execution, Execution>
+      cancelExecutionOperationSettings() {
+    return cancelExecutionOperationSettings;
   }
 
   public ExecutionsStub createStub() throws IOException {
@@ -299,6 +314,8 @@ public class ExecutionsStubSettings extends StubSettings<ExecutionsStubSettings>
     listExecutionsSettings = settingsBuilder.listExecutionsSettings().build();
     deleteExecutionSettings = settingsBuilder.deleteExecutionSettings().build();
     deleteExecutionOperationSettings = settingsBuilder.deleteExecutionOperationSettings().build();
+    cancelExecutionSettings = settingsBuilder.cancelExecutionSettings().build();
+    cancelExecutionOperationSettings = settingsBuilder.cancelExecutionOperationSettings().build();
   }
 
   /** Builder for ExecutionsStubSettings. */
@@ -312,6 +329,10 @@ public class ExecutionsStubSettings extends StubSettings<ExecutionsStubSettings>
         deleteExecutionSettings;
     private final OperationCallSettings.Builder<DeleteExecutionRequest, Execution, Execution>
         deleteExecutionOperationSettings;
+    private final UnaryCallSettings.Builder<CancelExecutionRequest, Operation>
+        cancelExecutionSettings;
+    private final OperationCallSettings.Builder<CancelExecutionRequest, Execution, Execution>
+        cancelExecutionOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -343,10 +364,15 @@ public class ExecutionsStubSettings extends StubSettings<ExecutionsStubSettings>
       listExecutionsSettings = PagedCallSettings.newBuilder(LIST_EXECUTIONS_PAGE_STR_FACT);
       deleteExecutionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteExecutionOperationSettings = OperationCallSettings.newBuilder();
+      cancelExecutionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      cancelExecutionOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getExecutionSettings, listExecutionsSettings, deleteExecutionSettings);
+              getExecutionSettings,
+              listExecutionsSettings,
+              deleteExecutionSettings,
+              cancelExecutionSettings);
       initDefaults(this);
     }
 
@@ -357,10 +383,15 @@ public class ExecutionsStubSettings extends StubSettings<ExecutionsStubSettings>
       listExecutionsSettings = settings.listExecutionsSettings.toBuilder();
       deleteExecutionSettings = settings.deleteExecutionSettings.toBuilder();
       deleteExecutionOperationSettings = settings.deleteExecutionOperationSettings.toBuilder();
+      cancelExecutionSettings = settings.cancelExecutionSettings.toBuilder();
+      cancelExecutionOperationSettings = settings.cancelExecutionOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              getExecutionSettings, listExecutionsSettings, deleteExecutionSettings);
+              getExecutionSettings,
+              listExecutionsSettings,
+              deleteExecutionSettings,
+              cancelExecutionSettings);
     }
 
     private static Builder createDefault() {
@@ -406,10 +437,39 @@ public class ExecutionsStubSettings extends StubSettings<ExecutionsStubSettings>
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
+          .cancelExecutionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
           .deleteExecutionOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
                   .<DeleteExecutionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Execution.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Execution.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelay(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelay(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeout(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeout(Duration.ZERO)
+                      .setTotalTimeout(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .cancelExecutionOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CancelExecutionRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
                   .build())
@@ -470,6 +530,19 @@ public class ExecutionsStubSettings extends StubSettings<ExecutionsStubSettings>
     public OperationCallSettings.Builder<DeleteExecutionRequest, Execution, Execution>
         deleteExecutionOperationSettings() {
       return deleteExecutionOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to cancelExecution. */
+    public UnaryCallSettings.Builder<CancelExecutionRequest, Operation> cancelExecutionSettings() {
+      return cancelExecutionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to cancelExecution. */
+    @BetaApi(
+        "The surface for use by generated code is not stable yet and may change in the future.")
+    public OperationCallSettings.Builder<CancelExecutionRequest, Execution, Execution>
+        cancelExecutionOperationSettings() {
+      return cancelExecutionOperationSettings;
     }
 
     @Override

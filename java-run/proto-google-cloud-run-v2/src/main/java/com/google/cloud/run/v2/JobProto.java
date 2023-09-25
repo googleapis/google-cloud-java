@@ -56,6 +56,14 @@ public final class JobProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_run_v2_RunJobRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_run_v2_RunJobRequest_Overrides_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_run_v2_RunJobRequest_Overrides_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_run_v2_RunJobRequest_Overrides_ContainerOverride_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_run_v2_RunJobRequest_Overrides_ContainerOverride_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_run_v2_Job_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_run_v2_Job_fieldAccessorTable;
@@ -84,108 +92,127 @@ public final class JobProto {
           + "cloud.run.v2\032\034google/api/annotations.pro"
           + "to\032\027google/api/client.proto\032\037google/api/"
           + "field_behavior.proto\032\035google/api/launch_"
-          + "stage.proto\032\031google/api/resource.proto\032#"
-          + "google/cloud/run/v2/condition.proto\032#goo"
-          + "gle/cloud/run/v2/execution.proto\032,google"
-          + "/cloud/run/v2/execution_template.proto\032)"
-          + "google/cloud/run/v2/vendor_settings.prot"
-          + "o\032\036google/iam/v1/iam_policy.proto\032\032googl"
-          + "e/iam/v1/policy.proto\032#google/longrunnin"
-          + "g/operations.proto\032\037google/protobuf/time"
-          + "stamp.proto\"\235\001\n\020CreateJobRequest\022/\n\006pare"
-          + "nt\030\001 \001(\tB\037\342A\001\002\372A\030\022\026run.googleapis.com/Jo"
-          + "b\022+\n\003job\030\002 \001(\0132\030.google.cloud.run.v2.Job"
-          + "B\004\342A\001\002\022\024\n\006job_id\030\003 \001(\tB\004\342A\001\002\022\025\n\rvalidate"
-          + "_only\030\004 \001(\010\">\n\rGetJobRequest\022-\n\004name\030\001 \001"
-          + "(\tB\037\342A\001\002\372A\030\n\026run.googleapis.com/Job\"m\n\020U"
-          + "pdateJobRequest\022+\n\003job\030\001 \001(\0132\030.google.cl"
-          + "oud.run.v2.JobB\004\342A\001\002\022\025\n\rvalidate_only\030\003 "
-          + "\001(\010\022\025\n\rallow_missing\030\004 \001(\010\"\177\n\017ListJobsRe"
+          + "stage.proto\032\031google/api/resource.proto\032\030"
+          + "google/api/routing.proto\032#google/cloud/r"
+          + "un/v2/condition.proto\032#google/cloud/run/"
+          + "v2/execution.proto\032,google/cloud/run/v2/"
+          + "execution_template.proto\032!google/cloud/r"
+          + "un/v2/k8s.min.proto\032)google/cloud/run/v2"
+          + "/vendor_settings.proto\032\036google/iam/v1/ia"
+          + "m_policy.proto\032\032google/iam/v1/policy.pro"
+          + "to\032#google/longrunning/operations.proto\032"
+          + "\036google/protobuf/duration.proto\032\037google/"
+          + "protobuf/timestamp.proto\"\235\001\n\020CreateJobRe"
           + "quest\022/\n\006parent\030\001 \001(\tB\037\342A\001\002\372A\030\022\026run.goog"
-          + "leapis.com/Job\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npag"
-          + "e_token\030\003 \001(\t\022\024\n\014show_deleted\030\004 \001(\010\"S\n\020L"
-          + "istJobsResponse\022&\n\004jobs\030\001 \003(\0132\030.google.c"
-          + "loud.run.v2.Job\022\027\n\017next_page_token\030\002 \001(\t"
-          + "\"f\n\020DeleteJobRequest\022-\n\004name\030\001 \001(\tB\037\342A\001\002"
-          + "\372A\030\n\026run.googleapis.com/Job\022\025\n\rvalidate_"
-          + "only\030\003 \001(\010\022\014\n\004etag\030\004 \001(\t\"c\n\rRunJobReques"
+          + "leapis.com/Job\022+\n\003job\030\002 \001(\0132\030.google.clo"
+          + "ud.run.v2.JobB\004\342A\001\002\022\024\n\006job_id\030\003 \001(\tB\004\342A\001"
+          + "\002\022\025\n\rvalidate_only\030\004 \001(\010\">\n\rGetJobReques"
           + "t\022-\n\004name\030\001 \001(\tB\037\342A\001\002\372A\030\n\026run.googleapis"
-          + ".com/Job\022\025\n\rvalidate_only\030\002 \001(\010\022\014\n\004etag\030"
-          + "\003 \001(\t\"\267\t\n\003Job\022\014\n\004name\030\001 \001(\t\022\021\n\003uid\030\002 \001(\t"
-          + "B\004\342A\001\003\022\030\n\ngeneration\030\003 \001(\003B\004\342A\001\003\0224\n\006labe"
-          + "ls\030\004 \003(\0132$.google.cloud.run.v2.Job.Label"
-          + "sEntry\022>\n\013annotations\030\005 \003(\0132).google.clo"
-          + "ud.run.v2.Job.AnnotationsEntry\0225\n\013create"
-          + "_time\030\006 \001(\0132\032.google.protobuf.TimestampB"
-          + "\004\342A\001\003\0225\n\013update_time\030\007 \001(\0132\032.google.prot"
-          + "obuf.TimestampB\004\342A\001\003\0225\n\013delete_time\030\010 \001("
-          + "\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n\013e"
-          + "xpire_time\030\t \001(\0132\032.google.protobuf.Times"
-          + "tampB\004\342A\001\003\022\025\n\007creator\030\n \001(\tB\004\342A\001\003\022\033\n\rlas"
-          + "t_modifier\030\013 \001(\tB\004\342A\001\003\022\016\n\006client\030\014 \001(\t\022\026"
-          + "\n\016client_version\030\r \001(\t\022-\n\014launch_stage\030\016"
-          + " \001(\0162\027.google.api.LaunchStage\022F\n\024binary_"
-          + "authorization\030\017 \001(\0132(.google.cloud.run.v"
-          + "2.BinaryAuthorization\022>\n\010template\030\020 \001(\0132"
-          + "&.google.cloud.run.v2.ExecutionTemplateB"
-          + "\004\342A\001\002\022!\n\023observed_generation\030\021 \001(\003B\004\342A\001\003"
-          + "\022@\n\022terminal_condition\030\022 \001(\0132\036.google.cl"
-          + "oud.run.v2.ConditionB\004\342A\001\003\0228\n\nconditions"
-          + "\030\023 \003(\0132\036.google.cloud.run.v2.ConditionB\004"
-          + "\342A\001\003\022\035\n\017execution_count\030\024 \001(\005B\004\342A\001\003\022O\n\030l"
-          + "atest_created_execution\030\026 \001(\0132\'.google.c"
-          + "loud.run.v2.ExecutionReferenceB\004\342A\001\003\022\031\n\013"
-          + "reconciling\030\027 \001(\010B\004\342A\001\003\022\033\n\rsatisfies_pzs"
-          + "\030\031 \001(\010B\004\342A\001\003\022\022\n\004etag\030c \001(\tB\004\342A\001\003\032-\n\013Labe"
-          + "lsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032"
-          + "2\n\020AnnotationsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu"
-          + "e\030\002 \001(\t:\0028\001:R\352AO\n\026run.googleapis.com/Job"
-          + "\0222projects/{project}/locations/{location"
-          + "}/jobs/{job}R\001\001\"\253\001\n\022ExecutionReference\022/"
-          + "\n\004name\030\001 \001(\tB!\372A\036\n\034run.googleapis.com/Ex"
-          + "ecution\022/\n\013create_time\030\002 \001(\0132\032.google.pr"
-          + "otobuf.Timestamp\0223\n\017completion_time\030\003 \001("
-          + "\0132\032.google.protobuf.Timestamp2\314\013\n\004Jobs\022\251"
-          + "\001\n\tCreateJob\022%.google.cloud.run.v2.Creat"
-          + "eJobRequest\032\035.google.longrunning.Operati"
-          + "on\"V\312A\n\n\003Job\022\003Job\332A\021parent,job,job_id\202\323\344"
-          + "\223\002/\"(/v2/{parent=projects/*/locations/*}"
-          + "/jobs:\003job\022\177\n\006GetJob\022\".google.cloud.run."
-          + "v2.GetJobRequest\032\030.google.cloud.run.v2.J"
-          + "ob\"7\332A\004name\202\323\344\223\002*\022(/v2/{name=projects/*/"
-          + "locations/*/jobs/*}\022\222\001\n\010ListJobs\022$.googl"
-          + "e.cloud.run.v2.ListJobsRequest\032%.google."
-          + "cloud.run.v2.ListJobsResponse\"9\332A\006parent"
-          + "\202\323\344\223\002*\022(/v2/{parent=projects/*/locations"
-          + "/*}/jobs\022\237\001\n\tUpdateJob\022%.google.cloud.ru"
-          + "n.v2.UpdateJobRequest\032\035.google.longrunni"
-          + "ng.Operation\"L\312A\n\n\003Job\022\003Job\332A\003job\202\323\344\223\00232"
-          + ",/v2/{job.name=projects/*/locations/*/jo"
-          + "bs/*}:\003job\022\227\001\n\tDeleteJob\022%.google.cloud."
-          + "run.v2.DeleteJobRequest\032\035.google.longrun"
-          + "ning.Operation\"D\312A\n\n\003Job\022\003Job\332A\004name\202\323\344\223"
-          + "\002**(/v2/{name=projects/*/locations/*/job"
-          + "s/*}\022\244\001\n\006RunJob\022\".google.cloud.run.v2.Ru"
-          + "nJobRequest\032\035.google.longrunning.Operati"
-          + "on\"W\312A\026\n\tExecution\022\tExecution\332A\004name\202\323\344\223"
-          + "\0021\",/v2/{name=projects/*/locations/*/job"
-          + "s/*}:run:\001*\022\214\001\n\014GetIamPolicy\022\".google.ia"
-          + "m.v1.GetIamPolicyRequest\032\025.google.iam.v1"
-          + ".Policy\"A\202\323\344\223\002;\0229/v2/{resource=projects/"
-          + "*/locations/*/jobs/*}:getIamPolicy\022\217\001\n\014S"
-          + "etIamPolicy\022\".google.iam.v1.SetIamPolicy"
-          + "Request\032\025.google.iam.v1.Policy\"D\202\323\344\223\002>\"9"
-          + "/v2/{resource=projects/*/locations/*/job"
-          + "s/*}:setIamPolicy:\001*\022\265\001\n\022TestIamPermissi"
-          + "ons\022(.google.iam.v1.TestIamPermissionsRe"
-          + "quest\032).google.iam.v1.TestIamPermissions"
-          + "Response\"J\202\323\344\223\002D\"?/v2/{resource=projects"
-          + "/*/locations/*/jobs/*}:testIamPermission"
-          + "s:\001*\032F\312A\022run.googleapis.com\322A.https://ww"
-          + "w.googleapis.com/auth/cloud-platformBP\n\027"
-          + "com.google.cloud.run.v2B\010JobProtoP\001Z)clo"
-          + "ud.google.com/go/run/apiv2/runpb;runpbb\006"
-          + "proto3"
+          + ".com/Job\"m\n\020UpdateJobRequest\022+\n\003job\030\001 \001("
+          + "\0132\030.google.cloud.run.v2.JobB\004\342A\001\002\022\025\n\rval"
+          + "idate_only\030\003 \001(\010\022\025\n\rallow_missing\030\004 \001(\010\""
+          + "\177\n\017ListJobsRequest\022/\n\006parent\030\001 \001(\tB\037\342A\001\002"
+          + "\372A\030\022\026run.googleapis.com/Job\022\021\n\tpage_size"
+          + "\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\022\024\n\014show_delet"
+          + "ed\030\004 \001(\010\"S\n\020ListJobsResponse\022&\n\004jobs\030\001 \003"
+          + "(\0132\030.google.cloud.run.v2.Job\022\027\n\017next_pag"
+          + "e_token\030\002 \001(\t\"f\n\020DeleteJobRequest\022-\n\004nam"
+          + "e\030\001 \001(\tB\037\342A\001\002\372A\030\n\026run.googleapis.com/Job"
+          + "\022\025\n\rvalidate_only\030\003 \001(\010\022\014\n\004etag\030\004 \001(\t\"\320\003"
+          + "\n\rRunJobRequest\022-\n\004name\030\001 \001(\tB\037\342A\001\002\372A\030\n\026"
+          + "run.googleapis.com/Job\022\025\n\rvalidate_only\030"
+          + "\002 \001(\010\022\014\n\004etag\030\003 \001(\t\022?\n\toverrides\030\004 \001(\0132,"
+          + ".google.cloud.run.v2.RunJobRequest.Overr"
+          + "ides\032\251\002\n\tOverrides\022[\n\023container_override"
+          + "s\030\001 \003(\0132>.google.cloud.run.v2.RunJobRequ"
+          + "est.Overrides.ContainerOverride\022\030\n\ntask_"
+          + "count\030\002 \001(\005B\004\342A\001\001\022*\n\007timeout\030\004 \001(\0132\031.goo"
+          + "gle.protobuf.Duration\032y\n\021ContainerOverri"
+          + "de\022\014\n\004name\030\001 \001(\t\022\022\n\004args\030\002 \003(\tB\004\342A\001\001\022(\n\003"
+          + "env\030\003 \003(\0132\033.google.cloud.run.v2.EnvVar\022\030"
+          + "\n\nclear_args\030\004 \001(\010B\004\342A\001\001\"\267\t\n\003Job\022\014\n\004name"
+          + "\030\001 \001(\t\022\021\n\003uid\030\002 \001(\tB\004\342A\001\003\022\030\n\ngeneration\030"
+          + "\003 \001(\003B\004\342A\001\003\0224\n\006labels\030\004 \003(\0132$.google.clo"
+          + "ud.run.v2.Job.LabelsEntry\022>\n\013annotations"
+          + "\030\005 \003(\0132).google.cloud.run.v2.Job.Annotat"
+          + "ionsEntry\0225\n\013create_time\030\006 \001(\0132\032.google."
+          + "protobuf.TimestampB\004\342A\001\003\0225\n\013update_time\030"
+          + "\007 \001(\0132\032.google.protobuf.TimestampB\004\342A\001\003\022"
+          + "5\n\013delete_time\030\010 \001(\0132\032.google.protobuf.T"
+          + "imestampB\004\342A\001\003\0225\n\013expire_time\030\t \001(\0132\032.go"
+          + "ogle.protobuf.TimestampB\004\342A\001\003\022\025\n\007creator"
+          + "\030\n \001(\tB\004\342A\001\003\022\033\n\rlast_modifier\030\013 \001(\tB\004\342A\001"
+          + "\003\022\016\n\006client\030\014 \001(\t\022\026\n\016client_version\030\r \001("
+          + "\t\022-\n\014launch_stage\030\016 \001(\0162\027.google.api.Lau"
+          + "nchStage\022F\n\024binary_authorization\030\017 \001(\0132("
+          + ".google.cloud.run.v2.BinaryAuthorization"
+          + "\022>\n\010template\030\020 \001(\0132&.google.cloud.run.v2"
+          + ".ExecutionTemplateB\004\342A\001\002\022!\n\023observed_gen"
+          + "eration\030\021 \001(\003B\004\342A\001\003\022@\n\022terminal_conditio"
+          + "n\030\022 \001(\0132\036.google.cloud.run.v2.ConditionB"
+          + "\004\342A\001\003\0228\n\nconditions\030\023 \003(\0132\036.google.cloud"
+          + ".run.v2.ConditionB\004\342A\001\003\022\035\n\017execution_cou"
+          + "nt\030\024 \001(\005B\004\342A\001\003\022O\n\030latest_created_executi"
+          + "on\030\026 \001(\0132\'.google.cloud.run.v2.Execution"
+          + "ReferenceB\004\342A\001\003\022\031\n\013reconciling\030\027 \001(\010B\004\342A"
+          + "\001\003\022\033\n\rsatisfies_pzs\030\031 \001(\010B\004\342A\001\003\022\022\n\004etag\030"
+          + "c \001(\tB\004\342A\001\003\032-\n\013LabelsEntry\022\013\n\003key\030\001 \001(\t\022"
+          + "\r\n\005value\030\002 \001(\t:\0028\001\0322\n\020AnnotationsEntry\022\013"
+          + "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:R\352AO\n\026run"
+          + ".googleapis.com/Job\0222projects/{project}/"
+          + "locations/{location}/jobs/{job}R\001\001\"\253\001\n\022E"
+          + "xecutionReference\022/\n\004name\030\001 \001(\tB!\372A\036\n\034ru"
+          + "n.googleapis.com/Execution\022/\n\013create_tim"
+          + "e\030\002 \001(\0132\032.google.protobuf.Timestamp\0223\n\017c"
+          + "ompletion_time\030\003 \001(\0132\032.google.protobuf.T"
+          + "imestamp2\212\016\n\004Jobs\022\335\001\n\tCreateJob\022%.google"
+          + ".cloud.run.v2.CreateJobRequest\032\035.google."
+          + "longrunning.Operation\"\211\001\312A\n\n\003Job\022\003Job\332A\021"
+          + "parent,job,job_id\202\323\344\223\002/\"(/v2/{parent=pro"
+          + "jects/*/locations/*}/jobs:\003job\212\323\344\223\002-\022+\n\006"
+          + "parent\022!projects/*/locations/{location=*"
+          + "}\022\263\001\n\006GetJob\022\".google.cloud.run.v2.GetJo"
+          + "bRequest\032\030.google.cloud.run.v2.Job\"k\332A\004n"
+          + "ame\202\323\344\223\002*\022(/v2/{name=projects/*/location"
+          + "s/*/jobs/*}\212\323\344\223\002.\022,\n\004name\022$projects/*/lo"
+          + "cations/{location=*}/**\022\305\001\n\010ListJobs\022$.g"
+          + "oogle.cloud.run.v2.ListJobsRequest\032%.goo"
+          + "gle.cloud.run.v2.ListJobsResponse\"l\332A\006pa"
+          + "rent\202\323\344\223\002*\022(/v2/{parent=projects/*/locat"
+          + "ions/*}/jobs\212\323\344\223\002-\022+\n\006parent\022!projects/*"
+          + "/locations/{location=*}\022\330\001\n\tUpdateJob\022%."
+          + "google.cloud.run.v2.UpdateJobRequest\032\035.g"
+          + "oogle.longrunning.Operation\"\204\001\312A\n\n\003Job\022\003"
+          + "Job\332A\003job\202\323\344\223\00232,/v2/{job.name=projects/"
+          + "*/locations/*/jobs/*}:\003job\212\323\344\223\0022\0220\n\010job."
+          + "name\022$projects/*/locations/{location=*}/"
+          + "**\022\313\001\n\tDeleteJob\022%.google.cloud.run.v2.D"
+          + "eleteJobRequest\032\035.google.longrunning.Ope"
+          + "ration\"x\312A\n\n\003Job\022\003Job\332A\004name\202\323\344\223\002**(/v2/"
+          + "{name=projects/*/locations/*/jobs/*}\212\323\344\223"
+          + "\002.\022,\n\004name\022$projects/*/locations/{locati"
+          + "on=*}/**\022\331\001\n\006RunJob\022\".google.cloud.run.v"
+          + "2.RunJobRequest\032\035.google.longrunning.Ope"
+          + "ration\"\213\001\312A\026\n\tExecution\022\tExecution\332A\004nam"
+          + "e\202\323\344\223\0021\",/v2/{name=projects/*/locations/"
+          + "*/jobs/*}:run:\001*\212\323\344\223\002.\022,\n\004name\022$projects"
+          + "/*/locations/{location=*}/**\022\214\001\n\014GetIamP"
+          + "olicy\022\".google.iam.v1.GetIamPolicyReques"
+          + "t\032\025.google.iam.v1.Policy\"A\202\323\344\223\002;\0229/v2/{r"
+          + "esource=projects/*/locations/*/jobs/*}:g"
+          + "etIamPolicy\022\217\001\n\014SetIamPolicy\022\".google.ia"
+          + "m.v1.SetIamPolicyRequest\032\025.google.iam.v1"
+          + ".Policy\"D\202\323\344\223\002>\"9/v2/{resource=projects/"
+          + "*/locations/*/jobs/*}:setIamPolicy:\001*\022\265\001"
+          + "\n\022TestIamPermissions\022(.google.iam.v1.Tes"
+          + "tIamPermissionsRequest\032).google.iam.v1.T"
+          + "estIamPermissionsResponse\"J\202\323\344\223\002D\"?/v2/{"
+          + "resource=projects/*/locations/*/jobs/*}:"
+          + "testIamPermissions:\001*\032F\312A\022run.googleapis"
+          + ".com\322A.https://www.googleapis.com/auth/c"
+          + "loud-platformBP\n\027com.google.cloud.run.v2"
+          + "B\010JobProtoP\001Z)cloud.google.com/go/run/ap"
+          + "iv2/runpb;runpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -196,13 +223,16 @@ public final class JobProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.LaunchStageProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.api.RoutingProto.getDescriptor(),
               com.google.cloud.run.v2.ConditionProto.getDescriptor(),
               com.google.cloud.run.v2.ExecutionProto.getDescriptor(),
               com.google.cloud.run.v2.ExecutionTemplateProto.getDescriptor(),
+              com.google.cloud.run.v2.K8sMinProto.getDescriptor(),
               com.google.cloud.run.v2.VendorSettingsProto.getDescriptor(),
               com.google.iam.v1.IamPolicyProto.getDescriptor(),
               com.google.iam.v1.PolicyProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_run_v2_CreateJobRequest_descriptor =
@@ -259,7 +289,25 @@ public final class JobProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_run_v2_RunJobRequest_descriptor,
             new java.lang.String[] {
-              "Name", "ValidateOnly", "Etag",
+              "Name", "ValidateOnly", "Etag", "Overrides",
+            });
+    internal_static_google_cloud_run_v2_RunJobRequest_Overrides_descriptor =
+        internal_static_google_cloud_run_v2_RunJobRequest_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_run_v2_RunJobRequest_Overrides_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_run_v2_RunJobRequest_Overrides_descriptor,
+            new java.lang.String[] {
+              "ContainerOverrides", "TaskCount", "Timeout",
+            });
+    internal_static_google_cloud_run_v2_RunJobRequest_Overrides_ContainerOverride_descriptor =
+        internal_static_google_cloud_run_v2_RunJobRequest_Overrides_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_run_v2_RunJobRequest_Overrides_ContainerOverride_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_run_v2_RunJobRequest_Overrides_ContainerOverride_descriptor,
+            new java.lang.String[] {
+              "Name", "Args", "Env", "ClearArgs",
             });
     internal_static_google_cloud_run_v2_Job_descriptor = getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_run_v2_Job_fieldAccessorTable =
@@ -324,6 +372,7 @@ public final class JobProto {
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resource);
     registry.add(com.google.api.ResourceProto.resourceReference);
+    registry.add(com.google.api.RoutingProto.routing);
     registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
@@ -332,13 +381,16 @@ public final class JobProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.LaunchStageProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.api.RoutingProto.getDescriptor();
     com.google.cloud.run.v2.ConditionProto.getDescriptor();
     com.google.cloud.run.v2.ExecutionProto.getDescriptor();
     com.google.cloud.run.v2.ExecutionTemplateProto.getDescriptor();
+    com.google.cloud.run.v2.K8sMinProto.getDescriptor();
     com.google.cloud.run.v2.VendorSettingsProto.getDescriptor();
     com.google.iam.v1.IamPolicyProto.getDescriptor();
     com.google.iam.v1.PolicyProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
+    com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }
 

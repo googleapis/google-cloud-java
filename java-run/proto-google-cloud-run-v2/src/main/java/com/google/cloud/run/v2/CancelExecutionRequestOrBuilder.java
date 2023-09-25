@@ -18,16 +18,16 @@
 
 package com.google.cloud.run.v2;
 
-public interface GetExecutionRequestOrBuilder
+public interface CancelExecutionRequestOrBuilder
     extends
-    // @@protoc_insertion_point(interface_extends:google.cloud.run.v2.GetExecutionRequest)
+    // @@protoc_insertion_point(interface_extends:google.cloud.run.v2.CancelExecutionRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
    *
    *
    * <pre>
-   * Required. The full name of the Execution.
+   * Required. The name of the Execution to cancel.
    * Format:
    * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
    * where `{project}` can be project id or number.
@@ -44,7 +44,7 @@ public interface GetExecutionRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The full name of the Execution.
+   * Required. The name of the Execution to cancel.
    * Format:
    * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
    * where `{project}` can be project id or number.
@@ -57,4 +57,45 @@ public interface GetExecutionRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates that the request should be validated without actually
+   * cancelling any resources.
+   * </pre>
+   *
+   * <code>bool validate_only = 2;</code>
+   *
+   * @return The validateOnly.
+   */
+  boolean getValidateOnly();
+
+  /**
+   *
+   *
+   * <pre>
+   * A system-generated fingerprint for this version of the resource.
+   * This may be used to detect modification conflict during updates.
+   * </pre>
+   *
+   * <code>string etag = 3;</code>
+   *
+   * @return The etag.
+   */
+  java.lang.String getEtag();
+  /**
+   *
+   *
+   * <pre>
+   * A system-generated fingerprint for this version of the resource.
+   * This may be used to detect modification conflict during updates.
+   * </pre>
+   *
+   * <code>string etag = 3;</code>
+   *
+   * @return The bytes for etag.
+   */
+  com.google.protobuf.ByteString getEtagBytes();
 }

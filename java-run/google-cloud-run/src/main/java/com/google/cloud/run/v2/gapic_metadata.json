@@ -10,6 +10,9 @@
         "grpc": {
           "libraryClient": "ExecutionsClient",
           "rpcs": {
+            "CancelExecution": {
+              "methods": ["cancelExecutionAsync", "cancelExecutionAsync", "cancelExecutionAsync", "cancelExecutionOperationCallable", "cancelExecutionCallable"]
+            },
             "DeleteExecution": {
               "methods": ["deleteExecutionAsync", "deleteExecutionAsync", "deleteExecutionAsync", "deleteExecutionOperationCallable", "deleteExecutionCallable"]
             },

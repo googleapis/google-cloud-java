@@ -1318,6 +1318,16 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <code>CANCELLING = 4;</code>
      */
     CANCELLING(4),
+    /**
+     *
+     *
+     * <pre>
+     * The execution was deleted.
+     * </pre>
+     *
+     * <code>DELETED = 5;</code>
+     */
+    DELETED(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -1372,6 +1382,16 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
      * <code>CANCELLING = 4;</code>
      */
     public static final int CANCELLING_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * The execution was deleted.
+     * </pre>
+     *
+     * <code>DELETED = 5;</code>
+     */
+    public static final int DELETED_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -1407,6 +1427,8 @@ public final class Condition extends com.google.protobuf.GeneratedMessageV3
           return CANCELLED;
         case 4:
           return CANCELLING;
+        case 5:
+          return DELETED;
         default:
           return null;
       }

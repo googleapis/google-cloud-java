@@ -976,6 +976,7 @@ public class JobsClient implements BackgroundResource {
    *           .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
    *           .setValidateOnly(true)
    *           .setEtag("etag3123477")
+   *           .setOverrides(RunJobRequest.Overrides.newBuilder().build())
    *           .build();
    *   Execution response = jobsClient.runJobAsync(request).get();
    * }
@@ -1006,6 +1007,7 @@ public class JobsClient implements BackgroundResource {
    *           .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
    *           .setValidateOnly(true)
    *           .setEtag("etag3123477")
+   *           .setOverrides(RunJobRequest.Overrides.newBuilder().build())
    *           .build();
    *   OperationFuture<Execution, Execution> future =
    *       jobsClient.runJobOperationCallable().futureCall(request);
@@ -1036,6 +1038,7 @@ public class JobsClient implements BackgroundResource {
    *           .setName(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
    *           .setValidateOnly(true)
    *           .setEtag("etag3123477")
+   *           .setOverrides(RunJobRequest.Overrides.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future = jobsClient.runJobCallable().futureCall(request);
    *   // Do something.

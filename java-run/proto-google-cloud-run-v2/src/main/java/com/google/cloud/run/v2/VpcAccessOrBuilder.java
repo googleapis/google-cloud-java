@@ -30,6 +30,8 @@ public interface VpcAccessOrBuilder
    * VPC Access connector name.
    * Format: projects/{project}/locations/{location}/connectors/{connector},
    * where {project} can be project id or number.
+   * For more information on sending traffic to a VPC network via a connector,
+   * visit https://cloud.google.com/run/docs/configuring/vpc-connectors.
    * </pre>
    *
    * <code>string connector = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -44,6 +46,8 @@ public interface VpcAccessOrBuilder
    * VPC Access connector name.
    * Format: projects/{project}/locations/{location}/connectors/{connector},
    * where {project} can be project id or number.
+   * For more information on sending traffic to a VPC network via a connector,
+   * visit https://cloud.google.com/run/docs/configuring/vpc-connectors.
    * </pre>
    *
    * <code>string connector = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -56,7 +60,8 @@ public interface VpcAccessOrBuilder
    *
    *
    * <pre>
-   * Traffic VPC egress settings.
+   * Traffic VPC egress settings. If not provided, it defaults to
+   * PRIVATE_RANGES_ONLY.
    * </pre>
    *
    * <code>.google.cloud.run.v2.VpcAccess.VpcEgress egress = 2;</code>
@@ -68,7 +73,8 @@ public interface VpcAccessOrBuilder
    *
    *
    * <pre>
-   * Traffic VPC egress settings.
+   * Traffic VPC egress settings. If not provided, it defaults to
+   * PRIVATE_RANGES_ONLY.
    * </pre>
    *
    * <code>.google.cloud.run.v2.VpcAccess.VpcEgress egress = 2;</code>
@@ -76,4 +82,62 @@ public interface VpcAccessOrBuilder
    * @return The egress.
    */
   com.google.cloud.run.v2.VpcAccess.VpcEgress getEgress();
+
+  /**
+   *
+   *
+   * <pre>
+   * Direct VPC egress settings. Currently only single network interface is
+   * supported.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+   */
+  java.util.List<com.google.cloud.run.v2.VpcAccess.NetworkInterface> getNetworkInterfacesList();
+  /**
+   *
+   *
+   * <pre>
+   * Direct VPC egress settings. Currently only single network interface is
+   * supported.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+   */
+  com.google.cloud.run.v2.VpcAccess.NetworkInterface getNetworkInterfaces(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Direct VPC egress settings. Currently only single network interface is
+   * supported.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+   */
+  int getNetworkInterfacesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Direct VPC egress settings. Currently only single network interface is
+   * supported.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+   */
+  java.util.List<? extends com.google.cloud.run.v2.VpcAccess.NetworkInterfaceOrBuilder>
+      getNetworkInterfacesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Direct VPC egress settings. Currently only single network interface is
+   * supported.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.run.v2.VpcAccess.NetworkInterface network_interfaces = 3;</code>
+   */
+  com.google.cloud.run.v2.VpcAccess.NetworkInterfaceOrBuilder getNetworkInterfacesOrBuilder(
+      int index);
 }

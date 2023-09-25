@@ -32,7 +32,7 @@ public final class JobsGrpc {
 
   private JobsGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.run.v2.Jobs";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.run.v2.Jobs";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1180,9 +1180,9 @@ public final class JobsGrpc {
 
   private static final class JobsMethodDescriptorSupplier extends JobsBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    JobsMethodDescriptorSupplier(String methodName) {
+    JobsMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
