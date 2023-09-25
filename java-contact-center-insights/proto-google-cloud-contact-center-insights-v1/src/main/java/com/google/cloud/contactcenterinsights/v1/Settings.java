@@ -1629,6 +1629,66 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         : redactionConfig_;
   }
 
+  public static final int SPEECH_CONFIG_FIELD_NUMBER = 11;
+  private com.google.cloud.contactcenterinsights.v1.SpeechConfig speechConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default Speech-to-Text resources to be used while ingesting audio
+   * files. Optional, CCAI Insights will create a default if not provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the speechConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasSpeechConfig() {
+    return speechConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default Speech-to-Text resources to be used while ingesting audio
+   * files. Optional, CCAI Insights will create a default if not provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The speechConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.SpeechConfig getSpeechConfig() {
+    return speechConfig_ == null
+        ? com.google.cloud.contactcenterinsights.v1.SpeechConfig.getDefaultInstance()
+        : speechConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default Speech-to-Text resources to be used while ingesting audio
+   * files. Optional, CCAI Insights will create a default if not provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.contactcenterinsights.v1.SpeechConfigOrBuilder
+      getSpeechConfigOrBuilder() {
+    return speechConfig_ == null
+        ? com.google.cloud.contactcenterinsights.v1.SpeechConfig.getDefaultInstance()
+        : speechConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1668,6 +1728,9 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     }
     if (redactionConfig_ != null) {
       output.writeMessage(10, getRedactionConfig());
+    }
+    if (speechConfig_ != null) {
+      output.writeMessage(11, getSpeechConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1711,6 +1774,9 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     if (redactionConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getRedactionConfig());
     }
+    if (speechConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getSpeechConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1751,6 +1817,10 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     if (hasRedactionConfig()) {
       if (!getRedactionConfig().equals(other.getRedactionConfig())) return false;
     }
+    if (hasSpeechConfig() != other.hasSpeechConfig()) return false;
+    if (hasSpeechConfig()) {
+      if (!getSpeechConfig().equals(other.getSpeechConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1789,6 +1859,10 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
     if (hasRedactionConfig()) {
       hash = (37 * hash) + REDACTION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getRedactionConfig().hashCode();
+    }
+    if (hasSpeechConfig()) {
+      hash = (37 * hash) + SPEECH_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getSpeechConfig().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1977,6 +2051,11 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         redactionConfigBuilder_.dispose();
         redactionConfigBuilder_ = null;
       }
+      speechConfig_ = null;
+      if (speechConfigBuilder_ != null) {
+        speechConfigBuilder_.dispose();
+        speechConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -2040,6 +2119,10 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.redactionConfig_ =
             redactionConfigBuilder_ == null ? redactionConfig_ : redactionConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.speechConfig_ =
+            speechConfigBuilder_ == null ? speechConfig_ : speechConfigBuilder_.build();
       }
     }
 
@@ -2116,6 +2199,9 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasRedactionConfig()) {
         mergeRedactionConfig(other.getRedactionConfig());
+      }
+      if (other.hasSpeechConfig()) {
+        mergeSpeechConfig(other.getSpeechConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2201,6 +2287,12 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000080;
                 break;
               } // case 82
+            case 90:
+              {
+                input.readMessage(getSpeechConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3729,6 +3821,219 @@ public final class Settings extends com.google.protobuf.GeneratedMessageV3
         redactionConfig_ = null;
       }
       return redactionConfigBuilder_;
+    }
+
+    private com.google.cloud.contactcenterinsights.v1.SpeechConfig speechConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contactcenterinsights.v1.SpeechConfig,
+            com.google.cloud.contactcenterinsights.v1.SpeechConfig.Builder,
+            com.google.cloud.contactcenterinsights.v1.SpeechConfigOrBuilder>
+        speechConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default Speech-to-Text resources to be used while ingesting audio
+     * files. Optional, CCAI Insights will create a default if not provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the speechConfig field is set.
+     */
+    public boolean hasSpeechConfig() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default Speech-to-Text resources to be used while ingesting audio
+     * files. Optional, CCAI Insights will create a default if not provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The speechConfig.
+     */
+    public com.google.cloud.contactcenterinsights.v1.SpeechConfig getSpeechConfig() {
+      if (speechConfigBuilder_ == null) {
+        return speechConfig_ == null
+            ? com.google.cloud.contactcenterinsights.v1.SpeechConfig.getDefaultInstance()
+            : speechConfig_;
+      } else {
+        return speechConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default Speech-to-Text resources to be used while ingesting audio
+     * files. Optional, CCAI Insights will create a default if not provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSpeechConfig(com.google.cloud.contactcenterinsights.v1.SpeechConfig value) {
+      if (speechConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        speechConfig_ = value;
+      } else {
+        speechConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default Speech-to-Text resources to be used while ingesting audio
+     * files. Optional, CCAI Insights will create a default if not provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSpeechConfig(
+        com.google.cloud.contactcenterinsights.v1.SpeechConfig.Builder builderForValue) {
+      if (speechConfigBuilder_ == null) {
+        speechConfig_ = builderForValue.build();
+      } else {
+        speechConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default Speech-to-Text resources to be used while ingesting audio
+     * files. Optional, CCAI Insights will create a default if not provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSpeechConfig(com.google.cloud.contactcenterinsights.v1.SpeechConfig value) {
+      if (speechConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && speechConfig_ != null
+            && speechConfig_
+                != com.google.cloud.contactcenterinsights.v1.SpeechConfig.getDefaultInstance()) {
+          getSpeechConfigBuilder().mergeFrom(value);
+        } else {
+          speechConfig_ = value;
+        }
+      } else {
+        speechConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default Speech-to-Text resources to be used while ingesting audio
+     * files. Optional, CCAI Insights will create a default if not provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSpeechConfig() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      speechConfig_ = null;
+      if (speechConfigBuilder_ != null) {
+        speechConfigBuilder_.dispose();
+        speechConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default Speech-to-Text resources to be used while ingesting audio
+     * files. Optional, CCAI Insights will create a default if not provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.contactcenterinsights.v1.SpeechConfig.Builder getSpeechConfigBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getSpeechConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default Speech-to-Text resources to be used while ingesting audio
+     * files. Optional, CCAI Insights will create a default if not provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.contactcenterinsights.v1.SpeechConfigOrBuilder
+        getSpeechConfigOrBuilder() {
+      if (speechConfigBuilder_ != null) {
+        return speechConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return speechConfig_ == null
+            ? com.google.cloud.contactcenterinsights.v1.SpeechConfig.getDefaultInstance()
+            : speechConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Default Speech-to-Text resources to be used while ingesting audio
+     * files. Optional, CCAI Insights will create a default if not provided.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.contactcenterinsights.v1.SpeechConfig,
+            com.google.cloud.contactcenterinsights.v1.SpeechConfig.Builder,
+            com.google.cloud.contactcenterinsights.v1.SpeechConfigOrBuilder>
+        getSpeechConfigFieldBuilder() {
+      if (speechConfigBuilder_ == null) {
+        speechConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.contactcenterinsights.v1.SpeechConfig,
+                com.google.cloud.contactcenterinsights.v1.SpeechConfig.Builder,
+                com.google.cloud.contactcenterinsights.v1.SpeechConfigOrBuilder>(
+                getSpeechConfig(), getParentForChildren(), isClean());
+        speechConfig_ = null;
+      }
+      return speechConfigBuilder_;
     }
 
     @java.lang.Override

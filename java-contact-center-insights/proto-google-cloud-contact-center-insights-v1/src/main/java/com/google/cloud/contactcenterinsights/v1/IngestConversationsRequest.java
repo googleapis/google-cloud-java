@@ -2241,7 +2241,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * A cloud storage bucket source.
+   * A cloud storage bucket source. Note that any previously ingested objects
+   * from the source will be skipped to avoid duplication.
    * </pre>
    *
    * <code>
@@ -2258,7 +2259,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * A cloud storage bucket source.
+   * A cloud storage bucket source. Note that any previously ingested objects
+   * from the source will be skipped to avoid duplication.
    * </pre>
    *
    * <code>
@@ -2281,7 +2283,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * A cloud storage bucket source.
+   * A cloud storage bucket source. Note that any previously ingested objects
+   * from the source will be skipped to avoid duplication.
    * </pre>
    *
    * <code>
@@ -3024,7 +3027,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A cloud storage bucket source.
+     * A cloud storage bucket source. Note that any previously ingested objects
+     * from the source will be skipped to avoid duplication.
      * </pre>
      *
      * <code>
@@ -3041,7 +3045,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A cloud storage bucket source.
+     * A cloud storage bucket source. Note that any previously ingested objects
+     * from the source will be skipped to avoid duplication.
      * </pre>
      *
      * <code>
@@ -3072,7 +3077,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A cloud storage bucket source.
+     * A cloud storage bucket source. Note that any previously ingested objects
+     * from the source will be skipped to avoid duplication.
      * </pre>
      *
      * <code>
@@ -3097,7 +3103,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A cloud storage bucket source.
+     * A cloud storage bucket source. Note that any previously ingested objects
+     * from the source will be skipped to avoid duplication.
      * </pre>
      *
      * <code>
@@ -3120,7 +3127,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A cloud storage bucket source.
+     * A cloud storage bucket source. Note that any previously ingested objects
+     * from the source will be skipped to avoid duplication.
      * </pre>
      *
      * <code>
@@ -3160,7 +3168,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A cloud storage bucket source.
+     * A cloud storage bucket source. Note that any previously ingested objects
+     * from the source will be skipped to avoid duplication.
      * </pre>
      *
      * <code>
@@ -3187,7 +3196,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A cloud storage bucket source.
+     * A cloud storage bucket source. Note that any previously ingested objects
+     * from the source will be skipped to avoid duplication.
      * </pre>
      *
      * <code>
@@ -3202,7 +3212,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A cloud storage bucket source.
+     * A cloud storage bucket source. Note that any previously ingested objects
+     * from the source will be skipped to avoid duplication.
      * </pre>
      *
      * <code>
@@ -3227,7 +3238,8 @@ public final class IngestConversationsRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A cloud storage bucket source.
+     * A cloud storage bucket source. Note that any previously ingested objects
+     * from the source will be skipped to avoid duplication.
      * </pre>
      *
      * <code>

@@ -378,6 +378,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *           .setConversation(Conversation.newBuilder().build())
    *           .setConversationId("conversationId-1676095234")
    *           .setRedactionConfig(RedactionConfig.newBuilder().build())
+   *           .setSpeechConfig(SpeechConfig.newBuilder().build())
    *           .build();
    *   Conversation response = contactCenterInsightsClient.uploadConversationAsync(request).get();
    * }
@@ -412,6 +413,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *           .setConversation(Conversation.newBuilder().build())
    *           .setConversationId("conversationId-1676095234")
    *           .setRedactionConfig(RedactionConfig.newBuilder().build())
+   *           .setSpeechConfig(SpeechConfig.newBuilder().build())
    *           .build();
    *   OperationFuture<Conversation, UploadConversationMetadata> future =
    *       contactCenterInsightsClient.uploadConversationOperationCallable().futureCall(request);
@@ -447,6 +449,7 @@ public class ContactCenterInsightsClient implements BackgroundResource {
    *           .setConversation(Conversation.newBuilder().build())
    *           .setConversationId("conversationId-1676095234")
    *           .setRedactionConfig(RedactionConfig.newBuilder().build())
+   *           .setSpeechConfig(SpeechConfig.newBuilder().build())
    *           .build();
    *   ApiFuture<Operation> future =
    *       contactCenterInsightsClient.uploadConversationCallable().futureCall(request);

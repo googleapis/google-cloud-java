@@ -405,4 +405,48 @@ public interface SettingsOrBuilder
    * <code>.google.cloud.contactcenterinsights.v1.RedactionConfig redaction_config = 10;</code>
    */
   com.google.cloud.contactcenterinsights.v1.RedactionConfigOrBuilder getRedactionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default Speech-to-Text resources to be used while ingesting audio
+   * files. Optional, CCAI Insights will create a default if not provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the speechConfig field is set.
+   */
+  boolean hasSpeechConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default Speech-to-Text resources to be used while ingesting audio
+   * files. Optional, CCAI Insights will create a default if not provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The speechConfig.
+   */
+  com.google.cloud.contactcenterinsights.v1.SpeechConfig getSpeechConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default Speech-to-Text resources to be used while ingesting audio
+   * files. Optional, CCAI Insights will create a default if not provided.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.contactcenterinsights.v1.SpeechConfigOrBuilder getSpeechConfigOrBuilder();
 }

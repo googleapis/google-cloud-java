@@ -22,6 +22,7 @@ import com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient;
 import com.google.cloud.contactcenterinsights.v1.Conversation;
 import com.google.cloud.contactcenterinsights.v1.LocationName;
 import com.google.cloud.contactcenterinsights.v1.RedactionConfig;
+import com.google.cloud.contactcenterinsights.v1.SpeechConfig;
 import com.google.cloud.contactcenterinsights.v1.UploadConversationRequest;
 import com.google.longrunning.Operation;
 
@@ -45,6 +46,7 @@ public class AsyncUploadConversation {
               .setConversation(Conversation.newBuilder().build())
               .setConversationId("conversationId-1676095234")
               .setRedactionConfig(RedactionConfig.newBuilder().build())
+              .setSpeechConfig(SpeechConfig.newBuilder().build())
               .build();
       ApiFuture<Operation> future =
           contactCenterInsightsClient.uploadConversationCallable().futureCall(request);

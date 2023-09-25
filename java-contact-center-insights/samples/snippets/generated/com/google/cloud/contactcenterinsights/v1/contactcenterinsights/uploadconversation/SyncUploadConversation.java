@@ -21,6 +21,7 @@ import com.google.cloud.contactcenterinsights.v1.ContactCenterInsightsClient;
 import com.google.cloud.contactcenterinsights.v1.Conversation;
 import com.google.cloud.contactcenterinsights.v1.LocationName;
 import com.google.cloud.contactcenterinsights.v1.RedactionConfig;
+import com.google.cloud.contactcenterinsights.v1.SpeechConfig;
 import com.google.cloud.contactcenterinsights.v1.UploadConversationRequest;
 
 public class SyncUploadConversation {
@@ -43,6 +44,7 @@ public class SyncUploadConversation {
               .setConversation(Conversation.newBuilder().build())
               .setConversationId("conversationId-1676095234")
               .setRedactionConfig(RedactionConfig.newBuilder().build())
+              .setSpeechConfig(SpeechConfig.newBuilder().build())
               .build();
       Conversation response = contactCenterInsightsClient.uploadConversationAsync(request).get();
     }
