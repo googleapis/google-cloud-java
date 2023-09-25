@@ -32,7 +32,7 @@ public final class AdvisoryNotificationsServiceGrpc {
 
   private AdvisoryNotificationsServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.advisorynotifications.v1.AdvisoryNotificationsService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -481,9 +481,9 @@ public final class AdvisoryNotificationsServiceGrpc {
   private static final class AdvisoryNotificationsServiceMethodDescriptorSupplier
       extends AdvisoryNotificationsServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    AdvisoryNotificationsServiceMethodDescriptorSupplier(String methodName) {
+    AdvisoryNotificationsServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

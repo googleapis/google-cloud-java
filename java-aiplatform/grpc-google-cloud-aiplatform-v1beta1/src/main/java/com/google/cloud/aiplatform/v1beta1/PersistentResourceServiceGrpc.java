@@ -32,7 +32,7 @@ public final class PersistentResourceServiceGrpc {
 
   private PersistentResourceServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.aiplatform.v1beta1.PersistentResourceService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -854,9 +854,9 @@ public final class PersistentResourceServiceGrpc {
   private static final class PersistentResourceServiceMethodDescriptorSupplier
       extends PersistentResourceServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    PersistentResourceServiceMethodDescriptorSupplier(String methodName) {
+    PersistentResourceServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

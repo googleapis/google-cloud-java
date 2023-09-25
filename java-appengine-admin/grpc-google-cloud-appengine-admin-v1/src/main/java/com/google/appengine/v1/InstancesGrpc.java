@@ -32,7 +32,7 @@ public final class InstancesGrpc {
 
   private InstancesGrpc() {}
 
-  public static final String SERVICE_NAME = "google.appengine.v1.Instances";
+  public static final java.lang.String SERVICE_NAME = "google.appengine.v1.Instances";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -732,9 +732,9 @@ public final class InstancesGrpc {
   private static final class InstancesMethodDescriptorSupplier
       extends InstancesBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    InstancesMethodDescriptorSupplier(String methodName) {
+    InstancesMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

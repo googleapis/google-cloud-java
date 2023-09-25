@@ -32,7 +32,8 @@ public final class ModelGardenServiceGrpc {
 
   private ModelGardenServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.aiplatform.v1.ModelGardenService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.aiplatform.v1.ModelGardenService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -346,9 +347,9 @@ public final class ModelGardenServiceGrpc {
   private static final class ModelGardenServiceMethodDescriptorSupplier
       extends ModelGardenServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ModelGardenServiceMethodDescriptorSupplier(String methodName) {
+    ModelGardenServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

@@ -32,7 +32,7 @@ public final class DatasetServiceGrpc {
 
   private DatasetServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.aiplatform.v1.DatasetService";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.aiplatform.v1.DatasetService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1717,9 +1717,9 @@ public final class DatasetServiceGrpc {
   private static final class DatasetServiceMethodDescriptorSupplier
       extends DatasetServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DatasetServiceMethodDescriptorSupplier(String methodName) {
+    DatasetServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

@@ -33,7 +33,7 @@ public final class ScheduleServiceGrpc {
 
   private ScheduleServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.aiplatform.v1.ScheduleService";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.aiplatform.v1.ScheduleService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1087,9 +1087,9 @@ public final class ScheduleServiceGrpc {
   private static final class ScheduleServiceMethodDescriptorSupplier
       extends ScheduleServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ScheduleServiceMethodDescriptorSupplier(String methodName) {
+    ScheduleServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

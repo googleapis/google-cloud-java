@@ -33,7 +33,7 @@ public final class ProvisioningGrpc {
 
   private ProvisioningGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.apigeeregistry.v1.Provisioning";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.apigeeregistry.v1.Provisioning";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -573,9 +573,9 @@ public final class ProvisioningGrpc {
   private static final class ProvisioningMethodDescriptorSupplier
       extends ProvisioningBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ProvisioningMethodDescriptorSupplier(String methodName) {
+    ProvisioningMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

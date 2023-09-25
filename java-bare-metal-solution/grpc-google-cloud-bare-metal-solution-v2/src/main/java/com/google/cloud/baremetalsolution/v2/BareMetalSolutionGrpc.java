@@ -38,7 +38,8 @@ public final class BareMetalSolutionGrpc {
 
   private BareMetalSolutionGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.baremetalsolution.v2.BareMetalSolution";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.baremetalsolution.v2.BareMetalSolution";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -5541,9 +5542,9 @@ public final class BareMetalSolutionGrpc {
   private static final class BareMetalSolutionMethodDescriptorSupplier
       extends BareMetalSolutionBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    BareMetalSolutionMethodDescriptorSupplier(String methodName) {
+    BareMetalSolutionMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

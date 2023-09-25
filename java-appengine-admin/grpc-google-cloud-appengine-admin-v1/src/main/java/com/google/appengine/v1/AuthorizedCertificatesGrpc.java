@@ -33,7 +33,7 @@ public final class AuthorizedCertificatesGrpc {
 
   private AuthorizedCertificatesGrpc() {}
 
-  public static final String SERVICE_NAME = "google.appengine.v1.AuthorizedCertificates";
+  public static final java.lang.String SERVICE_NAME = "google.appengine.v1.AuthorizedCertificates";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -873,9 +873,9 @@ public final class AuthorizedCertificatesGrpc {
   private static final class AuthorizedCertificatesMethodDescriptorSupplier
       extends AuthorizedCertificatesBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    AuthorizedCertificatesMethodDescriptorSupplier(String methodName) {
+    AuthorizedCertificatesMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
