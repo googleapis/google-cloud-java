@@ -26,6 +26,7 @@ import com.google.cloud.bigquery.BigQuery;
 import com.google.cloud.bigquery.BigQueryOptions;
 import com.google.cloud.bigquery.QueryJobConfiguration;
 import com.google.cloud.bigquery.TableResult;
+import com.google.cloud.bigquery.storage.v1.AppendRowsRequest;
 import com.google.cloud.bigquery.storage.v1.AppendRowsResponse;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteClient;
 import com.google.cloud.bigquery.storage.v1.BigQueryWriteSettings;
@@ -178,6 +179,10 @@ public class WriteToDefaultStream {
                       .setChannelsPerCpu(2)
                       .build())
               .setEnableConnectionPool(true)
+              // If value is missing in json and there is a default value configured on bigquery
+              // column, apply the default value to the missing value field.
+              .setDefaultMissingValueInterpretation(
+                  AppendRowsRequest.MissingValueInterpretation.DEFAULT_VALUE)
               .build();
     }
 
