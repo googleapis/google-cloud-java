@@ -79,7 +79,19 @@ public abstract class ExternalTableDefinition extends TableDefinition {
       return setSourceUrisImmut(ImmutableList.copyOf(sourceUris));
     }
 
+    abstract Builder setFileSetSpecTypeInner(String spec);
+
     abstract Builder setSourceUrisImmut(ImmutableList<String> sourceUris);
+
+    /**
+     * Defines how to interpret files denoted by URIs. By default the files are assumed to be data
+     * files (this can be specified explicitly via FILE_SET_SPEC_TYPE_FILE_SYSTEM_MATCH). A second
+     * option is "FILE_SET_SPEC_TYPE_NEW_LINE_DELIMITED_MANIFEST" which interprets each file as a
+     * manifest file, where each line is a reference to a file.
+     */
+    public Builder setFileSetSpecType(String fileSetSpecType) {
+      return setFileSetSpecTypeInner(fileSetSpecType);
+    }
 
     /**
      * Sets the source format, and possibly some parsing options, of the external data. Supported
@@ -233,6 +245,14 @@ public abstract class ExternalTableDefinition extends TableDefinition {
   }
 
   @Nullable
+  public String getFileSetSpecType() {
+    return getFileSetSpecTypeInner();
+  }
+
+  @Nullable
+  abstract String getFileSetSpecTypeInner();
+
+  @Nullable
   public abstract ImmutableList<String> getSourceUrisImmut();
 
   /**
@@ -338,6 +358,10 @@ public abstract class ExternalTableDefinition extends TableDefinition {
     if (getHivePartitioningOptions() != null) {
       externalConfigurationPb.setHivePartitioningOptions(getHivePartitioningOptions().toPb());
     }
+    if (getFileSetSpecType() != null) {
+      externalConfigurationPb.setFileSetSpecType(getFileSetSpecType());
+    }
+
     return externalConfigurationPb;
   }
 
@@ -507,6 +531,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
       if (externalDataConfiguration.getReferenceFileSchemaUri() != null) {
         builder.setReferenceFileSchemaUri(externalDataConfiguration.getReferenceFileSchemaUri());
       }
+      if (externalDataConfiguration.getFileSetSpecType() != null) {
+        builder.setFileSetSpecType(externalDataConfiguration.getFileSetSpecType());
+      }
     }
     return builder.build();
   }
@@ -565,6 +592,9 @@ public abstract class ExternalTableDefinition extends TableDefinition {
     if (externalDataConfiguration.getHivePartitioningOptions() != null) {
       builder.setHivePartitioningOptions(
           HivePartitioningOptions.fromPb(externalDataConfiguration.getHivePartitioningOptions()));
+    }
+    if (externalDataConfiguration.getFileSetSpecType() != null) {
+      builder.setFileSetSpecType(externalDataConfiguration.getFileSetSpecType());
     }
 
     return builder.build();

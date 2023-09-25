@@ -38,6 +38,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   private static final long serialVersionUID = -2673554846792429829L;
 
   private final List<String> sourceUris;
+  private final String fileSetSpecType;
   private final TableId destinationTable;
   private final List<String> decimalTargetTypes;
   private final EncryptionConfiguration destinationEncryptionConfiguration;
@@ -67,6 +68,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       implements LoadConfiguration.Builder {
 
     private List<String> sourceUris;
+    private String fileSetSpecType;
     private TableId destinationTable;
     private List<String> decimalTargetTypes;
     private EncryptionConfiguration destinationEncryptionConfiguration;
@@ -107,6 +109,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       this.schema = loadConfiguration.schema;
       this.ignoreUnknownValues = loadConfiguration.ignoreUnknownValues;
       this.sourceUris = loadConfiguration.sourceUris;
+      this.fileSetSpecType = loadConfiguration.fileSetSpecType;
       this.schemaUpdateOptions = loadConfiguration.schemaUpdateOptions;
       this.autodetect = loadConfiguration.autodetect;
       this.destinationEncryptionConfiguration =
@@ -174,6 +177,9 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
       this.projectionFields = loadConfigurationPb.getProjectionFields();
       if (loadConfigurationPb.getSourceUris() != null) {
         this.sourceUris = ImmutableList.copyOf(configurationPb.getLoad().getSourceUris());
+      }
+      if (loadConfigurationPb.getFileSetSpecType() != null) {
+        this.fileSetSpecType = loadConfigurationPb.getFileSetSpecType();
       }
       if (loadConfigurationPb.getSchemaUpdateOptions() != null) {
         ImmutableList.Builder<JobInfo.SchemaUpdateOption> schemaUpdateOptionsBuilder =
@@ -307,6 +313,17 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     }
 
     /**
+     * Defines how to interpret files denoted by URIs. By default the files are assumed to be data
+     * files (this can be specified explicitly via FILE_SET_SPEC_TYPE_FILE_SYSTEM_MATCH). A second
+     * option is "FILE_SET_SPEC_TYPE_NEW_LINE_DELIMITED_MANIFEST" which interprets each file as a
+     * manifest file, where each line is a reference to a file.
+     */
+    public Builder setFileSetSpecType(String fileSetSpecType) {
+      this.fileSetSpecType = fileSetSpecType;
+      return this;
+    }
+
+    /**
      * Defines the list of possible SQL data types to which the source decimal values are converted.
      * This list and the precision and the scale parameters of the decimal field determine the
      * target type. In the order of NUMERIC, BIGNUMERIC, and STRING, a type is picked if it is in
@@ -403,6 +420,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
   private LoadJobConfiguration(Builder builder) {
     super(builder);
     this.sourceUris = builder.sourceUris;
+    this.fileSetSpecType = builder.fileSetSpecType;
     this.destinationTable = builder.destinationTable;
     this.decimalTargetTypes = builder.decimalTargetTypes;
     this.createDisposition = builder.createDisposition;
@@ -497,6 +515,10 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     return sourceUris;
   }
 
+  public String getFileSetSpecType() {
+    return fileSetSpecType;
+  }
+
   public List<String> getDecimalTargetTypes() {
     return decimalTargetTypes;
   }
@@ -575,6 +597,7 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
         .add("schema", schema)
         .add("ignoreUnknownValue", ignoreUnknownValues)
         .add("sourceUris", sourceUris)
+        .add("fileSetSpecType", fileSetSpecType)
         .add("schemaUpdateOptions", schemaUpdateOptions)
         .add("autodetect", autodetect)
         .add("timePartitioning", timePartitioning)
@@ -654,6 +677,9 @@ public final class LoadJobConfiguration extends JobConfiguration implements Load
     }
     if (sourceUris != null) {
       loadConfigurationPb.setSourceUris(ImmutableList.copyOf(sourceUris));
+    }
+    if (fileSetSpecType != null) {
+      loadConfigurationPb.setFileSetSpecType(fileSetSpecType);
     }
     if (decimalTargetTypes != null) {
       loadConfigurationPb.setDecimalTargetTypes(ImmutableList.copyOf(decimalTargetTypes));
