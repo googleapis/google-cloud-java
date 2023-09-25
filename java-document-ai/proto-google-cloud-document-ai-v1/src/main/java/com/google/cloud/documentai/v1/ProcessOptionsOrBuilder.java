@@ -27,6 +27,100 @@ public interface ProcessOptionsOrBuilder
    *
    *
    * <pre>
+   * Which pages to process (1-indexed).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1.ProcessOptions.IndividualPageSelector individual_page_selector = 5;
+   * </code>
+   *
+   * @return Whether the individualPageSelector field is set.
+   */
+  boolean hasIndividualPageSelector();
+  /**
+   *
+   *
+   * <pre>
+   * Which pages to process (1-indexed).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1.ProcessOptions.IndividualPageSelector individual_page_selector = 5;
+   * </code>
+   *
+   * @return The individualPageSelector.
+   */
+  com.google.cloud.documentai.v1.ProcessOptions.IndividualPageSelector getIndividualPageSelector();
+  /**
+   *
+   *
+   * <pre>
+   * Which pages to process (1-indexed).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1.ProcessOptions.IndividualPageSelector individual_page_selector = 5;
+   * </code>
+   */
+  com.google.cloud.documentai.v1.ProcessOptions.IndividualPageSelectorOrBuilder
+      getIndividualPageSelectorOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Only process certain pages from the start. Process all if the document
+   * has fewer pages.
+   * </pre>
+   *
+   * <code>int32 from_start = 6;</code>
+   *
+   * @return Whether the fromStart field is set.
+   */
+  boolean hasFromStart();
+  /**
+   *
+   *
+   * <pre>
+   * Only process certain pages from the start. Process all if the document
+   * has fewer pages.
+   * </pre>
+   *
+   * <code>int32 from_start = 6;</code>
+   *
+   * @return The fromStart.
+   */
+  int getFromStart();
+
+  /**
+   *
+   *
+   * <pre>
+   * Only process certain pages from the end, same as above.
+   * </pre>
+   *
+   * <code>int32 from_end = 7;</code>
+   *
+   * @return Whether the fromEnd field is set.
+   */
+  boolean hasFromEnd();
+  /**
+   *
+   *
+   * <pre>
+   * Only process certain pages from the end, same as above.
+   * </pre>
+   *
+   * <code>int32 from_end = 7;</code>
+   *
+   * @return The fromEnd.
+   */
+  int getFromEnd();
+
+  /**
+   *
+   *
+   * <pre>
    * Only applicable to `OCR_PROCESSOR`. Returns error if set on other
    * processor types.
    * </pre>
@@ -60,4 +154,6 @@ public interface ProcessOptionsOrBuilder
    * <code>.google.cloud.documentai.v1.OcrConfig ocr_config = 1;</code>
    */
   com.google.cloud.documentai.v1.OcrConfigOrBuilder getOcrConfigOrBuilder();
+
+  com.google.cloud.documentai.v1.ProcessOptions.PageRangeCase getPageRangeCase();
 }

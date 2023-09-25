@@ -78,6 +78,60 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
     return inactive_;
   }
 
+  public static final int FIELD_EXTRACTION_METADATA_FIELD_NUMBER = 9;
+  private com.google.cloud.documentai.v1beta3.FieldExtractionMetadata fieldExtractionMetadata_;
+  /**
+   *
+   *
+   * <pre>
+   * Field extraction metadata on the property.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.FieldExtractionMetadata field_extraction_metadata = 9;
+   * </code>
+   *
+   * @return Whether the fieldExtractionMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasFieldExtractionMetadata() {
+    return fieldExtractionMetadata_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Field extraction metadata on the property.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.FieldExtractionMetadata field_extraction_metadata = 9;
+   * </code>
+   *
+   * @return The fieldExtractionMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.FieldExtractionMetadata getFieldExtractionMetadata() {
+    return fieldExtractionMetadata_ == null
+        ? com.google.cloud.documentai.v1beta3.FieldExtractionMetadata.getDefaultInstance()
+        : fieldExtractionMetadata_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Field extraction metadata on the property.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.FieldExtractionMetadata field_extraction_metadata = 9;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.FieldExtractionMetadataOrBuilder
+      getFieldExtractionMetadataOrBuilder() {
+    return fieldExtractionMetadata_ == null
+        ? com.google.cloud.documentai.v1beta3.FieldExtractionMetadata.getDefaultInstance()
+        : fieldExtractionMetadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -95,6 +149,9 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
     if (inactive_ != false) {
       output.writeBool(3, inactive_);
     }
+    if (fieldExtractionMetadata_ != null) {
+      output.writeMessage(9, getFieldExtractionMetadata());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -106,6 +163,10 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
     size = 0;
     if (inactive_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, inactive_);
+    }
+    if (fieldExtractionMetadata_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(9, getFieldExtractionMetadata());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -124,6 +185,10 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
         (com.google.cloud.documentai.v1beta3.PropertyMetadata) obj;
 
     if (getInactive() != other.getInactive()) return false;
+    if (hasFieldExtractionMetadata() != other.hasFieldExtractionMetadata()) return false;
+    if (hasFieldExtractionMetadata()) {
+      if (!getFieldExtractionMetadata().equals(other.getFieldExtractionMetadata())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -137,6 +202,10 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + INACTIVE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getInactive());
+    if (hasFieldExtractionMetadata()) {
+      hash = (37 * hash) + FIELD_EXTRACTION_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getFieldExtractionMetadata().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -277,6 +346,11 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
       super.clear();
       bitField0_ = 0;
       inactive_ = false;
+      fieldExtractionMetadata_ = null;
+      if (fieldExtractionMetadataBuilder_ != null) {
+        fieldExtractionMetadataBuilder_.dispose();
+        fieldExtractionMetadataBuilder_ = null;
+      }
       return this;
     }
 
@@ -315,6 +389,12 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.inactive_ = inactive_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.fieldExtractionMetadata_ =
+            fieldExtractionMetadataBuilder_ == null
+                ? fieldExtractionMetadata_
+                : fieldExtractionMetadataBuilder_.build();
       }
     }
 
@@ -367,6 +447,9 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
       if (other.getInactive() != false) {
         setInactive(other.getInactive());
       }
+      if (other.hasFieldExtractionMetadata()) {
+        mergeFieldExtractionMetadata(other.getFieldExtractionMetadata());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -399,6 +482,13 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 24
+            case 74:
+              {
+                input.readMessage(
+                    getFieldExtractionMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -469,6 +559,206 @@ public final class PropertyMetadata extends com.google.protobuf.GeneratedMessage
       inactive_ = false;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.documentai.v1beta3.FieldExtractionMetadata fieldExtractionMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.FieldExtractionMetadata,
+            com.google.cloud.documentai.v1beta3.FieldExtractionMetadata.Builder,
+            com.google.cloud.documentai.v1beta3.FieldExtractionMetadataOrBuilder>
+        fieldExtractionMetadataBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Field extraction metadata on the property.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.FieldExtractionMetadata field_extraction_metadata = 9;
+     * </code>
+     *
+     * @return Whether the fieldExtractionMetadata field is set.
+     */
+    public boolean hasFieldExtractionMetadata() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field extraction metadata on the property.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.FieldExtractionMetadata field_extraction_metadata = 9;
+     * </code>
+     *
+     * @return The fieldExtractionMetadata.
+     */
+    public com.google.cloud.documentai.v1beta3.FieldExtractionMetadata
+        getFieldExtractionMetadata() {
+      if (fieldExtractionMetadataBuilder_ == null) {
+        return fieldExtractionMetadata_ == null
+            ? com.google.cloud.documentai.v1beta3.FieldExtractionMetadata.getDefaultInstance()
+            : fieldExtractionMetadata_;
+      } else {
+        return fieldExtractionMetadataBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field extraction metadata on the property.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.FieldExtractionMetadata field_extraction_metadata = 9;
+     * </code>
+     */
+    public Builder setFieldExtractionMetadata(
+        com.google.cloud.documentai.v1beta3.FieldExtractionMetadata value) {
+      if (fieldExtractionMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fieldExtractionMetadata_ = value;
+      } else {
+        fieldExtractionMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field extraction metadata on the property.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.FieldExtractionMetadata field_extraction_metadata = 9;
+     * </code>
+     */
+    public Builder setFieldExtractionMetadata(
+        com.google.cloud.documentai.v1beta3.FieldExtractionMetadata.Builder builderForValue) {
+      if (fieldExtractionMetadataBuilder_ == null) {
+        fieldExtractionMetadata_ = builderForValue.build();
+      } else {
+        fieldExtractionMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field extraction metadata on the property.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.FieldExtractionMetadata field_extraction_metadata = 9;
+     * </code>
+     */
+    public Builder mergeFieldExtractionMetadata(
+        com.google.cloud.documentai.v1beta3.FieldExtractionMetadata value) {
+      if (fieldExtractionMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && fieldExtractionMetadata_ != null
+            && fieldExtractionMetadata_
+                != com.google.cloud.documentai.v1beta3.FieldExtractionMetadata
+                    .getDefaultInstance()) {
+          getFieldExtractionMetadataBuilder().mergeFrom(value);
+        } else {
+          fieldExtractionMetadata_ = value;
+        }
+      } else {
+        fieldExtractionMetadataBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field extraction metadata on the property.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.FieldExtractionMetadata field_extraction_metadata = 9;
+     * </code>
+     */
+    public Builder clearFieldExtractionMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      fieldExtractionMetadata_ = null;
+      if (fieldExtractionMetadataBuilder_ != null) {
+        fieldExtractionMetadataBuilder_.dispose();
+        fieldExtractionMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field extraction metadata on the property.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.FieldExtractionMetadata field_extraction_metadata = 9;
+     * </code>
+     */
+    public com.google.cloud.documentai.v1beta3.FieldExtractionMetadata.Builder
+        getFieldExtractionMetadataBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getFieldExtractionMetadataFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field extraction metadata on the property.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.FieldExtractionMetadata field_extraction_metadata = 9;
+     * </code>
+     */
+    public com.google.cloud.documentai.v1beta3.FieldExtractionMetadataOrBuilder
+        getFieldExtractionMetadataOrBuilder() {
+      if (fieldExtractionMetadataBuilder_ != null) {
+        return fieldExtractionMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return fieldExtractionMetadata_ == null
+            ? com.google.cloud.documentai.v1beta3.FieldExtractionMetadata.getDefaultInstance()
+            : fieldExtractionMetadata_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Field extraction metadata on the property.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.FieldExtractionMetadata field_extraction_metadata = 9;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.FieldExtractionMetadata,
+            com.google.cloud.documentai.v1beta3.FieldExtractionMetadata.Builder,
+            com.google.cloud.documentai.v1beta3.FieldExtractionMetadataOrBuilder>
+        getFieldExtractionMetadataFieldBuilder() {
+      if (fieldExtractionMetadataBuilder_ == null) {
+        fieldExtractionMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.FieldExtractionMetadata,
+                com.google.cloud.documentai.v1beta3.FieldExtractionMetadata.Builder,
+                com.google.cloud.documentai.v1beta3.FieldExtractionMetadataOrBuilder>(
+                getFieldExtractionMetadata(), getParentForChildren(), isClean());
+        fieldExtractionMetadata_ = null;
+      }
+      return fieldExtractionMetadataBuilder_;
     }
 
     @java.lang.Override

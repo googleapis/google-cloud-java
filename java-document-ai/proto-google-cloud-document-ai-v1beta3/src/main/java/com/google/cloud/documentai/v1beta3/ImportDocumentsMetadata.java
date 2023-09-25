@@ -1418,9 +1418,9 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The validation status of each import config. Status is set to errors if
-   * there is no documents to import in the import_config, or OK if the
-   * operation will try to proceed at least one document.
+   * The validation status of each import config. Status is set to an error if
+   * there are no documents to import in the `import_config`, or `OK` if the
+   * operation will try to proceed with at least one document.
    * </pre>
    *
    * Protobuf type {@code
@@ -1766,9 +1766,9 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The validation status of each import config. Status is set to errors if
-     * there is no documents to import in the import_config, or OK if the
-     * operation will try to proceed at least one document.
+     * The validation status of each import config. Status is set to an error if
+     * there are no documents to import in the `import_config`, or `OK` if the
+     * operation will try to proceed with at least one document.
      * </pre>
      *
      * Protobuf type {@code
@@ -2350,7 +2350,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -2365,7 +2365,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -2382,7 +2382,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The basic metadata of the long running operation.
+   * The basic metadata of the long-running operation.
    * </pre>
    *
    * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -3132,7 +3132,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -3146,7 +3146,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -3166,7 +3166,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -3189,7 +3189,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -3209,7 +3209,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -3237,7 +3237,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -3256,7 +3256,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -3271,7 +3271,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>
@@ -3290,7 +3290,7 @@ public final class ImportDocumentsMetadata extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * The basic metadata of the long running operation.
+     * The basic metadata of the long-running operation.
      * </pre>
      *
      * <code>.google.cloud.documentai.v1beta3.CommonOperationMetadata common_metadata = 1;</code>

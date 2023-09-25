@@ -34,7 +34,7 @@ public final class DocumentUnderstandingServiceGrpc {
 
   private DocumentUnderstandingServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.documentai.v1beta2.DocumentUnderstandingService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -489,9 +489,9 @@ public final class DocumentUnderstandingServiceGrpc {
   private static final class DocumentUnderstandingServiceMethodDescriptorSupplier
       extends DocumentUnderstandingServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DocumentUnderstandingServiceMethodDescriptorSupplier(String methodName) {
+    DocumentUnderstandingServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

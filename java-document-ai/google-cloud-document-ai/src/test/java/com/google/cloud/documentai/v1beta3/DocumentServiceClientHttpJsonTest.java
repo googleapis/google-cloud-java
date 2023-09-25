@@ -16,6 +16,7 @@
 
 package com.google.cloud.documentai.v1beta3;
 
+import static com.google.cloud.documentai.v1beta3.DocumentServiceClient.ListDocumentsPagedResponse;
 import static com.google.cloud.documentai.v1beta3.DocumentServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -315,6 +316,108 @@ public class DocumentServiceClientHttpJsonTest {
       String dataset =
           "projects/project-9539/locations/location-9539/processors/processor-9539/dataset";
       client.getDocument(dataset);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDocumentsTest() throws Exception {
+    DocumentMetadata responsesElement = DocumentMetadata.newBuilder().build();
+    ListDocumentsResponse expectedResponse =
+        ListDocumentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDocumentMetadata(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DatasetName dataset = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+
+    ListDocumentsPagedResponse pagedListResponse = client.listDocuments(dataset);
+
+    List<DocumentMetadata> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDocumentMetadataList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDocumentsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DatasetName dataset = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+      client.listDocuments(dataset);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDocumentsTest2() throws Exception {
+    DocumentMetadata responsesElement = DocumentMetadata.newBuilder().build();
+    ListDocumentsResponse expectedResponse =
+        ListDocumentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDocumentMetadata(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String dataset =
+        "projects/project-9539/locations/location-9539/processors/processor-9539/dataset";
+
+    ListDocumentsPagedResponse pagedListResponse = client.listDocuments(dataset);
+
+    List<DocumentMetadata> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDocumentMetadataList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listDocumentsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String dataset =
+          "projects/project-9539/locations/location-9539/processors/processor-9539/dataset";
+      client.listDocuments(dataset);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

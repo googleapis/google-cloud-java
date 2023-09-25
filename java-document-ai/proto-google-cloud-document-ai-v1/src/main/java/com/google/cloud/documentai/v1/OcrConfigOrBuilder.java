@@ -179,16 +179,67 @@ public interface OcrConfigOrBuilder
    *
    *
    * <pre>
-   * Turn on font id model and returns font style information.
-   * Use PremiumFeatures.compute_style_info instead.
+   * Turn on font identification model and return font style information.
+   * Deprecated, use
+   * [PremiumFeatures.compute_style_info][google.cloud.documentai.v1.OcrConfig.PremiumFeatures.compute_style_info]
+   * instead.
    * </pre>
    *
    * <code>bool compute_style_info = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1.OcrConfig.compute_style_info is deprecated. See
-   *     google/cloud/documentai/v1/document_io.proto;l=150
+   *     google/cloud/documentai/v1/document_io.proto;l=165
    * @return The computeStyleInfo.
    */
   @java.lang.Deprecated
   boolean getComputeStyleInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Turn off character box detector in OCR engine. Character box detection is
+   * enabled by default in OCR 2.0+ processors.
+   * </pre>
+   *
+   * <code>bool disable_character_boxes_detection = 10;</code>
+   *
+   * @return The disableCharacterBoxesDetection.
+   */
+  boolean getDisableCharacterBoxesDetection();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configurations for premium OCR features.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.OcrConfig.PremiumFeatures premium_features = 11;</code>
+   *
+   * @return Whether the premiumFeatures field is set.
+   */
+  boolean hasPremiumFeatures();
+  /**
+   *
+   *
+   * <pre>
+   * Configurations for premium OCR features.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.OcrConfig.PremiumFeatures premium_features = 11;</code>
+   *
+   * @return The premiumFeatures.
+   */
+  com.google.cloud.documentai.v1.OcrConfig.PremiumFeatures getPremiumFeatures();
+  /**
+   *
+   *
+   * <pre>
+   * Configurations for premium OCR features.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.OcrConfig.PremiumFeatures premium_features = 11;</code>
+   */
+  com.google.cloud.documentai.v1.OcrConfig.PremiumFeaturesOrBuilder getPremiumFeaturesOrBuilder();
 }

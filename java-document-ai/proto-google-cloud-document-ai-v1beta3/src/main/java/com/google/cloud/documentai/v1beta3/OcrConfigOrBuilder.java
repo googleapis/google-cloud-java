@@ -188,7 +188,7 @@ public interface OcrConfigOrBuilder
    * <code>bool compute_style_info = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.OcrConfig.compute_style_info is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_io.proto;l=158
+   *     google/cloud/documentai/v1beta3/document_io.proto;l=165
    * @return The computeStyleInfo.
    */
   @java.lang.Deprecated
@@ -199,7 +199,7 @@ public interface OcrConfigOrBuilder
    *
    * <pre>
    * Turn off character box detector in OCR engine. Character box detection is
-   * enabled by default in OCR 2.0+ processors.
+   * enabled by default in OCR 2.0 (and later) processors.
    * </pre>
    *
    * <code>bool disable_character_boxes_detection = 10;</code>

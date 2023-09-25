@@ -34,7 +34,6 @@ public enum DatasetSplitType implements com.google.protobuf.ProtocolMessageEnum 
    *
    * <pre>
    * Default value if the enum is not set.
-   * go/protodosdonts#do-include-an-unspecified-value-in-an-enum
    * </pre>
    *
    * <code>DATASET_SPLIT_TYPE_UNSPECIFIED = 0;</code>
@@ -78,7 +77,6 @@ public enum DatasetSplitType implements com.google.protobuf.ProtocolMessageEnum 
    *
    * <pre>
    * Default value if the enum is not set.
-   * go/protodosdonts#do-include-an-unspecified-value-in-an-enum
    * </pre>
    *
    * <code>DATASET_SPLIT_TYPE_UNSPECIFIED = 0;</code>

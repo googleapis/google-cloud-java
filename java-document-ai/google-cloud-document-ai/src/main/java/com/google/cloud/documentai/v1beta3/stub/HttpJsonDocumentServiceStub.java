@@ -16,6 +16,7 @@
 
 package com.google.cloud.documentai.v1beta3.stub;
 
+import static com.google.cloud.documentai.v1beta3.DocumentServiceClient.ListDocumentsPagedResponse;
 import static com.google.cloud.documentai.v1beta3.DocumentServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.HttpRule;
@@ -46,6 +47,8 @@ import com.google.cloud.documentai.v1beta3.GetDocumentResponse;
 import com.google.cloud.documentai.v1beta3.ImportDocumentsMetadata;
 import com.google.cloud.documentai.v1beta3.ImportDocumentsRequest;
 import com.google.cloud.documentai.v1beta3.ImportDocumentsResponse;
+import com.google.cloud.documentai.v1beta3.ListDocumentsRequest;
+import com.google.cloud.documentai.v1beta3.ListDocumentsResponse;
 import com.google.cloud.documentai.v1beta3.UpdateDatasetOperationMetadata;
 import com.google.cloud.documentai.v1beta3.UpdateDatasetRequest;
 import com.google.cloud.documentai.v1beta3.UpdateDatasetSchemaRequest;
@@ -198,6 +201,43 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<GetDocumentResponse>newBuilder()
                       .setDefaultInstance(GetDocumentResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListDocumentsRequest, ListDocumentsResponse>
+      listDocumentsMethodDescriptor =
+          ApiMethodDescriptor.<ListDocumentsRequest, ListDocumentsResponse>newBuilder()
+              .setFullMethodName("google.cloud.documentai.v1beta3.DocumentService/ListDocuments")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListDocumentsRequest>newBuilder()
+                      .setPath(
+                          "/v1beta3/{dataset=projects/*/locations/*/processors/*/dataset}:listDocuments",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDocumentsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "dataset", request.getDataset());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListDocumentsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearDataset().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListDocumentsResponse>newBuilder()
+                      .setDefaultInstance(ListDocumentsResponse.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -397,6 +437,9 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
           ImportDocumentsRequest, ImportDocumentsResponse, ImportDocumentsMetadata>
       importDocumentsOperationCallable;
   private final UnaryCallable<GetDocumentRequest, GetDocumentResponse> getDocumentCallable;
+  private final UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> listDocumentsCallable;
+  private final UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse>
+      listDocumentsPagedCallable;
   private final UnaryCallable<BatchDeleteDocumentsRequest, Operation> batchDeleteDocumentsCallable;
   private final OperationCallable<
           BatchDeleteDocumentsRequest, BatchDeleteDocumentsResponse, BatchDeleteDocumentsMetadata>
@@ -520,6 +563,18 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<ListDocumentsRequest, ListDocumentsResponse>
+        listDocumentsTransportSettings =
+            HttpJsonCallSettings.<ListDocumentsRequest, ListDocumentsResponse>newBuilder()
+                .setMethodDescriptor(listDocumentsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("dataset", String.valueOf(request.getDataset()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<BatchDeleteDocumentsRequest, Operation>
         batchDeleteDocumentsTransportSettings =
             HttpJsonCallSettings.<BatchDeleteDocumentsRequest, Operation>newBuilder()
@@ -602,6 +657,12 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
     this.getDocumentCallable =
         callableFactory.createUnaryCallable(
             getDocumentTransportSettings, settings.getDocumentSettings(), clientContext);
+    this.listDocumentsCallable =
+        callableFactory.createUnaryCallable(
+            listDocumentsTransportSettings, settings.listDocumentsSettings(), clientContext);
+    this.listDocumentsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDocumentsTransportSettings, settings.listDocumentsSettings(), clientContext);
     this.batchDeleteDocumentsCallable =
         callableFactory.createUnaryCallable(
             batchDeleteDocumentsTransportSettings,
@@ -641,6 +702,7 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
     methodDescriptors.add(updateDatasetMethodDescriptor);
     methodDescriptors.add(importDocumentsMethodDescriptor);
     methodDescriptors.add(getDocumentMethodDescriptor);
+    methodDescriptors.add(listDocumentsMethodDescriptor);
     methodDescriptors.add(batchDeleteDocumentsMethodDescriptor);
     methodDescriptors.add(getDatasetSchemaMethodDescriptor);
     methodDescriptors.add(updateDatasetSchemaMethodDescriptor);
@@ -678,6 +740,17 @@ public class HttpJsonDocumentServiceStub extends DocumentServiceStub {
   @Override
   public UnaryCallable<GetDocumentRequest, GetDocumentResponse> getDocumentCallable() {
     return getDocumentCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> listDocumentsCallable() {
+    return listDocumentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse>
+      listDocumentsPagedCallable() {
+    return listDocumentsPagedCallable;
   }
 
   @Override

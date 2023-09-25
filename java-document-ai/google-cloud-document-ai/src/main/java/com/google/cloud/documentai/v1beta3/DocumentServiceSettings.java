@@ -16,6 +16,7 @@
 
 package com.google.cloud.documentai.v1beta3;
 
+import static com.google.cloud.documentai.v1beta3.DocumentServiceClient.ListDocumentsPagedResponse;
 import static com.google.cloud.documentai.v1beta3.DocumentServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -108,6 +109,12 @@ public class DocumentServiceSettings extends ClientSettings<DocumentServiceSetti
   /** Returns the object with the settings used for calls to getDocument. */
   public UnaryCallSettings<GetDocumentRequest, GetDocumentResponse> getDocumentSettings() {
     return ((DocumentServiceStubSettings) getStubSettings()).getDocumentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDocuments. */
+  public PagedCallSettings<ListDocumentsRequest, ListDocumentsResponse, ListDocumentsPagedResponse>
+      listDocumentsSettings() {
+    return ((DocumentServiceStubSettings) getStubSettings()).listDocumentsSettings();
   }
 
   /** Returns the object with the settings used for calls to batchDeleteDocuments. */
@@ -288,6 +295,13 @@ public class DocumentServiceSettings extends ClientSettings<DocumentServiceSetti
     public UnaryCallSettings.Builder<GetDocumentRequest, GetDocumentResponse>
         getDocumentSettings() {
       return getStubSettingsBuilder().getDocumentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDocuments. */
+    public PagedCallSettings.Builder<
+            ListDocumentsRequest, ListDocumentsResponse, ListDocumentsPagedResponse>
+        listDocumentsSettings() {
+      return getStubSettingsBuilder().listDocumentsSettings();
     }
 
     /** Returns the builder for the settings used for calls to batchDeleteDocuments. */

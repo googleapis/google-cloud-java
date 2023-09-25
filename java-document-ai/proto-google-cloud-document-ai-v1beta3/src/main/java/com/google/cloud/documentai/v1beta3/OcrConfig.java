@@ -919,8 +919,8 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Turn on selection mark detector in OCR engine. Only available in OCR 2.0+
-     * processors.
+     * Turn on selection mark detector in OCR engine. Only available in OCR 2.0
+     * (and later) processors.
      * </pre>
      *
      * <code>bool enable_selection_mark_detection = 3;</code>
@@ -1003,8 +1003,8 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Turn on selection mark detector in OCR engine. Only available in OCR 2.0+
-     * processors.
+     * Turn on selection mark detector in OCR engine. Only available in OCR 2.0
+     * (and later) processors.
      * </pre>
      *
      * <code>bool enable_selection_mark_detection = 3;</code>
@@ -1453,8 +1453,8 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Turn on selection mark detector in OCR engine. Only available in OCR 2.0+
-       * processors.
+       * Turn on selection mark detector in OCR engine. Only available in OCR 2.0
+       * (and later) processors.
        * </pre>
        *
        * <code>bool enable_selection_mark_detection = 3;</code>
@@ -1469,8 +1469,8 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Turn on selection mark detector in OCR engine. Only available in OCR 2.0+
-       * processors.
+       * Turn on selection mark detector in OCR engine. Only available in OCR 2.0
+       * (and later) processors.
        * </pre>
        *
        * <code>bool enable_selection_mark_detection = 3;</code>
@@ -1489,8 +1489,8 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Turn on selection mark detector in OCR engine. Only available in OCR 2.0+
-       * processors.
+       * Turn on selection mark detector in OCR engine. Only available in OCR 2.0
+       * (and later) processors.
        * </pre>
        *
        * <code>bool enable_selection_mark_detection = 3;</code>
@@ -1887,7 +1887,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>bool compute_style_info = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.OcrConfig.compute_style_info is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_io.proto;l=158
+   *     google/cloud/documentai/v1beta3/document_io.proto;l=165
    * @return The computeStyleInfo.
    */
   @java.lang.Override
@@ -1903,7 +1903,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Turn off character box detector in OCR engine. Character box detection is
-   * enabled by default in OCR 2.0+ processors.
+   * enabled by default in OCR 2.0 (and later) processors.
    * </pre>
    *
    * <code>bool disable_character_boxes_detection = 10;</code>
@@ -3092,7 +3092,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>bool compute_style_info = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.OcrConfig.compute_style_info is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_io.proto;l=158
+     *     google/cloud/documentai/v1beta3/document_io.proto;l=165
      * @return The computeStyleInfo.
      */
     @java.lang.Override
@@ -3113,7 +3113,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>bool compute_style_info = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.OcrConfig.compute_style_info is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_io.proto;l=158
+     *     google/cloud/documentai/v1beta3/document_io.proto;l=165
      * @param value The computeStyleInfo to set.
      * @return This builder for chaining.
      */
@@ -3138,7 +3138,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>bool compute_style_info = 8 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.OcrConfig.compute_style_info is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_io.proto;l=158
+     *     google/cloud/documentai/v1beta3/document_io.proto;l=165
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3155,7 +3155,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Turn off character box detector in OCR engine. Character box detection is
-     * enabled by default in OCR 2.0+ processors.
+     * enabled by default in OCR 2.0 (and later) processors.
      * </pre>
      *
      * <code>bool disable_character_boxes_detection = 10;</code>
@@ -3171,7 +3171,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Turn off character box detector in OCR engine. Character box detection is
-     * enabled by default in OCR 2.0+ processors.
+     * enabled by default in OCR 2.0 (and later) processors.
      * </pre>
      *
      * <code>bool disable_character_boxes_detection = 10;</code>
@@ -3191,7 +3191,7 @@ public final class OcrConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Turn off character box detector in OCR engine. Character box detection is
-     * enabled by default in OCR 2.0+ processors.
+     * enabled by default in OCR 2.0 (and later) processors.
      * </pre>
      *
      * <code>bool disable_character_boxes_detection = 10;</code>

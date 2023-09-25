@@ -35,4 +35,43 @@ public interface PropertyMetadataOrBuilder
    * @return The inactive.
    */
   boolean getInactive();
+
+  /**
+   *
+   *
+   * <pre>
+   * Field extraction metadata on the property.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.FieldExtractionMetadata field_extraction_metadata = 9;
+   * </code>
+   *
+   * @return Whether the fieldExtractionMetadata field is set.
+   */
+  boolean hasFieldExtractionMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Field extraction metadata on the property.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.FieldExtractionMetadata field_extraction_metadata = 9;
+   * </code>
+   *
+   * @return The fieldExtractionMetadata.
+   */
+  com.google.cloud.documentai.v1beta3.FieldExtractionMetadata getFieldExtractionMetadata();
+  /**
+   *
+   *
+   * <pre>
+   * Field extraction metadata on the property.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.FieldExtractionMetadata field_extraction_metadata = 9;
+   * </code>
+   */
+  com.google.cloud.documentai.v1beta3.FieldExtractionMetadataOrBuilder
+      getFieldExtractionMetadataOrBuilder();
 }

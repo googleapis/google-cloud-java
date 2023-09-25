@@ -918,8 +918,8 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Only process certain pages from the start, process all if the document
-   * has less pages.
+   * Only process certain pages from the start. Process all if the document
+   * has fewer pages.
    * </pre>
    *
    * <code>int32 from_start = 6;</code>
@@ -934,8 +934,8 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Only process certain pages from the start, process all if the document
-   * has less pages.
+   * Only process certain pages from the start. Process all if the document
+   * has fewer pages.
    * </pre>
    *
    * <code>int32 from_start = 6;</code>
@@ -1038,6 +1038,74 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         : ocrConfig_;
   }
 
+  public static final int SCHEMA_OVERRIDE_FIELD_NUMBER = 8;
+  private com.google.cloud.documentai.v1beta3.DocumentSchema schemaOverride_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Override the schema of the
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]. Will
+   * return an Invalid Argument error if this field is set when the underlying
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
+   * doesn't support schema override.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.DocumentSchema schema_override = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the schemaOverride field is set.
+   */
+  @java.lang.Override
+  public boolean hasSchemaOverride() {
+    return schemaOverride_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Override the schema of the
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]. Will
+   * return an Invalid Argument error if this field is set when the underlying
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
+   * doesn't support schema override.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.DocumentSchema schema_override = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The schemaOverride.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.DocumentSchema getSchemaOverride() {
+    return schemaOverride_ == null
+        ? com.google.cloud.documentai.v1beta3.DocumentSchema.getDefaultInstance()
+        : schemaOverride_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Override the schema of the
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]. Will
+   * return an Invalid Argument error if this field is set when the underlying
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
+   * doesn't support schema override.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.DocumentSchema schema_override = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.DocumentSchemaOrBuilder getSchemaOverrideOrBuilder() {
+    return schemaOverride_ == null
+        ? com.google.cloud.documentai.v1beta3.DocumentSchema.getDefaultInstance()
+        : schemaOverride_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1065,6 +1133,9 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     }
     if (pageRangeCase_ == 7) {
       output.writeInt32(7, (int) ((java.lang.Integer) pageRange_));
+    }
+    if (schemaOverride_ != null) {
+      output.writeMessage(8, getSchemaOverride());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1095,6 +1166,9 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeInt32Size(
               7, (int) ((java.lang.Integer) pageRange_));
     }
+    if (schemaOverride_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getSchemaOverride());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1114,6 +1188,10 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     if (hasOcrConfig() != other.hasOcrConfig()) return false;
     if (hasOcrConfig()) {
       if (!getOcrConfig().equals(other.getOcrConfig())) return false;
+    }
+    if (hasSchemaOverride() != other.hasSchemaOverride()) return false;
+    if (hasSchemaOverride()) {
+      if (!getSchemaOverride().equals(other.getSchemaOverride())) return false;
     }
     if (!getPageRangeCase().equals(other.getPageRangeCase())) return false;
     switch (pageRangeCase_) {
@@ -1143,6 +1221,10 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
     if (hasOcrConfig()) {
       hash = (37 * hash) + OCR_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getOcrConfig().hashCode();
+    }
+    if (hasSchemaOverride()) {
+      hash = (37 * hash) + SCHEMA_OVERRIDE_FIELD_NUMBER;
+      hash = (53 * hash) + getSchemaOverride().hashCode();
     }
     switch (pageRangeCase_) {
       case 5:
@@ -1307,6 +1389,11 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         ocrConfigBuilder_.dispose();
         ocrConfigBuilder_ = null;
       }
+      schemaOverride_ = null;
+      if (schemaOverrideBuilder_ != null) {
+        schemaOverrideBuilder_.dispose();
+        schemaOverrideBuilder_ = null;
+      }
       pageRangeCase_ = 0;
       pageRange_ = null;
       return this;
@@ -1348,6 +1435,10 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.ocrConfig_ = ocrConfigBuilder_ == null ? ocrConfig_ : ocrConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.schemaOverride_ =
+            schemaOverrideBuilder_ == null ? schemaOverride_ : schemaOverrideBuilder_.build();
       }
     }
 
@@ -1407,6 +1498,9 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (other.hasOcrConfig()) {
         mergeOcrConfig(other.getOcrConfig());
+      }
+      if (other.hasSchemaOverride()) {
+        mergeSchemaOverride(other.getSchemaOverride());
       }
       switch (other.getPageRangeCase()) {
         case INDIVIDUAL_PAGE_SELECTOR:
@@ -1480,6 +1574,12 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
                 pageRangeCase_ = 7;
                 break;
               } // case 56
+            case 66:
+              {
+                input.readMessage(getSchemaOverrideFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1761,8 +1861,8 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only process certain pages from the start, process all if the document
-     * has less pages.
+     * Only process certain pages from the start. Process all if the document
+     * has fewer pages.
      * </pre>
      *
      * <code>int32 from_start = 6;</code>
@@ -1776,8 +1876,8 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only process certain pages from the start, process all if the document
-     * has less pages.
+     * Only process certain pages from the start. Process all if the document
+     * has fewer pages.
      * </pre>
      *
      * <code>int32 from_start = 6;</code>
@@ -1794,8 +1894,8 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only process certain pages from the start, process all if the document
-     * has less pages.
+     * Only process certain pages from the start. Process all if the document
+     * has fewer pages.
      * </pre>
      *
      * <code>int32 from_start = 6;</code>
@@ -1814,8 +1914,8 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only process certain pages from the start, process all if the document
-     * has less pages.
+     * Only process certain pages from the start. Process all if the document
+     * has fewer pages.
      * </pre>
      *
      * <code>int32 from_start = 6;</code>
@@ -2092,6 +2192,246 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
         ocrConfig_ = null;
       }
       return ocrConfigBuilder_;
+    }
+
+    private com.google.cloud.documentai.v1beta3.DocumentSchema schemaOverride_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.DocumentSchema,
+            com.google.cloud.documentai.v1beta3.DocumentSchema.Builder,
+            com.google.cloud.documentai.v1beta3.DocumentSchemaOrBuilder>
+        schemaOverrideBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Override the schema of the
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]. Will
+     * return an Invalid Argument error if this field is set when the underlying
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
+     * doesn't support schema override.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.DocumentSchema schema_override = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the schemaOverride field is set.
+     */
+    public boolean hasSchemaOverride() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Override the schema of the
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]. Will
+     * return an Invalid Argument error if this field is set when the underlying
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
+     * doesn't support schema override.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.DocumentSchema schema_override = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The schemaOverride.
+     */
+    public com.google.cloud.documentai.v1beta3.DocumentSchema getSchemaOverride() {
+      if (schemaOverrideBuilder_ == null) {
+        return schemaOverride_ == null
+            ? com.google.cloud.documentai.v1beta3.DocumentSchema.getDefaultInstance()
+            : schemaOverride_;
+      } else {
+        return schemaOverrideBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Override the schema of the
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]. Will
+     * return an Invalid Argument error if this field is set when the underlying
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
+     * doesn't support schema override.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.DocumentSchema schema_override = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSchemaOverride(com.google.cloud.documentai.v1beta3.DocumentSchema value) {
+      if (schemaOverrideBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        schemaOverride_ = value;
+      } else {
+        schemaOverrideBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Override the schema of the
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]. Will
+     * return an Invalid Argument error if this field is set when the underlying
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
+     * doesn't support schema override.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.DocumentSchema schema_override = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSchemaOverride(
+        com.google.cloud.documentai.v1beta3.DocumentSchema.Builder builderForValue) {
+      if (schemaOverrideBuilder_ == null) {
+        schemaOverride_ = builderForValue.build();
+      } else {
+        schemaOverrideBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Override the schema of the
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]. Will
+     * return an Invalid Argument error if this field is set when the underlying
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
+     * doesn't support schema override.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.DocumentSchema schema_override = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSchemaOverride(com.google.cloud.documentai.v1beta3.DocumentSchema value) {
+      if (schemaOverrideBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && schemaOverride_ != null
+            && schemaOverride_
+                != com.google.cloud.documentai.v1beta3.DocumentSchema.getDefaultInstance()) {
+          getSchemaOverrideBuilder().mergeFrom(value);
+        } else {
+          schemaOverride_ = value;
+        }
+      } else {
+        schemaOverrideBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Override the schema of the
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]. Will
+     * return an Invalid Argument error if this field is set when the underlying
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
+     * doesn't support schema override.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.DocumentSchema schema_override = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSchemaOverride() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      schemaOverride_ = null;
+      if (schemaOverrideBuilder_ != null) {
+        schemaOverrideBuilder_.dispose();
+        schemaOverrideBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Override the schema of the
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]. Will
+     * return an Invalid Argument error if this field is set when the underlying
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
+     * doesn't support schema override.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.DocumentSchema schema_override = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.documentai.v1beta3.DocumentSchema.Builder getSchemaOverrideBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getSchemaOverrideFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Override the schema of the
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]. Will
+     * return an Invalid Argument error if this field is set when the underlying
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
+     * doesn't support schema override.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.DocumentSchema schema_override = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.documentai.v1beta3.DocumentSchemaOrBuilder
+        getSchemaOverrideOrBuilder() {
+      if (schemaOverrideBuilder_ != null) {
+        return schemaOverrideBuilder_.getMessageOrBuilder();
+      } else {
+        return schemaOverride_ == null
+            ? com.google.cloud.documentai.v1beta3.DocumentSchema.getDefaultInstance()
+            : schemaOverride_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Override the schema of the
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]. Will
+     * return an Invalid Argument error if this field is set when the underlying
+     * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
+     * doesn't support schema override.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1beta3.DocumentSchema schema_override = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.DocumentSchema,
+            com.google.cloud.documentai.v1beta3.DocumentSchema.Builder,
+            com.google.cloud.documentai.v1beta3.DocumentSchemaOrBuilder>
+        getSchemaOverrideFieldBuilder() {
+      if (schemaOverrideBuilder_ == null) {
+        schemaOverrideBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.DocumentSchema,
+                com.google.cloud.documentai.v1beta3.DocumentSchema.Builder,
+                com.google.cloud.documentai.v1beta3.DocumentSchemaOrBuilder>(
+                getSchemaOverride(), getParentForChildren(), isClean());
+        schemaOverride_ = null;
+      }
+      return schemaOverrideBuilder_;
     }
 
     @java.lang.Override

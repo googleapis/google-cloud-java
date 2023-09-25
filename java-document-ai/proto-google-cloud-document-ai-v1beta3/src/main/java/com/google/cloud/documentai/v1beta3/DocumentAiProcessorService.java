@@ -298,13 +298,15 @@ public final class DocumentAiProcessorService {
           + "operations.proto\032\033google/protobuf/empty."
           + "proto\032 google/protobuf/field_mask.proto\032"
           + "\037google/protobuf/timestamp.proto\032\027google"
-          + "/rpc/status.proto\"\243\002\n\016ProcessOptions\022j\n\030"
+          + "/rpc/status.proto\"\363\002\n\016ProcessOptions\022j\n\030"
           + "individual_page_selector\030\005 \001(\0132F.google."
           + "cloud.documentai.v1beta3.ProcessOptions."
           + "IndividualPageSelectorH\000\022\024\n\nfrom_start\030\006"
           + " \001(\005H\000\022\022\n\010from_end\030\007 \001(\005H\000\022>\n\nocr_config"
           + "\030\001 \001(\0132*.google.cloud.documentai.v1beta3"
-          + ".OcrConfig\032-\n\026IndividualPageSelector\022\023\n\005"
+          + ".OcrConfig\022N\n\017schema_override\030\010 \001(\0132/.go"
+          + "ogle.cloud.documentai.v1beta3.DocumentSc"
+          + "hemaB\004\342A\001\001\032-\n\026IndividualPageSelector\022\023\n\005"
           + "pages\030\001 \003(\005B\004\342A\001\001B\014\n\npage_range\"\334\003\n\016Proc"
           + "essRequest\022D\n\017inline_document\030\004 \001(\0132).go"
           + "ogle.cloud.documentai.v1beta3.DocumentH\000"
@@ -677,10 +679,10 @@ public final class DocumentAiProcessorService {
           + "1beta3.GetEvaluationRequest\032+.google.clo"
           + "ud.documentai.v1beta3.Evaluation\"d\332A\004nam"
           + "e\202\323\344\223\002W\022U/v1beta3/{name=projects/*/locat"
-          + "ions/*/processors/*/processorVersions/*/"
-          + "evaluations/*}\022\354\001\n\017ListEvaluations\0227.goo"
-          + "gle.cloud.documentai.v1beta3.ListEvaluat",
-      "ionsRequest\0328.google.cloud.documentai.v1"
+          + "ions/*/processors/*/processorVersions/*/",
+      "evaluations/*}\022\354\001\n\017ListEvaluations\0227.goo"
+          + "gle.cloud.documentai.v1beta3.ListEvaluat"
+          + "ionsRequest\0328.google.cloud.documentai.v1"
           + "beta3.ListEvaluationsResponse\"f\332A\006parent"
           + "\202\323\344\223\002W\022U/v1beta3/{parent=projects/*/loca"
           + "tions/*/processors/*/processorVersions/*"
@@ -734,7 +736,12 @@ public final class DocumentAiProcessorService {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_ProcessOptions_descriptor,
             new java.lang.String[] {
-              "IndividualPageSelector", "FromStart", "FromEnd", "OcrConfig", "PageRange",
+              "IndividualPageSelector",
+              "FromStart",
+              "FromEnd",
+              "OcrConfig",
+              "SchemaOverride",
+              "PageRange",
             });
     internal_static_google_cloud_documentai_v1beta3_ProcessOptions_IndividualPageSelector_descriptor =
         internal_static_google_cloud_documentai_v1beta3_ProcessOptions_descriptor

@@ -74,7 +74,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unspecified case, fallback to read the LATEST_HUMAN_REVIEW.
+     * Unspecified case, fall back to read the `LATEST_HUMAN_REVIEW`.
      * </pre>
      *
      * <code>REVISION_CASE_UNSPECIFIED = 0;</code>
@@ -117,7 +117,7 @@ public final class RevisionRef extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Unspecified case, fallback to read the LATEST_HUMAN_REVIEW.
+     * Unspecified case, fall back to read the `LATEST_HUMAN_REVIEW`.
      * </pre>
      *
      * <code>REVISION_CASE_UNSPECIFIED = 0;</code>

@@ -71,7 +71,7 @@ public interface RawDocumentOrBuilder
    * the following:
    * `*`, `?`, `[`, `]`, `%`, `{`, `}`,`'`, `&#92;"`, `,`
    * `~`, `=` and `:` are reserved.
-   * If not specified, a default ID will be generated.
+   * If not specified, a default ID is generated.
    * </pre>
    *
    * <code>string display_name = 3;</code>
@@ -87,7 +87,7 @@ public interface RawDocumentOrBuilder
    * the following:
    * `*`, `?`, `[`, `]`, `%`, `{`, `}`,`'`, `&#92;"`, `,`
    * `~`, `=` and `:` are reserved.
-   * If not specified, a default ID will be generated.
+   * If not specified, a default ID is generated.
    * </pre>
    *
    * <code>string display_name = 3;</code>

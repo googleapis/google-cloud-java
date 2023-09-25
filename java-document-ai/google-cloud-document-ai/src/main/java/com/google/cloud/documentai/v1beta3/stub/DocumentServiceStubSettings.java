@@ -16,6 +16,7 @@
 
 package com.google.cloud.documentai.v1beta3.stub;
 
+import static com.google.cloud.documentai.v1beta3.DocumentServiceClient.ListDocumentsPagedResponse;
 import static com.google.cloud.documentai.v1beta3.DocumentServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -52,12 +53,15 @@ import com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsRequest;
 import com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsResponse;
 import com.google.cloud.documentai.v1beta3.Dataset;
 import com.google.cloud.documentai.v1beta3.DatasetSchema;
+import com.google.cloud.documentai.v1beta3.DocumentMetadata;
 import com.google.cloud.documentai.v1beta3.GetDatasetSchemaRequest;
 import com.google.cloud.documentai.v1beta3.GetDocumentRequest;
 import com.google.cloud.documentai.v1beta3.GetDocumentResponse;
 import com.google.cloud.documentai.v1beta3.ImportDocumentsMetadata;
 import com.google.cloud.documentai.v1beta3.ImportDocumentsRequest;
 import com.google.cloud.documentai.v1beta3.ImportDocumentsResponse;
+import com.google.cloud.documentai.v1beta3.ListDocumentsRequest;
+import com.google.cloud.documentai.v1beta3.ListDocumentsResponse;
 import com.google.cloud.documentai.v1beta3.UpdateDatasetOperationMetadata;
 import com.google.cloud.documentai.v1beta3.UpdateDatasetRequest;
 import com.google.cloud.documentai.v1beta3.UpdateDatasetSchemaRequest;
@@ -127,6 +131,9 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
           ImportDocumentsRequest, ImportDocumentsResponse, ImportDocumentsMetadata>
       importDocumentsOperationSettings;
   private final UnaryCallSettings<GetDocumentRequest, GetDocumentResponse> getDocumentSettings;
+  private final PagedCallSettings<
+          ListDocumentsRequest, ListDocumentsResponse, ListDocumentsPagedResponse>
+      listDocumentsSettings;
   private final UnaryCallSettings<BatchDeleteDocumentsRequest, Operation>
       batchDeleteDocumentsSettings;
   private final OperationCallSettings<
@@ -139,6 +146,43 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
   private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
+
+  private static final PagedListDescriptor<
+          ListDocumentsRequest, ListDocumentsResponse, DocumentMetadata>
+      LIST_DOCUMENTS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListDocumentsRequest, ListDocumentsResponse, DocumentMetadata>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDocumentsRequest injectToken(ListDocumentsRequest payload, String token) {
+              return ListDocumentsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDocumentsRequest injectPageSize(ListDocumentsRequest payload, int pageSize) {
+              return ListDocumentsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDocumentsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDocumentsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DocumentMetadata> extractResources(ListDocumentsResponse payload) {
+              return payload.getDocumentMetadataList() == null
+                  ? ImmutableList.<DocumentMetadata>of()
+                  : payload.getDocumentMetadataList();
+            }
+          };
 
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
@@ -173,6 +217,24 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
               return payload.getLocationsList() == null
                   ? ImmutableList.<Location>of()
                   : payload.getLocationsList();
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDocumentsRequest, ListDocumentsResponse, ListDocumentsPagedResponse>
+      LIST_DOCUMENTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDocumentsRequest, ListDocumentsResponse, ListDocumentsPagedResponse>() {
+            @Override
+            public ApiFuture<ListDocumentsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> callable,
+                ListDocumentsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDocumentsResponse> futureResponse) {
+              PageContext<ListDocumentsRequest, ListDocumentsResponse, DocumentMetadata>
+                  pageContext =
+                      PageContext.create(callable, LIST_DOCUMENTS_PAGE_STR_DESC, request, context);
+              return ListDocumentsPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -219,6 +281,12 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
   /** Returns the object with the settings used for calls to getDocument. */
   public UnaryCallSettings<GetDocumentRequest, GetDocumentResponse> getDocumentSettings() {
     return getDocumentSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDocuments. */
+  public PagedCallSettings<ListDocumentsRequest, ListDocumentsResponse, ListDocumentsPagedResponse>
+      listDocumentsSettings() {
+    return listDocumentsSettings;
   }
 
   /** Returns the object with the settings used for calls to batchDeleteDocuments. */
@@ -366,6 +434,7 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
     importDocumentsSettings = settingsBuilder.importDocumentsSettings().build();
     importDocumentsOperationSettings = settingsBuilder.importDocumentsOperationSettings().build();
     getDocumentSettings = settingsBuilder.getDocumentSettings().build();
+    listDocumentsSettings = settingsBuilder.listDocumentsSettings().build();
     batchDeleteDocumentsSettings = settingsBuilder.batchDeleteDocumentsSettings().build();
     batchDeleteDocumentsOperationSettings =
         settingsBuilder.batchDeleteDocumentsOperationSettings().build();
@@ -389,6 +458,9 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
         importDocumentsOperationSettings;
     private final UnaryCallSettings.Builder<GetDocumentRequest, GetDocumentResponse>
         getDocumentSettings;
+    private final PagedCallSettings.Builder<
+            ListDocumentsRequest, ListDocumentsResponse, ListDocumentsPagedResponse>
+        listDocumentsSettings;
     private final UnaryCallSettings.Builder<BatchDeleteDocumentsRequest, Operation>
         batchDeleteDocumentsSettings;
     private final OperationCallSettings.Builder<
@@ -434,6 +506,7 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
       importDocumentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       importDocumentsOperationSettings = OperationCallSettings.newBuilder();
       getDocumentSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listDocumentsSettings = PagedCallSettings.newBuilder(LIST_DOCUMENTS_PAGE_STR_FACT);
       batchDeleteDocumentsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       batchDeleteDocumentsOperationSettings = OperationCallSettings.newBuilder();
       getDatasetSchemaSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -446,6 +519,7 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
               updateDatasetSettings,
               importDocumentsSettings,
               getDocumentSettings,
+              listDocumentsSettings,
               batchDeleteDocumentsSettings,
               getDatasetSchemaSettings,
               updateDatasetSchemaSettings,
@@ -462,6 +536,7 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
       importDocumentsSettings = settings.importDocumentsSettings.toBuilder();
       importDocumentsOperationSettings = settings.importDocumentsOperationSettings.toBuilder();
       getDocumentSettings = settings.getDocumentSettings.toBuilder();
+      listDocumentsSettings = settings.listDocumentsSettings.toBuilder();
       batchDeleteDocumentsSettings = settings.batchDeleteDocumentsSettings.toBuilder();
       batchDeleteDocumentsOperationSettings =
           settings.batchDeleteDocumentsOperationSettings.toBuilder();
@@ -475,6 +550,7 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
               updateDatasetSettings,
               importDocumentsSettings,
               getDocumentSettings,
+              listDocumentsSettings,
               batchDeleteDocumentsSettings,
               getDatasetSchemaSettings,
               updateDatasetSchemaSettings,
@@ -521,6 +597,11 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
 
       builder
           .getDocumentSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listDocumentsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -674,6 +755,13 @@ public class DocumentServiceStubSettings extends StubSettings<DocumentServiceStu
     public UnaryCallSettings.Builder<GetDocumentRequest, GetDocumentResponse>
         getDocumentSettings() {
       return getDocumentSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDocuments. */
+    public PagedCallSettings.Builder<
+            ListDocumentsRequest, ListDocumentsResponse, ListDocumentsPagedResponse>
+        listDocumentsSettings() {
+      return listDocumentsSettings;
     }
 
     /** Returns the builder for the settings used for calls to batchDeleteDocuments. */

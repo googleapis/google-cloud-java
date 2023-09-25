@@ -16,6 +16,7 @@
 
 package com.google.cloud.documentai.v1beta3.stub;
 
+import static com.google.cloud.documentai.v1beta3.DocumentServiceClient.ListDocumentsPagedResponse;
 import static com.google.cloud.documentai.v1beta3.DocumentServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -33,6 +34,8 @@ import com.google.cloud.documentai.v1beta3.GetDocumentResponse;
 import com.google.cloud.documentai.v1beta3.ImportDocumentsMetadata;
 import com.google.cloud.documentai.v1beta3.ImportDocumentsRequest;
 import com.google.cloud.documentai.v1beta3.ImportDocumentsResponse;
+import com.google.cloud.documentai.v1beta3.ListDocumentsRequest;
+import com.google.cloud.documentai.v1beta3.ListDocumentsResponse;
 import com.google.cloud.documentai.v1beta3.UpdateDatasetOperationMetadata;
 import com.google.cloud.documentai.v1beta3.UpdateDatasetRequest;
 import com.google.cloud.documentai.v1beta3.UpdateDatasetSchemaRequest;
@@ -82,6 +85,15 @@ public abstract class DocumentServiceStub implements BackgroundResource {
 
   public UnaryCallable<GetDocumentRequest, GetDocumentResponse> getDocumentCallable() {
     throw new UnsupportedOperationException("Not implemented: getDocumentCallable()");
+  }
+
+  public UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse>
+      listDocumentsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDocumentsPagedCallable()");
+  }
+
+  public UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> listDocumentsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDocumentsCallable()");
   }
 
   public OperationCallable<

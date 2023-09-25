@@ -16,6 +16,7 @@
 
 package com.google.cloud.documentai.v1beta3;
 
+import static com.google.cloud.documentai.v1beta3.DocumentServiceClient.ListDocumentsPagedResponse;
 import static com.google.cloud.documentai.v1beta3.DocumentServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -292,6 +293,94 @@ public class DocumentServiceClientTest {
     try {
       String dataset = "dataset1443214456";
       client.getDocument(dataset);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDocumentsTest() throws Exception {
+    DocumentMetadata responsesElement = DocumentMetadata.newBuilder().build();
+    ListDocumentsResponse expectedResponse =
+        ListDocumentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDocumentMetadata(Arrays.asList(responsesElement))
+            .build();
+    mockDocumentService.addResponse(expectedResponse);
+
+    DatasetName dataset = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+
+    ListDocumentsPagedResponse pagedListResponse = client.listDocuments(dataset);
+
+    List<DocumentMetadata> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDocumentMetadataList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDocumentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDocumentsRequest actualRequest = ((ListDocumentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(dataset.toString(), actualRequest.getDataset());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDocumentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentService.addException(exception);
+
+    try {
+      DatasetName dataset = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+      client.listDocuments(dataset);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDocumentsTest2() throws Exception {
+    DocumentMetadata responsesElement = DocumentMetadata.newBuilder().build();
+    ListDocumentsResponse expectedResponse =
+        ListDocumentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDocumentMetadata(Arrays.asList(responsesElement))
+            .build();
+    mockDocumentService.addResponse(expectedResponse);
+
+    String dataset = "dataset1443214456";
+
+    ListDocumentsPagedResponse pagedListResponse = client.listDocuments(dataset);
+
+    List<DocumentMetadata> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDocumentMetadataList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDocumentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDocumentsRequest actualRequest = ((ListDocumentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(dataset, actualRequest.getDataset());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDocumentsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentService.addException(exception);
+
+    try {
+      String dataset = "dataset1443214456";
+      client.listDocuments(dataset);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

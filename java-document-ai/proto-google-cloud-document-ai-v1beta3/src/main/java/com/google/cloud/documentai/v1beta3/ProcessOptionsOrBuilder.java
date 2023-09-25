@@ -70,8 +70,8 @@ public interface ProcessOptionsOrBuilder
    *
    *
    * <pre>
-   * Only process certain pages from the start, process all if the document
-   * has less pages.
+   * Only process certain pages from the start. Process all if the document
+   * has fewer pages.
    * </pre>
    *
    * <code>int32 from_start = 6;</code>
@@ -83,8 +83,8 @@ public interface ProcessOptionsOrBuilder
    *
    *
    * <pre>
-   * Only process certain pages from the start, process all if the document
-   * has less pages.
+   * Only process certain pages from the start. Process all if the document
+   * has fewer pages.
    * </pre>
    *
    * <code>int32 from_start = 6;</code>
@@ -155,6 +155,59 @@ public interface ProcessOptionsOrBuilder
    * <code>.google.cloud.documentai.v1beta3.OcrConfig ocr_config = 1;</code>
    */
   com.google.cloud.documentai.v1beta3.OcrConfigOrBuilder getOcrConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Override the schema of the
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]. Will
+   * return an Invalid Argument error if this field is set when the underlying
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
+   * doesn't support schema override.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.DocumentSchema schema_override = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the schemaOverride field is set.
+   */
+  boolean hasSchemaOverride();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Override the schema of the
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]. Will
+   * return an Invalid Argument error if this field is set when the underlying
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
+   * doesn't support schema override.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.DocumentSchema schema_override = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The schemaOverride.
+   */
+  com.google.cloud.documentai.v1beta3.DocumentSchema getSchemaOverride();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Override the schema of the
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]. Will
+   * return an Invalid Argument error if this field is set when the underlying
+   * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
+   * doesn't support schema override.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.DocumentSchema schema_override = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.documentai.v1beta3.DocumentSchemaOrBuilder getSchemaOverrideOrBuilder();
 
   com.google.cloud.documentai.v1beta3.ProcessOptions.PageRangeCase getPageRangeCase();
 }

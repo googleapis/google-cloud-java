@@ -67,6 +67,10 @@ public final class DocumentIoProto {
       internal_static_google_cloud_documentai_v1_OcrConfig_Hints_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1_OcrConfig_Hints_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1_OcrConfig_PremiumFeatures_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1_OcrConfig_PremiumFeatures_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -98,19 +102,25 @@ public final class DocumentIoProto {
           + "ocumentai.v1.DocumentOutputConfig.GcsOut"
           + "putConfig.ShardingConfig\032@\n\016ShardingConf"
           + "ig\022\027\n\017pages_per_shard\030\001 \001(\005\022\025\n\rpages_ove"
-          + "rlap\030\002 \001(\005B\r\n\013destination\"\205\002\n\tOcrConfig\022"
+          + "rlap\030\002 \001(\005B\r\n\013destination\"\362\003\n\tOcrConfig\022"
           + ":\n\005hints\030\002 \001(\0132+.google.cloud.documentai"
           + ".v1.OcrConfig.Hints\022!\n\031enable_native_pdf"
           + "_parsing\030\003 \001(\010\022#\n\033enable_image_quality_s"
           + "cores\030\004 \001(\010\022\034\n\024advanced_ocr_options\030\005 \003("
           + "\t\022\025\n\renable_symbol\030\006 \001(\010\022\036\n\022compute_styl"
-          + "e_info\030\010 \001(\010B\002\030\001\032\037\n\005Hints\022\026\n\016language_hi"
-          + "nts\030\001 \003(\tB\315\001\n\036com.google.cloud.documenta"
-          + "i.v1B\017DocumentIoProtoP\001Z>cloud.google.co"
-          + "m/go/documentai/apiv1/documentaipb;docum"
-          + "entaipb\252\002\032Google.Cloud.DocumentAI.V1\312\002\032G"
-          + "oogle\\Cloud\\DocumentAI\\V1\352\002\035Google::Clou"
-          + "d::DocumentAI::V1b\006proto3"
+          + "e_info\030\010 \001(\010B\002\030\001\022)\n!disable_character_bo"
+          + "xes_detection\030\n \001(\010\022O\n\020premium_features\030"
+          + "\013 \001(\01325.google.cloud.documentai.v1.OcrCo"
+          + "nfig.PremiumFeatures\032\037\n\005Hints\022\026\n\016languag"
+          + "e_hints\030\001 \003(\t\032o\n\017PremiumFeatures\022\'\n\037enab"
+          + "le_selection_mark_detection\030\003 \001(\010\022\032\n\022com"
+          + "pute_style_info\030\004 \001(\010\022\027\n\017enable_math_ocr"
+          + "\030\005 \001(\010B\315\001\n\036com.google.cloud.documentai.v"
+          + "1B\017DocumentIoProtoP\001Z>cloud.google.com/g"
+          + "o/documentai/apiv1/documentaipb;document"
+          + "aipb\252\002\032Google.Cloud.DocumentAI.V1\312\002\032Goog"
+          + "le\\Cloud\\DocumentAI\\V1\352\002\035Google::Cloud::"
+          + "DocumentAI::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -198,6 +208,8 @@ public final class DocumentIoProto {
               "AdvancedOcrOptions",
               "EnableSymbol",
               "ComputeStyleInfo",
+              "DisableCharacterBoxesDetection",
+              "PremiumFeatures",
             });
     internal_static_google_cloud_documentai_v1_OcrConfig_Hints_descriptor =
         internal_static_google_cloud_documentai_v1_OcrConfig_descriptor.getNestedTypes().get(0);
@@ -206,6 +218,14 @@ public final class DocumentIoProto {
             internal_static_google_cloud_documentai_v1_OcrConfig_Hints_descriptor,
             new java.lang.String[] {
               "LanguageHints",
+            });
+    internal_static_google_cloud_documentai_v1_OcrConfig_PremiumFeatures_descriptor =
+        internal_static_google_cloud_documentai_v1_OcrConfig_descriptor.getNestedTypes().get(1);
+    internal_static_google_cloud_documentai_v1_OcrConfig_PremiumFeatures_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1_OcrConfig_PremiumFeatures_descriptor,
+            new java.lang.String[] {
+              "EnableSelectionMarkDetection", "ComputeStyleInfo", "EnableMathOcr",
             });
     com.google.protobuf.FieldMaskProto.getDescriptor();
   }

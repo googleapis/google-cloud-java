@@ -67,7 +67,7 @@ public interface ImportProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * The source processor version to import from, and can be from different
+   * The source processor version to import from. It can be from a different
    * environment and region than the destination processor.
    * </pre>
    *
@@ -82,7 +82,7 @@ public interface ImportProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * The source processor version to import from, and can be from different
+   * The source processor version to import from. It can be from a different
    * environment and region than the destination processor.
    * </pre>
    *
@@ -98,7 +98,7 @@ public interface ImportProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
-   * The source processor version to import from, and can be from different
+   * The source processor version to import from. It can be from a different
    * environment and region than the destination processor.
    * </pre>
    *

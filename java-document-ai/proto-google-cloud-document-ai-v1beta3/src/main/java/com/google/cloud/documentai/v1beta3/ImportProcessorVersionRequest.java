@@ -24,9 +24,9 @@ package com.google.cloud.documentai.v1beta3;
  * <pre>
  * The request message for the
  * [ImportProcessorVersion][google.cloud.documentai.v1beta3.DocumentProcessorService.ImportProcessorVersion]
- * method. Requirements:
+ * method.
  *
- * - The Document AI [Service
+ * The Document AI [Service
  * Agent](https://cloud.google.com/iam/docs/service-agents) of the destination
  * project must have [Document AI Editor
  * role](https://cloud.google.com/document-ai/docs/access-control/iam-roles) on
@@ -35,8 +35,10 @@ package com.google.cloud.documentai.v1beta3;
  * The destination project is specified as part of the
  * [parent][google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.parent]
  * field. The source project is specified as part of the
- * [source][ImportProcessorVersionRequest.processor_version_source or
- * ImportProcessorVersionRequest.external_processor_version_source] field.
+ * [source][google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.processor_version_source]
+ * or
+ * [external_processor_version_source][google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.external_processor_version_source]
+ * field.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta3.ImportProcessorVersionRequest}
@@ -1140,7 +1142,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The source processor version to import from, and can be from different
+   * The source processor version to import from. It can be from a different
    * environment and region than the destination processor.
    * </pre>
    *
@@ -1158,7 +1160,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The source processor version to import from, and can be from different
+   * The source processor version to import from. It can be from a different
    * environment and region than the destination processor.
    * </pre>
    *
@@ -1184,7 +1186,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * The source processor version to import from, and can be from different
+   * The source processor version to import from. It can be from a different
    * environment and region than the destination processor.
    * </pre>
    *
@@ -1476,9 +1478,9 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
    * <pre>
    * The request message for the
    * [ImportProcessorVersion][google.cloud.documentai.v1beta3.DocumentProcessorService.ImportProcessorVersion]
-   * method. Requirements:
+   * method.
    *
-   * - The Document AI [Service
+   * The Document AI [Service
    * Agent](https://cloud.google.com/iam/docs/service-agents) of the destination
    * project must have [Document AI Editor
    * role](https://cloud.google.com/document-ai/docs/access-control/iam-roles) on
@@ -1487,8 +1489,10 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
    * The destination project is specified as part of the
    * [parent][google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.parent]
    * field. The source project is specified as part of the
-   * [source][ImportProcessorVersionRequest.processor_version_source or
-   * ImportProcessorVersionRequest.external_processor_version_source] field.
+   * [source][google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.processor_version_source]
+   * or
+   * [external_processor_version_source][google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.external_processor_version_source]
+   * field.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta3.ImportProcessorVersionRequest}
@@ -1886,7 +1890,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The source processor version to import from, and can be from different
+     * The source processor version to import from. It can be from a different
      * environment and region than the destination processor.
      * </pre>
      *
@@ -1904,7 +1908,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The source processor version to import from, and can be from different
+     * The source processor version to import from. It can be from a different
      * environment and region than the destination processor.
      * </pre>
      *
@@ -1938,7 +1942,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The source processor version to import from, and can be from different
+     * The source processor version to import from. It can be from a different
      * environment and region than the destination processor.
      * </pre>
      *
@@ -1966,7 +1970,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The source processor version to import from, and can be from different
+     * The source processor version to import from. It can be from a different
      * environment and region than the destination processor.
      * </pre>
      *
@@ -1991,7 +1995,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The source processor version to import from, and can be from different
+     * The source processor version to import from. It can be from a different
      * environment and region than the destination processor.
      * </pre>
      *
@@ -2034,7 +2038,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The source processor version to import from, and can be from different
+     * The source processor version to import from. It can be from a different
      * environment and region than the destination processor.
      * </pre>
      *
@@ -2062,7 +2066,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The source processor version to import from, and can be from different
+     * The source processor version to import from. It can be from a different
      * environment and region than the destination processor.
      * </pre>
      *
@@ -2079,7 +2083,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The source processor version to import from, and can be from different
+     * The source processor version to import from. It can be from a different
      * environment and region than the destination processor.
      * </pre>
      *
@@ -2107,7 +2111,7 @@ public final class ImportProcessorVersionRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * The source processor version to import from, and can be from different
+     * The source processor version to import from. It can be from a different
      * environment and region than the destination processor.
      * </pre>
      *
