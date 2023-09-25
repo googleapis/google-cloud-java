@@ -26,9 +26,12 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.advisorynotifications.v1.GetNotificationRequest;
+import com.google.cloud.advisorynotifications.v1.GetSettingsRequest;
 import com.google.cloud.advisorynotifications.v1.ListNotificationsRequest;
 import com.google.cloud.advisorynotifications.v1.ListNotificationsResponse;
 import com.google.cloud.advisorynotifications.v1.Notification;
+import com.google.cloud.advisorynotifications.v1.Settings;
+import com.google.cloud.advisorynotifications.v1.UpdateSettingsRequest;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -67,11 +70,33 @@ public class GrpcAdvisoryNotificationsServiceStub extends AdvisoryNotificationsS
               .setResponseMarshaller(ProtoUtils.marshaller(Notification.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<GetSettingsRequest, Settings> getSettingsMethodDescriptor =
+      MethodDescriptor.<GetSettingsRequest, Settings>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName(
+              "google.cloud.advisorynotifications.v1.AdvisoryNotificationsService/GetSettings")
+          .setRequestMarshaller(ProtoUtils.marshaller(GetSettingsRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Settings.getDefaultInstance()))
+          .build();
+
+  private static final MethodDescriptor<UpdateSettingsRequest, Settings>
+      updateSettingsMethodDescriptor =
+          MethodDescriptor.<UpdateSettingsRequest, Settings>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.advisorynotifications.v1.AdvisoryNotificationsService/UpdateSettings")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateSettingsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Settings.getDefaultInstance()))
+              .build();
+
   private final UnaryCallable<ListNotificationsRequest, ListNotificationsResponse>
       listNotificationsCallable;
   private final UnaryCallable<ListNotificationsRequest, ListNotificationsPagedResponse>
       listNotificationsPagedCallable;
   private final UnaryCallable<GetNotificationRequest, Notification> getNotificationCallable;
+  private final UnaryCallable<GetSettingsRequest, Settings> getSettingsCallable;
+  private final UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
@@ -141,6 +166,26 @@ public class GrpcAdvisoryNotificationsServiceStub extends AdvisoryNotificationsS
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<GetSettingsRequest, Settings> getSettingsTransportSettings =
+        GrpcCallSettings.<GetSettingsRequest, Settings>newBuilder()
+            .setMethodDescriptor(getSettingsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateSettingsRequest, Settings> updateSettingsTransportSettings =
+        GrpcCallSettings.<UpdateSettingsRequest, Settings>newBuilder()
+            .setMethodDescriptor(updateSettingsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("settings.name", String.valueOf(request.getSettings().getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.listNotificationsCallable =
         callableFactory.createUnaryCallable(
@@ -155,6 +200,12 @@ public class GrpcAdvisoryNotificationsServiceStub extends AdvisoryNotificationsS
     this.getNotificationCallable =
         callableFactory.createUnaryCallable(
             getNotificationTransportSettings, settings.getNotificationSettings(), clientContext);
+    this.getSettingsCallable =
+        callableFactory.createUnaryCallable(
+            getSettingsTransportSettings, settings.getSettingsSettings(), clientContext);
+    this.updateSettingsCallable =
+        callableFactory.createUnaryCallable(
+            updateSettingsTransportSettings, settings.updateSettingsSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -179,6 +230,16 @@ public class GrpcAdvisoryNotificationsServiceStub extends AdvisoryNotificationsS
   @Override
   public UnaryCallable<GetNotificationRequest, Notification> getNotificationCallable() {
     return getNotificationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSettingsRequest, Settings> getSettingsCallable() {
+    return getSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable() {
+    return updateSettingsCallable;
   }
 
   @Override

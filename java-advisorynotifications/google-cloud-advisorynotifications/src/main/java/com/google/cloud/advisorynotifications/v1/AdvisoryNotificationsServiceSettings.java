@@ -91,6 +91,16 @@ public class AdvisoryNotificationsServiceSettings
     return ((AdvisoryNotificationsServiceStubSettings) getStubSettings()).getNotificationSettings();
   }
 
+  /** Returns the object with the settings used for calls to getSettings. */
+  public UnaryCallSettings<GetSettingsRequest, Settings> getSettingsSettings() {
+    return ((AdvisoryNotificationsServiceStubSettings) getStubSettings()).getSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateSettings. */
+  public UnaryCallSettings<UpdateSettingsRequest, Settings> updateSettingsSettings() {
+    return ((AdvisoryNotificationsServiceStubSettings) getStubSettings()).updateSettingsSettings();
+  }
+
   public static final AdvisoryNotificationsServiceSettings create(
       AdvisoryNotificationsServiceStubSettings stub) throws IOException {
     return new AdvisoryNotificationsServiceSettings.Builder(stub.toBuilder()).build();
@@ -218,6 +228,16 @@ public class AdvisoryNotificationsServiceSettings
     public UnaryCallSettings.Builder<GetNotificationRequest, Notification>
         getNotificationSettings() {
       return getStubSettingsBuilder().getNotificationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSettings. */
+    public UnaryCallSettings.Builder<GetSettingsRequest, Settings> getSettingsSettings() {
+      return getStubSettingsBuilder().getSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateSettings. */
+    public UnaryCallSettings.Builder<UpdateSettingsRequest, Settings> updateSettingsSettings() {
+      return getStubSettingsBuilder().updateSettingsSettings();
     }
 
     @Override

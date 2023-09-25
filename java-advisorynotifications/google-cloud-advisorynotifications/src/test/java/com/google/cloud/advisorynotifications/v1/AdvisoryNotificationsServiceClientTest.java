@@ -32,6 +32,7 @@ import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 import javax.annotation.Generated;
@@ -249,6 +250,126 @@ public class AdvisoryNotificationsServiceClientTest {
     try {
       String name = "name3373707";
       client.getNotification(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSettingsTest() throws Exception {
+    Settings expectedResponse =
+        Settings.newBuilder()
+            .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+            .putAllNotificationSettings(new HashMap<String, NotificationSettings>())
+            .setEtag("etag3123477")
+            .build();
+    mockAdvisoryNotificationsService.addResponse(expectedResponse);
+
+    SettingsName name = SettingsName.of("[ORGANIZATION]", "[LOCATION]");
+
+    Settings actualResponse = client.getSettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAdvisoryNotificationsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSettingsRequest actualRequest = ((GetSettingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSettingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAdvisoryNotificationsService.addException(exception);
+
+    try {
+      SettingsName name = SettingsName.of("[ORGANIZATION]", "[LOCATION]");
+      client.getSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSettingsTest2() throws Exception {
+    Settings expectedResponse =
+        Settings.newBuilder()
+            .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+            .putAllNotificationSettings(new HashMap<String, NotificationSettings>())
+            .setEtag("etag3123477")
+            .build();
+    mockAdvisoryNotificationsService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    Settings actualResponse = client.getSettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAdvisoryNotificationsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSettingsRequest actualRequest = ((GetSettingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSettingsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAdvisoryNotificationsService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getSettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSettingsTest() throws Exception {
+    Settings expectedResponse =
+        Settings.newBuilder()
+            .setName(SettingsName.of("[ORGANIZATION]", "[LOCATION]").toString())
+            .putAllNotificationSettings(new HashMap<String, NotificationSettings>())
+            .setEtag("etag3123477")
+            .build();
+    mockAdvisoryNotificationsService.addResponse(expectedResponse);
+
+    Settings settings = Settings.newBuilder().build();
+
+    Settings actualResponse = client.updateSettings(settings);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAdvisoryNotificationsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateSettingsRequest actualRequest = ((UpdateSettingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(settings, actualRequest.getSettings());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateSettingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAdvisoryNotificationsService.addException(exception);
+
+    try {
+      Settings settings = Settings.newBuilder().build();
+      client.updateSettings(settings);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

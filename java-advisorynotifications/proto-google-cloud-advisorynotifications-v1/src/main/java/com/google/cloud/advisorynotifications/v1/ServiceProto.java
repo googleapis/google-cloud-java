@@ -71,6 +71,26 @@ public final class ServiceProto {
       internal_static_google_cloud_advisorynotifications_v1_GetNotificationRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_advisorynotifications_v1_GetNotificationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_advisorynotifications_v1_Settings_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_advisorynotifications_v1_Settings_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_advisorynotifications_v1_Settings_NotificationSettingsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_advisorynotifications_v1_Settings_NotificationSettingsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_advisorynotifications_v1_NotificationSettings_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_advisorynotifications_v1_NotificationSettings_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_advisorynotifications_v1_GetSettingsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_advisorynotifications_v1_GetSettingsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_advisorynotifications_v1_UpdateSettingsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_advisorynotifications_v1_UpdateSettingsRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -129,42 +149,68 @@ public final class ServiceProto {
           + "ize\030\003 \001(\005\"y\n\026GetNotificationRequest\022H\n\004n"
           + "ame\030\001 \001(\tB:\342A\001\002\372A3\n1advisorynotification"
           + "s.googleapis.com/Notification\022\025\n\rlanguag"
-          + "e_code\030\005 \001(\t*J\n\020NotificationView\022!\n\035NOTI"
-          + "FICATION_VIEW_UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010"
-          + "\n\004FULL\020\002*\240\001\n\021LocalizationState\022\"\n\036LOCALI"
-          + "ZATION_STATE_UNSPECIFIED\020\000\022%\n!LOCALIZATI"
-          + "ON_STATE_NOT_APPLICABLE\020\001\022\036\n\032LOCALIZATIO"
-          + "N_STATE_PENDING\020\002\022 \n\034LOCALIZATION_STATE_"
-          + "COMPLETED\020\003*\332\001\n\020NotificationType\022!\n\035NOTI"
-          + "FICATION_TYPE_UNSPECIFIED\020\000\022/\n+NOTIFICAT"
-          + "ION_TYPE_SECURITY_PRIVACY_ADVISORY\020\001\022\'\n#"
-          + "NOTIFICATION_TYPE_SENSITIVE_ACTIONS\020\002\022\"\n"
-          + "\036NOTIFICATION_TYPE_SECURITY_MSA\020\003\022%\n!NOT"
-          + "IFICATION_TYPE_THREAT_HORIZONS\020\0042\251\004\n\034Adv"
-          + "isoryNotificationsService\022\337\001\n\021ListNotifi"
-          + "cations\022?.google.cloud.advisorynotificat"
-          + "ions.v1.ListNotificationsRequest\032@.googl"
-          + "e.cloud.advisorynotifications.v1.ListNot"
-          + "ificationsResponse\"G\332A\006parent\202\323\344\223\0028\0226/v1"
-          + "/{parent=organizations/*/locations/*}/no"
-          + "tifications\022\314\001\n\017GetNotification\022=.google"
-          + ".cloud.advisorynotifications.v1.GetNotif"
-          + "icationRequest\0323.google.cloud.advisoryno"
-          + "tifications.v1.Notification\"E\332A\004name\202\323\344\223"
-          + "\0028\0226/v1/{name=organizations/*/locations/"
-          + "*/notifications/*}\032X\312A$advisorynotificat"
-          + "ions.googleapis.com\322A.https://www.google"
-          + "apis.com/auth/cloud-platformB\374\002\n)com.goo"
-          + "gle.cloud.advisorynotifications.v1B\014Serv"
-          + "iceProtoP\001Z_cloud.google.com/go/advisory"
-          + "notifications/apiv1/advisorynotification"
-          + "spb;advisorynotificationspb\252\002%Google.Clo"
-          + "ud.AdvisoryNotifications.V1\312\002%Google\\Clo"
-          + "ud\\AdvisoryNotifications\\V1\352\002(Google::Cl"
-          + "oud::AdvisoryNotifications::V1\352Ab\n-advis"
-          + "orynotifications.googleapis.com/Location"
-          + "\0221organizations/{organization}/locations"
-          + "/{location}b\006proto3"
+          + "e_code\030\005 \001(\t\"\214\003\n\010Settings\022\022\n\004name\030\001 \001(\tB"
+          + "\004\342A\001\003\022n\n\025notification_settings\030\002 \003(\0132I.g"
+          + "oogle.cloud.advisorynotifications.v1.Set"
+          + "tings.NotificationSettingsEntryB\004\342A\001\002\022\022\n"
+          + "\004etag\030\003 \001(\tB\004\342A\001\002\032x\n\031NotificationSetting"
+          + "sEntry\022\013\n\003key\030\001 \001(\t\022J\n\005value\030\002 \001(\0132;.goo"
+          + "gle.cloud.advisorynotifications.v1.Notif"
+          + "icationSettings:\0028\001:n\352Ak\n-advisorynotifi"
+          + "cations.googleapis.com/Settings\022:organiz"
+          + "ations/{organization}/locations/{locatio"
+          + "n}/settings\"\'\n\024NotificationSettings\022\017\n\007e"
+          + "nabled\030\001 \001(\010\"Z\n\022GetSettingsRequest\022D\n\004na"
+          + "me\030\001 \001(\tB6\342A\001\002\372A/\n-advisorynotifications"
+          + ".googleapis.com/Settings\"`\n\025UpdateSettin"
+          + "gsRequest\022G\n\010settings\030\001 \001(\0132/.google.clo"
+          + "ud.advisorynotifications.v1.SettingsB\004\342A"
+          + "\001\002*J\n\020NotificationView\022!\n\035NOTIFICATION_V"
+          + "IEW_UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002*\240"
+          + "\001\n\021LocalizationState\022\"\n\036LOCALIZATION_STA"
+          + "TE_UNSPECIFIED\020\000\022%\n!LOCALIZATION_STATE_N"
+          + "OT_APPLICABLE\020\001\022\036\n\032LOCALIZATION_STATE_PE"
+          + "NDING\020\002\022 \n\034LOCALIZATION_STATE_COMPLETED\020"
+          + "\003*\332\001\n\020NotificationType\022!\n\035NOTIFICATION_T"
+          + "YPE_UNSPECIFIED\020\000\022/\n+NOTIFICATION_TYPE_S"
+          + "ECURITY_PRIVACY_ADVISORY\020\001\022\'\n#NOTIFICATI"
+          + "ON_TYPE_SENSITIVE_ACTIONS\020\002\022\"\n\036NOTIFICAT"
+          + "ION_TYPE_SECURITY_MSA\020\003\022%\n!NOTIFICATION_"
+          + "TYPE_THREAT_HORIZONS\020\0042\276\007\n\034AdvisoryNotif"
+          + "icationsService\022\337\001\n\021ListNotifications\022?."
+          + "google.cloud.advisorynotifications.v1.Li"
+          + "stNotificationsRequest\032@.google.cloud.ad"
+          + "visorynotifications.v1.ListNotifications"
+          + "Response\"G\332A\006parent\202\323\344\223\0028\0226/v1/{parent=o"
+          + "rganizations/*/locations/*}/notification"
+          + "s\022\314\001\n\017GetNotification\022=.google.cloud.adv"
+          + "isorynotifications.v1.GetNotificationReq"
+          + "uest\0323.google.cloud.advisorynotification"
+          + "s.v1.Notification\"E\332A\004name\202\323\344\223\0028\0226/v1/{n"
+          + "ame=organizations/*/locations/*/notifica"
+          + "tions/*}\022\271\001\n\013GetSettings\0229.google.cloud."
+          + "advisorynotifications.v1.GetSettingsRequ"
+          + "est\032/.google.cloud.advisorynotifications"
+          + ".v1.Settings\">\332A\004name\202\323\344\223\0021\022//v1/{name=o"
+          + "rganizations/*/locations/*/settings}\022\326\001\n"
+          + "\016UpdateSettings\022<.google.cloud.advisoryn"
+          + "otifications.v1.UpdateSettingsRequest\032/."
+          + "google.cloud.advisorynotifications.v1.Se"
+          + "ttings\"U\332A\010settings\202\323\344\223\002D28/v1/{settings"
+          + ".name=organizations/*/locations/*/settin"
+          + "gs}:\010settings\032X\312A$advisorynotifications."
+          + "googleapis.com\322A.https://www.googleapis."
+          + "com/auth/cloud-platformB\374\002\n)com.google.c"
+          + "loud.advisorynotifications.v1B\014ServicePr"
+          + "otoP\001Z_cloud.google.com/go/advisorynotif"
+          + "ications/apiv1/advisorynotificationspb;a"
+          + "dvisorynotificationspb\252\002%Google.Cloud.Ad"
+          + "visoryNotifications.V1\312\002%Google\\Cloud\\Ad"
+          + "visoryNotifications\\V1\352\002(Google::Cloud::"
+          + "AdvisoryNotifications::V1\352Ab\n-advisoryno"
+          + "tifications.googleapis.com/Location\0221org"
+          + "anizations/{organization}/locations/{loc"
+          + "ation}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -267,6 +313,48 @@ public final class ServiceProto {
             internal_static_google_cloud_advisorynotifications_v1_GetNotificationRequest_descriptor,
             new java.lang.String[] {
               "Name", "LanguageCode",
+            });
+    internal_static_google_cloud_advisorynotifications_v1_Settings_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_advisorynotifications_v1_Settings_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_advisorynotifications_v1_Settings_descriptor,
+            new java.lang.String[] {
+              "Name", "NotificationSettings", "Etag",
+            });
+    internal_static_google_cloud_advisorynotifications_v1_Settings_NotificationSettingsEntry_descriptor =
+        internal_static_google_cloud_advisorynotifications_v1_Settings_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_advisorynotifications_v1_Settings_NotificationSettingsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_advisorynotifications_v1_Settings_NotificationSettingsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_advisorynotifications_v1_NotificationSettings_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_advisorynotifications_v1_NotificationSettings_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_advisorynotifications_v1_NotificationSettings_descriptor,
+            new java.lang.String[] {
+              "Enabled",
+            });
+    internal_static_google_cloud_advisorynotifications_v1_GetSettingsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_advisorynotifications_v1_GetSettingsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_advisorynotifications_v1_GetSettingsRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_advisorynotifications_v1_UpdateSettingsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_advisorynotifications_v1_UpdateSettingsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_advisorynotifications_v1_UpdateSettingsRequest_descriptor,
+            new java.lang.String[] {
+              "Settings",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
