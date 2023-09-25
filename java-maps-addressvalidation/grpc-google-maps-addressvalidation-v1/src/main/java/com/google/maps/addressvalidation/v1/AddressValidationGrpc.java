@@ -32,7 +32,8 @@ public final class AddressValidationGrpc {
 
   private AddressValidationGrpc() {}
 
-  public static final String SERVICE_NAME = "google.maps.addressvalidation.v1.AddressValidation";
+  public static final java.lang.String SERVICE_NAME =
+      "google.maps.addressvalidation.v1.AddressValidation";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -494,9 +495,9 @@ public final class AddressValidationGrpc {
   private static final class AddressValidationMethodDescriptorSupplier
       extends AddressValidationBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    AddressValidationMethodDescriptorSupplier(String methodName) {
+    AddressValidationMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

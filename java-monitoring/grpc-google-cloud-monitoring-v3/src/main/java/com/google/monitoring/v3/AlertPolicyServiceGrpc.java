@@ -40,7 +40,7 @@ public final class AlertPolicyServiceGrpc {
 
   private AlertPolicyServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.monitoring.v3.AlertPolicyService";
+  public static final java.lang.String SERVICE_NAME = "google.monitoring.v3.AlertPolicyService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -889,9 +889,9 @@ public final class AlertPolicyServiceGrpc {
   private static final class AlertPolicyServiceMethodDescriptorSupplier
       extends AlertPolicyServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    AlertPolicyServiceMethodDescriptorSupplier(String methodName) {
+    AlertPolicyServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

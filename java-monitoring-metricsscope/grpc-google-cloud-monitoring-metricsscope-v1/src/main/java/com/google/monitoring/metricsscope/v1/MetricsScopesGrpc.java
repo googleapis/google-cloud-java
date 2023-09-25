@@ -33,7 +33,8 @@ public final class MetricsScopesGrpc {
 
   private MetricsScopesGrpc() {}
 
-  public static final String SERVICE_NAME = "google.monitoring.metricsscope.v1.MetricsScopes";
+  public static final java.lang.String SERVICE_NAME =
+      "google.monitoring.metricsscope.v1.MetricsScopes";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -742,9 +743,9 @@ public final class MetricsScopesGrpc {
   private static final class MetricsScopesMethodDescriptorSupplier
       extends MetricsScopesBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    MetricsScopesMethodDescriptorSupplier(String methodName) {
+    MetricsScopesMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

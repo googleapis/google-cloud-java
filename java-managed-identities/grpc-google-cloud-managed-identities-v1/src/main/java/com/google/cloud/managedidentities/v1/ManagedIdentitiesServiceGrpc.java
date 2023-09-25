@@ -55,7 +55,7 @@ public final class ManagedIdentitiesServiceGrpc {
 
   private ManagedIdentitiesServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.managedidentities.v1.ManagedIdentitiesService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -1543,9 +1543,9 @@ public final class ManagedIdentitiesServiceGrpc {
   private static final class ManagedIdentitiesServiceMethodDescriptorSupplier
       extends ManagedIdentitiesServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ManagedIdentitiesServiceMethodDescriptorSupplier(String methodName) {
+    ManagedIdentitiesServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

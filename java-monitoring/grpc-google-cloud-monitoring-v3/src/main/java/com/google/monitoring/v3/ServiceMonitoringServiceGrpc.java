@@ -35,7 +35,8 @@ public final class ServiceMonitoringServiceGrpc {
 
   private ServiceMonitoringServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.monitoring.v3.ServiceMonitoringService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.monitoring.v3.ServiceMonitoringService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1426,9 +1427,9 @@ public final class ServiceMonitoringServiceGrpc {
   private static final class ServiceMonitoringServiceMethodDescriptorSupplier
       extends ServiceMonitoringServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ServiceMonitoringServiceMethodDescriptorSupplier(String methodName) {
+    ServiceMonitoringServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

@@ -33,7 +33,7 @@ public final class WorkflowsServiceV2BetaGrpc {
 
   private WorkflowsServiceV2BetaGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.lifesciences.v2beta.WorkflowsServiceV2Beta";
 
   // Static method descriptors that strictly reflect the proto.
@@ -403,9 +403,9 @@ public final class WorkflowsServiceV2BetaGrpc {
   private static final class WorkflowsServiceV2BetaMethodDescriptorSupplier
       extends WorkflowsServiceV2BetaBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    WorkflowsServiceV2BetaMethodDescriptorSupplier(String methodName) {
+    WorkflowsServiceV2BetaMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

@@ -35,7 +35,7 @@ public final class EkmServiceGrpc {
 
   private EkmServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.kms.v1.EkmService";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.kms.v1.EkmService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1070,9 +1070,9 @@ public final class EkmServiceGrpc {
   private static final class EkmServiceMethodDescriptorSupplier
       extends EkmServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    EkmServiceMethodDescriptorSupplier(String methodName) {
+    EkmServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

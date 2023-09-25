@@ -32,7 +32,8 @@ public final class KeyDashboardServiceGrpc {
 
   private KeyDashboardServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.kms.inventory.v1.KeyDashboardService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.kms.inventory.v1.KeyDashboardService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -356,9 +357,9 @@ public final class KeyDashboardServiceGrpc {
   private static final class KeyDashboardServiceMethodDescriptorSupplier
       extends KeyDashboardServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    KeyDashboardServiceMethodDescriptorSupplier(String methodName) {
+    KeyDashboardServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

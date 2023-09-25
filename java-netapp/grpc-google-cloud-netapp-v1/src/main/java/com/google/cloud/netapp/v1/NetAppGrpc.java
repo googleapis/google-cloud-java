@@ -32,7 +32,7 @@ public final class NetAppGrpc {
 
   private NetAppGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.netapp.v1.NetApp";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.netapp.v1.NetApp";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -4280,9 +4280,9 @@ public final class NetAppGrpc {
 
   private static final class NetAppMethodDescriptorSupplier extends NetAppBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    NetAppMethodDescriptorSupplier(String methodName) {
+    NetAppMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

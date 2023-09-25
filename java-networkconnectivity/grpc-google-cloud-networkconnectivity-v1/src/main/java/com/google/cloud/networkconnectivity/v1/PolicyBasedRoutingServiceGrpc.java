@@ -33,7 +33,7 @@ public final class PolicyBasedRoutingServiceGrpc {
 
   private PolicyBasedRoutingServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.networkconnectivity.v1.PolicyBasedRoutingService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -736,9 +736,9 @@ public final class PolicyBasedRoutingServiceGrpc {
   private static final class PolicyBasedRoutingServiceMethodDescriptorSupplier
       extends PolicyBasedRoutingServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    PolicyBasedRoutingServiceMethodDescriptorSupplier(String methodName) {
+    PolicyBasedRoutingServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

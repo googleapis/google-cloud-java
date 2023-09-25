@@ -39,7 +39,7 @@ public final class UptimeCheckServiceGrpc {
 
   private UptimeCheckServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.monitoring.v3.UptimeCheckService";
+  public static final java.lang.String SERVICE_NAME = "google.monitoring.v3.UptimeCheckService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1015,9 +1015,9 @@ public final class UptimeCheckServiceGrpc {
   private static final class UptimeCheckServiceMethodDescriptorSupplier
       extends UptimeCheckServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    UptimeCheckServiceMethodDescriptorSupplier(String methodName) {
+    UptimeCheckServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

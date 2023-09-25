@@ -33,7 +33,7 @@ public final class LanguageServiceGrpc {
 
   private LanguageServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.language.v1.LanguageService";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.language.v1.LanguageService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1106,9 +1106,9 @@ public final class LanguageServiceGrpc {
   private static final class LanguageServiceMethodDescriptorSupplier
       extends LanguageServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    LanguageServiceMethodDescriptorSupplier(String methodName) {
+    LanguageServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
