@@ -42,7 +42,7 @@ public final class AccessContextManagerGrpc {
 
   private AccessContextManagerGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.identity.accesscontextmanager.v1.AccessContextManager";
 
   // Static method descriptors that strictly reflect the proto.
@@ -3973,9 +3973,9 @@ public final class AccessContextManagerGrpc {
   private static final class AccessContextManagerMethodDescriptorSupplier
       extends AccessContextManagerBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    AccessContextManagerMethodDescriptorSupplier(String methodName) {
+    AccessContextManagerMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
