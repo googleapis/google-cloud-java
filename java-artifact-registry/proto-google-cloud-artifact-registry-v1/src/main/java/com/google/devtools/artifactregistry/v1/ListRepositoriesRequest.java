@@ -71,7 +71,8 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The name of the parent resource whose repositories will be listed.
+   * Required. The name of the parent resource whose repositories will be
+   * listed.
    * </pre>
    *
    * <code>
@@ -96,7 +97,8 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The name of the parent resource whose repositories will be listed.
+   * Required. The name of the parent resource whose repositories will be
+   * listed.
    * </pre>
    *
    * <code>
@@ -585,7 +587,8 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the parent resource whose repositories will be listed.
+     * Required. The name of the parent resource whose repositories will be
+     * listed.
      * </pre>
      *
      * <code>
@@ -609,7 +612,8 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the parent resource whose repositories will be listed.
+     * Required. The name of the parent resource whose repositories will be
+     * listed.
      * </pre>
      *
      * <code>
@@ -633,7 +637,8 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the parent resource whose repositories will be listed.
+     * Required. The name of the parent resource whose repositories will be
+     * listed.
      * </pre>
      *
      * <code>
@@ -656,7 +661,8 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the parent resource whose repositories will be listed.
+     * Required. The name of the parent resource whose repositories will be
+     * listed.
      * </pre>
      *
      * <code>
@@ -675,7 +681,8 @@ public final class ListRepositoriesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The name of the parent resource whose repositories will be listed.
+     * Required. The name of the parent resource whose repositories will be
+     * listed.
      * </pre>
      *
      * <code>
