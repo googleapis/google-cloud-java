@@ -37,7 +37,8 @@ public final class TranscoderServiceGrpc {
 
   private TranscoderServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.video.transcoder.v1.TranscoderService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.video.transcoder.v1.TranscoderService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1181,9 +1182,9 @@ public final class TranscoderServiceGrpc {
   private static final class TranscoderServiceMethodDescriptorSupplier
       extends TranscoderServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    TranscoderServiceMethodDescriptorSupplier(String methodName) {
+    TranscoderServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

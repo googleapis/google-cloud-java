@@ -36,7 +36,8 @@ public final class LivestreamServiceGrpc {
 
   private LivestreamServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.video.livestream.v1.LivestreamService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.video.livestream.v1.LivestreamService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -2768,9 +2769,9 @@ public final class LivestreamServiceGrpc {
   private static final class LivestreamServiceMethodDescriptorSupplier
       extends LivestreamServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    LivestreamServiceMethodDescriptorSupplier(String methodName) {
+    LivestreamServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

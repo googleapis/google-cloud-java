@@ -32,7 +32,7 @@ public final class VmMigrationGrpc {
 
   private VmMigrationGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.vmmigration.v1.VmMigration";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.vmmigration.v1.VmMigration";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -5641,9 +5641,9 @@ public final class VmMigrationGrpc {
   private static final class VmMigrationMethodDescriptorSupplier
       extends VmMigrationBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    VmMigrationMethodDescriptorSupplier(String methodName) {
+    VmMigrationMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

@@ -32,7 +32,7 @@ public final class VmwareEngineGrpc {
 
   private VmwareEngineGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.vmwareengine.v1.VmwareEngine";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.vmwareengine.v1.VmwareEngine";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -5130,9 +5130,9 @@ public final class VmwareEngineGrpc {
   private static final class VmwareEngineMethodDescriptorSupplier
       extends VmwareEngineBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    VmwareEngineMethodDescriptorSupplier(String methodName) {
+    VmwareEngineMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
