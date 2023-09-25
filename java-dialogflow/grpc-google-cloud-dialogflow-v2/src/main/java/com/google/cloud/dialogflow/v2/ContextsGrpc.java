@@ -32,7 +32,7 @@ public final class ContextsGrpc {
 
   private ContextsGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.dialogflow.v2.Contexts";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.dialogflow.v2.Contexts";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -901,9 +901,9 @@ public final class ContextsGrpc {
 
   private static final class ContextsMethodDescriptorSupplier extends ContextsBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ContextsMethodDescriptorSupplier(String methodName) {
+    ContextsMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

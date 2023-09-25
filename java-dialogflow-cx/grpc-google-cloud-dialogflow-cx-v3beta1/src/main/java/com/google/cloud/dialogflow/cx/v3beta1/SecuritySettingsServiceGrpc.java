@@ -32,7 +32,7 @@ public final class SecuritySettingsServiceGrpc {
 
   private SecuritySettingsServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.dialogflow.cx.v3beta1.SecuritySettingsService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -875,9 +875,9 @@ public final class SecuritySettingsServiceGrpc {
   private static final class SecuritySettingsServiceMethodDescriptorSupplier
       extends SecuritySettingsServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    SecuritySettingsServiceMethodDescriptorSupplier(String methodName) {
+    SecuritySettingsServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

@@ -33,7 +33,7 @@ public final class DataformGrpc {
 
   private DataformGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.dataform.v1beta1.Dataform";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.dataform.v1beta1.Dataform";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -4505,9 +4505,9 @@ public final class DataformGrpc {
 
   private static final class DataformMethodDescriptorSupplier extends DataformBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DataformMethodDescriptorSupplier(String methodName) {
+    DataformMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

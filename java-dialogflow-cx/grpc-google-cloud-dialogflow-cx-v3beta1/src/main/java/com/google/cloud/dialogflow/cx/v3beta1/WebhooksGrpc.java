@@ -32,7 +32,7 @@ public final class WebhooksGrpc {
 
   private WebhooksGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.dialogflow.cx.v3beta1.Webhooks";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.dialogflow.cx.v3beta1.Webhooks";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -797,9 +797,9 @@ public final class WebhooksGrpc {
 
   private static final class WebhooksMethodDescriptorSupplier extends WebhooksBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    WebhooksMethodDescriptorSupplier(String methodName) {
+    WebhooksMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

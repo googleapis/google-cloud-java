@@ -33,7 +33,8 @@ public final class DocumentServiceGrpc {
 
   private DocumentServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.discoveryengine.v1.DocumentService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.discoveryengine.v1.DocumentService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1118,9 +1119,9 @@ public final class DocumentServiceGrpc {
   private static final class DocumentServiceMethodDescriptorSupplier
       extends DocumentServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DocumentServiceMethodDescriptorSupplier(String methodName) {
+    DocumentServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

@@ -32,7 +32,7 @@ public final class ConversationalSearchServiceGrpc {
 
   private ConversationalSearchServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.discoveryengine.v1beta.ConversationalSearchService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -1018,9 +1018,9 @@ public final class ConversationalSearchServiceGrpc {
   private static final class ConversationalSearchServiceMethodDescriptorSupplier
       extends ConversationalSearchServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ConversationalSearchServiceMethodDescriptorSupplier(String methodName) {
+    ConversationalSearchServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

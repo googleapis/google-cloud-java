@@ -33,7 +33,7 @@ public final class MessagesV1Beta3Grpc {
 
   private MessagesV1Beta3Grpc() {}
 
-  public static final String SERVICE_NAME = "google.dataflow.v1beta3.MessagesV1Beta3";
+  public static final java.lang.String SERVICE_NAME = "google.dataflow.v1beta3.MessagesV1Beta3";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -370,9 +370,9 @@ public final class MessagesV1Beta3Grpc {
   private static final class MessagesV1Beta3MethodDescriptorSupplier
       extends MessagesV1Beta3BaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    MessagesV1Beta3MethodDescriptorSupplier(String methodName) {
+    MessagesV1Beta3MethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

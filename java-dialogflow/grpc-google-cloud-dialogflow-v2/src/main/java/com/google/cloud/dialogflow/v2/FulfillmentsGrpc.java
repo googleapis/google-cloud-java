@@ -32,7 +32,7 @@ public final class FulfillmentsGrpc {
 
   private FulfillmentsGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.dialogflow.v2.Fulfillments";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.dialogflow.v2.Fulfillments";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -457,9 +457,9 @@ public final class FulfillmentsGrpc {
   private static final class FulfillmentsMethodDescriptorSupplier
       extends FulfillmentsBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    FulfillmentsMethodDescriptorSupplier(String methodName) {
+    FulfillmentsMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

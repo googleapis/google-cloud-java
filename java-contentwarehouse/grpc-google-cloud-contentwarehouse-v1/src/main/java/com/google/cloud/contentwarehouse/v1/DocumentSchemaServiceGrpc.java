@@ -32,7 +32,7 @@ public final class DocumentSchemaServiceGrpc {
 
   private DocumentSchemaServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.contentwarehouse.v1.DocumentSchemaService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -883,9 +883,9 @@ public final class DocumentSchemaServiceGrpc {
   private static final class DocumentSchemaServiceMethodDescriptorSupplier
       extends DocumentSchemaServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DocumentSchemaServiceMethodDescriptorSupplier(String methodName) {
+    DocumentSchemaServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

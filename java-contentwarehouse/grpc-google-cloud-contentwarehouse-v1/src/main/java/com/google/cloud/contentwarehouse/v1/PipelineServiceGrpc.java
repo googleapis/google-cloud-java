@@ -32,7 +32,8 @@ public final class PipelineServiceGrpc {
 
   private PipelineServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.contentwarehouse.v1.PipelineService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.contentwarehouse.v1.PipelineService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -336,9 +337,9 @@ public final class PipelineServiceGrpc {
   private static final class PipelineServiceMethodDescriptorSupplier
       extends PipelineServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    PipelineServiceMethodDescriptorSupplier(String methodName) {
+    PipelineServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

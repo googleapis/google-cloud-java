@@ -36,7 +36,7 @@ public final class DataplexServiceGrpc {
 
   private DataplexServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.dataplex.v1.DataplexService";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.dataplex.v1.DataplexService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -3919,9 +3919,9 @@ public final class DataplexServiceGrpc {
   private static final class DataplexServiceMethodDescriptorSupplier
       extends DataplexServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DataplexServiceMethodDescriptorSupplier(String methodName) {
+    DataplexServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

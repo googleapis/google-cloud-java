@@ -32,7 +32,7 @@ public final class TemplatesServiceGrpc {
 
   private TemplatesServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.dataflow.v1beta3.TemplatesService";
+  public static final java.lang.String SERVICE_NAME = "google.dataflow.v1beta3.TemplatesService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -577,9 +577,9 @@ public final class TemplatesServiceGrpc {
   private static final class TemplatesServiceMethodDescriptorSupplier
       extends TemplatesServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    TemplatesServiceMethodDescriptorSupplier(String methodName) {
+    TemplatesServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

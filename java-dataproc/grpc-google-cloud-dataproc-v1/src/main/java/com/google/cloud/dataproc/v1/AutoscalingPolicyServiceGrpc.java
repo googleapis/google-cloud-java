@@ -33,7 +33,8 @@ public final class AutoscalingPolicyServiceGrpc {
 
   private AutoscalingPolicyServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.dataproc.v1.AutoscalingPolicyService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.dataproc.v1.AutoscalingPolicyService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -868,9 +869,9 @@ public final class AutoscalingPolicyServiceGrpc {
   private static final class AutoscalingPolicyServiceMethodDescriptorSupplier
       extends AutoscalingPolicyServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    AutoscalingPolicyServiceMethodDescriptorSupplier(String methodName) {
+    AutoscalingPolicyServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

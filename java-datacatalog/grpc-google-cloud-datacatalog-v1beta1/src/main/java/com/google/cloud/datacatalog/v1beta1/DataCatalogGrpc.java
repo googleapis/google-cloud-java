@@ -33,7 +33,8 @@ public final class DataCatalogGrpc {
 
   private DataCatalogGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.datacatalog.v1beta1.DataCatalog";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.datacatalog.v1beta1.DataCatalog";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -3958,9 +3959,9 @@ public final class DataCatalogGrpc {
   private static final class DataCatalogMethodDescriptorSupplier
       extends DataCatalogBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DataCatalogMethodDescriptorSupplier(String methodName) {
+    DataCatalogMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

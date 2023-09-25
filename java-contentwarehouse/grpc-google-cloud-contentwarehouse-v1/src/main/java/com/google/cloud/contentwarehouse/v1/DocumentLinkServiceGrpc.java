@@ -33,7 +33,8 @@ public final class DocumentLinkServiceGrpc {
 
   private DocumentLinkServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.contentwarehouse.v1.DocumentLinkService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.contentwarehouse.v1.DocumentLinkService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -713,9 +714,9 @@ public final class DocumentLinkServiceGrpc {
   private static final class DocumentLinkServiceMethodDescriptorSupplier
       extends DocumentLinkServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DocumentLinkServiceMethodDescriptorSupplier(String methodName) {
+    DocumentLinkServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

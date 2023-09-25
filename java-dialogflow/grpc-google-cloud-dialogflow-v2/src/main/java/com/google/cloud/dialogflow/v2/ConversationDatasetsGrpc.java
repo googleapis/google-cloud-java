@@ -34,7 +34,8 @@ public final class ConversationDatasetsGrpc {
 
   private ConversationDatasetsGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.dialogflow.v2.ConversationDatasets";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.dialogflow.v2.ConversationDatasets";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -953,9 +954,9 @@ public final class ConversationDatasetsGrpc {
   private static final class ConversationDatasetsMethodDescriptorSupplier
       extends ConversationDatasetsBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ConversationDatasetsMethodDescriptorSupplier(String methodName) {
+    ConversationDatasetsMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
