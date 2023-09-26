@@ -38,7 +38,7 @@ public final class ClientGatewaysServiceGrpc {
 
   private ClientGatewaysServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.beyondcorp.clientgateways.v1.ClientGatewaysService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -752,9 +752,9 @@ public final class ClientGatewaysServiceGrpc {
   private static final class ClientGatewaysServiceMethodDescriptorSupplier
       extends ClientGatewaysServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ClientGatewaysServiceMethodDescriptorSupplier(String methodName) {
+    ClientGatewaysServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

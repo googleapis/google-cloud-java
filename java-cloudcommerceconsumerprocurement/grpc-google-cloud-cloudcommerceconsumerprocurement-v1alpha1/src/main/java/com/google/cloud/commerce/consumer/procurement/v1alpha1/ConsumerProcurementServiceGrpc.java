@@ -39,7 +39,7 @@ public final class ConsumerProcurementServiceGrpc {
 
   private ConsumerProcurementServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.commerce.consumer.procurement.v1alpha1.ConsumerProcurementService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -669,9 +669,9 @@ public final class ConsumerProcurementServiceGrpc {
   private static final class ConsumerProcurementServiceMethodDescriptorSupplier
       extends ConsumerProcurementServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ConsumerProcurementServiceMethodDescriptorSupplier(String methodName) {
+    ConsumerProcurementServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

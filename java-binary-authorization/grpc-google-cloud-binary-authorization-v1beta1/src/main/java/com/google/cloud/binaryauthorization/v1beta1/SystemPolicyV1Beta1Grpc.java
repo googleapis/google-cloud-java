@@ -32,7 +32,7 @@ public final class SystemPolicyV1Beta1Grpc {
 
   private SystemPolicyV1Beta1Grpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.binaryauthorization.v1beta1.SystemPolicyV1Beta1";
 
   // Static method descriptors that strictly reflect the proto.
@@ -350,9 +350,9 @@ public final class SystemPolicyV1Beta1Grpc {
   private static final class SystemPolicyV1Beta1MethodDescriptorSupplier
       extends SystemPolicyV1Beta1BaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    SystemPolicyV1Beta1MethodDescriptorSupplier(String methodName) {
+    SystemPolicyV1Beta1MethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

@@ -50,7 +50,8 @@ public final class CertificateManagerGrpc {
 
   private CertificateManagerGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.certificatemanager.v1.CertificateManager";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.certificatemanager.v1.CertificateManager";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -3285,9 +3286,9 @@ public final class CertificateManagerGrpc {
   private static final class CertificateManagerMethodDescriptorSupplier
       extends CertificateManagerBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    CertificateManagerMethodDescriptorSupplier(String methodName) {
+    CertificateManagerMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

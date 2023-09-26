@@ -32,7 +32,7 @@ public final class ValidationHelperV1Grpc {
 
   private ValidationHelperV1Grpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.binaryauthorization.v1.ValidationHelperV1";
 
   // Static method descriptors that strictly reflect the proto.
@@ -392,9 +392,9 @@ public final class ValidationHelperV1Grpc {
   private static final class ValidationHelperV1MethodDescriptorSupplier
       extends ValidationHelperV1BaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ValidationHelperV1MethodDescriptorSupplier(String methodName) {
+    ValidationHelperV1MethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

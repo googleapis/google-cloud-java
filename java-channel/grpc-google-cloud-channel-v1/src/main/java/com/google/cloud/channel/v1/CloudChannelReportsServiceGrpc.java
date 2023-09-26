@@ -34,7 +34,8 @@ public final class CloudChannelReportsServiceGrpc {
 
   private CloudChannelReportsServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.channel.v1.CloudChannelReportsService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.channel.v1.CloudChannelReportsService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -678,9 +679,9 @@ public final class CloudChannelReportsServiceGrpc {
   private static final class CloudChannelReportsServiceMethodDescriptorSupplier
       extends CloudChannelReportsServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    CloudChannelReportsServiceMethodDescriptorSupplier(String methodName) {
+    CloudChannelReportsServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
