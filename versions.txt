@@ -678,3 +678,5 @@ proto-google-cloud-alloydb-connectors-v1beta:0.2.0:0.3.0-SNAPSHOT
 google-shopping-merchant-inventories:0.0.0:0.0.1-SNAPSHOT
 proto-google-shopping-merchant-inventories-v1beta:0.0.0:0.0.1-SNAPSHOT
 grpc-google-shopping-merchant-inventories-v1beta:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-policy-troubleshooter-v3:1.23.0:1.24.0-SNAPSHOT
+grpc-google-cloud-policy-troubleshooter-v3:1.23.0:1.24.0-SNAPSHOT

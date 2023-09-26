@@ -36,8 +36,18 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-policy-troubleshooter-v3</artifactId>
+        <version>1.24.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-policy-troubleshooter-v3:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-policy-troubleshooter-v1</artifactId>
         <version>1.24.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-policy-troubleshooter-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-policy-troubleshooter-v3</artifactId>
+        <version>1.24.0-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-policy-troubleshooter-v3:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
