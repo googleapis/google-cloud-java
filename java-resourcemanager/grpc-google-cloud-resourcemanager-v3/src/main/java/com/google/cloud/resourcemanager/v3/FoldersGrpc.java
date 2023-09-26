@@ -34,7 +34,7 @@ public final class FoldersGrpc {
 
   private FoldersGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.resourcemanager.v3.Folders";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.resourcemanager.v3.Folders";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1845,9 +1845,9 @@ public final class FoldersGrpc {
 
   private static final class FoldersMethodDescriptorSupplier extends FoldersBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    FoldersMethodDescriptorSupplier(String methodName) {
+    FoldersMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

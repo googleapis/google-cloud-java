@@ -47,7 +47,7 @@ public final class OrgPolicyGrpc {
 
   private OrgPolicyGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.orgpolicy.v2.OrgPolicy";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.orgpolicy.v2.OrgPolicy";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1178,9 +1178,9 @@ public final class OrgPolicyGrpc {
   private static final class OrgPolicyMethodDescriptorSupplier
       extends OrgPolicyBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    OrgPolicyMethodDescriptorSupplier(String methodName) {
+    OrgPolicyMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

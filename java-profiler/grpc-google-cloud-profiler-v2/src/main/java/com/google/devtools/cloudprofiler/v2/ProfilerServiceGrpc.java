@@ -36,7 +36,8 @@ public final class ProfilerServiceGrpc {
 
   private ProfilerServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.devtools.cloudprofiler.v2.ProfilerService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.devtools.cloudprofiler.v2.ProfilerService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -669,9 +670,9 @@ public final class ProfilerServiceGrpc {
   private static final class ProfilerServiceMethodDescriptorSupplier
       extends ProfilerServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ProfilerServiceMethodDescriptorSupplier(String methodName) {
+    ProfilerServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

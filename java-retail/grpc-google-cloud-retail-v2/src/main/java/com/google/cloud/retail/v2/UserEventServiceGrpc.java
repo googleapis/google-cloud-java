@@ -32,7 +32,7 @@ public final class UserEventServiceGrpc {
 
   private UserEventServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.retail.v2.UserEventService";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.retail.v2.UserEventService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -850,9 +850,9 @@ public final class UserEventServiceGrpc {
   private static final class UserEventServiceMethodDescriptorSupplier
       extends UserEventServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    UserEventServiceMethodDescriptorSupplier(String methodName) {
+    UserEventServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

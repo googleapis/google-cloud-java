@@ -32,7 +32,7 @@ public final class RapidMigrationAssessmentGrpc {
 
   private RapidMigrationAssessmentGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.rapidmigrationassessment.v1.RapidMigrationAssessment";
 
   // Static method descriptors that strictly reflect the proto.
@@ -1420,9 +1420,9 @@ public final class RapidMigrationAssessmentGrpc {
   private static final class RapidMigrationAssessmentMethodDescriptorSupplier
       extends RapidMigrationAssessmentBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    RapidMigrationAssessmentMethodDescriptorSupplier(String methodName) {
+    RapidMigrationAssessmentMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

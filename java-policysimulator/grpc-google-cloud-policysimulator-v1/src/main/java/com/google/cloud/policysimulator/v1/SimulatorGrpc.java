@@ -41,7 +41,7 @@ public final class SimulatorGrpc {
 
   private SimulatorGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.policysimulator.v1.Simulator";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.policysimulator.v1.Simulator";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -630,9 +630,9 @@ public final class SimulatorGrpc {
   private static final class SimulatorMethodDescriptorSupplier
       extends SimulatorBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    SimulatorMethodDescriptorSupplier(String methodName) {
+    SimulatorMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

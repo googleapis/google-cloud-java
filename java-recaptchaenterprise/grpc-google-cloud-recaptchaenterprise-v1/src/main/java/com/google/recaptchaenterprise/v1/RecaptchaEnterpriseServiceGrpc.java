@@ -32,7 +32,7 @@ public final class RecaptchaEnterpriseServiceGrpc {
 
   private RecaptchaEnterpriseServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -1830,9 +1830,9 @@ public final class RecaptchaEnterpriseServiceGrpc {
   private static final class RecaptchaEnterpriseServiceMethodDescriptorSupplier
       extends RecaptchaEnterpriseServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    RecaptchaEnterpriseServiceMethodDescriptorSupplier(String methodName) {
+    RecaptchaEnterpriseServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
