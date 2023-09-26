@@ -68,7 +68,7 @@ public final class DatastoreAdminGrpc {
 
   private DatastoreAdminGrpc() {}
 
-  public static final String SERVICE_NAME = "google.datastore.admin.v1.DatastoreAdmin";
+  public static final java.lang.String SERVICE_NAME = "google.datastore.admin.v1.DatastoreAdmin";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1242,9 +1242,9 @@ public final class DatastoreAdminGrpc {
   private static final class DatastoreAdminMethodDescriptorSupplier
       extends DatastoreAdminBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DatastoreAdminMethodDescriptorSupplier(String methodName) {
+    DatastoreAdminMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
