@@ -19,6 +19,8 @@ package com.google.cloud.bigquery.analyticshub.v1;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListDataExchangesPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListListingsPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListOrgDataExchangesPagedResponse;
+import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSharedResourceSubscriptionsPagedResponse;
+import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSubscriptionsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
@@ -29,6 +31,7 @@ import com.google.api.gax.rpc.ApiExceptionFactory;
 import com.google.api.gax.rpc.InvalidArgumentException;
 import com.google.api.gax.rpc.StatusCode;
 import com.google.api.gax.rpc.testing.FakeStatusCode;
+import com.google.api.resourcenames.ResourceName;
 import com.google.cloud.bigquery.analyticshub.v1.stub.HttpJsonAnalyticsHubServiceStub;
 import com.google.common.collect.Lists;
 import com.google.iam.v1.AuditConfig;
@@ -39,13 +42,18 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.protobuf.Any;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -250,6 +258,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setDocumentation("documentation1587405498")
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
+            .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -300,6 +309,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setDocumentation("documentation1587405498")
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
+            .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -350,6 +360,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setDocumentation("documentation1587405498")
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
+            .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -402,6 +413,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setDocumentation("documentation1587405498")
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
+            .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -454,6 +466,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setDocumentation("documentation1587405498")
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
+            .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -466,6 +479,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .setDocumentation("documentation1587405498")
             .setListingCount(-1101038700)
             .setIcon(ByteString.EMPTY)
+            .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -504,6 +518,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
               .setDocumentation("documentation1587405498")
               .setListingCount(-1101038700)
               .setIcon(ByteString.EMPTY)
+              .setSharingEnvironmentConfig(SharingEnvironmentConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDataExchange(dataExchange, updateMask);
@@ -710,6 +725,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .addAllCategories(new ArrayList<Listing.Category>())
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
+            .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -765,6 +781,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .addAllCategories(new ArrayList<Listing.Category>())
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
+            .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -822,6 +839,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .addAllCategories(new ArrayList<Listing.Category>())
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
+            .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -879,6 +897,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .addAllCategories(new ArrayList<Listing.Category>())
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
+            .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -937,6 +956,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .addAllCategories(new ArrayList<Listing.Category>())
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
+            .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -954,6 +974,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
             .addAllCategories(new ArrayList<Listing.Category>())
             .setPublisher(Publisher.newBuilder().build())
             .setRequestAccess("requestAccess871967955")
+            .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -997,6 +1018,7 @@ public class AnalyticsHubServiceClientHttpJsonTest {
               .addAllCategories(new ArrayList<Listing.Category>())
               .setPublisher(Publisher.newBuilder().build())
               .setRequestAccess("requestAccess871967955")
+              .setRestrictedExportConfig(Listing.RestrictedExportConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateListing(listing, updateMask);
@@ -1090,7 +1112,10 @@ public class AnalyticsHubServiceClientHttpJsonTest {
 
   @Test
   public void subscribeListingTest() throws Exception {
-    SubscribeListingResponse expectedResponse = SubscribeListingResponse.newBuilder().build();
+    SubscribeListingResponse expectedResponse =
+        SubscribeListingResponse.newBuilder()
+            .setSubscription(Subscription.newBuilder().build())
+            .build();
     mockService.addResponse(expectedResponse);
 
     ListingName name = ListingName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[LISTING]");
@@ -1131,7 +1156,10 @@ public class AnalyticsHubServiceClientHttpJsonTest {
 
   @Test
   public void subscribeListingTest2() throws Exception {
-    SubscribeListingResponse expectedResponse = SubscribeListingResponse.newBuilder().build();
+    SubscribeListingResponse expectedResponse =
+        SubscribeListingResponse.newBuilder()
+            .setSubscription(Subscription.newBuilder().build())
+            .build();
     mockService.addResponse(expectedResponse);
 
     String name =
@@ -1169,6 +1197,680 @@ public class AnalyticsHubServiceClientHttpJsonTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void subscribeDataExchangeTest() throws Exception {
+    SubscribeDataExchangeResponse expectedResponse =
+        SubscribeDataExchangeResponse.newBuilder()
+            .setSubscription(Subscription.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("subscribeDataExchangeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    DataExchangeName name = DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]");
+
+    SubscribeDataExchangeResponse actualResponse = client.subscribeDataExchangeAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void subscribeDataExchangeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DataExchangeName name = DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]");
+      client.subscribeDataExchangeAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void subscribeDataExchangeTest2() throws Exception {
+    SubscribeDataExchangeResponse expectedResponse =
+        SubscribeDataExchangeResponse.newBuilder()
+            .setSubscription(Subscription.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("subscribeDataExchangeTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-1196/locations/location-1196/dataExchanges/dataExchange-1196";
+
+    SubscribeDataExchangeResponse actualResponse = client.subscribeDataExchangeAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void subscribeDataExchangeExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-1196/locations/location-1196/dataExchanges/dataExchange-1196";
+      client.subscribeDataExchangeAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void refreshSubscriptionTest() throws Exception {
+    RefreshSubscriptionResponse expectedResponse =
+        RefreshSubscriptionResponse.newBuilder()
+            .setSubscription(Subscription.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("refreshSubscriptionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    SubscriptionName name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]");
+
+    RefreshSubscriptionResponse actualResponse = client.refreshSubscriptionAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void refreshSubscriptionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SubscriptionName name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]");
+      client.refreshSubscriptionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void refreshSubscriptionTest2() throws Exception {
+    RefreshSubscriptionResponse expectedResponse =
+        RefreshSubscriptionResponse.newBuilder()
+            .setSubscription(Subscription.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("refreshSubscriptionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-7420/locations/location-7420/subscriptions/subscription-7420";
+
+    RefreshSubscriptionResponse actualResponse = client.refreshSubscriptionAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void refreshSubscriptionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-7420/locations/location-7420/subscriptions/subscription-7420";
+      client.refreshSubscriptionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void getSubscriptionTest() throws Exception {
+    Subscription expectedResponse =
+        Subscription.newBuilder()
+            .setName(SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]").toString())
+            .setCreationTime(Timestamp.newBuilder().build())
+            .setLastModifyTime(Timestamp.newBuilder().build())
+            .setOrganizationId("organizationId-927042130")
+            .setOrganizationDisplayName("organizationDisplayName-1353817286")
+            .putAllLinkedDatasetMap(new HashMap<String, Subscription.LinkedResource>())
+            .setSubscriberContact("subscriberContact-847205736")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SubscriptionName name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]");
+
+    Subscription actualResponse = client.getSubscription(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSubscriptionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SubscriptionName name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]");
+      client.getSubscription(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSubscriptionTest2() throws Exception {
+    Subscription expectedResponse =
+        Subscription.newBuilder()
+            .setName(SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]").toString())
+            .setCreationTime(Timestamp.newBuilder().build())
+            .setLastModifyTime(Timestamp.newBuilder().build())
+            .setOrganizationId("organizationId-927042130")
+            .setOrganizationDisplayName("organizationDisplayName-1353817286")
+            .putAllLinkedDatasetMap(new HashMap<String, Subscription.LinkedResource>())
+            .setSubscriberContact("subscriberContact-847205736")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-7420/locations/location-7420/subscriptions/subscription-7420";
+
+    Subscription actualResponse = client.getSubscription(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSubscriptionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-7420/locations/location-7420/subscriptions/subscription-7420";
+      client.getSubscription(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSubscriptionsTest() throws Exception {
+    Subscription responsesElement = Subscription.newBuilder().build();
+    ListSubscriptionsResponse expectedResponse =
+        ListSubscriptionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSubscriptions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListSubscriptionsPagedResponse pagedListResponse = client.listSubscriptions(parent);
+
+    List<Subscription> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSubscriptionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSubscriptionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listSubscriptions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSubscriptionsTest2() throws Exception {
+    Subscription responsesElement = Subscription.newBuilder().build();
+    ListSubscriptionsResponse expectedResponse =
+        ListSubscriptionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSubscriptions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-5833/locations/location-5833";
+
+    ListSubscriptionsPagedResponse pagedListResponse = client.listSubscriptions(parent);
+
+    List<Subscription> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSubscriptionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSubscriptionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-5833/locations/location-5833";
+      client.listSubscriptions(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSharedResourceSubscriptionsTest() throws Exception {
+    Subscription responsesElement = Subscription.newBuilder().build();
+    ListSharedResourceSubscriptionsResponse expectedResponse =
+        ListSharedResourceSubscriptionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSharedResourceSubscriptions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ResourceName resource = DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]");
+
+    ListSharedResourceSubscriptionsPagedResponse pagedListResponse =
+        client.listSharedResourceSubscriptions(resource);
+
+    List<Subscription> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getSharedResourceSubscriptionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSharedResourceSubscriptionsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ResourceName resource = DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]");
+      client.listSharedResourceSubscriptions(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSharedResourceSubscriptionsTest2() throws Exception {
+    Subscription responsesElement = Subscription.newBuilder().build();
+    ListSharedResourceSubscriptionsResponse expectedResponse =
+        ListSharedResourceSubscriptionsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSharedResourceSubscriptions(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String resource =
+        "projects/project-3791/locations/location-3791/dataExchanges/dataExchange-3791";
+
+    ListSharedResourceSubscriptionsPagedResponse pagedListResponse =
+        client.listSharedResourceSubscriptions(resource);
+
+    List<Subscription> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getSharedResourceSubscriptionsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSharedResourceSubscriptionsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String resource =
+          "projects/project-3791/locations/location-3791/dataExchanges/dataExchange-3791";
+      client.listSharedResourceSubscriptions(resource);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void revokeSubscriptionTest() throws Exception {
+    RevokeSubscriptionResponse expectedResponse = RevokeSubscriptionResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    SubscriptionName name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]");
+
+    RevokeSubscriptionResponse actualResponse = client.revokeSubscription(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void revokeSubscriptionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SubscriptionName name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]");
+      client.revokeSubscription(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void revokeSubscriptionTest2() throws Exception {
+    RevokeSubscriptionResponse expectedResponse = RevokeSubscriptionResponse.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "projects/project-7420/locations/location-7420/subscriptions/subscription-7420";
+
+    RevokeSubscriptionResponse actualResponse = client.revokeSubscription(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void revokeSubscriptionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-7420/locations/location-7420/subscriptions/subscription-7420";
+      client.revokeSubscription(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSubscriptionTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteSubscriptionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    SubscriptionName name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]");
+
+    client.deleteSubscriptionAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSubscriptionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SubscriptionName name = SubscriptionName.of("[PROJECT]", "[LOCATION]", "[SUBSCRIPTION]");
+      client.deleteSubscriptionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void deleteSubscriptionTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteSubscriptionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name = "projects/project-7420/locations/location-7420/subscriptions/subscription-7420";
+
+    client.deleteSubscriptionAsync(name).get();
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteSubscriptionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "projects/project-7420/locations/location-7420/subscriptions/subscription-7420";
+      client.deleteSubscriptionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
     }
   }
 

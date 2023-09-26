@@ -27,9 +27,9 @@ public interface UpdateListingRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Field mask specifies the fields to update in the listing resource. The
-   * fields specified in the `updateMask` are relative to the resource and are
-   * not a full request.
+   * Required. Field mask specifies the fields to update in the listing
+   * resource. The fields specified in the `updateMask` are relative to the
+   * resource and are not a full request.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -42,9 +42,9 @@ public interface UpdateListingRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Field mask specifies the fields to update in the listing resource. The
-   * fields specified in the `updateMask` are relative to the resource and are
-   * not a full request.
+   * Required. Field mask specifies the fields to update in the listing
+   * resource. The fields specified in the `updateMask` are relative to the
+   * resource and are not a full request.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];
@@ -57,9 +57,9 @@ public interface UpdateListingRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Field mask specifies the fields to update in the listing resource. The
-   * fields specified in the `updateMask` are relative to the resource and are
-   * not a full request.
+   * Required. Field mask specifies the fields to update in the listing
+   * resource. The fields specified in the `updateMask` are relative to the
+   * resource and are not a full request.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 1 [(.google.api.field_behavior) = REQUIRED];

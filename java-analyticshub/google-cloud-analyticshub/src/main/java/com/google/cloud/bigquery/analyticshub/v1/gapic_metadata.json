@@ -22,6 +22,9 @@
             "DeleteListing": {
               "methods": ["deleteListing", "deleteListing", "deleteListing", "deleteListingCallable"]
             },
+            "DeleteSubscription": {
+              "methods": ["deleteSubscriptionAsync", "deleteSubscriptionAsync", "deleteSubscriptionAsync", "deleteSubscriptionOperationCallable", "deleteSubscriptionCallable"]
+            },
             "GetDataExchange": {
               "methods": ["getDataExchange", "getDataExchange", "getDataExchange", "getDataExchangeCallable"]
             },
@@ -30,6 +33,9 @@
             },
             "GetListing": {
               "methods": ["getListing", "getListing", "getListing", "getListingCallable"]
+            },
+            "GetSubscription": {
+              "methods": ["getSubscription", "getSubscription", "getSubscription", "getSubscriptionCallable"]
             },
             "ListDataExchanges": {
               "methods": ["listDataExchanges", "listDataExchanges", "listDataExchanges", "listDataExchangesPagedCallable", "listDataExchangesCallable"]
@@ -40,8 +46,23 @@
             "ListOrgDataExchanges": {
               "methods": ["listOrgDataExchanges", "listOrgDataExchanges", "listOrgDataExchangesPagedCallable", "listOrgDataExchangesCallable"]
             },
+            "ListSharedResourceSubscriptions": {
+              "methods": ["listSharedResourceSubscriptions", "listSharedResourceSubscriptions", "listSharedResourceSubscriptions", "listSharedResourceSubscriptionsPagedCallable", "listSharedResourceSubscriptionsCallable"]
+            },
+            "ListSubscriptions": {
+              "methods": ["listSubscriptions", "listSubscriptions", "listSubscriptions", "listSubscriptionsPagedCallable", "listSubscriptionsCallable"]
+            },
+            "RefreshSubscription": {
+              "methods": ["refreshSubscriptionAsync", "refreshSubscriptionAsync", "refreshSubscriptionAsync", "refreshSubscriptionOperationCallable", "refreshSubscriptionCallable"]
+            },
+            "RevokeSubscription": {
+              "methods": ["revokeSubscription", "revokeSubscription", "revokeSubscription", "revokeSubscriptionCallable"]
+            },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "SubscribeDataExchange": {
+              "methods": ["subscribeDataExchangeAsync", "subscribeDataExchangeAsync", "subscribeDataExchangeAsync", "subscribeDataExchangeOperationCallable", "subscribeDataExchangeCallable"]
             },
             "SubscribeListing": {
               "methods": ["subscribeListing", "subscribeListing", "subscribeListing", "subscribeListingCallable"]
