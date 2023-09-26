@@ -1,0 +1,45 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.shopping.merchant.inventories.v1beta",
+  "libraryPackage": "com.google.shopping.merchant.inventories.v1beta",
+  "services": {
+    "LocalInventoryService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "LocalInventoryServiceClient",
+          "rpcs": {
+            "DeleteLocalInventory": {
+              "methods": ["deleteLocalInventory", "deleteLocalInventory", "deleteLocalInventory", "deleteLocalInventoryCallable"]
+            },
+            "InsertLocalInventory": {
+              "methods": ["insertLocalInventory", "insertLocalInventoryCallable"]
+            },
+            "ListLocalInventories": {
+              "methods": ["listLocalInventories", "listLocalInventories", "listLocalInventoriesPagedCallable", "listLocalInventoriesCallable"]
+            }
+          }
+        }
+      }
+    },
+    "RegionalInventoryService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RegionalInventoryServiceClient",
+          "rpcs": {
+            "DeleteRegionalInventory": {
+              "methods": ["deleteRegionalInventory", "deleteRegionalInventory", "deleteRegionalInventory", "deleteRegionalInventoryCallable"]
+            },
+            "InsertRegionalInventory": {
+              "methods": ["insertRegionalInventory", "insertRegionalInventoryCallable"]
+            },
+            "ListRegionalInventories": {
+              "methods": ["listRegionalInventories", "listRegionalInventories", "listRegionalInventoriesPagedCallable", "listRegionalInventoriesCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
