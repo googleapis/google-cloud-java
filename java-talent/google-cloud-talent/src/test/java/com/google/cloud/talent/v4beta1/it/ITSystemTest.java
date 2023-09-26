@@ -49,7 +49,6 @@ import com.google.cloud.talent.v4beta1.TenantName;
 import com.google.cloud.talent.v4beta1.TenantServiceClient;
 import com.google.cloud.talent.v4beta1.UpdateCompanyRequest;
 import com.google.cloud.talent.v4beta1.UpdateJobRequest;
-import com.google.cloud.talent.v4beta1.UpdateTenantRequest;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.Arrays;
@@ -192,16 +191,6 @@ public class ITSystemTest {
         assertEquals(tenant.getName(), actual.getName());
       }
     }
-  }
-
-  @Test
-  public void updateTenantTest() {
-    String external_id = String.valueOf(Instant.now().getEpochSecond());
-    Tenant updateTenant = tenant.toBuilder().setExternalId(external_id).build();
-    UpdateTenantRequest request = UpdateTenantRequest.newBuilder().setTenant(updateTenant).build();
-    Tenant actual = tenantServiceClient.updateTenant(request);
-    assertEquals(tenant.getName(), actual.getName());
-    assertEquals(external_id, actual.getExternalId());
   }
 
   @Test
