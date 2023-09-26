@@ -32,7 +32,7 @@ public final class TextToSpeechLongAudioSynthesizeGrpc {
 
   private TextToSpeechLongAudioSynthesizeGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.texttospeech.v1.TextToSpeechLongAudioSynthesize";
 
   // Static method descriptors that strictly reflect the proto.
@@ -352,9 +352,9 @@ public final class TextToSpeechLongAudioSynthesizeGrpc {
   private static final class TextToSpeechLongAudioSynthesizeMethodDescriptorSupplier
       extends TextToSpeechLongAudioSynthesizeBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    TextToSpeechLongAudioSynthesizeMethodDescriptorSupplier(String methodName) {
+    TextToSpeechLongAudioSynthesizeMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

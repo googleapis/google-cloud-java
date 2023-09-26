@@ -33,7 +33,7 @@ public final class CloudTasksGrpc {
 
   private CloudTasksGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.tasks.v2beta2.CloudTasks";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.tasks.v2beta2.CloudTasks";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -3273,9 +3273,9 @@ public final class CloudTasksGrpc {
   private static final class CloudTasksMethodDescriptorSupplier
       extends CloudTasksBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    CloudTasksMethodDescriptorSupplier(String methodName) {
+    CloudTasksMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

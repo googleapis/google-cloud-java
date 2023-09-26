@@ -32,7 +32,8 @@ public final class SecurityCenterGrpc {
 
   private SecurityCenterGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.securitycenter.v1p1beta1.SecurityCenter";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.securitycenter.v1p1beta1.SecurityCenter";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -3045,9 +3046,9 @@ public final class SecurityCenterGrpc {
   private static final class SecurityCenterMethodDescriptorSupplier
       extends SecurityCenterBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    SecurityCenterMethodDescriptorSupplier(String methodName) {
+    SecurityCenterMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

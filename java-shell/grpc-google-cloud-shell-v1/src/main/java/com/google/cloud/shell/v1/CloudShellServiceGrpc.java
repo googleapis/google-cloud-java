@@ -38,7 +38,7 @@ public final class CloudShellServiceGrpc {
 
   private CloudShellServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.shell.v1.CloudShellService";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.shell.v1.CloudShellService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -871,9 +871,9 @@ public final class CloudShellServiceGrpc {
   private static final class CloudShellServiceMethodDescriptorSupplier
       extends CloudShellServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    CloudShellServiceMethodDescriptorSupplier(String methodName) {
+    CloudShellServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

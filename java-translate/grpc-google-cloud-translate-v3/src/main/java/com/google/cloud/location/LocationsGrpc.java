@@ -34,7 +34,7 @@ public final class LocationsGrpc {
 
   private LocationsGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.location.Locations";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.location.Locations";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -458,9 +458,9 @@ public final class LocationsGrpc {
   private static final class LocationsMethodDescriptorSupplier
       extends LocationsBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    LocationsMethodDescriptorSupplier(String methodName) {
+    LocationsMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

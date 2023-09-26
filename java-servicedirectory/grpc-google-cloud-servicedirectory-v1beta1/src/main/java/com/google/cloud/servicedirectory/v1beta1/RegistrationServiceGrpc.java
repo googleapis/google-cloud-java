@@ -43,7 +43,7 @@ public final class RegistrationServiceGrpc {
 
   private RegistrationServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.servicedirectory.v1beta1.RegistrationService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -2416,9 +2416,9 @@ public final class RegistrationServiceGrpc {
   private static final class RegistrationServiceMethodDescriptorSupplier
       extends RegistrationServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    RegistrationServiceMethodDescriptorSupplier(String methodName) {
+    RegistrationServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
