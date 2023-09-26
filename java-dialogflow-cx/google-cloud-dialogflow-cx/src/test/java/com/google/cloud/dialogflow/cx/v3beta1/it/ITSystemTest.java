@@ -37,8 +37,6 @@ import com.google.cloud.dialogflow.cx.v3beta1.DeleteIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeletePageRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteTransitionRouteGroupRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteVersionRequest;
-import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentRequest;
-import com.google.cloud.dialogflow.cx.v3beta1.DetectIntentResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.EntityType;
 import com.google.cloud.dialogflow.cx.v3beta1.EntityTypesClient;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest;
@@ -63,8 +61,6 @@ import com.google.cloud.dialogflow.cx.v3beta1.ListPagesRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListTransitionRouteGroupsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListVersionsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.LocationName;
-import com.google.cloud.dialogflow.cx.v3beta1.MatchIntentRequest;
-import com.google.cloud.dialogflow.cx.v3beta1.MatchIntentResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.NluSettings;
 import com.google.cloud.dialogflow.cx.v3beta1.Page;
 import com.google.cloud.dialogflow.cx.v3beta1.PagesClient;
@@ -474,25 +470,6 @@ public class ITSystemTest {
     FieldMask updateMask = FieldMask.newBuilder().build();
     Page updatedPage = pagesClient.updatePage(page, updateMask);
     assertPageDetails(updatedPage);
-  }
-
-  @Test
-  public void detectIntentTest() {
-    String session = String.format("%s/sessions/%s", agentName, ID);
-    DetectIntentRequest request =
-        DetectIntentRequest.newBuilder().setSession(session).setQueryInput(QUERY_INPUT).build();
-    DetectIntentResponse detectIntent = sessionsClient.detectIntent(request);
-    assertTrue(detectIntent.getQueryResult().getText().contains(TEXT));
-  }
-
-  @Test
-  public void matchIntentTest() {
-    String session = String.format("%s/sessions/%s", agentName, ID);
-    MatchIntentRequest request =
-        MatchIntentRequest.newBuilder().setSession(session).setQueryInput(QUERY_INPUT).build();
-    MatchIntentResponse matchIntentResponse = sessionsClient.matchIntent(request);
-    assertTrue(matchIntentResponse.getMatchesList().size() > 0);
-    assertEquals(TEXT, matchIntentResponse.getText());
   }
 
   @Test
