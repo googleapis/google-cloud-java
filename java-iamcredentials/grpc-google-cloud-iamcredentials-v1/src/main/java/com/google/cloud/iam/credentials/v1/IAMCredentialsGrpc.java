@@ -39,7 +39,7 @@ public final class IAMCredentialsGrpc {
 
   private IAMCredentialsGrpc() {}
 
-  public static final String SERVICE_NAME = "google.iam.credentials.v1.IAMCredentials";
+  public static final java.lang.String SERVICE_NAME = "google.iam.credentials.v1.IAMCredentials";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -743,9 +743,9 @@ public final class IAMCredentialsGrpc {
   private static final class IAMCredentialsMethodDescriptorSupplier
       extends IAMCredentialsBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    IAMCredentialsMethodDescriptorSupplier(String methodName) {
+    IAMCredentialsMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

@@ -32,7 +32,7 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
 
   private EnterpriseKnowledgeGraphServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.enterpriseknowledgegraph.v1.EnterpriseKnowledgeGraphService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -1405,9 +1405,9 @@ public final class EnterpriseKnowledgeGraphServiceGrpc {
   private static final class EnterpriseKnowledgeGraphServiceMethodDescriptorSupplier
       extends EnterpriseKnowledgeGraphServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    EnterpriseKnowledgeGraphServiceMethodDescriptorSupplier(String methodName) {
+    EnterpriseKnowledgeGraphServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

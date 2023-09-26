@@ -32,7 +32,8 @@ public final class DataMigrationServiceGrpc {
 
   private DataMigrationServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.clouddms.v1.DataMigrationService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.clouddms.v1.DataMigrationService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -5240,9 +5241,9 @@ public final class DataMigrationServiceGrpc {
   private static final class DataMigrationServiceMethodDescriptorSupplier
       extends DataMigrationServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DataMigrationServiceMethodDescriptorSupplier(String methodName) {
+    DataMigrationServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

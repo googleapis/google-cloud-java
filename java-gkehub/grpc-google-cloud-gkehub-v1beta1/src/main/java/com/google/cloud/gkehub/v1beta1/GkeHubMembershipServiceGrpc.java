@@ -39,7 +39,8 @@ public final class GkeHubMembershipServiceGrpc {
 
   private GkeHubMembershipServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.gkehub.v1beta1.GkeHubMembershipService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.gkehub.v1beta1.GkeHubMembershipService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1306,9 +1307,9 @@ public final class GkeHubMembershipServiceGrpc {
   private static final class GkeHubMembershipServiceMethodDescriptorSupplier
       extends GkeHubMembershipServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    GkeHubMembershipServiceMethodDescriptorSupplier(String methodName) {
+    GkeHubMembershipServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

@@ -47,7 +47,8 @@ public final class CloudFilestoreManagerGrpc {
 
   private CloudFilestoreManagerGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.filestore.v1.CloudFilestoreManager";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.filestore.v1.CloudFilestoreManager";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -2160,9 +2161,9 @@ public final class CloudFilestoreManagerGrpc {
   private static final class CloudFilestoreManagerMethodDescriptorSupplier
       extends CloudFilestoreManagerBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    CloudFilestoreManagerMethodDescriptorSupplier(String methodName) {
+    CloudFilestoreManagerMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

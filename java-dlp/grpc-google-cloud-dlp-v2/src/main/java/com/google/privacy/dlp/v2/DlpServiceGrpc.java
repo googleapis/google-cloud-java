@@ -39,7 +39,7 @@ public final class DlpServiceGrpc {
 
   private DlpServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.privacy.dlp.v2.DlpService";
+  public static final java.lang.String SERVICE_NAME = "google.privacy.dlp.v2.DlpService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -4529,9 +4529,9 @@ public final class DlpServiceGrpc {
   private static final class DlpServiceMethodDescriptorSupplier
       extends DlpServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DlpServiceMethodDescriptorSupplier(String methodName) {
+    DlpServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

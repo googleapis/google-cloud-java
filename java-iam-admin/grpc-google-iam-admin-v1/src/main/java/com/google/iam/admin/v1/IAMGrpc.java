@@ -54,7 +54,7 @@ public final class IAMGrpc {
 
   private IAMGrpc() {}
 
-  public static final String SERVICE_NAME = "google.iam.admin.v1.IAM";
+  public static final java.lang.String SERVICE_NAME = "google.iam.admin.v1.IAM";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -4251,9 +4251,9 @@ public final class IAMGrpc {
 
   private static final class IAMMethodDescriptorSupplier extends IAMBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    IAMMethodDescriptorSupplier(String methodName) {
+    IAMMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

@@ -32,7 +32,8 @@ public final class CloudFunctionsServiceGrpc {
 
   private CloudFunctionsServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.functions.v1.CloudFunctionsService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.functions.v1.CloudFunctionsService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1631,9 +1632,9 @@ public final class CloudFunctionsServiceGrpc {
   private static final class CloudFunctionsServiceMethodDescriptorSupplier
       extends CloudFunctionsServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    CloudFunctionsServiceMethodDescriptorSupplier(String methodName) {
+    CloudFunctionsServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

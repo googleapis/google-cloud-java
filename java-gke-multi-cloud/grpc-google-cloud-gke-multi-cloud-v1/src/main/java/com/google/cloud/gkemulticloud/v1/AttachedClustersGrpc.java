@@ -34,7 +34,8 @@ public final class AttachedClustersGrpc {
 
   private AttachedClustersGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.gkemulticloud.v1.AttachedClusters";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.gkemulticloud.v1.AttachedClusters";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1306,9 +1307,9 @@ public final class AttachedClustersGrpc {
   private static final class AttachedClustersMethodDescriptorSupplier
       extends AttachedClustersBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    AttachedClustersMethodDescriptorSupplier(String methodName) {
+    AttachedClustersMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
