@@ -2,7 +2,7 @@
   "api_shortname": "telcoautomation",
   "name_pretty": "Telco Automation API",
   "product_documentation": "https://cloud.google.com/telcoautomation/docs/overview",
-  "api_description": "Telecom Network Automation is a Google-managed, \n  cloud implementation of Nephio, a Linux Foundation open source project that \n  can deliver simple, carrier-grade, Kubernetes-based, multi-cloud, \n  multi-vendor, cloud-native intent automation via common automation blueprints.",
+  "api_description": "Telecom Network Automation is a Google-managed, cloud implementation of Nephio, a Linux Foundation open source project that can deliver simple, carrier-grade, Kubernetes-based, multi-cloud, multi-vendor, cloud-native intent automation via common automation blueprints.",
   "client_documentation": "https://cloud.google.com/java/docs/reference/google-cloud-telcoautomation/latest/overview",
   "release_level": "preview",
   "transport": "grpc",
