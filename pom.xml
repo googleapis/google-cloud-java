@@ -111,7 +111,6 @@
     <module>java-maps-routing</module>
     <module>java-mediatranslation</module>
     <module>java-memcache</module>
-    <module>java-merchantapi</module>
     <module>java-migrationcenter</module>
     <module>java-monitoring-dashboards</module>
     <module>java-monitoring-metricsscope</module>
