@@ -34,7 +34,8 @@ public final class BigtableInstanceAdminGrpc {
 
   private BigtableInstanceAdminGrpc() {}
 
-  public static final String SERVICE_NAME = "google.bigtable.admin.v2.BigtableInstanceAdmin";
+  public static final java.lang.String SERVICE_NAME =
+      "google.bigtable.admin.v2.BigtableInstanceAdmin";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -2736,9 +2737,9 @@ public final class BigtableInstanceAdminGrpc {
   private static final class BigtableInstanceAdminMethodDescriptorSupplier
       extends BigtableInstanceAdminBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    BigtableInstanceAdminMethodDescriptorSupplier(String methodName) {
+    BigtableInstanceAdminMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

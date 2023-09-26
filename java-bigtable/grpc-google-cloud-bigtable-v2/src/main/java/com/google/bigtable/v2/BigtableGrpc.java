@@ -32,7 +32,7 @@ public final class BigtableGrpc {
 
   private BigtableGrpc() {}
 
-  public static final String SERVICE_NAME = "google.bigtable.v2.Bigtable";
+  public static final java.lang.String SERVICE_NAME = "google.bigtable.v2.Bigtable";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1256,9 +1256,9 @@ public final class BigtableGrpc {
 
   private static final class BigtableMethodDescriptorSupplier extends BigtableBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    BigtableMethodDescriptorSupplier(String methodName) {
+    BigtableMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
