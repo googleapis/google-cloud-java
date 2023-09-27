@@ -111,7 +111,6 @@
     <module>java-maps-routing</module>
     <module>java-mediatranslation</module>
     <module>java-memcache</module>
-    <module>java-merchantapi</module>
     <module>java-migrationcenter</module>
     <module>java-monitoring-dashboards</module>
     <module>java-monitoring-metricsscope</module>
@@ -152,6 +151,7 @@
     <module>java-service-management</module>
     <module>java-service-usage</module>
     <module>java-shell</module>
+    <module>java-shopping-merchant-inventories</module>
     <module>java-shopping-merchant-reports</module>
     <module>java-speech</module>
     <module>java-storageinsights</module>
