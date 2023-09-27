@@ -680,6 +680,9 @@ proto-google-shopping-merchant-inventories-v1beta:0.0.0:0.0.1-SNAPSHOT
 grpc-google-shopping-merchant-inventories-v1beta:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-policy-troubleshooter-v3:1.23.0:1.24.0-SNAPSHOT
 grpc-google-cloud-policy-troubleshooter-v3:1.23.0:1.24.0-SNAPSHOT
+google-shopping-merchant-reports:0.0.0:0.0.1-SNAPSHOT
+proto-google-shopping-merchant-reports-v1beta:0.0.0:0.0.1-SNAPSHOT
+grpc-google-shopping-merchant-reports-v1beta:0.0.0:0.0.1-SNAPSHOT
 google-cloud-telcoautomation:0.0.0:0.0.1-SNAPSHOT
 proto-google-cloud-telcoautomation-v1alpha1:0.0.0:0.0.1-SNAPSHOT
 grpc-google-cloud-telcoautomation-v1alpha1:0.0.0:0.0.1-SNAPSHOT
