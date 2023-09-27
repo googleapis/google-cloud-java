@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.25.0 (2023-09-27)
+
+### Features
+
+* Update transferConfig.name description to indicate that it supports both formats ([#9824](https://github.com/googleapis/google-cloud-java/issues/9824)) ([6ab58e6](https://github.com/googleapis/google-cloud-java/commit/6ab58e6f2affd10023f3e591a6a23f9e8061e6ec))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.16.0 ([#9866](https://github.com/googleapis/google-cloud-java/issues/9866)) ([aa36b2c](https://github.com/googleapis/google-cloud-java/commit/aa36b2c3c31b817052239fd771a21d20108b2c31))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.16.1 ([#9881](https://github.com/googleapis/google-cloud-java/issues/9881)) ([8a29511](https://github.com/googleapis/google-cloud-java/commit/8a2951166eb0305be040cc0ae38be105c437ba25))
+
+
 ## 2.24.0 (2023-09-11)
 
 ### Dependencies

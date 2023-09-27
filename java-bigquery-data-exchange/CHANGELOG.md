@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.20.0 (2023-09-27)
+
+### Features
+
+* add Subscription resource and RPCs ([#9883](https://github.com/googleapis/google-cloud-java/issues/9883)) ([17a5c8d](https://github.com/googleapis/google-cloud-java/commit/17a5c8de9555166b0e3c22d00f06f7d2249fcc13))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.16.0 ([#9866](https://github.com/googleapis/google-cloud-java/issues/9866)) ([aa36b2c](https://github.com/googleapis/google-cloud-java/commit/aa36b2c3c31b817052239fd771a21d20108b2c31))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.16.1 ([#9881](https://github.com/googleapis/google-cloud-java/issues/9881)) ([8a29511](https://github.com/googleapis/google-cloud-java/commit/8a2951166eb0305be040cc0ae38be105c437ba25))
+
+
 ## 2.19.0 (2023-09-11)
 
 ### Dependencies

@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.29.0 (2023-09-27)
+
+### Features
+
+* added field Processor.processor_version_aliases ([#9863](https://github.com/googleapis/google-cloud-java/issues/9863)) ([848d53c](https://github.com/googleapis/google-cloud-java/commit/848d53c37131e0412e3224f86bcab3746d7f9544))
+* make `page_range` field public ([#9879](https://github.com/googleapis/google-cloud-java/issues/9879)) ([b63a4e5](https://github.com/googleapis/google-cloud-java/commit/b63a4e5eb905c1ea1bdad4cf03b74d9649c29748))
+* update client libraries for Enterprise OCR add-ons ([#9829](https://github.com/googleapis/google-cloud-java/issues/9829)) ([86c71f8](https://github.com/googleapis/google-cloud-java/commit/86c71f88d42c5c42a68e7f81cbf0c04c6fcd6b3d))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.16.0 ([#9866](https://github.com/googleapis/google-cloud-java/issues/9866)) ([aa36b2c](https://github.com/googleapis/google-cloud-java/commit/aa36b2c3c31b817052239fd771a21d20108b2c31))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.16.1 ([#9881](https://github.com/googleapis/google-cloud-java/issues/9881)) ([8a29511](https://github.com/googleapis/google-cloud-java/commit/8a2951166eb0305be040cc0ae38be105c437ba25))
+
+
 ## 2.28.0 (2023-09-11)
 
 ### Dependencies
