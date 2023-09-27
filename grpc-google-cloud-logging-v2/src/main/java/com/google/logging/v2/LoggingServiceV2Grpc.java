@@ -32,7 +32,7 @@ public final class LoggingServiceV2Grpc {
 
   private LoggingServiceV2Grpc() {}
 
-  public static final String SERVICE_NAME = "google.logging.v2.LoggingServiceV2";
+  public static final java.lang.String SERVICE_NAME = "google.logging.v2.LoggingServiceV2";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -938,9 +938,9 @@ public final class LoggingServiceV2Grpc {
   private static final class LoggingServiceV2MethodDescriptorSupplier
       extends LoggingServiceV2BaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    LoggingServiceV2MethodDescriptorSupplier(String methodName) {
+    LoggingServiceV2MethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
