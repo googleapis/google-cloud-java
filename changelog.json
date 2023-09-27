@@ -4,6 +4,472 @@
     {
       "changes": [
         {
+          "type": "docs",
+          "sha": "15733af70f6c19d62042e876c93fc205165b046a",
+          "message": "[cloudbilling] update service documentation",
+          "issues": [
+            "9857"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-billing",
+      "id": "65eb9b80-d9e1-4060-9ade-b18c0fa547e6",
+      "createTime": "2023-09-27T15:16:51.164Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "24ec31f2f588b02b5216a37ea2ef2f866ec47fcd",
+          "message": "[infra-manager] change the config service's Ruby namespace to avoid a collision with a base class in the Ruby client platform",
+          "issues": [
+            "9856"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-infra-manager",
+      "id": "d06969ec-fe8e-41e5-ae57-ea25c25556f8",
+      "createTime": "2023-09-27T15:16:51.159Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "dfd3ddee9e5672a901b217da0a602988762f9a85",
+          "message": "[tpu] added new WAITING_FOR_RESOURCES state for QueuedResourceState",
+          "issues": [
+            "9855"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-tpu",
+      "id": "b8d1362c-a84d-4b49-b54f-52ef84017e7e",
+      "createTime": "2023-09-27T15:16:51.154Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "fa7d67252bb528a3020245680cba5816069b65b5",
+          "message": "[rapidmigrationassessment] update comments",
+          "issues": [
+            "9847"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-rapidmigrationassessment",
+      "id": "9ef9cc1e-77dd-450c-a9d3-62d7268dfb9f",
+      "createTime": "2023-09-27T15:16:51.148Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "9b4dac059922e314c2c465b89ec0673ba09bbf84",
+          "message": "[alloydb] Added enum value for PG15",
+          "issues": [
+            "9845"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-alloydb",
+      "id": "984ca944-ee45-45d7-8320-820bcc756257",
+      "createTime": "2023-09-27T15:16:51.143Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "82ca5cf82205beae8529b025d79379cb2ff17c91",
+          "message": "[migrationcenter] added GenericInsight which exposes generic insights on assets",
+          "issues": [
+            "9843"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-migrationcenter",
+      "id": "260d4c1c-b2dc-46a4-a143-4ed8687a9dce",
+      "createTime": "2023-09-27T15:16:51.139Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "59426b156a78b953a0e6a5505298954299a21930",
+          "message": "[serviceusage] introduce resource class serviceusage.googleapis.com/Service",
+          "issues": [
+            "9841"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-service-usage",
+      "id": "99335c33-6b3a-486b-9971-2156efb15716",
+      "createTime": "2023-09-27T15:16:51.135Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "76f74c8f218f33220e846d777e3ddba8189eb6a6",
+          "message": "[container] add SecurityPostureConfig Enterprise vuln mode to allow customers to enable Advanced Vulnerability Scanning for their clusters",
+          "issues": [
+            "9838"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-container",
+      "id": "56e0e7ec-f56c-4673-b2ea-5b06a8f2afb8",
+      "createTime": "2023-09-27T15:16:51.130Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "47f40312a614c62d22e26cc3fcf35956d3c5d3ff",
+          "message": "[dataproc] add optional parameters (tarball_gcs_dir, diagnosis_interval, jobs, yarn_application_ids) in DiagnoseClusterRequest",
+          "issues": [
+            "9836"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataproc",
+      "id": "9d8f5e70-94c6-43d9-8ecb-f11f018d53f9",
+      "createTime": "2023-09-27T15:16:51.126Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "6ab58e6f2affd10023f3e591a6a23f9e8061e6ec",
+          "message": "[bigquerydatatransfer] Update transferConfig.name description to indicate that it supports both formats",
+          "issues": [
+            "9824"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquerydatatransfer",
+      "id": "229f2963-8bc6-4d51-9e63-b6322be99b45",
+      "createTime": "2023-09-27T15:16:51.121Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "26c3ef423f514d4e98b4952f69117a8302f3daba",
+          "message": "[networkconnectivity] add PolicyBasedRouting APIs",
+          "issues": [
+            "9825"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-networkconnectivity",
+      "id": "729cbf75-f6bf-48d2-8348-c01becb9a2d0",
+      "createTime": "2023-09-27T15:16:51.116Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "d1d5341998158b6eedd980bca7d6089b327d0f00",
+          "message": "[alloydb] add metadata exchange support for AlloyDB beta connectors",
+          "issues": [
+            "9827"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-alloydb-connectors",
+      "id": "dc221e73-ceee-4aeb-957c-c288d339139c",
+      "createTime": "2023-09-27T15:16:51.112Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "deps",
+          "sha": "e094b3182fad9f8d9dbeca2c237d781f643710f5",
+          "message": "Remove gax-grpc from Compute",
+          "issues": [
+            "9864"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-compute",
+      "id": "24d8a37a-e269-428f-b90c-39f8bb870e9f",
+      "createTime": "2023-09-27T15:16:51.108Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "1122185299e33454a588035e450d6e603d84a601",
+          "message": "[run] Adds support for cancel Execution",
+          "issues": [
+            "9880"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-run",
+      "id": "03adb211-488b-4fbc-b1d0-76ac9bb0081c",
+      "createTime": "2023-09-27T15:16:51.103Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "b63a4e5eb905c1ea1bdad4cf03b74d9649c29748",
+          "message": "[documentai] make `page_range` field public",
+          "issues": [
+            "9879"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "848d53c37131e0412e3224f86bcab3746d7f9544",
+          "message": "[documentai] added field Processor.processor_version_aliases",
+          "issues": [
+            "9863"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "86c71f88d42c5c42a68e7f81cbf0c04c6fcd6b3d",
+          "message": "[documentai] update client libraries for Enterprise OCR add-ons",
+          "issues": [
+            "9829"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-document-ai",
+      "id": "4d5f4d44-db2d-48f6-93ed-8d5cd5c0671b",
+      "createTime": "2023-09-27T15:16:51.099Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "00babba91144ca0316e7dec6cad01a91a9aa28a0",
+          "message": "[advisorynotifications] add new RPCs GetSettings, UpdateSettings and new messages Settings, NotificationSettings, GetSettingsRequest, UpdateSettingsRequest",
+          "issues": [
+            "9882"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-advisorynotifications",
+      "id": "36f52de3-eee1-43d1-9422-6c49cd55a194",
+      "createTime": "2023-09-27T15:16:51.095Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "724c6c1835925fa340d95de025bbbb00b7fe2668",
+          "message": "correct regex in `policy-troubleshooter`'s `OwlBot.yaml`",
+          "issues": [
+            "9884"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-policy-troubleshooter",
+      "id": "0135d06b-a758-4f97-aea2-4ce9a3d4e82c",
+      "createTime": "2023-09-27T15:16:51.089Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "8002742584f6153931dd2ceda2b03b3d9a7639b9",
+          "message": "[batch] update batch PD interface support",
+          "issues": [
+            "9888"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-batch",
+      "id": "6e4b5ff3-adba-4daa-8fab-af56c9bcb9ec",
+      "createTime": "2023-09-27T15:16:51.085Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "255469c2d42822b88c58ccd8d17654a2666aa4c4",
+          "message": "add `matched_token_page_indices` field in Document Warehouse API v1",
+          "issues": [
+            "9886"
+          ]
+        },
+        {
+          "type": "feat",
+          "sha": "83a2e008d7b00e1d50f3942b55b242593a1e3a40",
+          "message": "add `ROOT_FOLDER` field to Document Warehouse API v1",
+          "issues": [
+            "9846"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-contentwarehouse",
+      "id": "5ee19c3d-fc5e-4114-a3f1-48cb9adfea11",
+      "createTime": "2023-09-27T15:16:51.081Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "17a5c8de9555166b0e3c22d00f06f7d2249fcc13",
+          "message": "[analyticshub] add Subscription resource and RPCs",
+          "issues": [
+            "9883"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-analyticshub",
+      "id": "a28df491-2687-4fd1-9e49-2b28b615ca1e",
+      "createTime": "2023-09-27T15:16:51.076Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "e09ffe1948e302d870219c657304f65678a10335",
+          "message": "[telcoautomation] new module for telcoautomation",
+          "issues": [
+            "9895"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-telcoautomation",
+      "id": "67741a24-97d4-4408-ab7e-8586adde1bd5",
+      "createTime": "2023-09-27T15:16:51.072Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "abfd6a1da5ad10c3c695a97806006a08eddb3680",
+          "message": "[shopping-merchant-reports] new module for shopping-merchant-reports",
+          "issues": [
+            "9896"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.shopping:google-shopping-merchant-reports",
+      "id": "c35606b0-f33f-44d0-96d9-4f695ecd3ef7",
+      "createTime": "2023-09-27T15:16:51.068Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "8f538eddbb89c2a1ac3872fd209cc70aee18fe0d",
+          "message": "[metastore] added EndpointLocation (v1, v1beta, v1alpha)",
+          "issues": [
+            "9898"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataproc-metastore",
+      "id": "61ddaf00-491a-4479-bf4a-7960b75fbbaf",
+      "createTime": "2023-09-27T15:16:51.062Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "330056f3766c0fd76ee7b851ff853cd3f4eca184",
+          "message": "[datacatalog]Enable Vertex AI Ingestion on DataPlex",
+          "issues": [
+            "9897"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datacatalog",
+      "id": "8c430f50-072d-4f28-93ec-91d067b29289",
+      "createTime": "2023-09-27T15:16:51.058Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "140047e73d507a4a17821620ed96eb9436603017",
+          "message": "[aiplatform] add feature.proto",
+          "issues": [
+            "9899"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-aiplatform",
+      "id": "a1a38f1c-1f6e-4e4b-b414-ac646a774285",
+      "createTime": "2023-09-27T15:16:51.054Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "f26705ef96d976fc55169663b5c5707276c82245",
+          "message": "re-generate merchant inventories under new directory",
+          "issues": [
+            "9901"
+          ]
+        }
+      ],
+      "version": "1.19.0",
+      "language": "JAVA",
+      "artifactName": "com.google.shopping:google-shopping-merchant-inventories",
+      "id": "e9aac992-5db2-4e19-bcab-ed3dc8257ac3",
+      "createTime": "2023-09-27T15:16:51.046Z"
+    },
+    {
+      "changes": [
+        {
           "type": "fix",
           "sha": "84141269f69deef3b57128570e609aacad1428ba",
           "message": "[videostitcher] use correct child_type annotation",
@@ -10581,5 +11047,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2023-09-11T22:14:47.852Z"
+  "updateTime": "2023-09-27T15:16:51.164Z"
 }
