@@ -1,5 +1,5 @@
 {
-  "api_shortname": "shopping-merchant-reports",
+  "api_shortname": "merchantapi",
   "name_pretty": "Merchant API",
   "product_documentation": "https://developers.google.com/merchant/api",
   "api_description": "Programmatically manage your Merchant Center accounts.",
@@ -10,7 +10,7 @@
   "repo": "googleapis/java-shopping-merchant-reports",
   "repo_short": "java-shopping-merchant-reports",
   "distribution_name": "com.google.shopping:google-shopping-merchant-reports",
-  "api_id": "shopping-merchant-reports.googleapis.com",
+  "api_id": "merchantapi.googleapis.com",
   "library_type": "GAPIC_AUTO",
   "requires_billing": true
 }
