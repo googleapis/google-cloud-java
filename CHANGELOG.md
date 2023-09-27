@@ -1,5 +1,25 @@
 # Changelog
 
+## [2.17.2](https://github.com/googleapis/java-datastore/compare/v2.17.1...v2.17.2) (2023-09-26)
+
+
+### Bug Fixes
+
+* Checksum format ([#1178](https://github.com/googleapis/java-datastore/issues/1178)) ([410b939](https://github.com/googleapis/java-datastore/commit/410b9397bb9ba480dff6217c0c4c27364e58db49))
+* Deprecate `databaseId` on datastore-v1-proto-client DatastoreOptions ([#1190](https://github.com/googleapis/java-datastore/issues/1190)) ([12a3d27](https://github.com/googleapis/java-datastore/commit/12a3d27ebc7ca87338ee896fd6ba3e804edd95ce))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.16.0 ([#1195](https://github.com/googleapis/java-datastore/issues/1195)) ([6f0cad7](https://github.com/googleapis/java-datastore/commit/6f0cad7268cee6347d34125c14c1133b80c840d7))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.16.1 ([#1198](https://github.com/googleapis/java-datastore/issues/1198)) ([8062be9](https://github.com/googleapis/java-datastore/commit/8062be94b00fe2967e592f3d0a35751f0d11a013))
+* Update dependency com.google.errorprone:error_prone_core to v2.22.0 ([#1194](https://github.com/googleapis/java-datastore/issues/1194)) ([b8f108a](https://github.com/googleapis/java-datastore/commit/b8f108a3d013b5b54c519db24b40dd63e4855240))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.26 ([#1176](https://github.com/googleapis/java-datastore/issues/1176)) ([76e3a71](https://github.com/googleapis/java-datastore/commit/76e3a71560222894513a485cb91cec7161276e3c))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.27 ([#1192](https://github.com/googleapis/java-datastore/issues/1192)) ([aa3bca1](https://github.com/googleapis/java-datastore/commit/aa3bca10de19350cabc244426ebc284c64cb7344))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.26 ([#1177](https://github.com/googleapis/java-datastore/issues/1177)) ([7733004](https://github.com/googleapis/java-datastore/commit/7733004aff34bb8b4b8addccc68e75080f0f33a5))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.27 ([#1193](https://github.com/googleapis/java-datastore/issues/1193)) ([a628255](https://github.com/googleapis/java-datastore/commit/a628255dffc2e8f871df699ebe7a94e4b75eb4b9))
+* Update gapic-generator-java to 2.26.0 ([#1197](https://github.com/googleapis/java-datastore/issues/1197)) ([2540282](https://github.com/googleapis/java-datastore/commit/2540282653d8f8f06a71568c81eca8d3cb70f00f))
+
 ## [2.17.1](https://github.com/googleapis/java-datastore/compare/v2.17.0...v2.17.1) (2023-09-11)
 
 
