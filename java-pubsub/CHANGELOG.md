@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.125.3](https://github.com/googleapis/java-pubsub/compare/v1.125.2...v1.125.3) (2023-09-27)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-core to v2.24.1 ([#1737](https://github.com/googleapis/java-pubsub/issues/1737)) ([48a4432](https://github.com/googleapis/java-pubsub/commit/48a44321ad34edd8c297ccc57445ec36916171cb))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.16.1 ([#1738](https://github.com/googleapis/java-pubsub/issues/1738)) ([e2cf7c1](https://github.com/googleapis/java-pubsub/commit/e2cf7c110b72dff695a46a972687a595216934e6))
+* Update dependency org.apache.avro:avro to v1.11.3 ([#1740](https://github.com/googleapis/java-pubsub/issues/1740)) ([971b35f](https://github.com/googleapis/java-pubsub/commit/971b35f5d26263ef3c1d83b6282680ac1608c032))
+* Update dependency org.xerial.snappy:snappy-java to v1.1.10.4 [security] ([#1742](https://github.com/googleapis/java-pubsub/issues/1742)) ([70ba500](https://github.com/googleapis/java-pubsub/commit/70ba500cc014cb9d0e1799997aa0682239b97cde))
+* Update dependency org.xerial.snappy:snappy-java to v1.1.10.5 ([#1746](https://github.com/googleapis/java-pubsub/issues/1746)) ([a4b1994](https://github.com/googleapis/java-pubsub/commit/a4b199414cad5cb061330832b2bf2a8bbe76bcbd))
+
 ## [1.125.2](https://github.com/googleapis/java-pubsub/compare/v1.125.1...v1.125.2) (2023-09-18)
 
 
