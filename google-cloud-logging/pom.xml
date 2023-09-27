@@ -84,7 +84,7 @@
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
-      <artifactId>grpc-core</artifactId>
+      <artifactId>grpc-inprocess</artifactId>
     </dependency>
     <dependency>
       <groupId>com.google.cloud</groupId>
