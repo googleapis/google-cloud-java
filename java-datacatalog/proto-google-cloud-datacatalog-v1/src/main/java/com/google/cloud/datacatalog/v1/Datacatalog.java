@@ -116,6 +116,10 @@ public final class Datacatalog {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datacatalog_v1_RoutineSpec_Argument_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datacatalog_v1_DatasetSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datacatalog_v1_DatasetSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datacatalog_v1_SqlDatabaseSystemSpec_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datacatalog_v1_SqlDatabaseSystemSpec_fieldAccessorTable;
@@ -139,6 +143,22 @@ public final class Datacatalog {
       internal_static_google_cloud_datacatalog_v1_ServiceSpec_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_datacatalog_v1_ServiceSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datacatalog_v1_VertexModelSourceInfo_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datacatalog_v1_VertexModelSourceInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datacatalog_v1_VertexModelSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datacatalog_v1_VertexModelSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datacatalog_v1_VertexDatasetSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datacatalog_v1_VertexDatasetSpec_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_datacatalog_v1_ModelSpec_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_datacatalog_v1_ModelSpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_datacatalog_v1_BusinessContext_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -356,7 +376,7 @@ public final class Datacatalog {
           + "linked_resource\030\001 \001(\tH\000\022\026\n\014sql_resource\030"
           + "\003 \001(\tH\000\022\036\n\024fully_qualified_name\030\005 \001(\tH\000\022"
           + "\017\n\007project\030\006 \001(\t\022\020\n\010location\030\007 \001(\tB\r\n\013ta"
-          + "rget_name\"\252\017\n\005Entry\022<\n\004name\030\001 \001(\tB.\342A\001\003\372"
+          + "rget_name\"\252\020\n\005Entry\022<\n\004name\030\001 \001(\tB.\342A\001\003\372"
           + "A\'\n%datacatalog.googleapis.com/EntryGrou"
           + "p\022\027\n\017linked_resource\030\t \001(\t\022\034\n\024fully_qual"
           + "ified_name\030\035 \001(\t\0226\n\004type\030\002 \001(\0162&.google."
@@ -383,404 +403,433 @@ public final class Datacatalog {
           + "c\030\033 \001(\01325.google.cloud.datacatalog.v1.Da"
           + "taSourceConnectionSpecH\004\022@\n\014routine_spec"
           + "\030\034 \001(\0132(.google.cloud.datacatalog.v1.Rou"
-          + "tineSpecH\004\022@\n\014fileset_spec\030! \001(\0132(.googl"
-          + "e.cloud.datacatalog.v1.FilesetSpecH\004\022@\n\014"
-          + "service_spec\030* \001(\0132(.google.cloud.dataca"
-          + "talog.v1.ServiceSpecH\004\022\024\n\014display_name\030\003"
-          + " \001(\t\022\023\n\013description\030\004 \001(\t\022F\n\020business_co"
-          + "ntext\030% \001(\0132,.google.cloud.datacatalog.v"
-          + "1.BusinessContext\0223\n\006schema\030\005 \001(\0132#.goog"
-          + "le.cloud.datacatalog.v1.Schema\022O\n\030source"
-          + "_system_timestamps\030\007 \001(\0132-.google.cloud."
-          + "datacatalog.v1.SystemTimestamps\022>\n\014usage"
-          + "_signal\030\r \001(\0132(.google.cloud.datacatalog"
-          + ".v1.UsageSignal\022>\n\006labels\030\016 \003(\0132..google"
-          + ".cloud.datacatalog.v1.Entry.LabelsEntry\022"
-          + "B\n\013data_source\030\024 \001(\0132\'.google.cloud.data"
-          + "catalog.v1.DataSourceB\004\342A\001\003\022L\n\020personal_"
-          + "details\030\032 \001(\0132,.google.cloud.datacatalog"
-          + ".v1.PersonalDetailsB\004\342A\001\003\032-\n\013LabelsEntry"
-          + "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:x\352Au\n d"
-          + "atacatalog.googleapis.com/Entry\022Qproject"
-          + "s/{project}/locations/{location}/entryGr"
-          + "oups/{entry_group}/entries/{entry}B\014\n\nen"
-          + "try_typeB\010\n\006systemB\r\n\013system_specB\013\n\ttyp"
-          + "e_specB\006\n\004spec\"\314\004\n\021DatabaseTableSpec\022F\n\004"
-          + "type\030\001 \001(\01628.google.cloud.datacatalog.v1"
-          + ".DatabaseTableSpec.TableType\022L\n\016dataplex"
-          + "_table\030\002 \001(\0132..google.cloud.datacatalog."
-          + "v1.DataplexTableSpecB\004\342A\001\003\022[\n\022database_v"
-          + "iew_spec\030\003 \001(\0132?.google.cloud.datacatalo"
-          + "g.v1.DatabaseTableSpec.DatabaseViewSpec\032"
-          + "\200\002\n\020DatabaseViewSpec\022[\n\tview_type\030\001 \001(\0162"
-          + "H.google.cloud.datacatalog.v1.DatabaseTa"
-          + "bleSpec.DatabaseViewSpec.ViewType\022\024\n\nbas"
-          + "e_table\030\002 \001(\tH\000\022\023\n\tsql_query\030\003 \001(\tH\000\"O\n\010"
-          + "ViewType\022\031\n\025VIEW_TYPE_UNSPECIFIED\020\000\022\021\n\rS"
-          + "TANDARD_VIEW\020\001\022\025\n\021MATERIALIZED_VIEW\020\002B\023\n"
-          + "\021source_definition\"A\n\tTableType\022\032\n\026TABLE"
-          + "_TYPE_UNSPECIFIED\020\000\022\n\n\006NATIVE\020\001\022\014\n\010EXTER"
-          + "NAL\020\002\"Y\n\013FilesetSpec\022J\n\020dataplex_fileset"
-          + "\030\001 \001(\01320.google.cloud.datacatalog.v1.Dat"
-          + "aplexFilesetSpec\"q\n\030DataSourceConnection"
-          + "Spec\022U\n\030bigquery_connection_spec\030\001 \001(\01323"
-          + ".google.cloud.datacatalog.v1.BigQueryCon"
-          + "nectionSpec\"\303\004\n\013RoutineSpec\022J\n\014routine_t"
-          + "ype\030\001 \001(\01624.google.cloud.datacatalog.v1."
-          + "RoutineSpec.RoutineType\022\020\n\010language\030\002 \001("
-          + "\t\022L\n\021routine_arguments\030\003 \003(\01321.google.cl"
-          + "oud.datacatalog.v1.RoutineSpec.Argument\022"
-          + "\023\n\013return_type\030\004 \001(\t\022\027\n\017definition_body\030"
-          + "\005 \001(\t\022Q\n\025bigquery_routine_spec\030\006 \001(\01320.g"
-          + "oogle.cloud.datacatalog.v1.BigQueryRouti"
-          + "neSpecH\000\032\246\001\n\010Argument\022\014\n\004name\030\001 \001(\t\022D\n\004m"
-          + "ode\030\002 \001(\01626.google.cloud.datacatalog.v1."
-          + "RoutineSpec.Argument.Mode\022\014\n\004type\030\003 \001(\t\""
-          + "8\n\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\006\n\002IN\020\001\022\007\n"
-          + "\003OUT\020\002\022\t\n\005INOUT\020\003\"O\n\013RoutineType\022\034\n\030ROUT"
-          + "INE_TYPE_UNSPECIFIED\020\000\022\023\n\017SCALAR_FUNCTIO"
-          + "N\020\001\022\r\n\tPROCEDURE\020\002B\r\n\013system_spec\"\\\n\025Sql"
-          + "DatabaseSystemSpec\022\022\n\nsql_engine\030\001 \001(\t\022\030"
-          + "\n\020database_version\030\002 \001(\t\022\025\n\rinstance_hos"
-          + "t\030\003 \001(\t\"\312\001\n\020LookerSystemSpec\022\032\n\022parent_i"
-          + "nstance_id\030\001 \001(\t\022$\n\034parent_instance_disp"
-          + "lay_name\030\002 \001(\t\022\027\n\017parent_model_id\030\003 \001(\t\022"
-          + "!\n\031parent_model_display_name\030\004 \001(\t\022\026\n\016pa"
-          + "rent_view_id\030\005 \001(\t\022 \n\030parent_view_displa"
-          + "y_name\030\006 \001(\t\"8\n\027CloudBigtableSystemSpec\022"
-          + "\035\n\025instance_display_name\030\001 \001(\t\"\375\001\n\031Cloud"
-          + "BigtableInstanceSpec\022u\n\034cloud_bigtable_c"
-          + "luster_specs\030\001 \003(\0132O.google.cloud.dataca"
-          + "talog.v1.CloudBigtableInstanceSpec.Cloud"
-          + "BigtableClusterSpec\032i\n\030CloudBigtableClus"
-          + "terSpec\022\024\n\014display_name\030\001 \001(\t\022\020\n\010locatio"
-          + "n\030\002 \001(\t\022\014\n\004type\030\003 \001(\t\022\027\n\017linked_resource"
-          + "\030\004 \001(\t\"|\n\013ServiceSpec\022^\n\034cloud_bigtable_"
-          + "instance_spec\030\001 \001(\01326.google.cloud.datac"
-          + "atalog.v1.CloudBigtableInstanceSpecH\000B\r\n"
-          + "\013system_spec\"\216\001\n\017BusinessContext\022B\n\016entr"
-          + "y_overview\030\001 \001(\0132*.google.cloud.datacata"
-          + "log.v1.EntryOverview\0227\n\010contacts\030\002 \001(\0132%"
-          + ".google.cloud.datacatalog.v1.Contacts\"!\n"
-          + "\rEntryOverview\022\020\n\010overview\030\001 \001(\t\"v\n\010Cont"
-          + "acts\022<\n\006people\030\001 \003(\0132,.google.cloud.data"
-          + "catalog.v1.Contacts.Person\032,\n\006Person\022\023\n\013"
-          + "designation\030\001 \001(\t\022\r\n\005email\030\002 \001(\t\"\212\002\n\nEnt"
-          + "ryGroup\022\014\n\004name\030\001 \001(\t\022\024\n\014display_name\030\002 "
-          + "\001(\t\022\023\n\013description\030\003 \001(\t\022T\n\027data_catalog"
-          + "_timestamps\030\004 \001(\0132-.google.cloud.datacat"
-          + "alog.v1.SystemTimestampsB\004\342A\001\003:m\352Aj\n%dat"
-          + "acatalog.googleapis.com/EntryGroup\022Aproj"
-          + "ects/{project}/locations/{location}/entr"
-          + "yGroups/{entry_group}\"\300\001\n\030CreateTagTempl"
-          + "ateRequest\022?\n\006parent\030\001 \001(\tB/\342A\001\002\372A(\022&dat"
-          + "acatalog.googleapis.com/TagTemplate\022\035\n\017t"
-          + "ag_template_id\030\003 \001(\tB\004\342A\001\002\022D\n\014tag_templa"
-          + "te\030\002 \001(\0132(.google.cloud.datacatalog.v1.T"
-          + "agTemplateB\004\342A\001\002\"V\n\025GetTagTemplateReques"
-          + "t\022=\n\004name\030\001 \001(\tB/\342A\001\002\372A(\n&datacatalog.go"
-          + "ogleapis.com/TagTemplate\"\221\001\n\030UpdateTagTe"
-          + "mplateRequest\022D\n\014tag_template\030\001 \001(\0132(.go"
-          + "ogle.cloud.datacatalog.v1.TagTemplateB\004\342"
-          + "A\001\002\022/\n\013update_mask\030\002 \001(\0132\032.google.protob"
-          + "uf.FieldMask\"n\n\030DeleteTagTemplateRequest"
-          + "\022=\n\004name\030\001 \001(\tB/\342A\001\002\372A(\n&datacatalog.goo"
-          + "gleapis.com/TagTemplate\022\023\n\005force\030\002 \001(\010B\004"
-          + "\342A\001\002\"\200\001\n\020CreateTagRequest\0227\n\006parent\030\001 \001("
-          + "\tB\'\342A\001\002\372A \022\036datacatalog.googleapis.com/T"
-          + "ag\0223\n\003tag\030\002 \001(\0132 .google.cloud.datacatal"
-          + "og.v1.TagB\004\342A\001\002\"x\n\020UpdateTagRequest\0223\n\003t"
-          + "ag\030\001 \001(\0132 .google.cloud.datacatalog.v1.T"
-          + "agB\004\342A\001\002\022/\n\013update_mask\030\002 \001(\0132\032.google.p"
-          + "rotobuf.FieldMask\"I\n\020DeleteTagRequest\0225\n"
-          + "\004name\030\001 \001(\tB\'\342A\001\002\372A \022\036datacatalog.google"
-          + "apis.com/Tag\"\326\001\n\035CreateTagTemplateFieldR"
-          + "equest\022?\n\006parent\030\001 \001(\tB/\342A\001\002\372A(\n&datacat"
-          + "alog.googleapis.com/TagTemplate\022#\n\025tag_t"
-          + "emplate_field_id\030\002 \001(\tB\004\342A\001\002\022O\n\022tag_temp"
-          + "late_field\030\003 \001(\0132-.google.cloud.datacata"
-          + "log.v1.TagTemplateFieldB\004\342A\001\002\"\353\001\n\035Update"
-          + "TagTemplateFieldRequest\022B\n\004name\030\001 \001(\tB4\342"
-          + "A\001\002\372A-\n+datacatalog.googleapis.com/TagTe"
-          + "mplateField\022O\n\022tag_template_field\030\002 \001(\0132"
-          + "-.google.cloud.datacatalog.v1.TagTemplat"
-          + "eFieldB\004\342A\001\002\0225\n\013update_mask\030\003 \001(\0132\032.goog"
-          + "le.protobuf.FieldMaskB\004\342A\001\001\"\214\001\n\035RenameTa"
-          + "gTemplateFieldRequest\022B\n\004name\030\001 \001(\tB4\342A\001"
-          + "\002\372A-\n+datacatalog.googleapis.com/TagTemp"
-          + "lateField\022\'\n\031new_tag_template_field_id\030\002"
-          + " \001(\tB\004\342A\001\002\"\240\001\n&RenameTagTemplateFieldEnu"
-          + "mValueRequest\022K\n\004name\030\001 \001(\tB=\342A\001\002\372A6\n4da"
-          + "tacatalog.googleapis.com/TagTemplateFiel"
-          + "dEnumValue\022)\n\033new_enum_value_display_nam"
-          + "e\030\002 \001(\tB\004\342A\001\002\"x\n\035DeleteTagTemplateFieldR"
-          + "equest\022B\n\004name\030\001 \001(\tB4\342A\001\002\372A-\n+datacatal"
-          + "og.googleapis.com/TagTemplateField\022\023\n\005fo"
-          + "rce\030\002 \001(\010B\004\342A\001\002\"q\n\017ListTagsRequest\0227\n\006pa"
-          + "rent\030\001 \001(\tB\'\342A\001\002\372A \022\036datacatalog.googlea"
-          + "pis.com/Tag\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_t"
-          + "oken\030\003 \001(\t\"[\n\020ListTagsResponse\022.\n\004tags\030\001"
-          + " \003(\0132 .google.cloud.datacatalog.v1.Tag\022\027"
-          + "\n\017next_page_token\030\002 \001(\t\"\346\001\n\024ReconcileTag"
-          + "sRequest\0229\n\006parent\030\001 \001(\tB)\342A\001\002\372A\"\n datac"
-          + "atalog.googleapis.com/Entry\022E\n\014tag_templ"
-          + "ate\030\002 \001(\tB/\342A\001\002\372A(\n&datacatalog.googleap"
-          + "is.com/TagTemplate\022\034\n\024force_delete_missi"
-          + "ng\030\003 \001(\010\022.\n\004tags\030\004 \003(\0132 .google.cloud.da"
-          + "tacatalog.v1.Tag\"k\n\025ReconcileTagsRespons"
-          + "e\022\032\n\022created_tags_count\030\001 \001(\003\022\032\n\022updated"
-          + "_tags_count\030\002 \001(\003\022\032\n\022deleted_tags_count\030"
-          + "\003 \001(\003\"\223\003\n\025ReconcileTagsMetadata\022U\n\005state"
-          + "\030\001 \001(\0162F.google.cloud.datacatalog.v1.Rec"
-          + "oncileTagsMetadata.ReconciliationState\022N"
-          + "\n\006errors\030\002 \003(\0132>.google.cloud.datacatalo"
-          + "g.v1.ReconcileTagsMetadata.ErrorsEntry\032A"
-          + "\n\013ErrorsEntry\022\013\n\003key\030\001 \001(\t\022!\n\005value\030\002 \001("
-          + "\0132\022.google.rpc.Status:\0028\001\"\217\001\n\023Reconcilia"
-          + "tionState\022$\n RECONCILIATION_STATE_UNSPEC"
-          + "IFIED\020\000\022\031\n\025RECONCILIATION_QUEUED\020\001\022\036\n\032RE"
-          + "CONCILIATION_IN_PROGRESS\020\002\022\027\n\023RECONCILIA"
-          + "TION_DONE\020\003\"\252\001\n\022ListEntriesRequest\022>\n\006pa"
-          + "rent\030\001 \001(\tB.\342A\001\002\372A\'\n%datacatalog.googlea"
-          + "pis.com/EntryGroup\022\021\n\tpage_size\030\002 \001(\005\022\022\n"
-          + "\npage_token\030\003 \001(\t\022-\n\tread_mask\030\004 \001(\0132\032.g"
-          + "oogle.protobuf.FieldMask\"c\n\023ListEntriesR"
-          + "esponse\0223\n\007entries\030\001 \003(\0132\".google.cloud."
-          + "datacatalog.v1.Entry\022\027\n\017next_page_token\030"
-          + "\002 \001(\t\"K\n\020StarEntryRequest\0227\n\004name\030\001 \001(\tB"
-          + ")\342A\001\002\372A\"\n datacatalog.googleapis.com/Ent"
-          + "ry\"\023\n\021StarEntryResponse\"M\n\022UnstarEntryRe"
-          + "quest\0227\n\004name\030\001 \001(\tB)\342A\001\002\372A\"\n datacatalo"
-          + "g.googleapis.com/Entry\"\025\n\023UnstarEntryRes"
-          + "ponse\"\214\001\n\024ImportEntriesRequest\0229\n\006parent"
-          + "\030\001 \001(\tB)\342A\001\002\372A\"\022 datacatalog.googleapis."
-          + "com/Entry\022\031\n\017gcs_bucket_path\030\002 \001(\tH\000\022\024\n\006"
-          + "job_id\030\003 \001(\tB\004\342A\001\001B\010\n\006source\"\225\001\n\025ImportE"
-          + "ntriesResponse\022#\n\026upserted_entries_count"
-          + "\030\005 \001(\003H\000\210\001\001\022\"\n\025deleted_entries_count\030\006 \001"
-          + "(\003H\001\210\001\001B\031\n\027_upserted_entries_countB\030\n\026_d"
-          + "eleted_entries_count\"\210\002\n\025ImportEntriesMe"
-          + "tadata\022M\n\005state\030\001 \001(\0162>.google.cloud.dat"
-          + "acatalog.v1.ImportEntriesMetadata.Import"
-          + "State\022\"\n\006errors\030\002 \003(\0132\022.google.rpc.Statu"
-          + "s\"|\n\013ImportState\022\034\n\030IMPORT_STATE_UNSPECI"
-          + "FIED\020\000\022\021\n\rIMPORT_QUEUED\020\001\022\026\n\022IMPORT_IN_P"
-          + "ROGRESS\020\002\022\017\n\013IMPORT_DONE\020\003\022\023\n\017IMPORT_OBS"
-          + "OLETE\020\004\"\237\001\n\032ModifyEntryOverviewRequest\0227"
-          + "\n\004name\030\001 \001(\tB)\342A\001\002\372A\"\n datacatalog.googl"
-          + "eapis.com/Entry\022H\n\016entry_overview\030\002 \001(\0132"
+          + "tineSpecH\004\022@\n\014dataset_spec\030  \001(\0132(.googl"
+          + "e.cloud.datacatalog.v1.DatasetSpecH\004\022@\n\014"
+          + "fileset_spec\030! \001(\0132(.google.cloud.dataca"
+          + "talog.v1.FilesetSpecH\004\022@\n\014service_spec\030*"
+          + " \001(\0132(.google.cloud.datacatalog.v1.Servi"
+          + "ceSpecH\004\022<\n\nmodel_spec\030+ \001(\0132&.google.cl"
+          + "oud.datacatalog.v1.ModelSpecH\004\022\024\n\014displa"
+          + "y_name\030\003 \001(\t\022\023\n\013description\030\004 \001(\t\022F\n\020bus"
+          + "iness_context\030% \001(\0132,.google.cloud.datac"
+          + "atalog.v1.BusinessContext\0223\n\006schema\030\005 \001("
+          + "\0132#.google.cloud.datacatalog.v1.Schema\022O"
+          + "\n\030source_system_timestamps\030\007 \001(\0132-.googl"
+          + "e.cloud.datacatalog.v1.SystemTimestamps\022"
+          + ">\n\014usage_signal\030\r \001(\0132(.google.cloud.dat"
+          + "acatalog.v1.UsageSignal\022>\n\006labels\030\016 \003(\0132"
+          + "..google.cloud.datacatalog.v1.Entry.Labe"
+          + "lsEntry\022B\n\013data_source\030\024 \001(\0132\'.google.cl"
+          + "oud.datacatalog.v1.DataSourceB\004\342A\001\003\022L\n\020p"
+          + "ersonal_details\030\032 \001(\0132,.google.cloud.dat"
+          + "acatalog.v1.PersonalDetailsB\004\342A\001\003\032-\n\013Lab"
+          + "elsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
+          + ":x\352Au\n datacatalog.googleapis.com/Entry\022"
+          + "Qprojects/{project}/locations/{location}"
+          + "/entryGroups/{entry_group}/entries/{entr"
+          + "y}B\014\n\nentry_typeB\010\n\006systemB\r\n\013system_spe"
+          + "cB\013\n\ttype_specB\006\n\004spec\"\314\004\n\021DatabaseTable"
+          + "Spec\022F\n\004type\030\001 \001(\01628.google.cloud.dataca"
+          + "talog.v1.DatabaseTableSpec.TableType\022L\n\016"
+          + "dataplex_table\030\002 \001(\0132..google.cloud.data"
+          + "catalog.v1.DataplexTableSpecB\004\342A\001\003\022[\n\022da"
+          + "tabase_view_spec\030\003 \001(\0132?.google.cloud.da"
+          + "tacatalog.v1.DatabaseTableSpec.DatabaseV"
+          + "iewSpec\032\200\002\n\020DatabaseViewSpec\022[\n\tview_typ"
+          + "e\030\001 \001(\0162H.google.cloud.datacatalog.v1.Da"
+          + "tabaseTableSpec.DatabaseViewSpec.ViewTyp"
+          + "e\022\024\n\nbase_table\030\002 \001(\tH\000\022\023\n\tsql_query\030\003 \001"
+          + "(\tH\000\"O\n\010ViewType\022\031\n\025VIEW_TYPE_UNSPECIFIE"
+          + "D\020\000\022\021\n\rSTANDARD_VIEW\020\001\022\025\n\021MATERIALIZED_V"
+          + "IEW\020\002B\023\n\021source_definition\"A\n\tTableType\022"
+          + "\032\n\026TABLE_TYPE_UNSPECIFIED\020\000\022\n\n\006NATIVE\020\001\022"
+          + "\014\n\010EXTERNAL\020\002\"Y\n\013FilesetSpec\022J\n\020dataplex"
+          + "_fileset\030\001 \001(\01320.google.cloud.datacatalo"
+          + "g.v1.DataplexFilesetSpec\"q\n\030DataSourceCo"
+          + "nnectionSpec\022U\n\030bigquery_connection_spec"
+          + "\030\001 \001(\01323.google.cloud.datacatalog.v1.Big"
+          + "QueryConnectionSpec\"\303\004\n\013RoutineSpec\022J\n\014r"
+          + "outine_type\030\001 \001(\01624.google.cloud.datacat"
+          + "alog.v1.RoutineSpec.RoutineType\022\020\n\010langu"
+          + "age\030\002 \001(\t\022L\n\021routine_arguments\030\003 \003(\01321.g"
+          + "oogle.cloud.datacatalog.v1.RoutineSpec.A"
+          + "rgument\022\023\n\013return_type\030\004 \001(\t\022\027\n\017definiti"
+          + "on_body\030\005 \001(\t\022Q\n\025bigquery_routine_spec\030\006"
+          + " \001(\01320.google.cloud.datacatalog.v1.BigQu"
+          + "eryRoutineSpecH\000\032\246\001\n\010Argument\022\014\n\004name\030\001 "
+          + "\001(\t\022D\n\004mode\030\002 \001(\01626.google.cloud.datacat"
+          + "alog.v1.RoutineSpec.Argument.Mode\022\014\n\004typ"
+          + "e\030\003 \001(\t\"8\n\004Mode\022\024\n\020MODE_UNSPECIFIED\020\000\022\006\n"
+          + "\002IN\020\001\022\007\n\003OUT\020\002\022\t\n\005INOUT\020\003\"O\n\013RoutineType"
+          + "\022\034\n\030ROUTINE_TYPE_UNSPECIFIED\020\000\022\023\n\017SCALAR"
+          + "_FUNCTION\020\001\022\r\n\tPROCEDURE\020\002B\r\n\013system_spe"
+          + "c\"k\n\013DatasetSpec\022M\n\023vertex_dataset_spec\030"
+          + "\002 \001(\0132..google.cloud.datacatalog.v1.Vert"
+          + "exDatasetSpecH\000B\r\n\013system_spec\"\\\n\025SqlDat"
+          + "abaseSystemSpec\022\022\n\nsql_engine\030\001 \001(\t\022\030\n\020d"
+          + "atabase_version\030\002 \001(\t\022\025\n\rinstance_host\030\003"
+          + " \001(\t\"\312\001\n\020LookerSystemSpec\022\032\n\022parent_inst"
+          + "ance_id\030\001 \001(\t\022$\n\034parent_instance_display"
+          + "_name\030\002 \001(\t\022\027\n\017parent_model_id\030\003 \001(\t\022!\n\031"
+          + "parent_model_display_name\030\004 \001(\t\022\026\n\016paren"
+          + "t_view_id\030\005 \001(\t\022 \n\030parent_view_display_n"
+          + "ame\030\006 \001(\t\"8\n\027CloudBigtableSystemSpec\022\035\n\025"
+          + "instance_display_name\030\001 \001(\t\"\375\001\n\031CloudBig"
+          + "tableInstanceSpec\022u\n\034cloud_bigtable_clus"
+          + "ter_specs\030\001 \003(\0132O.google.cloud.datacatal"
+          + "og.v1.CloudBigtableInstanceSpec.CloudBig"
+          + "tableClusterSpec\032i\n\030CloudBigtableCluster"
+          + "Spec\022\024\n\014display_name\030\001 \001(\t\022\020\n\010location\030\002"
+          + " \001(\t\022\014\n\004type\030\003 \001(\t\022\027\n\017linked_resource\030\004 "
+          + "\001(\t\"|\n\013ServiceSpec\022^\n\034cloud_bigtable_ins"
+          + "tance_spec\030\001 \001(\01326.google.cloud.datacata"
+          + "log.v1.CloudBigtableInstanceSpecH\000B\r\n\013sy"
+          + "stem_spec\"\350\001\n\025VertexModelSourceInfo\022W\n\013s"
+          + "ource_type\030\001 \001(\0162B.google.cloud.datacata"
+          + "log.v1.VertexModelSourceInfo.ModelSource"
+          + "Type\022\014\n\004copy\030\002 \001(\010\"h\n\017ModelSourceType\022!\n"
+          + "\035MODEL_SOURCE_TYPE_UNSPECIFIED\020\000\022\n\n\006AUTO"
+          + "ML\020\001\022\n\n\006CUSTOM\020\002\022\010\n\004BQML\020\003\022\020\n\014MODEL_GARD"
+          + "EN\020\004\"\316\001\n\017VertexModelSpec\022\022\n\nversion_id\030\001"
+          + " \001(\t\022\027\n\017version_aliases\030\002 \003(\t\022\033\n\023version"
+          + "_description\030\003 \001(\t\022T\n\030vertex_model_sourc"
+          + "e_info\030\004 \001(\01322.google.cloud.datacatalog."
+          + "v1.VertexModelSourceInfo\022\033\n\023container_im"
+          + "age_uri\030\005 \001(\t\"\344\002\n\021VertexDatasetSpec\022\027\n\017d"
+          + "ata_item_count\030\001 \001(\003\022J\n\tdata_type\030\002 \001(\0162"
+          + "7.google.cloud.datacatalog.v1.VertexData"
+          + "setSpec.DataType\"\351\001\n\010DataType\022\031\n\025DATA_TY"
+          + "PE_UNSPECIFIED\020\000\022\t\n\005TABLE\020\001\022\t\n\005IMAGE\020\002\022\010"
+          + "\n\004TEXT\020\003\022\t\n\005VIDEO\020\004\022\020\n\014CONVERSATION\020\005\022\017\n"
+          + "\013TIME_SERIES\020\006\022\014\n\010DOCUMENT\020\007\022\022\n\016TEXT_TO_"
+          + "SPEECH\020\010\022\017\n\013TRANSLATION\020\t\022\020\n\014STORE_VISIO"
+          + "N\020\n\022\036\n\032ENTERPRISE_KNOWLEDGE_GRAPH\020\013\022\017\n\013T"
+          + "EXT_PROMPT\020\014\"e\n\tModelSpec\022I\n\021vertex_mode"
+          + "l_spec\030\001 \001(\0132,.google.cloud.datacatalog."
+          + "v1.VertexModelSpecH\000B\r\n\013system_spec\"\216\001\n\017"
+          + "BusinessContext\022B\n\016entry_overview\030\001 \001(\0132"
           + "*.google.cloud.datacatalog.v1.EntryOverv"
-          + "iewB\004\342A\001\002\"\224\001\n\032ModifyEntryContactsRequest"
-          + "\0227\n\004name\030\001 \001(\tB)\342A\001\002\372A\"\n datacatalog.goo"
-          + "gleapis.com/Entry\022=\n\010contacts\030\002 \001(\0132%.go"
-          + "ogle.cloud.datacatalog.v1.ContactsB\004\342A\001\002"
-          + "*\373\001\n\tEntryType\022\032\n\026ENTRY_TYPE_UNSPECIFIED"
-          + "\020\000\022\t\n\005TABLE\020\002\022\t\n\005MODEL\020\005\022\017\n\013DATA_STREAM\020"
-          + "\003\022\013\n\007FILESET\020\004\022\013\n\007CLUSTER\020\006\022\014\n\010DATABASE\020"
-          + "\007\022\032\n\026DATA_SOURCE_CONNECTION\020\010\022\013\n\007ROUTINE"
-          + "\020\t\022\010\n\004LAKE\020\n\022\010\n\004ZONE\020\013\022\013\n\007SERVICE\020\016\022\023\n\017D"
-          + "ATABASE_SCHEMA\020\017\022\r\n\tDASHBOARD\020\020\022\013\n\007EXPLO"
-          + "RE\020\021\022\010\n\004LOOK\020\0222\300;\n\013DataCatalog\022\243\001\n\rSearc"
-          + "hCatalog\0221.google.cloud.datacatalog.v1.S"
-          + "earchCatalogRequest\0322.google.cloud.datac"
-          + "atalog.v1.SearchCatalogResponse\"+\332A\013scop"
-          + "e,query\202\323\344\223\002\027\"\022/v1/catalog:search:\001*\022\333\001\n"
-          + "\020CreateEntryGroup\0224.google.cloud.datacat"
-          + "alog.v1.CreateEntryGroupRequest\032\'.google"
-          + ".cloud.datacatalog.v1.EntryGroup\"h\332A!par"
-          + "ent,entry_group_id,entry_group\202\323\344\223\002>\"//v"
-          + "1/{parent=projects/*/locations/*}/entryG"
-          + "roups:\013entry_group\022\274\001\n\rGetEntryGroup\0221.g"
-          + "oogle.cloud.datacatalog.v1.GetEntryGroup"
-          + "Request\032\'.google.cloud.datacatalog.v1.En"
-          + "tryGroup\"O\332A\004name\332A\016name,read_mask\202\323\344\223\0021"
-          + "\022//v1/{name=projects/*/locations/*/entry"
-          + "Groups/*}\022\353\001\n\020UpdateEntryGroup\0224.google."
-          + "cloud.datacatalog.v1.UpdateEntryGroupReq"
-          + "uest\032\'.google.cloud.datacatalog.v1.Entry"
-          + "Group\"x\332A\013entry_group\332A\027entry_group,upda"
-          + "te_mask\202\323\344\223\002J2;/v1/{entry_group.name=pro"
-          + "jects/*/locations/*/entryGroups/*}:\013entr"
-          + "y_group\022\240\001\n\020DeleteEntryGroup\0224.google.cl"
-          + "oud.datacatalog.v1.DeleteEntryGroupReque"
-          + "st\032\026.google.protobuf.Empty\">\332A\004name\202\323\344\223\002"
-          + "1*//v1/{name=projects/*/locations/*/entr"
-          + "yGroups/*}\022\276\001\n\017ListEntryGroups\0223.google."
-          + "cloud.datacatalog.v1.ListEntryGroupsRequ"
-          + "est\0324.google.cloud.datacatalog.v1.ListEn"
-          + "tryGroupsResponse\"@\332A\006parent\202\323\344\223\0021\022//v1/"
-          + "{parent=projects/*/locations/*}/entryGro"
-          + "ups\022\304\001\n\013CreateEntry\022/.google.cloud.datac"
-          + "atalog.v1.CreateEntryRequest\032\".google.cl"
-          + "oud.datacatalog.v1.Entry\"`\332A\025parent,entr"
-          + "y_id,entry\202\323\344\223\002B\"9/v1/{parent=projects/*"
-          + "/locations/*/entryGroups/*}/entries:\005ent"
-          + "ry\022\316\001\n\013UpdateEntry\022/.google.cloud.dataca"
-          + "talog.v1.UpdateEntryRequest\032\".google.clo"
-          + "ud.datacatalog.v1.Entry\"j\332A\005entry\332A\021entr"
-          + "y,update_mask\202\323\344\223\002H2?/v1/{entry.name=pro"
-          + "jects/*/locations/*/entryGroups/*/entrie"
-          + "s/*}:\005entry\022\240\001\n\013DeleteEntry\022/.google.clo"
-          + "ud.datacatalog.v1.DeleteEntryRequest\032\026.g"
-          + "oogle.protobuf.Empty\"H\332A\004name\202\323\344\223\002;*9/v1"
-          + "/{name=projects/*/locations/*/entryGroup"
-          + "s/*/entries/*}\022\246\001\n\010GetEntry\022,.google.clo"
-          + "ud.datacatalog.v1.GetEntryRequest\032\".goog"
-          + "le.cloud.datacatalog.v1.Entry\"H\332A\004name\202\323"
-          + "\344\223\002;\0229/v1/{name=projects/*/locations/*/e"
-          + "ntryGroups/*/entries/*}\022~\n\013LookupEntry\022/"
-          + ".google.cloud.datacatalog.v1.LookupEntry"
-          + "Request\032\".google.cloud.datacatalog.v1.En"
-          + "try\"\032\202\323\344\223\002\024\022\022/v1/entries:lookup\022\274\001\n\013List"
-          + "Entries\022/.google.cloud.datacatalog.v1.Li"
-          + "stEntriesRequest\0320.google.cloud.datacata"
-          + "log.v1.ListEntriesResponse\"J\332A\006parent\202\323\344"
-          + "\223\002;\0229/v1/{parent=projects/*/locations/*/"
-          + "entryGroups/*}/entries\022\324\001\n\023ModifyEntryOv"
-          + "erview\0227.google.cloud.datacatalog.v1.Mod"
-          + "ifyEntryOverviewRequest\032*.google.cloud.d"
-          + "atacatalog.v1.EntryOverview\"X\202\323\344\223\002R\"M/v1"
-          + "/{name=projects/*/locations/*/entryGroup"
-          + "s/*/entries/*}:modifyEntryOverview:\001*\022\317\001"
-          + "\n\023ModifyEntryContacts\0227.google.cloud.dat"
-          + "acatalog.v1.ModifyEntryContactsRequest\032%"
-          + ".google.cloud.datacatalog.v1.Contacts\"X\202"
-          + "\323\344\223\002R\"M/v1/{name=projects/*/locations/*/"
-          + "entryGroups/*/entries/*}:modifyEntryCont"
-          + "acts:\001*\022\342\001\n\021CreateTagTemplate\0225.google.c"
-          + "loud.datacatalog.v1.CreateTagTemplateReq"
-          + "uest\032(.google.cloud.datacatalog.v1.TagTe"
-          + "mplate\"l\332A#parent,tag_template_id,tag_te"
-          + "mplate\202\323\344\223\002@\"0/v1/{parent=projects/*/loc"
-          + "ations/*}/tagTemplates:\014tag_template\022\257\001\n"
-          + "\016GetTagTemplate\0222.google.cloud.datacatal"
-          + "og.v1.GetTagTemplateRequest\032(.google.clo"
-          + "ud.datacatalog.v1.TagTemplate\"?\332A\004name\202\323"
-          + "\344\223\0022\0220/v1/{name=projects/*/locations/*/t"
-          + "agTemplates/*}\022\363\001\n\021UpdateTagTemplate\0225.g"
-          + "oogle.cloud.datacatalog.v1.UpdateTagTemp"
-          + "lateRequest\032(.google.cloud.datacatalog.v"
-          + "1.TagTemplate\"}\332A\014tag_template\332A\030tag_tem"
-          + "plate,update_mask\202\323\344\223\002M2=/v1/{tag_templa"
-          + "te.name=projects/*/locations/*/tagTempla"
-          + "tes/*}:\014tag_template\022\251\001\n\021DeleteTagTempla"
-          + "te\0225.google.cloud.datacatalog.v1.DeleteT"
-          + "agTemplateRequest\032\026.google.protobuf.Empt"
-          + "y\"E\332A\nname,force\202\323\344\223\0022*0/v1/{name=projec"
-          + "ts/*/locations/*/tagTemplates/*}\022\215\002\n\026Cre"
-          + "ateTagTemplateField\022:.google.cloud.datac"
-          + "atalog.v1.CreateTagTemplateFieldRequest\032"
+          + "iew\0227\n\010contacts\030\002 \001(\0132%.google.cloud.dat"
+          + "acatalog.v1.Contacts\"!\n\rEntryOverview\022\020\n"
+          + "\010overview\030\001 \001(\t\"v\n\010Contacts\022<\n\006people\030\001 "
+          + "\003(\0132,.google.cloud.datacatalog.v1.Contac"
+          + "ts.Person\032,\n\006Person\022\023\n\013designation\030\001 \001(\t"
+          + "\022\r\n\005email\030\002 \001(\t\"\212\002\n\nEntryGroup\022\014\n\004name\030\001"
+          + " \001(\t\022\024\n\014display_name\030\002 \001(\t\022\023\n\013descriptio"
+          + "n\030\003 \001(\t\022T\n\027data_catalog_timestamps\030\004 \001(\013"
+          + "2-.google.cloud.datacatalog.v1.SystemTim"
+          + "estampsB\004\342A\001\003:m\352Aj\n%datacatalog.googleap"
+          + "is.com/EntryGroup\022Aprojects/{project}/lo"
+          + "cations/{location}/entryGroups/{entry_gr"
+          + "oup}\"\300\001\n\030CreateTagTemplateRequest\022?\n\006par"
+          + "ent\030\001 \001(\tB/\342A\001\002\372A(\022&datacatalog.googleap"
+          + "is.com/TagTemplate\022\035\n\017tag_template_id\030\003 "
+          + "\001(\tB\004\342A\001\002\022D\n\014tag_template\030\002 \001(\0132(.google"
+          + ".cloud.datacatalog.v1.TagTemplateB\004\342A\001\002\""
+          + "V\n\025GetTagTemplateRequest\022=\n\004name\030\001 \001(\tB/"
+          + "\342A\001\002\372A(\n&datacatalog.googleapis.com/TagT"
+          + "emplate\"\221\001\n\030UpdateTagTemplateRequest\022D\n\014"
+          + "tag_template\030\001 \001(\0132(.google.cloud.dataca"
+          + "talog.v1.TagTemplateB\004\342A\001\002\022/\n\013update_mas"
+          + "k\030\002 \001(\0132\032.google.protobuf.FieldMask\"n\n\030D"
+          + "eleteTagTemplateRequest\022=\n\004name\030\001 \001(\tB/\342"
+          + "A\001\002\372A(\n&datacatalog.googleapis.com/TagTe"
+          + "mplate\022\023\n\005force\030\002 \001(\010B\004\342A\001\002\"\200\001\n\020CreateTa"
+          + "gRequest\0227\n\006parent\030\001 \001(\tB\'\342A\001\002\372A \022\036datac"
+          + "atalog.googleapis.com/Tag\0223\n\003tag\030\002 \001(\0132 "
+          + ".google.cloud.datacatalog.v1.TagB\004\342A\001\002\"x"
+          + "\n\020UpdateTagRequest\0223\n\003tag\030\001 \001(\0132 .google"
+          + ".cloud.datacatalog.v1.TagB\004\342A\001\002\022/\n\013updat"
+          + "e_mask\030\002 \001(\0132\032.google.protobuf.FieldMask"
+          + "\"I\n\020DeleteTagRequest\0225\n\004name\030\001 \001(\tB\'\342A\001\002"
+          + "\372A \022\036datacatalog.googleapis.com/Tag\"\326\001\n\035"
+          + "CreateTagTemplateFieldRequest\022?\n\006parent\030"
+          + "\001 \001(\tB/\342A\001\002\372A(\n&datacatalog.googleapis.c"
+          + "om/TagTemplate\022#\n\025tag_template_field_id\030"
+          + "\002 \001(\tB\004\342A\001\002\022O\n\022tag_template_field\030\003 \001(\0132"
           + "-.google.cloud.datacatalog.v1.TagTemplat"
-          + "eField\"\207\001\332A/parent,tag_template_field_id"
-          + ",tag_template_field\202\323\344\223\002O\"9/v1/{parent=p"
-          + "rojects/*/locations/*/tagTemplates/*}/fi"
-          + "elds:\022tag_template_field\022\233\002\n\026UpdateTagTe"
-          + "mplateField\022:.google.cloud.datacatalog.v"
-          + "1.UpdateTagTemplateFieldRequest\032-.google"
-          + ".cloud.datacatalog.v1.TagTemplateField\"\225"
-          + "\001\332A\027name,tag_template_field\332A#name,tag_t"
-          + "emplate_field,update_mask\202\323\344\223\002O29/v1/{na"
-          + "me=projects/*/locations/*/tagTemplates/*"
-          + "/fields/*}:\022tag_template_field\022\361\001\n\026Renam"
-          + "eTagTemplateField\022:.google.cloud.datacat"
-          + "alog.v1.RenameTagTemplateFieldRequest\032-.",
-      "google.cloud.datacatalog.v1.TagTemplateF"
-          + "ield\"l\332A\036name,new_tag_template_field_id\202"
-          + "\323\344\223\002E\"@/v1/{name=projects/*/locations/*/"
-          + "tagTemplates/*/fields/*}:rename:\001*\022\222\002\n\037R"
-          + "enameTagTemplateFieldEnumValue\022C.google."
-          + "cloud.datacatalog.v1.RenameTagTemplateFi"
-          + "eldEnumValueRequest\032-.google.cloud.datac"
-          + "atalog.v1.TagTemplateField\"{\332A name,new_"
-          + "enum_value_display_name\202\323\344\223\002R\"M/v1/{name"
-          + "=projects/*/locations/*/tagTemplates/*/f"
-          + "ields/*/enumValues/*}:rename:\001*\022\274\001\n\026Dele"
-          + "teTagTemplateField\022:.google.cloud.dataca"
-          + "talog.v1.DeleteTagTemplateFieldRequest\032\026"
-          + ".google.protobuf.Empty\"N\332A\nname,force\202\323\344"
-          + "\223\002;*9/v1/{name=projects/*/locations/*/ta"
-          + "gTemplates/*/fields/*}\022\371\001\n\tCreateTag\022-.g"
-          + "oogle.cloud.datacatalog.v1.CreateTagRequ"
-          + "est\032 .google.cloud.datacatalog.v1.Tag\"\232\001"
-          + "\332A\nparent,tag\202\323\344\223\002\206\001\"@/v1/{parent=projec"
-          + "ts/*/locations/*/entryGroups/*/entries/*"
-          + "}/tags:\003tagZ=\"6/v1/{parent=projects/*/lo"
-          + "cations/*/entryGroups/*}/tags:\003tag\022\214\002\n\tU"
-          + "pdateTag\022-.google.cloud.datacatalog.v1.U"
-          + "pdateTagRequest\032 .google.cloud.datacatal"
-          + "og.v1.Tag\"\255\001\332A\003tag\332A\017tag,update_mask\202\323\344\223"
-          + "\002\216\0012D/v1/{tag.name=projects/*/locations/"
-          + "*/entryGroups/*/entries/*/tags/*}:\003tagZA"
-          + "2:/v1/{tag.name=projects/*/locations/*/e"
-          + "ntryGroups/*/tags/*}:\003tag\022\336\001\n\tDeleteTag\022"
-          + "-.google.cloud.datacatalog.v1.DeleteTagR"
-          + "equest\032\026.google.protobuf.Empty\"\211\001\332A\004name"
-          + "\202\323\344\223\002|*@/v1/{name=projects/*/locations/*"
-          + "/entryGroups/*/entries/*/tags/*}Z8*6/v1/"
-          + "{name=projects/*/locations/*/entryGroups"
-          + "/*/tags/*}\022\365\001\n\010ListTags\022,.google.cloud.d"
-          + "atacatalog.v1.ListTagsRequest\032-.google.c"
-          + "loud.datacatalog.v1.ListTagsResponse\"\213\001\332"
-          + "A\006parent\202\323\344\223\002|\022@/v1/{parent=projects/*/l"
-          + "ocations/*/entryGroups/*/entries/*}/tags"
-          + "Z8\0226/v1/{parent=projects/*/locations/*/e"
-          + "ntryGroups/*}/tags\022\352\001\n\rReconcileTags\0221.g"
-          + "oogle.cloud.datacatalog.v1.ReconcileTags"
-          + "Request\032\035.google.longrunning.Operation\"\206"
-          + "\001\312A.\n\025ReconcileTagsResponse\022\025ReconcileTa"
-          + "gsMetadata\202\323\344\223\002O\"J/v1/{parent=projects/*"
-          + "/locations/*/entryGroups/*/entries/*}/ta"
-          + "gs:reconcile:\001*\022\274\001\n\tStarEntry\022-.google.c"
-          + "loud.datacatalog.v1.StarEntryRequest\032..g"
-          + "oogle.cloud.datacatalog.v1.StarEntryResp"
-          + "onse\"P\332A\004name\202\323\344\223\002C\">/v1/{name=projects/"
-          + "*/locations/*/entryGroups/*/entries/*}:s"
-          + "tar:\001*\022\304\001\n\013UnstarEntry\022/.google.cloud.da"
-          + "tacatalog.v1.UnstarEntryRequest\0320.google"
-          + ".cloud.datacatalog.v1.UnstarEntryRespons"
-          + "e\"R\332A\004name\202\323\344\223\002E\"@/v1/{name=projects/*/l"
-          + "ocations/*/entryGroups/*/entries/*}:unst"
-          + "ar:\001*\022\362\001\n\014SetIamPolicy\022\".google.iam.v1.S"
-          + "etIamPolicyRequest\032\025.google.iam.v1.Polic"
-          + "y\"\246\001\332A\017resource,policy\202\323\344\223\002\215\001\"A/v1/{reso"
-          + "urce=projects/*/locations/*/tagTemplates"
-          + "/*}:setIamPolicy:\001*ZE\"@/v1/{resource=pro"
-          + "jects/*/locations/*/entryGroups/*}:setIa"
-          + "mPolicy:\001*\022\274\002\n\014GetIamPolicy\022\".google.iam"
-          + ".v1.GetIamPolicyRequest\032\025.google.iam.v1."
-          + "Policy\"\360\001\332A\010resource\202\323\344\223\002\336\001\"A/v1/{resour"
-          + "ce=projects/*/locations/*/tagTemplates/*"
-          + "}:getIamPolicy:\001*ZE\"@/v1/{resource=proje"
-          + "cts/*/locations/*/entryGroups/*}:getIamP"
-          + "olicy:\001*ZO\"J/v1/{resource=projects/*/loc"
-          + "ations/*/entryGroups/*/entries/*}:getIam"
-          + "Policy:\001*\022\343\002\n\022TestIamPermissions\022(.googl"
-          + "e.iam.v1.TestIamPermissionsRequest\032).goo"
-          + "gle.iam.v1.TestIamPermissionsResponse\"\367\001"
-          + "\202\323\344\223\002\360\001\"G/v1/{resource=projects/*/locati"
-          + "ons/*/tagTemplates/*}:testIamPermissions"
-          + ":\001*ZK\"F/v1/{resource=projects/*/location"
-          + "s/*/entryGroups/*}:testIamPermissions:\001*"
-          + "ZU\"P/v1/{resource=projects/*/locations/*"
-          + "/entryGroups/*/entries/*}:testIamPermiss"
-          + "ions:\001*\022\337\001\n\rImportEntries\0221.google.cloud"
-          + ".datacatalog.v1.ImportEntriesRequest\032\035.g"
-          + "oogle.longrunning.Operation\"|\312A.\n\025Import"
-          + "EntriesResponse\022\025ImportEntriesMetadata\202\323"
-          + "\344\223\002E\"@/v1/{parent=projects/*/locations/*"
-          + "/entryGroups/*}/entries:import:\001*\032N\312A\032da"
-          + "tacatalog.googleapis.com\322A.https://www.g"
-          + "oogleapis.com/auth/cloud-platformB\212\003\n\037co"
-          + "m.google.cloud.datacatalog.v1P\001ZAcloud.g"
-          + "oogle.com/go/datacatalog/apiv1/datacatal"
-          + "ogpb;datacatalogpb\370\001\001\252\002\033Google.Cloud.Dat"
-          + "aCatalog.V1\312\002\033Google\\Cloud\\DataCatalog\\V"
-          + "1\352\002\036Google::Cloud::DataCatalog::V1\352A\300\001\n4"
-          + "datacatalog.googleapis.com/TagTemplateFi"
-          + "eldEnumValue\022\207\001projects/{project}/locati"
-          + "ons/{location}/tagTemplates/{tag_templat"
-          + "e}/fields/{tag_template_field_id}/enumVa"
-          + "lues/{enum_value_display_name}b\006proto3"
+          + "eFieldB\004\342A\001\002\"\353\001\n\035UpdateTagTemplateFieldR"
+          + "equest\022B\n\004name\030\001 \001(\tB4\342A\001\002\372A-\n+datacatal"
+          + "og.googleapis.com/TagTemplateField\022O\n\022ta"
+          + "g_template_field\030\002 \001(\0132-.google.cloud.da"
+          + "tacatalog.v1.TagTemplateFieldB\004\342A\001\002\0225\n\013u"
+          + "pdate_mask\030\003 \001(\0132\032.google.protobuf.Field"
+          + "MaskB\004\342A\001\001\"\214\001\n\035RenameTagTemplateFieldReq"
+          + "uest\022B\n\004name\030\001 \001(\tB4\342A\001\002\372A-\n+datacatalog"
+          + ".googleapis.com/TagTemplateField\022\'\n\031new_"
+          + "tag_template_field_id\030\002 \001(\tB\004\342A\001\002\"\240\001\n&Re"
+          + "nameTagTemplateFieldEnumValueRequest\022K\n\004"
+          + "name\030\001 \001(\tB=\342A\001\002\372A6\n4datacatalog.googlea"
+          + "pis.com/TagTemplateFieldEnumValue\022)\n\033new"
+          + "_enum_value_display_name\030\002 \001(\tB\004\342A\001\002\"x\n\035"
+          + "DeleteTagTemplateFieldRequest\022B\n\004name\030\001 "
+          + "\001(\tB4\342A\001\002\372A-\n+datacatalog.googleapis.com"
+          + "/TagTemplateField\022\023\n\005force\030\002 \001(\010B\004\342A\001\002\"q"
+          + "\n\017ListTagsRequest\0227\n\006parent\030\001 \001(\tB\'\342A\001\002\372"
+          + "A \022\036datacatalog.googleapis.com/Tag\022\021\n\tpa"
+          + "ge_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t\"[\n\020Lis"
+          + "tTagsResponse\022.\n\004tags\030\001 \003(\0132 .google.clo"
+          + "ud.datacatalog.v1.Tag\022\027\n\017next_page_token"
+          + "\030\002 \001(\t\"\346\001\n\024ReconcileTagsRequest\0229\n\006paren"
+          + "t\030\001 \001(\tB)\342A\001\002\372A\"\n datacatalog.googleapis"
+          + ".com/Entry\022E\n\014tag_template\030\002 \001(\tB/\342A\001\002\372A"
+          + "(\n&datacatalog.googleapis.com/TagTemplat"
+          + "e\022\034\n\024force_delete_missing\030\003 \001(\010\022.\n\004tags\030"
+          + "\004 \003(\0132 .google.cloud.datacatalog.v1.Tag\""
+          + "k\n\025ReconcileTagsResponse\022\032\n\022created_tags"
+          + "_count\030\001 \001(\003\022\032\n\022updated_tags_count\030\002 \001(\003"
+          + "\022\032\n\022deleted_tags_count\030\003 \001(\003\"\223\003\n\025Reconci"
+          + "leTagsMetadata\022U\n\005state\030\001 \001(\0162F.google.c"
+          + "loud.datacatalog.v1.ReconcileTagsMetadat"
+          + "a.ReconciliationState\022N\n\006errors\030\002 \003(\0132>."
+          + "google.cloud.datacatalog.v1.ReconcileTag"
+          + "sMetadata.ErrorsEntry\032A\n\013ErrorsEntry\022\013\n\003"
+          + "key\030\001 \001(\t\022!\n\005value\030\002 \001(\0132\022.google.rpc.St"
+          + "atus:\0028\001\"\217\001\n\023ReconciliationState\022$\n RECO"
+          + "NCILIATION_STATE_UNSPECIFIED\020\000\022\031\n\025RECONC"
+          + "ILIATION_QUEUED\020\001\022\036\n\032RECONCILIATION_IN_P"
+          + "ROGRESS\020\002\022\027\n\023RECONCILIATION_DONE\020\003\"\252\001\n\022L"
+          + "istEntriesRequest\022>\n\006parent\030\001 \001(\tB.\342A\001\002\372"
+          + "A\'\n%datacatalog.googleapis.com/EntryGrou"
+          + "p\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_token\030\003 \001(\t"
+          + "\022-\n\tread_mask\030\004 \001(\0132\032.google.protobuf.Fi"
+          + "eldMask\"c\n\023ListEntriesResponse\0223\n\007entrie"
+          + "s\030\001 \003(\0132\".google.cloud.datacatalog.v1.En"
+          + "try\022\027\n\017next_page_token\030\002 \001(\t\"K\n\020StarEntr"
+          + "yRequest\0227\n\004name\030\001 \001(\tB)\342A\001\002\372A\"\n datacat"
+          + "alog.googleapis.com/Entry\"\023\n\021StarEntryRe"
+          + "sponse\"M\n\022UnstarEntryRequest\0227\n\004name\030\001 \001"
+          + "(\tB)\342A\001\002\372A\"\n datacatalog.googleapis.com/"
+          + "Entry\"\025\n\023UnstarEntryResponse\"\214\001\n\024ImportE"
+          + "ntriesRequest\0229\n\006parent\030\001 \001(\tB)\342A\001\002\372A\"\022 "
+          + "datacatalog.googleapis.com/Entry\022\031\n\017gcs_"
+          + "bucket_path\030\002 \001(\tH\000\022\024\n\006job_id\030\003 \001(\tB\004\342A\001"
+          + "\001B\010\n\006source\"\225\001\n\025ImportEntriesResponse\022#\n"
+          + "\026upserted_entries_count\030\005 \001(\003H\000\210\001\001\022\"\n\025de"
+          + "leted_entries_count\030\006 \001(\003H\001\210\001\001B\031\n\027_upser"
+          + "ted_entries_countB\030\n\026_deleted_entries_co"
+          + "unt\"\210\002\n\025ImportEntriesMetadata\022M\n\005state\030\001"
+          + " \001(\0162>.google.cloud.datacatalog.v1.Impor"
+          + "tEntriesMetadata.ImportState\022\"\n\006errors\030\002"
+          + " \003(\0132\022.google.rpc.Status\"|\n\013ImportState\022"
+          + "\034\n\030IMPORT_STATE_UNSPECIFIED\020\000\022\021\n\rIMPORT_"
+          + "QUEUED\020\001\022\026\n\022IMPORT_IN_PROGRESS\020\002\022\017\n\013IMPO"
+          + "RT_DONE\020\003\022\023\n\017IMPORT_OBSOLETE\020\004\"\237\001\n\032Modif"
+          + "yEntryOverviewRequest\0227\n\004name\030\001 \001(\tB)\342A\001"
+          + "\002\372A\"\n datacatalog.googleapis.com/Entry\022H"
+          + "\n\016entry_overview\030\002 \001(\0132*.google.cloud.da"
+          + "tacatalog.v1.EntryOverviewB\004\342A\001\002\"\224\001\n\032Mod"
+          + "ifyEntryContactsRequest\0227\n\004name\030\001 \001(\tB)\342"
+          + "A\001\002\372A\"\n datacatalog.googleapis.com/Entry"
+          + "\022=\n\010contacts\030\002 \001(\0132%.google.cloud.dataca"
+          + "talog.v1.ContactsB\004\342A\001\002*\373\001\n\tEntryType\022\032\n"
+          + "\026ENTRY_TYPE_UNSPECIFIED\020\000\022\t\n\005TABLE\020\002\022\t\n\005"
+          + "MODEL\020\005\022\017\n\013DATA_STREAM\020\003\022\013\n\007FILESET\020\004\022\013\n"
+          + "\007CLUSTER\020\006\022\014\n\010DATABASE\020\007\022\032\n\026DATA_SOURCE_"
+          + "CONNECTION\020\010\022\013\n\007ROUTINE\020\t\022\010\n\004LAKE\020\n\022\010\n\004Z"
+          + "ONE\020\013\022\013\n\007SERVICE\020\016\022\023\n\017DATABASE_SCHEMA\020\017\022"
+          + "\r\n\tDASHBOARD\020\020\022\013\n\007EXPLORE\020\021\022\010\n\004LOOK\020\0222\300;"
+          + "\n\013DataCatalog\022\243\001\n\rSearchCatalog\0221.google"
+          + ".cloud.datacatalog.v1.SearchCatalogReque"
+          + "st\0322.google.cloud.datacatalog.v1.SearchC"
+          + "atalogResponse\"+\332A\013scope,query\202\323\344\223\002\027\"\022/v"
+          + "1/catalog:search:\001*\022\333\001\n\020CreateEntryGroup"
+          + "\0224.google.cloud.datacatalog.v1.CreateEnt"
+          + "ryGroupRequest\032\'.google.cloud.datacatalo"
+          + "g.v1.EntryGroup\"h\332A!parent,entry_group_i"
+          + "d,entry_group\202\323\344\223\002>\"//v1/{parent=project"
+          + "s/*/locations/*}/entryGroups:\013entry_grou"
+          + "p\022\274\001\n\rGetEntryGroup\0221.google.cloud.datac"
+          + "atalog.v1.GetEntryGroupRequest\032\'.google."
+          + "cloud.datacatalog.v1.EntryGroup\"O\332A\004name"
+          + "\332A\016name,read_mask\202\323\344\223\0021\022//v1/{name=proje"
+          + "cts/*/locations/*/entryGroups/*}\022\353\001\n\020Upd"
+          + "ateEntryGroup\0224.google.cloud.datacatalog"
+          + ".v1.UpdateEntryGroupRequest\032\'.google.clo"
+          + "ud.datacatalog.v1.EntryGroup\"x\332A\013entry_g"
+          + "roup\332A\027entry_group,update_mask\202\323\344\223\002J2;/v"
+          + "1/{entry_group.name=projects/*/locations"
+          + "/*/entryGroups/*}:\013entry_group\022\240\001\n\020Delet"
+          + "eEntryGroup\0224.google.cloud.datacatalog.v"
+          + "1.DeleteEntryGroupRequest\032\026.google.proto"
+          + "buf.Empty\">\332A\004name\202\323\344\223\0021*//v1/{name=proj"
+          + "ects/*/locations/*/entryGroups/*}\022\276\001\n\017Li"
+          + "stEntryGroups\0223.google.cloud.datacatalog"
+          + ".v1.ListEntryGroupsRequest\0324.google.clou"
+          + "d.datacatalog.v1.ListEntryGroupsResponse"
+          + "\"@\332A\006parent\202\323\344\223\0021\022//v1/{parent=projects/"
+          + "*/locations/*}/entryGroups\022\304\001\n\013CreateEnt"
+          + "ry\022/.google.cloud.datacatalog.v1.CreateE"
+          + "ntryRequest\032\".google.cloud.datacatalog.v"
+          + "1.Entry\"`\332A\025parent,entry_id,entry\202\323\344\223\002B\""
+          + "9/v1/{parent=projects/*/locations/*/entr"
+          + "yGroups/*}/entries:\005entry\022\316\001\n\013UpdateEntr"
+          + "y\022/.google.cloud.datacatalog.v1.UpdateEn"
+          + "tryRequest\032\".google.cloud.datacatalog.v1"
+          + ".Entry\"j\332A\005entry\332A\021entry,update_mask\202\323\344\223"
+          + "\002H2?/v1/{entry.name=projects/*/locations"
+          + "/*/entryGroups/*/entries/*}:\005entry\022\240\001\n\013D"
+          + "eleteEntry\022/.google.cloud.datacatalog.v1"
+          + ".DeleteEntryRequest\032\026.google.protobuf.Em"
+          + "pty\"H\332A\004name\202\323\344\223\002;*9/v1/{name=projects/*"
+          + "/locations/*/entryGroups/*/entries/*}\022\246\001"
+          + "\n\010GetEntry\022,.google.cloud.datacatalog.v1"
+          + ".GetEntryRequest\032\".google.cloud.datacata"
+          + "log.v1.Entry\"H\332A\004name\202\323\344\223\002;\0229/v1/{name=p"
+          + "rojects/*/locations/*/entryGroups/*/entr"
+          + "ies/*}\022~\n\013LookupEntry\022/.google.cloud.dat"
+          + "acatalog.v1.LookupEntryRequest\032\".google."
+          + "cloud.datacatalog.v1.Entry\"\032\202\323\344\223\002\024\022\022/v1/"
+          + "entries:lookup\022\274\001\n\013ListEntries\022/.google."
+          + "cloud.datacatalog.v1.ListEntriesRequest\032"
+          + "0.google.cloud.datacatalog.v1.ListEntrie"
+          + "sResponse\"J\332A\006parent\202\323\344\223\002;\0229/v1/{parent="
+          + "projects/*/locations/*/entryGroups/*}/en"
+          + "tries\022\324\001\n\023ModifyEntryOverview\0227.google.c"
+          + "loud.datacatalog.v1.ModifyEntryOverviewR"
+          + "equest\032*.google.cloud.datacatalog.v1.Ent"
+          + "ryOverview\"X\202\323\344\223\002R\"M/v1/{name=projects/*"
+          + "/locations/*/entryGroups/*/entries/*}:mo"
+          + "difyEntryOverview:\001*\022\317\001\n\023ModifyEntryCont"
+          + "acts\0227.google.cloud.datacatalog.v1.Modif"
+          + "yEntryContactsRequest\032%.google.cloud.dat"
+          + "acatalog.v1.Contacts\"X\202\323\344\223\002R\"M/v1/{name="
+          + "projects/*/locations/*/entryGroups/*/ent"
+          + "ries/*}:modifyEntryContacts:\001*\022\342\001\n\021Creat"
+          + "eTagTemplate\0225.google.cloud.datacatalog."
+          + "v1.CreateTagTemplateRequest\032(.google.clo"
+          + "ud.datacatalog.v1.TagTemplate\"l\332A#parent"
+          + ",tag_template_id,tag_template\202\323\344\223\002@\"0/v1"
+          + "/{parent=projects/*/locations/*}/tagTemp"
+          + "lates:\014tag_template\022\257\001\n\016GetTagTemplate\0222"
+          + ".google.cloud.datacatalog.v1.GetTagTempl"
+          + "ateRequest\032(.google.cloud.datacatalog.v1",
+      ".TagTemplate\"?\332A\004name\202\323\344\223\0022\0220/v1/{name=p"
+          + "rojects/*/locations/*/tagTemplates/*}\022\363\001"
+          + "\n\021UpdateTagTemplate\0225.google.cloud.datac"
+          + "atalog.v1.UpdateTagTemplateRequest\032(.goo"
+          + "gle.cloud.datacatalog.v1.TagTemplate\"}\332A"
+          + "\014tag_template\332A\030tag_template,update_mask"
+          + "\202\323\344\223\002M2=/v1/{tag_template.name=projects/"
+          + "*/locations/*/tagTemplates/*}:\014tag_templ"
+          + "ate\022\251\001\n\021DeleteTagTemplate\0225.google.cloud"
+          + ".datacatalog.v1.DeleteTagTemplateRequest"
+          + "\032\026.google.protobuf.Empty\"E\332A\nname,force\202"
+          + "\323\344\223\0022*0/v1/{name=projects/*/locations/*/"
+          + "tagTemplates/*}\022\215\002\n\026CreateTagTemplateFie"
+          + "ld\022:.google.cloud.datacatalog.v1.CreateT"
+          + "agTemplateFieldRequest\032-.google.cloud.da"
+          + "tacatalog.v1.TagTemplateField\"\207\001\332A/paren"
+          + "t,tag_template_field_id,tag_template_fie"
+          + "ld\202\323\344\223\002O\"9/v1/{parent=projects/*/locatio"
+          + "ns/*/tagTemplates/*}/fields:\022tag_templat"
+          + "e_field\022\233\002\n\026UpdateTagTemplateField\022:.goo"
+          + "gle.cloud.datacatalog.v1.UpdateTagTempla"
+          + "teFieldRequest\032-.google.cloud.datacatalo"
+          + "g.v1.TagTemplateField\"\225\001\332A\027name,tag_temp"
+          + "late_field\332A#name,tag_template_field,upd"
+          + "ate_mask\202\323\344\223\002O29/v1/{name=projects/*/loc"
+          + "ations/*/tagTemplates/*/fields/*}:\022tag_t"
+          + "emplate_field\022\361\001\n\026RenameTagTemplateField"
+          + "\022:.google.cloud.datacatalog.v1.RenameTag"
+          + "TemplateFieldRequest\032-.google.cloud.data"
+          + "catalog.v1.TagTemplateField\"l\332A\036name,new"
+          + "_tag_template_field_id\202\323\344\223\002E\"@/v1/{name="
+          + "projects/*/locations/*/tagTemplates/*/fi"
+          + "elds/*}:rename:\001*\022\222\002\n\037RenameTagTemplateF"
+          + "ieldEnumValue\022C.google.cloud.datacatalog"
+          + ".v1.RenameTagTemplateFieldEnumValueReque"
+          + "st\032-.google.cloud.datacatalog.v1.TagTemp"
+          + "lateField\"{\332A name,new_enum_value_displa"
+          + "y_name\202\323\344\223\002R\"M/v1/{name=projects/*/locat"
+          + "ions/*/tagTemplates/*/fields/*/enumValue"
+          + "s/*}:rename:\001*\022\274\001\n\026DeleteTagTemplateFiel"
+          + "d\022:.google.cloud.datacatalog.v1.DeleteTa"
+          + "gTemplateFieldRequest\032\026.google.protobuf."
+          + "Empty\"N\332A\nname,force\202\323\344\223\002;*9/v1/{name=pr"
+          + "ojects/*/locations/*/tagTemplates/*/fiel"
+          + "ds/*}\022\371\001\n\tCreateTag\022-.google.cloud.datac"
+          + "atalog.v1.CreateTagRequest\032 .google.clou"
+          + "d.datacatalog.v1.Tag\"\232\001\332A\nparent,tag\202\323\344\223"
+          + "\002\206\001\"@/v1/{parent=projects/*/locations/*/"
+          + "entryGroups/*/entries/*}/tags:\003tagZ=\"6/v"
+          + "1/{parent=projects/*/locations/*/entryGr"
+          + "oups/*}/tags:\003tag\022\214\002\n\tUpdateTag\022-.google"
+          + ".cloud.datacatalog.v1.UpdateTagRequest\032 "
+          + ".google.cloud.datacatalog.v1.Tag\"\255\001\332A\003ta"
+          + "g\332A\017tag,update_mask\202\323\344\223\002\216\0012D/v1/{tag.nam"
+          + "e=projects/*/locations/*/entryGroups/*/e"
+          + "ntries/*/tags/*}:\003tagZA2:/v1/{tag.name=p"
+          + "rojects/*/locations/*/entryGroups/*/tags"
+          + "/*}:\003tag\022\336\001\n\tDeleteTag\022-.google.cloud.da"
+          + "tacatalog.v1.DeleteTagRequest\032\026.google.p"
+          + "rotobuf.Empty\"\211\001\332A\004name\202\323\344\223\002|*@/v1/{name"
+          + "=projects/*/locations/*/entryGroups/*/en"
+          + "tries/*/tags/*}Z8*6/v1/{name=projects/*/"
+          + "locations/*/entryGroups/*/tags/*}\022\365\001\n\010Li"
+          + "stTags\022,.google.cloud.datacatalog.v1.Lis"
+          + "tTagsRequest\032-.google.cloud.datacatalog."
+          + "v1.ListTagsResponse\"\213\001\332A\006parent\202\323\344\223\002|\022@/"
+          + "v1/{parent=projects/*/locations/*/entryG"
+          + "roups/*/entries/*}/tagsZ8\0226/v1/{parent=p"
+          + "rojects/*/locations/*/entryGroups/*}/tag"
+          + "s\022\352\001\n\rReconcileTags\0221.google.cloud.datac"
+          + "atalog.v1.ReconcileTagsRequest\032\035.google."
+          + "longrunning.Operation\"\206\001\312A.\n\025ReconcileTa"
+          + "gsResponse\022\025ReconcileTagsMetadata\202\323\344\223\002O\""
+          + "J/v1/{parent=projects/*/locations/*/entr"
+          + "yGroups/*/entries/*}/tags:reconcile:\001*\022\274"
+          + "\001\n\tStarEntry\022-.google.cloud.datacatalog."
+          + "v1.StarEntryRequest\032..google.cloud.datac"
+          + "atalog.v1.StarEntryResponse\"P\332A\004name\202\323\344\223"
+          + "\002C\">/v1/{name=projects/*/locations/*/ent"
+          + "ryGroups/*/entries/*}:star:\001*\022\304\001\n\013Unstar"
+          + "Entry\022/.google.cloud.datacatalog.v1.Unst"
+          + "arEntryRequest\0320.google.cloud.datacatalo"
+          + "g.v1.UnstarEntryResponse\"R\332A\004name\202\323\344\223\002E\""
+          + "@/v1/{name=projects/*/locations/*/entryG"
+          + "roups/*/entries/*}:unstar:\001*\022\362\001\n\014SetIamP"
+          + "olicy\022\".google.iam.v1.SetIamPolicyReques"
+          + "t\032\025.google.iam.v1.Policy\"\246\001\332A\017resource,p"
+          + "olicy\202\323\344\223\002\215\001\"A/v1/{resource=projects/*/l"
+          + "ocations/*/tagTemplates/*}:setIamPolicy:"
+          + "\001*ZE\"@/v1/{resource=projects/*/locations"
+          + "/*/entryGroups/*}:setIamPolicy:\001*\022\274\002\n\014Ge"
+          + "tIamPolicy\022\".google.iam.v1.GetIamPolicyR"
+          + "equest\032\025.google.iam.v1.Policy\"\360\001\332A\010resou"
+          + "rce\202\323\344\223\002\336\001\"A/v1/{resource=projects/*/loc"
+          + "ations/*/tagTemplates/*}:getIamPolicy:\001*"
+          + "ZE\"@/v1/{resource=projects/*/locations/*"
+          + "/entryGroups/*}:getIamPolicy:\001*ZO\"J/v1/{"
+          + "resource=projects/*/locations/*/entryGro"
+          + "ups/*/entries/*}:getIamPolicy:\001*\022\343\002\n\022Tes"
+          + "tIamPermissions\022(.google.iam.v1.TestIamP"
+          + "ermissionsRequest\032).google.iam.v1.TestIa"
+          + "mPermissionsResponse\"\367\001\202\323\344\223\002\360\001\"G/v1/{res"
+          + "ource=projects/*/locations/*/tagTemplate"
+          + "s/*}:testIamPermissions:\001*ZK\"F/v1/{resou"
+          + "rce=projects/*/locations/*/entryGroups/*"
+          + "}:testIamPermissions:\001*ZU\"P/v1/{resource"
+          + "=projects/*/locations/*/entryGroups/*/en"
+          + "tries/*}:testIamPermissions:\001*\022\337\001\n\rImpor"
+          + "tEntries\0221.google.cloud.datacatalog.v1.I"
+          + "mportEntriesRequest\032\035.google.longrunning"
+          + ".Operation\"|\312A.\n\025ImportEntriesResponse\022\025"
+          + "ImportEntriesMetadata\202\323\344\223\002E\"@/v1/{parent"
+          + "=projects/*/locations/*/entryGroups/*}/e"
+          + "ntries:import:\001*\032N\312A\032datacatalog.googlea"
+          + "pis.com\322A.https://www.googleapis.com/aut"
+          + "h/cloud-platformB\212\003\n\037com.google.cloud.da"
+          + "tacatalog.v1P\001ZAcloud.google.com/go/data"
+          + "catalog/apiv1/datacatalogpb;datacatalogp"
+          + "b\370\001\001\252\002\033Google.Cloud.DataCatalog.V1\312\002\033Goo"
+          + "gle\\Cloud\\DataCatalog\\V1\352\002\036Google::Cloud"
+          + "::DataCatalog::V1\352A\300\001\n4datacatalog.googl"
+          + "eapis.com/TagTemplateFieldEnumValue\022\207\001pr"
+          + "ojects/{project}/locations/{location}/ta"
+          + "gTemplates/{tag_template}/fields/{tag_te"
+          + "mplate_field_id}/enumValues/{enum_value_"
+          + "display_name}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -954,8 +1003,10 @@ public final class Datacatalog {
               "DatabaseTableSpec",
               "DataSourceConnectionSpec",
               "RoutineSpec",
+              "DatasetSpec",
               "FilesetSpec",
               "ServiceSpec",
+              "ModelSpec",
               "DisplayName",
               "Description",
               "BusinessContext",
@@ -1035,8 +1086,16 @@ public final class Datacatalog {
             new java.lang.String[] {
               "Name", "Mode", "Type",
             });
-    internal_static_google_cloud_datacatalog_v1_SqlDatabaseSystemSpec_descriptor =
+    internal_static_google_cloud_datacatalog_v1_DatasetSpec_descriptor =
         getDescriptor().getMessageTypes().get(18);
+    internal_static_google_cloud_datacatalog_v1_DatasetSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datacatalog_v1_DatasetSpec_descriptor,
+            new java.lang.String[] {
+              "VertexDatasetSpec", "SystemSpec",
+            });
+    internal_static_google_cloud_datacatalog_v1_SqlDatabaseSystemSpec_descriptor =
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_datacatalog_v1_SqlDatabaseSystemSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_SqlDatabaseSystemSpec_descriptor,
@@ -1044,7 +1103,7 @@ public final class Datacatalog {
               "SqlEngine", "DatabaseVersion", "InstanceHost",
             });
     internal_static_google_cloud_datacatalog_v1_LookerSystemSpec_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_datacatalog_v1_LookerSystemSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_LookerSystemSpec_descriptor,
@@ -1057,7 +1116,7 @@ public final class Datacatalog {
               "ParentViewDisplayName",
             });
     internal_static_google_cloud_datacatalog_v1_CloudBigtableSystemSpec_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_datacatalog_v1_CloudBigtableSystemSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_CloudBigtableSystemSpec_descriptor,
@@ -1065,7 +1124,7 @@ public final class Datacatalog {
               "InstanceDisplayName",
             });
     internal_static_google_cloud_datacatalog_v1_CloudBigtableInstanceSpec_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_datacatalog_v1_CloudBigtableInstanceSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_CloudBigtableInstanceSpec_descriptor,
@@ -1083,15 +1142,51 @@ public final class Datacatalog {
               "DisplayName", "Location", "Type", "LinkedResource",
             });
     internal_static_google_cloud_datacatalog_v1_ServiceSpec_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_datacatalog_v1_ServiceSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_ServiceSpec_descriptor,
             new java.lang.String[] {
               "CloudBigtableInstanceSpec", "SystemSpec",
             });
+    internal_static_google_cloud_datacatalog_v1_VertexModelSourceInfo_descriptor =
+        getDescriptor().getMessageTypes().get(24);
+    internal_static_google_cloud_datacatalog_v1_VertexModelSourceInfo_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datacatalog_v1_VertexModelSourceInfo_descriptor,
+            new java.lang.String[] {
+              "SourceType", "Copy",
+            });
+    internal_static_google_cloud_datacatalog_v1_VertexModelSpec_descriptor =
+        getDescriptor().getMessageTypes().get(25);
+    internal_static_google_cloud_datacatalog_v1_VertexModelSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datacatalog_v1_VertexModelSpec_descriptor,
+            new java.lang.String[] {
+              "VersionId",
+              "VersionAliases",
+              "VersionDescription",
+              "VertexModelSourceInfo",
+              "ContainerImageUri",
+            });
+    internal_static_google_cloud_datacatalog_v1_VertexDatasetSpec_descriptor =
+        getDescriptor().getMessageTypes().get(26);
+    internal_static_google_cloud_datacatalog_v1_VertexDatasetSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datacatalog_v1_VertexDatasetSpec_descriptor,
+            new java.lang.String[] {
+              "DataItemCount", "DataType",
+            });
+    internal_static_google_cloud_datacatalog_v1_ModelSpec_descriptor =
+        getDescriptor().getMessageTypes().get(27);
+    internal_static_google_cloud_datacatalog_v1_ModelSpec_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_datacatalog_v1_ModelSpec_descriptor,
+            new java.lang.String[] {
+              "VertexModelSpec", "SystemSpec",
+            });
     internal_static_google_cloud_datacatalog_v1_BusinessContext_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_datacatalog_v1_BusinessContext_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_BusinessContext_descriptor,
@@ -1099,7 +1194,7 @@ public final class Datacatalog {
               "EntryOverview", "Contacts",
             });
     internal_static_google_cloud_datacatalog_v1_EntryOverview_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_datacatalog_v1_EntryOverview_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_EntryOverview_descriptor,
@@ -1107,7 +1202,7 @@ public final class Datacatalog {
               "Overview",
             });
     internal_static_google_cloud_datacatalog_v1_Contacts_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_datacatalog_v1_Contacts_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_Contacts_descriptor,
@@ -1123,7 +1218,7 @@ public final class Datacatalog {
               "Designation", "Email",
             });
     internal_static_google_cloud_datacatalog_v1_EntryGroup_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_datacatalog_v1_EntryGroup_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_EntryGroup_descriptor,
@@ -1131,7 +1226,7 @@ public final class Datacatalog {
               "Name", "DisplayName", "Description", "DataCatalogTimestamps",
             });
     internal_static_google_cloud_datacatalog_v1_CreateTagTemplateRequest_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_datacatalog_v1_CreateTagTemplateRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_CreateTagTemplateRequest_descriptor,
@@ -1139,7 +1234,7 @@ public final class Datacatalog {
               "Parent", "TagTemplateId", "TagTemplate",
             });
     internal_static_google_cloud_datacatalog_v1_GetTagTemplateRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_datacatalog_v1_GetTagTemplateRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_GetTagTemplateRequest_descriptor,
@@ -1147,7 +1242,7 @@ public final class Datacatalog {
               "Name",
             });
     internal_static_google_cloud_datacatalog_v1_UpdateTagTemplateRequest_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_datacatalog_v1_UpdateTagTemplateRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_UpdateTagTemplateRequest_descriptor,
@@ -1155,7 +1250,7 @@ public final class Datacatalog {
               "TagTemplate", "UpdateMask",
             });
     internal_static_google_cloud_datacatalog_v1_DeleteTagTemplateRequest_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_datacatalog_v1_DeleteTagTemplateRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_DeleteTagTemplateRequest_descriptor,
@@ -1163,7 +1258,7 @@ public final class Datacatalog {
               "Name", "Force",
             });
     internal_static_google_cloud_datacatalog_v1_CreateTagRequest_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_datacatalog_v1_CreateTagRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_CreateTagRequest_descriptor,
@@ -1171,7 +1266,7 @@ public final class Datacatalog {
               "Parent", "Tag",
             });
     internal_static_google_cloud_datacatalog_v1_UpdateTagRequest_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_datacatalog_v1_UpdateTagRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_UpdateTagRequest_descriptor,
@@ -1179,7 +1274,7 @@ public final class Datacatalog {
               "Tag", "UpdateMask",
             });
     internal_static_google_cloud_datacatalog_v1_DeleteTagRequest_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_datacatalog_v1_DeleteTagRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_DeleteTagRequest_descriptor,
@@ -1187,7 +1282,7 @@ public final class Datacatalog {
               "Name",
             });
     internal_static_google_cloud_datacatalog_v1_CreateTagTemplateFieldRequest_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_cloud_datacatalog_v1_CreateTagTemplateFieldRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_CreateTagTemplateFieldRequest_descriptor,
@@ -1195,7 +1290,7 @@ public final class Datacatalog {
               "Parent", "TagTemplateFieldId", "TagTemplateField",
             });
     internal_static_google_cloud_datacatalog_v1_UpdateTagTemplateFieldRequest_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_datacatalog_v1_UpdateTagTemplateFieldRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_UpdateTagTemplateFieldRequest_descriptor,
@@ -1203,7 +1298,7 @@ public final class Datacatalog {
               "Name", "TagTemplateField", "UpdateMask",
             });
     internal_static_google_cloud_datacatalog_v1_RenameTagTemplateFieldRequest_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_cloud_datacatalog_v1_RenameTagTemplateFieldRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_RenameTagTemplateFieldRequest_descriptor,
@@ -1211,7 +1306,7 @@ public final class Datacatalog {
               "Name", "NewTagTemplateFieldId",
             });
     internal_static_google_cloud_datacatalog_v1_RenameTagTemplateFieldEnumValueRequest_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_cloud_datacatalog_v1_RenameTagTemplateFieldEnumValueRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_RenameTagTemplateFieldEnumValueRequest_descriptor,
@@ -1219,7 +1314,7 @@ public final class Datacatalog {
               "Name", "NewEnumValueDisplayName",
             });
     internal_static_google_cloud_datacatalog_v1_DeleteTagTemplateFieldRequest_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(43);
     internal_static_google_cloud_datacatalog_v1_DeleteTagTemplateFieldRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_DeleteTagTemplateFieldRequest_descriptor,
@@ -1227,7 +1322,7 @@ public final class Datacatalog {
               "Name", "Force",
             });
     internal_static_google_cloud_datacatalog_v1_ListTagsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(44);
     internal_static_google_cloud_datacatalog_v1_ListTagsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_ListTagsRequest_descriptor,
@@ -1235,7 +1330,7 @@ public final class Datacatalog {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_datacatalog_v1_ListTagsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(40);
+        getDescriptor().getMessageTypes().get(45);
     internal_static_google_cloud_datacatalog_v1_ListTagsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_ListTagsResponse_descriptor,
@@ -1243,7 +1338,7 @@ public final class Datacatalog {
               "Tags", "NextPageToken",
             });
     internal_static_google_cloud_datacatalog_v1_ReconcileTagsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(41);
+        getDescriptor().getMessageTypes().get(46);
     internal_static_google_cloud_datacatalog_v1_ReconcileTagsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_ReconcileTagsRequest_descriptor,
@@ -1251,7 +1346,7 @@ public final class Datacatalog {
               "Parent", "TagTemplate", "ForceDeleteMissing", "Tags",
             });
     internal_static_google_cloud_datacatalog_v1_ReconcileTagsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(42);
+        getDescriptor().getMessageTypes().get(47);
     internal_static_google_cloud_datacatalog_v1_ReconcileTagsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_ReconcileTagsResponse_descriptor,
@@ -1259,7 +1354,7 @@ public final class Datacatalog {
               "CreatedTagsCount", "UpdatedTagsCount", "DeletedTagsCount",
             });
     internal_static_google_cloud_datacatalog_v1_ReconcileTagsMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(43);
+        getDescriptor().getMessageTypes().get(48);
     internal_static_google_cloud_datacatalog_v1_ReconcileTagsMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_ReconcileTagsMetadata_descriptor,
@@ -1277,7 +1372,7 @@ public final class Datacatalog {
               "Key", "Value",
             });
     internal_static_google_cloud_datacatalog_v1_ListEntriesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(44);
+        getDescriptor().getMessageTypes().get(49);
     internal_static_google_cloud_datacatalog_v1_ListEntriesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_ListEntriesRequest_descriptor,
@@ -1285,7 +1380,7 @@ public final class Datacatalog {
               "Parent", "PageSize", "PageToken", "ReadMask",
             });
     internal_static_google_cloud_datacatalog_v1_ListEntriesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(45);
+        getDescriptor().getMessageTypes().get(50);
     internal_static_google_cloud_datacatalog_v1_ListEntriesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_ListEntriesResponse_descriptor,
@@ -1293,7 +1388,7 @@ public final class Datacatalog {
               "Entries", "NextPageToken",
             });
     internal_static_google_cloud_datacatalog_v1_StarEntryRequest_descriptor =
-        getDescriptor().getMessageTypes().get(46);
+        getDescriptor().getMessageTypes().get(51);
     internal_static_google_cloud_datacatalog_v1_StarEntryRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_StarEntryRequest_descriptor,
@@ -1301,13 +1396,13 @@ public final class Datacatalog {
               "Name",
             });
     internal_static_google_cloud_datacatalog_v1_StarEntryResponse_descriptor =
-        getDescriptor().getMessageTypes().get(47);
+        getDescriptor().getMessageTypes().get(52);
     internal_static_google_cloud_datacatalog_v1_StarEntryResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_StarEntryResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_datacatalog_v1_UnstarEntryRequest_descriptor =
-        getDescriptor().getMessageTypes().get(48);
+        getDescriptor().getMessageTypes().get(53);
     internal_static_google_cloud_datacatalog_v1_UnstarEntryRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_UnstarEntryRequest_descriptor,
@@ -1315,13 +1410,13 @@ public final class Datacatalog {
               "Name",
             });
     internal_static_google_cloud_datacatalog_v1_UnstarEntryResponse_descriptor =
-        getDescriptor().getMessageTypes().get(49);
+        getDescriptor().getMessageTypes().get(54);
     internal_static_google_cloud_datacatalog_v1_UnstarEntryResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_UnstarEntryResponse_descriptor,
             new java.lang.String[] {});
     internal_static_google_cloud_datacatalog_v1_ImportEntriesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(50);
+        getDescriptor().getMessageTypes().get(55);
     internal_static_google_cloud_datacatalog_v1_ImportEntriesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_ImportEntriesRequest_descriptor,
@@ -1329,7 +1424,7 @@ public final class Datacatalog {
               "Parent", "GcsBucketPath", "JobId", "Source",
             });
     internal_static_google_cloud_datacatalog_v1_ImportEntriesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(51);
+        getDescriptor().getMessageTypes().get(56);
     internal_static_google_cloud_datacatalog_v1_ImportEntriesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_ImportEntriesResponse_descriptor,
@@ -1340,7 +1435,7 @@ public final class Datacatalog {
               "DeletedEntriesCount",
             });
     internal_static_google_cloud_datacatalog_v1_ImportEntriesMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(52);
+        getDescriptor().getMessageTypes().get(57);
     internal_static_google_cloud_datacatalog_v1_ImportEntriesMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_ImportEntriesMetadata_descriptor,
@@ -1348,7 +1443,7 @@ public final class Datacatalog {
               "State", "Errors",
             });
     internal_static_google_cloud_datacatalog_v1_ModifyEntryOverviewRequest_descriptor =
-        getDescriptor().getMessageTypes().get(53);
+        getDescriptor().getMessageTypes().get(58);
     internal_static_google_cloud_datacatalog_v1_ModifyEntryOverviewRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_ModifyEntryOverviewRequest_descriptor,
@@ -1356,7 +1451,7 @@ public final class Datacatalog {
               "Name", "EntryOverview",
             });
     internal_static_google_cloud_datacatalog_v1_ModifyEntryContactsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(54);
+        getDescriptor().getMessageTypes().get(59);
     internal_static_google_cloud_datacatalog_v1_ModifyEntryContactsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_datacatalog_v1_ModifyEntryContactsRequest_descriptor,

@@ -118,6 +118,16 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    * <code>LOOKER = 9;</code>
    */
   LOOKER(9),
+  /**
+   *
+   *
+   * <pre>
+   * Vertex AI
+   * </pre>
+   *
+   * <code>VERTEX_AI = 10;</code>
+   */
+  VERTEX_AI(10),
   UNRECOGNIZED(-1),
   ;
 
@@ -211,6 +221,16 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
    * <code>LOOKER = 9;</code>
    */
   public static final int LOOKER_VALUE = 9;
+  /**
+   *
+   *
+   * <pre>
+   * Vertex AI
+   * </pre>
+   *
+   * <code>VERTEX_AI = 10;</code>
+   */
+  public static final int VERTEX_AI_VALUE = 10;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -254,6 +274,8 @@ public enum IntegratedSystem implements com.google.protobuf.ProtocolMessageEnum 
         return CLOUD_SQL;
       case 9:
         return LOOKER;
+      case 10:
+        return VERTEX_AI;
       default:
         return null;
     }

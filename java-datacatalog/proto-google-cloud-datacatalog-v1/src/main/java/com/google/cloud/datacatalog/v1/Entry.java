@@ -300,8 +300,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     DATABASE_TABLE_SPEC(24),
     DATA_SOURCE_CONNECTION_SPEC(27),
     ROUTINE_SPEC(28),
+    DATASET_SPEC(32),
     FILESET_SPEC(33),
     SERVICE_SPEC(42),
+    MODEL_SPEC(43),
     SPEC_NOT_SET(0);
     private final int value;
 
@@ -326,10 +328,14 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
           return DATA_SOURCE_CONNECTION_SPEC;
         case 28:
           return ROUTINE_SPEC;
+        case 32:
+          return DATASET_SPEC;
         case 33:
           return FILESET_SPEC;
         case 42:
           return SERVICE_SPEC;
+        case 43:
+          return MODEL_SPEC;
         case 0:
           return SPEC_NOT_SET;
         default:
@@ -1391,6 +1397,57 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.datacatalog.v1.RoutineSpec.getDefaultInstance();
   }
 
+  public static final int DATASET_SPEC_FIELD_NUMBER = 32;
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DatasetSpec dataset_spec = 32;</code>
+   *
+   * @return Whether the datasetSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasDatasetSpec() {
+    return specCase_ == 32;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DatasetSpec dataset_spec = 32;</code>
+   *
+   * @return The datasetSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.DatasetSpec getDatasetSpec() {
+    if (specCase_ == 32) {
+      return (com.google.cloud.datacatalog.v1.DatasetSpec) spec_;
+    }
+    return com.google.cloud.datacatalog.v1.DatasetSpec.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DatasetSpec dataset_spec = 32;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.DatasetSpecOrBuilder getDatasetSpecOrBuilder() {
+    if (specCase_ == 32) {
+      return (com.google.cloud.datacatalog.v1.DatasetSpec) spec_;
+    }
+    return com.google.cloud.datacatalog.v1.DatasetSpec.getDefaultInstance();
+  }
+
   public static final int FILESET_SPEC_FIELD_NUMBER = 33;
   /**
    *
@@ -1494,6 +1551,57 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.datacatalog.v1.ServiceSpec) spec_;
     }
     return com.google.cloud.datacatalog.v1.ServiceSpec.getDefaultInstance();
+  }
+
+  public static final int MODEL_SPEC_FIELD_NUMBER = 43;
+  /**
+   *
+   *
+   * <pre>
+   * Model specification.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.ModelSpec model_spec = 43;</code>
+   *
+   * @return Whether the modelSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasModelSpec() {
+    return specCase_ == 43;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Model specification.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.ModelSpec model_spec = 43;</code>
+   *
+   * @return The modelSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.ModelSpec getModelSpec() {
+    if (specCase_ == 43) {
+      return (com.google.cloud.datacatalog.v1.ModelSpec) spec_;
+    }
+    return com.google.cloud.datacatalog.v1.ModelSpec.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Model specification.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.ModelSpec model_spec = 43;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datacatalog.v1.ModelSpecOrBuilder getModelSpecOrBuilder() {
+    if (specCase_ == 43) {
+      return (com.google.cloud.datacatalog.v1.ModelSpec) spec_;
+    }
+    return com.google.cloud.datacatalog.v1.ModelSpec.getDefaultInstance();
   }
 
   public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
@@ -2139,6 +2247,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullyQualifiedName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 29, fullyQualifiedName_);
     }
+    if (specCase_ == 32) {
+      output.writeMessage(32, (com.google.cloud.datacatalog.v1.DatasetSpec) spec_);
+    }
     if (specCase_ == 33) {
       output.writeMessage(33, (com.google.cloud.datacatalog.v1.FilesetSpec) spec_);
     }
@@ -2157,6 +2268,9 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     }
     if (specCase_ == 42) {
       output.writeMessage(42, (com.google.cloud.datacatalog.v1.ServiceSpec) spec_);
+    }
+    if (specCase_ == 43) {
+      output.writeMessage(43, (com.google.cloud.datacatalog.v1.ModelSpec) spec_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2253,6 +2367,11 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fullyQualifiedName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, fullyQualifiedName_);
     }
+    if (specCase_ == 32) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              32, (com.google.cloud.datacatalog.v1.DatasetSpec) spec_);
+    }
     if (specCase_ == 33) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -2280,6 +2399,11 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               42, (com.google.cloud.datacatalog.v1.ServiceSpec) spec_);
+    }
+    if (specCase_ == 43) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              43, (com.google.cloud.datacatalog.v1.ModelSpec) spec_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2388,11 +2512,17 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       case 28:
         if (!getRoutineSpec().equals(other.getRoutineSpec())) return false;
         break;
+      case 32:
+        if (!getDatasetSpec().equals(other.getDatasetSpec())) return false;
+        break;
       case 33:
         if (!getFilesetSpec().equals(other.getFilesetSpec())) return false;
         break;
       case 42:
         if (!getServiceSpec().equals(other.getServiceSpec())) return false;
+        break;
+      case 43:
+        if (!getModelSpec().equals(other.getModelSpec())) return false;
         break;
       case 0:
       default:
@@ -2515,6 +2645,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + ROUTINE_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getRoutineSpec().hashCode();
         break;
+      case 32:
+        hash = (37 * hash) + DATASET_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getDatasetSpec().hashCode();
+        break;
       case 33:
         hash = (37 * hash) + FILESET_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getFilesetSpec().hashCode();
@@ -2522,6 +2656,10 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       case 42:
         hash = (37 * hash) + SERVICE_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getServiceSpec().hashCode();
+        break;
+      case 43:
+        hash = (37 * hash) + MODEL_SPEC_FIELD_NUMBER;
+        hash = (53 * hash) + getModelSpec().hashCode();
         break;
       case 0:
       default:
@@ -2723,11 +2861,17 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       if (routineSpecBuilder_ != null) {
         routineSpecBuilder_.clear();
       }
+      if (datasetSpecBuilder_ != null) {
+        datasetSpecBuilder_.clear();
+      }
       if (filesetSpecBuilder_ != null) {
         filesetSpecBuilder_.clear();
       }
       if (serviceSpecBuilder_ != null) {
         serviceSpecBuilder_.clear();
+      }
+      if (modelSpecBuilder_ != null) {
+        modelSpecBuilder_.clear();
       }
       displayName_ = "";
       description_ = "";
@@ -2818,37 +2962,37 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.fullyQualifiedName_ = fullyQualifiedName_;
       }
-      if (((from_bitField0_ & 0x00040000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.displayName_ = displayName_;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00200000) != 0)) {
         result.description_ = description_;
       }
-      if (((from_bitField0_ & 0x00100000) != 0)) {
+      if (((from_bitField0_ & 0x00400000) != 0)) {
         result.businessContext_ =
             businessContextBuilder_ == null ? businessContext_ : businessContextBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00200000) != 0)) {
+      if (((from_bitField0_ & 0x00800000) != 0)) {
         result.schema_ = schemaBuilder_ == null ? schema_ : schemaBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00400000) != 0)) {
+      if (((from_bitField0_ & 0x01000000) != 0)) {
         result.sourceSystemTimestamps_ =
             sourceSystemTimestampsBuilder_ == null
                 ? sourceSystemTimestamps_
                 : sourceSystemTimestampsBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00800000) != 0)) {
+      if (((from_bitField0_ & 0x02000000) != 0)) {
         result.usageSignal_ =
             usageSignalBuilder_ == null ? usageSignal_ : usageSignalBuilder_.build();
       }
-      if (((from_bitField0_ & 0x01000000) != 0)) {
+      if (((from_bitField0_ & 0x04000000) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x02000000) != 0)) {
+      if (((from_bitField0_ & 0x08000000) != 0)) {
         result.dataSource_ = dataSourceBuilder_ == null ? dataSource_ : dataSourceBuilder_.build();
       }
-      if (((from_bitField0_ & 0x04000000) != 0)) {
+      if (((from_bitField0_ & 0x10000000) != 0)) {
         result.personalDetails_ =
             personalDetailsBuilder_ == null ? personalDetails_ : personalDetailsBuilder_.build();
       }
@@ -2892,11 +3036,17 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       if (specCase_ == 28 && routineSpecBuilder_ != null) {
         result.spec_ = routineSpecBuilder_.build();
       }
+      if (specCase_ == 32 && datasetSpecBuilder_ != null) {
+        result.spec_ = datasetSpecBuilder_.build();
+      }
       if (specCase_ == 33 && filesetSpecBuilder_ != null) {
         result.spec_ = filesetSpecBuilder_.build();
       }
       if (specCase_ == 42 && serviceSpecBuilder_ != null) {
         result.spec_ = serviceSpecBuilder_.build();
+      }
+      if (specCase_ == 43 && modelSpecBuilder_ != null) {
+        result.spec_ = modelSpecBuilder_.build();
       }
     }
 
@@ -2962,12 +3112,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00200000;
         onChanged();
       }
       if (other.hasBusinessContext()) {
@@ -2983,7 +3133,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         mergeUsageSignal(other.getUsageSignal());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x04000000;
       if (other.hasDataSource()) {
         mergeDataSource(other.getDataSource());
       }
@@ -3084,6 +3234,11 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             mergeRoutineSpec(other.getRoutineSpec());
             break;
           }
+        case DATASET_SPEC:
+          {
+            mergeDatasetSpec(other.getDatasetSpec());
+            break;
+          }
         case FILESET_SPEC:
           {
             mergeFilesetSpec(other.getFilesetSpec());
@@ -3092,6 +3247,11 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         case SERVICE_SPEC:
           {
             mergeServiceSpec(other.getServiceSpec());
+            break;
+          }
+        case MODEL_SPEC:
+          {
+            mergeModelSpec(other.getModelSpec());
             break;
           }
         case SPEC_NOT_SET:
@@ -3141,19 +3301,19 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 26
             case 34:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00200000;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getSchemaFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00200000;
+                bitField0_ |= 0x00800000;
                 break;
               } // case 42
             case 50:
@@ -3166,7 +3326,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getSourceSystemTimestampsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00400000;
+                bitField0_ |= 0x01000000;
                 break;
               } // case 58
             case 74:
@@ -3185,7 +3345,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             case 106:
               {
                 input.readMessage(getUsageSignalFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00800000;
+                bitField0_ |= 0x02000000;
                 break;
               } // case 106
             case 114:
@@ -3197,7 +3357,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x01000000;
+                bitField0_ |= 0x04000000;
                 break;
               } // case 114
             case 122:
@@ -3231,7 +3391,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             case 162:
               {
                 input.readMessage(getDataSourceFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x02000000;
+                bitField0_ |= 0x08000000;
                 break;
               } // case 162
             case 194:
@@ -3244,7 +3404,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             case 210:
               {
                 input.readMessage(getPersonalDetailsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x04000000;
+                bitField0_ |= 0x10000000;
                 break;
               } // case 210
             case 218:
@@ -3266,6 +3426,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 234
+            case 258:
+              {
+                input.readMessage(getDatasetSpecFieldBuilder().getBuilder(), extensionRegistry);
+                specCase_ = 32;
+                break;
+              } // case 258
             case 266:
               {
                 input.readMessage(getFilesetSpecFieldBuilder().getBuilder(), extensionRegistry);
@@ -3275,7 +3441,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
             case 298:
               {
                 input.readMessage(getBusinessContextFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00100000;
+                bitField0_ |= 0x00400000;
                 break;
               } // case 298
             case 314:
@@ -3305,6 +3471,12 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
                 specCase_ = 42;
                 break;
               } // case 338
+            case 346:
+              {
+                input.readMessage(getModelSpecFieldBuilder().getBuilder(), extensionRegistry);
+                specCase_ = 43;
+                break;
+              } // case 346
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6565,6 +6737,215 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.DatasetSpec,
+            com.google.cloud.datacatalog.v1.DatasetSpec.Builder,
+            com.google.cloud.datacatalog.v1.DatasetSpecOrBuilder>
+        datasetSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DatasetSpec dataset_spec = 32;</code>
+     *
+     * @return Whether the datasetSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasDatasetSpec() {
+      return specCase_ == 32;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DatasetSpec dataset_spec = 32;</code>
+     *
+     * @return The datasetSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.DatasetSpec getDatasetSpec() {
+      if (datasetSpecBuilder_ == null) {
+        if (specCase_ == 32) {
+          return (com.google.cloud.datacatalog.v1.DatasetSpec) spec_;
+        }
+        return com.google.cloud.datacatalog.v1.DatasetSpec.getDefaultInstance();
+      } else {
+        if (specCase_ == 32) {
+          return datasetSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.datacatalog.v1.DatasetSpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DatasetSpec dataset_spec = 32;</code>
+     */
+    public Builder setDatasetSpec(com.google.cloud.datacatalog.v1.DatasetSpec value) {
+      if (datasetSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        spec_ = value;
+        onChanged();
+      } else {
+        datasetSpecBuilder_.setMessage(value);
+      }
+      specCase_ = 32;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DatasetSpec dataset_spec = 32;</code>
+     */
+    public Builder setDatasetSpec(
+        com.google.cloud.datacatalog.v1.DatasetSpec.Builder builderForValue) {
+      if (datasetSpecBuilder_ == null) {
+        spec_ = builderForValue.build();
+        onChanged();
+      } else {
+        datasetSpecBuilder_.setMessage(builderForValue.build());
+      }
+      specCase_ = 32;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DatasetSpec dataset_spec = 32;</code>
+     */
+    public Builder mergeDatasetSpec(com.google.cloud.datacatalog.v1.DatasetSpec value) {
+      if (datasetSpecBuilder_ == null) {
+        if (specCase_ == 32
+            && spec_ != com.google.cloud.datacatalog.v1.DatasetSpec.getDefaultInstance()) {
+          spec_ =
+              com.google.cloud.datacatalog.v1.DatasetSpec.newBuilder(
+                      (com.google.cloud.datacatalog.v1.DatasetSpec) spec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          spec_ = value;
+        }
+        onChanged();
+      } else {
+        if (specCase_ == 32) {
+          datasetSpecBuilder_.mergeFrom(value);
+        } else {
+          datasetSpecBuilder_.setMessage(value);
+        }
+      }
+      specCase_ = 32;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DatasetSpec dataset_spec = 32;</code>
+     */
+    public Builder clearDatasetSpec() {
+      if (datasetSpecBuilder_ == null) {
+        if (specCase_ == 32) {
+          specCase_ = 0;
+          spec_ = null;
+          onChanged();
+        }
+      } else {
+        if (specCase_ == 32) {
+          specCase_ = 0;
+          spec_ = null;
+        }
+        datasetSpecBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DatasetSpec dataset_spec = 32;</code>
+     */
+    public com.google.cloud.datacatalog.v1.DatasetSpec.Builder getDatasetSpecBuilder() {
+      return getDatasetSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DatasetSpec dataset_spec = 32;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.DatasetSpecOrBuilder getDatasetSpecOrBuilder() {
+      if ((specCase_ == 32) && (datasetSpecBuilder_ != null)) {
+        return datasetSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (specCase_ == 32) {
+          return (com.google.cloud.datacatalog.v1.DatasetSpec) spec_;
+        }
+        return com.google.cloud.datacatalog.v1.DatasetSpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specification that applies to a dataset.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.DatasetSpec dataset_spec = 32;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.DatasetSpec,
+            com.google.cloud.datacatalog.v1.DatasetSpec.Builder,
+            com.google.cloud.datacatalog.v1.DatasetSpecOrBuilder>
+        getDatasetSpecFieldBuilder() {
+      if (datasetSpecBuilder_ == null) {
+        if (!(specCase_ == 32)) {
+          spec_ = com.google.cloud.datacatalog.v1.DatasetSpec.getDefaultInstance();
+        }
+        datasetSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datacatalog.v1.DatasetSpec,
+                com.google.cloud.datacatalog.v1.DatasetSpec.Builder,
+                com.google.cloud.datacatalog.v1.DatasetSpecOrBuilder>(
+                (com.google.cloud.datacatalog.v1.DatasetSpec) spec_,
+                getParentForChildren(),
+                isClean());
+        spec_ = null;
+      }
+      specCase_ = 32;
+      onChanged();
+      return datasetSpecBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.datacatalog.v1.FilesetSpec,
             com.google.cloud.datacatalog.v1.FilesetSpec.Builder,
             com.google.cloud.datacatalog.v1.FilesetSpecOrBuilder>
@@ -6991,6 +7372,214 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       return serviceSpecBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.ModelSpec,
+            com.google.cloud.datacatalog.v1.ModelSpec.Builder,
+            com.google.cloud.datacatalog.v1.ModelSpecOrBuilder>
+        modelSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Model specification.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.ModelSpec model_spec = 43;</code>
+     *
+     * @return Whether the modelSpec field is set.
+     */
+    @java.lang.Override
+    public boolean hasModelSpec() {
+      return specCase_ == 43;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model specification.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.ModelSpec model_spec = 43;</code>
+     *
+     * @return The modelSpec.
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.ModelSpec getModelSpec() {
+      if (modelSpecBuilder_ == null) {
+        if (specCase_ == 43) {
+          return (com.google.cloud.datacatalog.v1.ModelSpec) spec_;
+        }
+        return com.google.cloud.datacatalog.v1.ModelSpec.getDefaultInstance();
+      } else {
+        if (specCase_ == 43) {
+          return modelSpecBuilder_.getMessage();
+        }
+        return com.google.cloud.datacatalog.v1.ModelSpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model specification.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.ModelSpec model_spec = 43;</code>
+     */
+    public Builder setModelSpec(com.google.cloud.datacatalog.v1.ModelSpec value) {
+      if (modelSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        spec_ = value;
+        onChanged();
+      } else {
+        modelSpecBuilder_.setMessage(value);
+      }
+      specCase_ = 43;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model specification.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.ModelSpec model_spec = 43;</code>
+     */
+    public Builder setModelSpec(com.google.cloud.datacatalog.v1.ModelSpec.Builder builderForValue) {
+      if (modelSpecBuilder_ == null) {
+        spec_ = builderForValue.build();
+        onChanged();
+      } else {
+        modelSpecBuilder_.setMessage(builderForValue.build());
+      }
+      specCase_ = 43;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model specification.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.ModelSpec model_spec = 43;</code>
+     */
+    public Builder mergeModelSpec(com.google.cloud.datacatalog.v1.ModelSpec value) {
+      if (modelSpecBuilder_ == null) {
+        if (specCase_ == 43
+            && spec_ != com.google.cloud.datacatalog.v1.ModelSpec.getDefaultInstance()) {
+          spec_ =
+              com.google.cloud.datacatalog.v1.ModelSpec.newBuilder(
+                      (com.google.cloud.datacatalog.v1.ModelSpec) spec_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          spec_ = value;
+        }
+        onChanged();
+      } else {
+        if (specCase_ == 43) {
+          modelSpecBuilder_.mergeFrom(value);
+        } else {
+          modelSpecBuilder_.setMessage(value);
+        }
+      }
+      specCase_ = 43;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model specification.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.ModelSpec model_spec = 43;</code>
+     */
+    public Builder clearModelSpec() {
+      if (modelSpecBuilder_ == null) {
+        if (specCase_ == 43) {
+          specCase_ = 0;
+          spec_ = null;
+          onChanged();
+        }
+      } else {
+        if (specCase_ == 43) {
+          specCase_ = 0;
+          spec_ = null;
+        }
+        modelSpecBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model specification.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.ModelSpec model_spec = 43;</code>
+     */
+    public com.google.cloud.datacatalog.v1.ModelSpec.Builder getModelSpecBuilder() {
+      return getModelSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model specification.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.ModelSpec model_spec = 43;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datacatalog.v1.ModelSpecOrBuilder getModelSpecOrBuilder() {
+      if ((specCase_ == 43) && (modelSpecBuilder_ != null)) {
+        return modelSpecBuilder_.getMessageOrBuilder();
+      } else {
+        if (specCase_ == 43) {
+          return (com.google.cloud.datacatalog.v1.ModelSpec) spec_;
+        }
+        return com.google.cloud.datacatalog.v1.ModelSpec.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Model specification.
+     * </pre>
+     *
+     * <code>.google.cloud.datacatalog.v1.ModelSpec model_spec = 43;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datacatalog.v1.ModelSpec,
+            com.google.cloud.datacatalog.v1.ModelSpec.Builder,
+            com.google.cloud.datacatalog.v1.ModelSpecOrBuilder>
+        getModelSpecFieldBuilder() {
+      if (modelSpecBuilder_ == null) {
+        if (!(specCase_ == 43)) {
+          spec_ = com.google.cloud.datacatalog.v1.ModelSpec.getDefaultInstance();
+        }
+        modelSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datacatalog.v1.ModelSpec,
+                com.google.cloud.datacatalog.v1.ModelSpec.Builder,
+                com.google.cloud.datacatalog.v1.ModelSpecOrBuilder>(
+                (com.google.cloud.datacatalog.v1.ModelSpec) spec_,
+                getParentForChildren(),
+                isClean());
+        spec_ = null;
+      }
+      specCase_ = 43;
+      onChanged();
+      return modelSpecBuilder_;
+    }
+
     private java.lang.Object displayName_ = "";
     /**
      *
@@ -7062,7 +7651,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7082,7 +7671,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -7107,7 +7696,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -7195,7 +7784,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7219,7 +7808,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00200000);
       onChanged();
       return this;
     }
@@ -7248,7 +7837,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00200000;
       onChanged();
       return this;
     }
@@ -7271,7 +7860,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the businessContext field is set.
      */
     public boolean hasBusinessContext() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
      *
@@ -7311,7 +7900,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         businessContextBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7331,7 +7920,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         businessContextBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7346,7 +7935,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeBusinessContext(com.google.cloud.datacatalog.v1.BusinessContext value) {
       if (businessContextBuilder_ == null) {
-        if (((bitField0_ & 0x00100000) != 0)
+        if (((bitField0_ & 0x00400000) != 0)
             && businessContext_ != null
             && businessContext_
                 != com.google.cloud.datacatalog.v1.BusinessContext.getDefaultInstance()) {
@@ -7357,7 +7946,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         businessContextBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }
@@ -7371,7 +7960,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
      */
     public Builder clearBusinessContext() {
-      bitField0_ = (bitField0_ & ~0x00100000);
+      bitField0_ = (bitField0_ & ~0x00400000);
       businessContext_ = null;
       if (businessContextBuilder_ != null) {
         businessContextBuilder_.dispose();
@@ -7390,7 +7979,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.BusinessContext business_context = 37;</code>
      */
     public com.google.cloud.datacatalog.v1.BusinessContext.Builder getBusinessContextBuilder() {
-      bitField0_ |= 0x00100000;
+      bitField0_ |= 0x00400000;
       onChanged();
       return getBusinessContextFieldBuilder().getBuilder();
     }
@@ -7456,7 +8045,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the schema field is set.
      */
     public boolean hasSchema() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
     /**
      *
@@ -7496,7 +8085,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         schemaBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7515,7 +8104,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         schemaBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7530,7 +8119,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeSchema(com.google.cloud.datacatalog.v1.Schema value) {
       if (schemaBuilder_ == null) {
-        if (((bitField0_ & 0x00200000) != 0)
+        if (((bitField0_ & 0x00800000) != 0)
             && schema_ != null
             && schema_ != com.google.cloud.datacatalog.v1.Schema.getDefaultInstance()) {
           getSchemaBuilder().mergeFrom(value);
@@ -7540,7 +8129,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         schemaBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return this;
     }
@@ -7554,7 +8143,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.Schema schema = 5;</code>
      */
     public Builder clearSchema() {
-      bitField0_ = (bitField0_ & ~0x00200000);
+      bitField0_ = (bitField0_ & ~0x00800000);
       schema_ = null;
       if (schemaBuilder_ != null) {
         schemaBuilder_.dispose();
@@ -7573,7 +8162,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.Schema schema = 5;</code>
      */
     public com.google.cloud.datacatalog.v1.Schema.Builder getSchemaBuilder() {
-      bitField0_ |= 0x00200000;
+      bitField0_ |= 0x00800000;
       onChanged();
       return getSchemaFieldBuilder().getBuilder();
     }
@@ -7644,7 +8233,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the sourceSystemTimestamps field is set.
      */
     public boolean hasSourceSystemTimestamps() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x01000000) != 0);
     }
     /**
      *
@@ -7695,7 +8284,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceSystemTimestampsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7720,7 +8309,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceSystemTimestampsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7741,7 +8330,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSourceSystemTimestamps(
         com.google.cloud.datacatalog.v1.SystemTimestamps value) {
       if (sourceSystemTimestampsBuilder_ == null) {
-        if (((bitField0_ & 0x00400000) != 0)
+        if (((bitField0_ & 0x01000000) != 0)
             && sourceSystemTimestamps_ != null
             && sourceSystemTimestamps_
                 != com.google.cloud.datacatalog.v1.SystemTimestamps.getDefaultInstance()) {
@@ -7752,7 +8341,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         sourceSystemTimestampsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return this;
     }
@@ -7771,7 +8360,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.SystemTimestamps source_system_timestamps = 7;</code>
      */
     public Builder clearSourceSystemTimestamps() {
-      bitField0_ = (bitField0_ & ~0x00400000);
+      bitField0_ = (bitField0_ & ~0x01000000);
       sourceSystemTimestamps_ = null;
       if (sourceSystemTimestampsBuilder_ != null) {
         sourceSystemTimestampsBuilder_.dispose();
@@ -7796,7 +8385,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.datacatalog.v1.SystemTimestamps.Builder
         getSourceSystemTimestampsBuilder() {
-      bitField0_ |= 0x00400000;
+      bitField0_ |= 0x01000000;
       onChanged();
       return getSourceSystemTimestampsFieldBuilder().getBuilder();
     }
@@ -7873,7 +8462,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the usageSignal field is set.
      */
     public boolean hasUsageSignal() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x02000000) != 0);
     }
     /**
      *
@@ -7913,7 +8502,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         usageSignalBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7933,7 +8522,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         usageSignalBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7948,7 +8537,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUsageSignal(com.google.cloud.datacatalog.v1.UsageSignal value) {
       if (usageSignalBuilder_ == null) {
-        if (((bitField0_ & 0x00800000) != 0)
+        if (((bitField0_ & 0x02000000) != 0)
             && usageSignal_ != null
             && usageSignal_ != com.google.cloud.datacatalog.v1.UsageSignal.getDefaultInstance()) {
           getUsageSignalBuilder().mergeFrom(value);
@@ -7958,7 +8547,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         usageSignalBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return this;
     }
@@ -7972,7 +8561,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13;</code>
      */
     public Builder clearUsageSignal() {
-      bitField0_ = (bitField0_ & ~0x00800000);
+      bitField0_ = (bitField0_ & ~0x02000000);
       usageSignal_ = null;
       if (usageSignalBuilder_ != null) {
         usageSignalBuilder_.dispose();
@@ -7991,7 +8580,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.datacatalog.v1.UsageSignal usage_signal = 13;</code>
      */
     public com.google.cloud.datacatalog.v1.UsageSignal.Builder getUsageSignalBuilder() {
-      bitField0_ |= 0x00800000;
+      bitField0_ |= 0x02000000;
       onChanged();
       return getUsageSignalFieldBuilder().getBuilder();
     }
@@ -8056,7 +8645,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x04000000;
       onChanged();
       return labels_;
     }
@@ -8157,7 +8746,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x01000000);
+      bitField0_ = (bitField0_ & ~0x04000000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -8184,7 +8773,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x04000000;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -8208,7 +8797,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x04000000;
       return this;
     }
     /**
@@ -8226,7 +8815,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x01000000;
+      bitField0_ |= 0x04000000;
       return this;
     }
 
@@ -8250,7 +8839,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the dataSource field is set.
      */
     public boolean hasDataSource() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x08000000) != 0);
     }
     /**
      *
@@ -8294,7 +8883,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         dataSourceBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -8316,7 +8905,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         dataSourceBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -8333,7 +8922,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeDataSource(com.google.cloud.datacatalog.v1.DataSource value) {
       if (dataSourceBuilder_ == null) {
-        if (((bitField0_ & 0x02000000) != 0)
+        if (((bitField0_ & 0x08000000) != 0)
             && dataSource_ != null
             && dataSource_ != com.google.cloud.datacatalog.v1.DataSource.getDefaultInstance()) {
           getDataSourceBuilder().mergeFrom(value);
@@ -8343,7 +8932,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         dataSourceBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return this;
     }
@@ -8359,7 +8948,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDataSource() {
-      bitField0_ = (bitField0_ & ~0x02000000);
+      bitField0_ = (bitField0_ & ~0x08000000);
       dataSource_ = null;
       if (dataSourceBuilder_ != null) {
         dataSourceBuilder_.dispose();
@@ -8380,7 +8969,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.datacatalog.v1.DataSource.Builder getDataSourceBuilder() {
-      bitField0_ |= 0x02000000;
+      bitField0_ |= 0x08000000;
       onChanged();
       return getDataSourceFieldBuilder().getBuilder();
     }
@@ -8453,7 +9042,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the personalDetails field is set.
      */
     public boolean hasPersonalDetails() {
-      return ((bitField0_ & 0x04000000) != 0);
+      return ((bitField0_ & 0x10000000) != 0);
     }
     /**
      *
@@ -8499,7 +9088,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         personalDetailsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8522,7 +9111,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         personalDetailsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8540,7 +9129,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePersonalDetails(com.google.cloud.datacatalog.v1.PersonalDetails value) {
       if (personalDetailsBuilder_ == null) {
-        if (((bitField0_ & 0x04000000) != 0)
+        if (((bitField0_ & 0x10000000) != 0)
             && personalDetails_ != null
             && personalDetails_
                 != com.google.cloud.datacatalog.v1.PersonalDetails.getDefaultInstance()) {
@@ -8551,7 +9140,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
       } else {
         personalDetailsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return this;
     }
@@ -8568,7 +9157,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPersonalDetails() {
-      bitField0_ = (bitField0_ & ~0x04000000);
+      bitField0_ = (bitField0_ & ~0x10000000);
       personalDetails_ = null;
       if (personalDetailsBuilder_ != null) {
         personalDetailsBuilder_.dispose();
@@ -8590,7 +9179,7 @@ public final class Entry extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.datacatalog.v1.PersonalDetails.Builder getPersonalDetailsBuilder() {
-      bitField0_ |= 0x04000000;
+      bitField0_ |= 0x10000000;
       onChanged();
       return getPersonalDetailsFieldBuilder().getBuilder();
     }
