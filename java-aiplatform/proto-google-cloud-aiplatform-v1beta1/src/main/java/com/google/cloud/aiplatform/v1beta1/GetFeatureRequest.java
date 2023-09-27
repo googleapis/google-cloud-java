@@ -24,6 +24,8 @@ package com.google.cloud.aiplatform.v1beta1;
  * <pre>
  * Request message for
  * [FeaturestoreService.GetFeature][google.cloud.aiplatform.v1beta1.FeaturestoreService.GetFeature].
+ * Request message for
+ * [FeatureRegistryService.GetFeature][google.cloud.aiplatform.v1beta1.FeatureRegistryService.GetFeature].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.GetFeatureRequest}
@@ -74,6 +76,7 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
    * Required. The name of the Feature resource.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * </pre>
    *
    * <code>
@@ -101,6 +104,7 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
    * Required. The name of the Feature resource.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * </pre>
    *
    * <code>
@@ -288,6 +292,8 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Request message for
    * [FeaturestoreService.GetFeature][google.cloud.aiplatform.v1beta1.FeaturestoreService.GetFeature].
+   * Request message for
+   * [FeatureRegistryService.GetFeature][google.cloud.aiplatform.v1beta1.FeatureRegistryService.GetFeature].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.GetFeatureRequest}
@@ -474,6 +480,7 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
      * Required. The name of the Feature resource.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
      * <code>
@@ -500,6 +507,7 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
      * Required. The name of the Feature resource.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
      * <code>
@@ -526,6 +534,7 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
      * Required. The name of the Feature resource.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
      * <code>
@@ -551,6 +560,7 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
      * Required. The name of the Feature resource.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
      * <code>
@@ -572,6 +582,7 @@ public final class GetFeatureRequest extends com.google.protobuf.GeneratedMessag
      * Required. The name of the Feature resource.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
      * <code>

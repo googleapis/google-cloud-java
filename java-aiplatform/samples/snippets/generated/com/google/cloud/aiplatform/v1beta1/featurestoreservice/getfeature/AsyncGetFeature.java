@@ -39,7 +39,7 @@ public class AsyncGetFeature {
       GetFeatureRequest request =
           GetFeatureRequest.newBuilder()
               .setName(
-                  FeatureName.of(
+                  FeatureName.ofProjectLocationFeaturestoreEntityTypeFeatureName(
                           "[PROJECT]", "[LOCATION]", "[FEATURESTORE]", "[ENTITY_TYPE]", "[FEATURE]")
                       .toString())
               .build();

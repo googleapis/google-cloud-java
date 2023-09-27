@@ -30,6 +30,7 @@ public interface DeleteFeatureRequestOrBuilder
    * Required. The name of the Features to be deleted.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    * </pre>
    *
    * <code>
@@ -46,6 +47,7 @@ public interface DeleteFeatureRequestOrBuilder
    * Required. The name of the Features to be deleted.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    * </pre>
    *
    * <code>

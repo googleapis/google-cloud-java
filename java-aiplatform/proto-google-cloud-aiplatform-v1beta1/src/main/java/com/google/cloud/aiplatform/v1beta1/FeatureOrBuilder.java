@@ -91,11 +91,11 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Type of Feature value.
+   * Immutable. Type of Feature value.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.Feature.ValueType value_type = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.aiplatform.v1beta1.Feature.ValueType value_type = 3 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The enum numeric value on the wire for valueType.
@@ -105,11 +105,11 @@ public interface FeatureOrBuilder
    *
    *
    * <pre>
-   * Required. Immutable. Type of Feature value.
+   * Immutable. Type of Feature value.
    * </pre>
    *
    * <code>
-   * .google.cloud.aiplatform.v1beta1.Feature.ValueType value_type = 3 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IMMUTABLE];
+   * .google.cloud.aiplatform.v1beta1.Feature.ValueType value_type = 3 [(.google.api.field_behavior) = IMMUTABLE];
    * </code>
    *
    * @return The valueType.

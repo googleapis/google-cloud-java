@@ -31,6 +31,7 @@ public interface UpdateFeatureRequestOrBuilder
    * updated.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    * </pre>
    *
    * <code>
@@ -48,6 +49,7 @@ public interface UpdateFeatureRequestOrBuilder
    * updated.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    * </pre>
    *
    * <code>
@@ -65,6 +67,7 @@ public interface UpdateFeatureRequestOrBuilder
    * updated.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}`
    * </pre>
    *
    * <code>

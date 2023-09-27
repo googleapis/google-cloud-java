@@ -77,6 +77,67 @@
  * }
  * }</pre>
  *
+ * <p>======================= FeatureOnlineStoreAdminServiceClient =======================
+ *
+ * <p>Service Description: The service that handles CRUD and List for resources for
+ * FeatureOnlineStore.
+ *
+ * <p>Sample for FeatureOnlineStoreAdminServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (FeatureOnlineStoreAdminServiceClient featureOnlineStoreAdminServiceClient =
+ *     FeatureOnlineStoreAdminServiceClient.create()) {
+ *   FeatureOnlineStoreName name =
+ *       FeatureOnlineStoreName.of("[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]");
+ *   FeatureOnlineStore response =
+ *       featureOnlineStoreAdminServiceClient.getFeatureOnlineStore(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= FeatureRegistryServiceClient =======================
+ *
+ * <p>Service Description: The service that handles CRUD and List for resources for FeatureRegistry.
+ *
+ * <p>Sample for FeatureRegistryServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (FeatureRegistryServiceClient featureRegistryServiceClient =
+ *     FeatureRegistryServiceClient.create()) {
+ *   FeatureGroupName name = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+ *   FeatureGroup response = featureRegistryServiceClient.getFeatureGroup(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= FeatureOnlineStoreServiceClient =======================
+ *
+ * <p>Sample for FeatureOnlineStoreServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (FeatureOnlineStoreServiceClient featureOnlineStoreServiceClient =
+ *     FeatureOnlineStoreServiceClient.create()) {
+ *   FeatureViewName featureView =
+ *       FeatureViewName.of("[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]");
+ *   String id = "id3355";
+ *   FetchFeatureValuesResponse response =
+ *       featureOnlineStoreServiceClient.fetchFeatureValues(featureView, id);
+ * }
+ * }</pre>
+ *
  * <p>======================= FeaturestoreOnlineServingServiceClient =======================
  *
  * <p>Service Description: A service for serving online feature values.

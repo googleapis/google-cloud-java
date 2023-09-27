@@ -27,9 +27,10 @@ public interface CreateFeatureRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the EntityType to create a Feature.
+   * The resource name of the EntityType or FeatureGroup to create a Feature.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * </pre>
    *
    * <code>
@@ -43,9 +44,10 @@ public interface CreateFeatureRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the EntityType to create a Feature.
+   * The resource name of the EntityType or FeatureGroup to create a Feature.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * </pre>
    *
    * <code>
@@ -107,7 +109,7 @@ public interface CreateFeatureRequestOrBuilder
    * This value may be up to 128 characters, and valid characters are
    * `[a-z0-9_]`. The first character cannot be a number.
    *
-   * The value must be unique within an EntityType.
+   * The value must be unique within an EntityType/FeatureGroup.
    * </pre>
    *
    * <code>string feature_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -125,7 +127,7 @@ public interface CreateFeatureRequestOrBuilder
    * This value may be up to 128 characters, and valid characters are
    * `[a-z0-9_]`. The first character cannot be a number.
    *
-   * The value must be unique within an EntityType.
+   * The value must be unique within an EntityType/FeatureGroup.
    * </pre>
    *
    * <code>string feature_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
