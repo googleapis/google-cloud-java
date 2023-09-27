@@ -84,7 +84,7 @@
     </dependency>
     <dependency>
       <groupId>io.grpc</groupId>
-      <artifactId>grpc-core</artifactId>
+      <artifactId>grpc-inprocess</artifactId>
       <scope>runtime</scope>
     </dependency>
     <dependency>
