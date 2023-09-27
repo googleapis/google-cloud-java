@@ -1,5 +1,29 @@
 # Changelog
 
+## [2.33.0](https://github.com/googleapis/java-bigquery/compare/v2.32.0...v2.33.0) (2023-09-27)
+
+
+### Features
+
+* Add support for FileSetSpec ([#2888](https://github.com/googleapis/java-bigquery/issues/2888)) ([3895bd9](https://github.com/googleapis/java-bigquery/commit/3895bd94b283b6ff731cfa94426ea0691e0d54c4))
+
+
+### Bug Fixes
+
+* Update samples snippet to write to BYTES instead of ARRAY&lt;BYTES&gt; ([#2876](https://github.com/googleapis/java-bigquery/issues/2876)) ([7e040e9](https://github.com/googleapis/java-bigquery/commit/7e040e97eeec762ab97190dea33b94769d681bf0))
+
+
+### Dependencies
+
+* Update actions/checkout action ([#2893](https://github.com/googleapis/java-bigquery/issues/2893)) ([e3655af](https://github.com/googleapis/java-bigquery/commit/e3655af235f002128979ed592c5aade33a4c7596))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.16.1 ([#2892](https://github.com/googleapis/java-bigquery/issues/2892)) ([e1d9871](https://github.com/googleapis/java-bigquery/commit/e1d987199ad8994aa3e9115daf26e0fb27aef911))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.27 ([#2885](https://github.com/googleapis/java-bigquery/issues/2885)) ([2237ca2](https://github.com/googleapis/java-bigquery/commit/2237ca2a1dbe9e1dc1d5e6c0dc2bd2fd39e01ef0))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.27 ([#2886](https://github.com/googleapis/java-bigquery/issues/2886)) ([539b4e6](https://github.com/googleapis/java-bigquery/commit/539b4e62f80598fb510fad37429ae0441db04c6f))
+* Update github/codeql-action action to v2.21.4 ([#2829](https://github.com/googleapis/java-bigquery/issues/2829)) ([599e3b3](https://github.com/googleapis/java-bigquery/commit/599e3b3d7e948a0688c6e08d4910f9db5c532f99))
+* Update github/codeql-action action to v2.21.8 - abandoned ([#2897](https://github.com/googleapis/java-bigquery/issues/2897)) ([ab4e1d0](https://github.com/googleapis/java-bigquery/commit/ab4e1d026c34b7d28caaf5b0b1465ac2de62c530))
+* Update github/codeql-action action to v2.21.8 ([#2889](https://github.com/googleapis/java-bigquery/issues/2889)) ([b568026](https://github.com/googleapis/java-bigquery/commit/b568026fe1b8fb7365306b718b5f8540fb13b8dc))
+* Update github/codeql-action action to v2.21.9 ([#2901](https://github.com/googleapis/java-bigquery/issues/2901)) ([33a729f](https://github.com/googleapis/java-bigquery/commit/33a729f367ba6d9f04595e1b781c7eb321289380))
+
 ## [2.32.0](https://github.com/googleapis/java-bigquery/compare/v2.31.2...v2.32.0) (2023-09-14)
 
 
