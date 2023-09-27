@@ -286,7 +286,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.database_type is
-     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=699
+     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=712
      * @return The enum numeric value on the wire for databaseType.
      */
     @java.lang.Deprecated
@@ -303,7 +303,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.database_type is
-     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=699
+     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=712
      * @return The databaseType.
      */
     @java.lang.Deprecated
@@ -346,7 +346,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * <code>string source_database = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.source_database is
-     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=706
+     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=719
      * @return The sourceDatabase.
      */
     @java.lang.Deprecated
@@ -361,7 +361,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * <code>string source_database = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.source_database is
-     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=706
+     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=719
      * @return The bytes for sourceDatabase.
      */
     @java.lang.Deprecated
@@ -597,7 +597,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.database_type is
-     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=699
+     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=712
      * @return The enum numeric value on the wire for databaseType.
      */
     @java.lang.Override
@@ -617,7 +617,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.database_type is
-     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=699
+     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=712
      * @return The databaseType.
      */
     @java.lang.Override
@@ -699,7 +699,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * <code>string source_database = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.source_database is
-     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=706
+     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=719
      * @return The sourceDatabase.
      */
     @java.lang.Override
@@ -725,7 +725,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
      * <code>string source_database = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.source_database is
-     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=706
+     *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=719
      * @return The bytes for sourceDatabase.
      */
     @java.lang.Override
@@ -1228,7 +1228,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=699
+       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=712
        * @return The enum numeric value on the wire for databaseType.
        */
       @java.lang.Override
@@ -1248,7 +1248,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=699
+       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=712
        * @param value The enum numeric value on the wire for databaseType to set.
        * @return This builder for chaining.
        */
@@ -1271,7 +1271,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=699
+       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=712
        * @return The databaseType.
        */
       @java.lang.Override
@@ -1298,7 +1298,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=699
+       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=712
        * @param value The databaseType to set.
        * @return This builder for chaining.
        */
@@ -1325,7 +1325,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.database_type is
-       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=699
+       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=712
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1458,7 +1458,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * <code>string source_database = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.source_database is
-       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=706
+       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=719
        * @return The sourceDatabase.
        */
       @java.lang.Deprecated
@@ -1483,7 +1483,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * <code>string source_database = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.source_database is
-       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=706
+       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=719
        * @return The bytes for sourceDatabase.
        */
       @java.lang.Deprecated
@@ -1508,7 +1508,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * <code>string source_database = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.source_database is
-       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=706
+       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=719
        * @param value The sourceDatabase to set.
        * @return This builder for chaining.
        */
@@ -1532,7 +1532,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * <code>string source_database = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.source_database is
-       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=706
+       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=719
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -1552,7 +1552,7 @@ public final class MetadataImport extends com.google.protobuf.GeneratedMessageV3
        * <code>string source_database = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.metastore.v1alpha.MetadataImport.DatabaseDump.source_database is
-       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=706
+       *     deprecated. See google/cloud/metastore/v1alpha/metastore.proto;l=719
        * @param value The bytes for sourceDatabase to set.
        * @return This builder for chaining.
        */
