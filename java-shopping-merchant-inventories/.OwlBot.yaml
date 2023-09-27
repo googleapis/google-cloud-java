@@ -14,23 +14,23 @@
 
 
 deep-remove-regex:
-- "/java-merchantapi/grpc-google-.*/src"
-- "/java-merchantapi/proto-google-.*/src"
-- "/java-merchantapi/google-.*/src"
-- "/java-merchantapi/samples/snippets/generated"
+- "/java-shopping-merchant-inventories/grpc-google-.*/src"
+- "/java-shopping-merchant-inventories/proto-google-.*/src"
+- "/java-shopping-merchant-inventories/google-.*/src"
+- "/java-shopping-merchant-inventories/samples/snippets/generated"
 
 deep-preserve-regex:
-- "/java-merchantapi/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-shopping-merchant-inventories/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 
 deep-copy-regex:
 - source: "/google/shopping/merchant/inventories/(v.*)/.*-java/proto-google-.*/src"
-  dest: "/owl-bot-staging/java-merchantapi/$1/proto-google-shopping-merchant-inventories-$1/src"
+  dest: "/owl-bot-staging/java-shopping-merchant-inventories/$1/proto-google-shopping-merchant-inventories-$1/src"
 - source: "/google/shopping/merchant/inventories/(v.*)/.*-java/grpc-google-.*/src"
-  dest: "/owl-bot-staging/java-merchantapi/$1/grpc-google-shopping-merchant-inventories-$1/src"
+  dest: "/owl-bot-staging/java-shopping-merchant-inventories/$1/grpc-google-shopping-merchant-inventories-$1/src"
 - source: "/google/shopping/merchant/inventories/(v.*)/.*-java/gapic-google-.*/src"
-  dest: "/owl-bot-staging/java-merchantapi/$1/google-shopping-merchant-inventories/src"
+  dest: "/owl-bot-staging/java-shopping-merchant-inventories/$1/google-shopping-merchant-inventories/src"
 - source: "/google/shopping/merchant/inventories/(v.*)/.*-java/samples/snippets/generated"
-  dest: "/owl-bot-staging/java-merchantapi/$1/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-shopping-merchant-inventories/$1/samples/snippets/generated"
 
 
 api-name: merchantapi
