@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.21.0](https://github.com/googleapis/google-cloud-java/compare/v1.20.0...v1.21.0) (2023-09-28)
+
+
+### Features
+
+* [dialogflow-cx] add support for AdvancedSettings ([#9918](https://github.com/googleapis/google-cloud-java/issues/9918)) ([59f9d8c](https://github.com/googleapis/google-cloud-java/commit/59f9d8c7ad8fc498f13873fc2b348ea23984f87c))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.125.4 ([#9915](https://github.com/googleapis/google-cloud-java/issues/9915)) ([58249cc](https://github.com/googleapis/google-cloud-java/commit/58249cca29b6a8a8b9075231c2e912a4553e5a2b))
+
+
+### Documentation
+
+* add links to rpc and rest documentation in repo-metadata.json ([#9913](https://github.com/googleapis/google-cloud-java/issues/9913)) ([453c1b7](https://github.com/googleapis/google-cloud-java/commit/453c1b77b721731cc9175d8c57b918fcd2de7be6))
+
 ## [1.20.0](https://github.com/googleapis/google-cloud-java/compare/v1.19.0...v1.20.0) (2023-09-28)
 
 
