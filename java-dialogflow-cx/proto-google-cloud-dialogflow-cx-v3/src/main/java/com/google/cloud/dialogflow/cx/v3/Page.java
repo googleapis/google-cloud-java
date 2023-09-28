@@ -689,6 +689,60 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     return eventHandlers_.get(index);
   }
 
+  public static final int ADVANCED_SETTINGS_FIELD_NUMBER = 13;
+  private com.google.cloud.dialogflow.cx.v3.AdvancedSettings advancedSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this page. The settings exposed at the
+   * lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 13;</code>
+   *
+   * @return Whether the advancedSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdvancedSettings() {
+    return advancedSettings_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this page. The settings exposed at the
+   * lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 13;</code>
+   *
+   * @return The advancedSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.AdvancedSettings getAdvancedSettings() {
+    return advancedSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.AdvancedSettings.getDefaultInstance()
+        : advancedSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this page. The settings exposed at the
+   * lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 13;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.AdvancedSettingsOrBuilder
+      getAdvancedSettingsOrBuilder() {
+    return advancedSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.AdvancedSettings.getDefaultInstance()
+        : advancedSettings_;
+  }
+
   public static final int KNOWLEDGE_CONNECTOR_SETTINGS_FIELD_NUMBER = 18;
   private com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings knowledgeConnectorSettings_;
   /**
@@ -783,6 +837,9 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 11, transitionRouteGroups_.getRaw(i));
     }
+    if (advancedSettings_ != null) {
+      output.writeMessage(13, getAdvancedSettings());
+    }
     if (knowledgeConnectorSettings_ != null) {
       output.writeMessage(18, getKnowledgeConnectorSettings());
     }
@@ -821,6 +878,9 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getTransitionRouteGroupsList().size();
     }
+    if (advancedSettings_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getAdvancedSettings());
+    }
     if (knowledgeConnectorSettings_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -854,6 +914,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     if (!getTransitionRouteGroupsList().equals(other.getTransitionRouteGroupsList())) return false;
     if (!getTransitionRoutesList().equals(other.getTransitionRoutesList())) return false;
     if (!getEventHandlersList().equals(other.getEventHandlersList())) return false;
+    if (hasAdvancedSettings() != other.hasAdvancedSettings()) return false;
+    if (hasAdvancedSettings()) {
+      if (!getAdvancedSettings().equals(other.getAdvancedSettings())) return false;
+    }
     if (hasKnowledgeConnectorSettings() != other.hasKnowledgeConnectorSettings()) return false;
     if (hasKnowledgeConnectorSettings()) {
       if (!getKnowledgeConnectorSettings().equals(other.getKnowledgeConnectorSettings()))
@@ -893,6 +957,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     if (getEventHandlersCount() > 0) {
       hash = (37 * hash) + EVENT_HANDLERS_FIELD_NUMBER;
       hash = (53 * hash) + getEventHandlersList().hashCode();
+    }
+    if (hasAdvancedSettings()) {
+      hash = (37 * hash) + ADVANCED_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdvancedSettings().hashCode();
     }
     if (hasKnowledgeConnectorSettings()) {
       hash = (37 * hash) + KNOWLEDGE_CONNECTOR_SETTINGS_FIELD_NUMBER;
@@ -1079,6 +1147,11 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         eventHandlersBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000040);
+      advancedSettings_ = null;
+      if (advancedSettingsBuilder_ != null) {
+        advancedSettingsBuilder_.dispose();
+        advancedSettingsBuilder_ = null;
+      }
       knowledgeConnectorSettings_ = null;
       if (knowledgeConnectorSettingsBuilder_ != null) {
         knowledgeConnectorSettingsBuilder_.dispose();
@@ -1160,6 +1233,10 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
         result.transitionRouteGroups_ = transitionRouteGroups_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.advancedSettings_ =
+            advancedSettingsBuilder_ == null ? advancedSettings_ : advancedSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.knowledgeConnectorSettings_ =
             knowledgeConnectorSettingsBuilder_ == null
                 ? knowledgeConnectorSettings_
@@ -1292,6 +1369,9 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasAdvancedSettings()) {
+        mergeAdvancedSettings(other.getAdvancedSettings());
+      }
       if (other.hasKnowledgeConnectorSettings()) {
         mergeKnowledgeConnectorSettings(other.getKnowledgeConnectorSettings());
       }
@@ -1380,11 +1460,18 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
                 transitionRouteGroups_.add(s);
                 break;
               } // case 90
+            case 106:
+              {
+                input.readMessage(
+                    getAdvancedSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 106
             case 146:
               {
                 input.readMessage(
                     getKnowledgeConnectorSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 146
             default:
@@ -3493,6 +3580,201 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       return eventHandlersBuilder_;
     }
 
+    private com.google.cloud.dialogflow.cx.v3.AdvancedSettings advancedSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.AdvancedSettings,
+            com.google.cloud.dialogflow.cx.v3.AdvancedSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3.AdvancedSettingsOrBuilder>
+        advancedSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this page. The settings exposed at the
+     * lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 13;</code>
+     *
+     * @return Whether the advancedSettings field is set.
+     */
+    public boolean hasAdvancedSettings() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this page. The settings exposed at the
+     * lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 13;</code>
+     *
+     * @return The advancedSettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3.AdvancedSettings getAdvancedSettings() {
+      if (advancedSettingsBuilder_ == null) {
+        return advancedSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3.AdvancedSettings.getDefaultInstance()
+            : advancedSettings_;
+      } else {
+        return advancedSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this page. The settings exposed at the
+     * lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 13;</code>
+     */
+    public Builder setAdvancedSettings(com.google.cloud.dialogflow.cx.v3.AdvancedSettings value) {
+      if (advancedSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        advancedSettings_ = value;
+      } else {
+        advancedSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this page. The settings exposed at the
+     * lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 13;</code>
+     */
+    public Builder setAdvancedSettings(
+        com.google.cloud.dialogflow.cx.v3.AdvancedSettings.Builder builderForValue) {
+      if (advancedSettingsBuilder_ == null) {
+        advancedSettings_ = builderForValue.build();
+      } else {
+        advancedSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this page. The settings exposed at the
+     * lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 13;</code>
+     */
+    public Builder mergeAdvancedSettings(com.google.cloud.dialogflow.cx.v3.AdvancedSettings value) {
+      if (advancedSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && advancedSettings_ != null
+            && advancedSettings_
+                != com.google.cloud.dialogflow.cx.v3.AdvancedSettings.getDefaultInstance()) {
+          getAdvancedSettingsBuilder().mergeFrom(value);
+        } else {
+          advancedSettings_ = value;
+        }
+      } else {
+        advancedSettingsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this page. The settings exposed at the
+     * lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 13;</code>
+     */
+    public Builder clearAdvancedSettings() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      advancedSettings_ = null;
+      if (advancedSettingsBuilder_ != null) {
+        advancedSettingsBuilder_.dispose();
+        advancedSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this page. The settings exposed at the
+     * lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 13;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.AdvancedSettings.Builder getAdvancedSettingsBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getAdvancedSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this page. The settings exposed at the
+     * lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 13;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.AdvancedSettingsOrBuilder
+        getAdvancedSettingsOrBuilder() {
+      if (advancedSettingsBuilder_ != null) {
+        return advancedSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return advancedSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3.AdvancedSettings.getDefaultInstance()
+            : advancedSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Hierarchical advanced settings for this page. The settings exposed at the
+     * lower level overrides the settings exposed at the higher level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 13;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.AdvancedSettings,
+            com.google.cloud.dialogflow.cx.v3.AdvancedSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3.AdvancedSettingsOrBuilder>
+        getAdvancedSettingsFieldBuilder() {
+      if (advancedSettingsBuilder_ == null) {
+        advancedSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3.AdvancedSettings,
+                com.google.cloud.dialogflow.cx.v3.AdvancedSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3.AdvancedSettingsOrBuilder>(
+                getAdvancedSettings(), getParentForChildren(), isClean());
+        advancedSettings_ = null;
+      }
+      return advancedSettingsBuilder_;
+    }
+
     private com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings
         knowledgeConnectorSettings_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3514,7 +3796,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the knowledgeConnectorSettings field is set.
      */
     public boolean hasKnowledgeConnectorSettings() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -3560,7 +3842,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       } else {
         knowledgeConnectorSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3582,7 +3864,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       } else {
         knowledgeConnectorSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3600,7 +3882,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeKnowledgeConnectorSettings(
         com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings value) {
       if (knowledgeConnectorSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && knowledgeConnectorSettings_ != null
             && knowledgeConnectorSettings_
                 != com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings
@@ -3612,7 +3894,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
       } else {
         knowledgeConnectorSettingsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3628,7 +3910,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearKnowledgeConnectorSettings() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       knowledgeConnectorSettings_ = null;
       if (knowledgeConnectorSettingsBuilder_ != null) {
         knowledgeConnectorSettingsBuilder_.dispose();
@@ -3650,7 +3932,7 @@ public final class Page extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings.Builder
         getKnowledgeConnectorSettingsBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getKnowledgeConnectorSettingsFieldBuilder().getBuilder();
     }

@@ -504,6 +504,44 @@ public interface PageOrBuilder
    *
    *
    * <pre>
+   * Hierarchical advanced settings for this page. The settings exposed at the
+   * lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 13;</code>
+   *
+   * @return Whether the advancedSettings field is set.
+   */
+  boolean hasAdvancedSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this page. The settings exposed at the
+   * lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 13;</code>
+   *
+   * @return The advancedSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3.AdvancedSettings getAdvancedSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this page. The settings exposed at the
+   * lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 13;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3.AdvancedSettingsOrBuilder getAdvancedSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Knowledge connector configuration.
    * </pre>
    *

@@ -70,6 +70,894 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
             com.google.cloud.dialogflow.cx.v3.AdvancedSettings.Builder.class);
   }
 
+  public interface DtmfSettingsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, incoming audio is processed for DTMF (dual tone multi frequency)
+     * events. For example, if the caller presses a button on their telephone
+     * keypad and DTMF processing is enabled, Dialogflow will detect the
+     * event (e.g. a "3" was pressed) in the incoming audio and pass the event
+     * to the bot to drive business logic (e.g. when 3 is pressed, return the
+     * account balance).
+     * </pre>
+     *
+     * <code>bool enabled = 1;</code>
+     *
+     * @return The enabled.
+     */
+    boolean getEnabled();
+
+    /**
+     *
+     *
+     * <pre>
+     * Max length of DTMF digits.
+     * </pre>
+     *
+     * <code>int32 max_digits = 2;</code>
+     *
+     * @return The maxDigits.
+     */
+    int getMaxDigits();
+
+    /**
+     *
+     *
+     * <pre>
+     * The digit that terminates a DTMF digit sequence.
+     * </pre>
+     *
+     * <code>string finish_digit = 3;</code>
+     *
+     * @return The finishDigit.
+     */
+    java.lang.String getFinishDigit();
+    /**
+     *
+     *
+     * <pre>
+     * The digit that terminates a DTMF digit sequence.
+     * </pre>
+     *
+     * <code>string finish_digit = 3;</code>
+     *
+     * @return The bytes for finishDigit.
+     */
+    com.google.protobuf.ByteString getFinishDigitBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Define behaviors for DTMF (dual tone multi frequency).
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings}
+   */
+  public static final class DtmfSettings extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings)
+      DtmfSettingsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use DtmfSettings.newBuilder() to construct.
+    private DtmfSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DtmfSettings() {
+      finishDigit_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DtmfSettings();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3.AdvancedSettingsProto
+          .internal_static_google_cloud_dialogflow_cx_v3_AdvancedSettings_DtmfSettings_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3.AdvancedSettingsProto
+          .internal_static_google_cloud_dialogflow_cx_v3_AdvancedSettings_DtmfSettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings.class,
+              com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings.Builder.class);
+    }
+
+    public static final int ENABLED_FIELD_NUMBER = 1;
+    private boolean enabled_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * If true, incoming audio is processed for DTMF (dual tone multi frequency)
+     * events. For example, if the caller presses a button on their telephone
+     * keypad and DTMF processing is enabled, Dialogflow will detect the
+     * event (e.g. a "3" was pressed) in the incoming audio and pass the event
+     * to the bot to drive business logic (e.g. when 3 is pressed, return the
+     * account balance).
+     * </pre>
+     *
+     * <code>bool enabled = 1;</code>
+     *
+     * @return The enabled.
+     */
+    @java.lang.Override
+    public boolean getEnabled() {
+      return enabled_;
+    }
+
+    public static final int MAX_DIGITS_FIELD_NUMBER = 2;
+    private int maxDigits_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Max length of DTMF digits.
+     * </pre>
+     *
+     * <code>int32 max_digits = 2;</code>
+     *
+     * @return The maxDigits.
+     */
+    @java.lang.Override
+    public int getMaxDigits() {
+      return maxDigits_;
+    }
+
+    public static final int FINISH_DIGIT_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object finishDigit_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The digit that terminates a DTMF digit sequence.
+     * </pre>
+     *
+     * <code>string finish_digit = 3;</code>
+     *
+     * @return The finishDigit.
+     */
+    @java.lang.Override
+    public java.lang.String getFinishDigit() {
+      java.lang.Object ref = finishDigit_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        finishDigit_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The digit that terminates a DTMF digit sequence.
+     * </pre>
+     *
+     * <code>string finish_digit = 3;</code>
+     *
+     * @return The bytes for finishDigit.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getFinishDigitBytes() {
+      java.lang.Object ref = finishDigit_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        finishDigit_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (enabled_ != false) {
+        output.writeBool(1, enabled_);
+      }
+      if (maxDigits_ != 0) {
+        output.writeInt32(2, maxDigits_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(finishDigit_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, finishDigit_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enabled_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enabled_);
+      }
+      if (maxDigits_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxDigits_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(finishDigit_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, finishDigit_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings other =
+          (com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings) obj;
+
+      if (getEnabled() != other.getEnabled()) return false;
+      if (getMaxDigits() != other.getMaxDigits()) return false;
+      if (!getFinishDigit().equals(other.getFinishDigit())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
+      hash = (37 * hash) + MAX_DIGITS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxDigits();
+      hash = (37 * hash) + FINISH_DIGIT_FIELD_NUMBER;
+      hash = (53 * hash) + getFinishDigit().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Define behaviors for DTMF (dual tone multi frequency).
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings)
+        com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3.AdvancedSettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3_AdvancedSettings_DtmfSettings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3.AdvancedSettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3_AdvancedSettings_DtmfSettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings.class,
+                com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        enabled_ = false;
+        maxDigits_ = 0;
+        finishDigit_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3.AdvancedSettingsProto
+            .internal_static_google_cloud_dialogflow_cx_v3_AdvancedSettings_DtmfSettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings build() {
+        com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings buildPartial() {
+        com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings result =
+            new com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enabled_ = enabled_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.maxDigits_ = maxDigits_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.finishDigit_ = finishDigit_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings) {
+          return mergeFrom((com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings.getDefaultInstance())
+          return this;
+        if (other.getEnabled() != false) {
+          setEnabled(other.getEnabled());
+        }
+        if (other.getMaxDigits() != 0) {
+          setMaxDigits(other.getMaxDigits());
+        }
+        if (!other.getFinishDigit().isEmpty()) {
+          finishDigit_ = other.finishDigit_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  enabled_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  maxDigits_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 26:
+                {
+                  finishDigit_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean enabled_;
+      /**
+       *
+       *
+       * <pre>
+       * If true, incoming audio is processed for DTMF (dual tone multi frequency)
+       * events. For example, if the caller presses a button on their telephone
+       * keypad and DTMF processing is enabled, Dialogflow will detect the
+       * event (e.g. a "3" was pressed) in the incoming audio and pass the event
+       * to the bot to drive business logic (e.g. when 3 is pressed, return the
+       * account balance).
+       * </pre>
+       *
+       * <code>bool enabled = 1;</code>
+       *
+       * @return The enabled.
+       */
+      @java.lang.Override
+      public boolean getEnabled() {
+        return enabled_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If true, incoming audio is processed for DTMF (dual tone multi frequency)
+       * events. For example, if the caller presses a button on their telephone
+       * keypad and DTMF processing is enabled, Dialogflow will detect the
+       * event (e.g. a "3" was pressed) in the incoming audio and pass the event
+       * to the bot to drive business logic (e.g. when 3 is pressed, return the
+       * account balance).
+       * </pre>
+       *
+       * <code>bool enabled = 1;</code>
+       *
+       * @param value The enabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnabled(boolean value) {
+
+        enabled_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If true, incoming audio is processed for DTMF (dual tone multi frequency)
+       * events. For example, if the caller presses a button on their telephone
+       * keypad and DTMF processing is enabled, Dialogflow will detect the
+       * event (e.g. a "3" was pressed) in the incoming audio and pass the event
+       * to the bot to drive business logic (e.g. when 3 is pressed, return the
+       * account balance).
+       * </pre>
+       *
+       * <code>bool enabled = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnabled() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int maxDigits_;
+      /**
+       *
+       *
+       * <pre>
+       * Max length of DTMF digits.
+       * </pre>
+       *
+       * <code>int32 max_digits = 2;</code>
+       *
+       * @return The maxDigits.
+       */
+      @java.lang.Override
+      public int getMaxDigits() {
+        return maxDigits_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Max length of DTMF digits.
+       * </pre>
+       *
+       * <code>int32 max_digits = 2;</code>
+       *
+       * @param value The maxDigits to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxDigits(int value) {
+
+        maxDigits_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Max length of DTMF digits.
+       * </pre>
+       *
+       * <code>int32 max_digits = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxDigits() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        maxDigits_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object finishDigit_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The digit that terminates a DTMF digit sequence.
+       * </pre>
+       *
+       * <code>string finish_digit = 3;</code>
+       *
+       * @return The finishDigit.
+       */
+      public java.lang.String getFinishDigit() {
+        java.lang.Object ref = finishDigit_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          finishDigit_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The digit that terminates a DTMF digit sequence.
+       * </pre>
+       *
+       * <code>string finish_digit = 3;</code>
+       *
+       * @return The bytes for finishDigit.
+       */
+      public com.google.protobuf.ByteString getFinishDigitBytes() {
+        java.lang.Object ref = finishDigit_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          finishDigit_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The digit that terminates a DTMF digit sequence.
+       * </pre>
+       *
+       * <code>string finish_digit = 3;</code>
+       *
+       * @param value The finishDigit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFinishDigit(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        finishDigit_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The digit that terminates a DTMF digit sequence.
+       * </pre>
+       *
+       * <code>string finish_digit = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFinishDigit() {
+        finishDigit_ = getDefaultInstance().getFinishDigit();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The digit that terminates a DTMF digit sequence.
+       * </pre>
+       *
+       * <code>string finish_digit = 3;</code>
+       *
+       * @param value The bytes for finishDigit to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFinishDigitBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        finishDigit_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings)
+    private static final com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DtmfSettings> PARSER =
+        new com.google.protobuf.AbstractParser<DtmfSettings>() {
+          @java.lang.Override
+          public DtmfSettings parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DtmfSettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DtmfSettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface LoggingSettingsOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings)
@@ -790,6 +1678,72 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
         : audioExportGcsDestination_;
   }
 
+  public static final int DTMF_SETTINGS_FIELD_NUMBER = 5;
+  private com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings dtmfSettings_;
+  /**
+   *
+   *
+   * <pre>
+   * Settings for DTMF.
+   * Exposed at the following levels:
+   * - Agent level
+   * - Flow level
+   * - Page level
+   * - Parameter level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings dtmf_settings = 5;</code>
+   *
+   * @return Whether the dtmfSettings field is set.
+   */
+  @java.lang.Override
+  public boolean hasDtmfSettings() {
+    return dtmfSettings_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings for DTMF.
+   * Exposed at the following levels:
+   * - Agent level
+   * - Flow level
+   * - Page level
+   * - Parameter level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings dtmf_settings = 5;</code>
+   *
+   * @return The dtmfSettings.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings getDtmfSettings() {
+    return dtmfSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings.getDefaultInstance()
+        : dtmfSettings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Settings for DTMF.
+   * Exposed at the following levels:
+   * - Agent level
+   * - Flow level
+   * - Page level
+   * - Parameter level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings dtmf_settings = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettingsOrBuilder
+      getDtmfSettingsOrBuilder() {
+    return dtmfSettings_ == null
+        ? com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings.getDefaultInstance()
+        : dtmfSettings_;
+  }
+
   public static final int LOGGING_SETTINGS_FIELD_NUMBER = 6;
   private com.google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings loggingSettings_;
   /**
@@ -873,6 +1827,9 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     if (audioExportGcsDestination_ != null) {
       output.writeMessage(2, getAudioExportGcsDestination());
     }
+    if (dtmfSettings_ != null) {
+      output.writeMessage(5, getDtmfSettings());
+    }
     if (loggingSettings_ != null) {
       output.writeMessage(6, getLoggingSettings());
     }
@@ -889,6 +1846,9 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, getAudioExportGcsDestination());
+    }
+    if (dtmfSettings_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getDtmfSettings());
     }
     if (loggingSettings_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getLoggingSettings());
@@ -914,6 +1874,10 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       if (!getAudioExportGcsDestination().equals(other.getAudioExportGcsDestination()))
         return false;
     }
+    if (hasDtmfSettings() != other.hasDtmfSettings()) return false;
+    if (hasDtmfSettings()) {
+      if (!getDtmfSettings().equals(other.getDtmfSettings())) return false;
+    }
     if (hasLoggingSettings() != other.hasLoggingSettings()) return false;
     if (hasLoggingSettings()) {
       if (!getLoggingSettings().equals(other.getLoggingSettings())) return false;
@@ -932,6 +1896,10 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     if (hasAudioExportGcsDestination()) {
       hash = (37 * hash) + AUDIO_EXPORT_GCS_DESTINATION_FIELD_NUMBER;
       hash = (53 * hash) + getAudioExportGcsDestination().hashCode();
+    }
+    if (hasDtmfSettings()) {
+      hash = (37 * hash) + DTMF_SETTINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getDtmfSettings().hashCode();
     }
     if (hasLoggingSettings()) {
       hash = (37 * hash) + LOGGING_SETTINGS_FIELD_NUMBER;
@@ -1091,6 +2059,11 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
         audioExportGcsDestinationBuilder_.dispose();
         audioExportGcsDestinationBuilder_ = null;
       }
+      dtmfSettings_ = null;
+      if (dtmfSettingsBuilder_ != null) {
+        dtmfSettingsBuilder_.dispose();
+        dtmfSettingsBuilder_ = null;
+      }
       loggingSettings_ = null;
       if (loggingSettingsBuilder_ != null) {
         loggingSettingsBuilder_.dispose();
@@ -1139,6 +2112,10 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
                 : audioExportGcsDestinationBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.dtmfSettings_ =
+            dtmfSettingsBuilder_ == null ? dtmfSettings_ : dtmfSettingsBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.loggingSettings_ =
             loggingSettingsBuilder_ == null ? loggingSettings_ : loggingSettingsBuilder_.build();
       }
@@ -1193,6 +2170,9 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       if (other.hasAudioExportGcsDestination()) {
         mergeAudioExportGcsDestination(other.getAudioExportGcsDestination());
       }
+      if (other.hasDtmfSettings()) {
+        mergeDtmfSettings(other.getDtmfSettings());
+      }
       if (other.hasLoggingSettings()) {
         mergeLoggingSettings(other.getLoggingSettings());
       }
@@ -1229,10 +2209,16 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 18
+            case 42:
+              {
+                input.readMessage(getDtmfSettingsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 42
             case 50:
               {
                 input.readMessage(getLoggingSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 50
             default:
@@ -1479,6 +2465,241 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       return audioExportGcsDestinationBuilder_;
     }
 
+    private com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings dtmfSettings_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings,
+            com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettingsOrBuilder>
+        dtmfSettingsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Settings for DTMF.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * - Page level
+     * - Parameter level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings dtmf_settings = 5;</code>
+     *
+     * @return Whether the dtmfSettings field is set.
+     */
+    public boolean hasDtmfSettings() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for DTMF.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * - Page level
+     * - Parameter level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings dtmf_settings = 5;</code>
+     *
+     * @return The dtmfSettings.
+     */
+    public com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings getDtmfSettings() {
+      if (dtmfSettingsBuilder_ == null) {
+        return dtmfSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings.getDefaultInstance()
+            : dtmfSettings_;
+      } else {
+        return dtmfSettingsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for DTMF.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * - Page level
+     * - Parameter level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings dtmf_settings = 5;</code>
+     */
+    public Builder setDtmfSettings(
+        com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings value) {
+      if (dtmfSettingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dtmfSettings_ = value;
+      } else {
+        dtmfSettingsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for DTMF.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * - Page level
+     * - Parameter level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings dtmf_settings = 5;</code>
+     */
+    public Builder setDtmfSettings(
+        com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings.Builder builderForValue) {
+      if (dtmfSettingsBuilder_ == null) {
+        dtmfSettings_ = builderForValue.build();
+      } else {
+        dtmfSettingsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for DTMF.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * - Page level
+     * - Parameter level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings dtmf_settings = 5;</code>
+     */
+    public Builder mergeDtmfSettings(
+        com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings value) {
+      if (dtmfSettingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && dtmfSettings_ != null
+            && dtmfSettings_
+                != com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings
+                    .getDefaultInstance()) {
+          getDtmfSettingsBuilder().mergeFrom(value);
+        } else {
+          dtmfSettings_ = value;
+        }
+      } else {
+        dtmfSettingsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for DTMF.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * - Page level
+     * - Parameter level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings dtmf_settings = 5;</code>
+     */
+    public Builder clearDtmfSettings() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      dtmfSettings_ = null;
+      if (dtmfSettingsBuilder_ != null) {
+        dtmfSettingsBuilder_.dispose();
+        dtmfSettingsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for DTMF.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * - Page level
+     * - Parameter level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings dtmf_settings = 5;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings.Builder
+        getDtmfSettingsBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getDtmfSettingsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for DTMF.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * - Page level
+     * - Parameter level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings dtmf_settings = 5;</code>
+     */
+    public com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettingsOrBuilder
+        getDtmfSettingsOrBuilder() {
+      if (dtmfSettingsBuilder_ != null) {
+        return dtmfSettingsBuilder_.getMessageOrBuilder();
+      } else {
+        return dtmfSettings_ == null
+            ? com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings.getDefaultInstance()
+            : dtmfSettings_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Settings for DTMF.
+     * Exposed at the following levels:
+     * - Agent level
+     * - Flow level
+     * - Page level
+     * - Parameter level.
+     * </pre>
+     *
+     * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings dtmf_settings = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings,
+            com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings.Builder,
+            com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettingsOrBuilder>
+        getDtmfSettingsFieldBuilder() {
+      if (dtmfSettingsBuilder_ == null) {
+        dtmfSettingsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings,
+                com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettings.Builder,
+                com.google.cloud.dialogflow.cx.v3.AdvancedSettings.DtmfSettingsOrBuilder>(
+                getDtmfSettings(), getParentForChildren(), isClean());
+        dtmfSettings_ = null;
+      }
+      return dtmfSettingsBuilder_;
+    }
+
     private com.google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings loggingSettings_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings,
@@ -1502,7 +2723,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
      * @return Whether the loggingSettings field is set.
      */
     public boolean hasLoggingSettings() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      *
@@ -1554,7 +2775,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       } else {
         loggingSettingsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1580,7 +2801,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       } else {
         loggingSettingsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1601,7 +2822,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
     public Builder mergeLoggingSettings(
         com.google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings value) {
       if (loggingSettingsBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && loggingSettings_ != null
             && loggingSettings_
                 != com.google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings
@@ -1613,7 +2834,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
       } else {
         loggingSettingsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1632,7 +2853,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
      * </code>
      */
     public Builder clearLoggingSettings() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       loggingSettings_ = null;
       if (loggingSettingsBuilder_ != null) {
         loggingSettingsBuilder_.dispose();
@@ -1657,7 +2878,7 @@ public final class AdvancedSettings extends com.google.protobuf.GeneratedMessage
      */
     public com.google.cloud.dialogflow.cx.v3.AdvancedSettings.LoggingSettings.Builder
         getLoggingSettingsBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getLoggingSettingsFieldBuilder().getBuilder();
     }

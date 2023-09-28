@@ -291,4 +291,59 @@ public interface FulfillmentOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3.Fulfillment.ConditionalCasesOrBuilder
       getConditionalCasesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this fulfillment. The settings exposed
+   * at the lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 7;</code>
+   *
+   * @return Whether the advancedSettings field is set.
+   */
+  boolean hasAdvancedSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this fulfillment. The settings exposed
+   * at the lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 7;</code>
+   *
+   * @return The advancedSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3.AdvancedSettings getAdvancedSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this fulfillment. The settings exposed
+   * at the lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 7;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3.AdvancedSettingsOrBuilder getAdvancedSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * If the flag is true, the agent will utilize LLM to generate a text
+   * response. If LLM generation fails, the defined
+   * [responses][google.cloud.dialogflow.cx.v3.Fulfillment.messages] in the
+   * fulfillment will be respected. This flag is only useful for fulfillments
+   * associated with no-match event handlers.
+   * </pre>
+   *
+   * <code>bool enable_generative_fallback = 12;</code>
+   *
+   * @return The enableGenerativeFallback.
+   */
+  boolean getEnableGenerativeFallback();
 }
