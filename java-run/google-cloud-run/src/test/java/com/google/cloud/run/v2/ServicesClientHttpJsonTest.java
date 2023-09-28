@@ -125,7 +125,6 @@ public class ServicesClientHttpJsonTest {
             .setUri("uri116076")
             .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
-            .setTrafficTagsCleanupThreshold(-795495828)
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -210,7 +209,6 @@ public class ServicesClientHttpJsonTest {
             .setUri("uri116076")
             .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
-            .setTrafficTagsCleanupThreshold(-795495828)
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -295,7 +293,6 @@ public class ServicesClientHttpJsonTest {
             .setUri("uri116076")
             .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
-            .setTrafficTagsCleanupThreshold(-795495828)
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -371,7 +368,6 @@ public class ServicesClientHttpJsonTest {
             .setUri("uri116076")
             .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
-            .setTrafficTagsCleanupThreshold(-795495828)
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -547,7 +543,6 @@ public class ServicesClientHttpJsonTest {
             .setUri("uri116076")
             .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
-            .setTrafficTagsCleanupThreshold(-795495828)
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -591,7 +586,6 @@ public class ServicesClientHttpJsonTest {
             .setUri("uri116076")
             .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
-            .setTrafficTagsCleanupThreshold(-795495828)
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -654,7 +648,6 @@ public class ServicesClientHttpJsonTest {
               .setUri("uri116076")
               .addAllCustomAudiences(new ArrayList<String>())
               .setSatisfiesPzs(true)
-              .setTrafficTagsCleanupThreshold(-795495828)
               .setReconciling(true)
               .setEtag("etag3123477")
               .build();
@@ -698,7 +691,6 @@ public class ServicesClientHttpJsonTest {
             .setUri("uri116076")
             .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
-            .setTrafficTagsCleanupThreshold(-795495828)
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();
@@ -779,7 +771,6 @@ public class ServicesClientHttpJsonTest {
             .setUri("uri116076")
             .addAllCustomAudiences(new ArrayList<String>())
             .setSatisfiesPzs(true)
-            .setTrafficTagsCleanupThreshold(-795495828)
             .setReconciling(true)
             .setEtag("etag3123477")
             .build();

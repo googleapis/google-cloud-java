@@ -193,7 +193,7 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * RunJob Overrides that contains Execution fields to be overridden on the go.
+   * RunJob Overrides that contains Execution fields to be overridden.
    * </pre>
    *
    * Protobuf type {@code google.cloud.run.v2.RunJobRequest.Overrides}
@@ -391,7 +391,7 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Per container override specification.
+     * Per-container override specification.
      * </pre>
      *
      * Protobuf type {@code google.cloud.run.v2.RunJobRequest.Overrides.ContainerOverride}
@@ -849,7 +849,7 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Per container override specification.
+       * Per-container override specification.
        * </pre>
        *
        * Protobuf type {@code google.cloud.run.v2.RunJobRequest.Overrides.ContainerOverride}
@@ -2254,7 +2254,7 @@ public final class RunJobRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * RunJob Overrides that contains Execution fields to be overridden on the go.
+     * RunJob Overrides that contains Execution fields to be overridden.
      * </pre>
      *
      * Protobuf type {@code google.cloud.run.v2.RunJobRequest.Overrides}
