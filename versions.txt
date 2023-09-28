@@ -683,6 +683,3 @@ grpc-google-cloud-policy-troubleshooter-v3:1.25.0:1.26.0-SNAPSHOT
 google-shopping-merchant-reports:0.2.0:0.3.0-SNAPSHOT
 proto-google-shopping-merchant-reports-v1beta:0.2.0:0.3.0-SNAPSHOT
 grpc-google-shopping-merchant-reports-v1beta:0.2.0:0.3.0-SNAPSHOT
-google-cloud-telcoautomation:0.2.0:0.3.0-SNAPSHOT
-proto-google-cloud-telcoautomation-v1alpha1:0.2.0:0.3.0-SNAPSHOT
-grpc-google-cloud-telcoautomation-v1alpha1:0.2.0:0.3.0-SNAPSHOT
