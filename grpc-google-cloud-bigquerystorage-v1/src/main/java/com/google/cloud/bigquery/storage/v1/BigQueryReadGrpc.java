@@ -33,7 +33,8 @@ public final class BigQueryReadGrpc {
 
   private BigQueryReadGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.bigquery.storage.v1.BigQueryRead";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.bigquery.storage.v1.BigQueryRead";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -688,9 +689,9 @@ public final class BigQueryReadGrpc {
   private static final class BigQueryReadMethodDescriptorSupplier
       extends BigQueryReadBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    BigQueryReadMethodDescriptorSupplier(String methodName) {
+    BigQueryReadMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

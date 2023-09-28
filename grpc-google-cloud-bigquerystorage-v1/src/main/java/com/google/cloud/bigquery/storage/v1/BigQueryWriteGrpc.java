@@ -35,7 +35,8 @@ public final class BigQueryWriteGrpc {
 
   private BigQueryWriteGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.bigquery.storage.v1.BigQueryWrite";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.bigquery.storage.v1.BigQueryWrite";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1048,9 +1049,9 @@ public final class BigQueryWriteGrpc {
   private static final class BigQueryWriteMethodDescriptorSupplier
       extends BigQueryWriteBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    BigQueryWriteMethodDescriptorSupplier(String methodName) {
+    BigQueryWriteMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
