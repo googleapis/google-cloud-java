@@ -33,7 +33,7 @@ public final class PublisherGrpc {
 
   private PublisherGrpc() {}
 
-  public static final String SERVICE_NAME = "google.pubsub.v1.Publisher";
+  public static final java.lang.String SERVICE_NAME = "google.pubsub.v1.Publisher";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1271,9 +1271,9 @@ public final class PublisherGrpc {
   private static final class PublisherMethodDescriptorSupplier
       extends PublisherBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    PublisherMethodDescriptorSupplier(String methodName) {
+    PublisherMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
