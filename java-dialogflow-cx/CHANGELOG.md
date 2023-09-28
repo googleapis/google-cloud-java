@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.38.0 (2023-09-28)
+
+### Features
+
+* add support for AdvancedSettings ([#9918](https://github.com/googleapis/google-cloud-java/issues/9918)) ([59f9d8c](https://github.com/googleapis/google-cloud-java/commit/59f9d8c7ad8fc498f13873fc2b348ea23984f87c))
+
+
+
 ## 0.36.0 (2023-09-27)
 
 ### Dependencies

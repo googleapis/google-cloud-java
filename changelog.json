@@ -4,6 +4,915 @@
     {
       "changes": [
         {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-workstations",
+      "id": "afc13e91-bada-445c-bb56-877f2af8e265",
+      "createTime": "2023-09-28T20:07:05.321Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-workflows",
+      "id": "8effbdd9-f75f-4286-a250-f2b882d83a8d",
+      "createTime": "2023-09-28T20:07:05.317Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-workflow-executions",
+      "id": "90df9840-72f5-49f5-9cb5-344f5e4b6d1a",
+      "createTime": "2023-09-28T20:07:05.313Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-webrisk",
+      "id": "5e299742-8515-4932-9159-3ebdc4ff8791",
+      "createTime": "2023-09-28T20:07:05.308Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vmwareengine",
+      "id": "673bd377-475f-4354-b97c-7d07d5a62c5f",
+      "createTime": "2023-09-28T20:07:05.304Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vision",
+      "id": "1e400a7b-9ddf-4acc-bf1d-5d2d0c654c04",
+      "createTime": "2023-09-28T20:07:05.300Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-video-transcoder",
+      "id": "3df909e2-142b-4117-ac90-e39d53555283",
+      "createTime": "2023-09-28T20:07:05.295Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-video-intelligence",
+      "id": "05e94868-6ba0-4e60-8c80-46ad9ca8ef24",
+      "createTime": "2023-09-28T20:07:05.290Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-translate",
+      "id": "74ac1041-69b4-486f-a6fb-fa375ff2dac5",
+      "createTime": "2023-09-28T20:07:05.286Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-tpu",
+      "id": "23e8b258-6550-406c-95f0-f1b4276300fe",
+      "createTime": "2023-09-28T20:07:05.281Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-texttospeech",
+      "id": "7ab6c585-645b-494f-83a9-1a2d3602a696",
+      "createTime": "2023-09-28T20:07:05.273Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-tasks",
+      "id": "406d226d-0b83-42d1-bc66-4f5f8e2764b7",
+      "createTime": "2023-09-28T20:07:05.269Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-speech",
+      "id": "8f87d0e7-b4c2-42bd-8137-2dd100c6ae8f",
+      "createTime": "2023-09-28T20:07:05.263Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-shell",
+      "id": "985fe11e-7d36-4978-9cff-2a26e6722c34",
+      "createTime": "2023-09-28T20:07:05.259Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-servicedirectory",
+      "id": "5bd38784-533b-429d-afd5-0346a2201a1b",
+      "createTime": "2023-09-28T20:07:05.254Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-securitycenter",
+      "id": "df6fed2e-6fcf-449d-bc60-c0dd35d3692d",
+      "createTime": "2023-09-28T20:07:05.249Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-securitycenter-settings",
+      "id": "935315bb-722b-47aa-9c5e-f05d52052b93",
+      "createTime": "2023-09-28T20:07:05.245Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-security-private-ca",
+      "id": "dd183dde-c6bc-4457-880f-21e82ecf3d9b",
+      "createTime": "2023-09-28T20:07:05.241Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-scheduler",
+      "id": "c39b01d8-13c2-4246-82dc-3a353725b818",
+      "createTime": "2023-09-28T20:07:05.236Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-run",
+      "id": "5ec4dd41-cad4-4046-9b10-a4ae6a667abe",
+      "createTime": "2023-09-28T20:07:05.232Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-recaptchaenterprise",
+      "id": "d5ed44f3-339f-4281-9e36-58d7c89bbb8e",
+      "createTime": "2023-09-28T20:07:05.228Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-orchestration-airflow",
+      "id": "52ff5878-91c9-4010-817c-5666ee4b2323",
+      "createTime": "2023-09-28T20:07:05.223Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-optimization",
+      "id": "968a867c-dd75-4f90-b528-93a29dd9b8dc",
+      "createTime": "2023-09-28T20:07:05.219Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-life-sciences",
+      "id": "c673beb6-9fac-4f1f-a754-42019fc14d08",
+      "createTime": "2023-09-28T20:07:05.215Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-language",
+      "id": "bf261d0b-4fb2-4a8b-8640-06029597bbfc",
+      "createTime": "2023-09-28T20:07:05.210Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-kmsinventory",
+      "id": "af5eea00-fbe1-4a62-8e3d-0f2094fc6423",
+      "createTime": "2023-09-28T20:07:05.206Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-functions",
+      "id": "92fbeecf-a692-4b9b-b1de-88810f66930a",
+      "createTime": "2023-09-28T20:07:05.202Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-filestore",
+      "id": "f91d7ba4-8717-4e05-b1a3-fd313aad05a6",
+      "createTime": "2023-09-28T20:07:05.197Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-eventarc",
+      "id": "4741b97a-baba-4e38-b9dd-e02a46b9fe20",
+      "createTime": "2023-09-28T20:07:05.193Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-eventarc-publishing",
+      "id": "c64b81ac-6706-4f93-bf4a-43b6fbcff8c4",
+      "createTime": "2023-09-28T20:07:05.189Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dms",
+      "id": "f743ecb1-fa61-4f19-a159-771c5265d47d",
+      "createTime": "2023-09-28T20:07:05.184Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dlp",
+      "id": "c427d85b-7d30-4814-ae1e-aaba31af0609",
+      "createTime": "2023-09-28T20:07:05.177Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datastream",
+      "id": "c3a7eac3-7e08-4285-a989-e032a173a247",
+      "createTime": "2023-09-28T20:07:05.173Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataproc",
+      "id": "d2579019-a88d-4d4d-8358-e5fb859293b9",
+      "createTime": "2023-09-28T20:07:05.167Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataproc-metastore",
+      "id": "4fc9a161-4988-474e-8b6f-3e8d60bd6842",
+      "createTime": "2023-09-28T20:07:05.163Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataplex",
+      "id": "4e83cbf9-75c3-452a-b87e-12c29c4b41d9",
+      "createTime": "2023-09-28T20:07:05.159Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-datalabeling",
+      "id": "65f0b35f-86c0-40f5-a5dd-cc0b2abbacd1",
+      "createTime": "2023-09-28T20:07:05.154Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataflow",
+      "id": "4a5348c0-833a-4611-bca7-c6df8930f1d7",
+      "createTime": "2023-09-28T20:07:05.150Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-data-fusion",
+      "id": "5cf6aaac-29b6-40bb-b039-a57329b1ce55",
+      "createTime": "2023-09-28T20:07:05.146Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-container",
+      "id": "4e4bc1cb-a824-4148-8751-571bc93577c6",
+      "createTime": "2023-09-28T20:07:05.141Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-channel",
+      "id": "90a0c6c5-af8a-4665-8405-3cca74068a79",
+      "createTime": "2023-09-28T20:07:05.137Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-binary-authorization",
+      "id": "71bd3bb8-e61b-47a7-92e4-aef5b4bee021",
+      "createTime": "2023-09-28T20:07:05.133Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-billing",
+      "id": "c90046e5-98c5-4fac-b54d-aa608e552951",
+      "createTime": "2023-09-28T20:07:05.128Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bigquerymigration",
+      "id": "b0b798cd-e968-48c6-8d2e-d2408ce75237",
+      "createTime": "2023-09-28T20:07:05.124Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-bare-metal-solution",
+      "id": "fb9218bf-53b4-4f2a-a622-aa49b6d259a7",
+      "createTime": "2023-09-28T20:07:05.120Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-automl",
+      "id": "c40256a1-8c2c-43e1-94c7-0ba215e96bd3",
+      "createTime": "2023-09-28T20:07:05.115Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-assured-workloads",
+      "id": "7757f263-ad7d-4c5d-aea6-e49aca36a7c0",
+      "createTime": "2023-09-28T20:07:05.111Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-artifact-registry",
+      "id": "fb5db73e-88b5-4806-bc1f-f73f1f2df478",
+      "createTime": "2023-09-28T20:07:05.107Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-api-gateway",
+      "id": "291cfe0f-939e-4a36-b760-17a0e8cc6b95",
+      "createTime": "2023-09-28T20:07:05.101Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-alloydb",
+      "id": "ccd46e91-0e79-44a9-a09f-69387a564dad",
+      "createTime": "2023-09-28T20:07:05.097Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-alloydb-connectors",
+      "id": "3dbb6535-5a7b-48a2-a05d-4cd14d6f6c45",
+      "createTime": "2023-09-28T20:07:05.093Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-aiplatform",
+      "id": "61123f51-7bda-43d9-99c5-7913425765bd",
+      "createTime": "2023-09-28T20:07:05.087Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "59f9d8c7ad8fc498f13873fc2b348ea23984f87c",
+          "message": "[dialogflow-cx] add support for AdvancedSettings",
+          "issues": [
+            "9918"
+          ]
+        },
+        {
+          "type": "docs",
+          "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
+          "message": "add links to rpc and rest documentation in repo-metadata.json",
+          "issues": [
+            "9913"
+          ]
+        }
+      ],
+      "version": "1.21.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow-cx",
+      "id": "918da628-0b48-4f9e-8946-92efa79c4e44",
+      "createTime": "2023-09-28T20:07:05.083Z"
+    },
+    {
+      "changes": [
+        {
           "type": "fix",
           "sha": "ad8170803074465d8e4af3353eef3bdc31e5dad7",
           "message": "[run] Removes accidentally exposed field service.traffic_tags_cleanup_threshold in Cloud Run Service",
@@ -11115,5 +12024,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2023-09-28T16:22:43.455Z"
+  "updateTime": "2023-09-28T20:07:05.321Z"
 }

@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.24.0 (2023-09-28)
+
+* No change
+
+
 ## 1.22.0 (2023-09-27)
 
 ### Dependencies
