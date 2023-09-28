@@ -1,5 +1,22 @@
 # Changelog
 
+## [2.43.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.42.0...v2.43.0) (2023-09-28)
+
+
+### Features
+
+* Add sample code about default missingValueInterpretation ([#2249](https://github.com/googleapis/java-bigquerystorage/issues/2249)) ([ebedcc0](https://github.com/googleapis/java-bigquerystorage/commit/ebedcc07e400429fc6b80a4ad0543fe25eef970d))
+
+
+### Dependencies
+
+* Update actions/checkout digest to 8ade135 ([#2251](https://github.com/googleapis/java-bigquerystorage/issues/2251)) ([182e050](https://github.com/googleapis/java-bigquerystorage/commit/182e050d9929f9fb58694e76625b03bb54f67efe))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.32.0 ([#2246](https://github.com/googleapis/java-bigquerystorage/issues/2246)) ([893fcb9](https://github.com/googleapis/java-bigquerystorage/commit/893fcb9f6c4b2eb9814ea2597fe9aae95367b4cd))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.33.0 ([#2255](https://github.com/googleapis/java-bigquerystorage/issues/2255)) ([7689dee](https://github.com/googleapis/java-bigquerystorage/commit/7689dee5f70a144efb9eb9be1a058d11d7e3c05d))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.16.1 ([#2250](https://github.com/googleapis/java-bigquerystorage/issues/2250)) ([43d96d2](https://github.com/googleapis/java-bigquerystorage/commit/43d96d288207a607d168f604f190fb28b5eab132))
+* Update dependency org.apache.arrow:arrow-vector to v13 ([#2236](https://github.com/googleapis/java-bigquerystorage/issues/2236)) ([afde7ce](https://github.com/googleapis/java-bigquerystorage/commit/afde7ce1f48f1c7cdd4b06d4aabdaac9d367aa50))
+* Update dependency org.apache.avro:avro to v1.11.3 ([#2252](https://github.com/googleapis/java-bigquerystorage/issues/2252)) ([10b615b](https://github.com/googleapis/java-bigquerystorage/commit/10b615b49ba8889f7d051ac03d4751ace82b6823))
+
 ## [2.42.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.41.1...v2.42.0) (2023-09-13)
 
 
