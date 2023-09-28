@@ -12,5 +12,6 @@
   "distribution_name": "com.google.cloud:google-cloud-bigquerymigration",
   "api_id": "bigquerymigration.googleapis.com",
   "library_type": "GAPIC_AUTO",
-  "requires_billing": true
+  "requires_billing": true,
+  "rest_documentation": "https://cloud.google.com/bigquery/docs/reference/rest"
 }
