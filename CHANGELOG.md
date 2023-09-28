@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.20.0](https://github.com/googleapis/google-cloud-java/compare/v1.19.0...v1.20.0) (2023-09-28)
+
+
+### Features
+
+* [alloydb] Add support to generate client certificate and get connection info for auth proxy in AlloyDB v1 ([#9903](https://github.com/googleapis/google-cloud-java/issues/9903)) ([16f1b33](https://github.com/googleapis/google-cloud-java/commit/16f1b33260b142bc30511e798281c4bf85410e07))
+* [dialogflow-cx] add support for AdvancedSettings ([#9905](https://github.com/googleapis/google-cloud-java/issues/9905)) ([f39cd4c](https://github.com/googleapis/google-cloud-java/commit/f39cd4ca6009c18172a2aef6c1814bb451fdfe47))
+* [dialogflow] Add the enable_partial_automated_agent_reply flag ([#9906](https://github.com/googleapis/google-cloud-java/issues/9906)) ([e88fe30](https://github.com/googleapis/google-cloud-java/commit/e88fe30b5ed56f1614595cc888e44875992e6d03))
+
+
+### Bug Fixes
+
+* [run] Removes accidentally exposed field service.traffic_tags_cleanup_threshold in Cloud Run Service ([#9908](https://github.com/googleapis/google-cloud-java/issues/9908)) ([ad81708](https://github.com/googleapis/google-cloud-java/commit/ad8170803074465d8e4af3353eef3bdc31e5dad7))
+* **deps:** update dependency com.google.apis:google-api-services-storage to v1-rev20230926-2.0.0 ([#9911](https://github.com/googleapis/google-cloud-java/issues/9911)) ([d7f5cc9](https://github.com/googleapis/google-cloud-java/commit/d7f5cc9e9871474e5a9b0b4d14681fe4b2f9d1bd))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.125.3 ([#9910](https://github.com/googleapis/google-cloud-java/issues/9910)) ([52dc784](https://github.com/googleapis/google-cloud-java/commit/52dc7849f9fbf21517c1f8a468c66a1f080122db))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.125.3 ([#9912](https://github.com/googleapis/google-cloud-java/issues/9912)) ([f49e2d9](https://github.com/googleapis/google-cloud-java/commit/f49e2d96183f80763e3a46e2a4a218959604ea6d))
+
 ## [1.19.0](https://github.com/googleapis/google-cloud-java/compare/v1.18.0...v1.19.0) (2023-09-27)
 
 
