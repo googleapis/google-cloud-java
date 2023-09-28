@@ -53,6 +53,7 @@ public class AsyncStreamingAnalyzeContent {
               .setAssistQueryParams(AssistQueryParameters.newBuilder().build())
               .setCxParameters(Struct.newBuilder().build())
               .setCxCurrentPage("cxCurrentPage1596907507")
+              .setEnableExtendedStreaming(true)
               .setEnablePartialAutomatedAgentReply(true)
               .setEnableDebuggingInfo(true)
               .build();
