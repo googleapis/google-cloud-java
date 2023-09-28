@@ -2990,6 +2990,34 @@ public class ITBigQueryTest {
   }
 
   @Test
+  public void testConnectionImplDryRunNoQueryParameters() throws SQLException {
+    String query =
+        String.format(
+            "select StringField,  BigNumericField, BooleanField, BytesField, IntegerField, "
+                + "TimestampField, FloatField, NumericField, TimeField, DateField,  DateTimeField, "
+                + "GeographyField, RecordField.BytesField, RecordField.BooleanField, "
+                + "IntegerArrayField from %s order by TimestampField",
+            TABLE_ID_FASTQUERY_BQ_RESULTSET.getTable());
+    ConnectionSettings connectionSettings =
+        ConnectionSettings.newBuilder()
+            .setDefaultDataset(DatasetId.of(DATASET))
+            .setCreateSession(true)
+            .build();
+    Connection connection = bigquery.createConnection(connectionSettings);
+    BigQueryDryRunResult bigQueryDryRunResultSet = connection.dryRun(query);
+    assertNotNull(bigQueryDryRunResultSet.getSchema());
+    assertEquals(
+        BQ_RESULTSET_EXPECTED_SCHEMA, bigQueryDryRunResultSet.getSchema()); // match the schema
+    List<Parameter> queryParameters = bigQueryDryRunResultSet.getQueryParameters();
+    assertEquals(0, queryParameters.size());
+    QueryStatistics queryStatistics = bigQueryDryRunResultSet.getStatistics().getQueryStatistics();
+    assertNotNull(queryStatistics);
+    SessionInfo sessionInfo = bigQueryDryRunResultSet.getStatistics().getSessionInfo();
+    assertNotNull(sessionInfo.getSessionId());
+    assertEquals(StatementType.SELECT, queryStatistics.getStatementType());
+  }
+
+  @Test
   // This test case test the order of the records, making sure that the result is not jumbled up due
   // to the multithreaded BigQueryResult implementation
   public void testBQResultSetMultiThreadedOrder() throws SQLException {

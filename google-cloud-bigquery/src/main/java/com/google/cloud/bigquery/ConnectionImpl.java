@@ -55,6 +55,7 @@ import com.google.common.util.concurrent.MoreExecutors;
 import java.io.IOException;
 import java.util.AbstractList;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -173,7 +174,9 @@ class ConnectionImpl implements Connection {
     List<QueryParameter> queryParametersPb =
         dryRunJob.getStatistics().getQuery().getUndeclaredQueryParameters();
     List<Parameter> queryParameters =
-        Lists.transform(queryParametersPb, QUERY_PARAMETER_FROM_PB_FUNCTION);
+        queryParametersPb == null
+            ? Collections.emptyList()
+            : Lists.transform(queryParametersPb, QUERY_PARAMETER_FROM_PB_FUNCTION);
     QueryStatistics queryStatistics = JobStatistics.fromPb(dryRunJob);
     SessionInfo sessionInfo =
         queryStatistics.getSessionInfo() == null ? null : queryStatistics.getSessionInfo();
