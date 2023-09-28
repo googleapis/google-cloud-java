@@ -2923,6 +2923,190 @@ public class AlloyDBAdminClientHttpJsonTest {
   }
 
   @Test
+  public void generateClientCertificateTest() throws Exception {
+    GenerateClientCertificateResponse expectedResponse =
+        GenerateClientCertificateResponse.newBuilder()
+            .addAllPemCertificateChain(new ArrayList<String>())
+            .setCaCert("caCert-1369003102")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+
+    GenerateClientCertificateResponse actualResponse = client.generateClientCertificate(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void generateClientCertificateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      client.generateClientCertificate(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void generateClientCertificateTest2() throws Exception {
+    GenerateClientCertificateResponse expectedResponse =
+        GenerateClientCertificateResponse.newBuilder()
+            .addAllPemCertificateChain(new ArrayList<String>())
+            .setCaCert("caCert-1369003102")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-9466/locations/location-9466/clusters/cluster-9466";
+
+    GenerateClientCertificateResponse actualResponse = client.generateClientCertificate(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void generateClientCertificateExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "projects/project-9466/locations/location-9466/clusters/cluster-9466";
+      client.generateClientCertificate(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getConnectionInfoTest() throws Exception {
+    ConnectionInfo expectedResponse =
+        ConnectionInfo.newBuilder()
+            .setName("name3373707")
+            .setIpAddress("ipAddress1634032845")
+            .setInstanceUid("instanceUid-2102004869")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]");
+
+    ConnectionInfo actualResponse = client.getConnectionInfo(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getConnectionInfoExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]");
+      client.getConnectionInfo(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getConnectionInfoTest2() throws Exception {
+    ConnectionInfo expectedResponse =
+        ConnectionInfo.newBuilder()
+            .setName("name3373707")
+            .setIpAddress("ipAddress1634032845")
+            .setInstanceUid("instanceUid-2102004869")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-9084/locations/location-9084/clusters/cluster-9084/instances/instance-9084";
+
+    ConnectionInfo actualResponse = client.getConnectionInfo(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getConnectionInfoExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-9084/locations/location-9084/clusters/cluster-9084/instances/instance-9084";
+      client.getConnectionInfo(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listUsersTest() throws Exception {
     User responsesElement = User.newBuilder().build();
     ListUsersResponse expectedResponse =

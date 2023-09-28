@@ -562,6 +562,49 @@ public class MockAlloyDBAdminImpl extends AlloyDBAdminImplBase {
   }
 
   @Override
+  public void generateClientCertificate(
+      GenerateClientCertificateRequest request,
+      StreamObserver<GenerateClientCertificateResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof GenerateClientCertificateResponse) {
+      requests.add(request);
+      responseObserver.onNext(((GenerateClientCertificateResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GenerateClientCertificate, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  GenerateClientCertificateResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getConnectionInfo(
+      GetConnectionInfoRequest request, StreamObserver<ConnectionInfo> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ConnectionInfo) {
+      requests.add(request);
+      responseObserver.onNext(((ConnectionInfo) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetConnectionInfo, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ConnectionInfo.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void listUsers(
       ListUsersRequest request, StreamObserver<ListUsersResponse> responseObserver) {
     Object response = responses.poll();

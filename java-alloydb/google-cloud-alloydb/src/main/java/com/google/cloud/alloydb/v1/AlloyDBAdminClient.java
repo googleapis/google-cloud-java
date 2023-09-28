@@ -3786,6 +3786,262 @@ public class AlloyDBAdminClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Generate a client certificate signed by a Cluster CA. The sole purpose of this endpoint is to
+   * support AlloyDB connectors and the Auth Proxy client. The endpoint's behavior is subject to
+   * change without notice, so do not rely on its behavior remaining constant. Future changes will
+   * not break AlloyDB connectors or the Auth Proxy client.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+   *   GenerateClientCertificateResponse response =
+   *       alloyDBAdminClient.generateClientCertificate(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent resource. The required format is: &#42;
+   *     projects/{project}/locations/{location}/clusters/{cluster}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateClientCertificateResponse generateClientCertificate(ClusterName parent) {
+    GenerateClientCertificateRequest request =
+        GenerateClientCertificateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return generateClientCertificate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generate a client certificate signed by a Cluster CA. The sole purpose of this endpoint is to
+   * support AlloyDB connectors and the Auth Proxy client. The endpoint's behavior is subject to
+   * change without notice, so do not rely on its behavior remaining constant. Future changes will
+   * not break AlloyDB connectors or the Auth Proxy client.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   String parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString();
+   *   GenerateClientCertificateResponse response =
+   *       alloyDBAdminClient.generateClientCertificate(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent resource. The required format is: &#42;
+   *     projects/{project}/locations/{location}/clusters/{cluster}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateClientCertificateResponse generateClientCertificate(String parent) {
+    GenerateClientCertificateRequest request =
+        GenerateClientCertificateRequest.newBuilder().setParent(parent).build();
+    return generateClientCertificate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generate a client certificate signed by a Cluster CA. The sole purpose of this endpoint is to
+   * support AlloyDB connectors and the Auth Proxy client. The endpoint's behavior is subject to
+   * change without notice, so do not rely on its behavior remaining constant. Future changes will
+   * not break AlloyDB connectors or the Auth Proxy client.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   GenerateClientCertificateRequest request =
+   *       GenerateClientCertificateRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setCertDuration(Duration.newBuilder().build())
+   *           .setPublicKey("publicKey1446899510")
+   *           .build();
+   *   GenerateClientCertificateResponse response =
+   *       alloyDBAdminClient.generateClientCertificate(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GenerateClientCertificateResponse generateClientCertificate(
+      GenerateClientCertificateRequest request) {
+    return generateClientCertificateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Generate a client certificate signed by a Cluster CA. The sole purpose of this endpoint is to
+   * support AlloyDB connectors and the Auth Proxy client. The endpoint's behavior is subject to
+   * change without notice, so do not rely on its behavior remaining constant. Future changes will
+   * not break AlloyDB connectors or the Auth Proxy client.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   GenerateClientCertificateRequest request =
+   *       GenerateClientCertificateRequest.newBuilder()
+   *           .setParent(ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setCertDuration(Duration.newBuilder().build())
+   *           .setPublicKey("publicKey1446899510")
+   *           .build();
+   *   ApiFuture<GenerateClientCertificateResponse> future =
+   *       alloyDBAdminClient.generateClientCertificateCallable().futureCall(request);
+   *   // Do something.
+   *   GenerateClientCertificateResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GenerateClientCertificateRequest, GenerateClientCertificateResponse>
+      generateClientCertificateCallable() {
+    return stub.generateClientCertificateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get instance metadata used for a connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]");
+   *   ConnectionInfo response = alloyDBAdminClient.getConnectionInfo(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent resource. The required format is:
+   *     projects/{project}/locations/{location}/clusters/{cluster}/instances/{instance}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ConnectionInfo getConnectionInfo(InstanceName parent) {
+    GetConnectionInfoRequest request =
+        GetConnectionInfoRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return getConnectionInfo(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get instance metadata used for a connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   String parent =
+   *       InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString();
+   *   ConnectionInfo response = alloyDBAdminClient.getConnectionInfo(parent);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the parent resource. The required format is:
+   *     projects/{project}/locations/{location}/clusters/{cluster}/instances/{instance}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ConnectionInfo getConnectionInfo(String parent) {
+    GetConnectionInfoRequest request =
+        GetConnectionInfoRequest.newBuilder().setParent(parent).build();
+    return getConnectionInfo(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get instance metadata used for a connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   GetConnectionInfoRequest request =
+   *       GetConnectionInfoRequest.newBuilder()
+   *           .setParent(
+   *               InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ConnectionInfo response = alloyDBAdminClient.getConnectionInfo(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ConnectionInfo getConnectionInfo(GetConnectionInfoRequest request) {
+    return getConnectionInfoCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Get instance metadata used for a connection.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AlloyDBAdminClient alloyDBAdminClient = AlloyDBAdminClient.create()) {
+   *   GetConnectionInfoRequest request =
+   *       GetConnectionInfoRequest.newBuilder()
+   *           .setParent(
+   *               InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<ConnectionInfo> future =
+   *       alloyDBAdminClient.getConnectionInfoCallable().futureCall(request);
+   *   // Do something.
+   *   ConnectionInfo response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetConnectionInfoRequest, ConnectionInfo> getConnectionInfoCallable() {
+    return stub.getConnectionInfoCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists Users in a given project and location.
    *
    * <p>Sample code:
