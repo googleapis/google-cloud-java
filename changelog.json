@@ -4,6 +4,74 @@
     {
       "changes": [
         {
+          "type": "fix",
+          "sha": "ad8170803074465d8e4af3353eef3bdc31e5dad7",
+          "message": "[run] Removes accidentally exposed field service.traffic_tags_cleanup_threshold in Cloud Run Service",
+          "issues": [
+            "9908"
+          ]
+        }
+      ],
+      "version": "1.20.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-run",
+      "id": "2585bea1-4fd1-42c3-ba99-02e7f468734d",
+      "createTime": "2023-09-28T16:22:43.455Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "16f1b33260b142bc30511e798281c4bf85410e07",
+          "message": "[alloydb] Add support to generate client certificate and get connection info for auth proxy in AlloyDB v1",
+          "issues": [
+            "9903"
+          ]
+        }
+      ],
+      "version": "1.20.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-alloydb",
+      "id": "811cf8cd-1e7e-4035-a30f-5174478564cb",
+      "createTime": "2023-09-28T16:22:43.446Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "e88fe30b5ed56f1614595cc888e44875992e6d03",
+          "message": "[dialogflow] Add the enable_partial_automated_agent_reply flag",
+          "issues": [
+            "9906"
+          ]
+        }
+      ],
+      "version": "1.20.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow",
+      "id": "0084c0eb-7c84-43d2-835f-835cdf09ffe2",
+      "createTime": "2023-09-28T16:22:43.438Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "f39cd4ca6009c18172a2aef6c1814bb451fdfe47",
+          "message": "[dialogflow-cx] add support for AdvancedSettings",
+          "issues": [
+            "9905"
+          ]
+        }
+      ],
+      "version": "1.20.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow-cx",
+      "id": "b7f53052-689d-4a19-aed7-de6e2a7cdfd5",
+      "createTime": "2023-09-28T16:22:43.432Z"
+    },
+    {
+      "changes": [
+        {
           "type": "docs",
           "sha": "15733af70f6c19d62042e876c93fc205165b046a",
           "message": "[cloudbilling] update service documentation",
@@ -11047,5 +11115,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2023-09-27T15:16:51.164Z"
+  "updateTime": "2023-09-28T16:22:43.455Z"
 }
