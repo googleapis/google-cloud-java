@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.33.1](https://github.com/googleapis/java-bigquery/compare/v2.33.0...v2.33.1) (2023-09-28)
+
+
+### Bug Fixes
+
+* Dry run NPE when there is no query parameters ([#2899](https://github.com/googleapis/java-bigquery/issues/2899)) ([8f85a4d](https://github.com/googleapis/java-bigquery/commit/8f85a4d540623e8b4c83005e62e842ba36f8fb1b))
+
 ## [2.33.0](https://github.com/googleapis/java-bigquery/compare/v2.32.0...v2.33.0) (2023-09-27)
 
 
