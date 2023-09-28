@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.125.5](https://github.com/googleapis/java-pubsub/compare/v1.125.4...v1.125.5) (2023-09-28)
+
+
+### Dependencies
+
+* Update gapic-generator-java to 2.26.0 ([935849c](https://github.com/googleapis/java-pubsub/commit/935849cedbb70a0821be56828dd0abeccbccc21c))
+
 ## [1.125.4](https://github.com/googleapis/java-pubsub/compare/v1.125.3...v1.125.4) (2023-09-28)
 
 
