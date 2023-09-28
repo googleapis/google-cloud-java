@@ -259,11 +259,17 @@
             "DeleteIntent": {
               "methods": ["deleteIntent", "deleteIntent", "deleteIntent", "deleteIntentCallable"]
             },
+            "ExportIntents": {
+              "methods": ["exportIntentsAsync", "exportIntentsOperationCallable", "exportIntentsCallable"]
+            },
             "GetIntent": {
               "methods": ["getIntent", "getIntent", "getIntent", "getIntentCallable"]
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ImportIntents": {
+              "methods": ["importIntentsAsync", "importIntentsOperationCallable", "importIntentsCallable"]
             },
             "ListIntents": {
               "methods": ["listIntents", "listIntents", "listIntents", "listIntentsPagedCallable", "listIntentsCallable"]

@@ -25,11 +25,18 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.CreateIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteIntentRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ExportIntentsMetadata;
+import com.google.cloud.dialogflow.cx.v3beta1.ExportIntentsRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ExportIntentsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.GetIntentRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ImportIntentsMetadata;
+import com.google.cloud.dialogflow.cx.v3beta1.ImportIntentsRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ImportIntentsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.Intent;
 import com.google.cloud.dialogflow.cx.v3beta1.ListIntentsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListIntentsResponse;
@@ -38,6 +45,7 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -97,6 +105,26 @@ public class GrpcIntentsStub extends IntentsStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<ImportIntentsRequest, Operation>
+      importIntentsMethodDescriptor =
+          MethodDescriptor.<ImportIntentsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Intents/ImportIntents")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ImportIntentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ExportIntentsRequest, Operation>
+      exportIntentsMethodDescriptor =
+          MethodDescriptor.<ExportIntentsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Intents/ExportIntents")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExportIntentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -123,6 +151,14 @@ public class GrpcIntentsStub extends IntentsStub {
   private final UnaryCallable<CreateIntentRequest, Intent> createIntentCallable;
   private final UnaryCallable<UpdateIntentRequest, Intent> updateIntentCallable;
   private final UnaryCallable<DeleteIntentRequest, Empty> deleteIntentCallable;
+  private final UnaryCallable<ImportIntentsRequest, Operation> importIntentsCallable;
+  private final OperationCallable<
+          ImportIntentsRequest, ImportIntentsResponse, ImportIntentsMetadata>
+      importIntentsOperationCallable;
+  private final UnaryCallable<ExportIntentsRequest, Operation> exportIntentsCallable;
+  private final OperationCallable<
+          ExportIntentsRequest, ExportIntentsResponse, ExportIntentsMetadata>
+      exportIntentsOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -217,6 +253,26 @@ public class GrpcIntentsStub extends IntentsStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ImportIntentsRequest, Operation> importIntentsTransportSettings =
+        GrpcCallSettings.<ImportIntentsRequest, Operation>newBuilder()
+            .setMethodDescriptor(importIntentsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ExportIntentsRequest, Operation> exportIntentsTransportSettings =
+        GrpcCallSettings.<ExportIntentsRequest, Operation>newBuilder()
+            .setMethodDescriptor(exportIntentsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -256,6 +312,24 @@ public class GrpcIntentsStub extends IntentsStub {
     this.deleteIntentCallable =
         callableFactory.createUnaryCallable(
             deleteIntentTransportSettings, settings.deleteIntentSettings(), clientContext);
+    this.importIntentsCallable =
+        callableFactory.createUnaryCallable(
+            importIntentsTransportSettings, settings.importIntentsSettings(), clientContext);
+    this.importIntentsOperationCallable =
+        callableFactory.createOperationCallable(
+            importIntentsTransportSettings,
+            settings.importIntentsOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.exportIntentsCallable =
+        callableFactory.createUnaryCallable(
+            exportIntentsTransportSettings, settings.exportIntentsSettings(), clientContext);
+    this.exportIntentsOperationCallable =
+        callableFactory.createOperationCallable(
+            exportIntentsTransportSettings,
+            settings.exportIntentsOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -302,6 +376,28 @@ public class GrpcIntentsStub extends IntentsStub {
   @Override
   public UnaryCallable<DeleteIntentRequest, Empty> deleteIntentCallable() {
     return deleteIntentCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportIntentsRequest, Operation> importIntentsCallable() {
+    return importIntentsCallable;
+  }
+
+  @Override
+  public OperationCallable<ImportIntentsRequest, ImportIntentsResponse, ImportIntentsMetadata>
+      importIntentsOperationCallable() {
+    return importIntentsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExportIntentsRequest, Operation> exportIntentsCallable() {
+    return exportIntentsCallable;
+  }
+
+  @Override
+  public OperationCallable<ExportIntentsRequest, ExportIntentsResponse, ExportIntentsMetadata>
+      exportIntentsOperationCallable() {
+    return exportIntentsOperationCallable;
   }
 
   @Override

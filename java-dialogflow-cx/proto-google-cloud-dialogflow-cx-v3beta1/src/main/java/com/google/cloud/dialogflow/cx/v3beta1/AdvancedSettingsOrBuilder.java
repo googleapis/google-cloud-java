@@ -78,6 +78,60 @@ public interface AdvancedSettingsOrBuilder
    *
    *
    * <pre>
+   * Settings for DTMF.
+   * Exposed at the following levels:
+   * - Agent level
+   * - Flow level
+   * - Page level
+   * - Parameter level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.DtmfSettings dtmf_settings = 5;
+   * </code>
+   *
+   * @return Whether the dtmfSettings field is set.
+   */
+  boolean hasDtmfSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Settings for DTMF.
+   * Exposed at the following levels:
+   * - Agent level
+   * - Flow level
+   * - Page level
+   * - Parameter level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.DtmfSettings dtmf_settings = 5;
+   * </code>
+   *
+   * @return The dtmfSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.DtmfSettings getDtmfSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Settings for DTMF.
+   * Exposed at the following levels:
+   * - Agent level
+   * - Flow level
+   * - Page level
+   * - Parameter level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.DtmfSettings dtmf_settings = 5;
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings.DtmfSettingsOrBuilder
+      getDtmfSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Settings for logging.
    * Settings for Dialogflow History, Contact Center messages, StackDriver logs,
    * and speech logging.

@@ -105,6 +105,7 @@ public class FlowsClientTest {
             .addAllEventHandlers(new ArrayList<EventHandler>())
             .addAllTransitionRouteGroups(new ArrayList<String>())
             .setNluSettings(NluSettings.newBuilder().build())
+            .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
             .build();
     mockFlows.addResponse(expectedResponse);
@@ -153,6 +154,7 @@ public class FlowsClientTest {
             .addAllEventHandlers(new ArrayList<EventHandler>())
             .addAllTransitionRouteGroups(new ArrayList<String>())
             .setNluSettings(NluSettings.newBuilder().build())
+            .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
             .build();
     mockFlows.addResponse(expectedResponse);
@@ -357,6 +359,7 @@ public class FlowsClientTest {
             .addAllEventHandlers(new ArrayList<EventHandler>())
             .addAllTransitionRouteGroups(new ArrayList<String>())
             .setNluSettings(NluSettings.newBuilder().build())
+            .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
             .build();
     mockFlows.addResponse(expectedResponse);
@@ -402,6 +405,7 @@ public class FlowsClientTest {
             .addAllEventHandlers(new ArrayList<EventHandler>())
             .addAllTransitionRouteGroups(new ArrayList<String>())
             .setNluSettings(NluSettings.newBuilder().build())
+            .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
             .build();
     mockFlows.addResponse(expectedResponse);
@@ -447,6 +451,7 @@ public class FlowsClientTest {
             .addAllEventHandlers(new ArrayList<EventHandler>())
             .addAllTransitionRouteGroups(new ArrayList<String>())
             .setNluSettings(NluSettings.newBuilder().build())
+            .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
             .build();
     mockFlows.addResponse(expectedResponse);
