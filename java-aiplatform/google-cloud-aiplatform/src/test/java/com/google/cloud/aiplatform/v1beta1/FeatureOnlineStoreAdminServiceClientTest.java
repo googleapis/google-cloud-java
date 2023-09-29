@@ -122,6 +122,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .setDedicatedServingEndpoint(
+                FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .setEmbeddingManagement(FeatureOnlineStore.EmbeddingManagement.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -185,6 +187,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .setDedicatedServingEndpoint(
+                FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .setEmbeddingManagement(FeatureOnlineStore.EmbeddingManagement.newBuilder().build())
             .build();
     Operation resultOperation =
@@ -248,6 +252,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .setDedicatedServingEndpoint(
+                FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .setEmbeddingManagement(FeatureOnlineStore.EmbeddingManagement.newBuilder().build())
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
@@ -296,6 +302,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .setDedicatedServingEndpoint(
+                FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .setEmbeddingManagement(FeatureOnlineStore.EmbeddingManagement.newBuilder().build())
             .build();
     mockFeatureOnlineStoreAdminService.addResponse(expectedResponse);
@@ -432,6 +440,8 @@ public class FeatureOnlineStoreAdminServiceClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .setEtag("etag3123477")
             .putAllLabels(new HashMap<String, String>())
+            .setDedicatedServingEndpoint(
+                FeatureOnlineStore.DedicatedServingEndpoint.newBuilder().build())
             .setEmbeddingManagement(FeatureOnlineStore.EmbeddingManagement.newBuilder().build())
             .build();
     Operation resultOperation =
