@@ -683,3 +683,4 @@ grpc-google-cloud-policy-troubleshooter-v3:1.26.0:1.26.0
 google-shopping-merchant-reports:0.3.0:0.3.0
 proto-google-shopping-merchant-reports-v1beta:0.3.0:0.3.0
 grpc-google-shopping-merchant-reports-v1beta:0.3.0:0.3.0
+proto-google-cloud-alloydb-connectors-v1:0.5.0:0.5.0

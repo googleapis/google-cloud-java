@@ -33,6 +33,11 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-alloydb-connectors-v1</artifactId>
+        <version>0.5.0</version><!-- {x-version-update:proto-google-cloud-alloydb-connectors-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-alloydb-connectors-v1beta</artifactId>
         <version>0.5.0</version><!-- {x-version-update:proto-google-cloud-alloydb-connectors-v1beta:current} -->
       </dependency>
@@ -48,6 +53,7 @@
     <module>google-cloud-alloydb-connectors</module>
     <module>proto-google-cloud-alloydb-connectors-v1alpha</module>
     <module>proto-google-cloud-alloydb-connectors-v1beta</module>
+    <module>proto-google-cloud-alloydb-connectors-v1</module>
     <module>google-cloud-alloydb-connectors-bom</module>
   </modules>
 
