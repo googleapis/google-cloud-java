@@ -1,0 +1,39 @@
+repo_short: java-gke-connect-gateway, invalid_rpc_link: https://cloud.google.com/anthos/multicluster-management/gateway/docs/reference/rpc, invalid_rest_link: https://cloud.google.com/anthos/multicluster-management/gateway/docs/reference/rest
+repo_short: java-container, invalid_rpc_link: https://cloud.google.com/kubernetes-engine/docs/reference/rpc
+repo_short: java-bigqueryreservation, invalid_rpc_link: https://cloud.google.com/bigquery/docs/reference/reservations/rpc/docs/reference/rpc, invalid_rest_link: https://cloud.google.com/bigquery/docs/reference/reservations/rpc/docs/reference/rest
+repo_short: java-biglake, invalid_rpc_link: https://cloud.google.com/biglake/docs/reference/rpc, invalid_rest_link: https://cloud.google.com/biglake/docs/reference/rest
+repo_short: java-filestore, invalid_rpc_link: https://cloud.google.com/filestore/docs/reference/rpc
+repo_short: java-certificate-manager, invalid_rpc_link: https://cloud.google.com/certificate-manager/docs/reference/rpc, invalid_rest_link: https://cloud.google.com/certificate-manager/docs/reference/rest
+repo_short: java-datalabeling, invalid_rpc_link: https://cloud.google.com/ai-platform/data-labeling/docs/reference/rpc
+repo_short: java-redis, invalid_rpc_link: https://cloud.google.com/memorystore/docs/redis/docs/reference/rpc, invalid_rest_link: https://cloud.google.com/memorystore/docs/redis/docs/reference/rest
+repo_short: java-trace, invalid_rpc_link: https://cloud.google.com/trace/docs/reference/rpc, invalid_rest_link: https://cloud.google.com/trace/docs/reference/rest
+repo_short: java-mediatranslation, invalid_rpc_link: https://cloud.google.com/docs/reference/rpc, invalid_rest_link: https://cloud.google.com/docs/reference/rest
+repo_short: java-appengine-admin, invalid_rpc_link: https://cloud.google.com/appengine/docs/admin-api/docs/reference/rpc, invalid_rest_link: https://cloud.google.com/appengine/docs/admin-api/docs/reference/rest
+repo_short: java-profiler, invalid_rpc_link: https://cloud.google.com/profiler/docs/reference/rpc, invalid_rest_link: https://cloud.google.com/profiler/docs/reference/rest
+repo_short: java-video-intelligence, invalid_rpc_link: https://cloud.google.com/video-intelligence/docs/reference/rpc
+repo_short: java-dlp, invalid_rpc_link: https://cloud.google.com/dlp/docs/reference/rpc
+repo_short: java-alloydb, invalid_rpc_link: https://cloud.google.com/alloydb/docs/reference/rpc
+repo_short: java-binary-authorization, invalid_rpc_link: https://cloud.google.com/binary-authorization/docs/reference/rpc
+repo_short: java-api-gateway, invalid_rpc_link: https://cloud.google.com/api-gateway/docs/reference/rpc
+repo_short: java-dataform, invalid_rpc_link: https://cloud.google.com/dataform/docs/reference/rpc, invalid_rest_link: https://cloud.google.com/dataform/docs/reference/rest
+repo_short: java-scheduler, invalid_rpc_link: https://cloud.google.com/scheduler/docs/reference/rpc
+repo_short: java-assured-workloads, invalid_rpc_link: https://cloud.google.com/assured-workloads/docs/reference/rpc
+repo_short: java-servicedirectory, invalid_rpc_link: https://cloud.google.com/service-directory/docs/reference/rpc
+repo_short: java-gke-multi-cloud, invalid_rpc_link: https://cloud.google.com/anthos/clusters/docs/multi-cloud/docs/reference/rpc, invalid_rest_link: https://cloud.google.com/anthos/clusters/docs/multi-cloud/docs/reference/rest
+repo_short: java-beyondcorp-appgateways, invalid_rpc_link: https://cloud.google.com/beyondcorp-enterprise/docs/reference/rpc, invalid_rest_link: https://cloud.google.com/beyondcorp-enterprise/docs/reference/rest
+repo_short: java-dataplex, invalid_rpc_link: https://cloud.google.com/dataplex/docs/reference/rpc
+repo_short: java-talent, invalid_rpc_link: https://cloud.google.com/solutions/talent-solution/docs/reference/rpc, invalid_rest_link: https://cloud.google.com/solutions/talent-solution/docs/reference/rest
+repo_short: java-netapp, invalid_rpc_link: https://cloud.google.com/netapp/volumes/docs/discover/overview/docs/reference/rpc, invalid_rest_link: https://cloud.google.com/netapp/volumes/docs/discover/overview/docs/reference/rest
+repo_short: java-enterpriseknowledgegraph, invalid_rpc_link: https://cloud.google.com/enterprise-knowledge-graph/docs/overview/docs/reference/rpc, invalid_rest_link: https://cloud.google.com/enterprise-knowledge-graph/docs/overview/docs/reference/rest
+repo_short: java-texttospeech, invalid_rpc_link: https://cloud.google.com/text-to-speech/docs/reference/rpc
+repo_short: java-errorreporting, invalid_rpc_link: https://cloud.google.com/error-reporting/docs/reference/rpc, invalid_rest_link: https://cloud.google.com/error-reporting/docs/reference/rest
+repo_short: java-tpu, invalid_rpc_link: https://cloud.google.com/tpu/docs/reference/rpc
+repo_short: java-compute, invalid_rpc_link: https://cloud.google.com/compute/docs/reference/rpc, invalid_rest_link: https://cloud.google.com/compute/docs/reference/rest
+repo_short: java-gsuite-addons, invalid_rpc_link: https://developers.google.com/workspace/add-ons/overview/docs/reference/rpc, invalid_rest_link: https://developers.google.com/workspace/add-ons/overview/docs/reference/rest
+repo_short: java-workflow-executions, invalid_rpc_link: https://cloud.google.com/workflows/docs/reference/rpc
+repo_short: java-storage-transfer, invalid_rpc_link: https://cloud.google.com/storage-transfer-service/docs/reference/rpc, invalid_rest_link: https://cloud.google.com/storage-transfer-service/docs/reference/rest
+repo_short: java-language, invalid_rpc_link: https://cloud.google.com/natural-language/docs/reference/rpc
+repo_short: java-securitycenter, invalid_rpc_link: https://cloud.google.com/security-command-center/docs/reference/rpc
+repo_short: java-billing, invalid_rpc_link: https://cloud.google.com/billing/docs/reference/rpc
+repo_short: java-webrisk, invalid_rpc_link: https://cloud.google.com/web-risk/docs/reference/rpc
+repo_short: java-containeranalysis, invalid_rpc_link: https://cloud.google.com/container-registry/docs/container-analysis/docs/reference/rpc, invalid_rest_link: https://cloud.google.com/container-registry/docs/container-analysis/docs/reference/rest

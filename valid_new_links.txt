@@ -1,0 +1,57 @@
+repo_short: java-container, rest_documentation: https://cloud.google.com/kubernetes-engine/docs/reference/rest
+repo_short: java-filestore, rest_documentation: https://cloud.google.com/filestore/docs/reference/rest
+repo_short: java-datalabeling, rest_documentation: https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest
+repo_short: java-container, rest_documentation: https://cloud.google.com/kubernetes-engine/docs/reference/rest
+repo_short: java-filestore, rest_documentation: https://cloud.google.com/filestore/docs/reference/rest
+repo_short: java-datalabeling, rest_documentation: https://cloud.google.com/ai-platform/data-labeling/docs/reference/rest, rpc_documentation: https://cloud.google.com/ai-platform/data-labeling/docs/reference/rpc
+repo_short: java-video-intelligence, rest_documentation: https://cloud.google.com/video-intelligence/docs/reference/rest, rpc_documentation: https://cloud.google.com/video-intelligence/docs/reference/rpc
+repo_short: java-dlp, rest_documentation: https://cloud.google.com/dlp/docs/reference/rest, rpc_documentation: https://cloud.google.com/dlp/docs/reference/rpc
+repo_short: java-alloydb, rest_documentation: https://cloud.google.com/alloydb/docs/reference/rest
+repo_short: java-binary-authorization, rest_documentation: https://cloud.google.com/binary-authorization/docs/reference/rest, rpc_documentation: https://cloud.google.com/binary-authorization/docs/reference/rpc
+repo_short: java-api-gateway, rest_documentation: https://cloud.google.com/api-gateway/docs/reference/rest
+repo_short: java-scheduler, rest_documentation: https://cloud.google.com/scheduler/docs/reference/rest, rpc_documentation: https://cloud.google.com/scheduler/docs/reference/rpc
+repo_short: java-assured-workloads, rest_documentation: https://cloud.google.com/assured-workloads/docs/reference/rest
+repo_short: java-servicedirectory, rest_documentation: https://cloud.google.com/service-directory/docs/reference/rest, rpc_documentation: https://cloud.google.com/service-directory/docs/reference/rpc
+repo_short: java-dataplex, rest_documentation: https://cloud.google.com/dataplex/docs/reference/rest, rpc_documentation: https://cloud.google.com/dataplex/docs/reference/rpc
+repo_short: java-texttospeech, rest_documentation: https://cloud.google.com/text-to-speech/docs/reference/rest, rpc_documentation: https://cloud.google.com/text-to-speech/docs/reference/rpc
+repo_short: java-tpu, rest_documentation: https://cloud.google.com/tpu/docs/reference/rest
+repo_short: java-workflow-executions, rest_documentation: https://cloud.google.com/workflows/docs/reference/rest
+repo_short: java-language, rest_documentation: https://cloud.google.com/natural-language/docs/reference/rest, rpc_documentation: https://cloud.google.com/natural-language/docs/reference/rpc
+repo_short: java-securitycenter, rest_documentation: https://cloud.google.com/security-command-center/docs/reference/rest
+repo_short: java-billing, rest_documentation: https://cloud.google.com/billing/docs/reference/rest, rpc_documentation: https://cloud.google.com/billing/docs/reference/rpc
+repo_short: java-webrisk, rest_documentation: https://cloud.google.com/web-risk/docs/reference/rest, rpc_documentation: https://cloud.google.com/web-risk/docs/reference/rpc
+repo_short: java-recaptchaenterprise, rest_documentation: https://cloud.google.com/recaptcha-enterprise/docs/reference/rest, rpc_documentation: https://cloud.google.com/recaptcha-enterprise/docs/reference/rpc
+repo_short: java-bigquerymigration, rest_documentation: https://cloud.google.com/bigquery/docs/reference/rest
+repo_short: java-speech, rest_documentation: https://cloud.google.com/speech-to-text/docs/reference/rest, rpc_documentation: https://cloud.google.com/speech-to-text/docs/reference/rpc
+repo_short: java-aiplatform, rest_documentation: https://cloud.google.com/vertex-ai/docs/reference/rest, rpc_documentation: https://cloud.google.com/vertex-ai/docs/reference/rpc
+repo_short: java-vmwareengine, rest_documentation: https://cloud.google.com/vmware-engine/docs/reference/rest
+repo_short: java-optimization, rest_documentation: https://cloud.google.com/optimization/docs/reference/rest, rpc_documentation: https://cloud.google.com/optimization/docs/reference/rpc
+repo_short: java-eventarc-publishing, rest_documentation: https://cloud.google.com/eventarc/docs/reference/rest, rpc_documentation: https://cloud.google.com/eventarc/docs/reference/rpc
+repo_short: java-eventarc, rest_documentation: https://cloud.google.com/eventarc/docs/reference/rest, rpc_documentation: https://cloud.google.com/eventarc/docs/reference/rpc
+repo_short: java-dataproc, rest_documentation: https://cloud.google.com/dataproc/docs/reference/rest, rpc_documentation: https://cloud.google.com/dataproc/docs/reference/rpc
+repo_short: java-workflows, rest_documentation: https://cloud.google.com/workflows/docs/reference/rest
+repo_short: java-orchestration-airflow, rest_documentation: https://cloud.google.com/composer/docs/reference/rest, rpc_documentation: https://cloud.google.com/composer/docs/reference/rpc
+repo_short: java-video-transcoder, rest_documentation: https://cloud.google.com/transcoder/docs/reference/rest, rpc_documentation: https://cloud.google.com/transcoder/docs/reference/rpc
+repo_short: java-run, rest_documentation: https://cloud.google.com/run/docs/reference/rest, rpc_documentation: https://cloud.google.com/run/docs/reference/rpc
+repo_short: java-kmsinventory, rest_documentation: https://cloud.google.com/kms/docs/reference/rest, rpc_documentation: https://cloud.google.com/kms/docs/reference/rpc
+repo_short: java-alloydb-connectors, rest_documentation: https://cloud.google.com/alloydb/docs/reference/rest
+repo_short: java-bare-metal-solution, rest_documentation: https://cloud.google.com/bare-metal/docs/reference/rest, rpc_documentation: https://cloud.google.com/bare-metal/docs/reference/rpc
+repo_short: java-functions, rest_documentation: https://cloud.google.com/functions/docs/reference/rest, rpc_documentation: https://cloud.google.com/functions/docs/reference/rpc
+repo_short: java-security-private-ca, rest_documentation: https://cloud.google.com/certificate-authority-service/docs/reference/rest, rpc_documentation: https://cloud.google.com/certificate-authority-service/docs/reference/rpc
+repo_short: java-dialogflow-cx, rest_documentation: https://cloud.google.com/dialogflow/cx/docs/reference/rest, rpc_documentation: https://cloud.google.com/dialogflow/cx/docs/reference/rpc
+repo_short: java-workstations, rest_documentation: https://cloud.google.com/workstations/docs/reference/rest, rpc_documentation: https://cloud.google.com/workstations/docs/reference/rpc
+repo_short: java-dataproc-metastore, rest_documentation: https://cloud.google.com/dataproc-metastore/docs/reference/rest, rpc_documentation: https://cloud.google.com/dataproc-metastore/docs/reference/rpc
+repo_short: java-securitycenter-settings, rest_documentation: https://cloud.google.com/security-command-center/docs/reference/rest
+repo_short: java-shell, rest_documentation: https://cloud.google.com/shell/docs/reference/rest, rpc_documentation: https://cloud.google.com/shell/docs/reference/rpc
+repo_short: java-datastream, rest_documentation: https://cloud.google.com/datastream/docs/reference/rest
+repo_short: java-life-sciences, rest_documentation: https://cloud.google.com/life-sciences/docs/reference/rest, rpc_documentation: https://cloud.google.com/life-sciences/docs/reference/rpc
+repo_short: java-channel, rest_documentation: https://cloud.google.com/channel/docs/reference/rest, rpc_documentation: https://cloud.google.com/channel/docs/reference/rpc
+repo_short: java-translate, rest_documentation: https://cloud.google.com/translate/docs/reference/rest, rpc_documentation: https://cloud.google.com/translate/docs/reference/rpc
+repo_short: java-dataflow, rest_documentation: https://cloud.google.com/dataflow/docs/reference/rest, rpc_documentation: https://cloud.google.com/dataflow/docs/reference/rpc
+repo_short: java-vision, rest_documentation: https://cloud.google.com/vision/docs/reference/rest, rpc_documentation: https://cloud.google.com/vision/docs/reference/rpc
+repo_short: java-data-fusion, rest_documentation: https://cloud.google.com/data-fusion/docs/reference/rest
+repo_short: java-artifact-registry, rest_documentation: https://cloud.google.com/artifact-registry/docs/reference/rest, rpc_documentation: https://cloud.google.com/artifact-registry/docs/reference/rpc
+repo_short: java-tasks, rest_documentation: https://cloud.google.com/tasks/docs/reference/rest, rpc_documentation: https://cloud.google.com/tasks/docs/reference/rpc
+repo_short: java-dms, rest_documentation: https://cloud.google.com/database-migration/docs/reference/rest
+repo_short: java-automl, rest_documentation: https://cloud.google.com/automl/docs/reference/rest, rpc_documentation: https://cloud.google.com/automl/docs/reference/rpc
+repo_short: java-container, rest_documentation: https://cloud.google.com/kubernetes-engine/docs/reference/rest

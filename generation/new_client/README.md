@@ -136,8 +136,13 @@ The example in this README uses AlloyDB's [Cloud Drop](https://github.com/google
 
 ### API short name
 
-For convenience of the subsequent commands, define a variable for API short name.
+For convenience of the subsequent commands, define a variable for API short name. This will be used to generate the `distribution_name` as well as the sub-directory within this repo.
 The corresponding value in the Cloud Drop page is `api_short_name`.
+
+> [!IMPORTANT]
+> `api_short_name` is not always unique across client libraries.
+> In the instance that the `api_short_name` is already in use by an existing client library, determine a unique name and append it to the `--destination-name`.
+> See example under [Advanced Options](#advanced-options).
 
 Example: `alloydb`
 
@@ -297,6 +302,24 @@ generated Google Maps Routes API Java client library.
   --cloud-api=false \
   --requires-billing=true \
   --distribution-name="com.google.maps:google-maps-routing"
+```
+
+If `maps-routing` was already in use by an existing client library as an `api_shortname`, you
+would determine a unique `destination_name` for the new library's subdirectory as well as a unique `distribution_name` for the artifact to be published (confirm with the service team).
+Let's say `maps-routing-gps` is the unique subdirectory and artifact name that has been decided
+You would then use the following command:
+```
+~/google-cloud-java$ python3.9 generation/new_client/new-client.py generate \
+  --api_shortname=maps-routing \
+  --proto-path=google/maps/routing \
+  --name-pretty="Routes API" \
+  --product-docs="https://developers.google.com/maps/documentation/routes" \
+  --api-description="Routes API is the next generation, performance optimized version of the existing Directions API and Distance Matrix API. It helps you find the ideal route from A to Z, calculates ETAs and distances for matrices of origin and destination locations, and also offers new features." \
+  --api-id=routes.googleapis.com \
+  --cloud-api=false \
+  --requires-billing=true \
+  --distribution-name="com.google.maps:google-maps-routing-gps" \
+  --destination-name="maps-routing-gps"
 ```
 
 # Principles
