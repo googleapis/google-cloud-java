@@ -3230,7 +3230,7 @@ public class ITBigQueryTest {
       throws SQLException, ExecutionException,
           InterruptedException { // use read API to read 300K records and check the order
     String query =
-        "SELECT date, county, state_name, confirmed_cases, deaths FROM "
+        "SELECT date, county, state_name, confirmed_cases, deaths / 10 FROM "
             + TABLE_ID_LARGE.getTable()
             + " where date is not null and county is not null and state_name is not null order by confirmed_cases asc limit 300000";
 
@@ -3255,7 +3255,8 @@ public class ITBigQueryTest {
       assertNotNull(rs.getString(1));
       assertNotNull(rs.getString(2));
       assertTrue(rs.getInt(3) >= 0);
-      assertTrue(rs.getInt(4) >= 0);
+      assertTrue(rs.getDouble(3) >= 0);
+      assertTrue(rs.getDouble(4) >= 0);
 
       // check if the records are sorted
       assertTrue(rs.getInt(3) >= lasConfirmedCases);

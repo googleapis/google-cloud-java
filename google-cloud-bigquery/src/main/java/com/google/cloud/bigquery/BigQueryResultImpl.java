@@ -337,7 +337,7 @@ public class BigQueryResultImpl<T> implements BigQueryResult<T> {
           throw new SQLException(String.format("Field %s not found", fieldName));
         }
         Object curVal = curRow.get(fieldName);
-        return curVal == null ? 0.0d : ((BigDecimal) curVal).doubleValue();
+        return curVal == null ? 0.0d : new BigDecimal(curVal.toString()).doubleValue();
       }
     }
 
