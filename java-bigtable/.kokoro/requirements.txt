@@ -418,6 +418,7 @@ protobuf==3.20.3 \
     #   gcp-docuploader
     #   gcp-releasetool
     #   google-api-core
+    #   googleapis-common-protos
 pyasn1==0.5.0 \
     --hash=sha256:87a2121042a1ac9358cabcaf1d07680ff97ee6404333bacca15f76aa8ad01a57 \
     --hash=sha256:97b7290ca68e62a832558ec3976f15cbf911bf5d7c7039d8b861c2a0ece69fde
@@ -469,9 +470,9 @@ typing-extensions==4.7.1 \
     --hash=sha256:440d5dd3af93b060174bf433bccd69b0babc3b15b1a8dca43789fd7f61514b36 \
     --hash=sha256:b75ddc264f0ba5615db7ba217daeb99701ad295353c45f9e95963337ceeeffb2
     # via -r requirements.in
-urllib3==1.26.16 \
-    --hash=sha256:8d36afa7616d8ab714608411b4a3b13e58f463aee519024578e062e141dce20f \
-    --hash=sha256:8f135f6502756bde6b2a9b28989df5fbe87c9970cecaa69041edcce7f0589b14
+urllib3==1.26.17 \
+    --hash=sha256:24d6a242c28d29af46c3fae832c36db3bbebcc533dd1bb549172cd739c82df21 \
+    --hash=sha256:94a757d178c9be92ef5539b8840d48dc9cf1b2709c9d6b588232a055c524458b
     # via
     #   google-auth
     #   requests
@@ -485,5 +486,6 @@ zipp==3.16.1 \
     # via importlib-metadata
 
 # WARNING: The following packages were not pinned, but pip requires them to be
-# pinned when the requirements file includes hashes. Consider using the --allow-unsafe flag.
+# pinned when the requirements file includes hashes and the requirement is not
+# satisfied by a package already installed. Consider using the --allow-unsafe flag.
 # setuptools
