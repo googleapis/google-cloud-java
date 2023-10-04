@@ -63,7 +63,7 @@
     <site.installationModule>${project.artifactId}</site.installationModule>
     <report.jxr.inherited>false</report.jxr.inherited>
     <skipITs>true</skipITs>
-    <auto-value-annotation.version>1.10.2</auto-value-annotation.version>
+    <auto-value-annotation.version>1.10.4</auto-value-annotation.version>
     <surefire.version>3.1.2</surefire.version>
     <docRoot>/java/docs/reference/</docRoot>
   </properties>
