@@ -17,10 +17,12 @@ jobs:
         java: [8, 11]
         repo:
         - java-bigquery
+        - java-bigtable
         job-type:
         - test  # maven-surefire-plugin
         - lint  # fmt-maven-plugin and google-java-format
         - clirr # clirr-maven-plugin
+        - javadoc # maven-javadoc-plugin
     steps:
     - uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4
     - uses: actions/setup-java@v3
@@ -31,3 +33,20 @@ jobs:
     - run: sudo apt-get update -y
     - run: sudo apt-get install libxml2-utils
     - run: .kokoro/client-library-check.sh ${{matrix.repo}} ${{matrix.job-type}}
+  javadoc-with-doclet:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        repo:
+        - java-bigtable
+    steps:
+    - uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4
+    - uses: actions/setup-java@v3
+      with:
+        distribution: temurin
+        java-version: 11
+    - run: java -version
+    - run: sudo apt-get update -y
+    - run: sudo apt-get install libxml2-utils
+    - run: .kokoro/client-library-check-javadoc-with-doclet.sh ${{matrix.repo}}
