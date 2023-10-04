@@ -1,0 +1,72 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.recaptchaenterprise.v1",
+  "libraryPackage": "com.google.cloud.recaptchaenterprise.v1",
+  "services": {
+    "RecaptchaEnterpriseService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "RecaptchaEnterpriseServiceClient",
+          "rpcs": {
+            "AnnotateAssessment": {
+              "methods": ["annotateAssessment", "annotateAssessment", "annotateAssessment", "annotateAssessmentCallable"]
+            },
+            "CreateAssessment": {
+              "methods": ["createAssessment", "createAssessment", "createAssessment", "createAssessmentCallable"]
+            },
+            "CreateFirewallPolicy": {
+              "methods": ["createFirewallPolicy", "createFirewallPolicy", "createFirewallPolicy", "createFirewallPolicyCallable"]
+            },
+            "CreateKey": {
+              "methods": ["createKey", "createKey", "createKey", "createKeyCallable"]
+            },
+            "DeleteFirewallPolicy": {
+              "methods": ["deleteFirewallPolicy", "deleteFirewallPolicy", "deleteFirewallPolicy", "deleteFirewallPolicyCallable"]
+            },
+            "DeleteKey": {
+              "methods": ["deleteKey", "deleteKey", "deleteKey", "deleteKeyCallable"]
+            },
+            "GetFirewallPolicy": {
+              "methods": ["getFirewallPolicy", "getFirewallPolicy", "getFirewallPolicy", "getFirewallPolicyCallable"]
+            },
+            "GetKey": {
+              "methods": ["getKey", "getKey", "getKey", "getKeyCallable"]
+            },
+            "GetMetrics": {
+              "methods": ["getMetrics", "getMetrics", "getMetrics", "getMetricsCallable"]
+            },
+            "ListFirewallPolicies": {
+              "methods": ["listFirewallPolicies", "listFirewallPolicies", "listFirewallPolicies", "listFirewallPoliciesPagedCallable", "listFirewallPoliciesCallable"]
+            },
+            "ListKeys": {
+              "methods": ["listKeys", "listKeys", "listKeys", "listKeysPagedCallable", "listKeysCallable"]
+            },
+            "ListRelatedAccountGroupMemberships": {
+              "methods": ["listRelatedAccountGroupMemberships", "listRelatedAccountGroupMemberships", "listRelatedAccountGroupMemberships", "listRelatedAccountGroupMembershipsPagedCallable", "listRelatedAccountGroupMembershipsCallable"]
+            },
+            "ListRelatedAccountGroups": {
+              "methods": ["listRelatedAccountGroups", "listRelatedAccountGroups", "listRelatedAccountGroups", "listRelatedAccountGroupsPagedCallable", "listRelatedAccountGroupsCallable"]
+            },
+            "MigrateKey": {
+              "methods": ["migrateKey", "migrateKeyCallable"]
+            },
+            "RetrieveLegacySecretKey": {
+              "methods": ["retrieveLegacySecretKey", "retrieveLegacySecretKey", "retrieveLegacySecretKey", "retrieveLegacySecretKeyCallable"]
+            },
+            "SearchRelatedAccountGroupMemberships": {
+              "methods": ["searchRelatedAccountGroupMemberships", "searchRelatedAccountGroupMemberships", "searchRelatedAccountGroupMemberships", "searchRelatedAccountGroupMembershipsPagedCallable", "searchRelatedAccountGroupMembershipsCallable"]
+            },
+            "UpdateFirewallPolicy": {
+              "methods": ["updateFirewallPolicy", "updateFirewallPolicy", "updateFirewallPolicyCallable"]
+            },
+            "UpdateKey": {
+              "methods": ["updateKey", "updateKey", "updateKeyCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
