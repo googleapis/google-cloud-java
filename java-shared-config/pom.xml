@@ -63,7 +63,7 @@
     <site.installationModule>${project.artifactId}</site.installationModule>
     <report.jxr.inherited>false</report.jxr.inherited>
     <skipITs>true</skipITs>
-    <auto-value-annotation.version>1.10.4</auto-value-annotation.version>
+    <auto-value.version>1.10.4</auto-value.version>
     <surefire.version>3.1.2</surefire.version>
     <docRoot>/java/docs/reference/</docRoot>
   </properties>
@@ -538,7 +538,7 @@
       <dependency>
         <groupId>com.google.auto.value</groupId>
         <artifactId>auto-value-annotations</artifactId>
-        <version>${auto-value-annotation.version}</version>
+        <version>${auto-value.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -741,7 +741,7 @@
                 <path>
                   <groupId>com.google.auto.value</groupId>
                   <artifactId>auto-value</artifactId>
-                  <version>${auto-value-annotation.version}</version>
+                  <version>${auto-value.version}</version>
                 </path>
                 <!--
                 Manually pull in auto-service-annotations so that it is part of the
