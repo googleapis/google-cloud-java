@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.5.8](https://github.com/googleapis/java-shared-config/compare/v1.5.7...v1.5.8) (2023-10-05)
+
+
+### Dependencies
+
+* Update actions/checkout action to v4 ([#653](https://github.com/googleapis/java-shared-config/issues/653)) ([cdf79f8](https://github.com/googleapis/java-shared-config/commit/cdf79f841657b234d3e6a0aaecd63444e637ff68))
+* Update auto-value-annotation.version to v1.10.4 ([#669](https://github.com/googleapis/java-shared-config/issues/669)) ([4a11c28](https://github.com/googleapis/java-shared-config/commit/4a11c2861e4f22aa00f98254f69b072b2376b808))
+* Update dependency com.puppycrawl.tools:checkstyle to v10.12.2 ([#644](https://github.com/googleapis/java-shared-config/issues/644)) ([763419a](https://github.com/googleapis/java-shared-config/commit/763419aefd7efb40b30641641198ca6491b380d2))
+* Update dependency com.puppycrawl.tools:checkstyle to v10.12.3 ([#652](https://github.com/googleapis/java-shared-config/issues/652)) ([62f6be7](https://github.com/googleapis/java-shared-config/commit/62f6be71cc9939d2151a6ab3981603ea88ae50fb))
+* Update dependency org.opentest4j:opentest4j to v1.3.0 ([#640](https://github.com/googleapis/java-shared-config/issues/640)) ([f3570a2](https://github.com/googleapis/java-shared-config/commit/f3570a227f82b8942d671b6b324ae4940cdd65c4))
+
+
+### Documentation
+
+* Update README.md with AutoValue ([#676](https://github.com/googleapis/java-shared-config/issues/676)) ([78d4661](https://github.com/googleapis/java-shared-config/commit/78d4661e566574b395c8891561c1e0d9603bed33))
+
 ## [1.5.7](https://github.com/googleapis/java-shared-config/compare/v1.5.6...v1.5.7) (2023-07-19)
 
 
