@@ -1,6 +1,7 @@
 # Google Cloud Shared Build Configs
 
 Shared Maven build configuration for Google Cloud Java client libraries.
+This is not intended for library users.
 
 [![Maven][maven-version-image]][maven-version-link]
 
@@ -25,6 +26,18 @@ This library follows [Semantic Versioning](http://semver.org/).
 
 It is currently in major version zero (``0.y.z``), which means that anything may change at any time
 and the public API should not be considered stable.
+
+## Usages
+
+Declare this artifact as the parent of Maven projects of Google Cloud libraries.
+This brings useful Maven plugins and their configurations to the Maven projects,
+such as compilations, document generation, and library publication.
+
+### AutoValue
+
+If you want to use AutoValue in your project, place an empty file `EnableAutoValue.txt`
+in the module that requires AutoValue's annotation processing.
+Example pull request: https://github.com/googleapis/java-pubsub/pull/1761/files.
 
 ## Contributing
 
