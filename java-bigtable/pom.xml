@@ -226,7 +226,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.6.0</version>
                 <executions>
                     <execution>
                         <id>aggregate</id>
@@ -314,7 +313,6 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.6.0</version>
                         <configuration>
                             <!-- This is the new way of publishing the doc to cloud.google.com -->
                             <doclet>com.microsoft.doclet.DocFxDoclet</doclet>
