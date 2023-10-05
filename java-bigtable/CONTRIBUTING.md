@@ -38,6 +38,8 @@ This project follows
 
 ## Running Tests
 
+### Integration Tests
+
 Bigtable integration tests can either be run against an emulator or a real Bigtable instance.
 The target environment can be selected by setting a maven profile. By default it is set to 
 `bigtable-emulator-it` and other options are `bigtable-prod-it` and `bigtable-directpath-it`.
@@ -70,6 +72,14 @@ mvn install -DskipUnitTests
 mvn install -DskipTests
 ```
 
+### Conformance Tests
+
+Bigtable Conformance Tests test the correctness of the client behavior and must be run for all code changes.
+When adding a new feature, conformance tests must be run with the feature enabled.
+
+Refer to the [Test Proxy](https://github.com/googleapis/java-bigtable/tree/main/test-proxy#cbt-java-test-proxy) page
+on how to run conformance tests.
+
 ## Formatting the code
 
 To auto-format any code changes, run ``mvn com.coveo:fmt-maven-plugin:format``.
@@ -78,4 +88,11 @@ To auto-format any code changes, run ``mvn com.coveo:fmt-maven-plugin:format``.
 Native Image testing is enabled for tests that follow a particular naming
 convention (`IT*` or `*ClientTest`). Unit tests that use Mockito or EasyMock
 have been excluded for the time being as they are not compatible with native
-image compilation. 
+image compilation.
+
+## Rollback plan
+
+A rollback plan is required for all new features. The rollback plan should include:
+
+1. How to disable this feature from the server side.
+2. For features that are strictly client side, what the risks are, and what tests are done.
