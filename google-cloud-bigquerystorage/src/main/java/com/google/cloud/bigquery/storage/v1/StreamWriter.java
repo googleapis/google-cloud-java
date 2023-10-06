@@ -19,6 +19,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.auto.value.AutoOneOf;
 import com.google.auto.value.AutoValue;
@@ -225,7 +226,8 @@ public class StreamWriter implements AutoCloseable {
                   builder.limitExceededBehavior,
                   builder.traceId,
                   builder.compressorName,
-                  clientSettings));
+                  clientSettings,
+                  builder.retrySettings));
     } else {
       if (!isDefaultStream(streamName)) {
         log.warning(
@@ -233,6 +235,12 @@ public class StreamWriter implements AutoCloseable {
                 + builder.streamName);
         throw new IllegalArgumentException(
             "Trying to enable connection pool in non-default stream.");
+      }
+
+      if (builder.retrySettings != null) {
+        log.warning("Retry settings is only allowed when connection pool is not enabled.");
+        throw new IllegalArgumentException(
+            "Trying to enable connection pool while providing retry settings.");
       }
 
       // We need a client to perform some getWriteStream calls.
@@ -433,7 +441,7 @@ public class StreamWriter implements AutoCloseable {
   public ApiFuture<AppendRowsResponse> append(ProtoRows rows, long offset) {
     if (userClosed.get()) {
       AppendRequestAndResponse requestWrapper =
-          new AppendRequestAndResponse(AppendRowsRequest.newBuilder().build(), this);
+          new AppendRequestAndResponse(AppendRowsRequest.newBuilder().build(), this, null);
       requestWrapper.appendResult.setException(
           new Exceptions.StreamWriterClosedException(
               Status.fromCode(Status.Code.FAILED_PRECONDITION)
@@ -619,6 +627,8 @@ public class StreamWriter implements AutoCloseable {
     private AppendRowsRequest.MissingValueInterpretation defaultMissingValueInterpretation =
         MissingValueInterpretation.MISSING_VALUE_INTERPRETATION_UNSPECIFIED;
 
+    private RetrySettings retrySettings = null;
+
     private Builder(String streamName) {
       this.streamName = Preconditions.checkNotNull(streamName);
       this.client = null;
@@ -753,6 +763,11 @@ public class StreamWriter implements AutoCloseable {
     public Builder setDefaultMissingValueInterpretation(
         AppendRowsRequest.MissingValueInterpretation defaultMissingValueInterpretation) {
       this.defaultMissingValueInterpretation = defaultMissingValueInterpretation;
+      return this;
+    }
+
+    public Builder setRetrySettings(RetrySettings retrySettings) {
+      this.retrySettings = retrySettings;
       return this;
     }
 

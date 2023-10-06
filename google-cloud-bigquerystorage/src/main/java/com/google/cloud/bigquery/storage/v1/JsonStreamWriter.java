@@ -19,6 +19,7 @@ import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.protobuf.Descriptors;
 import java.io.IOException;
@@ -343,6 +344,17 @@ public class JsonStreamWriter implements AutoCloseable {
      */
     public Builder setCompressorName(String compressorName) {
       this.schemaAwareStreamWriterBuilder.setCompressorName(compressorName);
+      return this;
+    }
+
+    /**
+     * Sets the RetrySettings to use for in-stream error retry.
+     *
+     * @param retrySettings
+     * @return Builder
+     */
+    public Builder setRetrySettings(RetrySettings retrySettings) {
+      this.schemaAwareStreamWriterBuilder.setRetrySettings(retrySettings);
       return this;
     }
 

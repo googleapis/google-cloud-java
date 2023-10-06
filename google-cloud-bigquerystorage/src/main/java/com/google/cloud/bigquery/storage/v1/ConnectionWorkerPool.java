@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.storage.v1;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.api.gax.batching.FlowController;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.auto.value.AutoValue;
 import com.google.cloud.bigquery.storage.v1.ConnectionWorker.Load;
 import com.google.cloud.bigquery.storage.v1.ConnectionWorker.TableSchemaAndTimestamp;
@@ -64,6 +65,8 @@ public class ConnectionWorkerPool {
    * Max retry duration for retryable errors.
    */
   private final java.time.Duration maxRetryDuration;
+
+  private RetrySettings retrySettings;
 
   /*
    * Behavior when inflight queue is exceeded. Only supports Block or Throw, default is Block.
@@ -214,6 +217,8 @@ public class ConnectionWorkerPool {
     this.compressorName = comperssorName;
     this.clientSettings = clientSettings;
     this.currentMaxConnectionCount = settings.minConnectionsPerRegion();
+    // In-stream retry is not enabled for multiplexing.
+    this.retrySettings = null;
   }
 
   /**
@@ -387,7 +392,8 @@ public class ConnectionWorkerPool {
             limitExceededBehavior,
             traceId,
             compressorName,
-            clientSettings);
+            clientSettings,
+            retrySettings);
     connectionWorkerPool.add(connectionWorker);
     log.info(
         String.format(
