@@ -49,6 +49,7 @@ branchProtectionRules:
     - "build (11, java-bigquery, lint)"
     - "build (11, java-bigquery, clirr)"
     - "build (11, java-bigtable, javadoc)"
+    - "javadoc-with-doclet (java-bigtable)"
     - "cla/google"
 - pattern: java7
   # Can admins overwrite branch protection.
