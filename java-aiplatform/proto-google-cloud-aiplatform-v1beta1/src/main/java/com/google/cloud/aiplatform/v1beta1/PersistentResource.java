@@ -869,7 +869,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
    * Peering for Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
    *
-   * If this field is left unspecified, the resources is not peered with any
+   * If this field is left unspecified, the resources aren't peered with any
    * network.
    * </pre>
    *
@@ -908,7 +908,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
    * Peering for Vertex
    * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
    *
-   * If this field is left unspecified, the resources is not peered with any
+   * If this field is left unspecified, the resources aren't peered with any
    * network.
    * </pre>
    *
@@ -1000,7 +1000,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Optional. Persistent Resource runtime spec.
-   * Used for e.g. Ray cluster configuration.
+   * For example, used for Ray cluster configuration.
    * </pre>
    *
    * <code>
@@ -1018,7 +1018,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Optional. Persistent Resource runtime spec.
-   * Used for e.g. Ray cluster configuration.
+   * For example, used for Ray cluster configuration.
    * </pre>
    *
    * <code>
@@ -1038,7 +1038,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Optional. Persistent Resource runtime spec.
-   * Used for e.g. Ray cluster configuration.
+   * For example, used for Ray cluster configuration.
    * </pre>
    *
    * <code>
@@ -1119,11 +1119,11 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. A list of names for the reserved ip ranges under the VPC network
+   * Optional. A list of names for the reserved IP ranges under the VPC network
    * that can be used for this persistent resource.
    *
-   * If set, we will deploy the persistent resource within the provided ip
-   * ranges. Otherwise, the persistent resource will be deployed to any ip
+   * If set, we will deploy the persistent resource within the provided IP
+   * ranges. Otherwise, the persistent resource is deployed to any IP
    * ranges under the provided VPC network.
    *
    * Example: ['vertex-ai-ip-range'].
@@ -1140,11 +1140,11 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. A list of names for the reserved ip ranges under the VPC network
+   * Optional. A list of names for the reserved IP ranges under the VPC network
    * that can be used for this persistent resource.
    *
-   * If set, we will deploy the persistent resource within the provided ip
-   * ranges. Otherwise, the persistent resource will be deployed to any ip
+   * If set, we will deploy the persistent resource within the provided IP
+   * ranges. Otherwise, the persistent resource is deployed to any IP
    * ranges under the provided VPC network.
    *
    * Example: ['vertex-ai-ip-range'].
@@ -1161,11 +1161,11 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. A list of names for the reserved ip ranges under the VPC network
+   * Optional. A list of names for the reserved IP ranges under the VPC network
    * that can be used for this persistent resource.
    *
-   * If set, we will deploy the persistent resource within the provided ip
-   * ranges. Otherwise, the persistent resource will be deployed to any ip
+   * If set, we will deploy the persistent resource within the provided IP
+   * ranges. Otherwise, the persistent resource is deployed to any IP
    * ranges under the provided VPC network.
    *
    * Example: ['vertex-ai-ip-range'].
@@ -1183,11 +1183,11 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Optional. A list of names for the reserved ip ranges under the VPC network
+   * Optional. A list of names for the reserved IP ranges under the VPC network
    * that can be used for this persistent resource.
    *
-   * If set, we will deploy the persistent resource within the provided ip
-   * ranges. Otherwise, the persistent resource will be deployed to any ip
+   * If set, we will deploy the persistent resource within the provided IP
+   * ranges. Otherwise, the persistent resource is deployed to any IP
    * ranges under the provided VPC network.
    *
    * Example: ['vertex-ai-ip-range'].
@@ -3745,7 +3745,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      * Peering for Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
      *
-     * If this field is left unspecified, the resources is not peered with any
+     * If this field is left unspecified, the resources aren't peered with any
      * network.
      * </pre>
      *
@@ -3783,7 +3783,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      * Peering for Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
      *
-     * If this field is left unspecified, the resources is not peered with any
+     * If this field is left unspecified, the resources aren't peered with any
      * network.
      * </pre>
      *
@@ -3821,7 +3821,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      * Peering for Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
      *
-     * If this field is left unspecified, the resources is not peered with any
+     * If this field is left unspecified, the resources aren't peered with any
      * network.
      * </pre>
      *
@@ -3858,7 +3858,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      * Peering for Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
      *
-     * If this field is left unspecified, the resources is not peered with any
+     * If this field is left unspecified, the resources aren't peered with any
      * network.
      * </pre>
      *
@@ -3891,7 +3891,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      * Peering for Vertex
      * AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering).
      *
-     * If this field is left unspecified, the resources is not peered with any
+     * If this field is left unspecified, the resources aren't peered with any
      * network.
      * </pre>
      *
@@ -4146,7 +4146,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. Persistent Resource runtime spec.
-     * Used for e.g. Ray cluster configuration.
+     * For example, used for Ray cluster configuration.
      * </pre>
      *
      * <code>
@@ -4163,7 +4163,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. Persistent Resource runtime spec.
-     * Used for e.g. Ray cluster configuration.
+     * For example, used for Ray cluster configuration.
      * </pre>
      *
      * <code>
@@ -4186,7 +4186,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. Persistent Resource runtime spec.
-     * Used for e.g. Ray cluster configuration.
+     * For example, used for Ray cluster configuration.
      * </pre>
      *
      * <code>
@@ -4212,7 +4212,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. Persistent Resource runtime spec.
-     * Used for e.g. Ray cluster configuration.
+     * For example, used for Ray cluster configuration.
      * </pre>
      *
      * <code>
@@ -4235,7 +4235,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. Persistent Resource runtime spec.
-     * Used for e.g. Ray cluster configuration.
+     * For example, used for Ray cluster configuration.
      * </pre>
      *
      * <code>
@@ -4265,7 +4265,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. Persistent Resource runtime spec.
-     * Used for e.g. Ray cluster configuration.
+     * For example, used for Ray cluster configuration.
      * </pre>
      *
      * <code>
@@ -4287,7 +4287,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. Persistent Resource runtime spec.
-     * Used for e.g. Ray cluster configuration.
+     * For example, used for Ray cluster configuration.
      * </pre>
      *
      * <code>
@@ -4305,7 +4305,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. Persistent Resource runtime spec.
-     * Used for e.g. Ray cluster configuration.
+     * For example, used for Ray cluster configuration.
      * </pre>
      *
      * <code>
@@ -4327,7 +4327,7 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Optional. Persistent Resource runtime spec.
-     * Used for e.g. Ray cluster configuration.
+     * For example, used for Ray cluster configuration.
      * </pre>
      *
      * <code>
@@ -4568,11 +4568,11 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A list of names for the reserved ip ranges under the VPC network
+     * Optional. A list of names for the reserved IP ranges under the VPC network
      * that can be used for this persistent resource.
      *
-     * If set, we will deploy the persistent resource within the provided ip
-     * ranges. Otherwise, the persistent resource will be deployed to any ip
+     * If set, we will deploy the persistent resource within the provided IP
+     * ranges. Otherwise, the persistent resource is deployed to any IP
      * ranges under the provided VPC network.
      *
      * Example: ['vertex-ai-ip-range'].
@@ -4591,11 +4591,11 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A list of names for the reserved ip ranges under the VPC network
+     * Optional. A list of names for the reserved IP ranges under the VPC network
      * that can be used for this persistent resource.
      *
-     * If set, we will deploy the persistent resource within the provided ip
-     * ranges. Otherwise, the persistent resource will be deployed to any ip
+     * If set, we will deploy the persistent resource within the provided IP
+     * ranges. Otherwise, the persistent resource is deployed to any IP
      * ranges under the provided VPC network.
      *
      * Example: ['vertex-ai-ip-range'].
@@ -4613,11 +4613,11 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A list of names for the reserved ip ranges under the VPC network
+     * Optional. A list of names for the reserved IP ranges under the VPC network
      * that can be used for this persistent resource.
      *
-     * If set, we will deploy the persistent resource within the provided ip
-     * ranges. Otherwise, the persistent resource will be deployed to any ip
+     * If set, we will deploy the persistent resource within the provided IP
+     * ranges. Otherwise, the persistent resource is deployed to any IP
      * ranges under the provided VPC network.
      *
      * Example: ['vertex-ai-ip-range'].
@@ -4636,11 +4636,11 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A list of names for the reserved ip ranges under the VPC network
+     * Optional. A list of names for the reserved IP ranges under the VPC network
      * that can be used for this persistent resource.
      *
-     * If set, we will deploy the persistent resource within the provided ip
-     * ranges. Otherwise, the persistent resource will be deployed to any ip
+     * If set, we will deploy the persistent resource within the provided IP
+     * ranges. Otherwise, the persistent resource is deployed to any IP
      * ranges under the provided VPC network.
      *
      * Example: ['vertex-ai-ip-range'].
@@ -4659,11 +4659,11 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A list of names for the reserved ip ranges under the VPC network
+     * Optional. A list of names for the reserved IP ranges under the VPC network
      * that can be used for this persistent resource.
      *
-     * If set, we will deploy the persistent resource within the provided ip
-     * ranges. Otherwise, the persistent resource will be deployed to any ip
+     * If set, we will deploy the persistent resource within the provided IP
+     * ranges. Otherwise, the persistent resource is deployed to any IP
      * ranges under the provided VPC network.
      *
      * Example: ['vertex-ai-ip-range'].
@@ -4690,11 +4690,11 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A list of names for the reserved ip ranges under the VPC network
+     * Optional. A list of names for the reserved IP ranges under the VPC network
      * that can be used for this persistent resource.
      *
-     * If set, we will deploy the persistent resource within the provided ip
-     * ranges. Otherwise, the persistent resource will be deployed to any ip
+     * If set, we will deploy the persistent resource within the provided IP
+     * ranges. Otherwise, the persistent resource is deployed to any IP
      * ranges under the provided VPC network.
      *
      * Example: ['vertex-ai-ip-range'].
@@ -4720,11 +4720,11 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A list of names for the reserved ip ranges under the VPC network
+     * Optional. A list of names for the reserved IP ranges under the VPC network
      * that can be used for this persistent resource.
      *
-     * If set, we will deploy the persistent resource within the provided ip
-     * ranges. Otherwise, the persistent resource will be deployed to any ip
+     * If set, we will deploy the persistent resource within the provided IP
+     * ranges. Otherwise, the persistent resource is deployed to any IP
      * ranges under the provided VPC network.
      *
      * Example: ['vertex-ai-ip-range'].
@@ -4747,11 +4747,11 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A list of names for the reserved ip ranges under the VPC network
+     * Optional. A list of names for the reserved IP ranges under the VPC network
      * that can be used for this persistent resource.
      *
-     * If set, we will deploy the persistent resource within the provided ip
-     * ranges. Otherwise, the persistent resource will be deployed to any ip
+     * If set, we will deploy the persistent resource within the provided IP
+     * ranges. Otherwise, the persistent resource is deployed to any IP
      * ranges under the provided VPC network.
      *
      * Example: ['vertex-ai-ip-range'].
@@ -4773,11 +4773,11 @@ public final class PersistentResource extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Optional. A list of names for the reserved ip ranges under the VPC network
+     * Optional. A list of names for the reserved IP ranges under the VPC network
      * that can be used for this persistent resource.
      *
-     * If set, we will deploy the persistent resource within the provided ip
-     * ranges. Otherwise, the persistent resource will be deployed to any ip
+     * If set, we will deploy the persistent resource within the provided IP
+     * ranges. Otherwise, the persistent resource is deployed to any IP
      * ranges under the provided VPC network.
      *
      * Example: ['vertex-ai-ip-range'].

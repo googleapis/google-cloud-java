@@ -727,7 +727,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    *
    * The value should be the name of the address
    * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
-   * Example: 'vertex-ai-ip-range'.
+   * Example: ['vertex-ai-ip-range'].
+   *
+   * For more information about subnets and network IP ranges, please see
+   * https://cloud.google.com/vpc/docs/subnets#manually_created_subnet_ip_ranges.
    * </pre>
    *
    * <code>repeated string reserved_ip_ranges = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -750,7 +753,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    *
    * The value should be the name of the address
    * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
-   * Example: 'vertex-ai-ip-range'.
+   * Example: ['vertex-ai-ip-range'].
+   *
+   * For more information about subnets and network IP ranges, please see
+   * https://cloud.google.com/vpc/docs/subnets#manually_created_subnet_ip_ranges.
    * </pre>
    *
    * <code>repeated string reserved_ip_ranges = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -773,7 +779,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    *
    * The value should be the name of the address
    * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
-   * Example: 'vertex-ai-ip-range'.
+   * Example: ['vertex-ai-ip-range'].
+   *
+   * For more information about subnets and network IP ranges, please see
+   * https://cloud.google.com/vpc/docs/subnets#manually_created_subnet_ip_ranges.
    * </pre>
    *
    * <code>repeated string reserved_ip_ranges = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -797,7 +806,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
    *
    * The value should be the name of the address
    * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
-   * Example: 'vertex-ai-ip-range'.
+   * Example: ['vertex-ai-ip-range'].
+   *
+   * For more information about subnets and network IP ranges, please see
+   * https://cloud.google.com/vpc/docs/subnets#manually_created_subnet_ip_ranges.
    * </pre>
    *
    * <code>repeated string reserved_ip_ranges = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3593,7 +3605,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      *
      * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
-     * Example: 'vertex-ai-ip-range'.
+     * Example: ['vertex-ai-ip-range'].
+     *
+     * For more information about subnets and network IP ranges, please see
+     * https://cloud.google.com/vpc/docs/subnets#manually_created_subnet_ip_ranges.
      * </pre>
      *
      * <code>repeated string reserved_ip_ranges = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -3618,7 +3633,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      *
      * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
-     * Example: 'vertex-ai-ip-range'.
+     * Example: ['vertex-ai-ip-range'].
+     *
+     * For more information about subnets and network IP ranges, please see
+     * https://cloud.google.com/vpc/docs/subnets#manually_created_subnet_ip_ranges.
      * </pre>
      *
      * <code>repeated string reserved_ip_ranges = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -3642,7 +3660,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      *
      * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
-     * Example: 'vertex-ai-ip-range'.
+     * Example: ['vertex-ai-ip-range'].
+     *
+     * For more information about subnets and network IP ranges, please see
+     * https://cloud.google.com/vpc/docs/subnets#manually_created_subnet_ip_ranges.
      * </pre>
      *
      * <code>repeated string reserved_ip_ranges = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -3667,7 +3688,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      *
      * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
-     * Example: 'vertex-ai-ip-range'.
+     * Example: ['vertex-ai-ip-range'].
+     *
+     * For more information about subnets and network IP ranges, please see
+     * https://cloud.google.com/vpc/docs/subnets#manually_created_subnet_ip_ranges.
      * </pre>
      *
      * <code>repeated string reserved_ip_ranges = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -3692,7 +3716,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      *
      * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
-     * Example: 'vertex-ai-ip-range'.
+     * Example: ['vertex-ai-ip-range'].
+     *
+     * For more information about subnets and network IP ranges, please see
+     * https://cloud.google.com/vpc/docs/subnets#manually_created_subnet_ip_ranges.
      * </pre>
      *
      * <code>repeated string reserved_ip_ranges = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -3725,7 +3752,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      *
      * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
-     * Example: 'vertex-ai-ip-range'.
+     * Example: ['vertex-ai-ip-range'].
+     *
+     * For more information about subnets and network IP ranges, please see
+     * https://cloud.google.com/vpc/docs/subnets#manually_created_subnet_ip_ranges.
      * </pre>
      *
      * <code>repeated string reserved_ip_ranges = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -3757,7 +3787,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      *
      * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
-     * Example: 'vertex-ai-ip-range'.
+     * Example: ['vertex-ai-ip-range'].
+     *
+     * For more information about subnets and network IP ranges, please see
+     * https://cloud.google.com/vpc/docs/subnets#manually_created_subnet_ip_ranges.
      * </pre>
      *
      * <code>repeated string reserved_ip_ranges = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -3786,7 +3819,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      *
      * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
-     * Example: 'vertex-ai-ip-range'.
+     * Example: ['vertex-ai-ip-range'].
+     *
+     * For more information about subnets and network IP ranges, please see
+     * https://cloud.google.com/vpc/docs/subnets#manually_created_subnet_ip_ranges.
      * </pre>
      *
      * <code>repeated string reserved_ip_ranges = 10 [(.google.api.field_behavior) = OPTIONAL];
@@ -3814,7 +3850,10 @@ public final class DeployedIndex extends com.google.protobuf.GeneratedMessageV3
      *
      * The value should be the name of the address
      * (https://cloud.google.com/compute/docs/reference/rest/v1/addresses)
-     * Example: 'vertex-ai-ip-range'.
+     * Example: ['vertex-ai-ip-range'].
+     *
+     * For more information about subnets and network IP ranges, please see
+     * https://cloud.google.com/vpc/docs/subnets#manually_created_subnet_ip_ranges.
      * </pre>
      *
      * <code>repeated string reserved_ip_ranges = 10 [(.google.api.field_behavior) = OPTIONAL];

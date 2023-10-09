@@ -71,15 +71,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
   @SuppressWarnings("serial")
   private volatile java.lang.Object parent_ = "";
   /**
-   *
-   *
-   * <pre>
-   * The resource name of the EntityType or FeatureGroup to create a Feature.
-   * Format:
-   * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
-   * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
-   * </pre>
-   *
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
@@ -99,15 +90,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
     }
   }
   /**
-   *
-   *
-   * <pre>
-   * The resource name of the EntityType or FeatureGroup to create a Feature.
-   * Format:
-   * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
-   * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
-   * </pre>
-   *
    * <code>
    * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
@@ -649,15 +631,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
 
     private java.lang.Object parent_ = "";
     /**
-     *
-     *
-     * <pre>
-     * The resource name of the EntityType or FeatureGroup to create a Feature.
-     * Format:
-     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
-     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
-     * </pre>
-     *
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -676,15 +649,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       }
     }
     /**
-     *
-     *
-     * <pre>
-     * The resource name of the EntityType or FeatureGroup to create a Feature.
-     * Format:
-     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
-     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
-     * </pre>
-     *
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -703,15 +667,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       }
     }
     /**
-     *
-     *
-     * <pre>
-     * The resource name of the EntityType or FeatureGroup to create a Feature.
-     * Format:
-     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
-     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
-     * </pre>
-     *
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -729,15 +684,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * The resource name of the EntityType or FeatureGroup to create a Feature.
-     * Format:
-     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
-     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
-     * </pre>
-     *
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
@@ -751,15 +697,6 @@ public final class CreateFeatureRequest extends com.google.protobuf.GeneratedMes
       return this;
     }
     /**
-     *
-     *
-     * <pre>
-     * The resource name of the EntityType or FeatureGroup to create a Feature.
-     * Format:
-     * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
-     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
-     * </pre>
-     *
      * <code>
      * string parent = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>

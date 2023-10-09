@@ -22,10 +22,11 @@ package com.google.cloud.aiplatform.v1beta1;
  *
  *
  * <pre>
- * Configure runtime on a PersistentResource instance, including but may not
- * limited to:
- * * Service accounts used to run the workloads;
- * * Whether make it a dedicated Ray Cluster;
+ * Configuration for the runtime on a PersistentResource instance, including
+ * but not limited to:
+ *
+ * * Service accounts used to run the workloads.
+ * * Whether to make it a dedicated Ray Cluster.
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ResourceRuntimeSpec}
@@ -362,10 +363,11 @@ public final class ResourceRuntimeSpec extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Configure runtime on a PersistentResource instance, including but may not
-   * limited to:
-   * * Service accounts used to run the workloads;
-   * * Whether make it a dedicated Ray Cluster;
+   * Configuration for the runtime on a PersistentResource instance, including
+   * but not limited to:
+   *
+   * * Service accounts used to run the workloads.
+   * * Whether to make it a dedicated Ray Cluster.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ResourceRuntimeSpec}

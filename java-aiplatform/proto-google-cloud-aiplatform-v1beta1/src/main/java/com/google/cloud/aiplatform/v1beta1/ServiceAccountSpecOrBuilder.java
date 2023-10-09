@@ -28,9 +28,9 @@ public interface ServiceAccountSpecOrBuilder
    *
    * <pre>
    * Required. If true, custom user-managed service account is enforced to run
-   * any workloads (e.g. Vertex Jobs) on the resource; Otherwise, will always
-   * use [Vertex AI Custom Code Service
-   * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents)
+   * any workloads (for example, Vertex Jobs) on the resource. Otherwise, uses
+   * the [Vertex AI Custom Code Service
+   * Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents).
    * </pre>
    *
    * <code>bool enable_custom_service_account = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -45,16 +45,16 @@ public interface ServiceAccountSpecOrBuilder
    * <pre>
    * Optional. Default service account that this PersistentResource's workloads
    * run as. The workloads include:
-   *  * Any runtime specified via `ResourceRuntimeSpec` on creation time,
-   *  e.g. Ray;
-   *  * Jobs submitted to PersistentResource, if no other service account
-   *  specified in the job specs.
    *
+   *  * Any runtime specified via `ResourceRuntimeSpec` on creation time,
+   *    for example, Ray.
+   *  * Jobs submitted to PersistentResource, if no other service account
+   *    specified in the job specs.
    *
    * Only works when custom service account is enabled and users have the
    * `iam.serviceAccounts.actAs` permission on this service account.
    *
-   * Required if any containers specified in `ResourceRuntimeSpec`.
+   * Required if any containers are specified in `ResourceRuntimeSpec`.
    * </pre>
    *
    * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -68,16 +68,16 @@ public interface ServiceAccountSpecOrBuilder
    * <pre>
    * Optional. Default service account that this PersistentResource's workloads
    * run as. The workloads include:
-   *  * Any runtime specified via `ResourceRuntimeSpec` on creation time,
-   *  e.g. Ray;
-   *  * Jobs submitted to PersistentResource, if no other service account
-   *  specified in the job specs.
    *
+   *  * Any runtime specified via `ResourceRuntimeSpec` on creation time,
+   *    for example, Ray.
+   *  * Jobs submitted to PersistentResource, if no other service account
+   *    specified in the job specs.
    *
    * Only works when custom service account is enabled and users have the
    * `iam.serviceAccounts.actAs` permission on this service account.
    *
-   * Required if any containers specified in `ResourceRuntimeSpec`.
+   * Required if any containers are specified in `ResourceRuntimeSpec`.
    * </pre>
    *
    * <code>string service_account = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

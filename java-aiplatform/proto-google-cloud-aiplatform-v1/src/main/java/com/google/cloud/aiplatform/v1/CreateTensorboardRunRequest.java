@@ -191,7 +191,7 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
    * component of the Tensorboard run's resource name.
    *
    * This value should be 1-128 characters, and valid characters
-   * are /[a-z][0-9]-/.
+   * are `/[a-z][0-9]-/`.
    * </pre>
    *
    * <code>string tensorboard_run_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -218,7 +218,7 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
    * component of the Tensorboard run's resource name.
    *
    * This value should be 1-128 characters, and valid characters
-   * are /[a-z][0-9]-/.
+   * are `/[a-z][0-9]-/`.
    * </pre>
    *
    * <code>string tensorboard_run_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -976,7 +976,7 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
      * component of the Tensorboard run's resource name.
      *
      * This value should be 1-128 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `/[a-z][0-9]-/`.
      * </pre>
      *
      * <code>string tensorboard_run_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1002,7 +1002,7 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
      * component of the Tensorboard run's resource name.
      *
      * This value should be 1-128 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `/[a-z][0-9]-/`.
      * </pre>
      *
      * <code>string tensorboard_run_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1028,7 +1028,7 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
      * component of the Tensorboard run's resource name.
      *
      * This value should be 1-128 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `/[a-z][0-9]-/`.
      * </pre>
      *
      * <code>string tensorboard_run_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1053,7 +1053,7 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
      * component of the Tensorboard run's resource name.
      *
      * This value should be 1-128 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `/[a-z][0-9]-/`.
      * </pre>
      *
      * <code>string tensorboard_run_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1074,7 +1074,7 @@ public final class CreateTensorboardRunRequest extends com.google.protobuf.Gener
      * component of the Tensorboard run's resource name.
      *
      * This value should be 1-128 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `/[a-z][0-9]-/`.
      * </pre>
      *
      * <code>string tensorboard_run_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
