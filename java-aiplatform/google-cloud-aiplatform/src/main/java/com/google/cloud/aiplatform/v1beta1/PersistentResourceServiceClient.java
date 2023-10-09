@@ -222,7 +222,7 @@ public class PersistentResourceServiceClient implements BackgroundResource {
    * @param persistentResourceId Required. The ID to use for the PersistentResource, which become
    *     the final component of the PersistentResource's resource name.
    *     <p>The maximum length is 63 characters, and valid characters are
-   *     /^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/.
+   *     `/^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PersistentResource, CreatePersistentResourceOperationMetadata>
@@ -267,7 +267,7 @@ public class PersistentResourceServiceClient implements BackgroundResource {
    * @param persistentResourceId Required. The ID to use for the PersistentResource, which become
    *     the final component of the PersistentResource's resource name.
    *     <p>The maximum length is 63 characters, and valid characters are
-   *     /^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/.
+   *     `/^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$/`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<PersistentResource, CreatePersistentResourceOperationMetadata>

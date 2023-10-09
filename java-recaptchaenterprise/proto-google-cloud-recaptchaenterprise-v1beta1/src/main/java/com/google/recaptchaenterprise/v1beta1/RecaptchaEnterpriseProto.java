@@ -92,6 +92,10 @@ public final class RecaptchaEnterpriseProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_recaptchaenterprise_v1beta1_FraudPreventionAssessment_CardTestingVerdict_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recaptchaenterprise_v1beta1_FraudPreventionAssessment_BehavioralTrustVerdict_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recaptchaenterprise_v1beta1_FraudPreventionAssessment_BehavioralTrustVerdict_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_recaptchaenterprise_v1beta1_AccountDefenderAssessment_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_recaptchaenterprise_v1beta1_AccountDefenderAssessment_fieldAccessorTable;
@@ -228,47 +232,51 @@ public final class RecaptchaEnterpriseProto {
           + "IFIED\020\000\022\032\n\026UNKNOWN_INVALID_REASON\020\001\022\r\n\tM"
           + "ALFORMED\020\002\022\013\n\007EXPIRED\020\003\022\010\n\004DUPE\020\004\022\025\n\rSIT"
           + "E_MISMATCH\020\005\032\002\010\001\022\013\n\007MISSING\020\006\022\021\n\rBROWSER"
-          + "_ERROR\020\007\"\370\002\n\031FraudPreventionAssessment\022\030"
+          + "_ERROR\020\007\"\237\004\n\031FraudPreventionAssessment\022\030"
           + "\n\020transaction_risk\030\001 \001(\002\022~\n\031stolen_instr"
           + "ument_verdict\030\002 \001(\0132[.google.cloud.recap"
           + "tchaenterprise.v1beta1.FraudPreventionAs"
           + "sessment.StolenInstrumentVerdict\022t\n\024card"
           + "_testing_verdict\030\003 \001(\0132V.google.cloud.re"
           + "captchaenterprise.v1beta1.FraudPreventio"
-          + "nAssessment.CardTestingVerdict\032\'\n\027Stolen"
-          + "InstrumentVerdict\022\014\n\004risk\030\001 \001(\002\032\"\n\022CardT"
-          + "estingVerdict\022\014\n\004risk\030\001 \001(\002\"\273\002\n\031AccountD"
-          + "efenderAssessment\022h\n\006labels\030\001 \003(\0162X.goog"
-          + "le.cloud.recaptchaenterprise.v1beta1.Acc"
-          + "ountDefenderAssessment.AccountDefenderLa"
-          + "bel\"\263\001\n\024AccountDefenderLabel\022&\n\"ACCOUNT_"
-          + "DEFENDER_LABEL_UNSPECIFIED\020\000\022\021\n\rPROFILE_"
-          + "MATCH\020\001\022\035\n\031SUSPICIOUS_LOGIN_ACTIVITY\020\002\022\037"
-          + "\n\033SUSPICIOUS_ACCOUNT_CREATION\020\003\022 \n\034RELAT"
-          + "ED_ACCOUNTS_NUMBER_HIGH\020\0042\315\004\n!RecaptchaE"
-          + "nterpriseServiceV1Beta1\022\335\001\n\020CreateAssess"
-          + "ment\022A.google.cloud.recaptchaenterprise."
-          + "v1beta1.CreateAssessmentRequest\0324.google"
-          + ".cloud.recaptchaenterprise.v1beta1.Asses"
-          + "sment\"P\332A\021parent,assessment\202\323\344\223\0026\"(/v1be"
-          + "ta1/{parent=projects/*}/assessments:\nass"
-          + "essment\022\357\001\n\022AnnotateAssessment\022C.google."
-          + "cloud.recaptchaenterprise.v1beta1.Annota"
-          + "teAssessmentRequest\032D.google.cloud.recap"
-          + "tchaenterprise.v1beta1.AnnotateAssessmen"
-          + "tResponse\"N\332A\017name,annotation\202\323\344\223\0026\"1/v1"
-          + "beta1/{name=projects/*/assessments/*}:an"
-          + "notate:\001*\032V\312A\"recaptchaenterprise.google"
-          + "apis.com\322A.https://www.googleapis.com/au"
-          + "th/cloud-platformB\262\002\n&com.google.recaptc"
-          + "haenterprise.v1beta1B\030RecaptchaEnterpris"
-          + "eProtoP\001Zacloud.google.com/go/recaptchae"
-          + "nterprise/v2/apiv1beta1/recaptchaenterpr"
-          + "isepb;recaptchaenterprisepb\242\002\004GCRE\252\002(Goo"
-          + "gle.Cloud.RecaptchaEnterprise.V1Beta1\312\002("
-          + "Google\\Cloud\\RecaptchaEnterprise\\V1beta1"
-          + "\352\002+Google::Cloud::RecaptchaEnterprise::V"
-          + "1beta1b\006proto3"
+          + "nAssessment.CardTestingVerdict\022|\n\030behavi"
+          + "oral_trust_verdict\030\004 \001(\0132Z.google.cloud."
+          + "recaptchaenterprise.v1beta1.FraudPrevent"
+          + "ionAssessment.BehavioralTrustVerdict\032\'\n\027"
+          + "StolenInstrumentVerdict\022\014\n\004risk\030\001 \001(\002\032\"\n"
+          + "\022CardTestingVerdict\022\014\n\004risk\030\001 \001(\002\032\'\n\026Beh"
+          + "avioralTrustVerdict\022\r\n\005trust\030\001 \001(\002\"\273\002\n\031A"
+          + "ccountDefenderAssessment\022h\n\006labels\030\001 \003(\016"
+          + "2X.google.cloud.recaptchaenterprise.v1be"
+          + "ta1.AccountDefenderAssessment.AccountDef"
+          + "enderLabel\"\263\001\n\024AccountDefenderLabel\022&\n\"A"
+          + "CCOUNT_DEFENDER_LABEL_UNSPECIFIED\020\000\022\021\n\rP"
+          + "ROFILE_MATCH\020\001\022\035\n\031SUSPICIOUS_LOGIN_ACTIV"
+          + "ITY\020\002\022\037\n\033SUSPICIOUS_ACCOUNT_CREATION\020\003\022 "
+          + "\n\034RELATED_ACCOUNTS_NUMBER_HIGH\020\0042\315\004\n!Rec"
+          + "aptchaEnterpriseServiceV1Beta1\022\335\001\n\020Creat"
+          + "eAssessment\022A.google.cloud.recaptchaente"
+          + "rprise.v1beta1.CreateAssessmentRequest\0324"
+          + ".google.cloud.recaptchaenterprise.v1beta"
+          + "1.Assessment\"P\332A\021parent,assessment\202\323\344\223\0026"
+          + "\"(/v1beta1/{parent=projects/*}/assessmen"
+          + "ts:\nassessment\022\357\001\n\022AnnotateAssessment\022C."
+          + "google.cloud.recaptchaenterprise.v1beta1"
+          + ".AnnotateAssessmentRequest\032D.google.clou"
+          + "d.recaptchaenterprise.v1beta1.AnnotateAs"
+          + "sessmentResponse\"N\332A\017name,annotation\202\323\344\223"
+          + "\0026\"1/v1beta1/{name=projects/*/assessment"
+          + "s/*}:annotate:\001*\032V\312A\"recaptchaenterprise"
+          + ".googleapis.com\322A.https://www.googleapis"
+          + ".com/auth/cloud-platformB\262\002\n&com.google."
+          + "recaptchaenterprise.v1beta1B\030RecaptchaEn"
+          + "terpriseProtoP\001Zacloud.google.com/go/rec"
+          + "aptchaenterprise/v2/apiv1beta1/recaptcha"
+          + "enterprisepb;recaptchaenterprisepb\242\002\004GCR"
+          + "E\252\002(Google.Cloud.RecaptchaEnterprise.V1B"
+          + "eta1\312\002(Google\\Cloud\\RecaptchaEnterprise\\"
+          + "V1beta1\352\002+Google::Cloud::RecaptchaEnterp"
+          + "rise::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -422,7 +430,10 @@ public final class RecaptchaEnterpriseProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1beta1_FraudPreventionAssessment_descriptor,
             new java.lang.String[] {
-              "TransactionRisk", "StolenInstrumentVerdict", "CardTestingVerdict",
+              "TransactionRisk",
+              "StolenInstrumentVerdict",
+              "CardTestingVerdict",
+              "BehavioralTrustVerdict",
             });
     internal_static_google_cloud_recaptchaenterprise_v1beta1_FraudPreventionAssessment_StolenInstrumentVerdict_descriptor =
         internal_static_google_cloud_recaptchaenterprise_v1beta1_FraudPreventionAssessment_descriptor
@@ -443,6 +454,16 @@ public final class RecaptchaEnterpriseProto {
             internal_static_google_cloud_recaptchaenterprise_v1beta1_FraudPreventionAssessment_CardTestingVerdict_descriptor,
             new java.lang.String[] {
               "Risk",
+            });
+    internal_static_google_cloud_recaptchaenterprise_v1beta1_FraudPreventionAssessment_BehavioralTrustVerdict_descriptor =
+        internal_static_google_cloud_recaptchaenterprise_v1beta1_FraudPreventionAssessment_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_recaptchaenterprise_v1beta1_FraudPreventionAssessment_BehavioralTrustVerdict_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recaptchaenterprise_v1beta1_FraudPreventionAssessment_BehavioralTrustVerdict_descriptor,
+            new java.lang.String[] {
+              "Trust",
             });
     internal_static_google_cloud_recaptchaenterprise_v1beta1_AccountDefenderAssessment_descriptor =
         getDescriptor().getMessageTypes().get(10);

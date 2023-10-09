@@ -744,7 +744,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. The resource name of the Assessment, in the format
-   * "projects/{project}/assessments/{assessment}".
+   * `projects/{project}/assessments/{assessment}`.
    * </pre>
    *
    * <code>
@@ -770,7 +770,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
    *
    * <pre>
    * Required. The resource name of the Assessment, in the format
-   * "projects/{project}/assessments/{assessment}".
+   * `projects/{project}/assessments/{assessment}`.
    * </pre>
    *
    * <code>
@@ -1537,7 +1537,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The resource name of the Assessment, in the format
-     * "projects/{project}/assessments/{assessment}".
+     * `projects/{project}/assessments/{assessment}`.
      * </pre>
      *
      * <code>
@@ -1562,7 +1562,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The resource name of the Assessment, in the format
-     * "projects/{project}/assessments/{assessment}".
+     * `projects/{project}/assessments/{assessment}`.
      * </pre>
      *
      * <code>
@@ -1587,7 +1587,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The resource name of the Assessment, in the format
-     * "projects/{project}/assessments/{assessment}".
+     * `projects/{project}/assessments/{assessment}`.
      * </pre>
      *
      * <code>
@@ -1611,7 +1611,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The resource name of the Assessment, in the format
-     * "projects/{project}/assessments/{assessment}".
+     * `projects/{project}/assessments/{assessment}`.
      * </pre>
      *
      * <code>
@@ -1631,7 +1631,7 @@ public final class AnnotateAssessmentRequest extends com.google.protobuf.Generat
      *
      * <pre>
      * Required. The resource name of the Assessment, in the format
-     * "projects/{project}/assessments/{assessment}".
+     * `projects/{project}/assessments/{assessment}`.
      * </pre>
      *
      * <code>

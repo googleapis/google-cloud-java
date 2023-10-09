@@ -991,9 +991,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent The resource name of the EntityType or FeatureGroup to create a Feature. Format:
-   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
-   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
+   * @param parent
    * @param feature Required. The Feature to create.
    * @param featureId Required. The ID to use for the Feature, which will become the final component
    *     of the Feature's resource name.
@@ -1035,9 +1033,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent The resource name of the EntityType or FeatureGroup to create a Feature. Format:
-   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
-   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
+   * @param parent
    * @param feature Required. The Feature to create.
    * @param featureId Required. The ID to use for the Feature, which will become the final component
    *     of the Feature's resource name.
@@ -1081,9 +1077,7 @@ public class FeatureRegistryServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent The resource name of the EntityType or FeatureGroup to create a Feature. Format:
-   *     `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
-   *     `projects/{project}/locations/{location}/featureGroups/{feature_group}`
+   * @param parent
    * @param feature Required. The Feature to create.
    * @param featureId Required. The ID to use for the Feature, which will become the final component
    *     of the Feature's resource name.

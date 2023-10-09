@@ -73,7 +73,7 @@ public final class ListRelatedAccountGroupsRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. The name of the project to list related account groups from, in
-   * the format "projects/{project}".
+   * the format `projects/{project}`.
    * </pre>
    *
    * <code>
@@ -99,7 +99,7 @@ public final class ListRelatedAccountGroupsRequest extends com.google.protobuf.G
    *
    * <pre>
    * Required. The name of the project to list related account groups from, in
-   * the format "projects/{project}".
+   * the format `projects/{project}`.
    * </pre>
    *
    * <code>
@@ -603,7 +603,7 @@ public final class ListRelatedAccountGroupsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The name of the project to list related account groups from, in
-     * the format "projects/{project}".
+     * the format `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -628,7 +628,7 @@ public final class ListRelatedAccountGroupsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The name of the project to list related account groups from, in
-     * the format "projects/{project}".
+     * the format `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -653,7 +653,7 @@ public final class ListRelatedAccountGroupsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The name of the project to list related account groups from, in
-     * the format "projects/{project}".
+     * the format `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -677,7 +677,7 @@ public final class ListRelatedAccountGroupsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The name of the project to list related account groups from, in
-     * the format "projects/{project}".
+     * the format `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -697,7 +697,7 @@ public final class ListRelatedAccountGroupsRequest extends com.google.protobuf.G
      *
      * <pre>
      * Required. The name of the project to list related account groups from, in
-     * the format "projects/{project}".
+     * the format `projects/{project}`.
      * </pre>
      *
      * <code>

@@ -28,7 +28,7 @@ public interface GetMetricsRequestOrBuilder
    *
    * <pre>
    * Required. The name of the requested metrics, in the format
-   * "projects/{project}/keys/{key}/metrics".
+   * `projects/{project}/keys/{key}/metrics`.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface GetMetricsRequestOrBuilder
    *
    * <pre>
    * Required. The name of the requested metrics, in the format
-   * "projects/{project}/keys/{key}/metrics".
+   * `projects/{project}/keys/{key}/metrics`.
    * </pre>
    *
    * <code>

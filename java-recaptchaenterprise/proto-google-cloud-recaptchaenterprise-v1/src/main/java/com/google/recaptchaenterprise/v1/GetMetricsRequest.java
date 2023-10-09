@@ -71,7 +71,7 @@ public final class GetMetricsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The name of the requested metrics, in the format
-   * "projects/{project}/keys/{key}/metrics".
+   * `projects/{project}/keys/{key}/metrics`.
    * </pre>
    *
    * <code>
@@ -97,7 +97,7 @@ public final class GetMetricsRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The name of the requested metrics, in the format
-   * "projects/{project}/keys/{key}/metrics".
+   * `projects/{project}/keys/{key}/metrics`.
    * </pre>
    *
    * <code>
@@ -467,7 +467,7 @@ public final class GetMetricsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the requested metrics, in the format
-     * "projects/{project}/keys/{key}/metrics".
+     * `projects/{project}/keys/{key}/metrics`.
      * </pre>
      *
      * <code>
@@ -492,7 +492,7 @@ public final class GetMetricsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the requested metrics, in the format
-     * "projects/{project}/keys/{key}/metrics".
+     * `projects/{project}/keys/{key}/metrics`.
      * </pre>
      *
      * <code>
@@ -517,7 +517,7 @@ public final class GetMetricsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the requested metrics, in the format
-     * "projects/{project}/keys/{key}/metrics".
+     * `projects/{project}/keys/{key}/metrics`.
      * </pre>
      *
      * <code>
@@ -541,7 +541,7 @@ public final class GetMetricsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the requested metrics, in the format
-     * "projects/{project}/keys/{key}/metrics".
+     * `projects/{project}/keys/{key}/metrics`.
      * </pre>
      *
      * <code>
@@ -561,7 +561,7 @@ public final class GetMetricsRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the requested metrics, in the format
-     * "projects/{project}/keys/{key}/metrics".
+     * `projects/{project}/keys/{key}/metrics`.
      * </pre>
      *
      * <code>

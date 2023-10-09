@@ -27,8 +27,9 @@ public interface FraudPreventionAssessmentOrBuilder
    *
    *
    * <pre>
-   * Probability (0-1) of this transaction being fraudulent. Summarizes the
-   * combined risk of attack vectors below.
+   * Probability of this transaction being fraudulent. Summarizes the combined
+   * risk of attack vectors below.
+   * Values are from 0.0 (lowest) to 1.0 (highest).
    * </pre>
    *
    * <code>float transaction_risk = 1;</code>
@@ -125,4 +126,47 @@ public interface FraudPreventionAssessmentOrBuilder
    */
   com.google.recaptchaenterprise.v1.FraudPreventionAssessment.CardTestingVerdictOrBuilder
       getCardTestingVerdictOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Assessment of this transaction for behavioral trust.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+   * </code>
+   *
+   * @return Whether the behavioralTrustVerdict field is set.
+   */
+  boolean hasBehavioralTrustVerdict();
+  /**
+   *
+   *
+   * <pre>
+   * Assessment of this transaction for behavioral trust.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+   * </code>
+   *
+   * @return The behavioralTrustVerdict.
+   */
+  com.google.recaptchaenterprise.v1.FraudPreventionAssessment.BehavioralTrustVerdict
+      getBehavioralTrustVerdict();
+  /**
+   *
+   *
+   * <pre>
+   * Assessment of this transaction for behavioral trust.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.FraudPreventionAssessment.BehavioralTrustVerdict behavioral_trust_verdict = 4;
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1.FraudPreventionAssessment.BehavioralTrustVerdictOrBuilder
+      getBehavioralTrustVerdictOrBuilder();
 }

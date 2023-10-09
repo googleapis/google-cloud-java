@@ -40,6 +40,10 @@ public final class FeatureOnlineStoreProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_Bigtable_AutoScaling_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_DedicatedServingEndpoint_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_DedicatedServingEndpoint_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_EmbeddingManagement_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_EmbeddingManagement_fieldAccessorTable;
@@ -60,7 +64,7 @@ public final class FeatureOnlineStoreProto {
           + "e_online_store.proto\022\037google.cloud.aipla"
           + "tform.v1beta1\032\037google/api/field_behavior"
           + ".proto\032\031google/api/resource.proto\032\037googl"
-          + "e/protobuf/timestamp.proto\"\245\010\n\022FeatureOn"
+          + "e/protobuf/timestamp.proto\"\344\t\n\022FeatureOn"
           + "lineStore\022P\n\010bigtable\030\010 \001(\0132<.google.clo"
           + "ud.aiplatform.v1beta1.FeatureOnlineStore"
           + ".BigtableH\000\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\0225\n\013creat"
@@ -71,7 +75,10 @@ public final class FeatureOnlineStoreProto {
           + "orm.v1beta1.FeatureOnlineStore.LabelsEnt"
           + "ryB\004\342A\001\001\022N\n\005state\030\007 \001(\01629.google.cloud.a"
           + "iplatform.v1beta1.FeatureOnlineStore.Sta"
-          + "teB\004\342A\001\003\022k\n\024embedding_management\030\013 \001(\0132G"
+          + "teB\004\342A\001\003\022v\n\032dedicated_serving_endpoint\030\n"
+          + " \001(\0132L.google.cloud.aiplatform.v1beta1.F"
+          + "eatureOnlineStore.DedicatedServingEndpoi"
+          + "ntB\004\342A\001\001\022k\n\024embedding_management\030\013 \001(\0132G"
           + ".google.cloud.aiplatform.v1beta1.Feature"
           + "OnlineStore.EmbeddingManagementB\004\342A\001\001\032\341\001"
           + "\n\010Bigtable\022d\n\014auto_scaling\030\001 \001(\0132H.googl"
@@ -79,21 +86,23 @@ public final class FeatureOnlineStoreProto {
           + "Store.Bigtable.AutoScalingB\004\342A\001\002\032o\n\013Auto"
           + "Scaling\022\034\n\016min_node_count\030\001 \001(\005B\004\342A\001\002\022\034\n"
           + "\016max_node_count\030\002 \001(\005B\004\342A\001\002\022$\n\026cpu_utili"
-          + "zation_target\030\003 \001(\005B\004\342A\001\001\032-\n\023EmbeddingMa"
-          + "nagement\022\026\n\007enabled\030\001 \001(\010B\005\342A\002\001\005\032-\n\013Labe"
-          + "lsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\""
-          + "8\n\005State\022\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006STABL"
-          + "E\020\001\022\014\n\010UPDATING\020\002:\206\001\352A\202\001\n,aiplatform.goo"
-          + "gleapis.com/FeatureOnlineStore\022Rprojects"
-          + "/{project}/locations/{location}/featureO"
-          + "nlineStores/{feature_online_store}B\016\n\014st"
-          + "orage_typeB\356\001\n#com.google.cloud.aiplatfo"
-          + "rm.v1beta1B\027FeatureOnlineStoreProtoP\001ZCc"
-          + "loud.google.com/go/aiplatform/apiv1beta1"
-          + "/aiplatformpb;aiplatformpb\252\002\037Google.Clou"
-          + "d.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPl"
-          + "atform\\V1beta1\352\002\"Google::Cloud::AIPlatfo"
-          + "rm::V1beta1b\006proto3"
+          + "zation_target\030\003 \001(\005B\004\342A\001\001\032E\n\030DedicatedSe"
+          + "rvingEndpoint\022)\n\033public_endpoint_domain_"
+          + "name\030\002 \001(\tB\004\342A\001\003\032-\n\023EmbeddingManagement\022"
+          + "\026\n\007enabled\030\001 \001(\010B\005\342A\002\001\005\032-\n\013LabelsEntry\022\013"
+          + "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"8\n\005State\022"
+          + "\025\n\021STATE_UNSPECIFIED\020\000\022\n\n\006STABLE\020\001\022\014\n\010UP"
+          + "DATING\020\002:\206\001\352A\202\001\n,aiplatform.googleapis.c"
+          + "om/FeatureOnlineStore\022Rprojects/{project"
+          + "}/locations/{location}/featureOnlineStor"
+          + "es/{feature_online_store}B\016\n\014storage_typ"
+          + "eB\356\001\n#com.google.cloud.aiplatform.v1beta"
+          + "1B\027FeatureOnlineStoreProtoP\001ZCcloud.goog"
+          + "le.com/go/aiplatform/apiv1beta1/aiplatfo"
+          + "rmpb;aiplatformpb\252\002\037Google.Cloud.AIPlatf"
+          + "orm.V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1"
+          + "beta1\352\002\"Google::Cloud::AIPlatform::V1bet"
+          + "a1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -116,6 +125,7 @@ public final class FeatureOnlineStoreProto {
               "Etag",
               "Labels",
               "State",
+              "DedicatedServingEndpoint",
               "EmbeddingManagement",
               "StorageType",
             });
@@ -139,10 +149,20 @@ public final class FeatureOnlineStoreProto {
             new java.lang.String[] {
               "MinNodeCount", "MaxNodeCount", "CpuUtilizationTarget",
             });
-    internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_EmbeddingManagement_descriptor =
+    internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_DedicatedServingEndpoint_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_descriptor
             .getNestedTypes()
             .get(1);
+    internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_DedicatedServingEndpoint_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_DedicatedServingEndpoint_descriptor,
+            new java.lang.String[] {
+              "PublicEndpointDomainName",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_EmbeddingManagement_descriptor =
+        internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_descriptor
+            .getNestedTypes()
+            .get(2);
     internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_EmbeddingManagement_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_EmbeddingManagement_descriptor,
@@ -152,7 +172,7 @@ public final class FeatureOnlineStoreProto {
     internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_LabelsEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_descriptor
             .getNestedTypes()
-            .get(2);
+            .get(3);
     internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_LabelsEntry_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_LabelsEntry_descriptor,

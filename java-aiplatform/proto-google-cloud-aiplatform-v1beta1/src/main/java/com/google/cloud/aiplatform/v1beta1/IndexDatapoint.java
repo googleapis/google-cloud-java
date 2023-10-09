@@ -73,7 +73,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The namespace of this restriction. eg: color.
+     * The namespace of this restriction. e.g.: color.
      * </pre>
      *
      * <code>string namespace = 1;</code>
@@ -85,7 +85,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The namespace of this restriction. eg: color.
+     * The namespace of this restriction. e.g.: color.
      * </pre>
      *
      * <code>string namespace = 1;</code>
@@ -98,7 +98,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The attributes to allow in this namespace. eg: 'red'
+     * The attributes to allow in this namespace. e.g.: 'red'
      * </pre>
      *
      * <code>repeated string allow_list = 2;</code>
@@ -110,7 +110,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The attributes to allow in this namespace. eg: 'red'
+     * The attributes to allow in this namespace. e.g.: 'red'
      * </pre>
      *
      * <code>repeated string allow_list = 2;</code>
@@ -122,7 +122,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The attributes to allow in this namespace. eg: 'red'
+     * The attributes to allow in this namespace. e.g.: 'red'
      * </pre>
      *
      * <code>repeated string allow_list = 2;</code>
@@ -135,7 +135,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The attributes to allow in this namespace. eg: 'red'
+     * The attributes to allow in this namespace. e.g.: 'red'
      * </pre>
      *
      * <code>repeated string allow_list = 2;</code>
@@ -149,7 +149,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The attributes to deny in this namespace. eg: 'blue'
+     * The attributes to deny in this namespace. e.g.: 'blue'
      * </pre>
      *
      * <code>repeated string deny_list = 3;</code>
@@ -161,7 +161,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The attributes to deny in this namespace. eg: 'blue'
+     * The attributes to deny in this namespace. e.g.: 'blue'
      * </pre>
      *
      * <code>repeated string deny_list = 3;</code>
@@ -173,7 +173,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The attributes to deny in this namespace. eg: 'blue'
+     * The attributes to deny in this namespace. e.g.: 'blue'
      * </pre>
      *
      * <code>repeated string deny_list = 3;</code>
@@ -186,7 +186,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The attributes to deny in this namespace. eg: 'blue'
+     * The attributes to deny in this namespace. e.g.: 'blue'
      * </pre>
      *
      * <code>repeated string deny_list = 3;</code>
@@ -251,7 +251,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The namespace of this restriction. eg: color.
+     * The namespace of this restriction. e.g.: color.
      * </pre>
      *
      * <code>string namespace = 1;</code>
@@ -274,7 +274,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The namespace of this restriction. eg: color.
+     * The namespace of this restriction. e.g.: color.
      * </pre>
      *
      * <code>string namespace = 1;</code>
@@ -303,7 +303,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The attributes to allow in this namespace. eg: 'red'
+     * The attributes to allow in this namespace. e.g.: 'red'
      * </pre>
      *
      * <code>repeated string allow_list = 2;</code>
@@ -317,7 +317,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The attributes to allow in this namespace. eg: 'red'
+     * The attributes to allow in this namespace. e.g.: 'red'
      * </pre>
      *
      * <code>repeated string allow_list = 2;</code>
@@ -331,7 +331,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The attributes to allow in this namespace. eg: 'red'
+     * The attributes to allow in this namespace. e.g.: 'red'
      * </pre>
      *
      * <code>repeated string allow_list = 2;</code>
@@ -346,7 +346,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The attributes to allow in this namespace. eg: 'red'
+     * The attributes to allow in this namespace. e.g.: 'red'
      * </pre>
      *
      * <code>repeated string allow_list = 2;</code>
@@ -367,7 +367,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The attributes to deny in this namespace. eg: 'blue'
+     * The attributes to deny in this namespace. e.g.: 'blue'
      * </pre>
      *
      * <code>repeated string deny_list = 3;</code>
@@ -381,7 +381,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The attributes to deny in this namespace. eg: 'blue'
+     * The attributes to deny in this namespace. e.g.: 'blue'
      * </pre>
      *
      * <code>repeated string deny_list = 3;</code>
@@ -395,7 +395,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The attributes to deny in this namespace. eg: 'blue'
+     * The attributes to deny in this namespace. e.g.: 'blue'
      * </pre>
      *
      * <code>repeated string deny_list = 3;</code>
@@ -410,7 +410,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The attributes to deny in this namespace. eg: 'blue'
+     * The attributes to deny in this namespace. e.g.: 'blue'
      * </pre>
      *
      * <code>repeated string deny_list = 3;</code>
@@ -855,7 +855,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The namespace of this restriction. eg: color.
+       * The namespace of this restriction. e.g.: color.
        * </pre>
        *
        * <code>string namespace = 1;</code>
@@ -877,7 +877,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The namespace of this restriction. eg: color.
+       * The namespace of this restriction. e.g.: color.
        * </pre>
        *
        * <code>string namespace = 1;</code>
@@ -899,7 +899,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The namespace of this restriction. eg: color.
+       * The namespace of this restriction. e.g.: color.
        * </pre>
        *
        * <code>string namespace = 1;</code>
@@ -920,7 +920,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The namespace of this restriction. eg: color.
+       * The namespace of this restriction. e.g.: color.
        * </pre>
        *
        * <code>string namespace = 1;</code>
@@ -937,7 +937,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The namespace of this restriction. eg: color.
+       * The namespace of this restriction. e.g.: color.
        * </pre>
        *
        * <code>string namespace = 1;</code>
@@ -969,7 +969,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The attributes to allow in this namespace. eg: 'red'
+       * The attributes to allow in this namespace. e.g.: 'red'
        * </pre>
        *
        * <code>repeated string allow_list = 2;</code>
@@ -984,7 +984,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The attributes to allow in this namespace. eg: 'red'
+       * The attributes to allow in this namespace. e.g.: 'red'
        * </pre>
        *
        * <code>repeated string allow_list = 2;</code>
@@ -998,7 +998,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The attributes to allow in this namespace. eg: 'red'
+       * The attributes to allow in this namespace. e.g.: 'red'
        * </pre>
        *
        * <code>repeated string allow_list = 2;</code>
@@ -1013,7 +1013,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The attributes to allow in this namespace. eg: 'red'
+       * The attributes to allow in this namespace. e.g.: 'red'
        * </pre>
        *
        * <code>repeated string allow_list = 2;</code>
@@ -1028,7 +1028,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The attributes to allow in this namespace. eg: 'red'
+       * The attributes to allow in this namespace. e.g.: 'red'
        * </pre>
        *
        * <code>repeated string allow_list = 2;</code>
@@ -1051,7 +1051,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The attributes to allow in this namespace. eg: 'red'
+       * The attributes to allow in this namespace. e.g.: 'red'
        * </pre>
        *
        * <code>repeated string allow_list = 2;</code>
@@ -1073,7 +1073,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The attributes to allow in this namespace. eg: 'red'
+       * The attributes to allow in this namespace. e.g.: 'red'
        * </pre>
        *
        * <code>repeated string allow_list = 2;</code>
@@ -1092,7 +1092,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The attributes to allow in this namespace. eg: 'red'
+       * The attributes to allow in this namespace. e.g.: 'red'
        * </pre>
        *
        * <code>repeated string allow_list = 2;</code>
@@ -1110,7 +1110,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The attributes to allow in this namespace. eg: 'red'
+       * The attributes to allow in this namespace. e.g.: 'red'
        * </pre>
        *
        * <code>repeated string allow_list = 2;</code>
@@ -1143,7 +1143,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The attributes to deny in this namespace. eg: 'blue'
+       * The attributes to deny in this namespace. e.g.: 'blue'
        * </pre>
        *
        * <code>repeated string deny_list = 3;</code>
@@ -1158,7 +1158,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The attributes to deny in this namespace. eg: 'blue'
+       * The attributes to deny in this namespace. e.g.: 'blue'
        * </pre>
        *
        * <code>repeated string deny_list = 3;</code>
@@ -1172,7 +1172,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The attributes to deny in this namespace. eg: 'blue'
+       * The attributes to deny in this namespace. e.g.: 'blue'
        * </pre>
        *
        * <code>repeated string deny_list = 3;</code>
@@ -1187,7 +1187,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The attributes to deny in this namespace. eg: 'blue'
+       * The attributes to deny in this namespace. e.g.: 'blue'
        * </pre>
        *
        * <code>repeated string deny_list = 3;</code>
@@ -1202,7 +1202,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The attributes to deny in this namespace. eg: 'blue'
+       * The attributes to deny in this namespace. e.g.: 'blue'
        * </pre>
        *
        * <code>repeated string deny_list = 3;</code>
@@ -1225,7 +1225,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The attributes to deny in this namespace. eg: 'blue'
+       * The attributes to deny in this namespace. e.g.: 'blue'
        * </pre>
        *
        * <code>repeated string deny_list = 3;</code>
@@ -1247,7 +1247,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The attributes to deny in this namespace. eg: 'blue'
+       * The attributes to deny in this namespace. e.g.: 'blue'
        * </pre>
        *
        * <code>repeated string deny_list = 3;</code>
@@ -1266,7 +1266,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The attributes to deny in this namespace. eg: 'blue'
+       * The attributes to deny in this namespace. e.g.: 'blue'
        * </pre>
        *
        * <code>repeated string deny_list = 3;</code>
@@ -1284,7 +1284,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The attributes to deny in this namespace. eg: 'blue'
+       * The attributes to deny in this namespace. e.g.: 'blue'
        * </pre>
        *
        * <code>repeated string deny_list = 3;</code>
@@ -2175,7 +2175,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. List of Restrict of the datapoint, used to perform "restricted
    * searches" where boolean rule are used to filter the subset of the database
-   * eligible for matching. See:
+   * eligible for matching. This uses categorical tokens. See:
    * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
    * </pre>
    *
@@ -2194,7 +2194,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. List of Restrict of the datapoint, used to perform "restricted
    * searches" where boolean rule are used to filter the subset of the database
-   * eligible for matching. See:
+   * eligible for matching. This uses categorical tokens. See:
    * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
    * </pre>
    *
@@ -2214,7 +2214,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. List of Restrict of the datapoint, used to perform "restricted
    * searches" where boolean rule are used to filter the subset of the database
-   * eligible for matching. See:
+   * eligible for matching. This uses categorical tokens. See:
    * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
    * </pre>
    *
@@ -2232,7 +2232,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. List of Restrict of the datapoint, used to perform "restricted
    * searches" where boolean rule are used to filter the subset of the database
-   * eligible for matching. See:
+   * eligible for matching. This uses categorical tokens. See:
    * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
    * </pre>
    *
@@ -2250,7 +2250,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. List of Restrict of the datapoint, used to perform "restricted
    * searches" where boolean rule are used to filter the subset of the database
-   * eligible for matching. See:
+   * eligible for matching. This uses categorical tokens. See:
    * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
    * </pre>
    *
@@ -3093,7 +3093,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. List of Restrict of the datapoint, used to perform "restricted
      * searches" where boolean rule are used to filter the subset of the database
-     * eligible for matching. See:
+     * eligible for matching. This uses categorical tokens. See:
      * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
      * </pre>
      *
@@ -3115,7 +3115,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. List of Restrict of the datapoint, used to perform "restricted
      * searches" where boolean rule are used to filter the subset of the database
-     * eligible for matching. See:
+     * eligible for matching. This uses categorical tokens. See:
      * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
      * </pre>
      *
@@ -3136,7 +3136,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. List of Restrict of the datapoint, used to perform "restricted
      * searches" where boolean rule are used to filter the subset of the database
-     * eligible for matching. See:
+     * eligible for matching. This uses categorical tokens. See:
      * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
      * </pre>
      *
@@ -3157,7 +3157,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. List of Restrict of the datapoint, used to perform "restricted
      * searches" where boolean rule are used to filter the subset of the database
-     * eligible for matching. See:
+     * eligible for matching. This uses categorical tokens. See:
      * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
      * </pre>
      *
@@ -3185,7 +3185,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. List of Restrict of the datapoint, used to perform "restricted
      * searches" where boolean rule are used to filter the subset of the database
-     * eligible for matching. See:
+     * eligible for matching. This uses categorical tokens. See:
      * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
      * </pre>
      *
@@ -3211,7 +3211,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. List of Restrict of the datapoint, used to perform "restricted
      * searches" where boolean rule are used to filter the subset of the database
-     * eligible for matching. See:
+     * eligible for matching. This uses categorical tokens. See:
      * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
      * </pre>
      *
@@ -3239,7 +3239,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. List of Restrict of the datapoint, used to perform "restricted
      * searches" where boolean rule are used to filter the subset of the database
-     * eligible for matching. See:
+     * eligible for matching. This uses categorical tokens. See:
      * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
      * </pre>
      *
@@ -3267,7 +3267,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. List of Restrict of the datapoint, used to perform "restricted
      * searches" where boolean rule are used to filter the subset of the database
-     * eligible for matching. See:
+     * eligible for matching. This uses categorical tokens. See:
      * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
      * </pre>
      *
@@ -3292,7 +3292,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. List of Restrict of the datapoint, used to perform "restricted
      * searches" where boolean rule are used to filter the subset of the database
-     * eligible for matching. See:
+     * eligible for matching. This uses categorical tokens. See:
      * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
      * </pre>
      *
@@ -3318,7 +3318,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. List of Restrict of the datapoint, used to perform "restricted
      * searches" where boolean rule are used to filter the subset of the database
-     * eligible for matching. See:
+     * eligible for matching. This uses categorical tokens. See:
      * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
      * </pre>
      *
@@ -3344,7 +3344,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. List of Restrict of the datapoint, used to perform "restricted
      * searches" where boolean rule are used to filter the subset of the database
-     * eligible for matching. See:
+     * eligible for matching. This uses categorical tokens. See:
      * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
      * </pre>
      *
@@ -3368,7 +3368,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. List of Restrict of the datapoint, used to perform "restricted
      * searches" where boolean rule are used to filter the subset of the database
-     * eligible for matching. See:
+     * eligible for matching. This uses categorical tokens. See:
      * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
      * </pre>
      *
@@ -3392,7 +3392,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. List of Restrict of the datapoint, used to perform "restricted
      * searches" where boolean rule are used to filter the subset of the database
-     * eligible for matching. See:
+     * eligible for matching. This uses categorical tokens. See:
      * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
      * </pre>
      *
@@ -3410,7 +3410,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. List of Restrict of the datapoint, used to perform "restricted
      * searches" where boolean rule are used to filter the subset of the database
-     * eligible for matching. See:
+     * eligible for matching. This uses categorical tokens. See:
      * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
      * </pre>
      *
@@ -3432,7 +3432,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. List of Restrict of the datapoint, used to perform "restricted
      * searches" where boolean rule are used to filter the subset of the database
-     * eligible for matching. See:
+     * eligible for matching. This uses categorical tokens. See:
      * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
      * </pre>
      *
@@ -3455,7 +3455,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. List of Restrict of the datapoint, used to perform "restricted
      * searches" where boolean rule are used to filter the subset of the database
-     * eligible for matching. See:
+     * eligible for matching. This uses categorical tokens. See:
      * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
      * </pre>
      *
@@ -3475,7 +3475,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. List of Restrict of the datapoint, used to perform "restricted
      * searches" where boolean rule are used to filter the subset of the database
-     * eligible for matching. See:
+     * eligible for matching. This uses categorical tokens. See:
      * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
      * </pre>
      *
@@ -3496,7 +3496,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. List of Restrict of the datapoint, used to perform "restricted
      * searches" where boolean rule are used to filter the subset of the database
-     * eligible for matching. See:
+     * eligible for matching. This uses categorical tokens. See:
      * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
      * </pre>
      *

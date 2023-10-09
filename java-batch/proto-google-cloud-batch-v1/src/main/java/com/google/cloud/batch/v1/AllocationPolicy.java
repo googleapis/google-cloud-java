@@ -1258,6 +1258,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * * `batch-centos`: use Batch CentOS images.
      * * `batch-cos`: use Batch Container-Optimized images.
      * * `batch-hpc-centos`: use Batch HPC CentOS images.
+     * * `batch-hpc-rocky`: use Batch HPC Rocky Linux images.
      * </pre>
      *
      * <code>string image = 4;</code>
@@ -1284,6 +1285,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * * `batch-centos`: use Batch CentOS images.
      * * `batch-cos`: use Batch Container-Optimized images.
      * * `batch-hpc-centos`: use Batch HPC CentOS images.
+     * * `batch-hpc-rocky`: use Batch HPC Rocky Linux images.
      * </pre>
      *
      * <code>string image = 4;</code>
@@ -1310,6 +1312,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * * `batch-centos`: use Batch CentOS images.
      * * `batch-cos`: use Batch Container-Optimized images.
      * * `batch-hpc-centos`: use Batch HPC CentOS images.
+     * * `batch-hpc-rocky`: use Batch HPC Rocky Linux images.
      * </pre>
      *
      * <code>string image = 4;</code>
@@ -1572,6 +1575,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * * `batch-centos`: use Batch CentOS images.
      * * `batch-cos`: use Batch Container-Optimized images.
      * * `batch-hpc-centos`: use Batch HPC CentOS images.
+     * * `batch-hpc-rocky`: use Batch HPC Rocky Linux images.
      * </pre>
      *
      * <code>string image = 4;</code>
@@ -1600,6 +1604,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * * `batch-centos`: use Batch CentOS images.
      * * `batch-cos`: use Batch Container-Optimized images.
      * * `batch-hpc-centos`: use Batch HPC CentOS images.
+     * * `batch-hpc-rocky`: use Batch HPC Rocky Linux images.
      * </pre>
      *
      * <code>string image = 4;</code>
@@ -1641,6 +1646,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * * `batch-centos`: use Batch CentOS images.
      * * `batch-cos`: use Batch Container-Optimized images.
      * * `batch-hpc-centos`: use Batch HPC CentOS images.
+     * * `batch-hpc-rocky`: use Batch HPC Rocky Linux images.
      * </pre>
      *
      * <code>string image = 4;</code>
@@ -2394,6 +2400,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * * `batch-centos`: use Batch CentOS images.
        * * `batch-cos`: use Batch Container-Optimized images.
        * * `batch-hpc-centos`: use Batch HPC CentOS images.
+       * * `batch-hpc-rocky`: use Batch HPC Rocky Linux images.
        * </pre>
        *
        * <code>string image = 4;</code>
@@ -2423,6 +2430,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * * `batch-centos`: use Batch CentOS images.
        * * `batch-cos`: use Batch Container-Optimized images.
        * * `batch-hpc-centos`: use Batch HPC CentOS images.
+       * * `batch-hpc-rocky`: use Batch HPC Rocky Linux images.
        * </pre>
        *
        * <code>string image = 4;</code>
@@ -2465,6 +2473,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * * `batch-centos`: use Batch CentOS images.
        * * `batch-cos`: use Batch Container-Optimized images.
        * * `batch-hpc-centos`: use Batch HPC CentOS images.
+       * * `batch-hpc-rocky`: use Batch HPC Rocky Linux images.
        * </pre>
        *
        * <code>string image = 4;</code>
@@ -2507,6 +2516,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * * `batch-centos`: use Batch CentOS images.
        * * `batch-cos`: use Batch Container-Optimized images.
        * * `batch-hpc-centos`: use Batch HPC CentOS images.
+       * * `batch-hpc-rocky`: use Batch HPC Rocky Linux images.
        * </pre>
        *
        * <code>string image = 4;</code>
@@ -2542,6 +2552,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * * `batch-centos`: use Batch CentOS images.
        * * `batch-cos`: use Batch Container-Optimized images.
        * * `batch-hpc-centos`: use Batch HPC CentOS images.
+       * * `batch-hpc-rocky`: use Batch HPC Rocky Linux images.
        * </pre>
        *
        * <code>string image = 4;</code>
@@ -2575,6 +2586,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * * `batch-centos`: use Batch CentOS images.
        * * `batch-cos`: use Batch Container-Optimized images.
        * * `batch-hpc-centos`: use Batch HPC CentOS images.
+       * * `batch-hpc-rocky`: use Batch HPC Rocky Linux images.
        * </pre>
        *
        * <code>string image = 4;</code>
@@ -4454,7 +4466,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-     *     deprecated. See google/cloud/batch/v1/job.proto;l=339
+     *     deprecated. See google/cloud/batch/v1/job.proto;l=340
      * @return The installGpuDrivers.
      */
     @java.lang.Deprecated
@@ -4625,7 +4637,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
      *
      * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-     *     deprecated. See google/cloud/batch/v1/job.proto;l=339
+     *     deprecated. See google/cloud/batch/v1/job.proto;l=340
      * @return The installGpuDrivers.
      */
     @java.lang.Override
@@ -5287,7 +5299,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=339
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=340
        * @return The installGpuDrivers.
        */
       @java.lang.Override
@@ -5305,7 +5317,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=339
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=340
        * @param value The installGpuDrivers to set.
        * @return This builder for chaining.
        */
@@ -5327,7 +5339,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
        * <code>bool install_gpu_drivers = 3 [deprecated = true];</code>
        *
        * @deprecated google.cloud.batch.v1.AllocationPolicy.Accelerator.install_gpu_drivers is
-       *     deprecated. See google/cloud/batch/v1/job.proto;l=339
+       *     deprecated. See google/cloud/batch/v1/job.proto;l=340
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -5789,6 +5801,33 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
      * <code>repeated .google.cloud.batch.v1.AllocationPolicy.AttachedDisk disks = 6;</code>
      */
     com.google.cloud.batch.v1.AllocationPolicy.AttachedDiskOrBuilder getDisksOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If specified, VMs will consume only the specified reservation.
+     * If not specified (default), VMs will consume any applicable reservation.
+     * </pre>
+     *
+     * <code>string reservation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The reservation.
+     */
+    java.lang.String getReservation();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If specified, VMs will consume only the specified reservation.
+     * If not specified (default), VMs will consume any applicable reservation.
+     * </pre>
+     *
+     * <code>string reservation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for reservation.
+     */
+    com.google.protobuf.ByteString getReservationBytes();
   }
   /**
    *
@@ -5816,6 +5855,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       provisioningModel_ = 0;
       accelerators_ = java.util.Collections.emptyList();
       disks_ = java.util.Collections.emptyList();
+      reservation_ = "";
     }
 
     @java.lang.Override
@@ -6207,6 +6247,59 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       return disks_.get(index);
     }
 
+    public static final int RESERVATION_FIELD_NUMBER = 7;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object reservation_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If specified, VMs will consume only the specified reservation.
+     * If not specified (default), VMs will consume any applicable reservation.
+     * </pre>
+     *
+     * <code>string reservation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The reservation.
+     */
+    @java.lang.Override
+    public java.lang.String getReservation() {
+      java.lang.Object ref = reservation_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        reservation_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If specified, VMs will consume only the specified reservation.
+     * If not specified (default), VMs will consume any applicable reservation.
+     * </pre>
+     *
+     * <code>string reservation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for reservation.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getReservationBytes() {
+      java.lang.Object ref = reservation_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        reservation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -6239,6 +6332,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       for (int i = 0; i < disks_.size(); i++) {
         output.writeMessage(6, disks_.get(i));
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reservation_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, reservation_);
+      }
       if (bootDisk_ != null) {
         output.writeMessage(8, getBootDisk());
       }
@@ -6269,6 +6365,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
       for (int i = 0; i < disks_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, disks_.get(i));
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reservation_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, reservation_);
+      }
       if (bootDisk_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getBootDisk());
       }
@@ -6297,6 +6396,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         if (!getBootDisk().equals(other.getBootDisk())) return false;
       }
       if (!getDisksList().equals(other.getDisksList())) return false;
+      if (!getReservation().equals(other.getReservation())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -6326,6 +6426,8 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         hash = (37 * hash) + DISKS_FIELD_NUMBER;
         hash = (53 * hash) + getDisksList().hashCode();
       }
+      hash = (37 * hash) + RESERVATION_FIELD_NUMBER;
+      hash = (53 * hash) + getReservation().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6491,6 +6593,7 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           disksBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000020);
+        reservation_ = "";
         return this;
       }
 
@@ -6561,6 +6664,9 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.bootDisk_ = bootDiskBuilder_ == null ? bootDisk_ : bootDiskBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.reservation_ = reservation_;
         }
       }
 
@@ -6682,6 +6788,11 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
             }
           }
         }
+        if (!other.getReservation().isEmpty()) {
+          reservation_ = other.reservation_;
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -6754,6 +6865,12 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
                   }
                   break;
                 } // case 50
+              case 58:
+                {
+                  reservation_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 58
               case 66:
                 {
                   input.readMessage(getBootDiskFieldBuilder().getBuilder(), extensionRegistry);
@@ -8106,6 +8223,117 @@ public final class AllocationPolicy extends com.google.protobuf.GeneratedMessage
           disks_ = null;
         }
         return disksBuilder_;
+      }
+
+      private java.lang.Object reservation_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If specified, VMs will consume only the specified reservation.
+       * If not specified (default), VMs will consume any applicable reservation.
+       * </pre>
+       *
+       * <code>string reservation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The reservation.
+       */
+      public java.lang.String getReservation() {
+        java.lang.Object ref = reservation_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          reservation_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If specified, VMs will consume only the specified reservation.
+       * If not specified (default), VMs will consume any applicable reservation.
+       * </pre>
+       *
+       * <code>string reservation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for reservation.
+       */
+      public com.google.protobuf.ByteString getReservationBytes() {
+        java.lang.Object ref = reservation_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          reservation_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If specified, VMs will consume only the specified reservation.
+       * If not specified (default), VMs will consume any applicable reservation.
+       * </pre>
+       *
+       * <code>string reservation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The reservation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReservation(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        reservation_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If specified, VMs will consume only the specified reservation.
+       * If not specified (default), VMs will consume any applicable reservation.
+       * </pre>
+       *
+       * <code>string reservation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearReservation() {
+        reservation_ = getDefaultInstance().getReservation();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If specified, VMs will consume only the specified reservation.
+       * If not specified (default), VMs will consume any applicable reservation.
+       * </pre>
+       *
+       * <code>string reservation = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for reservation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReservationBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        reservation_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
       }
 
       @java.lang.Override

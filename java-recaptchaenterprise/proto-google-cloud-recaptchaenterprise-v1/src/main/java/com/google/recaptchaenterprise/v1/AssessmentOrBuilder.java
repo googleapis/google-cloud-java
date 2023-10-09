@@ -28,7 +28,7 @@ public interface AssessmentOrBuilder
    *
    * <pre>
    * Output only. The resource name for the Assessment in the format
-   * "projects/{project}/assessments/{assessment}".
+   * `projects/{project}/assessments/{assessment}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -41,7 +41,7 @@ public interface AssessmentOrBuilder
    *
    * <pre>
    * Output only. The resource name for the Assessment in the format
-   * "projects/{project}/assessments/{assessment}".
+   * `projects/{project}/assessments/{assessment}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -304,6 +304,51 @@ public interface AssessmentOrBuilder
    *
    *
    * <pre>
+   * Assessment returned when firewall policies belonging to the project are
+   * evaluated using the field firewall_policy_evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+   * </code>
+   *
+   * @return Whether the firewallPolicyAssessment field is set.
+   */
+  boolean hasFirewallPolicyAssessment();
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned when firewall policies belonging to the project are
+   * evaluated using the field firewall_policy_evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+   * </code>
+   *
+   * @return The firewallPolicyAssessment.
+   */
+  com.google.recaptchaenterprise.v1.FirewallPolicyAssessment getFirewallPolicyAssessment();
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned when firewall policies belonging to the project are
+   * evaluated using the field firewall_policy_evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1.FirewallPolicyAssessmentOrBuilder
+      getFirewallPolicyAssessmentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Assessment returned by Fraud Prevention when TransactionData is provided.
    * </pre>
    *
@@ -341,4 +386,48 @@ public interface AssessmentOrBuilder
    */
   com.google.recaptchaenterprise.v1.FraudPreventionAssessmentOrBuilder
       getFraudPreventionAssessmentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Fraud Signals specific to the users involved in a payment
+   * transaction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.FraudSignals fraud_signals = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the fraudSignals field is set.
+   */
+  boolean hasFraudSignals();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Fraud Signals specific to the users involved in a payment
+   * transaction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.FraudSignals fraud_signals = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The fraudSignals.
+   */
+  com.google.recaptchaenterprise.v1.FraudSignals getFraudSignals();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Fraud Signals specific to the users involved in a payment
+   * transaction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.FraudSignals fraud_signals = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.recaptchaenterprise.v1.FraudSignalsOrBuilder getFraudSignalsOrBuilder();
 }
