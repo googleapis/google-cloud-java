@@ -16,17 +16,29 @@
             "CreateAssessment": {
               "methods": ["createAssessment", "createAssessment", "createAssessment", "createAssessmentCallable"]
             },
+            "CreateFirewallPolicy": {
+              "methods": ["createFirewallPolicy", "createFirewallPolicy", "createFirewallPolicy", "createFirewallPolicyCallable"]
+            },
             "CreateKey": {
               "methods": ["createKey", "createKey", "createKey", "createKeyCallable"]
             },
+            "DeleteFirewallPolicy": {
+              "methods": ["deleteFirewallPolicy", "deleteFirewallPolicy", "deleteFirewallPolicy", "deleteFirewallPolicyCallable"]
+            },
             "DeleteKey": {
               "methods": ["deleteKey", "deleteKey", "deleteKey", "deleteKeyCallable"]
+            },
+            "GetFirewallPolicy": {
+              "methods": ["getFirewallPolicy", "getFirewallPolicy", "getFirewallPolicy", "getFirewallPolicyCallable"]
             },
             "GetKey": {
               "methods": ["getKey", "getKey", "getKey", "getKeyCallable"]
             },
             "GetMetrics": {
               "methods": ["getMetrics", "getMetrics", "getMetrics", "getMetricsCallable"]
+            },
+            "ListFirewallPolicies": {
+              "methods": ["listFirewallPolicies", "listFirewallPolicies", "listFirewallPolicies", "listFirewallPoliciesPagedCallable", "listFirewallPoliciesCallable"]
             },
             "ListKeys": {
               "methods": ["listKeys", "listKeys", "listKeys", "listKeysPagedCallable", "listKeysCallable"]
@@ -45,6 +57,9 @@
             },
             "SearchRelatedAccountGroupMemberships": {
               "methods": ["searchRelatedAccountGroupMemberships", "searchRelatedAccountGroupMemberships", "searchRelatedAccountGroupMemberships", "searchRelatedAccountGroupMembershipsPagedCallable", "searchRelatedAccountGroupMembershipsCallable"]
+            },
+            "UpdateFirewallPolicy": {
+              "methods": ["updateFirewallPolicy", "updateFirewallPolicy", "updateFirewallPolicyCallable"]
             },
             "UpdateKey": {
               "methods": ["updateKey", "updateKey", "updateKeyCallable"]

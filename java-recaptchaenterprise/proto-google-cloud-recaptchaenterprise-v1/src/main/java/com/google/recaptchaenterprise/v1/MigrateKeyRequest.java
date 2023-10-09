@@ -71,7 +71,7 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The name of the key to be migrated, in the format
-   * "projects/{project}/keys/{key}".
+   * `projects/{project}/keys/{key}`.
    * </pre>
    *
    * <code>
@@ -97,7 +97,7 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Required. The name of the key to be migrated, in the format
-   * "projects/{project}/keys/{key}".
+   * `projects/{project}/keys/{key}`.
    * </pre>
    *
    * <code>
@@ -514,7 +514,7 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the key to be migrated, in the format
-     * "projects/{project}/keys/{key}".
+     * `projects/{project}/keys/{key}`.
      * </pre>
      *
      * <code>
@@ -539,7 +539,7 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the key to be migrated, in the format
-     * "projects/{project}/keys/{key}".
+     * `projects/{project}/keys/{key}`.
      * </pre>
      *
      * <code>
@@ -564,7 +564,7 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the key to be migrated, in the format
-     * "projects/{project}/keys/{key}".
+     * `projects/{project}/keys/{key}`.
      * </pre>
      *
      * <code>
@@ -588,7 +588,7 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the key to be migrated, in the format
-     * "projects/{project}/keys/{key}".
+     * `projects/{project}/keys/{key}`.
      * </pre>
      *
      * <code>
@@ -608,7 +608,7 @@ public final class MigrateKeyRequest extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Required. The name of the key to be migrated, in the format
-     * "projects/{project}/keys/{key}".
+     * `projects/{project}/keys/{key}`.
      * </pre>
      *
      * <code>

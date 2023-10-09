@@ -16,6 +16,7 @@
 
 package com.google.cloud.recaptchaenterprise.v1.stub;
 
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListFirewallPoliciesPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupMembershipsPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupsPagedResponse;
@@ -52,11 +53,17 @@ import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
 import com.google.recaptchaenterprise.v1.CreateAssessmentRequest;
+import com.google.recaptchaenterprise.v1.CreateFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.CreateKeyRequest;
+import com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.DeleteKeyRequest;
+import com.google.recaptchaenterprise.v1.FirewallPolicy;
+import com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
 import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
+import com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest;
+import com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
@@ -71,6 +78,7 @@ import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
+import com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
 import java.io.IOException;
 import java.util.List;
@@ -136,6 +144,18 @@ public class RecaptchaEnterpriseServiceStubSettings
   private final UnaryCallSettings<DeleteKeyRequest, Empty> deleteKeySettings;
   private final UnaryCallSettings<MigrateKeyRequest, Key> migrateKeySettings;
   private final UnaryCallSettings<GetMetricsRequest, Metrics> getMetricsSettings;
+  private final UnaryCallSettings<CreateFirewallPolicyRequest, FirewallPolicy>
+      createFirewallPolicySettings;
+  private final PagedCallSettings<
+          ListFirewallPoliciesRequest,
+          ListFirewallPoliciesResponse,
+          ListFirewallPoliciesPagedResponse>
+      listFirewallPoliciesSettings;
+  private final UnaryCallSettings<GetFirewallPolicyRequest, FirewallPolicy>
+      getFirewallPolicySettings;
+  private final UnaryCallSettings<UpdateFirewallPolicyRequest, FirewallPolicy>
+      updateFirewallPolicySettings;
+  private final UnaryCallSettings<DeleteFirewallPolicyRequest, Empty> deleteFirewallPolicySettings;
   private final PagedCallSettings<
           ListRelatedAccountGroupsRequest,
           ListRelatedAccountGroupsResponse,
@@ -185,6 +205,46 @@ public class RecaptchaEnterpriseServiceStubSettings
               return payload.getKeysList() == null
                   ? ImmutableList.<Key>of()
                   : payload.getKeysList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListFirewallPoliciesRequest, ListFirewallPoliciesResponse, FirewallPolicy>
+      LIST_FIREWALL_POLICIES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListFirewallPoliciesRequest, ListFirewallPoliciesResponse, FirewallPolicy>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListFirewallPoliciesRequest injectToken(
+                ListFirewallPoliciesRequest payload, String token) {
+              return ListFirewallPoliciesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListFirewallPoliciesRequest injectPageSize(
+                ListFirewallPoliciesRequest payload, int pageSize) {
+              return ListFirewallPoliciesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListFirewallPoliciesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListFirewallPoliciesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<FirewallPolicy> extractResources(ListFirewallPoliciesResponse payload) {
+              return payload.getFirewallPoliciesList() == null
+                  ? ImmutableList.<FirewallPolicy>of()
+                  : payload.getFirewallPoliciesList();
             }
           };
 
@@ -350,6 +410,29 @@ public class RecaptchaEnterpriseServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
+          ListFirewallPoliciesRequest,
+          ListFirewallPoliciesResponse,
+          ListFirewallPoliciesPagedResponse>
+      LIST_FIREWALL_POLICIES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListFirewallPoliciesRequest,
+              ListFirewallPoliciesResponse,
+              ListFirewallPoliciesPagedResponse>() {
+            @Override
+            public ApiFuture<ListFirewallPoliciesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse> callable,
+                ListFirewallPoliciesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListFirewallPoliciesResponse> futureResponse) {
+              PageContext<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse, FirewallPolicy>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_FIREWALL_POLICIES_PAGE_STR_DESC, request, context);
+              return ListFirewallPoliciesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListRelatedAccountGroupsRequest,
           ListRelatedAccountGroupsResponse,
           ListRelatedAccountGroupsPagedResponse>
@@ -497,6 +580,37 @@ public class RecaptchaEnterpriseServiceStubSettings
     return getMetricsSettings;
   }
 
+  /** Returns the object with the settings used for calls to createFirewallPolicy. */
+  public UnaryCallSettings<CreateFirewallPolicyRequest, FirewallPolicy>
+      createFirewallPolicySettings() {
+    return createFirewallPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to listFirewallPolicies. */
+  public PagedCallSettings<
+          ListFirewallPoliciesRequest,
+          ListFirewallPoliciesResponse,
+          ListFirewallPoliciesPagedResponse>
+      listFirewallPoliciesSettings() {
+    return listFirewallPoliciesSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getFirewallPolicy. */
+  public UnaryCallSettings<GetFirewallPolicyRequest, FirewallPolicy> getFirewallPolicySettings() {
+    return getFirewallPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateFirewallPolicy. */
+  public UnaryCallSettings<UpdateFirewallPolicyRequest, FirewallPolicy>
+      updateFirewallPolicySettings() {
+    return updateFirewallPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteFirewallPolicy. */
+  public UnaryCallSettings<DeleteFirewallPolicyRequest, Empty> deleteFirewallPolicySettings() {
+    return deleteFirewallPolicySettings;
+  }
+
   /** Returns the object with the settings used for calls to listRelatedAccountGroups. */
   public PagedCallSettings<
           ListRelatedAccountGroupsRequest,
@@ -611,6 +725,11 @@ public class RecaptchaEnterpriseServiceStubSettings
     deleteKeySettings = settingsBuilder.deleteKeySettings().build();
     migrateKeySettings = settingsBuilder.migrateKeySettings().build();
     getMetricsSettings = settingsBuilder.getMetricsSettings().build();
+    createFirewallPolicySettings = settingsBuilder.createFirewallPolicySettings().build();
+    listFirewallPoliciesSettings = settingsBuilder.listFirewallPoliciesSettings().build();
+    getFirewallPolicySettings = settingsBuilder.getFirewallPolicySettings().build();
+    updateFirewallPolicySettings = settingsBuilder.updateFirewallPolicySettings().build();
+    deleteFirewallPolicySettings = settingsBuilder.deleteFirewallPolicySettings().build();
     listRelatedAccountGroupsSettings = settingsBuilder.listRelatedAccountGroupsSettings().build();
     listRelatedAccountGroupMembershipsSettings =
         settingsBuilder.listRelatedAccountGroupMembershipsSettings().build();
@@ -638,6 +757,19 @@ public class RecaptchaEnterpriseServiceStubSettings
     private final UnaryCallSettings.Builder<DeleteKeyRequest, Empty> deleteKeySettings;
     private final UnaryCallSettings.Builder<MigrateKeyRequest, Key> migrateKeySettings;
     private final UnaryCallSettings.Builder<GetMetricsRequest, Metrics> getMetricsSettings;
+    private final UnaryCallSettings.Builder<CreateFirewallPolicyRequest, FirewallPolicy>
+        createFirewallPolicySettings;
+    private final PagedCallSettings.Builder<
+            ListFirewallPoliciesRequest,
+            ListFirewallPoliciesResponse,
+            ListFirewallPoliciesPagedResponse>
+        listFirewallPoliciesSettings;
+    private final UnaryCallSettings.Builder<GetFirewallPolicyRequest, FirewallPolicy>
+        getFirewallPolicySettings;
+    private final UnaryCallSettings.Builder<UpdateFirewallPolicyRequest, FirewallPolicy>
+        updateFirewallPolicySettings;
+    private final UnaryCallSettings.Builder<DeleteFirewallPolicyRequest, Empty>
+        deleteFirewallPolicySettings;
     private final PagedCallSettings.Builder<
             ListRelatedAccountGroupsRequest,
             ListRelatedAccountGroupsResponse,
@@ -700,6 +832,12 @@ public class RecaptchaEnterpriseServiceStubSettings
       deleteKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       migrateKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getMetricsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createFirewallPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listFirewallPoliciesSettings =
+          PagedCallSettings.newBuilder(LIST_FIREWALL_POLICIES_PAGE_STR_FACT);
+      getFirewallPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateFirewallPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteFirewallPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listRelatedAccountGroupsSettings =
           PagedCallSettings.newBuilder(LIST_RELATED_ACCOUNT_GROUPS_PAGE_STR_FACT);
       listRelatedAccountGroupMembershipsSettings =
@@ -719,6 +857,11 @@ public class RecaptchaEnterpriseServiceStubSettings
               deleteKeySettings,
               migrateKeySettings,
               getMetricsSettings,
+              createFirewallPolicySettings,
+              listFirewallPoliciesSettings,
+              getFirewallPolicySettings,
+              updateFirewallPolicySettings,
+              deleteFirewallPolicySettings,
               listRelatedAccountGroupsSettings,
               listRelatedAccountGroupMembershipsSettings,
               searchRelatedAccountGroupMembershipsSettings);
@@ -738,6 +881,11 @@ public class RecaptchaEnterpriseServiceStubSettings
       deleteKeySettings = settings.deleteKeySettings.toBuilder();
       migrateKeySettings = settings.migrateKeySettings.toBuilder();
       getMetricsSettings = settings.getMetricsSettings.toBuilder();
+      createFirewallPolicySettings = settings.createFirewallPolicySettings.toBuilder();
+      listFirewallPoliciesSettings = settings.listFirewallPoliciesSettings.toBuilder();
+      getFirewallPolicySettings = settings.getFirewallPolicySettings.toBuilder();
+      updateFirewallPolicySettings = settings.updateFirewallPolicySettings.toBuilder();
+      deleteFirewallPolicySettings = settings.deleteFirewallPolicySettings.toBuilder();
       listRelatedAccountGroupsSettings = settings.listRelatedAccountGroupsSettings.toBuilder();
       listRelatedAccountGroupMembershipsSettings =
           settings.listRelatedAccountGroupMembershipsSettings.toBuilder();
@@ -756,6 +904,11 @@ public class RecaptchaEnterpriseServiceStubSettings
               deleteKeySettings,
               migrateKeySettings,
               getMetricsSettings,
+              createFirewallPolicySettings,
+              listFirewallPoliciesSettings,
+              getFirewallPolicySettings,
+              updateFirewallPolicySettings,
+              deleteFirewallPolicySettings,
               listRelatedAccountGroupsSettings,
               listRelatedAccountGroupMembershipsSettings,
               searchRelatedAccountGroupMembershipsSettings);
@@ -822,6 +975,31 @@ public class RecaptchaEnterpriseServiceStubSettings
 
       builder
           .getMetricsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createFirewallPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listFirewallPoliciesSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getFirewallPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateFirewallPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteFirewallPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -911,6 +1089,39 @@ public class RecaptchaEnterpriseServiceStubSettings
     /** Returns the builder for the settings used for calls to getMetrics. */
     public UnaryCallSettings.Builder<GetMetricsRequest, Metrics> getMetricsSettings() {
       return getMetricsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createFirewallPolicy. */
+    public UnaryCallSettings.Builder<CreateFirewallPolicyRequest, FirewallPolicy>
+        createFirewallPolicySettings() {
+      return createFirewallPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listFirewallPolicies. */
+    public PagedCallSettings.Builder<
+            ListFirewallPoliciesRequest,
+            ListFirewallPoliciesResponse,
+            ListFirewallPoliciesPagedResponse>
+        listFirewallPoliciesSettings() {
+      return listFirewallPoliciesSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getFirewallPolicy. */
+    public UnaryCallSettings.Builder<GetFirewallPolicyRequest, FirewallPolicy>
+        getFirewallPolicySettings() {
+      return getFirewallPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateFirewallPolicy. */
+    public UnaryCallSettings.Builder<UpdateFirewallPolicyRequest, FirewallPolicy>
+        updateFirewallPolicySettings() {
+      return updateFirewallPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteFirewallPolicy. */
+    public UnaryCallSettings.Builder<DeleteFirewallPolicyRequest, Empty>
+        deleteFirewallPolicySettings() {
+      return deleteFirewallPolicySettings;
     }
 
     /** Returns the builder for the settings used for calls to listRelatedAccountGroups. */

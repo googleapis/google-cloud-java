@@ -71,7 +71,7 @@ public final class DeleteKeyRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The name of the key to be deleted, in the format
-   * "projects/{project}/keys/{key}".
+   * `projects/{project}/keys/{key}`.
    * </pre>
    *
    * <code>
@@ -97,7 +97,7 @@ public final class DeleteKeyRequest extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Required. The name of the key to be deleted, in the format
-   * "projects/{project}/keys/{key}".
+   * `projects/{project}/keys/{key}`.
    * </pre>
    *
    * <code>
@@ -467,7 +467,7 @@ public final class DeleteKeyRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The name of the key to be deleted, in the format
-     * "projects/{project}/keys/{key}".
+     * `projects/{project}/keys/{key}`.
      * </pre>
      *
      * <code>
@@ -492,7 +492,7 @@ public final class DeleteKeyRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The name of the key to be deleted, in the format
-     * "projects/{project}/keys/{key}".
+     * `projects/{project}/keys/{key}`.
      * </pre>
      *
      * <code>
@@ -517,7 +517,7 @@ public final class DeleteKeyRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The name of the key to be deleted, in the format
-     * "projects/{project}/keys/{key}".
+     * `projects/{project}/keys/{key}`.
      * </pre>
      *
      * <code>
@@ -541,7 +541,7 @@ public final class DeleteKeyRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The name of the key to be deleted, in the format
-     * "projects/{project}/keys/{key}".
+     * `projects/{project}/keys/{key}`.
      * </pre>
      *
      * <code>
@@ -561,7 +561,7 @@ public final class DeleteKeyRequest extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Required. The name of the key to be deleted, in the format
-     * "projects/{project}/keys/{key}".
+     * `projects/{project}/keys/{key}`.
      * </pre>
      *
      * <code>

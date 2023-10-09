@@ -28,7 +28,7 @@ public interface MigrateKeyRequestOrBuilder
    *
    * <pre>
    * Required. The name of the key to be migrated, in the format
-   * "projects/{project}/keys/{key}".
+   * `projects/{project}/keys/{key}`.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface MigrateKeyRequestOrBuilder
    *
    * <pre>
    * Required. The name of the key to be migrated, in the format
-   * "projects/{project}/keys/{key}".
+   * `projects/{project}/keys/{key}`.
    * </pre>
    *
    * <code>
