@@ -83,7 +83,7 @@
     <dependency>
       <groupId>com.google.auto.value</groupId>
       <artifactId>auto-value</artifactId>
-      <version>${auto-value-annotation.version}</version>
+      <version>${auto-value.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.auto.value</groupId>
