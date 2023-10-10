@@ -13,6 +13,7 @@ jobs:
         java: [11]
         repo:
         - java-bigquery
+        - java-bigquerystorage
         - java-spanner
         - java-storage
         - java-pubsub
