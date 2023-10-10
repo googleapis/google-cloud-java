@@ -27,6 +27,47 @@ public interface DataQualityDimensionResultOrBuilder
    *
    *
    * <pre>
+   * Output only. The dimension config specified in the DataQualitySpec, as is.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityDimension dimension = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dimension field is set.
+   */
+  boolean hasDimension();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dimension config specified in the DataQualitySpec, as is.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityDimension dimension = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dimension.
+   */
+  com.google.cloud.dataplex.v1.DataQualityDimension getDimension();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dimension config specified in the DataQualitySpec, as is.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataQualityDimension dimension = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataQualityDimensionOrBuilder getDimensionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Whether the dimension passed or failed.
    * </pre>
    *
