@@ -128,7 +128,7 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The maximum number of results per page that should be returned.
+   * The maximum number of results per page to return.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>
@@ -199,7 +199,7 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * An expression that filters the results listed in the response.
+   * An expression that filters the list of results.
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -222,7 +222,7 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * An expression that filters the results listed in the response.
+   * An expression that filters the list of results.
    * </pre>
    *
    * <code>string filter = 4;</code>
@@ -853,7 +853,7 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The maximum number of results per page that should be returned.
+     * The maximum number of results per page to return.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -868,7 +868,7 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The maximum number of results per page that should be returned.
+     * The maximum number of results per page to return.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -887,7 +887,7 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The maximum number of results per page that should be returned.
+     * The maximum number of results per page to return.
      * </pre>
      *
      * <code>int32 page_size = 2;</code>
@@ -1012,7 +1012,7 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An expression that filters the results listed in the response.
+     * An expression that filters the list of results.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1034,7 +1034,7 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An expression that filters the results listed in the response.
+     * An expression that filters the list of results.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1056,7 +1056,7 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An expression that filters the results listed in the response.
+     * An expression that filters the list of results.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1077,7 +1077,7 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An expression that filters the results listed in the response.
+     * An expression that filters the list of results.
      * </pre>
      *
      * <code>string filter = 4;</code>
@@ -1094,7 +1094,7 @@ public final class ListHubsRequest extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * An expression that filters the results listed in the response.
+     * An expression that filters the list of results.
      * </pre>
      *
      * <code>string filter = 4;</code>

@@ -16,7 +16,12 @@
 
 package com.google.cloud.networkconnectivity.v1;
 
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListGroupsPagedResponse;
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListHubSpokesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListHubsPagedResponse;
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListRouteTablesPagedResponse;
+import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListRoutesPagedResponse;
 import static com.google.cloud.networkconnectivity.v1.HubServiceClient.ListSpokesPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -31,7 +36,16 @@ import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.networkconnectivity.v1.stub.HubServiceStubSettings;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -122,6 +136,12 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
     return ((HubServiceStubSettings) getStubSettings()).deleteHubOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to listHubSpokes. */
+  public PagedCallSettings<ListHubSpokesRequest, ListHubSpokesResponse, ListHubSpokesPagedResponse>
+      listHubSpokesSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).listHubSpokesSettings();
+  }
+
   /** Returns the object with the settings used for calls to listSpokes. */
   public PagedCallSettings<ListSpokesRequest, ListSpokesResponse, ListSpokesPagedResponse>
       listSpokesSettings() {
@@ -155,6 +175,28 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
     return ((HubServiceStubSettings) getStubSettings()).updateSpokeOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to rejectHubSpoke. */
+  public UnaryCallSettings<RejectHubSpokeRequest, Operation> rejectHubSpokeSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).rejectHubSpokeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to rejectHubSpoke. */
+  public OperationCallSettings<RejectHubSpokeRequest, RejectHubSpokeResponse, OperationMetadata>
+      rejectHubSpokeOperationSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).rejectHubSpokeOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to acceptHubSpoke. */
+  public UnaryCallSettings<AcceptHubSpokeRequest, Operation> acceptHubSpokeSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).acceptHubSpokeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to acceptHubSpoke. */
+  public OperationCallSettings<AcceptHubSpokeRequest, AcceptHubSpokeResponse, OperationMetadata>
+      acceptHubSpokeOperationSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).acceptHubSpokeOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteSpoke. */
   public UnaryCallSettings<DeleteSpokeRequest, Operation> deleteSpokeSettings() {
     return ((HubServiceStubSettings) getStubSettings()).deleteSpokeSettings();
@@ -164,6 +206,67 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
   public OperationCallSettings<DeleteSpokeRequest, Empty, OperationMetadata>
       deleteSpokeOperationSettings() {
     return ((HubServiceStubSettings) getStubSettings()).deleteSpokeOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getRouteTable. */
+  public UnaryCallSettings<GetRouteTableRequest, RouteTable> getRouteTableSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).getRouteTableSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getRoute. */
+  public UnaryCallSettings<GetRouteRequest, Route> getRouteSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).getRouteSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listRoutes. */
+  public PagedCallSettings<ListRoutesRequest, ListRoutesResponse, ListRoutesPagedResponse>
+      listRoutesSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).listRoutesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listRouteTables. */
+  public PagedCallSettings<
+          ListRouteTablesRequest, ListRouteTablesResponse, ListRouteTablesPagedResponse>
+      listRouteTablesSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).listRouteTablesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getGroup. */
+  public UnaryCallSettings<GetGroupRequest, Group> getGroupSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).getGroupSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listGroups. */
+  public PagedCallSettings<ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
+      listGroupsSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).listGroupsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).getLocationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return ((HubServiceStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return ((HubServiceStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((HubServiceStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final HubServiceSettings create(HubServiceStubSettings stub) throws IOException {
@@ -306,6 +409,13 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
       return getStubSettingsBuilder().deleteHubOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to listHubSpokes. */
+    public PagedCallSettings.Builder<
+            ListHubSpokesRequest, ListHubSpokesResponse, ListHubSpokesPagedResponse>
+        listHubSpokesSettings() {
+      return getStubSettingsBuilder().listHubSpokesSettings();
+    }
+
     /** Returns the builder for the settings used for calls to listSpokes. */
     public PagedCallSettings.Builder<ListSpokesRequest, ListSpokesResponse, ListSpokesPagedResponse>
         listSpokesSettings() {
@@ -339,6 +449,30 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
       return getStubSettingsBuilder().updateSpokeOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to rejectHubSpoke. */
+    public UnaryCallSettings.Builder<RejectHubSpokeRequest, Operation> rejectHubSpokeSettings() {
+      return getStubSettingsBuilder().rejectHubSpokeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to rejectHubSpoke. */
+    public OperationCallSettings.Builder<
+            RejectHubSpokeRequest, RejectHubSpokeResponse, OperationMetadata>
+        rejectHubSpokeOperationSettings() {
+      return getStubSettingsBuilder().rejectHubSpokeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to acceptHubSpoke. */
+    public UnaryCallSettings.Builder<AcceptHubSpokeRequest, Operation> acceptHubSpokeSettings() {
+      return getStubSettingsBuilder().acceptHubSpokeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to acceptHubSpoke. */
+    public OperationCallSettings.Builder<
+            AcceptHubSpokeRequest, AcceptHubSpokeResponse, OperationMetadata>
+        acceptHubSpokeOperationSettings() {
+      return getStubSettingsBuilder().acceptHubSpokeOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteSpoke. */
     public UnaryCallSettings.Builder<DeleteSpokeRequest, Operation> deleteSpokeSettings() {
       return getStubSettingsBuilder().deleteSpokeSettings();
@@ -348,6 +482,68 @@ public class HubServiceSettings extends ClientSettings<HubServiceSettings> {
     public OperationCallSettings.Builder<DeleteSpokeRequest, Empty, OperationMetadata>
         deleteSpokeOperationSettings() {
       return getStubSettingsBuilder().deleteSpokeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getRouteTable. */
+    public UnaryCallSettings.Builder<GetRouteTableRequest, RouteTable> getRouteTableSettings() {
+      return getStubSettingsBuilder().getRouteTableSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getRoute. */
+    public UnaryCallSettings.Builder<GetRouteRequest, Route> getRouteSettings() {
+      return getStubSettingsBuilder().getRouteSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listRoutes. */
+    public PagedCallSettings.Builder<ListRoutesRequest, ListRoutesResponse, ListRoutesPagedResponse>
+        listRoutesSettings() {
+      return getStubSettingsBuilder().listRoutesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listRouteTables. */
+    public PagedCallSettings.Builder<
+            ListRouteTablesRequest, ListRouteTablesResponse, ListRouteTablesPagedResponse>
+        listRouteTablesSettings() {
+      return getStubSettingsBuilder().listRouteTablesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getGroup. */
+    public UnaryCallSettings.Builder<GetGroupRequest, Group> getGroupSettings() {
+      return getStubSettingsBuilder().getGroupSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listGroups. */
+    public PagedCallSettings.Builder<ListGroupsRequest, ListGroupsResponse, ListGroupsPagedResponse>
+        listGroupsSettings() {
+      return getStubSettingsBuilder().listGroupsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override
