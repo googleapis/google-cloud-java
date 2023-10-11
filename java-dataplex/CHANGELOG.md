@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.26.0 (2023-10-11)
+
+### Features
+
+* DataQualityDimension is now part of the DataQualityDimensionResult message ([#9949](https://github.com/googleapis/google-cloud-java/issues/9949)) ([6557fc8](https://github.com/googleapis/google-cloud-java/commit/6557fc87ab26da76e59aa9297ef98824eba9fa2c))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.5.8 ([#9941](https://github.com/googleapis/google-cloud-java/issues/9941)) ([f818d26](https://github.com/googleapis/google-cloud-java/commit/f818d26968e1f19d302da1f1ea0145b2cc496ce0))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.17.0 ([#9942](https://github.com/googleapis/google-cloud-java/issues/9942)) ([2cc7888](https://github.com/googleapis/google-cloud-java/commit/2cc78885d76ae5e7dfc4cc9f3034c25fa22c6cc1))
+
+
 ## 1.25.0 (2023-09-28)
 
 * No change

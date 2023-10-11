@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.22.0](https://github.com/googleapis/google-cloud-java/compare/v1.21.0...v1.22.0) (2023-10-11)
+
+
+### Features
+
+* [aiplatform] add DatasetVersion and dataset version RPCs to DatasetService ([#9922](https://github.com/googleapis/google-cloud-java/issues/9922)) ([1f45cd0](https://github.com/googleapis/google-cloud-java/commit/1f45cd036e0650aff38595a4a4f6afcb0d23b958))
+* [batch] add InstancePolicy.reservation field for restricting jobs to a specific reservation ([#9933](https://github.com/googleapis/google-cloud-java/issues/9933)) ([42f3ee5](https://github.com/googleapis/google-cloud-java/commit/42f3ee5cc0fc747bc79e183077bd8e6807e3f9b6))
+* [dataplex] DataQualityDimension is now part of the DataQualityDimensionResult message ([#9949](https://github.com/googleapis/google-cloud-java/issues/9949)) ([6557fc8](https://github.com/googleapis/google-cloud-java/commit/6557fc87ab26da76e59aa9297ef98824eba9fa2c))
+* [dialogflow] Add the enable_partial_automated_agent_reply flag ([#9924](https://github.com/googleapis/google-cloud-java/issues/9924)) ([cfcf828](https://github.com/googleapis/google-cloud-java/commit/cfcf828228ac5b8355a7e24b70994298e2666958))
+* [networkconnectivity] add Network Connectivity Center APIs related to VPC spokes ([#9927](https://github.com/googleapis/google-cloud-java/issues/9927)) ([2164568](https://github.com/googleapis/google-cloud-java/commit/2164568460df563f4a51d6696c39e1a8e58d68e2))
+* [recaptchaenterprise] FirewallPolicy CRUD API ([#9937](https://github.com/googleapis/google-cloud-java/issues/9937)) ([3e9bd05](https://github.com/googleapis/google-cloud-java/commit/3e9bd057c7e7a613c8b5c25d69ee42a9d969d034))
+
+
+### Bug Fixes
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.5.8 ([#9941](https://github.com/googleapis/google-cloud-java/issues/9941)) ([f818d26](https://github.com/googleapis/google-cloud-java/commit/f818d26968e1f19d302da1f1ea0145b2cc496ce0))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.17.0 ([#9942](https://github.com/googleapis/google-cloud-java/issues/9942)) ([2cc7888](https://github.com/googleapis/google-cloud-java/commit/2cc78885d76ae5e7dfc4cc9f3034c25fa22c6cc1))
+* remove IoT integration tests ([#9944](https://github.com/googleapis/google-cloud-java/issues/9944)) ([237c070](https://github.com/googleapis/google-cloud-java/commit/237c070a9d0a3ecf6a25387648a4d5dd81d705c2))
+* telcoautomation documentation links ([#9938](https://github.com/googleapis/google-cloud-java/issues/9938)) ([54262fd](https://github.com/googleapis/google-cloud-java/commit/54262fd530705e063bc2a0b85f9e6c6d8e5d74e7))
+
 ## [1.21.0](https://github.com/googleapis/google-cloud-java/compare/v1.20.0...v1.21.0) (2023-09-28)
 
 
