@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.44.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.43.0...v2.44.0) (2023-10-10)
+
+
+### Features
+
+* Add in-stream retry logic for retryable and quota errors ([#2243](https://github.com/googleapis/java-bigquerystorage/issues/2243)) ([6435a04](https://github.com/googleapis/java-bigquerystorage/commit/6435a0491827779b01dd0c3cf184f6578bf33f3e))
+
+
+### Dependencies
+
+* Bumping google-cloud-shared-config to v1.5.8 ([#2269](https://github.com/googleapis/java-bigquerystorage/issues/2269)) ([fb6e38d](https://github.com/googleapis/java-bigquerystorage/commit/fb6e38d575800ab4c7c16ae0545fdbd91ea358bd))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.33.1 ([#2258](https://github.com/googleapis/java-bigquerystorage/issues/2258)) ([f6cbea2](https://github.com/googleapis/java-bigquerystorage/commit/f6cbea204b5a414d8e2932ad2fd194996685ec39))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.17.0 ([#2266](https://github.com/googleapis/java-bigquerystorage/issues/2266)) ([827aaf7](https://github.com/googleapis/java-bigquerystorage/commit/827aaf70bc19de8d67d0f386085877eb5d2fbced))
+
 ## [2.43.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.42.0...v2.43.0) (2023-09-28)
 
 
