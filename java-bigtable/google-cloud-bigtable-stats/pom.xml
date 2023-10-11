@@ -254,4 +254,12 @@
             </plugin>
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>test</id>
+            <properties>
+                <bigtable.test-monitoring-endpoint/>
+            </properties>
+        </profile>
+    </profiles>
 </project>

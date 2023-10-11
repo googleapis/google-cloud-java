@@ -23,6 +23,7 @@ import com.google.auth.Credentials;
 import com.google.cloud.monitoring.v3.MetricServiceClient;
 import com.google.cloud.monitoring.v3.MetricServiceSettings;
 import com.google.common.annotations.VisibleForTesting;
+import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import io.opencensus.common.Duration;
 import io.opencensus.exporter.metrics.util.IntervalMetricReader;
@@ -43,6 +44,11 @@ public class BigtableStackdriverStatsExporter {
   // Default export interval is 1 minute
   private static final Duration EXPORT_INTERVAL = Duration.create(60, 0);
   private static final String RESOURCE_TYPE = "bigtable_client_raw";
+
+  private static final String MONITORING_ENDPOINT =
+      MoreObjects.firstNonNull(
+          System.getProperty("bigtable.test-monitoring-endpoint"),
+          MetricServiceSettings.getDefaultEndpoint());
 
   private final IntervalMetricReader intervalMetricReader;
 
@@ -84,7 +90,7 @@ public class BigtableStackdriverStatsExporter {
         MetricServiceSettings.newBuilder()
             .setTransportChannelProvider(InstantiatingGrpcChannelProvider.newBuilder().build());
     settingsBuilder.setCredentialsProvider(FixedCredentialsProvider.create(credentials));
-
+    settingsBuilder.setEndpoint(MONITORING_ENDPOINT);
     org.threeten.bp.Duration timeout = org.threeten.bp.Duration.ofMillis(deadline.toMillis());
     settingsBuilder.createServiceTimeSeriesSettings().setSimpleTimeoutNoRetries(timeout);
     return MetricServiceClient.create(settingsBuilder.build());
