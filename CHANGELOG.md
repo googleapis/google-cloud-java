@@ -1,5 +1,23 @@
 # Changelog
 
+## [2.33.2](https://github.com/googleapis/java-bigquery/compare/v2.33.1...v2.33.2) (2023-10-11)
+
+
+### Bug Fixes
+
+* GetDouble in read API path ([#2919](https://github.com/googleapis/java-bigquery/issues/2919)) ([436ee8e](https://github.com/googleapis/java-bigquery/commit/436ee8ebe9104f6ca721f1a14bd409158c7bdb5a))
+
+
+### Dependencies
+
+* Update dependency com.google.api.grpc:proto-google-cloud-bigqueryconnection-v1 to v2.29.0 ([#2911](https://github.com/googleapis/java-bigquery/issues/2911)) ([052f5c2](https://github.com/googleapis/java-bigquery/commit/052f5c2f722243be39c0d93b1f81b81a0db48ef1))
+* Update dependency com.google.apis:google-api-services-bigquery to v2-rev20230925-2.0.0 ([#2921](https://github.com/googleapis/java-bigquery/issues/2921)) ([f0fb64f](https://github.com/googleapis/java-bigquery/commit/f0fb64f43817c5aa53adb6c5152afe3fd44b7df1))
+* Update dependency com.google.cloud:google-cloud-datacatalog-bom to v1.33.0 ([#2912](https://github.com/googleapis/java-bigquery/issues/2912)) ([e053494](https://github.com/googleapis/java-bigquery/commit/e05349476a8d987b2cd24ee6a80b2d9b7b9463ee))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.17.0 ([#2931](https://github.com/googleapis/java-bigquery/issues/2931)) ([25a94f1](https://github.com/googleapis/java-bigquery/commit/25a94f1da840c0cb32bed882e18f7b10f9890d04))
+* Update github/codeql-action action to v2.22.0 ([#2926](https://github.com/googleapis/java-bigquery/issues/2926)) ([33ce4ae](https://github.com/googleapis/java-bigquery/commit/33ce4aee8b10f630212d96901af00f063c43f440))
+* Update github/codeql-action action to v2.22.1 ([#2934](https://github.com/googleapis/java-bigquery/issues/2934)) ([7ae7b99](https://github.com/googleapis/java-bigquery/commit/7ae7b99ab21fcd6e74cbaa95e750da961c09ae80))
+* Update ossf/scorecard-action action to v2.3.0 ([#2927](https://github.com/googleapis/java-bigquery/issues/2927)) ([93bfd8e](https://github.com/googleapis/java-bigquery/commit/93bfd8eb7fe35121e97b06cf8b103a3960fe9535))
+
 ## [2.33.1](https://github.com/googleapis/java-bigquery/compare/v2.33.0...v2.33.1) (2023-09-28)
 
 
