@@ -65,6 +65,13 @@ public class StandardTableDefinitionTest {
       TimePartitioning.of(TimePartitioning.Type.DAY, 42);
   private static final Clustering CLUSTERING =
       Clustering.newBuilder().setFields(ImmutableList.of("Foo", "Bar")).build();
+  private static final BigLakeConfiguration BIG_LAKE_CONFIGURATION =
+      BigLakeConfiguration.newBuilder()
+          .setConnectionId("us.connection-test")
+          .setTableFormat("ICEBERG")
+          .setFileFormat("PARQUET")
+          .setStorageUri("gs://java-bigquery-test/standard-table-def")
+          .build();
   private static final StandardTableDefinition TABLE_DEFINITION =
       StandardTableDefinition.newBuilder()
           .setLocation(LOCATION)
@@ -82,6 +89,7 @@ public class StandardTableDefinitionTest {
           .setSchema(TABLE_SCHEMA)
           .setTimePartitioning(TIME_PARTITIONING)
           .setClustering(CLUSTERING)
+          .setBigLakeConfiguration(BIG_LAKE_CONFIGURATION)
           .build();
 
   @Test
