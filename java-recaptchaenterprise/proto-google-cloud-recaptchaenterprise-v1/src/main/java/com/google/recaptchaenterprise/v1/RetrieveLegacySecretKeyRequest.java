@@ -72,7 +72,7 @@ public final class RetrieveLegacySecretKeyRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Required. The public key name linked to the requested secret key in the
-   * format "projects/{project}/keys/{key}".
+   * format `projects/{project}/keys/{key}`.
    * </pre>
    *
    * <code>
@@ -98,7 +98,7 @@ public final class RetrieveLegacySecretKeyRequest extends com.google.protobuf.Ge
    *
    * <pre>
    * Required. The public key name linked to the requested secret key in the
-   * format "projects/{project}/keys/{key}".
+   * format `projects/{project}/keys/{key}`.
    * </pre>
    *
    * <code>
@@ -473,7 +473,7 @@ public final class RetrieveLegacySecretKeyRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The public key name linked to the requested secret key in the
-     * format "projects/{project}/keys/{key}".
+     * format `projects/{project}/keys/{key}`.
      * </pre>
      *
      * <code>
@@ -498,7 +498,7 @@ public final class RetrieveLegacySecretKeyRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The public key name linked to the requested secret key in the
-     * format "projects/{project}/keys/{key}".
+     * format `projects/{project}/keys/{key}`.
      * </pre>
      *
      * <code>
@@ -523,7 +523,7 @@ public final class RetrieveLegacySecretKeyRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The public key name linked to the requested secret key in the
-     * format "projects/{project}/keys/{key}".
+     * format `projects/{project}/keys/{key}`.
      * </pre>
      *
      * <code>
@@ -547,7 +547,7 @@ public final class RetrieveLegacySecretKeyRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The public key name linked to the requested secret key in the
-     * format "projects/{project}/keys/{key}".
+     * format `projects/{project}/keys/{key}`.
      * </pre>
      *
      * <code>
@@ -567,7 +567,7 @@ public final class RetrieveLegacySecretKeyRequest extends com.google.protobuf.Ge
      *
      * <pre>
      * Required. The public key name linked to the requested secret key in the
-     * format "projects/{project}/keys/{key}".
+     * format `projects/{project}/keys/{key}`.
      * </pre>
      *
      * <code>

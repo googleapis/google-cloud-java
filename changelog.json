@@ -4,6 +4,125 @@
     {
       "changes": [
         {
+          "type": "fix",
+          "sha": "237c070a9d0a3ecf6a25387648a4d5dd81d705c2",
+          "message": "remove IoT integration tests",
+          "issues": [
+            "9944"
+          ]
+        }
+      ],
+      "version": "1.22.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-iot",
+      "id": "ca94f469-bd09-4560-a05f-7febdb24c873",
+      "createTime": "2023-10-11T13:41:33.030Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "1f45cd036e0650aff38595a4a4f6afcb0d23b958",
+          "message": "[aiplatform] add DatasetVersion and dataset version RPCs to DatasetService",
+          "issues": [
+            "9922"
+          ]
+        }
+      ],
+      "version": "1.22.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-aiplatform",
+      "id": "e637a2a4-1a0d-4f47-80cb-e83a50da0927",
+      "createTime": "2023-10-11T13:41:33.024Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "cfcf828228ac5b8355a7e24b70994298e2666958",
+          "message": "[dialogflow] Add the enable_partial_automated_agent_reply flag",
+          "issues": [
+            "9924"
+          ]
+        }
+      ],
+      "version": "1.22.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dialogflow",
+      "id": "7726b2eb-9396-49c0-ad11-014829e7dc5d",
+      "createTime": "2023-10-11T13:41:33.019Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "42f3ee5cc0fc747bc79e183077bd8e6807e3f9b6",
+          "message": "[batch] add InstancePolicy.reservation field for restricting jobs to a specific reservation",
+          "issues": [
+            "9933"
+          ]
+        }
+      ],
+      "version": "1.22.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-batch",
+      "id": "1dc72b24-e4f4-492b-81fd-c01fcf662de4",
+      "createTime": "2023-10-11T13:41:33.014Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "3e9bd057c7e7a613c8b5c25d69ee42a9d969d034",
+          "message": "[recaptchaenterprise] FirewallPolicy CRUD API",
+          "issues": [
+            "9937"
+          ]
+        }
+      ],
+      "version": "1.22.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-recaptchaenterprise",
+      "id": "0e0673c4-4715-4228-b3b9-66a063977e8a",
+      "createTime": "2023-10-11T13:41:33.008Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "2164568460df563f4a51d6696c39e1a8e58d68e2",
+          "message": "[networkconnectivity] add Network Connectivity Center APIs related to VPC spokes",
+          "issues": [
+            "9927"
+          ]
+        }
+      ],
+      "version": "1.22.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-networkconnectivity",
+      "id": "4ea84936-1518-4716-a2e0-7ea2838e5a70",
+      "createTime": "2023-10-11T13:41:33.002Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "6557fc87ab26da76e59aa9297ef98824eba9fa2c",
+          "message": "[dataplex] DataQualityDimension is now part of the DataQualityDimensionResult message",
+          "issues": [
+            "9949"
+          ]
+        }
+      ],
+      "version": "1.22.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-dataplex",
+      "id": "9e03a25e-4d79-4705-9a5d-d4c29a21aae9",
+      "createTime": "2023-10-11T13:41:32.995Z"
+    },
+    {
+      "changes": [
+        {
           "type": "docs",
           "sha": "453c1b77b721731cc9175d8c57b918fcd2de7be6",
           "message": "add links to rpc and rest documentation in repo-metadata.json",
@@ -12024,5 +12143,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2023-09-28T20:07:05.321Z"
+  "updateTime": "2023-10-11T13:41:33.030Z"
 }

@@ -27,8 +27,8 @@ public interface ResourcePoolOrBuilder
    *
    *
    * <pre>
-   * Immutable. The unique ID in a PersistentResource to refer the this resource
-   * pool. User can specify it if need to use it, otherwise we will generate it
+   * Immutable. The unique ID in a PersistentResource for referring to this
+   * resource pool. User can specify it if necessary. Otherwise, it's generated
    * automatically.
    * </pre>
    *
@@ -41,8 +41,8 @@ public interface ResourcePoolOrBuilder
    *
    *
    * <pre>
-   * Immutable. The unique ID in a PersistentResource to refer the this resource
-   * pool. User can specify it if need to use it, otherwise we will generate it
+   * Immutable. The unique ID in a PersistentResource for referring to this
+   * resource pool. User can specify it if necessary. Otherwise, it's generated
    * automatically.
    * </pre>
    *

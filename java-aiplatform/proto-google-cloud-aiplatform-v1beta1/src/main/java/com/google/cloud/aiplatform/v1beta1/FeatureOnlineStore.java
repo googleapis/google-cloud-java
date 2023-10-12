@@ -1827,6 +1827,699 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public interface DedicatedServingEndpointOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field will be populated with the domain name to use for
+     * this FeatureOnlineStore
+     * </pre>
+     *
+     * <code>string public_endpoint_domain_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The publicEndpointDomainName.
+     */
+    java.lang.String getPublicEndpointDomainName();
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field will be populated with the domain name to use for
+     * this FeatureOnlineStore
+     * </pre>
+     *
+     * <code>string public_endpoint_domain_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for publicEndpointDomainName.
+     */
+    com.google.protobuf.ByteString getPublicEndpointDomainNameBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The dedicated serving endpoint for this FeatureOnlineStore.
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint}
+   */
+  public static final class DedicatedServingEndpoint extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint)
+      DedicatedServingEndpointOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use DedicatedServingEndpoint.newBuilder() to construct.
+    private DedicatedServingEndpoint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DedicatedServingEndpoint() {
+      publicEndpointDomainName_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DedicatedServingEndpoint();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStoreProto
+          .internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_DedicatedServingEndpoint_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStoreProto
+          .internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_DedicatedServingEndpoint_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint.class,
+              com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+                  .Builder.class);
+    }
+
+    public static final int PUBLIC_ENDPOINT_DOMAIN_NAME_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object publicEndpointDomainName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field will be populated with the domain name to use for
+     * this FeatureOnlineStore
+     * </pre>
+     *
+     * <code>string public_endpoint_domain_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The publicEndpointDomainName.
+     */
+    @java.lang.Override
+    public java.lang.String getPublicEndpointDomainName() {
+      java.lang.Object ref = publicEndpointDomainName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        publicEndpointDomainName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. This field will be populated with the domain name to use for
+     * this FeatureOnlineStore
+     * </pre>
+     *
+     * <code>string public_endpoint_domain_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for publicEndpointDomainName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPublicEndpointDomainNameBytes() {
+      java.lang.Object ref = publicEndpointDomainName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        publicEndpointDomainName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicEndpointDomainName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, publicEndpointDomainName_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(publicEndpointDomainName_)) {
+        size +=
+            com.google.protobuf.GeneratedMessageV3.computeStringSize(2, publicEndpointDomainName_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint other =
+          (com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint) obj;
+
+      if (!getPublicEndpointDomainName().equals(other.getPublicEndpointDomainName())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PUBLIC_ENDPOINT_DOMAIN_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getPublicEndpointDomainName().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The dedicated serving endpoint for this FeatureOnlineStore.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint)
+        com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpointOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStoreProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_DedicatedServingEndpoint_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStoreProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_DedicatedServingEndpoint_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+                    .class,
+                com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        publicEndpointDomainName_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStoreProto
+            .internal_static_google_cloud_aiplatform_v1beta1_FeatureOnlineStore_DedicatedServingEndpoint_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+          build() {
+        com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+          buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint result =
+            new com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.publicEndpointDomainName_ = publicEndpointDomainName_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+                .getDefaultInstance()) return this;
+        if (!other.getPublicEndpointDomainName().isEmpty()) {
+          publicEndpointDomainName_ = other.publicEndpointDomainName_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18:
+                {
+                  publicEndpointDomainName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object publicEndpointDomainName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Output only. This field will be populated with the domain name to use for
+       * this FeatureOnlineStore
+       * </pre>
+       *
+       * <code>string public_endpoint_domain_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The publicEndpointDomainName.
+       */
+      public java.lang.String getPublicEndpointDomainName() {
+        java.lang.Object ref = publicEndpointDomainName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          publicEndpointDomainName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. This field will be populated with the domain name to use for
+       * this FeatureOnlineStore
+       * </pre>
+       *
+       * <code>string public_endpoint_domain_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The bytes for publicEndpointDomainName.
+       */
+      public com.google.protobuf.ByteString getPublicEndpointDomainNameBytes() {
+        java.lang.Object ref = publicEndpointDomainName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          publicEndpointDomainName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. This field will be populated with the domain name to use for
+       * this FeatureOnlineStore
+       * </pre>
+       *
+       * <code>string public_endpoint_domain_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The publicEndpointDomainName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPublicEndpointDomainName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        publicEndpointDomainName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. This field will be populated with the domain name to use for
+       * this FeatureOnlineStore
+       * </pre>
+       *
+       * <code>string public_endpoint_domain_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPublicEndpointDomainName() {
+        publicEndpointDomainName_ = getDefaultInstance().getPublicEndpointDomainName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. This field will be populated with the domain name to use for
+       * this FeatureOnlineStore
+       * </pre>
+       *
+       * <code>string public_endpoint_domain_name = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @param value The bytes for publicEndpointDomainName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPublicEndpointDomainNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        publicEndpointDomainName_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint)
+    private static final com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore
+            .DedicatedServingEndpoint
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DedicatedServingEndpoint> PARSER =
+        new com.google.protobuf.AbstractParser<DedicatedServingEndpoint>() {
+          @java.lang.Override
+          public DedicatedServingEndpoint parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DedicatedServingEndpoint> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DedicatedServingEndpoint> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface EmbeddingManagementOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement)
@@ -2901,6 +3594,70 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         : result;
   }
 
+  public static final int DEDICATED_SERVING_ENDPOINT_FIELD_NUMBER = 10;
+  private com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+      dedicatedServingEndpoint_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+   * is different from common Vertex service endpoint.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dedicatedServingEndpoint field is set.
+   */
+  @java.lang.Override
+  public boolean hasDedicatedServingEndpoint() {
+    return dedicatedServingEndpoint_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+   * is different from common Vertex service endpoint.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dedicatedServingEndpoint.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+      getDedicatedServingEndpoint() {
+    return dedicatedServingEndpoint_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+            .getDefaultInstance()
+        : dedicatedServingEndpoint_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+   * is different from common Vertex service endpoint.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpointOrBuilder
+      getDedicatedServingEndpointOrBuilder() {
+    return dedicatedServingEndpoint_ == null
+        ? com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+            .getDefaultInstance()
+        : dedicatedServingEndpoint_;
+  }
+
   public static final int EMBEDDING_MANAGEMENT_FIELD_NUMBER = 11;
   private com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement
       embeddingManagement_;
@@ -2999,6 +3756,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       output.writeMessage(
           8, (com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable) storageType_);
     }
+    if (dedicatedServingEndpoint_ != null) {
+      output.writeMessage(10, getDedicatedServingEndpoint());
+    }
     if (embeddingManagement_ != null) {
       output.writeMessage(11, getEmbeddingManagement());
     }
@@ -3043,6 +3803,11 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, (com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.Bigtable) storageType_);
     }
+    if (dedicatedServingEndpoint_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, getDedicatedServingEndpoint());
+    }
     if (embeddingManagement_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(11, getEmbeddingManagement());
@@ -3075,6 +3840,10 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     if (!getEtag().equals(other.getEtag())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (state_ != other.state_) return false;
+    if (hasDedicatedServingEndpoint() != other.hasDedicatedServingEndpoint()) return false;
+    if (hasDedicatedServingEndpoint()) {
+      if (!getDedicatedServingEndpoint().equals(other.getDedicatedServingEndpoint())) return false;
+    }
     if (hasEmbeddingManagement() != other.hasEmbeddingManagement()) return false;
     if (hasEmbeddingManagement()) {
       if (!getEmbeddingManagement().equals(other.getEmbeddingManagement())) return false;
@@ -3116,6 +3885,10 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     }
     hash = (37 * hash) + STATE_FIELD_NUMBER;
     hash = (53 * hash) + state_;
+    if (hasDedicatedServingEndpoint()) {
+      hash = (37 * hash) + DEDICATED_SERVING_ENDPOINT_FIELD_NUMBER;
+      hash = (53 * hash) + getDedicatedServingEndpoint().hashCode();
+    }
     if (hasEmbeddingManagement()) {
       hash = (37 * hash) + EMBEDDING_MANAGEMENT_FIELD_NUMBER;
       hash = (53 * hash) + getEmbeddingManagement().hashCode();
@@ -3307,6 +4080,11 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       etag_ = "";
       internalGetMutableLabels().clear();
       state_ = 0;
+      dedicatedServingEndpoint_ = null;
+      if (dedicatedServingEndpointBuilder_ != null) {
+        dedicatedServingEndpointBuilder_.dispose();
+        dedicatedServingEndpointBuilder_ = null;
+      }
       embeddingManagement_ = null;
       if (embeddingManagementBuilder_ != null) {
         embeddingManagementBuilder_.dispose();
@@ -3371,6 +4149,12 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
         result.state_ = state_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.dedicatedServingEndpoint_ =
+            dedicatedServingEndpointBuilder_ == null
+                ? dedicatedServingEndpoint_
+                : dedicatedServingEndpointBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.embeddingManagement_ =
             embeddingManagementBuilder_ == null
                 ? embeddingManagement_
@@ -3452,6 +4236,9 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       bitField0_ |= 0x00000020;
       if (other.state_ != 0) {
         setStateValue(other.getStateValue());
+      }
+      if (other.hasDedicatedServingEndpoint()) {
+        mergeDedicatedServingEndpoint(other.getDedicatedServingEndpoint());
       }
       if (other.hasEmbeddingManagement()) {
         mergeEmbeddingManagement(other.getEmbeddingManagement());
@@ -3541,11 +4328,18 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
                 storageTypeCase_ = 8;
                 break;
               } // case 66
+            case 82:
+              {
+                input.readMessage(
+                    getDedicatedServingEndpointFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 82
             case 90:
               {
                 input.readMessage(
                     getEmbeddingManagementFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 90
             default:
@@ -4775,6 +5569,232 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        dedicatedServingEndpoint_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint,
+            com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint.Builder,
+            com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore
+                .DedicatedServingEndpointOrBuilder>
+        dedicatedServingEndpointBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+     * is different from common Vertex service endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the dedicatedServingEndpoint field is set.
+     */
+    public boolean hasDedicatedServingEndpoint() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+     * is different from common Vertex service endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The dedicatedServingEndpoint.
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+        getDedicatedServingEndpoint() {
+      if (dedicatedServingEndpointBuilder_ == null) {
+        return dedicatedServingEndpoint_ == null
+            ? com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+                .getDefaultInstance()
+            : dedicatedServingEndpoint_;
+      } else {
+        return dedicatedServingEndpointBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+     * is different from common Vertex service endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDedicatedServingEndpoint(
+        com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint value) {
+      if (dedicatedServingEndpointBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dedicatedServingEndpoint_ = value;
+      } else {
+        dedicatedServingEndpointBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+     * is different from common Vertex service endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDedicatedServingEndpoint(
+        com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint.Builder
+            builderForValue) {
+      if (dedicatedServingEndpointBuilder_ == null) {
+        dedicatedServingEndpoint_ = builderForValue.build();
+      } else {
+        dedicatedServingEndpointBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+     * is different from common Vertex service endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDedicatedServingEndpoint(
+        com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint value) {
+      if (dedicatedServingEndpointBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && dedicatedServingEndpoint_ != null
+            && dedicatedServingEndpoint_
+                != com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+                    .getDefaultInstance()) {
+          getDedicatedServingEndpointBuilder().mergeFrom(value);
+        } else {
+          dedicatedServingEndpoint_ = value;
+        }
+      } else {
+        dedicatedServingEndpointBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+     * is different from common Vertex service endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDedicatedServingEndpoint() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      dedicatedServingEndpoint_ = null;
+      if (dedicatedServingEndpointBuilder_ != null) {
+        dedicatedServingEndpointBuilder_.dispose();
+        dedicatedServingEndpointBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+     * is different from common Vertex service endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint.Builder
+        getDedicatedServingEndpointBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getDedicatedServingEndpointFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+     * is different from common Vertex service endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpointOrBuilder
+        getDedicatedServingEndpointOrBuilder() {
+      if (dedicatedServingEndpointBuilder_ != null) {
+        return dedicatedServingEndpointBuilder_.getMessageOrBuilder();
+      } else {
+        return dedicatedServingEndpoint_ == null
+            ? com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+                .getDefaultInstance()
+            : dedicatedServingEndpoint_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+     * is different from common Vertex service endpoint.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint,
+            com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint.Builder,
+            com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore
+                .DedicatedServingEndpointOrBuilder>
+        getDedicatedServingEndpointFieldBuilder() {
+      if (dedicatedServingEndpointBuilder_ == null) {
+        dedicatedServingEndpointBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint,
+                com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+                    .Builder,
+                com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore
+                    .DedicatedServingEndpointOrBuilder>(
+                getDedicatedServingEndpoint(), getParentForChildren(), isClean());
+        dedicatedServingEndpoint_ = null;
+      }
+      return dedicatedServingEndpointBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement
         embeddingManagement_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -4796,7 +5816,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * @return Whether the embeddingManagement field is set.
      */
     public boolean hasEmbeddingManagement() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -4843,7 +5863,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       } else {
         embeddingManagementBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4866,7 +5886,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       } else {
         embeddingManagementBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4884,7 +5904,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
     public Builder mergeEmbeddingManagement(
         com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement value) {
       if (embeddingManagementBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && embeddingManagement_ != null
             && embeddingManagement_
                 != com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement
@@ -4896,7 +5916,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
       } else {
         embeddingManagementBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4912,7 +5932,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearEmbeddingManagement() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       embeddingManagement_ = null;
       if (embeddingManagementBuilder_ != null) {
         embeddingManagementBuilder_.dispose();
@@ -4934,7 +5954,7 @@ public final class FeatureOnlineStore extends com.google.protobuf.GeneratedMessa
      */
     public com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.EmbeddingManagement.Builder
         getEmbeddingManagementBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getEmbeddingManagementFieldBuilder().getBuilder();
     }

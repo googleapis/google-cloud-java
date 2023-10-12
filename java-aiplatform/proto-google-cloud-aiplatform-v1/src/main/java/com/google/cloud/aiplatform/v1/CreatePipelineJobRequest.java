@@ -190,7 +190,7 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
    * generated.
    *
    * This value should be less than 128 characters, and valid characters
-   * are /[a-z][0-9]-/.
+   * are `/[a-z][0-9]-/`.
    * </pre>
    *
    * <code>string pipeline_job_id = 3;</code>
@@ -218,7 +218,7 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
    * generated.
    *
    * This value should be less than 128 characters, and valid characters
-   * are /[a-z][0-9]-/.
+   * are `/[a-z][0-9]-/`.
    * </pre>
    *
    * <code>string pipeline_job_id = 3;</code>
@@ -971,7 +971,7 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
      * generated.
      *
      * This value should be less than 128 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `/[a-z][0-9]-/`.
      * </pre>
      *
      * <code>string pipeline_job_id = 3;</code>
@@ -998,7 +998,7 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
      * generated.
      *
      * This value should be less than 128 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `/[a-z][0-9]-/`.
      * </pre>
      *
      * <code>string pipeline_job_id = 3;</code>
@@ -1025,7 +1025,7 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
      * generated.
      *
      * This value should be less than 128 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `/[a-z][0-9]-/`.
      * </pre>
      *
      * <code>string pipeline_job_id = 3;</code>
@@ -1051,7 +1051,7 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
      * generated.
      *
      * This value should be less than 128 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `/[a-z][0-9]-/`.
      * </pre>
      *
      * <code>string pipeline_job_id = 3;</code>
@@ -1073,7 +1073,7 @@ public final class CreatePipelineJobRequest extends com.google.protobuf.Generate
      * generated.
      *
      * This value should be less than 128 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `/[a-z][0-9]-/`.
      * </pre>
      *
      * <code>string pipeline_job_id = 3;</code>

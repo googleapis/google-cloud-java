@@ -13,8 +13,14 @@
             "CreateDataset": {
               "methods": ["createDatasetAsync", "createDatasetAsync", "createDatasetAsync", "createDatasetOperationCallable", "createDatasetCallable"]
             },
+            "CreateDatasetVersion": {
+              "methods": ["createDatasetVersionAsync", "createDatasetVersionAsync", "createDatasetVersionAsync", "createDatasetVersionOperationCallable", "createDatasetVersionCallable"]
+            },
             "DeleteDataset": {
               "methods": ["deleteDatasetAsync", "deleteDatasetAsync", "deleteDatasetAsync", "deleteDatasetOperationCallable", "deleteDatasetCallable"]
+            },
+            "DeleteDatasetVersion": {
+              "methods": ["deleteDatasetVersionAsync", "deleteDatasetVersionAsync", "deleteDatasetVersionAsync", "deleteDatasetVersionOperationCallable", "deleteDatasetVersionCallable"]
             },
             "DeleteSavedQuery": {
               "methods": ["deleteSavedQueryAsync", "deleteSavedQueryAsync", "deleteSavedQueryAsync", "deleteSavedQueryOperationCallable", "deleteSavedQueryCallable"]
@@ -27,6 +33,9 @@
             },
             "GetDataset": {
               "methods": ["getDataset", "getDataset", "getDataset", "getDatasetCallable"]
+            },
+            "GetDatasetVersion": {
+              "methods": ["getDatasetVersion", "getDatasetVersion", "getDatasetVersion", "getDatasetVersionCallable"]
             },
             "GetIamPolicy": {
               "methods": ["getIamPolicy", "getIamPolicyCallable"]
@@ -43,6 +52,9 @@
             "ListDataItems": {
               "methods": ["listDataItems", "listDataItems", "listDataItems", "listDataItemsPagedCallable", "listDataItemsCallable"]
             },
+            "ListDatasetVersions": {
+              "methods": ["listDatasetVersions", "listDatasetVersions", "listDatasetVersions", "listDatasetVersionsPagedCallable", "listDatasetVersionsCallable"]
+            },
             "ListDatasets": {
               "methods": ["listDatasets", "listDatasets", "listDatasets", "listDatasetsPagedCallable", "listDatasetsCallable"]
             },
@@ -51,6 +63,9 @@
             },
             "ListSavedQueries": {
               "methods": ["listSavedQueries", "listSavedQueries", "listSavedQueries", "listSavedQueriesPagedCallable", "listSavedQueriesCallable"]
+            },
+            "RestoreDatasetVersion": {
+              "methods": ["restoreDatasetVersionAsync", "restoreDatasetVersionAsync", "restoreDatasetVersionAsync", "restoreDatasetVersionOperationCallable", "restoreDatasetVersionCallable"]
             },
             "SearchDataItems": {
               "methods": ["searchDataItems", "searchDataItemsPagedCallable", "searchDataItemsCallable"]

@@ -18,6 +18,7 @@ package com.google.cloud.aiplatform.v1;
 
 import static com.google.cloud.aiplatform.v1.DatasetServiceClient.ListAnnotationsPagedResponse;
 import static com.google.cloud.aiplatform.v1.DatasetServiceClient.ListDataItemsPagedResponse;
+import static com.google.cloud.aiplatform.v1.DatasetServiceClient.ListDatasetVersionsPagedResponse;
 import static com.google.cloud.aiplatform.v1.DatasetServiceClient.ListDatasetsPagedResponse;
 import static com.google.cloud.aiplatform.v1.DatasetServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1.DatasetServiceClient.ListSavedQueriesPagedResponse;
@@ -149,6 +150,55 @@ public class DatasetServiceSettings extends ClientSettings<DatasetServiceSetting
   public OperationCallSettings<ExportDataRequest, ExportDataResponse, ExportDataOperationMetadata>
       exportDataOperationSettings() {
     return ((DatasetServiceStubSettings) getStubSettings()).exportDataOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDatasetVersion. */
+  public UnaryCallSettings<CreateDatasetVersionRequest, Operation> createDatasetVersionSettings() {
+    return ((DatasetServiceStubSettings) getStubSettings()).createDatasetVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createDatasetVersion. */
+  public OperationCallSettings<
+          CreateDatasetVersionRequest, DatasetVersion, CreateDatasetVersionOperationMetadata>
+      createDatasetVersionOperationSettings() {
+    return ((DatasetServiceStubSettings) getStubSettings()).createDatasetVersionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDatasetVersion. */
+  public UnaryCallSettings<DeleteDatasetVersionRequest, Operation> deleteDatasetVersionSettings() {
+    return ((DatasetServiceStubSettings) getStubSettings()).deleteDatasetVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteDatasetVersion. */
+  public OperationCallSettings<DeleteDatasetVersionRequest, Empty, DeleteOperationMetadata>
+      deleteDatasetVersionOperationSettings() {
+    return ((DatasetServiceStubSettings) getStubSettings()).deleteDatasetVersionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getDatasetVersion. */
+  public UnaryCallSettings<GetDatasetVersionRequest, DatasetVersion> getDatasetVersionSettings() {
+    return ((DatasetServiceStubSettings) getStubSettings()).getDatasetVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listDatasetVersions. */
+  public PagedCallSettings<
+          ListDatasetVersionsRequest, ListDatasetVersionsResponse, ListDatasetVersionsPagedResponse>
+      listDatasetVersionsSettings() {
+    return ((DatasetServiceStubSettings) getStubSettings()).listDatasetVersionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to restoreDatasetVersion. */
+  public UnaryCallSettings<RestoreDatasetVersionRequest, Operation>
+      restoreDatasetVersionSettings() {
+    return ((DatasetServiceStubSettings) getStubSettings()).restoreDatasetVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to restoreDatasetVersion. */
+  public OperationCallSettings<
+          RestoreDatasetVersionRequest, DatasetVersion, RestoreDatasetVersionOperationMetadata>
+      restoreDatasetVersionOperationSettings() {
+    return ((DatasetServiceStubSettings) getStubSettings())
+        .restoreDatasetVersionOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listDataItems. */
@@ -380,6 +430,60 @@ public class DatasetServiceSettings extends ClientSettings<DatasetServiceSetting
             ExportDataRequest, ExportDataResponse, ExportDataOperationMetadata>
         exportDataOperationSettings() {
       return getStubSettingsBuilder().exportDataOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDatasetVersion. */
+    public UnaryCallSettings.Builder<CreateDatasetVersionRequest, Operation>
+        createDatasetVersionSettings() {
+      return getStubSettingsBuilder().createDatasetVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDatasetVersion. */
+    public OperationCallSettings.Builder<
+            CreateDatasetVersionRequest, DatasetVersion, CreateDatasetVersionOperationMetadata>
+        createDatasetVersionOperationSettings() {
+      return getStubSettingsBuilder().createDatasetVersionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDatasetVersion. */
+    public UnaryCallSettings.Builder<DeleteDatasetVersionRequest, Operation>
+        deleteDatasetVersionSettings() {
+      return getStubSettingsBuilder().deleteDatasetVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDatasetVersion. */
+    public OperationCallSettings.Builder<
+            DeleteDatasetVersionRequest, Empty, DeleteOperationMetadata>
+        deleteDatasetVersionOperationSettings() {
+      return getStubSettingsBuilder().deleteDatasetVersionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getDatasetVersion. */
+    public UnaryCallSettings.Builder<GetDatasetVersionRequest, DatasetVersion>
+        getDatasetVersionSettings() {
+      return getStubSettingsBuilder().getDatasetVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listDatasetVersions. */
+    public PagedCallSettings.Builder<
+            ListDatasetVersionsRequest,
+            ListDatasetVersionsResponse,
+            ListDatasetVersionsPagedResponse>
+        listDatasetVersionsSettings() {
+      return getStubSettingsBuilder().listDatasetVersionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to restoreDatasetVersion. */
+    public UnaryCallSettings.Builder<RestoreDatasetVersionRequest, Operation>
+        restoreDatasetVersionSettings() {
+      return getStubSettingsBuilder().restoreDatasetVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to restoreDatasetVersion. */
+    public OperationCallSettings.Builder<
+            RestoreDatasetVersionRequest, DatasetVersion, RestoreDatasetVersionOperationMetadata>
+        restoreDatasetVersionOperationSettings() {
+      return getStubSettingsBuilder().restoreDatasetVersionOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listDataItems. */
