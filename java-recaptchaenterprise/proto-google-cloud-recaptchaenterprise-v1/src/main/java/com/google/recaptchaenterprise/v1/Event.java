@@ -44,6 +44,9 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     userIpAddress_ = "";
     expectedAction_ = "";
     hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
+    requestedUri_ = "";
+    ja3_ = "";
+    headers_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -353,6 +356,232 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     return hashedAccountId_;
   }
 
+  public static final int EXPRESS_FIELD_NUMBER = 14;
+  private boolean express_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Flag for a reCAPTCHA express request for an assessment without a
+   * token. If enabled, `site_key` must reference a SCORE key with WAF feature
+   * set to EXPRESS.
+   * </pre>
+   *
+   * <code>bool express = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The express.
+   */
+  @java.lang.Override
+  public boolean getExpress() {
+    return express_;
+  }
+
+  public static final int REQUESTED_URI_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object requestedUri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The URI resource the user requested that triggered an assessment.
+   * </pre>
+   *
+   * <code>string requested_uri = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The requestedUri.
+   */
+  @java.lang.Override
+  public java.lang.String getRequestedUri() {
+    java.lang.Object ref = requestedUri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      requestedUri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The URI resource the user requested that triggered an assessment.
+   * </pre>
+   *
+   * <code>string requested_uri = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for requestedUri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRequestedUriBytes() {
+    java.lang.Object ref = requestedUri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      requestedUri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int WAF_TOKEN_ASSESSMENT_FIELD_NUMBER = 9;
+  private boolean wafTokenAssessment_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Flag for running WAF token assessment.
+   * If enabled, the token must be specified, and have been created by a
+   * WAF-enabled key.
+   * </pre>
+   *
+   * <code>bool waf_token_assessment = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The wafTokenAssessment.
+   */
+  @java.lang.Override
+  public boolean getWafTokenAssessment() {
+    return wafTokenAssessment_;
+  }
+
+  public static final int JA3_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ja3_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional JA3 fingerprint for SSL clients.
+   * </pre>
+   *
+   * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ja3.
+   */
+  @java.lang.Override
+  public java.lang.String getJa3() {
+    java.lang.Object ref = ja3_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ja3_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional JA3 fingerprint for SSL clients.
+   * </pre>
+   *
+   * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for ja3.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getJa3Bytes() {
+    java.lang.Object ref = ja3_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      ja3_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int HEADERS_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList headers_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. HTTP header information about the request.
+   * </pre>
+   *
+   * <code>repeated string headers = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the headers.
+   */
+  public com.google.protobuf.ProtocolStringList getHeadersList() {
+    return headers_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. HTTP header information about the request.
+   * </pre>
+   *
+   * <code>repeated string headers = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of headers.
+   */
+  public int getHeadersCount() {
+    return headers_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. HTTP header information about the request.
+   * </pre>
+   *
+   * <code>repeated string headers = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The headers at the given index.
+   */
+  public java.lang.String getHeaders(int index) {
+    return headers_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. HTTP header information about the request.
+   * </pre>
+   *
+   * <code>repeated string headers = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the headers at the given index.
+   */
+  public com.google.protobuf.ByteString getHeadersBytes(int index) {
+    return headers_.getByteString(index);
+  }
+
+  public static final int FIREWALL_POLICY_EVALUATION_FIELD_NUMBER = 12;
+  private boolean firewallPolicyEvaluation_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Flag for enabling firewall policy config assessment.
+   * If this flag is enabled, the firewall policy will be evaluated and a
+   * suggested firewall action will be returned in the response.
+   * </pre>
+   *
+   * <code>bool firewall_policy_evaluation = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The firewallPolicyEvaluation.
+   */
+  @java.lang.Override
+  public boolean getFirewallPolicyEvaluation() {
+    return firewallPolicyEvaluation_;
+  }
+
   public static final int TRANSACTION_DATA_FIELD_NUMBER = 13;
   private com.google.recaptchaenterprise.v1.TransactionData transactionData_;
   /**
@@ -447,8 +676,26 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     if (!hashedAccountId_.isEmpty()) {
       output.writeBytes(6, hashedAccountId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestedUri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, requestedUri_);
+    }
+    if (wafTokenAssessment_ != false) {
+      output.writeBool(9, wafTokenAssessment_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ja3_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, ja3_);
+    }
+    for (int i = 0; i < headers_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, headers_.getRaw(i));
+    }
+    if (firewallPolicyEvaluation_ != false) {
+      output.writeBool(12, firewallPolicyEvaluation_);
+    }
     if (transactionData_ != null) {
       output.writeMessage(13, getTransactionData());
+    }
+    if (express_ != false) {
+      output.writeBool(14, express_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -477,8 +724,31 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     if (!hashedAccountId_.isEmpty()) {
       size += com.google.protobuf.CodedOutputStream.computeBytesSize(6, hashedAccountId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestedUri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, requestedUri_);
+    }
+    if (wafTokenAssessment_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(9, wafTokenAssessment_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ja3_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, ja3_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < headers_.size(); i++) {
+        dataSize += computeStringSizeNoTag(headers_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getHeadersList().size();
+    }
+    if (firewallPolicyEvaluation_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, firewallPolicyEvaluation_);
+    }
     if (transactionData_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getTransactionData());
+    }
+    if (express_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, express_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -501,6 +771,12 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     if (!getUserIpAddress().equals(other.getUserIpAddress())) return false;
     if (!getExpectedAction().equals(other.getExpectedAction())) return false;
     if (!getHashedAccountId().equals(other.getHashedAccountId())) return false;
+    if (getExpress() != other.getExpress()) return false;
+    if (!getRequestedUri().equals(other.getRequestedUri())) return false;
+    if (getWafTokenAssessment() != other.getWafTokenAssessment()) return false;
+    if (!getJa3().equals(other.getJa3())) return false;
+    if (!getHeadersList().equals(other.getHeadersList())) return false;
+    if (getFirewallPolicyEvaluation() != other.getFirewallPolicyEvaluation()) return false;
     if (hasTransactionData() != other.hasTransactionData()) return false;
     if (hasTransactionData()) {
       if (!getTransactionData().equals(other.getTransactionData())) return false;
@@ -528,6 +804,20 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getExpectedAction().hashCode();
     hash = (37 * hash) + HASHED_ACCOUNT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getHashedAccountId().hashCode();
+    hash = (37 * hash) + EXPRESS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExpress());
+    hash = (37 * hash) + REQUESTED_URI_FIELD_NUMBER;
+    hash = (53 * hash) + getRequestedUri().hashCode();
+    hash = (37 * hash) + WAF_TOKEN_ASSESSMENT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getWafTokenAssessment());
+    hash = (37 * hash) + JA3_FIELD_NUMBER;
+    hash = (53 * hash) + getJa3().hashCode();
+    if (getHeadersCount() > 0) {
+      hash = (37 * hash) + HEADERS_FIELD_NUMBER;
+      hash = (53 * hash) + getHeadersList().hashCode();
+    }
+    hash = (37 * hash) + FIREWALL_POLICY_EVALUATION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFirewallPolicyEvaluation());
     if (hasTransactionData()) {
       hash = (37 * hash) + TRANSACTION_DATA_FIELD_NUMBER;
       hash = (53 * hash) + getTransactionData().hashCode();
@@ -677,6 +967,12 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       userIpAddress_ = "";
       expectedAction_ = "";
       hashedAccountId_ = com.google.protobuf.ByteString.EMPTY;
+      express_ = false;
+      requestedUri_ = "";
+      wafTokenAssessment_ = false;
+      ja3_ = "";
+      headers_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      firewallPolicyEvaluation_ = false;
       transactionData_ = null;
       if (transactionDataBuilder_ != null) {
         transactionDataBuilder_.dispose();
@@ -737,6 +1033,25 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
         result.hashedAccountId_ = hashedAccountId_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.express_ = express_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.requestedUri_ = requestedUri_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.wafTokenAssessment_ = wafTokenAssessment_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.ja3_ = ja3_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        headers_.makeImmutable();
+        result.headers_ = headers_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.firewallPolicyEvaluation_ = firewallPolicyEvaluation_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.transactionData_ =
             transactionDataBuilder_ == null ? transactionData_ : transactionDataBuilder_.build();
       }
@@ -815,6 +1130,35 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       if (other.getHashedAccountId() != com.google.protobuf.ByteString.EMPTY) {
         setHashedAccountId(other.getHashedAccountId());
       }
+      if (other.getExpress() != false) {
+        setExpress(other.getExpress());
+      }
+      if (!other.getRequestedUri().isEmpty()) {
+        requestedUri_ = other.requestedUri_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      if (other.getWafTokenAssessment() != false) {
+        setWafTokenAssessment(other.getWafTokenAssessment());
+      }
+      if (!other.getJa3().isEmpty()) {
+        ja3_ = other.ja3_;
+        bitField0_ |= 0x00000200;
+        onChanged();
+      }
+      if (!other.headers_.isEmpty()) {
+        if (headers_.isEmpty()) {
+          headers_ = other.headers_;
+          bitField0_ |= 0x00000400;
+        } else {
+          ensureHeadersIsMutable();
+          headers_.addAll(other.headers_);
+        }
+        onChanged();
+      }
+      if (other.getFirewallPolicyEvaluation() != false) {
+        setFirewallPolicyEvaluation(other.getFirewallPolicyEvaluation());
+      }
       if (other.hasTransactionData()) {
         mergeTransactionData(other.getTransactionData());
       }
@@ -880,12 +1224,49 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 66:
+              {
+                requestedUri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+            case 72:
+              {
+                wafTokenAssessment_ = input.readBool();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
+            case 82:
+              {
+                ja3_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
+            case 90:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureHeadersIsMutable();
+                headers_.add(s);
+                break;
+              } // case 90
+            case 96:
+              {
+                firewallPolicyEvaluation_ = input.readBool();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 96
             case 106:
               {
                 input.readMessage(getTransactionDataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
+            case 112:
+              {
+                express_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 112
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1523,6 +1904,569 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private boolean express_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag for a reCAPTCHA express request for an assessment without a
+     * token. If enabled, `site_key` must reference a SCORE key with WAF feature
+     * set to EXPRESS.
+     * </pre>
+     *
+     * <code>bool express = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The express.
+     */
+    @java.lang.Override
+    public boolean getExpress() {
+      return express_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag for a reCAPTCHA express request for an assessment without a
+     * token. If enabled, `site_key` must reference a SCORE key with WAF feature
+     * set to EXPRESS.
+     * </pre>
+     *
+     * <code>bool express = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The express to set.
+     * @return This builder for chaining.
+     */
+    public Builder setExpress(boolean value) {
+
+      express_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag for a reCAPTCHA express request for an assessment without a
+     * token. If enabled, `site_key` must reference a SCORE key with WAF feature
+     * set to EXPRESS.
+     * </pre>
+     *
+     * <code>bool express = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearExpress() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      express_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object requestedUri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The URI resource the user requested that triggered an assessment.
+     * </pre>
+     *
+     * <code>string requested_uri = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The requestedUri.
+     */
+    public java.lang.String getRequestedUri() {
+      java.lang.Object ref = requestedUri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        requestedUri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The URI resource the user requested that triggered an assessment.
+     * </pre>
+     *
+     * <code>string requested_uri = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for requestedUri.
+     */
+    public com.google.protobuf.ByteString getRequestedUriBytes() {
+      java.lang.Object ref = requestedUri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        requestedUri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The URI resource the user requested that triggered an assessment.
+     * </pre>
+     *
+     * <code>string requested_uri = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The requestedUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestedUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      requestedUri_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The URI resource the user requested that triggered an assessment.
+     * </pre>
+     *
+     * <code>string requested_uri = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRequestedUri() {
+      requestedUri_ = getDefaultInstance().getRequestedUri();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The URI resource the user requested that triggered an assessment.
+     * </pre>
+     *
+     * <code>string requested_uri = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for requestedUri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRequestedUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      requestedUri_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    private boolean wafTokenAssessment_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag for running WAF token assessment.
+     * If enabled, the token must be specified, and have been created by a
+     * WAF-enabled key.
+     * </pre>
+     *
+     * <code>bool waf_token_assessment = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The wafTokenAssessment.
+     */
+    @java.lang.Override
+    public boolean getWafTokenAssessment() {
+      return wafTokenAssessment_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag for running WAF token assessment.
+     * If enabled, the token must be specified, and have been created by a
+     * WAF-enabled key.
+     * </pre>
+     *
+     * <code>bool waf_token_assessment = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The wafTokenAssessment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWafTokenAssessment(boolean value) {
+
+      wafTokenAssessment_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag for running WAF token assessment.
+     * If enabled, the token must be specified, and have been created by a
+     * WAF-enabled key.
+     * </pre>
+     *
+     * <code>bool waf_token_assessment = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWafTokenAssessment() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      wafTokenAssessment_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object ja3_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional JA3 fingerprint for SSL clients.
+     * </pre>
+     *
+     * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The ja3.
+     */
+    public java.lang.String getJa3() {
+      java.lang.Object ref = ja3_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ja3_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional JA3 fingerprint for SSL clients.
+     * </pre>
+     *
+     * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for ja3.
+     */
+    public com.google.protobuf.ByteString getJa3Bytes() {
+      java.lang.Object ref = ja3_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        ja3_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional JA3 fingerprint for SSL clients.
+     * </pre>
+     *
+     * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The ja3 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJa3(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ja3_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional JA3 fingerprint for SSL clients.
+     * </pre>
+     *
+     * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearJa3() {
+      ja3_ = getDefaultInstance().getJa3();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional JA3 fingerprint for SSL clients.
+     * </pre>
+     *
+     * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for ja3 to set.
+     * @return This builder for chaining.
+     */
+    public Builder setJa3Bytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ja3_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList headers_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureHeadersIsMutable() {
+      if (!headers_.isModifiable()) {
+        headers_ = new com.google.protobuf.LazyStringArrayList(headers_);
+      }
+      bitField0_ |= 0x00000400;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HTTP header information about the request.
+     * </pre>
+     *
+     * <code>repeated string headers = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the headers.
+     */
+    public com.google.protobuf.ProtocolStringList getHeadersList() {
+      headers_.makeImmutable();
+      return headers_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HTTP header information about the request.
+     * </pre>
+     *
+     * <code>repeated string headers = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of headers.
+     */
+    public int getHeadersCount() {
+      return headers_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HTTP header information about the request.
+     * </pre>
+     *
+     * <code>repeated string headers = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The headers at the given index.
+     */
+    public java.lang.String getHeaders(int index) {
+      return headers_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HTTP header information about the request.
+     * </pre>
+     *
+     * <code>repeated string headers = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the headers at the given index.
+     */
+    public com.google.protobuf.ByteString getHeadersBytes(int index) {
+      return headers_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HTTP header information about the request.
+     * </pre>
+     *
+     * <code>repeated string headers = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The headers to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHeaders(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureHeadersIsMutable();
+      headers_.set(index, value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HTTP header information about the request.
+     * </pre>
+     *
+     * <code>repeated string headers = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The headers to add.
+     * @return This builder for chaining.
+     */
+    public Builder addHeaders(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureHeadersIsMutable();
+      headers_.add(value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HTTP header information about the request.
+     * </pre>
+     *
+     * <code>repeated string headers = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The headers to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllHeaders(java.lang.Iterable<java.lang.String> values) {
+      ensureHeadersIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, headers_);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HTTP header information about the request.
+     * </pre>
+     *
+     * <code>repeated string headers = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHeaders() {
+      headers_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. HTTP header information about the request.
+     * </pre>
+     *
+     * <code>repeated string headers = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the headers to add.
+     * @return This builder for chaining.
+     */
+    public Builder addHeadersBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureHeadersIsMutable();
+      headers_.add(value);
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private boolean firewallPolicyEvaluation_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag for enabling firewall policy config assessment.
+     * If this flag is enabled, the firewall policy will be evaluated and a
+     * suggested firewall action will be returned in the response.
+     * </pre>
+     *
+     * <code>bool firewall_policy_evaluation = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The firewallPolicyEvaluation.
+     */
+    @java.lang.Override
+    public boolean getFirewallPolicyEvaluation() {
+      return firewallPolicyEvaluation_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag for enabling firewall policy config assessment.
+     * If this flag is enabled, the firewall policy will be evaluated and a
+     * suggested firewall action will be returned in the response.
+     * </pre>
+     *
+     * <code>bool firewall_policy_evaluation = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The firewallPolicyEvaluation to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFirewallPolicyEvaluation(boolean value) {
+
+      firewallPolicyEvaluation_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag for enabling firewall policy config assessment.
+     * If this flag is enabled, the firewall policy will be evaluated and a
+     * suggested firewall action will be returned in the response.
+     * </pre>
+     *
+     * <code>bool firewall_policy_evaluation = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFirewallPolicyEvaluation() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      firewallPolicyEvaluation_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.recaptchaenterprise.v1.TransactionData transactionData_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.recaptchaenterprise.v1.TransactionData,
@@ -1545,7 +2489,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the transactionData field is set.
      */
     public boolean hasTransactionData() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -1593,7 +2537,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         transactionDataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -1617,7 +2561,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         transactionDataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -1636,7 +2580,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTransactionData(com.google.recaptchaenterprise.v1.TransactionData value) {
       if (transactionDataBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && transactionData_ != null
             && transactionData_
                 != com.google.recaptchaenterprise.v1.TransactionData.getDefaultInstance()) {
@@ -1647,7 +2591,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
       } else {
         transactionDataBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -1665,7 +2609,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearTransactionData() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00001000);
       transactionData_ = null;
       if (transactionDataBuilder_ != null) {
         transactionDataBuilder_.dispose();
@@ -1688,7 +2632,7 @@ public final class Event extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.recaptchaenterprise.v1.TransactionData.Builder getTransactionDataBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getTransactionDataFieldBuilder().getBuilder();
     }

@@ -16,6 +16,7 @@
 
 package com.google.cloud.recaptchaenterprise.v1;
 
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListFirewallPoliciesPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupMembershipsPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupsPagedResponse;
@@ -42,14 +43,24 @@ import com.google.recaptchaenterprise.v1.Assessment;
 import com.google.recaptchaenterprise.v1.AssessmentName;
 import com.google.recaptchaenterprise.v1.ChallengeMetrics;
 import com.google.recaptchaenterprise.v1.CreateAssessmentRequest;
+import com.google.recaptchaenterprise.v1.CreateFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.CreateKeyRequest;
+import com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.DeleteKeyRequest;
 import com.google.recaptchaenterprise.v1.Event;
+import com.google.recaptchaenterprise.v1.FirewallAction;
+import com.google.recaptchaenterprise.v1.FirewallPolicy;
+import com.google.recaptchaenterprise.v1.FirewallPolicyAssessment;
+import com.google.recaptchaenterprise.v1.FirewallPolicyName;
 import com.google.recaptchaenterprise.v1.FraudPreventionAssessment;
+import com.google.recaptchaenterprise.v1.FraudSignals;
+import com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
 import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
 import com.google.recaptchaenterprise.v1.KeyName;
+import com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest;
+import com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
@@ -72,6 +83,7 @@ import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsReq
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
 import com.google.recaptchaenterprise.v1.TestingOptions;
 import com.google.recaptchaenterprise.v1.TokenProperties;
+import com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
 import com.google.recaptchaenterprise.v1.WafSettings;
 import io.grpc.StatusRuntimeException;
@@ -140,7 +152,9 @@ public class RecaptchaEnterpriseServiceClientTest {
             .setAccountDefenderAssessment(AccountDefenderAssessment.newBuilder().build())
             .setPrivatePasswordLeakVerification(
                 PrivatePasswordLeakVerification.newBuilder().build())
+            .setFirewallPolicyAssessment(FirewallPolicyAssessment.newBuilder().build())
             .setFraudPreventionAssessment(FraudPreventionAssessment.newBuilder().build())
+            .setFraudSignals(FraudSignals.newBuilder().build())
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
@@ -189,7 +203,9 @@ public class RecaptchaEnterpriseServiceClientTest {
             .setAccountDefenderAssessment(AccountDefenderAssessment.newBuilder().build())
             .setPrivatePasswordLeakVerification(
                 PrivatePasswordLeakVerification.newBuilder().build())
+            .setFirewallPolicyAssessment(FirewallPolicyAssessment.newBuilder().build())
             .setFraudPreventionAssessment(FraudPreventionAssessment.newBuilder().build())
+            .setFraudSignals(FraudSignals.newBuilder().build())
             .build();
     mockRecaptchaEnterpriseService.addResponse(expectedResponse);
 
@@ -892,6 +908,388 @@ public class RecaptchaEnterpriseServiceClientTest {
     try {
       String name = "name3373707";
       client.getMetrics(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createFirewallPolicyTest() throws Exception {
+    FirewallPolicy expectedResponse =
+        FirewallPolicy.newBuilder()
+            .setName(FirewallPolicyName.of("[PROJECT]", "[FIREWALLPOLICY]").toString())
+            .setDescription("description-1724546052")
+            .setPath("path3433509")
+            .setCondition("condition-861311717")
+            .addAllActions(new ArrayList<FirewallAction>())
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+    FirewallPolicy firewallPolicy = FirewallPolicy.newBuilder().build();
+
+    FirewallPolicy actualResponse = client.createFirewallPolicy(parent, firewallPolicy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateFirewallPolicyRequest actualRequest =
+        ((CreateFirewallPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(firewallPolicy, actualRequest.getFirewallPolicy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createFirewallPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      FirewallPolicy firewallPolicy = FirewallPolicy.newBuilder().build();
+      client.createFirewallPolicy(parent, firewallPolicy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createFirewallPolicyTest2() throws Exception {
+    FirewallPolicy expectedResponse =
+        FirewallPolicy.newBuilder()
+            .setName(FirewallPolicyName.of("[PROJECT]", "[FIREWALLPOLICY]").toString())
+            .setDescription("description-1724546052")
+            .setPath("path3433509")
+            .setCondition("condition-861311717")
+            .addAllActions(new ArrayList<FirewallAction>())
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    FirewallPolicy firewallPolicy = FirewallPolicy.newBuilder().build();
+
+    FirewallPolicy actualResponse = client.createFirewallPolicy(parent, firewallPolicy);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateFirewallPolicyRequest actualRequest =
+        ((CreateFirewallPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(firewallPolicy, actualRequest.getFirewallPolicy());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createFirewallPolicyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      FirewallPolicy firewallPolicy = FirewallPolicy.newBuilder().build();
+      client.createFirewallPolicy(parent, firewallPolicy);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFirewallPoliciesTest() throws Exception {
+    FirewallPolicy responsesElement = FirewallPolicy.newBuilder().build();
+    ListFirewallPoliciesResponse expectedResponse =
+        ListFirewallPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFirewallPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    ProjectName parent = ProjectName.of("[PROJECT]");
+
+    ListFirewallPoliciesPagedResponse pagedListResponse = client.listFirewallPolicies(parent);
+
+    List<FirewallPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFirewallPoliciesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFirewallPoliciesRequest actualRequest =
+        ((ListFirewallPoliciesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFirewallPoliciesExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      ProjectName parent = ProjectName.of("[PROJECT]");
+      client.listFirewallPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listFirewallPoliciesTest2() throws Exception {
+    FirewallPolicy responsesElement = FirewallPolicy.newBuilder().build();
+    ListFirewallPoliciesResponse expectedResponse =
+        ListFirewallPoliciesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllFirewallPolicies(Arrays.asList(responsesElement))
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListFirewallPoliciesPagedResponse pagedListResponse = client.listFirewallPolicies(parent);
+
+    List<FirewallPolicy> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getFirewallPoliciesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListFirewallPoliciesRequest actualRequest =
+        ((ListFirewallPoliciesRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listFirewallPoliciesExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listFirewallPolicies(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFirewallPolicyTest() throws Exception {
+    FirewallPolicy expectedResponse =
+        FirewallPolicy.newBuilder()
+            .setName(FirewallPolicyName.of("[PROJECT]", "[FIREWALLPOLICY]").toString())
+            .setDescription("description-1724546052")
+            .setPath("path3433509")
+            .setCondition("condition-861311717")
+            .addAllActions(new ArrayList<FirewallAction>())
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    FirewallPolicyName name = FirewallPolicyName.of("[PROJECT]", "[FIREWALLPOLICY]");
+
+    FirewallPolicy actualResponse = client.getFirewallPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFirewallPolicyRequest actualRequest = ((GetFirewallPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFirewallPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      FirewallPolicyName name = FirewallPolicyName.of("[PROJECT]", "[FIREWALLPOLICY]");
+      client.getFirewallPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getFirewallPolicyTest2() throws Exception {
+    FirewallPolicy expectedResponse =
+        FirewallPolicy.newBuilder()
+            .setName(FirewallPolicyName.of("[PROJECT]", "[FIREWALLPOLICY]").toString())
+            .setDescription("description-1724546052")
+            .setPath("path3433509")
+            .setCondition("condition-861311717")
+            .addAllActions(new ArrayList<FirewallAction>())
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    FirewallPolicy actualResponse = client.getFirewallPolicy(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetFirewallPolicyRequest actualRequest = ((GetFirewallPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getFirewallPolicyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getFirewallPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateFirewallPolicyTest() throws Exception {
+    FirewallPolicy expectedResponse =
+        FirewallPolicy.newBuilder()
+            .setName(FirewallPolicyName.of("[PROJECT]", "[FIREWALLPOLICY]").toString())
+            .setDescription("description-1724546052")
+            .setPath("path3433509")
+            .setCondition("condition-861311717")
+            .addAllActions(new ArrayList<FirewallAction>())
+            .build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    FirewallPolicy firewallPolicy = FirewallPolicy.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    FirewallPolicy actualResponse = client.updateFirewallPolicy(firewallPolicy, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateFirewallPolicyRequest actualRequest =
+        ((UpdateFirewallPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(firewallPolicy, actualRequest.getFirewallPolicy());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateFirewallPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      FirewallPolicy firewallPolicy = FirewallPolicy.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateFirewallPolicy(firewallPolicy, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteFirewallPolicyTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    FirewallPolicyName name = FirewallPolicyName.of("[PROJECT]", "[FIREWALLPOLICY]");
+
+    client.deleteFirewallPolicy(name);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFirewallPolicyRequest actualRequest =
+        ((DeleteFirewallPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteFirewallPolicyExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      FirewallPolicyName name = FirewallPolicyName.of("[PROJECT]", "[FIREWALLPOLICY]");
+      client.deleteFirewallPolicy(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteFirewallPolicyTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockRecaptchaEnterpriseService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteFirewallPolicy(name);
+
+    List<AbstractMessage> actualRequests = mockRecaptchaEnterpriseService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteFirewallPolicyRequest actualRequest =
+        ((DeleteFirewallPolicyRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteFirewallPolicyExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRecaptchaEnterpriseService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteFirewallPolicy(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

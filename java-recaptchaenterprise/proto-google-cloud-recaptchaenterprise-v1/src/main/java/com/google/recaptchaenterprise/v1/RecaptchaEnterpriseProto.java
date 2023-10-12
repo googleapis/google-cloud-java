@@ -104,6 +104,22 @@ public final class RecaptchaEnterpriseProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_recaptchaenterprise_v1_FraudPreventionAssessment_CardTestingVerdict_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recaptchaenterprise_v1_FraudPreventionAssessment_BehavioralTrustVerdict_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recaptchaenterprise_v1_FraudPreventionAssessment_BehavioralTrustVerdict_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recaptchaenterprise_v1_FraudSignals_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recaptchaenterprise_v1_FraudSignals_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recaptchaenterprise_v1_FraudSignals_UserSignals_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recaptchaenterprise_v1_FraudSignals_UserSignals_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recaptchaenterprise_v1_FraudSignals_CardSignals_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recaptchaenterprise_v1_FraudSignals_CardSignals_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_recaptchaenterprise_v1_AccountDefenderAssessment_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_recaptchaenterprise_v1_AccountDefenderAssessment_fieldAccessorTable;
@@ -135,6 +151,30 @@ public final class RecaptchaEnterpriseProto {
       internal_static_google_cloud_recaptchaenterprise_v1_DeleteKeyRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_recaptchaenterprise_v1_DeleteKeyRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recaptchaenterprise_v1_CreateFirewallPolicyRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recaptchaenterprise_v1_CreateFirewallPolicyRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recaptchaenterprise_v1_ListFirewallPoliciesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recaptchaenterprise_v1_ListFirewallPoliciesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recaptchaenterprise_v1_ListFirewallPoliciesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recaptchaenterprise_v1_ListFirewallPoliciesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recaptchaenterprise_v1_GetFirewallPolicyRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recaptchaenterprise_v1_GetFirewallPolicyRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recaptchaenterprise_v1_UpdateFirewallPolicyRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recaptchaenterprise_v1_UpdateFirewallPolicyRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recaptchaenterprise_v1_DeleteFirewallPolicyRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recaptchaenterprise_v1_DeleteFirewallPolicyRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_recaptchaenterprise_v1_MigrateKeyRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -176,6 +216,10 @@ public final class RecaptchaEnterpriseProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_recaptchaenterprise_v1_IOSKeySettings_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recaptchaenterprise_v1_AppleDeveloperId_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recaptchaenterprise_v1_AppleDeveloperId_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_recaptchaenterprise_v1_ScoreDistribution_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_recaptchaenterprise_v1_ScoreDistribution_fieldAccessorTable;
@@ -195,6 +239,38 @@ public final class RecaptchaEnterpriseProto {
       internal_static_google_cloud_recaptchaenterprise_v1_ChallengeMetrics_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_recaptchaenterprise_v1_ChallengeMetrics_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recaptchaenterprise_v1_FirewallPolicyAssessment_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recaptchaenterprise_v1_FirewallPolicyAssessment_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_AllowAction_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_AllowAction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_BlockAction_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_BlockAction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_RedirectAction_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_RedirectAction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_SubstituteAction_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_SubstituteAction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_SetHeaderAction_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_SetHeaderAction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_recaptchaenterprise_v1_FirewallPolicy_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_recaptchaenterprise_v1_FirewallPolicy_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_recaptchaenterprise_v1_ListRelatedAccountGroupMembershipsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -247,382 +323,489 @@ public final class RecaptchaEnterpriseProto {
           + "gle/api/field_behavior.proto\032\031google/api"
           + "/resource.proto\032\033google/protobuf/empty.p"
           + "roto\032 google/protobuf/field_mask.proto\032\037"
-          + "google/protobuf/timestamp.proto\"\252\001\n\027Crea"
-          + "teAssessmentRequest\022D\n\006parent\030\001 \001(\tB4\342A\001"
-          + "\002\372A-\n+cloudresourcemanager.googleapis.co"
-          + "m/Project\022I\n\nassessment\030\002 \001(\0132/.google.c"
-          + "loud.recaptchaenterprise.v1.AssessmentB\004"
-          + "\342A\001\002\"\226\005\n\020TransactionEvent\022d\n\nevent_type\030"
-          + "\001 \001(\0162J.google.cloud.recaptchaenterprise"
-          + ".v1.TransactionEvent.TransactionEventTyp"
-          + "eB\004\342A\001\001\022\024\n\006reason\030\002 \001(\tB\004\342A\001\001\022\023\n\005value\030\003"
-          + " \001(\001B\004\342A\001\001\0224\n\nevent_time\030\004 \001(\0132\032.google."
-          + "protobuf.TimestampB\004\342A\001\001\"\272\003\n\024Transaction"
-          + "EventType\022&\n\"TRANSACTION_EVENT_TYPE_UNSP"
-          + "ECIFIED\020\000\022\024\n\020MERCHANT_APPROVE\020\001\022\021\n\rMERCH"
-          + "ANT_DENY\020\002\022\021\n\rMANUAL_REVIEW\020\003\022\021\n\rAUTHORI"
-          + "ZATION\020\004\022\031\n\025AUTHORIZATION_DECLINE\020\005\022\023\n\017P"
-          + "AYMENT_CAPTURE\020\006\022\033\n\027PAYMENT_CAPTURE_DECL"
-          + "INE\020\007\022\n\n\006CANCEL\020\010\022\026\n\022CHARGEBACK_INQUIRY\020"
-          + "\t\022\024\n\020CHARGEBACK_ALERT\020\n\022\026\n\022FRAUD_NOTIFIC"
-          + "ATION\020\013\022\016\n\nCHARGEBACK\020\014\022\034\n\030CHARGEBACK_RE"
-          + "PRESENTMENT\020\r\022\026\n\022CHARGEBACK_REVERSE\020\016\022\022\n"
-          + "\016REFUND_REQUEST\020\017\022\022\n\016REFUND_DECLINE\020\020\022\n\n"
-          + "\006REFUND\020\021\022\022\n\016REFUND_REVERSE\020\022\"\357\006\n\031Annota"
-          + "teAssessmentRequest\022D\n\004name\030\001 \001(\tB6\342A\001\002\372"
-          + "A/\n-recaptchaenterprise.googleapis.com/A"
-          + "ssessment\022c\n\nannotation\030\002 \001(\0162I.google.c"
-          + "loud.recaptchaenterprise.v1.AnnotateAsse"
-          + "ssmentRequest.AnnotationB\004\342A\001\001\022\\\n\007reason"
-          + "s\030\003 \003(\0162E.google.cloud.recaptchaenterpri"
-          + "se.v1.AnnotateAssessmentRequest.ReasonB\004"
-          + "\342A\001\001\022\037\n\021hashed_account_id\030\004 \001(\014B\004\342A\001\001\022V\n"
-          + "\021transaction_event\030\005 \001(\01325.google.cloud."
-          + "recaptchaenterprise.v1.TransactionEventB"
-          + "\004\342A\001\001\"~\n\nAnnotation\022\032\n\026ANNOTATION_UNSPEC"
-          + "IFIED\020\000\022\016\n\nLEGITIMATE\020\001\022\016\n\nFRAUDULENT\020\002\022"
-          + "\030\n\020PASSWORD_CORRECT\020\003\032\002\010\001\022\032\n\022PASSWORD_IN"
-          + "CORRECT\020\004\032\002\010\001\"\317\002\n\006Reason\022\026\n\022REASON_UNSPE"
-          + "CIFIED\020\000\022\016\n\nCHARGEBACK\020\001\022\024\n\020CHARGEBACK_F"
-          + "RAUD\020\010\022\026\n\022CHARGEBACK_DISPUTE\020\t\022\n\n\006REFUND"
-          + "\020\n\022\020\n\014REFUND_FRAUD\020\013\022\030\n\024TRANSACTION_ACCE"
-          + "PTED\020\014\022\030\n\024TRANSACTION_DECLINED\020\r\022\026\n\022PAYM"
-          + "ENT_HEURISTICS\020\002\022\030\n\024INITIATED_TWO_FACTOR"
-          + "\020\007\022\025\n\021PASSED_TWO_FACTOR\020\003\022\025\n\021FAILED_TWO_"
-          + "FACTOR\020\004\022\024\n\020CORRECT_PASSWORD\020\005\022\026\n\022INCORR"
-          + "ECT_PASSWORD\020\006\022\017\n\013SOCIAL_SPAM\020\016\"\034\n\032Annot"
-          + "ateAssessmentResponse\"\266\001\n\030EndpointVerifi"
-          + "cationInfo\022\027\n\remail_address\030\001 \001(\tH\000\022\026\n\014p"
-          + "hone_number\030\002 \001(\tH\000\022\033\n\rrequest_token\030\003 \001"
-          + "(\tB\004\342A\001\003\022@\n\026last_verification_time\030\004 \001(\013"
-          + "2\032.google.protobuf.TimestampB\004\342A\001\003B\n\n\010en"
-          + "dpoint\"\322\004\n\027AccountVerificationInfo\022P\n\ten"
-          + "dpoints\030\001 \003(\0132=.google.cloud.recaptchaen"
-          + "terprise.v1.EndpointVerificationInfo\022\025\n\r"
-          + "language_code\030\003 \001(\t\022m\n\032latest_verificati"
-          + "on_result\030\007 \001(\0162C.google.cloud.recaptcha"
-          + "enterprise.v1.AccountVerificationInfo.Re"
-          + "sultB\004\342A\001\003\022\024\n\010username\030\002 \001(\tB\002\030\001\"\310\002\n\006Res"
-          + "ult\022\026\n\022RESULT_UNSPECIFIED\020\000\022\031\n\025SUCCESS_U"
-          + "SER_VERIFIED\020\001\022\033\n\027ERROR_USER_NOT_VERIFIE"
-          + "D\020\002\022$\n ERROR_SITE_ONBOARDING_INCOMPLETE\020"
-          + "\003\022\037\n\033ERROR_RECIPIENT_NOT_ALLOWED\020\004\022)\n%ER"
-          + "ROR_RECIPIENT_ABUSE_LIMIT_EXHAUSTED\020\005\022\033\n"
-          + "\027ERROR_CRITICAL_INTERNAL\020\006\022\"\n\036ERROR_CUST"
-          + "OMER_QUOTA_EXHAUSTED\020\007\022\037\n\033ERROR_VERIFICA"
-          + "TION_BYPASSED\020\010\022\032\n\026ERROR_VERDICT_MISMATC"
-          + "H\020\t\"\320\001\n\037PrivatePasswordLeakVerification\022"
-          + " \n\022lookup_hash_prefix\030\001 \001(\014B\004\342A\001\001\022-\n\037enc"
-          + "rypted_user_credentials_hash\030\002 \001(\014B\004\342A\001\001"
-          + "\022+\n\035encrypted_leak_match_prefixes\030\003 \003(\014B"
-          + "\004\342A\001\003\022/\n!reencrypted_user_credentials_ha"
-          + "sh\030\004 \001(\014B\004\342A\001\003\"\372\005\n\nAssessment\022\022\n\004name\030\001 "
-          + "\001(\tB\004\342A\001\003\0229\n\005event\030\002 \001(\0132*.google.cloud."
-          + "recaptchaenterprise.v1.Event\022N\n\rrisk_ana"
-          + "lysis\030\003 \001(\01321.google.cloud.recaptchaente"
-          + "rprise.v1.RiskAnalysisB\004\342A\001\003\022T\n\020token_pr"
-          + "operties\030\004 \001(\01324.google.cloud.recaptchae"
-          + "nterprise.v1.TokenPropertiesB\004\342A\001\003\022Z\n\024ac"
-          + "count_verification\030\005 \001(\0132<.google.cloud."
-          + "recaptchaenterprise.v1.AccountVerificati"
-          + "onInfo\022c\n\033account_defender_assessment\030\006 "
-          + "\001(\0132>.google.cloud.recaptchaenterprise.v"
-          + "1.AccountDefenderAssessment\022p\n\"private_p"
-          + "assword_leak_verification\030\010 \001(\0132D.google"
-          + ".cloud.recaptchaenterprise.v1.PrivatePas"
-          + "swordLeakVerification\022c\n\033fraud_preventio"
-          + "n_assessment\030\013 \001(\0132>.google.cloud.recapt"
-          + "chaenterprise.v1.FraudPreventionAssessme"
-          + "nt:_\352A\\\n-recaptchaenterprise.googleapis."
-          + "com/Assessment\022+projects/{project}/asses"
-          + "sments/{assessment}\"\203\002\n\005Event\022\023\n\005token\030\001"
-          + " \001(\tB\004\342A\001\001\022\026\n\010site_key\030\002 \001(\tB\004\342A\001\001\022\030\n\nus"
-          + "er_agent\030\003 \001(\tB\004\342A\001\001\022\035\n\017user_ip_address\030"
-          + "\004 \001(\tB\004\342A\001\001\022\035\n\017expected_action\030\005 \001(\tB\004\342A"
-          + "\001\001\022\037\n\021hashed_account_id\030\006 \001(\014B\004\342A\001\001\022T\n\020t"
-          + "ransaction_data\030\r \001(\01324.google.cloud.rec"
-          + "aptchaenterprise.v1.TransactionDataB\004\342A\001"
-          + "\001\"\377\010\n\017TransactionData\022\033\n\016transaction_id\030"
-          + "\013 \001(\tH\000\210\001\001\022\026\n\016payment_method\030\001 \001(\t\022\020\n\010ca"
-          + "rd_bin\030\002 \001(\t\022\026\n\016card_last_four\030\003 \001(\t\022\025\n\r"
-          + "currency_code\030\004 \001(\t\022\r\n\005value\030\005 \001(\001\022\026\n\016sh"
-          + "ipping_value\030\014 \001(\001\022V\n\020shipping_address\030\006"
-          + " \001(\0132<.google.cloud.recaptchaenterprise."
-          + "v1.TransactionData.Address\022U\n\017billing_ad"
-          + "dress\030\007 \001(\0132<.google.cloud.recaptchaente"
-          + "rprise.v1.TransactionData.Address\022G\n\004use"
-          + "r\030\010 \001(\01329.google.cloud.recaptchaenterpri"
-          + "se.v1.TransactionData.User\022L\n\tmerchants\030"
-          + "\r \003(\01329.google.cloud.recaptchaenterprise"
-          + ".v1.TransactionData.User\022H\n\005items\030\016 \003(\0132"
-          + "9.google.cloud.recaptchaenterprise.v1.Tr"
-          + "ansactionData.Item\022V\n\014gateway_info\030\n \001(\013"
-          + "2@.google.cloud.recaptchaenterprise.v1.T"
-          + "ransactionData.GatewayInfo\032\206\001\n\007Address\022\021"
-          + "\n\trecipient\030\001 \001(\t\022\017\n\007address\030\002 \003(\t\022\020\n\010lo"
-          + "cality\030\003 \001(\t\022\033\n\023administrative_area\030\004 \001("
-          + "\t\022\023\n\013region_code\030\005 \001(\t\022\023\n\013postal_code\030\006 "
-          + "\001(\t\032\204\001\n\004User\022\022\n\naccount_id\030\006 \001(\t\022\023\n\013crea"
-          + "tion_ms\030\001 \001(\003\022\r\n\005email\030\002 \001(\t\022\026\n\016email_ve"
-          + "rified\030\003 \001(\010\022\024\n\014phone_number\030\004 \001(\t\022\026\n\016ph"
-          + "one_verified\030\005 \001(\010\032R\n\004Item\022\014\n\004name\030\001 \001(\t"
-          + "\022\r\n\005value\030\002 \001(\001\022\020\n\010quantity\030\003 \001(\003\022\033\n\023mer"
-          + "chant_account_id\030\004 \001(\t\032p\n\013GatewayInfo\022\014\n"
-          + "\004name\030\001 \001(\t\022\035\n\025gateway_response_code\030\002 \001"
-          + "(\t\022\031\n\021avs_response_code\030\003 \001(\t\022\031\n\021cvv_res"
-          + "ponse_code\030\004 \001(\tB\021\n\017_transaction_id\"\342\002\n\014"
-          + "RiskAnalysis\022\r\n\005score\030\001 \001(\002\022W\n\007reasons\030\002"
-          + " \003(\0162F.google.cloud.recaptchaenterprise."
-          + "v1.RiskAnalysis.ClassificationReason\"\351\001\n"
-          + "\024ClassificationReason\022%\n!CLASSIFICATION_"
-          + "REASON_UNSPECIFIED\020\000\022\016\n\nAUTOMATION\020\001\022\032\n\026"
-          + "UNEXPECTED_ENVIRONMENT\020\002\022\024\n\020TOO_MUCH_TRA"
-          + "FFIC\020\003\022\035\n\031UNEXPECTED_USAGE_PATTERNS\020\004\022\030\n"
-          + "\024LOW_CONFIDENCE_SCORE\020\005\022\025\n\021SUSPECTED_CAR"
-          + "DING\020\006\022\030\n\024SUSPECTED_CHARGEBACK\020\007\"\230\003\n\017Tok"
-          + "enProperties\022\r\n\005valid\030\001 \001(\010\022Z\n\016invalid_r"
-          + "eason\030\002 \001(\0162B.google.cloud.recaptchaente"
-          + "rprise.v1.TokenProperties.InvalidReason\022"
-          + "/\n\013create_time\030\003 \001(\0132\032.google.protobuf.T"
-          + "imestamp\022\020\n\010hostname\030\004 \001(\t\022\034\n\024android_pa"
-          + "ckage_name\030\010 \001(\t\022\025\n\rios_bundle_id\030\t \001(\t\022"
-          + "\016\n\006action\030\005 \001(\t\"\221\001\n\rInvalidReason\022\036\n\032INV"
-          + "ALID_REASON_UNSPECIFIED\020\000\022\032\n\026UNKNOWN_INV"
-          + "ALID_REASON\020\001\022\r\n\tMALFORMED\020\002\022\013\n\007EXPIRED\020"
-          + "\003\022\010\n\004DUPE\020\004\022\013\n\007MISSING\020\005\022\021\n\rBROWSER_ERRO"
-          + "R\020\006\"\356\002\n\031FraudPreventionAssessment\022\030\n\020tra"
-          + "nsaction_risk\030\001 \001(\002\022y\n\031stolen_instrument"
-          + "_verdict\030\002 \001(\0132V.google.cloud.recaptchae"
-          + "nterprise.v1.FraudPreventionAssessment.S"
-          + "tolenInstrumentVerdict\022o\n\024card_testing_v"
-          + "erdict\030\003 \001(\0132Q.google.cloud.recaptchaent"
-          + "erprise.v1.FraudPreventionAssessment.Car"
-          + "dTestingVerdict\032\'\n\027StolenInstrumentVerdi"
-          + "ct\022\014\n\004risk\030\001 \001(\002\032\"\n\022CardTestingVerdict\022\014"
-          + "\n\004risk\030\001 \001(\002\"\266\002\n\031AccountDefenderAssessme"
-          + "nt\022c\n\006labels\030\001 \003(\0162S.google.cloud.recapt"
-          + "chaenterprise.v1.AccountDefenderAssessme"
-          + "nt.AccountDefenderLabel\"\263\001\n\024AccountDefen"
-          + "derLabel\022&\n\"ACCOUNT_DEFENDER_LABEL_UNSPE"
-          + "CIFIED\020\000\022\021\n\rPROFILE_MATCH\020\001\022\035\n\031SUSPICIOU"
-          + "S_LOGIN_ACTIVITY\020\002\022\037\n\033SUSPICIOUS_ACCOUNT"
-          + "_CREATION\020\003\022 \n\034RELATED_ACCOUNTS_NUMBER_H"
-          + "IGH\020\004\"\225\001\n\020CreateKeyRequest\022D\n\006parent\030\001 \001"
-          + "(\tB4\342A\001\002\372A-\n+cloudresourcemanager.google"
-          + "apis.com/Project\022;\n\003key\030\002 \001(\0132(.google.c"
-          + "loud.recaptchaenterprise.v1.KeyB\004\342A\001\002\"\212\001"
-          + "\n\017ListKeysRequest\022D\n\006parent\030\001 \001(\tB4\342A\001\002\372"
-          + "A-\n+cloudresourcemanager.googleapis.com/"
-          + "Project\022\027\n\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030\n\npage"
-          + "_token\030\003 \001(\tB\004\342A\001\001\"c\n\020ListKeysResponse\0226"
-          + "\n\004keys\030\001 \003(\0132(.google.cloud.recaptchaent"
-          + "erprise.v1.Key\022\027\n\017next_page_token\030\002 \001(\t\""
-          + "^\n\036RetrieveLegacySecretKeyRequest\022<\n\003key"
-          + "\030\001 \001(\tB/\342A\001\002\372A(\n&recaptchaenterprise.goo"
-          + "gleapis.com/Key\"N\n\rGetKeyRequest\022=\n\004name"
-          + "\030\001 \001(\tB/\342A\001\002\372A(\n&recaptchaenterprise.goo"
-          + "gleapis.com/Key\"\206\001\n\020UpdateKeyRequest\022;\n\003"
-          + "key\030\001 \001(\0132(.google.cloud.recaptchaenterp"
-          + "rise.v1.KeyB\004\342A\001\002\0225\n\013update_mask\030\002 \001(\0132\032"
-          + ".google.protobuf.FieldMaskB\004\342A\001\001\"Q\n\020Dele"
-          + "teKeyRequest\022=\n\004name\030\001 \001(\tB/\342A\001\002\372A(\n&rec"
-          + "aptchaenterprise.googleapis.com/Key\"t\n\021M"
-          + "igrateKeyRequest\022=\n\004name\030\001 \001(\tB/\342A\001\002\372A(\n"
-          + "&recaptchaenterprise.googleapis.com/Key\022"
-          + " \n\022skip_billing_check\030\002 \001(\010B\004\342A\001\001\"V\n\021Get"
-          + "MetricsRequest\022A\n\004name\030\001 \001(\tB3\342A\001\002\372A,\n*r"
-          + "ecaptchaenterprise.googleapis.com/Metric"
-          + "s\"\301\002\n\007Metrics\022\022\n\004name\030\004 \001(\tB\004\342A\001\003\022.\n\nsta"
-          + "rt_time\030\001 \001(\0132\032.google.protobuf.Timestam"
-          + "p\022H\n\rscore_metrics\030\002 \003(\01321.google.cloud."
-          + "recaptchaenterprise.v1.ScoreMetrics\022P\n\021c"
-          + "hallenge_metrics\030\003 \003(\01325.google.cloud.re"
-          + "captchaenterprise.v1.ChallengeMetrics:V\352"
-          + "AS\n*recaptchaenterprise.googleapis.com/M"
-          + "etrics\022%projects/{project}/keys/{key}/me"
-          + "trics\"<\n\037RetrieveLegacySecretKeyResponse"
-          + "\022\031\n\021legacy_secret_key\030\001 \001(\t\"\273\005\n\003Key\022\014\n\004n"
-          + "ame\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022K\n\014web_s"
-          + "ettings\030\003 \001(\01323.google.cloud.recaptchaen"
-          + "terprise.v1.WebKeySettingsH\000\022S\n\020android_"
-          + "settings\030\004 \001(\01327.google.cloud.recaptchae"
-          + "nterprise.v1.AndroidKeySettingsH\000\022K\n\014ios"
-          + "_settings\030\005 \001(\01323.google.cloud.recaptcha"
-          + "enterprise.v1.IOSKeySettingsH\000\022D\n\006labels"
-          + "\030\006 \003(\01324.google.cloud.recaptchaenterpris"
-          + "e.v1.Key.LabelsEntry\0225\n\013create_time\030\007 \001("
-          + "\0132\032.google.protobuf.TimestampB\004\342A\001\003\022L\n\017t"
-          + "esting_options\030\t \001(\01323.google.cloud.reca"
-          + "ptchaenterprise.v1.TestingOptions\022F\n\014waf"
-          + "_settings\030\n \001(\01320.google.cloud.recaptcha"
-          + "enterprise.v1.WafSettings\032-\n\013LabelsEntry"
-          + "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:J\352AG\n&r"
-          + "ecaptchaenterprise.googleapis.com/Key\022\035p"
-          + "rojects/{project}/keys/{key}B\023\n\021platform"
-          + "_settings\"\350\001\n\016TestingOptions\022\025\n\rtesting_"
-          + "score\030\001 \001(\002\022_\n\021testing_challenge\030\002 \001(\0162D"
-          + ".google.cloud.recaptchaenterprise.v1.Tes"
-          + "tingOptions.TestingChallenge\"^\n\020TestingC"
-          + "hallenge\022!\n\035TESTING_CHALLENGE_UNSPECIFIE"
-          + "D\020\000\022\r\n\tNOCAPTCHA\020\001\022\030\n\024UNSOLVABLE_CHALLEN"
-          + "GE\020\002\"\221\004\n\016WebKeySettings\022\031\n\021allow_all_dom"
-          + "ains\030\003 \001(\010\022\027\n\017allowed_domains\030\001 \003(\t\022\031\n\021a"
-          + "llow_amp_traffic\030\002 \001(\010\022c\n\020integration_ty"
-          + "pe\030\004 \001(\0162C.google.cloud.recaptchaenterpr"
-          + "ise.v1.WebKeySettings.IntegrationTypeB\004\342"
-          + "A\001\002\022v\n\035challenge_security_preference\030\005 \001"
-          + "(\0162O.google.cloud.recaptchaenterprise.v1"
-          + ".WebKeySettings.ChallengeSecurityPrefere"
-          + "nce\"[\n\017IntegrationType\022 \n\034INTEGRATION_TY"
-          + "PE_UNSPECIFIED\020\000\022\t\n\005SCORE\020\001\022\014\n\010CHECKBOX\020"
-          + "\002\022\r\n\tINVISIBLE\020\003\"v\n\033ChallengeSecurityPre"
-          + "ference\022-\n)CHALLENGE_SECURITY_PREFERENCE"
-          + "_UNSPECIFIED\020\000\022\r\n\tUSABILITY\020\001\022\013\n\007BALANCE"
-          + "\020\002\022\014\n\010SECURITY\020\003\"T\n\022AndroidKeySettings\022\037"
-          + "\n\027allow_all_package_names\030\002 \001(\010\022\035\n\025allow"
-          + "ed_package_names\030\001 \003(\t\"J\n\016IOSKeySettings"
-          + "\022\034\n\024allow_all_bundle_ids\030\002 \001(\010\022\032\n\022allowe"
-          + "d_bundle_ids\030\001 \003(\t\"\251\001\n\021ScoreDistribution"
-          + "\022_\n\rscore_buckets\030\001 \003(\0132H.google.cloud.r"
-          + "ecaptchaenterprise.v1.ScoreDistribution."
-          + "ScoreBucketsEntry\0323\n\021ScoreBucketsEntry\022\013"
-          + "\n\003key\030\001 \001(\005\022\r\n\005value\030\002 \001(\003:\0028\001\"\253\002\n\014Score"
-          + "Metrics\022O\n\017overall_metrics\030\001 \001(\01326.googl"
-          + "e.cloud.recaptchaenterprise.v1.ScoreDist"
-          + "ribution\022\\\n\016action_metrics\030\002 \003(\0132D.googl"
-          + "e.cloud.recaptchaenterprise.v1.ScoreMetr"
-          + "ics.ActionMetricsEntry\032l\n\022ActionMetricsE"
-          + "ntry\022\013\n\003key\030\001 \001(\t\022E\n\005value\030\002 \001(\01326.googl"
-          + "e.cloud.recaptchaenterprise.v1.ScoreDist"
-          + "ribution:\0028\001\"o\n\020ChallengeMetrics\022\026\n\016page"
-          + "load_count\030\001 \001(\003\022\027\n\017nocaptcha_count\030\002 \001("
-          + "\003\022\024\n\014failed_count\030\003 \001(\003\022\024\n\014passed_count\030"
-          + "\004 \001(\003\"\271\001\n)ListRelatedAccountGroupMembers"
-          + "hipsRequest\022Y\n\006parent\030\001 \001(\tBI\342A\001\002\372AB\022@re"
-          + "captchaenterprise.googleapis.com/Related"
-          + "AccountGroupMembership\022\027\n\tpage_size\030\002 \001("
-          + "\005B\004\342A\001\001\022\030\n\npage_token\030\003 \001(\tB\004\342A\001\001\"\264\001\n*Li"
-          + "stRelatedAccountGroupMembershipsResponse"
-          + "\022m\n!related_account_group_memberships\030\001 "
-          + "\003(\0132B.google.cloud.recaptchaenterprise.v"
-          + "1.RelatedAccountGroupMembership\022\027\n\017next_"
-          + "page_token\030\002 \001(\t\"\245\001\n\037ListRelatedAccountG"
-          + "roupsRequest\022O\n\006parent\030\001 \001(\tB?\342A\001\002\372A8\0226r"
-          + "ecaptchaenterprise.googleapis.com/Relate"
-          + "dAccountGroup\022\027\n\tpage_size\030\002 \001(\005B\004\342A\001\001\022\030"
-          + "\n\npage_token\030\003 \001(\tB\004\342A\001\001\"\225\001\n ListRelated"
-          + "AccountGroupsResponse\022X\n\026related_account"
-          + "_groups\030\001 \003(\01328.google.cloud.recaptchaen"
-          + "terprise.v1.RelatedAccountGroup\022\027\n\017next_"
-          + "page_token\030\002 \001(\t\"\335\001\n+SearchRelatedAccoun"
-          + "tGroupMembershipsRequest\022Z\n\007project\030\001 \001("
-          + "\tBI\342A\001\002\372AB\022@recaptchaenterprise.googleap"
-          + "is.com/RelatedAccountGroupMembership\022\037\n\021"
-          + "hashed_account_id\030\002 \001(\014B\004\342A\001\001\022\027\n\tpage_si"
-          + "ze\030\003 \001(\005B\004\342A\001\001\022\030\n\npage_token\030\004 \001(\tB\004\342A\001\001"
-          + "\"\266\001\n,SearchRelatedAccountGroupMembership"
-          + "sResponse\022m\n!related_account_group_membe"
-          + "rships\030\001 \003(\0132B.google.cloud.recaptchaent"
-          + "erprise.v1.RelatedAccountGroupMembership"
-          + "\022\027\n\017next_page_token\030\002 \001(\t\"\264\002\n\035RelatedAcc"
-          + "ountGroupMembership\022W\n\004name\030\001 \001(\tBI\342A\001\002\372"
-          + "AB\n@recaptchaenterprise.googleapis.com/R"
-          + "elatedAccountGroupMembership\022\031\n\021hashed_a"
-          + "ccount_id\030\002 \001(\014:\236\001\352A\232\001\n@recaptchaenterpr"
-          + "ise.googleapis.com/RelatedAccountGroupMe"
-          + "mbership\022Vprojects/{project}/relatedacco"
-          + "untgroups/{relatedaccountgroup}/membersh"
-          + "ips/{membership}\"\340\001\n\023RelatedAccountGroup"
-          + "\022M\n\004name\030\001 \001(\tB?\342A\001\002\372A8\n6recaptchaenterp"
-          + "rise.googleapis.com/RelatedAccountGroup:"
-          + "z\352Aw\n6recaptchaenterprise.googleapis.com"
-          + "/RelatedAccountGroup\022=projects/{project}"
-          + "/relatedaccountgroups/{relatedaccountgro"
-          + "up}\"\324\002\n\013WafSettings\022V\n\013waf_service\030\001 \001(\016"
-          + "2;.google.cloud.recaptchaenterprise.v1.W"
-          + "afSettings.WafServiceB\004\342A\001\002\022V\n\013waf_featu"
-          + "re\030\002 \001(\0162;.google.cloud.recaptchaenterpr"
-          + "ise.v1.WafSettings.WafFeatureB\004\342A\001\002\"b\n\nW"
-          + "afFeature\022\033\n\027WAF_FEATURE_UNSPECIFIED\020\000\022\022"
-          + "\n\016CHALLENGE_PAGE\020\001\022\021\n\rSESSION_TOKEN\020\002\022\020\n"
-          + "\014ACTION_TOKEN\020\003\"1\n\nWafService\022\033\n\027WAF_SER"
-          + "VICE_UNSPECIFIED\020\000\022\006\n\002CA\020\0012\261\025\n\032Recaptcha"
-          + "EnterpriseService\022\316\001\n\020CreateAssessment\022<"
-          + ".google.cloud.recaptchaenterprise.v1.Cre"
-          + "ateAssessmentRequest\032/.google.cloud.reca"
-          + "ptchaenterprise.v1.Assessment\"K\332A\021parent"
-          + ",assessment\202\323\344\223\0021\"#/v1/{parent=projects/"
-          + "*}/assessments:\nassessment\022\340\001\n\022AnnotateA"
-          + "ssessment\022>.google.cloud.recaptchaenterp"
-          + "rise.v1.AnnotateAssessmentRequest\032?.goog"
-          + "le.cloud.recaptchaenterprise.v1.Annotate"
-          + "AssessmentResponse\"I\332A\017name,annotation\202\323"
-          + "\344\223\0021\",/v1/{name=projects/*/assessments/*"
-          + "}:annotate:\001*\022\244\001\n\tCreateKey\0225.google.clo"
-          + "ud.recaptchaenterprise.v1.CreateKeyReque"
-          + "st\032(.google.cloud.recaptchaenterprise.v1"
-          + ".Key\"6\332A\nparent,key\202\323\344\223\002#\"\034/v1/{parent=p"
-          + "rojects/*}/keys:\003key\022\246\001\n\010ListKeys\0224.goog"
-          + "le.cloud.recaptchaenterprise.v1.ListKeys"
-          + "Request\0325.google.cloud.recaptchaenterpri"
-          + "se.v1.ListKeysResponse\"-\332A\006parent\202\323\344\223\002\036\022"
-          + "\034/v1/{parent=projects/*}/keys\022\347\001\n\027Retrie"
-          + "veLegacySecretKey\022C.google.cloud.recaptc"
-          + "haenterprise.v1.RetrieveLegacySecretKeyR"
-          + "equest\032D.google.cloud.recaptchaenterpris"
-          + "e.v1.RetrieveLegacySecretKeyResponse\"A\332A"
-          + "\003key\202\323\344\223\0025\0223/v1/{key=projects/*/keys/*}:"
-          + "retrieveLegacySecretKey\022\223\001\n\006GetKey\0222.goo"
-          + "gle.cloud.recaptchaenterprise.v1.GetKeyR"
-          + "equest\032(.google.cloud.recaptchaenterpris"
-          + "e.v1.Key\"+\332A\004name\202\323\344\223\002\036\022\034/v1/{name=proje"
-          + "cts/*/keys/*}\022\255\001\n\tUpdateKey\0225.google.clo"
-          + "ud.recaptchaenterprise.v1.UpdateKeyReque"
-          + "st\032(.google.cloud.recaptchaenterprise.v1"
-          + ".Key\"?\332A\017key,update_mask\202\323\344\223\002\'2 /v1/{key"
-          + ".name=projects/*/keys/*}:\003key\022\207\001\n\tDelete"
-          + "Key\0225.google.cloud.recaptchaenterprise.v"
-          + "1.DeleteKeyRequest\032\026.google.protobuf.Emp"
-          + "ty\"+\332A\004name\202\323\344\223\002\036*\034/v1/{name=projects/*/"
-          + "keys/*}\022\237\001\n\nMigrateKey\0226.google.cloud.re"
-          + "captchaenterprise.v1.MigrateKeyRequest\032("
-          + ".google.cloud.recaptchaenterprise.v1.Key"
-          + "\"/\202\323\344\223\002)\"$/v1/{name=projects/*/keys/*}:m"
-          + "igrate:\001*\022\247\001\n\nGetMetrics\0226.google.cloud."
-          + "recaptchaenterprise.v1.GetMetricsRequest"
-          + "\032,.google.cloud.recaptchaenterprise.v1.M"
-          + "etrics\"3\332A\004name\202\323\344\223\002&\022$/v1/{name=project"
-          + "s/*/keys/*/metrics}\022\346\001\n\030ListRelatedAccou"
-          + "ntGroups\022D.google.cloud.recaptchaenterpr"
-          + "ise.v1.ListRelatedAccountGroupsRequest\032E"
-          + ".google.cloud.recaptchaenterprise.v1.Lis"
-          + "tRelatedAccountGroupsResponse\"=\332A\006parent"
-          + "\202\323\344\223\002.\022,/v1/{parent=projects/*}/relateda"
-          + "ccountgroups\022\222\002\n\"ListRelatedAccountGroup"
-          + "Memberships\022N.google.cloud.recaptchaente"
-          + "rprise.v1.ListRelatedAccountGroupMembers"
-          + "hipsRequest\032O.google.cloud.recaptchaente"
-          + "rprise.v1.ListRelatedAccountGroupMembers"
-          + "hipsResponse\"K\332A\006parent\202\323\344\223\002<\022:/v1/{pare"
-          + "nt=projects/*/relatedaccountgroups/*}/me"
-          + "mberships\022\262\002\n$SearchRelatedAccountGroupM"
-          + "emberships\022P.google.cloud.recaptchaenter"
-          + "prise.v1.SearchRelatedAccountGroupMember"
-          + "shipsRequest\032Q.google.cloud.recaptchaent"
-          + "erprise.v1.SearchRelatedAccountGroupMemb"
-          + "ershipsResponse\"e\332A\031project,hashed_accou"
-          + "nt_id\202\323\344\223\002C\">/v1/{project=projects/*}/re"
-          + "latedaccountgroupmemberships:search:\001*\032V"
-          + "\312A\"recaptchaenterprise.googleapis.com\322A."
-          + "https://www.googleapis.com/auth/cloud-pl"
-          + "atformB\231\002\n!com.google.recaptchaenterpris"
-          + "e.v1B\030RecaptchaEnterpriseProtoP\001Z\\cloud."
-          + "google.com/go/recaptchaenterprise/v2/api"
-          + "v1/recaptchaenterprisepb;recaptchaenterp"
-          + "risepb\242\002\004GCRE\252\002#Google.Cloud.RecaptchaEn"
-          + "terprise.V1\312\002#Google\\Cloud\\RecaptchaEnte"
-          + "rprise\\V1\352\002&Google::Cloud::RecaptchaEnte"
-          + "rprise::V1b\006proto3"
+          + "google/protobuf/timestamp.proto\032\027google/"
+          + "rpc/status.proto\"\252\001\n\027CreateAssessmentReq"
+          + "uest\022D\n\006parent\030\001 \001(\tB4\342A\001\002\372A-\n+cloudreso"
+          + "urcemanager.googleapis.com/Project\022I\n\nas"
+          + "sessment\030\002 \001(\0132/.google.cloud.recaptchae"
+          + "nterprise.v1.AssessmentB\004\342A\001\002\"\226\005\n\020Transa"
+          + "ctionEvent\022d\n\nevent_type\030\001 \001(\0162J.google."
+          + "cloud.recaptchaenterprise.v1.Transaction"
+          + "Event.TransactionEventTypeB\004\342A\001\001\022\024\n\006reas"
+          + "on\030\002 \001(\tB\004\342A\001\001\022\023\n\005value\030\003 \001(\001B\004\342A\001\001\0224\n\ne"
+          + "vent_time\030\004 \001(\0132\032.google.protobuf.Timest"
+          + "ampB\004\342A\001\001\"\272\003\n\024TransactionEventType\022&\n\"TR"
+          + "ANSACTION_EVENT_TYPE_UNSPECIFIED\020\000\022\024\n\020ME"
+          + "RCHANT_APPROVE\020\001\022\021\n\rMERCHANT_DENY\020\002\022\021\n\rM"
+          + "ANUAL_REVIEW\020\003\022\021\n\rAUTHORIZATION\020\004\022\031\n\025AUT"
+          + "HORIZATION_DECLINE\020\005\022\023\n\017PAYMENT_CAPTURE\020"
+          + "\006\022\033\n\027PAYMENT_CAPTURE_DECLINE\020\007\022\n\n\006CANCEL"
+          + "\020\010\022\026\n\022CHARGEBACK_INQUIRY\020\t\022\024\n\020CHARGEBACK"
+          + "_ALERT\020\n\022\026\n\022FRAUD_NOTIFICATION\020\013\022\016\n\nCHAR"
+          + "GEBACK\020\014\022\034\n\030CHARGEBACK_REPRESENTMENT\020\r\022\026"
+          + "\n\022CHARGEBACK_REVERSE\020\016\022\022\n\016REFUND_REQUEST"
+          + "\020\017\022\022\n\016REFUND_DECLINE\020\020\022\n\n\006REFUND\020\021\022\022\n\016RE"
+          + "FUND_REVERSE\020\022\"\357\006\n\031AnnotateAssessmentReq"
+          + "uest\022D\n\004name\030\001 \001(\tB6\342A\001\002\372A/\n-recaptchaen"
+          + "terprise.googleapis.com/Assessment\022c\n\nan"
+          + "notation\030\002 \001(\0162I.google.cloud.recaptchae"
+          + "nterprise.v1.AnnotateAssessmentRequest.A"
+          + "nnotationB\004\342A\001\001\022\\\n\007reasons\030\003 \003(\0162E.googl"
+          + "e.cloud.recaptchaenterprise.v1.AnnotateA"
+          + "ssessmentRequest.ReasonB\004\342A\001\001\022\037\n\021hashed_"
+          + "account_id\030\004 \001(\014B\004\342A\001\001\022V\n\021transaction_ev"
+          + "ent\030\005 \001(\01325.google.cloud.recaptchaenterp"
+          + "rise.v1.TransactionEventB\004\342A\001\001\"~\n\nAnnota"
+          + "tion\022\032\n\026ANNOTATION_UNSPECIFIED\020\000\022\016\n\nLEGI"
+          + "TIMATE\020\001\022\016\n\nFRAUDULENT\020\002\022\030\n\020PASSWORD_COR"
+          + "RECT\020\003\032\002\010\001\022\032\n\022PASSWORD_INCORRECT\020\004\032\002\010\001\"\317"
+          + "\002\n\006Reason\022\026\n\022REASON_UNSPECIFIED\020\000\022\016\n\nCHA"
+          + "RGEBACK\020\001\022\024\n\020CHARGEBACK_FRAUD\020\010\022\026\n\022CHARG"
+          + "EBACK_DISPUTE\020\t\022\n\n\006REFUND\020\n\022\020\n\014REFUND_FR"
+          + "AUD\020\013\022\030\n\024TRANSACTION_ACCEPTED\020\014\022\030\n\024TRANS"
+          + "ACTION_DECLINED\020\r\022\026\n\022PAYMENT_HEURISTICS\020"
+          + "\002\022\030\n\024INITIATED_TWO_FACTOR\020\007\022\025\n\021PASSED_TW"
+          + "O_FACTOR\020\003\022\025\n\021FAILED_TWO_FACTOR\020\004\022\024\n\020COR"
+          + "RECT_PASSWORD\020\005\022\026\n\022INCORRECT_PASSWORD\020\006\022"
+          + "\017\n\013SOCIAL_SPAM\020\016\"\034\n\032AnnotateAssessmentRe"
+          + "sponse\"\266\001\n\030EndpointVerificationInfo\022\027\n\re"
+          + "mail_address\030\001 \001(\tH\000\022\026\n\014phone_number\030\002 \001"
+          + "(\tH\000\022\033\n\rrequest_token\030\003 \001(\tB\004\342A\001\003\022@\n\026las"
+          + "t_verification_time\030\004 \001(\0132\032.google.proto"
+          + "buf.TimestampB\004\342A\001\003B\n\n\010endpoint\"\322\004\n\027Acco"
+          + "untVerificationInfo\022P\n\tendpoints\030\001 \003(\0132="
+          + ".google.cloud.recaptchaenterprise.v1.End"
+          + "pointVerificationInfo\022\025\n\rlanguage_code\030\003"
+          + " \001(\t\022m\n\032latest_verification_result\030\007 \001(\016"
+          + "2C.google.cloud.recaptchaenterprise.v1.A"
+          + "ccountVerificationInfo.ResultB\004\342A\001\003\022\024\n\010u"
+          + "sername\030\002 \001(\tB\002\030\001\"\310\002\n\006Result\022\026\n\022RESULT_U"
+          + "NSPECIFIED\020\000\022\031\n\025SUCCESS_USER_VERIFIED\020\001\022"
+          + "\033\n\027ERROR_USER_NOT_VERIFIED\020\002\022$\n ERROR_SI"
+          + "TE_ONBOARDING_INCOMPLETE\020\003\022\037\n\033ERROR_RECI"
+          + "PIENT_NOT_ALLOWED\020\004\022)\n%ERROR_RECIPIENT_A"
+          + "BUSE_LIMIT_EXHAUSTED\020\005\022\033\n\027ERROR_CRITICAL"
+          + "_INTERNAL\020\006\022\"\n\036ERROR_CUSTOMER_QUOTA_EXHA"
+          + "USTED\020\007\022\037\n\033ERROR_VERIFICATION_BYPASSED\020\010"
+          + "\022\032\n\026ERROR_VERDICT_MISMATCH\020\t\"\320\001\n\037Private"
+          + "PasswordLeakVerification\022 \n\022lookup_hash_"
+          + "prefix\030\001 \001(\014B\004\342A\001\001\022-\n\037encrypted_user_cre"
+          + "dentials_hash\030\002 \001(\014B\004\342A\001\001\022+\n\035encrypted_l"
+          + "eak_match_prefixes\030\003 \003(\014B\004\342A\001\003\022/\n!reencr"
+          + "ypted_user_credentials_hash\030\004 \001(\014B\004\342A\001\003\""
+          + "\255\007\n\nAssessment\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\0229\n\005ev"
+          + "ent\030\002 \001(\0132*.google.cloud.recaptchaenterp"
+          + "rise.v1.Event\022N\n\rrisk_analysis\030\003 \001(\01321.g"
+          + "oogle.cloud.recaptchaenterprise.v1.RiskA"
+          + "nalysisB\004\342A\001\003\022T\n\020token_properties\030\004 \001(\0132"
+          + "4.google.cloud.recaptchaenterprise.v1.To"
+          + "kenPropertiesB\004\342A\001\003\022Z\n\024account_verificat"
+          + "ion\030\005 \001(\0132<.google.cloud.recaptchaenterp"
+          + "rise.v1.AccountVerificationInfo\022c\n\033accou"
+          + "nt_defender_assessment\030\006 \001(\0132>.google.cl"
+          + "oud.recaptchaenterprise.v1.AccountDefend"
+          + "erAssessment\022p\n\"private_password_leak_ve"
+          + "rification\030\010 \001(\0132D.google.cloud.recaptch"
+          + "aenterprise.v1.PrivatePasswordLeakVerifi"
+          + "cation\022a\n\032firewall_policy_assessment\030\n \001"
+          + "(\0132=.google.cloud.recaptchaenterprise.v1"
+          + ".FirewallPolicyAssessment\022c\n\033fraud_preve"
+          + "ntion_assessment\030\013 \001(\0132>.google.cloud.re"
+          + "captchaenterprise.v1.FraudPreventionAsse"
+          + "ssment\022N\n\rfraud_signals\030\r \001(\01321.google.c"
+          + "loud.recaptchaenterprise.v1.FraudSignals"
+          + "B\004\342A\001\003:_\352A\\\n-recaptchaenterprise.googlea"
+          + "pis.com/Assessment\022+projects/{project}/a"
+          + "ssessments/{assessment}\"\257\003\n\005Event\022\023\n\005tok"
+          + "en\030\001 \001(\tB\004\342A\001\001\022\026\n\010site_key\030\002 \001(\tB\004\342A\001\001\022\030"
+          + "\n\nuser_agent\030\003 \001(\tB\004\342A\001\001\022\035\n\017user_ip_addr"
+          + "ess\030\004 \001(\tB\004\342A\001\001\022\035\n\017expected_action\030\005 \001(\t"
+          + "B\004\342A\001\001\022\037\n\021hashed_account_id\030\006 \001(\014B\004\342A\001\001\022"
+          + "\025\n\007express\030\016 \001(\010B\004\342A\001\001\022\033\n\rrequested_uri\030"
+          + "\010 \001(\tB\004\342A\001\001\022\"\n\024waf_token_assessment\030\t \001("
+          + "\010B\004\342A\001\001\022\021\n\003ja3\030\n \001(\tB\004\342A\001\001\022\025\n\007headers\030\013 "
+          + "\003(\tB\004\342A\001\001\022(\n\032firewall_policy_evaluation\030"
+          + "\014 \001(\010B\004\342A\001\001\022T\n\020transaction_data\030\r \001(\01324."
+          + "google.cloud.recaptchaenterprise.v1.Tran"
+          + "sactionDataB\004\342A\001\001\"\377\010\n\017TransactionData\022\033\n"
+          + "\016transaction_id\030\013 \001(\tH\000\210\001\001\022\026\n\016payment_me"
+          + "thod\030\001 \001(\t\022\020\n\010card_bin\030\002 \001(\t\022\026\n\016card_las"
+          + "t_four\030\003 \001(\t\022\025\n\rcurrency_code\030\004 \001(\t\022\r\n\005v"
+          + "alue\030\005 \001(\001\022\026\n\016shipping_value\030\014 \001(\001\022V\n\020sh"
+          + "ipping_address\030\006 \001(\0132<.google.cloud.reca"
+          + "ptchaenterprise.v1.TransactionData.Addre"
+          + "ss\022U\n\017billing_address\030\007 \001(\0132<.google.clo"
+          + "ud.recaptchaenterprise.v1.TransactionDat"
+          + "a.Address\022G\n\004user\030\010 \001(\01329.google.cloud.r"
+          + "ecaptchaenterprise.v1.TransactionData.Us"
+          + "er\022L\n\tmerchants\030\r \003(\01329.google.cloud.rec"
+          + "aptchaenterprise.v1.TransactionData.User"
+          + "\022H\n\005items\030\016 \003(\01329.google.cloud.recaptcha"
+          + "enterprise.v1.TransactionData.Item\022V\n\014ga"
+          + "teway_info\030\n \001(\0132@.google.cloud.recaptch"
+          + "aenterprise.v1.TransactionData.GatewayIn"
+          + "fo\032\206\001\n\007Address\022\021\n\trecipient\030\001 \001(\t\022\017\n\007add"
+          + "ress\030\002 \003(\t\022\020\n\010locality\030\003 \001(\t\022\033\n\023administ"
+          + "rative_area\030\004 \001(\t\022\023\n\013region_code\030\005 \001(\t\022\023"
+          + "\n\013postal_code\030\006 \001(\t\032\204\001\n\004User\022\022\n\naccount_"
+          + "id\030\006 \001(\t\022\023\n\013creation_ms\030\001 \001(\003\022\r\n\005email\030\002"
+          + " \001(\t\022\026\n\016email_verified\030\003 \001(\010\022\024\n\014phone_nu"
+          + "mber\030\004 \001(\t\022\026\n\016phone_verified\030\005 \001(\010\032R\n\004It"
+          + "em\022\014\n\004name\030\001 \001(\t\022\r\n\005value\030\002 \001(\001\022\020\n\010quant"
+          + "ity\030\003 \001(\003\022\033\n\023merchant_account_id\030\004 \001(\t\032p"
+          + "\n\013GatewayInfo\022\014\n\004name\030\001 \001(\t\022\035\n\025gateway_r"
+          + "esponse_code\030\002 \001(\t\022\031\n\021avs_response_code\030"
+          + "\003 \001(\t\022\031\n\021cvv_response_code\030\004 \001(\tB\021\n\017_tra"
+          + "nsaction_id\"\204\003\n\014RiskAnalysis\022\r\n\005score\030\001 "
+          + "\001(\002\022W\n\007reasons\030\002 \003(\0162F.google.cloud.reca"
+          + "ptchaenterprise.v1.RiskAnalysis.Classifi"
+          + "cationReason\022 \n\030extended_verdict_reasons"
+          + "\030\003 \003(\t\"\351\001\n\024ClassificationReason\022%\n!CLASS"
+          + "IFICATION_REASON_UNSPECIFIED\020\000\022\016\n\nAUTOMA"
+          + "TION\020\001\022\032\n\026UNEXPECTED_ENVIRONMENT\020\002\022\024\n\020TO"
+          + "O_MUCH_TRAFFIC\020\003\022\035\n\031UNEXPECTED_USAGE_PAT"
+          + "TERNS\020\004\022\030\n\024LOW_CONFIDENCE_SCORE\020\005\022\025\n\021SUS"
+          + "PECTED_CARDING\020\006\022\030\n\024SUSPECTED_CHARGEBACK"
+          + "\020\007\"\230\003\n\017TokenProperties\022\r\n\005valid\030\001 \001(\010\022Z\n"
+          + "\016invalid_reason\030\002 \001(\0162B.google.cloud.rec"
+          + "aptchaenterprise.v1.TokenProperties.Inva"
+          + "lidReason\022/\n\013create_time\030\003 \001(\0132\032.google."
+          + "protobuf.Timestamp\022\020\n\010hostname\030\004 \001(\t\022\034\n\024"
+          + "android_package_name\030\010 \001(\t\022\025\n\rios_bundle"
+          + "_id\030\t \001(\t\022\016\n\006action\030\005 \001(\t\"\221\001\n\rInvalidRea"
+          + "son\022\036\n\032INVALID_REASON_UNSPECIFIED\020\000\022\032\n\026U"
+          + "NKNOWN_INVALID_REASON\020\001\022\r\n\tMALFORMED\020\002\022\013"
+          + "\n\007EXPIRED\020\003\022\010\n\004DUPE\020\004\022\013\n\007MISSING\020\005\022\021\n\rBR"
+          + "OWSER_ERROR\020\006\"\220\004\n\031FraudPreventionAssessm"
+          + "ent\022\030\n\020transaction_risk\030\001 \001(\002\022y\n\031stolen_"
+          + "instrument_verdict\030\002 \001(\0132V.google.cloud."
+          + "recaptchaenterprise.v1.FraudPreventionAs"
+          + "sessment.StolenInstrumentVerdict\022o\n\024card"
+          + "_testing_verdict\030\003 \001(\0132Q.google.cloud.re"
+          + "captchaenterprise.v1.FraudPreventionAsse"
+          + "ssment.CardTestingVerdict\022w\n\030behavioral_"
+          + "trust_verdict\030\004 \001(\0132U.google.cloud.recap"
+          + "tchaenterprise.v1.FraudPreventionAssessm"
+          + "ent.BehavioralTrustVerdict\032\'\n\027StolenInst"
+          + "rumentVerdict\022\014\n\004risk\030\001 \001(\002\032\"\n\022CardTesti"
+          + "ngVerdict\022\014\n\004risk\030\001 \001(\002\032\'\n\026BehavioralTru"
+          + "stVerdict\022\r\n\005trust\030\001 \001(\002\"\350\003\n\014FraudSignal"
+          + "s\022Y\n\014user_signals\030\001 \001(\0132=.google.cloud.r"
+          + "ecaptchaenterprise.v1.FraudSignals.UserS"
+          + "ignalsB\004\342A\001\003\022Y\n\014card_signals\030\002 \001(\0132=.goo"
+          + "gle.cloud.recaptchaenterprise.v1.FraudSi"
+          + "gnals.CardSignalsB\004\342A\001\003\032R\n\013UserSignals\022%"
+          + "\n\027active_days_lower_bound\030\001 \001(\005B\004\342A\001\003\022\034\n"
+          + "\016synthetic_risk\030\002 \001(\002B\004\342A\001\003\032\315\001\n\013CardSign"
+          + "als\022b\n\013card_labels\030\001 \003(\0162G.google.cloud."
+          + "recaptchaenterprise.v1.FraudSignals.Card"
+          + "Signals.CardLabelB\004\342A\001\003\"Z\n\tCardLabel\022\032\n\026"
+          + "CARD_LABEL_UNSPECIFIED\020\000\022\013\n\007PREPAID\020\001\022\013\n"
+          + "\007VIRTUAL\020\002\022\027\n\023UNEXPECTED_LOCATION\020\003\"\266\002\n\031"
+          + "AccountDefenderAssessment\022c\n\006labels\030\001 \003("
+          + "\0162S.google.cloud.recaptchaenterprise.v1."
+          + "AccountDefenderAssessment.AccountDefende"
+          + "rLabel\"\263\001\n\024AccountDefenderLabel\022&\n\"ACCOU"
+          + "NT_DEFENDER_LABEL_UNSPECIFIED\020\000\022\021\n\rPROFI"
+          + "LE_MATCH\020\001\022\035\n\031SUSPICIOUS_LOGIN_ACTIVITY\020"
+          + "\002\022\037\n\033SUSPICIOUS_ACCOUNT_CREATION\020\003\022 \n\034RE"
+          + "LATED_ACCOUNTS_NUMBER_HIGH\020\004\"\225\001\n\020CreateK"
+          + "eyRequest\022D\n\006parent\030\001 \001(\tB4\342A\001\002\372A-\n+clou"
+          + "dresourcemanager.googleapis.com/Project\022"
+          + ";\n\003key\030\002 \001(\0132(.google.cloud.recaptchaent"
+          + "erprise.v1.KeyB\004\342A\001\002\"\212\001\n\017ListKeysRequest"
+          + "\022D\n\006parent\030\001 \001(\tB4\342A\001\002\372A-\n+cloudresource"
+          + "manager.googleapis.com/Project\022\027\n\tpage_s"
+          + "ize\030\002 \001(\005B\004\342A\001\001\022\030\n\npage_token\030\003 \001(\tB\004\342A\001"
+          + "\001\"c\n\020ListKeysResponse\0226\n\004keys\030\001 \003(\0132(.go"
+          + "ogle.cloud.recaptchaenterprise.v1.Key\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"^\n\036RetrieveLegacy"
+          + "SecretKeyRequest\022<\n\003key\030\001 \001(\tB/\342A\001\002\372A(\n&"
+          + "recaptchaenterprise.googleapis.com/Key\"N"
+          + "\n\rGetKeyRequest\022=\n\004name\030\001 \001(\tB/\342A\001\002\372A(\n&"
+          + "recaptchaenterprise.googleapis.com/Key\"\206"
+          + "\001\n\020UpdateKeyRequest\022;\n\003key\030\001 \001(\0132(.googl"
+          + "e.cloud.recaptchaenterprise.v1.KeyB\004\342A\001\002"
+          + "\0225\n\013update_mask\030\002 \001(\0132\032.google.protobuf."
+          + "FieldMaskB\004\342A\001\001\"Q\n\020DeleteKeyRequest\022=\n\004n"
+          + "ame\030\001 \001(\tB/\342A\001\002\372A(\n&recaptchaenterprise."
+          + "googleapis.com/Key\"\267\001\n\033CreateFirewallPol"
+          + "icyRequest\022D\n\006parent\030\001 \001(\tB4\342A\001\002\372A-\n+clo"
+          + "udresourcemanager.googleapis.com/Project"
+          + "\022R\n\017firewall_policy\030\002 \001(\01323.google.cloud"
+          + ".recaptchaenterprise.v1.FirewallPolicyB\004"
+          + "\342A\001\002\"\226\001\n\033ListFirewallPoliciesRequest\022D\n\006"
+          + "parent\030\001 \001(\tB4\342A\001\002\372A-\n+cloudresourcemana"
+          + "ger.googleapis.com/Project\022\027\n\tpage_size\030"
+          + "\002 \001(\005B\004\342A\001\001\022\030\n\npage_token\030\003 \001(\tB\004\342A\001\001\"\207\001"
+          + "\n\034ListFirewallPoliciesResponse\022N\n\021firewa"
+          + "ll_policies\030\001 \003(\01323.google.cloud.recaptc"
+          + "haenterprise.v1.FirewallPolicy\022\027\n\017next_p"
+          + "age_token\030\002 \001(\t\"d\n\030GetFirewallPolicyRequ"
+          + "est\022H\n\004name\030\001 \001(\tB:\342A\001\002\372A3\n1recaptchaent"
+          + "erprise.googleapis.com/FirewallPolicy\"\250\001"
+          + "\n\033UpdateFirewallPolicyRequest\022R\n\017firewal"
+          + "l_policy\030\001 \001(\01323.google.cloud.recaptchae"
+          + "nterprise.v1.FirewallPolicyB\004\342A\001\002\0225\n\013upd"
+          + "ate_mask\030\002 \001(\0132\032.google.protobuf.FieldMa"
+          + "skB\004\342A\001\001\"g\n\033DeleteFirewallPolicyRequest\022"
+          + "H\n\004name\030\001 \001(\tB:\342A\001\002\372A3\n1recaptchaenterpr"
+          + "ise.googleapis.com/FirewallPolicy\"t\n\021Mig"
+          + "rateKeyRequest\022=\n\004name\030\001 \001(\tB/\342A\001\002\372A(\n&r"
+          + "ecaptchaenterprise.googleapis.com/Key\022 \n"
+          + "\022skip_billing_check\030\002 \001(\010B\004\342A\001\001\"V\n\021GetMe"
+          + "tricsRequest\022A\n\004name\030\001 \001(\tB3\342A\001\002\372A,\n*rec"
+          + "aptchaenterprise.googleapis.com/Metrics\""
+          + "\301\002\n\007Metrics\022\022\n\004name\030\004 \001(\tB\004\342A\001\003\022.\n\nstart"
+          + "_time\030\001 \001(\0132\032.google.protobuf.Timestamp\022"
+          + "H\n\rscore_metrics\030\002 \003(\01321.google.cloud.re"
+          + "captchaenterprise.v1.ScoreMetrics\022P\n\021cha"
+          + "llenge_metrics\030\003 \003(\01325.google.cloud.reca"
+          + "ptchaenterprise.v1.ChallengeMetrics:V\352AS"
+          + "\n*recaptchaenterprise.googleapis.com/Met"
+          + "rics\022%projects/{project}/keys/{key}/metr"
+          + "ics\"<\n\037RetrieveLegacySecretKeyResponse\022\031"
+          + "\n\021legacy_secret_key\030\001 \001(\t\"\273\005\n\003Key\022\014\n\004nam"
+          + "e\030\001 \001(\t\022\024\n\014display_name\030\002 \001(\t\022K\n\014web_set"
+          + "tings\030\003 \001(\01323.google.cloud.recaptchaente"
+          + "rprise.v1.WebKeySettingsH\000\022S\n\020android_se"
+          + "ttings\030\004 \001(\01327.google.cloud.recaptchaent"
+          + "erprise.v1.AndroidKeySettingsH\000\022K\n\014ios_s"
+          + "ettings\030\005 \001(\01323.google.cloud.recaptchaen"
+          + "terprise.v1.IOSKeySettingsH\000\022D\n\006labels\030\006"
+          + " \003(\01324.google.cloud.recaptchaenterprise."
+          + "v1.Key.LabelsEntry\0225\n\013create_time\030\007 \001(\0132"
+          + "\032.google.protobuf.TimestampB\004\342A\001\003\022L\n\017tes"
+          + "ting_options\030\t \001(\01323.google.cloud.recapt"
+          + "chaenterprise.v1.TestingOptions\022F\n\014waf_s"
+          + "ettings\030\n \001(\01320.google.cloud.recaptchaen"
+          + "terprise.v1.WafSettings\032-\n\013LabelsEntry\022\013"
+          + "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:J\352AG\n&rec"
+          + "aptchaenterprise.googleapis.com/Key\022\035pro"
+          + "jects/{project}/keys/{key}B\023\n\021platform_s"
+          + "ettings\"\350\001\n\016TestingOptions\022\025\n\rtesting_sc"
+          + "ore\030\001 \001(\002\022_\n\021testing_challenge\030\002 \001(\0162D.g"
+          + "oogle.cloud.recaptchaenterprise.v1.Testi"
+          + "ngOptions.TestingChallenge\"^\n\020TestingCha"
+          + "llenge\022!\n\035TESTING_CHALLENGE_UNSPECIFIED\020"
+          + "\000\022\r\n\tNOCAPTCHA\020\001\022\030\n\024UNSOLVABLE_CHALLENGE"
+          + "\020\002\"\221\004\n\016WebKeySettings\022\031\n\021allow_all_domai"
+          + "ns\030\003 \001(\010\022\027\n\017allowed_domains\030\001 \003(\t\022\031\n\021all"
+          + "ow_amp_traffic\030\002 \001(\010\022c\n\020integration_type"
+          + "\030\004 \001(\0162C.google.cloud.recaptchaenterpris"
+          + "e.v1.WebKeySettings.IntegrationTypeB\004\342A\001"
+          + "\002\022v\n\035challenge_security_preference\030\005 \001(\016"
+          + "2O.google.cloud.recaptchaenterprise.v1.W"
+          + "ebKeySettings.ChallengeSecurityPreferenc"
+          + "e\"[\n\017IntegrationType\022 \n\034INTEGRATION_TYPE"
+          + "_UNSPECIFIED\020\000\022\t\n\005SCORE\020\001\022\014\n\010CHECKBOX\020\002\022"
+          + "\r\n\tINVISIBLE\020\003\"v\n\033ChallengeSecurityPrefe"
+          + "rence\022-\n)CHALLENGE_SECURITY_PREFERENCE_U"
+          + "NSPECIFIED\020\000\022\r\n\tUSABILITY\020\001\022\013\n\007BALANCE\020\002"
+          + "\022\014\n\010SECURITY\020\003\"\207\001\n\022AndroidKeySettings\022\037\n"
+          + "\027allow_all_package_names\030\002 \001(\010\022\035\n\025allowe"
+          + "d_package_names\030\001 \003(\t\0221\n)support_non_goo"
+          + "gle_app_store_distribution\030\003 \001(\010\"\235\001\n\016IOS"
+          + "KeySettings\022\034\n\024allow_all_bundle_ids\030\002 \001("
+          + "\010\022\032\n\022allowed_bundle_ids\030\001 \003(\t\022Q\n\022apple_d"
+          + "eveloper_id\030\003 \001(\01325.google.cloud.recaptc"
+          + "haenterprise.v1.AppleDeveloperId\"[\n\020Appl"
+          + "eDeveloperId\022\032\n\013private_key\030\001 \001(\tB\005\342A\002\002\004"
+          + "\022\024\n\006key_id\030\002 \001(\tB\004\342A\001\002\022\025\n\007team_id\030\003 \001(\tB"
+          + "\004\342A\001\002\"\251\001\n\021ScoreDistribution\022_\n\rscore_buc"
+          + "kets\030\001 \003(\0132H.google.cloud.recaptchaenter"
+          + "prise.v1.ScoreDistribution.ScoreBucketsE"
+          + "ntry\0323\n\021ScoreBucketsEntry\022\013\n\003key\030\001 \001(\005\022\r"
+          + "\n\005value\030\002 \001(\003:\0028\001\"\253\002\n\014ScoreMetrics\022O\n\017ov"
+          + "erall_metrics\030\001 \001(\01326.google.cloud.recap"
+          + "tchaenterprise.v1.ScoreDistribution\022\\\n\016a"
+          + "ction_metrics\030\002 \003(\0132D.google.cloud.recap"
+          + "tchaenterprise.v1.ScoreMetrics.ActionMet"
+          + "ricsEntry\032l\n\022ActionMetricsEntry\022\013\n\003key\030\001"
+          + " \001(\t\022E\n\005value\030\002 \001(\01326.google.cloud.recap"
+          + "tchaenterprise.v1.ScoreDistribution:\0028\001\""
+          + "o\n\020ChallengeMetrics\022\026\n\016pageload_count\030\001 "
+          + "\001(\003\022\027\n\017nocaptcha_count\030\002 \001(\003\022\024\n\014failed_c"
+          + "ount\030\003 \001(\003\022\024\n\014passed_count\030\004 \001(\003\"\221\001\n\030Fir"
+          + "ewallPolicyAssessment\022!\n\005error\030\005 \001(\0132\022.g"
+          + "oogle.rpc.Status\022R\n\017firewall_policy\030\010 \001("
+          + "\01323.google.cloud.recaptchaenterprise.v1."
+          + "FirewallPolicyB\004\342A\001\003\"\335\004\n\016FirewallAction\022"
+          + "P\n\005allow\030\001 \001(\0132?.google.cloud.recaptchae"
+          + "nterprise.v1.FirewallAction.AllowActionH"
+          + "\000\022P\n\005block\030\002 \001(\0132?.google.cloud.recaptch"
+          + "aenterprise.v1.FirewallAction.BlockActio"
+          + "nH\000\022V\n\010redirect\030\005 \001(\0132B.google.cloud.rec"
+          + "aptchaenterprise.v1.FirewallAction.Redir"
+          + "ectActionH\000\022Z\n\nsubstitute\030\003 \001(\0132D.google"
+          + ".cloud.recaptchaenterprise.v1.FirewallAc"
+          + "tion.SubstituteActionH\000\022Y\n\nset_header\030\004 "
+          + "\001(\0132C.google.cloud.recaptchaenterprise.v"
+          + "1.FirewallAction.SetHeaderActionH\000\032\r\n\013Al"
+          + "lowAction\032\r\n\013BlockAction\032\020\n\016RedirectActi"
+          + "on\032 \n\020SubstituteAction\022\014\n\004path\030\001 \001(\t\032-\n\017"
+          + "SetHeaderAction\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 "
+          + "\001(\tB\027\n\025firewall_action_oneof\"\210\002\n\016Firewal"
+          + "lPolicy\022\014\n\004name\030\001 \001(\t\022\023\n\013description\030\002 \001"
+          + "(\t\022\014\n\004path\030\004 \001(\t\022\021\n\tcondition\030\005 \001(\t\022D\n\007a"
+          + "ctions\030\006 \003(\01323.google.cloud.recaptchaent"
+          + "erprise.v1.FirewallAction:l\352Ai\n1recaptch"
+          + "aenterprise.googleapis.com/FirewallPolic"
+          + "y\0224projects/{project}/firewallpolicies/{"
+          + "firewallpolicy}\"\271\001\n)ListRelatedAccountGr"
+          + "oupMembershipsRequest\022Y\n\006parent\030\001 \001(\tBI\342"
+          + "A\001\002\372AB\022@recaptchaenterprise.googleapis.c"
+          + "om/RelatedAccountGroupMembership\022\027\n\tpage"
+          + "_size\030\002 \001(\005B\004\342A\001\001\022\030\n\npage_token\030\003 \001(\tB\004\342"
+          + "A\001\001\"\264\001\n*ListRelatedAccountGroupMembershi"
+          + "psResponse\022m\n!related_account_group_memb"
+          + "erships\030\001 \003(\0132B.google.cloud.recaptchaen"
+          + "terprise.v1.RelatedAccountGroupMembershi"
+          + "p\022\027\n\017next_page_token\030\002 \001(\t\"\245\001\n\037ListRelat"
+          + "edAccountGroupsRequest\022O\n\006parent\030\001 \001(\tB?"
+          + "\342A\001\002\372A8\0226recaptchaenterprise.googleapis."
+          + "com/RelatedAccountGroup\022\027\n\tpage_size\030\002 \001"
+          + "(\005B\004\342A\001\001\022\030\n\npage_token\030\003 \001(\tB\004\342A\001\001\"\225\001\n L"
+          + "istRelatedAccountGroupsResponse\022X\n\026relat"
+          + "ed_account_groups\030\001 \003(\01328.google.cloud.r"
+          + "ecaptchaenterprise.v1.RelatedAccountGrou"
+          + "p\022\027\n\017next_page_token\030\002 \001(\t\"\335\001\n+SearchRel"
+          + "atedAccountGroupMembershipsRequest\022Z\n\007pr"
+          + "oject\030\001 \001(\tBI\342A\001\002\372AB\022@recaptchaenterpris"
+          + "e.googleapis.com/RelatedAccountGroupMemb"
+          + "ership\022\037\n\021hashed_account_id\030\002 \001(\014B\004\342A\001\001\022"
+          + "\027\n\tpage_size\030\003 \001(\005B\004\342A\001\001\022\030\n\npage_token\030\004"
+          + " \001(\tB\004\342A\001\001\"\266\001\n,SearchRelatedAccountGroup"
+          + "MembershipsResponse\022m\n!related_account_g"
+          + "roup_memberships\030\001 \003(\0132B.google.cloud.re"
+          + "captchaenterprise.v1.RelatedAccountGroup"
+          + "Membership\022\027\n\017next_page_token\030\002 \001(\t\"\264\002\n\035"
+          + "RelatedAccountGroupMembership\022W\n\004name\030\001 "
+          + "\001(\tBI\342A\001\002\372AB\n@recaptchaenterprise.google"
+          + "apis.com/RelatedAccountGroupMembership\022\031"
+          + "\n\021hashed_account_id\030\002 \001(\014:\236\001\352A\232\001\n@recapt"
+          + "chaenterprise.googleapis.com/RelatedAcco"
+          + "untGroupMembership\022Vprojects/{project}/r"
+          + "elatedaccountgroups/{relatedaccountgroup"
+          + "}/memberships/{membership}\"\340\001\n\023RelatedAc"
+          + "countGroup\022M\n\004name\030\001 \001(\tB?\342A\001\002\372A8\n6recap"
+          + "tchaenterprise.googleapis.com/RelatedAcc"
+          + "ountGroup:z\352Aw\n6recaptchaenterprise.goog"
+          + "leapis.com/RelatedAccountGroup\022=projects"
+          + "/{project}/relatedaccountgroups/{related"
+          + "accountgroup}\"\355\002\n\013WafSettings\022V\n\013waf_ser"
+          + "vice\030\001 \001(\0162;.google.cloud.recaptchaenter"
+          + "prise.v1.WafSettings.WafServiceB\004\342A\001\002\022V\n"
+          + "\013waf_feature\030\002 \001(\0162;.google.cloud.recapt"
+          + "chaenterprise.v1.WafSettings.WafFeatureB"
+          + "\004\342A\001\002\"o\n\nWafFeature\022\033\n\027WAF_FEATURE_UNSPE"
+          + "CIFIED\020\000\022\022\n\016CHALLENGE_PAGE\020\001\022\021\n\rSESSION_"
+          + "TOKEN\020\002\022\020\n\014ACTION_TOKEN\020\003\022\013\n\007EXPRESS\020\005\"="
+          + "\n\nWafService\022\033\n\027WAF_SERVICE_UNSPECIFIED\020"
+          + "\000\022\006\n\002CA\020\001\022\n\n\006FASTLY\020\0032\346\035\n\032RecaptchaEnter"
+          + "priseService\022\316\001\n\020CreateAssessment\022<.goog"
+          + "le.cloud.recaptchaenterprise.v1.CreateAs"
+          + "sessmentRequest\032/.google.cloud.recaptcha"
+          + "enterprise.v1.Assessment\"K\332A\021parent,asse"
+          + "ssment\202\323\344\223\0021\"#/v1/{parent=projects/*}/as"
+          + "sessments:\nassessment\022\340\001\n\022AnnotateAssess"
+          + "ment\022>.google.cloud.recaptchaenterprise."
+          + "v1.AnnotateAssessmentRequest\032?.google.cl"
+          + "oud.recaptchaenterprise.v1.AnnotateAsses"
+          + "smentResponse\"I\332A\017name,annotation\202\323\344\223\0021\""
+          + ",/v1/{name=projects/*/assessments/*}:ann"
+          + "otate:\001*\022\244\001\n\tCreateKey\0225.google.cloud.re"
+          + "captchaenterprise.v1.CreateKeyRequest\032(.",
+      "google.cloud.recaptchaenterprise.v1.Key\""
+          + "6\332A\nparent,key\202\323\344\223\002#\"\034/v1/{parent=projec"
+          + "ts/*}/keys:\003key\022\246\001\n\010ListKeys\0224.google.cl"
+          + "oud.recaptchaenterprise.v1.ListKeysReque"
+          + "st\0325.google.cloud.recaptchaenterprise.v1"
+          + ".ListKeysResponse\"-\332A\006parent\202\323\344\223\002\036\022\034/v1/"
+          + "{parent=projects/*}/keys\022\347\001\n\027RetrieveLeg"
+          + "acySecretKey\022C.google.cloud.recaptchaent"
+          + "erprise.v1.RetrieveLegacySecretKeyReques"
+          + "t\032D.google.cloud.recaptchaenterprise.v1."
+          + "RetrieveLegacySecretKeyResponse\"A\332A\003key\202"
+          + "\323\344\223\0025\0223/v1/{key=projects/*/keys/*}:retri"
+          + "eveLegacySecretKey\022\223\001\n\006GetKey\0222.google.c"
+          + "loud.recaptchaenterprise.v1.GetKeyReques"
+          + "t\032(.google.cloud.recaptchaenterprise.v1."
+          + "Key\"+\332A\004name\202\323\344\223\002\036\022\034/v1/{name=projects/*"
+          + "/keys/*}\022\255\001\n\tUpdateKey\0225.google.cloud.re"
+          + "captchaenterprise.v1.UpdateKeyRequest\032(."
+          + "google.cloud.recaptchaenterprise.v1.Key\""
+          + "?\332A\017key,update_mask\202\323\344\223\002\'2 /v1/{key.name"
+          + "=projects/*/keys/*}:\003key\022\207\001\n\tDeleteKey\0225"
+          + ".google.cloud.recaptchaenterprise.v1.Del"
+          + "eteKeyRequest\032\026.google.protobuf.Empty\"+\332"
+          + "A\004name\202\323\344\223\002\036*\034/v1/{name=projects/*/keys/"
+          + "*}\022\237\001\n\nMigrateKey\0226.google.cloud.recaptc"
+          + "haenterprise.v1.MigrateKeyRequest\032(.goog"
+          + "le.cloud.recaptchaenterprise.v1.Key\"/\202\323\344"
+          + "\223\002)\"$/v1/{name=projects/*/keys/*}:migrat"
+          + "e:\001*\022\247\001\n\nGetMetrics\0226.google.cloud.recap"
+          + "tchaenterprise.v1.GetMetricsRequest\032,.go"
+          + "ogle.cloud.recaptchaenterprise.v1.Metric"
+          + "s\"3\332A\004name\202\323\344\223\002&\022$/v1/{name=projects/*/k"
+          + "eys/*/metrics}\022\351\001\n\024CreateFirewallPolicy\022"
+          + "@.google.cloud.recaptchaenterprise.v1.Cr"
+          + "eateFirewallPolicyRequest\0323.google.cloud"
+          + ".recaptchaenterprise.v1.FirewallPolicy\"Z"
+          + "\332A\026parent,firewall_policy\202\323\344\223\002;\"(/v1/{pa"
+          + "rent=projects/*}/firewallpolicies:\017firew"
+          + "all_policy\022\326\001\n\024ListFirewallPolicies\022@.go"
+          + "ogle.cloud.recaptchaenterprise.v1.ListFi"
+          + "rewallPoliciesRequest\032A.google.cloud.rec"
+          + "aptchaenterprise.v1.ListFirewallPolicies"
+          + "Response\"9\332A\006parent\202\323\344\223\002*\022(/v1/{parent=p"
+          + "rojects/*}/firewallpolicies\022\300\001\n\021GetFirew"
+          + "allPolicy\022=.google.cloud.recaptchaenterp"
+          + "rise.v1.GetFirewallPolicyRequest\0323.googl"
+          + "e.cloud.recaptchaenterprise.v1.FirewallP"
+          + "olicy\"7\332A\004name\202\323\344\223\002*\022(/v1/{name=projects"
+          + "/*/firewallpolicies/*}\022\376\001\n\024UpdateFirewal"
+          + "lPolicy\022@.google.cloud.recaptchaenterpri"
+          + "se.v1.UpdateFirewallPolicyRequest\0323.goog"
+          + "le.cloud.recaptchaenterprise.v1.Firewall"
+          + "Policy\"o\332A\033firewall_policy,update_mask\202\323"
+          + "\344\223\002K28/v1/{firewall_policy.name=projects"
+          + "/*/firewallpolicies/*}:\017firewall_policy\022"
+          + "\251\001\n\024DeleteFirewallPolicy\022@.google.cloud."
+          + "recaptchaenterprise.v1.DeleteFirewallPol"
+          + "icyRequest\032\026.google.protobuf.Empty\"7\332A\004n"
+          + "ame\202\323\344\223\002**(/v1/{name=projects/*/firewall"
+          + "policies/*}\022\346\001\n\030ListRelatedAccountGroups"
+          + "\022D.google.cloud.recaptchaenterprise.v1.L"
+          + "istRelatedAccountGroupsRequest\032E.google."
+          + "cloud.recaptchaenterprise.v1.ListRelated"
+          + "AccountGroupsResponse\"=\332A\006parent\202\323\344\223\002.\022,"
+          + "/v1/{parent=projects/*}/relatedaccountgr"
+          + "oups\022\222\002\n\"ListRelatedAccountGroupMembersh"
+          + "ips\022N.google.cloud.recaptchaenterprise.v"
+          + "1.ListRelatedAccountGroupMembershipsRequ"
+          + "est\032O.google.cloud.recaptchaenterprise.v"
+          + "1.ListRelatedAccountGroupMembershipsResp"
+          + "onse\"K\332A\006parent\202\323\344\223\002<\022:/v1/{parent=proje"
+          + "cts/*/relatedaccountgroups/*}/membership"
+          + "s\022\262\002\n$SearchRelatedAccountGroupMembershi"
+          + "ps\022P.google.cloud.recaptchaenterprise.v1"
+          + ".SearchRelatedAccountGroupMembershipsReq"
+          + "uest\032Q.google.cloud.recaptchaenterprise."
+          + "v1.SearchRelatedAccountGroupMembershipsR"
+          + "esponse\"e\332A\031project,hashed_account_id\202\323\344"
+          + "\223\002C\">/v1/{project=projects/*}/relatedacc"
+          + "ountgroupmemberships:search:\001*\032V\312A\"recap"
+          + "tchaenterprise.googleapis.com\322A.https://"
+          + "www.googleapis.com/auth/cloud-platformB\231"
+          + "\002\n!com.google.recaptchaenterprise.v1B\030Re"
+          + "captchaEnterpriseProtoP\001Z\\cloud.google.c"
+          + "om/go/recaptchaenterprise/v2/apiv1/recap"
+          + "tchaenterprisepb;recaptchaenterprisepb\242\002"
+          + "\004GCRE\252\002#Google.Cloud.RecaptchaEnterprise"
+          + ".V1\312\002#Google\\Cloud\\RecaptchaEnterprise\\V"
+          + "1\352\002&Google::Cloud::RecaptchaEnterprise::"
+          + "V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -635,6 +818,7 @@ public final class RecaptchaEnterpriseProto {
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.rpc.StatusProto.getDescriptor(),
             });
     internal_static_google_cloud_recaptchaenterprise_v1_CreateAssessmentRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -706,7 +890,9 @@ public final class RecaptchaEnterpriseProto {
               "AccountVerification",
               "AccountDefenderAssessment",
               "PrivatePasswordLeakVerification",
+              "FirewallPolicyAssessment",
               "FraudPreventionAssessment",
+              "FraudSignals",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_Event_descriptor =
         getDescriptor().getMessageTypes().get(8);
@@ -720,6 +906,12 @@ public final class RecaptchaEnterpriseProto {
               "UserIpAddress",
               "ExpectedAction",
               "HashedAccountId",
+              "Express",
+              "RequestedUri",
+              "WafTokenAssessment",
+              "Ja3",
+              "Headers",
+              "FirewallPolicyEvaluation",
               "TransactionData",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_TransactionData_descriptor =
@@ -789,7 +981,7 @@ public final class RecaptchaEnterpriseProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_RiskAnalysis_descriptor,
             new java.lang.String[] {
-              "Score", "Reasons",
+              "Score", "Reasons", "ExtendedVerdictReasons",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_TokenProperties_descriptor =
         getDescriptor().getMessageTypes().get(11);
@@ -811,7 +1003,10 @@ public final class RecaptchaEnterpriseProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_FraudPreventionAssessment_descriptor,
             new java.lang.String[] {
-              "TransactionRisk", "StolenInstrumentVerdict", "CardTestingVerdict",
+              "TransactionRisk",
+              "StolenInstrumentVerdict",
+              "CardTestingVerdict",
+              "BehavioralTrustVerdict",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_FraudPreventionAssessment_StolenInstrumentVerdict_descriptor =
         internal_static_google_cloud_recaptchaenterprise_v1_FraudPreventionAssessment_descriptor
@@ -833,8 +1028,46 @@ public final class RecaptchaEnterpriseProto {
             new java.lang.String[] {
               "Risk",
             });
-    internal_static_google_cloud_recaptchaenterprise_v1_AccountDefenderAssessment_descriptor =
+    internal_static_google_cloud_recaptchaenterprise_v1_FraudPreventionAssessment_BehavioralTrustVerdict_descriptor =
+        internal_static_google_cloud_recaptchaenterprise_v1_FraudPreventionAssessment_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_recaptchaenterprise_v1_FraudPreventionAssessment_BehavioralTrustVerdict_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recaptchaenterprise_v1_FraudPreventionAssessment_BehavioralTrustVerdict_descriptor,
+            new java.lang.String[] {
+              "Trust",
+            });
+    internal_static_google_cloud_recaptchaenterprise_v1_FraudSignals_descriptor =
         getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_recaptchaenterprise_v1_FraudSignals_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recaptchaenterprise_v1_FraudSignals_descriptor,
+            new java.lang.String[] {
+              "UserSignals", "CardSignals",
+            });
+    internal_static_google_cloud_recaptchaenterprise_v1_FraudSignals_UserSignals_descriptor =
+        internal_static_google_cloud_recaptchaenterprise_v1_FraudSignals_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_recaptchaenterprise_v1_FraudSignals_UserSignals_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recaptchaenterprise_v1_FraudSignals_UserSignals_descriptor,
+            new java.lang.String[] {
+              "ActiveDaysLowerBound", "SyntheticRisk",
+            });
+    internal_static_google_cloud_recaptchaenterprise_v1_FraudSignals_CardSignals_descriptor =
+        internal_static_google_cloud_recaptchaenterprise_v1_FraudSignals_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_recaptchaenterprise_v1_FraudSignals_CardSignals_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recaptchaenterprise_v1_FraudSignals_CardSignals_descriptor,
+            new java.lang.String[] {
+              "CardLabels",
+            });
+    internal_static_google_cloud_recaptchaenterprise_v1_AccountDefenderAssessment_descriptor =
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_recaptchaenterprise_v1_AccountDefenderAssessment_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_AccountDefenderAssessment_descriptor,
@@ -842,7 +1075,7 @@ public final class RecaptchaEnterpriseProto {
               "Labels",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_CreateKeyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_recaptchaenterprise_v1_CreateKeyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_CreateKeyRequest_descriptor,
@@ -850,7 +1083,7 @@ public final class RecaptchaEnterpriseProto {
               "Parent", "Key",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_ListKeysRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_recaptchaenterprise_v1_ListKeysRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_ListKeysRequest_descriptor,
@@ -858,7 +1091,7 @@ public final class RecaptchaEnterpriseProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_ListKeysResponse_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_recaptchaenterprise_v1_ListKeysResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_ListKeysResponse_descriptor,
@@ -866,7 +1099,7 @@ public final class RecaptchaEnterpriseProto {
               "Keys", "NextPageToken",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_RetrieveLegacySecretKeyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_recaptchaenterprise_v1_RetrieveLegacySecretKeyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_RetrieveLegacySecretKeyRequest_descriptor,
@@ -874,7 +1107,7 @@ public final class RecaptchaEnterpriseProto {
               "Key",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_GetKeyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_recaptchaenterprise_v1_GetKeyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_GetKeyRequest_descriptor,
@@ -882,7 +1115,7 @@ public final class RecaptchaEnterpriseProto {
               "Name",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_UpdateKeyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_recaptchaenterprise_v1_UpdateKeyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_UpdateKeyRequest_descriptor,
@@ -890,15 +1123,63 @@ public final class RecaptchaEnterpriseProto {
               "Key", "UpdateMask",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_DeleteKeyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_recaptchaenterprise_v1_DeleteKeyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_DeleteKeyRequest_descriptor,
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_cloud_recaptchaenterprise_v1_CreateFirewallPolicyRequest_descriptor =
+        getDescriptor().getMessageTypes().get(22);
+    internal_static_google_cloud_recaptchaenterprise_v1_CreateFirewallPolicyRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recaptchaenterprise_v1_CreateFirewallPolicyRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "FirewallPolicy",
+            });
+    internal_static_google_cloud_recaptchaenterprise_v1_ListFirewallPoliciesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(23);
+    internal_static_google_cloud_recaptchaenterprise_v1_ListFirewallPoliciesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recaptchaenterprise_v1_ListFirewallPoliciesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_recaptchaenterprise_v1_ListFirewallPoliciesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(24);
+    internal_static_google_cloud_recaptchaenterprise_v1_ListFirewallPoliciesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recaptchaenterprise_v1_ListFirewallPoliciesResponse_descriptor,
+            new java.lang.String[] {
+              "FirewallPolicies", "NextPageToken",
+            });
+    internal_static_google_cloud_recaptchaenterprise_v1_GetFirewallPolicyRequest_descriptor =
+        getDescriptor().getMessageTypes().get(25);
+    internal_static_google_cloud_recaptchaenterprise_v1_GetFirewallPolicyRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recaptchaenterprise_v1_GetFirewallPolicyRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_recaptchaenterprise_v1_UpdateFirewallPolicyRequest_descriptor =
+        getDescriptor().getMessageTypes().get(26);
+    internal_static_google_cloud_recaptchaenterprise_v1_UpdateFirewallPolicyRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recaptchaenterprise_v1_UpdateFirewallPolicyRequest_descriptor,
+            new java.lang.String[] {
+              "FirewallPolicy", "UpdateMask",
+            });
+    internal_static_google_cloud_recaptchaenterprise_v1_DeleteFirewallPolicyRequest_descriptor =
+        getDescriptor().getMessageTypes().get(27);
+    internal_static_google_cloud_recaptchaenterprise_v1_DeleteFirewallPolicyRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recaptchaenterprise_v1_DeleteFirewallPolicyRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
     internal_static_google_cloud_recaptchaenterprise_v1_MigrateKeyRequest_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_recaptchaenterprise_v1_MigrateKeyRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_MigrateKeyRequest_descriptor,
@@ -906,7 +1187,7 @@ public final class RecaptchaEnterpriseProto {
               "Name", "SkipBillingCheck",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_GetMetricsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_recaptchaenterprise_v1_GetMetricsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_GetMetricsRequest_descriptor,
@@ -914,7 +1195,7 @@ public final class RecaptchaEnterpriseProto {
               "Name",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_Metrics_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_recaptchaenterprise_v1_Metrics_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_Metrics_descriptor,
@@ -922,7 +1203,7 @@ public final class RecaptchaEnterpriseProto {
               "Name", "StartTime", "ScoreMetrics", "ChallengeMetrics",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_RetrieveLegacySecretKeyResponse_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_recaptchaenterprise_v1_RetrieveLegacySecretKeyResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_RetrieveLegacySecretKeyResponse_descriptor,
@@ -930,7 +1211,7 @@ public final class RecaptchaEnterpriseProto {
               "LegacySecretKey",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_Key_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_recaptchaenterprise_v1_Key_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_Key_descriptor,
@@ -955,7 +1236,7 @@ public final class RecaptchaEnterpriseProto {
               "Key", "Value",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_TestingOptions_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_recaptchaenterprise_v1_TestingOptions_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_TestingOptions_descriptor,
@@ -963,7 +1244,7 @@ public final class RecaptchaEnterpriseProto {
               "TestingScore", "TestingChallenge",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_WebKeySettings_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_recaptchaenterprise_v1_WebKeySettings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_WebKeySettings_descriptor,
@@ -975,23 +1256,31 @@ public final class RecaptchaEnterpriseProto {
               "ChallengeSecurityPreference",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_AndroidKeySettings_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_recaptchaenterprise_v1_AndroidKeySettings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_AndroidKeySettings_descriptor,
             new java.lang.String[] {
-              "AllowAllPackageNames", "AllowedPackageNames",
+              "AllowAllPackageNames", "AllowedPackageNames", "SupportNonGoogleAppStoreDistribution",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_IOSKeySettings_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_recaptchaenterprise_v1_IOSKeySettings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_IOSKeySettings_descriptor,
             new java.lang.String[] {
-              "AllowAllBundleIds", "AllowedBundleIds",
+              "AllowAllBundleIds", "AllowedBundleIds", "AppleDeveloperId",
+            });
+    internal_static_google_cloud_recaptchaenterprise_v1_AppleDeveloperId_descriptor =
+        getDescriptor().getMessageTypes().get(37);
+    internal_static_google_cloud_recaptchaenterprise_v1_AppleDeveloperId_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recaptchaenterprise_v1_AppleDeveloperId_descriptor,
+            new java.lang.String[] {
+              "PrivateKey", "KeyId", "TeamId",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_ScoreDistribution_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_recaptchaenterprise_v1_ScoreDistribution_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_ScoreDistribution_descriptor,
@@ -1009,7 +1298,7 @@ public final class RecaptchaEnterpriseProto {
               "Key", "Value",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_ScoreMetrics_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_cloud_recaptchaenterprise_v1_ScoreMetrics_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_ScoreMetrics_descriptor,
@@ -1027,15 +1316,83 @@ public final class RecaptchaEnterpriseProto {
               "Key", "Value",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_ChallengeMetrics_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_recaptchaenterprise_v1_ChallengeMetrics_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_ChallengeMetrics_descriptor,
             new java.lang.String[] {
               "PageloadCount", "NocaptchaCount", "FailedCount", "PassedCount",
             });
+    internal_static_google_cloud_recaptchaenterprise_v1_FirewallPolicyAssessment_descriptor =
+        getDescriptor().getMessageTypes().get(41);
+    internal_static_google_cloud_recaptchaenterprise_v1_FirewallPolicyAssessment_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recaptchaenterprise_v1_FirewallPolicyAssessment_descriptor,
+            new java.lang.String[] {
+              "Error", "FirewallPolicy",
+            });
+    internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_descriptor =
+        getDescriptor().getMessageTypes().get(42);
+    internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_descriptor,
+            new java.lang.String[] {
+              "Allow", "Block", "Redirect", "Substitute", "SetHeader", "FirewallActionOneof",
+            });
+    internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_AllowAction_descriptor =
+        internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_AllowAction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_AllowAction_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_BlockAction_descriptor =
+        internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_BlockAction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_BlockAction_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_RedirectAction_descriptor =
+        internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_descriptor
+            .getNestedTypes()
+            .get(2);
+    internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_RedirectAction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_RedirectAction_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_SubstituteAction_descriptor =
+        internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_descriptor
+            .getNestedTypes()
+            .get(3);
+    internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_SubstituteAction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_SubstituteAction_descriptor,
+            new java.lang.String[] {
+              "Path",
+            });
+    internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_SetHeaderAction_descriptor =
+        internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_descriptor
+            .getNestedTypes()
+            .get(4);
+    internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_SetHeaderAction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recaptchaenterprise_v1_FirewallAction_SetHeaderAction_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_recaptchaenterprise_v1_FirewallPolicy_descriptor =
+        getDescriptor().getMessageTypes().get(43);
+    internal_static_google_cloud_recaptchaenterprise_v1_FirewallPolicy_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_recaptchaenterprise_v1_FirewallPolicy_descriptor,
+            new java.lang.String[] {
+              "Name", "Description", "Path", "Condition", "Actions",
+            });
     internal_static_google_cloud_recaptchaenterprise_v1_ListRelatedAccountGroupMembershipsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(44);
     internal_static_google_cloud_recaptchaenterprise_v1_ListRelatedAccountGroupMembershipsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_ListRelatedAccountGroupMembershipsRequest_descriptor,
@@ -1043,7 +1400,7 @@ public final class RecaptchaEnterpriseProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_ListRelatedAccountGroupMembershipsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(45);
     internal_static_google_cloud_recaptchaenterprise_v1_ListRelatedAccountGroupMembershipsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_ListRelatedAccountGroupMembershipsResponse_descriptor,
@@ -1051,7 +1408,7 @@ public final class RecaptchaEnterpriseProto {
               "RelatedAccountGroupMemberships", "NextPageToken",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_ListRelatedAccountGroupsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(46);
     internal_static_google_cloud_recaptchaenterprise_v1_ListRelatedAccountGroupsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_ListRelatedAccountGroupsRequest_descriptor,
@@ -1059,7 +1416,7 @@ public final class RecaptchaEnterpriseProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_ListRelatedAccountGroupsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(47);
     internal_static_google_cloud_recaptchaenterprise_v1_ListRelatedAccountGroupsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_ListRelatedAccountGroupsResponse_descriptor,
@@ -1067,7 +1424,7 @@ public final class RecaptchaEnterpriseProto {
               "RelatedAccountGroups", "NextPageToken",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_SearchRelatedAccountGroupMembershipsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(48);
     internal_static_google_cloud_recaptchaenterprise_v1_SearchRelatedAccountGroupMembershipsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_SearchRelatedAccountGroupMembershipsRequest_descriptor,
@@ -1075,7 +1432,7 @@ public final class RecaptchaEnterpriseProto {
               "Project", "HashedAccountId", "PageSize", "PageToken",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_SearchRelatedAccountGroupMembershipsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(49);
     internal_static_google_cloud_recaptchaenterprise_v1_SearchRelatedAccountGroupMembershipsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_SearchRelatedAccountGroupMembershipsResponse_descriptor,
@@ -1083,7 +1440,7 @@ public final class RecaptchaEnterpriseProto {
               "RelatedAccountGroupMemberships", "NextPageToken",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_RelatedAccountGroupMembership_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(50);
     internal_static_google_cloud_recaptchaenterprise_v1_RelatedAccountGroupMembership_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_RelatedAccountGroupMembership_descriptor,
@@ -1091,7 +1448,7 @@ public final class RecaptchaEnterpriseProto {
               "Name", "HashedAccountId",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_RelatedAccountGroup_descriptor =
-        getDescriptor().getMessageTypes().get(40);
+        getDescriptor().getMessageTypes().get(51);
     internal_static_google_cloud_recaptchaenterprise_v1_RelatedAccountGroup_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_RelatedAccountGroup_descriptor,
@@ -1099,7 +1456,7 @@ public final class RecaptchaEnterpriseProto {
               "Name",
             });
     internal_static_google_cloud_recaptchaenterprise_v1_WafSettings_descriptor =
-        getDescriptor().getMessageTypes().get(41);
+        getDescriptor().getMessageTypes().get(52);
     internal_static_google_cloud_recaptchaenterprise_v1_WafSettings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_recaptchaenterprise_v1_WafSettings_descriptor,
@@ -1124,6 +1481,7 @@ public final class RecaptchaEnterpriseProto {
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.rpc.StatusProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -16,6 +16,7 @@
 
 package com.google.cloud.recaptchaenterprise.v1.stub;
 
+import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListFirewallPoliciesPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListKeysPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupMembershipsPagedResponse;
 import static com.google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseServiceClient.ListRelatedAccountGroupsPagedResponse;
@@ -28,11 +29,17 @@ import com.google.recaptchaenterprise.v1.AnnotateAssessmentRequest;
 import com.google.recaptchaenterprise.v1.AnnotateAssessmentResponse;
 import com.google.recaptchaenterprise.v1.Assessment;
 import com.google.recaptchaenterprise.v1.CreateAssessmentRequest;
+import com.google.recaptchaenterprise.v1.CreateFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.CreateKeyRequest;
+import com.google.recaptchaenterprise.v1.DeleteFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.DeleteKeyRequest;
+import com.google.recaptchaenterprise.v1.FirewallPolicy;
+import com.google.recaptchaenterprise.v1.GetFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.GetKeyRequest;
 import com.google.recaptchaenterprise.v1.GetMetricsRequest;
 import com.google.recaptchaenterprise.v1.Key;
+import com.google.recaptchaenterprise.v1.ListFirewallPoliciesRequest;
+import com.google.recaptchaenterprise.v1.ListFirewallPoliciesResponse;
 import com.google.recaptchaenterprise.v1.ListKeysRequest;
 import com.google.recaptchaenterprise.v1.ListKeysResponse;
 import com.google.recaptchaenterprise.v1.ListRelatedAccountGroupMembershipsRequest;
@@ -45,6 +52,7 @@ import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyRequest;
 import com.google.recaptchaenterprise.v1.RetrieveLegacySecretKeyResponse;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsRequest;
 import com.google.recaptchaenterprise.v1.SearchRelatedAccountGroupMembershipsResponse;
+import com.google.recaptchaenterprise.v1.UpdateFirewallPolicyRequest;
 import com.google.recaptchaenterprise.v1.UpdateKeyRequest;
 import javax.annotation.Generated;
 
@@ -101,6 +109,32 @@ public abstract class RecaptchaEnterpriseServiceStub implements BackgroundResour
 
   public UnaryCallable<GetMetricsRequest, Metrics> getMetricsCallable() {
     throw new UnsupportedOperationException("Not implemented: getMetricsCallable()");
+  }
+
+  public UnaryCallable<CreateFirewallPolicyRequest, FirewallPolicy> createFirewallPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: createFirewallPolicyCallable()");
+  }
+
+  public UnaryCallable<ListFirewallPoliciesRequest, ListFirewallPoliciesPagedResponse>
+      listFirewallPoliciesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listFirewallPoliciesPagedCallable()");
+  }
+
+  public UnaryCallable<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse>
+      listFirewallPoliciesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listFirewallPoliciesCallable()");
+  }
+
+  public UnaryCallable<GetFirewallPolicyRequest, FirewallPolicy> getFirewallPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getFirewallPolicyCallable()");
+  }
+
+  public UnaryCallable<UpdateFirewallPolicyRequest, FirewallPolicy> updateFirewallPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateFirewallPolicyCallable()");
+  }
+
+  public UnaryCallable<DeleteFirewallPolicyRequest, Empty> deleteFirewallPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteFirewallPolicyCallable()");
   }
 
   public UnaryCallable<ListRelatedAccountGroupsRequest, ListRelatedAccountGroupsPagedResponse>

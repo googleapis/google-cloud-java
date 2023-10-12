@@ -187,7 +187,7 @@ public final class CreateTensorboardExperimentRequest extends com.google.protobu
    * final component of the Tensorboard experiment's resource name.
    *
    * This value should be 1-128 characters, and valid characters
-   * are /[a-z][0-9]-/.
+   * are `/[a-z][0-9]-/`.
    * </pre>
    *
    * <code>string tensorboard_experiment_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -214,7 +214,7 @@ public final class CreateTensorboardExperimentRequest extends com.google.protobu
    * final component of the Tensorboard experiment's resource name.
    *
    * This value should be 1-128 characters, and valid characters
-   * are /[a-z][0-9]-/.
+   * are `/[a-z][0-9]-/`.
    * </pre>
    *
    * <code>string tensorboard_experiment_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -968,7 +968,7 @@ public final class CreateTensorboardExperimentRequest extends com.google.protobu
      * final component of the Tensorboard experiment's resource name.
      *
      * This value should be 1-128 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `/[a-z][0-9]-/`.
      * </pre>
      *
      * <code>string tensorboard_experiment_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -994,7 +994,7 @@ public final class CreateTensorboardExperimentRequest extends com.google.protobu
      * final component of the Tensorboard experiment's resource name.
      *
      * This value should be 1-128 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `/[a-z][0-9]-/`.
      * </pre>
      *
      * <code>string tensorboard_experiment_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1020,7 +1020,7 @@ public final class CreateTensorboardExperimentRequest extends com.google.protobu
      * final component of the Tensorboard experiment's resource name.
      *
      * This value should be 1-128 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `/[a-z][0-9]-/`.
      * </pre>
      *
      * <code>string tensorboard_experiment_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1045,7 +1045,7 @@ public final class CreateTensorboardExperimentRequest extends com.google.protobu
      * final component of the Tensorboard experiment's resource name.
      *
      * This value should be 1-128 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `/[a-z][0-9]-/`.
      * </pre>
      *
      * <code>string tensorboard_experiment_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1066,7 +1066,7 @@ public final class CreateTensorboardExperimentRequest extends com.google.protobu
      * final component of the Tensorboard experiment's resource name.
      *
      * This value should be 1-128 characters, and valid characters
-     * are /[a-z][0-9]-/.
+     * are `/[a-z][0-9]-/`.
      * </pre>
      *
      * <code>string tensorboard_experiment_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>

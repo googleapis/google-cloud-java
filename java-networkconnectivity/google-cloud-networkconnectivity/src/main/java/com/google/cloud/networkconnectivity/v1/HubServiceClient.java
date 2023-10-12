@@ -26,9 +26,18 @@ import com.google.api.gax.paging.AbstractPagedListResponse;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.networkconnectivity.v1.stub.HubServiceStub;
 import com.google.cloud.networkconnectivity.v1.stub.HubServiceStubSettings;
 import com.google.common.util.concurrent.MoreExecutors;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.OperationsClient;
 import com.google.protobuf.Empty;
@@ -868,6 +877,184 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists the Network Connectivity Center spokes associated with a specified hub and location. The
+   * list includes both spokes that are attached to the hub and spokes that have been proposed but
+   * not yet accepted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   HubName name = HubName.of("[PROJECT]", "[HUB]");
+   *   for (Spoke element : hubServiceClient.listHubSpokes(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListHubSpokesPagedResponse listHubSpokes(HubName name) {
+    ListHubSpokesRequest request =
+        ListHubSpokesRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return listHubSpokes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Network Connectivity Center spokes associated with a specified hub and location. The
+   * list includes both spokes that are attached to the hub and spokes that have been proposed but
+   * not yet accepted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = HubName.of("[PROJECT]", "[HUB]").toString();
+   *   for (Spoke element : hubServiceClient.listHubSpokes(name).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListHubSpokesPagedResponse listHubSpokes(String name) {
+    ListHubSpokesRequest request = ListHubSpokesRequest.newBuilder().setName(name).build();
+    return listHubSpokes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Network Connectivity Center spokes associated with a specified hub and location. The
+   * list includes both spokes that are attached to the hub and spokes that have been proposed but
+   * not yet accepted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListHubSpokesRequest request =
+   *       ListHubSpokesRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .addAllSpokeLocations(new ArrayList<String>())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Spoke element : hubServiceClient.listHubSpokes(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListHubSpokesPagedResponse listHubSpokes(ListHubSpokesRequest request) {
+    return listHubSpokesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Network Connectivity Center spokes associated with a specified hub and location. The
+   * list includes both spokes that are attached to the hub and spokes that have been proposed but
+   * not yet accepted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListHubSpokesRequest request =
+   *       ListHubSpokesRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .addAllSpokeLocations(new ArrayList<String>())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Spoke> future = hubServiceClient.listHubSpokesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Spoke element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListHubSpokesRequest, ListHubSpokesPagedResponse>
+      listHubSpokesPagedCallable() {
+    return stub.listHubSpokesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists the Network Connectivity Center spokes associated with a specified hub and location. The
+   * list includes both spokes that are attached to the hub and spokes that have been proposed but
+   * not yet accepted.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListHubSpokesRequest request =
+   *       ListHubSpokesRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .addAllSpokeLocations(new ArrayList<String>())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListHubSpokesResponse response = hubServiceClient.listHubSpokesCallable().call(request);
+   *     for (Spoke element : response.getSpokesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListHubSpokesRequest, ListHubSpokesResponse> listHubSpokesCallable() {
+    return stub.listHubSpokesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists the Network Connectivity Center spokes in a specified project and location.
    *
    * <p>Sample code:
@@ -1430,6 +1617,463 @@ public class HubServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Rejects a Network Connectivity Center spoke from being attached to a hub. If the spoke was
+   * previously in the `ACTIVE` state, it transitions to the `INACTIVE` state and is no longer able
+   * to connect to other spokes that are attached to the hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   HubName name = HubName.of("[PROJECT]", "[HUB]");
+   *   SpokeName spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+   *   RejectHubSpokeResponse response = hubServiceClient.rejectHubSpokeAsync(name, spokeUri).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub from which to reject the spoke.
+   * @param spokeUri Required. The URI of the spoke to reject from the hub.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RejectHubSpokeResponse, OperationMetadata> rejectHubSpokeAsync(
+      HubName name, SpokeName spokeUri) {
+    RejectHubSpokeRequest request =
+        RejectHubSpokeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setSpokeUri(spokeUri == null ? null : spokeUri.toString())
+            .build();
+    return rejectHubSpokeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects a Network Connectivity Center spoke from being attached to a hub. If the spoke was
+   * previously in the `ACTIVE` state, it transitions to the `INACTIVE` state and is no longer able
+   * to connect to other spokes that are attached to the hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   HubName name = HubName.of("[PROJECT]", "[HUB]");
+   *   String spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString();
+   *   RejectHubSpokeResponse response = hubServiceClient.rejectHubSpokeAsync(name, spokeUri).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub from which to reject the spoke.
+   * @param spokeUri Required. The URI of the spoke to reject from the hub.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RejectHubSpokeResponse, OperationMetadata> rejectHubSpokeAsync(
+      HubName name, String spokeUri) {
+    RejectHubSpokeRequest request =
+        RejectHubSpokeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setSpokeUri(spokeUri)
+            .build();
+    return rejectHubSpokeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects a Network Connectivity Center spoke from being attached to a hub. If the spoke was
+   * previously in the `ACTIVE` state, it transitions to the `INACTIVE` state and is no longer able
+   * to connect to other spokes that are attached to the hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = HubName.of("[PROJECT]", "[HUB]").toString();
+   *   SpokeName spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+   *   RejectHubSpokeResponse response = hubServiceClient.rejectHubSpokeAsync(name, spokeUri).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub from which to reject the spoke.
+   * @param spokeUri Required. The URI of the spoke to reject from the hub.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RejectHubSpokeResponse, OperationMetadata> rejectHubSpokeAsync(
+      String name, SpokeName spokeUri) {
+    RejectHubSpokeRequest request =
+        RejectHubSpokeRequest.newBuilder()
+            .setName(name)
+            .setSpokeUri(spokeUri == null ? null : spokeUri.toString())
+            .build();
+    return rejectHubSpokeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects a Network Connectivity Center spoke from being attached to a hub. If the spoke was
+   * previously in the `ACTIVE` state, it transitions to the `INACTIVE` state and is no longer able
+   * to connect to other spokes that are attached to the hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = HubName.of("[PROJECT]", "[HUB]").toString();
+   *   String spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString();
+   *   RejectHubSpokeResponse response = hubServiceClient.rejectHubSpokeAsync(name, spokeUri).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub from which to reject the spoke.
+   * @param spokeUri Required. The URI of the spoke to reject from the hub.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RejectHubSpokeResponse, OperationMetadata> rejectHubSpokeAsync(
+      String name, String spokeUri) {
+    RejectHubSpokeRequest request =
+        RejectHubSpokeRequest.newBuilder().setName(name).setSpokeUri(spokeUri).build();
+    return rejectHubSpokeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects a Network Connectivity Center spoke from being attached to a hub. If the spoke was
+   * previously in the `ACTIVE` state, it transitions to the `INACTIVE` state and is no longer able
+   * to connect to other spokes that are attached to the hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   RejectHubSpokeRequest request =
+   *       RejectHubSpokeRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setSpokeUri(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setDetails("details1557721666")
+   *           .build();
+   *   RejectHubSpokeResponse response = hubServiceClient.rejectHubSpokeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<RejectHubSpokeResponse, OperationMetadata> rejectHubSpokeAsync(
+      RejectHubSpokeRequest request) {
+    return rejectHubSpokeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects a Network Connectivity Center spoke from being attached to a hub. If the spoke was
+   * previously in the `ACTIVE` state, it transitions to the `INACTIVE` state and is no longer able
+   * to connect to other spokes that are attached to the hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   RejectHubSpokeRequest request =
+   *       RejectHubSpokeRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setSpokeUri(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setDetails("details1557721666")
+   *           .build();
+   *   OperationFuture<RejectHubSpokeResponse, OperationMetadata> future =
+   *       hubServiceClient.rejectHubSpokeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   RejectHubSpokeResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<RejectHubSpokeRequest, RejectHubSpokeResponse, OperationMetadata>
+      rejectHubSpokeOperationCallable() {
+    return stub.rejectHubSpokeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Rejects a Network Connectivity Center spoke from being attached to a hub. If the spoke was
+   * previously in the `ACTIVE` state, it transitions to the `INACTIVE` state and is no longer able
+   * to connect to other spokes that are attached to the hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   RejectHubSpokeRequest request =
+   *       RejectHubSpokeRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setSpokeUri(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .setDetails("details1557721666")
+   *           .build();
+   *   ApiFuture<Operation> future = hubServiceClient.rejectHubSpokeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RejectHubSpokeRequest, Operation> rejectHubSpokeCallable() {
+    return stub.rejectHubSpokeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts a proposal to attach a Network Connectivity Center spoke to a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   HubName name = HubName.of("[PROJECT]", "[HUB]");
+   *   SpokeName spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+   *   AcceptHubSpokeResponse response = hubServiceClient.acceptHubSpokeAsync(name, spokeUri).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub into which to accept the spoke.
+   * @param spokeUri Required. The URI of the spoke to accept into the hub.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AcceptHubSpokeResponse, OperationMetadata> acceptHubSpokeAsync(
+      HubName name, SpokeName spokeUri) {
+    AcceptHubSpokeRequest request =
+        AcceptHubSpokeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setSpokeUri(spokeUri == null ? null : spokeUri.toString())
+            .build();
+    return acceptHubSpokeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts a proposal to attach a Network Connectivity Center spoke to a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   HubName name = HubName.of("[PROJECT]", "[HUB]");
+   *   String spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString();
+   *   AcceptHubSpokeResponse response = hubServiceClient.acceptHubSpokeAsync(name, spokeUri).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub into which to accept the spoke.
+   * @param spokeUri Required. The URI of the spoke to accept into the hub.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AcceptHubSpokeResponse, OperationMetadata> acceptHubSpokeAsync(
+      HubName name, String spokeUri) {
+    AcceptHubSpokeRequest request =
+        AcceptHubSpokeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setSpokeUri(spokeUri)
+            .build();
+    return acceptHubSpokeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts a proposal to attach a Network Connectivity Center spoke to a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = HubName.of("[PROJECT]", "[HUB]").toString();
+   *   SpokeName spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]");
+   *   AcceptHubSpokeResponse response = hubServiceClient.acceptHubSpokeAsync(name, spokeUri).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub into which to accept the spoke.
+   * @param spokeUri Required. The URI of the spoke to accept into the hub.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AcceptHubSpokeResponse, OperationMetadata> acceptHubSpokeAsync(
+      String name, SpokeName spokeUri) {
+    AcceptHubSpokeRequest request =
+        AcceptHubSpokeRequest.newBuilder()
+            .setName(name)
+            .setSpokeUri(spokeUri == null ? null : spokeUri.toString())
+            .build();
+    return acceptHubSpokeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts a proposal to attach a Network Connectivity Center spoke to a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = HubName.of("[PROJECT]", "[HUB]").toString();
+   *   String spokeUri = SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString();
+   *   AcceptHubSpokeResponse response = hubServiceClient.acceptHubSpokeAsync(name, spokeUri).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the hub into which to accept the spoke.
+   * @param spokeUri Required. The URI of the spoke to accept into the hub.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AcceptHubSpokeResponse, OperationMetadata> acceptHubSpokeAsync(
+      String name, String spokeUri) {
+    AcceptHubSpokeRequest request =
+        AcceptHubSpokeRequest.newBuilder().setName(name).setSpokeUri(spokeUri).build();
+    return acceptHubSpokeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts a proposal to attach a Network Connectivity Center spoke to a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   AcceptHubSpokeRequest request =
+   *       AcceptHubSpokeRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setSpokeUri(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   AcceptHubSpokeResponse response = hubServiceClient.acceptHubSpokeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<AcceptHubSpokeResponse, OperationMetadata> acceptHubSpokeAsync(
+      AcceptHubSpokeRequest request) {
+    return acceptHubSpokeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts a proposal to attach a Network Connectivity Center spoke to a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   AcceptHubSpokeRequest request =
+   *       AcceptHubSpokeRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setSpokeUri(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<AcceptHubSpokeResponse, OperationMetadata> future =
+   *       hubServiceClient.acceptHubSpokeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   AcceptHubSpokeResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<AcceptHubSpokeRequest, AcceptHubSpokeResponse, OperationMetadata>
+      acceptHubSpokeOperationCallable() {
+    return stub.acceptHubSpokeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Accepts a proposal to attach a Network Connectivity Center spoke to a hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   AcceptHubSpokeRequest request =
+   *       AcceptHubSpokeRequest.newBuilder()
+   *           .setName(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setSpokeUri(SpokeName.of("[PROJECT]", "[LOCATION]", "[SPOKE]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future = hubServiceClient.acceptHubSpokeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AcceptHubSpokeRequest, Operation> acceptHubSpokeCallable() {
+    return stub.acceptHubSpokeCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Deletes a Network Connectivity Center spoke.
    *
    * <p>Sample code:
@@ -1569,6 +2213,1173 @@ public class HubServiceClient implements BackgroundResource {
     return stub.deleteSpokeCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about a Network Connectivity Center route table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   RouteTableName name = RouteTableName.of("[PROJECT]", "[HUB]", "[ROUTE_TABLE]");
+   *   RouteTable response = hubServiceClient.getRouteTable(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the route table resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RouteTable getRouteTable(RouteTableName name) {
+    GetRouteTableRequest request =
+        GetRouteTableRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getRouteTable(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about a Network Connectivity Center route table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = RouteTableName.of("[PROJECT]", "[HUB]", "[ROUTE_TABLE]").toString();
+   *   RouteTable response = hubServiceClient.getRouteTable(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the route table resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RouteTable getRouteTable(String name) {
+    GetRouteTableRequest request = GetRouteTableRequest.newBuilder().setName(name).build();
+    return getRouteTable(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about a Network Connectivity Center route table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   GetRouteTableRequest request =
+   *       GetRouteTableRequest.newBuilder()
+   *           .setName(RouteTableName.of("[PROJECT]", "[HUB]", "[ROUTE_TABLE]").toString())
+   *           .build();
+   *   RouteTable response = hubServiceClient.getRouteTable(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RouteTable getRouteTable(GetRouteTableRequest request) {
+    return getRouteTableCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about a Network Connectivity Center route table.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   GetRouteTableRequest request =
+   *       GetRouteTableRequest.newBuilder()
+   *           .setName(RouteTableName.of("[PROJECT]", "[HUB]", "[ROUTE_TABLE]").toString())
+   *           .build();
+   *   ApiFuture<RouteTable> future = hubServiceClient.getRouteTableCallable().futureCall(request);
+   *   // Do something.
+   *   RouteTable response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetRouteTableRequest, RouteTable> getRouteTableCallable() {
+    return stub.getRouteTableCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about the specified route.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   HubRouteName name = HubRouteName.of("[PROJECT]", "[HUB]", "[ROUTE_TABLE]", "[ROUTE]");
+   *   Route response = hubServiceClient.getRoute(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the route resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Route getRoute(HubRouteName name) {
+    GetRouteRequest request =
+        GetRouteRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getRoute(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about the specified route.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = HubRouteName.of("[PROJECT]", "[HUB]", "[ROUTE_TABLE]", "[ROUTE]").toString();
+   *   Route response = hubServiceClient.getRoute(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the route resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Route getRoute(String name) {
+    GetRouteRequest request = GetRouteRequest.newBuilder().setName(name).build();
+    return getRoute(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about the specified route.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   GetRouteRequest request =
+   *       GetRouteRequest.newBuilder()
+   *           .setName(HubRouteName.of("[PROJECT]", "[HUB]", "[ROUTE_TABLE]", "[ROUTE]").toString())
+   *           .build();
+   *   Route response = hubServiceClient.getRoute(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Route getRoute(GetRouteRequest request) {
+    return getRouteCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about the specified route.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   GetRouteRequest request =
+   *       GetRouteRequest.newBuilder()
+   *           .setName(HubRouteName.of("[PROJECT]", "[HUB]", "[ROUTE_TABLE]", "[ROUTE]").toString())
+   *           .build();
+   *   ApiFuture<Route> future = hubServiceClient.getRouteCallable().futureCall(request);
+   *   // Do something.
+   *   Route response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetRouteRequest, Route> getRouteCallable() {
+    return stub.getRouteCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists routes in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   RouteTableName parent = RouteTableName.of("[PROJECT]", "[HUB]", "[ROUTE_TABLE]");
+   *   for (Route element : hubServiceClient.listRoutes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource's name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRoutesPagedResponse listRoutes(RouteTableName parent) {
+    ListRoutesRequest request =
+        ListRoutesRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listRoutes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists routes in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String parent = RouteTableName.of("[PROJECT]", "[HUB]", "[ROUTE_TABLE]").toString();
+   *   for (Route element : hubServiceClient.listRoutes(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource's name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRoutesPagedResponse listRoutes(String parent) {
+    ListRoutesRequest request = ListRoutesRequest.newBuilder().setParent(parent).build();
+    return listRoutes(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists routes in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListRoutesRequest request =
+   *       ListRoutesRequest.newBuilder()
+   *           .setParent(RouteTableName.of("[PROJECT]", "[HUB]", "[ROUTE_TABLE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Route element : hubServiceClient.listRoutes(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRoutesPagedResponse listRoutes(ListRoutesRequest request) {
+    return listRoutesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists routes in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListRoutesRequest request =
+   *       ListRoutesRequest.newBuilder()
+   *           .setParent(RouteTableName.of("[PROJECT]", "[HUB]", "[ROUTE_TABLE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Route> future = hubServiceClient.listRoutesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Route element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRoutesRequest, ListRoutesPagedResponse> listRoutesPagedCallable() {
+    return stub.listRoutesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists routes in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListRoutesRequest request =
+   *       ListRoutesRequest.newBuilder()
+   *           .setParent(RouteTableName.of("[PROJECT]", "[HUB]", "[ROUTE_TABLE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListRoutesResponse response = hubServiceClient.listRoutesCallable().call(request);
+   *     for (Route element : response.getRoutesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRoutesRequest, ListRoutesResponse> listRoutesCallable() {
+    return stub.listRoutesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists route tables in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   HubName parent = HubName.of("[PROJECT]", "[HUB]");
+   *   for (RouteTable element : hubServiceClient.listRouteTables(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource's name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRouteTablesPagedResponse listRouteTables(HubName parent) {
+    ListRouteTablesRequest request =
+        ListRouteTablesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listRouteTables(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists route tables in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String parent = HubName.of("[PROJECT]", "[HUB]").toString();
+   *   for (RouteTable element : hubServiceClient.listRouteTables(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource's name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRouteTablesPagedResponse listRouteTables(String parent) {
+    ListRouteTablesRequest request = ListRouteTablesRequest.newBuilder().setParent(parent).build();
+    return listRouteTables(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists route tables in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListRouteTablesRequest request =
+   *       ListRouteTablesRequest.newBuilder()
+   *           .setParent(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (RouteTable element : hubServiceClient.listRouteTables(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRouteTablesPagedResponse listRouteTables(ListRouteTablesRequest request) {
+    return listRouteTablesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists route tables in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListRouteTablesRequest request =
+   *       ListRouteTablesRequest.newBuilder()
+   *           .setParent(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<RouteTable> future =
+   *       hubServiceClient.listRouteTablesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (RouteTable element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRouteTablesRequest, ListRouteTablesPagedResponse>
+      listRouteTablesPagedCallable() {
+    return stub.listRouteTablesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists route tables in a given project.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListRouteTablesRequest request =
+   *       ListRouteTablesRequest.newBuilder()
+   *           .setParent(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListRouteTablesResponse response = hubServiceClient.listRouteTablesCallable().call(request);
+   *     for (RouteTable element : response.getRouteTablesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListRouteTablesRequest, ListRouteTablesResponse>
+      listRouteTablesCallable() {
+    return stub.listRouteTablesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about a Network Connectivity Center group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   GroupName name = GroupName.of("[PROJECT]", "[HUB]", "[GROUP]");
+   *   Group response = hubServiceClient.getGroup(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the route table resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Group getGroup(GroupName name) {
+    GetGroupRequest request =
+        GetGroupRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about a Network Connectivity Center group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String name = GroupName.of("[PROJECT]", "[HUB]", "[GROUP]").toString();
+   *   Group response = hubServiceClient.getGroup(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the route table resource.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Group getGroup(String name) {
+    GetGroupRequest request = GetGroupRequest.newBuilder().setName(name).build();
+    return getGroup(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about a Network Connectivity Center group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   GetGroupRequest request =
+   *       GetGroupRequest.newBuilder()
+   *           .setName(GroupName.of("[PROJECT]", "[HUB]", "[GROUP]").toString())
+   *           .build();
+   *   Group response = hubServiceClient.getGroup(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Group getGroup(GetGroupRequest request) {
+    return getGroupCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets details about a Network Connectivity Center group.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   GetGroupRequest request =
+   *       GetGroupRequest.newBuilder()
+   *           .setName(GroupName.of("[PROJECT]", "[HUB]", "[GROUP]").toString())
+   *           .build();
+   *   ApiFuture<Group> future = hubServiceClient.getGroupCallable().futureCall(request);
+   *   // Do something.
+   *   Group response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetGroupRequest, Group> getGroupCallable() {
+    return stub.getGroupCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists groups in a given hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   HubName parent = HubName.of("[PROJECT]", "[HUB]");
+   *   for (Group element : hubServiceClient.listGroups(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource's name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListGroupsPagedResponse listGroups(HubName parent) {
+    ListGroupsRequest request =
+        ListGroupsRequest.newBuilder().setParent(parent == null ? null : parent.toString()).build();
+    return listGroups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists groups in a given hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   String parent = HubName.of("[PROJECT]", "[HUB]").toString();
+   *   for (Group element : hubServiceClient.listGroups(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource's name.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListGroupsPagedResponse listGroups(String parent) {
+    ListGroupsRequest request = ListGroupsRequest.newBuilder().setParent(parent).build();
+    return listGroups(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists groups in a given hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListGroupsRequest request =
+   *       ListGroupsRequest.newBuilder()
+   *           .setParent(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (Group element : hubServiceClient.listGroups(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListGroupsPagedResponse listGroups(ListGroupsRequest request) {
+    return listGroupsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists groups in a given hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListGroupsRequest request =
+   *       ListGroupsRequest.newBuilder()
+   *           .setParent(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<Group> future = hubServiceClient.listGroupsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Group element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListGroupsRequest, ListGroupsPagedResponse> listGroupsPagedCallable() {
+    return stub.listGroupsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists groups in a given hub.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListGroupsRequest request =
+   *       ListGroupsRequest.newBuilder()
+   *           .setParent(HubName.of("[PROJECT]", "[HUB]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListGroupsResponse response = hubServiceClient.listGroupsCallable().call(request);
+   *     for (Group element : response.getGroupsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListGroupsRequest, ListGroupsResponse> listGroupsCallable() {
+    return stub.listGroupsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (Location element : hubServiceClient.listLocations(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListLocationsPagedResponse listLocations(ListLocationsRequest request) {
+    return listLocationsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<Location> future =
+   *       hubServiceClient.listLocationsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (Location element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return stub.listLocationsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists information about the supported locations for this service.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   ListLocationsRequest request =
+   *       ListLocationsRequest.newBuilder()
+   *           .setName("name3373707")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListLocationsResponse response = hubServiceClient.listLocationsCallable().call(request);
+   *     for (Location element : response.getLocationsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return stub.listLocationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   Location response = hubServiceClient.getLocation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Location getLocation(GetLocationRequest request) {
+    return getLocationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets information about a location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   GetLocationRequest request = GetLocationRequest.newBuilder().setName("name3373707").build();
+   *   ApiFuture<Location> future = hubServiceClient.getLocationCallable().futureCall(request);
+   *   // Do something.
+   *   Location response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return stub.getLocationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(GroupName.of("[PROJECT]", "[HUB]", "[GROUP]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   Policy response = hubServiceClient.setIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy setIamPolicy(SetIamPolicyRequest request) {
+    return setIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Sets the access control policy on the specified resource. Replacesany existing policy.
+   *
+   * <p>Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED`errors.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   SetIamPolicyRequest request =
+   *       SetIamPolicyRequest.newBuilder()
+   *           .setResource(GroupName.of("[PROJECT]", "[HUB]", "[GROUP]").toString())
+   *           .setPolicy(Policy.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = hubServiceClient.setIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    return stub.setIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(GroupName.of("[PROJECT]", "[HUB]", "[GROUP]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   Policy response = hubServiceClient.getIamPolicy(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Policy getIamPolicy(GetIamPolicyRequest request) {
+    return getIamPolicyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets the access control policy for a resource. Returns an empty policyif the resource exists
+   * and does not have a policy set.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   GetIamPolicyRequest request =
+   *       GetIamPolicyRequest.newBuilder()
+   *           .setResource(GroupName.of("[PROJECT]", "[HUB]", "[GROUP]").toString())
+   *           .setOptions(GetPolicyOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Policy> future = hubServiceClient.getIamPolicyCallable().futureCall(request);
+   *   // Do something.
+   *   Policy response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    return stub.getIamPolicyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(GroupName.of("[PROJECT]", "[HUB]", "[GROUP]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   TestIamPermissionsResponse response = hubServiceClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestIamPermissionsResponse testIamPermissions(TestIamPermissionsRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource. If theresource does not exist,
+   * this will return an empty set ofpermissions, not a `NOT_FOUND` error.
+   *
+   * <p>Note: This operation is designed to be used for buildingpermission-aware UIs and
+   * command-line tools, not for authorizationchecking. This operation may "fail open" without
+   * warning.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (HubServiceClient hubServiceClient = HubServiceClient.create()) {
+   *   TestIamPermissionsRequest request =
+   *       TestIamPermissionsRequest.newBuilder()
+   *           .setResource(GroupName.of("[PROJECT]", "[HUB]", "[GROUP]").toString())
+   *           .addAllPermissions(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<TestIamPermissionsResponse> future =
+   *       hubServiceClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestIamPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -1662,6 +3473,81 @@ public class HubServiceClient implements BackgroundResource {
     }
   }
 
+  public static class ListHubSpokesPagedResponse
+      extends AbstractPagedListResponse<
+          ListHubSpokesRequest,
+          ListHubSpokesResponse,
+          Spoke,
+          ListHubSpokesPage,
+          ListHubSpokesFixedSizeCollection> {
+
+    public static ApiFuture<ListHubSpokesPagedResponse> createAsync(
+        PageContext<ListHubSpokesRequest, ListHubSpokesResponse, Spoke> context,
+        ApiFuture<ListHubSpokesResponse> futureResponse) {
+      ApiFuture<ListHubSpokesPage> futurePage =
+          ListHubSpokesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListHubSpokesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListHubSpokesPagedResponse(ListHubSpokesPage page) {
+      super(page, ListHubSpokesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListHubSpokesPage
+      extends AbstractPage<ListHubSpokesRequest, ListHubSpokesResponse, Spoke, ListHubSpokesPage> {
+
+    private ListHubSpokesPage(
+        PageContext<ListHubSpokesRequest, ListHubSpokesResponse, Spoke> context,
+        ListHubSpokesResponse response) {
+      super(context, response);
+    }
+
+    private static ListHubSpokesPage createEmptyPage() {
+      return new ListHubSpokesPage(null, null);
+    }
+
+    @Override
+    protected ListHubSpokesPage createPage(
+        PageContext<ListHubSpokesRequest, ListHubSpokesResponse, Spoke> context,
+        ListHubSpokesResponse response) {
+      return new ListHubSpokesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListHubSpokesPage> createPageAsync(
+        PageContext<ListHubSpokesRequest, ListHubSpokesResponse, Spoke> context,
+        ApiFuture<ListHubSpokesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListHubSpokesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListHubSpokesRequest,
+          ListHubSpokesResponse,
+          Spoke,
+          ListHubSpokesPage,
+          ListHubSpokesFixedSizeCollection> {
+
+    private ListHubSpokesFixedSizeCollection(List<ListHubSpokesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListHubSpokesFixedSizeCollection createEmptyCollection() {
+      return new ListHubSpokesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListHubSpokesFixedSizeCollection createCollection(
+        List<ListHubSpokesPage> pages, int collectionSize) {
+      return new ListHubSpokesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
   public static class ListSpokesPagedResponse
       extends AbstractPagedListResponse<
           ListSpokesRequest,
@@ -1732,6 +3618,305 @@ public class HubServiceClient implements BackgroundResource {
     protected ListSpokesFixedSizeCollection createCollection(
         List<ListSpokesPage> pages, int collectionSize) {
       return new ListSpokesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListRoutesPagedResponse
+      extends AbstractPagedListResponse<
+          ListRoutesRequest,
+          ListRoutesResponse,
+          Route,
+          ListRoutesPage,
+          ListRoutesFixedSizeCollection> {
+
+    public static ApiFuture<ListRoutesPagedResponse> createAsync(
+        PageContext<ListRoutesRequest, ListRoutesResponse, Route> context,
+        ApiFuture<ListRoutesResponse> futureResponse) {
+      ApiFuture<ListRoutesPage> futurePage =
+          ListRoutesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListRoutesPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListRoutesPagedResponse(ListRoutesPage page) {
+      super(page, ListRoutesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListRoutesPage
+      extends AbstractPage<ListRoutesRequest, ListRoutesResponse, Route, ListRoutesPage> {
+
+    private ListRoutesPage(
+        PageContext<ListRoutesRequest, ListRoutesResponse, Route> context,
+        ListRoutesResponse response) {
+      super(context, response);
+    }
+
+    private static ListRoutesPage createEmptyPage() {
+      return new ListRoutesPage(null, null);
+    }
+
+    @Override
+    protected ListRoutesPage createPage(
+        PageContext<ListRoutesRequest, ListRoutesResponse, Route> context,
+        ListRoutesResponse response) {
+      return new ListRoutesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListRoutesPage> createPageAsync(
+        PageContext<ListRoutesRequest, ListRoutesResponse, Route> context,
+        ApiFuture<ListRoutesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListRoutesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRoutesRequest,
+          ListRoutesResponse,
+          Route,
+          ListRoutesPage,
+          ListRoutesFixedSizeCollection> {
+
+    private ListRoutesFixedSizeCollection(List<ListRoutesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListRoutesFixedSizeCollection createEmptyCollection() {
+      return new ListRoutesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListRoutesFixedSizeCollection createCollection(
+        List<ListRoutesPage> pages, int collectionSize) {
+      return new ListRoutesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListRouteTablesPagedResponse
+      extends AbstractPagedListResponse<
+          ListRouteTablesRequest,
+          ListRouteTablesResponse,
+          RouteTable,
+          ListRouteTablesPage,
+          ListRouteTablesFixedSizeCollection> {
+
+    public static ApiFuture<ListRouteTablesPagedResponse> createAsync(
+        PageContext<ListRouteTablesRequest, ListRouteTablesResponse, RouteTable> context,
+        ApiFuture<ListRouteTablesResponse> futureResponse) {
+      ApiFuture<ListRouteTablesPage> futurePage =
+          ListRouteTablesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListRouteTablesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListRouteTablesPagedResponse(ListRouteTablesPage page) {
+      super(page, ListRouteTablesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListRouteTablesPage
+      extends AbstractPage<
+          ListRouteTablesRequest, ListRouteTablesResponse, RouteTable, ListRouteTablesPage> {
+
+    private ListRouteTablesPage(
+        PageContext<ListRouteTablesRequest, ListRouteTablesResponse, RouteTable> context,
+        ListRouteTablesResponse response) {
+      super(context, response);
+    }
+
+    private static ListRouteTablesPage createEmptyPage() {
+      return new ListRouteTablesPage(null, null);
+    }
+
+    @Override
+    protected ListRouteTablesPage createPage(
+        PageContext<ListRouteTablesRequest, ListRouteTablesResponse, RouteTable> context,
+        ListRouteTablesResponse response) {
+      return new ListRouteTablesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListRouteTablesPage> createPageAsync(
+        PageContext<ListRouteTablesRequest, ListRouteTablesResponse, RouteTable> context,
+        ApiFuture<ListRouteTablesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListRouteTablesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRouteTablesRequest,
+          ListRouteTablesResponse,
+          RouteTable,
+          ListRouteTablesPage,
+          ListRouteTablesFixedSizeCollection> {
+
+    private ListRouteTablesFixedSizeCollection(
+        List<ListRouteTablesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListRouteTablesFixedSizeCollection createEmptyCollection() {
+      return new ListRouteTablesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListRouteTablesFixedSizeCollection createCollection(
+        List<ListRouteTablesPage> pages, int collectionSize) {
+      return new ListRouteTablesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListGroupsPagedResponse
+      extends AbstractPagedListResponse<
+          ListGroupsRequest,
+          ListGroupsResponse,
+          Group,
+          ListGroupsPage,
+          ListGroupsFixedSizeCollection> {
+
+    public static ApiFuture<ListGroupsPagedResponse> createAsync(
+        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        ApiFuture<ListGroupsResponse> futureResponse) {
+      ApiFuture<ListGroupsPage> futurePage =
+          ListGroupsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage, input -> new ListGroupsPagedResponse(input), MoreExecutors.directExecutor());
+    }
+
+    private ListGroupsPagedResponse(ListGroupsPage page) {
+      super(page, ListGroupsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListGroupsPage
+      extends AbstractPage<ListGroupsRequest, ListGroupsResponse, Group, ListGroupsPage> {
+
+    private ListGroupsPage(
+        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        ListGroupsResponse response) {
+      super(context, response);
+    }
+
+    private static ListGroupsPage createEmptyPage() {
+      return new ListGroupsPage(null, null);
+    }
+
+    @Override
+    protected ListGroupsPage createPage(
+        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        ListGroupsResponse response) {
+      return new ListGroupsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListGroupsPage> createPageAsync(
+        PageContext<ListGroupsRequest, ListGroupsResponse, Group> context,
+        ApiFuture<ListGroupsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListGroupsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListGroupsRequest,
+          ListGroupsResponse,
+          Group,
+          ListGroupsPage,
+          ListGroupsFixedSizeCollection> {
+
+    private ListGroupsFixedSizeCollection(List<ListGroupsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListGroupsFixedSizeCollection createEmptyCollection() {
+      return new ListGroupsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListGroupsFixedSizeCollection createCollection(
+        List<ListGroupsPage> pages, int collectionSize) {
+      return new ListGroupsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListLocationsPagedResponse
+      extends AbstractPagedListResponse<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    public static ApiFuture<ListLocationsPagedResponse> createAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      ApiFuture<ListLocationsPage> futurePage =
+          ListLocationsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListLocationsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListLocationsPagedResponse(ListLocationsPage page) {
+      super(page, ListLocationsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListLocationsPage
+      extends AbstractPage<
+          ListLocationsRequest, ListLocationsResponse, Location, ListLocationsPage> {
+
+    private ListLocationsPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      super(context, response);
+    }
+
+    private static ListLocationsPage createEmptyPage() {
+      return new ListLocationsPage(null, null);
+    }
+
+    @Override
+    protected ListLocationsPage createPage(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ListLocationsResponse response) {
+      return new ListLocationsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListLocationsPage> createPageAsync(
+        PageContext<ListLocationsRequest, ListLocationsResponse, Location> context,
+        ApiFuture<ListLocationsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListLocationsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListLocationsRequest,
+          ListLocationsResponse,
+          Location,
+          ListLocationsPage,
+          ListLocationsFixedSizeCollection> {
+
+    private ListLocationsFixedSizeCollection(List<ListLocationsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListLocationsFixedSizeCollection createEmptyCollection() {
+      return new ListLocationsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListLocationsFixedSizeCollection createCollection(
+        List<ListLocationsPage> pages, int collectionSize) {
+      return new ListLocationsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

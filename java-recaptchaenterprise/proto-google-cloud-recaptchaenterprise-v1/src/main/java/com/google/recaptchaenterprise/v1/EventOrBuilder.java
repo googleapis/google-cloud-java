@@ -178,6 +178,152 @@ public interface EventOrBuilder
    *
    *
    * <pre>
+   * Optional. Flag for a reCAPTCHA express request for an assessment without a
+   * token. If enabled, `site_key` must reference a SCORE key with WAF feature
+   * set to EXPRESS.
+   * </pre>
+   *
+   * <code>bool express = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The express.
+   */
+  boolean getExpress();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The URI resource the user requested that triggered an assessment.
+   * </pre>
+   *
+   * <code>string requested_uri = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The requestedUri.
+   */
+  java.lang.String getRequestedUri();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The URI resource the user requested that triggered an assessment.
+   * </pre>
+   *
+   * <code>string requested_uri = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for requestedUri.
+   */
+  com.google.protobuf.ByteString getRequestedUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Flag for running WAF token assessment.
+   * If enabled, the token must be specified, and have been created by a
+   * WAF-enabled key.
+   * </pre>
+   *
+   * <code>bool waf_token_assessment = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The wafTokenAssessment.
+   */
+  boolean getWafTokenAssessment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional JA3 fingerprint for SSL clients.
+   * </pre>
+   *
+   * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The ja3.
+   */
+  java.lang.String getJa3();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional JA3 fingerprint for SSL clients.
+   * </pre>
+   *
+   * <code>string ja3 = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for ja3.
+   */
+  com.google.protobuf.ByteString getJa3Bytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. HTTP header information about the request.
+   * </pre>
+   *
+   * <code>repeated string headers = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the headers.
+   */
+  java.util.List<java.lang.String> getHeadersList();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. HTTP header information about the request.
+   * </pre>
+   *
+   * <code>repeated string headers = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of headers.
+   */
+  int getHeadersCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. HTTP header information about the request.
+   * </pre>
+   *
+   * <code>repeated string headers = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The headers at the given index.
+   */
+  java.lang.String getHeaders(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. HTTP header information about the request.
+   * </pre>
+   *
+   * <code>repeated string headers = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the headers at the given index.
+   */
+  com.google.protobuf.ByteString getHeadersBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Flag for enabling firewall policy config assessment.
+   * If this flag is enabled, the firewall policy will be evaluated and a
+   * suggested firewall action will be returned in the response.
+   * </pre>
+   *
+   * <code>bool firewall_policy_evaluation = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The firewallPolicyEvaluation.
+   */
+  boolean getFirewallPolicyEvaluation();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Data describing a payment transaction to be assessed. Sending
    * this data enables reCAPTCHA Enterprise Fraud Prevention and the
    * FraudPreventionAssessment component in the response.

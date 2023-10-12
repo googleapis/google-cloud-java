@@ -1176,7 +1176,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * @param tensorboardExperiment The TensorboardExperiment to create.
    * @param tensorboardExperimentId Required. The ID to use for the Tensorboard experiment, which
    *     becomes the final component of the Tensorboard experiment's resource name.
-   *     <p>This value should be 1-128 characters, and valid characters are /[a-z][0-9]-/.
+   *     <p>This value should be 1-128 characters, and valid characters are `/[a-z][0-9]-/`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TensorboardExperiment createTensorboardExperiment(
@@ -1222,7 +1222,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * @param tensorboardExperiment The TensorboardExperiment to create.
    * @param tensorboardExperimentId Required. The ID to use for the Tensorboard experiment, which
    *     becomes the final component of the Tensorboard experiment's resource name.
-   *     <p>This value should be 1-128 characters, and valid characters are /[a-z][0-9]-/.
+   *     <p>This value should be 1-128 characters, and valid characters are `/[a-z][0-9]-/`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TensorboardExperiment createTensorboardExperiment(
@@ -1903,7 +1903,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * @param tensorboardRun Required. The TensorboardRun to create.
    * @param tensorboardRunId Required. The ID to use for the Tensorboard run, which becomes the
    *     final component of the Tensorboard run's resource name.
-   *     <p>This value should be 1-128 characters, and valid characters are /[a-z][0-9]-/.
+   *     <p>This value should be 1-128 characters, and valid characters are `/[a-z][0-9]-/`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TensorboardRun createTensorboardRun(
@@ -1946,7 +1946,7 @@ public class TensorboardServiceClient implements BackgroundResource {
    * @param tensorboardRun Required. The TensorboardRun to create.
    * @param tensorboardRunId Required. The ID to use for the Tensorboard run, which becomes the
    *     final component of the Tensorboard run's resource name.
-   *     <p>This value should be 1-128 characters, and valid characters are /[a-z][0-9]-/.
+   *     <p>This value should be 1-128 characters, and valid characters are `/[a-z][0-9]-/`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final TensorboardRun createTensorboardRun(

@@ -95,7 +95,7 @@ public interface IndexDatapointOrBuilder
    * <pre>
    * Optional. List of Restrict of the datapoint, used to perform "restricted
    * searches" where boolean rule are used to filter the subset of the database
-   * eligible for matching. See:
+   * eligible for matching. This uses categorical tokens. See:
    * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
    * </pre>
    *
@@ -110,7 +110,7 @@ public interface IndexDatapointOrBuilder
    * <pre>
    * Optional. List of Restrict of the datapoint, used to perform "restricted
    * searches" where boolean rule are used to filter the subset of the database
-   * eligible for matching. See:
+   * eligible for matching. This uses categorical tokens. See:
    * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
    * </pre>
    *
@@ -125,7 +125,7 @@ public interface IndexDatapointOrBuilder
    * <pre>
    * Optional. List of Restrict of the datapoint, used to perform "restricted
    * searches" where boolean rule are used to filter the subset of the database
-   * eligible for matching. See:
+   * eligible for matching. This uses categorical tokens. See:
    * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
    * </pre>
    *
@@ -140,7 +140,7 @@ public interface IndexDatapointOrBuilder
    * <pre>
    * Optional. List of Restrict of the datapoint, used to perform "restricted
    * searches" where boolean rule are used to filter the subset of the database
-   * eligible for matching. See:
+   * eligible for matching. This uses categorical tokens. See:
    * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
    * </pre>
    *
@@ -156,7 +156,7 @@ public interface IndexDatapointOrBuilder
    * <pre>
    * Optional. List of Restrict of the datapoint, used to perform "restricted
    * searches" where boolean rule are used to filter the subset of the database
-   * eligible for matching. See:
+   * eligible for matching. This uses categorical tokens. See:
    * https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
    * </pre>
    *

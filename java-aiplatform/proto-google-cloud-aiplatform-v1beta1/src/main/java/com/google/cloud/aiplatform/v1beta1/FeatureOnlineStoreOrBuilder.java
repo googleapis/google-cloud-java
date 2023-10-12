@@ -335,6 +335,52 @@ public interface FeatureOnlineStoreOrBuilder
    *
    *
    * <pre>
+   * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+   * is different from common Vertex service endpoint.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the dedicatedServingEndpoint field is set.
+   */
+  boolean hasDedicatedServingEndpoint();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+   * is different from common Vertex service endpoint.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The dedicatedServingEndpoint.
+   */
+  com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint
+      getDedicatedServingEndpoint();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The dedicated serving endpoint for this FeatureOnlineStore, which
+   * is different from common Vertex service endpoint.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpoint dedicated_serving_endpoint = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.FeatureOnlineStore.DedicatedServingEndpointOrBuilder
+      getDedicatedServingEndpointOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The settings for embedding management in FeatureOnlineStore.
    * </pre>
    *

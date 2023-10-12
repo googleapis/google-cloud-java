@@ -28,7 +28,7 @@ public interface GetKeyRequestOrBuilder
    *
    * <pre>
    * Required. The name of the requested key, in the format
-   * "projects/{project}/keys/{key}".
+   * `projects/{project}/keys/{key}`.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface GetKeyRequestOrBuilder
    *
    * <pre>
    * Required. The name of the requested key, in the format
-   * "projects/{project}/keys/{key}".
+   * `projects/{project}/keys/{key}`.
    * </pre>
    *
    * <code>

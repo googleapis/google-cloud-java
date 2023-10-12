@@ -90,4 +90,18 @@ public interface AndroidKeySettingsOrBuilder
    * @return The bytes of the allowedPackageNames at the given index.
    */
   com.google.protobuf.ByteString getAllowedPackageNamesBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Set to true for keys that are used in an Android application that is
+   * available for download in app stores in addition to the Google Play Store.
+   * </pre>
+   *
+   * <code>bool support_non_google_app_store_distribution = 3;</code>
+   *
+   * @return The supportNonGoogleAppStoreDistribution.
+   */
+  boolean getSupportNonGoogleAppStoreDistribution();
 }

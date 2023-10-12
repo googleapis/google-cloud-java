@@ -78,7 +78,7 @@ public final class SearchRelatedAccountGroupMembershipsRequest
    * <pre>
    * Required. The name of the project to search related account group
    * memberships from. Specify the project name in the following format:
-   * "projects/{project}".
+   * `projects/{project}`.
    * </pre>
    *
    * <code>
@@ -105,7 +105,7 @@ public final class SearchRelatedAccountGroupMembershipsRequest
    * <pre>
    * Required. The name of the project to search related account group
    * memberships from. Specify the project name in the following format:
-   * "projects/{project}".
+   * `projects/{project}`.
    * </pre>
    *
    * <code>
@@ -133,8 +133,8 @@ public final class SearchRelatedAccountGroupMembershipsRequest
    *
    *
    * <pre>
-   * Optional. The unique stable hashed user identifier we should search
-   * connections to. The identifier should correspond to a `hashed_account_id`
+   * Optional. The unique stable hashed user identifier used to search
+   * connections. The identifier should correspond to a `hashed_account_id`
    * provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
    * </pre>
    *
@@ -668,7 +668,7 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      * <pre>
      * Required. The name of the project to search related account group
      * memberships from. Specify the project name in the following format:
-     * "projects/{project}".
+     * `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -694,7 +694,7 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      * <pre>
      * Required. The name of the project to search related account group
      * memberships from. Specify the project name in the following format:
-     * "projects/{project}".
+     * `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -720,7 +720,7 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      * <pre>
      * Required. The name of the project to search related account group
      * memberships from. Specify the project name in the following format:
-     * "projects/{project}".
+     * `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -745,7 +745,7 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      * <pre>
      * Required. The name of the project to search related account group
      * memberships from. Specify the project name in the following format:
-     * "projects/{project}".
+     * `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -766,7 +766,7 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      * <pre>
      * Required. The name of the project to search related account group
      * memberships from. Specify the project name in the following format:
-     * "projects/{project}".
+     * `projects/{project}`.
      * </pre>
      *
      * <code>
@@ -792,8 +792,8 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      *
      *
      * <pre>
-     * Optional. The unique stable hashed user identifier we should search
-     * connections to. The identifier should correspond to a `hashed_account_id`
+     * Optional. The unique stable hashed user identifier used to search
+     * connections. The identifier should correspond to a `hashed_account_id`
      * provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
      * </pre>
      *
@@ -809,8 +809,8 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      *
      *
      * <pre>
-     * Optional. The unique stable hashed user identifier we should search
-     * connections to. The identifier should correspond to a `hashed_account_id`
+     * Optional. The unique stable hashed user identifier used to search
+     * connections. The identifier should correspond to a `hashed_account_id`
      * provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
      * </pre>
      *
@@ -832,8 +832,8 @@ public final class SearchRelatedAccountGroupMembershipsRequest
      *
      *
      * <pre>
-     * Optional. The unique stable hashed user identifier we should search
-     * connections to. The identifier should correspond to a `hashed_account_id`
+     * Optional. The unique stable hashed user identifier used to search
+     * connections. The identifier should correspond to a `hashed_account_id`
      * provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
      * </pre>
      *

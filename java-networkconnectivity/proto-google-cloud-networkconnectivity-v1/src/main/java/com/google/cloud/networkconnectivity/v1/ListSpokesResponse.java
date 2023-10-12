@@ -144,8 +144,9 @@ public final class ListSpokesResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The next pagination token in the List response. It should be used as
-   * page_token for the following request. An empty value means no more result.
+   * The token for the next page of the response. To see more results,
+   * use this value as the page_token for your next request. If this value
+   * is empty, there are no more results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -168,8 +169,9 @@ public final class ListSpokesResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The next pagination token in the List response. It should be used as
-   * page_token for the following request. An empty value means no more result.
+   * The token for the next page of the response. To see more results,
+   * use this value as the page_token for your next request. If this value
+   * is empty, there are no more results.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -1062,8 +1064,9 @@ public final class ListSpokesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The next pagination token in the List response. It should be used as
-     * page_token for the following request. An empty value means no more result.
+     * The token for the next page of the response. To see more results,
+     * use this value as the page_token for your next request. If this value
+     * is empty, there are no more results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1085,8 +1088,9 @@ public final class ListSpokesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The next pagination token in the List response. It should be used as
-     * page_token for the following request. An empty value means no more result.
+     * The token for the next page of the response. To see more results,
+     * use this value as the page_token for your next request. If this value
+     * is empty, there are no more results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1108,8 +1112,9 @@ public final class ListSpokesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The next pagination token in the List response. It should be used as
-     * page_token for the following request. An empty value means no more result.
+     * The token for the next page of the response. To see more results,
+     * use this value as the page_token for your next request. If this value
+     * is empty, there are no more results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1130,8 +1135,9 @@ public final class ListSpokesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The next pagination token in the List response. It should be used as
-     * page_token for the following request. An empty value means no more result.
+     * The token for the next page of the response. To see more results,
+     * use this value as the page_token for your next request. If this value
+     * is empty, there are no more results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1148,8 +1154,9 @@ public final class ListSpokesResponse extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The next pagination token in the List response. It should be used as
-     * page_token for the following request. An empty value means no more result.
+     * The token for the next page of the response. To see more results,
+     * use this value as the page_token for your next request. If this value
+     * is empty, there are no more results.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

@@ -43,7 +43,7 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The resource's create operation is in progress
+   * The resource's create operation is in progress.
    * </pre>
    *
    * <code>CREATING = 1;</code>
@@ -63,7 +63,7 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The resource's Delete operation is in progress
+   * The resource's delete operation is in progress.
    * </pre>
    *
    * <code>DELETING = 3;</code>
@@ -73,12 +73,53 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The resource's Update operation is in progress
+   * The resource's accept operation is in progress.
+   * </pre>
+   *
+   * <code>ACCEPTING = 8;</code>
+   */
+  ACCEPTING(8),
+  /**
+   *
+   *
+   * <pre>
+   * The resource's reject operation is in progress.
+   * </pre>
+   *
+   * <code>REJECTING = 9;</code>
+   */
+  REJECTING(9),
+  /**
+   *
+   *
+   * <pre>
+   * The resource's update operation is in progress.
    * </pre>
    *
    * <code>UPDATING = 6;</code>
    */
   UPDATING(6),
+  /**
+   *
+   *
+   * <pre>
+   * The resource is inactive.
+   * </pre>
+   *
+   * <code>INACTIVE = 7;</code>
+   */
+  INACTIVE(7),
+  /**
+   *
+   *
+   * <pre>
+   * The hub associated with this spoke resource has been deleted.
+   * This state applies to spoke resources only.
+   * </pre>
+   *
+   * <code>OBSOLETE = 10;</code>
+   */
+  OBSOLETE(10),
   UNRECOGNIZED(-1),
   ;
 
@@ -96,7 +137,7 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The resource's create operation is in progress
+   * The resource's create operation is in progress.
    * </pre>
    *
    * <code>CREATING = 1;</code>
@@ -116,7 +157,7 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The resource's Delete operation is in progress
+   * The resource's delete operation is in progress.
    * </pre>
    *
    * <code>DELETING = 3;</code>
@@ -126,12 +167,53 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * The resource's Update operation is in progress
+   * The resource's accept operation is in progress.
+   * </pre>
+   *
+   * <code>ACCEPTING = 8;</code>
+   */
+  public static final int ACCEPTING_VALUE = 8;
+  /**
+   *
+   *
+   * <pre>
+   * The resource's reject operation is in progress.
+   * </pre>
+   *
+   * <code>REJECTING = 9;</code>
+   */
+  public static final int REJECTING_VALUE = 9;
+  /**
+   *
+   *
+   * <pre>
+   * The resource's update operation is in progress.
    * </pre>
    *
    * <code>UPDATING = 6;</code>
    */
   public static final int UPDATING_VALUE = 6;
+  /**
+   *
+   *
+   * <pre>
+   * The resource is inactive.
+   * </pre>
+   *
+   * <code>INACTIVE = 7;</code>
+   */
+  public static final int INACTIVE_VALUE = 7;
+  /**
+   *
+   *
+   * <pre>
+   * The hub associated with this spoke resource has been deleted.
+   * This state applies to spoke resources only.
+   * </pre>
+   *
+   * <code>OBSOLETE = 10;</code>
+   */
+  public static final int OBSOLETE_VALUE = 10;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -165,8 +247,16 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
         return ACTIVE;
       case 3:
         return DELETING;
+      case 8:
+        return ACCEPTING;
+      case 9:
+        return REJECTING;
       case 6:
         return UPDATING;
+      case 7:
+        return INACTIVE;
+      case 10:
+        return OBSOLETE;
       default:
         return null;
     }
@@ -196,7 +286,7 @@ public enum State implements com.google.protobuf.ProtocolMessageEnum {
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.networkconnectivity.v1.HubProto.getDescriptor().getEnumTypes().get(1);
+    return com.google.cloud.networkconnectivity.v1.HubProto.getDescriptor().getEnumTypes().get(2);
   }
 
   private static final State[] VALUES = values();
