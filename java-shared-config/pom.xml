@@ -65,6 +65,7 @@
     <skipITs>true</skipITs>
     <auto-value.version>1.10.4</auto-value.version>
     <surefire.version>3.1.2</surefire.version>
+    <graal-sdk.version>22.3.2</graal-sdk.version>
     <docRoot>/java/docs/reference/</docRoot>
   </properties>
 
@@ -539,6 +540,12 @@
         <groupId>com.google.auto.value</groupId>
         <artifactId>auto-value-annotations</artifactId>
         <version>${auto-value.version}</version>
+      </dependency>
+      
+      <dependency>
+        <groupId>org.graalvm.sdk</groupId>
+        <artifactId>graal-sdk</artifactId>
+        <version>${graal-sdk.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
