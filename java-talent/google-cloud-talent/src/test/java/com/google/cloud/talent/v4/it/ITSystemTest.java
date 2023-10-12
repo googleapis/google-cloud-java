@@ -1,11 +1,11 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     https://www.apache.org/licenses/LICENSE-2.0
+ *      https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,42 +13,42 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.cloud.talent.v4beta1.it;
+package com.google.cloud.talent.v4.it;
 
 import static org.junit.Assert.assertEquals;
 
 import com.google.cloud.ServiceOptions;
-import com.google.cloud.talent.v4beta1.ClientEvent;
-import com.google.cloud.talent.v4beta1.Company;
-import com.google.cloud.talent.v4beta1.CompanyName;
-import com.google.cloud.talent.v4beta1.CompanyServiceClient;
-import com.google.cloud.talent.v4beta1.CompleteQueryRequest;
-import com.google.cloud.talent.v4beta1.CompleteQueryResponse;
-import com.google.cloud.talent.v4beta1.CompletionClient;
-import com.google.cloud.talent.v4beta1.CreateClientEventRequest;
-import com.google.cloud.talent.v4beta1.CreateCompanyRequest;
-import com.google.cloud.talent.v4beta1.CreateJobRequest;
-import com.google.cloud.talent.v4beta1.CreateTenantRequest;
-import com.google.cloud.talent.v4beta1.DeleteCompanyRequest;
-import com.google.cloud.talent.v4beta1.DeleteJobRequest;
-import com.google.cloud.talent.v4beta1.DeleteTenantRequest;
-import com.google.cloud.talent.v4beta1.EventServiceClient;
-import com.google.cloud.talent.v4beta1.GetCompanyRequest;
-import com.google.cloud.talent.v4beta1.GetJobRequest;
-import com.google.cloud.talent.v4beta1.GetTenantRequest;
-import com.google.cloud.talent.v4beta1.Job;
-import com.google.cloud.talent.v4beta1.JobEvent;
-import com.google.cloud.talent.v4beta1.JobName;
-import com.google.cloud.talent.v4beta1.JobServiceClient;
-import com.google.cloud.talent.v4beta1.ListCompaniesRequest;
-import com.google.cloud.talent.v4beta1.ListJobsRequest;
-import com.google.cloud.talent.v4beta1.ListTenantsRequest;
-import com.google.cloud.talent.v4beta1.ProjectName;
-import com.google.cloud.talent.v4beta1.Tenant;
-import com.google.cloud.talent.v4beta1.TenantName;
-import com.google.cloud.talent.v4beta1.TenantServiceClient;
-import com.google.cloud.talent.v4beta1.UpdateCompanyRequest;
-import com.google.cloud.talent.v4beta1.UpdateJobRequest;
+import com.google.cloud.talent.v4.ClientEvent;
+import com.google.cloud.talent.v4.Company;
+import com.google.cloud.talent.v4.CompanyName;
+import com.google.cloud.talent.v4.CompanyServiceClient;
+import com.google.cloud.talent.v4.CompleteQueryRequest;
+import com.google.cloud.talent.v4.CompleteQueryResponse;
+import com.google.cloud.talent.v4.CompletionClient;
+import com.google.cloud.talent.v4.CreateClientEventRequest;
+import com.google.cloud.talent.v4.CreateCompanyRequest;
+import com.google.cloud.talent.v4.CreateJobRequest;
+import com.google.cloud.talent.v4.CreateTenantRequest;
+import com.google.cloud.talent.v4.DeleteCompanyRequest;
+import com.google.cloud.talent.v4.DeleteJobRequest;
+import com.google.cloud.talent.v4.DeleteTenantRequest;
+import com.google.cloud.talent.v4.EventServiceClient;
+import com.google.cloud.talent.v4.GetCompanyRequest;
+import com.google.cloud.talent.v4.GetJobRequest;
+import com.google.cloud.talent.v4.GetTenantRequest;
+import com.google.cloud.talent.v4.Job;
+import com.google.cloud.talent.v4.JobEvent;
+import com.google.cloud.talent.v4.JobName;
+import com.google.cloud.talent.v4.JobServiceClient;
+import com.google.cloud.talent.v4.ListCompaniesRequest;
+import com.google.cloud.talent.v4.ListJobsRequest;
+import com.google.cloud.talent.v4.ListTenantsRequest;
+import com.google.cloud.talent.v4.ProjectName;
+import com.google.cloud.talent.v4.Tenant;
+import com.google.cloud.talent.v4.TenantName;
+import com.google.cloud.talent.v4.TenantServiceClient;
+import com.google.cloud.talent.v4.UpdateCompanyRequest;
+import com.google.cloud.talent.v4.UpdateJobRequest;
 import com.google.protobuf.Timestamp;
 import java.io.IOException;
 import java.util.Arrays;
@@ -120,7 +120,7 @@ public class ITSystemTest {
             .build();
     company = companyServiceClient.createCompany(companyRequest);
     companyId = getId(company.getName());
-    companyName = CompanyName.ofProjectTenantCompanyName(PROJECT_ID, tenantId, companyId);
+    companyName = CompanyName.of(PROJECT_ID, tenantId, companyId);
 
     /* create job */
     jobServiceClient = JobServiceClient.create();
@@ -140,7 +140,7 @@ public class ITSystemTest {
         CreateJobRequest.newBuilder().setParent(tenantName.toString()).setJob(createJob).build();
     job = jobServiceClient.createJob(jobRequest);
     jobId = getId(job.getName());
-    jobName = JobName.ofProjectTenantJobName(PROJECT_ID, tenantId, jobId);
+    jobName = JobName.of(PROJECT_ID, tenantId, jobId);
 
     /*create event */
     eventServiceClient = EventServiceClient.create();
@@ -313,7 +313,7 @@ public class ITSystemTest {
   public void completeQueryTest() {
     CompleteQueryRequest request =
         CompleteQueryRequest.newBuilder()
-            .setParent(tenantName.toString())
+            .setTenant(tenantName.toString())
             .setQuery("Soft")
             .setPageSize(5)
             .addAllLanguageCodes(Arrays.asList(LANGUAGE_CODE))
