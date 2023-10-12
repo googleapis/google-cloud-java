@@ -381,10 +381,10 @@ public final class HotTablet extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The average CPU usage spent by a node on this tablet over the start_time to
-   * end_time time range. The percentage is the amount of CPU used by the node
-   * to serve the tablet, from 0% (tablet was not interacted with) to 100% (the
-   * node spent all cycles serving the hot tablet).
+   * Output only. The average CPU usage spent by a node on this tablet over the
+   * start_time to end_time time range. The percentage is the amount of CPU used
+   * by the node to serve the tablet, from 0% (tablet was not interacted with)
+   * to 100% (the node spent all cycles serving the hot tablet).
    * </pre>
    *
    * <code>float node_cpu_usage_percent = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1712,10 +1712,10 @@ public final class HotTablet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The average CPU usage spent by a node on this tablet over the start_time to
-     * end_time time range. The percentage is the amount of CPU used by the node
-     * to serve the tablet, from 0% (tablet was not interacted with) to 100% (the
-     * node spent all cycles serving the hot tablet).
+     * Output only. The average CPU usage spent by a node on this tablet over the
+     * start_time to end_time time range. The percentage is the amount of CPU used
+     * by the node to serve the tablet, from 0% (tablet was not interacted with)
+     * to 100% (the node spent all cycles serving the hot tablet).
      * </pre>
      *
      * <code>float node_cpu_usage_percent = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1730,10 +1730,10 @@ public final class HotTablet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The average CPU usage spent by a node on this tablet over the start_time to
-     * end_time time range. The percentage is the amount of CPU used by the node
-     * to serve the tablet, from 0% (tablet was not interacted with) to 100% (the
-     * node spent all cycles serving the hot tablet).
+     * Output only. The average CPU usage spent by a node on this tablet over the
+     * start_time to end_time time range. The percentage is the amount of CPU used
+     * by the node to serve the tablet, from 0% (tablet was not interacted with)
+     * to 100% (the node spent all cycles serving the hot tablet).
      * </pre>
      *
      * <code>float node_cpu_usage_percent = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1752,10 +1752,10 @@ public final class HotTablet extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The average CPU usage spent by a node on this tablet over the start_time to
-     * end_time time range. The percentage is the amount of CPU used by the node
-     * to serve the tablet, from 0% (tablet was not interacted with) to 100% (the
-     * node spent all cycles serving the hot tablet).
+     * Output only. The average CPU usage spent by a node on this tablet over the
+     * start_time to end_time time range. The percentage is the amount of CPU used
+     * by the node to serve the tablet, from 0% (tablet was not interacted with)
+     * to 100% (the node spent all cycles serving the hot tablet).
      * </pre>
      *
      * <code>float node_cpu_usage_percent = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

@@ -195,5 +195,101 @@ public interface AppProfileOrBuilder
   com.google.bigtable.admin.v2.AppProfile.SingleClusterRoutingOrBuilder
       getSingleClusterRoutingOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * This field has been deprecated in favor of `standard_isolation.priority`.
+   * If you set this field, `standard_isolation.priority` will be set instead.
+   *
+   * The priority of requests sent using this app profile.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
+   *
+   * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
+   *     google/bigtable/admin/v2/instance.proto;l=332
+   * @return Whether the priority field is set.
+   */
+  @java.lang.Deprecated
+  boolean hasPriority();
+  /**
+   *
+   *
+   * <pre>
+   * This field has been deprecated in favor of `standard_isolation.priority`.
+   * If you set this field, `standard_isolation.priority` will be set instead.
+   *
+   * The priority of requests sent using this app profile.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
+   *
+   * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
+   *     google/bigtable/admin/v2/instance.proto;l=332
+   * @return The enum numeric value on the wire for priority.
+   */
+  @java.lang.Deprecated
+  int getPriorityValue();
+  /**
+   *
+   *
+   * <pre>
+   * This field has been deprecated in favor of `standard_isolation.priority`.
+   * If you set this field, `standard_isolation.priority` will be set instead.
+   *
+   * The priority of requests sent using this app profile.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
+   *
+   * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
+   *     google/bigtable/admin/v2/instance.proto;l=332
+   * @return The priority.
+   */
+  @java.lang.Deprecated
+  com.google.bigtable.admin.v2.AppProfile.Priority getPriority();
+
+  /**
+   *
+   *
+   * <pre>
+   * The standard options used for isolating this app profile's traffic from
+   * other use cases.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.AppProfile.StandardIsolation standard_isolation = 11;</code>
+   *
+   * @return Whether the standardIsolation field is set.
+   */
+  boolean hasStandardIsolation();
+  /**
+   *
+   *
+   * <pre>
+   * The standard options used for isolating this app profile's traffic from
+   * other use cases.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.AppProfile.StandardIsolation standard_isolation = 11;</code>
+   *
+   * @return The standardIsolation.
+   */
+  com.google.bigtable.admin.v2.AppProfile.StandardIsolation getStandardIsolation();
+  /**
+   *
+   *
+   * <pre>
+   * The standard options used for isolating this app profile's traffic from
+   * other use cases.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.AppProfile.StandardIsolation standard_isolation = 11;</code>
+   */
+  com.google.bigtable.admin.v2.AppProfile.StandardIsolationOrBuilder
+      getStandardIsolationOrBuilder();
+
   com.google.bigtable.admin.v2.AppProfile.RoutingPolicyCase getRoutingPolicyCase();
+
+  com.google.bigtable.admin.v2.AppProfile.IsolationCase getIsolationCase();
 }

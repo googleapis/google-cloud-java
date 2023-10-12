@@ -70,8 +70,8 @@ public final class DeleteClusterRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The unique name of the cluster to be deleted. Values are of the form
-   * `projects/{project}/instances/{instance}/clusters/{cluster}`.
+   * Required. The unique name of the cluster to be deleted. Values are of the
+   * form `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * </pre>
    *
    * <code>
@@ -96,8 +96,8 @@ public final class DeleteClusterRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. The unique name of the cluster to be deleted. Values are of the form
-   * `projects/{project}/instances/{instance}/clusters/{cluster}`.
+   * Required. The unique name of the cluster to be deleted. Values are of the
+   * form `projects/{project}/instances/{instance}/clusters/{cluster}`.
    * </pre>
    *
    * <code>
@@ -466,8 +466,8 @@ public final class DeleteClusterRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The unique name of the cluster to be deleted. Values are of the form
-     * `projects/{project}/instances/{instance}/clusters/{cluster}`.
+     * Required. The unique name of the cluster to be deleted. Values are of the
+     * form `projects/{project}/instances/{instance}/clusters/{cluster}`.
      * </pre>
      *
      * <code>
@@ -491,8 +491,8 @@ public final class DeleteClusterRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The unique name of the cluster to be deleted. Values are of the form
-     * `projects/{project}/instances/{instance}/clusters/{cluster}`.
+     * Required. The unique name of the cluster to be deleted. Values are of the
+     * form `projects/{project}/instances/{instance}/clusters/{cluster}`.
      * </pre>
      *
      * <code>
@@ -516,8 +516,8 @@ public final class DeleteClusterRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The unique name of the cluster to be deleted. Values are of the form
-     * `projects/{project}/instances/{instance}/clusters/{cluster}`.
+     * Required. The unique name of the cluster to be deleted. Values are of the
+     * form `projects/{project}/instances/{instance}/clusters/{cluster}`.
      * </pre>
      *
      * <code>
@@ -540,8 +540,8 @@ public final class DeleteClusterRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The unique name of the cluster to be deleted. Values are of the form
-     * `projects/{project}/instances/{instance}/clusters/{cluster}`.
+     * Required. The unique name of the cluster to be deleted. Values are of the
+     * form `projects/{project}/instances/{instance}/clusters/{cluster}`.
      * </pre>
      *
      * <code>
@@ -560,8 +560,8 @@ public final class DeleteClusterRequest extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. The unique name of the cluster to be deleted. Values are of the form
-     * `projects/{project}/instances/{instance}/clusters/{cluster}`.
+     * Required. The unique name of the cluster to be deleted. Values are of the
+     * form `projects/{project}/instances/{instance}/clusters/{cluster}`.
      * </pre>
      *
      * <code>

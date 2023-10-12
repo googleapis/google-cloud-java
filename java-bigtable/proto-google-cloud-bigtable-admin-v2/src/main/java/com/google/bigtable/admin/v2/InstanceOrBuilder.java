@@ -243,9 +243,9 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. A server-assigned timestamp representing when this Instance was created.
-   * For instances created before this field was added (August 2021), this value
-   * is `seconds: 0, nanos: 1`.
+   * Output only. A server-assigned timestamp representing when this Instance
+   * was created. For instances created before this field was added (August
+   * 2021), this value is `seconds: 0, nanos: 1`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -258,9 +258,9 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. A server-assigned timestamp representing when this Instance was created.
-   * For instances created before this field was added (August 2021), this value
-   * is `seconds: 0, nanos: 1`.
+   * Output only. A server-assigned timestamp representing when this Instance
+   * was created. For instances created before this field was added (August
+   * 2021), this value is `seconds: 0, nanos: 1`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -273,9 +273,9 @@ public interface InstanceOrBuilder
    *
    *
    * <pre>
-   * Output only. A server-assigned timestamp representing when this Instance was created.
-   * For instances created before this field was added (August 2021), this value
-   * is `seconds: 0, nanos: 1`.
+   * Output only. A server-assigned timestamp representing when this Instance
+   * was created. For instances created before this field was added (August
+   * 2021), this value is `seconds: 0, nanos: 1`.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];

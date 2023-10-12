@@ -70,7 +70,8 @@ public final class DeleteAppProfileRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The unique name of the app profile to be deleted. Values are of the form
+   * Required. The unique name of the app profile to be deleted. Values are of
+   * the form
    * `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
    * </pre>
    *
@@ -96,7 +97,8 @@ public final class DeleteAppProfileRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The unique name of the app profile to be deleted. Values are of the form
+   * Required. The unique name of the app profile to be deleted. Values are of
+   * the form
    * `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
    * </pre>
    *
@@ -506,7 +508,8 @@ public final class DeleteAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The unique name of the app profile to be deleted. Values are of the form
+     * Required. The unique name of the app profile to be deleted. Values are of
+     * the form
      * `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
      * </pre>
      *
@@ -531,7 +534,8 @@ public final class DeleteAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The unique name of the app profile to be deleted. Values are of the form
+     * Required. The unique name of the app profile to be deleted. Values are of
+     * the form
      * `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
      * </pre>
      *
@@ -556,7 +560,8 @@ public final class DeleteAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The unique name of the app profile to be deleted. Values are of the form
+     * Required. The unique name of the app profile to be deleted. Values are of
+     * the form
      * `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
      * </pre>
      *
@@ -580,7 +585,8 @@ public final class DeleteAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The unique name of the app profile to be deleted. Values are of the form
+     * Required. The unique name of the app profile to be deleted. Values are of
+     * the form
      * `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
      * </pre>
      *
@@ -600,7 +606,8 @@ public final class DeleteAppProfileRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The unique name of the app profile to be deleted. Values are of the form
+     * Required. The unique name of the app profile to be deleted. Values are of
+     * the form
      * `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
      * </pre>
      *

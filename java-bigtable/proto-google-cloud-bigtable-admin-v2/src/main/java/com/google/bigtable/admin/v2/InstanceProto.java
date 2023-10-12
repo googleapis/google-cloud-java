@@ -72,6 +72,10 @@ public final class InstanceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_AppProfile_SingleClusterRouting_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_bigtable_admin_v2_HotTablet_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_bigtable_admin_v2_HotTablet_fieldAccessorTable;
@@ -132,39 +136,48 @@ public final class InstanceProto {
           + "\n\010CREATING\020\002\022\014\n\010RESIZING\020\003\022\014\n\010DISABLED\020\004"
           + ":e\352Ab\n$bigtableadmin.googleapis.com/Clus"
           + "ter\022:projects/{project}/instances/{insta"
-          + "nce}/clusters/{cluster}B\010\n\006config\"\210\004\n\nAp"
+          + "nce}/clusters/{cluster}B\010\n\006config\"\350\006\n\nAp"
           + "pProfile\022\014\n\004name\030\001 \001(\t\022\014\n\004etag\030\002 \001(\t\022\023\n\013"
           + "description\030\003 \001(\t\022g\n\035multi_cluster_routi"
           + "ng_use_any\030\005 \001(\0132>.google.bigtable.admin"
           + ".v2.AppProfile.MultiClusterRoutingUseAny"
           + "H\000\022[\n\026single_cluster_routing\030\006 \001(\01329.goo"
           + "gle.bigtable.admin.v2.AppProfile.SingleC"
-          + "lusterRoutingH\000\0320\n\031MultiClusterRoutingUs"
-          + "eAny\022\023\n\013cluster_ids\030\001 \003(\t\032N\n\024SingleClust"
-          + "erRouting\022\022\n\ncluster_id\030\001 \001(\t\022\"\n\032allow_t"
-          + "ransactional_writes\030\002 \001(\010:o\352Al\n\'bigtable"
-          + "admin.googleapis.com/AppProfile\022Aproject"
-          + "s/{project}/instances/{instance}/appProf"
-          + "iles/{app_profile}B\020\n\016routing_policy\"\213\003\n"
-          + "\tHotTablet\022\014\n\004name\030\001 \001(\t\022;\n\ntable_name\030\002"
-          + " \001(\tB\'\372A$\n\"bigtableadmin.googleapis.com/"
-          + "Table\0224\n\nstart_time\030\003 \001(\0132\032.google.proto"
-          + "buf.TimestampB\004\342A\001\003\0222\n\010end_time\030\004 \001(\0132\032."
-          + "google.protobuf.TimestampB\004\342A\001\003\022\021\n\tstart"
-          + "_key\030\005 \001(\t\022\017\n\007end_key\030\006 \001(\t\022$\n\026node_cpu_"
-          + "usage_percent\030\007 \001(\002B\004\342A\001\003:\177\352A|\n&bigtable"
-          + "admin.googleapis.com/HotTablet\022Rprojects"
-          + "/{project}/instances/{instance}/clusters"
-          + "/{cluster}/hotTablets/{hot_tablet}B\320\002\n\034c"
-          + "om.google.bigtable.admin.v2B\rInstancePro"
-          + "toP\001Z=google.golang.org/genproto/googlea"
-          + "pis/bigtable/admin/v2;admin\252\002\036Google.Clo"
-          + "ud.Bigtable.Admin.V2\312\002\036Google\\Cloud\\Bigt"
-          + "able\\Admin\\V2\352\002\"Google::Cloud::Bigtable:"
-          + ":Admin::V2\352Ax\n!cloudkms.googleapis.com/C"
-          + "ryptoKey\022Sprojects/{project}/locations/{"
-          + "location}/keyRings/{key_ring}/cryptoKeys"
-          + "/{crypto_key}b\006proto3"
+          + "lusterRoutingH\000\022E\n\010priority\030\007 \001(\0162-.goog"
+          + "le.bigtable.admin.v2.AppProfile.Priority"
+          + "B\002\030\001H\001\022T\n\022standard_isolation\030\013 \001(\01326.goo"
+          + "gle.bigtable.admin.v2.AppProfile.Standar"
+          + "dIsolationH\001\0320\n\031MultiClusterRoutingUseAn"
+          + "y\022\023\n\013cluster_ids\030\001 \003(\t\032N\n\024SingleClusterR"
+          + "outing\022\022\n\ncluster_id\030\001 \001(\t\022\"\n\032allow_tran"
+          + "sactional_writes\030\002 \001(\010\032T\n\021StandardIsolat"
+          + "ion\022?\n\010priority\030\001 \001(\0162-.google.bigtable."
+          + "admin.v2.AppProfile.Priority\"^\n\010Priority"
+          + "\022\030\n\024PRIORITY_UNSPECIFIED\020\000\022\020\n\014PRIORITY_L"
+          + "OW\020\001\022\023\n\017PRIORITY_MEDIUM\020\002\022\021\n\rPRIORITY_HI"
+          + "GH\020\003:o\352Al\n\'bigtableadmin.googleapis.com/"
+          + "AppProfile\022Aprojects/{project}/instances"
+          + "/{instance}/appProfiles/{app_profile}B\020\n"
+          + "\016routing_policyB\013\n\tisolation\"\213\003\n\tHotTabl"
+          + "et\022\014\n\004name\030\001 \001(\t\022;\n\ntable_name\030\002 \001(\tB\'\372A"
+          + "$\n\"bigtableadmin.googleapis.com/Table\0224\n"
+          + "\nstart_time\030\003 \001(\0132\032.google.protobuf.Time"
+          + "stampB\004\342A\001\003\0222\n\010end_time\030\004 \001(\0132\032.google.p"
+          + "rotobuf.TimestampB\004\342A\001\003\022\021\n\tstart_key\030\005 \001"
+          + "(\t\022\017\n\007end_key\030\006 \001(\t\022$\n\026node_cpu_usage_pe"
+          + "rcent\030\007 \001(\002B\004\342A\001\003:\177\352A|\n&bigtableadmin.go"
+          + "ogleapis.com/HotTablet\022Rprojects/{projec"
+          + "t}/instances/{instance}/clusters/{cluste"
+          + "r}/hotTablets/{hot_tablet}B\320\002\n\034com.googl"
+          + "e.bigtable.admin.v2B\rInstanceProtoP\001Z=go"
+          + "ogle.golang.org/genproto/googleapis/bigt"
+          + "able/admin/v2;admin\252\002\036Google.Cloud.Bigta"
+          + "ble.Admin.V2\312\002\036Google\\Cloud\\Bigtable\\Adm"
+          + "in\\V2\352\002\"Google::Cloud::Bigtable::Admin::"
+          + "V2\352Ax\n!cloudkms.googleapis.com/CryptoKey"
+          + "\022Sprojects/{project}/locations/{location"
+          + "}/keyRings/{key_ring}/cryptoKeys/{crypto"
+          + "_key}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -264,7 +277,10 @@ public final class InstanceProto {
               "Description",
               "MultiClusterRoutingUseAny",
               "SingleClusterRouting",
+              "Priority",
+              "StandardIsolation",
               "RoutingPolicy",
+              "Isolation",
             });
     internal_static_google_bigtable_admin_v2_AppProfile_MultiClusterRoutingUseAny_descriptor =
         internal_static_google_bigtable_admin_v2_AppProfile_descriptor.getNestedTypes().get(0);
@@ -281,6 +297,14 @@ public final class InstanceProto {
             internal_static_google_bigtable_admin_v2_AppProfile_SingleClusterRouting_descriptor,
             new java.lang.String[] {
               "ClusterId", "AllowTransactionalWrites",
+            });
+    internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_descriptor =
+        internal_static_google_bigtable_admin_v2_AppProfile_descriptor.getNestedTypes().get(2);
+    internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_descriptor,
+            new java.lang.String[] {
+              "Priority",
             });
     internal_static_google_bigtable_admin_v2_HotTablet_descriptor =
         getDescriptor().getMessageTypes().get(5);

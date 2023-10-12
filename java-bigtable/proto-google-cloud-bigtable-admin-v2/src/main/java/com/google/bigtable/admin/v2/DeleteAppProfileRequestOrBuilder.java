@@ -27,7 +27,8 @@ public interface DeleteAppProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The unique name of the app profile to be deleted. Values are of the form
+   * Required. The unique name of the app profile to be deleted. Values are of
+   * the form
    * `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
    * </pre>
    *
@@ -42,7 +43,8 @@ public interface DeleteAppProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The unique name of the app profile to be deleted. Values are of the form
+   * Required. The unique name of the app profile to be deleted. Values are of
+   * the form
    * `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
    * </pre>
    *

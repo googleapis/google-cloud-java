@@ -27,8 +27,8 @@ public interface CreateInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The unique name of the project in which to create the new instance.
-   * Values are of the form `projects/{project}`.
+   * Required. The unique name of the project in which to create the new
+   * instance. Values are of the form `projects/{project}`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface CreateInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The unique name of the project in which to create the new instance.
-   * Values are of the form `projects/{project}`.
+   * Required. The unique name of the project in which to create the new
+   * instance. Values are of the form `projects/{project}`.
    * </pre>
    *
    * <code>
@@ -58,8 +58,8 @@ public interface CreateInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ID to be used when referring to the new instance within its project,
-   * e.g., just `myinstance` rather than
+   * Required. The ID to be used when referring to the new instance within its
+   * project, e.g., just `myinstance` rather than
    * `projects/myproject/instances/myinstance`.
    * </pre>
    *
@@ -72,8 +72,8 @@ public interface CreateInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ID to be used when referring to the new instance within its project,
-   * e.g., just `myinstance` rather than
+   * Required. The ID to be used when referring to the new instance within its
+   * project, e.g., just `myinstance` rather than
    * `projects/myproject/instances/myinstance`.
    * </pre>
    *

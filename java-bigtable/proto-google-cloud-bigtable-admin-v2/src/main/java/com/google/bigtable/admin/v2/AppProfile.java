@@ -65,6 +65,139 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
             com.google.bigtable.admin.v2.AppProfile.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Possible priorities for an app profile. Note that higher priority writes
+   * can sometimes queue behind lower priority writes to the same tablet, as
+   * writes must be strictly sequenced in the durability log.
+   * </pre>
+   *
+   * Protobuf enum {@code google.bigtable.admin.v2.AppProfile.Priority}
+   */
+  public enum Priority implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default value. Mapped to PRIORITY_HIGH (the legacy behavior) on creation.
+     * </pre>
+     *
+     * <code>PRIORITY_UNSPECIFIED = 0;</code>
+     */
+    PRIORITY_UNSPECIFIED(0),
+    /** <code>PRIORITY_LOW = 1;</code> */
+    PRIORITY_LOW(1),
+    /** <code>PRIORITY_MEDIUM = 2;</code> */
+    PRIORITY_MEDIUM(2),
+    /** <code>PRIORITY_HIGH = 3;</code> */
+    PRIORITY_HIGH(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default value. Mapped to PRIORITY_HIGH (the legacy behavior) on creation.
+     * </pre>
+     *
+     * <code>PRIORITY_UNSPECIFIED = 0;</code>
+     */
+    public static final int PRIORITY_UNSPECIFIED_VALUE = 0;
+    /** <code>PRIORITY_LOW = 1;</code> */
+    public static final int PRIORITY_LOW_VALUE = 1;
+    /** <code>PRIORITY_MEDIUM = 2;</code> */
+    public static final int PRIORITY_MEDIUM_VALUE = 2;
+    /** <code>PRIORITY_HIGH = 3;</code> */
+    public static final int PRIORITY_HIGH_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Priority valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Priority forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PRIORITY_UNSPECIFIED;
+        case 1:
+          return PRIORITY_LOW;
+        case 2:
+          return PRIORITY_MEDIUM;
+        case 3:
+          return PRIORITY_HIGH;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Priority> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Priority> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Priority>() {
+          public Priority findValueByNumber(int number) {
+            return Priority.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.AppProfile.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final Priority[] VALUES = values();
+
+    public static Priority valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Priority(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.bigtable.admin.v2.AppProfile.Priority)
+  }
+
   public interface MultiClusterRoutingUseAnyOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny)
@@ -1632,6 +1765,622 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface StandardIsolationOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.AppProfile.StandardIsolation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The priority of requests sent using this app profile.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 1;</code>
+     *
+     * @return The enum numeric value on the wire for priority.
+     */
+    int getPriorityValue();
+    /**
+     *
+     *
+     * <pre>
+     * The priority of requests sent using this app profile.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 1;</code>
+     *
+     * @return The priority.
+     */
+    com.google.bigtable.admin.v2.AppProfile.Priority getPriority();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Standard options for isolating this app profile's traffic from other use
+   * cases.
+   * </pre>
+   *
+   * Protobuf type {@code google.bigtable.admin.v2.AppProfile.StandardIsolation}
+   */
+  public static final class StandardIsolation extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.AppProfile.StandardIsolation)
+      StandardIsolationOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use StandardIsolation.newBuilder() to construct.
+    private StandardIsolation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private StandardIsolation() {
+      priority_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new StandardIsolation();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.InstanceProto
+          .internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.bigtable.admin.v2.InstanceProto
+          .internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.bigtable.admin.v2.AppProfile.StandardIsolation.class,
+              com.google.bigtable.admin.v2.AppProfile.StandardIsolation.Builder.class);
+    }
+
+    public static final int PRIORITY_FIELD_NUMBER = 1;
+    private int priority_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The priority of requests sent using this app profile.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 1;</code>
+     *
+     * @return The enum numeric value on the wire for priority.
+     */
+    @java.lang.Override
+    public int getPriorityValue() {
+      return priority_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The priority of requests sent using this app profile.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 1;</code>
+     *
+     * @return The priority.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.AppProfile.Priority getPriority() {
+      com.google.bigtable.admin.v2.AppProfile.Priority result =
+          com.google.bigtable.admin.v2.AppProfile.Priority.forNumber(priority_);
+      return result == null
+          ? com.google.bigtable.admin.v2.AppProfile.Priority.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (priority_
+          != com.google.bigtable.admin.v2.AppProfile.Priority.PRIORITY_UNSPECIFIED.getNumber()) {
+        output.writeEnum(1, priority_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (priority_
+          != com.google.bigtable.admin.v2.AppProfile.Priority.PRIORITY_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, priority_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.bigtable.admin.v2.AppProfile.StandardIsolation)) {
+        return super.equals(obj);
+      }
+      com.google.bigtable.admin.v2.AppProfile.StandardIsolation other =
+          (com.google.bigtable.admin.v2.AppProfile.StandardIsolation) obj;
+
+      if (priority_ != other.priority_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+      hash = (53 * hash) + priority_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.bigtable.admin.v2.AppProfile.StandardIsolation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Standard options for isolating this app profile's traffic from other use
+     * cases.
+     * </pre>
+     *
+     * Protobuf type {@code google.bigtable.admin.v2.AppProfile.StandardIsolation}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.AppProfile.StandardIsolation)
+        com.google.bigtable.admin.v2.AppProfile.StandardIsolationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.InstanceProto
+            .internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.bigtable.admin.v2.InstanceProto
+            .internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.bigtable.admin.v2.AppProfile.StandardIsolation.class,
+                com.google.bigtable.admin.v2.AppProfile.StandardIsolation.Builder.class);
+      }
+
+      // Construct using com.google.bigtable.admin.v2.AppProfile.StandardIsolation.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        priority_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.bigtable.admin.v2.InstanceProto
+            .internal_static_google_bigtable_admin_v2_AppProfile_StandardIsolation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.AppProfile.StandardIsolation getDefaultInstanceForType() {
+        return com.google.bigtable.admin.v2.AppProfile.StandardIsolation.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.AppProfile.StandardIsolation build() {
+        com.google.bigtable.admin.v2.AppProfile.StandardIsolation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.AppProfile.StandardIsolation buildPartial() {
+        com.google.bigtable.admin.v2.AppProfile.StandardIsolation result =
+            new com.google.bigtable.admin.v2.AppProfile.StandardIsolation(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.bigtable.admin.v2.AppProfile.StandardIsolation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.priority_ = priority_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.bigtable.admin.v2.AppProfile.StandardIsolation) {
+          return mergeFrom((com.google.bigtable.admin.v2.AppProfile.StandardIsolation) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.bigtable.admin.v2.AppProfile.StandardIsolation other) {
+        if (other == com.google.bigtable.admin.v2.AppProfile.StandardIsolation.getDefaultInstance())
+          return this;
+        if (other.priority_ != 0) {
+          setPriorityValue(other.getPriorityValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  priority_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int priority_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The priority of requests sent using this app profile.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 1;</code>
+       *
+       * @return The enum numeric value on the wire for priority.
+       */
+      @java.lang.Override
+      public int getPriorityValue() {
+        return priority_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The priority of requests sent using this app profile.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 1;</code>
+       *
+       * @param value The enum numeric value on the wire for priority to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPriorityValue(int value) {
+        priority_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The priority of requests sent using this app profile.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 1;</code>
+       *
+       * @return The priority.
+       */
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.AppProfile.Priority getPriority() {
+        com.google.bigtable.admin.v2.AppProfile.Priority result =
+            com.google.bigtable.admin.v2.AppProfile.Priority.forNumber(priority_);
+        return result == null
+            ? com.google.bigtable.admin.v2.AppProfile.Priority.UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The priority of requests sent using this app profile.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 1;</code>
+       *
+       * @param value The priority to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPriority(com.google.bigtable.admin.v2.AppProfile.Priority value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        priority_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The priority of requests sent using this app profile.
+       * </pre>
+       *
+       * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPriority() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        priority_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.AppProfile.StandardIsolation)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.AppProfile.StandardIsolation)
+    private static final com.google.bigtable.admin.v2.AppProfile.StandardIsolation DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.AppProfile.StandardIsolation();
+    }
+
+    public static com.google.bigtable.admin.v2.AppProfile.StandardIsolation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StandardIsolation> PARSER =
+        new com.google.protobuf.AbstractParser<StandardIsolation>() {
+          @java.lang.Override
+          public StandardIsolation parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<StandardIsolation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StandardIsolation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.AppProfile.StandardIsolation getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int routingPolicyCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -1679,6 +2428,56 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
 
   public RoutingPolicyCase getRoutingPolicyCase() {
     return RoutingPolicyCase.forNumber(routingPolicyCase_);
+  }
+
+  private int isolationCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object isolation_;
+
+  public enum IsolationCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    @java.lang.Deprecated
+    PRIORITY(7),
+    STANDARD_ISOLATION(11),
+    ISOLATION_NOT_SET(0);
+    private final int value;
+
+    private IsolationCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static IsolationCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static IsolationCase forNumber(int value) {
+      switch (value) {
+        case 7:
+          return PRIORITY;
+        case 11:
+          return STANDARD_ISOLATION;
+        case 0:
+          return ISOLATION_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public IsolationCase getIsolationCase() {
+    return IsolationCase.forNumber(isolationCase_);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -1964,6 +2763,134 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
     return com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting.getDefaultInstance();
   }
 
+  public static final int PRIORITY_FIELD_NUMBER = 7;
+  /**
+   *
+   *
+   * <pre>
+   * This field has been deprecated in favor of `standard_isolation.priority`.
+   * If you set this field, `standard_isolation.priority` will be set instead.
+   *
+   * The priority of requests sent using this app profile.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
+   *
+   * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
+   *     google/bigtable/admin/v2/instance.proto;l=332
+   * @return Whether the priority field is set.
+   */
+  @java.lang.Deprecated
+  public boolean hasPriority() {
+    return isolationCase_ == 7;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field has been deprecated in favor of `standard_isolation.priority`.
+   * If you set this field, `standard_isolation.priority` will be set instead.
+   *
+   * The priority of requests sent using this app profile.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
+   *
+   * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
+   *     google/bigtable/admin/v2/instance.proto;l=332
+   * @return The enum numeric value on the wire for priority.
+   */
+  @java.lang.Deprecated
+  public int getPriorityValue() {
+    if (isolationCase_ == 7) {
+      return (java.lang.Integer) isolation_;
+    }
+    return 0;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * This field has been deprecated in favor of `standard_isolation.priority`.
+   * If you set this field, `standard_isolation.priority` will be set instead.
+   *
+   * The priority of requests sent using this app profile.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
+   *
+   * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
+   *     google/bigtable/admin/v2/instance.proto;l=332
+   * @return The priority.
+   */
+  @java.lang.Deprecated
+  public com.google.bigtable.admin.v2.AppProfile.Priority getPriority() {
+    if (isolationCase_ == 7) {
+      com.google.bigtable.admin.v2.AppProfile.Priority result =
+          com.google.bigtable.admin.v2.AppProfile.Priority.forNumber(
+              (java.lang.Integer) isolation_);
+      return result == null
+          ? com.google.bigtable.admin.v2.AppProfile.Priority.UNRECOGNIZED
+          : result;
+    }
+    return com.google.bigtable.admin.v2.AppProfile.Priority.PRIORITY_UNSPECIFIED;
+  }
+
+  public static final int STANDARD_ISOLATION_FIELD_NUMBER = 11;
+  /**
+   *
+   *
+   * <pre>
+   * The standard options used for isolating this app profile's traffic from
+   * other use cases.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.AppProfile.StandardIsolation standard_isolation = 11;</code>
+   *
+   * @return Whether the standardIsolation field is set.
+   */
+  @java.lang.Override
+  public boolean hasStandardIsolation() {
+    return isolationCase_ == 11;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The standard options used for isolating this app profile's traffic from
+   * other use cases.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.AppProfile.StandardIsolation standard_isolation = 11;</code>
+   *
+   * @return The standardIsolation.
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.AppProfile.StandardIsolation getStandardIsolation() {
+    if (isolationCase_ == 11) {
+      return (com.google.bigtable.admin.v2.AppProfile.StandardIsolation) isolation_;
+    }
+    return com.google.bigtable.admin.v2.AppProfile.StandardIsolation.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The standard options used for isolating this app profile's traffic from
+   * other use cases.
+   * </pre>
+   *
+   * <code>.google.bigtable.admin.v2.AppProfile.StandardIsolation standard_isolation = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.bigtable.admin.v2.AppProfile.StandardIsolationOrBuilder
+      getStandardIsolationOrBuilder() {
+    if (isolationCase_ == 11) {
+      return (com.google.bigtable.admin.v2.AppProfile.StandardIsolation) isolation_;
+    }
+    return com.google.bigtable.admin.v2.AppProfile.StandardIsolation.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1995,6 +2922,13 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           6, (com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting) routingPolicy_);
     }
+    if (isolationCase_ == 7) {
+      output.writeEnum(7, ((java.lang.Integer) isolation_));
+    }
+    if (isolationCase_ == 11) {
+      output.writeMessage(
+          11, (com.google.bigtable.admin.v2.AppProfile.StandardIsolation) isolation_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2023,6 +2957,16 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, (com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting) routingPolicy_);
+    }
+    if (isolationCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeEnumSize(
+              7, ((java.lang.Integer) isolation_));
+    }
+    if (isolationCase_ == 11) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, (com.google.bigtable.admin.v2.AppProfile.StandardIsolation) isolation_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2054,6 +2998,17 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       case 0:
       default:
     }
+    if (!getIsolationCase().equals(other.getIsolationCase())) return false;
+    switch (isolationCase_) {
+      case 7:
+        if (getPriorityValue() != other.getPriorityValue()) return false;
+        break;
+      case 11:
+        if (!getStandardIsolation().equals(other.getStandardIsolation())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2079,6 +3034,18 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       case 6:
         hash = (37 * hash) + SINGLE_CLUSTER_ROUTING_FIELD_NUMBER;
         hash = (53 * hash) + getSingleClusterRouting().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (isolationCase_) {
+      case 7:
+        hash = (37 * hash) + PRIORITY_FIELD_NUMBER;
+        hash = (53 * hash) + getPriorityValue();
+        break;
+      case 11:
+        hash = (37 * hash) + STANDARD_ISOLATION_FIELD_NUMBER;
+        hash = (53 * hash) + getStandardIsolation().hashCode();
         break;
       case 0:
       default:
@@ -2232,8 +3199,13 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       if (singleClusterRoutingBuilder_ != null) {
         singleClusterRoutingBuilder_.clear();
       }
+      if (standardIsolationBuilder_ != null) {
+        standardIsolationBuilder_.clear();
+      }
       routingPolicyCase_ = 0;
       routingPolicy_ = null;
+      isolationCase_ = 0;
+      isolation_ = null;
       return this;
     }
 
@@ -2290,6 +3262,11 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       }
       if (routingPolicyCase_ == 6 && singleClusterRoutingBuilder_ != null) {
         result.routingPolicy_ = singleClusterRoutingBuilder_.build();
+      }
+      result.isolationCase_ = isolationCase_;
+      result.isolation_ = this.isolation_;
+      if (isolationCase_ == 11 && standardIsolationBuilder_ != null) {
+        result.isolation_ = standardIsolationBuilder_.build();
       }
     }
 
@@ -2369,6 +3346,22 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
             break;
           }
       }
+      switch (other.getIsolationCase()) {
+        case PRIORITY:
+          {
+            setPriorityValue(other.getPriorityValue());
+            break;
+          }
+        case STANDARD_ISOLATION:
+          {
+            mergeStandardIsolation(other.getStandardIsolation());
+            break;
+          }
+        case ISOLATION_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2427,6 +3420,20 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
                 routingPolicyCase_ = 6;
                 break;
               } // case 50
+            case 56:
+              {
+                int rawValue = input.readEnum();
+                isolationCase_ = 7;
+                isolation_ = rawValue;
+                break;
+              } // case 56
+            case 90:
+              {
+                input.readMessage(
+                    getStandardIsolationFieldBuilder().getBuilder(), extensionRegistry);
+                isolationCase_ = 11;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2454,6 +3461,20 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRoutingPolicy() {
       routingPolicyCase_ = 0;
       routingPolicy_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int isolationCase_ = 0;
+    private java.lang.Object isolation_;
+
+    public IsolationCase getIsolationCase() {
+      return IsolationCase.forNumber(isolationCase_);
+    }
+
+    public Builder clearIsolation() {
+      isolationCase_ = 0;
+      isolation_ = null;
       onChanged();
       return this;
     }
@@ -3281,6 +4302,381 @@ public final class AppProfile extends com.google.protobuf.GeneratedMessageV3
       routingPolicyCase_ = 6;
       onChanged();
       return singleClusterRoutingBuilder_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This field has been deprecated in favor of `standard_isolation.priority`.
+     * If you set this field, `standard_isolation.priority` will be set instead.
+     *
+     * The priority of requests sent using this app profile.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
+     *
+     * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
+     *     google/bigtable/admin/v2/instance.proto;l=332
+     * @return Whether the priority field is set.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public boolean hasPriority() {
+      return isolationCase_ == 7;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field has been deprecated in favor of `standard_isolation.priority`.
+     * If you set this field, `standard_isolation.priority` will be set instead.
+     *
+     * The priority of requests sent using this app profile.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
+     *
+     * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
+     *     google/bigtable/admin/v2/instance.proto;l=332
+     * @return The enum numeric value on the wire for priority.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public int getPriorityValue() {
+      if (isolationCase_ == 7) {
+        return ((java.lang.Integer) isolation_).intValue();
+      }
+      return 0;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field has been deprecated in favor of `standard_isolation.priority`.
+     * If you set this field, `standard_isolation.priority` will be set instead.
+     *
+     * The priority of requests sent using this app profile.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
+     *
+     * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
+     *     google/bigtable/admin/v2/instance.proto;l=332
+     * @param value The enum numeric value on the wire for priority to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder setPriorityValue(int value) {
+      isolationCase_ = 7;
+      isolation_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field has been deprecated in favor of `standard_isolation.priority`.
+     * If you set this field, `standard_isolation.priority` will be set instead.
+     *
+     * The priority of requests sent using this app profile.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
+     *
+     * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
+     *     google/bigtable/admin/v2/instance.proto;l=332
+     * @return The priority.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public com.google.bigtable.admin.v2.AppProfile.Priority getPriority() {
+      if (isolationCase_ == 7) {
+        com.google.bigtable.admin.v2.AppProfile.Priority result =
+            com.google.bigtable.admin.v2.AppProfile.Priority.forNumber(
+                (java.lang.Integer) isolation_);
+        return result == null
+            ? com.google.bigtable.admin.v2.AppProfile.Priority.UNRECOGNIZED
+            : result;
+      }
+      return com.google.bigtable.admin.v2.AppProfile.Priority.PRIORITY_UNSPECIFIED;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field has been deprecated in favor of `standard_isolation.priority`.
+     * If you set this field, `standard_isolation.priority` will be set instead.
+     *
+     * The priority of requests sent using this app profile.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
+     *
+     * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
+     *     google/bigtable/admin/v2/instance.proto;l=332
+     * @param value The priority to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder setPriority(com.google.bigtable.admin.v2.AppProfile.Priority value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      isolationCase_ = 7;
+      isolation_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * This field has been deprecated in favor of `standard_isolation.priority`.
+     * If you set this field, `standard_isolation.priority` will be set instead.
+     *
+     * The priority of requests sent using this app profile.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.AppProfile.Priority priority = 7 [deprecated = true];</code>
+     *
+     * @deprecated google.bigtable.admin.v2.AppProfile.priority is deprecated. See
+     *     google/bigtable/admin/v2/instance.proto;l=332
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder clearPriority() {
+      if (isolationCase_ == 7) {
+        isolationCase_ = 0;
+        isolation_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.AppProfile.StandardIsolation,
+            com.google.bigtable.admin.v2.AppProfile.StandardIsolation.Builder,
+            com.google.bigtable.admin.v2.AppProfile.StandardIsolationOrBuilder>
+        standardIsolationBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The standard options used for isolating this app profile's traffic from
+     * other use cases.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.AppProfile.StandardIsolation standard_isolation = 11;</code>
+     *
+     * @return Whether the standardIsolation field is set.
+     */
+    @java.lang.Override
+    public boolean hasStandardIsolation() {
+      return isolationCase_ == 11;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The standard options used for isolating this app profile's traffic from
+     * other use cases.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.AppProfile.StandardIsolation standard_isolation = 11;</code>
+     *
+     * @return The standardIsolation.
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.AppProfile.StandardIsolation getStandardIsolation() {
+      if (standardIsolationBuilder_ == null) {
+        if (isolationCase_ == 11) {
+          return (com.google.bigtable.admin.v2.AppProfile.StandardIsolation) isolation_;
+        }
+        return com.google.bigtable.admin.v2.AppProfile.StandardIsolation.getDefaultInstance();
+      } else {
+        if (isolationCase_ == 11) {
+          return standardIsolationBuilder_.getMessage();
+        }
+        return com.google.bigtable.admin.v2.AppProfile.StandardIsolation.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The standard options used for isolating this app profile's traffic from
+     * other use cases.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.AppProfile.StandardIsolation standard_isolation = 11;</code>
+     */
+    public Builder setStandardIsolation(
+        com.google.bigtable.admin.v2.AppProfile.StandardIsolation value) {
+      if (standardIsolationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        isolation_ = value;
+        onChanged();
+      } else {
+        standardIsolationBuilder_.setMessage(value);
+      }
+      isolationCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The standard options used for isolating this app profile's traffic from
+     * other use cases.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.AppProfile.StandardIsolation standard_isolation = 11;</code>
+     */
+    public Builder setStandardIsolation(
+        com.google.bigtable.admin.v2.AppProfile.StandardIsolation.Builder builderForValue) {
+      if (standardIsolationBuilder_ == null) {
+        isolation_ = builderForValue.build();
+        onChanged();
+      } else {
+        standardIsolationBuilder_.setMessage(builderForValue.build());
+      }
+      isolationCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The standard options used for isolating this app profile's traffic from
+     * other use cases.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.AppProfile.StandardIsolation standard_isolation = 11;</code>
+     */
+    public Builder mergeStandardIsolation(
+        com.google.bigtable.admin.v2.AppProfile.StandardIsolation value) {
+      if (standardIsolationBuilder_ == null) {
+        if (isolationCase_ == 11
+            && isolation_
+                != com.google.bigtable.admin.v2.AppProfile.StandardIsolation.getDefaultInstance()) {
+          isolation_ =
+              com.google.bigtable.admin.v2.AppProfile.StandardIsolation.newBuilder(
+                      (com.google.bigtable.admin.v2.AppProfile.StandardIsolation) isolation_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          isolation_ = value;
+        }
+        onChanged();
+      } else {
+        if (isolationCase_ == 11) {
+          standardIsolationBuilder_.mergeFrom(value);
+        } else {
+          standardIsolationBuilder_.setMessage(value);
+        }
+      }
+      isolationCase_ = 11;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The standard options used for isolating this app profile's traffic from
+     * other use cases.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.AppProfile.StandardIsolation standard_isolation = 11;</code>
+     */
+    public Builder clearStandardIsolation() {
+      if (standardIsolationBuilder_ == null) {
+        if (isolationCase_ == 11) {
+          isolationCase_ = 0;
+          isolation_ = null;
+          onChanged();
+        }
+      } else {
+        if (isolationCase_ == 11) {
+          isolationCase_ = 0;
+          isolation_ = null;
+        }
+        standardIsolationBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The standard options used for isolating this app profile's traffic from
+     * other use cases.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.AppProfile.StandardIsolation standard_isolation = 11;</code>
+     */
+    public com.google.bigtable.admin.v2.AppProfile.StandardIsolation.Builder
+        getStandardIsolationBuilder() {
+      return getStandardIsolationFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The standard options used for isolating this app profile's traffic from
+     * other use cases.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.AppProfile.StandardIsolation standard_isolation = 11;</code>
+     */
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.AppProfile.StandardIsolationOrBuilder
+        getStandardIsolationOrBuilder() {
+      if ((isolationCase_ == 11) && (standardIsolationBuilder_ != null)) {
+        return standardIsolationBuilder_.getMessageOrBuilder();
+      } else {
+        if (isolationCase_ == 11) {
+          return (com.google.bigtable.admin.v2.AppProfile.StandardIsolation) isolation_;
+        }
+        return com.google.bigtable.admin.v2.AppProfile.StandardIsolation.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The standard options used for isolating this app profile's traffic from
+     * other use cases.
+     * </pre>
+     *
+     * <code>.google.bigtable.admin.v2.AppProfile.StandardIsolation standard_isolation = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.bigtable.admin.v2.AppProfile.StandardIsolation,
+            com.google.bigtable.admin.v2.AppProfile.StandardIsolation.Builder,
+            com.google.bigtable.admin.v2.AppProfile.StandardIsolationOrBuilder>
+        getStandardIsolationFieldBuilder() {
+      if (standardIsolationBuilder_ == null) {
+        if (!(isolationCase_ == 11)) {
+          isolation_ =
+              com.google.bigtable.admin.v2.AppProfile.StandardIsolation.getDefaultInstance();
+        }
+        standardIsolationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.bigtable.admin.v2.AppProfile.StandardIsolation,
+                com.google.bigtable.admin.v2.AppProfile.StandardIsolation.Builder,
+                com.google.bigtable.admin.v2.AppProfile.StandardIsolationOrBuilder>(
+                (com.google.bigtable.admin.v2.AppProfile.StandardIsolation) isolation_,
+                getParentForChildren(),
+                isClean());
+        isolation_ = null;
+      }
+      isolationCase_ = 11;
+      onChanged();
+      return standardIsolationBuilder_;
     }
 
     @java.lang.Override

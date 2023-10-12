@@ -27,8 +27,8 @@ public interface ListInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The unique name of the project for which a list of instances is requested.
-   * Values are of the form `projects/{project}`.
+   * Required. The unique name of the project for which a list of instances is
+   * requested. Values are of the form `projects/{project}`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface ListInstancesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The unique name of the project for which a list of instances is requested.
-   * Values are of the form `projects/{project}`.
+   * Required. The unique name of the project for which a list of instances is
+   * requested. Values are of the form `projects/{project}`.
    * </pre>
    *
    * <code>

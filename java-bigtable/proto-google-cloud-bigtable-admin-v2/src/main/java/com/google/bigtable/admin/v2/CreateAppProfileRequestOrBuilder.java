@@ -27,9 +27,8 @@ public interface CreateAppProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The unique name of the instance in which to create the new app profile.
-   * Values are of the form
-   * `projects/{project}/instances/{instance}`.
+   * Required. The unique name of the instance in which to create the new app
+   * profile. Values are of the form `projects/{project}/instances/{instance}`.
    * </pre>
    *
    * <code>
@@ -43,9 +42,8 @@ public interface CreateAppProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The unique name of the instance in which to create the new app profile.
-   * Values are of the form
-   * `projects/{project}/instances/{instance}`.
+   * Required. The unique name of the instance in which to create the new app
+   * profile. Values are of the form `projects/{project}/instances/{instance}`.
    * </pre>
    *
    * <code>
@@ -60,8 +58,8 @@ public interface CreateAppProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ID to be used when referring to the new app profile within its
-   * instance, e.g., just `myprofile` rather than
+   * Required. The ID to be used when referring to the new app profile within
+   * its instance, e.g., just `myprofile` rather than
    * `projects/myproject/instances/myinstance/appProfiles/myprofile`.
    * </pre>
    *
@@ -74,8 +72,8 @@ public interface CreateAppProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The ID to be used when referring to the new app profile within its
-   * instance, e.g., just `myprofile` rather than
+   * Required. The ID to be used when referring to the new app profile within
+   * its instance, e.g., just `myprofile` rather than
    * `projects/myproject/instances/myinstance/appProfiles/myprofile`.
    * </pre>
    *

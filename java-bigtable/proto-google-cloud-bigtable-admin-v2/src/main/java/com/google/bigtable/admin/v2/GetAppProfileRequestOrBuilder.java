@@ -27,8 +27,8 @@ public interface GetAppProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The unique name of the requested app profile. Values are of the form
-   * `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
+   * Required. The unique name of the requested app profile. Values are of the
+   * form `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
    * </pre>
    *
    * <code>
@@ -42,8 +42,8 @@ public interface GetAppProfileRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The unique name of the requested app profile. Values are of the form
-   * `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
+   * Required. The unique name of the requested app profile. Values are of the
+   * form `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
    * </pre>
    *
    * <code>
