@@ -1,5 +1,18 @@
 # Changelog
 
+## [2.28.0](https://github.com/googleapis/java-bigtable/compare/v2.27.4...v2.28.0) (2023-10-12)
+
+
+### Features
+
+* Add support for Cloud Bigtable Request Priorities in App Profiles ([#1954](https://github.com/googleapis/java-bigtable/issues/1954)) ([8822571](https://github.com/googleapis/java-bigtable/commit/88225717b870032b8892123262d2529ba1dbd481))
+* Add test profile to push metrics to test environment ([#1921](https://github.com/googleapis/java-bigtable/issues/1921)) ([2104315](https://github.com/googleapis/java-bigtable/commit/210431523ce54029db846a0d6777d5e417e039dd))
+
+
+### Dependencies
+
+* Update shared dependencies ([#1955](https://github.com/googleapis/java-bigtable/issues/1955)) ([f29717e](https://github.com/googleapis/java-bigtable/commit/f29717e3f1af03a78ce9468cdafa8c09dfb1b216))
+
 ## [2.27.4](https://github.com/googleapis/java-bigtable/compare/v2.27.3...v2.27.4) (2023-09-29)
 
 
