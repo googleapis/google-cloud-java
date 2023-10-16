@@ -36,6 +36,7 @@ branchProtectionRules:
     - "Kokoro - Test: Integration"
     - "Kokoro - Test: Java GraalVM Native Image"
     - "Kokoro - Test: Java 17 GraalVM Native Image"
+    - "Kokoro - Test: Docker Image Validation"
     - "dependencies (11, java-bigquery)"
     - "dependencies (11, java-spanner)"
     - "dependencies (11, java-storage)"

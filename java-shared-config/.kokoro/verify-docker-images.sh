@@ -8,6 +8,8 @@ function fetch_image_names() {
   echo "$imageNames"
 }
 
+git config --global --add safe.directory /tmpfs/src/github/java-shared-config
+
 # Get the directory of the build script
 scriptDir=$(realpath "$(dirname "${BASH_SOURCE[0]}")")
 # cd to the parent directory, i.e. the root of the git repo
@@ -16,8 +18,8 @@ cd ${scriptDir}/.. || exit
 # Fetch the java-shared-config version in source of the current commit.
 javaSharedConfigVersion="$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)"
 
-branchName=$(git name-rev "$KOKORO_GIT_COMMIT" | sed 's/.* //')
-gitCommitMessage=$(git log -1 "$(git rev-parse --short "$KOKORO_GIT_COMMIT")" | grep "chore(main): release *")
+branchName=$(git name-rev "${KOKORO_GIT_COMMIT}" | sed 's/.* //')
+gitCommitMessage=$(git log -1 "$(git rev-parse --short "${KOKORO_GIT_COMMIT}")" | grep "chore(main): release *")
 
 # GraalVM docker images are not tagged with SNAPSHOT versions.
 if [[ "${branchName}" == *"release-please--branches--main"* ]] && [[ ! $gitCommitMessage =~ "SNAPSHOT" ]]; then
