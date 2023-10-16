@@ -29,11 +29,13 @@ public interface GenerateServiceIdentityRequestOrBuilder
    * <pre>
    * Name of the consumer and service to generate an identity for.
    *
-   * The `GenerateServiceIdentity` methods currently only support projects.
+   * The `GenerateServiceIdentity` methods currently support projects, folders,
+   * organizations.
    *
-   * An example name would be:
-   * `projects/123/services/example.googleapis.com` where `123` is the
-   * project number.
+   * Example parents would be:
+   * `projects/123/services/example.googleapis.com`
+   * `folders/123/services/example.googleapis.com`
+   * `organizations/123/services/example.googleapis.com`
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -47,11 +49,13 @@ public interface GenerateServiceIdentityRequestOrBuilder
    * <pre>
    * Name of the consumer and service to generate an identity for.
    *
-   * The `GenerateServiceIdentity` methods currently only support projects.
+   * The `GenerateServiceIdentity` methods currently support projects, folders,
+   * organizations.
    *
-   * An example name would be:
-   * `projects/123/services/example.googleapis.com` where `123` is the
-   * project number.
+   * Example parents would be:
+   * `projects/123/services/example.googleapis.com`
+   * `folders/123/services/example.googleapis.com`
+   * `organizations/123/services/example.googleapis.com`
    * </pre>
    *
    * <code>string parent = 1;</code>

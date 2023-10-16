@@ -326,6 +326,37 @@ service DocumentProcessorService {
   }
 }
 
+// Options for Process API
+message ProcessOptions {
+  // A list of individual page numbers.
+  message IndividualPageSelector {
+    // Optional. Indices of the pages (starting from 1).
+    repeated int32 pages = 1 [(google.api.field_behavior) = OPTIONAL];
+  }
+
+  // A subset of pages to process. If not specified, all pages will be
+  // processed. NOTICE: If any of the page range is set, we will extract and
+  // process only the given pages from the document. In the output document,
+  // [Document.Page.page_number][google.cloud.documentai.v1.Document.Page.page_number]
+  // is referring to the page number in the original document. This
+  // configuration only applies to sync requests.
+  oneof page_range {
+    // Which pages to process (1-indexed).
+    IndividualPageSelector individual_page_selector = 5;
+
+    // Only process certain pages from the start. Process all if the document
+    // has fewer pages.
+    int32 from_start = 6;
+
+    // Only process certain pages from the end, same as above.
+    int32 from_end = 7;
+  }
+
+  // Only applicable to `OCR_PROCESSOR`. Returns error if set on other
+  // processor types.
+  OcrConfig ocr_config = 1;
+}
+
 // Request message for the
 // [ProcessDocument][google.cloud.documentai.v1.DocumentProcessorService.ProcessDocument]
 // method.
@@ -337,6 +368,9 @@ message ProcessRequest {
 
     // A raw document content (bytes).
     RawDocument raw_document = 5;
+
+    // A raw document on Google Cloud Storage.
+    GcsDocument gcs_document = 8;
   }
 
   // Required. The resource name of the
@@ -363,6 +397,9 @@ message ProcessRequest {
   // output. Only supports top-level document and pages field, so it must be in
   // the form of `{document_field_name}` or `pages.{page_field_name}`.
   google.protobuf.FieldMask field_mask = 6;
+
+  // Inference-time options for the process API
+  ProcessOptions process_options = 7;
 }
 
 // The status of human review on a processed document.
@@ -443,6 +480,9 @@ message BatchProcessRequest {
   // Whether human review should be skipped for this request. Default to
   // `false`.
   bool skip_human_review = 4;
+
+  // Inference-time options for the process API
+  ProcessOptions process_options = 7;
 }
 
 // Response message for
@@ -893,6 +933,28 @@ message TrainProcessorVersionRequest {
 
     // The documents used for testing the trained version.
     BatchDocumentsInputConfig test_documents = 4;
+  }
+
+  // Options to control the training of the Custom Document Extraction (CDE)
+  // Processor.
+  message CustomDocumentExtractionOptions {
+    // Training Method for CDE. `TRAINING_METHOD_UNSPECIFIED` will fall back to
+    // `MODEL_BASED`.
+    enum TrainingMethod {
+      TRAINING_METHOD_UNSPECIFIED = 0;
+
+      MODEL_BASED = 1;
+
+      TEMPLATE_BASED = 2;
+    }
+
+    // Training method to use for CDE training.
+    TrainingMethod training_method = 3;
+  }
+
+  oneof processor_flags {
+    // Options to control Custom Document Extraction (CDE) Processor.
+    CustomDocumentExtractionOptions custom_document_extraction_options = 5;
   }
 
   // Required. The parent (project, location and processor) to create the new

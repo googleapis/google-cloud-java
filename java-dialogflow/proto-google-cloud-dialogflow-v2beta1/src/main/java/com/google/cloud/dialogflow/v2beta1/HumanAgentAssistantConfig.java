@@ -817,7 +817,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * suggestions.
      *
      * Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST,
-     * ENTITY_EXTRACTION.
+     * ENTITY_EXTRACTION, KNOWLEDGE_ASSIST.
      * </pre>
      *
      * <code>bool enable_event_based_suggestion = 3;</code>
@@ -825,6 +825,22 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * @return The enableEventBasedSuggestion.
      */
     boolean getEnableEventBasedSuggestion();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disable the logging of search queries sent by human agents. It
+     * can prevent those queries from being stored at answer records.
+     *
+     * Supported features: KNOWLEDGE_SEARCH.
+     * </pre>
+     *
+     * <code>bool disable_agent_query_logging = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The disableAgentQueryLogging.
+     */
+    boolean getDisableAgentQueryLogging();
 
     /**
      *
@@ -1113,7 +1129,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
      * suggestions.
      *
      * Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST,
-     * ENTITY_EXTRACTION.
+     * ENTITY_EXTRACTION, KNOWLEDGE_ASSIST.
      * </pre>
      *
      * <code>bool enable_event_based_suggestion = 3;</code>
@@ -1123,6 +1139,27 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
     @java.lang.Override
     public boolean getEnableEventBasedSuggestion() {
       return enableEventBasedSuggestion_;
+    }
+
+    public static final int DISABLE_AGENT_QUERY_LOGGING_FIELD_NUMBER = 14;
+    private boolean disableAgentQueryLogging_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Disable the logging of search queries sent by human agents. It
+     * can prevent those queries from being stored at answer records.
+     *
+     * Supported features: KNOWLEDGE_SEARCH.
+     * </pre>
+     *
+     * <code>bool disable_agent_query_logging = 14 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The disableAgentQueryLogging.
+     */
+    @java.lang.Override
+    public boolean getDisableAgentQueryLogging() {
+      return disableAgentQueryLogging_;
     }
 
     public static final int SUGGESTION_TRIGGER_SETTINGS_FIELD_NUMBER = 10;
@@ -1414,6 +1451,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       if (suggestionTriggerSettings_ != null) {
         output.writeMessage(10, getSuggestionTriggerSettings());
       }
+      if (disableAgentQueryLogging_ != false) {
+        output.writeBool(14, disableAgentQueryLogging_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1448,6 +1488,10 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 10, getSuggestionTriggerSettings());
       }
+      if (disableAgentQueryLogging_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(14, disableAgentQueryLogging_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1472,6 +1516,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         if (!getSuggestionFeature().equals(other.getSuggestionFeature())) return false;
       }
       if (getEnableEventBasedSuggestion() != other.getEnableEventBasedSuggestion()) return false;
+      if (getDisableAgentQueryLogging() != other.getDisableAgentQueryLogging()) return false;
       if (hasSuggestionTriggerSettings() != other.hasSuggestionTriggerSettings()) return false;
       if (hasSuggestionTriggerSettings()) {
         if (!getSuggestionTriggerSettings().equals(other.getSuggestionTriggerSettings()))
@@ -1508,6 +1553,8 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       hash = (37 * hash) + ENABLE_EVENT_BASED_SUGGESTION_FIELD_NUMBER;
       hash =
           (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableEventBasedSuggestion());
+      hash = (37 * hash) + DISABLE_AGENT_QUERY_LOGGING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableAgentQueryLogging());
       if (hasSuggestionTriggerSettings()) {
         hash = (37 * hash) + SUGGESTION_TRIGGER_SETTINGS_FIELD_NUMBER;
         hash = (53 * hash) + getSuggestionTriggerSettings().hashCode();
@@ -1696,6 +1743,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           suggestionFeatureBuilder_ = null;
         }
         enableEventBasedSuggestion_ = false;
+        disableAgentQueryLogging_ = false;
         suggestionTriggerSettings_ = null;
         if (suggestionTriggerSettingsBuilder_ != null) {
           suggestionTriggerSettingsBuilder_.dispose();
@@ -1771,22 +1819,25 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           result.enableEventBasedSuggestion_ = enableEventBasedSuggestion_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.disableAgentQueryLogging_ = disableAgentQueryLogging_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.suggestionTriggerSettings_ =
               suggestionTriggerSettingsBuilder_ == null
                   ? suggestionTriggerSettings_
                   : suggestionTriggerSettingsBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           result.queryConfig_ =
               queryConfigBuilder_ == null ? queryConfig_ : queryConfigBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           result.conversationModelConfig_ =
               conversationModelConfigBuilder_ == null
                   ? conversationModelConfig_
                   : conversationModelConfigBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
+        if (((from_bitField0_ & 0x00000040) != 0)) {
           result.conversationProcessConfig_ =
               conversationProcessConfigBuilder_ == null
                   ? conversationProcessConfig_
@@ -1856,6 +1907,9 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         if (other.getEnableEventBasedSuggestion() != false) {
           setEnableEventBasedSuggestion(other.getEnableEventBasedSuggestion());
         }
+        if (other.getDisableAgentQueryLogging() != false) {
+          setDisableAgentQueryLogging(other.getDisableAgentQueryLogging());
+        }
         if (other.hasSuggestionTriggerSettings()) {
           mergeSuggestionTriggerSettings(other.getSuggestionTriggerSettings());
         }
@@ -1910,30 +1964,36 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
               case 50:
                 {
                   input.readMessage(getQueryConfigFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000008;
+                  bitField0_ |= 0x00000010;
                   break;
                 } // case 50
               case 58:
                 {
                   input.readMessage(
                       getConversationModelConfigFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000010;
+                  bitField0_ |= 0x00000020;
                   break;
                 } // case 58
               case 66:
                 {
                   input.readMessage(
                       getConversationProcessConfigFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000020;
+                  bitField0_ |= 0x00000040;
                   break;
                 } // case 66
               case 82:
                 {
                   input.readMessage(
                       getSuggestionTriggerSettingsFieldBuilder().getBuilder(), extensionRegistry);
-                  bitField0_ |= 0x00000004;
+                  bitField0_ |= 0x00000008;
                   break;
                 } // case 82
+              case 112:
+                {
+                  disableAgentQueryLogging_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 112
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2151,7 +2211,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * suggestions.
        *
        * Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST,
-       * ENTITY_EXTRACTION.
+       * ENTITY_EXTRACTION, KNOWLEDGE_ASSIST.
        * </pre>
        *
        * <code>bool enable_event_based_suggestion = 3;</code>
@@ -2170,7 +2230,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * suggestions.
        *
        * Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST,
-       * ENTITY_EXTRACTION.
+       * ENTITY_EXTRACTION, KNOWLEDGE_ASSIST.
        * </pre>
        *
        * <code>bool enable_event_based_suggestion = 3;</code>
@@ -2193,7 +2253,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * suggestions.
        *
        * Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST,
-       * ENTITY_EXTRACTION.
+       * ENTITY_EXTRACTION, KNOWLEDGE_ASSIST.
        * </pre>
        *
        * <code>bool enable_event_based_suggestion = 3;</code>
@@ -2203,6 +2263,71 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public Builder clearEnableEventBasedSuggestion() {
         bitField0_ = (bitField0_ & ~0x00000002);
         enableEventBasedSuggestion_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean disableAgentQueryLogging_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Disable the logging of search queries sent by human agents. It
+       * can prevent those queries from being stored at answer records.
+       *
+       * Supported features: KNOWLEDGE_SEARCH.
+       * </pre>
+       *
+       * <code>bool disable_agent_query_logging = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The disableAgentQueryLogging.
+       */
+      @java.lang.Override
+      public boolean getDisableAgentQueryLogging() {
+        return disableAgentQueryLogging_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Disable the logging of search queries sent by human agents. It
+       * can prevent those queries from being stored at answer records.
+       *
+       * Supported features: KNOWLEDGE_SEARCH.
+       * </pre>
+       *
+       * <code>bool disable_agent_query_logging = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The disableAgentQueryLogging to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableAgentQueryLogging(boolean value) {
+
+        disableAgentQueryLogging_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Disable the logging of search queries sent by human agents. It
+       * can prevent those queries from being stored at answer records.
+       *
+       * Supported features: KNOWLEDGE_SEARCH.
+       * </pre>
+       *
+       * <code>bool disable_agent_query_logging = 14 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDisableAgentQueryLogging() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        disableAgentQueryLogging_ = false;
         onChanged();
         return this;
       }
@@ -2235,7 +2360,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * @return Whether the suggestionTriggerSettings field is set.
        */
       public boolean hasSuggestionTriggerSettings() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        *
@@ -2289,7 +2414,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           suggestionTriggerSettingsBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2316,7 +2441,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           suggestionTriggerSettingsBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2338,7 +2463,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionTriggerSettings
               value) {
         if (suggestionTriggerSettingsBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)
+          if (((bitField0_ & 0x00000008) != 0)
               && suggestionTriggerSettings_ != null
               && suggestionTriggerSettings_
                   != com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
@@ -2350,7 +2475,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           suggestionTriggerSettingsBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -2369,7 +2494,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * </code>
        */
       public Builder clearSuggestionTriggerSettings() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         suggestionTriggerSettings_ = null;
         if (suggestionTriggerSettingsBuilder_ != null) {
           suggestionTriggerSettingsBuilder_.dispose();
@@ -2395,7 +2520,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionTriggerSettings
               .Builder
           getSuggestionTriggerSettingsBuilder() {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return getSuggestionTriggerSettingsFieldBuilder().getBuilder();
       }
@@ -2485,7 +2610,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * @return Whether the queryConfig field is set.
        */
       public boolean hasQueryConfig() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
        *
@@ -2533,7 +2658,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           queryConfigBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2557,7 +2682,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           queryConfigBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2576,7 +2701,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
               value) {
         if (queryConfigBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0)
+          if (((bitField0_ & 0x00000010) != 0)
               && queryConfig_ != null
               && queryConfig_
                   != com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
@@ -2588,7 +2713,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           queryConfigBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -2604,7 +2729,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * </code>
        */
       public Builder clearQueryConfig() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         queryConfig_ = null;
         if (queryConfigBuilder_ != null) {
           queryConfigBuilder_.dispose();
@@ -2627,7 +2752,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.SuggestionQueryConfig
               .Builder
           getQueryConfigBuilder() {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return getQueryConfigFieldBuilder().getBuilder();
       }
@@ -2710,7 +2835,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * @return Whether the conversationModelConfig field is set.
        */
       public boolean hasConversationModelConfig() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        *
@@ -2758,7 +2883,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           conversationModelConfigBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2782,7 +2907,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           conversationModelConfigBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2801,7 +2926,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.ConversationModelConfig
               value) {
         if (conversationModelConfigBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) != 0)
+          if (((bitField0_ & 0x00000020) != 0)
               && conversationModelConfig_ != null
               && conversationModelConfig_
                   != com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
@@ -2813,7 +2938,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           conversationModelConfigBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -2829,7 +2954,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * </code>
        */
       public Builder clearConversationModelConfig() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         conversationModelConfig_ = null;
         if (conversationModelConfigBuilder_ != null) {
           conversationModelConfigBuilder_.dispose();
@@ -2852,7 +2977,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.ConversationModelConfig
               .Builder
           getConversationModelConfigBuilder() {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return getConversationModelConfigFieldBuilder().getBuilder();
       }
@@ -2937,7 +3062,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * @return Whether the conversationProcessConfig field is set.
        */
       public boolean hasConversationProcessConfig() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        *
@@ -2985,7 +3110,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           conversationProcessConfigBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -3009,7 +3134,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           conversationProcessConfigBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -3028,7 +3153,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
           com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.ConversationProcessConfig
               value) {
         if (conversationProcessConfigBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0)
+          if (((bitField0_ & 0x00000040) != 0)
               && conversationProcessConfig_ != null
               && conversationProcessConfig_
                   != com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig
@@ -3040,7 +3165,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
         } else {
           conversationProcessConfigBuilder_.mergeFrom(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -3056,7 +3181,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
        * </code>
        */
       public Builder clearConversationProcessConfig() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         conversationProcessConfig_ = null;
         if (conversationProcessConfigBuilder_ != null) {
           conversationProcessConfigBuilder_.dispose();
@@ -3079,7 +3204,7 @@ public final class HumanAgentAssistantConfig extends com.google.protobuf.Generat
       public com.google.cloud.dialogflow.v2beta1.HumanAgentAssistantConfig.ConversationProcessConfig
               .Builder
           getConversationProcessConfigBuilder() {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return getConversationProcessConfigFieldBuilder().getBuilder();
       }

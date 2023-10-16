@@ -255,4 +255,29 @@ public interface JobEventOrBuilder
    * @return The bytes for serviceJob.
    */
   com.google.protobuf.ByteString getServiceJobBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Job execution trigger.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger execution_trigger = 11;</code>
+   *
+   * @return The enum numeric value on the wire for executionTrigger.
+   */
+  int getExecutionTriggerValue();
+  /**
+   *
+   *
+   * <pre>
+   * Job execution trigger.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger execution_trigger = 11;</code>
+   *
+   * @return The executionTrigger.
+   */
+  com.google.cloud.dataplex.v1.JobEvent.ExecutionTrigger getExecutionTrigger();
 }

@@ -97,6 +97,41 @@ public interface ProcessRequestOrBuilder
    *
    *
    * <pre>
+   * A raw document on Google Cloud Storage.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.GcsDocument gcs_document = 8;</code>
+   *
+   * @return Whether the gcsDocument field is set.
+   */
+  boolean hasGcsDocument();
+  /**
+   *
+   *
+   * <pre>
+   * A raw document on Google Cloud Storage.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.GcsDocument gcs_document = 8;</code>
+   *
+   * @return The gcsDocument.
+   */
+  com.google.cloud.documentai.v1beta3.GcsDocument getGcsDocument();
+  /**
+   *
+   *
+   * <pre>
+   * A raw document on Google Cloud Storage.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.GcsDocument gcs_document = 8;</code>
+   */
+  com.google.cloud.documentai.v1beta3.GcsDocumentOrBuilder getGcsDocumentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The resource name of the
    * [Processor][google.cloud.documentai.v1beta3.Processor] or
    * [ProcessorVersion][google.cloud.documentai.v1beta3.ProcessorVersion]
@@ -153,7 +188,7 @@ public interface ProcessRequestOrBuilder
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=381
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=416
    * @return Whether the document field is set.
    */
   @java.lang.Deprecated
@@ -171,7 +206,7 @@ public interface ProcessRequestOrBuilder
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=381
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=416
    * @return The document.
    */
   @java.lang.Deprecated

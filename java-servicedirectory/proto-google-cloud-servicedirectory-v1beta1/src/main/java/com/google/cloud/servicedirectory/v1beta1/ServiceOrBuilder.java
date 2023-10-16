@@ -70,10 +70,6 @@ public interface ServiceOrBuilder
    *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
    *     not longer than 253 characters in total, followed by a slash (/).
    *     Metadata that fails to meet these requirements are rejected
-   * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
-   *     for system metadata managed by Service Directory. If the user tries
-   *     to write to these keyspaces, those entries are silently ignored by
-   *     the system
    *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
@@ -103,10 +99,6 @@ public interface ServiceOrBuilder
    *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
    *     not longer than 253 characters in total, followed by a slash (/).
    *     Metadata that fails to meet these requirements are rejected
-   * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
-   *     for system metadata managed by Service Directory. If the user tries
-   *     to write to these keyspaces, those entries are silently ignored by
-   *     the system
    *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
@@ -139,10 +131,6 @@ public interface ServiceOrBuilder
    *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
    *     not longer than 253 characters in total, followed by a slash (/).
    *     Metadata that fails to meet these requirements are rejected
-   * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
-   *     for system metadata managed by Service Directory. If the user tries
-   *     to write to these keyspaces, those entries are silently ignored by
-   *     the system
    *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
@@ -172,10 +160,6 @@ public interface ServiceOrBuilder
    *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
    *     not longer than 253 characters in total, followed by a slash (/).
    *     Metadata that fails to meet these requirements are rejected
-   * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
-   *     for system metadata managed by Service Directory. If the user tries
-   *     to write to these keyspaces, those entries are silently ignored by
-   *     the system
    *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
@@ -209,10 +193,6 @@ public interface ServiceOrBuilder
    *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
    *     not longer than 253 characters in total, followed by a slash (/).
    *     Metadata that fails to meet these requirements are rejected
-   * *   The `(*.)google.com/` and `(*.)googleapis.com/` prefixes are reserved
-   *     for system metadata managed by Service Directory. If the user tries
-   *     to write to these keyspaces, those entries are silently ignored by
-   *     the system
    *
    * Note: This field is equivalent to the `annotations` field in the v1 API.
    * They have the same syntax and read/write to the same location in Service
@@ -228,7 +208,8 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * Output only. Endpoints associated with this service. Returned on
-   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+   * Control plane clients should use
    * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
    * </pre>
    *
@@ -242,7 +223,8 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * Output only. Endpoints associated with this service. Returned on
-   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+   * Control plane clients should use
    * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
    * </pre>
    *
@@ -256,7 +238,8 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * Output only. Endpoints associated with this service. Returned on
-   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+   * Control plane clients should use
    * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
    * </pre>
    *
@@ -270,7 +253,8 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * Output only. Endpoints associated with this service. Returned on
-   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+   * Control plane clients should use
    * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
    * </pre>
    *
@@ -285,7 +269,8 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * Output only. Endpoints associated with this service. Returned on
-   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService]. Control plane clients should use
+   * [LookupService.ResolveService][google.cloud.servicedirectory.v1beta1.LookupService.ResolveService].
+   * Control plane clients should use
    * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
    * </pre>
    *
@@ -337,9 +322,9 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp when the service was last updated. Note: endpoints being
-   * created/deleted/updated within the service are not considered service
-   * updates for the purpose of this timestamp.
+   * Output only. The timestamp when the service was last updated. Note:
+   * endpoints being created/deleted/updated within the service are not
+   * considered service updates for the purpose of this timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -352,9 +337,9 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp when the service was last updated. Note: endpoints being
-   * created/deleted/updated within the service are not considered service
-   * updates for the purpose of this timestamp.
+   * Output only. The timestamp when the service was last updated. Note:
+   * endpoints being created/deleted/updated within the service are not
+   * considered service updates for the purpose of this timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -367,13 +352,40 @@ public interface ServiceOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp when the service was last updated. Note: endpoints being
-   * created/deleted/updated within the service are not considered service
-   * updates for the purpose of this timestamp.
+   * Output only. The timestamp when the service was last updated. Note:
+   * endpoints being created/deleted/updated within the service are not
+   * considered service updates for the purpose of this timestamp.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A globally unique identifier (in UUID4 format) for this
+   * service.
+   * </pre>
+   *
+   * <code>string uid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The uid.
+   */
+  java.lang.String getUid();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A globally unique identifier (in UUID4 format) for this
+   * service.
+   * </pre>
+   *
+   * <code>string uid = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for uid.
+   */
+  com.google.protobuf.ByteString getUidBytes();
 }

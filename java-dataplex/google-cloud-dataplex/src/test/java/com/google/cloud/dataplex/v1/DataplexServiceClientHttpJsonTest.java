@@ -2673,6 +2673,8 @@ public class DataplexServiceClientHttpJsonTest {
             .setRetryCount(-928040776)
             .setServiceJob("serviceJob-1724783416")
             .setMessage("message954925063")
+            .putAllLabels(new HashMap<String, String>())
+            .setExecutionSpec(Task.ExecutionSpec.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2723,6 +2725,8 @@ public class DataplexServiceClientHttpJsonTest {
             .setRetryCount(-928040776)
             .setServiceJob("serviceJob-1724783416")
             .setMessage("message954925063")
+            .putAllLabels(new HashMap<String, String>())
+            .setExecutionSpec(Task.ExecutionSpec.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

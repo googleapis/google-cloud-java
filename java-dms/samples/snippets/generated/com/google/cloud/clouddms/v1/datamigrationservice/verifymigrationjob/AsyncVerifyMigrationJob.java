@@ -19,9 +19,11 @@ package com.google.cloud.clouddms.v1.samples;
 // [START datamigration_v1_generated_DataMigrationService_VerifyMigrationJob_async]
 import com.google.api.core.ApiFuture;
 import com.google.cloud.clouddms.v1.DataMigrationServiceClient;
+import com.google.cloud.clouddms.v1.MigrationJob;
 import com.google.cloud.clouddms.v1.MigrationJobName;
 import com.google.cloud.clouddms.v1.VerifyMigrationJobRequest;
 import com.google.longrunning.Operation;
+import com.google.protobuf.FieldMask;
 
 public class AsyncVerifyMigrationJob {
 
@@ -40,6 +42,8 @@ public class AsyncVerifyMigrationJob {
       VerifyMigrationJobRequest request =
           VerifyMigrationJobRequest.newBuilder()
               .setName(MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+              .setUpdateMask(FieldMask.newBuilder().build())
+              .setMigrationJob(MigrationJob.newBuilder().build())
               .build();
       ApiFuture<Operation> future =
           dataMigrationServiceClient.verifyMigrationJobCallable().futureCall(request);

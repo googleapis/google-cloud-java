@@ -139,12 +139,12 @@ public interface StreamingDetectIntentRequestOrBuilder
    * <pre>
    * Required. The input specification. It can be set to:
    *
-   * 1.  an audio config which instructs the speech recognizer how to process
-   *     the speech audio,
+   * 1. an audio config which instructs the speech recognizer how to process
+   * the speech audio,
    *
-   * 2.  a conversational query in the form of text, or
+   * 2. a conversational query in the form of text, or
    *
-   * 3.  an event that specifies which intent to trigger.
+   * 3. an event that specifies which intent to trigger.
    * </pre>
    *
    * <code>
@@ -160,12 +160,12 @@ public interface StreamingDetectIntentRequestOrBuilder
    * <pre>
    * Required. The input specification. It can be set to:
    *
-   * 1.  an audio config which instructs the speech recognizer how to process
-   *     the speech audio,
+   * 1. an audio config which instructs the speech recognizer how to process
+   * the speech audio,
    *
-   * 2.  a conversational query in the form of text, or
+   * 2. a conversational query in the form of text, or
    *
-   * 3.  an event that specifies which intent to trigger.
+   * 3. an event that specifies which intent to trigger.
    * </pre>
    *
    * <code>
@@ -181,12 +181,12 @@ public interface StreamingDetectIntentRequestOrBuilder
    * <pre>
    * Required. The input specification. It can be set to:
    *
-   * 1.  an audio config which instructs the speech recognizer how to process
-   *     the speech audio,
+   * 1. an audio config which instructs the speech recognizer how to process
+   * the speech audio,
    *
-   * 2.  a conversational query in the form of text, or
+   * 2. a conversational query in the form of text, or
    *
-   * 3.  an event that specifies which intent to trigger.
+   * 3. an event that specifies which intent to trigger.
    * </pre>
    *
    * <code>
@@ -213,7 +213,7 @@ public interface StreamingDetectIntentRequestOrBuilder
    * <code>bool single_utterance = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.StreamingDetectIntentRequest.single_utterance is
-   *     deprecated. See google/cloud/dialogflow/v2beta1/session.proto;l=564
+   *     deprecated. See google/cloud/dialogflow/v2beta1/session.proto;l=569
    * @return The singleUtterance.
    */
   @java.lang.Deprecated

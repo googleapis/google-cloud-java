@@ -17,6 +17,7 @@
 package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.ModelGardenServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.ModelGardenServiceClient.ListPublisherModelsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
@@ -27,6 +28,8 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.GetPublisherModelRequest;
+import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListPublisherModelsResponse;
 import com.google.cloud.aiplatform.v1beta1.PublisherModel;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -62,6 +65,18 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPublisherModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PublisherModel.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListPublisherModelsRequest, ListPublisherModelsResponse>
+      listPublisherModelsMethodDescriptor =
+          MethodDescriptor.<ListPublisherModelsRequest, ListPublisherModelsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.ModelGardenService/ListPublisherModels")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListPublisherModelsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListPublisherModelsResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -111,6 +126,10 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
               .build();
 
   private final UnaryCallable<GetPublisherModelRequest, PublisherModel> getPublisherModelCallable;
+  private final UnaryCallable<ListPublisherModelsRequest, ListPublisherModelsResponse>
+      listPublisherModelsCallable;
+  private final UnaryCallable<ListPublisherModelsRequest, ListPublisherModelsPagedResponse>
+      listPublisherModelsPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -174,6 +193,17 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ListPublisherModelsRequest, ListPublisherModelsResponse>
+        listPublisherModelsTransportSettings =
+            GrpcCallSettings.<ListPublisherModelsRequest, ListPublisherModelsResponse>newBuilder()
+                .setMethodDescriptor(listPublisherModelsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -231,6 +261,16 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
             getPublisherModelTransportSettings,
             settings.getPublisherModelSettings(),
             clientContext);
+    this.listPublisherModelsCallable =
+        callableFactory.createUnaryCallable(
+            listPublisherModelsTransportSettings,
+            settings.listPublisherModelsSettings(),
+            clientContext);
+    this.listPublisherModelsPagedCallable =
+        callableFactory.createPagedCallable(
+            listPublisherModelsTransportSettings,
+            settings.listPublisherModelsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -263,6 +303,18 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
   @Override
   public UnaryCallable<GetPublisherModelRequest, PublisherModel> getPublisherModelCallable() {
     return getPublisherModelCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPublisherModelsRequest, ListPublisherModelsResponse>
+      listPublisherModelsCallable() {
+    return listPublisherModelsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListPublisherModelsRequest, ListPublisherModelsPagedResponse>
+      listPublisherModelsPagedCallable() {
+    return listPublisherModelsPagedCallable;
   }
 
   @Override

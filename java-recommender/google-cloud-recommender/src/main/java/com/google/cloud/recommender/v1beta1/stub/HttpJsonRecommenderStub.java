@@ -16,8 +16,10 @@
 
 package com.google.cloud.recommender.v1beta1.stub;
 
+import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListInsightTypesPagedResponse;
 import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListInsightsPagedResponse;
 import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListRecommendationsPagedResponse;
+import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListRecommendersPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.core.InternalApi;
@@ -38,10 +40,14 @@ import com.google.cloud.recommender.v1beta1.GetRecommendationRequest;
 import com.google.cloud.recommender.v1beta1.GetRecommenderConfigRequest;
 import com.google.cloud.recommender.v1beta1.Insight;
 import com.google.cloud.recommender.v1beta1.InsightTypeConfig;
+import com.google.cloud.recommender.v1beta1.ListInsightTypesRequest;
+import com.google.cloud.recommender.v1beta1.ListInsightTypesResponse;
 import com.google.cloud.recommender.v1beta1.ListInsightsRequest;
 import com.google.cloud.recommender.v1beta1.ListInsightsResponse;
 import com.google.cloud.recommender.v1beta1.ListRecommendationsRequest;
 import com.google.cloud.recommender.v1beta1.ListRecommendationsResponse;
+import com.google.cloud.recommender.v1beta1.ListRecommendersRequest;
+import com.google.cloud.recommender.v1beta1.ListRecommendersResponse;
 import com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest;
 import com.google.cloud.recommender.v1beta1.MarkRecommendationClaimedRequest;
 import com.google.cloud.recommender.v1beta1.MarkRecommendationFailedRequest;
@@ -562,6 +568,76 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<ListRecommendersRequest, ListRecommendersResponse>
+      listRecommendersMethodDescriptor =
+          ApiMethodDescriptor.<ListRecommendersRequest, ListRecommendersResponse>newBuilder()
+              .setFullMethodName("google.cloud.recommender.v1beta1.Recommender/ListRecommenders")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListRecommendersRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/recommenders",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRecommendersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListRecommendersRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListRecommendersResponse>newBuilder()
+                      .setDefaultInstance(ListRecommendersResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListInsightTypesRequest, ListInsightTypesResponse>
+      listInsightTypesMethodDescriptor =
+          ApiMethodDescriptor.<ListInsightTypesRequest, ListInsightTypesResponse>newBuilder()
+              .setFullMethodName("google.cloud.recommender.v1beta1.Recommender/ListInsightTypes")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListInsightTypesRequest>newBuilder()
+                      .setPath(
+                          "/v1beta1/insightTypes",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListInsightTypesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListInsightTypesRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "pageSize", request.getPageSize());
+                            serializer.putQueryParam(fields, "pageToken", request.getPageToken());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListInsightTypesResponse>newBuilder()
+                      .setDefaultInstance(ListInsightTypesResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<ListInsightsRequest, ListInsightsResponse> listInsightsCallable;
   private final UnaryCallable<ListInsightsRequest, ListInsightsPagedResponse>
       listInsightsPagedCallable;
@@ -586,6 +662,14 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
       getInsightTypeConfigCallable;
   private final UnaryCallable<UpdateInsightTypeConfigRequest, InsightTypeConfig>
       updateInsightTypeConfigCallable;
+  private final UnaryCallable<ListRecommendersRequest, ListRecommendersResponse>
+      listRecommendersCallable;
+  private final UnaryCallable<ListRecommendersRequest, ListRecommendersPagedResponse>
+      listRecommendersPagedCallable;
+  private final UnaryCallable<ListInsightTypesRequest, ListInsightTypesResponse>
+      listInsightTypesCallable;
+  private final UnaryCallable<ListInsightTypesRequest, ListInsightTypesPagedResponse>
+      listInsightTypesPagedCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -775,6 +859,18 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<ListRecommendersRequest, ListRecommendersResponse>
+        listRecommendersTransportSettings =
+            HttpJsonCallSettings.<ListRecommendersRequest, ListRecommendersResponse>newBuilder()
+                .setMethodDescriptor(listRecommendersMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
+    HttpJsonCallSettings<ListInsightTypesRequest, ListInsightTypesResponse>
+        listInsightTypesTransportSettings =
+            HttpJsonCallSettings.<ListInsightTypesRequest, ListInsightTypesResponse>newBuilder()
+                .setMethodDescriptor(listInsightTypesMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .build();
 
     this.listInsightsCallable =
         callableFactory.createUnaryCallable(
@@ -840,6 +936,18 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
             updateInsightTypeConfigTransportSettings,
             settings.updateInsightTypeConfigSettings(),
             clientContext);
+    this.listRecommendersCallable =
+        callableFactory.createUnaryCallable(
+            listRecommendersTransportSettings, settings.listRecommendersSettings(), clientContext);
+    this.listRecommendersPagedCallable =
+        callableFactory.createPagedCallable(
+            listRecommendersTransportSettings, settings.listRecommendersSettings(), clientContext);
+    this.listInsightTypesCallable =
+        callableFactory.createUnaryCallable(
+            listInsightTypesTransportSettings, settings.listInsightTypesSettings(), clientContext);
+    this.listInsightTypesPagedCallable =
+        callableFactory.createPagedCallable(
+            listInsightTypesTransportSettings, settings.listInsightTypesSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -860,6 +968,8 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
     methodDescriptors.add(updateRecommenderConfigMethodDescriptor);
     methodDescriptors.add(getInsightTypeConfigMethodDescriptor);
     methodDescriptors.add(updateInsightTypeConfigMethodDescriptor);
+    methodDescriptors.add(listRecommendersMethodDescriptor);
+    methodDescriptors.add(listInsightTypesMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -940,6 +1050,30 @@ public class HttpJsonRecommenderStub extends RecommenderStub {
   public UnaryCallable<UpdateInsightTypeConfigRequest, InsightTypeConfig>
       updateInsightTypeConfigCallable() {
     return updateInsightTypeConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRecommendersRequest, ListRecommendersResponse>
+      listRecommendersCallable() {
+    return listRecommendersCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListRecommendersRequest, ListRecommendersPagedResponse>
+      listRecommendersPagedCallable() {
+    return listRecommendersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListInsightTypesRequest, ListInsightTypesResponse>
+      listInsightTypesCallable() {
+    return listInsightTypesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListInsightTypesRequest, ListInsightTypesPagedResponse>
+      listInsightTypesPagedCallable() {
+    return listInsightTypesPagedCallable;
   }
 
   @Override

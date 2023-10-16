@@ -100,4 +100,45 @@ public class MockAdvisoryNotificationsServiceImpl extends AdvisoryNotificationsS
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void getSettings(GetSettingsRequest request, StreamObserver<Settings> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Settings) {
+      requests.add(request);
+      responseObserver.onNext(((Settings) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSettings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Settings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateSettings(
+      UpdateSettingsRequest request, StreamObserver<Settings> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Settings) {
+      requests.add(request);
+      responseObserver.onNext(((Settings) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateSettings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Settings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

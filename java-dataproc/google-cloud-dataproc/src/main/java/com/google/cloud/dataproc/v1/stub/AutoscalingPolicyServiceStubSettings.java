@@ -54,6 +54,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -118,6 +123,10 @@ public class AutoscalingPolicyServiceStubSettings
       listAutoscalingPoliciesSettings;
   private final UnaryCallSettings<DeleteAutoscalingPolicyRequest, Empty>
       deleteAutoscalingPolicySettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<
           ListAutoscalingPoliciesRequest, ListAutoscalingPoliciesResponse, AutoscalingPolicy>
@@ -222,6 +231,22 @@ public class AutoscalingPolicyServiceStubSettings
   public UnaryCallSettings<DeleteAutoscalingPolicyRequest, Empty>
       deleteAutoscalingPolicySettings() {
     return deleteAutoscalingPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
   }
 
   public AutoscalingPolicyServiceStub createStub() throws IOException {
@@ -335,6 +360,9 @@ public class AutoscalingPolicyServiceStubSettings
     getAutoscalingPolicySettings = settingsBuilder.getAutoscalingPolicySettings().build();
     listAutoscalingPoliciesSettings = settingsBuilder.listAutoscalingPoliciesSettings().build();
     deleteAutoscalingPolicySettings = settingsBuilder.deleteAutoscalingPolicySettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for AutoscalingPolicyServiceStubSettings. */
@@ -354,6 +382,10 @@ public class AutoscalingPolicyServiceStubSettings
         listAutoscalingPoliciesSettings;
     private final UnaryCallSettings.Builder<DeleteAutoscalingPolicyRequest, Empty>
         deleteAutoscalingPolicySettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -367,6 +399,7 @@ public class AutoscalingPolicyServiceStubSettings
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -394,6 +427,8 @@ public class AutoscalingPolicyServiceStubSettings
               .setTotalTimeout(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_1_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -410,6 +445,9 @@ public class AutoscalingPolicyServiceStubSettings
       listAutoscalingPoliciesSettings =
           PagedCallSettings.newBuilder(LIST_AUTOSCALING_POLICIES_PAGE_STR_FACT);
       deleteAutoscalingPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -417,7 +455,10 @@ public class AutoscalingPolicyServiceStubSettings
               updateAutoscalingPolicySettings,
               getAutoscalingPolicySettings,
               listAutoscalingPoliciesSettings,
-              deleteAutoscalingPolicySettings);
+              deleteAutoscalingPolicySettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -429,6 +470,9 @@ public class AutoscalingPolicyServiceStubSettings
       getAutoscalingPolicySettings = settings.getAutoscalingPolicySettings.toBuilder();
       listAutoscalingPoliciesSettings = settings.listAutoscalingPoliciesSettings.toBuilder();
       deleteAutoscalingPolicySettings = settings.deleteAutoscalingPolicySettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -436,7 +480,10 @@ public class AutoscalingPolicyServiceStubSettings
               updateAutoscalingPolicySettings,
               getAutoscalingPolicySettings,
               listAutoscalingPoliciesSettings,
-              deleteAutoscalingPolicySettings);
+              deleteAutoscalingPolicySettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -491,6 +538,21 @@ public class AutoscalingPolicyServiceStubSettings
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .testIamPermissionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
       return builder;
     }
 
@@ -540,6 +602,22 @@ public class AutoscalingPolicyServiceStubSettings
     public UnaryCallSettings.Builder<DeleteAutoscalingPolicyRequest, Empty>
         deleteAutoscalingPolicySettings() {
       return deleteAutoscalingPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

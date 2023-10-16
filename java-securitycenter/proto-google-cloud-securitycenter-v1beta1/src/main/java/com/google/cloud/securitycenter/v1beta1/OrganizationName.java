@@ -127,7 +127,7 @@ public class OrganizationName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       OrganizationName that = ((OrganizationName) o);
       return Objects.equals(this.organization, that.organization);
     }

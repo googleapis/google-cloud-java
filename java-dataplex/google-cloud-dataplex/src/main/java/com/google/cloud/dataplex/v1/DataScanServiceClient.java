@@ -1275,6 +1275,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *           .setParent(DataScanName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   for (DataScanJob element : dataScanServiceClient.listDataScanJobs(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -1307,6 +1308,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *           .setParent(DataScanName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   ApiFuture<DataScanJob> future =
    *       dataScanServiceClient.listDataScanJobsPagedCallable().futureCall(request);
@@ -1340,6 +1342,7 @@ public class DataScanServiceClient implements BackgroundResource {
    *           .setParent(DataScanName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]").toString())
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
    *           .build();
    *   while (true) {
    *     ListDataScanJobsResponse response =

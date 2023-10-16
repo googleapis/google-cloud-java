@@ -54,8 +54,8 @@
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
- *   DatasetSchemaName name = DatasetSchemaName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
- *   DatasetSchema response = documentServiceClient.getDatasetSchema(name);
+ *   DatasetName dataset = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+ *   GetDocumentResponse response = documentServiceClient.getDocument(dataset);
  * }
  * }</pre>
  */

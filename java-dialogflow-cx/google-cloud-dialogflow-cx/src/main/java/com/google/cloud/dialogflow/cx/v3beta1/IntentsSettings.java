@@ -28,6 +28,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -36,6 +37,7 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -105,6 +107,28 @@ public class IntentsSettings extends ClientSettings<IntentsSettings> {
   /** Returns the object with the settings used for calls to deleteIntent. */
   public UnaryCallSettings<DeleteIntentRequest, Empty> deleteIntentSettings() {
     return ((IntentsStubSettings) getStubSettings()).deleteIntentSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importIntents. */
+  public UnaryCallSettings<ImportIntentsRequest, Operation> importIntentsSettings() {
+    return ((IntentsStubSettings) getStubSettings()).importIntentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to importIntents. */
+  public OperationCallSettings<ImportIntentsRequest, ImportIntentsResponse, ImportIntentsMetadata>
+      importIntentsOperationSettings() {
+    return ((IntentsStubSettings) getStubSettings()).importIntentsOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportIntents. */
+  public UnaryCallSettings<ExportIntentsRequest, Operation> exportIntentsSettings() {
+    return ((IntentsStubSettings) getStubSettings()).exportIntentsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to exportIntents. */
+  public OperationCallSettings<ExportIntentsRequest, ExportIntentsResponse, ExportIntentsMetadata>
+      exportIntentsOperationSettings() {
+    return ((IntentsStubSettings) getStubSettings()).exportIntentsOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -257,6 +281,30 @@ public class IntentsSettings extends ClientSettings<IntentsSettings> {
     /** Returns the builder for the settings used for calls to deleteIntent. */
     public UnaryCallSettings.Builder<DeleteIntentRequest, Empty> deleteIntentSettings() {
       return getStubSettingsBuilder().deleteIntentSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importIntents. */
+    public UnaryCallSettings.Builder<ImportIntentsRequest, Operation> importIntentsSettings() {
+      return getStubSettingsBuilder().importIntentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to importIntents. */
+    public OperationCallSettings.Builder<
+            ImportIntentsRequest, ImportIntentsResponse, ImportIntentsMetadata>
+        importIntentsOperationSettings() {
+      return getStubSettingsBuilder().importIntentsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportIntents. */
+    public UnaryCallSettings.Builder<ExportIntentsRequest, Operation> exportIntentsSettings() {
+      return getStubSettingsBuilder().exportIntentsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to exportIntents. */
+    public OperationCallSettings.Builder<
+            ExportIntentsRequest, ExportIntentsResponse, ExportIntentsMetadata>
+        exportIntentsOperationSettings() {
+      return getStubSettingsBuilder().exportIntentsOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -41,7 +41,8 @@ public final class ArtifactRegistryGrpc {
 
   private ArtifactRegistryGrpc() {}
 
-  public static final String SERVICE_NAME = "google.devtools.artifactregistry.v1.ArtifactRegistry";
+  public static final java.lang.String SERVICE_NAME =
+      "google.devtools.artifactregistry.v1.ArtifactRegistry";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -4431,9 +4432,9 @@ public final class ArtifactRegistryGrpc {
   private static final class ArtifactRegistryMethodDescriptorSupplier
       extends ArtifactRegistryBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ArtifactRegistryMethodDescriptorSupplier(String methodName) {
+    ArtifactRegistryMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

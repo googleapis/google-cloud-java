@@ -32,7 +32,8 @@ public final class LookupServiceGrpc {
 
   private LookupServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.servicedirectory.v1beta1.LookupService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.servicedirectory.v1beta1.LookupService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -355,9 +356,9 @@ public final class LookupServiceGrpc {
   private static final class LookupServiceMethodDescriptorSupplier
       extends LookupServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    LookupServiceMethodDescriptorSupplier(String methodName) {
+    LookupServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

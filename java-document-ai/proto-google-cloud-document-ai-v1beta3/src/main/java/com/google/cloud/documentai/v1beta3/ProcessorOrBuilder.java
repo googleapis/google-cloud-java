@@ -166,6 +166,70 @@ public interface ProcessorOrBuilder
    *
    *
    * <pre>
+   * Output only. The processor version aliases.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.documentai.v1beta3.ProcessorVersionAlias>
+      getProcessorVersionAliasesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The processor version aliases.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.documentai.v1beta3.ProcessorVersionAlias getProcessorVersionAliases(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The processor version aliases.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getProcessorVersionAliasesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The processor version aliases.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.documentai.v1beta3.ProcessorVersionAliasOrBuilder>
+      getProcessorVersionAliasesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The processor version aliases.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.documentai.v1beta3.ProcessorVersionAliasOrBuilder
+      getProcessorVersionAliasesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Immutable. The http endpoint that can be called to invoke
    * processing.
    * </pre>

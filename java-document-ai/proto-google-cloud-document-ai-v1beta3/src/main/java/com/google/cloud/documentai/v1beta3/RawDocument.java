@@ -40,6 +40,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
   private RawDocument() {
     content_ = com.google.protobuf.ByteString.EMPTY;
     mimeType_ = "";
+    displayName_ = "";
   }
 
   @java.lang.Override
@@ -134,6 +135,65 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The display name of the document, it supports all Unicode characters except
+   * the following:
+   * `*`, `?`, `[`, `]`, `%`, `{`, `}`,`'`, `&#92;"`, `,`
+   * `~`, `=` and `:` are reserved.
+   * If not specified, a default ID is generated.
+   * </pre>
+   *
+   * <code>string display_name = 3;</code>
+   *
+   * @return The displayName.
+   */
+  @java.lang.Override
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      displayName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The display name of the document, it supports all Unicode characters except
+   * the following:
+   * `*`, `?`, `[`, `]`, `%`, `{`, `}`,`'`, `&#92;"`, `,`
+   * `~`, `=` and `:` are reserved.
+   * If not specified, a default ID is generated.
+   * </pre>
+   *
+   * <code>string display_name = 3;</code>
+   *
+   * @return The bytes for displayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -154,6 +214,9 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, mimeType_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, displayName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -168,6 +231,9 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mimeType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, mimeType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, displayName_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -187,6 +253,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
 
     if (!getContent().equals(other.getContent())) return false;
     if (!getMimeType().equals(other.getMimeType())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -202,6 +269,8 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getContent().hashCode();
     hash = (37 * hash) + MIME_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getMimeType().hashCode();
+    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDisplayName().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -343,6 +412,7 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       content_ = com.google.protobuf.ByteString.EMPTY;
       mimeType_ = "";
+      displayName_ = "";
       return this;
     }
 
@@ -384,6 +454,9 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.mimeType_ = mimeType_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.displayName_ = displayName_;
       }
     }
 
@@ -441,6 +514,11 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getDisplayName().isEmpty()) {
+        displayName_ = other.displayName_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -479,6 +557,12 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                displayName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -660,6 +744,132 @@ public final class RawDocument extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       mimeType_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object displayName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the document, it supports all Unicode characters except
+     * the following:
+     * `*`, `?`, `[`, `]`, `%`, `{`, `}`,`'`, `&#92;"`, `,`
+     * `~`, `=` and `:` are reserved.
+     * If not specified, a default ID is generated.
+     * </pre>
+     *
+     * <code>string display_name = 3;</code>
+     *
+     * @return The displayName.
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the document, it supports all Unicode characters except
+     * the following:
+     * `*`, `?`, `[`, `]`, `%`, `{`, `}`,`'`, `&#92;"`, `,`
+     * `~`, `=` and `:` are reserved.
+     * If not specified, a default ID is generated.
+     * </pre>
+     *
+     * <code>string display_name = 3;</code>
+     *
+     * @return The bytes for displayName.
+     */
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the document, it supports all Unicode characters except
+     * the following:
+     * `*`, `?`, `[`, `]`, `%`, `{`, `}`,`'`, `&#92;"`, `,`
+     * `~`, `=` and `:` are reserved.
+     * If not specified, a default ID is generated.
+     * </pre>
+     *
+     * <code>string display_name = 3;</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      displayName_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the document, it supports all Unicode characters except
+     * the following:
+     * `*`, `?`, `[`, `]`, `%`, `{`, `}`,`'`, `&#92;"`, `,`
+     * `~`, `=` and `:` are reserved.
+     * If not specified, a default ID is generated.
+     * </pre>
+     *
+     * <code>string display_name = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisplayName() {
+      displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The display name of the document, it supports all Unicode characters except
+     * the following:
+     * `*`, `?`, `[`, `]`, `%`, `{`, `}`,`'`, `&#92;"`, `,`
+     * `~`, `=` and `:` are reserved.
+     * If not specified, a default ID is generated.
+     * </pre>
+     *
+     * <code>string display_name = 3;</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      displayName_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

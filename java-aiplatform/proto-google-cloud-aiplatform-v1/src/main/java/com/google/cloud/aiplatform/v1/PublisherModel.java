@@ -2819,6 +2819,49 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferencesOrBuilder
         getRequestAccessOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Open evaluation pipeline of the PublisherModel.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences open_evaluation_pipeline = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the openEvaluationPipeline field is set.
+     */
+    boolean hasOpenEvaluationPipeline();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Open evaluation pipeline of the PublisherModel.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences open_evaluation_pipeline = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The openEvaluationPipeline.
+     */
+    com.google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences
+        getOpenEvaluationPipeline();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Open evaluation pipeline of the PublisherModel.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences open_evaluation_pipeline = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferencesOrBuilder
+        getOpenEvaluationPipelineOrBuilder();
   }
   /**
    *
@@ -8769,6 +8812,68 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           : requestAccess_;
     }
 
+    public static final int OPEN_EVALUATION_PIPELINE_FIELD_NUMBER = 11;
+    private com.google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences
+        openEvaluationPipeline_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Open evaluation pipeline of the PublisherModel.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences open_evaluation_pipeline = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the openEvaluationPipeline field is set.
+     */
+    @java.lang.Override
+    public boolean hasOpenEvaluationPipeline() {
+      return openEvaluationPipeline_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Open evaluation pipeline of the PublisherModel.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences open_evaluation_pipeline = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The openEvaluationPipeline.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences
+        getOpenEvaluationPipeline() {
+      return openEvaluationPipeline_ == null
+          ? com.google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences
+              .getDefaultInstance()
+          : openEvaluationPipeline_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Open evaluation pipeline of the PublisherModel.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences open_evaluation_pipeline = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.PublisherModel.CallToAction
+            .RegionalResourceReferencesOrBuilder
+        getOpenEvaluationPipelineOrBuilder() {
+      return openEvaluationPipeline_ == null
+          ? com.google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences
+              .getDefaultInstance()
+          : openEvaluationPipeline_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -8809,6 +8914,9 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       }
       if (requestAccess_ != null) {
         output.writeMessage(9, getRequestAccess());
+      }
+      if (openEvaluationPipeline_ != null) {
+        output.writeMessage(11, getOpenEvaluationPipeline());
       }
       getUnknownFields().writeTo(output);
     }
@@ -8851,6 +8959,11 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       }
       if (requestAccess_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getRequestAccess());
+      }
+      if (openEvaluationPipeline_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                11, getOpenEvaluationPipeline());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -8905,6 +9018,10 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       if (hasRequestAccess()) {
         if (!getRequestAccess().equals(other.getRequestAccess())) return false;
       }
+      if (hasOpenEvaluationPipeline() != other.hasOpenEvaluationPipeline()) return false;
+      if (hasOpenEvaluationPipeline()) {
+        if (!getOpenEvaluationPipeline().equals(other.getOpenEvaluationPipeline())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -8951,6 +9068,10 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
       if (hasRequestAccess()) {
         hash = (37 * hash) + REQUEST_ACCESS_FIELD_NUMBER;
         hash = (53 * hash) + getRequestAccess().hashCode();
+      }
+      if (hasOpenEvaluationPipeline()) {
+        hash = (37 * hash) + OPEN_EVALUATION_PIPELINE_FIELD_NUMBER;
+        hash = (53 * hash) + getOpenEvaluationPipeline().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -9139,6 +9260,11 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           requestAccessBuilder_.dispose();
           requestAccessBuilder_ = null;
         }
+        openEvaluationPipeline_ = null;
+        if (openEvaluationPipelineBuilder_ != null) {
+          openEvaluationPipelineBuilder_.dispose();
+          openEvaluationPipelineBuilder_ = null;
+        }
         return this;
       }
 
@@ -9219,6 +9345,12 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           result.requestAccess_ =
               requestAccessBuilder_ == null ? requestAccess_ : requestAccessBuilder_.build();
         }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.openEvaluationPipeline_ =
+              openEvaluationPipelineBuilder_ == null
+                  ? openEvaluationPipeline_
+                  : openEvaluationPipelineBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -9296,6 +9428,9 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
         }
         if (other.hasRequestAccess()) {
           mergeRequestAccess(other.getRequestAccess());
+        }
+        if (other.hasOpenEvaluationPipeline()) {
+          mergeOpenEvaluationPipeline(other.getOpenEvaluationPipeline());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -9381,6 +9516,13 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000100;
                   break;
                 } // case 74
+              case 90:
+                {
+                  input.readMessage(
+                      getOpenEvaluationPipelineFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000200;
+                  break;
+                } // case 90
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11396,6 +11538,231 @@ public final class PublisherModel extends com.google.protobuf.GeneratedMessageV3
           requestAccess_ = null;
         }
         return requestAccessBuilder_;
+      }
+
+      private com.google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences
+          openEvaluationPipeline_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences,
+              com.google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences
+                  .Builder,
+              com.google.cloud.aiplatform.v1.PublisherModel.CallToAction
+                  .RegionalResourceReferencesOrBuilder>
+          openEvaluationPipelineBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open evaluation pipeline of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences open_evaluation_pipeline = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the openEvaluationPipeline field is set.
+       */
+      public boolean hasOpenEvaluationPipeline() {
+        return ((bitField0_ & 0x00000200) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open evaluation pipeline of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences open_evaluation_pipeline = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The openEvaluationPipeline.
+       */
+      public com.google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences
+          getOpenEvaluationPipeline() {
+        if (openEvaluationPipelineBuilder_ == null) {
+          return openEvaluationPipeline_ == null
+              ? com.google.cloud.aiplatform.v1.PublisherModel.CallToAction
+                  .RegionalResourceReferences.getDefaultInstance()
+              : openEvaluationPipeline_;
+        } else {
+          return openEvaluationPipelineBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open evaluation pipeline of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences open_evaluation_pipeline = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setOpenEvaluationPipeline(
+          com.google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences
+              value) {
+        if (openEvaluationPipelineBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          openEvaluationPipeline_ = value;
+        } else {
+          openEvaluationPipelineBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open evaluation pipeline of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences open_evaluation_pipeline = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setOpenEvaluationPipeline(
+          com.google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences
+                  .Builder
+              builderForValue) {
+        if (openEvaluationPipelineBuilder_ == null) {
+          openEvaluationPipeline_ = builderForValue.build();
+        } else {
+          openEvaluationPipelineBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open evaluation pipeline of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences open_evaluation_pipeline = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeOpenEvaluationPipeline(
+          com.google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences
+              value) {
+        if (openEvaluationPipelineBuilder_ == null) {
+          if (((bitField0_ & 0x00000200) != 0)
+              && openEvaluationPipeline_ != null
+              && openEvaluationPipeline_
+                  != com.google.cloud.aiplatform.v1.PublisherModel.CallToAction
+                      .RegionalResourceReferences.getDefaultInstance()) {
+            getOpenEvaluationPipelineBuilder().mergeFrom(value);
+          } else {
+            openEvaluationPipeline_ = value;
+          }
+        } else {
+          openEvaluationPipelineBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open evaluation pipeline of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences open_evaluation_pipeline = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearOpenEvaluationPipeline() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        openEvaluationPipeline_ = null;
+        if (openEvaluationPipelineBuilder_ != null) {
+          openEvaluationPipelineBuilder_.dispose();
+          openEvaluationPipelineBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open evaluation pipeline of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences open_evaluation_pipeline = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences
+              .Builder
+          getOpenEvaluationPipelineBuilder() {
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return getOpenEvaluationPipelineFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open evaluation pipeline of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences open_evaluation_pipeline = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.PublisherModel.CallToAction
+              .RegionalResourceReferencesOrBuilder
+          getOpenEvaluationPipelineOrBuilder() {
+        if (openEvaluationPipelineBuilder_ != null) {
+          return openEvaluationPipelineBuilder_.getMessageOrBuilder();
+        } else {
+          return openEvaluationPipeline_ == null
+              ? com.google.cloud.aiplatform.v1.PublisherModel.CallToAction
+                  .RegionalResourceReferences.getDefaultInstance()
+              : openEvaluationPipeline_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Open evaluation pipeline of the PublisherModel.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences open_evaluation_pipeline = 11 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences,
+              com.google.cloud.aiplatform.v1.PublisherModel.CallToAction.RegionalResourceReferences
+                  .Builder,
+              com.google.cloud.aiplatform.v1.PublisherModel.CallToAction
+                  .RegionalResourceReferencesOrBuilder>
+          getOpenEvaluationPipelineFieldBuilder() {
+        if (openEvaluationPipelineBuilder_ == null) {
+          openEvaluationPipelineBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1.PublisherModel.CallToAction
+                      .RegionalResourceReferences,
+                  com.google.cloud.aiplatform.v1.PublisherModel.CallToAction
+                      .RegionalResourceReferences.Builder,
+                  com.google.cloud.aiplatform.v1.PublisherModel.CallToAction
+                      .RegionalResourceReferencesOrBuilder>(
+                  getOpenEvaluationPipeline(), getParentForChildren(), isClean());
+          openEvaluationPipeline_ = null;
+        }
+        return openEvaluationPipelineBuilder_;
       }
 
       @java.lang.Override

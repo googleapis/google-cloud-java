@@ -8023,6 +8023,459 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public interface KnowledgeInfoCardOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard)
+      com.google.protobuf.MessageOrBuilder {}
+  /**
+   *
+   *
+   * <pre>
+   * Represents info card response. If the response contains generative
+   * knowledge prediction, Dialogflow will return a payload with Infobot
+   * Messenger compatible info card.
+   *
+   * Otherwise, the info card response is skipped.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard}
+   */
+  public static final class KnowledgeInfoCard extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard)
+      KnowledgeInfoCardOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use KnowledgeInfoCard.newBuilder() to construct.
+    private KnowledgeInfoCard(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private KnowledgeInfoCard() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new KnowledgeInfoCard();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_KnowledgeInfoCard_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
+          .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_KnowledgeInfoCard_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard.class,
+              com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard.Builder
+                  .class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard other =
+          (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents info card response. If the response contains generative
+     * knowledge prediction, Dialogflow will return a payload with Infobot
+     * Messenger compatible info card.
+     *
+     * Otherwise, the info card response is skipped.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard)
+        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCardOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_KnowledgeInfoCard_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_KnowledgeInfoCard_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard.class,
+                com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessageProto
+            .internal_static_google_cloud_dialogflow_cx_v3beta1_ResponseMessage_KnowledgeInfoCard_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+          getDefaultInstanceForType() {
+        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard build() {
+        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+          buildPartial() {
+        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard result =
+            new com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard) {
+          return mergeFrom(
+              (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard other) {
+        if (other
+            == com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+                .getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard)
+    private static final com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard();
+    }
+
+    public static com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<KnowledgeInfoCard> PARSER =
+        new com.google.protobuf.AbstractParser<KnowledgeInfoCard>() {
+          @java.lang.Override
+          public KnowledgeInfoCard parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<KnowledgeInfoCard> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<KnowledgeInfoCard> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int messageCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -8041,6 +8494,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     PLAY_AUDIO(12),
     MIXED_AUDIO(13),
     TELEPHONY_TRANSFER_CALL(18),
+    KNOWLEDGE_INFO_CARD(20),
     MESSAGE_NOT_SET(0);
     private final int value;
 
@@ -8077,6 +8531,8 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
           return MIXED_AUDIO;
         case 18:
           return TELEPHONY_TRANSFER_CALL;
+        case 20:
+          return KNOWLEDGE_INFO_CARD;
         case 0:
           return MESSAGE_NOT_SET;
         default:
@@ -8656,6 +9112,70 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         .getDefaultInstance();
   }
 
+  public static final int KNOWLEDGE_INFO_CARD_FIELD_NUMBER = 20;
+  /**
+   *
+   *
+   * <pre>
+   * Represents info card for knowledge answers, to be better rendered in
+   * Dialogflow Messenger.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard knowledge_info_card = 20;
+   * </code>
+   *
+   * @return Whether the knowledgeInfoCard field is set.
+   */
+  @java.lang.Override
+  public boolean hasKnowledgeInfoCard() {
+    return messageCase_ == 20;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents info card for knowledge answers, to be better rendered in
+   * Dialogflow Messenger.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard knowledge_info_card = 20;
+   * </code>
+   *
+   * @return The knowledgeInfoCard.
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+      getKnowledgeInfoCard() {
+    if (messageCase_ == 20) {
+      return (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard) message_;
+    }
+    return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Represents info card for knowledge answers, to be better rendered in
+   * Dialogflow Messenger.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard knowledge_info_card = 20;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCardOrBuilder
+      getKnowledgeInfoCardOrBuilder() {
+    if (messageCase_ == 20) {
+      return (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard) message_;
+    }
+    return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+        .getDefaultInstance();
+  }
+
   public static final int CHANNEL_FIELD_NUMBER = 19;
 
   @SuppressWarnings("serial")
@@ -8766,6 +9286,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channel_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 19, channel_);
     }
+    if (messageCase_ == 20) {
+      output.writeMessage(
+          20, (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard) message_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -8828,6 +9352,12 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(channel_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, channel_);
     }
+    if (messageCase_ == 20) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              20,
+              (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard) message_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -8873,6 +9403,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         break;
       case 18:
         if (!getTelephonyTransferCall().equals(other.getTelephonyTransferCall())) return false;
+        break;
+      case 20:
+        if (!getKnowledgeInfoCard().equals(other.getKnowledgeInfoCard())) return false;
         break;
       case 0:
       default:
@@ -8926,6 +9459,10 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       case 18:
         hash = (37 * hash) + TELEPHONY_TRANSFER_CALL_FIELD_NUMBER;
         hash = (53 * hash) + getTelephonyTransferCall().hashCode();
+        break;
+      case 20:
+        hash = (37 * hash) + KNOWLEDGE_INFO_CARD_FIELD_NUMBER;
+        hash = (53 * hash) + getKnowledgeInfoCard().hashCode();
         break;
       case 0:
       default:
@@ -9113,6 +9650,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       if (telephonyTransferCallBuilder_ != null) {
         telephonyTransferCallBuilder_.clear();
       }
+      if (knowledgeInfoCardBuilder_ != null) {
+        knowledgeInfoCardBuilder_.clear();
+      }
       channel_ = "";
       messageCase_ = 0;
       message_ = null;
@@ -9153,7 +9693,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
 
     private void buildPartial0(com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.channel_ = channel_;
       }
     }
@@ -9187,6 +9727,9 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       }
       if (messageCase_ == 18 && telephonyTransferCallBuilder_ != null) {
         result.message_ = telephonyTransferCallBuilder_.build();
+      }
+      if (messageCase_ == 20 && knowledgeInfoCardBuilder_ != null) {
+        result.message_ = knowledgeInfoCardBuilder_.build();
       }
     }
 
@@ -9238,7 +9781,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         return this;
       if (!other.getChannel().isEmpty()) {
         channel_ = other.channel_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       switch (other.getMessageCase()) {
@@ -9285,6 +9828,11 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         case TELEPHONY_TRANSFER_CALL:
           {
             mergeTelephonyTransferCall(other.getTelephonyTransferCall());
+            break;
+          }
+        case KNOWLEDGE_INFO_CARD:
+          {
+            mergeKnowledgeInfoCard(other.getKnowledgeInfoCard());
             break;
           }
         case MESSAGE_NOT_SET:
@@ -9378,9 +9926,16 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
             case 154:
               {
                 channel_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 154
+            case 162:
+              {
+                input.readMessage(
+                    getKnowledgeInfoCardFieldBuilder().getBuilder(), extensionRegistry);
+                messageCase_ = 20;
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -11637,6 +12192,258 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       return telephonyTransferCallBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard,
+            com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCardOrBuilder>
+        knowledgeInfoCardBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Represents info card for knowledge answers, to be better rendered in
+     * Dialogflow Messenger.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard knowledge_info_card = 20;
+     * </code>
+     *
+     * @return Whether the knowledgeInfoCard field is set.
+     */
+    @java.lang.Override
+    public boolean hasKnowledgeInfoCard() {
+      return messageCase_ == 20;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents info card for knowledge answers, to be better rendered in
+     * Dialogflow Messenger.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard knowledge_info_card = 20;
+     * </code>
+     *
+     * @return The knowledgeInfoCard.
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+        getKnowledgeInfoCard() {
+      if (knowledgeInfoCardBuilder_ == null) {
+        if (messageCase_ == 20) {
+          return (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard)
+              message_;
+        }
+        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+            .getDefaultInstance();
+      } else {
+        if (messageCase_ == 20) {
+          return knowledgeInfoCardBuilder_.getMessage();
+        }
+        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents info card for knowledge answers, to be better rendered in
+     * Dialogflow Messenger.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard knowledge_info_card = 20;
+     * </code>
+     */
+    public Builder setKnowledgeInfoCard(
+        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard value) {
+      if (knowledgeInfoCardBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        message_ = value;
+        onChanged();
+      } else {
+        knowledgeInfoCardBuilder_.setMessage(value);
+      }
+      messageCase_ = 20;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents info card for knowledge answers, to be better rendered in
+     * Dialogflow Messenger.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard knowledge_info_card = 20;
+     * </code>
+     */
+    public Builder setKnowledgeInfoCard(
+        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard.Builder
+            builderForValue) {
+      if (knowledgeInfoCardBuilder_ == null) {
+        message_ = builderForValue.build();
+        onChanged();
+      } else {
+        knowledgeInfoCardBuilder_.setMessage(builderForValue.build());
+      }
+      messageCase_ = 20;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents info card for knowledge answers, to be better rendered in
+     * Dialogflow Messenger.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard knowledge_info_card = 20;
+     * </code>
+     */
+    public Builder mergeKnowledgeInfoCard(
+        com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard value) {
+      if (knowledgeInfoCardBuilder_ == null) {
+        if (messageCase_ == 20
+            && message_
+                != com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+                    .getDefaultInstance()) {
+          message_ =
+              com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard.newBuilder(
+                      (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard)
+                          message_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          message_ = value;
+        }
+        onChanged();
+      } else {
+        if (messageCase_ == 20) {
+          knowledgeInfoCardBuilder_.mergeFrom(value);
+        } else {
+          knowledgeInfoCardBuilder_.setMessage(value);
+        }
+      }
+      messageCase_ = 20;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents info card for knowledge answers, to be better rendered in
+     * Dialogflow Messenger.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard knowledge_info_card = 20;
+     * </code>
+     */
+    public Builder clearKnowledgeInfoCard() {
+      if (knowledgeInfoCardBuilder_ == null) {
+        if (messageCase_ == 20) {
+          messageCase_ = 0;
+          message_ = null;
+          onChanged();
+        }
+      } else {
+        if (messageCase_ == 20) {
+          messageCase_ = 0;
+          message_ = null;
+        }
+        knowledgeInfoCardBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents info card for knowledge answers, to be better rendered in
+     * Dialogflow Messenger.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard knowledge_info_card = 20;
+     * </code>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard.Builder
+        getKnowledgeInfoCardBuilder() {
+      return getKnowledgeInfoCardFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents info card for knowledge answers, to be better rendered in
+     * Dialogflow Messenger.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard knowledge_info_card = 20;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCardOrBuilder
+        getKnowledgeInfoCardOrBuilder() {
+      if ((messageCase_ == 20) && (knowledgeInfoCardBuilder_ != null)) {
+        return knowledgeInfoCardBuilder_.getMessageOrBuilder();
+      } else {
+        if (messageCase_ == 20) {
+          return (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard)
+              message_;
+        }
+        return com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Represents info card for knowledge answers, to be better rendered in
+     * Dialogflow Messenger.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard knowledge_info_card = 20;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard,
+            com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard.Builder,
+            com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCardOrBuilder>
+        getKnowledgeInfoCardFieldBuilder() {
+      if (knowledgeInfoCardBuilder_ == null) {
+        if (!(messageCase_ == 20)) {
+          message_ =
+              com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard
+                  .getDefaultInstance();
+        }
+        knowledgeInfoCardBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard,
+                com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard.Builder,
+                com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCardOrBuilder>(
+                (com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard) message_,
+                getParentForChildren(),
+                isClean());
+        message_ = null;
+      }
+      messageCase_ = 20;
+      onChanged();
+      return knowledgeInfoCardBuilder_;
+    }
+
     private java.lang.Object channel_ = "";
     /**
      *
@@ -11708,7 +12515,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       channel_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -11728,7 +12535,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearChannel() {
       channel_ = getDefaultInstance().getChannel();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -11753,7 +12560,7 @@ public final class ResponseMessage extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       channel_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

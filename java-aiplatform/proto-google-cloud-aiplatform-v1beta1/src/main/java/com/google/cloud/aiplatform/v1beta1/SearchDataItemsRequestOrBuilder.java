@@ -153,7 +153,7 @@ public interface SearchDataItemsRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.saved_query is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=437
+   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=626
    * @return The savedQuery.
    */
   @java.lang.Deprecated
@@ -172,7 +172,7 @@ public interface SearchDataItemsRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.saved_query is deprecated.
-   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=437
+   *     See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=626
    * @return The bytes for savedQuery.
    */
   @java.lang.Deprecated
@@ -270,7 +270,7 @@ public interface SearchDataItemsRequestOrBuilder
    * <code>string annotations_filter = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.annotations_filter is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=468
+   *     deprecated. See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=657
    * @return The annotationsFilter.
    */
   @java.lang.Deprecated
@@ -287,7 +287,7 @@ public interface SearchDataItemsRequestOrBuilder
    * <code>string annotations_filter = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.annotations_filter is
-   *     deprecated. See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=468
+   *     deprecated. See google/cloud/aiplatform/v1beta1/dataset_service.proto;l=657
    * @return The bytes for annotationsFilter.
    */
   @java.lang.Deprecated
@@ -438,7 +438,7 @@ public interface SearchDataItemsRequestOrBuilder
    * <code>string order_by = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.order_by is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/dataset_service.proto;l=492
+   *     google/cloud/aiplatform/v1beta1/dataset_service.proto;l=681
    * @return The orderBy.
    */
   @java.lang.Deprecated
@@ -454,7 +454,7 @@ public interface SearchDataItemsRequestOrBuilder
    * <code>string order_by = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.SearchDataItemsRequest.order_by is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/dataset_service.proto;l=492
+   *     google/cloud/aiplatform/v1beta1/dataset_service.proto;l=681
    * @return The bytes for orderBy.
    */
   @java.lang.Deprecated

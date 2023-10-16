@@ -96,4 +96,47 @@ public interface MonitoringConfigOrBuilder
    */
   com.google.container.v1beta1.ManagedPrometheusConfigOrBuilder
       getManagedPrometheusConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of Advanced Datapath Observability features.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AdvancedDatapathObservabilityConfig advanced_datapath_observability_config = 3;
+   * </code>
+   *
+   * @return Whether the advancedDatapathObservabilityConfig field is set.
+   */
+  boolean hasAdvancedDatapathObservabilityConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of Advanced Datapath Observability features.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AdvancedDatapathObservabilityConfig advanced_datapath_observability_config = 3;
+   * </code>
+   *
+   * @return The advancedDatapathObservabilityConfig.
+   */
+  com.google.container.v1beta1.AdvancedDatapathObservabilityConfig
+      getAdvancedDatapathObservabilityConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Configuration of Advanced Datapath Observability features.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AdvancedDatapathObservabilityConfig advanced_datapath_observability_config = 3;
+   * </code>
+   */
+  com.google.container.v1beta1.AdvancedDatapathObservabilityConfigOrBuilder
+      getAdvancedDatapathObservabilityConfigOrBuilder();
 }

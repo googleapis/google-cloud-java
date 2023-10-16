@@ -19,25 +19,42 @@ package com.google.cloud.bigquery.analyticshub.v1.stub;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListDataExchangesPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListListingsPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListOrgDataExchangesPagedResponse;
+import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSharedResourceSubscriptionsPagedResponse;
+import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSubscriptionsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.analyticshub.v1.CreateDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.CreateListingRequest;
 import com.google.cloud.bigquery.analyticshub.v1.DataExchange;
 import com.google.cloud.bigquery.analyticshub.v1.DeleteDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.DeleteListingRequest;
+import com.google.cloud.bigquery.analyticshub.v1.DeleteSubscriptionRequest;
 import com.google.cloud.bigquery.analyticshub.v1.GetDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.GetListingRequest;
+import com.google.cloud.bigquery.analyticshub.v1.GetSubscriptionRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListDataExchangesRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListDataExchangesResponse;
 import com.google.cloud.bigquery.analyticshub.v1.ListListingsRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListListingsResponse;
 import com.google.cloud.bigquery.analyticshub.v1.ListOrgDataExchangesRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListOrgDataExchangesResponse;
+import com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsRequest;
+import com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsResponse;
+import com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsRequest;
+import com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsResponse;
 import com.google.cloud.bigquery.analyticshub.v1.Listing;
+import com.google.cloud.bigquery.analyticshub.v1.OperationMetadata;
+import com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionRequest;
+import com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionResponse;
+import com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionRequest;
+import com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse;
+import com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest;
+import com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeResponse;
 import com.google.cloud.bigquery.analyticshub.v1.SubscribeListingRequest;
 import com.google.cloud.bigquery.analyticshub.v1.SubscribeListingResponse;
+import com.google.cloud.bigquery.analyticshub.v1.Subscription;
 import com.google.cloud.bigquery.analyticshub.v1.UpdateDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.UpdateListingRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -45,6 +62,8 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -56,6 +75,14 @@ import javax.annotation.Generated;
  */
 @Generated("by gapic-generator-java")
 public abstract class AnalyticsHubServiceStub implements BackgroundResource {
+
+  public OperationsStub getOperationsStub() {
+    return null;
+  }
+
+  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+    return null;
+  }
 
   public UnaryCallable<ListDataExchangesRequest, ListDataExchangesPagedResponse>
       listDataExchangesPagedCallable() {
@@ -120,6 +147,71 @@ public abstract class AnalyticsHubServiceStub implements BackgroundResource {
   public UnaryCallable<SubscribeListingRequest, SubscribeListingResponse>
       subscribeListingCallable() {
     throw new UnsupportedOperationException("Not implemented: subscribeListingCallable()");
+  }
+
+  public OperationCallable<
+          SubscribeDataExchangeRequest, SubscribeDataExchangeResponse, OperationMetadata>
+      subscribeDataExchangeOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: subscribeDataExchangeOperationCallable()");
+  }
+
+  public UnaryCallable<SubscribeDataExchangeRequest, Operation> subscribeDataExchangeCallable() {
+    throw new UnsupportedOperationException("Not implemented: subscribeDataExchangeCallable()");
+  }
+
+  public OperationCallable<
+          RefreshSubscriptionRequest, RefreshSubscriptionResponse, OperationMetadata>
+      refreshSubscriptionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: refreshSubscriptionOperationCallable()");
+  }
+
+  public UnaryCallable<RefreshSubscriptionRequest, Operation> refreshSubscriptionCallable() {
+    throw new UnsupportedOperationException("Not implemented: refreshSubscriptionCallable()");
+  }
+
+  public UnaryCallable<GetSubscriptionRequest, Subscription> getSubscriptionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getSubscriptionCallable()");
+  }
+
+  public UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsPagedResponse>
+      listSubscriptionsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSubscriptionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
+      listSubscriptionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listSubscriptionsCallable()");
+  }
+
+  public UnaryCallable<
+          ListSharedResourceSubscriptionsRequest, ListSharedResourceSubscriptionsPagedResponse>
+      listSharedResourceSubscriptionsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listSharedResourceSubscriptionsPagedCallable()");
+  }
+
+  public UnaryCallable<
+          ListSharedResourceSubscriptionsRequest, ListSharedResourceSubscriptionsResponse>
+      listSharedResourceSubscriptionsCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listSharedResourceSubscriptionsCallable()");
+  }
+
+  public UnaryCallable<RevokeSubscriptionRequest, RevokeSubscriptionResponse>
+      revokeSubscriptionCallable() {
+    throw new UnsupportedOperationException("Not implemented: revokeSubscriptionCallable()");
+  }
+
+  public OperationCallable<DeleteSubscriptionRequest, Empty, OperationMetadata>
+      deleteSubscriptionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteSubscriptionOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteSubscriptionRequest, Operation> deleteSubscriptionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSubscriptionCallable()");
   }
 
   public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {

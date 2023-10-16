@@ -143,6 +143,26 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_SQL_INSTANCE = 6;</code>
      */
     CLOUD_SQL_INSTANCE(6),
+    /**
+     *
+     *
+     * <pre>
+     * Forwarded to a VPC network in another project.
+     * </pre>
+     *
+     * <code>ANOTHER_PROJECT = 7;</code>
+     */
+    ANOTHER_PROJECT(7),
+    /**
+     *
+     *
+     * <pre>
+     * Forwarded to an NCC Hub.
+     * </pre>
+     *
+     * <code>NCC_HUB = 8;</code>
+     */
+    NCC_HUB(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -216,6 +236,26 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>CLOUD_SQL_INSTANCE = 6;</code>
      */
     public static final int CLOUD_SQL_INSTANCE_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * Forwarded to a VPC network in another project.
+     * </pre>
+     *
+     * <code>ANOTHER_PROJECT = 7;</code>
+     */
+    public static final int ANOTHER_PROJECT_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Forwarded to an NCC Hub.
+     * </pre>
+     *
+     * <code>NCC_HUB = 8;</code>
+     */
+    public static final int NCC_HUB_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -255,6 +295,10 @@ public final class ForwardInfo extends com.google.protobuf.GeneratedMessageV3
           return IMPORTED_CUSTOM_ROUTE_NEXT_HOP;
         case 6:
           return CLOUD_SQL_INSTANCE;
+        case 7:
+          return ANOTHER_PROJECT;
+        case 8:
+          return NCC_HUB;
         default:
           return null;
       }

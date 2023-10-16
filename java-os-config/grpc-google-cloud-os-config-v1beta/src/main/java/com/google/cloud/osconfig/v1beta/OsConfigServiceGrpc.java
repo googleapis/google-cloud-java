@@ -34,7 +34,8 @@ public final class OsConfigServiceGrpc {
 
   private OsConfigServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.osconfig.v1beta.OsConfigService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.osconfig.v1beta.OsConfigService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -2523,9 +2524,9 @@ public final class OsConfigServiceGrpc {
   private static final class OsConfigServiceMethodDescriptorSupplier
       extends OsConfigServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    OsConfigServiceMethodDescriptorSupplier(String methodName) {
+    OsConfigServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

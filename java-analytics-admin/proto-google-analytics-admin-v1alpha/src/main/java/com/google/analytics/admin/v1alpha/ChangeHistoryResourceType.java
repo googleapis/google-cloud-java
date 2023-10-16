@@ -222,6 +222,16 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    *
    *
    * <pre>
+   * SKAdNetworkConversionValueSchema resource
+   * </pre>
+   *
+   * <code>SKADNETWORK_CONVERSION_VALUE_SCHEMA = 26;</code>
+   */
+  SKADNETWORK_CONVERSION_VALUE_SCHEMA(26),
+  /**
+   *
+   *
+   * <pre>
    * AdSenseLink resource
    * </pre>
    *
@@ -445,6 +455,16 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    *
    *
    * <pre>
+   * SKAdNetworkConversionValueSchema resource
+   * </pre>
+   *
+   * <code>SKADNETWORK_CONVERSION_VALUE_SCHEMA = 26;</code>
+   */
+  public static final int SKADNETWORK_CONVERSION_VALUE_SCHEMA_VALUE = 26;
+  /**
+   *
+   *
+   * <pre>
    * AdSenseLink resource
    * </pre>
    *
@@ -534,6 +554,8 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
         return CHANNEL_GROUP;
       case 24:
         return ENHANCED_MEASUREMENT_SETTINGS;
+      case 26:
+        return SKADNETWORK_CONVERSION_VALUE_SCHEMA;
       case 27:
         return ADSENSE_LINK;
       case 28:

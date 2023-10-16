@@ -32,7 +32,7 @@ public final class ImageVersionsGrpc {
 
   private ImageVersionsGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.orchestration.airflow.service.v1.ImageVersions";
 
   // Static method descriptors that strictly reflect the proto.
@@ -354,9 +354,9 @@ public final class ImageVersionsGrpc {
   private static final class ImageVersionsMethodDescriptorSupplier
       extends ImageVersionsBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ImageVersionsMethodDescriptorSupplier(String methodName) {
+    ImageVersionsMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

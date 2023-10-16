@@ -42,6 +42,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
   private Endpoint() {
     name_ = "";
     address_ = "";
+    network_ = "";
+    uid_ = "";
   }
 
   @java.lang.Override
@@ -137,13 +139,15 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. An IPv4 or IPv6 address. Service Directory will reject bad
-   * addresses like:
-   *   "8.8.8"
-   *   "8.8.8.8:53"
-   *   "test:bad:address"
-   *   "[::1]"
-   *   "[::1]:8080"
+   * Optional. An IPv4 or IPv6 address. Service Directory rejects bad addresses
+   * like:
+   *
+   * *   `8.8.8`
+   * *   `8.8.8.8:53`
+   * *   `test:bad:address`
+   * *   `[::1]`
+   * *   `[::1]:8080`
+   *
    * Limited to 45 characters.
    * </pre>
    *
@@ -167,13 +171,15 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. An IPv4 or IPv6 address. Service Directory will reject bad
-   * addresses like:
-   *   "8.8.8"
-   *   "8.8.8.8:53"
-   *   "test:bad:address"
-   *   "[::1]"
-   *   "[::1]:8080"
+   * Optional. An IPv4 or IPv6 address. Service Directory rejects bad addresses
+   * like:
+   *
+   * *   `8.8.8`
+   * *   `8.8.8.8:53`
+   * *   `test:bad:address`
+   * *   `[::1]`
+   * *   `[::1]:8080`
+   *
    * Limited to 45 characters.
    * </pre>
    *
@@ -200,7 +206,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Service Directory will reject values outside of [0, 65535].
+   * Optional. Service Directory rejects values outside of `[0, 65535]`.
    * </pre>
    *
    * <code>int32 port = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -244,23 +250,23 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Annotations for the endpoint. This data can be consumed by
-   * service clients. Restrictions:
-   *  - The entire annotations dictionary may contain up to 512 characters,
-   *    spread accoss all key-value pairs. Annotations that goes beyond any
-   *    these limits will be rejected.
-   *  - Valid annotation keys have two segments: an optional prefix and name,
-   *    separated by a slash (/). The name segment is required and must be 63
-   *    characters or less, beginning and ending with an alphanumeric character
-   *    ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
-   *    alphanumerics between. The prefix is optional. If specified, the prefix
-   *    must be a DNS subdomain: a series of DNS labels separated by dots (.),
-   *    not longer than 253 characters in total, followed by a slash (/).
-   *    Annotations that fails to meet these requirements will be rejected.
-   *  - The '(*.)google.com/' and '(*.)googleapis.com/' prefixes are reserved
-   *    for system annotations managed by Service Directory. If the user tries
-   *    to write to these keyspaces, those entries will be silently ignored by
-   *    the system.
-   * Note: This field is equivalent to the 'metadata' field in the v1beta1 API.
+   * service clients.
+   *
+   * Restrictions:
+   *
+   * *   The entire annotations dictionary may contain up to 512 characters,
+   *     spread accoss all key-value pairs. Annotations that go beyond this
+   *     limit are rejected
+   * *   Valid annotation keys have two segments: an optional prefix and name,
+   *     separated by a slash (/). The name segment is required and must be 63
+   *     characters or less, beginning and ending with an alphanumeric character
+   *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+   *     alphanumerics between. The prefix is optional. If specified, the prefix
+   *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+   *     not longer than 253 characters in total, followed by a slash (/)
+   *     Annotations that fails to meet these requirements are rejected.
+   *
+   * Note: This field is equivalent to the `metadata` field in the v1beta1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.
    * </pre>
@@ -286,23 +292,23 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Annotations for the endpoint. This data can be consumed by
-   * service clients. Restrictions:
-   *  - The entire annotations dictionary may contain up to 512 characters,
-   *    spread accoss all key-value pairs. Annotations that goes beyond any
-   *    these limits will be rejected.
-   *  - Valid annotation keys have two segments: an optional prefix and name,
-   *    separated by a slash (/). The name segment is required and must be 63
-   *    characters or less, beginning and ending with an alphanumeric character
-   *    ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
-   *    alphanumerics between. The prefix is optional. If specified, the prefix
-   *    must be a DNS subdomain: a series of DNS labels separated by dots (.),
-   *    not longer than 253 characters in total, followed by a slash (/).
-   *    Annotations that fails to meet these requirements will be rejected.
-   *  - The '(*.)google.com/' and '(*.)googleapis.com/' prefixes are reserved
-   *    for system annotations managed by Service Directory. If the user tries
-   *    to write to these keyspaces, those entries will be silently ignored by
-   *    the system.
-   * Note: This field is equivalent to the 'metadata' field in the v1beta1 API.
+   * service clients.
+   *
+   * Restrictions:
+   *
+   * *   The entire annotations dictionary may contain up to 512 characters,
+   *     spread accoss all key-value pairs. Annotations that go beyond this
+   *     limit are rejected
+   * *   Valid annotation keys have two segments: an optional prefix and name,
+   *     separated by a slash (/). The name segment is required and must be 63
+   *     characters or less, beginning and ending with an alphanumeric character
+   *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+   *     alphanumerics between. The prefix is optional. If specified, the prefix
+   *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+   *     not longer than 253 characters in total, followed by a slash (/)
+   *     Annotations that fails to meet these requirements are rejected.
+   *
+   * Note: This field is equivalent to the `metadata` field in the v1beta1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.
    * </pre>
@@ -319,23 +325,23 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Annotations for the endpoint. This data can be consumed by
-   * service clients. Restrictions:
-   *  - The entire annotations dictionary may contain up to 512 characters,
-   *    spread accoss all key-value pairs. Annotations that goes beyond any
-   *    these limits will be rejected.
-   *  - Valid annotation keys have two segments: an optional prefix and name,
-   *    separated by a slash (/). The name segment is required and must be 63
-   *    characters or less, beginning and ending with an alphanumeric character
-   *    ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
-   *    alphanumerics between. The prefix is optional. If specified, the prefix
-   *    must be a DNS subdomain: a series of DNS labels separated by dots (.),
-   *    not longer than 253 characters in total, followed by a slash (/).
-   *    Annotations that fails to meet these requirements will be rejected.
-   *  - The '(*.)google.com/' and '(*.)googleapis.com/' prefixes are reserved
-   *    for system annotations managed by Service Directory. If the user tries
-   *    to write to these keyspaces, those entries will be silently ignored by
-   *    the system.
-   * Note: This field is equivalent to the 'metadata' field in the v1beta1 API.
+   * service clients.
+   *
+   * Restrictions:
+   *
+   * *   The entire annotations dictionary may contain up to 512 characters,
+   *     spread accoss all key-value pairs. Annotations that go beyond this
+   *     limit are rejected
+   * *   Valid annotation keys have two segments: an optional prefix and name,
+   *     separated by a slash (/). The name segment is required and must be 63
+   *     characters or less, beginning and ending with an alphanumeric character
+   *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+   *     alphanumerics between. The prefix is optional. If specified, the prefix
+   *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+   *     not longer than 253 characters in total, followed by a slash (/)
+   *     Annotations that fails to meet these requirements are rejected.
+   *
+   * Note: This field is equivalent to the `metadata` field in the v1beta1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.
    * </pre>
@@ -359,23 +365,23 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Annotations for the endpoint. This data can be consumed by
-   * service clients. Restrictions:
-   *  - The entire annotations dictionary may contain up to 512 characters,
-   *    spread accoss all key-value pairs. Annotations that goes beyond any
-   *    these limits will be rejected.
-   *  - Valid annotation keys have two segments: an optional prefix and name,
-   *    separated by a slash (/). The name segment is required and must be 63
-   *    characters or less, beginning and ending with an alphanumeric character
-   *    ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
-   *    alphanumerics between. The prefix is optional. If specified, the prefix
-   *    must be a DNS subdomain: a series of DNS labels separated by dots (.),
-   *    not longer than 253 characters in total, followed by a slash (/).
-   *    Annotations that fails to meet these requirements will be rejected.
-   *  - The '(*.)google.com/' and '(*.)googleapis.com/' prefixes are reserved
-   *    for system annotations managed by Service Directory. If the user tries
-   *    to write to these keyspaces, those entries will be silently ignored by
-   *    the system.
-   * Note: This field is equivalent to the 'metadata' field in the v1beta1 API.
+   * service clients.
+   *
+   * Restrictions:
+   *
+   * *   The entire annotations dictionary may contain up to 512 characters,
+   *     spread accoss all key-value pairs. Annotations that go beyond this
+   *     limit are rejected
+   * *   Valid annotation keys have two segments: an optional prefix and name,
+   *     separated by a slash (/). The name segment is required and must be 63
+   *     characters or less, beginning and ending with an alphanumeric character
+   *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+   *     alphanumerics between. The prefix is optional. If specified, the prefix
+   *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+   *     not longer than 253 characters in total, followed by a slash (/)
+   *     Annotations that fails to meet these requirements are rejected.
+   *
+   * Note: This field is equivalent to the `metadata` field in the v1beta1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.
    * </pre>
@@ -393,6 +399,126 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
+  }
+
+  public static final int NETWORK_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object network_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The Google Compute Engine network (VPC) of the endpoint in the
+   * format `projects/&lt;project number&gt;/locations/global/networks/&#42;`.
+   *
+   * The project must be specified by project number (project id is rejected).
+   * Incorrectly formatted networks are rejected, we also check to make sure
+   * that you have the servicedirectory.networks.attach permission on the
+   * project specified.
+   * </pre>
+   *
+   * <code>
+   * string network = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The network.
+   */
+  @java.lang.Override
+  public java.lang.String getNetwork() {
+    java.lang.Object ref = network_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      network_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The Google Compute Engine network (VPC) of the endpoint in the
+   * format `projects/&lt;project number&gt;/locations/global/networks/&#42;`.
+   *
+   * The project must be specified by project number (project id is rejected).
+   * Incorrectly formatted networks are rejected, we also check to make sure
+   * that you have the servicedirectory.networks.attach permission on the
+   * project specified.
+   * </pre>
+   *
+   * <code>
+   * string network = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for network.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNetworkBytes() {
+    java.lang.Object ref = network_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      network_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int UID_FIELD_NUMBER = 9;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uid_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The globally unique identifier of the endpoint in the UUID4
+   * format.
+   * </pre>
+   *
+   * <code>string uid = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The uid.
+   */
+  @java.lang.Override
+  public java.lang.String getUid() {
+    java.lang.Object ref = uid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      uid_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The globally unique identifier of the endpoint in the UUID4
+   * format.
+   * </pre>
+   *
+   * <code>string uid = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for uid.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getUidBytes() {
+    java.lang.Object ref = uid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      uid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -420,6 +546,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetAnnotations(), AnnotationsDefaultEntryHolder.defaultEntry, 5);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, network_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uid_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, uid_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -448,6 +580,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, annotations__);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(network_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, network_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uid_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, uid_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -468,6 +606,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     if (!getAddress().equals(other.getAddress())) return false;
     if (getPort() != other.getPort()) return false;
     if (!internalGetAnnotations().equals(other.internalGetAnnotations())) return false;
+    if (!getNetwork().equals(other.getNetwork())) return false;
+    if (!getUid().equals(other.getUid())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -489,6 +629,10 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ANNOTATIONS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetAnnotations().hashCode();
     }
+    hash = (37 * hash) + NETWORK_FIELD_NUMBER;
+    hash = (53 * hash) + getNetwork().hashCode();
+    hash = (37 * hash) + UID_FIELD_NUMBER;
+    hash = (53 * hash) + getUid().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -654,6 +798,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       address_ = "";
       port_ = 0;
       internalGetMutableAnnotations().clear();
+      network_ = "";
+      uid_ = "";
       return this;
     }
 
@@ -702,6 +848,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.annotations_ = internalGetAnnotations();
         result.annotations_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.network_ = network_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.uid_ = uid_;
       }
     }
 
@@ -765,6 +917,16 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableAnnotations().mergeFrom(other.internalGetAnnotations());
       bitField0_ |= 0x00000008;
+      if (!other.getNetwork().isEmpty()) {
+        network_ = other.network_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      if (!other.getUid().isEmpty()) {
+        uid_ = other.uid_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -821,6 +983,18 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 42
+            case 66:
+              {
+                network_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 66
+            case 74:
+              {
+                uid_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 74
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -956,13 +1130,15 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An IPv4 or IPv6 address. Service Directory will reject bad
-     * addresses like:
-     *   "8.8.8"
-     *   "8.8.8.8:53"
-     *   "test:bad:address"
-     *   "[::1]"
-     *   "[::1]:8080"
+     * Optional. An IPv4 or IPv6 address. Service Directory rejects bad addresses
+     * like:
+     *
+     * *   `8.8.8`
+     * *   `8.8.8.8:53`
+     * *   `test:bad:address`
+     * *   `[::1]`
+     * *   `[::1]:8080`
+     *
      * Limited to 45 characters.
      * </pre>
      *
@@ -985,13 +1161,15 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An IPv4 or IPv6 address. Service Directory will reject bad
-     * addresses like:
-     *   "8.8.8"
-     *   "8.8.8.8:53"
-     *   "test:bad:address"
-     *   "[::1]"
-     *   "[::1]:8080"
+     * Optional. An IPv4 or IPv6 address. Service Directory rejects bad addresses
+     * like:
+     *
+     * *   `8.8.8`
+     * *   `8.8.8.8:53`
+     * *   `test:bad:address`
+     * *   `[::1]`
+     * *   `[::1]:8080`
+     *
      * Limited to 45 characters.
      * </pre>
      *
@@ -1014,13 +1192,15 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An IPv4 or IPv6 address. Service Directory will reject bad
-     * addresses like:
-     *   "8.8.8"
-     *   "8.8.8.8:53"
-     *   "test:bad:address"
-     *   "[::1]"
-     *   "[::1]:8080"
+     * Optional. An IPv4 or IPv6 address. Service Directory rejects bad addresses
+     * like:
+     *
+     * *   `8.8.8`
+     * *   `8.8.8.8:53`
+     * *   `test:bad:address`
+     * *   `[::1]`
+     * *   `[::1]:8080`
+     *
      * Limited to 45 characters.
      * </pre>
      *
@@ -1042,13 +1222,15 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An IPv4 or IPv6 address. Service Directory will reject bad
-     * addresses like:
-     *   "8.8.8"
-     *   "8.8.8.8:53"
-     *   "test:bad:address"
-     *   "[::1]"
-     *   "[::1]:8080"
+     * Optional. An IPv4 or IPv6 address. Service Directory rejects bad addresses
+     * like:
+     *
+     * *   `8.8.8`
+     * *   `8.8.8.8:53`
+     * *   `test:bad:address`
+     * *   `[::1]`
+     * *   `[::1]:8080`
+     *
      * Limited to 45 characters.
      * </pre>
      *
@@ -1066,13 +1248,15 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. An IPv4 or IPv6 address. Service Directory will reject bad
-     * addresses like:
-     *   "8.8.8"
-     *   "8.8.8.8:53"
-     *   "test:bad:address"
-     *   "[::1]"
-     *   "[::1]:8080"
+     * Optional. An IPv4 or IPv6 address. Service Directory rejects bad addresses
+     * like:
+     *
+     * *   `8.8.8`
+     * *   `8.8.8.8:53`
+     * *   `test:bad:address`
+     * *   `[::1]`
+     * *   `[::1]:8080`
+     *
      * Limited to 45 characters.
      * </pre>
      *
@@ -1097,7 +1281,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Service Directory will reject values outside of [0, 65535].
+     * Optional. Service Directory rejects values outside of `[0, 65535]`.
      * </pre>
      *
      * <code>int32 port = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1112,7 +1296,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Service Directory will reject values outside of [0, 65535].
+     * Optional. Service Directory rejects values outside of `[0, 65535]`.
      * </pre>
      *
      * <code>int32 port = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1131,7 +1315,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Service Directory will reject values outside of [0, 65535].
+     * Optional. Service Directory rejects values outside of `[0, 65535]`.
      * </pre>
      *
      * <code>int32 port = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1178,23 +1362,23 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations for the endpoint. This data can be consumed by
-     * service clients. Restrictions:
-     *  - The entire annotations dictionary may contain up to 512 characters,
-     *    spread accoss all key-value pairs. Annotations that goes beyond any
-     *    these limits will be rejected.
-     *  - Valid annotation keys have two segments: an optional prefix and name,
-     *    separated by a slash (/). The name segment is required and must be 63
-     *    characters or less, beginning and ending with an alphanumeric character
-     *    ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
-     *    alphanumerics between. The prefix is optional. If specified, the prefix
-     *    must be a DNS subdomain: a series of DNS labels separated by dots (.),
-     *    not longer than 253 characters in total, followed by a slash (/).
-     *    Annotations that fails to meet these requirements will be rejected.
-     *  - The '(*.)google.com/' and '(*.)googleapis.com/' prefixes are reserved
-     *    for system annotations managed by Service Directory. If the user tries
-     *    to write to these keyspaces, those entries will be silently ignored by
-     *    the system.
-     * Note: This field is equivalent to the 'metadata' field in the v1beta1 API.
+     * service clients.
+     *
+     * Restrictions:
+     *
+     * *   The entire annotations dictionary may contain up to 512 characters,
+     *     spread accoss all key-value pairs. Annotations that go beyond this
+     *     limit are rejected
+     * *   Valid annotation keys have two segments: an optional prefix and name,
+     *     separated by a slash (/). The name segment is required and must be 63
+     *     characters or less, beginning and ending with an alphanumeric character
+     *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+     *     alphanumerics between. The prefix is optional. If specified, the prefix
+     *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+     *     not longer than 253 characters in total, followed by a slash (/)
+     *     Annotations that fails to meet these requirements are rejected.
+     *
+     * Note: This field is equivalent to the `metadata` field in the v1beta1 API.
      * They have the same syntax and read/write to the same location in Service
      * Directory.
      * </pre>
@@ -1220,23 +1404,23 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations for the endpoint. This data can be consumed by
-     * service clients. Restrictions:
-     *  - The entire annotations dictionary may contain up to 512 characters,
-     *    spread accoss all key-value pairs. Annotations that goes beyond any
-     *    these limits will be rejected.
-     *  - Valid annotation keys have two segments: an optional prefix and name,
-     *    separated by a slash (/). The name segment is required and must be 63
-     *    characters or less, beginning and ending with an alphanumeric character
-     *    ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
-     *    alphanumerics between. The prefix is optional. If specified, the prefix
-     *    must be a DNS subdomain: a series of DNS labels separated by dots (.),
-     *    not longer than 253 characters in total, followed by a slash (/).
-     *    Annotations that fails to meet these requirements will be rejected.
-     *  - The '(*.)google.com/' and '(*.)googleapis.com/' prefixes are reserved
-     *    for system annotations managed by Service Directory. If the user tries
-     *    to write to these keyspaces, those entries will be silently ignored by
-     *    the system.
-     * Note: This field is equivalent to the 'metadata' field in the v1beta1 API.
+     * service clients.
+     *
+     * Restrictions:
+     *
+     * *   The entire annotations dictionary may contain up to 512 characters,
+     *     spread accoss all key-value pairs. Annotations that go beyond this
+     *     limit are rejected
+     * *   Valid annotation keys have two segments: an optional prefix and name,
+     *     separated by a slash (/). The name segment is required and must be 63
+     *     characters or less, beginning and ending with an alphanumeric character
+     *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+     *     alphanumerics between. The prefix is optional. If specified, the prefix
+     *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+     *     not longer than 253 characters in total, followed by a slash (/)
+     *     Annotations that fails to meet these requirements are rejected.
+     *
+     * Note: This field is equivalent to the `metadata` field in the v1beta1 API.
      * They have the same syntax and read/write to the same location in Service
      * Directory.
      * </pre>
@@ -1253,23 +1437,23 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations for the endpoint. This data can be consumed by
-     * service clients. Restrictions:
-     *  - The entire annotations dictionary may contain up to 512 characters,
-     *    spread accoss all key-value pairs. Annotations that goes beyond any
-     *    these limits will be rejected.
-     *  - Valid annotation keys have two segments: an optional prefix and name,
-     *    separated by a slash (/). The name segment is required and must be 63
-     *    characters or less, beginning and ending with an alphanumeric character
-     *    ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
-     *    alphanumerics between. The prefix is optional. If specified, the prefix
-     *    must be a DNS subdomain: a series of DNS labels separated by dots (.),
-     *    not longer than 253 characters in total, followed by a slash (/).
-     *    Annotations that fails to meet these requirements will be rejected.
-     *  - The '(*.)google.com/' and '(*.)googleapis.com/' prefixes are reserved
-     *    for system annotations managed by Service Directory. If the user tries
-     *    to write to these keyspaces, those entries will be silently ignored by
-     *    the system.
-     * Note: This field is equivalent to the 'metadata' field in the v1beta1 API.
+     * service clients.
+     *
+     * Restrictions:
+     *
+     * *   The entire annotations dictionary may contain up to 512 characters,
+     *     spread accoss all key-value pairs. Annotations that go beyond this
+     *     limit are rejected
+     * *   Valid annotation keys have two segments: an optional prefix and name,
+     *     separated by a slash (/). The name segment is required and must be 63
+     *     characters or less, beginning and ending with an alphanumeric character
+     *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+     *     alphanumerics between. The prefix is optional. If specified, the prefix
+     *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+     *     not longer than 253 characters in total, followed by a slash (/)
+     *     Annotations that fails to meet these requirements are rejected.
+     *
+     * Note: This field is equivalent to the `metadata` field in the v1beta1 API.
      * They have the same syntax and read/write to the same location in Service
      * Directory.
      * </pre>
@@ -1293,23 +1477,23 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations for the endpoint. This data can be consumed by
-     * service clients. Restrictions:
-     *  - The entire annotations dictionary may contain up to 512 characters,
-     *    spread accoss all key-value pairs. Annotations that goes beyond any
-     *    these limits will be rejected.
-     *  - Valid annotation keys have two segments: an optional prefix and name,
-     *    separated by a slash (/). The name segment is required and must be 63
-     *    characters or less, beginning and ending with an alphanumeric character
-     *    ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
-     *    alphanumerics between. The prefix is optional. If specified, the prefix
-     *    must be a DNS subdomain: a series of DNS labels separated by dots (.),
-     *    not longer than 253 characters in total, followed by a slash (/).
-     *    Annotations that fails to meet these requirements will be rejected.
-     *  - The '(*.)google.com/' and '(*.)googleapis.com/' prefixes are reserved
-     *    for system annotations managed by Service Directory. If the user tries
-     *    to write to these keyspaces, those entries will be silently ignored by
-     *    the system.
-     * Note: This field is equivalent to the 'metadata' field in the v1beta1 API.
+     * service clients.
+     *
+     * Restrictions:
+     *
+     * *   The entire annotations dictionary may contain up to 512 characters,
+     *     spread accoss all key-value pairs. Annotations that go beyond this
+     *     limit are rejected
+     * *   Valid annotation keys have two segments: an optional prefix and name,
+     *     separated by a slash (/). The name segment is required and must be 63
+     *     characters or less, beginning and ending with an alphanumeric character
+     *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+     *     alphanumerics between. The prefix is optional. If specified, the prefix
+     *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+     *     not longer than 253 characters in total, followed by a slash (/)
+     *     Annotations that fails to meet these requirements are rejected.
+     *
+     * Note: This field is equivalent to the `metadata` field in the v1beta1 API.
      * They have the same syntax and read/write to the same location in Service
      * Directory.
      * </pre>
@@ -1339,23 +1523,23 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations for the endpoint. This data can be consumed by
-     * service clients. Restrictions:
-     *  - The entire annotations dictionary may contain up to 512 characters,
-     *    spread accoss all key-value pairs. Annotations that goes beyond any
-     *    these limits will be rejected.
-     *  - Valid annotation keys have two segments: an optional prefix and name,
-     *    separated by a slash (/). The name segment is required and must be 63
-     *    characters or less, beginning and ending with an alphanumeric character
-     *    ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
-     *    alphanumerics between. The prefix is optional. If specified, the prefix
-     *    must be a DNS subdomain: a series of DNS labels separated by dots (.),
-     *    not longer than 253 characters in total, followed by a slash (/).
-     *    Annotations that fails to meet these requirements will be rejected.
-     *  - The '(*.)google.com/' and '(*.)googleapis.com/' prefixes are reserved
-     *    for system annotations managed by Service Directory. If the user tries
-     *    to write to these keyspaces, those entries will be silently ignored by
-     *    the system.
-     * Note: This field is equivalent to the 'metadata' field in the v1beta1 API.
+     * service clients.
+     *
+     * Restrictions:
+     *
+     * *   The entire annotations dictionary may contain up to 512 characters,
+     *     spread accoss all key-value pairs. Annotations that go beyond this
+     *     limit are rejected
+     * *   Valid annotation keys have two segments: an optional prefix and name,
+     *     separated by a slash (/). The name segment is required and must be 63
+     *     characters or less, beginning and ending with an alphanumeric character
+     *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+     *     alphanumerics between. The prefix is optional. If specified, the prefix
+     *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+     *     not longer than 253 characters in total, followed by a slash (/)
+     *     Annotations that fails to meet these requirements are rejected.
+     *
+     * Note: This field is equivalent to the `metadata` field in the v1beta1 API.
      * They have the same syntax and read/write to the same location in Service
      * Directory.
      * </pre>
@@ -1381,23 +1565,23 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations for the endpoint. This data can be consumed by
-     * service clients. Restrictions:
-     *  - The entire annotations dictionary may contain up to 512 characters,
-     *    spread accoss all key-value pairs. Annotations that goes beyond any
-     *    these limits will be rejected.
-     *  - Valid annotation keys have two segments: an optional prefix and name,
-     *    separated by a slash (/). The name segment is required and must be 63
-     *    characters or less, beginning and ending with an alphanumeric character
-     *    ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
-     *    alphanumerics between. The prefix is optional. If specified, the prefix
-     *    must be a DNS subdomain: a series of DNS labels separated by dots (.),
-     *    not longer than 253 characters in total, followed by a slash (/).
-     *    Annotations that fails to meet these requirements will be rejected.
-     *  - The '(*.)google.com/' and '(*.)googleapis.com/' prefixes are reserved
-     *    for system annotations managed by Service Directory. If the user tries
-     *    to write to these keyspaces, those entries will be silently ignored by
-     *    the system.
-     * Note: This field is equivalent to the 'metadata' field in the v1beta1 API.
+     * service clients.
+     *
+     * Restrictions:
+     *
+     * *   The entire annotations dictionary may contain up to 512 characters,
+     *     spread accoss all key-value pairs. Annotations that go beyond this
+     *     limit are rejected
+     * *   Valid annotation keys have two segments: an optional prefix and name,
+     *     separated by a slash (/). The name segment is required and must be 63
+     *     characters or less, beginning and ending with an alphanumeric character
+     *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+     *     alphanumerics between. The prefix is optional. If specified, the prefix
+     *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+     *     not longer than 253 characters in total, followed by a slash (/)
+     *     Annotations that fails to meet these requirements are rejected.
+     *
+     * Note: This field is equivalent to the `metadata` field in the v1beta1 API.
      * They have the same syntax and read/write to the same location in Service
      * Directory.
      * </pre>
@@ -1421,23 +1605,23 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Annotations for the endpoint. This data can be consumed by
-     * service clients. Restrictions:
-     *  - The entire annotations dictionary may contain up to 512 characters,
-     *    spread accoss all key-value pairs. Annotations that goes beyond any
-     *    these limits will be rejected.
-     *  - Valid annotation keys have two segments: an optional prefix and name,
-     *    separated by a slash (/). The name segment is required and must be 63
-     *    characters or less, beginning and ending with an alphanumeric character
-     *    ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
-     *    alphanumerics between. The prefix is optional. If specified, the prefix
-     *    must be a DNS subdomain: a series of DNS labels separated by dots (.),
-     *    not longer than 253 characters in total, followed by a slash (/).
-     *    Annotations that fails to meet these requirements will be rejected.
-     *  - The '(*.)google.com/' and '(*.)googleapis.com/' prefixes are reserved
-     *    for system annotations managed by Service Directory. If the user tries
-     *    to write to these keyspaces, those entries will be silently ignored by
-     *    the system.
-     * Note: This field is equivalent to the 'metadata' field in the v1beta1 API.
+     * service clients.
+     *
+     * Restrictions:
+     *
+     * *   The entire annotations dictionary may contain up to 512 characters,
+     *     spread accoss all key-value pairs. Annotations that go beyond this
+     *     limit are rejected
+     * *   Valid annotation keys have two segments: an optional prefix and name,
+     *     separated by a slash (/). The name segment is required and must be 63
+     *     characters or less, beginning and ending with an alphanumeric character
+     *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+     *     alphanumerics between. The prefix is optional. If specified, the prefix
+     *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+     *     not longer than 253 characters in total, followed by a slash (/)
+     *     Annotations that fails to meet these requirements are rejected.
+     *
+     * Note: This field is equivalent to the `metadata` field in the v1beta1 API.
      * They have the same syntax and read/write to the same location in Service
      * Directory.
      * </pre>
@@ -1448,6 +1632,263 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
       bitField0_ |= 0x00000008;
+      return this;
+    }
+
+    private java.lang.Object network_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The Google Compute Engine network (VPC) of the endpoint in the
+     * format `projects/&lt;project number&gt;/locations/global/networks/&#42;`.
+     *
+     * The project must be specified by project number (project id is rejected).
+     * Incorrectly formatted networks are rejected, we also check to make sure
+     * that you have the servicedirectory.networks.attach permission on the
+     * project specified.
+     * </pre>
+     *
+     * <code>
+     * string network = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The network.
+     */
+    public java.lang.String getNetwork() {
+      java.lang.Object ref = network_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        network_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The Google Compute Engine network (VPC) of the endpoint in the
+     * format `projects/&lt;project number&gt;/locations/global/networks/&#42;`.
+     *
+     * The project must be specified by project number (project id is rejected).
+     * Incorrectly formatted networks are rejected, we also check to make sure
+     * that you have the servicedirectory.networks.attach permission on the
+     * project specified.
+     * </pre>
+     *
+     * <code>
+     * string network = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for network.
+     */
+    public com.google.protobuf.ByteString getNetworkBytes() {
+      java.lang.Object ref = network_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        network_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The Google Compute Engine network (VPC) of the endpoint in the
+     * format `projects/&lt;project number&gt;/locations/global/networks/&#42;`.
+     *
+     * The project must be specified by project number (project id is rejected).
+     * Incorrectly formatted networks are rejected, we also check to make sure
+     * that you have the servicedirectory.networks.attach permission on the
+     * project specified.
+     * </pre>
+     *
+     * <code>
+     * string network = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The network to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetwork(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      network_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The Google Compute Engine network (VPC) of the endpoint in the
+     * format `projects/&lt;project number&gt;/locations/global/networks/&#42;`.
+     *
+     * The project must be specified by project number (project id is rejected).
+     * Incorrectly formatted networks are rejected, we also check to make sure
+     * that you have the servicedirectory.networks.attach permission on the
+     * project specified.
+     * </pre>
+     *
+     * <code>
+     * string network = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNetwork() {
+      network_ = getDefaultInstance().getNetwork();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The Google Compute Engine network (VPC) of the endpoint in the
+     * format `projects/&lt;project number&gt;/locations/global/networks/&#42;`.
+     *
+     * The project must be specified by project number (project id is rejected).
+     * Incorrectly formatted networks are rejected, we also check to make sure
+     * that you have the servicedirectory.networks.attach permission on the
+     * project specified.
+     * </pre>
+     *
+     * <code>
+     * string network = 8 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes for network to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      network_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object uid_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The globally unique identifier of the endpoint in the UUID4
+     * format.
+     * </pre>
+     *
+     * <code>string uid = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The uid.
+     */
+    public java.lang.String getUid() {
+      java.lang.Object ref = uid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The globally unique identifier of the endpoint in the UUID4
+     * format.
+     * </pre>
+     *
+     * <code>string uid = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for uid.
+     */
+    public com.google.protobuf.ByteString getUidBytes() {
+      java.lang.Object ref = uid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        uid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The globally unique identifier of the endpoint in the UUID4
+     * format.
+     * </pre>
+     *
+     * <code>string uid = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The uid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUid(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      uid_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The globally unique identifier of the endpoint in the UUID4
+     * format.
+     * </pre>
+     *
+     * <code>string uid = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUid() {
+      uid_ = getDefaultInstance().getUid();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The globally unique identifier of the endpoint in the UUID4
+     * format.
+     * </pre>
+     *
+     * <code>string uid = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for uid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUidBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      uid_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
       return this;
     }
 

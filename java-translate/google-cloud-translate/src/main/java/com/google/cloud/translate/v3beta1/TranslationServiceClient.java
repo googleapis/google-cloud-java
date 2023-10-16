@@ -636,6 +636,10 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .setModel("model104069929")
    *           .setGlossaryConfig(TranslateTextGlossaryConfig.newBuilder().build())
    *           .putAllLabels(new HashMap<String, String>())
+   *           .setCustomizedAttribution("customizedAttribution557650238")
+   *           .setIsTranslateNativePdfOnly(true)
+   *           .setEnableShadowRemovalNativePdf(true)
+   *           .setEnableRotationCorrection(true)
    *           .build();
    *   TranslateDocumentResponse response = translationServiceClient.translateDocument(request);
    * }
@@ -671,6 +675,10 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .setModel("model104069929")
    *           .setGlossaryConfig(TranslateTextGlossaryConfig.newBuilder().build())
    *           .putAllLabels(new HashMap<String, String>())
+   *           .setCustomizedAttribution("customizedAttribution557650238")
+   *           .setIsTranslateNativePdfOnly(true)
+   *           .setEnableShadowRemovalNativePdf(true)
+   *           .setEnableRotationCorrection(true)
    *           .build();
    *   ApiFuture<TranslateDocumentResponse> future =
    *       translationServiceClient.translateDocumentCallable().futureCall(request);
@@ -810,7 +818,7 @@ public class TranslationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Translates a large volume of documents in asynchronous batch mode. This function provides
+   * Translates a large volume of document in asynchronous batch mode. This function provides
    * real-time output as the inputs are being processed. If caller cancels a request, the partial
    * results (for an input file, it's all or nothing) may still be available on the specified output
    * location.
@@ -846,8 +854,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *     <p>Only AutoML Translation models or glossaries within the same region (have the same
    *     location-id) can be used, otherwise an INVALID_ARGUMENT (400) error is returned.
    * @param sourceLanguageCode Required. The BCP-47 language code of the input document if known,
-   *     for example, "en-US" or "sr-Latn". Supported language codes are listed in Language Support
-   *     (https://cloud.google.com/translate/docs/languages).
+   *     for example, "en-US" or "sr-Latn". Supported language codes are listed in [Language
+   *     Support](https://cloud.google.com/translate/docs/languages).
    * @param targetLanguageCodes Required. The BCP-47 language code to use for translation of the
    *     input document. Specify up to 10 language codes here.
    * @param inputConfigs Required. Input configurations. The total number of files matched should be
@@ -877,7 +885,7 @@ public class TranslationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Translates a large volume of documents in asynchronous batch mode. This function provides
+   * Translates a large volume of document in asynchronous batch mode. This function provides
    * real-time output as the inputs are being processed. If caller cancels a request, the partial
    * results (for an input file, it's all or nothing) may still be available on the specified output
    * location.
@@ -913,8 +921,8 @@ public class TranslationServiceClient implements BackgroundResource {
    *     <p>Only AutoML Translation models or glossaries within the same region (have the same
    *     location-id) can be used, otherwise an INVALID_ARGUMENT (400) error is returned.
    * @param sourceLanguageCode Required. The BCP-47 language code of the input document if known,
-   *     for example, "en-US" or "sr-Latn". Supported language codes are listed in Language Support
-   *     (https://cloud.google.com/translate/docs/languages).
+   *     for example, "en-US" or "sr-Latn". Supported language codes are listed in [Language
+   *     Support](https://cloud.google.com/translate/docs/languages).
    * @param targetLanguageCodes Required. The BCP-47 language code to use for translation of the
    *     input document. Specify up to 10 language codes here.
    * @param inputConfigs Required. Input configurations. The total number of files matched should be
@@ -944,7 +952,7 @@ public class TranslationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Translates a large volume of documents in asynchronous batch mode. This function provides
+   * Translates a large volume of document in asynchronous batch mode. This function provides
    * real-time output as the inputs are being processed. If caller cancels a request, the partial
    * results (for an input file, it's all or nothing) may still be available on the specified output
    * location.
@@ -971,6 +979,9 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .putAllModels(new HashMap<String, String>())
    *           .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
    *           .putAllFormatConversions(new HashMap<String, String>())
+   *           .setCustomizedAttribution("customizedAttribution557650238")
+   *           .setEnableShadowRemovalNativePdf(true)
+   *           .setEnableRotationCorrection(true)
    *           .build();
    *   BatchTranslateDocumentResponse response =
    *       translationServiceClient.batchTranslateDocumentAsync(request).get();
@@ -987,7 +998,7 @@ public class TranslationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Translates a large volume of documents in asynchronous batch mode. This function provides
+   * Translates a large volume of document in asynchronous batch mode. This function provides
    * real-time output as the inputs are being processed. If caller cancels a request, the partial
    * results (for an input file, it's all or nothing) may still be available on the specified output
    * location.
@@ -1014,6 +1025,9 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .putAllModels(new HashMap<String, String>())
    *           .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
    *           .putAllFormatConversions(new HashMap<String, String>())
+   *           .setCustomizedAttribution("customizedAttribution557650238")
+   *           .setEnableShadowRemovalNativePdf(true)
+   *           .setEnableRotationCorrection(true)
    *           .build();
    *   OperationFuture<BatchTranslateDocumentResponse, BatchTranslateDocumentMetadata> future =
    *       translationServiceClient.batchTranslateDocumentOperationCallable().futureCall(request);
@@ -1032,7 +1046,7 @@ public class TranslationServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Translates a large volume of documents in asynchronous batch mode. This function provides
+   * Translates a large volume of document in asynchronous batch mode. This function provides
    * real-time output as the inputs are being processed. If caller cancels a request, the partial
    * results (for an input file, it's all or nothing) may still be available on the specified output
    * location.
@@ -1059,6 +1073,9 @@ public class TranslationServiceClient implements BackgroundResource {
    *           .putAllModels(new HashMap<String, String>())
    *           .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
    *           .putAllFormatConversions(new HashMap<String, String>())
+   *           .setCustomizedAttribution("customizedAttribution557650238")
+   *           .setEnableShadowRemovalNativePdf(true)
+   *           .setEnableRotationCorrection(true)
    *           .build();
    *   ApiFuture<Operation> future =
    *       translationServiceClient.batchTranslateDocumentCallable().futureCall(request);

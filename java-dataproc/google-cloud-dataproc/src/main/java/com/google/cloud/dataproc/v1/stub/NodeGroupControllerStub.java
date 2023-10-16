@@ -24,6 +24,11 @@ import com.google.cloud.dataproc.v1.GetNodeGroupRequest;
 import com.google.cloud.dataproc.v1.NodeGroup;
 import com.google.cloud.dataproc.v1.NodeGroupOperationMetadata;
 import com.google.cloud.dataproc.v1.ResizeNodeGroupRequest;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
@@ -65,6 +70,19 @@ public abstract class NodeGroupControllerStub implements BackgroundResource {
 
   public UnaryCallable<GetNodeGroupRequest, NodeGroup> getNodeGroupCallable() {
     throw new UnsupportedOperationException("Not implemented: getNodeGroupCallable()");
+  }
+
+  public UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: setIamPolicyCallable()");
+  }
+
+  public UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable() {
+    throw new UnsupportedOperationException("Not implemented: getIamPolicyCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override

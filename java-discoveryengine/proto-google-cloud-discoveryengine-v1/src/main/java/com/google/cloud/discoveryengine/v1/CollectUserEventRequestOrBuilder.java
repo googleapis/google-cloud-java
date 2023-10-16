@@ -87,7 +87,7 @@ public interface CollectUserEventRequestOrBuilder
    * <pre>
    * The URL including cgi-parameters but excluding the hash fragment with a
    * length limit of 5,000 characters. This is often more useful than the
-   * referer URL, because many browsers only send the domain for 3rd party
+   * referer URL, because many browsers only send the domain for third-party
    * requests.
    * </pre>
    *
@@ -102,7 +102,7 @@ public interface CollectUserEventRequestOrBuilder
    * <pre>
    * The URL including cgi-parameters but excluding the hash fragment with a
    * length limit of 5,000 characters. This is often more useful than the
-   * referer URL, because many browsers only send the domain for 3rd party
+   * referer URL, because many browsers only send the domain for third-party
    * requests.
    * </pre>
    *
@@ -117,7 +117,7 @@ public interface CollectUserEventRequestOrBuilder
    * <pre>
    * The URL including cgi-parameters but excluding the hash fragment with a
    * length limit of 5,000 characters. This is often more useful than the
-   * referer URL, because many browsers only send the domain for 3rd party
+   * referer URL, because many browsers only send the domain for third-party
    * requests.
    * </pre>
    *

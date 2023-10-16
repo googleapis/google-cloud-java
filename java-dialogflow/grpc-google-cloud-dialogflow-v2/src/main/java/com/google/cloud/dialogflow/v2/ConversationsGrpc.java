@@ -33,7 +33,7 @@ public final class ConversationsGrpc {
 
   private ConversationsGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.dialogflow.v2.Conversations";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.dialogflow.v2.Conversations";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -373,6 +373,53 @@ public final class ConversationsGrpc {
     return getGenerateStatelessSummaryMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest,
+          com.google.cloud.dialogflow.v2.SearchKnowledgeResponse>
+      getSearchKnowledgeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SearchKnowledge",
+      requestType = com.google.cloud.dialogflow.v2.SearchKnowledgeRequest.class,
+      responseType = com.google.cloud.dialogflow.v2.SearchKnowledgeResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.v2.SearchKnowledgeRequest,
+          com.google.cloud.dialogflow.v2.SearchKnowledgeResponse>
+      getSearchKnowledgeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.v2.SearchKnowledgeRequest,
+            com.google.cloud.dialogflow.v2.SearchKnowledgeResponse>
+        getSearchKnowledgeMethod;
+    if ((getSearchKnowledgeMethod = ConversationsGrpc.getSearchKnowledgeMethod) == null) {
+      synchronized (ConversationsGrpc.class) {
+        if ((getSearchKnowledgeMethod = ConversationsGrpc.getSearchKnowledgeMethod) == null) {
+          ConversationsGrpc.getSearchKnowledgeMethod =
+              getSearchKnowledgeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.v2.SearchKnowledgeRequest,
+                          com.google.cloud.dialogflow.v2.SearchKnowledgeResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "SearchKnowledge"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2.SearchKnowledgeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.v2.SearchKnowledgeResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ConversationsMethodDescriptorSupplier("SearchKnowledge"))
+                      .build();
+        }
+      }
+    }
+    return getSearchKnowledgeMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static ConversationsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<ConversationsStub> factory =
@@ -549,6 +596,21 @@ public final class ConversationsGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGenerateStatelessSummaryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get answers for the given query based on knowledge documents.
+     * </pre>
+     */
+    default void searchKnowledge(
+        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.SearchKnowledgeResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSearchKnowledgeMethod(), responseObserver);
     }
   }
 
@@ -728,6 +790,23 @@ public final class ConversationsGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get answers for the given query based on knowledge documents.
+     * </pre>
+     */
+    public void searchKnowledge(
+        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.SearchKnowledgeResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSearchKnowledgeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -864,6 +943,19 @@ public final class ConversationsGrpc {
         com.google.cloud.dialogflow.v2.GenerateStatelessSummaryRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGenerateStatelessSummaryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get answers for the given query based on knowledge documents.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.v2.SearchKnowledgeResponse searchKnowledge(
+        com.google.cloud.dialogflow.v2.SearchKnowledgeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSearchKnowledgeMethod(), getCallOptions(), request);
     }
   }
 
@@ -1010,6 +1102,20 @@ public final class ConversationsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGenerateStatelessSummaryMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get answers for the given query based on knowledge documents.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.v2.SearchKnowledgeResponse>
+        searchKnowledge(com.google.cloud.dialogflow.v2.SearchKnowledgeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSearchKnowledgeMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_CONVERSATION = 0;
@@ -1019,6 +1125,7 @@ public final class ConversationsGrpc {
   private static final int METHODID_LIST_MESSAGES = 4;
   private static final int METHODID_SUGGEST_CONVERSATION_SUMMARY = 5;
   private static final int METHODID_GENERATE_STATELESS_SUMMARY = 6;
+  private static final int METHODID_SEARCH_KNOWLEDGE = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1080,6 +1187,12 @@ public final class ConversationsGrpc {
               (com.google.cloud.dialogflow.v2.GenerateStatelessSummaryRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.dialogflow.v2.GenerateStatelessSummaryResponse>)
+                  responseObserver);
+          break;
+        case METHODID_SEARCH_KNOWLEDGE:
+          serviceImpl.searchKnowledge(
+              (com.google.cloud.dialogflow.v2.SearchKnowledgeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.v2.SearchKnowledgeResponse>)
                   responseObserver);
           break;
         default:
@@ -1149,6 +1262,13 @@ public final class ConversationsGrpc {
                     com.google.cloud.dialogflow.v2.GenerateStatelessSummaryRequest,
                     com.google.cloud.dialogflow.v2.GenerateStatelessSummaryResponse>(
                     service, METHODID_GENERATE_STATELESS_SUMMARY)))
+        .addMethod(
+            getSearchKnowledgeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeRequest,
+                    com.google.cloud.dialogflow.v2.SearchKnowledgeResponse>(
+                    service, METHODID_SEARCH_KNOWLEDGE)))
         .build();
   }
 
@@ -1176,9 +1296,9 @@ public final class ConversationsGrpc {
   private static final class ConversationsMethodDescriptorSupplier
       extends ConversationsBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ConversationsMethodDescriptorSupplier(String methodName) {
+    ConversationsMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -1207,6 +1327,7 @@ public final class ConversationsGrpc {
                       .addMethod(getListMessagesMethod())
                       .addMethod(getSuggestConversationSummaryMethod())
                       .addMethod(getGenerateStatelessSummaryMethod())
+                      .addMethod(getSearchKnowledgeMethod())
                       .build();
         }
       }

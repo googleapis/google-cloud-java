@@ -32,7 +32,8 @@ public final class MetadataServiceGrpc {
 
   private MetadataServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.aiplatform.v1beta1.MetadataService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.aiplatform.v1beta1.MetadataService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -4125,9 +4126,9 @@ public final class MetadataServiceGrpc {
   private static final class MetadataServiceMethodDescriptorSupplier
       extends MetadataServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    MetadataServiceMethodDescriptorSupplier(String methodName) {
+    MetadataServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

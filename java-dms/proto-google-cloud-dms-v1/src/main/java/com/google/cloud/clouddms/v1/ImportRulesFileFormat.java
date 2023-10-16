@@ -155,7 +155,7 @@ public enum ImportRulesFileFormat implements com.google.protobuf.ProtocolMessage
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ConversionWorkspaceResourcesProto.getDescriptor()
         .getEnumTypes()
-        .get(2);
+        .get(4);
   }
 
   private static final ImportRulesFileFormat[] VALUES = values();

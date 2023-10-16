@@ -272,14 +272,15 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A generic list of settings for the workspace.
+   * Optional. A generic list of settings for the workspace.
    * The settings are database pair dependant and can indicate default behavior
    * for the mapping rules engine or turn on or off specific features.
    * Such examples can be: convert_foreign_key_to_interleave=true,
    * skip_triggers=false, ignore_non_table_synonyms=true
    * </pre>
    *
-   * <code>map&lt;string, string&gt; global_settings = 4;</code>
+   * <code>map&lt;string, string&gt; global_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public boolean containsGlobalSettings(java.lang.String key) {
@@ -298,14 +299,15 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A generic list of settings for the workspace.
+   * Optional. A generic list of settings for the workspace.
    * The settings are database pair dependant and can indicate default behavior
    * for the mapping rules engine or turn on or off specific features.
    * Such examples can be: convert_foreign_key_to_interleave=true,
    * skip_triggers=false, ignore_non_table_synonyms=true
    * </pre>
    *
-   * <code>map&lt;string, string&gt; global_settings = 4;</code>
+   * <code>map&lt;string, string&gt; global_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getGlobalSettingsMap() {
@@ -315,14 +317,15 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A generic list of settings for the workspace.
+   * Optional. A generic list of settings for the workspace.
    * The settings are database pair dependant and can indicate default behavior
    * for the mapping rules engine or turn on or off specific features.
    * Such examples can be: convert_foreign_key_to_interleave=true,
    * skip_triggers=false, ignore_non_table_synonyms=true
    * </pre>
    *
-   * <code>map&lt;string, string&gt; global_settings = 4;</code>
+   * <code>map&lt;string, string&gt; global_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getGlobalSettingsOrDefault(
@@ -339,14 +342,15 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * A generic list of settings for the workspace.
+   * Optional. A generic list of settings for the workspace.
    * The settings are database pair dependant and can indicate default behavior
    * for the mapping rules engine or turn on or off specific features.
    * Such examples can be: convert_foreign_key_to_interleave=true,
    * skip_triggers=false, ignore_non_table_synonyms=true
    * </pre>
    *
-   * <code>map&lt;string, string&gt; global_settings = 4;</code>
+   * <code>map&lt;string, string&gt; global_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.lang.String getGlobalSettingsOrThrow(java.lang.String key) {
@@ -592,10 +596,10 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The display name for the workspace.
+   * Optional. The display name for the workspace.
    * </pre>
    *
-   * <code>string display_name = 11;</code>
+   * <code>string display_name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The displayName.
    */
@@ -615,10 +619,10 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The display name for the workspace.
+   * Optional. The display name for the workspace.
    * </pre>
    *
-   * <code>string display_name = 11;</code>
+   * <code>string display_name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for displayName.
    */
@@ -1809,14 +1813,16 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A generic list of settings for the workspace.
+     * Optional. A generic list of settings for the workspace.
      * The settings are database pair dependant and can indicate default behavior
      * for the mapping rules engine or turn on or off specific features.
      * Such examples can be: convert_foreign_key_to_interleave=true,
      * skip_triggers=false, ignore_non_table_synonyms=true
      * </pre>
      *
-     * <code>map&lt;string, string&gt; global_settings = 4;</code>
+     * <code>
+     * map&lt;string, string&gt; global_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public boolean containsGlobalSettings(java.lang.String key) {
@@ -1835,14 +1841,16 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A generic list of settings for the workspace.
+     * Optional. A generic list of settings for the workspace.
      * The settings are database pair dependant and can indicate default behavior
      * for the mapping rules engine or turn on or off specific features.
      * Such examples can be: convert_foreign_key_to_interleave=true,
      * skip_triggers=false, ignore_non_table_synonyms=true
      * </pre>
      *
-     * <code>map&lt;string, string&gt; global_settings = 4;</code>
+     * <code>
+     * map&lt;string, string&gt; global_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getGlobalSettingsMap() {
@@ -1852,14 +1860,16 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A generic list of settings for the workspace.
+     * Optional. A generic list of settings for the workspace.
      * The settings are database pair dependant and can indicate default behavior
      * for the mapping rules engine or turn on or off specific features.
      * Such examples can be: convert_foreign_key_to_interleave=true,
      * skip_triggers=false, ignore_non_table_synonyms=true
      * </pre>
      *
-     * <code>map&lt;string, string&gt; global_settings = 4;</code>
+     * <code>
+     * map&lt;string, string&gt; global_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getGlobalSettingsOrDefault(
@@ -1876,14 +1886,16 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A generic list of settings for the workspace.
+     * Optional. A generic list of settings for the workspace.
      * The settings are database pair dependant and can indicate default behavior
      * for the mapping rules engine or turn on or off specific features.
      * Such examples can be: convert_foreign_key_to_interleave=true,
      * skip_triggers=false, ignore_non_table_synonyms=true
      * </pre>
      *
-     * <code>map&lt;string, string&gt; global_settings = 4;</code>
+     * <code>
+     * map&lt;string, string&gt; global_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getGlobalSettingsOrThrow(java.lang.String key) {
@@ -1906,14 +1918,16 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A generic list of settings for the workspace.
+     * Optional. A generic list of settings for the workspace.
      * The settings are database pair dependant and can indicate default behavior
      * for the mapping rules engine or turn on or off specific features.
      * Such examples can be: convert_foreign_key_to_interleave=true,
      * skip_triggers=false, ignore_non_table_synonyms=true
      * </pre>
      *
-     * <code>map&lt;string, string&gt; global_settings = 4;</code>
+     * <code>
+     * map&lt;string, string&gt; global_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeGlobalSettings(java.lang.String key) {
       if (key == null) {
@@ -1932,14 +1946,16 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A generic list of settings for the workspace.
+     * Optional. A generic list of settings for the workspace.
      * The settings are database pair dependant and can indicate default behavior
      * for the mapping rules engine or turn on or off specific features.
      * Such examples can be: convert_foreign_key_to_interleave=true,
      * skip_triggers=false, ignore_non_table_synonyms=true
      * </pre>
      *
-     * <code>map&lt;string, string&gt; global_settings = 4;</code>
+     * <code>
+     * map&lt;string, string&gt; global_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putGlobalSettings(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -1956,14 +1972,16 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * A generic list of settings for the workspace.
+     * Optional. A generic list of settings for the workspace.
      * The settings are database pair dependant and can indicate default behavior
      * for the mapping rules engine or turn on or off specific features.
      * Such examples can be: convert_foreign_key_to_interleave=true,
      * skip_triggers=false, ignore_non_table_synonyms=true
      * </pre>
      *
-     * <code>map&lt;string, string&gt; global_settings = 4;</code>
+     * <code>
+     * map&lt;string, string&gt; global_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllGlobalSettings(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableGlobalSettings().getMutableMap().putAll(values);
@@ -2741,10 +2759,10 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The display name for the workspace.
+     * Optional. The display name for the workspace.
      * </pre>
      *
-     * <code>string display_name = 11;</code>
+     * <code>string display_name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The displayName.
      */
@@ -2763,10 +2781,10 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The display name for the workspace.
+     * Optional. The display name for the workspace.
      * </pre>
      *
-     * <code>string display_name = 11;</code>
+     * <code>string display_name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for displayName.
      */
@@ -2785,10 +2803,10 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The display name for the workspace.
+     * Optional. The display name for the workspace.
      * </pre>
      *
-     * <code>string display_name = 11;</code>
+     * <code>string display_name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -2806,10 +2824,10 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The display name for the workspace.
+     * Optional. The display name for the workspace.
      * </pre>
      *
-     * <code>string display_name = 11;</code>
+     * <code>string display_name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -2823,10 +2841,10 @@ public final class ConversionWorkspace extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The display name for the workspace.
+     * Optional. The display name for the workspace.
      * </pre>
      *
-     * <code>string display_name = 11;</code>
+     * <code>string display_name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.

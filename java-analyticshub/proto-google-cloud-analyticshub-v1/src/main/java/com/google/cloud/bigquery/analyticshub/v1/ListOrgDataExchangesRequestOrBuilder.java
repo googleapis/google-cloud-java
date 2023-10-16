@@ -27,8 +27,8 @@ public interface ListOrgDataExchangesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The organization resource path of the projects containing DataExchanges.
-   * e.g. `organizations/myorg/locations/US`.
+   * Required. The organization resource path of the projects containing
+   * DataExchanges. e.g. `organizations/myorg/locations/US`.
    * </pre>
    *
    * <code>string organization = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -40,8 +40,8 @@ public interface ListOrgDataExchangesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The organization resource path of the projects containing DataExchanges.
-   * e.g. `organizations/myorg/locations/US`.
+   * Required. The organization resource path of the projects containing
+   * DataExchanges. e.g. `organizations/myorg/locations/US`.
    * </pre>
    *
    * <code>string organization = 1 [(.google.api.field_behavior) = REQUIRED];</code>

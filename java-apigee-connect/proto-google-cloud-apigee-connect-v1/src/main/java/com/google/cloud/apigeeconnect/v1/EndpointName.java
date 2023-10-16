@@ -137,7 +137,7 @@ public class EndpointName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       EndpointName that = ((EndpointName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.endpoint, that.endpoint);

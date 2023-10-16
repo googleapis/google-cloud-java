@@ -86,10 +86,10 @@ public final class ServiceUsageProto {
     java.lang.String[] descriptorData = {
       "\n-google/api/serviceusage/v1/serviceusag"
           + "e.proto\022\032google.api.serviceusage.v1\032\034goo"
-          + "gle/api/annotations.proto\032*google/api/se"
-          + "rviceusage/v1/resources.proto\032#google/lo"
-          + "ngrunning/operations.proto\032\027google/api/c"
-          + "lient.proto\"$\n\024EnableServiceRequest\022\014\n\004n"
+          + "gle/api/annotations.proto\032\027google/api/cl"
+          + "ient.proto\032*google/api/serviceusage/v1/r"
+          + "esources.proto\032#google/longrunning/opera"
+          + "tions.proto\"$\n\024EnableServiceRequest\022\014\n\004n"
           + "ame\030\001 \001(\t\"M\n\025EnableServiceResponse\0224\n\007se"
           + "rvice\030\001 \001(\0132#.google.api.serviceusage.v1"
           + ".Service\"\222\002\n\025DisableServiceRequest\022\014\n\004na"
@@ -162,9 +162,9 @@ public final class ServiceUsageProto {
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
               com.google.api.serviceusage.v1.ResourcesProto.getDescriptor(),
               com.google.longrunning.OperationsProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_api_serviceusage_v1_EnableServiceRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -273,9 +273,9 @@ public final class ServiceUsageProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.api.serviceusage.v1.ResourcesProto.getDescriptor();
     com.google.longrunning.OperationsProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

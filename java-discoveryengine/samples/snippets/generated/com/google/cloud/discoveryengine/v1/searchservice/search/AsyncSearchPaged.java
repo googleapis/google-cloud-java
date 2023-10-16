@@ -25,6 +25,7 @@ import com.google.cloud.discoveryengine.v1.ServingConfigName;
 import com.google.cloud.discoveryengine.v1.UserInfo;
 import com.google.common.base.Strings;
 import com.google.protobuf.Value;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class AsyncSearchPaged {
@@ -51,10 +52,15 @@ public class AsyncSearchPaged {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setQuery("query107944136")
+              .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setOffset(-1019779949)
+              .setFilter("filter-1274492040")
+              .setOrderBy("orderBy-1207110587")
               .setUserInfo(UserInfo.newBuilder().build())
+              .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
+              .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
               .putAllParams(new HashMap<String, Value>())
               .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
               .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())

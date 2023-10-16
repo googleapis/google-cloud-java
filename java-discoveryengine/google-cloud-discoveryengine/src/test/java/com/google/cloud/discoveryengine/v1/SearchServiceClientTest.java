@@ -30,6 +30,7 @@ import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Value;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -101,10 +102,15 @@ public class SearchServiceClientTest {
                         "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                     .toString())
             .setQuery("query107944136")
+            .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
             .setPageSize(883849137)
             .setPageToken("pageToken873572522")
             .setOffset(-1019779949)
+            .setFilter("filter-1274492040")
+            .setOrderBy("orderBy-1207110587")
             .setUserInfo(UserInfo.newBuilder().build())
+            .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
+            .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
             .putAllParams(new HashMap<String, Value>())
             .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
             .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
@@ -129,10 +135,15 @@ public class SearchServiceClientTest {
     Assert.assertEquals(request.getServingConfig(), actualRequest.getServingConfig());
     Assert.assertEquals(request.getBranch(), actualRequest.getBranch());
     Assert.assertEquals(request.getQuery(), actualRequest.getQuery());
+    Assert.assertEquals(request.getImageQuery(), actualRequest.getImageQuery());
     Assert.assertEquals(request.getPageSize(), actualRequest.getPageSize());
     Assert.assertEquals(request.getPageToken(), actualRequest.getPageToken());
     Assert.assertEquals(request.getOffset(), actualRequest.getOffset());
+    Assert.assertEquals(request.getFilter(), actualRequest.getFilter());
+    Assert.assertEquals(request.getOrderBy(), actualRequest.getOrderBy());
     Assert.assertEquals(request.getUserInfo(), actualRequest.getUserInfo());
+    Assert.assertEquals(request.getFacetSpecsList(), actualRequest.getFacetSpecsList());
+    Assert.assertEquals(request.getBoostSpec(), actualRequest.getBoostSpec());
     Assert.assertEquals(request.getParamsMap(), actualRequest.getParamsMap());
     Assert.assertEquals(request.getQueryExpansionSpec(), actualRequest.getQueryExpansionSpec());
     Assert.assertEquals(request.getSpellCorrectionSpec(), actualRequest.getSpellCorrectionSpec());
@@ -163,10 +174,15 @@ public class SearchServiceClientTest {
                           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
                       .toString())
               .setQuery("query107944136")
+              .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
               .setOffset(-1019779949)
+              .setFilter("filter-1274492040")
+              .setOrderBy("orderBy-1207110587")
               .setUserInfo(UserInfo.newBuilder().build())
+              .addAllFacetSpecs(new ArrayList<SearchRequest.FacetSpec>())
+              .setBoostSpec(SearchRequest.BoostSpec.newBuilder().build())
               .putAllParams(new HashMap<String, Value>())
               .setQueryExpansionSpec(SearchRequest.QueryExpansionSpec.newBuilder().build())
               .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())

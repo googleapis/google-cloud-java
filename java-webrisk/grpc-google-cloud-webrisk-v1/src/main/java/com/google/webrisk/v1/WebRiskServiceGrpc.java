@@ -33,7 +33,7 @@ public final class WebRiskServiceGrpc {
 
   private WebRiskServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.webrisk.v1.WebRiskService";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.webrisk.v1.WebRiskService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -900,9 +900,9 @@ public final class WebRiskServiceGrpc {
   private static final class WebRiskServiceMethodDescriptorSupplier
       extends WebRiskServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    WebRiskServiceMethodDescriptorSupplier(String methodName) {
+    WebRiskServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

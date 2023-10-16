@@ -87,10 +87,40 @@ public interface ApplyConversionWorkspaceRequestOrBuilder
    *
    *
    * <pre>
-   * Fully qualified (Uri) name of the destination connection profile.
+   * Optional. Only validates the apply process, but doesn't change the
+   * destination database. Only works for PostgreSQL destination connection
+   * profile.
    * </pre>
    *
-   * <code>string connection_profile = 100;</code>
+   * <code>bool dry_run = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The dryRun.
+   */
+  boolean getDryRun();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether the conversion workspace is to be committed
+   * automatically after the apply.
+   * </pre>
+   *
+   * <code>bool auto_commit = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The autoCommit.
+   */
+  boolean getAutoCommit();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Fully qualified (Uri) name of the destination connection
+   * profile.
+   * </pre>
+   *
+   * <code>string connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the connectionProfile field is set.
    */
@@ -99,10 +129,11 @@ public interface ApplyConversionWorkspaceRequestOrBuilder
    *
    *
    * <pre>
-   * Fully qualified (Uri) name of the destination connection profile.
+   * Optional. Fully qualified (Uri) name of the destination connection
+   * profile.
    * </pre>
    *
-   * <code>string connection_profile = 100;</code>
+   * <code>string connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The connectionProfile.
    */
@@ -111,10 +142,11 @@ public interface ApplyConversionWorkspaceRequestOrBuilder
    *
    *
    * <pre>
-   * Fully qualified (Uri) name of the destination connection profile.
+   * Optional. Fully qualified (Uri) name of the destination connection
+   * profile.
    * </pre>
    *
-   * <code>string connection_profile = 100;</code>
+   * <code>string connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for connectionProfile.
    */

@@ -43,7 +43,7 @@ public final class CloudRedisGrpc {
 
   private CloudRedisGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.redis.v1beta1.CloudRedis";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.redis.v1beta1.CloudRedis";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1651,9 +1651,9 @@ public final class CloudRedisGrpc {
   private static final class CloudRedisMethodDescriptorSupplier
       extends CloudRedisBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    CloudRedisMethodDescriptorSupplier(String methodName) {
+    CloudRedisMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

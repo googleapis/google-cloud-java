@@ -191,4 +191,83 @@ public interface NfsExportOptionsOrBuilder
    * @return The anonGid.
    */
   long getAnonGid();
+
+  /**
+   *
+   *
+   * <pre>
+   * The security flavors allowed for mount operations.
+   * The default is AUTH_SYS.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor security_flavors = 6;
+   * </code>
+   *
+   * @return A list containing the securityFlavors.
+   */
+  java.util.List<com.google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor>
+      getSecurityFlavorsList();
+  /**
+   *
+   *
+   * <pre>
+   * The security flavors allowed for mount operations.
+   * The default is AUTH_SYS.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor security_flavors = 6;
+   * </code>
+   *
+   * @return The count of securityFlavors.
+   */
+  int getSecurityFlavorsCount();
+  /**
+   *
+   *
+   * <pre>
+   * The security flavors allowed for mount operations.
+   * The default is AUTH_SYS.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor security_flavors = 6;
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The securityFlavors at the given index.
+   */
+  com.google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor getSecurityFlavors(int index);
+  /**
+   *
+   *
+   * <pre>
+   * The security flavors allowed for mount operations.
+   * The default is AUTH_SYS.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor security_flavors = 6;
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for securityFlavors.
+   */
+  java.util.List<java.lang.Integer> getSecurityFlavorsValueList();
+  /**
+   *
+   *
+   * <pre>
+   * The security flavors allowed for mount operations.
+   * The default is AUTH_SYS.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.filestore.v1beta1.NfsExportOptions.SecurityFlavor security_flavors = 6;
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of securityFlavors at the given index.
+   */
+  int getSecurityFlavorsValue(int index);
 }

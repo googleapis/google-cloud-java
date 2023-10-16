@@ -46,6 +46,7 @@ public class AsyncChangeOfferLRO {
               .addAllParameters(new ArrayList<Parameter>())
               .setPurchaseOrderId("purchaseOrderId2029917384")
               .setRequestId("requestId693933066")
+              .setBillingAccount("billingAccount708726578")
               .build();
       OperationFuture<Entitlement, OperationMetadata> future =
           cloudChannelServiceClient.changeOfferOperationCallable().futureCall(request);

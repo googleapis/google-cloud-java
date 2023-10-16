@@ -137,7 +137,7 @@ public class TagHoldName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       TagHoldName that = ((TagHoldName) o);
       return Objects.equals(this.tagValue, that.tagValue)
           && Objects.equals(this.tagHold, that.tagHold);

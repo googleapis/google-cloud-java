@@ -41,8 +41,32 @@
  *           .setQuery("query107944136")
  *           .setQueryModel("queryModel-184930495")
  *           .setUserPseudoId("userPseudoId-1155274652")
+ *           .setIncludeTailSuggestions(true)
  *           .build();
  *   CompleteQueryResponse response = completionServiceClient.completeQuery(request);
+ * }
+ * }</pre>
+ *
+ * <p>======================= ConversationalSearchServiceClient =======================
+ *
+ * <p>Service Description: Service for conversational search.
+ *
+ * <p>Sample for ConversationalSearchServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+ *     ConversationalSearchServiceClient.create()) {
+ *   ConversationName name =
+ *       ConversationName.ofProjectLocationDataStoreConversationName(
+ *           "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[CONVERSATION]");
+ *   TextInput query = TextInput.newBuilder().build();
+ *   ConverseConversationResponse response =
+ *       conversationalSearchServiceClient.converseConversation(name, query);
  * }
  * }</pre>
  *
@@ -143,6 +167,7 @@
  *                       "[PROJECT]", "[LOCATION]", "[DATA_STORE]", "[BRANCH]")
  *                   .toString())
  *           .setQuery("query107944136")
+ *           .setImageQuery(SearchRequest.ImageQuery.newBuilder().build())
  *           .setPageSize(883849137)
  *           .setPageToken("pageToken873572522")
  *           .setOffset(-1019779949)
@@ -156,6 +181,8 @@
  *           .setSpellCorrectionSpec(SearchRequest.SpellCorrectionSpec.newBuilder().build())
  *           .setUserPseudoId("userPseudoId-1155274652")
  *           .setContentSearchSpec(SearchRequest.ContentSearchSpec.newBuilder().build())
+ *           .setEmbeddingSpec(SearchRequest.EmbeddingSpec.newBuilder().build())
+ *           .setRankingExpression("rankingExpression2110320494")
  *           .setSafeSearch(true)
  *           .putAllUserLabels(new HashMap<String, String>())
  *           .build();

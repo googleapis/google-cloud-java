@@ -291,4 +291,24 @@ public interface NotificationsRuleOrBuilder
    * @return The disableDefaultIamRecipients.
    */
   boolean getDisableDefaultIamRecipients();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When set to true, and when the budget has a single project
+   * configured, notifications will be sent to project level recipients of that
+   * project. This field will be ignored if the budget has multiple or no
+   * project configured.
+   *
+   * Currently, project level recipients are the users with `Owner` role on a
+   * cloud project.
+   * </pre>
+   *
+   * <code>bool enable_project_level_recipients = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enableProjectLevelRecipients.
+   */
+  boolean getEnableProjectLevelRecipients();
 }

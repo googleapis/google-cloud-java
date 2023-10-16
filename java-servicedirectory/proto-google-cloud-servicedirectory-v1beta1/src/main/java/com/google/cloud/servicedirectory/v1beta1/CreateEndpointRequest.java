@@ -22,7 +22,8 @@ package com.google.cloud.servicedirectory.v1beta1;
  *
  *
  * <pre>
- * The request message for [RegistrationService.CreateEndpoint][google.cloud.servicedirectory.v1beta1.RegistrationService.CreateEndpoint].
+ * The request message for
+ * [RegistrationService.CreateEndpoint][google.cloud.servicedirectory.v1beta1.RegistrationService.CreateEndpoint].
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicedirectory.v1beta1.CreateEndpointRequest}
@@ -424,7 +425,8 @@ public final class CreateEndpointRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The request message for [RegistrationService.CreateEndpoint][google.cloud.servicedirectory.v1beta1.RegistrationService.CreateEndpoint].
+   * The request message for
+   * [RegistrationService.CreateEndpoint][google.cloud.servicedirectory.v1beta1.RegistrationService.CreateEndpoint].
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicedirectory.v1beta1.CreateEndpointRequest}

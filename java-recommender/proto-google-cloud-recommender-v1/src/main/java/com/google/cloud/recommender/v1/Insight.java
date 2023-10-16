@@ -23,7 +23,7 @@ package com.google.cloud.recommender.v1;
  *
  * <pre>
  * An insight along with the information used to derive the insight. The insight
- * may have associated recomendations as well.
+ * may have associated recommendations as well.
  * </pre>
  *
  * Protobuf type {@code google.cloud.recommender.v1.Insight}
@@ -130,6 +130,26 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * <code>MANAGEABILITY = 4;</code>
      */
     MANAGEABILITY(4),
+    /**
+     *
+     *
+     * <pre>
+     * The insight is related to sustainability.
+     * </pre>
+     *
+     * <code>SUSTAINABILITY = 5;</code>
+     */
+    SUSTAINABILITY(5),
+    /**
+     *
+     *
+     * <pre>
+     * This insight is related to reliability.
+     * </pre>
+     *
+     * <code>RELIABILITY = 6;</code>
+     */
+    RELIABILITY(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -183,6 +203,26 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
      * <code>MANAGEABILITY = 4;</code>
      */
     public static final int MANAGEABILITY_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * The insight is related to sustainability.
+     * </pre>
+     *
+     * <code>SUSTAINABILITY = 5;</code>
+     */
+    public static final int SUSTAINABILITY_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * This insight is related to reliability.
+     * </pre>
+     *
+     * <code>RELIABILITY = 6;</code>
+     */
+    public static final int RELIABILITY_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -218,6 +258,10 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
           return PERFORMANCE;
         case 4:
           return MANAGEABILITY;
+        case 5:
+          return SUSTAINABILITY;
+        case 6:
+          return RELIABILITY;
         default:
           return null;
       }
@@ -2063,7 +2107,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * An insight along with the information used to derive the insight. The insight
-   * may have associated recomendations as well.
+   * may have associated recommendations as well.
    * </pre>
    *
    * Protobuf type {@code google.cloud.recommender.v1.Insight}

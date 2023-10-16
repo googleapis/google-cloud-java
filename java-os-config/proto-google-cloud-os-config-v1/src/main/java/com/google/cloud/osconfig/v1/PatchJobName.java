@@ -137,7 +137,7 @@ public class PatchJobName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       PatchJobName that = ((PatchJobName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.patchJob, that.patchJob);

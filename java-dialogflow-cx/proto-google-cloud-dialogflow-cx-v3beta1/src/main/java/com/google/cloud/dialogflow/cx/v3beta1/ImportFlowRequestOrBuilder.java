@@ -167,5 +167,50 @@ public interface ImportFlowRequestOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest.ImportOption getImportOption();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the import strategy used when resolving resource
+   * conflicts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.FlowImportStrategy flow_import_strategy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the flowImportStrategy field is set.
+   */
+  boolean hasFlowImportStrategy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the import strategy used when resolving resource
+   * conflicts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.FlowImportStrategy flow_import_strategy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The flowImportStrategy.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.FlowImportStrategy getFlowImportStrategy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies the import strategy used when resolving resource
+   * conflicts.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.FlowImportStrategy flow_import_strategy = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.FlowImportStrategyOrBuilder
+      getFlowImportStrategyOrBuilder();
+
   com.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest.FlowCase getFlowCase();
 }

@@ -79,11 +79,11 @@ public interface ListWorkstationsResponseOrBuilder
    *
    *
    * <pre>
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
+   * Optional. Token to retrieve the next page of results, or empty if there are
+   * no more results in the list.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The nextPageToken.
    */
@@ -92,11 +92,11 @@ public interface ListWorkstationsResponseOrBuilder
    *
    *
    * <pre>
-   * Token to retrieve the next page of results, or empty if there are no more
-   * results in the list.
+   * Optional. Token to retrieve the next page of results, or empty if there are
+   * no more results in the list.
    * </pre>
    *
-   * <code>string next_page_token = 2;</code>
+   * <code>string next_page_token = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for nextPageToken.
    */
@@ -106,10 +106,10 @@ public interface ListWorkstationsResponseOrBuilder
    *
    *
    * <pre>
-   * Unreachable resources.
+   * Optional. Unreachable resources.
    * </pre>
    *
-   * <code>repeated string unreachable = 3;</code>
+   * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return A list containing the unreachable.
    */
@@ -118,10 +118,10 @@ public interface ListWorkstationsResponseOrBuilder
    *
    *
    * <pre>
-   * Unreachable resources.
+   * Optional. Unreachable resources.
    * </pre>
    *
-   * <code>repeated string unreachable = 3;</code>
+   * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The count of unreachable.
    */
@@ -130,10 +130,10 @@ public interface ListWorkstationsResponseOrBuilder
    *
    *
    * <pre>
-   * Unreachable resources.
+   * Optional. Unreachable resources.
    * </pre>
    *
-   * <code>repeated string unreachable = 3;</code>
+   * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the element to return.
    * @return The unreachable at the given index.
@@ -143,10 +143,10 @@ public interface ListWorkstationsResponseOrBuilder
    *
    *
    * <pre>
-   * Unreachable resources.
+   * Optional. Unreachable resources.
    * </pre>
    *
-   * <code>repeated string unreachable = 3;</code>
+   * <code>repeated string unreachable = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @param index The index of the value to return.
    * @return The bytes of the unreachable at the given index.

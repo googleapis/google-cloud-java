@@ -37,7 +37,8 @@ public final class ServiceControllerGrpc {
 
   private ServiceControllerGrpc() {}
 
-  public static final String SERVICE_NAME = "google.api.servicecontrol.v2.ServiceController";
+  public static final java.lang.String SERVICE_NAME =
+      "google.api.servicecontrol.v2.ServiceController";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -606,9 +607,9 @@ public final class ServiceControllerGrpc {
   private static final class ServiceControllerMethodDescriptorSupplier
       extends ServiceControllerBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ServiceControllerMethodDescriptorSupplier(String methodName) {
+    ServiceControllerMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

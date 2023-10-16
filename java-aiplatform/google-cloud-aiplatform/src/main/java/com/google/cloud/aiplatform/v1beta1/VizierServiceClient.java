@@ -830,6 +830,7 @@ public class VizierServiceClient implements BackgroundResource {
    *           .setParent(StudyName.of("[PROJECT]", "[LOCATION]", "[STUDY]").toString())
    *           .setSuggestionCount(390130452)
    *           .setClientId("clientId908408390")
+   *           .addAllContexts(new ArrayList<TrialContext>())
    *           .build();
    *   SuggestTrialsResponse response = vizierServiceClient.suggestTrialsAsync(request).get();
    * }
@@ -864,6 +865,7 @@ public class VizierServiceClient implements BackgroundResource {
    *           .setParent(StudyName.of("[PROJECT]", "[LOCATION]", "[STUDY]").toString())
    *           .setSuggestionCount(390130452)
    *           .setClientId("clientId908408390")
+   *           .addAllContexts(new ArrayList<TrialContext>())
    *           .build();
    *   OperationFuture<SuggestTrialsResponse, SuggestTrialsMetadata> future =
    *       vizierServiceClient.suggestTrialsOperationCallable().futureCall(request);
@@ -898,6 +900,7 @@ public class VizierServiceClient implements BackgroundResource {
    *           .setParent(StudyName.of("[PROJECT]", "[LOCATION]", "[STUDY]").toString())
    *           .setSuggestionCount(390130452)
    *           .setClientId("clientId908408390")
+   *           .addAllContexts(new ArrayList<TrialContext>())
    *           .build();
    *   ApiFuture<Operation> future = vizierServiceClient.suggestTrialsCallable().futureCall(request);
    *   // Do something.

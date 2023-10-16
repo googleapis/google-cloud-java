@@ -291,7 +291,7 @@ public class StoredInfoTypeName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       StoredInfoTypeName that = ((StoredInfoTypeName) o);
       return Objects.equals(this.organization, that.organization)
           && Objects.equals(this.storedInfoType, that.storedInfoType)

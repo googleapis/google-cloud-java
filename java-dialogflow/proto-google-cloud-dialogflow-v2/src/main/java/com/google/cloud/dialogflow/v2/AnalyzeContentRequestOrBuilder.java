@@ -130,6 +130,41 @@ public interface AnalyzeContentRequestOrBuilder
    *
    *
    * <pre>
+   * An input representing the selection of a suggestion.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.SuggestionInput suggestion_input = 12;</code>
+   *
+   * @return Whether the suggestionInput field is set.
+   */
+  boolean hasSuggestionInput();
+  /**
+   *
+   *
+   * <pre>
+   * An input representing the selection of a suggestion.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.SuggestionInput suggestion_input = 12;</code>
+   *
+   * @return The suggestionInput.
+   */
+  com.google.cloud.dialogflow.v2.SuggestionInput getSuggestionInput();
+  /**
+   *
+   *
+   * <pre>
+   * An input representing the selection of a suggestion.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.v2.SuggestionInput suggestion_input = 12;</code>
+   */
+  com.google.cloud.dialogflow.v2.SuggestionInputOrBuilder getSuggestionInputOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Speech synthesis configuration.
    * The speech synthesis settings for a virtual agent that may be configured
    * for the associated conversation profile are not used when calling

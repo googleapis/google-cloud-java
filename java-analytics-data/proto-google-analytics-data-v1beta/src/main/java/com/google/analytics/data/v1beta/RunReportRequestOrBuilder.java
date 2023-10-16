@@ -242,7 +242,7 @@ public interface RunReportRequestOrBuilder
    *
    *
    * <pre>
-   * Dimension filters allow you to ask for only specific dimension values in
+   * Dimension filters let you ask for only specific dimension values in
    * the report. To learn more, see [Fundamentals of Dimension
    * Filters](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_filters)
    * for examples. Metrics cannot be used in this filter.
@@ -257,7 +257,7 @@ public interface RunReportRequestOrBuilder
    *
    *
    * <pre>
-   * Dimension filters allow you to ask for only specific dimension values in
+   * Dimension filters let you ask for only specific dimension values in
    * the report. To learn more, see [Fundamentals of Dimension
    * Filters](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_filters)
    * for examples. Metrics cannot be used in this filter.
@@ -272,7 +272,7 @@ public interface RunReportRequestOrBuilder
    *
    *
    * <pre>
-   * Dimension filters allow you to ask for only specific dimension values in
+   * Dimension filters let you ask for only specific dimension values in
    * the report. To learn more, see [Fundamentals of Dimension
    * Filters](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#dimension_filters)
    * for examples. Metrics cannot be used in this filter.
@@ -346,7 +346,7 @@ public interface RunReportRequestOrBuilder
    *
    * <pre>
    * The number of rows to return. If unspecified, 10,000 rows are returned. The
-   * API returns a maximum of 100,000 rows per request, no matter how many you
+   * API returns a maximum of 250,000 rows per request, no matter how many you
    * ask for. `limit` must be positive.
    *
    * The API can also return fewer rows than the requested `limit`, if there
@@ -557,6 +557,13 @@ public interface RunReportRequestOrBuilder
    * If false or unspecified, each row with all metrics equal to 0 will not be
    * returned. If true, these rows will be returned if they are not separately
    * removed by a filter.
+   *
+   * Regardless of this `keep_empty_rows` setting, only data recorded by the
+   * Google Analytics (GA4) property can be displayed in a report.
+   *
+   * For example if a property never logs a `purchase` event, then a query for
+   * the `eventName` dimension and  `eventCount` metric will not have a row
+   * eventName: "purchase" and eventCount: 0.
    * </pre>
    *
    * <code>bool keep_empty_rows = 13;</code>

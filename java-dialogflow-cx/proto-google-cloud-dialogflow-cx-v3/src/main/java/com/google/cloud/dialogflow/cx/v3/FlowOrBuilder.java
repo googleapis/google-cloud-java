@@ -357,7 +357,10 @@ public interface FlowOrBuilder
    * defined in the page have higher priority than those defined in the flow.
    *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+   * groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }
@@ -379,7 +382,10 @@ public interface FlowOrBuilder
    * defined in the page have higher priority than those defined in the flow.
    *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+   * groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }
@@ -401,7 +407,10 @@ public interface FlowOrBuilder
    * defined in the page have higher priority than those defined in the flow.
    *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+   * groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }
@@ -424,7 +433,10 @@ public interface FlowOrBuilder
    * defined in the page have higher priority than those defined in the flow.
    *
    * Format:`projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
+   * ID&gt;/transitionRouteGroups/&lt;TransitionRouteGroup ID&gt;` for agent-level
+   * groups.
    * </pre>
    *
    * <code>repeated string transition_route_groups = 15 [(.google.api.resource_reference) = { ... }
@@ -469,4 +481,84 @@ public interface FlowOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3.NluSettings nlu_settings = 11;</code>
    */
   com.google.cloud.dialogflow.cx.v3.NluSettingsOrBuilder getNluSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this flow. The settings exposed at the
+   * lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 14;</code>
+   *
+   * @return Whether the advancedSettings field is set.
+   */
+  boolean hasAdvancedSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this flow. The settings exposed at the
+   * lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 14;</code>
+   *
+   * @return The advancedSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3.AdvancedSettings getAdvancedSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Hierarchical advanced settings for this flow. The settings exposed at the
+   * lower level overrides the settings exposed at the higher level.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.AdvancedSettings advanced_settings = 14;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3.AdvancedSettingsOrBuilder getAdvancedSettingsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Knowledge connector configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the knowledgeConnectorSettings field is set.
+   */
+  boolean hasKnowledgeConnectorSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Knowledge connector configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The knowledgeConnectorSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings getKnowledgeConnectorSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Knowledge connector configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettings knowledge_connector_settings = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.KnowledgeConnectorSettingsOrBuilder
+      getKnowledgeConnectorSettingsOrBuilder();
 }

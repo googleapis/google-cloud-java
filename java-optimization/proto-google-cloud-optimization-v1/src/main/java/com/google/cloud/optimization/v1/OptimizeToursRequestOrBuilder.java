@@ -170,43 +170,6 @@ public interface OptimizeToursRequestOrBuilder
    *
    *
    * <pre>
-   * Truncates the number of validation errors returned. These errors are
-   * typically attached to an INVALID_ARGUMENT error payload as a BadRequest
-   * error detail (https://cloud.google.com/apis/design/errors#error_details),
-   * unless solving_mode=VALIDATE_ONLY: see the
-   * [OptimizeToursResponse.validation_errors][google.cloud.optimization.v1.OptimizeToursResponse.validation_errors]
-   * field.
-   * This defaults to 100 and is capped at 10,000.
-   * </pre>
-   *
-   * <code>optional int32 max_validation_errors = 5;</code>
-   *
-   * @return Whether the maxValidationErrors field is set.
-   */
-  boolean hasMaxValidationErrors();
-  /**
-   *
-   *
-   * <pre>
-   * Truncates the number of validation errors returned. These errors are
-   * typically attached to an INVALID_ARGUMENT error payload as a BadRequest
-   * error detail (https://cloud.google.com/apis/design/errors#error_details),
-   * unless solving_mode=VALIDATE_ONLY: see the
-   * [OptimizeToursResponse.validation_errors][google.cloud.optimization.v1.OptimizeToursResponse.validation_errors]
-   * field.
-   * This defaults to 100 and is capped at 10,000.
-   * </pre>
-   *
-   * <code>optional int32 max_validation_errors = 5;</code>
-   *
-   * @return The maxValidationErrors.
-   */
-  int getMaxValidationErrors();
-
-  /**
-   *
-   *
-   * <pre>
    * Search mode used to solve the request.
    * </pre>
    *
@@ -809,6 +772,43 @@ public interface OptimizeToursRequestOrBuilder
    *
    *
    * <pre>
+   * Truncates the number of validation errors returned. These errors are
+   * typically attached to an INVALID_ARGUMENT error payload as a BadRequest
+   * error detail (https://cloud.google.com/apis/design/errors#error_details),
+   * unless solving_mode=VALIDATE_ONLY: see the
+   * [OptimizeToursResponse.validation_errors][google.cloud.optimization.v1.OptimizeToursResponse.validation_errors]
+   * field.
+   * This defaults to 100 and is capped at 10,000.
+   * </pre>
+   *
+   * <code>optional int32 max_validation_errors = 5;</code>
+   *
+   * @return Whether the maxValidationErrors field is set.
+   */
+  boolean hasMaxValidationErrors();
+  /**
+   *
+   *
+   * <pre>
+   * Truncates the number of validation errors returned. These errors are
+   * typically attached to an INVALID_ARGUMENT error payload as a BadRequest
+   * error detail (https://cloud.google.com/apis/design/errors#error_details),
+   * unless solving_mode=VALIDATE_ONLY: see the
+   * [OptimizeToursResponse.validation_errors][google.cloud.optimization.v1.OptimizeToursResponse.validation_errors]
+   * field.
+   * This defaults to 100 and is capped at 10,000.
+   * </pre>
+   *
+   * <code>optional int32 max_validation_errors = 5;</code>
+   *
+   * @return The maxValidationErrors.
+   */
+  int getMaxValidationErrors();
+
+  /**
+   *
+   *
+   * <pre>
    * Label that may be used to identify this request, reported back in the
    * [OptimizeToursResponse.request_label][google.cloud.optimization.v1.OptimizeToursResponse.request_label].
    * </pre>
@@ -847,7 +847,7 @@ public interface OptimizeToursRequestOrBuilder
    * <code>bool populate_travel_step_polylines = 20 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.OptimizeToursRequest.populate_travel_step_polylines is
-   *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=351
+   *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=359
    * @return The populateTravelStepPolylines.
    */
   @java.lang.Deprecated

@@ -138,7 +138,7 @@ public class MonitoredProjectName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       MonitoredProjectName that = ((MonitoredProjectName) o);
       return Objects.equals(this.metricsScope, that.metricsScope)
           && Objects.equals(this.project, that.project);

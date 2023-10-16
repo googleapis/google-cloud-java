@@ -41,7 +41,7 @@ public final class AutoMlGrpc {
 
   private AutoMlGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.automl.v1.AutoMl";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.automl.v1.AutoMl";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -2411,9 +2411,9 @@ public final class AutoMlGrpc {
 
   private static final class AutoMlMethodDescriptorSupplier extends AutoMlBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    AutoMlMethodDescriptorSupplier(String methodName) {
+    AutoMlMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

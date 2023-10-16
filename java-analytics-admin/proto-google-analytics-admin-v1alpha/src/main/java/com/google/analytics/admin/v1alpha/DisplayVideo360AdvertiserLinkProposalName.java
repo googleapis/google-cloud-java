@@ -155,7 +155,7 @@ public class DisplayVideo360AdvertiserLinkProposalName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       DisplayVideo360AdvertiserLinkProposalName that =
           ((DisplayVideo360AdvertiserLinkProposalName) o);
       return Objects.equals(this.property, that.property)

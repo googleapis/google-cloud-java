@@ -92,10 +92,6 @@ public final class ModelServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_ExportModelRequest_OutputConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_aiplatform_v1_UpdateExplanationDatasetResponse_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_aiplatform_v1_UpdateExplanationDatasetResponse_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_ExportModelOperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_ExportModelOperationMetadata_fieldAccessorTable;
@@ -103,6 +99,10 @@ public final class ModelServiceProto {
       internal_static_google_cloud_aiplatform_v1_ExportModelOperationMetadata_OutputInfo_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1_ExportModelOperationMetadata_OutputInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1_UpdateExplanationDatasetResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1_UpdateExplanationDatasetResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_aiplatform_v1_ExportModelResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -243,15 +243,15 @@ public final class ModelServiceProto {
           + "on\030\003 \001(\0132*.google.cloud.aiplatform.v1.Gc"
           + "sDestination\022S\n\021image_destination\030\004 \001(\0132"
           + "8.google.cloud.aiplatform.v1.ContainerRe"
-          + "gistryDestination\"\"\n UpdateExplanationDa"
-          + "tasetResponse\"\237\002\n\034ExportModelOperationMe"
-          + "tadata\022N\n\020generic_metadata\030\001 \001(\01324.googl"
-          + "e.cloud.aiplatform.v1.GenericOperationMe"
-          + "tadata\022^\n\013output_info\030\002 \001(\0132C.google.clo"
-          + "ud.aiplatform.v1.ExportModelOperationMet"
-          + "adata.OutputInfoB\004\342A\001\003\032O\n\nOutputInfo\022!\n\023"
-          + "artifact_output_uri\030\002 \001(\tB\004\342A\001\003\022\036\n\020image"
-          + "_output_uri\030\003 \001(\tB\004\342A\001\003\"\025\n\023ExportModelRe"
+          + "gistryDestination\"\237\002\n\034ExportModelOperati"
+          + "onMetadata\022N\n\020generic_metadata\030\001 \001(\01324.g"
+          + "oogle.cloud.aiplatform.v1.GenericOperati"
+          + "onMetadata\022^\n\013output_info\030\002 \001(\0132C.google"
+          + ".cloud.aiplatform.v1.ExportModelOperatio"
+          + "nMetadata.OutputInfoB\004\342A\001\003\032O\n\nOutputInfo"
+          + "\022!\n\023artifact_output_uri\030\002 \001(\tB\004\342A\001\003\022\036\n\020i"
+          + "mage_output_uri\030\003 \001(\tB\004\342A\001\003\"\"\n UpdateExp"
+          + "lanationDatasetResponse\"\025\n\023ExportModelRe"
           + "sponse\"\304\002\n\020CopyModelRequest\022\030\n\010model_id\030"
           + "\004 \001(\tB\004\342A\001\001H\000\022@\n\014parent_model\030\005 \001(\tB(\342A\001"
           + "\001\372A!\n\037aiplatform.googleapis.com/ModelH\000\022"
@@ -567,14 +567,8 @@ public final class ModelServiceProto {
             new java.lang.String[] {
               "ExportFormatId", "ArtifactDestination", "ImageDestination",
             });
-    internal_static_google_cloud_aiplatform_v1_UpdateExplanationDatasetResponse_descriptor =
-        getDescriptor().getMessageTypes().get(15);
-    internal_static_google_cloud_aiplatform_v1_UpdateExplanationDatasetResponse_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_aiplatform_v1_UpdateExplanationDatasetResponse_descriptor,
-            new java.lang.String[] {});
     internal_static_google_cloud_aiplatform_v1_ExportModelOperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_aiplatform_v1_ExportModelOperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_ExportModelOperationMetadata_descriptor,
@@ -591,6 +585,12 @@ public final class ModelServiceProto {
             new java.lang.String[] {
               "ArtifactOutputUri", "ImageOutputUri",
             });
+    internal_static_google_cloud_aiplatform_v1_UpdateExplanationDatasetResponse_descriptor =
+        getDescriptor().getMessageTypes().get(16);
+    internal_static_google_cloud_aiplatform_v1_UpdateExplanationDatasetResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1_UpdateExplanationDatasetResponse_descriptor,
+            new java.lang.String[] {});
     internal_static_google_cloud_aiplatform_v1_ExportModelResponse_descriptor =
         getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_aiplatform_v1_ExportModelResponse_fieldAccessorTable =

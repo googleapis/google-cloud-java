@@ -21,8 +21,7 @@
  *
  * <p>======================= DatasetServiceClient =======================
  *
- * <p>Service Description: The service that handles the CRUD of Vertex AI Dataset and its child
- * resources.
+ * <p>Service Description: The service that manages Vertex AI Dataset and its child resources.
  *
  * <p>Sample for DatasetServiceClient:
  *
@@ -75,6 +74,67 @@
  *   EndpointName name =
  *       EndpointName.ofProjectLocationEndpointName("[PROJECT]", "[LOCATION]", "[ENDPOINT]");
  *   Endpoint response = endpointServiceClient.getEndpoint(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= FeatureOnlineStoreAdminServiceClient =======================
+ *
+ * <p>Service Description: The service that handles CRUD and List for resources for
+ * FeatureOnlineStore.
+ *
+ * <p>Sample for FeatureOnlineStoreAdminServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (FeatureOnlineStoreAdminServiceClient featureOnlineStoreAdminServiceClient =
+ *     FeatureOnlineStoreAdminServiceClient.create()) {
+ *   FeatureOnlineStoreName name =
+ *       FeatureOnlineStoreName.of("[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]");
+ *   FeatureOnlineStore response =
+ *       featureOnlineStoreAdminServiceClient.getFeatureOnlineStore(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= FeatureRegistryServiceClient =======================
+ *
+ * <p>Service Description: The service that handles CRUD and List for resources for FeatureRegistry.
+ *
+ * <p>Sample for FeatureRegistryServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (FeatureRegistryServiceClient featureRegistryServiceClient =
+ *     FeatureRegistryServiceClient.create()) {
+ *   FeatureGroupName name = FeatureGroupName.of("[PROJECT]", "[LOCATION]", "[FEATURE_GROUP]");
+ *   FeatureGroup response = featureRegistryServiceClient.getFeatureGroup(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= FeatureOnlineStoreServiceClient =======================
+ *
+ * <p>Sample for FeatureOnlineStoreServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (FeatureOnlineStoreServiceClient featureOnlineStoreServiceClient =
+ *     FeatureOnlineStoreServiceClient.create()) {
+ *   FeatureViewName featureView =
+ *       FeatureViewName.of("[PROJECT]", "[LOCATION]", "[FEATURE_ONLINE_STORE]", "[FEATURE_VIEW]");
+ *   String id = "id3355";
+ *   FetchFeatureValuesResponse response =
+ *       featureOnlineStoreServiceClient.fetchFeatureValues(featureView, id);
  * }
  * }</pre>
  *
@@ -269,6 +329,26 @@
  * try (ModelServiceClient modelServiceClient = ModelServiceClient.create()) {
  *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
  *   Model response = modelServiceClient.getModel(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= PersistentResourceServiceClient =======================
+ *
+ * <p>Service Description: A service for managing Vertex AI's machine learning PersistentResource.
+ *
+ * <p>Sample for PersistentResourceServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (PersistentResourceServiceClient persistentResourceServiceClient =
+ *     PersistentResourceServiceClient.create()) {
+ *   PersistentResourceName name =
+ *       PersistentResourceName.of("[PROJECT]", "[LOCATION]", "[PERSISTENT_RESOURCE]");
+ *   PersistentResource response = persistentResourceServiceClient.getPersistentResource(name);
  * }
  * }</pre>
  *

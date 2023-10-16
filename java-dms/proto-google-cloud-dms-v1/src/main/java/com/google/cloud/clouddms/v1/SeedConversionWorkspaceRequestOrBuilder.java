@@ -70,10 +70,10 @@ public interface SeedConversionWorkspaceRequestOrBuilder
    *
    *
    * <pre>
-   * Fully qualified (Uri) name of the source connection profile.
+   * Optional. Fully qualified (Uri) name of the source connection profile.
    * </pre>
    *
-   * <code>string source_connection_profile = 100;</code>
+   * <code>string source_connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return Whether the sourceConnectionProfile field is set.
    */
@@ -82,10 +82,10 @@ public interface SeedConversionWorkspaceRequestOrBuilder
    *
    *
    * <pre>
-   * Fully qualified (Uri) name of the source connection profile.
+   * Optional. Fully qualified (Uri) name of the source connection profile.
    * </pre>
    *
-   * <code>string source_connection_profile = 100;</code>
+   * <code>string source_connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The sourceConnectionProfile.
    */
@@ -94,10 +94,10 @@ public interface SeedConversionWorkspaceRequestOrBuilder
    *
    *
    * <pre>
-   * Fully qualified (Uri) name of the source connection profile.
+   * Optional. Fully qualified (Uri) name of the source connection profile.
    * </pre>
    *
-   * <code>string source_connection_profile = 100;</code>
+   * <code>string source_connection_profile = 100 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for sourceConnectionProfile.
    */
@@ -107,10 +107,12 @@ public interface SeedConversionWorkspaceRequestOrBuilder
    *
    *
    * <pre>
-   * Fully qualified (Uri) name of the destination connection profile.
+   * Optional. Fully qualified (Uri) name of the destination connection
+   * profile.
    * </pre>
    *
-   * <code>string destination_connection_profile = 101;</code>
+   * <code>string destination_connection_profile = 101 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return Whether the destinationConnectionProfile field is set.
    */
@@ -119,10 +121,12 @@ public interface SeedConversionWorkspaceRequestOrBuilder
    *
    *
    * <pre>
-   * Fully qualified (Uri) name of the destination connection profile.
+   * Optional. Fully qualified (Uri) name of the destination connection
+   * profile.
    * </pre>
    *
-   * <code>string destination_connection_profile = 101;</code>
+   * <code>string destination_connection_profile = 101 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The destinationConnectionProfile.
    */
@@ -131,10 +135,12 @@ public interface SeedConversionWorkspaceRequestOrBuilder
    *
    *
    * <pre>
-   * Fully qualified (Uri) name of the destination connection profile.
+   * Optional. Fully qualified (Uri) name of the destination connection
+   * profile.
    * </pre>
    *
-   * <code>string destination_connection_profile = 101;</code>
+   * <code>string destination_connection_profile = 101 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    *
    * @return The bytes for destinationConnectionProfile.
    */

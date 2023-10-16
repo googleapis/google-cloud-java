@@ -32,7 +32,8 @@ public final class ConnectionServiceGrpc {
 
   private ConnectionServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.apigeeconnect.v1.ConnectionService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.apigeeconnect.v1.ConnectionService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -351,9 +352,9 @@ public final class ConnectionServiceGrpc {
   private static final class ConnectionServiceMethodDescriptorSupplier
       extends ConnectionServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ConnectionServiceMethodDescriptorSupplier(String methodName) {
+    ConnectionServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

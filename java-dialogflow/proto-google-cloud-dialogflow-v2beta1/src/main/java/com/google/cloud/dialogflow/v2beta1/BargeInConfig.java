@@ -46,6 +46,7 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  * The flow goes like below:
  *
+ * ```
  * --&gt; Time
  *
  * without speech detection  | utterance only | utterance or no-speech event
@@ -53,6 +54,7 @@ package com.google.cloud.dialogflow.v2beta1;
  *           +-------------+ | +------------+ | +---------------+
  * ----------+ no barge-in +-|-+  barge-in  +-|-+ normal period +-----------
  *           +-------------+ | +------------+ | +---------------+
+ * ```
  *
  * No-speech event is a response with END_OF_UTTERANCE without any transcript
  * following up.
@@ -402,6 +404,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * The flow goes like below:
    *
+   * ```
    * --&gt; Time
    *
    * without speech detection  | utterance only | utterance or no-speech event
@@ -409,6 +412,7 @@ public final class BargeInConfig extends com.google.protobuf.GeneratedMessageV3
    *           +-------------+ | +------------+ | +---------------+
    * ----------+ no barge-in +-|-+  barge-in  +-|-+ normal period +-----------
    *           +-------------+ | +------------+ | +---------------+
+   * ```
    *
    * No-speech event is a response with END_OF_UTTERANCE without any transcript
    * following up.

@@ -168,7 +168,7 @@ public class CustomerRepricingConfigName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       CustomerRepricingConfigName that = ((CustomerRepricingConfigName) o);
       return Objects.equals(this.account, that.account)
           && Objects.equals(this.customer, that.customer)

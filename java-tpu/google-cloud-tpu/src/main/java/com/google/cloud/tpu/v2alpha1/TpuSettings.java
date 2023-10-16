@@ -185,6 +185,17 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
     return ((TpuStubSettings) getStubSettings()).deleteQueuedResourceOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to resetQueuedResource. */
+  public UnaryCallSettings<ResetQueuedResourceRequest, Operation> resetQueuedResourceSettings() {
+    return ((TpuStubSettings) getStubSettings()).resetQueuedResourceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to resetQueuedResource. */
+  public OperationCallSettings<ResetQueuedResourceRequest, QueuedResource, OperationMetadata>
+      resetQueuedResourceOperationSettings() {
+    return ((TpuStubSettings) getStubSettings()).resetQueuedResourceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to generateServiceIdentity. */
   public UnaryCallSettings<GenerateServiceIdentityRequest, GenerateServiceIdentityResponse>
       generateServiceIdentitySettings() {
@@ -448,6 +459,19 @@ public class TpuSettings extends ClientSettings<TpuSettings> {
             DeleteQueuedResourceRequest, QueuedResource, OperationMetadata>
         deleteQueuedResourceOperationSettings() {
       return getStubSettingsBuilder().deleteQueuedResourceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resetQueuedResource. */
+    public UnaryCallSettings.Builder<ResetQueuedResourceRequest, Operation>
+        resetQueuedResourceSettings() {
+      return getStubSettingsBuilder().resetQueuedResourceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to resetQueuedResource. */
+    public OperationCallSettings.Builder<
+            ResetQueuedResourceRequest, QueuedResource, OperationMetadata>
+        resetQueuedResourceOperationSettings() {
+      return getStubSettingsBuilder().resetQueuedResourceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to generateServiceIdentity. */

@@ -23,7 +23,7 @@ package com.google.cloud.recommender.v1beta1;
  *
  * <pre>
  * An insight along with the information used to derive the insight. The insight
- * may have associated recomendations as well.
+ * may have associated recommendations as well.
  * </pre>
  *
  * Protobuf type {@code google.cloud.recommender.v1beta1.Insight}
@@ -2071,7 +2071,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * An insight along with the information used to derive the insight. The insight
-   * may have associated recomendations as well.
+   * may have associated recommendations as well.
    * </pre>
    *
    * Protobuf type {@code google.cloud.recommender.v1beta1.Insight}

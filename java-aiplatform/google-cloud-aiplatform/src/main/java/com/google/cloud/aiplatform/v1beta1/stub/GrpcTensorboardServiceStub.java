@@ -65,6 +65,8 @@ import com.google.cloud.aiplatform.v1beta1.ListTensorboardsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListTensorboardsResponse;
 import com.google.cloud.aiplatform.v1beta1.ReadTensorboardBlobDataRequest;
 import com.google.cloud.aiplatform.v1beta1.ReadTensorboardBlobDataResponse;
+import com.google.cloud.aiplatform.v1beta1.ReadTensorboardSizeRequest;
+import com.google.cloud.aiplatform.v1beta1.ReadTensorboardSizeResponse;
 import com.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataRequest;
 import com.google.cloud.aiplatform.v1beta1.ReadTensorboardTimeSeriesDataResponse;
 import com.google.cloud.aiplatform.v1beta1.ReadTensorboardUsageRequest;
@@ -131,18 +133,6 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(Tensorboard.getDefaultInstance()))
               .build();
 
-  private static final MethodDescriptor<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
-      readTensorboardUsageMethodDescriptor =
-          MethodDescriptor.<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(
-                  "google.cloud.aiplatform.v1beta1.TensorboardService/ReadTensorboardUsage")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ReadTensorboardUsageRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ReadTensorboardUsageResponse.getDefaultInstance()))
-              .build();
-
   private static final MethodDescriptor<UpdateTensorboardRequest, Operation>
       updateTensorboardMethodDescriptor =
           MethodDescriptor.<UpdateTensorboardRequest, Operation>newBuilder()
@@ -175,6 +165,30 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTensorboardRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
+      readTensorboardUsageMethodDescriptor =
+          MethodDescriptor.<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.TensorboardService/ReadTensorboardUsage")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ReadTensorboardUsageRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ReadTensorboardUsageResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>
+      readTensorboardSizeMethodDescriptor =
+          MethodDescriptor.<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.TensorboardService/ReadTensorboardSize")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ReadTensorboardSizeRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ReadTensorboardSizeResponse.getDefaultInstance()))
               .build();
 
   private static final MethodDescriptor<CreateTensorboardExperimentRequest, TensorboardExperiment>
@@ -531,8 +545,6 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
           CreateTensorboardRequest, Tensorboard, CreateTensorboardOperationMetadata>
       createTensorboardOperationCallable;
   private final UnaryCallable<GetTensorboardRequest, Tensorboard> getTensorboardCallable;
-  private final UnaryCallable<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
-      readTensorboardUsageCallable;
   private final UnaryCallable<UpdateTensorboardRequest, Operation> updateTensorboardCallable;
   private final OperationCallable<
           UpdateTensorboardRequest, Tensorboard, UpdateTensorboardOperationMetadata>
@@ -544,6 +556,10 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
   private final UnaryCallable<DeleteTensorboardRequest, Operation> deleteTensorboardCallable;
   private final OperationCallable<DeleteTensorboardRequest, Empty, DeleteOperationMetadata>
       deleteTensorboardOperationCallable;
+  private final UnaryCallable<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
+      readTensorboardUsageCallable;
+  private final UnaryCallable<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>
+      readTensorboardSizeCallable;
   private final UnaryCallable<CreateTensorboardExperimentRequest, TensorboardExperiment>
       createTensorboardExperimentCallable;
   private final UnaryCallable<GetTensorboardExperimentRequest, TensorboardExperiment>
@@ -686,17 +702,6 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   return builder.build();
                 })
             .build();
-    GrpcCallSettings<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
-        readTensorboardUsageTransportSettings =
-            GrpcCallSettings.<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>newBuilder()
-                .setMethodDescriptor(readTensorboardUsageMethodDescriptor)
-                .setParamsExtractor(
-                    request -> {
-                      RequestParamsBuilder builder = RequestParamsBuilder.create();
-                      builder.add("tensorboard", String.valueOf(request.getTensorboard()));
-                      return builder.build();
-                    })
-                .build();
     GrpcCallSettings<UpdateTensorboardRequest, Operation> updateTensorboardTransportSettings =
         GrpcCallSettings.<UpdateTensorboardRequest, Operation>newBuilder()
             .setMethodDescriptor(updateTensorboardMethodDescriptor)
@@ -729,6 +734,28 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
+        readTensorboardUsageTransportSettings =
+            GrpcCallSettings.<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>newBuilder()
+                .setMethodDescriptor(readTensorboardUsageMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("tensorboard", String.valueOf(request.getTensorboard()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>
+        readTensorboardSizeTransportSettings =
+            GrpcCallSettings.<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>newBuilder()
+                .setMethodDescriptor(readTensorboardSizeMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("tensorboard", String.valueOf(request.getTensorboard()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<CreateTensorboardExperimentRequest, TensorboardExperiment>
         createTensorboardExperimentTransportSettings =
             GrpcCallSettings.<CreateTensorboardExperimentRequest, TensorboardExperiment>newBuilder()
@@ -1077,11 +1104,6 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
     this.getTensorboardCallable =
         callableFactory.createUnaryCallable(
             getTensorboardTransportSettings, settings.getTensorboardSettings(), clientContext);
-    this.readTensorboardUsageCallable =
-        callableFactory.createUnaryCallable(
-            readTensorboardUsageTransportSettings,
-            settings.readTensorboardUsageSettings(),
-            clientContext);
     this.updateTensorboardCallable =
         callableFactory.createUnaryCallable(
             updateTensorboardTransportSettings,
@@ -1110,6 +1132,16 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
             settings.deleteTensorboardOperationSettings(),
             clientContext,
             operationsStub);
+    this.readTensorboardUsageCallable =
+        callableFactory.createUnaryCallable(
+            readTensorboardUsageTransportSettings,
+            settings.readTensorboardUsageSettings(),
+            clientContext);
+    this.readTensorboardSizeCallable =
+        callableFactory.createUnaryCallable(
+            readTensorboardSizeTransportSettings,
+            settings.readTensorboardSizeSettings(),
+            clientContext);
     this.createTensorboardExperimentCallable =
         callableFactory.createUnaryCallable(
             createTensorboardExperimentTransportSettings,
@@ -1310,12 +1342,6 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
   }
 
   @Override
-  public UnaryCallable<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
-      readTensorboardUsageCallable() {
-    return readTensorboardUsageCallable;
-  }
-
-  @Override
   public UnaryCallable<UpdateTensorboardRequest, Operation> updateTensorboardCallable() {
     return updateTensorboardCallable;
   }
@@ -1348,6 +1374,18 @@ public class GrpcTensorboardServiceStub extends TensorboardServiceStub {
   public OperationCallable<DeleteTensorboardRequest, Empty, DeleteOperationMetadata>
       deleteTensorboardOperationCallable() {
     return deleteTensorboardOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
+      readTensorboardUsageCallable() {
+    return readTensorboardUsageCallable;
+  }
+
+  @Override
+  public UnaryCallable<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>
+      readTensorboardSizeCallable() {
+    return readTensorboardSizeCallable;
   }
 
   @Override

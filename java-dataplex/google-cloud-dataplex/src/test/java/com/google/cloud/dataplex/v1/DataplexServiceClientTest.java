@@ -2364,6 +2364,8 @@ public class DataplexServiceClientTest {
             .setRetryCount(-928040776)
             .setServiceJob("serviceJob-1724783416")
             .setMessage("message954925063")
+            .putAllLabels(new HashMap<String, String>())
+            .setExecutionSpec(Task.ExecutionSpec.newBuilder().build())
             .build();
     mockDataplexService.addResponse(expectedResponse);
 
@@ -2408,6 +2410,8 @@ public class DataplexServiceClientTest {
             .setRetryCount(-928040776)
             .setServiceJob("serviceJob-1724783416")
             .setMessage("message954925063")
+            .putAllLabels(new HashMap<String, String>())
+            .setExecutionSpec(Task.ExecutionSpec.newBuilder().build())
             .build();
     mockDataplexService.addResponse(expectedResponse);
 

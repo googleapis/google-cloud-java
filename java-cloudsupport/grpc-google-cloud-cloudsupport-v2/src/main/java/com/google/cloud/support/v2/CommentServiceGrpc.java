@@ -32,7 +32,7 @@ public final class CommentServiceGrpc {
 
   private CommentServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.support.v2.CommentService";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.support.v2.CommentService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -458,9 +458,9 @@ public final class CommentServiceGrpc {
   private static final class CommentServiceMethodDescriptorSupplier
       extends CommentServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    CommentServiceMethodDescriptorSupplier(String methodName) {
+    CommentServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

@@ -13,5 +13,7 @@
   "api_id": "binary-authorization.googleapis.com",
   "requires_billing": true,
   "codeowner_team": "@googleapis/aap-dpes",
-  "library_type": "GAPIC_AUTO"
+  "library_type": "GAPIC_AUTO",
+  "rest_documentation": "https://cloud.google.com/binary-authorization/docs/reference/rest",
+  "rpc_documentation": "https://cloud.google.com/binary-authorization/docs/reference/rpc"
 }

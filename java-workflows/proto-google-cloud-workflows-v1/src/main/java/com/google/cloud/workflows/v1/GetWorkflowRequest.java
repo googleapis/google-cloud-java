@@ -40,6 +40,7 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
 
   private GetWorkflowRequest() {
     name_ = "";
+    revisionId_ = "";
   }
 
   @java.lang.Override
@@ -71,7 +72,7 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Name of the workflow which information should be retrieved.
+   * Required. Name of the workflow for which information should be retrieved.
    * Format: projects/{project}/locations/{location}/workflows/{workflow}
    * </pre>
    *
@@ -97,7 +98,7 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Required. Name of the workflow which information should be retrieved.
+   * Required. Name of the workflow for which information should be retrieved.
    * Format: projects/{project}/locations/{location}/workflows/{workflow}
    * </pre>
    *
@@ -114,6 +115,65 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REVISION_ID_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object revisionId_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The revision of the workflow to retrieve. If the revision_id is
+   * empty, the latest revision is retrieved.
+   * The format is "000001-a4d", where the first six characters define
+   * the zero-padded decimal revision number. They are followed by a hyphen and
+   * three hexadecimal characters.
+   * </pre>
+   *
+   * <code>string revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The revisionId.
+   */
+  @java.lang.Override
+  public java.lang.String getRevisionId() {
+    java.lang.Object ref = revisionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      revisionId_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The revision of the workflow to retrieve. If the revision_id is
+   * empty, the latest revision is retrieved.
+   * The format is "000001-a4d", where the first six characters define
+   * the zero-padded decimal revision number. They are followed by a hyphen and
+   * three hexadecimal characters.
+   * </pre>
+   *
+   * <code>string revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for revisionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRevisionIdBytes() {
+    java.lang.Object ref = revisionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      revisionId_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -137,6 +197,9 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(revisionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, revisionId_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -148,6 +211,9 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(revisionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, revisionId_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -166,6 +232,7 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
         (com.google.cloud.workflows.v1.GetWorkflowRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (!getRevisionId().equals(other.getRevisionId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -179,6 +246,8 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + REVISION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRevisionId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -320,6 +389,7 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      revisionId_ = "";
       return this;
     }
 
@@ -358,6 +428,9 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.revisionId_ = revisionId_;
       }
     }
 
@@ -412,6 +485,11 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getRevisionId().isEmpty()) {
+        revisionId_ = other.revisionId_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -444,6 +522,12 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                revisionId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -468,7 +552,7 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Name of the workflow which information should be retrieved.
+     * Required. Name of the workflow for which information should be retrieved.
      * Format: projects/{project}/locations/{location}/workflows/{workflow}
      * </pre>
      *
@@ -493,7 +577,7 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Name of the workflow which information should be retrieved.
+     * Required. Name of the workflow for which information should be retrieved.
      * Format: projects/{project}/locations/{location}/workflows/{workflow}
      * </pre>
      *
@@ -518,7 +602,7 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Name of the workflow which information should be retrieved.
+     * Required. Name of the workflow for which information should be retrieved.
      * Format: projects/{project}/locations/{location}/workflows/{workflow}
      * </pre>
      *
@@ -542,7 +626,7 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Name of the workflow which information should be retrieved.
+     * Required. Name of the workflow for which information should be retrieved.
      * Format: projects/{project}/locations/{location}/workflows/{workflow}
      * </pre>
      *
@@ -562,7 +646,7 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Required. Name of the workflow which information should be retrieved.
+     * Required. Name of the workflow for which information should be retrieved.
      * Format: projects/{project}/locations/{location}/workflows/{workflow}
      * </pre>
      *
@@ -580,6 +664,132 @@ public final class GetWorkflowRequest extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       name_ = value;
       bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object revisionId_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The revision of the workflow to retrieve. If the revision_id is
+     * empty, the latest revision is retrieved.
+     * The format is "000001-a4d", where the first six characters define
+     * the zero-padded decimal revision number. They are followed by a hyphen and
+     * three hexadecimal characters.
+     * </pre>
+     *
+     * <code>string revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The revisionId.
+     */
+    public java.lang.String getRevisionId() {
+      java.lang.Object ref = revisionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        revisionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The revision of the workflow to retrieve. If the revision_id is
+     * empty, the latest revision is retrieved.
+     * The format is "000001-a4d", where the first six characters define
+     * the zero-padded decimal revision number. They are followed by a hyphen and
+     * three hexadecimal characters.
+     * </pre>
+     *
+     * <code>string revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for revisionId.
+     */
+    public com.google.protobuf.ByteString getRevisionIdBytes() {
+      java.lang.Object ref = revisionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        revisionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The revision of the workflow to retrieve. If the revision_id is
+     * empty, the latest revision is retrieved.
+     * The format is "000001-a4d", where the first six characters define
+     * the zero-padded decimal revision number. They are followed by a hyphen and
+     * three hexadecimal characters.
+     * </pre>
+     *
+     * <code>string revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The revisionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRevisionId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      revisionId_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The revision of the workflow to retrieve. If the revision_id is
+     * empty, the latest revision is retrieved.
+     * The format is "000001-a4d", where the first six characters define
+     * the zero-padded decimal revision number. They are followed by a hyphen and
+     * three hexadecimal characters.
+     * </pre>
+     *
+     * <code>string revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRevisionId() {
+      revisionId_ = getDefaultInstance().getRevisionId();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The revision of the workflow to retrieve. If the revision_id is
+     * empty, the latest revision is retrieved.
+     * The format is "000001-a4d", where the first six characters define
+     * the zero-padded decimal revision number. They are followed by a hyphen and
+     * three hexadecimal characters.
+     * </pre>
+     *
+     * <code>string revision_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for revisionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRevisionIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      revisionId_ = value;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }

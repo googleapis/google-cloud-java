@@ -40,7 +40,7 @@ public final class KeyManagementServiceGrpc {
 
   private KeyManagementServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.kms.v1.KeyManagementService";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.kms.v1.KeyManagementService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -3874,9 +3874,9 @@ public final class KeyManagementServiceGrpc {
   private static final class KeyManagementServiceMethodDescriptorSupplier
       extends KeyManagementServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    KeyManagementServiceMethodDescriptorSupplier(String methodName) {
+    KeyManagementServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

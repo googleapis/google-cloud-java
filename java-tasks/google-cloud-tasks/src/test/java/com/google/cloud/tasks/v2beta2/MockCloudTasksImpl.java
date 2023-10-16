@@ -238,6 +238,27 @@ public class MockCloudTasksImpl extends CloudTasksImplBase {
   }
 
   @Override
+  public void uploadQueueYaml(
+      UploadQueueYamlRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UploadQueueYaml, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void getIamPolicy(GetIamPolicyRequest request, StreamObserver<Policy> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Policy) {
@@ -478,6 +499,27 @@ public class MockCloudTasksImpl extends CloudTasksImplBase {
                   "Unrecognized response type %s for method RunTask, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Task.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void bufferTask(
+      BufferTaskRequest request, StreamObserver<BufferTaskResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BufferTaskResponse) {
+      requests.add(request);
+      responseObserver.onNext(((BufferTaskResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BufferTask, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BufferTaskResponse.class.getName(),
                   Exception.class.getName())));
     }
   }

@@ -38,7 +38,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private Runnable() {}
+  private Runnable() {
+    displayName_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -193,6 +195,14 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * Volumes to mount (bind mount) from the host machine files or directories
      * into the container, formatted to match docker run's --volume option,
      * e.g. /foo:/bar, or /foo:/bar:ro
+     *
+     * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
+     * will mount each volume from the host machine to the container with the
+     * same mount path by default. In this case, the default mount option for
+     * containers will be read-only (ro) for existing persistent disks and
+     * read-write (rw) for other volume types, regardless of the original mount
+     * options specified in `TaskSpec.Volumes`. If you need different mount
+     * settings, you can explicitly configure them in this field.
      * </pre>
      *
      * <code>repeated string volumes = 7;</code>
@@ -207,6 +217,14 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * Volumes to mount (bind mount) from the host machine files or directories
      * into the container, formatted to match docker run's --volume option,
      * e.g. /foo:/bar, or /foo:/bar:ro
+     *
+     * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
+     * will mount each volume from the host machine to the container with the
+     * same mount path by default. In this case, the default mount option for
+     * containers will be read-only (ro) for existing persistent disks and
+     * read-write (rw) for other volume types, regardless of the original mount
+     * options specified in `TaskSpec.Volumes`. If you need different mount
+     * settings, you can explicitly configure them in this field.
      * </pre>
      *
      * <code>repeated string volumes = 7;</code>
@@ -221,6 +239,14 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * Volumes to mount (bind mount) from the host machine files or directories
      * into the container, formatted to match docker run's --volume option,
      * e.g. /foo:/bar, or /foo:/bar:ro
+     *
+     * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
+     * will mount each volume from the host machine to the container with the
+     * same mount path by default. In this case, the default mount option for
+     * containers will be read-only (ro) for existing persistent disks and
+     * read-write (rw) for other volume types, regardless of the original mount
+     * options specified in `TaskSpec.Volumes`. If you need different mount
+     * settings, you can explicitly configure them in this field.
      * </pre>
      *
      * <code>repeated string volumes = 7;</code>
@@ -236,6 +262,14 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * Volumes to mount (bind mount) from the host machine files or directories
      * into the container, formatted to match docker run's --volume option,
      * e.g. /foo:/bar, or /foo:/bar:ro
+     *
+     * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
+     * will mount each volume from the host machine to the container with the
+     * same mount path by default. In this case, the default mount option for
+     * containers will be read-only (ro) for existing persistent disks and
+     * read-write (rw) for other volume types, regardless of the original mount
+     * options specified in `TaskSpec.Volumes`. If you need different mount
+     * settings, you can explicitly configure them in this field.
      * </pre>
      *
      * <code>repeated string volumes = 7;</code>
@@ -345,6 +379,23 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for password.
      */
     com.google.protobuf.ByteString getPasswordBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Not yet implemented.
+     * If set to true, container will run with Image streaming.
+     * The container runtime will be changed to containerd
+     * instead of docker. Currently, only imageUri, commands, entrypoint
+     * and volumes are supported and any other fields will be ignored.
+     * </pre>
+     *
+     * <code>bool enable_image_streaming = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableImageStreaming.
+     */
+    boolean getEnableImageStreaming();
   }
   /**
    *
@@ -582,6 +633,14 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * Volumes to mount (bind mount) from the host machine files or directories
      * into the container, formatted to match docker run's --volume option,
      * e.g. /foo:/bar, or /foo:/bar:ro
+     *
+     * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
+     * will mount each volume from the host machine to the container with the
+     * same mount path by default. In this case, the default mount option for
+     * containers will be read-only (ro) for existing persistent disks and
+     * read-write (rw) for other volume types, regardless of the original mount
+     * options specified in `TaskSpec.Volumes`. If you need different mount
+     * settings, you can explicitly configure them in this field.
      * </pre>
      *
      * <code>repeated string volumes = 7;</code>
@@ -598,6 +657,14 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * Volumes to mount (bind mount) from the host machine files or directories
      * into the container, formatted to match docker run's --volume option,
      * e.g. /foo:/bar, or /foo:/bar:ro
+     *
+     * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
+     * will mount each volume from the host machine to the container with the
+     * same mount path by default. In this case, the default mount option for
+     * containers will be read-only (ro) for existing persistent disks and
+     * read-write (rw) for other volume types, regardless of the original mount
+     * options specified in `TaskSpec.Volumes`. If you need different mount
+     * settings, you can explicitly configure them in this field.
      * </pre>
      *
      * <code>repeated string volumes = 7;</code>
@@ -614,6 +681,14 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * Volumes to mount (bind mount) from the host machine files or directories
      * into the container, formatted to match docker run's --volume option,
      * e.g. /foo:/bar, or /foo:/bar:ro
+     *
+     * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
+     * will mount each volume from the host machine to the container with the
+     * same mount path by default. In this case, the default mount option for
+     * containers will be read-only (ro) for existing persistent disks and
+     * read-write (rw) for other volume types, regardless of the original mount
+     * options specified in `TaskSpec.Volumes`. If you need different mount
+     * settings, you can explicitly configure them in this field.
      * </pre>
      *
      * <code>repeated string volumes = 7;</code>
@@ -631,6 +706,14 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * Volumes to mount (bind mount) from the host machine files or directories
      * into the container, formatted to match docker run's --volume option,
      * e.g. /foo:/bar, or /foo:/bar:ro
+     *
+     * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
+     * will mount each volume from the host machine to the container with the
+     * same mount path by default. In this case, the default mount option for
+     * containers will be read-only (ro) for existing persistent disks and
+     * read-write (rw) for other volume types, regardless of the original mount
+     * options specified in `TaskSpec.Volumes`. If you need different mount
+     * settings, you can explicitly configure them in this field.
      * </pre>
      *
      * <code>repeated string volumes = 7;</code>
@@ -826,6 +909,28 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int ENABLE_IMAGE_STREAMING_FIELD_NUMBER = 12;
+    private boolean enableImageStreaming_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Not yet implemented.
+     * If set to true, container will run with Image streaming.
+     * The container runtime will be changed to containerd
+     * instead of docker. Currently, only imageUri, commands, entrypoint
+     * and volumes are supported and any other fields will be ignored.
+     * </pre>
+     *
+     * <code>bool enable_image_streaming = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableImageStreaming.
+     */
+    @java.lang.Override
+    public boolean getEnableImageStreaming() {
+      return enableImageStreaming_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -863,6 +968,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, password_);
+      }
+      if (enableImageStreaming_ != false) {
+        output.writeBool(12, enableImageStreaming_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -907,6 +1015,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(password_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, password_);
       }
+      if (enableImageStreaming_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, enableImageStreaming_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -931,6 +1042,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       if (getBlockExternalNetwork() != other.getBlockExternalNetwork()) return false;
       if (!getUsername().equals(other.getUsername())) return false;
       if (!getPassword().equals(other.getPassword())) return false;
+      if (getEnableImageStreaming() != other.getEnableImageStreaming()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -962,6 +1074,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getUsername().hashCode();
       hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
       hash = (53 * hash) + getPassword().hashCode();
+      hash = (37 * hash) + ENABLE_IMAGE_STREAMING_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableImageStreaming());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1111,6 +1225,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         blockExternalNetwork_ = false;
         username_ = "";
         password_ = "";
+        enableImageStreaming_ = false;
         return this;
       }
 
@@ -1172,6 +1287,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
           result.password_ = password_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.enableImageStreaming_ = enableImageStreaming_;
         }
       }
 
@@ -1271,6 +1389,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000080;
           onChanged();
         }
+        if (other.getEnableImageStreaming() != false) {
+          setEnableImageStreaming(other.getEnableImageStreaming());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1347,6 +1468,12 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000080;
                   break;
                 } // case 90
+              case 96:
+                {
+                  enableImageStreaming_ = input.readBool();
+                  bitField0_ |= 0x00000100;
+                  break;
+                } // case 96
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1786,6 +1913,14 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        * Volumes to mount (bind mount) from the host machine files or directories
        * into the container, formatted to match docker run's --volume option,
        * e.g. /foo:/bar, or /foo:/bar:ro
+       *
+       * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
+       * will mount each volume from the host machine to the container with the
+       * same mount path by default. In this case, the default mount option for
+       * containers will be read-only (ro) for existing persistent disks and
+       * read-write (rw) for other volume types, regardless of the original mount
+       * options specified in `TaskSpec.Volumes`. If you need different mount
+       * settings, you can explicitly configure them in this field.
        * </pre>
        *
        * <code>repeated string volumes = 7;</code>
@@ -1803,6 +1938,14 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        * Volumes to mount (bind mount) from the host machine files or directories
        * into the container, formatted to match docker run's --volume option,
        * e.g. /foo:/bar, or /foo:/bar:ro
+       *
+       * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
+       * will mount each volume from the host machine to the container with the
+       * same mount path by default. In this case, the default mount option for
+       * containers will be read-only (ro) for existing persistent disks and
+       * read-write (rw) for other volume types, regardless of the original mount
+       * options specified in `TaskSpec.Volumes`. If you need different mount
+       * settings, you can explicitly configure them in this field.
        * </pre>
        *
        * <code>repeated string volumes = 7;</code>
@@ -1819,6 +1962,14 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        * Volumes to mount (bind mount) from the host machine files or directories
        * into the container, formatted to match docker run's --volume option,
        * e.g. /foo:/bar, or /foo:/bar:ro
+       *
+       * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
+       * will mount each volume from the host machine to the container with the
+       * same mount path by default. In this case, the default mount option for
+       * containers will be read-only (ro) for existing persistent disks and
+       * read-write (rw) for other volume types, regardless of the original mount
+       * options specified in `TaskSpec.Volumes`. If you need different mount
+       * settings, you can explicitly configure them in this field.
        * </pre>
        *
        * <code>repeated string volumes = 7;</code>
@@ -1836,6 +1987,14 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        * Volumes to mount (bind mount) from the host machine files or directories
        * into the container, formatted to match docker run's --volume option,
        * e.g. /foo:/bar, or /foo:/bar:ro
+       *
+       * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
+       * will mount each volume from the host machine to the container with the
+       * same mount path by default. In this case, the default mount option for
+       * containers will be read-only (ro) for existing persistent disks and
+       * read-write (rw) for other volume types, regardless of the original mount
+       * options specified in `TaskSpec.Volumes`. If you need different mount
+       * settings, you can explicitly configure them in this field.
        * </pre>
        *
        * <code>repeated string volumes = 7;</code>
@@ -1853,6 +2012,14 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        * Volumes to mount (bind mount) from the host machine files or directories
        * into the container, formatted to match docker run's --volume option,
        * e.g. /foo:/bar, or /foo:/bar:ro
+       *
+       * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
+       * will mount each volume from the host machine to the container with the
+       * same mount path by default. In this case, the default mount option for
+       * containers will be read-only (ro) for existing persistent disks and
+       * read-write (rw) for other volume types, regardless of the original mount
+       * options specified in `TaskSpec.Volumes`. If you need different mount
+       * settings, you can explicitly configure them in this field.
        * </pre>
        *
        * <code>repeated string volumes = 7;</code>
@@ -1878,6 +2045,14 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        * Volumes to mount (bind mount) from the host machine files or directories
        * into the container, formatted to match docker run's --volume option,
        * e.g. /foo:/bar, or /foo:/bar:ro
+       *
+       * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
+       * will mount each volume from the host machine to the container with the
+       * same mount path by default. In this case, the default mount option for
+       * containers will be read-only (ro) for existing persistent disks and
+       * read-write (rw) for other volume types, regardless of the original mount
+       * options specified in `TaskSpec.Volumes`. If you need different mount
+       * settings, you can explicitly configure them in this field.
        * </pre>
        *
        * <code>repeated string volumes = 7;</code>
@@ -1902,6 +2077,14 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        * Volumes to mount (bind mount) from the host machine files or directories
        * into the container, formatted to match docker run's --volume option,
        * e.g. /foo:/bar, or /foo:/bar:ro
+       *
+       * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
+       * will mount each volume from the host machine to the container with the
+       * same mount path by default. In this case, the default mount option for
+       * containers will be read-only (ro) for existing persistent disks and
+       * read-write (rw) for other volume types, regardless of the original mount
+       * options specified in `TaskSpec.Volumes`. If you need different mount
+       * settings, you can explicitly configure them in this field.
        * </pre>
        *
        * <code>repeated string volumes = 7;</code>
@@ -1923,6 +2106,14 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        * Volumes to mount (bind mount) from the host machine files or directories
        * into the container, formatted to match docker run's --volume option,
        * e.g. /foo:/bar, or /foo:/bar:ro
+       *
+       * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
+       * will mount each volume from the host machine to the container with the
+       * same mount path by default. In this case, the default mount option for
+       * containers will be read-only (ro) for existing persistent disks and
+       * read-write (rw) for other volume types, regardless of the original mount
+       * options specified in `TaskSpec.Volumes`. If you need different mount
+       * settings, you can explicitly configure them in this field.
        * </pre>
        *
        * <code>repeated string volumes = 7;</code>
@@ -1943,6 +2134,14 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
        * Volumes to mount (bind mount) from the host machine files or directories
        * into the container, formatted to match docker run's --volume option,
        * e.g. /foo:/bar, or /foo:/bar:ro
+       *
+       * If the `TaskSpec.Volumes` field is specified but this field is not, Batch
+       * will mount each volume from the host machine to the container with the
+       * same mount path by default. In this case, the default mount option for
+       * containers will be read-only (ro) for existing persistent disks and
+       * read-write (rw) for other volume types, regardless of the original mount
+       * options specified in `TaskSpec.Volumes`. If you need different mount
+       * settings, you can explicitly configure them in this field.
        * </pre>
        *
        * <code>repeated string volumes = 7;</code>
@@ -2363,6 +2562,71 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         password_ = value;
         bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableImageStreaming_;
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Not yet implemented.
+       * If set to true, container will run with Image streaming.
+       * The container runtime will be changed to containerd
+       * instead of docker. Currently, only imageUri, commands, entrypoint
+       * and volumes are supported and any other fields will be ignored.
+       * </pre>
+       *
+       * <code>bool enable_image_streaming = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enableImageStreaming.
+       */
+      @java.lang.Override
+      public boolean getEnableImageStreaming() {
+        return enableImageStreaming_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Not yet implemented.
+       * If set to true, container will run with Image streaming.
+       * The container runtime will be changed to containerd
+       * instead of docker. Currently, only imageUri, commands, entrypoint
+       * and volumes are supported and any other fields will be ignored.
+       * </pre>
+       *
+       * <code>bool enable_image_streaming = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enableImageStreaming to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableImageStreaming(boolean value) {
+
+        enableImageStreaming_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Not yet implemented.
+       * If set to true, container will run with Image streaming.
+       * The container runtime will be changed to containerd
+       * instead of docker. Currently, only imageUri, commands, entrypoint
+       * and volumes are supported and any other fields will be ignored.
+       * </pre>
+       *
+       * <code>bool enable_image_streaming = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableImageStreaming() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        enableImageStreaming_ = false;
         onChanged();
         return this;
       }
@@ -4511,6 +4775,63 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.batch.v1alpha.Runnable.Barrier.getDefaultInstance();
   }
 
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DisplayName is an optional field that can be provided by the
+   * caller. If provided, it will be used in logs and other outputs to identify
+   * the script, making it easier for users to understand the logs. If not
+   * provided the index of the runnable will be used for outputs.
+   * </pre>
+   *
+   * <code>string display_name = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The displayName.
+   */
+  @java.lang.Override
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      displayName_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DisplayName is an optional field that can be provided by the
+   * caller. If provided, it will be used in logs and other outputs to identify
+   * the script, making it easier for users to understand the logs. If not
+   * provided the index of the runnable will be used for outputs.
+   * </pre>
+   *
+   * <code>string display_name = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int IGNORE_EXIT_STATUS_FIELD_NUMBER = 3;
   private boolean ignoreExitStatus_ = false;
   /**
@@ -4816,6 +5137,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 9);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 10, displayName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -4865,6 +5189,9 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, labels__);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, displayName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4880,6 +5207,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.cloud.batch.v1alpha.Runnable other = (com.google.cloud.batch.v1alpha.Runnable) obj;
 
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (getIgnoreExitStatus() != other.getIgnoreExitStatus()) return false;
     if (getBackground() != other.getBackground()) return false;
     if (getAlwaysRun() != other.getAlwaysRun()) return false;
@@ -4917,6 +5245,8 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDisplayName().hashCode();
     hash = (37 * hash) + IGNORE_EXIT_STATUS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIgnoreExitStatus());
     hash = (37 * hash) + BACKGROUND_FIELD_NUMBER;
@@ -5120,6 +5450,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       if (barrierBuilder_ != null) {
         barrierBuilder_.clear();
       }
+      displayName_ = "";
       ignoreExitStatus_ = false;
       background_ = false;
       alwaysRun_ = false;
@@ -5174,22 +5505,25 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     private void buildPartial0(com.google.cloud.batch.v1alpha.Runnable result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.ignoreExitStatus_ = ignoreExitStatus_;
+        result.displayName_ = displayName_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.background_ = background_;
+        result.ignoreExitStatus_ = ignoreExitStatus_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.alwaysRun_ = alwaysRun_;
+        result.background_ = background_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.alwaysRun_ = alwaysRun_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.environment_ =
             environmentBuilder_ == null ? environment_ : environmentBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.timeout_ = timeoutBuilder_ == null ? timeout_ : timeoutBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
@@ -5254,6 +5588,11 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.batch.v1alpha.Runnable other) {
       if (other == com.google.cloud.batch.v1alpha.Runnable.getDefaultInstance()) return this;
+      if (!other.getDisplayName().isEmpty()) {
+        displayName_ = other.displayName_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       if (other.getIgnoreExitStatus() != false) {
         setIgnoreExitStatus(other.getIgnoreExitStatus());
       }
@@ -5270,7 +5609,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         mergeTimeout(other.getTimeout());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       switch (other.getExecutableCase()) {
         case CONTAINER:
           {
@@ -5333,19 +5672,19 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 ignoreExitStatus_ = input.readBool();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 24
             case 32:
               {
                 background_ = input.readBool();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 32
             case 40:
               {
                 alwaysRun_ = input.readBool();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 40
             case 50:
@@ -5357,13 +5696,13 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
             case 58:
               {
                 input.readMessage(getEnvironmentFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
               {
                 input.readMessage(getTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 74:
@@ -5375,9 +5714,15 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 74
+            case 82:
+              {
+                displayName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6040,6 +6385,127 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       return barrierBuilder_;
     }
 
+    private java.lang.Object displayName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DisplayName is an optional field that can be provided by the
+     * caller. If provided, it will be used in logs and other outputs to identify
+     * the script, making it easier for users to understand the logs. If not
+     * provided the index of the runnable will be used for outputs.
+     * </pre>
+     *
+     * <code>string display_name = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The displayName.
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DisplayName is an optional field that can be provided by the
+     * caller. If provided, it will be used in logs and other outputs to identify
+     * the script, making it easier for users to understand the logs. If not
+     * provided the index of the runnable will be used for outputs.
+     * </pre>
+     *
+     * <code>string display_name = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for displayName.
+     */
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DisplayName is an optional field that can be provided by the
+     * caller. If provided, it will be used in logs and other outputs to identify
+     * the script, making it easier for users to understand the logs. If not
+     * provided the index of the runnable will be used for outputs.
+     * </pre>
+     *
+     * <code>string display_name = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      displayName_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DisplayName is an optional field that can be provided by the
+     * caller. If provided, it will be used in logs and other outputs to identify
+     * the script, making it easier for users to understand the logs. If not
+     * provided the index of the runnable will be used for outputs.
+     * </pre>
+     *
+     * <code>string display_name = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisplayName() {
+      displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. DisplayName is an optional field that can be provided by the
+     * caller. If provided, it will be used in logs and other outputs to identify
+     * the script, making it easier for users to understand the logs. If not
+     * provided the index of the runnable will be used for outputs.
+     * </pre>
+     *
+     * <code>string display_name = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      displayName_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
     private boolean ignoreExitStatus_;
     /**
      *
@@ -6073,7 +6539,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public Builder setIgnoreExitStatus(boolean value) {
 
       ignoreExitStatus_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -6090,7 +6556,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearIgnoreExitStatus() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       ignoreExitStatus_ = false;
       onChanged();
       return this;
@@ -6131,7 +6597,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public Builder setBackground(boolean value) {
 
       background_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -6149,7 +6615,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearBackground() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       background_ = false;
       onChanged();
       return this;
@@ -6200,7 +6666,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     public Builder setAlwaysRun(boolean value) {
 
       alwaysRun_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -6223,7 +6689,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAlwaysRun() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       alwaysRun_ = false;
       onChanged();
       return this;
@@ -6248,7 +6714,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the environment field is set.
      */
     public boolean hasEnvironment() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -6290,7 +6756,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       } else {
         environmentBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -6311,7 +6777,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       } else {
         environmentBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -6327,7 +6793,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEnvironment(com.google.cloud.batch.v1alpha.Environment value) {
       if (environmentBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && environment_ != null
             && environment_ != com.google.cloud.batch.v1alpha.Environment.getDefaultInstance()) {
           getEnvironmentBuilder().mergeFrom(value);
@@ -6337,7 +6803,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       } else {
         environmentBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -6352,7 +6818,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.batch.v1alpha.Environment environment = 7;</code>
      */
     public Builder clearEnvironment() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       environment_ = null;
       if (environmentBuilder_ != null) {
         environmentBuilder_.dispose();
@@ -6372,7 +6838,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.batch.v1alpha.Environment environment = 7;</code>
      */
     public com.google.cloud.batch.v1alpha.Environment.Builder getEnvironmentBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getEnvironmentFieldBuilder().getBuilder();
     }
@@ -6440,7 +6906,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the timeout field is set.
      */
     public boolean hasTimeout() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -6478,7 +6944,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       } else {
         timeoutBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -6497,7 +6963,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       } else {
         timeoutBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -6512,7 +6978,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeTimeout(com.google.protobuf.Duration value) {
       if (timeoutBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && timeout_ != null
             && timeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getTimeoutBuilder().mergeFrom(value);
@@ -6522,7 +6988,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       } else {
         timeoutBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -6536,7 +7002,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration timeout = 8;</code>
      */
     public Builder clearTimeout() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       timeout_ = null;
       if (timeoutBuilder_ != null) {
         timeoutBuilder_.dispose();
@@ -6555,7 +7021,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration timeout = 8;</code>
      */
     public com.google.protobuf.Duration.Builder getTimeoutBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getTimeoutFieldBuilder().getBuilder();
     }
@@ -6618,7 +7084,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return labels_;
     }
@@ -6703,7 +7169,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -6726,7 +7192,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -6746,7 +7212,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
     /**
@@ -6760,7 +7226,7 @@ public final class Runnable extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       return this;
     }
 

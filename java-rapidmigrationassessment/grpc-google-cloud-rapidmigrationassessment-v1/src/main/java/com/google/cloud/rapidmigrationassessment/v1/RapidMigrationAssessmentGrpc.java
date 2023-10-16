@@ -21,7 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Rapid Migration Assessment service
+ * Service describing handlers for resources.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -32,7 +32,7 @@ public final class RapidMigrationAssessmentGrpc {
 
   private RapidMigrationAssessmentGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.rapidmigrationassessment.v1.RapidMigrationAssessment";
 
   // Static method descriptors that strictly reflect the proto.
@@ -559,7 +559,7 @@ public final class RapidMigrationAssessmentGrpc {
    *
    *
    * <pre>
-   * Rapid Migration Assessment service
+   * Service describing handlers for resources.
    * </pre>
    */
   public interface AsyncService {
@@ -658,6 +658,7 @@ public final class RapidMigrationAssessmentGrpc {
      *
      * <pre>
      * Deletes a single Collector - changes state of collector to "Deleting".
+     * Background jobs does final deletion thorugh producer api.
      * </pre>
      */
     default void deleteCollector(
@@ -714,7 +715,7 @@ public final class RapidMigrationAssessmentGrpc {
    * Base class for the server implementation of the service RapidMigrationAssessment.
    *
    * <pre>
-   * Rapid Migration Assessment service
+   * Service describing handlers for resources.
    * </pre>
    */
   public abstract static class RapidMigrationAssessmentImplBase
@@ -730,7 +731,7 @@ public final class RapidMigrationAssessmentGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service RapidMigrationAssessment.
    *
    * <pre>
-   * Rapid Migration Assessment service
+   * Service describing handlers for resources.
    * </pre>
    */
   public static final class RapidMigrationAssessmentStub
@@ -851,6 +852,7 @@ public final class RapidMigrationAssessmentGrpc {
      *
      * <pre>
      * Deletes a single Collector - changes state of collector to "Deleting".
+     * Background jobs does final deletion thorugh producer api.
      * </pre>
      */
     public void deleteCollector(
@@ -915,7 +917,7 @@ public final class RapidMigrationAssessmentGrpc {
    * A stub to allow clients to do synchronous rpc calls to service RapidMigrationAssessment.
    *
    * <pre>
-   * Rapid Migration Assessment service
+   * Service describing handlers for resources.
    * </pre>
    */
   public static final class RapidMigrationAssessmentBlockingStub
@@ -1015,6 +1017,7 @@ public final class RapidMigrationAssessmentGrpc {
      *
      * <pre>
      * Deletes a single Collector - changes state of collector to "Deleting".
+     * Background jobs does final deletion thorugh producer api.
      * </pre>
      */
     public com.google.longrunning.Operation deleteCollector(
@@ -1068,7 +1071,7 @@ public final class RapidMigrationAssessmentGrpc {
    * RapidMigrationAssessment.
    *
    * <pre>
-   * Rapid Migration Assessment service
+   * Service describing handlers for resources.
    * </pre>
    */
   public static final class RapidMigrationAssessmentFutureStub
@@ -1174,6 +1177,7 @@ public final class RapidMigrationAssessmentGrpc {
      *
      * <pre>
      * Deletes a single Collector - changes state of collector to "Deleting".
+     * Background jobs does final deletion thorugh producer api.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -1416,9 +1420,9 @@ public final class RapidMigrationAssessmentGrpc {
   private static final class RapidMigrationAssessmentMethodDescriptorSupplier
       extends RapidMigrationAssessmentBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    RapidMigrationAssessmentMethodDescriptorSupplier(String methodName) {
+    RapidMigrationAssessmentMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

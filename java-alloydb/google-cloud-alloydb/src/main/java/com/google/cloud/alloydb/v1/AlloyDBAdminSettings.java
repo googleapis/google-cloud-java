@@ -319,6 +319,17 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
     return ((AlloyDBAdminStubSettings) getStubSettings()).listSupportedDatabaseFlagsSettings();
   }
 
+  /** Returns the object with the settings used for calls to generateClientCertificate. */
+  public UnaryCallSettings<GenerateClientCertificateRequest, GenerateClientCertificateResponse>
+      generateClientCertificateSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).generateClientCertificateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getConnectionInfo. */
+  public UnaryCallSettings<GetConnectionInfoRequest, ConnectionInfo> getConnectionInfoSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).getConnectionInfoSettings();
+  }
+
   /** Returns the object with the settings used for calls to listUsers. */
   public PagedCallSettings<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
       listUsersSettings() {
@@ -707,6 +718,19 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
             ListSupportedDatabaseFlagsPagedResponse>
         listSupportedDatabaseFlagsSettings() {
       return getStubSettingsBuilder().listSupportedDatabaseFlagsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to generateClientCertificate. */
+    public UnaryCallSettings.Builder<
+            GenerateClientCertificateRequest, GenerateClientCertificateResponse>
+        generateClientCertificateSettings() {
+      return getStubSettingsBuilder().generateClientCertificateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getConnectionInfo. */
+    public UnaryCallSettings.Builder<GetConnectionInfoRequest, ConnectionInfo>
+        getConnectionInfoSettings() {
+      return getStubSettingsBuilder().getConnectionInfoSettings();
     }
 
     /** Returns the builder for the settings used for calls to listUsers. */

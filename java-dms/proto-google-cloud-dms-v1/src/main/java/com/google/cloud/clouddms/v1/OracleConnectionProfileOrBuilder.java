@@ -167,6 +167,50 @@ public interface OracleConnectionProfileOrBuilder
    *
    *
    * <pre>
+   * SSL configuration for the connection to the source Oracle database.
+   *
+   *  * Only `SERVER_ONLY` configuration is supported for Oracle SSL.
+   *  * SSL is supported for Oracle versions 12 and above.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.SslConfig ssl = 7;</code>
+   *
+   * @return Whether the ssl field is set.
+   */
+  boolean hasSsl();
+  /**
+   *
+   *
+   * <pre>
+   * SSL configuration for the connection to the source Oracle database.
+   *
+   *  * Only `SERVER_ONLY` configuration is supported for Oracle SSL.
+   *  * SSL is supported for Oracle versions 12 and above.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.SslConfig ssl = 7;</code>
+   *
+   * @return The ssl.
+   */
+  com.google.cloud.clouddms.v1.SslConfig getSsl();
+  /**
+   *
+   *
+   * <pre>
+   * SSL configuration for the connection to the source Oracle database.
+   *
+   *  * Only `SERVER_ONLY` configuration is supported for Oracle SSL.
+   *  * SSL is supported for Oracle versions 12 and above.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.SslConfig ssl = 7;</code>
+   */
+  com.google.cloud.clouddms.v1.SslConfigOrBuilder getSslOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Static Service IP connectivity.
    * </pre>
    *

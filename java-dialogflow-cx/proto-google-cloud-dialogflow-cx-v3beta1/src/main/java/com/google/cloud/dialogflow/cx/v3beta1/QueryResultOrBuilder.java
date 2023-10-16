@@ -582,7 +582,7 @@ public interface QueryResultOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=725
+   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=729
    * @return Whether the intent field is set.
    */
   @java.lang.Deprecated
@@ -602,7 +602,7 @@ public interface QueryResultOrBuilder
    * <code>.google.cloud.dialogflow.cx.v3beta1.Intent intent = 8 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent is deprecated. See
-   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=725
+   *     google/cloud/dialogflow/cx/v3beta1/session.proto;l=729
    * @return The intent.
    */
   @java.lang.Deprecated
@@ -642,7 +642,7 @@ public interface QueryResultOrBuilder
    * <code>float intent_detection_confidence = 9 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.cx.v3beta1.QueryResult.intent_detection_confidence is
-   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=736
+   *     deprecated. See google/cloud/dialogflow/cx/v3beta1/session.proto;l=740
    * @return The intentDetectionConfidence.
    */
   @java.lang.Deprecated
@@ -816,6 +816,53 @@ public interface QueryResultOrBuilder
    */
   com.google.cloud.dialogflow.cx.v3beta1.SentimentAnalysisResultOrBuilder
       getSentimentAnalysisResultOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Returns the current advanced settings including IVR settings. Even though
+   * the operations configured by these settings are performed by Dialogflow,
+   * the client may need to perform special logic at the moment. For example, if
+   * Dialogflow exports audio to Google Cloud Storage, then the client may need
+   * to wait for the resulting object to appear in the bucket before proceeding.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 21;</code>
+   *
+   * @return Whether the advancedSettings field is set.
+   */
+  boolean hasAdvancedSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Returns the current advanced settings including IVR settings. Even though
+   * the operations configured by these settings are performed by Dialogflow,
+   * the client may need to perform special logic at the moment. For example, if
+   * Dialogflow exports audio to Google Cloud Storage, then the client may need
+   * to wait for the resulting object to appear in the bucket before proceeding.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 21;</code>
+   *
+   * @return The advancedSettings.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings getAdvancedSettings();
+  /**
+   *
+   *
+   * <pre>
+   * Returns the current advanced settings including IVR settings. Even though
+   * the operations configured by these settings are performed by Dialogflow,
+   * the client may need to perform special logic at the moment. For example, if
+   * Dialogflow exports audio to Google Cloud Storage, then the client may need
+   * to wait for the resulting object to appear in the bucket before proceeding.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3beta1.AdvancedSettings advanced_settings = 21;</code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.AdvancedSettingsOrBuilder getAdvancedSettingsOrBuilder();
 
   com.google.cloud.dialogflow.cx.v3beta1.QueryResult.QueryCase getQueryCase();
 }

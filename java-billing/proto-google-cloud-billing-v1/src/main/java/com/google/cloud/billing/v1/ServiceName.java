@@ -127,7 +127,7 @@ public class ServiceName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       ServiceName that = ((ServiceName) o);
       return Objects.equals(this.service, that.service);
     }

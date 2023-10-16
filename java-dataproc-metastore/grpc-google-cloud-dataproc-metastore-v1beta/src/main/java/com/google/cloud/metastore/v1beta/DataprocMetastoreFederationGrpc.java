@@ -43,7 +43,7 @@ public final class DataprocMetastoreFederationGrpc {
 
   private DataprocMetastoreFederationGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.metastore.v1beta.DataprocMetastoreFederation";
 
   // Static method descriptors that strictly reflect the proto.
@@ -891,9 +891,9 @@ public final class DataprocMetastoreFederationGrpc {
   private static final class DataprocMetastoreFederationMethodDescriptorSupplier
       extends DataprocMetastoreFederationBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DataprocMetastoreFederationMethodDescriptorSupplier(String methodName) {
+    DataprocMetastoreFederationMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

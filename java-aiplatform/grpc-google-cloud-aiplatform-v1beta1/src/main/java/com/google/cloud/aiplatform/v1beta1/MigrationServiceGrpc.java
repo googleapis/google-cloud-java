@@ -33,7 +33,8 @@ public final class MigrationServiceGrpc {
 
   private MigrationServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.aiplatform.v1beta1.MigrationService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.aiplatform.v1beta1.MigrationService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -490,9 +491,9 @@ public final class MigrationServiceGrpc {
   private static final class MigrationServiceMethodDescriptorSupplier
       extends MigrationServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    MigrationServiceMethodDescriptorSupplier(String methodName) {
+    MigrationServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

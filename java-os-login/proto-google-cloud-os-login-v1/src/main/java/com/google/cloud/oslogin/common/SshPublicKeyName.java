@@ -137,7 +137,7 @@ public class SshPublicKeyName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       SshPublicKeyName that = ((SshPublicKeyName) o);
       return Objects.equals(this.user, that.user)
           && Objects.equals(this.fingerprint, that.fingerprint);

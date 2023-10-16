@@ -34,7 +34,7 @@ public final class DataFusionGrpc {
 
   private DataFusionGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.datafusion.v1beta1.DataFusion";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.datafusion.v1beta1.DataFusion";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1777,9 +1777,9 @@ public final class DataFusionGrpc {
   private static final class DataFusionMethodDescriptorSupplier
       extends DataFusionBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DataFusionMethodDescriptorSupplier(String methodName) {
+    DataFusionMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

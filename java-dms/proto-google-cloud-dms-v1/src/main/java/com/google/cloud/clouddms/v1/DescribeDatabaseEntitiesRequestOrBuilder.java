@@ -60,11 +60,11 @@ public interface DescribeDatabaseEntitiesRequestOrBuilder
    *
    *
    * <pre>
-   * The maximum number of entities to return. The service may return
+   * Optional. The maximum number of entities to return. The service may return
    * fewer entities than the value specifies.
    * </pre>
    *
-   * <code>int32 page_size = 3;</code>
+   * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -74,7 +74,7 @@ public interface DescribeDatabaseEntitiesRequestOrBuilder
    *
    *
    * <pre>
-   * The nextPageToken value received in the previous call to
+   * Optional. The nextPageToken value received in the previous call to
    * conversionWorkspace.describeDatabaseEntities, used in the subsequent
    * request to retrieve the next page of results. On first call this should be
    * left blank. When paginating, all other parameters provided to
@@ -82,7 +82,7 @@ public interface DescribeDatabaseEntitiesRequestOrBuilder
    * provided the page token.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -91,7 +91,7 @@ public interface DescribeDatabaseEntitiesRequestOrBuilder
    *
    *
    * <pre>
-   * The nextPageToken value received in the previous call to
+   * Optional. The nextPageToken value received in the previous call to
    * conversionWorkspace.describeDatabaseEntities, used in the subsequent
    * request to retrieve the next page of results. On first call this should be
    * left blank. When paginating, all other parameters provided to
@@ -99,7 +99,7 @@ public interface DescribeDatabaseEntitiesRequestOrBuilder
    * provided the page token.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -109,10 +109,12 @@ public interface DescribeDatabaseEntitiesRequestOrBuilder
    *
    *
    * <pre>
-   * The tree to fetch.
+   * Required. The tree to fetch.
    * </pre>
    *
-   * <code>.google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest.DBTreeType tree = 6;</code>
+   * <code>
+   * .google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest.DBTreeType tree = 6 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The enum numeric value on the wire for tree.
    */
@@ -121,10 +123,12 @@ public interface DescribeDatabaseEntitiesRequestOrBuilder
    *
    *
    * <pre>
-   * The tree to fetch.
+   * Required. The tree to fetch.
    * </pre>
    *
-   * <code>.google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest.DBTreeType tree = 6;</code>
+   * <code>
+   * .google.cloud.clouddms.v1.DescribeDatabaseEntitiesRequest.DBTreeType tree = 6 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The tree.
    */
@@ -134,11 +138,12 @@ public interface DescribeDatabaseEntitiesRequestOrBuilder
    *
    *
    * <pre>
-   * Whether to retrieve the latest committed version of the entities or the
-   * latest version. This field is ignored if a specific commit_id is specified.
+   * Optional. Whether to retrieve the latest committed version of the entities
+   * or the latest version. This field is ignored if a specific commit_id is
+   * specified.
    * </pre>
    *
-   * <code>bool uncommitted = 11;</code>
+   * <code>bool uncommitted = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The uncommitted.
    */
@@ -148,11 +153,11 @@ public interface DescribeDatabaseEntitiesRequestOrBuilder
    *
    *
    * <pre>
-   * Request a specific commit ID. If not specified, the entities from the
-   * latest commit are returned.
+   * Optional. Request a specific commit ID. If not specified, the entities from
+   * the latest commit are returned.
    * </pre>
    *
-   * <code>string commit_id = 12;</code>
+   * <code>string commit_id = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The commitId.
    */
@@ -161,11 +166,11 @@ public interface DescribeDatabaseEntitiesRequestOrBuilder
    *
    *
    * <pre>
-   * Request a specific commit ID. If not specified, the entities from the
-   * latest commit are returned.
+   * Optional. Request a specific commit ID. If not specified, the entities from
+   * the latest commit are returned.
    * </pre>
    *
-   * <code>string commit_id = 12;</code>
+   * <code>string commit_id = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for commitId.
    */
@@ -175,10 +180,10 @@ public interface DescribeDatabaseEntitiesRequestOrBuilder
    *
    *
    * <pre>
-   * Filter the returned entities based on AIP-160 standard.
+   * Optional. Filter the returned entities based on AIP-160 standard.
    * </pre>
    *
-   * <code>string filter = 13;</code>
+   * <code>string filter = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The filter.
    */
@@ -187,12 +192,41 @@ public interface DescribeDatabaseEntitiesRequestOrBuilder
    *
    *
    * <pre>
-   * Filter the returned entities based on AIP-160 standard.
+   * Optional. Filter the returned entities based on AIP-160 standard.
    * </pre>
    *
-   * <code>string filter = 13;</code>
+   * <code>string filter = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Results view based on AIP-157
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.DatabaseEntityView view = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for view.
+   */
+  int getViewValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Results view based on AIP-157
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.DatabaseEntityView view = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The view.
+   */
+  com.google.cloud.clouddms.v1.DatabaseEntityView getView();
 }

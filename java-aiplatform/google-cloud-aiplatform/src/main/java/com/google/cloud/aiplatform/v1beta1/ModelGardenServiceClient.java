@@ -290,6 +290,156 @@ public class ModelGardenServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Lists publisher models in Model Garden.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   String parent = "parent-995424086";
+   *   for (PublisherModel element :
+   *       modelGardenServiceClient.listPublisherModels(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the Publisher from which to list the PublisherModels.
+   *     Format: `publishers/{publisher}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPublisherModelsPagedResponse listPublisherModels(String parent) {
+    ListPublisherModelsRequest request =
+        ListPublisherModelsRequest.newBuilder().setParent(parent).build();
+    return listPublisherModels(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists publisher models in Model Garden.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   ListPublisherModelsRequest request =
+   *       ListPublisherModelsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setView(PublisherModelView.forNumber(0))
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   for (PublisherModel element :
+   *       modelGardenServiceClient.listPublisherModels(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListPublisherModelsPagedResponse listPublisherModels(
+      ListPublisherModelsRequest request) {
+    return listPublisherModelsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists publisher models in Model Garden.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   ListPublisherModelsRequest request =
+   *       ListPublisherModelsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setView(PublisherModelView.forNumber(0))
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   ApiFuture<PublisherModel> future =
+   *       modelGardenServiceClient.listPublisherModelsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (PublisherModel element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListPublisherModelsRequest, ListPublisherModelsPagedResponse>
+      listPublisherModelsPagedCallable() {
+    return stub.listPublisherModelsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists publisher models in Model Garden.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ModelGardenServiceClient modelGardenServiceClient = ModelGardenServiceClient.create()) {
+   *   ListPublisherModelsRequest request =
+   *       ListPublisherModelsRequest.newBuilder()
+   *           .setParent("parent-995424086")
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setView(PublisherModelView.forNumber(0))
+   *           .setOrderBy("orderBy-1207110587")
+   *           .setLanguageCode("languageCode-2092349083")
+   *           .build();
+   *   while (true) {
+   *     ListPublisherModelsResponse response =
+   *         modelGardenServiceClient.listPublisherModelsCallable().call(request);
+   *     for (PublisherModel element : response.getPublisherModelsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListPublisherModelsRequest, ListPublisherModelsResponse>
+      listPublisherModelsCallable() {
+    return stub.listPublisherModelsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists information about the supported locations for this service.
    *
    * <p>Sample code:
@@ -684,6 +834,90 @@ public class ModelGardenServiceClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListPublisherModelsPagedResponse
+      extends AbstractPagedListResponse<
+          ListPublisherModelsRequest,
+          ListPublisherModelsResponse,
+          PublisherModel,
+          ListPublisherModelsPage,
+          ListPublisherModelsFixedSizeCollection> {
+
+    public static ApiFuture<ListPublisherModelsPagedResponse> createAsync(
+        PageContext<ListPublisherModelsRequest, ListPublisherModelsResponse, PublisherModel>
+            context,
+        ApiFuture<ListPublisherModelsResponse> futureResponse) {
+      ApiFuture<ListPublisherModelsPage> futurePage =
+          ListPublisherModelsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListPublisherModelsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListPublisherModelsPagedResponse(ListPublisherModelsPage page) {
+      super(page, ListPublisherModelsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListPublisherModelsPage
+      extends AbstractPage<
+          ListPublisherModelsRequest,
+          ListPublisherModelsResponse,
+          PublisherModel,
+          ListPublisherModelsPage> {
+
+    private ListPublisherModelsPage(
+        PageContext<ListPublisherModelsRequest, ListPublisherModelsResponse, PublisherModel>
+            context,
+        ListPublisherModelsResponse response) {
+      super(context, response);
+    }
+
+    private static ListPublisherModelsPage createEmptyPage() {
+      return new ListPublisherModelsPage(null, null);
+    }
+
+    @Override
+    protected ListPublisherModelsPage createPage(
+        PageContext<ListPublisherModelsRequest, ListPublisherModelsResponse, PublisherModel>
+            context,
+        ListPublisherModelsResponse response) {
+      return new ListPublisherModelsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListPublisherModelsPage> createPageAsync(
+        PageContext<ListPublisherModelsRequest, ListPublisherModelsResponse, PublisherModel>
+            context,
+        ApiFuture<ListPublisherModelsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListPublisherModelsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListPublisherModelsRequest,
+          ListPublisherModelsResponse,
+          PublisherModel,
+          ListPublisherModelsPage,
+          ListPublisherModelsFixedSizeCollection> {
+
+    private ListPublisherModelsFixedSizeCollection(
+        List<ListPublisherModelsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListPublisherModelsFixedSizeCollection createEmptyCollection() {
+      return new ListPublisherModelsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListPublisherModelsFixedSizeCollection createCollection(
+        List<ListPublisherModelsPage> pages, int collectionSize) {
+      return new ListPublisherModelsFixedSizeCollection(pages, collectionSize);
+    }
   }
 
   public static class ListLocationsPagedResponse

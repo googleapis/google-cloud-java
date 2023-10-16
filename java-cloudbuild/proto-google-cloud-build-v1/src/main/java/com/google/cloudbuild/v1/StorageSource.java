@@ -22,7 +22,7 @@ package com.google.cloudbuild.v1;
  *
  *
  * <pre>
- * Location of the source in an archive file in Google Cloud Storage.
+ * Location of the source in an archive file in Cloud Storage.
  * </pre>
  *
  * Protobuf type {@code google.devtools.cloudbuild.v1.StorageSource}
@@ -71,7 +71,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Google Cloud Storage bucket containing the source (see
+   * Cloud Storage bucket containing the source (see
    * [Bucket Name
    * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
    * </pre>
@@ -96,7 +96,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Google Cloud Storage bucket containing the source (see
+   * Cloud Storage bucket containing the source (see
    * [Bucket Name
    * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
    * </pre>
@@ -126,10 +126,10 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Google Cloud Storage object containing the source.
+   * Cloud Storage object containing the source.
    *
-   * This object must be a gzipped archive file (`.tar.gz`) containing source to
-   * build.
+   * This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`)
+   * containing source to build.
    * </pre>
    *
    * <code>string object = 2;</code>
@@ -152,10 +152,10 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Google Cloud Storage object containing the source.
+   * Cloud Storage object containing the source.
    *
-   * This object must be a gzipped archive file (`.tar.gz`) containing source to
-   * build.
+   * This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`)
+   * containing source to build.
    * </pre>
    *
    * <code>string object = 2;</code>
@@ -181,7 +181,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Google Cloud Storage generation for the object. If the generation is
+   * Cloud Storage generation for the object. If the generation is
    * omitted, the latest generation will be used.
    * </pre>
    *
@@ -374,7 +374,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Location of the source in an archive file in Google Cloud Storage.
+   * Location of the source in an archive file in Cloud Storage.
    * </pre>
    *
    * Protobuf type {@code google.devtools.cloudbuild.v1.StorageSource}
@@ -585,7 +585,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage bucket containing the source (see
+     * Cloud Storage bucket containing the source (see
      * [Bucket Name
      * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
      * </pre>
@@ -609,7 +609,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage bucket containing the source (see
+     * Cloud Storage bucket containing the source (see
      * [Bucket Name
      * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
      * </pre>
@@ -633,7 +633,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage bucket containing the source (see
+     * Cloud Storage bucket containing the source (see
      * [Bucket Name
      * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
      * </pre>
@@ -656,7 +656,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage bucket containing the source (see
+     * Cloud Storage bucket containing the source (see
      * [Bucket Name
      * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
      * </pre>
@@ -675,7 +675,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage bucket containing the source (see
+     * Cloud Storage bucket containing the source (see
      * [Bucket Name
      * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
      * </pre>
@@ -701,10 +701,10 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage object containing the source.
+     * Cloud Storage object containing the source.
      *
-     * This object must be a gzipped archive file (`.tar.gz`) containing source to
-     * build.
+     * This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`)
+     * containing source to build.
      * </pre>
      *
      * <code>string object = 2;</code>
@@ -726,10 +726,10 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage object containing the source.
+     * Cloud Storage object containing the source.
      *
-     * This object must be a gzipped archive file (`.tar.gz`) containing source to
-     * build.
+     * This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`)
+     * containing source to build.
      * </pre>
      *
      * <code>string object = 2;</code>
@@ -751,10 +751,10 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage object containing the source.
+     * Cloud Storage object containing the source.
      *
-     * This object must be a gzipped archive file (`.tar.gz`) containing source to
-     * build.
+     * This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`)
+     * containing source to build.
      * </pre>
      *
      * <code>string object = 2;</code>
@@ -775,10 +775,10 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage object containing the source.
+     * Cloud Storage object containing the source.
      *
-     * This object must be a gzipped archive file (`.tar.gz`) containing source to
-     * build.
+     * This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`)
+     * containing source to build.
      * </pre>
      *
      * <code>string object = 2;</code>
@@ -795,10 +795,10 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage object containing the source.
+     * Cloud Storage object containing the source.
      *
-     * This object must be a gzipped archive file (`.tar.gz`) containing source to
-     * build.
+     * This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`)
+     * containing source to build.
      * </pre>
      *
      * <code>string object = 2;</code>
@@ -822,7 +822,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage generation for the object. If the generation is
+     * Cloud Storage generation for the object. If the generation is
      * omitted, the latest generation will be used.
      * </pre>
      *
@@ -838,7 +838,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage generation for the object. If the generation is
+     * Cloud Storage generation for the object. If the generation is
      * omitted, the latest generation will be used.
      * </pre>
      *
@@ -858,7 +858,7 @@ public final class StorageSource extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Google Cloud Storage generation for the object. If the generation is
+     * Cloud Storage generation for the object. If the generation is
      * omitted, the latest generation will be used.
      * </pre>
      *

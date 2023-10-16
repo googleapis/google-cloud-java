@@ -431,6 +431,51 @@ public interface ResponseMessageOrBuilder
    *
    *
    * <pre>
+   * Represents info card for knowledge answers, to be better rendered in
+   * Dialogflow Messenger.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard knowledge_info_card = 20;
+   * </code>
+   *
+   * @return Whether the knowledgeInfoCard field is set.
+   */
+  boolean hasKnowledgeInfoCard();
+  /**
+   *
+   *
+   * <pre>
+   * Represents info card for knowledge answers, to be better rendered in
+   * Dialogflow Messenger.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard knowledge_info_card = 20;
+   * </code>
+   *
+   * @return The knowledgeInfoCard.
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard getKnowledgeInfoCard();
+  /**
+   *
+   *
+   * <pre>
+   * Represents info card for knowledge answers, to be better rendered in
+   * Dialogflow Messenger.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCard knowledge_info_card = 20;
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3beta1.ResponseMessage.KnowledgeInfoCardOrBuilder
+      getKnowledgeInfoCardOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The channel which the response is associated with. Clients can specify the
    * channel via
    * [QueryParameters.channel][google.cloud.dialogflow.cx.v3beta1.QueryParameters.channel],

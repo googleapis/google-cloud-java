@@ -49,7 +49,7 @@ public final class ContextProto {
           + "pi/field_behavior.proto\032\031google/api/reso"
           + "urce.proto\032\034google/protobuf/struct.proto"
           + "\032\037google/protobuf/timestamp.proto\"\327\004\n\007Co"
-          + "ntext\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\022\024\n\014display_nam"
+          + "ntext\022\022\n\004name\030\001 \001(\tB\004\342A\001\005\022\024\n\014display_nam"
           + "e\030\002 \001(\t\022\014\n\004etag\030\010 \001(\t\022?\n\006labels\030\t \003(\0132/."
           + "google.cloud.aiplatform.v1.Context.Label"
           + "sEntry\0225\n\013create_time\030\n \001(\0132\032.google.pro"

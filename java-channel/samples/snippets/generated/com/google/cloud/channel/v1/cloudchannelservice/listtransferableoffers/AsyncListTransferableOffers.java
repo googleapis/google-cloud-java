@@ -42,6 +42,7 @@ public class AsyncListTransferableOffers {
               .setPageToken("pageToken873572522")
               .setSku("sku113949")
               .setLanguageCode("languageCode-2092349083")
+              .setBillingAccount("billingAccount708726578")
               .build();
       ApiFuture<TransferableOffer> future =
           cloudChannelServiceClient.listTransferableOffersPagedCallable().futureCall(request);

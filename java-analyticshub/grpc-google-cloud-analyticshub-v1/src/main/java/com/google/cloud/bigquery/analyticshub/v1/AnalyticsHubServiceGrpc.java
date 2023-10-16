@@ -37,7 +37,7 @@ public final class AnalyticsHubServiceGrpc {
 
   private AnalyticsHubServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -613,6 +613,354 @@ public final class AnalyticsHubServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest,
+          com.google.longrunning.Operation>
+      getSubscribeDataExchangeMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "SubscribeDataExchange",
+      requestType = com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest,
+          com.google.longrunning.Operation>
+      getSubscribeDataExchangeMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest,
+            com.google.longrunning.Operation>
+        getSubscribeDataExchangeMethod;
+    if ((getSubscribeDataExchangeMethod = AnalyticsHubServiceGrpc.getSubscribeDataExchangeMethod)
+        == null) {
+      synchronized (AnalyticsHubServiceGrpc.class) {
+        if ((getSubscribeDataExchangeMethod =
+                AnalyticsHubServiceGrpc.getSubscribeDataExchangeMethod)
+            == null) {
+          AnalyticsHubServiceGrpc.getSubscribeDataExchangeMethod =
+              getSubscribeDataExchangeMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "SubscribeDataExchange"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsHubServiceMethodDescriptorSupplier("SubscribeDataExchange"))
+                      .build();
+        }
+      }
+    }
+    return getSubscribeDataExchangeMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionRequest,
+          com.google.longrunning.Operation>
+      getRefreshSubscriptionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RefreshSubscription",
+      requestType = com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionRequest,
+          com.google.longrunning.Operation>
+      getRefreshSubscriptionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionRequest,
+            com.google.longrunning.Operation>
+        getRefreshSubscriptionMethod;
+    if ((getRefreshSubscriptionMethod = AnalyticsHubServiceGrpc.getRefreshSubscriptionMethod)
+        == null) {
+      synchronized (AnalyticsHubServiceGrpc.class) {
+        if ((getRefreshSubscriptionMethod = AnalyticsHubServiceGrpc.getRefreshSubscriptionMethod)
+            == null) {
+          AnalyticsHubServiceGrpc.getRefreshSubscriptionMethod =
+              getRefreshSubscriptionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RefreshSubscription"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsHubServiceMethodDescriptorSupplier("RefreshSubscription"))
+                      .build();
+        }
+      }
+    }
+    return getRefreshSubscriptionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.GetSubscriptionRequest,
+          com.google.cloud.bigquery.analyticshub.v1.Subscription>
+      getGetSubscriptionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSubscription",
+      requestType = com.google.cloud.bigquery.analyticshub.v1.GetSubscriptionRequest.class,
+      responseType = com.google.cloud.bigquery.analyticshub.v1.Subscription.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.GetSubscriptionRequest,
+          com.google.cloud.bigquery.analyticshub.v1.Subscription>
+      getGetSubscriptionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.analyticshub.v1.GetSubscriptionRequest,
+            com.google.cloud.bigquery.analyticshub.v1.Subscription>
+        getGetSubscriptionMethod;
+    if ((getGetSubscriptionMethod = AnalyticsHubServiceGrpc.getGetSubscriptionMethod) == null) {
+      synchronized (AnalyticsHubServiceGrpc.class) {
+        if ((getGetSubscriptionMethod = AnalyticsHubServiceGrpc.getGetSubscriptionMethod) == null) {
+          AnalyticsHubServiceGrpc.getGetSubscriptionMethod =
+              getGetSubscriptionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.analyticshub.v1.GetSubscriptionRequest,
+                          com.google.cloud.bigquery.analyticshub.v1.Subscription>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSubscription"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1.GetSubscriptionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1.Subscription
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsHubServiceMethodDescriptorSupplier("GetSubscription"))
+                      .build();
+        }
+      }
+    }
+    return getGetSubscriptionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsRequest,
+          com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsResponse>
+      getListSubscriptionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSubscriptions",
+      requestType = com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsRequest.class,
+      responseType = com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsRequest,
+          com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsResponse>
+      getListSubscriptionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsRequest,
+            com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsResponse>
+        getListSubscriptionsMethod;
+    if ((getListSubscriptionsMethod = AnalyticsHubServiceGrpc.getListSubscriptionsMethod) == null) {
+      synchronized (AnalyticsHubServiceGrpc.class) {
+        if ((getListSubscriptionsMethod = AnalyticsHubServiceGrpc.getListSubscriptionsMethod)
+            == null) {
+          AnalyticsHubServiceGrpc.getListSubscriptionsMethod =
+              getListSubscriptionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsRequest,
+                          com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListSubscriptions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsHubServiceMethodDescriptorSupplier("ListSubscriptions"))
+                      .build();
+        }
+      }
+    }
+    return getListSubscriptionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsRequest,
+          com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsResponse>
+      getListSharedResourceSubscriptionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSharedResourceSubscriptions",
+      requestType =
+          com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsRequest.class,
+      responseType =
+          com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsRequest,
+          com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsResponse>
+      getListSharedResourceSubscriptionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsRequest,
+            com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsResponse>
+        getListSharedResourceSubscriptionsMethod;
+    if ((getListSharedResourceSubscriptionsMethod =
+            AnalyticsHubServiceGrpc.getListSharedResourceSubscriptionsMethod)
+        == null) {
+      synchronized (AnalyticsHubServiceGrpc.class) {
+        if ((getListSharedResourceSubscriptionsMethod =
+                AnalyticsHubServiceGrpc.getListSharedResourceSubscriptionsMethod)
+            == null) {
+          AnalyticsHubServiceGrpc.getListSharedResourceSubscriptionsMethod =
+              getListSharedResourceSubscriptionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.analyticshub.v1
+                              .ListSharedResourceSubscriptionsRequest,
+                          com.google.cloud.bigquery.analyticshub.v1
+                              .ListSharedResourceSubscriptionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListSharedResourceSubscriptions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1
+                                  .ListSharedResourceSubscriptionsRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1
+                                  .ListSharedResourceSubscriptionsResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsHubServiceMethodDescriptorSupplier(
+                              "ListSharedResourceSubscriptions"))
+                      .build();
+        }
+      }
+    }
+    return getListSharedResourceSubscriptionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionRequest,
+          com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse>
+      getRevokeSubscriptionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RevokeSubscription",
+      requestType = com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionRequest.class,
+      responseType = com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionRequest,
+          com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse>
+      getRevokeSubscriptionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionRequest,
+            com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse>
+        getRevokeSubscriptionMethod;
+    if ((getRevokeSubscriptionMethod = AnalyticsHubServiceGrpc.getRevokeSubscriptionMethod)
+        == null) {
+      synchronized (AnalyticsHubServiceGrpc.class) {
+        if ((getRevokeSubscriptionMethod = AnalyticsHubServiceGrpc.getRevokeSubscriptionMethod)
+            == null) {
+          AnalyticsHubServiceGrpc.getRevokeSubscriptionMethod =
+              getRevokeSubscriptionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionRequest,
+                          com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RevokeSubscription"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsHubServiceMethodDescriptorSupplier("RevokeSubscription"))
+                      .build();
+        }
+      }
+    }
+    return getRevokeSubscriptionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.DeleteSubscriptionRequest,
+          com.google.longrunning.Operation>
+      getDeleteSubscriptionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSubscription",
+      requestType = com.google.cloud.bigquery.analyticshub.v1.DeleteSubscriptionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.bigquery.analyticshub.v1.DeleteSubscriptionRequest,
+          com.google.longrunning.Operation>
+      getDeleteSubscriptionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.bigquery.analyticshub.v1.DeleteSubscriptionRequest,
+            com.google.longrunning.Operation>
+        getDeleteSubscriptionMethod;
+    if ((getDeleteSubscriptionMethod = AnalyticsHubServiceGrpc.getDeleteSubscriptionMethod)
+        == null) {
+      synchronized (AnalyticsHubServiceGrpc.class) {
+        if ((getDeleteSubscriptionMethod = AnalyticsHubServiceGrpc.getDeleteSubscriptionMethod)
+            == null) {
+          AnalyticsHubServiceGrpc.getDeleteSubscriptionMethod =
+              getDeleteSubscriptionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.bigquery.analyticshub.v1.DeleteSubscriptionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteSubscription"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.bigquery.analyticshub.v1.DeleteSubscriptionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsHubServiceMethodDescriptorSupplier("DeleteSubscription"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteSubscriptionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>
       getGetIamPolicyMethod;
 
@@ -979,6 +1327,114 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
+     * Creates a Subscription to a Data Exchange. This is a long-running operation
+     * as it will create one or more linked datasets.
+     * </pre>
+     */
+    default void subscribeDataExchange(
+        com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getSubscribeDataExchangeMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Refreshes a Subscription to a Data Exchange. A Data Exchange can become
+     * stale when a publisher adds or removes data. This is a long-running
+     * operation as it may create many linked datasets.
+     * </pre>
+     */
+    default void refreshSubscription(
+        com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRefreshSubscriptionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a Subscription.
+     * </pre>
+     */
+    default void getSubscription(
+        com.google.cloud.bigquery.analyticshub.v1.GetSubscriptionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.analyticshub.v1.Subscription>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetSubscriptionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all subscriptions in a given project and location.
+     * </pre>
+     */
+    default void listSubscriptions(
+        com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSubscriptionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all subscriptions on a given Data Exchange or Listing.
+     * </pre>
+     */
+    default void listSharedResourceSubscriptions(
+        com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSharedResourceSubscriptionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Revokes a given subscription.
+     * </pre>
+     */
+    default void revokeSubscription(
+        com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRevokeSubscriptionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a subscription.
+     * </pre>
+     */
+    default void deleteSubscription(
+        com.google.cloud.bigquery.analyticshub.v1.DeleteSubscriptionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteSubscriptionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the IAM policy.
      * </pre>
      */
@@ -1276,6 +1732,128 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
+     * Creates a Subscription to a Data Exchange. This is a long-running operation
+     * as it will create one or more linked datasets.
+     * </pre>
+     */
+    public void subscribeDataExchange(
+        com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getSubscribeDataExchangeMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Refreshes a Subscription to a Data Exchange. A Data Exchange can become
+     * stale when a publisher adds or removes data. This is a long-running
+     * operation as it may create many linked datasets.
+     * </pre>
+     */
+    public void refreshSubscription(
+        com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRefreshSubscriptionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a Subscription.
+     * </pre>
+     */
+    public void getSubscription(
+        com.google.cloud.bigquery.analyticshub.v1.GetSubscriptionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.bigquery.analyticshub.v1.Subscription>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSubscriptionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all subscriptions in a given project and location.
+     * </pre>
+     */
+    public void listSubscriptions(
+        com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSubscriptionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all subscriptions on a given Data Exchange or Listing.
+     * </pre>
+     */
+    public void listSharedResourceSubscriptions(
+        com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSharedResourceSubscriptionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Revokes a given subscription.
+     * </pre>
+     */
+    public void revokeSubscription(
+        com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRevokeSubscriptionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a subscription.
+     * </pre>
+     */
+    public void deleteSubscription(
+        com.google.cloud.bigquery.analyticshub.v1.DeleteSubscriptionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteSubscriptionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the IAM policy.
      * </pre>
      */
@@ -1507,6 +2085,102 @@ public final class AnalyticsHubServiceGrpc {
         com.google.cloud.bigquery.analyticshub.v1.SubscribeListingRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSubscribeListingMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a Subscription to a Data Exchange. This is a long-running operation
+     * as it will create one or more linked datasets.
+     * </pre>
+     */
+    public com.google.longrunning.Operation subscribeDataExchange(
+        com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getSubscribeDataExchangeMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Refreshes a Subscription to a Data Exchange. A Data Exchange can become
+     * stale when a publisher adds or removes data. This is a long-running
+     * operation as it may create many linked datasets.
+     * </pre>
+     */
+    public com.google.longrunning.Operation refreshSubscription(
+        com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRefreshSubscriptionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a Subscription.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.Subscription getSubscription(
+        com.google.cloud.bigquery.analyticshub.v1.GetSubscriptionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSubscriptionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all subscriptions in a given project and location.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsResponse listSubscriptions(
+        com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSubscriptionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all subscriptions on a given Data Exchange or Listing.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsResponse
+        listSharedResourceSubscriptions(
+            com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSharedResourceSubscriptionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Revokes a given subscription.
+     * </pre>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse revokeSubscription(
+        com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRevokeSubscriptionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a subscription.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSubscription(
+        com.google.cloud.bigquery.analyticshub.v1.DeleteSubscriptionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSubscriptionMethod(), getCallOptions(), request);
     }
 
     /**
@@ -1753,6 +2427,112 @@ public final class AnalyticsHubServiceGrpc {
      *
      *
      * <pre>
+     * Creates a Subscription to a Data Exchange. This is a long-running operation
+     * as it will create one or more linked datasets.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        subscribeDataExchange(
+            com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getSubscribeDataExchangeMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Refreshes a Subscription to a Data Exchange. A Data Exchange can become
+     * stale when a publisher adds or removes data. This is a long-running
+     * operation as it may create many linked datasets.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        refreshSubscription(
+            com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRefreshSubscriptionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a Subscription.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.bigquery.analyticshub.v1.Subscription>
+        getSubscription(com.google.cloud.bigquery.analyticshub.v1.GetSubscriptionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSubscriptionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all subscriptions in a given project and location.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsResponse>
+        listSubscriptions(
+            com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSubscriptionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists all subscriptions on a given Data Exchange or Listing.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsResponse>
+        listSharedResourceSubscriptions(
+            com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSharedResourceSubscriptionsMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Revokes a given subscription.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse>
+        revokeSubscription(
+            com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRevokeSubscriptionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a subscription.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteSubscription(
+            com.google.cloud.bigquery.analyticshub.v1.DeleteSubscriptionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteSubscriptionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the IAM policy.
      * </pre>
      */
@@ -1802,9 +2582,16 @@ public final class AnalyticsHubServiceGrpc {
   private static final int METHODID_UPDATE_LISTING = 9;
   private static final int METHODID_DELETE_LISTING = 10;
   private static final int METHODID_SUBSCRIBE_LISTING = 11;
-  private static final int METHODID_GET_IAM_POLICY = 12;
-  private static final int METHODID_SET_IAM_POLICY = 13;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 14;
+  private static final int METHODID_SUBSCRIBE_DATA_EXCHANGE = 12;
+  private static final int METHODID_REFRESH_SUBSCRIPTION = 13;
+  private static final int METHODID_GET_SUBSCRIPTION = 14;
+  private static final int METHODID_LIST_SUBSCRIPTIONS = 15;
+  private static final int METHODID_LIST_SHARED_RESOURCE_SUBSCRIPTIONS = 16;
+  private static final int METHODID_REVOKE_SUBSCRIPTION = 17;
+  private static final int METHODID_DELETE_SUBSCRIPTION = 18;
+  private static final int METHODID_GET_IAM_POLICY = 19;
+  private static final int METHODID_SET_IAM_POLICY = 20;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 21;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1896,6 +2683,50 @@ public final class AnalyticsHubServiceGrpc {
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.bigquery.analyticshub.v1.SubscribeListingResponse>)
                   responseObserver);
+          break;
+        case METHODID_SUBSCRIBE_DATA_EXCHANGE:
+          serviceImpl.subscribeDataExchange(
+              (com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_REFRESH_SUBSCRIPTION:
+          serviceImpl.refreshSubscription(
+              (com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_SUBSCRIPTION:
+          serviceImpl.getSubscription(
+              (com.google.cloud.bigquery.analyticshub.v1.GetSubscriptionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.bigquery.analyticshub.v1.Subscription>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_SUBSCRIPTIONS:
+          serviceImpl.listSubscriptions(
+              (com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_SHARED_RESOURCE_SUBSCRIPTIONS:
+          serviceImpl.listSharedResourceSubscriptions(
+              (com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.bigquery.analyticshub.v1
+                          .ListSharedResourceSubscriptionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_REVOKE_SUBSCRIPTION:
+          serviceImpl.revokeSubscription(
+              (com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_SUBSCRIPTION:
+          serviceImpl.deleteSubscription(
+              (com.google.cloud.bigquery.analyticshub.v1.DeleteSubscriptionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_GET_IAM_POLICY:
           serviceImpl.getIamPolicy(
@@ -2014,6 +2845,54 @@ public final class AnalyticsHubServiceGrpc {
                     com.google.cloud.bigquery.analyticshub.v1.SubscribeListingResponse>(
                     service, METHODID_SUBSCRIBE_LISTING)))
         .addMethod(
+            getSubscribeDataExchangeMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest,
+                    com.google.longrunning.Operation>(service, METHODID_SUBSCRIBE_DATA_EXCHANGE)))
+        .addMethod(
+            getRefreshSubscriptionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_REFRESH_SUBSCRIPTION)))
+        .addMethod(
+            getGetSubscriptionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.analyticshub.v1.GetSubscriptionRequest,
+                    com.google.cloud.bigquery.analyticshub.v1.Subscription>(
+                    service, METHODID_GET_SUBSCRIPTION)))
+        .addMethod(
+            getListSubscriptionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsRequest,
+                    com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsResponse>(
+                    service, METHODID_LIST_SUBSCRIPTIONS)))
+        .addMethod(
+            getListSharedResourceSubscriptionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.analyticshub.v1
+                        .ListSharedResourceSubscriptionsRequest,
+                    com.google.cloud.bigquery.analyticshub.v1
+                        .ListSharedResourceSubscriptionsResponse>(
+                    service, METHODID_LIST_SHARED_RESOURCE_SUBSCRIPTIONS)))
+        .addMethod(
+            getRevokeSubscriptionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionRequest,
+                    com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse>(
+                    service, METHODID_REVOKE_SUBSCRIPTION)))
+        .addMethod(
+            getDeleteSubscriptionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.bigquery.analyticshub.v1.DeleteSubscriptionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_SUBSCRIPTION)))
+        .addMethod(
             getGetIamPolicyMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<com.google.iam.v1.GetIamPolicyRequest, com.google.iam.v1.Policy>(
@@ -2057,9 +2936,9 @@ public final class AnalyticsHubServiceGrpc {
   private static final class AnalyticsHubServiceMethodDescriptorSupplier
       extends AnalyticsHubServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    AnalyticsHubServiceMethodDescriptorSupplier(String methodName) {
+    AnalyticsHubServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -2093,6 +2972,13 @@ public final class AnalyticsHubServiceGrpc {
                       .addMethod(getUpdateListingMethod())
                       .addMethod(getDeleteListingMethod())
                       .addMethod(getSubscribeListingMethod())
+                      .addMethod(getSubscribeDataExchangeMethod())
+                      .addMethod(getRefreshSubscriptionMethod())
+                      .addMethod(getGetSubscriptionMethod())
+                      .addMethod(getListSubscriptionsMethod())
+                      .addMethod(getListSharedResourceSubscriptionsMethod())
+                      .addMethod(getRevokeSubscriptionMethod())
+                      .addMethod(getDeleteSubscriptionMethod())
                       .addMethod(getGetIamPolicyMethod())
                       .addMethod(getSetIamPolicyMethod())
                       .addMethod(getTestIamPermissionsMethod())

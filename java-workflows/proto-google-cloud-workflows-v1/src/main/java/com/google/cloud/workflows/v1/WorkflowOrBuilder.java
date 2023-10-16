@@ -115,11 +115,12 @@ public interface WorkflowOrBuilder
    * following properties of a workflow:
    *
    * - [Service account][google.cloud.workflows.v1.Workflow.service_account]
-   * - [Workflow code to be executed][google.cloud.workflows.v1.Workflow.source_contents]
+   * - [Workflow code to be
+   * executed][google.cloud.workflows.v1.Workflow.source_contents]
    *
-   * The format is "000001-a4d", where the first 6 characters define
+   * The format is "000001-a4d", where the first six characters define
    * the zero-padded revision ordinal number. They are followed by a hyphen and
-   * 3 hexadecimal random characters.
+   * three hexadecimal random characters.
    * </pre>
    *
    * <code>string revision_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -136,11 +137,12 @@ public interface WorkflowOrBuilder
    * following properties of a workflow:
    *
    * - [Service account][google.cloud.workflows.v1.Workflow.service_account]
-   * - [Workflow code to be executed][google.cloud.workflows.v1.Workflow.source_contents]
+   * - [Workflow code to be
+   * executed][google.cloud.workflows.v1.Workflow.source_contents]
    *
-   * The format is "000001-a4d", where the first 6 characters define
+   * The format is "000001-a4d", where the first six characters define
    * the zero-padded revision ordinal number. They are followed by a hyphen and
-   * 3 hexadecimal random characters.
+   * three hexadecimal random characters.
    * </pre>
    *
    * <code>string revision_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -153,7 +155,7 @@ public interface WorkflowOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp of when the workflow was created.
+   * Output only. The timestamp for when the workflow was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -166,7 +168,7 @@ public interface WorkflowOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp of when the workflow was created.
+   * Output only. The timestamp for when the workflow was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -179,7 +181,7 @@ public interface WorkflowOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp of when the workflow was created.
+   * Output only. The timestamp for when the workflow was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -191,7 +193,7 @@ public interface WorkflowOrBuilder
    *
    *
    * <pre>
-   * Output only. The last update timestamp of the workflow.
+   * Output only. The timestamp for when the workflow was last updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -204,7 +206,7 @@ public interface WorkflowOrBuilder
    *
    *
    * <pre>
-   * Output only. The last update timestamp of the workflow.
+   * Output only. The timestamp for when the workflow was last updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -217,7 +219,7 @@ public interface WorkflowOrBuilder
    *
    *
    * <pre>
-   * Output only. The last update timestamp of the workflow.
+   * Output only. The timestamp for when the workflow was last updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -229,8 +231,8 @@ public interface WorkflowOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp that the latest revision of the workflow
-   * was created.
+   * Output only. The timestamp for the latest revision of the workflow's
+   * creation.
    * </pre>
    *
    * <code>
@@ -244,8 +246,8 @@ public interface WorkflowOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp that the latest revision of the workflow
-   * was created.
+   * Output only. The timestamp for the latest revision of the workflow's
+   * creation.
    * </pre>
    *
    * <code>
@@ -259,8 +261,8 @@ public interface WorkflowOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp that the latest revision of the workflow
-   * was created.
+   * Output only. The timestamp for the latest revision of the workflow's
+   * creation.
    * </pre>
    *
    * <code>
@@ -276,7 +278,7 @@ public interface WorkflowOrBuilder
    * Labels associated with this workflow.
    * Labels can contain at most 64 entries. Keys and values can be no longer
    * than 63 characters and can only contain lowercase letters, numeric
-   * characters, underscores and dashes. Label keys must start with a letter.
+   * characters, underscores, and dashes. Label keys must start with a letter.
    * International characters are allowed.
    * </pre>
    *
@@ -290,7 +292,7 @@ public interface WorkflowOrBuilder
    * Labels associated with this workflow.
    * Labels can contain at most 64 entries. Keys and values can be no longer
    * than 63 characters and can only contain lowercase letters, numeric
-   * characters, underscores and dashes. Label keys must start with a letter.
+   * characters, underscores, and dashes. Label keys must start with a letter.
    * International characters are allowed.
    * </pre>
    *
@@ -307,7 +309,7 @@ public interface WorkflowOrBuilder
    * Labels associated with this workflow.
    * Labels can contain at most 64 entries. Keys and values can be no longer
    * than 63 characters and can only contain lowercase letters, numeric
-   * characters, underscores and dashes. Label keys must start with a letter.
+   * characters, underscores, and dashes. Label keys must start with a letter.
    * International characters are allowed.
    * </pre>
    *
@@ -321,7 +323,7 @@ public interface WorkflowOrBuilder
    * Labels associated with this workflow.
    * Labels can contain at most 64 entries. Keys and values can be no longer
    * than 63 characters and can only contain lowercase letters, numeric
-   * characters, underscores and dashes. Label keys must start with a letter.
+   * characters, underscores, and dashes. Label keys must start with a letter.
    * International characters are allowed.
    * </pre>
    *
@@ -339,7 +341,7 @@ public interface WorkflowOrBuilder
    * Labels associated with this workflow.
    * Labels can contain at most 64 entries. Keys and values can be no longer
    * than 63 characters and can only contain lowercase letters, numeric
-   * characters, underscores and dashes. Label keys must start with a letter.
+   * characters, underscores, and dashes. Label keys must start with a letter.
    * International characters are allowed.
    * </pre>
    *
@@ -430,6 +432,215 @@ public interface WorkflowOrBuilder
    * @return The bytes for sourceContents.
    */
   com.google.protobuf.ByteString getSourceContentsBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of a KMS crypto key used to encrypt or decrypt
+   * the data associated with the workflow.
+   *
+   * Format:
+   * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}
+   *
+   * Using `-` as a wildcard for the `{project}` or not providing one at all
+   * will infer the project from the account.
+   *
+   * If not provided, data associated with the workflow will not be
+   * CMEK-encrypted.
+   * </pre>
+   *
+   * <code>
+   * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The cryptoKeyName.
+   */
+  java.lang.String getCryptoKeyName();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of a KMS crypto key used to encrypt or decrypt
+   * the data associated with the workflow.
+   *
+   * Format:
+   * projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}
+   *
+   * Using `-` as a wildcard for the `{project}` or not providing one at all
+   * will infer the project from the account.
+   *
+   * If not provided, data associated with the workflow will not be
+   * CMEK-encrypted.
+   * </pre>
+   *
+   * <code>
+   * string crypto_key_name = 11 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The bytes for cryptoKeyName.
+   */
+  com.google.protobuf.ByteString getCryptoKeyNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Error regarding the state of the workflow. For example, this
+   * field will have error details if the execution data is unavailable due to
+   * revoked KMS key permissions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workflows.v1.Workflow.StateError state_error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the stateError field is set.
+   */
+  boolean hasStateError();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Error regarding the state of the workflow. For example, this
+   * field will have error details if the execution data is unavailable due to
+   * revoked KMS key permissions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workflows.v1.Workflow.StateError state_error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The stateError.
+   */
+  com.google.cloud.workflows.v1.Workflow.StateError getStateError();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Error regarding the state of the workflow. For example, this
+   * field will have error details if the execution data is unavailable due to
+   * revoked KMS key permissions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workflows.v1.Workflow.StateError state_error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.workflows.v1.Workflow.StateErrorOrBuilder getStateErrorOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the level of platform logging to apply to calls and
+   * call responses during executions of this workflow. If both the workflow and
+   * the execution specify a logging level, the execution level takes
+   * precedence.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workflows.v1.Workflow.CallLogLevel call_log_level = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for callLogLevel.
+   */
+  int getCallLogLevelValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Describes the level of platform logging to apply to calls and
+   * call responses during executions of this workflow. If both the workflow and
+   * the execution specify a logging level, the execution level takes
+   * precedence.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.workflows.v1.Workflow.CallLogLevel call_log_level = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The callLogLevel.
+   */
+  com.google.cloud.workflows.v1.Workflow.CallLogLevel getCallLogLevel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined environment variables associated with this workflow
+   * revision. This map has a maximum length of 20. Each string can take up to
+   * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
+   * “WORKFLOWS".
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getUserEnvVarsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined environment variables associated with this workflow
+   * revision. This map has a maximum length of 20. Each string can take up to
+   * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
+   * “WORKFLOWS".
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  boolean containsUserEnvVars(java.lang.String key);
+  /** Use {@link #getUserEnvVarsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getUserEnvVars();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined environment variables associated with this workflow
+   * revision. This map has a maximum length of 20. Each string can take up to
+   * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
+   * “WORKFLOWS".
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getUserEnvVarsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined environment variables associated with this workflow
+   * revision. This map has a maximum length of 20. Each string can take up to
+   * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
+   * “WORKFLOWS".
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getUserEnvVarsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined environment variables associated with this workflow
+   * revision. This map has a maximum length of 20. Each string can take up to
+   * 40KiB. Keys cannot be empty strings and cannot start with “GOOGLE” or
+   * “WORKFLOWS".
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; user_env_vars = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.lang.String getUserEnvVarsOrThrow(java.lang.String key);
 
   com.google.cloud.workflows.v1.Workflow.SourceCodeCase getSourceCodeCase();
 }

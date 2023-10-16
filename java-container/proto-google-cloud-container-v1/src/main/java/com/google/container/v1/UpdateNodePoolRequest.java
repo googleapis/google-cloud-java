@@ -47,6 +47,8 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     name_ = "";
     locations_ = com.google.protobuf.LazyStringArrayList.emptyList();
     etag_ = "";
+    machineType_ = "";
+    diskType_ = "";
   }
 
   @java.lang.Override
@@ -86,7 +88,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2537
+   *     google/container/v1/cluster_service.proto;l=2606
    * @return The projectId.
    */
   @java.lang.Override
@@ -114,7 +116,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2537
+   *     google/container/v1/cluster_service.proto;l=2606
    * @return The bytes for projectId.
    */
   @java.lang.Override
@@ -148,7 +150,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2543
+   *     google/container/v1/cluster_service.proto;l=2612
    * @return The zone.
    */
   @java.lang.Override
@@ -177,7 +179,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2543
+   *     google/container/v1/cluster_service.proto;l=2612
    * @return The bytes for zone.
    */
   @java.lang.Override
@@ -209,7 +211,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2547
+   *     google/container/v1/cluster_service.proto;l=2616
    * @return The clusterId.
    */
   @java.lang.Override
@@ -236,7 +238,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2547
+   *     google/container/v1/cluster_service.proto;l=2616
    * @return The bytes for clusterId.
    */
   @java.lang.Override
@@ -268,7 +270,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2551
+   *     google/container/v1/cluster_service.proto;l=2620
    * @return The nodePoolId.
    */
   @java.lang.Override
@@ -295,7 +297,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2551
+   *     google/container/v1/cluster_service.proto;l=2620
    * @return The bytes for nodePoolId.
    */
   @java.lang.Override
@@ -1387,6 +1389,141 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         : windowsNodeConfig_;
   }
 
+  public static final int MACHINE_TYPE_FIELD_NUMBER = 36;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object machineType_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired [Google Compute Engine machine
+   * type](https://cloud.google.com/compute/docs/machine-types) for nodes in the
+   * node pool. Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified machine type.
+   * </pre>
+   *
+   * <code>string machine_type = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The machineType.
+   */
+  @java.lang.Override
+  public java.lang.String getMachineType() {
+    java.lang.Object ref = machineType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      machineType_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired [Google Compute Engine machine
+   * type](https://cloud.google.com/compute/docs/machine-types) for nodes in the
+   * node pool. Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified machine type.
+   * </pre>
+   *
+   * <code>string machine_type = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for machineType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getMachineTypeBytes() {
+    java.lang.Object ref = machineType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      machineType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DISK_TYPE_FIELD_NUMBER = 37;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object diskType_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired disk type (e.g. 'pd-standard', 'pd-ssd' or
+   * 'pd-balanced') for nodes in the node pool.
+   * Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified disk type.
+   * </pre>
+   *
+   * <code>string disk_type = 37 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The diskType.
+   */
+  @java.lang.Override
+  public java.lang.String getDiskType() {
+    java.lang.Object ref = diskType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      diskType_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired disk type (e.g. 'pd-standard', 'pd-ssd' or
+   * 'pd-balanced') for nodes in the node pool.
+   * Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified disk type.
+   * </pre>
+   *
+   * <code>string disk_type = 37 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for diskType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDiskTypeBytes() {
+    java.lang.Object ref = diskType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      diskType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DISK_SIZE_GB_FIELD_NUMBER = 38;
+  private long diskSizeGb_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired disk size for nodes in the node pool specified in GB.
+   * The smallest allowed disk size is 10GB.
+   * Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified disk size.
+   * </pre>
+   *
+   * <code>int64 disk_size_gb = 38 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The diskSizeGb.
+   */
+  @java.lang.Override
+  public long getDiskSizeGb() {
+    return diskSizeGb_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1472,6 +1609,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     }
     if (windowsNodeConfig_ != null) {
       output.writeMessage(34, getWindowsNodeConfig());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 36, machineType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(diskType_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 37, diskType_);
+    }
+    if (diskSizeGb_ != 0L) {
+      output.writeInt64(38, diskSizeGb_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1560,6 +1706,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (windowsNodeConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(34, getWindowsNodeConfig());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(36, machineType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(diskType_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(37, diskType_);
+    }
+    if (diskSizeGb_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(38, diskSizeGb_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1645,6 +1800,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
     if (hasWindowsNodeConfig()) {
       if (!getWindowsNodeConfig().equals(other.getWindowsNodeConfig())) return false;
     }
+    if (!getMachineType().equals(other.getMachineType())) return false;
+    if (!getDiskType().equals(other.getDiskType())) return false;
+    if (getDiskSizeGb() != other.getDiskSizeGb()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1736,6 +1894,12 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + WINDOWS_NODE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getWindowsNodeConfig().hashCode();
     }
+    hash = (37 * hash) + MACHINE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getMachineType().hashCode();
+    hash = (37 * hash) + DISK_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getDiskType().hashCode();
+    hash = (37 * hash) + DISK_SIZE_GB_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getDiskSizeGb());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1959,6 +2123,9 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         windowsNodeConfigBuilder_.dispose();
         windowsNodeConfigBuilder_ = null;
       }
+      machineType_ = "";
+      diskType_ = "";
+      diskSizeGb_ = 0L;
       return this;
     }
 
@@ -2084,6 +2251,15 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
             windowsNodeConfigBuilder_ == null
                 ? windowsNodeConfig_
                 : windowsNodeConfigBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x01000000) != 0)) {
+        result.machineType_ = machineType_;
+      }
+      if (((from_bitField0_ & 0x02000000) != 0)) {
+        result.diskType_ = diskType_;
+      }
+      if (((from_bitField0_ & 0x04000000) != 0)) {
+        result.diskSizeGb_ = diskSizeGb_;
       }
     }
 
@@ -2226,6 +2402,19 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
       }
       if (other.hasWindowsNodeConfig()) {
         mergeWindowsNodeConfig(other.getWindowsNodeConfig());
+      }
+      if (!other.getMachineType().isEmpty()) {
+        machineType_ = other.machineType_;
+        bitField0_ |= 0x01000000;
+        onChanged();
+      }
+      if (!other.getDiskType().isEmpty()) {
+        diskType_ = other.diskType_;
+        bitField0_ |= 0x02000000;
+        onChanged();
+      }
+      if (other.getDiskSizeGb() != 0L) {
+        setDiskSizeGb(other.getDiskSizeGb());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2402,6 +2591,24 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00800000;
                 break;
               } // case 274
+            case 290:
+              {
+                machineType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x01000000;
+                break;
+              } // case 290
+            case 298:
+              {
+                diskType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 298
+            case 304:
+              {
+                diskSizeGb_ = input.readInt64();
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 304
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2434,7 +2641,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2537
+     *     google/container/v1/cluster_service.proto;l=2606
      * @return The projectId.
      */
     @java.lang.Deprecated
@@ -2461,7 +2668,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2537
+     *     google/container/v1/cluster_service.proto;l=2606
      * @return The bytes for projectId.
      */
     @java.lang.Deprecated
@@ -2488,7 +2695,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2537
+     *     google/container/v1/cluster_service.proto;l=2606
      * @param value The projectId to set.
      * @return This builder for chaining.
      */
@@ -2514,7 +2721,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2537
+     *     google/container/v1/cluster_service.proto;l=2606
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2536,7 +2743,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string project_id = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2537
+     *     google/container/v1/cluster_service.proto;l=2606
      * @param value The bytes for projectId to set.
      * @return This builder for chaining.
      */
@@ -2566,7 +2773,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2543
+     *     google/container/v1/cluster_service.proto;l=2612
      * @return The zone.
      */
     @java.lang.Deprecated
@@ -2594,7 +2801,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2543
+     *     google/container/v1/cluster_service.proto;l=2612
      * @return The bytes for zone.
      */
     @java.lang.Deprecated
@@ -2622,7 +2829,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2543
+     *     google/container/v1/cluster_service.proto;l=2612
      * @param value The zone to set.
      * @return This builder for chaining.
      */
@@ -2649,7 +2856,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2543
+     *     google/container/v1/cluster_service.proto;l=2612
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2672,7 +2879,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string zone = 2 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2543
+     *     google/container/v1/cluster_service.proto;l=2612
      * @param value The bytes for zone to set.
      * @return This builder for chaining.
      */
@@ -2700,7 +2907,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2547
+     *     google/container/v1/cluster_service.proto;l=2616
      * @return The clusterId.
      */
     @java.lang.Deprecated
@@ -2726,7 +2933,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2547
+     *     google/container/v1/cluster_service.proto;l=2616
      * @return The bytes for clusterId.
      */
     @java.lang.Deprecated
@@ -2752,7 +2959,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2547
+     *     google/container/v1/cluster_service.proto;l=2616
      * @param value The clusterId to set.
      * @return This builder for chaining.
      */
@@ -2777,7 +2984,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2547
+     *     google/container/v1/cluster_service.proto;l=2616
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2798,7 +3005,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string cluster_id = 3 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2547
+     *     google/container/v1/cluster_service.proto;l=2616
      * @param value The bytes for clusterId to set.
      * @return This builder for chaining.
      */
@@ -2826,7 +3033,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2551
+     *     google/container/v1/cluster_service.proto;l=2620
      * @return The nodePoolId.
      */
     @java.lang.Deprecated
@@ -2852,7 +3059,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2551
+     *     google/container/v1/cluster_service.proto;l=2620
      * @return The bytes for nodePoolId.
      */
     @java.lang.Deprecated
@@ -2878,7 +3085,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2551
+     *     google/container/v1/cluster_service.proto;l=2620
      * @param value The nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -2903,7 +3110,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2551
+     *     google/container/v1/cluster_service.proto;l=2620
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2924,7 +3131,7 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
      * <code>string node_pool_id = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-     *     google/container/v1/cluster_service.proto;l=2551
+     *     google/container/v1/cluster_service.proto;l=2620
      * @param value The bytes for nodePoolId to set.
      * @return This builder for chaining.
      */
@@ -6471,6 +6678,310 @@ public final class UpdateNodePoolRequest extends com.google.protobuf.GeneratedMe
         windowsNodeConfig_ = null;
       }
       return windowsNodeConfigBuilder_;
+    }
+
+    private java.lang.Object machineType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired [Google Compute Engine machine
+     * type](https://cloud.google.com/compute/docs/machine-types) for nodes in the
+     * node pool. Initiates an upgrade operation that migrates the nodes in the
+     * node pool to the specified machine type.
+     * </pre>
+     *
+     * <code>string machine_type = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The machineType.
+     */
+    public java.lang.String getMachineType() {
+      java.lang.Object ref = machineType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        machineType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired [Google Compute Engine machine
+     * type](https://cloud.google.com/compute/docs/machine-types) for nodes in the
+     * node pool. Initiates an upgrade operation that migrates the nodes in the
+     * node pool to the specified machine type.
+     * </pre>
+     *
+     * <code>string machine_type = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for machineType.
+     */
+    public com.google.protobuf.ByteString getMachineTypeBytes() {
+      java.lang.Object ref = machineType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        machineType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired [Google Compute Engine machine
+     * type](https://cloud.google.com/compute/docs/machine-types) for nodes in the
+     * node pool. Initiates an upgrade operation that migrates the nodes in the
+     * node pool to the specified machine type.
+     * </pre>
+     *
+     * <code>string machine_type = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The machineType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMachineType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      machineType_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired [Google Compute Engine machine
+     * type](https://cloud.google.com/compute/docs/machine-types) for nodes in the
+     * node pool. Initiates an upgrade operation that migrates the nodes in the
+     * node pool to the specified machine type.
+     * </pre>
+     *
+     * <code>string machine_type = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMachineType() {
+      machineType_ = getDefaultInstance().getMachineType();
+      bitField0_ = (bitField0_ & ~0x01000000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired [Google Compute Engine machine
+     * type](https://cloud.google.com/compute/docs/machine-types) for nodes in the
+     * node pool. Initiates an upgrade operation that migrates the nodes in the
+     * node pool to the specified machine type.
+     * </pre>
+     *
+     * <code>string machine_type = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for machineType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMachineTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      machineType_ = value;
+      bitField0_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object diskType_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired disk type (e.g. 'pd-standard', 'pd-ssd' or
+     * 'pd-balanced') for nodes in the node pool.
+     * Initiates an upgrade operation that migrates the nodes in the
+     * node pool to the specified disk type.
+     * </pre>
+     *
+     * <code>string disk_type = 37 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The diskType.
+     */
+    public java.lang.String getDiskType() {
+      java.lang.Object ref = diskType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        diskType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired disk type (e.g. 'pd-standard', 'pd-ssd' or
+     * 'pd-balanced') for nodes in the node pool.
+     * Initiates an upgrade operation that migrates the nodes in the
+     * node pool to the specified disk type.
+     * </pre>
+     *
+     * <code>string disk_type = 37 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for diskType.
+     */
+    public com.google.protobuf.ByteString getDiskTypeBytes() {
+      java.lang.Object ref = diskType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        diskType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired disk type (e.g. 'pd-standard', 'pd-ssd' or
+     * 'pd-balanced') for nodes in the node pool.
+     * Initiates an upgrade operation that migrates the nodes in the
+     * node pool to the specified disk type.
+     * </pre>
+     *
+     * <code>string disk_type = 37 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The diskType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDiskType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      diskType_ = value;
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired disk type (e.g. 'pd-standard', 'pd-ssd' or
+     * 'pd-balanced') for nodes in the node pool.
+     * Initiates an upgrade operation that migrates the nodes in the
+     * node pool to the specified disk type.
+     * </pre>
+     *
+     * <code>string disk_type = 37 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDiskType() {
+      diskType_ = getDefaultInstance().getDiskType();
+      bitField0_ = (bitField0_ & ~0x02000000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired disk type (e.g. 'pd-standard', 'pd-ssd' or
+     * 'pd-balanced') for nodes in the node pool.
+     * Initiates an upgrade operation that migrates the nodes in the
+     * node pool to the specified disk type.
+     * </pre>
+     *
+     * <code>string disk_type = 37 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for diskType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDiskTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      diskType_ = value;
+      bitField0_ |= 0x02000000;
+      onChanged();
+      return this;
+    }
+
+    private long diskSizeGb_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired disk size for nodes in the node pool specified in GB.
+     * The smallest allowed disk size is 10GB.
+     * Initiates an upgrade operation that migrates the nodes in the
+     * node pool to the specified disk size.
+     * </pre>
+     *
+     * <code>int64 disk_size_gb = 38 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The diskSizeGb.
+     */
+    @java.lang.Override
+    public long getDiskSizeGb() {
+      return diskSizeGb_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired disk size for nodes in the node pool specified in GB.
+     * The smallest allowed disk size is 10GB.
+     * Initiates an upgrade operation that migrates the nodes in the
+     * node pool to the specified disk size.
+     * </pre>
+     *
+     * <code>int64 disk_size_gb = 38 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The diskSizeGb to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDiskSizeGb(long value) {
+
+      diskSizeGb_ = value;
+      bitField0_ |= 0x04000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The desired disk size for nodes in the node pool specified in GB.
+     * The smallest allowed disk size is 10GB.
+     * Initiates an upgrade operation that migrates the nodes in the
+     * node pool to the specified disk size.
+     * </pre>
+     *
+     * <code>int64 disk_size_gb = 38 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDiskSizeGb() {
+      bitField0_ = (bitField0_ & ~0x04000000);
+      diskSizeGb_ = 0L;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

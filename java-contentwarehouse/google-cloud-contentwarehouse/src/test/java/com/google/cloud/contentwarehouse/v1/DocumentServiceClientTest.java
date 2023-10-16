@@ -195,6 +195,8 @@ public class DocumentServiceClientTest {
             .setTextExtractionEnabled(true)
             .setCreator("creator1028554796")
             .setUpdater("updater-234430263")
+            .setDispositionTime(Timestamp.newBuilder().build())
+            .setLegalHold(true)
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -254,6 +256,8 @@ public class DocumentServiceClientTest {
             .setTextExtractionEnabled(true)
             .setCreator("creator1028554796")
             .setUpdater("updater-234430263")
+            .setDispositionTime(Timestamp.newBuilder().build())
+            .setLegalHold(true)
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -561,6 +565,8 @@ public class DocumentServiceClientTest {
             .setTextExtractionEnabled(true)
             .setCreator("creator1028554796")
             .setUpdater("updater-234430263")
+            .setDispositionTime(Timestamp.newBuilder().build())
+            .setLegalHold(true)
             .build();
     mockDocumentService.addResponse(expectedResponse);
 
@@ -620,6 +626,8 @@ public class DocumentServiceClientTest {
             .setTextExtractionEnabled(true)
             .setCreator("creator1028554796")
             .setUpdater("updater-234430263")
+            .setDispositionTime(Timestamp.newBuilder().build())
+            .setLegalHold(true)
             .build();
     mockDocumentService.addResponse(expectedResponse);
 

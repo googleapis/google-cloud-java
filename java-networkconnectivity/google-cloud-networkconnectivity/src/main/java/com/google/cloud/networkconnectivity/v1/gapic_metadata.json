@@ -10,6 +10,9 @@
         "grpc": {
           "libraryClient": "HubServiceClient",
           "rpcs": {
+            "AcceptHubSpoke": {
+              "methods": ["acceptHubSpokeAsync", "acceptHubSpokeAsync", "acceptHubSpokeAsync", "acceptHubSpokeAsync", "acceptHubSpokeAsync", "acceptHubSpokeOperationCallable", "acceptHubSpokeCallable"]
+            },
             "CreateHub": {
               "methods": ["createHubAsync", "createHubAsync", "createHubAsync", "createHubOperationCallable", "createHubCallable"]
             },
@@ -22,23 +25,98 @@
             "DeleteSpoke": {
               "methods": ["deleteSpokeAsync", "deleteSpokeAsync", "deleteSpokeAsync", "deleteSpokeOperationCallable", "deleteSpokeCallable"]
             },
+            "GetGroup": {
+              "methods": ["getGroup", "getGroup", "getGroup", "getGroupCallable"]
+            },
             "GetHub": {
               "methods": ["getHub", "getHub", "getHub", "getHubCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetRoute": {
+              "methods": ["getRoute", "getRoute", "getRoute", "getRouteCallable"]
+            },
+            "GetRouteTable": {
+              "methods": ["getRouteTable", "getRouteTable", "getRouteTable", "getRouteTableCallable"]
             },
             "GetSpoke": {
               "methods": ["getSpoke", "getSpoke", "getSpoke", "getSpokeCallable"]
             },
+            "ListGroups": {
+              "methods": ["listGroups", "listGroups", "listGroups", "listGroupsPagedCallable", "listGroupsCallable"]
+            },
+            "ListHubSpokes": {
+              "methods": ["listHubSpokes", "listHubSpokes", "listHubSpokes", "listHubSpokesPagedCallable", "listHubSpokesCallable"]
+            },
             "ListHubs": {
               "methods": ["listHubs", "listHubs", "listHubs", "listHubsPagedCallable", "listHubsCallable"]
             },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListRouteTables": {
+              "methods": ["listRouteTables", "listRouteTables", "listRouteTables", "listRouteTablesPagedCallable", "listRouteTablesCallable"]
+            },
+            "ListRoutes": {
+              "methods": ["listRoutes", "listRoutes", "listRoutes", "listRoutesPagedCallable", "listRoutesCallable"]
+            },
             "ListSpokes": {
               "methods": ["listSpokes", "listSpokes", "listSpokes", "listSpokesPagedCallable", "listSpokesCallable"]
+            },
+            "RejectHubSpoke": {
+              "methods": ["rejectHubSpokeAsync", "rejectHubSpokeAsync", "rejectHubSpokeAsync", "rejectHubSpokeAsync", "rejectHubSpokeAsync", "rejectHubSpokeOperationCallable", "rejectHubSpokeCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             },
             "UpdateHub": {
               "methods": ["updateHubAsync", "updateHubAsync", "updateHubOperationCallable", "updateHubCallable"]
             },
             "UpdateSpoke": {
               "methods": ["updateSpokeAsync", "updateSpokeAsync", "updateSpokeOperationCallable", "updateSpokeCallable"]
+            }
+          }
+        }
+      }
+    },
+    "PolicyBasedRoutingService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "PolicyBasedRoutingServiceClient",
+          "rpcs": {
+            "CreatePolicyBasedRoute": {
+              "methods": ["createPolicyBasedRouteAsync", "createPolicyBasedRouteAsync", "createPolicyBasedRouteAsync", "createPolicyBasedRouteOperationCallable", "createPolicyBasedRouteCallable"]
+            },
+            "DeletePolicyBasedRoute": {
+              "methods": ["deletePolicyBasedRouteAsync", "deletePolicyBasedRouteAsync", "deletePolicyBasedRouteAsync", "deletePolicyBasedRouteOperationCallable", "deletePolicyBasedRouteCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetPolicyBasedRoute": {
+              "methods": ["getPolicyBasedRoute", "getPolicyBasedRoute", "getPolicyBasedRoute", "getPolicyBasedRouteCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListPolicyBasedRoutes": {
+              "methods": ["listPolicyBasedRoutes", "listPolicyBasedRoutes", "listPolicyBasedRoutes", "listPolicyBasedRoutesPagedCallable", "listPolicyBasedRoutesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }

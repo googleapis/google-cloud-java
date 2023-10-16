@@ -137,7 +137,7 @@ public class BigQueryLinkName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       BigQueryLinkName that = ((BigQueryLinkName) o);
       return Objects.equals(this.property, that.property)
           && Objects.equals(this.bigqueryLink, that.bigqueryLink);

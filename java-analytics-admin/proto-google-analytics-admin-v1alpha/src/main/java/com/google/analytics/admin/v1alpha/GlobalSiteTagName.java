@@ -138,7 +138,7 @@ public class GlobalSiteTagName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       GlobalSiteTagName that = ((GlobalSiteTagName) o);
       return Objects.equals(this.property, that.property)
           && Objects.equals(this.dataStream, that.dataStream);

@@ -33,7 +33,8 @@ public final class SessionEntityTypesGrpc {
 
   private SessionEntityTypesGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.dialogflow.v2.SessionEntityTypes";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.dialogflow.v2.SessionEntityTypes";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -916,9 +917,9 @@ public final class SessionEntityTypesGrpc {
   private static final class SessionEntityTypesMethodDescriptorSupplier
       extends SessionEntityTypesBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    SessionEntityTypesMethodDescriptorSupplier(String methodName) {
+    SessionEntityTypesMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

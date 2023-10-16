@@ -100,7 +100,7 @@ public interface ExportAgentResponseOrBuilder
    *
    * <pre>
    * Commit SHA of the git push. This field is populated if
-   * `git_destination` are specified in
+   * `git_destination` is specified in
    * [ExportAgentRequest][google.cloud.dialogflow.cx.v3.ExportAgentRequest].
    * </pre>
    *
@@ -114,7 +114,7 @@ public interface ExportAgentResponseOrBuilder
    *
    * <pre>
    * Commit SHA of the git push. This field is populated if
-   * `git_destination` are specified in
+   * `git_destination` is specified in
    * [ExportAgentRequest][google.cloud.dialogflow.cx.v3.ExportAgentRequest].
    * </pre>
    *
@@ -128,7 +128,7 @@ public interface ExportAgentResponseOrBuilder
    *
    * <pre>
    * Commit SHA of the git push. This field is populated if
-   * `git_destination` are specified in
+   * `git_destination` is specified in
    * [ExportAgentRequest][google.cloud.dialogflow.cx.v3.ExportAgentRequest].
    * </pre>
    *

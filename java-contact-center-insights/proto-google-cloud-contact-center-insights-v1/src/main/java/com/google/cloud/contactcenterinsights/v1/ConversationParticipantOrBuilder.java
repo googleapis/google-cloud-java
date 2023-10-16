@@ -113,7 +113,7 @@ public interface ConversationParticipantOrBuilder
    *
    * @deprecated
    *     google.cloud.contactcenterinsights.v1.ConversationParticipant.dialogflow_participant is
-   *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1208
+   *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1222
    * @return The dialogflowParticipant.
    */
   @java.lang.Deprecated
@@ -131,7 +131,7 @@ public interface ConversationParticipantOrBuilder
    *
    * @deprecated
    *     google.cloud.contactcenterinsights.v1.ConversationParticipant.dialogflow_participant is
-   *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1208
+   *     deprecated. See google/cloud/contactcenterinsights/v1/resources.proto;l=1222
    * @return The bytes for dialogflowParticipant.
    */
   @java.lang.Deprecated

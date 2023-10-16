@@ -24,6 +24,8 @@ package com.google.cloud.aiplatform.v1beta1;
  * <pre>
  * Request message for
  * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures].
+ * Request message for
+ * [FeatureRegistryService.ListFeatures][google.cloud.aiplatform.v1beta1.FeatureRegistryService.ListFeatures].
  * </pre>
  *
  * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListFeaturesRequest}
@@ -77,6 +79,7 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
    * Required. The resource name of the Location to list Features.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * </pre>
    *
    * <code>
@@ -104,6 +107,7 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
    * Required. The resource name of the Location to list Features.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * </pre>
    *
    * <code>
@@ -311,7 +315,7 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
    * Supported fields:
    *
    *   * `feature_id`
-   *   * `value_type`
+   *   * `value_type` (Not supported for FeatureRegistry Feature)
    *   * `create_time`
    *   * `update_time`
    * </pre>
@@ -341,7 +345,7 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
    * Supported fields:
    *
    *   * `feature_id`
-   *   * `value_type`
+   *   * `value_type` (Not supported for FeatureRegistry Feature)
    *   * `create_time`
    *   * `update_time`
    * </pre>
@@ -657,6 +661,8 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * Request message for
    * [FeaturestoreService.ListFeatures][google.cloud.aiplatform.v1beta1.FeaturestoreService.ListFeatures].
+   * Request message for
+   * [FeatureRegistryService.ListFeatures][google.cloud.aiplatform.v1beta1.FeatureRegistryService.ListFeatures].
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.ListFeaturesRequest}
@@ -931,6 +937,7 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      * Required. The resource name of the Location to list Features.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
      * <code>
@@ -957,6 +964,7 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      * Required. The resource name of the Location to list Features.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
      * <code>
@@ -983,6 +991,7 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      * Required. The resource name of the Location to list Features.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
      * <code>
@@ -1008,6 +1017,7 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      * Required. The resource name of the Location to list Features.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
      * <code>
@@ -1029,6 +1039,7 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      * Required. The resource name of the Location to list Features.
      * Format:
      * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+     * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
      * </pre>
      *
      * <code>
@@ -1458,7 +1469,7 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      * Supported fields:
      *
      *   * `feature_id`
-     *   * `value_type`
+     *   * `value_type` (Not supported for FeatureRegistry Feature)
      *   * `create_time`
      *   * `update_time`
      * </pre>
@@ -1487,7 +1498,7 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      * Supported fields:
      *
      *   * `feature_id`
-     *   * `value_type`
+     *   * `value_type` (Not supported for FeatureRegistry Feature)
      *   * `create_time`
      *   * `update_time`
      * </pre>
@@ -1516,7 +1527,7 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      * Supported fields:
      *
      *   * `feature_id`
-     *   * `value_type`
+     *   * `value_type` (Not supported for FeatureRegistry Feature)
      *   * `create_time`
      *   * `update_time`
      * </pre>
@@ -1544,7 +1555,7 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      * Supported fields:
      *
      *   * `feature_id`
-     *   * `value_type`
+     *   * `value_type` (Not supported for FeatureRegistry Feature)
      *   * `create_time`
      *   * `update_time`
      * </pre>
@@ -1568,7 +1579,7 @@ public final class ListFeaturesRequest extends com.google.protobuf.GeneratedMess
      * Supported fields:
      *
      *   * `feature_id`
-     *   * `value_type`
+     *   * `value_type` (Not supported for FeatureRegistry Feature)
      *   * `create_time`
      *   * `update_time`
      * </pre>

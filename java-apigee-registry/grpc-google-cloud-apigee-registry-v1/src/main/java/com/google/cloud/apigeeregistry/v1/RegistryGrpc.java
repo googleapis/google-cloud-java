@@ -32,7 +32,7 @@ public final class RegistryGrpc {
 
   private RegistryGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.apigeeregistry.v1.Registry";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.apigeeregistry.v1.Registry";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -4360,9 +4360,9 @@ public final class RegistryGrpc {
 
   private static final class RegistryMethodDescriptorSupplier extends RegistryBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    RegistryMethodDescriptorSupplier(String methodName) {
+    RegistryMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

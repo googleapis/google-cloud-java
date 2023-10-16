@@ -81,7 +81,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Node group roles.
+   * Node pool roles.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.dataproc.v1.NodeGroup.Role}
@@ -101,7 +101,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job drivers run on the node group.
+     * Job drivers run on the node pool.
      * </pre>
      *
      * <code>DRIVER = 1;</code>
@@ -124,7 +124,7 @@ public final class NodeGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Job drivers run on the node group.
+     * Job drivers run on the node pool.
      * </pre>
      *
      * <code>DRIVER = 1;</code>

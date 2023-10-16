@@ -58,11 +58,11 @@ public interface ListTasksRequestOrBuilder
    *
    *
    * <pre>
-   * The response_view specifies which subset of the [Task][google.cloud.tasks.v2.Task] will be
-   * returned.
+   * The response_view specifies which subset of the
+   * [Task][google.cloud.tasks.v2.Task] will be returned.
    *
-   * By default response_view is [BASIC][google.cloud.tasks.v2.Task.View.BASIC]; not all
-   * information is retrieved by default because some data, such as
+   * By default response_view is [BASIC][google.cloud.tasks.v2.Task.View.BASIC];
+   * not all information is retrieved by default because some data, such as
    * payloads, might be desirable to return only when needed because
    * of its large size or because of the sensitivity of data that it
    * contains.
@@ -81,11 +81,11 @@ public interface ListTasksRequestOrBuilder
    *
    *
    * <pre>
-   * The response_view specifies which subset of the [Task][google.cloud.tasks.v2.Task] will be
-   * returned.
+   * The response_view specifies which subset of the
+   * [Task][google.cloud.tasks.v2.Task] will be returned.
    *
-   * By default response_view is [BASIC][google.cloud.tasks.v2.Task.View.BASIC]; not all
-   * information is retrieved by default because some data, such as
+   * By default response_view is [BASIC][google.cloud.tasks.v2.Task.View.BASIC];
+   * not all information is retrieved by default because some data, such as
    * payloads, might be desirable to return only when needed because
    * of its large size or because of the sensitivity of data that it
    * contains.
@@ -108,8 +108,8 @@ public interface ListTasksRequestOrBuilder
    * Maximum page size.
    *
    * Fewer tasks than requested might be returned, even if more tasks exist; use
-   * [next_page_token][google.cloud.tasks.v2.ListTasksResponse.next_page_token] in the response to
-   * determine if more tasks exist.
+   * [next_page_token][google.cloud.tasks.v2.ListTasksResponse.next_page_token]
+   * in the response to determine if more tasks exist.
    *
    * The maximum page size is 1000. If unspecified, the page size will be the
    * maximum.
@@ -129,9 +129,9 @@ public interface ListTasksRequestOrBuilder
    *
    * To request the first page results, page_token must be empty. To
    * request the next page of results, page_token must be the value of
-   * [next_page_token][google.cloud.tasks.v2.ListTasksResponse.next_page_token] returned
-   * from the previous call to [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks]
-   * method.
+   * [next_page_token][google.cloud.tasks.v2.ListTasksResponse.next_page_token]
+   * returned from the previous call to
+   * [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks] method.
    *
    * The page token is valid for only 2 hours.
    * </pre>
@@ -149,9 +149,9 @@ public interface ListTasksRequestOrBuilder
    *
    * To request the first page results, page_token must be empty. To
    * request the next page of results, page_token must be the value of
-   * [next_page_token][google.cloud.tasks.v2.ListTasksResponse.next_page_token] returned
-   * from the previous call to [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks]
-   * method.
+   * [next_page_token][google.cloud.tasks.v2.ListTasksResponse.next_page_token]
+   * returned from the previous call to
+   * [ListTasks][google.cloud.tasks.v2.CloudTasks.ListTasks] method.
    *
    * The page token is valid for only 2 hours.
    * </pre>

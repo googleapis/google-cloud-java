@@ -169,7 +169,7 @@ public class MeasurementProtocolSecretName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       MeasurementProtocolSecretName that = ((MeasurementProtocolSecretName) o);
       return Objects.equals(this.property, that.property)
           && Objects.equals(this.dataStream, that.dataStream)

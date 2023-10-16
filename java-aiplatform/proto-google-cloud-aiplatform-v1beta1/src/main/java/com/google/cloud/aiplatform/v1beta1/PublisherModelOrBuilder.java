@@ -116,6 +116,50 @@ public interface PublisherModelOrBuilder
    *
    *
    * <pre>
+   * Optional. The parent that this model was customized from. E.g., Vision API,
+   * Natural Language API, LaMDA, T5, etc. Foundation models don't have parents.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PublisherModel.Parent parent = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the parent field is set.
+   */
+  boolean hasParent();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The parent that this model was customized from. E.g., Vision API,
+   * Natural Language API, LaMDA, T5, etc. Foundation models don't have parents.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PublisherModel.Parent parent = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The parent.
+   */
+  com.google.cloud.aiplatform.v1beta1.PublisherModel.Parent getParent();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The parent that this model was customized from. E.g., Vision API,
+   * Natural Language API, LaMDA, T5, etc. Foundation models don't have parents.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.PublisherModel.Parent parent = 14 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.PublisherModel.ParentOrBuilder getParentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Supported call-to-action options.
    * </pre>
    *

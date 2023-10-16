@@ -263,6 +263,17 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
      * <code>VULNERABILITY_BASIC = 2;</code>
      */
     VULNERABILITY_BASIC(2),
+    /**
+     *
+     *
+     * <pre>
+     * Applies the Security Posture's vulnerability on cluster Enterprise level
+     * features.
+     * </pre>
+     *
+     * <code>VULNERABILITY_ENTERPRISE = 3;</code>
+     */
+    VULNERABILITY_ENTERPRISE(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -296,6 +307,17 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
      * <code>VULNERABILITY_BASIC = 2;</code>
      */
     public static final int VULNERABILITY_BASIC_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Applies the Security Posture's vulnerability on cluster Enterprise level
+     * features.
+     * </pre>
+     *
+     * <code>VULNERABILITY_ENTERPRISE = 3;</code>
+     */
+    public static final int VULNERABILITY_ENTERPRISE_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -327,6 +349,8 @@ public final class SecurityPostureConfig extends com.google.protobuf.GeneratedMe
           return VULNERABILITY_DISABLED;
         case 2:
           return VULNERABILITY_BASIC;
+        case 3:
+          return VULNERABILITY_ENTERPRISE;
         default:
           return null;
       }

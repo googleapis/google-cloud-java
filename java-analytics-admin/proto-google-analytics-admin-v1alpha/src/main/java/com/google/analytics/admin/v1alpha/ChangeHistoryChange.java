@@ -782,6 +782,52 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * A snapshot of SKAdNetworkConversionValueSchema resource in change
+     * history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema skadnetwork_conversion_value_schema = 26;
+     * </code>
+     *
+     * @return Whether the skadnetworkConversionValueSchema field is set.
+     */
+    boolean hasSkadnetworkConversionValueSchema();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of SKAdNetworkConversionValueSchema resource in change
+     * history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema skadnetwork_conversion_value_schema = 26;
+     * </code>
+     *
+     * @return The skadnetworkConversionValueSchema.
+     */
+    com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
+        getSkadnetworkConversionValueSchema();
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of SKAdNetworkConversionValueSchema resource in change
+     * history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema skadnetwork_conversion_value_schema = 26;
+     * </code>
+     */
+    com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchemaOrBuilder
+        getSkadnetworkConversionValueSchemaOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
      * A snapshot of an AdSenseLink resource in change history.
      * </pre>
      *
@@ -958,6 +1004,7 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       CHANNEL_GROUP(22),
       BIGQUERY_LINK(23),
       ENHANCED_MEASUREMENT_SETTINGS(24),
+      SKADNETWORK_CONVERSION_VALUE_SCHEMA(26),
       ADSENSE_LINK(27),
       AUDIENCE(28),
       EVENT_CREATE_RULE(29),
@@ -1017,6 +1064,8 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             return BIGQUERY_LINK;
           case 24:
             return ENHANCED_MEASUREMENT_SETTINGS;
+          case 26:
+            return SKADNETWORK_CONVERSION_VALUE_SCHEMA;
           case 27:
             return ADSENSE_LINK;
           case 28:
@@ -2061,6 +2110,70 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       return com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings.getDefaultInstance();
     }
 
+    public static final int SKADNETWORK_CONVERSION_VALUE_SCHEMA_FIELD_NUMBER = 26;
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of SKAdNetworkConversionValueSchema resource in change
+     * history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema skadnetwork_conversion_value_schema = 26;
+     * </code>
+     *
+     * @return Whether the skadnetworkConversionValueSchema field is set.
+     */
+    @java.lang.Override
+    public boolean hasSkadnetworkConversionValueSchema() {
+      return resourceCase_ == 26;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of SKAdNetworkConversionValueSchema resource in change
+     * history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema skadnetwork_conversion_value_schema = 26;
+     * </code>
+     *
+     * @return The skadnetworkConversionValueSchema.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
+        getSkadnetworkConversionValueSchema() {
+      if (resourceCase_ == 26) {
+        return (com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
+          .getDefaultInstance();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of SKAdNetworkConversionValueSchema resource in change
+     * history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema skadnetwork_conversion_value_schema = 26;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchemaOrBuilder
+        getSkadnetworkConversionValueSchemaOrBuilder() {
+      if (resourceCase_ == 26) {
+        return (com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
+          .getDefaultInstance();
+    }
+
     public static final int ADSENSE_LINK_FIELD_NUMBER = 27;
     /**
      *
@@ -2293,6 +2406,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         output.writeMessage(
             24, (com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings) resource_);
       }
+      if (resourceCase_ == 26) {
+        output.writeMessage(
+            26, (com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema) resource_);
+      }
       if (resourceCase_ == 27) {
         output.writeMessage(27, (com.google.analytics.admin.v1alpha.AdSenseLink) resource_);
       }
@@ -2408,6 +2525,12 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 24, (com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings) resource_);
       }
+      if (resourceCase_ == 26) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                26,
+                (com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema) resource_);
+      }
       if (resourceCase_ == 27) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -2503,6 +2626,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         case 24:
           if (!getEnhancedMeasurementSettings().equals(other.getEnhancedMeasurementSettings()))
             return false;
+          break;
+        case 26:
+          if (!getSkadnetworkConversionValueSchema()
+              .equals(other.getSkadnetworkConversionValueSchema())) return false;
           break;
         case 27:
           if (!getAdsenseLink().equals(other.getAdsenseLink())) return false;
@@ -2603,6 +2730,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         case 24:
           hash = (37 * hash) + ENHANCED_MEASUREMENT_SETTINGS_FIELD_NUMBER;
           hash = (53 * hash) + getEnhancedMeasurementSettings().hashCode();
+          break;
+        case 26:
+          hash = (37 * hash) + SKADNETWORK_CONVERSION_VALUE_SCHEMA_FIELD_NUMBER;
+          hash = (53 * hash) + getSkadnetworkConversionValueSchema().hashCode();
           break;
         case 27:
           hash = (37 * hash) + ADSENSE_LINK_FIELD_NUMBER;
@@ -2828,6 +2959,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         if (enhancedMeasurementSettingsBuilder_ != null) {
           enhancedMeasurementSettingsBuilder_.clear();
         }
+        if (skadnetworkConversionValueSchemaBuilder_ != null) {
+          skadnetworkConversionValueSchemaBuilder_.clear();
+        }
         if (adsenseLinkBuilder_ != null) {
           adsenseLinkBuilder_.clear();
         }
@@ -2943,6 +3077,9 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         if (resourceCase_ == 24 && enhancedMeasurementSettingsBuilder_ != null) {
           result.resource_ = enhancedMeasurementSettingsBuilder_.build();
+        }
+        if (resourceCase_ == 26 && skadnetworkConversionValueSchemaBuilder_ != null) {
+          result.resource_ = skadnetworkConversionValueSchemaBuilder_.build();
         }
         if (resourceCase_ == 27 && adsenseLinkBuilder_ != null) {
           result.resource_ = adsenseLinkBuilder_.build();
@@ -3103,6 +3240,11 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           case ENHANCED_MEASUREMENT_SETTINGS:
             {
               mergeEnhancedMeasurementSettings(other.getEnhancedMeasurementSettings());
+              break;
+            }
+          case SKADNETWORK_CONVERSION_VALUE_SCHEMA:
+            {
+              mergeSkadnetworkConversionValueSchema(other.getSkadnetworkConversionValueSchema());
               break;
             }
           case ADSENSE_LINK:
@@ -3278,6 +3420,14 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
                   resourceCase_ = 24;
                   break;
                 } // case 194
+              case 210:
+                {
+                  input.readMessage(
+                      getSkadnetworkConversionValueSchemaFieldBuilder().getBuilder(),
+                      extensionRegistry);
+                  resourceCase_ = 26;
+                  break;
+                } // case 210
               case 218:
                 {
                   input.readMessage(getAdsenseLinkFieldBuilder().getBuilder(), extensionRegistry);
@@ -7499,6 +7649,256 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 24;
         onChanged();
         return enhancedMeasurementSettingsBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema,
+              com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema.Builder,
+              com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchemaOrBuilder>
+          skadnetworkConversionValueSchemaBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of SKAdNetworkConversionValueSchema resource in change
+       * history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema skadnetwork_conversion_value_schema = 26;
+       * </code>
+       *
+       * @return Whether the skadnetworkConversionValueSchema field is set.
+       */
+      @java.lang.Override
+      public boolean hasSkadnetworkConversionValueSchema() {
+        return resourceCase_ == 26;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of SKAdNetworkConversionValueSchema resource in change
+       * history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema skadnetwork_conversion_value_schema = 26;
+       * </code>
+       *
+       * @return The skadnetworkConversionValueSchema.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
+          getSkadnetworkConversionValueSchema() {
+        if (skadnetworkConversionValueSchemaBuilder_ == null) {
+          if (resourceCase_ == 26) {
+            return (com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
+              .getDefaultInstance();
+        } else {
+          if (resourceCase_ == 26) {
+            return skadnetworkConversionValueSchemaBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of SKAdNetworkConversionValueSchema resource in change
+       * history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema skadnetwork_conversion_value_schema = 26;
+       * </code>
+       */
+      public Builder setSkadnetworkConversionValueSchema(
+          com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema value) {
+        if (skadnetworkConversionValueSchemaBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          skadnetworkConversionValueSchemaBuilder_.setMessage(value);
+        }
+        resourceCase_ = 26;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of SKAdNetworkConversionValueSchema resource in change
+       * history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema skadnetwork_conversion_value_schema = 26;
+       * </code>
+       */
+      public Builder setSkadnetworkConversionValueSchema(
+          com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema.Builder
+              builderForValue) {
+        if (skadnetworkConversionValueSchemaBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          skadnetworkConversionValueSchemaBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 26;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of SKAdNetworkConversionValueSchema resource in change
+       * history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema skadnetwork_conversion_value_schema = 26;
+       * </code>
+       */
+      public Builder mergeSkadnetworkConversionValueSchema(
+          com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema value) {
+        if (skadnetworkConversionValueSchemaBuilder_ == null) {
+          if (resourceCase_ == 26
+              && resource_
+                  != com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
+                      .getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema.newBuilder(
+                        (com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema)
+                            resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 26) {
+            skadnetworkConversionValueSchemaBuilder_.mergeFrom(value);
+          } else {
+            skadnetworkConversionValueSchemaBuilder_.setMessage(value);
+          }
+        }
+        resourceCase_ = 26;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of SKAdNetworkConversionValueSchema resource in change
+       * history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema skadnetwork_conversion_value_schema = 26;
+       * </code>
+       */
+      public Builder clearSkadnetworkConversionValueSchema() {
+        if (skadnetworkConversionValueSchemaBuilder_ == null) {
+          if (resourceCase_ == 26) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 26) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          skadnetworkConversionValueSchemaBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of SKAdNetworkConversionValueSchema resource in change
+       * history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema skadnetwork_conversion_value_schema = 26;
+       * </code>
+       */
+      public com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema.Builder
+          getSkadnetworkConversionValueSchemaBuilder() {
+        return getSkadnetworkConversionValueSchemaFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of SKAdNetworkConversionValueSchema resource in change
+       * history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema skadnetwork_conversion_value_schema = 26;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchemaOrBuilder
+          getSkadnetworkConversionValueSchemaOrBuilder() {
+        if ((resourceCase_ == 26) && (skadnetworkConversionValueSchemaBuilder_ != null)) {
+          return skadnetworkConversionValueSchemaBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 26) {
+            return (com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
+              .getDefaultInstance();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of SKAdNetworkConversionValueSchema resource in change
+       * history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema skadnetwork_conversion_value_schema = 26;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema,
+              com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema.Builder,
+              com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchemaOrBuilder>
+          getSkadnetworkConversionValueSchemaFieldBuilder() {
+        if (skadnetworkConversionValueSchemaBuilder_ == null) {
+          if (!(resourceCase_ == 26)) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
+                    .getDefaultInstance();
+          }
+          skadnetworkConversionValueSchemaBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema,
+                  com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema.Builder,
+                  com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchemaOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 26;
+        onChanged();
+        return skadnetworkConversionValueSchemaBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<

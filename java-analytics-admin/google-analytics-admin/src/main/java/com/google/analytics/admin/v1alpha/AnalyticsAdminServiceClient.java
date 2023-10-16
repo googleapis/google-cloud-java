@@ -4240,7 +4240,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param measurementProtocolSecret Required. The measurement protocol secret to update.
-   * @param updateMask The list of fields to be updated. Omitted fields will not be updated.
+   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
+   *     updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MeasurementProtocolSecret updateMeasurementProtocolSecret(
@@ -4384,6 +4385,727 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
           AcknowledgeUserDataCollectionRequest, AcknowledgeUserDataCollectionResponse>
       acknowledgeUserDataCollectionCallable() {
     return stub.acknowledgeUserDataCollectionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up a single SKAdNetworkConversionValueSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SKAdNetworkConversionValueSchemaName name =
+   *       SKAdNetworkConversionValueSchemaName.of(
+   *           "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]");
+   *   SKAdNetworkConversionValueSchema response =
+   *       analyticsAdminServiceClient.getSKAdNetworkConversionValueSchema(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of SKAdNetwork conversion value schema to look up.
+   *     Format:
+   *     properties/{property}/dataStreams/{dataStream}/sKAdNetworkConversionValueSchema/{skadnetwork_conversion_value_schema}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SKAdNetworkConversionValueSchema getSKAdNetworkConversionValueSchema(
+      SKAdNetworkConversionValueSchemaName name) {
+    GetSKAdNetworkConversionValueSchemaRequest request =
+        GetSKAdNetworkConversionValueSchemaRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getSKAdNetworkConversionValueSchema(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up a single SKAdNetworkConversionValueSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       SKAdNetworkConversionValueSchemaName.of(
+   *               "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]")
+   *           .toString();
+   *   SKAdNetworkConversionValueSchema response =
+   *       analyticsAdminServiceClient.getSKAdNetworkConversionValueSchema(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of SKAdNetwork conversion value schema to look up.
+   *     Format:
+   *     properties/{property}/dataStreams/{dataStream}/sKAdNetworkConversionValueSchema/{skadnetwork_conversion_value_schema}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SKAdNetworkConversionValueSchema getSKAdNetworkConversionValueSchema(String name) {
+    GetSKAdNetworkConversionValueSchemaRequest request =
+        GetSKAdNetworkConversionValueSchemaRequest.newBuilder().setName(name).build();
+    return getSKAdNetworkConversionValueSchema(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up a single SKAdNetworkConversionValueSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetSKAdNetworkConversionValueSchemaRequest request =
+   *       GetSKAdNetworkConversionValueSchemaRequest.newBuilder()
+   *           .setName(
+   *               SKAdNetworkConversionValueSchemaName.of(
+   *                       "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]")
+   *                   .toString())
+   *           .build();
+   *   SKAdNetworkConversionValueSchema response =
+   *       analyticsAdminServiceClient.getSKAdNetworkConversionValueSchema(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SKAdNetworkConversionValueSchema getSKAdNetworkConversionValueSchema(
+      GetSKAdNetworkConversionValueSchemaRequest request) {
+    return getSKAdNetworkConversionValueSchemaCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Looks up a single SKAdNetworkConversionValueSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetSKAdNetworkConversionValueSchemaRequest request =
+   *       GetSKAdNetworkConversionValueSchemaRequest.newBuilder()
+   *           .setName(
+   *               SKAdNetworkConversionValueSchemaName.of(
+   *                       "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<SKAdNetworkConversionValueSchema> future =
+   *       analyticsAdminServiceClient
+   *           .getSKAdNetworkConversionValueSchemaCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   SKAdNetworkConversionValueSchema response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      getSKAdNetworkConversionValueSchemaCallable() {
+    return stub.getSKAdNetworkConversionValueSchemaCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a SKAdNetworkConversionValueSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DataStreamName parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
+   *   SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema =
+   *       SKAdNetworkConversionValueSchema.newBuilder().build();
+   *   SKAdNetworkConversionValueSchema response =
+   *       analyticsAdminServiceClient.createSKAdNetworkConversionValueSchema(
+   *           parent, skadnetworkConversionValueSchema);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this schema will be created. Format:
+   *     properties/{property}/dataStreams/{dataStream}
+   * @param skadnetworkConversionValueSchema Required. SKAdNetwork conversion value schema to
+   *     create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SKAdNetworkConversionValueSchema createSKAdNetworkConversionValueSchema(
+      DataStreamName parent, SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema) {
+    CreateSKAdNetworkConversionValueSchemaRequest request =
+        CreateSKAdNetworkConversionValueSchemaRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSkadnetworkConversionValueSchema(skadnetworkConversionValueSchema)
+            .build();
+    return createSKAdNetworkConversionValueSchema(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a SKAdNetworkConversionValueSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString();
+   *   SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema =
+   *       SKAdNetworkConversionValueSchema.newBuilder().build();
+   *   SKAdNetworkConversionValueSchema response =
+   *       analyticsAdminServiceClient.createSKAdNetworkConversionValueSchema(
+   *           parent, skadnetworkConversionValueSchema);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource where this schema will be created. Format:
+   *     properties/{property}/dataStreams/{dataStream}
+   * @param skadnetworkConversionValueSchema Required. SKAdNetwork conversion value schema to
+   *     create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SKAdNetworkConversionValueSchema createSKAdNetworkConversionValueSchema(
+      String parent, SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema) {
+    CreateSKAdNetworkConversionValueSchemaRequest request =
+        CreateSKAdNetworkConversionValueSchemaRequest.newBuilder()
+            .setParent(parent)
+            .setSkadnetworkConversionValueSchema(skadnetworkConversionValueSchema)
+            .build();
+    return createSKAdNetworkConversionValueSchema(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a SKAdNetworkConversionValueSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateSKAdNetworkConversionValueSchemaRequest request =
+   *       CreateSKAdNetworkConversionValueSchemaRequest.newBuilder()
+   *           .setParent(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+   *           .setSkadnetworkConversionValueSchema(
+   *               SKAdNetworkConversionValueSchema.newBuilder().build())
+   *           .build();
+   *   SKAdNetworkConversionValueSchema response =
+   *       analyticsAdminServiceClient.createSKAdNetworkConversionValueSchema(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SKAdNetworkConversionValueSchema createSKAdNetworkConversionValueSchema(
+      CreateSKAdNetworkConversionValueSchemaRequest request) {
+    return createSKAdNetworkConversionValueSchemaCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a SKAdNetworkConversionValueSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateSKAdNetworkConversionValueSchemaRequest request =
+   *       CreateSKAdNetworkConversionValueSchemaRequest.newBuilder()
+   *           .setParent(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+   *           .setSkadnetworkConversionValueSchema(
+   *               SKAdNetworkConversionValueSchema.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SKAdNetworkConversionValueSchema> future =
+   *       analyticsAdminServiceClient
+   *           .createSKAdNetworkConversionValueSchemaCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   SKAdNetworkConversionValueSchema response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      createSKAdNetworkConversionValueSchemaCallable() {
+    return stub.createSKAdNetworkConversionValueSchemaCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes target SKAdNetworkConversionValueSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SKAdNetworkConversionValueSchemaName name =
+   *       SKAdNetworkConversionValueSchemaName.of(
+   *           "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]");
+   *   analyticsAdminServiceClient.deleteSKAdNetworkConversionValueSchema(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the SKAdNetworkConversionValueSchema to delete. Format:
+   *     properties/{property}/dataStreams/{dataStream}/sKAdNetworkConversionValueSchema/{skadnetwork_conversion_value_schema}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSKAdNetworkConversionValueSchema(
+      SKAdNetworkConversionValueSchemaName name) {
+    DeleteSKAdNetworkConversionValueSchemaRequest request =
+        DeleteSKAdNetworkConversionValueSchemaRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteSKAdNetworkConversionValueSchema(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes target SKAdNetworkConversionValueSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       SKAdNetworkConversionValueSchemaName.of(
+   *               "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]")
+   *           .toString();
+   *   analyticsAdminServiceClient.deleteSKAdNetworkConversionValueSchema(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the SKAdNetworkConversionValueSchema to delete. Format:
+   *     properties/{property}/dataStreams/{dataStream}/sKAdNetworkConversionValueSchema/{skadnetwork_conversion_value_schema}
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSKAdNetworkConversionValueSchema(String name) {
+    DeleteSKAdNetworkConversionValueSchemaRequest request =
+        DeleteSKAdNetworkConversionValueSchemaRequest.newBuilder().setName(name).build();
+    deleteSKAdNetworkConversionValueSchema(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes target SKAdNetworkConversionValueSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteSKAdNetworkConversionValueSchemaRequest request =
+   *       DeleteSKAdNetworkConversionValueSchemaRequest.newBuilder()
+   *           .setName(
+   *               SKAdNetworkConversionValueSchemaName.of(
+   *                       "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]")
+   *                   .toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteSKAdNetworkConversionValueSchema(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSKAdNetworkConversionValueSchema(
+      DeleteSKAdNetworkConversionValueSchemaRequest request) {
+    deleteSKAdNetworkConversionValueSchemaCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes target SKAdNetworkConversionValueSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteSKAdNetworkConversionValueSchemaRequest request =
+   *       DeleteSKAdNetworkConversionValueSchemaRequest.newBuilder()
+   *           .setName(
+   *               SKAdNetworkConversionValueSchemaName.of(
+   *                       "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient
+   *           .deleteSKAdNetworkConversionValueSchemaCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>
+      deleteSKAdNetworkConversionValueSchemaCallable() {
+    return stub.deleteSKAdNetworkConversionValueSchemaCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a SKAdNetworkConversionValueSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema =
+   *       SKAdNetworkConversionValueSchema.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   SKAdNetworkConversionValueSchema response =
+   *       analyticsAdminServiceClient.updateSKAdNetworkConversionValueSchema(
+   *           skadnetworkConversionValueSchema, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param skadnetworkConversionValueSchema Required. SKAdNetwork conversion value schema to
+   *     update.
+   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
+   *     updated.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SKAdNetworkConversionValueSchema updateSKAdNetworkConversionValueSchema(
+      SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema, FieldMask updateMask) {
+    UpdateSKAdNetworkConversionValueSchemaRequest request =
+        UpdateSKAdNetworkConversionValueSchemaRequest.newBuilder()
+            .setSkadnetworkConversionValueSchema(skadnetworkConversionValueSchema)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateSKAdNetworkConversionValueSchema(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a SKAdNetworkConversionValueSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateSKAdNetworkConversionValueSchemaRequest request =
+   *       UpdateSKAdNetworkConversionValueSchemaRequest.newBuilder()
+   *           .setSkadnetworkConversionValueSchema(
+   *               SKAdNetworkConversionValueSchema.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   SKAdNetworkConversionValueSchema response =
+   *       analyticsAdminServiceClient.updateSKAdNetworkConversionValueSchema(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SKAdNetworkConversionValueSchema updateSKAdNetworkConversionValueSchema(
+      UpdateSKAdNetworkConversionValueSchemaRequest request) {
+    return updateSKAdNetworkConversionValueSchemaCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a SKAdNetworkConversionValueSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateSKAdNetworkConversionValueSchemaRequest request =
+   *       UpdateSKAdNetworkConversionValueSchemaRequest.newBuilder()
+   *           .setSkadnetworkConversionValueSchema(
+   *               SKAdNetworkConversionValueSchema.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SKAdNetworkConversionValueSchema> future =
+   *       analyticsAdminServiceClient
+   *           .updateSKAdNetworkConversionValueSchemaCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   SKAdNetworkConversionValueSchema response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      updateSKAdNetworkConversionValueSchemaCallable() {
+    return stub.updateSKAdNetworkConversionValueSchemaCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists SKAdNetworkConversionValueSchema on a stream. Properties can have at most one
+   * SKAdNetworkConversionValueSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DataStreamName parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
+   *   for (SKAdNetworkConversionValueSchema element :
+   *       analyticsAdminServiceClient.listSKAdNetworkConversionValueSchemas(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format:
+   *     properties/{property_id}/dataStreams/{dataStream}/sKAdNetworkConversionValueSchema Example:
+   *     properties/1234/dataStreams/5678/sKAdNetworkConversionValueSchema
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSKAdNetworkConversionValueSchemasPagedResponse
+      listSKAdNetworkConversionValueSchemas(DataStreamName parent) {
+    ListSKAdNetworkConversionValueSchemasRequest request =
+        ListSKAdNetworkConversionValueSchemasRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSKAdNetworkConversionValueSchemas(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists SKAdNetworkConversionValueSchema on a stream. Properties can have at most one
+   * SKAdNetworkConversionValueSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString();
+   *   for (SKAdNetworkConversionValueSchema element :
+   *       analyticsAdminServiceClient.listSKAdNetworkConversionValueSchemas(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format:
+   *     properties/{property_id}/dataStreams/{dataStream}/sKAdNetworkConversionValueSchema Example:
+   *     properties/1234/dataStreams/5678/sKAdNetworkConversionValueSchema
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSKAdNetworkConversionValueSchemasPagedResponse
+      listSKAdNetworkConversionValueSchemas(String parent) {
+    ListSKAdNetworkConversionValueSchemasRequest request =
+        ListSKAdNetworkConversionValueSchemasRequest.newBuilder().setParent(parent).build();
+    return listSKAdNetworkConversionValueSchemas(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists SKAdNetworkConversionValueSchema on a stream. Properties can have at most one
+   * SKAdNetworkConversionValueSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListSKAdNetworkConversionValueSchemasRequest request =
+   *       ListSKAdNetworkConversionValueSchemasRequest.newBuilder()
+   *           .setParent(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (SKAdNetworkConversionValueSchema element :
+   *       analyticsAdminServiceClient.listSKAdNetworkConversionValueSchemas(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSKAdNetworkConversionValueSchemasPagedResponse
+      listSKAdNetworkConversionValueSchemas(ListSKAdNetworkConversionValueSchemasRequest request) {
+    return listSKAdNetworkConversionValueSchemasPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists SKAdNetworkConversionValueSchema on a stream. Properties can have at most one
+   * SKAdNetworkConversionValueSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListSKAdNetworkConversionValueSchemasRequest request =
+   *       ListSKAdNetworkConversionValueSchemasRequest.newBuilder()
+   *           .setParent(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<SKAdNetworkConversionValueSchema> future =
+   *       analyticsAdminServiceClient
+   *           .listSKAdNetworkConversionValueSchemasPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (SKAdNetworkConversionValueSchema element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasPagedResponse>
+      listSKAdNetworkConversionValueSchemasPagedCallable() {
+    return stub.listSKAdNetworkConversionValueSchemasPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists SKAdNetworkConversionValueSchema on a stream. Properties can have at most one
+   * SKAdNetworkConversionValueSchema.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListSKAdNetworkConversionValueSchemasRequest request =
+   *       ListSKAdNetworkConversionValueSchemasRequest.newBuilder()
+   *           .setParent(DataStreamName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListSKAdNetworkConversionValueSchemasResponse response =
+   *         analyticsAdminServiceClient
+   *             .listSKAdNetworkConversionValueSchemasCallable()
+   *             .call(request);
+   *     for (SKAdNetworkConversionValueSchema element :
+   *         response.getSkadnetworkConversionValueSchemasList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasResponse>
+      listSKAdNetworkConversionValueSchemasCallable() {
+    return stub.listSKAdNetworkConversionValueSchemasCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -4869,6 +5591,105 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   public final UnaryCallable<CreateConversionEventRequest, ConversionEvent>
       createConversionEventCallable() {
     return stub.createConversionEventCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a conversion event with the specified attributes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ConversionEvent conversionEvent = ConversionEvent.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ConversionEvent response =
+   *       analyticsAdminServiceClient.updateConversionEvent(conversionEvent, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param conversionEvent Required. The conversion event to update. The `name` field is used to
+   *     identify the settings to be updated.
+   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
+   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ConversionEvent updateConversionEvent(
+      ConversionEvent conversionEvent, FieldMask updateMask) {
+    UpdateConversionEventRequest request =
+        UpdateConversionEventRequest.newBuilder()
+            .setConversionEvent(conversionEvent)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateConversionEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a conversion event with the specified attributes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateConversionEventRequest request =
+   *       UpdateConversionEventRequest.newBuilder()
+   *           .setConversionEvent(ConversionEvent.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ConversionEvent response = analyticsAdminServiceClient.updateConversionEvent(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ConversionEvent updateConversionEvent(UpdateConversionEventRequest request) {
+    return updateConversionEventCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a conversion event with the specified attributes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateConversionEventRequest request =
+   *       UpdateConversionEventRequest.newBuilder()
+   *           .setConversionEvent(ConversionEvent.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ConversionEvent> future =
+   *       analyticsAdminServiceClient.updateConversionEventCallable().futureCall(request);
+   *   // Do something.
+   *   ConversionEvent response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventCallable() {
+    return stub.updateConversionEventCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -15400,6 +16221,105 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     protected ListMeasurementProtocolSecretsFixedSizeCollection createCollection(
         List<ListMeasurementProtocolSecretsPage> pages, int collectionSize) {
       return new ListMeasurementProtocolSecretsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSKAdNetworkConversionValueSchemasPagedResponse
+      extends AbstractPagedListResponse<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasResponse,
+          SKAdNetworkConversionValueSchema,
+          ListSKAdNetworkConversionValueSchemasPage,
+          ListSKAdNetworkConversionValueSchemasFixedSizeCollection> {
+
+    public static ApiFuture<ListSKAdNetworkConversionValueSchemasPagedResponse> createAsync(
+        PageContext<
+                ListSKAdNetworkConversionValueSchemasRequest,
+                ListSKAdNetworkConversionValueSchemasResponse,
+                SKAdNetworkConversionValueSchema>
+            context,
+        ApiFuture<ListSKAdNetworkConversionValueSchemasResponse> futureResponse) {
+      ApiFuture<ListSKAdNetworkConversionValueSchemasPage> futurePage =
+          ListSKAdNetworkConversionValueSchemasPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSKAdNetworkConversionValueSchemasPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSKAdNetworkConversionValueSchemasPagedResponse(
+        ListSKAdNetworkConversionValueSchemasPage page) {
+      super(page, ListSKAdNetworkConversionValueSchemasFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSKAdNetworkConversionValueSchemasPage
+      extends AbstractPage<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasResponse,
+          SKAdNetworkConversionValueSchema,
+          ListSKAdNetworkConversionValueSchemasPage> {
+
+    private ListSKAdNetworkConversionValueSchemasPage(
+        PageContext<
+                ListSKAdNetworkConversionValueSchemasRequest,
+                ListSKAdNetworkConversionValueSchemasResponse,
+                SKAdNetworkConversionValueSchema>
+            context,
+        ListSKAdNetworkConversionValueSchemasResponse response) {
+      super(context, response);
+    }
+
+    private static ListSKAdNetworkConversionValueSchemasPage createEmptyPage() {
+      return new ListSKAdNetworkConversionValueSchemasPage(null, null);
+    }
+
+    @Override
+    protected ListSKAdNetworkConversionValueSchemasPage createPage(
+        PageContext<
+                ListSKAdNetworkConversionValueSchemasRequest,
+                ListSKAdNetworkConversionValueSchemasResponse,
+                SKAdNetworkConversionValueSchema>
+            context,
+        ListSKAdNetworkConversionValueSchemasResponse response) {
+      return new ListSKAdNetworkConversionValueSchemasPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSKAdNetworkConversionValueSchemasPage> createPageAsync(
+        PageContext<
+                ListSKAdNetworkConversionValueSchemasRequest,
+                ListSKAdNetworkConversionValueSchemasResponse,
+                SKAdNetworkConversionValueSchema>
+            context,
+        ApiFuture<ListSKAdNetworkConversionValueSchemasResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSKAdNetworkConversionValueSchemasFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasResponse,
+          SKAdNetworkConversionValueSchema,
+          ListSKAdNetworkConversionValueSchemasPage,
+          ListSKAdNetworkConversionValueSchemasFixedSizeCollection> {
+
+    private ListSKAdNetworkConversionValueSchemasFixedSizeCollection(
+        List<ListSKAdNetworkConversionValueSchemasPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSKAdNetworkConversionValueSchemasFixedSizeCollection
+        createEmptyCollection() {
+      return new ListSKAdNetworkConversionValueSchemasFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSKAdNetworkConversionValueSchemasFixedSizeCollection createCollection(
+        List<ListSKAdNetworkConversionValueSchemasPage> pages, int collectionSize) {
+      return new ListSKAdNetworkConversionValueSchemasFixedSizeCollection(pages, collectionSize);
     }
   }
 

@@ -94,6 +94,7 @@ import com.google.analytics.admin.v1beta.RunAccessReportResponse;
 import com.google.analytics.admin.v1beta.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1beta.SearchChangeHistoryEventsResponse;
 import com.google.analytics.admin.v1beta.UpdateAccountRequest;
+import com.google.analytics.admin.v1beta.UpdateConversionEventRequest;
 import com.google.analytics.admin.v1beta.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1beta.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1beta.UpdateDataRetentionSettingsRequest;
@@ -445,6 +446,17 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(ConversionEvent.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventMethodDescriptor =
+          MethodDescriptor.<UpdateConversionEventRequest, ConversionEvent>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1beta.AnalyticsAdminService/UpdateConversionEvent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateConversionEventRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ConversionEvent.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetConversionEventRequest, ConversionEvent>
       getConversionEventMethodDescriptor =
           MethodDescriptor.<GetConversionEventRequest, ConversionEvent>newBuilder()
@@ -743,6 +755,8 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       searchChangeHistoryEventsPagedCallable;
   private final UnaryCallable<CreateConversionEventRequest, ConversionEvent>
       createConversionEventCallable;
+  private final UnaryCallable<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventCallable;
   private final UnaryCallable<GetConversionEventRequest, ConversionEvent>
       getConversionEventCallable;
   private final UnaryCallable<DeleteConversionEventRequest, Empty> deleteConversionEventCallable;
@@ -1094,6 +1108,19 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateConversionEventRequest, ConversionEvent>
+        updateConversionEventTransportSettings =
+            GrpcCallSettings.<UpdateConversionEventRequest, ConversionEvent>newBuilder()
+                .setMethodDescriptor(updateConversionEventMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "conversion_event.name",
+                          String.valueOf(request.getConversionEvent().getName()));
                       return builder.build();
                     })
                 .build();
@@ -1473,6 +1500,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             createConversionEventTransportSettings,
             settings.createConversionEventSettings(),
             clientContext);
+    this.updateConversionEventCallable =
+        callableFactory.createUnaryCallable(
+            updateConversionEventTransportSettings,
+            settings.updateConversionEventSettings(),
+            clientContext);
     this.getConversionEventCallable =
         callableFactory.createUnaryCallable(
             getConversionEventTransportSettings,
@@ -1780,6 +1812,12 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   public UnaryCallable<CreateConversionEventRequest, ConversionEvent>
       createConversionEventCallable() {
     return createConversionEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventCallable() {
+    return updateConversionEventCallable;
   }
 
   @Override

@@ -75,6 +75,10 @@ public class HttpJsonCompletionServiceStub extends CompletionServiceStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<CompleteQueryRequest> serializer =
                                 ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields,
+                                "includeTailSuggestions",
+                                request.getIncludeTailSuggestions());
                             serializer.putQueryParam(fields, "query", request.getQuery());
                             serializer.putQueryParam(fields, "queryModel", request.getQueryModel());
                             serializer.putQueryParam(

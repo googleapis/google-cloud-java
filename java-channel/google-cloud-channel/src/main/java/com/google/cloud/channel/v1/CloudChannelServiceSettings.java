@@ -458,6 +458,14 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
     return ((CloudChannelServiceStubSettings) getStubSettings()).listPurchasableOffersSettings();
   }
 
+  /** Returns the object with the settings used for calls to queryEligibleBillingAccounts. */
+  public UnaryCallSettings<
+          QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+      queryEligibleBillingAccountsSettings() {
+    return ((CloudChannelServiceStubSettings) getStubSettings())
+        .queryEligibleBillingAccountsSettings();
+  }
+
   /** Returns the object with the settings used for calls to registerSubscriber. */
   public UnaryCallSettings<RegisterSubscriberRequest, RegisterSubscriberResponse>
       registerSubscriberSettings() {
@@ -964,6 +972,13 @@ public class CloudChannelServiceSettings extends ClientSettings<CloudChannelServ
             ListPurchasableOffersPagedResponse>
         listPurchasableOffersSettings() {
       return getStubSettingsBuilder().listPurchasableOffersSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to queryEligibleBillingAccounts. */
+    public UnaryCallSettings.Builder<
+            QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+        queryEligibleBillingAccountsSettings() {
+      return getStubSettingsBuilder().queryEligibleBillingAccountsSettings();
     }
 
     /** Returns the builder for the settings used for calls to registerSubscriber. */

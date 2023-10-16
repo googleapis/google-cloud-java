@@ -127,7 +127,7 @@ public class ProductName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       ProductName that = ((ProductName) o);
       return Objects.equals(this.product, that.product);
     }

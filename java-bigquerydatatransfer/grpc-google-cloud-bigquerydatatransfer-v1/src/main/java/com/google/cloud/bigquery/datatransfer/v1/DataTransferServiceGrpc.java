@@ -32,7 +32,7 @@ public final class DataTransferServiceGrpc {
 
   private DataTransferServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.bigquery.datatransfer.v1.DataTransferService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -2151,9 +2151,9 @@ public final class DataTransferServiceGrpc {
   private static final class DataTransferServiceMethodDescriptorSupplier
       extends DataTransferServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DataTransferServiceMethodDescriptorSupplier(String methodName) {
+    DataTransferServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

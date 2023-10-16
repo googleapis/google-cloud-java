@@ -164,6 +164,27 @@ public class MockRecommenderImpl extends RecommenderImplBase {
   }
 
   @Override
+  public void markRecommendationDismissed(
+      MarkRecommendationDismissedRequest request, StreamObserver<Recommendation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Recommendation) {
+      requests.add(request);
+      responseObserver.onNext(((Recommendation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method MarkRecommendationDismissed, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Recommendation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void markRecommendationClaimed(
       MarkRecommendationClaimedRequest request, StreamObserver<Recommendation> responseObserver) {
     Object response = responses.poll();

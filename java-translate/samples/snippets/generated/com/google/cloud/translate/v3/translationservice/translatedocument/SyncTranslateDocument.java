@@ -51,6 +51,7 @@ public class SyncTranslateDocument {
               .setCustomizedAttribution("customizedAttribution557650238")
               .setIsTranslateNativePdfOnly(true)
               .setEnableShadowRemovalNativePdf(true)
+              .setEnableRotationCorrection(true)
               .build();
       TranslateDocumentResponse response = translationServiceClient.translateDocument(request);
     }

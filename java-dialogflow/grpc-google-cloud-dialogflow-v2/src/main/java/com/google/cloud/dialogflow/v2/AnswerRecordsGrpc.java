@@ -33,7 +33,7 @@ public final class AnswerRecordsGrpc {
 
   private AnswerRecordsGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.dialogflow.v2.AnswerRecords";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.dialogflow.v2.AnswerRecords";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -472,9 +472,9 @@ public final class AnswerRecordsGrpc {
   private static final class AnswerRecordsMethodDescriptorSupplier
       extends AnswerRecordsBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    AnswerRecordsMethodDescriptorSupplier(String methodName) {
+    AnswerRecordsMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

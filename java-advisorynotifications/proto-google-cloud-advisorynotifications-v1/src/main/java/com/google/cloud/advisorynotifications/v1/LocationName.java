@@ -137,7 +137,7 @@ public class LocationName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       LocationName that = ((LocationName) o);
       return Objects.equals(this.organization, that.organization)
           && Objects.equals(this.location, that.location);

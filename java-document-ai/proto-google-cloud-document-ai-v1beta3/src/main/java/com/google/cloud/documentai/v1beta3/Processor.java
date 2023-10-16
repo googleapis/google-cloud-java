@@ -44,6 +44,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     state_ = 0;
     defaultProcessorVersion_ = "";
+    processorVersionAliases_ = java.util.Collections.emptyList();
     processEndpoint_ = "";
     kmsKeyName_ = "";
   }
@@ -607,6 +608,92 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PROCESSOR_VERSION_ALIASES_FIELD_NUMBER = 10;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.documentai.v1beta3.ProcessorVersionAlias>
+      processorVersionAliases_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The processor version aliases.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.documentai.v1beta3.ProcessorVersionAlias>
+      getProcessorVersionAliasesList() {
+    return processorVersionAliases_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The processor version aliases.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.documentai.v1beta3.ProcessorVersionAliasOrBuilder>
+      getProcessorVersionAliasesOrBuilderList() {
+    return processorVersionAliases_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The processor version aliases.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getProcessorVersionAliasesCount() {
+    return processorVersionAliases_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The processor version aliases.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.ProcessorVersionAlias getProcessorVersionAliases(
+      int index) {
+    return processorVersionAliases_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The processor version aliases.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.ProcessorVersionAliasOrBuilder
+      getProcessorVersionAliasesOrBuilder(int index) {
+    return processorVersionAliases_.get(index);
+  }
+
   public static final int PROCESS_ENDPOINT_FIELD_NUMBER = 6;
 
   @SuppressWarnings("serial")
@@ -802,6 +889,9 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultProcessorVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, defaultProcessorVersion_);
     }
+    for (int i = 0; i < processorVersionAliases_.size(); i++) {
+      output.writeMessage(10, processorVersionAliases_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -836,6 +926,11 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(defaultProcessorVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, defaultProcessorVersion_);
     }
+    for (int i = 0; i < processorVersionAliases_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, processorVersionAliases_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -857,6 +952,8 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (state_ != other.state_) return false;
     if (!getDefaultProcessorVersion().equals(other.getDefaultProcessorVersion())) return false;
+    if (!getProcessorVersionAliasesList().equals(other.getProcessorVersionAliasesList()))
+      return false;
     if (!getProcessEndpoint().equals(other.getProcessEndpoint())) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
@@ -884,6 +981,10 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + state_;
     hash = (37 * hash) + DEFAULT_PROCESSOR_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getDefaultProcessorVersion().hashCode();
+    if (getProcessorVersionAliasesCount() > 0) {
+      hash = (37 * hash) + PROCESSOR_VERSION_ALIASES_FIELD_NUMBER;
+      hash = (53 * hash) + getProcessorVersionAliasesList().hashCode();
+    }
     hash = (37 * hash) + PROCESS_ENDPOINT_FIELD_NUMBER;
     hash = (53 * hash) + getProcessEndpoint().hashCode();
     if (hasCreateTime()) {
@@ -1037,6 +1138,13 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       displayName_ = "";
       state_ = 0;
       defaultProcessorVersion_ = "";
+      if (processorVersionAliasesBuilder_ == null) {
+        processorVersionAliases_ = java.util.Collections.emptyList();
+      } else {
+        processorVersionAliases_ = null;
+        processorVersionAliasesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
       processEndpoint_ = "";
       createTime_ = null;
       if (createTimeBuilder_ != null) {
@@ -1071,11 +1179,25 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.documentai.v1beta3.Processor buildPartial() {
       com.google.cloud.documentai.v1beta3.Processor result =
           new com.google.cloud.documentai.v1beta3.Processor(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.documentai.v1beta3.Processor result) {
+      if (processorVersionAliasesBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          processorVersionAliases_ =
+              java.util.Collections.unmodifiableList(processorVersionAliases_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.processorVersionAliases_ = processorVersionAliases_;
+      } else {
+        result.processorVersionAliases_ = processorVersionAliasesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.documentai.v1beta3.Processor result) {
@@ -1095,13 +1217,13 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.defaultProcessorVersion_ = defaultProcessorVersion_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.processEndpoint_ = processEndpoint_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.kmsKeyName_ = kmsKeyName_;
       }
     }
@@ -1174,9 +1296,36 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (processorVersionAliasesBuilder_ == null) {
+        if (!other.processorVersionAliases_.isEmpty()) {
+          if (processorVersionAliases_.isEmpty()) {
+            processorVersionAliases_ = other.processorVersionAliases_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureProcessorVersionAliasesIsMutable();
+            processorVersionAliases_.addAll(other.processorVersionAliases_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.processorVersionAliases_.isEmpty()) {
+          if (processorVersionAliasesBuilder_.isEmpty()) {
+            processorVersionAliasesBuilder_.dispose();
+            processorVersionAliasesBuilder_ = null;
+            processorVersionAliases_ = other.processorVersionAliases_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            processorVersionAliasesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getProcessorVersionAliasesFieldBuilder()
+                    : null;
+          } else {
+            processorVersionAliasesBuilder_.addAllMessages(other.processorVersionAliases_);
+          }
+        }
+      }
       if (!other.getProcessEndpoint().isEmpty()) {
         processEndpoint_ = other.processEndpoint_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasCreateTime()) {
@@ -1184,7 +1333,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getKmsKeyName().isEmpty()) {
         kmsKeyName_ = other.kmsKeyName_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1240,19 +1389,19 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
             case 50:
               {
                 processEndpoint_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
               {
                 kmsKeyName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 74:
@@ -1261,6 +1410,20 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 74
+            case 82:
+              {
+                com.google.cloud.documentai.v1beta3.ProcessorVersionAlias m =
+                    input.readMessage(
+                        com.google.cloud.documentai.v1beta3.ProcessorVersionAlias.parser(),
+                        extensionRegistry);
+                if (processorVersionAliasesBuilder_ == null) {
+                  ensureProcessorVersionAliasesIsMutable();
+                  processorVersionAliases_.add(m);
+                } else {
+                  processorVersionAliasesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 82
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1831,6 +1994,413 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private java.util.List<com.google.cloud.documentai.v1beta3.ProcessorVersionAlias>
+        processorVersionAliases_ = java.util.Collections.emptyList();
+
+    private void ensureProcessorVersionAliasesIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        processorVersionAliases_ =
+            new java.util.ArrayList<com.google.cloud.documentai.v1beta3.ProcessorVersionAlias>(
+                processorVersionAliases_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.ProcessorVersionAlias,
+            com.google.cloud.documentai.v1beta3.ProcessorVersionAlias.Builder,
+            com.google.cloud.documentai.v1beta3.ProcessorVersionAliasOrBuilder>
+        processorVersionAliasesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The processor version aliases.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.documentai.v1beta3.ProcessorVersionAlias>
+        getProcessorVersionAliasesList() {
+      if (processorVersionAliasesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(processorVersionAliases_);
+      } else {
+        return processorVersionAliasesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The processor version aliases.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getProcessorVersionAliasesCount() {
+      if (processorVersionAliasesBuilder_ == null) {
+        return processorVersionAliases_.size();
+      } else {
+        return processorVersionAliasesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The processor version aliases.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.documentai.v1beta3.ProcessorVersionAlias getProcessorVersionAliases(
+        int index) {
+      if (processorVersionAliasesBuilder_ == null) {
+        return processorVersionAliases_.get(index);
+      } else {
+        return processorVersionAliasesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The processor version aliases.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setProcessorVersionAliases(
+        int index, com.google.cloud.documentai.v1beta3.ProcessorVersionAlias value) {
+      if (processorVersionAliasesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProcessorVersionAliasesIsMutable();
+        processorVersionAliases_.set(index, value);
+        onChanged();
+      } else {
+        processorVersionAliasesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The processor version aliases.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setProcessorVersionAliases(
+        int index,
+        com.google.cloud.documentai.v1beta3.ProcessorVersionAlias.Builder builderForValue) {
+      if (processorVersionAliasesBuilder_ == null) {
+        ensureProcessorVersionAliasesIsMutable();
+        processorVersionAliases_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        processorVersionAliasesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The processor version aliases.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addProcessorVersionAliases(
+        com.google.cloud.documentai.v1beta3.ProcessorVersionAlias value) {
+      if (processorVersionAliasesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProcessorVersionAliasesIsMutable();
+        processorVersionAliases_.add(value);
+        onChanged();
+      } else {
+        processorVersionAliasesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The processor version aliases.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addProcessorVersionAliases(
+        int index, com.google.cloud.documentai.v1beta3.ProcessorVersionAlias value) {
+      if (processorVersionAliasesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureProcessorVersionAliasesIsMutable();
+        processorVersionAliases_.add(index, value);
+        onChanged();
+      } else {
+        processorVersionAliasesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The processor version aliases.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addProcessorVersionAliases(
+        com.google.cloud.documentai.v1beta3.ProcessorVersionAlias.Builder builderForValue) {
+      if (processorVersionAliasesBuilder_ == null) {
+        ensureProcessorVersionAliasesIsMutable();
+        processorVersionAliases_.add(builderForValue.build());
+        onChanged();
+      } else {
+        processorVersionAliasesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The processor version aliases.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addProcessorVersionAliases(
+        int index,
+        com.google.cloud.documentai.v1beta3.ProcessorVersionAlias.Builder builderForValue) {
+      if (processorVersionAliasesBuilder_ == null) {
+        ensureProcessorVersionAliasesIsMutable();
+        processorVersionAliases_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        processorVersionAliasesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The processor version aliases.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllProcessorVersionAliases(
+        java.lang.Iterable<? extends com.google.cloud.documentai.v1beta3.ProcessorVersionAlias>
+            values) {
+      if (processorVersionAliasesBuilder_ == null) {
+        ensureProcessorVersionAliasesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, processorVersionAliases_);
+        onChanged();
+      } else {
+        processorVersionAliasesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The processor version aliases.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearProcessorVersionAliases() {
+      if (processorVersionAliasesBuilder_ == null) {
+        processorVersionAliases_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        processorVersionAliasesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The processor version aliases.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeProcessorVersionAliases(int index) {
+      if (processorVersionAliasesBuilder_ == null) {
+        ensureProcessorVersionAliasesIsMutable();
+        processorVersionAliases_.remove(index);
+        onChanged();
+      } else {
+        processorVersionAliasesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The processor version aliases.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.documentai.v1beta3.ProcessorVersionAlias.Builder
+        getProcessorVersionAliasesBuilder(int index) {
+      return getProcessorVersionAliasesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The processor version aliases.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.documentai.v1beta3.ProcessorVersionAliasOrBuilder
+        getProcessorVersionAliasesOrBuilder(int index) {
+      if (processorVersionAliasesBuilder_ == null) {
+        return processorVersionAliases_.get(index);
+      } else {
+        return processorVersionAliasesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The processor version aliases.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.documentai.v1beta3.ProcessorVersionAliasOrBuilder>
+        getProcessorVersionAliasesOrBuilderList() {
+      if (processorVersionAliasesBuilder_ != null) {
+        return processorVersionAliasesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(processorVersionAliases_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The processor version aliases.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.documentai.v1beta3.ProcessorVersionAlias.Builder
+        addProcessorVersionAliasesBuilder() {
+      return getProcessorVersionAliasesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.documentai.v1beta3.ProcessorVersionAlias.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The processor version aliases.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.documentai.v1beta3.ProcessorVersionAlias.Builder
+        addProcessorVersionAliasesBuilder(int index) {
+      return getProcessorVersionAliasesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.documentai.v1beta3.ProcessorVersionAlias.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The processor version aliases.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.documentai.v1beta3.ProcessorVersionAlias processor_version_aliases = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.documentai.v1beta3.ProcessorVersionAlias.Builder>
+        getProcessorVersionAliasesBuilderList() {
+      return getProcessorVersionAliasesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.ProcessorVersionAlias,
+            com.google.cloud.documentai.v1beta3.ProcessorVersionAlias.Builder,
+            com.google.cloud.documentai.v1beta3.ProcessorVersionAliasOrBuilder>
+        getProcessorVersionAliasesFieldBuilder() {
+      if (processorVersionAliasesBuilder_ == null) {
+        processorVersionAliasesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.ProcessorVersionAlias,
+                com.google.cloud.documentai.v1beta3.ProcessorVersionAlias.Builder,
+                com.google.cloud.documentai.v1beta3.ProcessorVersionAliasOrBuilder>(
+                processorVersionAliases_,
+                ((bitField0_ & 0x00000020) != 0),
+                getParentForChildren(),
+                isClean());
+        processorVersionAliases_ = null;
+      }
+      return processorVersionAliasesBuilder_;
+    }
+
     private java.lang.Object processEndpoint_ = "";
     /**
      *
@@ -1902,7 +2472,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       processEndpoint_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1922,7 +2492,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearProcessEndpoint() {
       processEndpoint_ = getDefaultInstance().getProcessEndpoint();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1947,7 +2517,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       processEndpoint_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1970,7 +2540,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2010,7 +2580,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2029,7 +2599,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2044,7 +2614,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -2054,7 +2624,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2068,7 +2638,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -2087,7 +2657,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -2200,7 +2770,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       kmsKeyName_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2218,7 +2788,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearKmsKeyName() {
       kmsKeyName_ = getDefaultInstance().getKmsKeyName();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2241,7 +2811,7 @@ public final class Processor extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       kmsKeyName_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

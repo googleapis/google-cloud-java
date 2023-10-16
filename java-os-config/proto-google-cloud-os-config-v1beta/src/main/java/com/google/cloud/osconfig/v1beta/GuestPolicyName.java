@@ -137,7 +137,7 @@ public class GuestPolicyName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       GuestPolicyName that = ((GuestPolicyName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.guestPolicy, that.guestPolicy);

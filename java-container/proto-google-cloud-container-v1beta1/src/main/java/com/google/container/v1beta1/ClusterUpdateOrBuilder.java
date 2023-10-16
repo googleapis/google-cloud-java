@@ -1641,35 +1641,51 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * Deprecated: Use DesiredSecurityPostureConfig instead.
    * Enable/Disable Protect API features for the cluster.
    * </pre>
    *
-   * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+   * <code>
+   * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2524
    * @return Whether the desiredProtectConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasDesiredProtectConfig();
   /**
    *
    *
    * <pre>
+   * Deprecated: Use DesiredSecurityPostureConfig instead.
    * Enable/Disable Protect API features for the cluster.
    * </pre>
    *
-   * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+   * <code>
+   * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2524
    * @return The desiredProtectConfig.
    */
+  @java.lang.Deprecated
   com.google.container.v1beta1.ProtectConfig getDesiredProtectConfig();
   /**
    *
    *
    * <pre>
+   * Deprecated: Use DesiredSecurityPostureConfig instead.
    * Enable/Disable Protect API features for the cluster.
    * </pre>
    *
-   * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+   * <code>
+   * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.container.v1beta1.ProtectConfigOrBuilder getDesiredProtectConfigOrBuilder();
 
   /**
@@ -2147,4 +2163,46 @@ public interface ClusterUpdateOrBuilder
    * <code>.google.container.v1beta1.K8sBetaAPIConfig desired_k8s_beta_apis = 131;</code>
    */
   com.google.container.v1beta1.K8sBetaAPIConfigOrBuilder getDesiredK8SBetaApisOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * HostMaintenancePolicy contains the desired maintenance policy for the
+   * Google Compute Engine hosts.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.HostMaintenancePolicy desired_host_maintenance_policy = 132;
+   * </code>
+   *
+   * @return Whether the desiredHostMaintenancePolicy field is set.
+   */
+  boolean hasDesiredHostMaintenancePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * HostMaintenancePolicy contains the desired maintenance policy for the
+   * Google Compute Engine hosts.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.HostMaintenancePolicy desired_host_maintenance_policy = 132;
+   * </code>
+   *
+   * @return The desiredHostMaintenancePolicy.
+   */
+  com.google.container.v1beta1.HostMaintenancePolicy getDesiredHostMaintenancePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * HostMaintenancePolicy contains the desired maintenance policy for the
+   * Google Compute Engine hosts.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.HostMaintenancePolicy desired_host_maintenance_policy = 132;
+   * </code>
+   */
+  com.google.container.v1beta1.HostMaintenancePolicyOrBuilder
+      getDesiredHostMaintenancePolicyOrBuilder();
 }

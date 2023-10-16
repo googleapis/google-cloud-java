@@ -47,6 +47,7 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     clusterUid_ = "";
     clusterName_ = "";
     etag_ = "";
+    databaseVersion_ = 0;
   }
 
   @java.lang.Override
@@ -467,6 +468,693 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.alloydb.v1alpha.Backup.Type)
+  }
+
+  public interface QuantityBasedExpiryOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The backup's position among its backups with the same source
+     * cluster and type, by descending chronological order create time(i.e.
+     * newest first).
+     * </pre>
+     *
+     * <code>int32 retention_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The retentionCount.
+     */
+    int getRetentionCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The length of the quantity-based queue, specified by the
+     * backup's retention policy.
+     * </pre>
+     *
+     * <code>int32 total_retention_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The totalRetentionCount.
+     */
+    int getTotalRetentionCount();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A backup's position in a quantity-based retention queue, of backups with
+   * the same source cluster and type, with length, retention, specified by the
+   * backup's retention policy.
+   * Once the position is greater than the retention, the backup is eligible to
+   * be garbage collected.
+   *
+   * Example: 5 backups from the same source cluster and type with a
+   * quantity-based retention of 3 and denoted by backup_id (position,
+   * retention).
+   *
+   * Safe: backup_5 (1, 3), backup_4, (2, 3), backup_3 (3, 3).
+   * Awaiting garbage collection: backup_2 (4, 3), backup_1 (5, 3)
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry}
+   */
+  public static final class QuantityBasedExpiry extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry)
+      QuantityBasedExpiryOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use QuantityBasedExpiry.newBuilder() to construct.
+    private QuantityBasedExpiry(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private QuantityBasedExpiry() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new QuantityBasedExpiry();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.alloydb.v1alpha.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1alpha_Backup_QuantityBasedExpiry_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.alloydb.v1alpha.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1alpha_Backup_QuantityBasedExpiry_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry.class,
+              com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry.Builder.class);
+    }
+
+    public static final int RETENTION_COUNT_FIELD_NUMBER = 1;
+    private int retentionCount_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The backup's position among its backups with the same source
+     * cluster and type, by descending chronological order create time(i.e.
+     * newest first).
+     * </pre>
+     *
+     * <code>int32 retention_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The retentionCount.
+     */
+    @java.lang.Override
+    public int getRetentionCount() {
+      return retentionCount_;
+    }
+
+    public static final int TOTAL_RETENTION_COUNT_FIELD_NUMBER = 2;
+    private int totalRetentionCount_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The length of the quantity-based queue, specified by the
+     * backup's retention policy.
+     * </pre>
+     *
+     * <code>int32 total_retention_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The totalRetentionCount.
+     */
+    @java.lang.Override
+    public int getTotalRetentionCount() {
+      return totalRetentionCount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (retentionCount_ != 0) {
+        output.writeInt32(1, retentionCount_);
+      }
+      if (totalRetentionCount_ != 0) {
+        output.writeInt32(2, totalRetentionCount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (retentionCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, retentionCount_);
+      }
+      if (totalRetentionCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, totalRetentionCount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry other =
+          (com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry) obj;
+
+      if (getRetentionCount() != other.getRetentionCount()) return false;
+      if (getTotalRetentionCount() != other.getTotalRetentionCount()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + RETENTION_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getRetentionCount();
+      hash = (37 * hash) + TOTAL_RETENTION_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getTotalRetentionCount();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A backup's position in a quantity-based retention queue, of backups with
+     * the same source cluster and type, with length, retention, specified by the
+     * backup's retention policy.
+     * Once the position is greater than the retention, the backup is eligible to
+     * be garbage collected.
+     *
+     * Example: 5 backups from the same source cluster and type with a
+     * quantity-based retention of 3 and denoted by backup_id (position,
+     * retention).
+     *
+     * Safe: backup_5 (1, 3), backup_4, (2, 3), backup_3 (3, 3).
+     * Awaiting garbage collection: backup_2 (4, 3), backup_1 (5, 3)
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry)
+        com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiryOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.alloydb.v1alpha.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1alpha_Backup_QuantityBasedExpiry_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.alloydb.v1alpha.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1alpha_Backup_QuantityBasedExpiry_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry.class,
+                com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry.Builder.class);
+      }
+
+      // Construct using com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        retentionCount_ = 0;
+        totalRetentionCount_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.alloydb.v1alpha.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1alpha_Backup_QuantityBasedExpiry_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry
+          getDefaultInstanceForType() {
+        return com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry build() {
+        com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry buildPartial() {
+        com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry result =
+            new com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.retentionCount_ = retentionCount_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.totalRetentionCount_ = totalRetentionCount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry) {
+          return mergeFrom((com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry other) {
+        if (other
+            == com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry.getDefaultInstance())
+          return this;
+        if (other.getRetentionCount() != 0) {
+          setRetentionCount(other.getRetentionCount());
+        }
+        if (other.getTotalRetentionCount() != 0) {
+          setTotalRetentionCount(other.getTotalRetentionCount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  retentionCount_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  totalRetentionCount_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int retentionCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The backup's position among its backups with the same source
+       * cluster and type, by descending chronological order create time(i.e.
+       * newest first).
+       * </pre>
+       *
+       * <code>int32 retention_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The retentionCount.
+       */
+      @java.lang.Override
+      public int getRetentionCount() {
+        return retentionCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The backup's position among its backups with the same source
+       * cluster and type, by descending chronological order create time(i.e.
+       * newest first).
+       * </pre>
+       *
+       * <code>int32 retention_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The retentionCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRetentionCount(int value) {
+
+        retentionCount_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The backup's position among its backups with the same source
+       * cluster and type, by descending chronological order create time(i.e.
+       * newest first).
+       * </pre>
+       *
+       * <code>int32 retention_count = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRetentionCount() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        retentionCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int totalRetentionCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The length of the quantity-based queue, specified by the
+       * backup's retention policy.
+       * </pre>
+       *
+       * <code>int32 total_retention_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The totalRetentionCount.
+       */
+      @java.lang.Override
+      public int getTotalRetentionCount() {
+        return totalRetentionCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The length of the quantity-based queue, specified by the
+       * backup's retention policy.
+       * </pre>
+       *
+       * <code>int32 total_retention_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The totalRetentionCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTotalRetentionCount(int value) {
+
+        totalRetentionCount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The length of the quantity-based queue, specified by the
+       * backup's retention policy.
+       * </pre>
+       *
+       * <code>int32 total_retention_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearTotalRetentionCount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        totalRetentionCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry)
+    private static final com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry();
+    }
+
+    public static com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QuantityBasedExpiry> PARSER =
+        new com.google.protobuf.AbstractParser<QuantityBasedExpiry>() {
+          @java.lang.Override
+          public QuantityBasedExpiry parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<QuantityBasedExpiry> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QuantityBasedExpiry> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -1501,6 +2189,130 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     return expiryTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expiryTime_;
   }
 
+  public static final int EXPIRY_QUANTITY_FIELD_NUMBER = 20;
+  private com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry expiryQuantity_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The QuantityBasedExpiry of the backup, specified by the
+   * backup's retention policy. Once the expiry quantity is over retention, the
+   * backup is eligible to be garbage collected.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry expiry_quantity = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the expiryQuantity field is set.
+   */
+  @java.lang.Override
+  public boolean hasExpiryQuantity() {
+    return expiryQuantity_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The QuantityBasedExpiry of the backup, specified by the
+   * backup's retention policy. Once the expiry quantity is over retention, the
+   * backup is eligible to be garbage collected.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry expiry_quantity = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The expiryQuantity.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry getExpiryQuantity() {
+    return expiryQuantity_ == null
+        ? com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry.getDefaultInstance()
+        : expiryQuantity_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The QuantityBasedExpiry of the backup, specified by the
+   * backup's retention policy. Once the expiry quantity is over retention, the
+   * backup is eligible to be garbage collected.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry expiry_quantity = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiryOrBuilder
+      getExpiryQuantityOrBuilder() {
+    return expiryQuantity_ == null
+        ? com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry.getDefaultInstance()
+        : expiryQuantity_;
+  }
+
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 21;
+  private boolean satisfiesPzs_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 21;</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int DATABASE_VERSION_FIELD_NUMBER = 22;
+  private int databaseVersion_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The database engine major version of the cluster this backup
+   * was created from. Any restored cluster created from this backup will have
+   * the same database version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for databaseVersion.
+   */
+  @java.lang.Override
+  public int getDatabaseVersionValue() {
+    return databaseVersion_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The database engine major version of the cluster this backup
+   * was created from. Any restored cluster created from this backup will have
+   * the same database version.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The databaseVersion.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1alpha.DatabaseVersion getDatabaseVersion() {
+    com.google.cloud.alloydb.v1alpha.DatabaseVersion result =
+        com.google.cloud.alloydb.v1alpha.DatabaseVersion.forNumber(databaseVersion_);
+    return result == null ? com.google.cloud.alloydb.v1alpha.DatabaseVersion.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1569,6 +2381,17 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     }
     if (expiryTime_ != null) {
       output.writeMessage(19, getExpiryTime());
+    }
+    if (expiryQuantity_ != null) {
+      output.writeMessage(20, getExpiryQuantity());
+    }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(21, satisfiesPzs_);
+    }
+    if (databaseVersion_
+        != com.google.cloud.alloydb.v1alpha.DatabaseVersion.DATABASE_VERSION_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(22, databaseVersion_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1650,6 +2473,17 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (expiryTime_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getExpiryTime());
     }
+    if (expiryQuantity_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getExpiryQuantity());
+    }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(21, satisfiesPzs_);
+    }
+    if (databaseVersion_
+        != com.google.cloud.alloydb.v1alpha.DatabaseVersion.DATABASE_VERSION_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(22, databaseVersion_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1702,6 +2536,12 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
     if (hasExpiryTime()) {
       if (!getExpiryTime().equals(other.getExpiryTime())) return false;
     }
+    if (hasExpiryQuantity() != other.hasExpiryQuantity()) return false;
+    if (hasExpiryQuantity()) {
+      if (!getExpiryQuantity().equals(other.getExpiryQuantity())) return false;
+    }
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (databaseVersion_ != other.databaseVersion_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1767,6 +2607,14 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + EXPIRY_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getExpiryTime().hashCode();
     }
+    if (hasExpiryQuantity()) {
+      hash = (37 * hash) + EXPIRY_QUANTITY_FIELD_NUMBER;
+      hash = (53 * hash) + getExpiryQuantity().hashCode();
+    }
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    hash = (37 * hash) + DATABASE_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + databaseVersion_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1973,6 +2821,13 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         expiryTimeBuilder_.dispose();
         expiryTimeBuilder_ = null;
       }
+      expiryQuantity_ = null;
+      if (expiryQuantityBuilder_ != null) {
+        expiryQuantityBuilder_.dispose();
+        expiryQuantityBuilder_ = null;
+      }
+      satisfiesPzs_ = false;
+      databaseVersion_ = 0;
       return this;
     }
 
@@ -2069,6 +2924,16 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
         result.expiryTime_ = expiryTimeBuilder_ == null ? expiryTime_ : expiryTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.expiryQuantity_ =
+            expiryQuantityBuilder_ == null ? expiryQuantity_ : expiryQuantityBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.databaseVersion_ = databaseVersion_;
       }
     }
 
@@ -2185,6 +3050,15 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasExpiryTime()) {
         mergeExpiryTime(other.getExpiryTime());
+      }
+      if (other.hasExpiryQuantity()) {
+        mergeExpiryQuantity(other.getExpiryQuantity());
+      }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.databaseVersion_ != 0) {
+        setDatabaseVersionValue(other.getDatabaseVersionValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2339,6 +3213,24 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00040000;
                 break;
               } // case 154
+            case 162:
+              {
+                input.readMessage(getExpiryQuantityFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 162
+            case 168:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 168
+            case 176:
+              {
+                databaseVersion_ = input.readEnum();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 176
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5067,6 +5959,397 @@ public final class Backup extends com.google.protobuf.GeneratedMessageV3
         expiryTime_ = null;
       }
       return expiryTimeBuilder_;
+    }
+
+    private com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry expiryQuantity_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry,
+            com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry.Builder,
+            com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiryOrBuilder>
+        expiryQuantityBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The QuantityBasedExpiry of the backup, specified by the
+     * backup's retention policy. Once the expiry quantity is over retention, the
+     * backup is eligible to be garbage collected.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry expiry_quantity = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the expiryQuantity field is set.
+     */
+    public boolean hasExpiryQuantity() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The QuantityBasedExpiry of the backup, specified by the
+     * backup's retention policy. Once the expiry quantity is over retention, the
+     * backup is eligible to be garbage collected.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry expiry_quantity = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The expiryQuantity.
+     */
+    public com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry getExpiryQuantity() {
+      if (expiryQuantityBuilder_ == null) {
+        return expiryQuantity_ == null
+            ? com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry.getDefaultInstance()
+            : expiryQuantity_;
+      } else {
+        return expiryQuantityBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The QuantityBasedExpiry of the backup, specified by the
+     * backup's retention policy. Once the expiry quantity is over retention, the
+     * backup is eligible to be garbage collected.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry expiry_quantity = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setExpiryQuantity(
+        com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry value) {
+      if (expiryQuantityBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        expiryQuantity_ = value;
+      } else {
+        expiryQuantityBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The QuantityBasedExpiry of the backup, specified by the
+     * backup's retention policy. Once the expiry quantity is over retention, the
+     * backup is eligible to be garbage collected.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry expiry_quantity = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setExpiryQuantity(
+        com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry.Builder builderForValue) {
+      if (expiryQuantityBuilder_ == null) {
+        expiryQuantity_ = builderForValue.build();
+      } else {
+        expiryQuantityBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The QuantityBasedExpiry of the backup, specified by the
+     * backup's retention policy. Once the expiry quantity is over retention, the
+     * backup is eligible to be garbage collected.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry expiry_quantity = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeExpiryQuantity(
+        com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry value) {
+      if (expiryQuantityBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && expiryQuantity_ != null
+            && expiryQuantity_
+                != com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry
+                    .getDefaultInstance()) {
+          getExpiryQuantityBuilder().mergeFrom(value);
+        } else {
+          expiryQuantity_ = value;
+        }
+      } else {
+        expiryQuantityBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The QuantityBasedExpiry of the backup, specified by the
+     * backup's retention policy. Once the expiry quantity is over retention, the
+     * backup is eligible to be garbage collected.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry expiry_quantity = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearExpiryQuantity() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      expiryQuantity_ = null;
+      if (expiryQuantityBuilder_ != null) {
+        expiryQuantityBuilder_.dispose();
+        expiryQuantityBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The QuantityBasedExpiry of the backup, specified by the
+     * backup's retention policy. Once the expiry quantity is over retention, the
+     * backup is eligible to be garbage collected.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry expiry_quantity = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry.Builder
+        getExpiryQuantityBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return getExpiryQuantityFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The QuantityBasedExpiry of the backup, specified by the
+     * backup's retention policy. Once the expiry quantity is over retention, the
+     * backup is eligible to be garbage collected.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry expiry_quantity = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiryOrBuilder
+        getExpiryQuantityOrBuilder() {
+      if (expiryQuantityBuilder_ != null) {
+        return expiryQuantityBuilder_.getMessageOrBuilder();
+      } else {
+        return expiryQuantity_ == null
+            ? com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry.getDefaultInstance()
+            : expiryQuantity_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The QuantityBasedExpiry of the backup, specified by the
+     * backup's retention policy. Once the expiry quantity is over retention, the
+     * backup is eligible to be garbage collected.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry expiry_quantity = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry,
+            com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry.Builder,
+            com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiryOrBuilder>
+        getExpiryQuantityFieldBuilder() {
+      if (expiryQuantityBuilder_ == null) {
+        expiryQuantityBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry,
+                com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiry.Builder,
+                com.google.cloud.alloydb.v1alpha.Backup.QuantityBasedExpiryOrBuilder>(
+                getExpiryQuantity(), getParentForChildren(), isClean());
+        expiryQuantity_ = null;
+      }
+      return expiryQuantityBuilder_;
+    }
+
+    private boolean satisfiesPzs_;
+    /**
+     *
+     *
+     * <pre>
+     * Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 21;</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 21;</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 21;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int databaseVersion_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The database engine major version of the cluster this backup
+     * was created from. Any restored cluster created from this backup will have
+     * the same database version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for databaseVersion.
+     */
+    @java.lang.Override
+    public int getDatabaseVersionValue() {
+      return databaseVersion_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The database engine major version of the cluster this backup
+     * was created from. Any restored cluster created from this backup will have
+     * the same database version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for databaseVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatabaseVersionValue(int value) {
+      databaseVersion_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The database engine major version of the cluster this backup
+     * was created from. Any restored cluster created from this backup will have
+     * the same database version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The databaseVersion.
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1alpha.DatabaseVersion getDatabaseVersion() {
+      com.google.cloud.alloydb.v1alpha.DatabaseVersion result =
+          com.google.cloud.alloydb.v1alpha.DatabaseVersion.forNumber(databaseVersion_);
+      return result == null
+          ? com.google.cloud.alloydb.v1alpha.DatabaseVersion.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The database engine major version of the cluster this backup
+     * was created from. Any restored cluster created from this backup will have
+     * the same database version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The databaseVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatabaseVersion(com.google.cloud.alloydb.v1alpha.DatabaseVersion value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00200000;
+      databaseVersion_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The database engine major version of the cluster this backup
+     * was created from. Any restored cluster created from this backup will have
+     * the same database version.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1alpha.DatabaseVersion database_version = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDatabaseVersion() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      databaseVersion_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

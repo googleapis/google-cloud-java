@@ -137,7 +137,7 @@ public class DatasetName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       DatasetName that = ((DatasetName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.dataset, that.dataset);

@@ -236,4 +236,30 @@ public interface DocumentReferenceOrBuilder
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getDeleteTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Document is a folder with retention policy.
+   * </pre>
+   *
+   * <code>bool document_is_retention_folder = 8;</code>
+   *
+   * @return The documentIsRetentionFolder.
+   */
+  boolean getDocumentIsRetentionFolder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Document is a folder with legal hold.
+   * </pre>
+   *
+   * <code>bool document_is_legal_hold_folder = 9;</code>
+   *
+   * @return The documentIsLegalHoldFolder.
+   */
+  boolean getDocumentIsLegalHoldFolder();
 }

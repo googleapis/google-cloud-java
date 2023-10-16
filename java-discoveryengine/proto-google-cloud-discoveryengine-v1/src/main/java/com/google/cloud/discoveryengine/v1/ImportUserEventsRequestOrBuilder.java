@@ -27,11 +27,10 @@ public interface ImportUserEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The Inline source for the input content for UserEvents.
+   * The Inline source for the input content for UserEvents.
    * </pre>
    *
-   * <code>
-   * .google.cloud.discoveryengine.v1.ImportUserEventsRequest.InlineSource inline_source = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.cloud.discoveryengine.v1.ImportUserEventsRequest.InlineSource inline_source = 2;
    * </code>
    *
    * @return Whether the inlineSource field is set.
@@ -41,11 +40,10 @@ public interface ImportUserEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The Inline source for the input content for UserEvents.
+   * The Inline source for the input content for UserEvents.
    * </pre>
    *
-   * <code>
-   * .google.cloud.discoveryengine.v1.ImportUserEventsRequest.InlineSource inline_source = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.cloud.discoveryengine.v1.ImportUserEventsRequest.InlineSource inline_source = 2;
    * </code>
    *
    * @return The inlineSource.
@@ -55,11 +53,10 @@ public interface ImportUserEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The Inline source for the input content for UserEvents.
+   * The Inline source for the input content for UserEvents.
    * </pre>
    *
-   * <code>
-   * .google.cloud.discoveryengine.v1.ImportUserEventsRequest.InlineSource inline_source = 2 [(.google.api.field_behavior) = REQUIRED];
+   * <code>.google.cloud.discoveryengine.v1.ImportUserEventsRequest.InlineSource inline_source = 2;
    * </code>
    */
   com.google.cloud.discoveryengine.v1.ImportUserEventsRequest.InlineSourceOrBuilder
@@ -69,12 +66,10 @@ public interface ImportUserEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Cloud Storage location for the input content.
+   * Cloud Storage location for the input content.
    * </pre>
    *
-   * <code>
-   * .google.cloud.discoveryengine.v1.GcsSource gcs_source = 3 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.discoveryengine.v1.GcsSource gcs_source = 3;</code>
    *
    * @return Whether the gcsSource field is set.
    */
@@ -83,12 +78,10 @@ public interface ImportUserEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Cloud Storage location for the input content.
+   * Cloud Storage location for the input content.
    * </pre>
    *
-   * <code>
-   * .google.cloud.discoveryengine.v1.GcsSource gcs_source = 3 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.discoveryengine.v1.GcsSource gcs_source = 3;</code>
    *
    * @return The gcsSource.
    */
@@ -97,12 +90,10 @@ public interface ImportUserEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Cloud Storage location for the input content.
+   * Cloud Storage location for the input content.
    * </pre>
    *
-   * <code>
-   * .google.cloud.discoveryengine.v1.GcsSource gcs_source = 3 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.discoveryengine.v1.GcsSource gcs_source = 3;</code>
    */
   com.google.cloud.discoveryengine.v1.GcsSourceOrBuilder getGcsSourceOrBuilder();
 
@@ -110,12 +101,10 @@ public interface ImportUserEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. BigQuery input source.
+   * BigQuery input source.
    * </pre>
    *
-   * <code>
-   * .google.cloud.discoveryengine.v1.BigQuerySource bigquery_source = 4 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.discoveryengine.v1.BigQuerySource bigquery_source = 4;</code>
    *
    * @return Whether the bigquerySource field is set.
    */
@@ -124,12 +113,10 @@ public interface ImportUserEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. BigQuery input source.
+   * BigQuery input source.
    * </pre>
    *
-   * <code>
-   * .google.cloud.discoveryengine.v1.BigQuerySource bigquery_source = 4 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.discoveryengine.v1.BigQuerySource bigquery_source = 4;</code>
    *
    * @return The bigquerySource.
    */
@@ -138,12 +125,10 @@ public interface ImportUserEventsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. BigQuery input source.
+   * BigQuery input source.
    * </pre>
    *
-   * <code>
-   * .google.cloud.discoveryengine.v1.BigQuerySource bigquery_source = 4 [(.google.api.field_behavior) = REQUIRED];
-   * </code>
+   * <code>.google.cloud.discoveryengine.v1.BigQuerySource bigquery_source = 4;</code>
    */
   com.google.cloud.discoveryengine.v1.BigQuerySourceOrBuilder getBigquerySourceOrBuilder();
 

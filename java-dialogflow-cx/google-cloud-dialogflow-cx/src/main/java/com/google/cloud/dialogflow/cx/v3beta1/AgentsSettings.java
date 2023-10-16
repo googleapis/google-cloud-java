@@ -142,6 +142,18 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
     return ((AgentsStubSettings) getStubSettings()).getAgentValidationResultSettings();
   }
 
+  /** Returns the object with the settings used for calls to getGenerativeSettings. */
+  public UnaryCallSettings<GetGenerativeSettingsRequest, GenerativeSettings>
+      getGenerativeSettingsSettings() {
+    return ((AgentsStubSettings) getStubSettings()).getGenerativeSettingsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateGenerativeSettings. */
+  public UnaryCallSettings<UpdateGenerativeSettingsRequest, GenerativeSettings>
+      updateGenerativeSettingsSettings() {
+    return ((AgentsStubSettings) getStubSettings()).updateGenerativeSettingsSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -325,6 +337,18 @@ public class AgentsSettings extends ClientSettings<AgentsSettings> {
     public UnaryCallSettings.Builder<GetAgentValidationResultRequest, AgentValidationResult>
         getAgentValidationResultSettings() {
       return getStubSettingsBuilder().getAgentValidationResultSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getGenerativeSettings. */
+    public UnaryCallSettings.Builder<GetGenerativeSettingsRequest, GenerativeSettings>
+        getGenerativeSettingsSettings() {
+      return getStubSettingsBuilder().getGenerativeSettingsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateGenerativeSettings. */
+    public UnaryCallSettings.Builder<UpdateGenerativeSettingsRequest, GenerativeSettings>
+        updateGenerativeSettingsSettings() {
+      return getStubSettingsBuilder().updateGenerativeSettingsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

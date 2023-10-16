@@ -859,12 +859,12 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The Compute Engine metadata entries to add to all instances (see
+   * Optional. The Compute Engine metadata entries to add to all instances (see
    * [Project and instance
    * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; metadata = 5;</code>
+   * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public boolean containsMetadata(java.lang.String key) {
@@ -883,12 +883,12 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The Compute Engine metadata entries to add to all instances (see
+   * Optional. The Compute Engine metadata entries to add to all instances (see
    * [Project and instance
    * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; metadata = 5;</code>
+   * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
@@ -898,12 +898,12 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The Compute Engine metadata entries to add to all instances (see
+   * Optional. The Compute Engine metadata entries to add to all instances (see
    * [Project and instance
    * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; metadata = 5;</code>
+   * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getMetadataOrDefault(
@@ -920,12 +920,12 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The Compute Engine metadata entries to add to all instances (see
+   * Optional. The Compute Engine metadata entries to add to all instances (see
    * [Project and instance
    * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; metadata = 5;</code>
+   * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.lang.String getMetadataOrThrow(java.lang.String key) {
@@ -3235,12 +3235,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine metadata entries to add to all instances (see
+     * Optional. The Compute Engine metadata entries to add to all instances (see
      * [Project and instance
      * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; metadata = 5;</code>
+     * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public boolean containsMetadata(java.lang.String key) {
@@ -3259,12 +3260,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine metadata entries to add to all instances (see
+     * Optional. The Compute Engine metadata entries to add to all instances (see
      * [Project and instance
      * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; metadata = 5;</code>
+     * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
@@ -3274,12 +3276,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine metadata entries to add to all instances (see
+     * Optional. The Compute Engine metadata entries to add to all instances (see
      * [Project and instance
      * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; metadata = 5;</code>
+     * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getMetadataOrDefault(
@@ -3296,12 +3299,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine metadata entries to add to all instances (see
+     * Optional. The Compute Engine metadata entries to add to all instances (see
      * [Project and instance
      * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; metadata = 5;</code>
+     * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getMetadataOrThrow(java.lang.String key) {
@@ -3324,12 +3328,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine metadata entries to add to all instances (see
+     * Optional. The Compute Engine metadata entries to add to all instances (see
      * [Project and instance
      * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; metadata = 5;</code>
+     * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeMetadata(java.lang.String key) {
       if (key == null) {
@@ -3348,12 +3353,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine metadata entries to add to all instances (see
+     * Optional. The Compute Engine metadata entries to add to all instances (see
      * [Project and instance
      * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; metadata = 5;</code>
+     * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putMetadata(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -3370,12 +3376,13 @@ public final class GceClusterConfig extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The Compute Engine metadata entries to add to all instances (see
+     * Optional. The Compute Engine metadata entries to add to all instances (see
      * [Project and instance
      * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
      * </pre>
      *
-     * <code>map&lt;string, string&gt; metadata = 5;</code>
+     * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);

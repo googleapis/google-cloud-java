@@ -80,7 +80,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Defaults to INCREMENTAL.
+     * Defaults to `INCREMENTAL`.
      * </pre>
      *
      * <code>RECONCILIATION_MODE_UNSPECIFIED = 0;</code>
@@ -114,7 +114,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Defaults to INCREMENTAL.
+     * Defaults to `INCREMENTAL`.
      * </pre>
      *
      * <code>RECONCILIATION_MODE_UNSPECIFIED = 0;</code>
@@ -1747,7 +1747,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
    * `false`, [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s
    * have to be specified using
    * [id_field][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.id_field],
-   * otherwises, documents without IDs will fail to be imported.
+   * otherwise, documents without IDs fail to be imported.
    *
    * Only set this field when using
    * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
@@ -1785,12 +1785,12 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
    * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
    * the column name of the BigQuery table where the unique ids are stored.
    *
-   * The values of the JSON field or the BigQuery column will be used as the
+   * The values of the JSON field or the BigQuery column are used as the
    * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
    * field or the BigQuery column must be of string type, and the values must be
    * set as valid strings conform to
    * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
-   * Otherwise, documents without valid IDs will fail to be imported.
+   * Otherwise, documents without valid IDs fail to be imported.
    *
    * Only set this field when using
    * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
@@ -1836,12 +1836,12 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
    * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
    * the column name of the BigQuery table where the unique ids are stored.
    *
-   * The values of the JSON field or the BigQuery column will be used as the
+   * The values of the JSON field or the BigQuery column are used as the
    * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
    * field or the BigQuery column must be of string type, and the values must be
    * set as valid strings conform to
    * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
-   * Otherwise, documents without valid IDs will fail to be imported.
+   * Otherwise, documents without valid IDs fail to be imported.
    *
    * Only set this field when using
    * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
@@ -3578,7 +3578,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * `false`, [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s
      * have to be specified using
      * [id_field][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.id_field],
-     * otherwises, documents without IDs will fail to be imported.
+     * otherwise, documents without IDs fail to be imported.
      *
      * Only set this field when using
      * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
@@ -3613,7 +3613,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * `false`, [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s
      * have to be specified using
      * [id_field][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.id_field],
-     * otherwises, documents without IDs will fail to be imported.
+     * otherwise, documents without IDs fail to be imported.
      *
      * Only set this field when using
      * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
@@ -3652,7 +3652,7 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * `false`, [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s
      * have to be specified using
      * [id_field][google.cloud.discoveryengine.v1beta.ImportDocumentsRequest.id_field],
-     * otherwises, documents without IDs will fail to be imported.
+     * otherwise, documents without IDs fail to be imported.
      *
      * Only set this field when using
      * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
@@ -3689,12 +3689,12 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
      * the column name of the BigQuery table where the unique ids are stored.
      *
-     * The values of the JSON field or the BigQuery column will be used as the
+     * The values of the JSON field or the BigQuery column are used as the
      * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
      * field or the BigQuery column must be of string type, and the values must be
      * set as valid strings conform to
      * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
-     * Otherwise, documents without valid IDs will fail to be imported.
+     * Otherwise, documents without valid IDs fail to be imported.
      *
      * Only set this field when using
      * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
@@ -3739,12 +3739,12 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
      * the column name of the BigQuery table where the unique ids are stored.
      *
-     * The values of the JSON field or the BigQuery column will be used as the
+     * The values of the JSON field or the BigQuery column are used as the
      * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
      * field or the BigQuery column must be of string type, and the values must be
      * set as valid strings conform to
      * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
-     * Otherwise, documents without valid IDs will fail to be imported.
+     * Otherwise, documents without valid IDs fail to be imported.
      *
      * Only set this field when using
      * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
@@ -3789,12 +3789,12 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
      * the column name of the BigQuery table where the unique ids are stored.
      *
-     * The values of the JSON field or the BigQuery column will be used as the
+     * The values of the JSON field or the BigQuery column are used as the
      * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
      * field or the BigQuery column must be of string type, and the values must be
      * set as valid strings conform to
      * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
-     * Otherwise, documents without valid IDs will fail to be imported.
+     * Otherwise, documents without valid IDs fail to be imported.
      *
      * Only set this field when using
      * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
@@ -3838,12 +3838,12 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
      * the column name of the BigQuery table where the unique ids are stored.
      *
-     * The values of the JSON field or the BigQuery column will be used as the
+     * The values of the JSON field or the BigQuery column are used as the
      * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
      * field or the BigQuery column must be of string type, and the values must be
      * set as valid strings conform to
      * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
-     * Otherwise, documents without valid IDs will fail to be imported.
+     * Otherwise, documents without valid IDs fail to be imported.
      *
      * Only set this field when using
      * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or
@@ -3883,12 +3883,12 @@ public final class ImportDocumentsRequest extends com.google.protobuf.GeneratedM
      * [BigQuerySource][google.cloud.discoveryengine.v1beta.BigQuerySource] it is
      * the column name of the BigQuery table where the unique ids are stored.
      *
-     * The values of the JSON field or the BigQuery column will be used as the
+     * The values of the JSON field or the BigQuery column are used as the
      * [Document.id][google.cloud.discoveryengine.v1beta.Document.id]s. The JSON
      * field or the BigQuery column must be of string type, and the values must be
      * set as valid strings conform to
      * [RFC-1034](https://tools.ietf.org/html/rfc1034) with 1-63 characters.
-     * Otherwise, documents without valid IDs will fail to be imported.
+     * Otherwise, documents without valid IDs fail to be imported.
      *
      * Only set this field when using
      * [GcsSource][google.cloud.discoveryengine.v1beta.GcsSource] or

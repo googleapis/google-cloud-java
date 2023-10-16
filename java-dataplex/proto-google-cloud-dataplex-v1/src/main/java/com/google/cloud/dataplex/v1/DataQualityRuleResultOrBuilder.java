@@ -75,8 +75,9 @@ public interface DataQualityRuleResultOrBuilder
    *
    *
    * <pre>
-   * The number of rows a rule was evaluated against. This field is only valid
-   * for ColumnMap type rules.
+   * The number of rows a rule was evaluated against.
+   *
+   * This field is only valid for row-level type rules.
    *
    * Evaluated count can be configured to either
    *
@@ -97,7 +98,8 @@ public interface DataQualityRuleResultOrBuilder
    *
    * <pre>
    * The number of rows which passed a rule evaluation.
-   * This field is only valid for ColumnMap type rules.
+   *
+   * This field is only valid for row-level type rules.
    * </pre>
    *
    * <code>int64 passed_count = 8;</code>
@@ -124,7 +126,8 @@ public interface DataQualityRuleResultOrBuilder
    *
    * <pre>
    * The ratio of **passed_count / evaluated_count**.
-   * This field is only valid for ColumnMap type rules.
+   *
+   * This field is only valid for row-level type rules.
    * </pre>
    *
    * <code>double pass_ratio = 6;</code>
@@ -138,7 +141,8 @@ public interface DataQualityRuleResultOrBuilder
    *
    * <pre>
    * The query to find rows that did not pass this rule.
-   * Only applies to ColumnMap and RowCondition rules.
+   *
+   * This field is only valid for row-level type rules.
    * </pre>
    *
    * <code>string failing_rows_query = 10;</code>
@@ -151,7 +155,8 @@ public interface DataQualityRuleResultOrBuilder
    *
    * <pre>
    * The query to find rows that did not pass this rule.
-   * Only applies to ColumnMap and RowCondition rules.
+   *
+   * This field is only valid for row-level type rules.
    * </pre>
    *
    * <code>string failing_rows_query = 10;</code>

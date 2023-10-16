@@ -21,7 +21,7 @@
  *
  * <p>======================= RapidMigrationAssessmentClient =======================
  *
- * <p>Service Description: Rapid Migration Assessment service
+ * <p>Service Description: Service describing handlers for resources.
  *
  * <p>Sample for RapidMigrationAssessmentClient:
  *

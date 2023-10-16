@@ -22,7 +22,8 @@ package com.google.cloud.servicedirectory.v1beta1;
  *
  *
  * <pre>
- * The response message for [RegistrationService.ListServices][google.cloud.servicedirectory.v1beta1.RegistrationService.ListServices].
+ * The response message for
+ * [RegistrationService.ListServices][google.cloud.servicedirectory.v1beta1.RegistrationService.ListServices].
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicedirectory.v1beta1.ListServicesResponse}
@@ -363,7 +364,8 @@ public final class ListServicesResponse extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The response message for [RegistrationService.ListServices][google.cloud.servicedirectory.v1beta1.RegistrationService.ListServices].
+   * The response message for
+   * [RegistrationService.ListServices][google.cloud.servicedirectory.v1beta1.RegistrationService.ListServices].
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicedirectory.v1beta1.ListServicesResponse}

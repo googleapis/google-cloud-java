@@ -67,6 +67,53 @@ public interface ImportProcessorVersionRequestOrBuilder
    *
    *
    * <pre>
+   * The source processor version to import from. It can be from a different
+   * environment and region than the destination processor.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.ExternalProcessorVersionSource external_processor_version_source = 3;
+   * </code>
+   *
+   * @return Whether the externalProcessorVersionSource field is set.
+   */
+  boolean hasExternalProcessorVersionSource();
+  /**
+   *
+   *
+   * <pre>
+   * The source processor version to import from. It can be from a different
+   * environment and region than the destination processor.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.ExternalProcessorVersionSource external_processor_version_source = 3;
+   * </code>
+   *
+   * @return The externalProcessorVersionSource.
+   */
+  com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.ExternalProcessorVersionSource
+      getExternalProcessorVersionSource();
+  /**
+   *
+   *
+   * <pre>
+   * The source processor version to import from. It can be from a different
+   * environment and region than the destination processor.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.documentai.v1beta3.ImportProcessorVersionRequest.ExternalProcessorVersionSource external_processor_version_source = 3;
+   * </code>
+   */
+  com.google.cloud.documentai.v1beta3.ImportProcessorVersionRequest
+          .ExternalProcessorVersionSourceOrBuilder
+      getExternalProcessorVersionSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The destination processor name to create the processor version
    * in. Format:
    * `projects/{project}/locations/{location}/processors/{processor}`

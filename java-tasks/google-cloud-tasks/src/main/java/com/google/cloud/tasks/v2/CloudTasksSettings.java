@@ -16,6 +16,7 @@
 
 package com.google.cloud.tasks.v2;
 
+import static com.google.cloud.tasks.v2.CloudTasksClient.ListLocationsPagedResponse;
 import static com.google.cloud.tasks.v2.CloudTasksClient.ListQueuesPagedResponse;
 import static com.google.cloud.tasks.v2.CloudTasksClient.ListTasksPagedResponse;
 
@@ -31,6 +32,10 @@ import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.tasks.v2.stub.CloudTasksStubSettings;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
@@ -162,6 +167,17 @@ public class CloudTasksSettings extends ClientSettings<CloudTasksSettings> {
   /** Returns the object with the settings used for calls to runTask. */
   public UnaryCallSettings<RunTaskRequest, Task> runTaskSettings() {
     return ((CloudTasksStubSettings) getStubSettings()).runTaskSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((CloudTasksStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((CloudTasksStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final CloudTasksSettings create(CloudTasksStubSettings stub) throws IOException {
@@ -359,6 +375,18 @@ public class CloudTasksSettings extends ClientSettings<CloudTasksSettings> {
     /** Returns the builder for the settings used for calls to runTask. */
     public UnaryCallSettings.Builder<RunTaskRequest, Task> runTaskSettings() {
       return getStubSettingsBuilder().runTaskSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

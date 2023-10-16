@@ -453,11 +453,12 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * Data-driven attribution distributes credit for the conversion based on
      * data for each conversion event. Each Data-driven model is specific to
      * each advertiser and each conversion event.
+     * Previously CROSS_CHANNEL_DATA_DRIVEN
      * </pre>
      *
-     * <code>CROSS_CHANNEL_DATA_DRIVEN = 1;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_DATA_DRIVEN = 1;</code>
      */
-    CROSS_CHANNEL_DATA_DRIVEN(1),
+    PAID_AND_ORGANIC_CHANNELS_DATA_DRIVEN(1),
     /**
      *
      *
@@ -465,11 +466,12 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * Ignores direct traffic and attributes 100% of the conversion value to the
      * last channel that the customer clicked through (or engaged view through
      * for YouTube) before converting.
+     * Previously CROSS_CHANNEL_LAST_CLICK
      * </pre>
      *
-     * <code>CROSS_CHANNEL_LAST_CLICK = 2;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_LAST_CLICK = 2;</code>
      */
-    CROSS_CHANNEL_LAST_CLICK(2),
+    PAID_AND_ORGANIC_CHANNELS_LAST_CLICK(2),
     /**
      *
      *
@@ -477,17 +479,18 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * Starting in June 2023, new properties can no longer use this model.
      * See
      * [Analytics
-     * Help](https://support.google.com/analytics/answer/9164320?hl=en#040623)
+     * Help](https://support.google.com/analytics/answer/9164320#040623)
      * for more details.
      * Starting in September 2023, we will sunset this model for all properties.
      *
      * Gives all credit for the conversion to the first channel that a customer
      * clicked (or engaged view through for YouTube) before converting.
+     * Previously CROSS_CHANNEL_FIRST_CLICK
      * </pre>
      *
-     * <code>CROSS_CHANNEL_FIRST_CLICK = 3;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_FIRST_CLICK = 3;</code>
      */
-    CROSS_CHANNEL_FIRST_CLICK(3),
+    PAID_AND_ORGANIC_CHANNELS_FIRST_CLICK(3),
     /**
      *
      *
@@ -495,18 +498,19 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * Starting in June 2023, new properties can no longer use this model.
      * See
      * [Analytics
-     * Help](https://support.google.com/analytics/answer/9164320?hl=en#040623)
+     * Help](https://support.google.com/analytics/answer/9164320#040623)
      * for more details.
      * Starting in September 2023, we will sunset this model for all properties.
      *
      * Distributes the credit for the conversion equally across all the channels
      * a customer clicked (or engaged view through for YouTube) before
      * converting.
+     * Previously CROSS_CHANNEL_LINEAR
      * </pre>
      *
-     * <code>CROSS_CHANNEL_LINEAR = 4;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_LINEAR = 4;</code>
      */
-    CROSS_CHANNEL_LINEAR(4),
+    PAID_AND_ORGANIC_CHANNELS_LINEAR(4),
     /**
      *
      *
@@ -514,17 +518,18 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * Starting in June 2023, new properties can no longer use this model.
      * See
      * [Analytics
-     * Help](https://support.google.com/analytics/answer/9164320?hl=en#040623)
+     * Help](https://support.google.com/analytics/answer/9164320#040623)
      * for more details.
      * Starting in September 2023, we will sunset this model for all properties.
      *
      * Attributes 40% credit to the first and last interaction, and the
      * remaining 20% credit is distributed evenly to the middle interactions.
+     * Previously CROSS_CHANNEL_POSITION_BASED
      * </pre>
      *
-     * <code>CROSS_CHANNEL_POSITION_BASED = 5;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_POSITION_BASED = 5;</code>
      */
-    CROSS_CHANNEL_POSITION_BASED(5),
+    PAID_AND_ORGANIC_CHANNELS_POSITION_BASED(5),
     /**
      *
      *
@@ -532,28 +537,30 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * Starting in June 2023, new properties can no longer use this model.
      * See
      * [Analytics
-     * Help](https://support.google.com/analytics/answer/9164320?hl=en#040623)
+     * Help](https://support.google.com/analytics/answer/9164320#040623)
      * for more details.
      * Starting in September 2023, we will sunset this model for all properties.
      *
      * Gives more credit to the touchpoints that happened closer in time to
      * the conversion.
+     * Previously CROSS_CHANNEL_TIME_DECAY
      * </pre>
      *
-     * <code>CROSS_CHANNEL_TIME_DECAY = 6;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_TIME_DECAY = 6;</code>
      */
-    CROSS_CHANNEL_TIME_DECAY(6),
+    PAID_AND_ORGANIC_CHANNELS_TIME_DECAY(6),
     /**
      *
      *
      * <pre>
-     * Attributes 100% of the conversion value to the last Google Ads channel
+     * Attributes 100% of the conversion value to the last Google Paid channel
      * that the customer clicked through before converting.
+     * Previously ADS_PREFERRED_LAST_CLICK
      * </pre>
      *
-     * <code>ADS_PREFERRED_LAST_CLICK = 7;</code>
+     * <code>GOOGLE_PAID_CHANNELS_LAST_CLICK = 7;</code>
      */
-    ADS_PREFERRED_LAST_CLICK(7),
+    GOOGLE_PAID_CHANNELS_LAST_CLICK(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -574,11 +581,12 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * Data-driven attribution distributes credit for the conversion based on
      * data for each conversion event. Each Data-driven model is specific to
      * each advertiser and each conversion event.
+     * Previously CROSS_CHANNEL_DATA_DRIVEN
      * </pre>
      *
-     * <code>CROSS_CHANNEL_DATA_DRIVEN = 1;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_DATA_DRIVEN = 1;</code>
      */
-    public static final int CROSS_CHANNEL_DATA_DRIVEN_VALUE = 1;
+    public static final int PAID_AND_ORGANIC_CHANNELS_DATA_DRIVEN_VALUE = 1;
     /**
      *
      *
@@ -586,11 +594,12 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * Ignores direct traffic and attributes 100% of the conversion value to the
      * last channel that the customer clicked through (or engaged view through
      * for YouTube) before converting.
+     * Previously CROSS_CHANNEL_LAST_CLICK
      * </pre>
      *
-     * <code>CROSS_CHANNEL_LAST_CLICK = 2;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_LAST_CLICK = 2;</code>
      */
-    public static final int CROSS_CHANNEL_LAST_CLICK_VALUE = 2;
+    public static final int PAID_AND_ORGANIC_CHANNELS_LAST_CLICK_VALUE = 2;
     /**
      *
      *
@@ -598,17 +607,18 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * Starting in June 2023, new properties can no longer use this model.
      * See
      * [Analytics
-     * Help](https://support.google.com/analytics/answer/9164320?hl=en#040623)
+     * Help](https://support.google.com/analytics/answer/9164320#040623)
      * for more details.
      * Starting in September 2023, we will sunset this model for all properties.
      *
      * Gives all credit for the conversion to the first channel that a customer
      * clicked (or engaged view through for YouTube) before converting.
+     * Previously CROSS_CHANNEL_FIRST_CLICK
      * </pre>
      *
-     * <code>CROSS_CHANNEL_FIRST_CLICK = 3;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_FIRST_CLICK = 3;</code>
      */
-    public static final int CROSS_CHANNEL_FIRST_CLICK_VALUE = 3;
+    public static final int PAID_AND_ORGANIC_CHANNELS_FIRST_CLICK_VALUE = 3;
     /**
      *
      *
@@ -616,18 +626,19 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * Starting in June 2023, new properties can no longer use this model.
      * See
      * [Analytics
-     * Help](https://support.google.com/analytics/answer/9164320?hl=en#040623)
+     * Help](https://support.google.com/analytics/answer/9164320#040623)
      * for more details.
      * Starting in September 2023, we will sunset this model for all properties.
      *
      * Distributes the credit for the conversion equally across all the channels
      * a customer clicked (or engaged view through for YouTube) before
      * converting.
+     * Previously CROSS_CHANNEL_LINEAR
      * </pre>
      *
-     * <code>CROSS_CHANNEL_LINEAR = 4;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_LINEAR = 4;</code>
      */
-    public static final int CROSS_CHANNEL_LINEAR_VALUE = 4;
+    public static final int PAID_AND_ORGANIC_CHANNELS_LINEAR_VALUE = 4;
     /**
      *
      *
@@ -635,17 +646,18 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * Starting in June 2023, new properties can no longer use this model.
      * See
      * [Analytics
-     * Help](https://support.google.com/analytics/answer/9164320?hl=en#040623)
+     * Help](https://support.google.com/analytics/answer/9164320#040623)
      * for more details.
      * Starting in September 2023, we will sunset this model for all properties.
      *
      * Attributes 40% credit to the first and last interaction, and the
      * remaining 20% credit is distributed evenly to the middle interactions.
+     * Previously CROSS_CHANNEL_POSITION_BASED
      * </pre>
      *
-     * <code>CROSS_CHANNEL_POSITION_BASED = 5;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_POSITION_BASED = 5;</code>
      */
-    public static final int CROSS_CHANNEL_POSITION_BASED_VALUE = 5;
+    public static final int PAID_AND_ORGANIC_CHANNELS_POSITION_BASED_VALUE = 5;
     /**
      *
      *
@@ -653,28 +665,30 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      * Starting in June 2023, new properties can no longer use this model.
      * See
      * [Analytics
-     * Help](https://support.google.com/analytics/answer/9164320?hl=en#040623)
+     * Help](https://support.google.com/analytics/answer/9164320#040623)
      * for more details.
      * Starting in September 2023, we will sunset this model for all properties.
      *
      * Gives more credit to the touchpoints that happened closer in time to
      * the conversion.
+     * Previously CROSS_CHANNEL_TIME_DECAY
      * </pre>
      *
-     * <code>CROSS_CHANNEL_TIME_DECAY = 6;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS_TIME_DECAY = 6;</code>
      */
-    public static final int CROSS_CHANNEL_TIME_DECAY_VALUE = 6;
+    public static final int PAID_AND_ORGANIC_CHANNELS_TIME_DECAY_VALUE = 6;
     /**
      *
      *
      * <pre>
-     * Attributes 100% of the conversion value to the last Google Ads channel
+     * Attributes 100% of the conversion value to the last Google Paid channel
      * that the customer clicked through before converting.
+     * Previously ADS_PREFERRED_LAST_CLICK
      * </pre>
      *
-     * <code>ADS_PREFERRED_LAST_CLICK = 7;</code>
+     * <code>GOOGLE_PAID_CHANNELS_LAST_CLICK = 7;</code>
      */
-    public static final int ADS_PREFERRED_LAST_CLICK_VALUE = 7;
+    public static final int GOOGLE_PAID_CHANNELS_LAST_CLICK_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -703,19 +717,19 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
         case 0:
           return REPORTING_ATTRIBUTION_MODEL_UNSPECIFIED;
         case 1:
-          return CROSS_CHANNEL_DATA_DRIVEN;
+          return PAID_AND_ORGANIC_CHANNELS_DATA_DRIVEN;
         case 2:
-          return CROSS_CHANNEL_LAST_CLICK;
+          return PAID_AND_ORGANIC_CHANNELS_LAST_CLICK;
         case 3:
-          return CROSS_CHANNEL_FIRST_CLICK;
+          return PAID_AND_ORGANIC_CHANNELS_FIRST_CLICK;
         case 4:
-          return CROSS_CHANNEL_LINEAR;
+          return PAID_AND_ORGANIC_CHANNELS_LINEAR;
         case 5:
-          return CROSS_CHANNEL_POSITION_BASED;
+          return PAID_AND_ORGANIC_CHANNELS_POSITION_BASED;
         case 6:
-          return CROSS_CHANNEL_TIME_DECAY;
+          return PAID_AND_ORGANIC_CHANNELS_TIME_DECAY;
         case 7:
-          return ADS_PREFERRED_LAST_CLICK;
+          return GOOGLE_PAID_CHANNELS_LAST_CLICK;
         default:
           return null;
       }
@@ -810,22 +824,27 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The Ads Web Conversion Data export scope is Cross Channel.
+     * Paid and organic channels are eligible to receive conversion credit, but
+     * only credit assigned to Google Ads channels will appear in your Ads
+     * accounts. To learn more, see [Paid and Organic
+     * channels](https://support.google.com/analytics/answer/10632359).
      * </pre>
      *
-     * <code>CROSS_CHANNEL = 2;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS = 2;</code>
      */
-    CROSS_CHANNEL(2),
+    PAID_AND_ORGANIC_CHANNELS(2),
     /**
      *
      *
      * <pre>
-     * The Ads Web Conversion Data export scope is Ads Preferred.
+     * Only Google Ads paid channels are eligible to receive conversion credit.
+     * To learn more, see [Google Paid
+     * channels](https://support.google.com/analytics/answer/10632359).
      * </pre>
      *
-     * <code>ADS_PREFERRED = 3;</code>
+     * <code>GOOGLE_PAID_CHANNELS = 3;</code>
      */
-    ADS_PREFERRED(3),
+    GOOGLE_PAID_CHANNELS(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -854,22 +873,27 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The Ads Web Conversion Data export scope is Cross Channel.
+     * Paid and organic channels are eligible to receive conversion credit, but
+     * only credit assigned to Google Ads channels will appear in your Ads
+     * accounts. To learn more, see [Paid and Organic
+     * channels](https://support.google.com/analytics/answer/10632359).
      * </pre>
      *
-     * <code>CROSS_CHANNEL = 2;</code>
+     * <code>PAID_AND_ORGANIC_CHANNELS = 2;</code>
      */
-    public static final int CROSS_CHANNEL_VALUE = 2;
+    public static final int PAID_AND_ORGANIC_CHANNELS_VALUE = 2;
     /**
      *
      *
      * <pre>
-     * The Ads Web Conversion Data export scope is Ads Preferred.
+     * Only Google Ads paid channels are eligible to receive conversion credit.
+     * To learn more, see [Google Paid
+     * channels](https://support.google.com/analytics/answer/10632359).
      * </pre>
      *
-     * <code>ADS_PREFERRED = 3;</code>
+     * <code>GOOGLE_PAID_CHANNELS = 3;</code>
      */
-    public static final int ADS_PREFERRED_VALUE = 3;
+    public static final int GOOGLE_PAID_CHANNELS_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -900,9 +924,9 @@ public final class AttributionSettings extends com.google.protobuf.GeneratedMess
         case 1:
           return NOT_SELECTED_YET;
         case 2:
-          return CROSS_CHANNEL;
+          return PAID_AND_ORGANIC_CHANNELS;
         case 3:
-          return ADS_PREFERRED;
+          return GOOGLE_PAID_CHANNELS;
         default:
           return null;
       }

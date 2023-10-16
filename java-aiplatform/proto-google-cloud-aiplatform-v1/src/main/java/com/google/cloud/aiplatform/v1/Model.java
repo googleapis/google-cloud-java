@@ -3286,10 +3286,13 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field is populated if the model is produced by a pipeline job.
+   * Optional. This field is populated if the model is produced by a pipeline
+   * job.
    * </pre>
    *
-   * <code>string pipeline_job = 47 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string pipeline_job = 47 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The pipelineJob.
    */
@@ -3309,10 +3312,13 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * This field is populated if the model is produced by a pipeline job.
+   * Optional. This field is populated if the model is produced by a pipeline
+   * job.
    * </pre>
    *
-   * <code>string pipeline_job = 47 [(.google.api.resource_reference) = { ... }</code>
+   * <code>
+   * string pipeline_job = 47 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for pipelineJob.
    */
@@ -8504,10 +8510,13 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is populated if the model is produced by a pipeline job.
+     * Optional. This field is populated if the model is produced by a pipeline
+     * job.
      * </pre>
      *
-     * <code>string pipeline_job = 47 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string pipeline_job = 47 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The pipelineJob.
      */
@@ -8526,10 +8535,13 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is populated if the model is produced by a pipeline job.
+     * Optional. This field is populated if the model is produced by a pipeline
+     * job.
      * </pre>
      *
-     * <code>string pipeline_job = 47 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string pipeline_job = 47 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for pipelineJob.
      */
@@ -8548,10 +8560,13 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is populated if the model is produced by a pipeline job.
+     * Optional. This field is populated if the model is produced by a pipeline
+     * job.
      * </pre>
      *
-     * <code>string pipeline_job = 47 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string pipeline_job = 47 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The pipelineJob to set.
      * @return This builder for chaining.
@@ -8569,10 +8584,13 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is populated if the model is produced by a pipeline job.
+     * Optional. This field is populated if the model is produced by a pipeline
+     * job.
      * </pre>
      *
-     * <code>string pipeline_job = 47 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string pipeline_job = 47 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -8586,10 +8604,13 @@ public final class Model extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * This field is populated if the model is produced by a pipeline job.
+     * Optional. This field is populated if the model is produced by a pipeline
+     * job.
      * </pre>
      *
-     * <code>string pipeline_job = 47 [(.google.api.resource_reference) = { ... }</code>
+     * <code>
+     * string pipeline_job = 47 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @param value The bytes for pipelineJob to set.
      * @return This builder for chaining.

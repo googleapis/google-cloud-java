@@ -21,8 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * The service that handles the CRUD of Vertex AI Dataset and its child
- * resources.
+ * The service that manages Vertex AI Dataset and its child resources.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -33,7 +32,7 @@ public final class DatasetServiceGrpc {
 
   private DatasetServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.aiplatform.v1.DatasetService";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.aiplatform.v1.DatasetService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -343,6 +342,248 @@ public final class DatasetServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.CreateDatasetVersionRequest,
+          com.google.longrunning.Operation>
+      getCreateDatasetVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateDatasetVersion",
+      requestType = com.google.cloud.aiplatform.v1.CreateDatasetVersionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.CreateDatasetVersionRequest,
+          com.google.longrunning.Operation>
+      getCreateDatasetVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.CreateDatasetVersionRequest,
+            com.google.longrunning.Operation>
+        getCreateDatasetVersionMethod;
+    if ((getCreateDatasetVersionMethod = DatasetServiceGrpc.getCreateDatasetVersionMethod)
+        == null) {
+      synchronized (DatasetServiceGrpc.class) {
+        if ((getCreateDatasetVersionMethod = DatasetServiceGrpc.getCreateDatasetVersionMethod)
+            == null) {
+          DatasetServiceGrpc.getCreateDatasetVersionMethod =
+              getCreateDatasetVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.CreateDatasetVersionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "CreateDatasetVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.CreateDatasetVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatasetServiceMethodDescriptorSupplier("CreateDatasetVersion"))
+                      .build();
+        }
+      }
+    }
+    return getCreateDatasetVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.DeleteDatasetVersionRequest,
+          com.google.longrunning.Operation>
+      getDeleteDatasetVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteDatasetVersion",
+      requestType = com.google.cloud.aiplatform.v1.DeleteDatasetVersionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.DeleteDatasetVersionRequest,
+          com.google.longrunning.Operation>
+      getDeleteDatasetVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.DeleteDatasetVersionRequest,
+            com.google.longrunning.Operation>
+        getDeleteDatasetVersionMethod;
+    if ((getDeleteDatasetVersionMethod = DatasetServiceGrpc.getDeleteDatasetVersionMethod)
+        == null) {
+      synchronized (DatasetServiceGrpc.class) {
+        if ((getDeleteDatasetVersionMethod = DatasetServiceGrpc.getDeleteDatasetVersionMethod)
+            == null) {
+          DatasetServiceGrpc.getDeleteDatasetVersionMethod =
+              getDeleteDatasetVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.DeleteDatasetVersionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "DeleteDatasetVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.DeleteDatasetVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatasetServiceMethodDescriptorSupplier("DeleteDatasetVersion"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteDatasetVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.GetDatasetVersionRequest,
+          com.google.cloud.aiplatform.v1.DatasetVersion>
+      getGetDatasetVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDatasetVersion",
+      requestType = com.google.cloud.aiplatform.v1.GetDatasetVersionRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.DatasetVersion.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.GetDatasetVersionRequest,
+          com.google.cloud.aiplatform.v1.DatasetVersion>
+      getGetDatasetVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.GetDatasetVersionRequest,
+            com.google.cloud.aiplatform.v1.DatasetVersion>
+        getGetDatasetVersionMethod;
+    if ((getGetDatasetVersionMethod = DatasetServiceGrpc.getGetDatasetVersionMethod) == null) {
+      synchronized (DatasetServiceGrpc.class) {
+        if ((getGetDatasetVersionMethod = DatasetServiceGrpc.getGetDatasetVersionMethod) == null) {
+          DatasetServiceGrpc.getGetDatasetVersionMethod =
+              getGetDatasetVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.GetDatasetVersionRequest,
+                          com.google.cloud.aiplatform.v1.DatasetVersion>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDatasetVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.GetDatasetVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.DatasetVersion.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatasetServiceMethodDescriptorSupplier("GetDatasetVersion"))
+                      .build();
+        }
+      }
+    }
+    return getGetDatasetVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.ListDatasetVersionsRequest,
+          com.google.cloud.aiplatform.v1.ListDatasetVersionsResponse>
+      getListDatasetVersionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDatasetVersions",
+      requestType = com.google.cloud.aiplatform.v1.ListDatasetVersionsRequest.class,
+      responseType = com.google.cloud.aiplatform.v1.ListDatasetVersionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.ListDatasetVersionsRequest,
+          com.google.cloud.aiplatform.v1.ListDatasetVersionsResponse>
+      getListDatasetVersionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.ListDatasetVersionsRequest,
+            com.google.cloud.aiplatform.v1.ListDatasetVersionsResponse>
+        getListDatasetVersionsMethod;
+    if ((getListDatasetVersionsMethod = DatasetServiceGrpc.getListDatasetVersionsMethod) == null) {
+      synchronized (DatasetServiceGrpc.class) {
+        if ((getListDatasetVersionsMethod = DatasetServiceGrpc.getListDatasetVersionsMethod)
+            == null) {
+          DatasetServiceGrpc.getListDatasetVersionsMethod =
+              getListDatasetVersionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.ListDatasetVersionsRequest,
+                          com.google.cloud.aiplatform.v1.ListDatasetVersionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListDatasetVersions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.ListDatasetVersionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.ListDatasetVersionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatasetServiceMethodDescriptorSupplier("ListDatasetVersions"))
+                      .build();
+        }
+      }
+    }
+    return getListDatasetVersionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.RestoreDatasetVersionRequest,
+          com.google.longrunning.Operation>
+      getRestoreDatasetVersionMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RestoreDatasetVersion",
+      requestType = com.google.cloud.aiplatform.v1.RestoreDatasetVersionRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.RestoreDatasetVersionRequest,
+          com.google.longrunning.Operation>
+      getRestoreDatasetVersionMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.RestoreDatasetVersionRequest,
+            com.google.longrunning.Operation>
+        getRestoreDatasetVersionMethod;
+    if ((getRestoreDatasetVersionMethod = DatasetServiceGrpc.getRestoreDatasetVersionMethod)
+        == null) {
+      synchronized (DatasetServiceGrpc.class) {
+        if ((getRestoreDatasetVersionMethod = DatasetServiceGrpc.getRestoreDatasetVersionMethod)
+            == null) {
+          DatasetServiceGrpc.getRestoreDatasetVersionMethod =
+              getRestoreDatasetVersionMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.RestoreDatasetVersionRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "RestoreDatasetVersion"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.RestoreDatasetVersionRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatasetServiceMethodDescriptorSupplier("RestoreDatasetVersion"))
+                      .build();
+        }
+      }
+    }
+    return getRestoreDatasetVersionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1.ListDataItemsRequest,
           com.google.cloud.aiplatform.v1.ListDataItemsResponse>
       getListDataItemsMethod;
@@ -484,6 +725,50 @@ public final class DatasetServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.DeleteSavedQueryRequest, com.google.longrunning.Operation>
+      getDeleteSavedQueryMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSavedQuery",
+      requestType = com.google.cloud.aiplatform.v1.DeleteSavedQueryRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.aiplatform.v1.DeleteSavedQueryRequest, com.google.longrunning.Operation>
+      getDeleteSavedQueryMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.aiplatform.v1.DeleteSavedQueryRequest,
+            com.google.longrunning.Operation>
+        getDeleteSavedQueryMethod;
+    if ((getDeleteSavedQueryMethod = DatasetServiceGrpc.getDeleteSavedQueryMethod) == null) {
+      synchronized (DatasetServiceGrpc.class) {
+        if ((getDeleteSavedQueryMethod = DatasetServiceGrpc.getDeleteSavedQueryMethod) == null) {
+          DatasetServiceGrpc.getDeleteSavedQueryMethod =
+              getDeleteSavedQueryMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.aiplatform.v1.DeleteSavedQueryRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteSavedQuery"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.aiplatform.v1.DeleteSavedQueryRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DatasetServiceMethodDescriptorSupplier("DeleteSavedQuery"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteSavedQueryMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.aiplatform.v1.GetAnnotationSpecRequest,
           com.google.cloud.aiplatform.v1.AnnotationSpec>
       getGetAnnotationSpecMethod;
@@ -621,8 +906,7 @@ public final class DatasetServiceGrpc {
    *
    *
    * <pre>
-   * The service that handles the CRUD of Vertex AI Dataset and its child
-   * resources.
+   * The service that manages Vertex AI Dataset and its child resources.
    * </pre>
    */
   public interface AsyncService {
@@ -727,6 +1011,78 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
+     * Create a version from a Dataset.
+     * </pre>
+     */
+    default void createDatasetVersion(
+        com.google.cloud.aiplatform.v1.CreateDatasetVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateDatasetVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Dataset version.
+     * </pre>
+     */
+    default void deleteDatasetVersion(
+        com.google.cloud.aiplatform.v1.DeleteDatasetVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteDatasetVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Dataset version.
+     * </pre>
+     */
+    default void getDatasetVersion(
+        com.google.cloud.aiplatform.v1.GetDatasetVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.DatasetVersion>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDatasetVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DatasetVersions in a Dataset.
+     * </pre>
+     */
+    default void listDatasetVersions(
+        com.google.cloud.aiplatform.v1.ListDatasetVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListDatasetVersionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDatasetVersionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restores a dataset version.
+     * </pre>
+     */
+    default void restoreDatasetVersion(
+        com.google.cloud.aiplatform.v1.RestoreDatasetVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getRestoreDatasetVersionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists DataItems in a Dataset.
      * </pre>
      */
@@ -772,6 +1128,20 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a SavedQuery.
+     * </pre>
+     */
+    default void deleteSavedQuery(
+        com.google.cloud.aiplatform.v1.DeleteSavedQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteSavedQueryMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets an AnnotationSpec.
      * </pre>
      */
@@ -803,8 +1173,7 @@ public final class DatasetServiceGrpc {
    * Base class for the server implementation of the service DatasetService.
    *
    * <pre>
-   * The service that handles the CRUD of Vertex AI Dataset and its child
-   * resources.
+   * The service that manages Vertex AI Dataset and its child resources.
    * </pre>
    */
   public abstract static class DatasetServiceImplBase
@@ -820,8 +1189,7 @@ public final class DatasetServiceGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service DatasetService.
    *
    * <pre>
-   * The service that handles the CRUD of Vertex AI Dataset and its child
-   * resources.
+   * The service that manages Vertex AI Dataset and its child resources.
    * </pre>
    */
   public static final class DatasetServiceStub
@@ -946,6 +1314,88 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
+     * Create a version from a Dataset.
+     * </pre>
+     */
+    public void createDatasetVersion(
+        com.google.cloud.aiplatform.v1.CreateDatasetVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateDatasetVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Dataset version.
+     * </pre>
+     */
+    public void deleteDatasetVersion(
+        com.google.cloud.aiplatform.v1.DeleteDatasetVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteDatasetVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Dataset version.
+     * </pre>
+     */
+    public void getDatasetVersion(
+        com.google.cloud.aiplatform.v1.GetDatasetVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.DatasetVersion>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDatasetVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DatasetVersions in a Dataset.
+     * </pre>
+     */
+    public void listDatasetVersions(
+        com.google.cloud.aiplatform.v1.ListDatasetVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListDatasetVersionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDatasetVersionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restores a dataset version.
+     * </pre>
+     */
+    public void restoreDatasetVersion(
+        com.google.cloud.aiplatform.v1.RestoreDatasetVersionRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRestoreDatasetVersionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists DataItems in a Dataset.
      * </pre>
      */
@@ -997,6 +1447,22 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a SavedQuery.
+     * </pre>
+     */
+    public void deleteSavedQuery(
+        com.google.cloud.aiplatform.v1.DeleteSavedQueryRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteSavedQueryMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets an AnnotationSpec.
      * </pre>
      */
@@ -1032,8 +1498,7 @@ public final class DatasetServiceGrpc {
    * A stub to allow clients to do synchronous rpc calls to service DatasetService.
    *
    * <pre>
-   * The service that handles the CRUD of Vertex AI Dataset and its child
-   * resources.
+   * The service that manages Vertex AI Dataset and its child resources.
    * </pre>
    */
   public static final class DatasetServiceBlockingStub
@@ -1143,6 +1608,71 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
+     * Create a version from a Dataset.
+     * </pre>
+     */
+    public com.google.longrunning.Operation createDatasetVersion(
+        com.google.cloud.aiplatform.v1.CreateDatasetVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDatasetVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Dataset version.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteDatasetVersion(
+        com.google.cloud.aiplatform.v1.DeleteDatasetVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteDatasetVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Dataset version.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.DatasetVersion getDatasetVersion(
+        com.google.cloud.aiplatform.v1.GetDatasetVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDatasetVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DatasetVersions in a Dataset.
+     * </pre>
+     */
+    public com.google.cloud.aiplatform.v1.ListDatasetVersionsResponse listDatasetVersions(
+        com.google.cloud.aiplatform.v1.ListDatasetVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDatasetVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restores a dataset version.
+     * </pre>
+     */
+    public com.google.longrunning.Operation restoreDatasetVersion(
+        com.google.cloud.aiplatform.v1.RestoreDatasetVersionRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRestoreDatasetVersionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists DataItems in a Dataset.
      * </pre>
      */
@@ -1182,6 +1712,19 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a SavedQuery.
+     * </pre>
+     */
+    public com.google.longrunning.Operation deleteSavedQuery(
+        com.google.cloud.aiplatform.v1.DeleteSavedQueryRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteSavedQueryMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets an AnnotationSpec.
      * </pre>
      */
@@ -1209,8 +1752,7 @@ public final class DatasetServiceGrpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service DatasetService.
    *
    * <pre>
-   * The service that handles the CRUD of Vertex AI Dataset and its child
-   * resources.
+   * The service that manages Vertex AI Dataset and its child resources.
    * </pre>
    */
   public static final class DatasetServiceFutureStub
@@ -1323,6 +1865,73 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
+     * Create a version from a Dataset.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        createDatasetVersion(com.google.cloud.aiplatform.v1.CreateDatasetVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateDatasetVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a Dataset version.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteDatasetVersion(com.google.cloud.aiplatform.v1.DeleteDatasetVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteDatasetVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets a Dataset version.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.DatasetVersion>
+        getDatasetVersion(com.google.cloud.aiplatform.v1.GetDatasetVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDatasetVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists DatasetVersions in a Dataset.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.aiplatform.v1.ListDatasetVersionsResponse>
+        listDatasetVersions(com.google.cloud.aiplatform.v1.ListDatasetVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDatasetVersionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Restores a dataset version.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        restoreDatasetVersion(com.google.cloud.aiplatform.v1.RestoreDatasetVersionRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRestoreDatasetVersionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists DataItems in a Dataset.
      * </pre>
      */
@@ -1365,6 +1974,19 @@ public final class DatasetServiceGrpc {
      *
      *
      * <pre>
+     * Deletes a SavedQuery.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        deleteSavedQuery(com.google.cloud.aiplatform.v1.DeleteSavedQueryRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteSavedQueryMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets an AnnotationSpec.
      * </pre>
      */
@@ -1397,11 +2019,17 @@ public final class DatasetServiceGrpc {
   private static final int METHODID_DELETE_DATASET = 4;
   private static final int METHODID_IMPORT_DATA = 5;
   private static final int METHODID_EXPORT_DATA = 6;
-  private static final int METHODID_LIST_DATA_ITEMS = 7;
-  private static final int METHODID_SEARCH_DATA_ITEMS = 8;
-  private static final int METHODID_LIST_SAVED_QUERIES = 9;
-  private static final int METHODID_GET_ANNOTATION_SPEC = 10;
-  private static final int METHODID_LIST_ANNOTATIONS = 11;
+  private static final int METHODID_CREATE_DATASET_VERSION = 7;
+  private static final int METHODID_DELETE_DATASET_VERSION = 8;
+  private static final int METHODID_GET_DATASET_VERSION = 9;
+  private static final int METHODID_LIST_DATASET_VERSIONS = 10;
+  private static final int METHODID_RESTORE_DATASET_VERSION = 11;
+  private static final int METHODID_LIST_DATA_ITEMS = 12;
+  private static final int METHODID_SEARCH_DATA_ITEMS = 13;
+  private static final int METHODID_LIST_SAVED_QUERIES = 14;
+  private static final int METHODID_DELETE_SAVED_QUERY = 15;
+  private static final int METHODID_GET_ANNOTATION_SPEC = 16;
+  private static final int METHODID_LIST_ANNOTATIONS = 17;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1458,6 +2086,34 @@ public final class DatasetServiceGrpc {
               (com.google.cloud.aiplatform.v1.ExportDataRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
+        case METHODID_CREATE_DATASET_VERSION:
+          serviceImpl.createDatasetVersion(
+              (com.google.cloud.aiplatform.v1.CreateDatasetVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_DELETE_DATASET_VERSION:
+          serviceImpl.deleteDatasetVersion(
+              (com.google.cloud.aiplatform.v1.DeleteDatasetVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_DATASET_VERSION:
+          serviceImpl.getDatasetVersion(
+              (com.google.cloud.aiplatform.v1.GetDatasetVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.DatasetVersion>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_DATASET_VERSIONS:
+          serviceImpl.listDatasetVersions(
+              (com.google.cloud.aiplatform.v1.ListDatasetVersionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.aiplatform.v1.ListDatasetVersionsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_RESTORE_DATASET_VERSION:
+          serviceImpl.restoreDatasetVersion(
+              (com.google.cloud.aiplatform.v1.RestoreDatasetVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
         case METHODID_LIST_DATA_ITEMS:
           serviceImpl.listDataItems(
               (com.google.cloud.aiplatform.v1.ListDataItemsRequest) request,
@@ -1475,6 +2131,11 @@ public final class DatasetServiceGrpc {
               (com.google.cloud.aiplatform.v1.ListSavedQueriesRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.aiplatform.v1.ListSavedQueriesResponse>)
                   responseObserver);
+          break;
+        case METHODID_DELETE_SAVED_QUERY:
+          serviceImpl.deleteSavedQuery(
+              (com.google.cloud.aiplatform.v1.DeleteSavedQueryRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_GET_ANNOTATION_SPEC:
           serviceImpl.getAnnotationSpec(
@@ -1550,6 +2211,38 @@ public final class DatasetServiceGrpc {
                     com.google.cloud.aiplatform.v1.ExportDataRequest,
                     com.google.longrunning.Operation>(service, METHODID_EXPORT_DATA)))
         .addMethod(
+            getCreateDatasetVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.CreateDatasetVersionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CREATE_DATASET_VERSION)))
+        .addMethod(
+            getDeleteDatasetVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.DeleteDatasetVersionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_DATASET_VERSION)))
+        .addMethod(
+            getGetDatasetVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.GetDatasetVersionRequest,
+                    com.google.cloud.aiplatform.v1.DatasetVersion>(
+                    service, METHODID_GET_DATASET_VERSION)))
+        .addMethod(
+            getListDatasetVersionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.ListDatasetVersionsRequest,
+                    com.google.cloud.aiplatform.v1.ListDatasetVersionsResponse>(
+                    service, METHODID_LIST_DATASET_VERSIONS)))
+        .addMethod(
+            getRestoreDatasetVersionMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.RestoreDatasetVersionRequest,
+                    com.google.longrunning.Operation>(service, METHODID_RESTORE_DATASET_VERSION)))
+        .addMethod(
             getListDataItemsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -1570,6 +2263,12 @@ public final class DatasetServiceGrpc {
                     com.google.cloud.aiplatform.v1.ListSavedQueriesRequest,
                     com.google.cloud.aiplatform.v1.ListSavedQueriesResponse>(
                     service, METHODID_LIST_SAVED_QUERIES)))
+        .addMethod(
+            getDeleteSavedQueryMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.aiplatform.v1.DeleteSavedQueryRequest,
+                    com.google.longrunning.Operation>(service, METHODID_DELETE_SAVED_QUERY)))
         .addMethod(
             getGetAnnotationSpecMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -1611,9 +2310,9 @@ public final class DatasetServiceGrpc {
   private static final class DatasetServiceMethodDescriptorSupplier
       extends DatasetServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DatasetServiceMethodDescriptorSupplier(String methodName) {
+    DatasetServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -1642,9 +2341,15 @@ public final class DatasetServiceGrpc {
                       .addMethod(getDeleteDatasetMethod())
                       .addMethod(getImportDataMethod())
                       .addMethod(getExportDataMethod())
+                      .addMethod(getCreateDatasetVersionMethod())
+                      .addMethod(getDeleteDatasetVersionMethod())
+                      .addMethod(getGetDatasetVersionMethod())
+                      .addMethod(getListDatasetVersionsMethod())
+                      .addMethod(getRestoreDatasetVersionMethod())
                       .addMethod(getListDataItemsMethod())
                       .addMethod(getSearchDataItemsMethod())
                       .addMethod(getListSavedQueriesMethod())
+                      .addMethod(getDeleteSavedQueryMethod())
                       .addMethod(getGetAnnotationSpecMethod())
                       .addMethod(getListAnnotationsMethod())
                       .build();

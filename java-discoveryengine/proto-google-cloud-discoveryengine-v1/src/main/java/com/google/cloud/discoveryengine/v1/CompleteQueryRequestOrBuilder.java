@@ -96,13 +96,14 @@ public interface CompleteQueryRequestOrBuilder
    * API calls. Do not use it when there is no traffic for Search API.
    * * `user-event` - Using suggestions generated from user-imported search
    * events.
+   * * `document-completable` - Using suggestions taken directly from
+   * user-imported document fields marked as completable.
    *
    * Default values:
    *
    * * `document` is the default model for regular dataStores.
    * * `search-history` is the default model for
-   * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1.IndustryVertical.SITE_SEARCH]
-   * dataStores.
+   * [IndustryVertical.SITE_SEARCH][] dataStores.
    * </pre>
    *
    * <code>string query_model = 3;</code>
@@ -123,13 +124,14 @@ public interface CompleteQueryRequestOrBuilder
    * API calls. Do not use it when there is no traffic for Search API.
    * * `user-event` - Using suggestions generated from user-imported search
    * events.
+   * * `document-completable` - Using suggestions taken directly from
+   * user-imported document fields marked as completable.
    *
    * Default values:
    *
    * * `document` is the default model for regular dataStores.
    * * `search-history` is the default model for
-   * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1.IndustryVertical.SITE_SEARCH]
-   * dataStores.
+   * [IndustryVertical.SITE_SEARCH][] dataStores.
    * </pre>
    *
    * <code>string query_model = 3;</code>
@@ -188,4 +190,20 @@ public interface CompleteQueryRequestOrBuilder
    * @return The bytes for userPseudoId.
    */
   com.google.protobuf.ByteString getUserPseudoIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates if tail suggestions should be returned if there are no
+   * suggestions that match the full query. Even if set to true, if there are
+   * suggestions that match the full query, those are returned and no
+   * tail suggestions are returned.
+   * </pre>
+   *
+   * <code>bool include_tail_suggestions = 5;</code>
+   *
+   * @return The includeTailSuggestions.
+   */
+  boolean getIncludeTailSuggestions();
 }

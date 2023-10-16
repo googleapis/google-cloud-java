@@ -146,7 +146,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    * Since index.csv will be keeping updated during the process, please make
    * sure there is no custom retention policy applied on the output bucket
    * that may avoid file updating.
-   * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+   * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
    *
    * The format of translations_file (for target language code 'trg') is:
    * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
@@ -166,10 +166,10 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    * If input file extension is a txt or html, the translation is directly
    * written to the output file. If glossary is requested, a separate
    * glossary_translations_file has format of
-   * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
+   * `gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]`
    *
    * The format of errors file (for target language code 'trg') is:
-   * gs://translation_test/a_b_c_'trg'_errors.[extension]
+   * `gs://translation_test/a_b_c_'trg'_errors.[extension]`
    *
    * If the input file extension is tsv, errors_file contains the following:
    * Column 1: ID of the request provided in the input, if it's not
@@ -181,7 +181,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * If the input file extension is txt or html, glossary_error_file will be
    * generated that contains error details. glossary_error_file has format of
-   * gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]
+   * `gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]`
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.GcsDestination gcs_destination = 1;</code>
@@ -231,7 +231,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    * Since index.csv will be keeping updated during the process, please make
    * sure there is no custom retention policy applied on the output bucket
    * that may avoid file updating.
-   * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+   * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
    *
    * The format of translations_file (for target language code 'trg') is:
    * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
@@ -251,10 +251,10 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    * If input file extension is a txt or html, the translation is directly
    * written to the output file. If glossary is requested, a separate
    * glossary_translations_file has format of
-   * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
+   * `gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]`
    *
    * The format of errors file (for target language code 'trg') is:
-   * gs://translation_test/a_b_c_'trg'_errors.[extension]
+   * `gs://translation_test/a_b_c_'trg'_errors.[extension]`
    *
    * If the input file extension is tsv, errors_file contains the following:
    * Column 1: ID of the request provided in the input, if it's not
@@ -266,7 +266,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * If the input file extension is txt or html, glossary_error_file will be
    * generated that contains error details. glossary_error_file has format of
-   * gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]
+   * `gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]`
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.GcsDestination gcs_destination = 1;</code>
@@ -319,7 +319,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    * Since index.csv will be keeping updated during the process, please make
    * sure there is no custom retention policy applied on the output bucket
    * that may avoid file updating.
-   * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+   * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
    *
    * The format of translations_file (for target language code 'trg') is:
    * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
@@ -339,10 +339,10 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    * If input file extension is a txt or html, the translation is directly
    * written to the output file. If glossary is requested, a separate
    * glossary_translations_file has format of
-   * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
+   * `gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]`
    *
    * The format of errors file (for target language code 'trg') is:
-   * gs://translation_test/a_b_c_'trg'_errors.[extension]
+   * `gs://translation_test/a_b_c_'trg'_errors.[extension]`
    *
    * If the input file extension is tsv, errors_file contains the following:
    * Column 1: ID of the request provided in the input, if it's not
@@ -354,7 +354,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
    *
    * If the input file extension is txt or html, glossary_error_file will be
    * generated that contains error details. glossary_error_file has format of
-   * gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]
+   * `gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]`
    * </pre>
    *
    * <code>.google.cloud.translation.v3beta1.GcsDestination gcs_destination = 1;</code>
@@ -798,7 +798,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * Since index.csv will be keeping updated during the process, please make
      * sure there is no custom retention policy applied on the output bucket
      * that may avoid file updating.
-     * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+     * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
      *
      * The format of translations_file (for target language code 'trg') is:
      * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
@@ -818,10 +818,10 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * If input file extension is a txt or html, the translation is directly
      * written to the output file. If glossary is requested, a separate
      * glossary_translations_file has format of
-     * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
+     * `gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]`
      *
      * The format of errors file (for target language code 'trg') is:
-     * gs://translation_test/a_b_c_'trg'_errors.[extension]
+     * `gs://translation_test/a_b_c_'trg'_errors.[extension]`
      *
      * If the input file extension is tsv, errors_file contains the following:
      * Column 1: ID of the request provided in the input, if it's not
@@ -833,7 +833,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * If the input file extension is txt or html, glossary_error_file will be
      * generated that contains error details. glossary_error_file has format of
-     * gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]
+     * `gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]`
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.GcsDestination gcs_destination = 1;</code>
@@ -883,7 +883,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * Since index.csv will be keeping updated during the process, please make
      * sure there is no custom retention policy applied on the output bucket
      * that may avoid file updating.
-     * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+     * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
      *
      * The format of translations_file (for target language code 'trg') is:
      * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
@@ -903,10 +903,10 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * If input file extension is a txt or html, the translation is directly
      * written to the output file. If glossary is requested, a separate
      * glossary_translations_file has format of
-     * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
+     * `gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]`
      *
      * The format of errors file (for target language code 'trg') is:
-     * gs://translation_test/a_b_c_'trg'_errors.[extension]
+     * `gs://translation_test/a_b_c_'trg'_errors.[extension]`
      *
      * If the input file extension is tsv, errors_file contains the following:
      * Column 1: ID of the request provided in the input, if it's not
@@ -918,7 +918,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * If the input file extension is txt or html, glossary_error_file will be
      * generated that contains error details. glossary_error_file has format of
-     * gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]
+     * `gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]`
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.GcsDestination gcs_destination = 1;</code>
@@ -978,7 +978,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * Since index.csv will be keeping updated during the process, please make
      * sure there is no custom retention policy applied on the output bucket
      * that may avoid file updating.
-     * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+     * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
      *
      * The format of translations_file (for target language code 'trg') is:
      * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
@@ -998,10 +998,10 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * If input file extension is a txt or html, the translation is directly
      * written to the output file. If glossary is requested, a separate
      * glossary_translations_file has format of
-     * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
+     * `gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]`
      *
      * The format of errors file (for target language code 'trg') is:
-     * gs://translation_test/a_b_c_'trg'_errors.[extension]
+     * `gs://translation_test/a_b_c_'trg'_errors.[extension]`
      *
      * If the input file extension is tsv, errors_file contains the following:
      * Column 1: ID of the request provided in the input, if it's not
@@ -1013,7 +1013,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * If the input file extension is txt or html, glossary_error_file will be
      * generated that contains error details. glossary_error_file has format of
-     * gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]
+     * `gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]`
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.GcsDestination gcs_destination = 1;</code>
@@ -1070,7 +1070,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * Since index.csv will be keeping updated during the process, please make
      * sure there is no custom retention policy applied on the output bucket
      * that may avoid file updating.
-     * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+     * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
      *
      * The format of translations_file (for target language code 'trg') is:
      * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
@@ -1090,10 +1090,10 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * If input file extension is a txt or html, the translation is directly
      * written to the output file. If glossary is requested, a separate
      * glossary_translations_file has format of
-     * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
+     * `gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]`
      *
      * The format of errors file (for target language code 'trg') is:
-     * gs://translation_test/a_b_c_'trg'_errors.[extension]
+     * `gs://translation_test/a_b_c_'trg'_errors.[extension]`
      *
      * If the input file extension is tsv, errors_file contains the following:
      * Column 1: ID of the request provided in the input, if it's not
@@ -1105,7 +1105,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * If the input file extension is txt or html, glossary_error_file will be
      * generated that contains error details. glossary_error_file has format of
-     * gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]
+     * `gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]`
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.GcsDestination gcs_destination = 1;</code>
@@ -1160,7 +1160,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * Since index.csv will be keeping updated during the process, please make
      * sure there is no custom retention policy applied on the output bucket
      * that may avoid file updating.
-     * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+     * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
      *
      * The format of translations_file (for target language code 'trg') is:
      * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
@@ -1180,10 +1180,10 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * If input file extension is a txt or html, the translation is directly
      * written to the output file. If glossary is requested, a separate
      * glossary_translations_file has format of
-     * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
+     * `gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]`
      *
      * The format of errors file (for target language code 'trg') is:
-     * gs://translation_test/a_b_c_'trg'_errors.[extension]
+     * `gs://translation_test/a_b_c_'trg'_errors.[extension]`
      *
      * If the input file extension is tsv, errors_file contains the following:
      * Column 1: ID of the request provided in the input, if it's not
@@ -1195,7 +1195,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * If the input file extension is txt or html, glossary_error_file will be
      * generated that contains error details. glossary_error_file has format of
-     * gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]
+     * `gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]`
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.GcsDestination gcs_destination = 1;</code>
@@ -1263,7 +1263,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * Since index.csv will be keeping updated during the process, please make
      * sure there is no custom retention policy applied on the output bucket
      * that may avoid file updating.
-     * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+     * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
      *
      * The format of translations_file (for target language code 'trg') is:
      * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
@@ -1283,10 +1283,10 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * If input file extension is a txt or html, the translation is directly
      * written to the output file. If glossary is requested, a separate
      * glossary_translations_file has format of
-     * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
+     * `gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]`
      *
      * The format of errors file (for target language code 'trg') is:
-     * gs://translation_test/a_b_c_'trg'_errors.[extension]
+     * `gs://translation_test/a_b_c_'trg'_errors.[extension]`
      *
      * If the input file extension is tsv, errors_file contains the following:
      * Column 1: ID of the request provided in the input, if it's not
@@ -1298,7 +1298,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * If the input file extension is txt or html, glossary_error_file will be
      * generated that contains error details. glossary_error_file has format of
-     * gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]
+     * `gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]`
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.GcsDestination gcs_destination = 1;</code>
@@ -1358,7 +1358,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * Since index.csv will be keeping updated during the process, please make
      * sure there is no custom retention policy applied on the output bucket
      * that may avoid file updating.
-     * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+     * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
      *
      * The format of translations_file (for target language code 'trg') is:
      * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
@@ -1378,10 +1378,10 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * If input file extension is a txt or html, the translation is directly
      * written to the output file. If glossary is requested, a separate
      * glossary_translations_file has format of
-     * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
+     * `gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]`
      *
      * The format of errors file (for target language code 'trg') is:
-     * gs://translation_test/a_b_c_'trg'_errors.[extension]
+     * `gs://translation_test/a_b_c_'trg'_errors.[extension]`
      *
      * If the input file extension is tsv, errors_file contains the following:
      * Column 1: ID of the request provided in the input, if it's not
@@ -1393,7 +1393,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * If the input file extension is txt or html, glossary_error_file will be
      * generated that contains error details. glossary_error_file has format of
-     * gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]
+     * `gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]`
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.GcsDestination gcs_destination = 1;</code>
@@ -1440,7 +1440,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * Since index.csv will be keeping updated during the process, please make
      * sure there is no custom retention policy applied on the output bucket
      * that may avoid file updating.
-     * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+     * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
      *
      * The format of translations_file (for target language code 'trg') is:
      * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
@@ -1460,10 +1460,10 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * If input file extension is a txt or html, the translation is directly
      * written to the output file. If glossary is requested, a separate
      * glossary_translations_file has format of
-     * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
+     * `gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]`
      *
      * The format of errors file (for target language code 'trg') is:
-     * gs://translation_test/a_b_c_'trg'_errors.[extension]
+     * `gs://translation_test/a_b_c_'trg'_errors.[extension]`
      *
      * If the input file extension is tsv, errors_file contains the following:
      * Column 1: ID of the request provided in the input, if it's not
@@ -1475,7 +1475,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * If the input file extension is txt or html, glossary_error_file will be
      * generated that contains error details. glossary_error_file has format of
-     * gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]
+     * `gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]`
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.GcsDestination gcs_destination = 1;</code>
@@ -1530,7 +1530,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * Since index.csv will be keeping updated during the process, please make
      * sure there is no custom retention policy applied on the output bucket
      * that may avoid file updating.
-     * (https://cloud.google.com/storage/docs/bucket-lock?hl=en#retention-policy)
+     * (https://cloud.google.com/storage/docs/bucket-lock#retention-policy)
      *
      * The format of translations_file (for target language code 'trg') is:
      * `gs://translation_test/a_b_c_'trg'_translations.[extension]`
@@ -1550,10 +1550,10 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      * If input file extension is a txt or html, the translation is directly
      * written to the output file. If glossary is requested, a separate
      * glossary_translations_file has format of
-     * gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]
+     * `gs://translation_test/a_b_c_'trg'_glossary_translations.[extension]`
      *
      * The format of errors file (for target language code 'trg') is:
-     * gs://translation_test/a_b_c_'trg'_errors.[extension]
+     * `gs://translation_test/a_b_c_'trg'_errors.[extension]`
      *
      * If the input file extension is tsv, errors_file contains the following:
      * Column 1: ID of the request provided in the input, if it's not
@@ -1565,7 +1565,7 @@ public final class OutputConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * If the input file extension is txt or html, glossary_error_file will be
      * generated that contains error details. glossary_error_file has format of
-     * gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]
+     * `gs://translation_test/a_b_c_'trg'_glossary_errors.[extension]`
      * </pre>
      *
      * <code>.google.cloud.translation.v3beta1.GcsDestination gcs_destination = 1;</code>

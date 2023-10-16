@@ -22,7 +22,7 @@ package com.google.cloud.documentai.v1beta2;
  *
  *
  * <pre>
- * User-provided hint for key value pair.
+ * Reserved for future use.
  * </pre>
  *
  * Protobuf type {@code google.cloud.documentai.v1beta2.KeyValuePairHint}
@@ -369,7 +369,7 @@ public final class KeyValuePairHint extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * User-provided hint for key value pair.
+   * Reserved for future use.
    * </pre>
    *
    * Protobuf type {@code google.cloud.documentai.v1beta2.KeyValuePairHint}

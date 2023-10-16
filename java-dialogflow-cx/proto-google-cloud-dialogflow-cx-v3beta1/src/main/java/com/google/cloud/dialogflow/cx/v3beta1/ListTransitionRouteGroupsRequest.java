@@ -76,7 +76,8 @@ public final class ListTransitionRouteGroupsRequest extends com.google.protobuf.
    * <pre>
    * Required. The flow to list all transition route groups for.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;.
    * </pre>
    *
    * <code>
@@ -103,7 +104,8 @@ public final class ListTransitionRouteGroupsRequest extends com.google.protobuf.
    * <pre>
    * Required. The flow to list all transition route groups for.
    * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;.
    * </pre>
    *
    * <code>
@@ -700,7 +702,8 @@ public final class ListTransitionRouteGroupsRequest extends com.google.protobuf.
      * <pre>
      * Required. The flow to list all transition route groups for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;.
      * </pre>
      *
      * <code>
@@ -726,7 +729,8 @@ public final class ListTransitionRouteGroupsRequest extends com.google.protobuf.
      * <pre>
      * Required. The flow to list all transition route groups for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;.
      * </pre>
      *
      * <code>
@@ -752,7 +756,8 @@ public final class ListTransitionRouteGroupsRequest extends com.google.protobuf.
      * <pre>
      * Required. The flow to list all transition route groups for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;.
      * </pre>
      *
      * <code>
@@ -777,7 +782,8 @@ public final class ListTransitionRouteGroupsRequest extends com.google.protobuf.
      * <pre>
      * Required. The flow to list all transition route groups for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;.
      * </pre>
      *
      * <code>
@@ -798,7 +804,8 @@ public final class ListTransitionRouteGroupsRequest extends com.google.protobuf.
      * <pre>
      * Required. The flow to list all transition route groups for.
      * Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;.
      * </pre>
      *
      * <code>

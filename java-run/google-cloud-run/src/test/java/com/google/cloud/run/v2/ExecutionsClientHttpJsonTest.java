@@ -474,4 +474,156 @@ public class ExecutionsClientHttpJsonTest {
     } catch (ExecutionException e) {
     }
   }
+
+  @Test
+  public void cancelExecutionTest() throws Exception {
+    Execution expectedResponse =
+        Execution.newBuilder()
+            .setName(ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]").toString())
+            .setUid("uid115792")
+            .setGeneration(305703192)
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setCompletionTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .setLaunchStage(LaunchStage.forNumber(0))
+            .setJob(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setParallelism(635164956)
+            .setTaskCount(1297805781)
+            .setTemplate(TaskTemplate.newBuilder().build())
+            .setReconciling(true)
+            .addAllConditions(new ArrayList<Condition>())
+            .setObservedGeneration(900833007)
+            .setRunningCount(261439119)
+            .setSucceededCount(633694641)
+            .setFailedCount(-2013829491)
+            .setCancelledCount(1921113249)
+            .setRetriedCount(-1654679545)
+            .setLogUri("logUri-1097354360")
+            .setSatisfiesPzs(true)
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("cancelExecutionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    ExecutionName name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]");
+
+    Execution actualResponse = client.cancelExecutionAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void cancelExecutionExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ExecutionName name = ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]");
+      client.cancelExecutionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
+
+  @Test
+  public void cancelExecutionTest2() throws Exception {
+    Execution expectedResponse =
+        Execution.newBuilder()
+            .setName(ExecutionName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[EXECUTION]").toString())
+            .setUid("uid115792")
+            .setGeneration(305703192)
+            .putAllLabels(new HashMap<String, String>())
+            .putAllAnnotations(new HashMap<String, String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setStartTime(Timestamp.newBuilder().build())
+            .setCompletionTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setExpireTime(Timestamp.newBuilder().build())
+            .setLaunchStage(LaunchStage.forNumber(0))
+            .setJob(JobName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setParallelism(635164956)
+            .setTaskCount(1297805781)
+            .setTemplate(TaskTemplate.newBuilder().build())
+            .setReconciling(true)
+            .addAllConditions(new ArrayList<Condition>())
+            .setObservedGeneration(900833007)
+            .setRunningCount(261439119)
+            .setSucceededCount(633694641)
+            .setFailedCount(-2013829491)
+            .setCancelledCount(1921113249)
+            .setRetriedCount(-1654679545)
+            .setLogUri("logUri-1097354360")
+            .setSatisfiesPzs(true)
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("cancelExecutionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockService.addResponse(resultOperation);
+
+    String name =
+        "projects/project-3087/locations/location-3087/jobs/job-3087/executions/execution-3087";
+
+    Execution actualResponse = client.cancelExecutionAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void cancelExecutionExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-3087/locations/location-3087/jobs/job-3087/executions/execution-3087";
+      client.cancelExecutionAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+    }
+  }
 }

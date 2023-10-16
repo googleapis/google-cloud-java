@@ -58,6 +58,9 @@
             "ListRuntimeVersions": {
               "methods": ["listRuntimeVersions", "listRuntimeVersions", "listRuntimeVersions", "listRuntimeVersionsPagedCallable", "listRuntimeVersionsCallable"]
             },
+            "ResetQueuedResource": {
+              "methods": ["resetQueuedResourceAsync", "resetQueuedResourceAsync", "resetQueuedResourceAsync", "resetQueuedResourceOperationCallable", "resetQueuedResourceCallable"]
+            },
             "SimulateMaintenanceEvent": {
               "methods": ["simulateMaintenanceEventAsync", "simulateMaintenanceEventOperationCallable", "simulateMaintenanceEventCallable"]
             },

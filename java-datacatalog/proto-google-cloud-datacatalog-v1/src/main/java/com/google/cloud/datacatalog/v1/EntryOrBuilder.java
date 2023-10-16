@@ -750,6 +750,41 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
+   * Specification that applies to a dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DatasetSpec dataset_spec = 32;</code>
+   *
+   * @return Whether the datasetSpec field is set.
+   */
+  boolean hasDatasetSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DatasetSpec dataset_spec = 32;</code>
+   *
+   * @return The datasetSpec.
+   */
+  com.google.cloud.datacatalog.v1.DatasetSpec getDatasetSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Specification that applies to a dataset.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.DatasetSpec dataset_spec = 32;</code>
+   */
+  com.google.cloud.datacatalog.v1.DatasetSpecOrBuilder getDatasetSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Specification that applies to a fileset resource. Valid only
    * for entries with the `FILESET` type.
    * </pre>
@@ -818,6 +853,41 @@ public interface EntryOrBuilder
    * <code>.google.cloud.datacatalog.v1.ServiceSpec service_spec = 42;</code>
    */
   com.google.cloud.datacatalog.v1.ServiceSpecOrBuilder getServiceSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Model specification.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.ModelSpec model_spec = 43;</code>
+   *
+   * @return Whether the modelSpec field is set.
+   */
+  boolean hasModelSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Model specification.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.ModelSpec model_spec = 43;</code>
+   *
+   * @return The modelSpec.
+   */
+  com.google.cloud.datacatalog.v1.ModelSpec getModelSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Model specification.
+   * </pre>
+   *
+   * <code>.google.cloud.datacatalog.v1.ModelSpec model_spec = 43;</code>
+   */
+  com.google.cloud.datacatalog.v1.ModelSpecOrBuilder getModelSpecOrBuilder();
 
   /**
    *

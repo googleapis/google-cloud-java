@@ -22,7 +22,9 @@ package com.google.cloud.video.stitcher.v1;
  *
  *
  * <pre>
- * Information related to the details for one ad tag.
+ * Information related to the details for one ad tag. This resource is only
+ * available for VOD sessions that do not implement Google Ad Manager ad
+ * insertion.
  * </pre>
  *
  * Protobuf type {@code google.cloud.video.stitcher.v1.VodAdTagDetail}
@@ -361,7 +363,9 @@ public final class VodAdTagDetail extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Information related to the details for one ad tag.
+   * Information related to the details for one ad tag. This resource is only
+   * available for VOD sessions that do not implement Google Ad Manager ad
+   * insertion.
    * </pre>
    *
    * Protobuf type {@code google.cloud.video.stitcher.v1.VodAdTagDetail}

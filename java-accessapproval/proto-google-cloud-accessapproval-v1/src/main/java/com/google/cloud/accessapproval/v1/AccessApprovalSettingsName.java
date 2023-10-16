@@ -225,7 +225,7 @@ public class AccessApprovalSettingsName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       AccessApprovalSettingsName that = ((AccessApprovalSettingsName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.folder, that.folder)

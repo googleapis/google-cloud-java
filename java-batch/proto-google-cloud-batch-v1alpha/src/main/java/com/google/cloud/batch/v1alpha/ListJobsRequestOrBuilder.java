@@ -77,11 +77,11 @@ public interface ListJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Sort results. Supported are "name", "name desc", "create_time",
-   * "create_time desc", and "".
+   * Optional. Sort results. Supported are "name", "name desc", "create_time",
+   * and "create_time desc".
    * </pre>
    *
-   * <code>string order_by = 5;</code>
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The orderBy.
    */
@@ -90,11 +90,11 @@ public interface ListJobsRequestOrBuilder
    *
    *
    * <pre>
-   * Sort results. Supported are "name", "name desc", "create_time",
-   * "create_time desc", and "".
+   * Optional. Sort results. Supported are "name", "name desc", "create_time",
+   * and "create_time desc".
    * </pre>
    *
-   * <code>string order_by = 5;</code>
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for orderBy.
    */

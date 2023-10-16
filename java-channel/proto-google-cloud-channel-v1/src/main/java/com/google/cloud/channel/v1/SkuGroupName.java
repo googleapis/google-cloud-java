@@ -137,7 +137,7 @@ public class SkuGroupName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       SkuGroupName that = ((SkuGroupName) o);
       return Objects.equals(this.account, that.account)
           && Objects.equals(this.skuGroup, that.skuGroup);

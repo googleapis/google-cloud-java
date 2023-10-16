@@ -175,6 +175,10 @@ public final class DocumentProto {
       internal_static_google_cloud_documentai_v1beta3_Document_TextChange_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1beta3_Document_TextChange_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1beta3_RevisionRef_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1beta3_RevisionRef_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -425,13 +429,20 @@ public final class DocumentProto {
           + ".Document.TextAnchor\022\024\n\014changed_text\030\002 \001"
           + "(\t\022L\n\nprovenance\030\003 \003(\01324.google.cloud.do"
           + "cumentai.v1beta3.Document.ProvenanceB\002\030\001"
-          + "B\010\n\006sourceB\344\001\n#com.google.cloud.document"
-          + "ai.v1beta3B\rDocumentProtoP\001ZCcloud.googl"
-          + "e.com/go/documentai/apiv1beta3/documenta"
-          + "ipb;documentaipb\252\002\037Google.Cloud.Document"
-          + "AI.V1Beta3\312\002\037Google\\Cloud\\DocumentAI\\V1b"
-          + "eta3\352\002\"Google::Cloud::DocumentAI::V1beta"
-          + "3b\006proto3"
+          + "B\010\n\006source\"\233\002\n\013RevisionRef\022R\n\rrevision_c"
+          + "ase\030\001 \001(\01629.google.cloud.documentai.v1be"
+          + "ta3.RevisionRef.RevisionCaseH\000\022\025\n\013revisi"
+          + "on_id\030\002 \001(\tH\000\022\"\n\030latest_processor_versio"
+          + "n\030\003 \001(\tH\000\"s\n\014RevisionCase\022\035\n\031REVISION_CA"
+          + "SE_UNSPECIFIED\020\000\022\027\n\023LATEST_HUMAN_REVIEW\020"
+          + "\001\022\024\n\020LATEST_TIMESTAMP\020\002\022\025\n\021BASE_OCR_REVI"
+          + "SION\020\003B\010\n\006sourceB\344\001\n#com.google.cloud.do"
+          + "cumentai.v1beta3B\rDocumentProtoP\001ZCcloud"
+          + ".google.com/go/documentai/apiv1beta3/doc"
+          + "umentaipb;documentaipb\252\002\037Google.Cloud.Do"
+          + "cumentAI.V1Beta3\312\002\037Google\\Cloud\\Document"
+          + "AI\\V1beta3\352\002\"Google::Cloud::DocumentAI::"
+          + "V1beta3b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -876,6 +887,14 @@ public final class DocumentProto {
             internal_static_google_cloud_documentai_v1beta3_Document_TextChange_descriptor,
             new java.lang.String[] {
               "TextAnchor", "ChangedText", "Provenance",
+            });
+    internal_static_google_cloud_documentai_v1beta3_RevisionRef_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_documentai_v1beta3_RevisionRef_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1beta3_RevisionRef_descriptor,
+            new java.lang.String[] {
+              "RevisionCase", "RevisionId", "LatestProcessorVersion", "Source",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

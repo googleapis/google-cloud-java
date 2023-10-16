@@ -137,7 +137,7 @@ public class EnvironmentName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       EnvironmentName that = ((EnvironmentName) o);
       return Objects.equals(this.user, that.user)
           && Objects.equals(this.environment, that.environment);

@@ -367,6 +367,7 @@ public class DataTransferServiceClientTest {
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
+            .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -426,6 +427,7 @@ public class DataTransferServiceClientTest {
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
+            .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -485,6 +487,7 @@ public class DataTransferServiceClientTest {
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
+            .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -545,6 +548,7 @@ public class DataTransferServiceClientTest {
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
+            .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -679,6 +683,7 @@ public class DataTransferServiceClientTest {
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
+            .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 
@@ -739,6 +744,7 @@ public class DataTransferServiceClientTest {
             .setNotificationPubsubTopic("notificationPubsubTopic-1361224991")
             .setEmailPreferences(EmailPreferences.newBuilder().build())
             .setOwnerInfo(UserInfo.newBuilder().build())
+            .setEncryptionConfiguration(EncryptionConfiguration.newBuilder().build())
             .build();
     mockDataTransferService.addResponse(expectedResponse);
 

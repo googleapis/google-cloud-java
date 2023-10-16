@@ -22,7 +22,8 @@ package com.google.cloud.tasks.v2;
  *
  *
  * <pre>
- * Request message for [UpdateQueue][google.cloud.tasks.v2.CloudTasks.UpdateQueue].
+ * Request message for
+ * [UpdateQueue][google.cloud.tasks.v2.CloudTasks.UpdateQueue].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2.UpdateQueueRequest}
@@ -358,7 +359,8 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [UpdateQueue][google.cloud.tasks.v2.CloudTasks.UpdateQueue].
+   * Request message for
+   * [UpdateQueue][google.cloud.tasks.v2.CloudTasks.UpdateQueue].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2.UpdateQueueRequest}

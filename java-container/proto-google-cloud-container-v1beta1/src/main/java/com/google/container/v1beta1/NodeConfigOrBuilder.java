@@ -1610,4 +1610,57 @@ public interface NodeConfigOrBuilder
    * <code>.google.container.v1beta1.SoleTenantConfig sole_tenant_config = 42;</code>
    */
   com.google.container.v1beta1.SoleTenantConfigOrBuilder getSoleTenantConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * HostMaintenancePolicy contains the desired maintenance policy for the
+   * Google Compute Engine hosts.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.HostMaintenancePolicy host_maintenance_policy = 44;</code>
+   *
+   * @return Whether the hostMaintenancePolicy field is set.
+   */
+  boolean hasHostMaintenancePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * HostMaintenancePolicy contains the desired maintenance policy for the
+   * Google Compute Engine hosts.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.HostMaintenancePolicy host_maintenance_policy = 44;</code>
+   *
+   * @return The hostMaintenancePolicy.
+   */
+  com.google.container.v1beta1.HostMaintenancePolicy getHostMaintenancePolicy();
+  /**
+   *
+   *
+   * <pre>
+   * HostMaintenancePolicy contains the desired maintenance policy for the
+   * Google Compute Engine hosts.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.HostMaintenancePolicy host_maintenance_policy = 44;</code>
+   */
+  com.google.container.v1beta1.HostMaintenancePolicyOrBuilder getHostMaintenancePolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enable confidential storage on Hyperdisk.
+   * boot_disk_kms_key is required when enable_confidential_storage is true.
+   * This is only available for private preview.
+   * </pre>
+   *
+   * <code>bool enable_confidential_storage = 46 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableConfidentialStorage.
+   */
+  boolean getEnableConfidentialStorage();
 }

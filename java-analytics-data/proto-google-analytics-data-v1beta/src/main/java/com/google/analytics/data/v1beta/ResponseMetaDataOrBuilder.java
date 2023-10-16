@@ -29,6 +29,18 @@ public interface ResponseMetaDataOrBuilder
    * <pre>
    * If true, indicates some buckets of dimension combinations are rolled into
    * "(other)" row. This can happen for high cardinality reports.
+   *
+   * The metadata parameter dataLossFromOtherRow is populated based on the
+   * aggregated data table used in the report. The parameter will be accurately
+   * populated regardless of the filters and limits in the report.
+   *
+   * For example, the (other) row could be dropped from the report because the
+   * request contains a filter on sessionSource = google. This parameter will
+   * still be populated if data loss from other row was present in the input
+   * aggregate data used to generate this report.
+   *
+   * To learn more, see [About the (other) row and data
+   * sampling](https://support.google.com/analytics/answer/13208658#reports).
    * </pre>
    *
    * <code>bool data_loss_from_other_row = 3;</code>

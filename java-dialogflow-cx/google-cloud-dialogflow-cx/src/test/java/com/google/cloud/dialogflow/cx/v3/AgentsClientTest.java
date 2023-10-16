@@ -204,6 +204,7 @@ public class AgentsClientTest {
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
+            .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -259,6 +260,7 @@ public class AgentsClientTest {
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
+            .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -314,6 +316,7 @@ public class AgentsClientTest {
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
+            .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -372,6 +375,7 @@ public class AgentsClientTest {
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
+            .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -430,6 +434,7 @@ public class AgentsClientTest {
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
+            .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .build();
     mockAgents.addResponse(expectedResponse);
 
@@ -778,6 +783,153 @@ public class AgentsClientTest {
     try {
       String name = "name3373707";
       client.getAgentValidationResult(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGenerativeSettingsTest() throws Exception {
+    GenerativeSettings expectedResponse =
+        GenerativeSettings.newBuilder()
+            .setName(
+                AgentGenerativeSettingsName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .setFallbackSettings(GenerativeSettings.FallbackSettings.newBuilder().build())
+            .setGenerativeSafetySettings(SafetySettings.newBuilder().build())
+            .setKnowledgeConnectorSettings(
+                GenerativeSettings.KnowledgeConnectorSettings.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .build();
+    mockAgents.addResponse(expectedResponse);
+
+    AgentGenerativeSettingsName name =
+        AgentGenerativeSettingsName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+    String languageCode = "languageCode-2092349083";
+
+    GenerativeSettings actualResponse = client.getGenerativeSettings(name, languageCode);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGenerativeSettingsRequest actualRequest =
+        ((GetGenerativeSettingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGenerativeSettingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgents.addException(exception);
+
+    try {
+      AgentGenerativeSettingsName name =
+          AgentGenerativeSettingsName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+      String languageCode = "languageCode-2092349083";
+      client.getGenerativeSettings(name, languageCode);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGenerativeSettingsTest2() throws Exception {
+    GenerativeSettings expectedResponse =
+        GenerativeSettings.newBuilder()
+            .setName(
+                AgentGenerativeSettingsName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .setFallbackSettings(GenerativeSettings.FallbackSettings.newBuilder().build())
+            .setGenerativeSafetySettings(SafetySettings.newBuilder().build())
+            .setKnowledgeConnectorSettings(
+                GenerativeSettings.KnowledgeConnectorSettings.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .build();
+    mockAgents.addResponse(expectedResponse);
+
+    String name = "name3373707";
+    String languageCode = "languageCode-2092349083";
+
+    GenerativeSettings actualResponse = client.getGenerativeSettings(name, languageCode);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetGenerativeSettingsRequest actualRequest =
+        ((GetGenerativeSettingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(languageCode, actualRequest.getLanguageCode());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getGenerativeSettingsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgents.addException(exception);
+
+    try {
+      String name = "name3373707";
+      String languageCode = "languageCode-2092349083";
+      client.getGenerativeSettings(name, languageCode);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateGenerativeSettingsTest() throws Exception {
+    GenerativeSettings expectedResponse =
+        GenerativeSettings.newBuilder()
+            .setName(
+                AgentGenerativeSettingsName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .setFallbackSettings(GenerativeSettings.FallbackSettings.newBuilder().build())
+            .setGenerativeSafetySettings(SafetySettings.newBuilder().build())
+            .setKnowledgeConnectorSettings(
+                GenerativeSettings.KnowledgeConnectorSettings.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .build();
+    mockAgents.addResponse(expectedResponse);
+
+    GenerativeSettings generativeSettings = GenerativeSettings.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    GenerativeSettings actualResponse =
+        client.updateGenerativeSettings(generativeSettings, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAgents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateGenerativeSettingsRequest actualRequest =
+        ((UpdateGenerativeSettingsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(generativeSettings, actualRequest.getGenerativeSettings());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateGenerativeSettingsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAgents.addException(exception);
+
+    try {
+      GenerativeSettings generativeSettings = GenerativeSettings.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateGenerativeSettings(generativeSettings, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

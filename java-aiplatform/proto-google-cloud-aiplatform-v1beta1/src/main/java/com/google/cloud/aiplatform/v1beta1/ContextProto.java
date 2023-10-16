@@ -49,7 +49,7 @@ public final class ContextProto {
           + "\032\037google/api/field_behavior.proto\032\031googl"
           + "e/api/resource.proto\032\034google/protobuf/st"
           + "ruct.proto\032\037google/protobuf/timestamp.pr"
-          + "oto\"\334\004\n\007Context\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\022\024\n\014d"
+          + "oto\"\334\004\n\007Context\022\022\n\004name\030\001 \001(\tB\004\342A\001\005\022\024\n\014d"
           + "isplay_name\030\002 \001(\t\022\014\n\004etag\030\010 \001(\t\022D\n\006label"
           + "s\030\t \003(\01324.google.cloud.aiplatform.v1beta"
           + "1.Context.LabelsEntry\0225\n\013create_time\030\n \001"

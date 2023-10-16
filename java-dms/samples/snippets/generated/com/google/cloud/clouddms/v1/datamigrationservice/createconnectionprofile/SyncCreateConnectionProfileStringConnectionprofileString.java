@@ -18,8 +18,8 @@ package com.google.cloud.clouddms.v1.samples;
 
 // [START datamigration_v1_generated_DataMigrationService_CreateConnectionProfile_StringConnectionprofileString_sync]
 import com.google.cloud.clouddms.v1.ConnectionProfile;
-import com.google.cloud.clouddms.v1.ConnectionProfileName;
 import com.google.cloud.clouddms.v1.DataMigrationServiceClient;
+import com.google.cloud.clouddms.v1.LocationName;
 
 public class SyncCreateConnectionProfileStringConnectionprofileString {
 
@@ -35,8 +35,7 @@ public class SyncCreateConnectionProfileStringConnectionprofileString {
     // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
     try (DataMigrationServiceClient dataMigrationServiceClient =
         DataMigrationServiceClient.create()) {
-      String parent =
-          ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]").toString();
+      String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
       ConnectionProfile connectionProfile = ConnectionProfile.newBuilder().build();
       String connectionProfileId = "connectionProfileId597575526";
       ConnectionProfile response =

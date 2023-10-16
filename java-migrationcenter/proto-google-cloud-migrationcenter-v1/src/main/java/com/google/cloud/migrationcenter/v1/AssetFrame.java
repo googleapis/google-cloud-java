@@ -432,6 +432,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Asset performance data samples.
+   * Samples that are from more than 40 days ago or after tomorrow are ignored.
    * </pre>
    *
    * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;
@@ -447,6 +448,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Asset performance data samples.
+   * Samples that are from more than 40 days ago or after tomorrow are ignored.
    * </pre>
    *
    * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;
@@ -462,6 +464,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Asset performance data samples.
+   * Samples that are from more than 40 days ago or after tomorrow are ignored.
    * </pre>
    *
    * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;
@@ -476,6 +479,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Asset performance data samples.
+   * Samples that are from more than 40 days ago or after tomorrow are ignored.
    * </pre>
    *
    * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;
@@ -490,6 +494,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Asset performance data samples.
+   * Samples that are from more than 40 days ago or after tomorrow are ignored.
    * </pre>
    *
    * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;
@@ -1910,6 +1915,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Asset performance data samples.
+     * Samples that are from more than 40 days ago or after tomorrow are ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;
@@ -1928,6 +1934,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Asset performance data samples.
+     * Samples that are from more than 40 days ago or after tomorrow are ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;
@@ -1945,6 +1952,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Asset performance data samples.
+     * Samples that are from more than 40 days ago or after tomorrow are ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;
@@ -1962,6 +1970,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Asset performance data samples.
+     * Samples that are from more than 40 days ago or after tomorrow are ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;
@@ -1986,6 +1995,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Asset performance data samples.
+     * Samples that are from more than 40 days ago or after tomorrow are ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;
@@ -2007,6 +2017,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Asset performance data samples.
+     * Samples that are from more than 40 days ago or after tomorrow are ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;
@@ -2031,6 +2042,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Asset performance data samples.
+     * Samples that are from more than 40 days ago or after tomorrow are ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;
@@ -2055,6 +2067,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Asset performance data samples.
+     * Samples that are from more than 40 days ago or after tomorrow are ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;
@@ -2076,6 +2089,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Asset performance data samples.
+     * Samples that are from more than 40 days ago or after tomorrow are ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;
@@ -2097,6 +2111,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Asset performance data samples.
+     * Samples that are from more than 40 days ago or after tomorrow are ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;
@@ -2119,6 +2134,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Asset performance data samples.
+     * Samples that are from more than 40 days ago or after tomorrow are ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;
@@ -2139,6 +2155,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Asset performance data samples.
+     * Samples that are from more than 40 days ago or after tomorrow are ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;
@@ -2159,6 +2176,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Asset performance data samples.
+     * Samples that are from more than 40 days ago or after tomorrow are ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;
@@ -2173,6 +2191,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Asset performance data samples.
+     * Samples that are from more than 40 days ago or after tomorrow are ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;
@@ -2191,6 +2210,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Asset performance data samples.
+     * Samples that are from more than 40 days ago or after tomorrow are ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;
@@ -2209,6 +2229,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Asset performance data samples.
+     * Samples that are from more than 40 days ago or after tomorrow are ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;
@@ -2224,6 +2245,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Asset performance data samples.
+     * Samples that are from more than 40 days ago or after tomorrow are ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;
@@ -2240,6 +2262,7 @@ public final class AssetFrame extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Asset performance data samples.
+     * Samples that are from more than 40 days ago or after tomorrow are ignored.
      * </pre>
      *
      * <code>repeated .google.cloud.migrationcenter.v1.PerformanceSample performance_samples = 13;

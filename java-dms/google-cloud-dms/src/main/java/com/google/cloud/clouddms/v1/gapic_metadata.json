@@ -25,6 +25,9 @@
             "CreateConversionWorkspace": {
               "methods": ["createConversionWorkspaceAsync", "createConversionWorkspaceAsync", "createConversionWorkspaceAsync", "createConversionWorkspaceOperationCallable", "createConversionWorkspaceCallable"]
             },
+            "CreateMappingRule": {
+              "methods": ["createMappingRule", "createMappingRule", "createMappingRule", "createMappingRuleCallable"]
+            },
             "CreateMigrationJob": {
               "methods": ["createMigrationJobAsync", "createMigrationJobAsync", "createMigrationJobAsync", "createMigrationJobOperationCallable", "createMigrationJobCallable"]
             },
@@ -36,6 +39,9 @@
             },
             "DeleteConversionWorkspace": {
               "methods": ["deleteConversionWorkspaceAsync", "deleteConversionWorkspaceAsync", "deleteConversionWorkspaceAsync", "deleteConversionWorkspaceOperationCallable", "deleteConversionWorkspaceCallable"]
+            },
+            "DeleteMappingRule": {
+              "methods": ["deleteMappingRule", "deleteMappingRule", "deleteMappingRule", "deleteMappingRuleCallable"]
             },
             "DeleteMigrationJob": {
               "methods": ["deleteMigrationJobAsync", "deleteMigrationJobAsync", "deleteMigrationJobAsync", "deleteMigrationJobOperationCallable", "deleteMigrationJobCallable"]
@@ -55,11 +61,17 @@
             "GenerateSshScript": {
               "methods": ["generateSshScript", "generateSshScriptCallable"]
             },
+            "GenerateTcpProxyScript": {
+              "methods": ["generateTcpProxyScript", "generateTcpProxyScriptCallable"]
+            },
             "GetConnectionProfile": {
               "methods": ["getConnectionProfile", "getConnectionProfile", "getConnectionProfile", "getConnectionProfileCallable"]
             },
             "GetConversionWorkspace": {
               "methods": ["getConversionWorkspace", "getConversionWorkspace", "getConversionWorkspace", "getConversionWorkspaceCallable"]
+            },
+            "GetMappingRule": {
+              "methods": ["getMappingRule", "getMappingRule", "getMappingRule", "getMappingRuleCallable"]
             },
             "GetMigrationJob": {
               "methods": ["getMigrationJob", "getMigrationJob", "getMigrationJob", "getMigrationJobCallable"]
@@ -75,6 +87,9 @@
             },
             "ListConversionWorkspaces": {
               "methods": ["listConversionWorkspaces", "listConversionWorkspaces", "listConversionWorkspaces", "listConversionWorkspacesPagedCallable", "listConversionWorkspacesCallable"]
+            },
+            "ListMappingRules": {
+              "methods": ["listMappingRules", "listMappingRules", "listMappingRules", "listMappingRulesPagedCallable", "listMappingRulesCallable"]
             },
             "ListMigrationJobs": {
               "methods": ["listMigrationJobs", "listMigrationJobs", "listMigrationJobs", "listMigrationJobsPagedCallable", "listMigrationJobsCallable"]

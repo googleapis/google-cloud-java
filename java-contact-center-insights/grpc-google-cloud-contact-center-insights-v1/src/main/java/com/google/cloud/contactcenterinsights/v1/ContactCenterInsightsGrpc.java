@@ -32,7 +32,7 @@ public final class ContactCenterInsightsGrpc {
 
   private ContactCenterInsightsGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.contactcenterinsights.v1.ContactCenterInsights";
 
   // Static method descriptors that strictly reflect the proto.
@@ -4781,9 +4781,9 @@ public final class ContactCenterInsightsGrpc {
   private static final class ContactCenterInsightsMethodDescriptorSupplier
       extends ContactCenterInsightsBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ContactCenterInsightsMethodDescriptorSupplier(String methodName) {
+    ContactCenterInsightsMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

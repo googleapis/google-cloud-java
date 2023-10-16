@@ -56,10 +56,10 @@ public interface ListWorkstationsRequestOrBuilder
    *
    *
    * <pre>
-   * Maximum number of items to return.
+   * Optional. Maximum number of items to return.
    * </pre>
    *
-   * <code>int32 page_size = 2;</code>
+   * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -69,10 +69,11 @@ public interface ListWorkstationsRequestOrBuilder
    *
    *
    * <pre>
-   * next_page_token value returned from a previous List request, if any.
+   * Optional. next_page_token value returned from a previous List request, if
+   * any.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -81,10 +82,11 @@ public interface ListWorkstationsRequestOrBuilder
    *
    *
    * <pre>
-   * next_page_token value returned from a previous List request, if any.
+   * Optional. next_page_token value returned from a previous List request, if
+   * any.
    * </pre>
    *
-   * <code>string page_token = 3;</code>
+   * <code>string page_token = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */

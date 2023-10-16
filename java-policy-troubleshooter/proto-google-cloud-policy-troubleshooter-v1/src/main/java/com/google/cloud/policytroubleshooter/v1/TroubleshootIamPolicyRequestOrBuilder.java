@@ -27,8 +27,8 @@ public interface TroubleshootIamPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * The information to use for checking whether a member has a permission for a
-   * resource.
+   * The information to use for checking whether a principal has a permission
+   * for a resource.
    * </pre>
    *
    * <code>.google.cloud.policytroubleshooter.v1.AccessTuple access_tuple = 1;</code>
@@ -40,8 +40,8 @@ public interface TroubleshootIamPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * The information to use for checking whether a member has a permission for a
-   * resource.
+   * The information to use for checking whether a principal has a permission
+   * for a resource.
    * </pre>
    *
    * <code>.google.cloud.policytroubleshooter.v1.AccessTuple access_tuple = 1;</code>
@@ -53,8 +53,8 @@ public interface TroubleshootIamPolicyRequestOrBuilder
    *
    *
    * <pre>
-   * The information to use for checking whether a member has a permission for a
-   * resource.
+   * The information to use for checking whether a principal has a permission
+   * for a resource.
    * </pre>
    *
    * <code>.google.cloud.policytroubleshooter.v1.AccessTuple access_tuple = 1;</code>

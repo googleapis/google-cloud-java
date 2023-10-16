@@ -241,12 +241,12 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * <pre>
    * Required. The input specification. It can be set to:
    *
-   * 1.  an audio config which instructs the speech recognizer how to process
-   *     the speech audio,
+   * 1. an audio config which instructs the speech recognizer how to process
+   * the speech audio,
    *
-   * 2.  a conversational query in the form of text, or
+   * 2. a conversational query in the form of text, or
    *
-   * 3.  an event that specifies which intent to trigger.
+   * 3. an event that specifies which intent to trigger.
    * </pre>
    *
    * <code>
@@ -265,12 +265,12 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * <pre>
    * Required. The input specification. It can be set to:
    *
-   * 1.  an audio config which instructs the speech recognizer how to process
-   *     the speech audio,
+   * 1. an audio config which instructs the speech recognizer how to process
+   * the speech audio,
    *
-   * 2.  a conversational query in the form of text, or
+   * 2. a conversational query in the form of text, or
    *
-   * 3.  an event that specifies which intent to trigger.
+   * 3. an event that specifies which intent to trigger.
    * </pre>
    *
    * <code>
@@ -291,12 +291,12 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * <pre>
    * Required. The input specification. It can be set to:
    *
-   * 1.  an audio config which instructs the speech recognizer how to process
-   *     the speech audio,
+   * 1. an audio config which instructs the speech recognizer how to process
+   * the speech audio,
    *
-   * 2.  a conversational query in the form of text, or
+   * 2. a conversational query in the form of text, or
    *
-   * 3.  an event that specifies which intent to trigger.
+   * 3. an event that specifies which intent to trigger.
    * </pre>
    *
    * <code>
@@ -330,7 +330,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
    * <code>bool single_utterance = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2.StreamingDetectIntentRequest.single_utterance is
-   *     deprecated. See google/cloud/dialogflow/v2/session.proto;l=464
+   *     deprecated. See google/cloud/dialogflow/v2/session.proto;l=469
    * @return The singleUtterance.
    */
   @java.lang.Override
@@ -1473,12 +1473,12 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The input specification. It can be set to:
      *
-     * 1.  an audio config which instructs the speech recognizer how to process
-     *     the speech audio,
+     * 1. an audio config which instructs the speech recognizer how to process
+     * the speech audio,
      *
-     * 2.  a conversational query in the form of text, or
+     * 2. a conversational query in the form of text, or
      *
-     * 3.  an event that specifies which intent to trigger.
+     * 3. an event that specifies which intent to trigger.
      * </pre>
      *
      * <code>
@@ -1496,12 +1496,12 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The input specification. It can be set to:
      *
-     * 1.  an audio config which instructs the speech recognizer how to process
-     *     the speech audio,
+     * 1. an audio config which instructs the speech recognizer how to process
+     * the speech audio,
      *
-     * 2.  a conversational query in the form of text, or
+     * 2. a conversational query in the form of text, or
      *
-     * 3.  an event that specifies which intent to trigger.
+     * 3. an event that specifies which intent to trigger.
      * </pre>
      *
      * <code>
@@ -1525,12 +1525,12 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The input specification. It can be set to:
      *
-     * 1.  an audio config which instructs the speech recognizer how to process
-     *     the speech audio,
+     * 1. an audio config which instructs the speech recognizer how to process
+     * the speech audio,
      *
-     * 2.  a conversational query in the form of text, or
+     * 2. a conversational query in the form of text, or
      *
-     * 3.  an event that specifies which intent to trigger.
+     * 3. an event that specifies which intent to trigger.
      * </pre>
      *
      * <code>
@@ -1556,12 +1556,12 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The input specification. It can be set to:
      *
-     * 1.  an audio config which instructs the speech recognizer how to process
-     *     the speech audio,
+     * 1. an audio config which instructs the speech recognizer how to process
+     * the speech audio,
      *
-     * 2.  a conversational query in the form of text, or
+     * 2. a conversational query in the form of text, or
      *
-     * 3.  an event that specifies which intent to trigger.
+     * 3. an event that specifies which intent to trigger.
      * </pre>
      *
      * <code>
@@ -1585,12 +1585,12 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The input specification. It can be set to:
      *
-     * 1.  an audio config which instructs the speech recognizer how to process
-     *     the speech audio,
+     * 1. an audio config which instructs the speech recognizer how to process
+     * the speech audio,
      *
-     * 2.  a conversational query in the form of text, or
+     * 2. a conversational query in the form of text, or
      *
-     * 3.  an event that specifies which intent to trigger.
+     * 3. an event that specifies which intent to trigger.
      * </pre>
      *
      * <code>
@@ -1619,12 +1619,12 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The input specification. It can be set to:
      *
-     * 1.  an audio config which instructs the speech recognizer how to process
-     *     the speech audio,
+     * 1. an audio config which instructs the speech recognizer how to process
+     * the speech audio,
      *
-     * 2.  a conversational query in the form of text, or
+     * 2. a conversational query in the form of text, or
      *
-     * 3.  an event that specifies which intent to trigger.
+     * 3. an event that specifies which intent to trigger.
      * </pre>
      *
      * <code>
@@ -1647,12 +1647,12 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The input specification. It can be set to:
      *
-     * 1.  an audio config which instructs the speech recognizer how to process
-     *     the speech audio,
+     * 1. an audio config which instructs the speech recognizer how to process
+     * the speech audio,
      *
-     * 2.  a conversational query in the form of text, or
+     * 2. a conversational query in the form of text, or
      *
-     * 3.  an event that specifies which intent to trigger.
+     * 3. an event that specifies which intent to trigger.
      * </pre>
      *
      * <code>
@@ -1670,12 +1670,12 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The input specification. It can be set to:
      *
-     * 1.  an audio config which instructs the speech recognizer how to process
-     *     the speech audio,
+     * 1. an audio config which instructs the speech recognizer how to process
+     * the speech audio,
      *
-     * 2.  a conversational query in the form of text, or
+     * 2. a conversational query in the form of text, or
      *
-     * 3.  an event that specifies which intent to trigger.
+     * 3. an event that specifies which intent to trigger.
      * </pre>
      *
      * <code>
@@ -1697,12 +1697,12 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <pre>
      * Required. The input specification. It can be set to:
      *
-     * 1.  an audio config which instructs the speech recognizer how to process
-     *     the speech audio,
+     * 1. an audio config which instructs the speech recognizer how to process
+     * the speech audio,
      *
-     * 2.  a conversational query in the form of text, or
+     * 2. a conversational query in the form of text, or
      *
-     * 3.  an event that specifies which intent to trigger.
+     * 3. an event that specifies which intent to trigger.
      * </pre>
      *
      * <code>
@@ -1745,7 +1745,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <code>bool single_utterance = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2.StreamingDetectIntentRequest.single_utterance is
-     *     deprecated. See google/cloud/dialogflow/v2/session.proto;l=464
+     *     deprecated. See google/cloud/dialogflow/v2/session.proto;l=469
      * @return The singleUtterance.
      */
     @java.lang.Override
@@ -1771,7 +1771,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <code>bool single_utterance = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2.StreamingDetectIntentRequest.single_utterance is
-     *     deprecated. See google/cloud/dialogflow/v2/session.proto;l=464
+     *     deprecated. See google/cloud/dialogflow/v2/session.proto;l=469
      * @param value The singleUtterance to set.
      * @return This builder for chaining.
      */
@@ -1801,7 +1801,7 @@ public final class StreamingDetectIntentRequest extends com.google.protobuf.Gene
      * <code>bool single_utterance = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2.StreamingDetectIntentRequest.single_utterance is
-     *     deprecated. See google/cloud/dialogflow/v2/session.proto;l=464
+     *     deprecated. See google/cloud/dialogflow/v2/session.proto;l=469
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

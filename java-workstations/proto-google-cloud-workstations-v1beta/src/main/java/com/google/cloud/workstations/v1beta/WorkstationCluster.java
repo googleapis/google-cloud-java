@@ -22,8 +22,10 @@ package com.google.cloud.workstations.v1beta;
  *
  *
  * <pre>
- * A grouping of workstation configurations and the associated workstations
- *  in that region.
+ * A workstation cluster resource in the Cloud Workstations API.
+ *
+ * Defines a group of workstations in a particular region and the
+ * VPC network they're attached to.
  * </pre>
  *
  * Protobuf type {@code google.cloud.workstations.v1beta.WorkstationCluster}
@@ -107,9 +109,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. Hostname for the workstation cluster. This field will be
      * populated only when private endpoint is enabled. To access workstations
-     * in the cluster, create a new DNS zone mapping this domain name to an
-     * internal IP address and a forwarding rule mapping that address to the
-     * service attachment.
+     * in the workstation cluster, create a new DNS zone mapping this domain
+     * name to an internal IP address and a forwarding rule mapping that address
+     * to the service attachment.
      * </pre>
      *
      * <code>string cluster_hostname = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -123,9 +125,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. Hostname for the workstation cluster. This field will be
      * populated only when private endpoint is enabled. To access workstations
-     * in the cluster, create a new DNS zone mapping this domain name to an
-     * internal IP address and a forwarding rule mapping that address to the
-     * service attachment.
+     * in the workstation cluster, create a new DNS zone mapping this domain
+     * name to an internal IP address and a forwarding rule mapping that address
+     * to the service attachment.
      * </pre>
      *
      * <code>string cluster_hostname = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -140,8 +142,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. Service attachment URI for the workstation cluster. The
      * service attachemnt is created when private endpoint is enabled. To access
-     * workstations in the cluster, configure access to the managed service
-     * using [Private Service
+     * workstations in the workstation cluster, configure access to the managed
+     * service using [Private Service
      * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-services).
      * </pre>
      *
@@ -156,8 +158,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. Service attachment URI for the workstation cluster. The
      * service attachemnt is created when private endpoint is enabled. To access
-     * workstations in the cluster, configure access to the managed service
-     * using [Private Service
+     * workstations in the workstation cluster, configure access to the managed
+     * service using [Private Service
      * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-services).
      * </pre>
      *
@@ -171,12 +173,12 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Additional projects that are allowed to attach to the workstation
-     * cluster's service attachment. By default, the workstation cluster's
-     * project and the VPC host project (if different) are allowed.
+     * Optional. Additional projects that are allowed to attach to the
+     * workstation cluster's service attachment. By default, the workstation
+     * cluster's project and the VPC host project (if different) are allowed.
      * </pre>
      *
-     * <code>repeated string allowed_projects = 4;</code>
+     * <code>repeated string allowed_projects = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the allowedProjects.
      */
@@ -185,12 +187,12 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Additional projects that are allowed to attach to the workstation
-     * cluster's service attachment. By default, the workstation cluster's
-     * project and the VPC host project (if different) are allowed.
+     * Optional. Additional projects that are allowed to attach to the
+     * workstation cluster's service attachment. By default, the workstation
+     * cluster's project and the VPC host project (if different) are allowed.
      * </pre>
      *
-     * <code>repeated string allowed_projects = 4;</code>
+     * <code>repeated string allowed_projects = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of allowedProjects.
      */
@@ -199,12 +201,12 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Additional projects that are allowed to attach to the workstation
-     * cluster's service attachment. By default, the workstation cluster's
-     * project and the VPC host project (if different) are allowed.
+     * Optional. Additional projects that are allowed to attach to the
+     * workstation cluster's service attachment. By default, the workstation
+     * cluster's project and the VPC host project (if different) are allowed.
      * </pre>
      *
-     * <code>repeated string allowed_projects = 4;</code>
+     * <code>repeated string allowed_projects = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The allowedProjects at the given index.
@@ -214,12 +216,12 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Additional projects that are allowed to attach to the workstation
-     * cluster's service attachment. By default, the workstation cluster's
-     * project and the VPC host project (if different) are allowed.
+     * Optional. Additional projects that are allowed to attach to the
+     * workstation cluster's service attachment. By default, the workstation
+     * cluster's project and the VPC host project (if different) are allowed.
      * </pre>
      *
-     * <code>repeated string allowed_projects = 4;</code>
+     * <code>repeated string allowed_projects = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the allowedProjects at the given index.
@@ -230,7 +232,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Configuration options for private clusters.
+   * Configuration options for private workstation clusters.
    * </pre>
    *
    * Protobuf type {@code google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig}
@@ -301,9 +303,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. Hostname for the workstation cluster. This field will be
      * populated only when private endpoint is enabled. To access workstations
-     * in the cluster, create a new DNS zone mapping this domain name to an
-     * internal IP address and a forwarding rule mapping that address to the
-     * service attachment.
+     * in the workstation cluster, create a new DNS zone mapping this domain
+     * name to an internal IP address and a forwarding rule mapping that address
+     * to the service attachment.
      * </pre>
      *
      * <code>string cluster_hostname = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -328,9 +330,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. Hostname for the workstation cluster. This field will be
      * populated only when private endpoint is enabled. To access workstations
-     * in the cluster, create a new DNS zone mapping this domain name to an
-     * internal IP address and a forwarding rule mapping that address to the
-     * service attachment.
+     * in the workstation cluster, create a new DNS zone mapping this domain
+     * name to an internal IP address and a forwarding rule mapping that address
+     * to the service attachment.
      * </pre>
      *
      * <code>string cluster_hostname = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -360,8 +362,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. Service attachment URI for the workstation cluster. The
      * service attachemnt is created when private endpoint is enabled. To access
-     * workstations in the cluster, configure access to the managed service
-     * using [Private Service
+     * workstations in the workstation cluster, configure access to the managed
+     * service using [Private Service
      * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-services).
      * </pre>
      *
@@ -387,8 +389,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Output only. Service attachment URI for the workstation cluster. The
      * service attachemnt is created when private endpoint is enabled. To access
-     * workstations in the cluster, configure access to the managed service
-     * using [Private Service
+     * workstations in the workstation cluster, configure access to the managed
+     * service using [Private Service
      * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-services).
      * </pre>
      *
@@ -418,12 +420,12 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Additional projects that are allowed to attach to the workstation
-     * cluster's service attachment. By default, the workstation cluster's
-     * project and the VPC host project (if different) are allowed.
+     * Optional. Additional projects that are allowed to attach to the
+     * workstation cluster's service attachment. By default, the workstation
+     * cluster's project and the VPC host project (if different) are allowed.
      * </pre>
      *
-     * <code>repeated string allowed_projects = 4;</code>
+     * <code>repeated string allowed_projects = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return A list containing the allowedProjects.
      */
@@ -434,12 +436,12 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Additional projects that are allowed to attach to the workstation
-     * cluster's service attachment. By default, the workstation cluster's
-     * project and the VPC host project (if different) are allowed.
+     * Optional. Additional projects that are allowed to attach to the
+     * workstation cluster's service attachment. By default, the workstation
+     * cluster's project and the VPC host project (if different) are allowed.
      * </pre>
      *
-     * <code>repeated string allowed_projects = 4;</code>
+     * <code>repeated string allowed_projects = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The count of allowedProjects.
      */
@@ -450,12 +452,12 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Additional projects that are allowed to attach to the workstation
-     * cluster's service attachment. By default, the workstation cluster's
-     * project and the VPC host project (if different) are allowed.
+     * Optional. Additional projects that are allowed to attach to the
+     * workstation cluster's service attachment. By default, the workstation
+     * cluster's project and the VPC host project (if different) are allowed.
      * </pre>
      *
-     * <code>repeated string allowed_projects = 4;</code>
+     * <code>repeated string allowed_projects = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the element to return.
      * @return The allowedProjects at the given index.
@@ -467,12 +469,12 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Additional projects that are allowed to attach to the workstation
-     * cluster's service attachment. By default, the workstation cluster's
-     * project and the VPC host project (if different) are allowed.
+     * Optional. Additional projects that are allowed to attach to the
+     * workstation cluster's service attachment. By default, the workstation
+     * cluster's project and the VPC host project (if different) are allowed.
      * </pre>
      *
-     * <code>repeated string allowed_projects = 4;</code>
+     * <code>repeated string allowed_projects = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param index The index of the value to return.
      * @return The bytes of the allowedProjects at the given index.
@@ -688,7 +690,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Configuration options for private clusters.
+     * Configuration options for private workstation clusters.
      * </pre>
      *
      * Protobuf type {@code
@@ -993,9 +995,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Output only. Hostname for the workstation cluster. This field will be
        * populated only when private endpoint is enabled. To access workstations
-       * in the cluster, create a new DNS zone mapping this domain name to an
-       * internal IP address and a forwarding rule mapping that address to the
-       * service attachment.
+       * in the workstation cluster, create a new DNS zone mapping this domain
+       * name to an internal IP address and a forwarding rule mapping that address
+       * to the service attachment.
        * </pre>
        *
        * <code>string cluster_hostname = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1019,9 +1021,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Output only. Hostname for the workstation cluster. This field will be
        * populated only when private endpoint is enabled. To access workstations
-       * in the cluster, create a new DNS zone mapping this domain name to an
-       * internal IP address and a forwarding rule mapping that address to the
-       * service attachment.
+       * in the workstation cluster, create a new DNS zone mapping this domain
+       * name to an internal IP address and a forwarding rule mapping that address
+       * to the service attachment.
        * </pre>
        *
        * <code>string cluster_hostname = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1045,9 +1047,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Output only. Hostname for the workstation cluster. This field will be
        * populated only when private endpoint is enabled. To access workstations
-       * in the cluster, create a new DNS zone mapping this domain name to an
-       * internal IP address and a forwarding rule mapping that address to the
-       * service attachment.
+       * in the workstation cluster, create a new DNS zone mapping this domain
+       * name to an internal IP address and a forwarding rule mapping that address
+       * to the service attachment.
        * </pre>
        *
        * <code>string cluster_hostname = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1070,9 +1072,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Output only. Hostname for the workstation cluster. This field will be
        * populated only when private endpoint is enabled. To access workstations
-       * in the cluster, create a new DNS zone mapping this domain name to an
-       * internal IP address and a forwarding rule mapping that address to the
-       * service attachment.
+       * in the workstation cluster, create a new DNS zone mapping this domain
+       * name to an internal IP address and a forwarding rule mapping that address
+       * to the service attachment.
        * </pre>
        *
        * <code>string cluster_hostname = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1091,9 +1093,9 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Output only. Hostname for the workstation cluster. This field will be
        * populated only when private endpoint is enabled. To access workstations
-       * in the cluster, create a new DNS zone mapping this domain name to an
-       * internal IP address and a forwarding rule mapping that address to the
-       * service attachment.
+       * in the workstation cluster, create a new DNS zone mapping this domain
+       * name to an internal IP address and a forwarding rule mapping that address
+       * to the service attachment.
        * </pre>
        *
        * <code>string cluster_hostname = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1119,8 +1121,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Output only. Service attachment URI for the workstation cluster. The
        * service attachemnt is created when private endpoint is enabled. To access
-       * workstations in the cluster, configure access to the managed service
-       * using [Private Service
+       * workstations in the workstation cluster, configure access to the managed
+       * service using [Private Service
        * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-services).
        * </pre>
        *
@@ -1146,8 +1148,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Output only. Service attachment URI for the workstation cluster. The
        * service attachemnt is created when private endpoint is enabled. To access
-       * workstations in the cluster, configure access to the managed service
-       * using [Private Service
+       * workstations in the workstation cluster, configure access to the managed
+       * service using [Private Service
        * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-services).
        * </pre>
        *
@@ -1173,8 +1175,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Output only. Service attachment URI for the workstation cluster. The
        * service attachemnt is created when private endpoint is enabled. To access
-       * workstations in the cluster, configure access to the managed service
-       * using [Private Service
+       * workstations in the workstation cluster, configure access to the managed
+       * service using [Private Service
        * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-services).
        * </pre>
        *
@@ -1199,8 +1201,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Output only. Service attachment URI for the workstation cluster. The
        * service attachemnt is created when private endpoint is enabled. To access
-       * workstations in the cluster, configure access to the managed service
-       * using [Private Service
+       * workstations in the workstation cluster, configure access to the managed
+       * service using [Private Service
        * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-services).
        * </pre>
        *
@@ -1221,8 +1223,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        * <pre>
        * Output only. Service attachment URI for the workstation cluster. The
        * service attachemnt is created when private endpoint is enabled. To access
-       * workstations in the cluster, configure access to the managed service
-       * using [Private Service
+       * workstations in the workstation cluster, configure access to the managed
+       * service using [Private Service
        * Connect](https://cloud.google.com/vpc/docs/configure-private-service-connect-services).
        * </pre>
        *
@@ -1256,12 +1258,13 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Additional projects that are allowed to attach to the workstation
-       * cluster's service attachment. By default, the workstation cluster's
-       * project and the VPC host project (if different) are allowed.
+       * Optional. Additional projects that are allowed to attach to the
+       * workstation cluster's service attachment. By default, the workstation
+       * cluster's project and the VPC host project (if different) are allowed.
        * </pre>
        *
-       * <code>repeated string allowed_projects = 4;</code>
+       * <code>repeated string allowed_projects = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return A list containing the allowedProjects.
        */
@@ -1273,12 +1276,13 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Additional projects that are allowed to attach to the workstation
-       * cluster's service attachment. By default, the workstation cluster's
-       * project and the VPC host project (if different) are allowed.
+       * Optional. Additional projects that are allowed to attach to the
+       * workstation cluster's service attachment. By default, the workstation
+       * cluster's project and the VPC host project (if different) are allowed.
        * </pre>
        *
-       * <code>repeated string allowed_projects = 4;</code>
+       * <code>repeated string allowed_projects = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The count of allowedProjects.
        */
@@ -1289,12 +1293,13 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Additional projects that are allowed to attach to the workstation
-       * cluster's service attachment. By default, the workstation cluster's
-       * project and the VPC host project (if different) are allowed.
+       * Optional. Additional projects that are allowed to attach to the
+       * workstation cluster's service attachment. By default, the workstation
+       * cluster's project and the VPC host project (if different) are allowed.
        * </pre>
        *
-       * <code>repeated string allowed_projects = 4;</code>
+       * <code>repeated string allowed_projects = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param index The index of the element to return.
        * @return The allowedProjects at the given index.
@@ -1306,12 +1311,13 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Additional projects that are allowed to attach to the workstation
-       * cluster's service attachment. By default, the workstation cluster's
-       * project and the VPC host project (if different) are allowed.
+       * Optional. Additional projects that are allowed to attach to the
+       * workstation cluster's service attachment. By default, the workstation
+       * cluster's project and the VPC host project (if different) are allowed.
        * </pre>
        *
-       * <code>repeated string allowed_projects = 4;</code>
+       * <code>repeated string allowed_projects = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param index The index of the value to return.
        * @return The bytes of the allowedProjects at the given index.
@@ -1323,12 +1329,13 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Additional projects that are allowed to attach to the workstation
-       * cluster's service attachment. By default, the workstation cluster's
-       * project and the VPC host project (if different) are allowed.
+       * Optional. Additional projects that are allowed to attach to the
+       * workstation cluster's service attachment. By default, the workstation
+       * cluster's project and the VPC host project (if different) are allowed.
        * </pre>
        *
-       * <code>repeated string allowed_projects = 4;</code>
+       * <code>repeated string allowed_projects = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param index The index to set the value at.
        * @param value The allowedProjects to set.
@@ -1348,12 +1355,13 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Additional projects that are allowed to attach to the workstation
-       * cluster's service attachment. By default, the workstation cluster's
-       * project and the VPC host project (if different) are allowed.
+       * Optional. Additional projects that are allowed to attach to the
+       * workstation cluster's service attachment. By default, the workstation
+       * cluster's project and the VPC host project (if different) are allowed.
        * </pre>
        *
-       * <code>repeated string allowed_projects = 4;</code>
+       * <code>repeated string allowed_projects = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param value The allowedProjects to add.
        * @return This builder for chaining.
@@ -1372,12 +1380,13 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Additional projects that are allowed to attach to the workstation
-       * cluster's service attachment. By default, the workstation cluster's
-       * project and the VPC host project (if different) are allowed.
+       * Optional. Additional projects that are allowed to attach to the
+       * workstation cluster's service attachment. By default, the workstation
+       * cluster's project and the VPC host project (if different) are allowed.
        * </pre>
        *
-       * <code>repeated string allowed_projects = 4;</code>
+       * <code>repeated string allowed_projects = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param values The allowedProjects to add.
        * @return This builder for chaining.
@@ -1393,12 +1402,13 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Additional projects that are allowed to attach to the workstation
-       * cluster's service attachment. By default, the workstation cluster's
-       * project and the VPC host project (if different) are allowed.
+       * Optional. Additional projects that are allowed to attach to the
+       * workstation cluster's service attachment. By default, the workstation
+       * cluster's project and the VPC host project (if different) are allowed.
        * </pre>
        *
-       * <code>repeated string allowed_projects = 4;</code>
+       * <code>repeated string allowed_projects = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return This builder for chaining.
        */
@@ -1413,12 +1423,13 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Additional projects that are allowed to attach to the workstation
-       * cluster's service attachment. By default, the workstation cluster's
-       * project and the VPC host project (if different) are allowed.
+       * Optional. Additional projects that are allowed to attach to the
+       * workstation cluster's service attachment. By default, the workstation
+       * cluster's project and the VPC host project (if different) are allowed.
        * </pre>
        *
-       * <code>repeated string allowed_projects = 4;</code>
+       * <code>repeated string allowed_projects = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @param value The bytes of the allowedProjects to add.
        * @return This builder for chaining.
@@ -1512,7 +1523,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Full name of this resource.
+   * Full name of this workstation cluster.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1535,7 +1546,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Full name of this resource.
+   * Full name of this workstation cluster.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -1563,10 +1574,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Human-readable name for this resource.
+   * Optional. Human-readable name for this workstation cluster.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The displayName.
    */
@@ -1586,10 +1597,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Human-readable name for this resource.
+   * Optional. Human-readable name for this workstation cluster.
    * </pre>
    *
-   * <code>string display_name = 2;</code>
+   * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for displayName.
    */
@@ -1614,7 +1625,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. A system-assigned unique identified for this resource.
+   * Output only. A system-assigned unique identifier for this workstation
+   * cluster.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1637,7 +1649,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. A system-assigned unique identified for this resource.
+   * Output only. A system-assigned unique identifier for this workstation
+   * cluster.
    * </pre>
    *
    * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1663,8 +1676,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Indicates whether this resource is currently being updated to
-   * match its intended state.
+   * Output only. Indicates whether this workstation cluster is currently being
+   * updated to match its intended state.
    * </pre>
    *
    * <code>bool reconciling = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1707,10 +1720,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public boolean containsAnnotations(java.lang.String key) {
@@ -1729,10 +1743,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -1742,10 +1757,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -1762,10 +1778,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Client-specified annotations.
+   * Optional. Client-specified annotations.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; annotations = 5;</code>
+   * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   @java.lang.Override
   public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -1809,11 +1826,13 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation cluster and that are also propagated to the
+   * underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 15;</code>
+   * <code>map&lt;string, string&gt; labels = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -1832,11 +1851,13 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation cluster and that are also propagated to the
+   * underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 15;</code>
+   * <code>map&lt;string, string&gt; labels = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -1846,11 +1867,13 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation cluster and that are also propagated to the
+   * underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 15;</code>
+   * <code>map&lt;string, string&gt; labels = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -1867,11 +1890,13 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Client-specified labels that are applied to the resource and that are also
-   * propagated to the underlying Compute Engine resources.
+   * Optional.
+   * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+   * are applied to the workstation cluster and that are also propagated to the
+   * underlying Compute Engine resources.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 15;</code>
+   * <code>map&lt;string, string&gt; labels = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -1891,7 +1916,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Time when this resource was created.
+   * Output only. Time when this workstation cluster was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1907,7 +1932,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Time when this resource was created.
+   * Output only. Time when this workstation cluster was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1923,7 +1948,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Time when this resource was created.
+   * Output only. Time when this workstation cluster was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1940,7 +1965,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Time when this resource was most recently updated.
+   * Output only. Time when this workstation cluster was most recently updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1956,7 +1981,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Time when this resource was most recently updated.
+   * Output only. Time when this workstation cluster was most recently updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1972,7 +1997,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Time when this resource was most recently updated.
+   * Output only. Time when this workstation cluster was most recently updated.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -1989,7 +2014,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Time when this resource was soft-deleted.
+   * Output only. Time when this workstation cluster was soft-deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2005,7 +2030,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Time when this resource was soft-deleted.
+   * Output only. Time when this workstation cluster was soft-deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2021,7 +2046,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Time when this resource was soft-deleted.
+   * Output only. Time when this workstation cluster was soft-deleted.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp delete_time = 8 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2040,11 +2065,12 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Checksum computed by the server. May be sent on update and delete requests
-   * to make sure that the client has an up-to-date value before proceeding.
+   * Optional. Checksum computed by the server. May be sent on update and delete
+   * requests to make sure that the client has an up-to-date value before
+   * proceeding.
    * </pre>
    *
-   * <code>string etag = 9;</code>
+   * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The etag.
    */
@@ -2064,11 +2090,12 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Checksum computed by the server. May be sent on update and delete requests
-   * to make sure that the client has an up-to-date value before proceeding.
+   * Optional. Checksum computed by the server. May be sent on update and delete
+   * requests to make sure that the client has an up-to-date value before
+   * proceeding.
    * </pre>
    *
-   * <code>string etag = 9;</code>
+   * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for etag.
    */
@@ -2094,7 +2121,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Immutable. Name of the Compute Engine network in which instances associated
-   * with this cluster will be created.
+   * with this workstation cluster will be created.
    * </pre>
    *
    * <code>string network = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2118,7 +2145,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Immutable. Name of the Compute Engine network in which instances associated
-   * with this cluster will be created.
+   * with this workstation cluster will be created.
    * </pre>
    *
    * <code>string network = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2147,8 +2174,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Immutable. Name of the Compute Engine subnetwork in which instances
-   * associated with this cluster will be created. Must be part of the
-   * subnetwork specified for this cluster.
+   * associated with this workstation cluster will be created. Must be part of
+   * the subnetwork specified for this workstation cluster.
    * </pre>
    *
    * <code>string subnetwork = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2172,8 +2199,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    * <pre>
    * Immutable. Name of the Compute Engine subnetwork in which instances
-   * associated with this cluster will be created. Must be part of the
-   * subnetwork specified for this cluster.
+   * associated with this workstation cluster will be created. Must be part of
+   * the subnetwork specified for this workstation cluster.
    * </pre>
    *
    * <code>string subnetwork = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2201,10 +2228,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The private IP address of the control plane for this cluster.
-   * Workstation VMs need access to this IP address to work with the service, so
-   * make sure that your firewall rules allow egress from the workstation VMs to
-   * this address.
+   * Output only. The private IP address of the control plane for this
+   * workstation cluster. Workstation VMs need access to this IP address to work
+   * with the service, so make sure that your firewall rules allow egress from
+   * the workstation VMs to this address.
    * </pre>
    *
    * <code>string control_plane_ip = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2227,10 +2254,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. The private IP address of the control plane for this cluster.
-   * Workstation VMs need access to this IP address to work with the service, so
-   * make sure that your firewall rules allow egress from the workstation VMs to
-   * this address.
+   * Output only. The private IP address of the control plane for this
+   * workstation cluster. Workstation VMs need access to this IP address to work
+   * with the service, so make sure that your firewall rules allow egress from
+   * the workstation VMs to this address.
    * </pre>
    *
    * <code>string control_plane_ip = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2257,11 +2284,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Configuration for private cluster.
+   * Optional. Configuration for private workstation cluster.
    * </pre>
    *
    * <code>
-   * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12;
+   * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the privateClusterConfig field is set.
@@ -2274,11 +2301,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Configuration for private cluster.
+   * Optional. Configuration for private workstation cluster.
    * </pre>
    *
    * <code>
-   * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12;
+   * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The privateClusterConfig.
@@ -2295,11 +2322,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Configuration for private cluster.
+   * Optional. Configuration for private workstation cluster.
    * </pre>
    *
    * <code>
-   * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12;
+   * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -2317,9 +2344,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Whether this resource is in degraded mode, in which case it
-   * may require user action to restore full functionality. Details can be found
-   * in the `conditions` field.
+   * Output only. Whether this workstation cluster is in degraded mode, in which
+   * case it may require user action to restore full functionality. Details can
+   * be found in
+   * [conditions][google.cloud.workstations.v1beta.WorkstationCluster.conditions].
    * </pre>
    *
    * <code>bool degraded = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2339,7 +2367,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Status conditions describing the current resource state.
+   * Output only. Status conditions describing the workstation cluster's current
+   * state.
    * </pre>
    *
    * <code>repeated .google.rpc.Status conditions = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2353,7 +2382,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Status conditions describing the current resource state.
+   * Output only. Status conditions describing the workstation cluster's current
+   * state.
    * </pre>
    *
    * <code>repeated .google.rpc.Status conditions = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2367,7 +2397,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Status conditions describing the current resource state.
+   * Output only. Status conditions describing the workstation cluster's current
+   * state.
    * </pre>
    *
    * <code>repeated .google.rpc.Status conditions = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2381,7 +2412,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Status conditions describing the current resource state.
+   * Output only. Status conditions describing the workstation cluster's current
+   * state.
    * </pre>
    *
    * <code>repeated .google.rpc.Status conditions = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2395,7 +2427,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Output only. Status conditions describing the current resource state.
+   * Output only. Status conditions describing the workstation cluster's current
+   * state.
    * </pre>
    *
    * <code>repeated .google.rpc.Status conditions = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2744,8 +2777,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * A grouping of workstation configurations and the associated workstations
-   *  in that region.
+   * A workstation cluster resource in the Cloud Workstations API.
+   *
+   * Defines a group of workstations in a particular region and the
+   * VPC network they're attached to.
    * </pre>
    *
    * Protobuf type {@code google.cloud.workstations.v1beta.WorkstationCluster}
@@ -3239,7 +3274,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Full name of this resource.
+     * Full name of this workstation cluster.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3261,7 +3296,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Full name of this resource.
+     * Full name of this workstation cluster.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3283,7 +3318,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Full name of this resource.
+     * Full name of this workstation cluster.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3304,7 +3339,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Full name of this resource.
+     * Full name of this workstation cluster.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3321,7 +3356,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Full name of this resource.
+     * Full name of this workstation cluster.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -3345,10 +3380,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Human-readable name for this resource.
+     * Optional. Human-readable name for this workstation cluster.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The displayName.
      */
@@ -3367,10 +3402,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Human-readable name for this resource.
+     * Optional. Human-readable name for this workstation cluster.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for displayName.
      */
@@ -3389,10 +3424,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Human-readable name for this resource.
+     * Optional. Human-readable name for this workstation cluster.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -3410,10 +3445,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Human-readable name for this resource.
+     * Optional. Human-readable name for this workstation cluster.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -3427,10 +3462,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Human-readable name for this resource.
+     * Optional. Human-readable name for this workstation cluster.
      * </pre>
      *
-     * <code>string display_name = 2;</code>
+     * <code>string display_name = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -3451,7 +3486,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A system-assigned unique identified for this resource.
+     * Output only. A system-assigned unique identifier for this workstation
+     * cluster.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3473,7 +3509,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A system-assigned unique identified for this resource.
+     * Output only. A system-assigned unique identifier for this workstation
+     * cluster.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3495,7 +3532,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A system-assigned unique identified for this resource.
+     * Output only. A system-assigned unique identifier for this workstation
+     * cluster.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3516,7 +3554,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A system-assigned unique identified for this resource.
+     * Output only. A system-assigned unique identifier for this workstation
+     * cluster.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3533,7 +3572,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. A system-assigned unique identified for this resource.
+     * Output only. A system-assigned unique identifier for this workstation
+     * cluster.
      * </pre>
      *
      * <code>string uid = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3557,8 +3597,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Indicates whether this resource is currently being updated to
-     * match its intended state.
+     * Output only. Indicates whether this workstation cluster is currently being
+     * updated to match its intended state.
      * </pre>
      *
      * <code>bool reconciling = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3573,8 +3613,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Indicates whether this resource is currently being updated to
-     * match its intended state.
+     * Output only. Indicates whether this workstation cluster is currently being
+     * updated to match its intended state.
      * </pre>
      *
      * <code>bool reconciling = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3593,8 +3633,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Indicates whether this resource is currently being updated to
-     * match its intended state.
+     * Output only. Indicates whether this workstation cluster is currently being
+     * updated to match its intended state.
      * </pre>
      *
      * <code>bool reconciling = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -3640,10 +3680,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Client-specified annotations.
+     * Optional. Client-specified annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public boolean containsAnnotations(java.lang.String key) {
@@ -3662,10 +3703,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Client-specified annotations.
+     * Optional. Client-specified annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getAnnotationsMap() {
@@ -3675,10 +3717,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Client-specified annotations.
+     * Optional. Client-specified annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getAnnotationsOrDefault(
@@ -3695,10 +3738,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Client-specified annotations.
+     * Optional. Client-specified annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public java.lang.String getAnnotationsOrThrow(java.lang.String key) {
@@ -3721,10 +3765,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Client-specified annotations.
+     * Optional. Client-specified annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder removeAnnotations(java.lang.String key) {
       if (key == null) {
@@ -3743,10 +3788,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Client-specified annotations.
+     * Optional. Client-specified annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAnnotations(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -3763,10 +3809,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Client-specified annotations.
+     * Optional. Client-specified annotations.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; annotations = 5;</code>
+     * <code>map&lt;string, string&gt; annotations = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     public Builder putAllAnnotations(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAnnotations().getMutableMap().putAll(values);
@@ -3803,11 +3850,13 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Client-specified labels that are applied to the resource and that are also
-     * propagated to the underlying Compute Engine resources.
+     * Optional.
+     * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+     * are applied to the workstation cluster and that are also propagated to the
+     * underlying Compute Engine resources.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 15;</code>
+     * <code>map&lt;string, string&gt; labels = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -3826,11 +3875,13 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Client-specified labels that are applied to the resource and that are also
-     * propagated to the underlying Compute Engine resources.
+     * Optional.
+     * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+     * are applied to the workstation cluster and that are also propagated to the
+     * underlying Compute Engine resources.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 15;</code>
+     * <code>map&lt;string, string&gt; labels = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -3840,11 +3891,13 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Client-specified labels that are applied to the resource and that are also
-     * propagated to the underlying Compute Engine resources.
+     * Optional.
+     * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+     * are applied to the workstation cluster and that are also propagated to the
+     * underlying Compute Engine resources.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 15;</code>
+     * <code>map&lt;string, string&gt; labels = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -3861,11 +3914,13 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Client-specified labels that are applied to the resource and that are also
-     * propagated to the underlying Compute Engine resources.
+     * Optional.
+     * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+     * are applied to the workstation cluster and that are also propagated to the
+     * underlying Compute Engine resources.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 15;</code>
+     * <code>map&lt;string, string&gt; labels = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -3888,11 +3943,13 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Client-specified labels that are applied to the resource and that are also
-     * propagated to the underlying Compute Engine resources.
+     * Optional.
+     * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+     * are applied to the workstation cluster and that are also propagated to the
+     * underlying Compute Engine resources.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 15;</code>
+     * <code>map&lt;string, string&gt; labels = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -3911,11 +3968,13 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Client-specified labels that are applied to the resource and that are also
-     * propagated to the underlying Compute Engine resources.
+     * Optional.
+     * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+     * are applied to the workstation cluster and that are also propagated to the
+     * underlying Compute Engine resources.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 15;</code>
+     * <code>map&lt;string, string&gt; labels = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -3932,11 +3991,13 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Client-specified labels that are applied to the resource and that are also
-     * propagated to the underlying Compute Engine resources.
+     * Optional.
+     * [Labels](https://cloud.google.com/workstations/docs/label-resources) that
+     * are applied to the workstation cluster and that are also propagated to the
+     * underlying Compute Engine resources.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 15;</code>
+     * <code>map&lt;string, string&gt; labels = 15 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
@@ -3954,7 +4015,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation cluster was created.
      * </pre>
      *
      * <code>
@@ -3970,7 +4031,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation cluster was created.
      * </pre>
      *
      * <code>
@@ -3992,7 +4053,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation cluster was created.
      * </pre>
      *
      * <code>
@@ -4016,7 +4077,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation cluster was created.
      * </pre>
      *
      * <code>
@@ -4037,7 +4098,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation cluster was created.
      * </pre>
      *
      * <code>
@@ -4064,7 +4125,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation cluster was created.
      * </pre>
      *
      * <code>
@@ -4085,7 +4146,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation cluster was created.
      * </pre>
      *
      * <code>
@@ -4101,7 +4162,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation cluster was created.
      * </pre>
      *
      * <code>
@@ -4121,7 +4182,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was created.
+     * Output only. Time when this workstation cluster was created.
      * </pre>
      *
      * <code>
@@ -4155,7 +4216,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation cluster was most recently updated.
      * </pre>
      *
      * <code>
@@ -4171,7 +4232,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation cluster was most recently updated.
      * </pre>
      *
      * <code>
@@ -4193,7 +4254,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation cluster was most recently updated.
      * </pre>
      *
      * <code>
@@ -4217,7 +4278,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation cluster was most recently updated.
      * </pre>
      *
      * <code>
@@ -4238,7 +4299,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation cluster was most recently updated.
      * </pre>
      *
      * <code>
@@ -4265,7 +4326,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation cluster was most recently updated.
      * </pre>
      *
      * <code>
@@ -4286,7 +4347,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation cluster was most recently updated.
      * </pre>
      *
      * <code>
@@ -4302,7 +4363,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation cluster was most recently updated.
      * </pre>
      *
      * <code>
@@ -4322,7 +4383,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was most recently updated.
+     * Output only. Time when this workstation cluster was most recently updated.
      * </pre>
      *
      * <code>
@@ -4356,7 +4417,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation cluster was soft-deleted.
      * </pre>
      *
      * <code>
@@ -4372,7 +4433,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation cluster was soft-deleted.
      * </pre>
      *
      * <code>
@@ -4394,7 +4455,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation cluster was soft-deleted.
      * </pre>
      *
      * <code>
@@ -4418,7 +4479,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation cluster was soft-deleted.
      * </pre>
      *
      * <code>
@@ -4439,7 +4500,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation cluster was soft-deleted.
      * </pre>
      *
      * <code>
@@ -4466,7 +4527,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation cluster was soft-deleted.
      * </pre>
      *
      * <code>
@@ -4487,7 +4548,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation cluster was soft-deleted.
      * </pre>
      *
      * <code>
@@ -4503,7 +4564,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation cluster was soft-deleted.
      * </pre>
      *
      * <code>
@@ -4523,7 +4584,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Time when this resource was soft-deleted.
+     * Output only. Time when this workstation cluster was soft-deleted.
      * </pre>
      *
      * <code>
@@ -4552,11 +4613,12 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Checksum computed by the server. May be sent on update and delete requests
-     * to make sure that the client has an up-to-date value before proceeding.
+     * Optional. Checksum computed by the server. May be sent on update and delete
+     * requests to make sure that the client has an up-to-date value before
+     * proceeding.
      * </pre>
      *
-     * <code>string etag = 9;</code>
+     * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The etag.
      */
@@ -4575,11 +4637,12 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Checksum computed by the server. May be sent on update and delete requests
-     * to make sure that the client has an up-to-date value before proceeding.
+     * Optional. Checksum computed by the server. May be sent on update and delete
+     * requests to make sure that the client has an up-to-date value before
+     * proceeding.
      * </pre>
      *
-     * <code>string etag = 9;</code>
+     * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for etag.
      */
@@ -4598,11 +4661,12 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Checksum computed by the server. May be sent on update and delete requests
-     * to make sure that the client has an up-to-date value before proceeding.
+     * Optional. Checksum computed by the server. May be sent on update and delete
+     * requests to make sure that the client has an up-to-date value before
+     * proceeding.
      * </pre>
      *
-     * <code>string etag = 9;</code>
+     * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The etag to set.
      * @return This builder for chaining.
@@ -4620,11 +4684,12 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Checksum computed by the server. May be sent on update and delete requests
-     * to make sure that the client has an up-to-date value before proceeding.
+     * Optional. Checksum computed by the server. May be sent on update and delete
+     * requests to make sure that the client has an up-to-date value before
+     * proceeding.
      * </pre>
      *
-     * <code>string etag = 9;</code>
+     * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -4638,11 +4703,12 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Checksum computed by the server. May be sent on update and delete requests
-     * to make sure that the client has an up-to-date value before proceeding.
+     * Optional. Checksum computed by the server. May be sent on update and delete
+     * requests to make sure that the client has an up-to-date value before
+     * proceeding.
      * </pre>
      *
-     * <code>string etag = 9;</code>
+     * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for etag to set.
      * @return This builder for chaining.
@@ -4664,7 +4730,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. Name of the Compute Engine network in which instances associated
-     * with this cluster will be created.
+     * with this workstation cluster will be created.
      * </pre>
      *
      * <code>string network = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4687,7 +4753,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. Name of the Compute Engine network in which instances associated
-     * with this cluster will be created.
+     * with this workstation cluster will be created.
      * </pre>
      *
      * <code>string network = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4710,7 +4776,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. Name of the Compute Engine network in which instances associated
-     * with this cluster will be created.
+     * with this workstation cluster will be created.
      * </pre>
      *
      * <code>string network = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4732,7 +4798,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. Name of the Compute Engine network in which instances associated
-     * with this cluster will be created.
+     * with this workstation cluster will be created.
      * </pre>
      *
      * <code>string network = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4750,7 +4816,7 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. Name of the Compute Engine network in which instances associated
-     * with this cluster will be created.
+     * with this workstation cluster will be created.
      * </pre>
      *
      * <code>string network = 10 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4775,8 +4841,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. Name of the Compute Engine subnetwork in which instances
-     * associated with this cluster will be created. Must be part of the
-     * subnetwork specified for this cluster.
+     * associated with this workstation cluster will be created. Must be part of
+     * the subnetwork specified for this workstation cluster.
      * </pre>
      *
      * <code>string subnetwork = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4799,8 +4865,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. Name of the Compute Engine subnetwork in which instances
-     * associated with this cluster will be created. Must be part of the
-     * subnetwork specified for this cluster.
+     * associated with this workstation cluster will be created. Must be part of
+     * the subnetwork specified for this workstation cluster.
      * </pre>
      *
      * <code>string subnetwork = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4823,8 +4889,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. Name of the Compute Engine subnetwork in which instances
-     * associated with this cluster will be created. Must be part of the
-     * subnetwork specified for this cluster.
+     * associated with this workstation cluster will be created. Must be part of
+     * the subnetwork specified for this workstation cluster.
      * </pre>
      *
      * <code>string subnetwork = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4846,8 +4912,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. Name of the Compute Engine subnetwork in which instances
-     * associated with this cluster will be created. Must be part of the
-     * subnetwork specified for this cluster.
+     * associated with this workstation cluster will be created. Must be part of
+     * the subnetwork specified for this workstation cluster.
      * </pre>
      *
      * <code>string subnetwork = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4865,8 +4931,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      * <pre>
      * Immutable. Name of the Compute Engine subnetwork in which instances
-     * associated with this cluster will be created. Must be part of the
-     * subnetwork specified for this cluster.
+     * associated with this workstation cluster will be created. Must be part of
+     * the subnetwork specified for this workstation cluster.
      * </pre>
      *
      * <code>string subnetwork = 11 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -4890,10 +4956,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The private IP address of the control plane for this cluster.
-     * Workstation VMs need access to this IP address to work with the service, so
-     * make sure that your firewall rules allow egress from the workstation VMs to
-     * this address.
+     * Output only. The private IP address of the control plane for this
+     * workstation cluster. Workstation VMs need access to this IP address to work
+     * with the service, so make sure that your firewall rules allow egress from
+     * the workstation VMs to this address.
      * </pre>
      *
      * <code>string control_plane_ip = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4915,10 +4981,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The private IP address of the control plane for this cluster.
-     * Workstation VMs need access to this IP address to work with the service, so
-     * make sure that your firewall rules allow egress from the workstation VMs to
-     * this address.
+     * Output only. The private IP address of the control plane for this
+     * workstation cluster. Workstation VMs need access to this IP address to work
+     * with the service, so make sure that your firewall rules allow egress from
+     * the workstation VMs to this address.
      * </pre>
      *
      * <code>string control_plane_ip = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4940,10 +5006,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The private IP address of the control plane for this cluster.
-     * Workstation VMs need access to this IP address to work with the service, so
-     * make sure that your firewall rules allow egress from the workstation VMs to
-     * this address.
+     * Output only. The private IP address of the control plane for this
+     * workstation cluster. Workstation VMs need access to this IP address to work
+     * with the service, so make sure that your firewall rules allow egress from
+     * the workstation VMs to this address.
      * </pre>
      *
      * <code>string control_plane_ip = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4964,10 +5030,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The private IP address of the control plane for this cluster.
-     * Workstation VMs need access to this IP address to work with the service, so
-     * make sure that your firewall rules allow egress from the workstation VMs to
-     * this address.
+     * Output only. The private IP address of the control plane for this
+     * workstation cluster. Workstation VMs need access to this IP address to work
+     * with the service, so make sure that your firewall rules allow egress from
+     * the workstation VMs to this address.
      * </pre>
      *
      * <code>string control_plane_ip = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -4984,10 +5050,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. The private IP address of the control plane for this cluster.
-     * Workstation VMs need access to this IP address to work with the service, so
-     * make sure that your firewall rules allow egress from the workstation VMs to
-     * this address.
+     * Output only. The private IP address of the control plane for this
+     * workstation cluster. Workstation VMs need access to this IP address to work
+     * with the service, so make sure that your firewall rules allow egress from
+     * the workstation VMs to this address.
      * </pre>
      *
      * <code>string control_plane_ip = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5017,11 +5083,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Configuration for private cluster.
+     * Optional. Configuration for private workstation cluster.
      * </pre>
      *
      * <code>
-     * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12;
+     * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the privateClusterConfig field is set.
@@ -5033,11 +5099,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Configuration for private cluster.
+     * Optional. Configuration for private workstation cluster.
      * </pre>
      *
      * <code>
-     * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12;
+     * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The privateClusterConfig.
@@ -5057,11 +5123,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Configuration for private cluster.
+     * Optional. Configuration for private workstation cluster.
      * </pre>
      *
      * <code>
-     * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12;
+     * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setPrivateClusterConfig(
@@ -5082,11 +5148,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Configuration for private cluster.
+     * Optional. Configuration for private workstation cluster.
      * </pre>
      *
      * <code>
-     * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12;
+     * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setPrivateClusterConfig(
@@ -5105,11 +5171,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Configuration for private cluster.
+     * Optional. Configuration for private workstation cluster.
      * </pre>
      *
      * <code>
-     * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12;
+     * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergePrivateClusterConfig(
@@ -5135,11 +5201,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Configuration for private cluster.
+     * Optional. Configuration for private workstation cluster.
      * </pre>
      *
      * <code>
-     * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12;
+     * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearPrivateClusterConfig() {
@@ -5156,11 +5222,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Configuration for private cluster.
+     * Optional. Configuration for private workstation cluster.
      * </pre>
      *
      * <code>
-     * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12;
+     * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig.Builder
@@ -5173,11 +5239,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Configuration for private cluster.
+     * Optional. Configuration for private workstation cluster.
      * </pre>
      *
      * <code>
-     * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12;
+     * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfigOrBuilder
@@ -5195,11 +5261,11 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Configuration for private cluster.
+     * Optional. Configuration for private workstation cluster.
      * </pre>
      *
      * <code>
-     * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12;
+     * .google.cloud.workstations.v1beta.WorkstationCluster.PrivateClusterConfig private_cluster_config = 12 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -5226,9 +5292,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Whether this resource is in degraded mode, in which case it
-     * may require user action to restore full functionality. Details can be found
-     * in the `conditions` field.
+     * Output only. Whether this workstation cluster is in degraded mode, in which
+     * case it may require user action to restore full functionality. Details can
+     * be found in
+     * [conditions][google.cloud.workstations.v1beta.WorkstationCluster.conditions].
      * </pre>
      *
      * <code>bool degraded = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5243,9 +5310,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Whether this resource is in degraded mode, in which case it
-     * may require user action to restore full functionality. Details can be found
-     * in the `conditions` field.
+     * Output only. Whether this workstation cluster is in degraded mode, in which
+     * case it may require user action to restore full functionality. Details can
+     * be found in
+     * [conditions][google.cloud.workstations.v1beta.WorkstationCluster.conditions].
      * </pre>
      *
      * <code>bool degraded = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5264,9 +5332,10 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Whether this resource is in degraded mode, in which case it
-     * may require user action to restore full functionality. Details can be found
-     * in the `conditions` field.
+     * Output only. Whether this workstation cluster is in degraded mode, in which
+     * case it may require user action to restore full functionality. Details can
+     * be found in
+     * [conditions][google.cloud.workstations.v1beta.WorkstationCluster.conditions].
      * </pre>
      *
      * <code>bool degraded = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -5297,7 +5366,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Status conditions describing the current resource state.
+     * Output only. Status conditions describing the workstation cluster's current
+     * state.
      * </pre>
      *
      * <code>
@@ -5315,7 +5385,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Status conditions describing the current resource state.
+     * Output only. Status conditions describing the workstation cluster's current
+     * state.
      * </pre>
      *
      * <code>
@@ -5333,7 +5404,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Status conditions describing the current resource state.
+     * Output only. Status conditions describing the workstation cluster's current
+     * state.
      * </pre>
      *
      * <code>
@@ -5351,7 +5423,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Status conditions describing the current resource state.
+     * Output only. Status conditions describing the workstation cluster's current
+     * state.
      * </pre>
      *
      * <code>
@@ -5375,7 +5448,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Status conditions describing the current resource state.
+     * Output only. Status conditions describing the workstation cluster's current
+     * state.
      * </pre>
      *
      * <code>
@@ -5396,7 +5470,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Status conditions describing the current resource state.
+     * Output only. Status conditions describing the workstation cluster's current
+     * state.
      * </pre>
      *
      * <code>
@@ -5420,7 +5495,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Status conditions describing the current resource state.
+     * Output only. Status conditions describing the workstation cluster's current
+     * state.
      * </pre>
      *
      * <code>
@@ -5444,7 +5520,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Status conditions describing the current resource state.
+     * Output only. Status conditions describing the workstation cluster's current
+     * state.
      * </pre>
      *
      * <code>
@@ -5465,7 +5542,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Status conditions describing the current resource state.
+     * Output only. Status conditions describing the workstation cluster's current
+     * state.
      * </pre>
      *
      * <code>
@@ -5486,7 +5564,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Status conditions describing the current resource state.
+     * Output only. Status conditions describing the workstation cluster's current
+     * state.
      * </pre>
      *
      * <code>
@@ -5507,7 +5586,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Status conditions describing the current resource state.
+     * Output only. Status conditions describing the workstation cluster's current
+     * state.
      * </pre>
      *
      * <code>
@@ -5528,7 +5608,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Status conditions describing the current resource state.
+     * Output only. Status conditions describing the workstation cluster's current
+     * state.
      * </pre>
      *
      * <code>
@@ -5549,7 +5630,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Status conditions describing the current resource state.
+     * Output only. Status conditions describing the workstation cluster's current
+     * state.
      * </pre>
      *
      * <code>
@@ -5563,7 +5645,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Status conditions describing the current resource state.
+     * Output only. Status conditions describing the workstation cluster's current
+     * state.
      * </pre>
      *
      * <code>
@@ -5581,7 +5664,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Status conditions describing the current resource state.
+     * Output only. Status conditions describing the workstation cluster's current
+     * state.
      * </pre>
      *
      * <code>
@@ -5599,7 +5683,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Status conditions describing the current resource state.
+     * Output only. Status conditions describing the workstation cluster's current
+     * state.
      * </pre>
      *
      * <code>
@@ -5613,7 +5698,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Status conditions describing the current resource state.
+     * Output only. Status conditions describing the workstation cluster's current
+     * state.
      * </pre>
      *
      * <code>
@@ -5628,7 +5714,8 @@ public final class WorkstationCluster extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Output only. Status conditions describing the current resource state.
+     * Output only. Status conditions describing the workstation cluster's current
+     * state.
      * </pre>
      *
      * <code>

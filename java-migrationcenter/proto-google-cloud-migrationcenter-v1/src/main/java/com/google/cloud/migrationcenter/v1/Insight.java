@@ -70,6 +70,7 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     MIGRATION_INSIGHT(1),
+    GENERIC_INSIGHT(2),
     INSIGHT_NOT_SET(0);
     private final int value;
 
@@ -90,6 +91,8 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 1:
           return MIGRATION_INSIGHT;
+        case 2:
+          return GENERIC_INSIGHT;
         case 0:
           return INSIGHT_NOT_SET;
         default:
@@ -164,6 +167,63 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.migrationcenter.v1.MigrationInsight.getDefaultInstance();
   }
 
+  public static final int GENERIC_INSIGHT_FIELD_NUMBER = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A generic insight about an asset
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.migrationcenter.v1.GenericInsight generic_insight = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the genericInsight field is set.
+   */
+  @java.lang.Override
+  public boolean hasGenericInsight() {
+    return insightCase_ == 2;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A generic insight about an asset
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.migrationcenter.v1.GenericInsight generic_insight = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The genericInsight.
+   */
+  @java.lang.Override
+  public com.google.cloud.migrationcenter.v1.GenericInsight getGenericInsight() {
+    if (insightCase_ == 2) {
+      return (com.google.cloud.migrationcenter.v1.GenericInsight) insight_;
+    }
+    return com.google.cloud.migrationcenter.v1.GenericInsight.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A generic insight about an asset
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.migrationcenter.v1.GenericInsight generic_insight = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.migrationcenter.v1.GenericInsightOrBuilder getGenericInsightOrBuilder() {
+    if (insightCase_ == 2) {
+      return (com.google.cloud.migrationcenter.v1.GenericInsight) insight_;
+    }
+    return com.google.cloud.migrationcenter.v1.GenericInsight.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -181,6 +241,9 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
     if (insightCase_ == 1) {
       output.writeMessage(1, (com.google.cloud.migrationcenter.v1.MigrationInsight) insight_);
     }
+    if (insightCase_ == 2) {
+      output.writeMessage(2, (com.google.cloud.migrationcenter.v1.GenericInsight) insight_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -194,6 +257,11 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               1, (com.google.cloud.migrationcenter.v1.MigrationInsight) insight_);
+    }
+    if (insightCase_ == 2) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.cloud.migrationcenter.v1.GenericInsight) insight_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -216,6 +284,9 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       case 1:
         if (!getMigrationInsight().equals(other.getMigrationInsight())) return false;
         break;
+      case 2:
+        if (!getGenericInsight().equals(other.getGenericInsight())) return false;
+        break;
       case 0:
       default:
     }
@@ -234,6 +305,10 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       case 1:
         hash = (37 * hash) + MIGRATION_INSIGHT_FIELD_NUMBER;
         hash = (53 * hash) + getMigrationInsight().hashCode();
+        break;
+      case 2:
+        hash = (37 * hash) + GENERIC_INSIGHT_FIELD_NUMBER;
+        hash = (53 * hash) + getGenericInsight().hashCode();
         break;
       case 0:
       default:
@@ -380,6 +455,9 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       if (migrationInsightBuilder_ != null) {
         migrationInsightBuilder_.clear();
       }
+      if (genericInsightBuilder_ != null) {
+        genericInsightBuilder_.clear();
+      }
       insightCase_ = 0;
       insight_ = null;
       return this;
@@ -426,6 +504,9 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       result.insight_ = this.insight_;
       if (insightCase_ == 1 && migrationInsightBuilder_ != null) {
         result.insight_ = migrationInsightBuilder_.build();
+      }
+      if (insightCase_ == 2 && genericInsightBuilder_ != null) {
+        result.insight_ = genericInsightBuilder_.build();
       }
     }
 
@@ -480,6 +561,11 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
             mergeMigrationInsight(other.getMigrationInsight());
             break;
           }
+        case GENERIC_INSIGHT:
+          {
+            mergeGenericInsight(other.getGenericInsight());
+            break;
+          }
         case INSIGHT_NOT_SET:
           {
             break;
@@ -518,6 +604,12 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
                 insightCase_ = 1;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(getGenericInsightFieldBuilder().getBuilder(), extensionRegistry);
+                insightCase_ = 2;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -780,6 +872,235 @@ public final class Insight extends com.google.protobuf.GeneratedMessageV3
       insightCase_ = 1;
       onChanged();
       return migrationInsightBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.migrationcenter.v1.GenericInsight,
+            com.google.cloud.migrationcenter.v1.GenericInsight.Builder,
+            com.google.cloud.migrationcenter.v1.GenericInsightOrBuilder>
+        genericInsightBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A generic insight about an asset
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.migrationcenter.v1.GenericInsight generic_insight = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the genericInsight field is set.
+     */
+    @java.lang.Override
+    public boolean hasGenericInsight() {
+      return insightCase_ == 2;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A generic insight about an asset
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.migrationcenter.v1.GenericInsight generic_insight = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The genericInsight.
+     */
+    @java.lang.Override
+    public com.google.cloud.migrationcenter.v1.GenericInsight getGenericInsight() {
+      if (genericInsightBuilder_ == null) {
+        if (insightCase_ == 2) {
+          return (com.google.cloud.migrationcenter.v1.GenericInsight) insight_;
+        }
+        return com.google.cloud.migrationcenter.v1.GenericInsight.getDefaultInstance();
+      } else {
+        if (insightCase_ == 2) {
+          return genericInsightBuilder_.getMessage();
+        }
+        return com.google.cloud.migrationcenter.v1.GenericInsight.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A generic insight about an asset
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.migrationcenter.v1.GenericInsight generic_insight = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setGenericInsight(com.google.cloud.migrationcenter.v1.GenericInsight value) {
+      if (genericInsightBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        insight_ = value;
+        onChanged();
+      } else {
+        genericInsightBuilder_.setMessage(value);
+      }
+      insightCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A generic insight about an asset
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.migrationcenter.v1.GenericInsight generic_insight = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setGenericInsight(
+        com.google.cloud.migrationcenter.v1.GenericInsight.Builder builderForValue) {
+      if (genericInsightBuilder_ == null) {
+        insight_ = builderForValue.build();
+        onChanged();
+      } else {
+        genericInsightBuilder_.setMessage(builderForValue.build());
+      }
+      insightCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A generic insight about an asset
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.migrationcenter.v1.GenericInsight generic_insight = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeGenericInsight(com.google.cloud.migrationcenter.v1.GenericInsight value) {
+      if (genericInsightBuilder_ == null) {
+        if (insightCase_ == 2
+            && insight_
+                != com.google.cloud.migrationcenter.v1.GenericInsight.getDefaultInstance()) {
+          insight_ =
+              com.google.cloud.migrationcenter.v1.GenericInsight.newBuilder(
+                      (com.google.cloud.migrationcenter.v1.GenericInsight) insight_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          insight_ = value;
+        }
+        onChanged();
+      } else {
+        if (insightCase_ == 2) {
+          genericInsightBuilder_.mergeFrom(value);
+        } else {
+          genericInsightBuilder_.setMessage(value);
+        }
+      }
+      insightCase_ = 2;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A generic insight about an asset
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.migrationcenter.v1.GenericInsight generic_insight = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearGenericInsight() {
+      if (genericInsightBuilder_ == null) {
+        if (insightCase_ == 2) {
+          insightCase_ = 0;
+          insight_ = null;
+          onChanged();
+        }
+      } else {
+        if (insightCase_ == 2) {
+          insightCase_ = 0;
+          insight_ = null;
+        }
+        genericInsightBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A generic insight about an asset
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.migrationcenter.v1.GenericInsight generic_insight = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.migrationcenter.v1.GenericInsight.Builder getGenericInsightBuilder() {
+      return getGenericInsightFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A generic insight about an asset
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.migrationcenter.v1.GenericInsight generic_insight = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.migrationcenter.v1.GenericInsightOrBuilder
+        getGenericInsightOrBuilder() {
+      if ((insightCase_ == 2) && (genericInsightBuilder_ != null)) {
+        return genericInsightBuilder_.getMessageOrBuilder();
+      } else {
+        if (insightCase_ == 2) {
+          return (com.google.cloud.migrationcenter.v1.GenericInsight) insight_;
+        }
+        return com.google.cloud.migrationcenter.v1.GenericInsight.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. A generic insight about an asset
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.migrationcenter.v1.GenericInsight generic_insight = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.migrationcenter.v1.GenericInsight,
+            com.google.cloud.migrationcenter.v1.GenericInsight.Builder,
+            com.google.cloud.migrationcenter.v1.GenericInsightOrBuilder>
+        getGenericInsightFieldBuilder() {
+      if (genericInsightBuilder_ == null) {
+        if (!(insightCase_ == 2)) {
+          insight_ = com.google.cloud.migrationcenter.v1.GenericInsight.getDefaultInstance();
+        }
+        genericInsightBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.migrationcenter.v1.GenericInsight,
+                com.google.cloud.migrationcenter.v1.GenericInsight.Builder,
+                com.google.cloud.migrationcenter.v1.GenericInsightOrBuilder>(
+                (com.google.cloud.migrationcenter.v1.GenericInsight) insight_,
+                getParentForChildren(),
+                isClean());
+        insight_ = null;
+      }
+      insightCase_ = 2;
+      onChanged();
+      return genericInsightBuilder_;
     }
 
     @java.lang.Override

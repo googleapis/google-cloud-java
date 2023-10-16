@@ -821,6 +821,27 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     return querySuggestions_.get(index);
   }
 
+  public static final int TAIL_MATCH_TRIGGERED_FIELD_NUMBER = 2;
+  private boolean tailMatchTriggered_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * True if the returned suggestions are all tail suggestions.
+   *
+   * For tail matching to be triggered, include_tail_suggestions in the request
+   * must be true and there must be no suggestions that match the full query.
+   * </pre>
+   *
+   * <code>bool tail_match_triggered = 2;</code>
+   *
+   * @return The tailMatchTriggered.
+   */
+  @java.lang.Override
+  public boolean getTailMatchTriggered() {
+    return tailMatchTriggered_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -838,6 +859,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     for (int i = 0; i < querySuggestions_.size(); i++) {
       output.writeMessage(1, querySuggestions_.get(i));
     }
+    if (tailMatchTriggered_ != false) {
+      output.writeBool(2, tailMatchTriggered_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -849,6 +873,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
     size = 0;
     for (int i = 0; i < querySuggestions_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, querySuggestions_.get(i));
+    }
+    if (tailMatchTriggered_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, tailMatchTriggered_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -867,6 +894,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         (com.google.cloud.discoveryengine.v1.CompleteQueryResponse) obj;
 
     if (!getQuerySuggestionsList().equals(other.getQuerySuggestionsList())) return false;
+    if (getTailMatchTriggered() != other.getTailMatchTriggered()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -882,6 +910,8 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
       hash = (37 * hash) + QUERY_SUGGESTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getQuerySuggestionsList().hashCode();
     }
+    hash = (37 * hash) + TAIL_MATCH_TRIGGERED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getTailMatchTriggered());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1031,6 +1061,7 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         querySuggestionsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      tailMatchTriggered_ = false;
       return this;
     }
 
@@ -1081,6 +1112,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
 
     private void buildPartial0(com.google.cloud.discoveryengine.v1.CompleteQueryResponse result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.tailMatchTriggered_ = tailMatchTriggered_;
+      }
     }
 
     @java.lang.Override
@@ -1156,6 +1190,9 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
           }
         }
       }
+      if (other.getTailMatchTriggered() != false) {
+        setTailMatchTriggered(other.getTailMatchTriggered());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1197,6 +1234,12 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
                 }
                 break;
               } // case 10
+            case 16:
+              {
+                tailMatchTriggered_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1651,6 +1694,68 @@ public final class CompleteQueryResponse extends com.google.protobuf.GeneratedMe
         querySuggestions_ = null;
       }
       return querySuggestionsBuilder_;
+    }
+
+    private boolean tailMatchTriggered_;
+    /**
+     *
+     *
+     * <pre>
+     * True if the returned suggestions are all tail suggestions.
+     *
+     * For tail matching to be triggered, include_tail_suggestions in the request
+     * must be true and there must be no suggestions that match the full query.
+     * </pre>
+     *
+     * <code>bool tail_match_triggered = 2;</code>
+     *
+     * @return The tailMatchTriggered.
+     */
+    @java.lang.Override
+    public boolean getTailMatchTriggered() {
+      return tailMatchTriggered_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * True if the returned suggestions are all tail suggestions.
+     *
+     * For tail matching to be triggered, include_tail_suggestions in the request
+     * must be true and there must be no suggestions that match the full query.
+     * </pre>
+     *
+     * <code>bool tail_match_triggered = 2;</code>
+     *
+     * @param value The tailMatchTriggered to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTailMatchTriggered(boolean value) {
+
+      tailMatchTriggered_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * True if the returned suggestions are all tail suggestions.
+     *
+     * For tail matching to be triggered, include_tail_suggestions in the request
+     * must be true and there must be no suggestions that match the full query.
+     * </pre>
+     *
+     * <code>bool tail_match_triggered = 2;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTailMatchTriggered() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      tailMatchTriggered_ = false;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

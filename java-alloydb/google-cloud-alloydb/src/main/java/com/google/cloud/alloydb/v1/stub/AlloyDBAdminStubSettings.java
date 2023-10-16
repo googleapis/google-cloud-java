@@ -56,6 +56,7 @@ import com.google.cloud.alloydb.v1.Backup;
 import com.google.cloud.alloydb.v1.BatchCreateInstancesRequest;
 import com.google.cloud.alloydb.v1.BatchCreateInstancesResponse;
 import com.google.cloud.alloydb.v1.Cluster;
+import com.google.cloud.alloydb.v1.ConnectionInfo;
 import com.google.cloud.alloydb.v1.CreateBackupRequest;
 import com.google.cloud.alloydb.v1.CreateClusterRequest;
 import com.google.cloud.alloydb.v1.CreateInstanceRequest;
@@ -67,8 +68,11 @@ import com.google.cloud.alloydb.v1.DeleteClusterRequest;
 import com.google.cloud.alloydb.v1.DeleteInstanceRequest;
 import com.google.cloud.alloydb.v1.DeleteUserRequest;
 import com.google.cloud.alloydb.v1.FailoverInstanceRequest;
+import com.google.cloud.alloydb.v1.GenerateClientCertificateRequest;
+import com.google.cloud.alloydb.v1.GenerateClientCertificateResponse;
 import com.google.cloud.alloydb.v1.GetBackupRequest;
 import com.google.cloud.alloydb.v1.GetClusterRequest;
+import com.google.cloud.alloydb.v1.GetConnectionInfoRequest;
 import com.google.cloud.alloydb.v1.GetInstanceRequest;
 import com.google.cloud.alloydb.v1.GetUserRequest;
 import com.google.cloud.alloydb.v1.InjectFaultRequest;
@@ -222,6 +226,11 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
           ListSupportedDatabaseFlagsResponse,
           ListSupportedDatabaseFlagsPagedResponse>
       listSupportedDatabaseFlagsSettings;
+  private final UnaryCallSettings<
+          GenerateClientCertificateRequest, GenerateClientCertificateResponse>
+      generateClientCertificateSettings;
+  private final UnaryCallSettings<GetConnectionInfoRequest, ConnectionInfo>
+      getConnectionInfoSettings;
   private final PagedCallSettings<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
       listUsersSettings;
   private final UnaryCallSettings<GetUserRequest, User> getUserSettings;
@@ -807,6 +816,17 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     return listSupportedDatabaseFlagsSettings;
   }
 
+  /** Returns the object with the settings used for calls to generateClientCertificate. */
+  public UnaryCallSettings<GenerateClientCertificateRequest, GenerateClientCertificateResponse>
+      generateClientCertificateSettings() {
+    return generateClientCertificateSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getConnectionInfo. */
+  public UnaryCallSettings<GetConnectionInfoRequest, ConnectionInfo> getConnectionInfoSettings() {
+    return getConnectionInfoSettings;
+  }
+
   /** Returns the object with the settings used for calls to listUsers. */
   public PagedCallSettings<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
       listUsersSettings() {
@@ -995,6 +1015,8 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
     deleteBackupOperationSettings = settingsBuilder.deleteBackupOperationSettings().build();
     listSupportedDatabaseFlagsSettings =
         settingsBuilder.listSupportedDatabaseFlagsSettings().build();
+    generateClientCertificateSettings = settingsBuilder.generateClientCertificateSettings().build();
+    getConnectionInfoSettings = settingsBuilder.getConnectionInfoSettings().build();
     listUsersSettings = settingsBuilder.listUsersSettings().build();
     getUserSettings = settingsBuilder.getUserSettings().build();
     createUserSettings = settingsBuilder.createUserSettings().build();
@@ -1089,6 +1111,11 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
             ListSupportedDatabaseFlagsResponse,
             ListSupportedDatabaseFlagsPagedResponse>
         listSupportedDatabaseFlagsSettings;
+    private final UnaryCallSettings.Builder<
+            GenerateClientCertificateRequest, GenerateClientCertificateResponse>
+        generateClientCertificateSettings;
+    private final UnaryCallSettings.Builder<GetConnectionInfoRequest, ConnectionInfo>
+        getConnectionInfoSettings;
     private final PagedCallSettings.Builder<
             ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
         listUsersSettings;
@@ -1190,6 +1217,8 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
       deleteBackupOperationSettings = OperationCallSettings.newBuilder();
       listSupportedDatabaseFlagsSettings =
           PagedCallSettings.newBuilder(LIST_SUPPORTED_DATABASE_FLAGS_PAGE_STR_FACT);
+      generateClientCertificateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getConnectionInfoSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listUsersSettings = PagedCallSettings.newBuilder(LIST_USERS_PAGE_STR_FACT);
       getUserSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createUserSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1224,6 +1253,8 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
               updateBackupSettings,
               deleteBackupSettings,
               listSupportedDatabaseFlagsSettings,
+              generateClientCertificateSettings,
+              getConnectionInfoSettings,
               listUsersSettings,
               getUserSettings,
               createUserSettings,
@@ -1281,6 +1312,8 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
       deleteBackupSettings = settings.deleteBackupSettings.toBuilder();
       deleteBackupOperationSettings = settings.deleteBackupOperationSettings.toBuilder();
       listSupportedDatabaseFlagsSettings = settings.listSupportedDatabaseFlagsSettings.toBuilder();
+      generateClientCertificateSettings = settings.generateClientCertificateSettings.toBuilder();
+      getConnectionInfoSettings = settings.getConnectionInfoSettings.toBuilder();
       listUsersSettings = settings.listUsersSettings.toBuilder();
       getUserSettings = settings.getUserSettings.toBuilder();
       createUserSettings = settings.createUserSettings.toBuilder();
@@ -1315,6 +1348,8 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
               updateBackupSettings,
               deleteBackupSettings,
               listSupportedDatabaseFlagsSettings,
+              generateClientCertificateSettings,
+              getConnectionInfoSettings,
               listUsersSettings,
               getUserSettings,
               createUserSettings,
@@ -1468,6 +1503,16 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
 
       builder
           .listSupportedDatabaseFlagsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .generateClientCertificateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .getConnectionInfoSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -2202,6 +2247,19 @@ public class AlloyDBAdminStubSettings extends StubSettings<AlloyDBAdminStubSetti
             ListSupportedDatabaseFlagsPagedResponse>
         listSupportedDatabaseFlagsSettings() {
       return listSupportedDatabaseFlagsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to generateClientCertificate. */
+    public UnaryCallSettings.Builder<
+            GenerateClientCertificateRequest, GenerateClientCertificateResponse>
+        generateClientCertificateSettings() {
+      return generateClientCertificateSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getConnectionInfo. */
+    public UnaryCallSettings.Builder<GetConnectionInfoRequest, ConnectionInfo>
+        getConnectionInfoSettings() {
+      return getConnectionInfoSettings;
     }
 
     /** Returns the builder for the settings used for calls to listUsers. */

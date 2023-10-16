@@ -170,7 +170,7 @@ public class ChannelPartnerRepricingConfigName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       ChannelPartnerRepricingConfigName that = ((ChannelPartnerRepricingConfigName) o);
       return Objects.equals(this.account, that.account)
           && Objects.equals(this.channelPartner, that.channelPartner)

@@ -204,6 +204,155 @@ public interface DatabaseEntityOrBuilder
    *
    *
    * <pre>
+   * Details about the entity DDL script. Multiple DDL scripts are provided for
+   * child entities such as a table entity will have one DDL for the table with
+   * additional DDLs for each index, constraint and such.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+   */
+  java.util.List<com.google.cloud.clouddms.v1.EntityDdl> getEntityDdlList();
+  /**
+   *
+   *
+   * <pre>
+   * Details about the entity DDL script. Multiple DDL scripts are provided for
+   * child entities such as a table entity will have one DDL for the table with
+   * additional DDLs for each index, constraint and such.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+   */
+  com.google.cloud.clouddms.v1.EntityDdl getEntityDdl(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Details about the entity DDL script. Multiple DDL scripts are provided for
+   * child entities such as a table entity will have one DDL for the table with
+   * additional DDLs for each index, constraint and such.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+   */
+  int getEntityDdlCount();
+  /**
+   *
+   *
+   * <pre>
+   * Details about the entity DDL script. Multiple DDL scripts are provided for
+   * child entities such as a table entity will have one DDL for the table with
+   * additional DDLs for each index, constraint and such.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+   */
+  java.util.List<? extends com.google.cloud.clouddms.v1.EntityDdlOrBuilder>
+      getEntityDdlOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Details about the entity DDL script. Multiple DDL scripts are provided for
+   * child entities such as a table entity will have one DDL for the table with
+   * additional DDLs for each index, constraint and such.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.clouddms.v1.EntityDdl entity_ddl = 6;</code>
+   */
+  com.google.cloud.clouddms.v1.EntityDdlOrBuilder getEntityDdlOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Details about the various issues found for the entity.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+   */
+  java.util.List<com.google.cloud.clouddms.v1.EntityIssue> getIssuesList();
+  /**
+   *
+   *
+   * <pre>
+   * Details about the various issues found for the entity.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+   */
+  com.google.cloud.clouddms.v1.EntityIssue getIssues(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Details about the various issues found for the entity.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+   */
+  int getIssuesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Details about the various issues found for the entity.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+   */
+  java.util.List<? extends com.google.cloud.clouddms.v1.EntityIssueOrBuilder>
+      getIssuesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Details about the various issues found for the entity.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.clouddms.v1.EntityIssue issues = 7;</code>
+   */
+  com.google.cloud.clouddms.v1.EntityIssueOrBuilder getIssuesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Database.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.DatabaseInstanceEntity database = 101;</code>
+   *
+   * @return Whether the database field is set.
+   */
+  boolean hasDatabase();
+  /**
+   *
+   *
+   * <pre>
+   * Database.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.DatabaseInstanceEntity database = 101;</code>
+   *
+   * @return The database.
+   */
+  com.google.cloud.clouddms.v1.DatabaseInstanceEntity getDatabase();
+  /**
+   *
+   *
+   * <pre>
+   * Database.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.DatabaseInstanceEntity database = 101;</code>
+   */
+  com.google.cloud.clouddms.v1.DatabaseInstanceEntityOrBuilder getDatabaseOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Schema.
    * </pre>
    *
@@ -479,6 +628,76 @@ public interface DatabaseEntityOrBuilder
    * <code>.google.cloud.clouddms.v1.PackageEntity database_package = 109;</code>
    */
   com.google.cloud.clouddms.v1.PackageEntityOrBuilder getDatabasePackageOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * UDT.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.UDTEntity udt = 110;</code>
+   *
+   * @return Whether the udt field is set.
+   */
+  boolean hasUdt();
+  /**
+   *
+   *
+   * <pre>
+   * UDT.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.UDTEntity udt = 110;</code>
+   *
+   * @return The udt.
+   */
+  com.google.cloud.clouddms.v1.UDTEntity getUdt();
+  /**
+   *
+   *
+   * <pre>
+   * UDT.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.UDTEntity udt = 110;</code>
+   */
+  com.google.cloud.clouddms.v1.UDTEntityOrBuilder getUdtOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Materialized view.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.MaterializedViewEntity materialized_view = 111;</code>
+   *
+   * @return Whether the materializedView field is set.
+   */
+  boolean hasMaterializedView();
+  /**
+   *
+   *
+   * <pre>
+   * Materialized view.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.MaterializedViewEntity materialized_view = 111;</code>
+   *
+   * @return The materializedView.
+   */
+  com.google.cloud.clouddms.v1.MaterializedViewEntity getMaterializedView();
+  /**
+   *
+   *
+   * <pre>
+   * Materialized view.
+   * </pre>
+   *
+   * <code>.google.cloud.clouddms.v1.MaterializedViewEntity materialized_view = 111;</code>
+   */
+  com.google.cloud.clouddms.v1.MaterializedViewEntityOrBuilder getMaterializedViewOrBuilder();
 
   com.google.cloud.clouddms.v1.DatabaseEntity.EntityBodyCase getEntityBodyCase();
 }

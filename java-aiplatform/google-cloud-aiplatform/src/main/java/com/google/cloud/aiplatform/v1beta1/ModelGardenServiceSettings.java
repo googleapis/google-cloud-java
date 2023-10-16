@@ -17,6 +17,7 @@
 package com.google.cloud.aiplatform.v1beta1;
 
 import static com.google.cloud.aiplatform.v1beta1.ModelGardenServiceClient.ListLocationsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.ModelGardenServiceClient.ListPublisherModelsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -88,6 +89,13 @@ public class ModelGardenServiceSettings extends ClientSettings<ModelGardenServic
   /** Returns the object with the settings used for calls to getPublisherModel. */
   public UnaryCallSettings<GetPublisherModelRequest, PublisherModel> getPublisherModelSettings() {
     return ((ModelGardenServiceStubSettings) getStubSettings()).getPublisherModelSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listPublisherModels. */
+  public PagedCallSettings<
+          ListPublisherModelsRequest, ListPublisherModelsResponse, ListPublisherModelsPagedResponse>
+      listPublisherModelsSettings() {
+    return ((ModelGardenServiceStubSettings) getStubSettings()).listPublisherModelsSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -218,6 +226,15 @@ public class ModelGardenServiceSettings extends ClientSettings<ModelGardenServic
     public UnaryCallSettings.Builder<GetPublisherModelRequest, PublisherModel>
         getPublisherModelSettings() {
       return getStubSettingsBuilder().getPublisherModelSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listPublisherModels. */
+    public PagedCallSettings.Builder<
+            ListPublisherModelsRequest,
+            ListPublisherModelsResponse,
+            ListPublisherModelsPagedResponse>
+        listPublisherModelsSettings() {
+      return getStubSettingsBuilder().listPublisherModelsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

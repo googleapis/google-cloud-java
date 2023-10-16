@@ -120,9 +120,44 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
+   * Raw image query.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery image_query = 19;</code>
+   *
+   * @return Whether the imageQuery field is set.
+   */
+  boolean hasImageQuery();
+  /**
+   *
+   *
+   * <pre>
+   * Raw image query.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery image_query = 19;</code>
+   *
+   * @return The imageQuery.
+   */
+  com.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery getImageQuery();
+  /**
+   *
+   *
+   * <pre>
+   * Raw image query.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchRequest.ImageQuery image_query = 19;</code>
+   */
+  com.google.cloud.discoveryengine.v1.SearchRequest.ImageQueryOrBuilder getImageQueryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Maximum number of [Document][google.cloud.discoveryengine.v1.Document]s to
    * return. If unspecified, defaults to a reasonable value. The maximum allowed
-   * value is 100. Values above 100 will be coerced to 100.
+   * value is 100. Values above 100 are coerced to 100.
    *
    * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
    * </pre>
@@ -196,9 +231,78 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
+   * The filter syntax consists of an expression language for constructing a
+   * predicate from one or more fields of the documents being filtered. Filter
+   * expression is case-sensitive.
+   *
+   * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+   * </pre>
+   *
+   * <code>string filter = 7;</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+  /**
+   *
+   *
+   * <pre>
+   * The filter syntax consists of an expression language for constructing a
+   * predicate from one or more fields of the documents being filtered. Filter
+   * expression is case-sensitive.
+   *
+   * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+   * </pre>
+   *
+   * <code>string filter = 7;</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The order in which documents are returned. Documents can be ordered by
+   * a field in an [Document][google.cloud.discoveryengine.v1.Document] object.
+   * Leave it unset if ordered by relevance. `order_by` expression is
+   * case-sensitive.
+   *
+   * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
+   * </pre>
+   *
+   * <code>string order_by = 8;</code>
+   *
+   * @return The orderBy.
+   */
+  java.lang.String getOrderBy();
+  /**
+   *
+   *
+   * <pre>
+   * The order in which documents are returned. Documents can be ordered by
+   * a field in an [Document][google.cloud.discoveryengine.v1.Document] object.
+   * Leave it unset if ordered by relevance. `order_by` expression is
+   * case-sensitive.
+   *
+   * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
+   * </pre>
+   *
+   * <code>string order_by = 8;</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  com.google.protobuf.ByteString getOrderByBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Information about the end user.
-   * Highly recommended for analytics. The user_agent string in UserInfo will
-   * be used to deduce device_type for analytics.
+   * Highly recommended for analytics.
+   * [UserInfo.user_agent][google.cloud.discoveryengine.v1.UserInfo.user_agent]
+   * is used to deduce `device_type` for analytics.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.UserInfo user_info = 21;</code>
@@ -211,8 +315,9 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Information about the end user.
-   * Highly recommended for analytics. The user_agent string in UserInfo will
-   * be used to deduce device_type for analytics.
+   * Highly recommended for analytics.
+   * [UserInfo.user_agent][google.cloud.discoveryengine.v1.UserInfo.user_agent]
+   * is used to deduce `device_type` for analytics.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.UserInfo user_info = 21;</code>
@@ -225,13 +330,117 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Information about the end user.
-   * Highly recommended for analytics. The user_agent string in UserInfo will
-   * be used to deduce device_type for analytics.
+   * Highly recommended for analytics.
+   * [UserInfo.user_agent][google.cloud.discoveryengine.v1.UserInfo.user_agent]
+   * is used to deduce `device_type` for analytics.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1.UserInfo user_info = 21;</code>
    */
   com.google.cloud.discoveryengine.v1.UserInfoOrBuilder getUserInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Facet specifications for faceted search. If empty, no facets are returned.
+   *
+   * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+   * error is returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;</code>
+   */
+  java.util.List<com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec> getFacetSpecsList();
+  /**
+   *
+   *
+   * <pre>
+   * Facet specifications for faceted search. If empty, no facets are returned.
+   *
+   * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+   * error is returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;</code>
+   */
+  com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpec getFacetSpecs(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Facet specifications for faceted search. If empty, no facets are returned.
+   *
+   * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+   * error is returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;</code>
+   */
+  int getFacetSpecsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Facet specifications for faceted search. If empty, no facets are returned.
+   *
+   * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+   * error is returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;</code>
+   */
+  java.util.List<? extends com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpecOrBuilder>
+      getFacetSpecsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Facet specifications for faceted search. If empty, no facets are returned.
+   *
+   * A maximum of 100 values are allowed. Otherwise, an  `INVALID_ARGUMENT`
+   * error is returned.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.discoveryengine.v1.SearchRequest.FacetSpec facet_specs = 9;</code>
+   */
+  com.google.cloud.discoveryengine.v1.SearchRequest.FacetSpecOrBuilder getFacetSpecsOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Boost specification to boost certain documents.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+   *
+   * @return Whether the boostSpec field is set.
+   */
+  boolean hasBoostSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Boost specification to boost certain documents.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+   *
+   * @return The boostSpec.
+   */
+  com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec getBoostSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Boost specification to boost certain documents.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchRequest.BoostSpec boost_spec = 10;</code>
+   */
+  com.google.cloud.discoveryengine.v1.SearchRequest.BoostSpecOrBuilder getBoostSpecOrBuilder();
 
   /**
    *
@@ -336,7 +545,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur.
+   * query expansion occurs.
    * </pre>
    *
    * <code>
@@ -351,7 +560,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur.
+   * query expansion occurs.
    * </pre>
    *
    * <code>
@@ -366,7 +575,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur.
+   * query expansion occurs.
    * </pre>
    *
    * <code>
@@ -381,7 +590,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The spell correction specification that specifies the mode under
-   * which spell correction will take effect.
+   * which spell correction takes effect.
    * </pre>
    *
    * <code>
@@ -396,7 +605,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The spell correction specification that specifies the mode under
-   * which spell correction will take effect.
+   * which spell correction takes effect.
    * </pre>
    *
    * <code>
@@ -411,7 +620,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The spell correction specification that specifies the mode under
-   * which spell correction will take effect.
+   * which spell correction takes effect.
    * </pre>
    *
    * <code>
@@ -476,8 +685,7 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * The content search spec that configs the desired behavior of content
-   * search.
+   * A specification for configuring the behavior of content search.
    * </pre>
    *
    * <code>
@@ -491,8 +699,7 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * The content search spec that configs the desired behavior of content
-   * search.
+   * A specification for configuring the behavior of content search.
    * </pre>
    *
    * <code>
@@ -506,8 +713,7 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * The content search spec that configs the desired behavior of content
-   * search.
+   * A specification for configuring the behavior of content search.
    * </pre>
    *
    * <code>
@@ -522,7 +728,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Whether to turn on safe search. This is only supported for
-   * [ContentConfig.PUBLIC_WEBSITE][].
+   * website search.
    * </pre>
    *
    * <code>bool safe_search = 20;</code>

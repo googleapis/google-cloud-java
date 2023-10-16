@@ -111,4 +111,57 @@ public interface ComputeEngineShapeDescriptorOrBuilder
    * @return The bytes for machineType.
    */
   com.google.protobuf.ByteString getMachineTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Compute Engine storage. Never empty.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+   */
+  java.util.List<com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor> getStorageList();
+  /**
+   *
+   *
+   * <pre>
+   * Compute Engine storage. Never empty.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+   */
+  com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor getStorage(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Compute Engine storage. Never empty.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+   */
+  int getStorageCount();
+  /**
+   *
+   *
+   * <pre>
+   * Compute Engine storage. Never empty.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+   */
+  java.util.List<? extends com.google.cloud.migrationcenter.v1.ComputeStorageDescriptorOrBuilder>
+      getStorageOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Compute Engine storage. Never empty.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+   */
+  com.google.cloud.migrationcenter.v1.ComputeStorageDescriptorOrBuilder getStorageOrBuilder(
+      int index);
 }

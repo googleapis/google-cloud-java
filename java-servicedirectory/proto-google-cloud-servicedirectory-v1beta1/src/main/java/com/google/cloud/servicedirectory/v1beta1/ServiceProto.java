@@ -50,26 +50,26 @@ public final class ServiceProto {
           + "proto\032\031google/api/resource.proto\0324google"
           + "/cloud/servicedirectory/v1beta1/endpoint"
           + ".proto\032\037google/protobuf/timestamp.proto\""
-          + "\335\003\n\007Service\022\022\n\004name\030\001 \001(\tB\004\342A\001\005\022T\n\010metad"
+          + "\360\003\n\007Service\022\022\n\004name\030\001 \001(\tB\004\342A\001\005\022T\n\010metad"
           + "ata\030\002 \003(\0132<.google.cloud.servicedirector"
           + "y.v1beta1.Service.MetadataEntryB\004\342A\001\001\022H\n"
           + "\tendpoints\030\003 \003(\0132/.google.cloud.serviced"
           + "irectory.v1beta1.EndpointB\004\342A\001\003\0225\n\013creat"
           + "e_time\030\006 \001(\0132\032.google.protobuf.Timestamp"
           + "B\004\342A\001\003\0225\n\013update_time\030\007 \001(\0132\032.google.pro"
-          + "tobuf.TimestampB\004\342A\001\003\032/\n\rMetadataEntry\022\013"
-          + "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001:\177\352A|\n\'ser"
-          + "vicedirectory.googleapis.com/Service\022Qpr"
-          + "ojects/{project}/locations/{location}/na"
-          + "mespaces/{namespace}/services/{service}B"
-          + "\220\002\n)com.google.cloud.servicedirectory.v1"
-          + "beta1B\014ServiceProtoP\001ZUcloud.google.com/"
-          + "go/servicedirectory/apiv1beta1/servicedi"
-          + "rectorypb;servicedirectorypb\370\001\001\252\002%Google"
-          + ".Cloud.ServiceDirectory.V1Beta1\312\002%Google"
-          + "\\Cloud\\ServiceDirectory\\V1beta1\352\002(Google"
-          + "::Cloud::ServiceDirectory::V1beta1b\006prot"
-          + "o3"
+          + "tobuf.TimestampB\004\342A\001\003\022\021\n\003uid\030\010 \001(\tB\004\342A\001\003"
+          + "\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030"
+          + "\002 \001(\t:\0028\001:\177\352A|\n\'servicedirectory.googlea"
+          + "pis.com/Service\022Qprojects/{project}/loca"
+          + "tions/{location}/namespaces/{namespace}/"
+          + "services/{service}B\220\002\n)com.google.cloud."
+          + "servicedirectory.v1beta1B\014ServiceProtoP\001"
+          + "ZUcloud.google.com/go/servicedirectory/a"
+          + "piv1beta1/servicedirectorypb;servicedire"
+          + "ctorypb\370\001\001\252\002%Google.Cloud.ServiceDirecto"
+          + "ry.V1Beta1\312\002%Google\\Cloud\\ServiceDirecto"
+          + "ry\\V1beta1\352\002(Google::Cloud::ServiceDirec"
+          + "tory::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -86,7 +86,7 @@ public final class ServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_servicedirectory_v1beta1_Service_descriptor,
             new java.lang.String[] {
-              "Name", "Metadata", "Endpoints", "CreateTime", "UpdateTime",
+              "Name", "Metadata", "Endpoints", "CreateTime", "UpdateTime", "Uid",
             });
     internal_static_google_cloud_servicedirectory_v1beta1_Service_MetadataEntry_descriptor =
         internal_static_google_cloud_servicedirectory_v1beta1_Service_descriptor

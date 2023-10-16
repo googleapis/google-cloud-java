@@ -22,7 +22,8 @@ package com.google.cloud.tasks.v2beta3;
  *
  *
  * <pre>
- * Request message for [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue].
+ * Request message for
+ * [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta3.CreateQueueRequest}
@@ -135,7 +136,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The queue to create.
    *
-   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+   * an existing queue.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -153,7 +155,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The queue to create.
    *
-   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+   * an existing queue.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -171,7 +174,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required. The queue to create.
    *
-   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+   * an existing queue.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -359,7 +363,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue].
+   * Request message for
+   * [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta3.CreateQueueRequest}
@@ -708,7 +713,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The queue to create.
      *
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+     * an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -725,7 +731,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The queue to create.
      *
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+     * an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -746,7 +753,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The queue to create.
      *
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+     * an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -771,7 +779,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The queue to create.
      *
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+     * an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -793,7 +802,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The queue to create.
      *
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+     * an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -821,7 +831,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The queue to create.
      *
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+     * an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -843,7 +854,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The queue to create.
      *
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+     * an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -860,7 +872,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The queue to create.
      *
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+     * an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];
@@ -879,7 +892,8 @@ public final class CreateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required. The queue to create.
      *
-     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+     * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+     * an existing queue.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.Queue queue = 2 [(.google.api.field_behavior) = REQUIRED];

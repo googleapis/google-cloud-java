@@ -33,7 +33,8 @@ public final class WorkflowTemplateServiceGrpc {
 
   private WorkflowTemplateServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.dataproc.v1.WorkflowTemplateService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.dataproc.v1.WorkflowTemplateService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1245,9 +1246,9 @@ public final class WorkflowTemplateServiceGrpc {
   private static final class WorkflowTemplateServiceMethodDescriptorSupplier
       extends WorkflowTemplateServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    WorkflowTemplateServiceMethodDescriptorSupplier(String methodName) {
+    WorkflowTemplateServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

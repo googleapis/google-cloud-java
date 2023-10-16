@@ -77,6 +77,33 @@ public interface ListJobsRequestOrBuilder
    *
    *
    * <pre>
+   * Optional. Sort results. Supported are "name", "name desc", "create_time",
+   * and "create_time desc".
+   * </pre>
+   *
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The orderBy.
+   */
+  java.lang.String getOrderBy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sort results. Supported are "name", "name desc", "create_time",
+   * and "create_time desc".
+   * </pre>
+   *
+   * <code>string order_by = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for orderBy.
+   */
+  com.google.protobuf.ByteString getOrderByBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Page size.
    * </pre>
    *

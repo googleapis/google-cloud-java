@@ -75,10 +75,10 @@ public interface ExecutionReportOrBuilder
    *
    *
    * <pre>
-   * Total number of rows in the import job.
+   * Output only. Total number of rows in the import job.
    * </pre>
    *
-   * <code>int32 total_rows_count = 3;</code>
+   * <code>int32 total_rows_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The totalRowsCount.
    */

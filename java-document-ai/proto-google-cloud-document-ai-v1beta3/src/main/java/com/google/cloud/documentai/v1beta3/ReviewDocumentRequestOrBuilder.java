@@ -101,7 +101,7 @@ public interface ReviewDocumentRequestOrBuilder
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=1096
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=1131
    * @return Whether the document field is set.
    */
   @java.lang.Deprecated
@@ -116,7 +116,7 @@ public interface ReviewDocumentRequestOrBuilder
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ReviewDocumentRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=1096
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=1131
    * @return The document.
    */
   @java.lang.Deprecated

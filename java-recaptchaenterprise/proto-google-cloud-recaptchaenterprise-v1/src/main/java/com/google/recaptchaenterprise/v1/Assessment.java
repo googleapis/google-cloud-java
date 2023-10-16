@@ -71,7 +71,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The resource name for the Assessment in the format
-   * "projects/{project}/assessments/{assessment}".
+   * `projects/{project}/assessments/{assessment}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -95,7 +95,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. The resource name for the Assessment in the format
-   * "projects/{project}/assessments/{assessment}".
+   * `projects/{project}/assessments/{assessment}`.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -453,6 +453,66 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         : privatePasswordLeakVerification_;
   }
 
+  public static final int FIREWALL_POLICY_ASSESSMENT_FIELD_NUMBER = 10;
+  private com.google.recaptchaenterprise.v1.FirewallPolicyAssessment firewallPolicyAssessment_;
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned when firewall policies belonging to the project are
+   * evaluated using the field firewall_policy_evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+   * </code>
+   *
+   * @return Whether the firewallPolicyAssessment field is set.
+   */
+  @java.lang.Override
+  public boolean hasFirewallPolicyAssessment() {
+    return firewallPolicyAssessment_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned when firewall policies belonging to the project are
+   * evaluated using the field firewall_policy_evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+   * </code>
+   *
+   * @return The firewallPolicyAssessment.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.FirewallPolicyAssessment getFirewallPolicyAssessment() {
+    return firewallPolicyAssessment_ == null
+        ? com.google.recaptchaenterprise.v1.FirewallPolicyAssessment.getDefaultInstance()
+        : firewallPolicyAssessment_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Assessment returned when firewall policies belonging to the project are
+   * evaluated using the field firewall_policy_evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.FirewallPolicyAssessmentOrBuilder
+      getFirewallPolicyAssessmentOrBuilder() {
+    return firewallPolicyAssessment_ == null
+        ? com.google.recaptchaenterprise.v1.FirewallPolicyAssessment.getDefaultInstance()
+        : firewallPolicyAssessment_;
+  }
+
   public static final int FRAUD_PREVENTION_ASSESSMENT_FIELD_NUMBER = 11;
   private com.google.recaptchaenterprise.v1.FraudPreventionAssessment fraudPreventionAssessment_;
   /**
@@ -511,6 +571,65 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         : fraudPreventionAssessment_;
   }
 
+  public static final int FRAUD_SIGNALS_FIELD_NUMBER = 13;
+  private com.google.recaptchaenterprise.v1.FraudSignals fraudSignals_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Fraud Signals specific to the users involved in a payment
+   * transaction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.FraudSignals fraud_signals = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the fraudSignals field is set.
+   */
+  @java.lang.Override
+  public boolean hasFraudSignals() {
+    return fraudSignals_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Fraud Signals specific to the users involved in a payment
+   * transaction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.FraudSignals fraud_signals = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The fraudSignals.
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.FraudSignals getFraudSignals() {
+    return fraudSignals_ == null
+        ? com.google.recaptchaenterprise.v1.FraudSignals.getDefaultInstance()
+        : fraudSignals_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Fraud Signals specific to the users involved in a payment
+   * transaction.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.recaptchaenterprise.v1.FraudSignals fraud_signals = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.recaptchaenterprise.v1.FraudSignalsOrBuilder getFraudSignalsOrBuilder() {
+    return fraudSignals_ == null
+        ? com.google.recaptchaenterprise.v1.FraudSignals.getDefaultInstance()
+        : fraudSignals_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -546,8 +665,14 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     if (privatePasswordLeakVerification_ != null) {
       output.writeMessage(8, getPrivatePasswordLeakVerification());
     }
+    if (firewallPolicyAssessment_ != null) {
+      output.writeMessage(10, getFirewallPolicyAssessment());
+    }
     if (fraudPreventionAssessment_ != null) {
       output.writeMessage(11, getFraudPreventionAssessment());
+    }
+    if (fraudSignals_ != null) {
+      output.writeMessage(13, getFraudSignals());
     }
     getUnknownFields().writeTo(output);
   }
@@ -583,10 +708,18 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               8, getPrivatePasswordLeakVerification());
     }
+    if (firewallPolicyAssessment_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, getFirewallPolicyAssessment());
+    }
     if (fraudPreventionAssessment_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               11, getFraudPreventionAssessment());
+    }
+    if (fraudSignals_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getFraudSignals());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -632,10 +765,18 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       if (!getPrivatePasswordLeakVerification().equals(other.getPrivatePasswordLeakVerification()))
         return false;
     }
+    if (hasFirewallPolicyAssessment() != other.hasFirewallPolicyAssessment()) return false;
+    if (hasFirewallPolicyAssessment()) {
+      if (!getFirewallPolicyAssessment().equals(other.getFirewallPolicyAssessment())) return false;
+    }
     if (hasFraudPreventionAssessment() != other.hasFraudPreventionAssessment()) return false;
     if (hasFraudPreventionAssessment()) {
       if (!getFraudPreventionAssessment().equals(other.getFraudPreventionAssessment()))
         return false;
+    }
+    if (hasFraudSignals() != other.hasFraudSignals()) return false;
+    if (hasFraudSignals()) {
+      if (!getFraudSignals().equals(other.getFraudSignals())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -674,9 +815,17 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + PRIVATE_PASSWORD_LEAK_VERIFICATION_FIELD_NUMBER;
       hash = (53 * hash) + getPrivatePasswordLeakVerification().hashCode();
     }
+    if (hasFirewallPolicyAssessment()) {
+      hash = (37 * hash) + FIREWALL_POLICY_ASSESSMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getFirewallPolicyAssessment().hashCode();
+    }
     if (hasFraudPreventionAssessment()) {
       hash = (37 * hash) + FRAUD_PREVENTION_ASSESSMENT_FIELD_NUMBER;
       hash = (53 * hash) + getFraudPreventionAssessment().hashCode();
+    }
+    if (hasFraudSignals()) {
+      hash = (37 * hash) + FRAUD_SIGNALS_FIELD_NUMBER;
+      hash = (53 * hash) + getFraudSignals().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -848,10 +997,20 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         privatePasswordLeakVerificationBuilder_.dispose();
         privatePasswordLeakVerificationBuilder_ = null;
       }
+      firewallPolicyAssessment_ = null;
+      if (firewallPolicyAssessmentBuilder_ != null) {
+        firewallPolicyAssessmentBuilder_.dispose();
+        firewallPolicyAssessmentBuilder_ = null;
+      }
       fraudPreventionAssessment_ = null;
       if (fraudPreventionAssessmentBuilder_ != null) {
         fraudPreventionAssessmentBuilder_.dispose();
         fraudPreventionAssessmentBuilder_ = null;
+      }
+      fraudSignals_ = null;
+      if (fraudSignalsBuilder_ != null) {
+        fraudSignalsBuilder_.dispose();
+        fraudSignalsBuilder_ = null;
       }
       return this;
     }
@@ -922,10 +1081,20 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
                 : privatePasswordLeakVerificationBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.firewallPolicyAssessment_ =
+            firewallPolicyAssessmentBuilder_ == null
+                ? firewallPolicyAssessment_
+                : firewallPolicyAssessmentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.fraudPreventionAssessment_ =
             fraudPreventionAssessmentBuilder_ == null
                 ? fraudPreventionAssessment_
                 : fraudPreventionAssessmentBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.fraudSignals_ =
+            fraudSignalsBuilder_ == null ? fraudSignals_ : fraudSignalsBuilder_.build();
       }
     }
 
@@ -997,8 +1166,14 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       if (other.hasPrivatePasswordLeakVerification()) {
         mergePrivatePasswordLeakVerification(other.getPrivatePasswordLeakVerification());
       }
+      if (other.hasFirewallPolicyAssessment()) {
+        mergeFirewallPolicyAssessment(other.getFirewallPolicyAssessment());
+      }
       if (other.hasFraudPreventionAssessment()) {
         mergeFraudPreventionAssessment(other.getFraudPreventionAssessment());
+      }
+      if (other.hasFraudSignals()) {
+        mergeFraudSignals(other.getFraudSignals());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1072,13 +1247,26 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000040;
                 break;
               } // case 66
+            case 82:
+              {
+                input.readMessage(
+                    getFirewallPolicyAssessmentFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 82
             case 90:
               {
                 input.readMessage(
                     getFraudPreventionAssessmentFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 90
+            case 106:
+              {
+                input.readMessage(getFraudSignalsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1104,7 +1292,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name for the Assessment in the format
-     * "projects/{project}/assessments/{assessment}".
+     * `projects/{project}/assessments/{assessment}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1127,7 +1315,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name for the Assessment in the format
-     * "projects/{project}/assessments/{assessment}".
+     * `projects/{project}/assessments/{assessment}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1150,7 +1338,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name for the Assessment in the format
-     * "projects/{project}/assessments/{assessment}".
+     * `projects/{project}/assessments/{assessment}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1172,7 +1360,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name for the Assessment in the format
-     * "projects/{project}/assessments/{assessment}".
+     * `projects/{project}/assessments/{assessment}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -1190,7 +1378,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. The resource name for the Assessment in the format
-     * "projects/{project}/assessments/{assessment}".
+     * `projects/{project}/assessments/{assessment}`.
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2443,6 +2631,224 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       return privatePasswordLeakVerificationBuilder_;
     }
 
+    private com.google.recaptchaenterprise.v1.FirewallPolicyAssessment firewallPolicyAssessment_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.FirewallPolicyAssessment,
+            com.google.recaptchaenterprise.v1.FirewallPolicyAssessment.Builder,
+            com.google.recaptchaenterprise.v1.FirewallPolicyAssessmentOrBuilder>
+        firewallPolicyAssessmentBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned when firewall policies belonging to the project are
+     * evaluated using the field firewall_policy_evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+     * </code>
+     *
+     * @return Whether the firewallPolicyAssessment field is set.
+     */
+    public boolean hasFirewallPolicyAssessment() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned when firewall policies belonging to the project are
+     * evaluated using the field firewall_policy_evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+     * </code>
+     *
+     * @return The firewallPolicyAssessment.
+     */
+    public com.google.recaptchaenterprise.v1.FirewallPolicyAssessment
+        getFirewallPolicyAssessment() {
+      if (firewallPolicyAssessmentBuilder_ == null) {
+        return firewallPolicyAssessment_ == null
+            ? com.google.recaptchaenterprise.v1.FirewallPolicyAssessment.getDefaultInstance()
+            : firewallPolicyAssessment_;
+      } else {
+        return firewallPolicyAssessmentBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned when firewall policies belonging to the project are
+     * evaluated using the field firewall_policy_evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+     * </code>
+     */
+    public Builder setFirewallPolicyAssessment(
+        com.google.recaptchaenterprise.v1.FirewallPolicyAssessment value) {
+      if (firewallPolicyAssessmentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        firewallPolicyAssessment_ = value;
+      } else {
+        firewallPolicyAssessmentBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned when firewall policies belonging to the project are
+     * evaluated using the field firewall_policy_evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+     * </code>
+     */
+    public Builder setFirewallPolicyAssessment(
+        com.google.recaptchaenterprise.v1.FirewallPolicyAssessment.Builder builderForValue) {
+      if (firewallPolicyAssessmentBuilder_ == null) {
+        firewallPolicyAssessment_ = builderForValue.build();
+      } else {
+        firewallPolicyAssessmentBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned when firewall policies belonging to the project are
+     * evaluated using the field firewall_policy_evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+     * </code>
+     */
+    public Builder mergeFirewallPolicyAssessment(
+        com.google.recaptchaenterprise.v1.FirewallPolicyAssessment value) {
+      if (firewallPolicyAssessmentBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && firewallPolicyAssessment_ != null
+            && firewallPolicyAssessment_
+                != com.google.recaptchaenterprise.v1.FirewallPolicyAssessment
+                    .getDefaultInstance()) {
+          getFirewallPolicyAssessmentBuilder().mergeFrom(value);
+        } else {
+          firewallPolicyAssessment_ = value;
+        }
+      } else {
+        firewallPolicyAssessmentBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned when firewall policies belonging to the project are
+     * evaluated using the field firewall_policy_evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+     * </code>
+     */
+    public Builder clearFirewallPolicyAssessment() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      firewallPolicyAssessment_ = null;
+      if (firewallPolicyAssessmentBuilder_ != null) {
+        firewallPolicyAssessmentBuilder_.dispose();
+        firewallPolicyAssessmentBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned when firewall policies belonging to the project are
+     * evaluated using the field firewall_policy_evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.FirewallPolicyAssessment.Builder
+        getFirewallPolicyAssessmentBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getFirewallPolicyAssessmentFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned when firewall policies belonging to the project are
+     * evaluated using the field firewall_policy_evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.FirewallPolicyAssessmentOrBuilder
+        getFirewallPolicyAssessmentOrBuilder() {
+      if (firewallPolicyAssessmentBuilder_ != null) {
+        return firewallPolicyAssessmentBuilder_.getMessageOrBuilder();
+      } else {
+        return firewallPolicyAssessment_ == null
+            ? com.google.recaptchaenterprise.v1.FirewallPolicyAssessment.getDefaultInstance()
+            : firewallPolicyAssessment_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Assessment returned when firewall policies belonging to the project are
+     * evaluated using the field firewall_policy_evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.FirewallPolicyAssessment firewall_policy_assessment = 10;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.FirewallPolicyAssessment,
+            com.google.recaptchaenterprise.v1.FirewallPolicyAssessment.Builder,
+            com.google.recaptchaenterprise.v1.FirewallPolicyAssessmentOrBuilder>
+        getFirewallPolicyAssessmentFieldBuilder() {
+      if (firewallPolicyAssessmentBuilder_ == null) {
+        firewallPolicyAssessmentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.recaptchaenterprise.v1.FirewallPolicyAssessment,
+                com.google.recaptchaenterprise.v1.FirewallPolicyAssessment.Builder,
+                com.google.recaptchaenterprise.v1.FirewallPolicyAssessmentOrBuilder>(
+                getFirewallPolicyAssessment(), getParentForChildren(), isClean());
+        firewallPolicyAssessment_ = null;
+      }
+      return firewallPolicyAssessmentBuilder_;
+    }
+
     private com.google.recaptchaenterprise.v1.FraudPreventionAssessment fraudPreventionAssessment_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.recaptchaenterprise.v1.FraudPreventionAssessment,
@@ -2463,7 +2869,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the fraudPreventionAssessment field is set.
      */
     public boolean hasFraudPreventionAssessment() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2509,7 +2915,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       } else {
         fraudPreventionAssessmentBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2531,7 +2937,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       } else {
         fraudPreventionAssessmentBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2549,7 +2955,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeFraudPreventionAssessment(
         com.google.recaptchaenterprise.v1.FraudPreventionAssessment value) {
       if (fraudPreventionAssessmentBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && fraudPreventionAssessment_ != null
             && fraudPreventionAssessment_
                 != com.google.recaptchaenterprise.v1.FraudPreventionAssessment
@@ -2561,7 +2967,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
       } else {
         fraudPreventionAssessmentBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2577,7 +2983,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearFraudPreventionAssessment() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       fraudPreventionAssessment_ = null;
       if (fraudPreventionAssessmentBuilder_ != null) {
         fraudPreventionAssessmentBuilder_.dispose();
@@ -2599,7 +3005,7 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.recaptchaenterprise.v1.FraudPreventionAssessment.Builder
         getFraudPreventionAssessmentBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getFraudPreventionAssessmentFieldBuilder().getBuilder();
     }
@@ -2650,6 +3056,218 @@ public final class Assessment extends com.google.protobuf.GeneratedMessageV3
         fraudPreventionAssessment_ = null;
       }
       return fraudPreventionAssessmentBuilder_;
+    }
+
+    private com.google.recaptchaenterprise.v1.FraudSignals fraudSignals_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.FraudSignals,
+            com.google.recaptchaenterprise.v1.FraudSignals.Builder,
+            com.google.recaptchaenterprise.v1.FraudSignalsOrBuilder>
+        fraudSignalsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Fraud Signals specific to the users involved in a payment
+     * transaction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.FraudSignals fraud_signals = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the fraudSignals field is set.
+     */
+    public boolean hasFraudSignals() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Fraud Signals specific to the users involved in a payment
+     * transaction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.FraudSignals fraud_signals = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The fraudSignals.
+     */
+    public com.google.recaptchaenterprise.v1.FraudSignals getFraudSignals() {
+      if (fraudSignalsBuilder_ == null) {
+        return fraudSignals_ == null
+            ? com.google.recaptchaenterprise.v1.FraudSignals.getDefaultInstance()
+            : fraudSignals_;
+      } else {
+        return fraudSignalsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Fraud Signals specific to the users involved in a payment
+     * transaction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.FraudSignals fraud_signals = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setFraudSignals(com.google.recaptchaenterprise.v1.FraudSignals value) {
+      if (fraudSignalsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fraudSignals_ = value;
+      } else {
+        fraudSignalsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Fraud Signals specific to the users involved in a payment
+     * transaction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.FraudSignals fraud_signals = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setFraudSignals(
+        com.google.recaptchaenterprise.v1.FraudSignals.Builder builderForValue) {
+      if (fraudSignalsBuilder_ == null) {
+        fraudSignals_ = builderForValue.build();
+      } else {
+        fraudSignalsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Fraud Signals specific to the users involved in a payment
+     * transaction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.FraudSignals fraud_signals = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeFraudSignals(com.google.recaptchaenterprise.v1.FraudSignals value) {
+      if (fraudSignalsBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)
+            && fraudSignals_ != null
+            && fraudSignals_
+                != com.google.recaptchaenterprise.v1.FraudSignals.getDefaultInstance()) {
+          getFraudSignalsBuilder().mergeFrom(value);
+        } else {
+          fraudSignals_ = value;
+        }
+      } else {
+        fraudSignalsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Fraud Signals specific to the users involved in a payment
+     * transaction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.FraudSignals fraud_signals = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearFraudSignals() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      fraudSignals_ = null;
+      if (fraudSignalsBuilder_ != null) {
+        fraudSignalsBuilder_.dispose();
+        fraudSignalsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Fraud Signals specific to the users involved in a payment
+     * transaction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.FraudSignals fraud_signals = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.FraudSignals.Builder getFraudSignalsBuilder() {
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return getFraudSignalsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Fraud Signals specific to the users involved in a payment
+     * transaction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.FraudSignals fraud_signals = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.recaptchaenterprise.v1.FraudSignalsOrBuilder getFraudSignalsOrBuilder() {
+      if (fraudSignalsBuilder_ != null) {
+        return fraudSignalsBuilder_.getMessageOrBuilder();
+      } else {
+        return fraudSignals_ == null
+            ? com.google.recaptchaenterprise.v1.FraudSignals.getDefaultInstance()
+            : fraudSignals_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Fraud Signals specific to the users involved in a payment
+     * transaction.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.recaptchaenterprise.v1.FraudSignals fraud_signals = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.recaptchaenterprise.v1.FraudSignals,
+            com.google.recaptchaenterprise.v1.FraudSignals.Builder,
+            com.google.recaptchaenterprise.v1.FraudSignalsOrBuilder>
+        getFraudSignalsFieldBuilder() {
+      if (fraudSignalsBuilder_ == null) {
+        fraudSignalsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.recaptchaenterprise.v1.FraudSignals,
+                com.google.recaptchaenterprise.v1.FraudSignals.Builder,
+                com.google.recaptchaenterprise.v1.FraudSignalsOrBuilder>(
+                getFraudSignals(), getParentForChildren(), isClean());
+        fraudSignals_ = null;
+      }
+      return fraudSignalsBuilder_;
     }
 
     @java.lang.Override

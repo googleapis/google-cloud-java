@@ -94,11 +94,23 @@
         "grpc": {
           "libraryClient": "DocumentServiceClient",
           "rpcs": {
+            "BatchDeleteDocuments": {
+              "methods": ["batchDeleteDocumentsAsync", "batchDeleteDocumentsAsync", "batchDeleteDocumentsOperationCallable", "batchDeleteDocumentsCallable"]
+            },
             "GetDatasetSchema": {
               "methods": ["getDatasetSchema", "getDatasetSchema", "getDatasetSchema", "getDatasetSchemaCallable"]
             },
+            "GetDocument": {
+              "methods": ["getDocument", "getDocument", "getDocument", "getDocumentCallable"]
+            },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ImportDocuments": {
+              "methods": ["importDocumentsAsync", "importDocumentsAsync", "importDocumentsAsync", "importDocumentsOperationCallable", "importDocumentsCallable"]
+            },
+            "ListDocuments": {
+              "methods": ["listDocuments", "listDocuments", "listDocuments", "listDocumentsPagedCallable", "listDocumentsCallable"]
             },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]

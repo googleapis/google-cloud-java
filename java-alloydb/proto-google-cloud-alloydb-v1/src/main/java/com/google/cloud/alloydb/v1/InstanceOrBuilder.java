@@ -898,4 +898,46 @@ public interface InstanceOrBuilder
    * <code>map&lt;string, string&gt; annotations = 18;</code>
    */
   java.lang.String getAnnotationsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client connection specific configurations
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the clientConnectionConfig field is set.
+   */
+  boolean hasClientConnectionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client connection specific configurations
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The clientConnectionConfig.
+   */
+  com.google.cloud.alloydb.v1.Instance.ClientConnectionConfig getClientConnectionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Client connection specific configurations
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Instance.ClientConnectionConfig client_connection_config = 23 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.alloydb.v1.Instance.ClientConnectionConfigOrBuilder
+      getClientConnectionConfigOrBuilder();
 }

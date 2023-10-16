@@ -48,9 +48,29 @@ public final class DatasetProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1beta3_Dataset_SpannerIndexingConfig_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1beta3_DocumentId_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1beta3_DocumentId_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1beta3_DocumentId_GCSManagedDocumentId_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1beta3_DocumentId_GCSManagedDocumentId_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1beta3_DocumentId_UnmanagedDocumentId_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1beta3_DocumentId_UnmanagedDocumentId_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_documentai_v1beta3_DatasetSchema_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_documentai_v1beta3_DatasetSchema_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1beta3_BatchDatasetDocuments_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1beta3_BatchDatasetDocuments_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_documentai_v1beta3_BatchDatasetDocuments_IndividualDocumentIds_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_documentai_v1beta3_BatchDatasetDocuments_IndividualDocumentIds_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -63,49 +83,67 @@ public final class DatasetProto {
       "\n-google/cloud/documentai/v1beta3/datase"
           + "t.proto\022\037google.cloud.documentai.v1beta3"
           + "\032\037google/api/field_behavior.proto\032\031googl"
-          + "e/api/resource.proto\0321google/cloud/docum"
-          + "entai/v1beta3/document_io.proto\0325google/"
-          + "cloud/documentai/v1beta3/document_schema"
-          + ".proto\"\352\007\n\007Dataset\022]\n\022gcs_managed_config"
-          + "\030\003 \001(\01329.google.cloud.documentai.v1beta3"
-          + ".Dataset.GCSManagedConfigB\004\342A\001\001H\000\022k\n\031doc"
-          + "ument_warehouse_config\030\005 \001(\0132@.google.cl"
-          + "oud.documentai.v1beta3.Dataset.DocumentW"
-          + "arehouseConfigB\004\342A\001\001H\000\022i\n\030unmanaged_data"
-          + "set_config\030\006 \001(\0132?.google.cloud.document"
-          + "ai.v1beta3.Dataset.UnmanagedDatasetConfi"
-          + "gB\004\342A\001\001H\000\022g\n\027spanner_indexing_config\030\004 \001"
-          + "(\0132>.google.cloud.documentai.v1beta3.Dat"
-          + "aset.SpannerIndexingConfigB\004\342A\001\001H\001\022\014\n\004na"
-          + "me\030\001 \001(\t\022C\n\005state\030\002 \001(\0162..google.cloud.d"
-          + "ocumentai.v1beta3.Dataset.StateB\004\342A\001\002\032X\n"
-          + "\020GCSManagedConfig\022D\n\ngcs_prefix\030\001 \001(\0132*."
-          + "google.cloud.documentai.v1beta3.GcsPrefi"
-          + "xB\004\342A\001\002\032t\n\027DocumentWarehouseConfig\022\030\n\nco"
-          + "llection\030\001 \001(\tB\004\342A\001\003\022?\n\006schema\030\002 \001(\tB/\342A"
-          + "\001\003\372A(\n&contentwarehouse.googleapis.com/S"
-          + "chema\032\030\n\026UnmanagedDatasetConfig\032\027\n\025Spann"
-          + "erIndexingConfig\"T\n\005State\022\025\n\021STATE_UNSPE"
-          + "CIFIED\020\000\022\021\n\rUNINITIALIZED\020\001\022\020\n\014INITIALIZ"
-          + "ING\020\002\022\017\n\013INITIALIZED\020\003:n\352Ak\n!documentai."
-          + "googleapis.com/Dataset\022Fprojects/{projec"
-          + "t}/locations/{location}/processors/{proc"
-          + "essor}/datasetB\020\n\016storage_sourceB\021\n\017inde"
-          + "xing_source\"\362\001\n\rDatasetSchema\022\014\n\004name\030\001 "
-          + "\001(\t\022N\n\017document_schema\030\003 \001(\0132/.google.cl"
-          + "oud.documentai.v1beta3.DocumentSchemaB\004\342"
-          + "A\001\001:\202\001\352A\177\n\'documentai.googleapis.com/Dat"
-          + "asetSchema\022Tprojects/{project}/locations"
-          + "/{location}/processors/{processor}/datas"
-          + "et/datasetSchemaB\310\002\n#com.google.cloud.do"
-          + "cumentai.v1beta3B\014DatasetProtoP\001ZCcloud."
-          + "google.com/go/documentai/apiv1beta3/docu"
-          + "mentaipb;documentaipb\252\002\037Google.Cloud.Doc"
-          + "umentAI.V1Beta3\312\002\037Google\\Cloud\\DocumentA"
-          + "I\\V1beta3\352\002\"Google::Cloud::DocumentAI::V"
-          + "1beta3\352Ab\n&contentwarehouse.googleapis.c"
-          + "om/Schema\0228projects/{project}/locations/"
-          + "{location}/schemas/{schema}b\006proto3"
+          + "e/api/resource.proto\032.google/cloud/docum"
+          + "entai/v1beta3/document.proto\0321google/clo"
+          + "ud/documentai/v1beta3/document_io.proto\032"
+          + "5google/cloud/documentai/v1beta3/documen"
+          + "t_schema.proto\"\352\007\n\007Dataset\022]\n\022gcs_manage"
+          + "d_config\030\003 \001(\01329.google.cloud.documentai"
+          + ".v1beta3.Dataset.GCSManagedConfigB\004\342A\001\001H"
+          + "\000\022k\n\031document_warehouse_config\030\005 \001(\0132@.g"
+          + "oogle.cloud.documentai.v1beta3.Dataset.D"
+          + "ocumentWarehouseConfigB\004\342A\001\001H\000\022i\n\030unmana"
+          + "ged_dataset_config\030\006 \001(\0132?.google.cloud."
+          + "documentai.v1beta3.Dataset.UnmanagedData"
+          + "setConfigB\004\342A\001\001H\000\022g\n\027spanner_indexing_co"
+          + "nfig\030\004 \001(\0132>.google.cloud.documentai.v1b"
+          + "eta3.Dataset.SpannerIndexingConfigB\004\342A\001\001"
+          + "H\001\022\014\n\004name\030\001 \001(\t\022C\n\005state\030\002 \001(\0162..google"
+          + ".cloud.documentai.v1beta3.Dataset.StateB"
+          + "\004\342A\001\002\032X\n\020GCSManagedConfig\022D\n\ngcs_prefix\030"
+          + "\001 \001(\0132*.google.cloud.documentai.v1beta3."
+          + "GcsPrefixB\004\342A\001\002\032t\n\027DocumentWarehouseConf"
+          + "ig\022\030\n\ncollection\030\001 \001(\tB\004\342A\001\003\022?\n\006schema\030\002"
+          + " \001(\tB/\342A\001\003\372A(\n&contentwarehouse.googleap"
+          + "is.com/Schema\032\030\n\026UnmanagedDatasetConfig\032"
+          + "\027\n\025SpannerIndexingConfig\"T\n\005State\022\025\n\021STA"
+          + "TE_UNSPECIFIED\020\000\022\021\n\rUNINITIALIZED\020\001\022\020\n\014I"
+          + "NITIALIZING\020\002\022\017\n\013INITIALIZED\020\003:n\352Ak\n!doc"
+          + "umentai.googleapis.com/Dataset\022Fprojects"
+          + "/{project}/locations/{location}/processo"
+          + "rs/{processor}/datasetB\020\n\016storage_source"
+          + "B\021\n\017indexing_source\"\210\003\n\nDocumentId\022^\n\022gc"
+          + "s_managed_doc_id\030\001 \001(\0132@.google.cloud.do"
+          + "cumentai.v1beta3.DocumentId.GCSManagedDo"
+          + "cumentIdH\000\022[\n\020unmanaged_doc_id\030\004 \001(\0132?.g"
+          + "oogle.cloud.documentai.v1beta3.DocumentI"
+          + "d.UnmanagedDocumentIdH\000\022B\n\014revision_ref\030"
+          + "\003 \001(\0132,.google.cloud.documentai.v1beta3."
+          + "RevisionRef\032D\n\024GCSManagedDocumentId\022\025\n\007g"
+          + "cs_uri\030\001 \001(\tB\004\342A\001\002\022\025\n\tcw_doc_id\030\002 \001(\tB\002\030"
+          + "\001\032+\n\023UnmanagedDocumentId\022\024\n\006doc_id\030\001 \001(\t"
+          + "B\004\342A\001\002B\006\n\004type\"\362\001\n\rDatasetSchema\022\014\n\004name"
+          + "\030\001 \001(\t\022N\n\017document_schema\030\003 \001(\0132/.google"
+          + ".cloud.documentai.v1beta3.DocumentSchema"
+          + "B\004\342A\001\001:\202\001\352A\177\n\'documentai.googleapis.com/"
+          + "DatasetSchema\022Tprojects/{project}/locati"
+          + "ons/{location}/processors/{processor}/da"
+          + "taset/datasetSchema\"\210\002\n\025BatchDatasetDocu"
+          + "ments\022o\n\027individual_document_ids\030\001 \001(\0132L"
+          + ".google.cloud.documentai.v1beta3.BatchDa"
+          + "tasetDocuments.IndividualDocumentIdsH\000\022\020"
+          + "\n\006filter\030\002 \001(\tH\000\032`\n\025IndividualDocumentId"
+          + "s\022G\n\014document_ids\030\001 \003(\0132+.google.cloud.d"
+          + "ocumentai.v1beta3.DocumentIdB\004\342A\001\002B\n\n\010cr"
+          + "iteriaB\310\002\n#com.google.cloud.documentai.v"
+          + "1beta3B\014DatasetProtoP\001ZCcloud.google.com"
+          + "/go/documentai/apiv1beta3/documentaipb;d"
+          + "ocumentaipb\252\002\037Google.Cloud.DocumentAI.V1"
+          + "Beta3\312\002\037Google\\Cloud\\DocumentAI\\V1beta3\352"
+          + "\002\"Google::Cloud::DocumentAI::V1beta3\352Ab\n"
+          + "&contentwarehouse.googleapis.com/Schema\022"
+          + "8projects/{project}/locations/{location}"
+          + "/schemas/{schema}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -113,6 +151,7 @@ public final class DatasetProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.documentai.v1beta3.DocumentProto.getDescriptor(),
               com.google.cloud.documentai.v1beta3.DocumentIoProto.getDescriptor(),
               com.google.cloud.documentai.v1beta3.DocumentAiDocumentSchema.getDescriptor(),
             });
@@ -159,13 +198,59 @@ public final class DatasetProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_Dataset_SpannerIndexingConfig_descriptor,
             new java.lang.String[] {});
-    internal_static_google_cloud_documentai_v1beta3_DatasetSchema_descriptor =
+    internal_static_google_cloud_documentai_v1beta3_DocumentId_descriptor =
         getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_documentai_v1beta3_DocumentId_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1beta3_DocumentId_descriptor,
+            new java.lang.String[] {
+              "GcsManagedDocId", "UnmanagedDocId", "RevisionRef", "Type",
+            });
+    internal_static_google_cloud_documentai_v1beta3_DocumentId_GCSManagedDocumentId_descriptor =
+        internal_static_google_cloud_documentai_v1beta3_DocumentId_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_documentai_v1beta3_DocumentId_GCSManagedDocumentId_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1beta3_DocumentId_GCSManagedDocumentId_descriptor,
+            new java.lang.String[] {
+              "GcsUri", "CwDocId",
+            });
+    internal_static_google_cloud_documentai_v1beta3_DocumentId_UnmanagedDocumentId_descriptor =
+        internal_static_google_cloud_documentai_v1beta3_DocumentId_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_documentai_v1beta3_DocumentId_UnmanagedDocumentId_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1beta3_DocumentId_UnmanagedDocumentId_descriptor,
+            new java.lang.String[] {
+              "DocId",
+            });
+    internal_static_google_cloud_documentai_v1beta3_DatasetSchema_descriptor =
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_documentai_v1beta3_DatasetSchema_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_documentai_v1beta3_DatasetSchema_descriptor,
             new java.lang.String[] {
               "Name", "DocumentSchema",
+            });
+    internal_static_google_cloud_documentai_v1beta3_BatchDatasetDocuments_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_documentai_v1beta3_BatchDatasetDocuments_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1beta3_BatchDatasetDocuments_descriptor,
+            new java.lang.String[] {
+              "IndividualDocumentIds", "Filter", "Criteria",
+            });
+    internal_static_google_cloud_documentai_v1beta3_BatchDatasetDocuments_IndividualDocumentIds_descriptor =
+        internal_static_google_cloud_documentai_v1beta3_BatchDatasetDocuments_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_documentai_v1beta3_BatchDatasetDocuments_IndividualDocumentIds_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_documentai_v1beta3_BatchDatasetDocuments_IndividualDocumentIds_descriptor,
+            new java.lang.String[] {
+              "DocumentIds",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -177,6 +262,7 @@ public final class DatasetProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.documentai.v1beta3.DocumentProto.getDescriptor();
     com.google.cloud.documentai.v1beta3.DocumentIoProto.getDescriptor();
     com.google.cloud.documentai.v1beta3.DocumentAiDocumentSchema.getDescriptor();
   }

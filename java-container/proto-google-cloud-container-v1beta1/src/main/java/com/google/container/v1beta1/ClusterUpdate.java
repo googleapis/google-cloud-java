@@ -2388,14 +2388,20 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Deprecated: Use DesiredSecurityPostureConfig instead.
    * Enable/Disable Protect API features for the cluster.
    * </pre>
    *
-   * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+   * <code>
+   * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2524
    * @return Whether the desiredProtectConfig field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasDesiredProtectConfig() {
     return ((bitField0_ & 0x00000002) != 0);
   }
@@ -2403,14 +2409,20 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Deprecated: Use DesiredSecurityPostureConfig instead.
    * Enable/Disable Protect API features for the cluster.
    * </pre>
    *
-   * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+   * <code>
+   * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
+   *     google/container/v1beta1/cluster_service.proto;l=2524
    * @return The desiredProtectConfig.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.container.v1beta1.ProtectConfig getDesiredProtectConfig() {
     return desiredProtectConfig_ == null
         ? com.google.container.v1beta1.ProtectConfig.getDefaultInstance()
@@ -2420,12 +2432,16 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
+   * Deprecated: Use DesiredSecurityPostureConfig instead.
    * Enable/Disable Protect API features for the cluster.
    * </pre>
    *
-   * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+   * <code>
+   * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.container.v1beta1.ProtectConfigOrBuilder getDesiredProtectConfigOrBuilder() {
     return desiredProtectConfig_ == null
         ? com.google.container.v1beta1.ProtectConfig.getDefaultInstance()
@@ -3108,6 +3124,63 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         : desiredK8SBetaApis_;
   }
 
+  public static final int DESIRED_HOST_MAINTENANCE_POLICY_FIELD_NUMBER = 132;
+  private com.google.container.v1beta1.HostMaintenancePolicy desiredHostMaintenancePolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * HostMaintenancePolicy contains the desired maintenance policy for the
+   * Google Compute Engine hosts.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.HostMaintenancePolicy desired_host_maintenance_policy = 132;
+   * </code>
+   *
+   * @return Whether the desiredHostMaintenancePolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredHostMaintenancePolicy() {
+    return desiredHostMaintenancePolicy_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HostMaintenancePolicy contains the desired maintenance policy for the
+   * Google Compute Engine hosts.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.HostMaintenancePolicy desired_host_maintenance_policy = 132;
+   * </code>
+   *
+   * @return The desiredHostMaintenancePolicy.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.HostMaintenancePolicy getDesiredHostMaintenancePolicy() {
+    return desiredHostMaintenancePolicy_ == null
+        ? com.google.container.v1beta1.HostMaintenancePolicy.getDefaultInstance()
+        : desiredHostMaintenancePolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * HostMaintenancePolicy contains the desired maintenance policy for the
+   * Google Compute Engine hosts.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.HostMaintenancePolicy desired_host_maintenance_policy = 132;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.HostMaintenancePolicyOrBuilder
+      getDesiredHostMaintenancePolicyOrBuilder() {
+    return desiredHostMaintenancePolicy_ == null
+        ? com.google.container.v1beta1.HostMaintenancePolicy.getDefaultInstance()
+        : desiredHostMaintenancePolicy_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3295,6 +3368,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
     if (desiredK8SBetaApis_ != null) {
       output.writeMessage(131, getDesiredK8SBetaApis());
+    }
+    if (desiredHostMaintenancePolicy_ != null) {
+      output.writeMessage(132, getDesiredHostMaintenancePolicy());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3557,6 +3633,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(131, getDesiredK8SBetaApis());
     }
+    if (desiredHostMaintenancePolicy_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              132, getDesiredHostMaintenancePolicy());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3805,6 +3886,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredK8SBetaApis()) {
       if (!getDesiredK8SBetaApis().equals(other.getDesiredK8SBetaApis())) return false;
     }
+    if (hasDesiredHostMaintenancePolicy() != other.hasDesiredHostMaintenancePolicy()) return false;
+    if (hasDesiredHostMaintenancePolicy()) {
+      if (!getDesiredHostMaintenancePolicy().equals(other.getDesiredHostMaintenancePolicy()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4023,6 +4109,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + DESIRED_K8S_BETA_APIS_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredK8SBetaApis().hashCode();
     }
+    if (hasDesiredHostMaintenancePolicy()) {
+      hash = (37 * hash) + DESIRED_HOST_MAINTENANCE_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredHostMaintenancePolicy().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4208,6 +4298,7 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         getDesiredNetworkPerformanceConfigFieldBuilder();
         getDesiredAutopilotWorkloadPolicyConfigFieldBuilder();
         getDesiredK8SBetaApisFieldBuilder();
+        getDesiredHostMaintenancePolicyFieldBuilder();
       }
     }
 
@@ -4443,6 +4534,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       if (desiredK8SBetaApisBuilder_ != null) {
         desiredK8SBetaApisBuilder_.dispose();
         desiredK8SBetaApisBuilder_ = null;
+      }
+      desiredHostMaintenancePolicy_ = null;
+      if (desiredHostMaintenancePolicyBuilder_ != null) {
+        desiredHostMaintenancePolicyBuilder_.dispose();
+        desiredHostMaintenancePolicyBuilder_ = null;
       }
       return this;
     }
@@ -4781,6 +4877,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 ? desiredK8SBetaApis_
                 : desiredK8SBetaApisBuilder_.build();
       }
+      if (((from_bitField1_ & 0x01000000) != 0)) {
+        result.desiredHostMaintenancePolicy_ =
+            desiredHostMaintenancePolicyBuilder_ == null
+                ? desiredHostMaintenancePolicy_
+                : desiredHostMaintenancePolicyBuilder_.build();
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -5018,6 +5120,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDesiredK8SBetaApis()) {
         mergeDesiredK8SBetaApis(other.getDesiredK8SBetaApis());
+      }
+      if (other.hasDesiredHostMaintenancePolicy()) {
+        mergeDesiredHostMaintenancePolicy(other.getDesiredHostMaintenancePolicy());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -5433,6 +5538,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00800000;
                 break;
               } // case 1050
+            case 1058:
+              {
+                input.readMessage(
+                    getDesiredHostMaintenancePolicyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField1_ |= 0x01000000;
+                break;
+              } // case 1058
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13091,13 +13203,19 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: Use DesiredSecurityPostureConfig instead.
      * Enable/Disable Protect API features for the cluster.
      * </pre>
      *
-     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
+     *     google/container/v1beta1/cluster_service.proto;l=2524
      * @return Whether the desiredProtectConfig field is set.
      */
+    @java.lang.Deprecated
     public boolean hasDesiredProtectConfig() {
       return ((bitField1_ & 0x00000400) != 0);
     }
@@ -13105,13 +13223,19 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: Use DesiredSecurityPostureConfig instead.
      * Enable/Disable Protect API features for the cluster.
      * </pre>
      *
-     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.container.v1beta1.ClusterUpdate.desired_protect_config is deprecated. See
+     *     google/container/v1beta1/cluster_service.proto;l=2524
      * @return The desiredProtectConfig.
      */
+    @java.lang.Deprecated
     public com.google.container.v1beta1.ProtectConfig getDesiredProtectConfig() {
       if (desiredProtectConfigBuilder_ == null) {
         return desiredProtectConfig_ == null
@@ -13125,11 +13249,15 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: Use DesiredSecurityPostureConfig instead.
      * Enable/Disable Protect API features for the cluster.
      * </pre>
      *
-     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setDesiredProtectConfig(com.google.container.v1beta1.ProtectConfig value) {
       if (desiredProtectConfigBuilder_ == null) {
         if (value == null) {
@@ -13147,11 +13275,15 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: Use DesiredSecurityPostureConfig instead.
      * Enable/Disable Protect API features for the cluster.
      * </pre>
      *
-     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setDesiredProtectConfig(
         com.google.container.v1beta1.ProtectConfig.Builder builderForValue) {
       if (desiredProtectConfigBuilder_ == null) {
@@ -13167,11 +13299,15 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: Use DesiredSecurityPostureConfig instead.
      * Enable/Disable Protect API features for the cluster.
      * </pre>
      *
-     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeDesiredProtectConfig(com.google.container.v1beta1.ProtectConfig value) {
       if (desiredProtectConfigBuilder_ == null) {
         if (((bitField1_ & 0x00000400) != 0)
@@ -13193,11 +13329,15 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: Use DesiredSecurityPostureConfig instead.
      * Enable/Disable Protect API features for the cluster.
      * </pre>
      *
-     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearDesiredProtectConfig() {
       bitField1_ = (bitField1_ & ~0x00000400);
       desiredProtectConfig_ = null;
@@ -13212,11 +13352,15 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: Use DesiredSecurityPostureConfig instead.
      * Enable/Disable Protect API features for the cluster.
      * </pre>
      *
-     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1beta1.ProtectConfig.Builder getDesiredProtectConfigBuilder() {
       bitField1_ |= 0x00000400;
       onChanged();
@@ -13226,11 +13370,15 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: Use DesiredSecurityPostureConfig instead.
      * Enable/Disable Protect API features for the cluster.
      * </pre>
      *
-     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.container.v1beta1.ProtectConfigOrBuilder getDesiredProtectConfigOrBuilder() {
       if (desiredProtectConfigBuilder_ != null) {
         return desiredProtectConfigBuilder_.getMessageOrBuilder();
@@ -13244,10 +13392,13 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Deprecated: Use DesiredSecurityPostureConfig instead.
      * Enable/Disable Protect API features for the cluster.
      * </pre>
      *
-     * <code>optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112;</code>
+     * <code>
+     * optional .google.container.v1beta1.ProtectConfig desired_protect_config = 112 [deprecated = true];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.container.v1beta1.ProtectConfig,
@@ -15541,6 +15692,213 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredK8SBetaApis_ = null;
       }
       return desiredK8SBetaApisBuilder_;
+    }
+
+    private com.google.container.v1beta1.HostMaintenancePolicy desiredHostMaintenancePolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.HostMaintenancePolicy,
+            com.google.container.v1beta1.HostMaintenancePolicy.Builder,
+            com.google.container.v1beta1.HostMaintenancePolicyOrBuilder>
+        desiredHostMaintenancePolicyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * HostMaintenancePolicy contains the desired maintenance policy for the
+     * Google Compute Engine hosts.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.HostMaintenancePolicy desired_host_maintenance_policy = 132;
+     * </code>
+     *
+     * @return Whether the desiredHostMaintenancePolicy field is set.
+     */
+    public boolean hasDesiredHostMaintenancePolicy() {
+      return ((bitField1_ & 0x01000000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HostMaintenancePolicy contains the desired maintenance policy for the
+     * Google Compute Engine hosts.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.HostMaintenancePolicy desired_host_maintenance_policy = 132;
+     * </code>
+     *
+     * @return The desiredHostMaintenancePolicy.
+     */
+    public com.google.container.v1beta1.HostMaintenancePolicy getDesiredHostMaintenancePolicy() {
+      if (desiredHostMaintenancePolicyBuilder_ == null) {
+        return desiredHostMaintenancePolicy_ == null
+            ? com.google.container.v1beta1.HostMaintenancePolicy.getDefaultInstance()
+            : desiredHostMaintenancePolicy_;
+      } else {
+        return desiredHostMaintenancePolicyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HostMaintenancePolicy contains the desired maintenance policy for the
+     * Google Compute Engine hosts.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.HostMaintenancePolicy desired_host_maintenance_policy = 132;
+     * </code>
+     */
+    public Builder setDesiredHostMaintenancePolicy(
+        com.google.container.v1beta1.HostMaintenancePolicy value) {
+      if (desiredHostMaintenancePolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredHostMaintenancePolicy_ = value;
+      } else {
+        desiredHostMaintenancePolicyBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HostMaintenancePolicy contains the desired maintenance policy for the
+     * Google Compute Engine hosts.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.HostMaintenancePolicy desired_host_maintenance_policy = 132;
+     * </code>
+     */
+    public Builder setDesiredHostMaintenancePolicy(
+        com.google.container.v1beta1.HostMaintenancePolicy.Builder builderForValue) {
+      if (desiredHostMaintenancePolicyBuilder_ == null) {
+        desiredHostMaintenancePolicy_ = builderForValue.build();
+      } else {
+        desiredHostMaintenancePolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HostMaintenancePolicy contains the desired maintenance policy for the
+     * Google Compute Engine hosts.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.HostMaintenancePolicy desired_host_maintenance_policy = 132;
+     * </code>
+     */
+    public Builder mergeDesiredHostMaintenancePolicy(
+        com.google.container.v1beta1.HostMaintenancePolicy value) {
+      if (desiredHostMaintenancePolicyBuilder_ == null) {
+        if (((bitField1_ & 0x01000000) != 0)
+            && desiredHostMaintenancePolicy_ != null
+            && desiredHostMaintenancePolicy_
+                != com.google.container.v1beta1.HostMaintenancePolicy.getDefaultInstance()) {
+          getDesiredHostMaintenancePolicyBuilder().mergeFrom(value);
+        } else {
+          desiredHostMaintenancePolicy_ = value;
+        }
+      } else {
+        desiredHostMaintenancePolicyBuilder_.mergeFrom(value);
+      }
+      bitField1_ |= 0x01000000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HostMaintenancePolicy contains the desired maintenance policy for the
+     * Google Compute Engine hosts.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.HostMaintenancePolicy desired_host_maintenance_policy = 132;
+     * </code>
+     */
+    public Builder clearDesiredHostMaintenancePolicy() {
+      bitField1_ = (bitField1_ & ~0x01000000);
+      desiredHostMaintenancePolicy_ = null;
+      if (desiredHostMaintenancePolicyBuilder_ != null) {
+        desiredHostMaintenancePolicyBuilder_.dispose();
+        desiredHostMaintenancePolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HostMaintenancePolicy contains the desired maintenance policy for the
+     * Google Compute Engine hosts.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.HostMaintenancePolicy desired_host_maintenance_policy = 132;
+     * </code>
+     */
+    public com.google.container.v1beta1.HostMaintenancePolicy.Builder
+        getDesiredHostMaintenancePolicyBuilder() {
+      bitField1_ |= 0x01000000;
+      onChanged();
+      return getDesiredHostMaintenancePolicyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HostMaintenancePolicy contains the desired maintenance policy for the
+     * Google Compute Engine hosts.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.HostMaintenancePolicy desired_host_maintenance_policy = 132;
+     * </code>
+     */
+    public com.google.container.v1beta1.HostMaintenancePolicyOrBuilder
+        getDesiredHostMaintenancePolicyOrBuilder() {
+      if (desiredHostMaintenancePolicyBuilder_ != null) {
+        return desiredHostMaintenancePolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredHostMaintenancePolicy_ == null
+            ? com.google.container.v1beta1.HostMaintenancePolicy.getDefaultInstance()
+            : desiredHostMaintenancePolicy_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * HostMaintenancePolicy contains the desired maintenance policy for the
+     * Google Compute Engine hosts.
+     * </pre>
+     *
+     * <code>.google.container.v1beta1.HostMaintenancePolicy desired_host_maintenance_policy = 132;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.HostMaintenancePolicy,
+            com.google.container.v1beta1.HostMaintenancePolicy.Builder,
+            com.google.container.v1beta1.HostMaintenancePolicyOrBuilder>
+        getDesiredHostMaintenancePolicyFieldBuilder() {
+      if (desiredHostMaintenancePolicyBuilder_ == null) {
+        desiredHostMaintenancePolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.HostMaintenancePolicy,
+                com.google.container.v1beta1.HostMaintenancePolicy.Builder,
+                com.google.container.v1beta1.HostMaintenancePolicyOrBuilder>(
+                getDesiredHostMaintenancePolicy(), getParentForChildren(), isClean());
+        desiredHostMaintenancePolicy_ = null;
+      }
+      return desiredHostMaintenancePolicyBuilder_;
     }
 
     @java.lang.Override

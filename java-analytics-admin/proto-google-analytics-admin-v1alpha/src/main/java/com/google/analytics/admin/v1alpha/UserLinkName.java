@@ -200,7 +200,7 @@ public class UserLinkName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       UserLinkName that = ((UserLinkName) o);
       return Objects.equals(this.account, that.account)
           && Objects.equals(this.userLink, that.userLink)

@@ -147,6 +147,7 @@ public class ReachabilityServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
+            .setProbingDetails(ProbingDetails.newBuilder().build())
             .build();
     mockReachabilityService.addResponse(expectedResponse);
 
@@ -195,6 +196,7 @@ public class ReachabilityServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
+            .setProbingDetails(ProbingDetails.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -259,6 +261,7 @@ public class ReachabilityServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
+            .setProbingDetails(ProbingDetails.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -320,6 +323,7 @@ public class ReachabilityServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
+            .setProbingDetails(ProbingDetails.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

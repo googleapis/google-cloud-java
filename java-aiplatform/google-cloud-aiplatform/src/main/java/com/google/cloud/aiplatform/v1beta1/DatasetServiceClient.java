@@ -50,8 +50,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: The service that handles the CRUD of Vertex AI Dataset and its child
- * resources.
+ * Service Description: The service that manages Vertex AI Dataset and its child resources.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -1163,6 +1162,784 @@ public class DatasetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Create a version from a Dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+   *   DatasetVersion datasetVersion = DatasetVersion.newBuilder().build();
+   *   DatasetVersion response =
+   *       datasetServiceClient.createDatasetVersionAsync(parent, datasetVersion).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the Dataset resource. Format:
+   *     `projects/{project}/locations/{location}/datasets/{dataset}`
+   * @param datasetVersion Required. The version to be created. The same CMEK policies with the
+   *     original Dataset will be applied the dataset version. So here we don't need to specify the
+   *     EncryptionSpecType here.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DatasetVersion, CreateDatasetVersionOperationMetadata>
+      createDatasetVersionAsync(DatasetName parent, DatasetVersion datasetVersion) {
+    CreateDatasetVersionRequest request =
+        CreateDatasetVersionRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setDatasetVersion(datasetVersion)
+            .build();
+    return createDatasetVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a version from a Dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   String parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString();
+   *   DatasetVersion datasetVersion = DatasetVersion.newBuilder().build();
+   *   DatasetVersion response =
+   *       datasetServiceClient.createDatasetVersionAsync(parent, datasetVersion).get();
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the Dataset resource. Format:
+   *     `projects/{project}/locations/{location}/datasets/{dataset}`
+   * @param datasetVersion Required. The version to be created. The same CMEK policies with the
+   *     original Dataset will be applied the dataset version. So here we don't need to specify the
+   *     EncryptionSpecType here.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DatasetVersion, CreateDatasetVersionOperationMetadata>
+      createDatasetVersionAsync(String parent, DatasetVersion datasetVersion) {
+    CreateDatasetVersionRequest request =
+        CreateDatasetVersionRequest.newBuilder()
+            .setParent(parent)
+            .setDatasetVersion(datasetVersion)
+            .build();
+    return createDatasetVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a version from a Dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   CreateDatasetVersionRequest request =
+   *       CreateDatasetVersionRequest.newBuilder()
+   *           .setParent(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setDatasetVersion(DatasetVersion.newBuilder().build())
+   *           .build();
+   *   DatasetVersion response = datasetServiceClient.createDatasetVersionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DatasetVersion, CreateDatasetVersionOperationMetadata>
+      createDatasetVersionAsync(CreateDatasetVersionRequest request) {
+    return createDatasetVersionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a version from a Dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   CreateDatasetVersionRequest request =
+   *       CreateDatasetVersionRequest.newBuilder()
+   *           .setParent(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setDatasetVersion(DatasetVersion.newBuilder().build())
+   *           .build();
+   *   OperationFuture<DatasetVersion, CreateDatasetVersionOperationMetadata> future =
+   *       datasetServiceClient.createDatasetVersionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DatasetVersion response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          CreateDatasetVersionRequest, DatasetVersion, CreateDatasetVersionOperationMetadata>
+      createDatasetVersionOperationCallable() {
+    return stub.createDatasetVersionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a version from a Dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   CreateDatasetVersionRequest request =
+   *       CreateDatasetVersionRequest.newBuilder()
+   *           .setParent(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setDatasetVersion(DatasetVersion.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       datasetServiceClient.createDatasetVersionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateDatasetVersionRequest, Operation>
+      createDatasetVersionCallable() {
+    return stub.createDatasetVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Dataset version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   DatasetVersionName name =
+   *       DatasetVersionName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATASET_VERSION]");
+   *   datasetServiceClient.deleteDatasetVersionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Dataset version to delete. Format:
+   *     `projects/{project}/locations/{location}/datasets/{dataset}/datasetVersions/{dataset_version}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteDatasetVersionAsync(
+      DatasetVersionName name) {
+    DeleteDatasetVersionRequest request =
+        DeleteDatasetVersionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteDatasetVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Dataset version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   String name =
+   *       DatasetVersionName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATASET_VERSION]")
+   *           .toString();
+   *   datasetServiceClient.deleteDatasetVersionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Dataset version to delete. Format:
+   *     `projects/{project}/locations/{location}/datasets/{dataset}/datasetVersions/{dataset_version}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteDatasetVersionAsync(
+      String name) {
+    DeleteDatasetVersionRequest request =
+        DeleteDatasetVersionRequest.newBuilder().setName(name).build();
+    return deleteDatasetVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Dataset version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   DeleteDatasetVersionRequest request =
+   *       DeleteDatasetVersionRequest.newBuilder()
+   *           .setName(
+   *               DatasetVersionName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATASET_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   datasetServiceClient.deleteDatasetVersionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteDatasetVersionAsync(
+      DeleteDatasetVersionRequest request) {
+    return deleteDatasetVersionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Dataset version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   DeleteDatasetVersionRequest request =
+   *       DeleteDatasetVersionRequest.newBuilder()
+   *           .setName(
+   *               DatasetVersionName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATASET_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, DeleteOperationMetadata> future =
+   *       datasetServiceClient.deleteDatasetVersionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteDatasetVersionRequest, Empty, DeleteOperationMetadata>
+      deleteDatasetVersionOperationCallable() {
+    return stub.deleteDatasetVersionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a Dataset version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   DeleteDatasetVersionRequest request =
+   *       DeleteDatasetVersionRequest.newBuilder()
+   *           .setName(
+   *               DatasetVersionName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATASET_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       datasetServiceClient.deleteDatasetVersionCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteDatasetVersionRequest, Operation>
+      deleteDatasetVersionCallable() {
+    return stub.deleteDatasetVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a Dataset version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   DatasetVersionName name =
+   *       DatasetVersionName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATASET_VERSION]");
+   *   DatasetVersion response = datasetServiceClient.getDatasetVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Dataset version to delete. Format:
+   *     `projects/{project}/locations/{location}/datasets/{dataset}/datasetVersions/{dataset_version}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DatasetVersion getDatasetVersion(DatasetVersionName name) {
+    GetDatasetVersionRequest request =
+        GetDatasetVersionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getDatasetVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a Dataset version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   String name =
+   *       DatasetVersionName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATASET_VERSION]")
+   *           .toString();
+   *   DatasetVersion response = datasetServiceClient.getDatasetVersion(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Dataset version to delete. Format:
+   *     `projects/{project}/locations/{location}/datasets/{dataset}/datasetVersions/{dataset_version}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DatasetVersion getDatasetVersion(String name) {
+    GetDatasetVersionRequest request = GetDatasetVersionRequest.newBuilder().setName(name).build();
+    return getDatasetVersion(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a Dataset version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   GetDatasetVersionRequest request =
+   *       GetDatasetVersionRequest.newBuilder()
+   *           .setName(
+   *               DatasetVersionName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATASET_VERSION]")
+   *                   .toString())
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   DatasetVersion response = datasetServiceClient.getDatasetVersion(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DatasetVersion getDatasetVersion(GetDatasetVersionRequest request) {
+    return getDatasetVersionCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a Dataset version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   GetDatasetVersionRequest request =
+   *       GetDatasetVersionRequest.newBuilder()
+   *           .setName(
+   *               DatasetVersionName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATASET_VERSION]")
+   *                   .toString())
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<DatasetVersion> future =
+   *       datasetServiceClient.getDatasetVersionCallable().futureCall(request);
+   *   // Do something.
+   *   DatasetVersion response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetDatasetVersionRequest, DatasetVersion> getDatasetVersionCallable() {
+    return stub.getDatasetVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DatasetVersions in a Dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   DatasetName parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]");
+   *   for (DatasetVersion element : datasetServiceClient.listDatasetVersions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Dataset to list DatasetVersions from. Format:
+   *     `projects/{project}/locations/{location}/datasets/{dataset}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDatasetVersionsPagedResponse listDatasetVersions(DatasetName parent) {
+    ListDatasetVersionsRequest request =
+        ListDatasetVersionsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listDatasetVersions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DatasetVersions in a Dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   String parent = DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString();
+   *   for (DatasetVersion element : datasetServiceClient.listDatasetVersions(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the Dataset to list DatasetVersions from. Format:
+   *     `projects/{project}/locations/{location}/datasets/{dataset}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDatasetVersionsPagedResponse listDatasetVersions(String parent) {
+    ListDatasetVersionsRequest request =
+        ListDatasetVersionsRequest.newBuilder().setParent(parent).build();
+    return listDatasetVersions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DatasetVersions in a Dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   ListDatasetVersionsRequest request =
+   *       ListDatasetVersionsRequest.newBuilder()
+   *           .setParent(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   for (DatasetVersion element :
+   *       datasetServiceClient.listDatasetVersions(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDatasetVersionsPagedResponse listDatasetVersions(
+      ListDatasetVersionsRequest request) {
+    return listDatasetVersionsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DatasetVersions in a Dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   ListDatasetVersionsRequest request =
+   *       ListDatasetVersionsRequest.newBuilder()
+   *           .setParent(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   ApiFuture<DatasetVersion> future =
+   *       datasetServiceClient.listDatasetVersionsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (DatasetVersion element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDatasetVersionsRequest, ListDatasetVersionsPagedResponse>
+      listDatasetVersionsPagedCallable() {
+    return stub.listDatasetVersionsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists DatasetVersions in a Dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   ListDatasetVersionsRequest request =
+   *       ListDatasetVersionsRequest.newBuilder()
+   *           .setParent(DatasetName.of("[PROJECT]", "[LOCATION]", "[DATASET]").toString())
+   *           .setFilter("filter-1274492040")
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setOrderBy("orderBy-1207110587")
+   *           .build();
+   *   while (true) {
+   *     ListDatasetVersionsResponse response =
+   *         datasetServiceClient.listDatasetVersionsCallable().call(request);
+   *     for (DatasetVersion element : response.getDatasetVersionsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDatasetVersionsRequest, ListDatasetVersionsResponse>
+      listDatasetVersionsCallable() {
+    return stub.listDatasetVersionsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restores a dataset version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   DatasetVersionName name =
+   *       DatasetVersionName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATASET_VERSION]");
+   *   DatasetVersion response = datasetServiceClient.restoreDatasetVersionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DatasetVersion resource. Format:
+   *     `projects/{project}/locations/{location}/datasets/{dataset}/datasetVersions/{dataset_version}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DatasetVersion, RestoreDatasetVersionOperationMetadata>
+      restoreDatasetVersionAsync(DatasetVersionName name) {
+    RestoreDatasetVersionRequest request =
+        RestoreDatasetVersionRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return restoreDatasetVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restores a dataset version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   String name =
+   *       DatasetVersionName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATASET_VERSION]")
+   *           .toString();
+   *   DatasetVersion response = datasetServiceClient.restoreDatasetVersionAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the DatasetVersion resource. Format:
+   *     `projects/{project}/locations/{location}/datasets/{dataset}/datasetVersions/{dataset_version}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DatasetVersion, RestoreDatasetVersionOperationMetadata>
+      restoreDatasetVersionAsync(String name) {
+    RestoreDatasetVersionRequest request =
+        RestoreDatasetVersionRequest.newBuilder().setName(name).build();
+    return restoreDatasetVersionAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restores a dataset version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   RestoreDatasetVersionRequest request =
+   *       RestoreDatasetVersionRequest.newBuilder()
+   *           .setName(
+   *               DatasetVersionName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATASET_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   DatasetVersion response = datasetServiceClient.restoreDatasetVersionAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<DatasetVersion, RestoreDatasetVersionOperationMetadata>
+      restoreDatasetVersionAsync(RestoreDatasetVersionRequest request) {
+    return restoreDatasetVersionOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restores a dataset version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   RestoreDatasetVersionRequest request =
+   *       RestoreDatasetVersionRequest.newBuilder()
+   *           .setName(
+   *               DatasetVersionName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATASET_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<DatasetVersion, RestoreDatasetVersionOperationMetadata> future =
+   *       datasetServiceClient.restoreDatasetVersionOperationCallable().futureCall(request);
+   *   // Do something.
+   *   DatasetVersion response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          RestoreDatasetVersionRequest, DatasetVersion, RestoreDatasetVersionOperationMetadata>
+      restoreDatasetVersionOperationCallable() {
+    return stub.restoreDatasetVersionOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Restores a dataset version.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   RestoreDatasetVersionRequest request =
+   *       RestoreDatasetVersionRequest.newBuilder()
+   *           .setName(
+   *               DatasetVersionName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[DATASET_VERSION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       datasetServiceClient.restoreDatasetVersionCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RestoreDatasetVersionRequest, Operation>
+      restoreDatasetVersionCallable() {
+    return stub.restoreDatasetVersionCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Lists DataItems in a Dataset.
    *
    * <p>Sample code:
@@ -1643,6 +2420,156 @@ public class DatasetServiceClient implements BackgroundResource {
   public final UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesResponse>
       listSavedQueriesCallable() {
     return stub.listSavedQueriesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a SavedQuery.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   SavedQueryName name =
+   *       SavedQueryName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[SAVED_QUERY]");
+   *   datasetServiceClient.deleteSavedQueryAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the SavedQuery to delete. Format:
+   *     `projects/{project}/locations/{location}/datasets/{dataset}/savedQueries/{saved_query}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteSavedQueryAsync(
+      SavedQueryName name) {
+    DeleteSavedQueryRequest request =
+        DeleteSavedQueryRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteSavedQueryAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a SavedQuery.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   String name =
+   *       SavedQueryName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[SAVED_QUERY]").toString();
+   *   datasetServiceClient.deleteSavedQueryAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the SavedQuery to delete. Format:
+   *     `projects/{project}/locations/{location}/datasets/{dataset}/savedQueries/{saved_query}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteSavedQueryAsync(String name) {
+    DeleteSavedQueryRequest request = DeleteSavedQueryRequest.newBuilder().setName(name).build();
+    return deleteSavedQueryAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a SavedQuery.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   DeleteSavedQueryRequest request =
+   *       DeleteSavedQueryRequest.newBuilder()
+   *           .setName(
+   *               SavedQueryName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[SAVED_QUERY]")
+   *                   .toString())
+   *           .build();
+   *   datasetServiceClient.deleteSavedQueryAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, DeleteOperationMetadata> deleteSavedQueryAsync(
+      DeleteSavedQueryRequest request) {
+    return deleteSavedQueryOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a SavedQuery.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   DeleteSavedQueryRequest request =
+   *       DeleteSavedQueryRequest.newBuilder()
+   *           .setName(
+   *               SavedQueryName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[SAVED_QUERY]")
+   *                   .toString())
+   *           .build();
+   *   OperationFuture<Empty, DeleteOperationMetadata> future =
+   *       datasetServiceClient.deleteSavedQueryOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteSavedQueryRequest, Empty, DeleteOperationMetadata>
+      deleteSavedQueryOperationCallable() {
+    return stub.deleteSavedQueryOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a SavedQuery.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DatasetServiceClient datasetServiceClient = DatasetServiceClient.create()) {
+   *   DeleteSavedQueryRequest request =
+   *       DeleteSavedQueryRequest.newBuilder()
+   *           .setName(
+   *               SavedQueryName.of("[PROJECT]", "[LOCATION]", "[DATASET]", "[SAVED_QUERY]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       datasetServiceClient.deleteSavedQueryCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteSavedQueryRequest, Operation> deleteSavedQueryCallable() {
+    return stub.deleteSavedQueryCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -2412,6 +3339,90 @@ public class DatasetServiceClient implements BackgroundResource {
     protected ListDatasetsFixedSizeCollection createCollection(
         List<ListDatasetsPage> pages, int collectionSize) {
       return new ListDatasetsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListDatasetVersionsPagedResponse
+      extends AbstractPagedListResponse<
+          ListDatasetVersionsRequest,
+          ListDatasetVersionsResponse,
+          DatasetVersion,
+          ListDatasetVersionsPage,
+          ListDatasetVersionsFixedSizeCollection> {
+
+    public static ApiFuture<ListDatasetVersionsPagedResponse> createAsync(
+        PageContext<ListDatasetVersionsRequest, ListDatasetVersionsResponse, DatasetVersion>
+            context,
+        ApiFuture<ListDatasetVersionsResponse> futureResponse) {
+      ApiFuture<ListDatasetVersionsPage> futurePage =
+          ListDatasetVersionsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListDatasetVersionsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListDatasetVersionsPagedResponse(ListDatasetVersionsPage page) {
+      super(page, ListDatasetVersionsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListDatasetVersionsPage
+      extends AbstractPage<
+          ListDatasetVersionsRequest,
+          ListDatasetVersionsResponse,
+          DatasetVersion,
+          ListDatasetVersionsPage> {
+
+    private ListDatasetVersionsPage(
+        PageContext<ListDatasetVersionsRequest, ListDatasetVersionsResponse, DatasetVersion>
+            context,
+        ListDatasetVersionsResponse response) {
+      super(context, response);
+    }
+
+    private static ListDatasetVersionsPage createEmptyPage() {
+      return new ListDatasetVersionsPage(null, null);
+    }
+
+    @Override
+    protected ListDatasetVersionsPage createPage(
+        PageContext<ListDatasetVersionsRequest, ListDatasetVersionsResponse, DatasetVersion>
+            context,
+        ListDatasetVersionsResponse response) {
+      return new ListDatasetVersionsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListDatasetVersionsPage> createPageAsync(
+        PageContext<ListDatasetVersionsRequest, ListDatasetVersionsResponse, DatasetVersion>
+            context,
+        ApiFuture<ListDatasetVersionsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListDatasetVersionsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDatasetVersionsRequest,
+          ListDatasetVersionsResponse,
+          DatasetVersion,
+          ListDatasetVersionsPage,
+          ListDatasetVersionsFixedSizeCollection> {
+
+    private ListDatasetVersionsFixedSizeCollection(
+        List<ListDatasetVersionsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListDatasetVersionsFixedSizeCollection createEmptyCollection() {
+      return new ListDatasetVersionsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListDatasetVersionsFixedSizeCollection createCollection(
+        List<ListDatasetVersionsPage> pages, int collectionSize) {
+      return new ListDatasetVersionsFixedSizeCollection(pages, collectionSize);
     }
   }
 

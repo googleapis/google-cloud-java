@@ -39,6 +39,7 @@ public class SyncStartMigrationJob {
       StartMigrationJobRequest request =
           StartMigrationJobRequest.newBuilder()
               .setName(MigrationJobName.of("[PROJECT]", "[LOCATION]", "[MIGRATION_JOB]").toString())
+              .setSkipValidation(true)
               .build();
       MigrationJob response = dataMigrationServiceClient.startMigrationJobAsync(request).get();
     }

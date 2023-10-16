@@ -48,6 +48,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     etag_ = "";
     kmsKeyName_ = "";
     suspensionReasons_ = java.util.Collections.emptyList();
+    protocol_ = 0;
   }
 
   @java.lang.Override
@@ -511,6 +512,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>ENTERPRISE = 7;</code>
      */
     ENTERPRISE(7),
+    /**
+     *
+     *
+     * <pre>
+     * ZONAL instances offer expanded capacity and performance scaling
+     * capabilities.
+     * </pre>
+     *
+     * <code>ZONAL = 8;</code>
+     */
+    ZONAL(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -590,6 +602,17 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * <code>ENTERPRISE = 7;</code>
      */
     public static final int ENTERPRISE_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * ZONAL instances offer expanded capacity and performance scaling
+     * capabilities.
+     * </pre>
+     *
+     * <code>ZONAL = 8;</code>
+     */
+    public static final int ZONAL_VALUE = 8;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -629,6 +652,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
           return HIGH_SCALE_SSD;
         case 7:
           return ENTERPRISE;
+        case 8:
+          return ZONAL;
         default:
           return null;
       }
@@ -817,6 +842,165 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.filestore.v1beta1.Instance.SuspensionReason)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * File access protocol.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.filestore.v1beta1.Instance.FileProtocol}
+   */
+  public enum FileProtocol implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * FILE_PROTOCOL_UNSPECIFIED serves a "not set" default value when
+     * a FileProtocol is a separate field in a message.
+     * </pre>
+     *
+     * <code>FILE_PROTOCOL_UNSPECIFIED = 0;</code>
+     */
+    FILE_PROTOCOL_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * NFS 3.0.
+     * </pre>
+     *
+     * <code>NFS_V3 = 1;</code>
+     */
+    NFS_V3(1),
+    /**
+     *
+     *
+     * <pre>
+     * NFS 4.1.
+     * </pre>
+     *
+     * <code>NFS_V4_1 = 2;</code>
+     */
+    NFS_V4_1(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * FILE_PROTOCOL_UNSPECIFIED serves a "not set" default value when
+     * a FileProtocol is a separate field in a message.
+     * </pre>
+     *
+     * <code>FILE_PROTOCOL_UNSPECIFIED = 0;</code>
+     */
+    public static final int FILE_PROTOCOL_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * NFS 3.0.
+     * </pre>
+     *
+     * <code>NFS_V3 = 1;</code>
+     */
+    public static final int NFS_V3_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * NFS 4.1.
+     * </pre>
+     *
+     * <code>NFS_V4_1 = 2;</code>
+     */
+    public static final int NFS_V4_1_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static FileProtocol valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static FileProtocol forNumber(int value) {
+      switch (value) {
+        case 0:
+          return FILE_PROTOCOL_UNSPECIFIED;
+        case 1:
+          return NFS_V3;
+        case 2:
+          return NFS_V4_1;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<FileProtocol> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<FileProtocol> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<FileProtocol>() {
+          public FileProtocol findValueByNumber(int number) {
+            return FileProtocol.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.filestore.v1beta1.Instance.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final FileProtocol[] VALUES = values();
+
+    public static FileProtocol valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private FileProtocol(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.filestore.v1beta1.Instance.FileProtocol)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -1535,7 +1719,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+   * state.
    * </pre>
    *
    * <code>
@@ -1555,7 +1740,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+   * state.
    * </pre>
    *
    * <code>
@@ -1572,7 +1758,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+   * state.
    * </pre>
    *
    * <code>
@@ -1591,7 +1778,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+   * state.
    * </pre>
    *
    * <code>
@@ -1608,7 +1796,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+   * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+   * state.
    * </pre>
    *
    * <code>
@@ -1667,10 +1856,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The max number of shares allowed.
+   * The max number of shares allowed.
    * </pre>
    *
-   * <code>int64 max_share_count = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>int64 max_share_count = 18;</code>
    *
    * @return The maxShareCount.
    */
@@ -1717,6 +1906,105 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public boolean getMultiShareEnabled() {
     return multiShareEnabled_;
+  }
+
+  public static final int PROTOCOL_FIELD_NUMBER = 21;
+  private int protocol_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The protocol indicates the access protocol for all shares in the
+   * instance. This field is immutable and it cannot be changed after the
+   * instance has been created. Default value: `NFS_V3`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.filestore.v1beta1.Instance.FileProtocol protocol = 21 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for protocol.
+   */
+  @java.lang.Override
+  public int getProtocolValue() {
+    return protocol_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The protocol indicates the access protocol for all shares in the
+   * instance. This field is immutable and it cannot be changed after the
+   * instance has been created. Default value: `NFS_V3`.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.filestore.v1beta1.Instance.FileProtocol protocol = 21 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The protocol.
+   */
+  @java.lang.Override
+  public com.google.cloud.filestore.v1beta1.Instance.FileProtocol getProtocol() {
+    com.google.cloud.filestore.v1beta1.Instance.FileProtocol result =
+        com.google.cloud.filestore.v1beta1.Instance.FileProtocol.forNumber(protocol_);
+    return result == null
+        ? com.google.cloud.filestore.v1beta1.Instance.FileProtocol.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int DIRECTORY_SERVICES_FIELD_NUMBER = 24;
+  private com.google.cloud.filestore.v1beta1.DirectoryServicesConfig directoryServices_;
+  /**
+   *
+   *
+   * <pre>
+   * Directory Services configuration for Kerberos-based authentication.
+   * Should only be set if protocol is "NFS_V4_1".
+   * </pre>
+   *
+   * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+   *
+   * @return Whether the directoryServices field is set.
+   */
+  @java.lang.Override
+  public boolean hasDirectoryServices() {
+    return directoryServices_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Directory Services configuration for Kerberos-based authentication.
+   * Should only be set if protocol is "NFS_V4_1".
+   * </pre>
+   *
+   * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+   *
+   * @return The directoryServices.
+   */
+  @java.lang.Override
+  public com.google.cloud.filestore.v1beta1.DirectoryServicesConfig getDirectoryServices() {
+    return directoryServices_ == null
+        ? com.google.cloud.filestore.v1beta1.DirectoryServicesConfig.getDefaultInstance()
+        : directoryServices_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Directory Services configuration for Kerberos-based authentication.
+   * Should only be set if protocol is "NFS_V4_1".
+   * </pre>
+   *
+   * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.filestore.v1beta1.DirectoryServicesConfigOrBuilder
+      getDirectoryServicesOrBuilder() {
+    return directoryServices_ == null
+        ? com.google.cloud.filestore.v1beta1.DirectoryServicesConfig.getDefaultInstance()
+        : directoryServices_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1790,6 +2078,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     if (multiShareEnabled_ != false) {
       output.writeBool(20, multiShareEnabled_);
+    }
+    if (protocol_
+        != com.google.cloud.filestore.v1beta1.Instance.FileProtocol.FILE_PROTOCOL_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(21, protocol_);
+    }
+    if (directoryServices_ != null) {
+      output.writeMessage(24, getDirectoryServices());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1871,6 +2167,14 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (multiShareEnabled_ != false) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, multiShareEnabled_);
     }
+    if (protocol_
+        != com.google.cloud.filestore.v1beta1.Instance.FileProtocol.FILE_PROTOCOL_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(21, protocol_);
+    }
+    if (directoryServices_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getDirectoryServices());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1911,6 +2215,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (getMaxShareCount() != other.getMaxShareCount()) return false;
     if (getCapacityGb() != other.getCapacityGb()) return false;
     if (getMultiShareEnabled() != other.getMultiShareEnabled()) return false;
+    if (protocol_ != other.protocol_) return false;
+    if (hasDirectoryServices() != other.hasDirectoryServices()) return false;
+    if (hasDirectoryServices()) {
+      if (!getDirectoryServices().equals(other.getDirectoryServices())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1970,6 +2279,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCapacityGb());
     hash = (37 * hash) + MULTI_SHARE_ENABLED_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getMultiShareEnabled());
+    hash = (37 * hash) + PROTOCOL_FIELD_NUMBER;
+    hash = (53 * hash) + protocol_;
+    if (hasDirectoryServices()) {
+      hash = (37 * hash) + DIRECTORY_SERVICES_FIELD_NUMBER;
+      hash = (53 * hash) + getDirectoryServices().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2168,6 +2483,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       maxShareCount_ = 0L;
       capacityGb_ = 0L;
       multiShareEnabled_ = false;
+      protocol_ = 0;
+      directoryServices_ = null;
+      if (directoryServicesBuilder_ != null) {
+        directoryServicesBuilder_.dispose();
+        directoryServicesBuilder_ = null;
+      }
       return this;
     }
 
@@ -2277,6 +2598,15 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
         result.multiShareEnabled_ = multiShareEnabled_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.protocol_ = protocol_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.directoryServices_ =
+            directoryServicesBuilder_ == null
+                ? directoryServices_
+                : directoryServicesBuilder_.build();
       }
     }
 
@@ -2442,6 +2772,12 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.getMultiShareEnabled() != false) {
         setMultiShareEnabled(other.getMultiShareEnabled());
+      }
+      if (other.protocol_ != 0) {
+        setProtocolValue(other.getProtocolValue());
+      }
+      if (other.hasDirectoryServices()) {
+        mergeDirectoryServices(other.getDirectoryServices());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2612,6 +2948,19 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00020000;
                 break;
               } // case 160
+            case 168:
+              {
+                protocol_ = input.readEnum();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 168
+            case 194:
+              {
+                input.readMessage(
+                    getDirectoryServicesFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 194
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4689,7 +5038,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
      * </pre>
      *
      * <code>
@@ -4708,7 +5058,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
      * </pre>
      *
      * <code>
@@ -4724,7 +5075,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
      * </pre>
      *
      * <code>
@@ -4742,7 +5094,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
      * </pre>
      *
      * <code>
@@ -4767,7 +5120,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
      * </pre>
      *
      * <code>
@@ -4791,7 +5145,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
      * </pre>
      *
      * <code>
@@ -4815,7 +5170,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
      * </pre>
      *
      * <code>
@@ -4834,7 +5190,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
      * </pre>
      *
      * <code>
@@ -4850,7 +5207,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
      * </pre>
      *
      * <code>
@@ -4867,7 +5225,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
      * </pre>
      *
      * <code>
@@ -4888,7 +5247,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
      * </pre>
      *
      * <code>
@@ -4908,7 +5268,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
+     * Output only. Field indicates all the reasons the instance is in "SUSPENDED"
+     * state.
      * </pre>
      *
      * <code>
@@ -5038,10 +5399,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The max number of shares allowed.
+     * The max number of shares allowed.
      * </pre>
      *
-     * <code>int64 max_share_count = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int64 max_share_count = 18;</code>
      *
      * @return The maxShareCount.
      */
@@ -5053,10 +5414,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The max number of shares allowed.
+     * The max number of shares allowed.
      * </pre>
      *
-     * <code>int64 max_share_count = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int64 max_share_count = 18;</code>
      *
      * @param value The maxShareCount to set.
      * @return This builder for chaining.
@@ -5072,10 +5433,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The max number of shares allowed.
+     * The max number of shares allowed.
      * </pre>
      *
-     * <code>int64 max_share_count = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>int64 max_share_count = 18;</code>
      *
      * @return This builder for chaining.
      */
@@ -5202,6 +5563,317 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       multiShareEnabled_ = false;
       onChanged();
       return this;
+    }
+
+    private int protocol_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The protocol indicates the access protocol for all shares in the
+     * instance. This field is immutable and it cannot be changed after the
+     * instance has been created. Default value: `NFS_V3`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.FileProtocol protocol = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for protocol.
+     */
+    @java.lang.Override
+    public int getProtocolValue() {
+      return protocol_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The protocol indicates the access protocol for all shares in the
+     * instance. This field is immutable and it cannot be changed after the
+     * instance has been created. Default value: `NFS_V3`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.FileProtocol protocol = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for protocol to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProtocolValue(int value) {
+      protocol_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The protocol indicates the access protocol for all shares in the
+     * instance. This field is immutable and it cannot be changed after the
+     * instance has been created. Default value: `NFS_V3`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.FileProtocol protocol = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The protocol.
+     */
+    @java.lang.Override
+    public com.google.cloud.filestore.v1beta1.Instance.FileProtocol getProtocol() {
+      com.google.cloud.filestore.v1beta1.Instance.FileProtocol result =
+          com.google.cloud.filestore.v1beta1.Instance.FileProtocol.forNumber(protocol_);
+      return result == null
+          ? com.google.cloud.filestore.v1beta1.Instance.FileProtocol.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The protocol indicates the access protocol for all shares in the
+     * instance. This field is immutable and it cannot be changed after the
+     * instance has been created. Default value: `NFS_V3`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.FileProtocol protocol = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The protocol to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProtocol(com.google.cloud.filestore.v1beta1.Instance.FileProtocol value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00040000;
+      protocol_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The protocol indicates the access protocol for all shares in the
+     * instance. This field is immutable and it cannot be changed after the
+     * instance has been created. Default value: `NFS_V3`.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.filestore.v1beta1.Instance.FileProtocol protocol = 21 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProtocol() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      protocol_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.filestore.v1beta1.DirectoryServicesConfig directoryServices_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.filestore.v1beta1.DirectoryServicesConfig,
+            com.google.cloud.filestore.v1beta1.DirectoryServicesConfig.Builder,
+            com.google.cloud.filestore.v1beta1.DirectoryServicesConfigOrBuilder>
+        directoryServicesBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Directory Services configuration for Kerberos-based authentication.
+     * Should only be set if protocol is "NFS_V4_1".
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+     *
+     * @return Whether the directoryServices field is set.
+     */
+    public boolean hasDirectoryServices() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Directory Services configuration for Kerberos-based authentication.
+     * Should only be set if protocol is "NFS_V4_1".
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+     *
+     * @return The directoryServices.
+     */
+    public com.google.cloud.filestore.v1beta1.DirectoryServicesConfig getDirectoryServices() {
+      if (directoryServicesBuilder_ == null) {
+        return directoryServices_ == null
+            ? com.google.cloud.filestore.v1beta1.DirectoryServicesConfig.getDefaultInstance()
+            : directoryServices_;
+      } else {
+        return directoryServicesBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Directory Services configuration for Kerberos-based authentication.
+     * Should only be set if protocol is "NFS_V4_1".
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+     */
+    public Builder setDirectoryServices(
+        com.google.cloud.filestore.v1beta1.DirectoryServicesConfig value) {
+      if (directoryServicesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        directoryServices_ = value;
+      } else {
+        directoryServicesBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Directory Services configuration for Kerberos-based authentication.
+     * Should only be set if protocol is "NFS_V4_1".
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+     */
+    public Builder setDirectoryServices(
+        com.google.cloud.filestore.v1beta1.DirectoryServicesConfig.Builder builderForValue) {
+      if (directoryServicesBuilder_ == null) {
+        directoryServices_ = builderForValue.build();
+      } else {
+        directoryServicesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Directory Services configuration for Kerberos-based authentication.
+     * Should only be set if protocol is "NFS_V4_1".
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+     */
+    public Builder mergeDirectoryServices(
+        com.google.cloud.filestore.v1beta1.DirectoryServicesConfig value) {
+      if (directoryServicesBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && directoryServices_ != null
+            && directoryServices_
+                != com.google.cloud.filestore.v1beta1.DirectoryServicesConfig
+                    .getDefaultInstance()) {
+          getDirectoryServicesBuilder().mergeFrom(value);
+        } else {
+          directoryServices_ = value;
+        }
+      } else {
+        directoryServicesBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Directory Services configuration for Kerberos-based authentication.
+     * Should only be set if protocol is "NFS_V4_1".
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+     */
+    public Builder clearDirectoryServices() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      directoryServices_ = null;
+      if (directoryServicesBuilder_ != null) {
+        directoryServicesBuilder_.dispose();
+        directoryServicesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Directory Services configuration for Kerberos-based authentication.
+     * Should only be set if protocol is "NFS_V4_1".
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+     */
+    public com.google.cloud.filestore.v1beta1.DirectoryServicesConfig.Builder
+        getDirectoryServicesBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return getDirectoryServicesFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Directory Services configuration for Kerberos-based authentication.
+     * Should only be set if protocol is "NFS_V4_1".
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+     */
+    public com.google.cloud.filestore.v1beta1.DirectoryServicesConfigOrBuilder
+        getDirectoryServicesOrBuilder() {
+      if (directoryServicesBuilder_ != null) {
+        return directoryServicesBuilder_.getMessageOrBuilder();
+      } else {
+        return directoryServices_ == null
+            ? com.google.cloud.filestore.v1beta1.DirectoryServicesConfig.getDefaultInstance()
+            : directoryServices_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Directory Services configuration for Kerberos-based authentication.
+     * Should only be set if protocol is "NFS_V4_1".
+     * </pre>
+     *
+     * <code>.google.cloud.filestore.v1beta1.DirectoryServicesConfig directory_services = 24;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.filestore.v1beta1.DirectoryServicesConfig,
+            com.google.cloud.filestore.v1beta1.DirectoryServicesConfig.Builder,
+            com.google.cloud.filestore.v1beta1.DirectoryServicesConfigOrBuilder>
+        getDirectoryServicesFieldBuilder() {
+      if (directoryServicesBuilder_ == null) {
+        directoryServicesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.filestore.v1beta1.DirectoryServicesConfig,
+                com.google.cloud.filestore.v1beta1.DirectoryServicesConfig.Builder,
+                com.google.cloud.filestore.v1beta1.DirectoryServicesConfigOrBuilder>(
+                getDirectoryServices(), getParentForChildren(), isClean());
+        directoryServices_ = null;
+      }
+      return directoryServicesBuilder_;
     }
 
     @java.lang.Override

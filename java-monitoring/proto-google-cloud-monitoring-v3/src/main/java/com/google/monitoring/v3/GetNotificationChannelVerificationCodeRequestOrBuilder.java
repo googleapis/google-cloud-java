@@ -27,9 +27,9 @@ public interface GetNotificationChannelVerificationCodeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The notification channel for which a verification code is to be generated
-   * and retrieved. This must name a channel that is already verified; if
-   * the specified channel is not verified, the request will fail.
+   * Required. The notification channel for which a verification code is to be
+   * generated and retrieved. This must name a channel that is already verified;
+   * if the specified channel is not verified, the request will fail.
    * </pre>
    *
    * <code>
@@ -43,9 +43,9 @@ public interface GetNotificationChannelVerificationCodeRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The notification channel for which a verification code is to be generated
-   * and retrieved. This must name a channel that is already verified; if
-   * the specified channel is not verified, the request will fail.
+   * Required. The notification channel for which a verification code is to be
+   * generated and retrieved. This must name a channel that is already verified;
+   * if the specified channel is not verified, the request will fail.
    * </pre>
    *
    * <code>

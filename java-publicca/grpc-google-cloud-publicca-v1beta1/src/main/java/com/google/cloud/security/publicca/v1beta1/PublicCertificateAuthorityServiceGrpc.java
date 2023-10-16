@@ -34,7 +34,7 @@ public final class PublicCertificateAuthorityServiceGrpc {
 
   private PublicCertificateAuthorityServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.security.publicca.v1beta1.PublicCertificateAuthorityService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -374,9 +374,9 @@ public final class PublicCertificateAuthorityServiceGrpc {
   private static final class PublicCertificateAuthorityServiceMethodDescriptorSupplier
       extends PublicCertificateAuthorityServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    PublicCertificateAuthorityServiceMethodDescriptorSupplier(String methodName) {
+    PublicCertificateAuthorityServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

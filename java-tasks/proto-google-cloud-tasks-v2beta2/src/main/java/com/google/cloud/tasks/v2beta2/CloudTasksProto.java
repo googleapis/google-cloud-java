@@ -64,6 +64,10 @@ public final class CloudTasksProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_tasks_v2beta2_ResumeQueueRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_tasks_v2beta2_UploadQueueYamlRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_tasks_v2beta2_UploadQueueYamlRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_tasks_v2beta2_ListTasksRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_tasks_v2beta2_ListTasksRequest_fieldAccessorTable;
@@ -107,6 +111,14 @@ public final class CloudTasksProto {
       internal_static_google_cloud_tasks_v2beta2_RunTaskRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_tasks_v2beta2_RunTaskRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_tasks_v2beta2_BufferTaskRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_tasks_v2beta2_BufferTaskRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_tasks_v2beta2_BufferTaskResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_tasks_v2beta2_BufferTaskResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -120,177 +132,195 @@ public final class CloudTasksProto {
           + "proto\022\032google.cloud.tasks.v2beta2\032\034googl"
           + "e/api/annotations.proto\032\027google/api/clie"
           + "nt.proto\032\037google/api/field_behavior.prot"
-          + "o\032\031google/api/resource.proto\032&google/clo"
-          + "ud/tasks/v2beta2/queue.proto\032%google/clo"
-          + "ud/tasks/v2beta2/task.proto\032\036google/iam/"
-          + "v1/iam_policy.proto\032\032google/iam/v1/polic"
-          + "y.proto\032\036google/protobuf/duration.proto\032"
-          + "\033google/protobuf/empty.proto\032 google/pro"
-          + "tobuf/field_mask.proto\032\037google/protobuf/"
-          + "timestamp.proto\"\271\001\n\021ListQueuesRequest\0228\n"
-          + "\006parent\030\001 \001(\tB(\342A\001\002\372A!\022\037cloudtasks.googl"
-          + "eapis.com/Queue\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_"
-          + "size\030\003 \001(\005\022\022\n\npage_token\030\004 \001(\t\0223\n\tread_m"
-          + "ask\030\005 \001(\0132\032.google.protobuf.FieldMaskB\004\342"
-          + "A\001\001\"`\n\022ListQueuesResponse\0221\n\006queues\030\001 \003("
-          + "\0132!.google.cloud.tasks.v2beta2.Queue\022\027\n\017"
-          + "next_page_token\030\002 \001(\t\"~\n\017GetQueueRequest"
-          + "\0226\n\004name\030\001 \001(\tB(\342A\001\002\372A!\n\037cloudtasks.goog"
-          + "leapis.com/Queue\0223\n\tread_mask\030\002 \001(\0132\032.go"
-          + "ogle.protobuf.FieldMaskB\004\342A\001\001\"\206\001\n\022Create"
-          + "QueueRequest\0228\n\006parent\030\001 \001(\tB(\342A\001\002\372A!\022\037c"
-          + "loudtasks.googleapis.com/Queue\0226\n\005queue\030"
-          + "\002 \001(\0132!.google.cloud.tasks.v2beta2.Queue"
-          + "B\004\342A\001\002\"}\n\022UpdateQueueRequest\0226\n\005queue\030\001 "
-          + "\001(\0132!.google.cloud.tasks.v2beta2.QueueB\004"
-          + "\342A\001\002\022/\n\013update_mask\030\002 \001(\0132\032.google.proto"
-          + "buf.FieldMask\"L\n\022DeleteQueueRequest\0226\n\004n"
-          + "ame\030\001 \001(\tB(\342A\001\002\372A!\n\037cloudtasks.googleapi"
-          + "s.com/Queue\"K\n\021PurgeQueueRequest\0226\n\004name"
-          + "\030\001 \001(\tB(\342A\001\002\372A!\n\037cloudtasks.googleapis.c"
-          + "om/Queue\"K\n\021PauseQueueRequest\0226\n\004name\030\001 "
-          + "\001(\tB(\342A\001\002\372A!\n\037cloudtasks.googleapis.com/"
-          + "Queue\"L\n\022ResumeQueueRequest\0226\n\004name\030\001 \001("
+          + "o\032\031google/api/httpbody.proto\032\031google/api"
+          + "/resource.proto\032&google/cloud/tasks/v2be"
+          + "ta2/queue.proto\032%google/cloud/tasks/v2be"
+          + "ta2/task.proto\032\036google/iam/v1/iam_policy"
+          + ".proto\032\032google/iam/v1/policy.proto\032\036goog"
+          + "le/protobuf/duration.proto\032\033google/proto"
+          + "buf/empty.proto\032 google/protobuf/field_m"
+          + "ask.proto\032\037google/protobuf/timestamp.pro"
+          + "to\"\271\001\n\021ListQueuesRequest\0228\n\006parent\030\001 \001(\t"
+          + "B(\342A\001\002\372A!\022\037cloudtasks.googleapis.com/Que"
+          + "ue\022\016\n\006filter\030\002 \001(\t\022\021\n\tpage_size\030\003 \001(\005\022\022\n"
+          + "\npage_token\030\004 \001(\t\0223\n\tread_mask\030\005 \001(\0132\032.g"
+          + "oogle.protobuf.FieldMaskB\004\342A\001\001\"`\n\022ListQu"
+          + "euesResponse\0221\n\006queues\030\001 \003(\0132!.google.cl"
+          + "oud.tasks.v2beta2.Queue\022\027\n\017next_page_tok"
+          + "en\030\002 \001(\t\"~\n\017GetQueueRequest\0226\n\004name\030\001 \001("
           + "\tB(\342A\001\002\372A!\n\037cloudtasks.googleapis.com/Qu"
-          + "eue\"\260\001\n\020ListTasksRequest\0227\n\006parent\030\001 \001(\t"
-          + "B\'\342A\001\002\372A \022\036cloudtasks.googleapis.com/Tas"
-          + "k\022<\n\rresponse_view\030\002 \001(\0162%.google.cloud."
-          + "tasks.v2beta2.Task.View\022\021\n\tpage_size\030\004 \001"
-          + "(\005\022\022\n\npage_token\030\005 \001(\t\"]\n\021ListTasksRespo"
-          + "nse\022/\n\005tasks\030\001 \003(\0132 .google.cloud.tasks."
-          + "v2beta2.Task\022\027\n\017next_page_token\030\002 \001(\t\"\205\001"
-          + "\n\016GetTaskRequest\0225\n\004name\030\001 \001(\tB\'\342A\001\002\372A \n"
-          + "\036cloudtasks.googleapis.com/Task\022<\n\rrespo"
-          + "nse_view\030\002 \001(\0162%.google.cloud.tasks.v2be"
-          + "ta2.Task.View\"\300\001\n\021CreateTaskRequest\0227\n\006p"
-          + "arent\030\001 \001(\tB\'\342A\001\002\372A \022\036cloudtasks.googlea"
-          + "pis.com/Task\0224\n\004task\030\002 \001(\0132 .google.clou"
-          + "d.tasks.v2beta2.TaskB\004\342A\001\002\022<\n\rresponse_v"
-          + "iew\030\003 \001(\0162%.google.cloud.tasks.v2beta2.T"
-          + "ask.View\"J\n\021DeleteTaskRequest\0225\n\004name\030\001 "
-          + "\001(\tB\'\342A\001\002\372A \n\036cloudtasks.googleapis.com/"
-          + "Task\"\346\001\n\021LeaseTasksRequest\0227\n\006parent\030\001 \001"
-          + "(\tB\'\342A\001\002\372A \022\036cloudtasks.googleapis.com/T"
-          + "ask\022\021\n\tmax_tasks\030\002 \001(\005\0227\n\016lease_duration"
-          + "\030\003 \001(\0132\031.google.protobuf.DurationB\004\342A\001\002\022"
-          + "<\n\rresponse_view\030\004 \001(\0162%.google.cloud.ta"
-          + "sks.v2beta2.Task.View\022\016\n\006filter\030\005 \001(\t\"E\n"
-          + "\022LeaseTasksResponse\022/\n\005tasks\030\001 \003(\0132 .goo"
-          + "gle.cloud.tasks.v2beta2.Task\"\210\001\n\026Acknowl"
-          + "edgeTaskRequest\0225\n\004name\030\001 \001(\tB\'\342A\001\002\372A \n\036"
-          + "cloudtasks.googleapis.com/Task\0227\n\rschedu"
-          + "le_time\030\002 \001(\0132\032.google.protobuf.Timestam"
-          + "pB\004\342A\001\002\"\372\001\n\021RenewLeaseRequest\0225\n\004name\030\001 "
-          + "\001(\tB\'\342A\001\002\372A \n\036cloudtasks.googleapis.com/"
-          + "Task\0227\n\rschedule_time\030\002 \001(\0132\032.google.pro"
-          + "tobuf.TimestampB\004\342A\001\002\0227\n\016lease_duration\030"
-          + "\003 \001(\0132\031.google.protobuf.DurationB\004\342A\001\002\022<"
-          + "\n\rresponse_view\030\004 \001(\0162%.google.cloud.tas"
-          + "ks.v2beta2.Task.View\"\302\001\n\022CancelLeaseRequ"
-          + "est\0225\n\004name\030\001 \001(\tB\'\342A\001\002\372A \n\036cloudtasks.g"
-          + "oogleapis.com/Task\0227\n\rschedule_time\030\002 \001("
-          + "\0132\032.google.protobuf.TimestampB\004\342A\001\002\022<\n\rr"
-          + "esponse_view\030\003 \001(\0162%.google.cloud.tasks."
-          + "v2beta2.Task.View\"\205\001\n\016RunTaskRequest\0225\n\004"
-          + "name\030\001 \001(\tB\'\342A\001\002\372A \n\036cloudtasks.googleap"
-          + "is.com/Task\022<\n\rresponse_view\030\002 \001(\0162%.goo"
-          + "gle.cloud.tasks.v2beta2.Task.View2\324\034\n\nCl"
-          + "oudTasks\022\255\001\n\nListQueues\022-.google.cloud.t"
-          + "asks.v2beta2.ListQueuesRequest\032..google."
-          + "cloud.tasks.v2beta2.ListQueuesResponse\"@"
-          + "\332A\006parent\202\323\344\223\0021\022//v2beta2/{parent=projec"
-          + "ts/*/locations/*}/queues\022\232\001\n\010GetQueue\022+."
-          + "google.cloud.tasks.v2beta2.GetQueueReque"
-          + "st\032!.google.cloud.tasks.v2beta2.Queue\">\332"
-          + "A\004name\202\323\344\223\0021\022//v2beta2/{name=projects/*/"
-          + "locations/*/queues/*}\022\257\001\n\013CreateQueue\022.."
-          + "google.cloud.tasks.v2beta2.CreateQueueRe"
-          + "quest\032!.google.cloud.tasks.v2beta2.Queue"
-          + "\"M\332A\014parent,queue\202\323\344\223\0028\"//v2beta2/{paren"
-          + "t=projects/*/locations/*}/queues:\005queue\022"
-          + "\272\001\n\013UpdateQueue\022..google.cloud.tasks.v2b"
-          + "eta2.UpdateQueueRequest\032!.google.cloud.t"
-          + "asks.v2beta2.Queue\"X\332A\021queue,update_mask"
-          + "\202\323\344\223\002>25/v2beta2/{queue.name=projects/*/"
-          + "locations/*/queues/*}:\005queue\022\225\001\n\013DeleteQ"
-          + "ueue\022..google.cloud.tasks.v2beta2.Delete"
-          + "QueueRequest\032\026.google.protobuf.Empty\">\332A"
-          + "\004name\202\323\344\223\0021*//v2beta2/{name=projects/*/l"
-          + "ocations/*/queues/*}\022\247\001\n\nPurgeQueue\022-.go"
-          + "ogle.cloud.tasks.v2beta2.PurgeQueueReque"
-          + "st\032!.google.cloud.tasks.v2beta2.Queue\"G\332"
-          + "A\004name\202\323\344\223\002:\"5/v2beta2/{name=projects/*/"
-          + "locations/*/queues/*}:purge:\001*\022\247\001\n\nPause"
-          + "Queue\022-.google.cloud.tasks.v2beta2.Pause"
+          + "eue\0223\n\tread_mask\030\002 \001(\0132\032.google.protobuf"
+          + ".FieldMaskB\004\342A\001\001\"\206\001\n\022CreateQueueRequest\022"
+          + "8\n\006parent\030\001 \001(\tB(\342A\001\002\372A!\022\037cloudtasks.goo"
+          + "gleapis.com/Queue\0226\n\005queue\030\002 \001(\0132!.googl"
+          + "e.cloud.tasks.v2beta2.QueueB\004\342A\001\002\"}\n\022Upd"
+          + "ateQueueRequest\0226\n\005queue\030\001 \001(\0132!.google."
+          + "cloud.tasks.v2beta2.QueueB\004\342A\001\002\022/\n\013updat"
+          + "e_mask\030\002 \001(\0132\032.google.protobuf.FieldMask"
+          + "\"L\n\022DeleteQueueRequest\0226\n\004name\030\001 \001(\tB(\342A"
+          + "\001\002\372A!\n\037cloudtasks.googleapis.com/Queue\"K"
+          + "\n\021PurgeQueueRequest\0226\n\004name\030\001 \001(\tB(\342A\001\002\372"
+          + "A!\n\037cloudtasks.googleapis.com/Queue\"K\n\021P"
+          + "auseQueueRequest\0226\n\004name\030\001 \001(\tB(\342A\001\002\372A!\n"
+          + "\037cloudtasks.googleapis.com/Queue\"L\n\022Resu"
+          + "meQueueRequest\0226\n\004name\030\001 \001(\tB(\342A\001\002\372A!\n\037c"
+          + "loudtasks.googleapis.com/Queue\"j\n\026Upload"
+          + "QueueYamlRequest\022\024\n\006app_id\030\001 \001(\tB\004\342A\001\002\022,"
+          + "\n\thttp_body\030\002 \001(\0132\024.google.api.HttpBodyH"
+          + "\000\210\001\001B\014\n\n_http_body\"\260\001\n\020ListTasksRequest\022"
+          + "7\n\006parent\030\001 \001(\tB\'\342A\001\002\372A \022\036cloudtasks.goo"
+          + "gleapis.com/Task\022<\n\rresponse_view\030\002 \001(\0162"
+          + "%.google.cloud.tasks.v2beta2.Task.View\022\021"
+          + "\n\tpage_size\030\004 \001(\005\022\022\n\npage_token\030\005 \001(\t\"]\n"
+          + "\021ListTasksResponse\022/\n\005tasks\030\001 \003(\0132 .goog"
+          + "le.cloud.tasks.v2beta2.Task\022\027\n\017next_page"
+          + "_token\030\002 \001(\t\"\205\001\n\016GetTaskRequest\0225\n\004name\030"
+          + "\001 \001(\tB\'\342A\001\002\372A \n\036cloudtasks.googleapis.co"
+          + "m/Task\022<\n\rresponse_view\030\002 \001(\0162%.google.c"
+          + "loud.tasks.v2beta2.Task.View\"\300\001\n\021CreateT"
+          + "askRequest\0227\n\006parent\030\001 \001(\tB\'\342A\001\002\372A \022\036clo"
+          + "udtasks.googleapis.com/Task\0224\n\004task\030\002 \001("
+          + "\0132 .google.cloud.tasks.v2beta2.TaskB\004\342A\001"
+          + "\002\022<\n\rresponse_view\030\003 \001(\0162%.google.cloud."
+          + "tasks.v2beta2.Task.View\"J\n\021DeleteTaskReq"
+          + "uest\0225\n\004name\030\001 \001(\tB\'\342A\001\002\372A \n\036cloudtasks."
+          + "googleapis.com/Task\"\346\001\n\021LeaseTasksReques"
+          + "t\0227\n\006parent\030\001 \001(\tB\'\342A\001\002\372A \022\036cloudtasks.g"
+          + "oogleapis.com/Task\022\021\n\tmax_tasks\030\002 \001(\005\0227\n"
+          + "\016lease_duration\030\003 \001(\0132\031.google.protobuf."
+          + "DurationB\004\342A\001\002\022<\n\rresponse_view\030\004 \001(\0162%."
+          + "google.cloud.tasks.v2beta2.Task.View\022\016\n\006"
+          + "filter\030\005 \001(\t\"E\n\022LeaseTasksResponse\022/\n\005ta"
+          + "sks\030\001 \003(\0132 .google.cloud.tasks.v2beta2.T"
+          + "ask\"\210\001\n\026AcknowledgeTaskRequest\0225\n\004name\030\001"
+          + " \001(\tB\'\342A\001\002\372A \n\036cloudtasks.googleapis.com"
+          + "/Task\0227\n\rschedule_time\030\002 \001(\0132\032.google.pr"
+          + "otobuf.TimestampB\004\342A\001\002\"\372\001\n\021RenewLeaseReq"
+          + "uest\0225\n\004name\030\001 \001(\tB\'\342A\001\002\372A \n\036cloudtasks."
+          + "googleapis.com/Task\0227\n\rschedule_time\030\002 \001"
+          + "(\0132\032.google.protobuf.TimestampB\004\342A\001\002\0227\n\016"
+          + "lease_duration\030\003 \001(\0132\031.google.protobuf.D"
+          + "urationB\004\342A\001\002\022<\n\rresponse_view\030\004 \001(\0162%.g"
+          + "oogle.cloud.tasks.v2beta2.Task.View\"\302\001\n\022"
+          + "CancelLeaseRequest\0225\n\004name\030\001 \001(\tB\'\342A\001\002\372A"
+          + " \n\036cloudtasks.googleapis.com/Task\0227\n\rsch"
+          + "edule_time\030\002 \001(\0132\032.google.protobuf.Times"
+          + "tampB\004\342A\001\002\022<\n\rresponse_view\030\003 \001(\0162%.goog"
+          + "le.cloud.tasks.v2beta2.Task.View\"\205\001\n\016Run"
+          + "TaskRequest\0225\n\004name\030\001 \001(\tB\'\342A\001\002\372A \n\036clou"
+          + "dtasks.googleapis.com/Task\022<\n\rresponse_v"
+          + "iew\030\002 \001(\0162%.google.cloud.tasks.v2beta2.T"
+          + "ask.View\"\214\001\n\021BufferTaskRequest\0226\n\005queue\030"
+          + "\001 \001(\tB\'\342A\001\002\372A \022\036cloudtasks.googleapis.co"
+          + "m/Task\022\025\n\007task_id\030\002 \001(\tB\004\342A\001\001\022(\n\004body\030\003 "
+          + "\001(\0132\024.google.api.HttpBodyB\004\342A\001\001\"D\n\022Buffe"
+          + "rTaskResponse\022.\n\004task\030\001 \001(\0132 .google.clo"
+          + "ud.tasks.v2beta2.Task2\214\037\n\nCloudTasks\022\255\001\n"
+          + "\nListQueues\022-.google.cloud.tasks.v2beta2"
+          + ".ListQueuesRequest\032..google.cloud.tasks."
+          + "v2beta2.ListQueuesResponse\"@\332A\006parent\202\323\344"
+          + "\223\0021\022//v2beta2/{parent=projects/*/locatio"
+          + "ns/*}/queues\022\232\001\n\010GetQueue\022+.google.cloud"
+          + ".tasks.v2beta2.GetQueueRequest\032!.google."
+          + "cloud.tasks.v2beta2.Queue\">\332A\004name\202\323\344\223\0021"
+          + "\022//v2beta2/{name=projects/*/locations/*/"
+          + "queues/*}\022\257\001\n\013CreateQueue\022..google.cloud"
+          + ".tasks.v2beta2.CreateQueueRequest\032!.goog"
+          + "le.cloud.tasks.v2beta2.Queue\"M\332A\014parent,"
+          + "queue\202\323\344\223\0028\"//v2beta2/{parent=projects/*"
+          + "/locations/*}/queues:\005queue\022\272\001\n\013UpdateQu"
+          + "eue\022..google.cloud.tasks.v2beta2.UpdateQ"
+          + "ueueRequest\032!.google.cloud.tasks.v2beta2"
+          + ".Queue\"X\332A\021queue,update_mask\202\323\344\223\002>25/v2b"
+          + "eta2/{queue.name=projects/*/locations/*/"
+          + "queues/*}:\005queue\022\225\001\n\013DeleteQueue\022..googl"
+          + "e.cloud.tasks.v2beta2.DeleteQueueRequest"
+          + "\032\026.google.protobuf.Empty\">\332A\004name\202\323\344\223\0021*"
+          + "//v2beta2/{name=projects/*/locations/*/q"
+          + "ueues/*}\022\247\001\n\nPurgeQueue\022-.google.cloud.t"
+          + "asks.v2beta2.PurgeQueueRequest\032!.google."
+          + "cloud.tasks.v2beta2.Queue\"G\332A\004name\202\323\344\223\002:"
+          + "\"5/v2beta2/{name=projects/*/locations/*/"
+          + "queues/*}:purge:\001*\022\247\001\n\nPauseQueue\022-.goog"
+          + "le.cloud.tasks.v2beta2.PauseQueueRequest"
+          + "\032!.google.cloud.tasks.v2beta2.Queue\"G\332A\004"
+          + "name\202\323\344\223\002:\"5/v2beta2/{name=projects/*/lo"
+          + "cations/*/queues/*}:pause:\001*\022\252\001\n\013ResumeQ"
+          + "ueue\022..google.cloud.tasks.v2beta2.Resume"
           + "QueueRequest\032!.google.cloud.tasks.v2beta"
-          + "2.Queue\"G\332A\004name\202\323\344\223\002:\"5/v2beta2/{name=p"
-          + "rojects/*/locations/*/queues/*}:pause:\001*"
-          + "\022\252\001\n\013ResumeQueue\022..google.cloud.tasks.v2"
-          + "beta2.ResumeQueueRequest\032!.google.cloud."
-          + "tasks.v2beta2.Queue\"H\332A\004name\202\323\344\223\002;\"6/v2b"
-          + "eta2/{name=projects/*/locations/*/queues"
-          + "/*}:resume:\001*\022\241\001\n\014GetIamPolicy\022\".google."
-          + "iam.v1.GetIamPolicyRequest\032\025.google.iam."
-          + "v1.Policy\"V\332A\010resource\202\323\344\223\002E\"@/v2beta2/{"
-          + "resource=projects/*/locations/*/queues/*"
-          + "}:getIamPolicy:\001*\022\250\001\n\014SetIamPolicy\022\".goo"
-          + "gle.iam.v1.SetIamPolicyRequest\032\025.google."
-          + "iam.v1.Policy\"]\332A\017resource,policy\202\323\344\223\002E\""
-          + "@/v2beta2/{resource=projects/*/locations"
-          + "/*/queues/*}:setIamPolicy:\001*\022\323\001\n\022TestIam"
-          + "Permissions\022(.google.iam.v1.TestIamPermi"
-          + "ssionsRequest\032).google.iam.v1.TestIamPer"
-          + "missionsResponse\"h\332A\024resource,permission"
-          + "s\202\323\344\223\002K\"F/v2beta2/{resource=projects/*/l"
-          + "ocations/*/queues/*}:testIamPermissions:"
-          + "\001*\022\262\001\n\tListTasks\022,.google.cloud.tasks.v2"
-          + "beta2.ListTasksRequest\032-.google.cloud.ta"
-          + "sks.v2beta2.ListTasksResponse\"H\332A\006parent"
-          + "\202\323\344\223\0029\0227/v2beta2/{parent=projects/*/loca"
-          + "tions/*/queues/*}/tasks\022\237\001\n\007GetTask\022*.go"
-          + "ogle.cloud.tasks.v2beta2.GetTaskRequest\032"
-          + " .google.cloud.tasks.v2beta2.Task\"F\332A\004na"
-          + "me\202\323\344\223\0029\0227/v2beta2/{name=projects/*/loca"
-          + "tions/*/queues/*/tasks/*}\022\257\001\n\nCreateTask"
-          + "\022-.google.cloud.tasks.v2beta2.CreateTask"
-          + "Request\032 .google.cloud.tasks.v2beta2.Tas"
-          + "k\"P\332A\013parent,task\202\323\344\223\002<\"7/v2beta2/{paren"
-          + "t=projects/*/locations/*/queues/*}/tasks"
-          + ":\001*\022\233\001\n\nDeleteTask\022-.google.cloud.tasks."
-          + "v2beta2.DeleteTaskRequest\032\026.google.proto"
-          + "buf.Empty\"F\332A\004name\202\323\344\223\0029*7/v2beta2/{name"
-          + "=projects/*/locations/*/queues/*/tasks/*"
-          + "}\022\315\001\n\nLeaseTasks\022-.google.cloud.tasks.v2"
-          + "beta2.LeaseTasksRequest\032..google.cloud.t"
-          + "asks.v2beta2.LeaseTasksResponse\"`\332A\025pare"
-          + "nt,lease_duration\202\323\344\223\002B\"=/v2beta2/{paren"
-          + "t=projects/*/locations/*/queues/*}/tasks"
-          + ":lease:\001*\022\302\001\n\017AcknowledgeTask\0222.google.c"
-          + "loud.tasks.v2beta2.AcknowledgeTaskReques"
-          + "t\032\026.google.protobuf.Empty\"c\332A\022name,sched"
-          + "ule_time\202\323\344\223\002H\"C/v2beta2/{name=projects/"
-          + "*/locations/*/queues/*/tasks/*}:acknowle"
-          + "dge:\001*\022\320\001\n\nRenewLease\022-.google.cloud.tas"
-          + "ks.v2beta2.RenewLeaseRequest\032 .google.cl"
-          + "oud.tasks.v2beta2.Task\"q\332A!name,schedule"
-          + "_time,lease_duration\202\323\344\223\002G\"B/v2beta2/{na"
-          + "me=projects/*/locations/*/queues/*/tasks"
-          + "/*}:renewLease:\001*\022\304\001\n\013CancelLease\022..goog"
-          + "le.cloud.tasks.v2beta2.CancelLeaseReques"
-          + "t\032 .google.cloud.tasks.v2beta2.Task\"c\332A\022"
-          + "name,schedule_time\202\323\344\223\002H\"C/v2beta2/{name"
-          + "=projects/*/locations/*/queues/*/tasks/*"
-          + "}:cancelLease:\001*\022\246\001\n\007RunTask\022*.google.cl"
-          + "oud.tasks.v2beta2.RunTaskRequest\032 .googl"
-          + "e.cloud.tasks.v2beta2.Task\"M\332A\004name\202\323\344\223\002"
-          + "@\";/v2beta2/{name=projects/*/locations/*"
-          + "/queues/*/tasks/*}:run:\001*\032M\312A\031cloudtasks"
-          + ".googleapis.com\322A.https://www.googleapis"
-          + ".com/auth/cloud-platformB\200\001\n\036com.google."
-          + "cloud.tasks.v2beta2B\017CloudTasksProtoP\001ZC"
-          + "cloud.google.com/go/cloudtasks/apiv2beta"
-          + "2/cloudtaskspb;cloudtaskspb\242\002\005TASKSb\006pro"
-          + "to3"
+          + "2.Queue\"H\332A\004name\202\323\344\223\002;\"6/v2beta2/{name=p"
+          + "rojects/*/locations/*/queues/*}:resume:\001"
+          + "*\022_\n\017UploadQueueYaml\0222.google.cloud.task"
+          + "s.v2beta2.UploadQueueYamlRequest\032\026.googl"
+          + "e.protobuf.Empty\"\000\022\241\001\n\014GetIamPolicy\022\".go"
+          + "ogle.iam.v1.GetIamPolicyRequest\032\025.google"
+          + ".iam.v1.Policy\"V\332A\010resource\202\323\344\223\002E\"@/v2be"
+          + "ta2/{resource=projects/*/locations/*/que"
+          + "ues/*}:getIamPolicy:\001*\022\250\001\n\014SetIamPolicy\022"
+          + "\".google.iam.v1.SetIamPolicyRequest\032\025.go"
+          + "ogle.iam.v1.Policy\"]\332A\017resource,policy\202\323"
+          + "\344\223\002E\"@/v2beta2/{resource=projects/*/loca"
+          + "tions/*/queues/*}:setIamPolicy:\001*\022\323\001\n\022Te"
+          + "stIamPermissions\022(.google.iam.v1.TestIam"
+          + "PermissionsRequest\032).google.iam.v1.TestI"
+          + "amPermissionsResponse\"h\332A\024resource,permi"
+          + "ssions\202\323\344\223\002K\"F/v2beta2/{resource=project"
+          + "s/*/locations/*/queues/*}:testIamPermiss"
+          + "ions:\001*\022\262\001\n\tListTasks\022,.google.cloud.tas"
+          + "ks.v2beta2.ListTasksRequest\032-.google.clo"
+          + "ud.tasks.v2beta2.ListTasksResponse\"H\332A\006p"
+          + "arent\202\323\344\223\0029\0227/v2beta2/{parent=projects/*"
+          + "/locations/*/queues/*}/tasks\022\237\001\n\007GetTask"
+          + "\022*.google.cloud.tasks.v2beta2.GetTaskReq"
+          + "uest\032 .google.cloud.tasks.v2beta2.Task\"F"
+          + "\332A\004name\202\323\344\223\0029\0227/v2beta2/{name=projects/*"
+          + "/locations/*/queues/*/tasks/*}\022\257\001\n\nCreat"
+          + "eTask\022-.google.cloud.tasks.v2beta2.Creat"
+          + "eTaskRequest\032 .google.cloud.tasks.v2beta"
+          + "2.Task\"P\332A\013parent,task\202\323\344\223\002<\"7/v2beta2/{"
+          + "parent=projects/*/locations/*/queues/*}/"
+          + "tasks:\001*\022\233\001\n\nDeleteTask\022-.google.cloud.t"
+          + "asks.v2beta2.DeleteTaskRequest\032\026.google."
+          + "protobuf.Empty\"F\332A\004name\202\323\344\223\0029*7/v2beta2/"
+          + "{name=projects/*/locations/*/queues/*/ta"
+          + "sks/*}\022\315\001\n\nLeaseTasks\022-.google.cloud.tas"
+          + "ks.v2beta2.LeaseTasksRequest\032..google.cl"
+          + "oud.tasks.v2beta2.LeaseTasksResponse\"`\332A"
+          + "\025parent,lease_duration\202\323\344\223\002B\"=/v2beta2/{"
+          + "parent=projects/*/locations/*/queues/*}/"
+          + "tasks:lease:\001*\022\302\001\n\017AcknowledgeTask\0222.goo"
+          + "gle.cloud.tasks.v2beta2.AcknowledgeTaskR"
+          + "equest\032\026.google.protobuf.Empty\"c\332A\022name,"
+          + "schedule_time\202\323\344\223\002H\"C/v2beta2/{name=proj"
+          + "ects/*/locations/*/queues/*/tasks/*}:ack"
+          + "nowledge:\001*\022\320\001\n\nRenewLease\022-.google.clou"
+          + "d.tasks.v2beta2.RenewLeaseRequest\032 .goog"
+          + "le.cloud.tasks.v2beta2.Task\"q\332A!name,sch"
+          + "edule_time,lease_duration\202\323\344\223\002G\"B/v2beta"
+          + "2/{name=projects/*/locations/*/queues/*/"
+          + "tasks/*}:renewLease:\001*\022\304\001\n\013CancelLease\022."
+          + ".google.cloud.tasks.v2beta2.CancelLeaseR"
+          + "equest\032 .google.cloud.tasks.v2beta2.Task"
+          + "\"c\332A\022name,schedule_time\202\323\344\223\002H\"C/v2beta2/"
+          + "{name=projects/*/locations/*/queues/*/ta"
+          + "sks/*}:cancelLease:\001*\022\246\001\n\007RunTask\022*.goog"
+          + "le.cloud.tasks.v2beta2.RunTaskRequest\032 ."
+          + "google.cloud.tasks.v2beta2.Task\"M\332A\004name"
+          + "\202\323\344\223\002@\";/v2beta2/{name=projects/*/locati"
+          + "ons/*/queues/*/tasks/*}:run:\001*\022\324\001\n\nBuffe"
+          + "rTask\022-.google.cloud.tasks.v2beta2.Buffe"
+          + "rTaskRequest\032..google.cloud.tasks.v2beta"
+          + "2.BufferTaskResponse\"g\332A\022queue,task_id,b"
+          + "ody\202\323\344\223\002L\"G/v2beta2/{queue=projects/*/lo"
+          + "cations/*/queues/*}/tasks/{task_id}:buff"
+          + "er:\001*\032M\312A\031cloudtasks.googleapis.com\322A.ht"
+          + "tps://www.googleapis.com/auth/cloud-plat"
+          + "formB\320\001\n\036com.google.cloud.tasks.v2beta2B"
+          + "\017CloudTasksProtoP\001ZCcloud.google.com/go/"
+          + "cloudtasks/apiv2beta2/cloudtaskspb;cloud"
+          + "taskspb\242\002\005TASKS\352AM\n\"cloudtasks.googleapi"
+          + "s.com/Location\022\'projects/{project}/locat"
+          + "ions/{location}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -299,6 +329,7 @@ public final class CloudTasksProto {
               com.google.api.AnnotationsProto.getDescriptor(),
               com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
+              com.google.api.HttpBodyProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.tasks.v2beta2.QueueProto.getDescriptor(),
               com.google.cloud.tasks.v2beta2.TaskProto.getDescriptor(),
@@ -381,8 +412,16 @@ public final class CloudTasksProto {
             new java.lang.String[] {
               "Name",
             });
-    internal_static_google_cloud_tasks_v2beta2_ListTasksRequest_descriptor =
+    internal_static_google_cloud_tasks_v2beta2_UploadQueueYamlRequest_descriptor =
         getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_tasks_v2beta2_UploadQueueYamlRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_tasks_v2beta2_UploadQueueYamlRequest_descriptor,
+            new java.lang.String[] {
+              "AppId", "HttpBody", "HttpBody",
+            });
+    internal_static_google_cloud_tasks_v2beta2_ListTasksRequest_descriptor =
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_tasks_v2beta2_ListTasksRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tasks_v2beta2_ListTasksRequest_descriptor,
@@ -390,7 +429,7 @@ public final class CloudTasksProto {
               "Parent", "ResponseView", "PageSize", "PageToken",
             });
     internal_static_google_cloud_tasks_v2beta2_ListTasksResponse_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_tasks_v2beta2_ListTasksResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tasks_v2beta2_ListTasksResponse_descriptor,
@@ -398,7 +437,7 @@ public final class CloudTasksProto {
               "Tasks", "NextPageToken",
             });
     internal_static_google_cloud_tasks_v2beta2_GetTaskRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_tasks_v2beta2_GetTaskRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tasks_v2beta2_GetTaskRequest_descriptor,
@@ -406,7 +445,7 @@ public final class CloudTasksProto {
               "Name", "ResponseView",
             });
     internal_static_google_cloud_tasks_v2beta2_CreateTaskRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_tasks_v2beta2_CreateTaskRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tasks_v2beta2_CreateTaskRequest_descriptor,
@@ -414,7 +453,7 @@ public final class CloudTasksProto {
               "Parent", "Task", "ResponseView",
             });
     internal_static_google_cloud_tasks_v2beta2_DeleteTaskRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_tasks_v2beta2_DeleteTaskRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tasks_v2beta2_DeleteTaskRequest_descriptor,
@@ -422,7 +461,7 @@ public final class CloudTasksProto {
               "Name",
             });
     internal_static_google_cloud_tasks_v2beta2_LeaseTasksRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_tasks_v2beta2_LeaseTasksRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tasks_v2beta2_LeaseTasksRequest_descriptor,
@@ -430,7 +469,7 @@ public final class CloudTasksProto {
               "Parent", "MaxTasks", "LeaseDuration", "ResponseView", "Filter",
             });
     internal_static_google_cloud_tasks_v2beta2_LeaseTasksResponse_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_tasks_v2beta2_LeaseTasksResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tasks_v2beta2_LeaseTasksResponse_descriptor,
@@ -438,7 +477,7 @@ public final class CloudTasksProto {
               "Tasks",
             });
     internal_static_google_cloud_tasks_v2beta2_AcknowledgeTaskRequest_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_tasks_v2beta2_AcknowledgeTaskRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tasks_v2beta2_AcknowledgeTaskRequest_descriptor,
@@ -446,7 +485,7 @@ public final class CloudTasksProto {
               "Name", "ScheduleTime",
             });
     internal_static_google_cloud_tasks_v2beta2_RenewLeaseRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_tasks_v2beta2_RenewLeaseRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tasks_v2beta2_RenewLeaseRequest_descriptor,
@@ -454,7 +493,7 @@ public final class CloudTasksProto {
               "Name", "ScheduleTime", "LeaseDuration", "ResponseView",
             });
     internal_static_google_cloud_tasks_v2beta2_CancelLeaseRequest_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_tasks_v2beta2_CancelLeaseRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tasks_v2beta2_CancelLeaseRequest_descriptor,
@@ -462,12 +501,28 @@ public final class CloudTasksProto {
               "Name", "ScheduleTime", "ResponseView",
             });
     internal_static_google_cloud_tasks_v2beta2_RunTaskRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_tasks_v2beta2_RunTaskRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_tasks_v2beta2_RunTaskRequest_descriptor,
             new java.lang.String[] {
               "Name", "ResponseView",
+            });
+    internal_static_google_cloud_tasks_v2beta2_BufferTaskRequest_descriptor =
+        getDescriptor().getMessageTypes().get(21);
+    internal_static_google_cloud_tasks_v2beta2_BufferTaskRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_tasks_v2beta2_BufferTaskRequest_descriptor,
+            new java.lang.String[] {
+              "Queue", "TaskId", "Body",
+            });
+    internal_static_google_cloud_tasks_v2beta2_BufferTaskResponse_descriptor =
+        getDescriptor().getMessageTypes().get(22);
+    internal_static_google_cloud_tasks_v2beta2_BufferTaskResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_tasks_v2beta2_BufferTaskResponse_descriptor,
+            new java.lang.String[] {
+              "Task",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -476,12 +531,14 @@ public final class CloudTasksProto {
     registry.add(com.google.api.AnnotationsProto.http);
     registry.add(com.google.api.ClientProto.methodSignature);
     registry.add(com.google.api.ClientProto.oauthScopes);
+    registry.add(com.google.api.ResourceProto.resourceDefinition);
     registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
     com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
+    com.google.api.HttpBodyProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.tasks.v2beta2.QueueProto.getDescriptor();
     com.google.cloud.tasks.v2beta2.TaskProto.getDescriptor();

@@ -21,6 +21,7 @@ deep-remove-regex:
 
 deep-preserve-regex:
 - "/java-service-management/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
+- "/java-service-management/google-cloud-service-management/src/test/java/com/google/cloud/api/servicemanagement/v1/ServiceManagerClientHttpJsonTest.java"
 
 deep-copy-regex:
 - source: "/google/api/servicemanagement/(v.*)/.*-java/proto-google-.*/src"

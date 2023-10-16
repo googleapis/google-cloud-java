@@ -190,7 +190,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
    * auto-generated one to you.
    *
    * The conversation ID must be compliant with the regression fomula
-   * "[a-zA-Z][a-zA-Z0-9_-]*" with the characters length in range of [3,64].
+   * `[a-zA-Z][a-zA-Z0-9_-]*` with the characters length in range of [3,64].
    * If the field is provided, the caller is resposible for
    * 1. the uniqueness of the ID, otherwise the request will be rejected.
    * 2. the consistency for whether to use custom ID or not under a project to
@@ -222,7 +222,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
    * auto-generated one to you.
    *
    * The conversation ID must be compliant with the regression fomula
-   * "[a-zA-Z][a-zA-Z0-9_-]*" with the characters length in range of [3,64].
+   * `[a-zA-Z][a-zA-Z0-9_-]*` with the characters length in range of [3,64].
    * If the field is provided, the caller is resposible for
    * 1. the uniqueness of the ID, otherwise the request will be rejected.
    * 2. the consistency for whether to use custom ID or not under a project to
@@ -979,7 +979,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
      * auto-generated one to you.
      *
      * The conversation ID must be compliant with the regression fomula
-     * "[a-zA-Z][a-zA-Z0-9_-]*" with the characters length in range of [3,64].
+     * `[a-zA-Z][a-zA-Z0-9_-]*` with the characters length in range of [3,64].
      * If the field is provided, the caller is resposible for
      * 1. the uniqueness of the ID, otherwise the request will be rejected.
      * 2. the consistency for whether to use custom ID or not under a project to
@@ -1010,7 +1010,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
      * auto-generated one to you.
      *
      * The conversation ID must be compliant with the regression fomula
-     * "[a-zA-Z][a-zA-Z0-9_-]*" with the characters length in range of [3,64].
+     * `[a-zA-Z][a-zA-Z0-9_-]*` with the characters length in range of [3,64].
      * If the field is provided, the caller is resposible for
      * 1. the uniqueness of the ID, otherwise the request will be rejected.
      * 2. the consistency for whether to use custom ID or not under a project to
@@ -1041,7 +1041,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
      * auto-generated one to you.
      *
      * The conversation ID must be compliant with the regression fomula
-     * "[a-zA-Z][a-zA-Z0-9_-]*" with the characters length in range of [3,64].
+     * `[a-zA-Z][a-zA-Z0-9_-]*` with the characters length in range of [3,64].
      * If the field is provided, the caller is resposible for
      * 1. the uniqueness of the ID, otherwise the request will be rejected.
      * 2. the consistency for whether to use custom ID or not under a project to
@@ -1071,7 +1071,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
      * auto-generated one to you.
      *
      * The conversation ID must be compliant with the regression fomula
-     * "[a-zA-Z][a-zA-Z0-9_-]*" with the characters length in range of [3,64].
+     * `[a-zA-Z][a-zA-Z0-9_-]*` with the characters length in range of [3,64].
      * If the field is provided, the caller is resposible for
      * 1. the uniqueness of the ID, otherwise the request will be rejected.
      * 2. the consistency for whether to use custom ID or not under a project to
@@ -1097,7 +1097,7 @@ public final class CreateConversationRequest extends com.google.protobuf.Generat
      * auto-generated one to you.
      *
      * The conversation ID must be compliant with the regression fomula
-     * "[a-zA-Z][a-zA-Z0-9_-]*" with the characters length in range of [3,64].
+     * `[a-zA-Z][a-zA-Z0-9_-]*` with the characters length in range of [3,64].
      * If the field is provided, the caller is resposible for
      * 1. the uniqueness of the ID, otherwise the request will be rejected.
      * 2. the consistency for whether to use custom ID or not under a project to

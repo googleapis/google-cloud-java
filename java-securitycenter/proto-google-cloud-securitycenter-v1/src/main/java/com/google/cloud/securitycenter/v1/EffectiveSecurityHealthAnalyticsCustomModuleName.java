@@ -283,7 +283,7 @@ public class EffectiveSecurityHealthAnalyticsCustomModuleName implements Resourc
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       EffectiveSecurityHealthAnalyticsCustomModuleName that =
           ((EffectiveSecurityHealthAnalyticsCustomModuleName) o);
       return Objects.equals(this.organization, that.organization)

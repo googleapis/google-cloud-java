@@ -22,7 +22,7 @@ package com.google.cloud.deploy.v1;
  *
  *
  * <pre>
- * A `Rollout` resource in the Google Cloud Deploy API.
+ * A `Rollout` resource in the Cloud Deploy API.
  *
  * A `Rollout` contains information around a specific deployment to a `Target`.
  * </pre>
@@ -650,7 +650,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Cloud Build is not available, either because it is not enabled or because
      * Cloud Deploy has insufficient permissions. See [required
-     * permission](/deploy/docs/cloud-deploy-service-account#required_permissions).
+     * permission](https://cloud.google.com/deploy/docs/cloud-deploy-service-account#required_permissions).
      * </pre>
      *
      * <code>CLOUD_BUILD_UNAVAILABLE = 1;</code>
@@ -711,8 +711,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Build failed to fulfill Google Cloud Deploy's request. See
-     * failure_message for additional details.
+     * Cloud Build failed to fulfill Cloud Deploy's request. See failure_message
+     * for additional details.
      * </pre>
      *
      * <code>CLOUD_BUILD_REQUEST_FAILED = 7;</code>
@@ -737,7 +737,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Cloud Build is not available, either because it is not enabled or because
      * Cloud Deploy has insufficient permissions. See [required
-     * permission](/deploy/docs/cloud-deploy-service-account#required_permissions).
+     * permission](https://cloud.google.com/deploy/docs/cloud-deploy-service-account#required_permissions).
      * </pre>
      *
      * <code>CLOUD_BUILD_UNAVAILABLE = 1;</code>
@@ -798,8 +798,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Cloud Build failed to fulfill Google Cloud Deploy's request. See
-     * failure_message for additional details.
+     * Cloud Build failed to fulfill Cloud Deploy's request. See failure_message
+     * for additional details.
      * </pre>
      *
      * <code>CLOUD_BUILD_REQUEST_FAILED = 7;</code>
@@ -1090,9 +1090,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -1115,9 +1114,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -1131,9 +1129,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -1154,9 +1151,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -1204,8 +1200,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -1237,8 +1232,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -1261,8 +1255,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -1292,8 +1285,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -2489,7 +2481,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A `Rollout` resource in the Google Cloud Deploy API.
+   * A `Rollout` resource in the Cloud Deploy API.
    *
    * A `Rollout` contains information around a specific deployment to a `Target`.
    * </pre>
@@ -3405,9 +3397,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -3430,9 +3421,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -3446,9 +3436,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -3469,9 +3458,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -3498,9 +3486,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -3523,9 +3510,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -3546,9 +3532,8 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -3589,8 +3574,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
      *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
@@ -3622,8 +3606,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
      *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
@@ -3646,8 +3629,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
      *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
@@ -3677,8 +3659,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
      *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
@@ -3714,8 +3695,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
      *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
@@ -3747,8 +3727,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
      *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
@@ -3778,8 +3757,7 @@ public final class Rollout extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
      *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.

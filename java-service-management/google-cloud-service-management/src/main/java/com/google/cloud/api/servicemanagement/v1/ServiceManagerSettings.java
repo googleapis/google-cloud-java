@@ -57,6 +57,11 @@ import com.google.api.servicemanagement.v1.SubmitConfigSourceResponse;
 import com.google.api.servicemanagement.v1.UndeleteServiceRequest;
 import com.google.api.servicemanagement.v1.UndeleteServiceResponse;
 import com.google.cloud.api.servicemanagement.v1.stub.ServiceManagerStubSettings;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -204,6 +209,22 @@ public class ServiceManagerSettings extends ClientSettings<ServiceManagerSetting
   public UnaryCallSettings<GenerateConfigReportRequest, GenerateConfigReportResponse>
       generateConfigReportSettings() {
     return ((ServiceManagerStubSettings) getStubSettings()).generateConfigReportSettings();
+  }
+
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return ((ServiceManagerStubSettings) getStubSettings()).setIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return ((ServiceManagerStubSettings) getStubSettings()).getIamPolicySettings();
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((ServiceManagerStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
   public static final ServiceManagerSettings create(ServiceManagerStubSettings stub)
@@ -429,6 +450,22 @@ public class ServiceManagerSettings extends ClientSettings<ServiceManagerSetting
     public UnaryCallSettings.Builder<GenerateConfigReportRequest, GenerateConfigReportResponse>
         generateConfigReportSettings() {
       return getStubSettingsBuilder().generateConfigReportSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return getStubSettingsBuilder().setIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getStubSettingsBuilder().getIamPolicySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

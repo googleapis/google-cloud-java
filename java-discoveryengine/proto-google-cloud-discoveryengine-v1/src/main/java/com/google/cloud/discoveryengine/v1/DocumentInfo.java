@@ -74,6 +74,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     ID(1),
     NAME(2),
+    URI(6),
     DOCUMENTDESCRIPTOR_NOT_SET(0);
     private final int value;
 
@@ -96,6 +97,8 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
           return ID;
         case 2:
           return NAME;
+        case 6:
+          return URI;
         case 0:
           return DOCUMENTDESCRIPTOR_NOT_SET;
         default:
@@ -117,10 +120,10 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The Document resource ID.
+   * The [Document][google.cloud.discoveryengine.v1.Document] resource ID.
    * </pre>
    *
-   * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string id = 1;</code>
    *
    * @return Whether the id field is set.
    */
@@ -131,10 +134,10 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The Document resource ID.
+   * The [Document][google.cloud.discoveryengine.v1.Document] resource ID.
    * </pre>
    *
-   * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string id = 1;</code>
    *
    * @return The id.
    */
@@ -158,10 +161,10 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The Document resource ID.
+   * The [Document][google.cloud.discoveryengine.v1.Document] resource ID.
    * </pre>
    *
-   * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string id = 1;</code>
    *
    * @return The bytes for id.
    */
@@ -187,13 +190,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The Document resource full name, of the form:
+   * The [Document][google.cloud.discoveryengine.v1.Document] resource full
+   * name, of the form:
    * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
    * </pre>
    *
-   * <code>
-   * string name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return Whether the name field is set.
    */
@@ -204,13 +206,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The Document resource full name, of the form:
+   * The [Document][google.cloud.discoveryengine.v1.Document] resource full
+   * name, of the form:
    * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
    * </pre>
    *
-   * <code>
-   * string name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The name.
    */
@@ -234,13 +235,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The Document resource full name, of the form:
+   * The [Document][google.cloud.discoveryengine.v1.Document] resource full
+   * name, of the form:
    * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
    * </pre>
    *
-   * <code>
-   * string name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for name.
    */
@@ -253,6 +253,79 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       if (documentDescriptorCase_ == 2) {
+        documentDescriptor_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int URI_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * The [Document][google.cloud.discoveryengine.v1.Document] URI - only
+   * allowed for website data stores.
+   * </pre>
+   *
+   * <code>string uri = 6;</code>
+   *
+   * @return Whether the uri field is set.
+   */
+  public boolean hasUri() {
+    return documentDescriptorCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The [Document][google.cloud.discoveryengine.v1.Document] URI - only
+   * allowed for website data stores.
+   * </pre>
+   *
+   * <code>string uri = 6;</code>
+   *
+   * @return The uri.
+   */
+  public java.lang.String getUri() {
+    java.lang.Object ref = "";
+    if (documentDescriptorCase_ == 6) {
+      ref = documentDescriptor_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (documentDescriptorCase_ == 6) {
+        documentDescriptor_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The [Document][google.cloud.discoveryengine.v1.Document] URI - only
+   * allowed for website data stores.
+   * </pre>
+   *
+   * <code>string uri = 6;</code>
+   *
+   * @return The bytes for uri.
+   */
+  public com.google.protobuf.ByteString getUriBytes() {
+    java.lang.Object ref = "";
+    if (documentDescriptorCase_ == 6) {
+      ref = documentDescriptor_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (documentDescriptorCase_ == 6) {
         documentDescriptor_ = b;
       }
       return b;
@@ -404,6 +477,9 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < promotionIds_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, promotionIds_.getRaw(i));
     }
+    if (documentDescriptorCase_ == 6) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, documentDescriptor_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -429,6 +505,9 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       }
       size += dataSize;
       size += 1 * getPromotionIdsList().size();
+    }
+    if (documentDescriptorCase_ == 6) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, documentDescriptor_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -458,6 +537,9 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
         break;
       case 2:
         if (!getName().equals(other.getName())) return false;
+        break;
+      case 6:
+        if (!getUri().equals(other.getUri())) return false;
         break;
       case 0:
       default:
@@ -489,6 +571,10 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       case 2:
         hash = (37 * hash) + NAME_FIELD_NUMBER;
         hash = (53 * hash) + getName().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + URI_FIELD_NUMBER;
+        hash = (53 * hash) + getUri().hashCode();
         break;
       case 0:
       default:
@@ -674,11 +760,11 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     private void buildPartial0(com.google.cloud.discoveryengine.v1.DocumentInfo result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.quantity_ = quantity_;
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         promotionIds_.makeImmutable();
         result.promotionIds_ = promotionIds_;
       }
@@ -742,7 +828,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       if (!other.promotionIds_.isEmpty()) {
         if (promotionIds_.isEmpty()) {
           promotionIds_ = other.promotionIds_;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000010;
         } else {
           ensurePromotionIdsIsMutable();
           promotionIds_.addAll(other.promotionIds_);
@@ -760,6 +846,13 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
         case NAME:
           {
             documentDescriptorCase_ = 2;
+            documentDescriptor_ = other.documentDescriptor_;
+            onChanged();
+            break;
+          }
+        case URI:
+          {
+            documentDescriptorCase_ = 6;
             documentDescriptor_ = other.documentDescriptor_;
             onChanged();
             break;
@@ -812,7 +905,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
             case 24:
               {
                 quantity_ = input.readInt32();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 24
             case 34:
@@ -822,6 +915,13 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
                 promotionIds_.add(s);
                 break;
               } // case 34
+            case 50:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                documentDescriptorCase_ = 6;
+                documentDescriptor_ = s;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -859,10 +959,10 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource ID.
+     * The [Document][google.cloud.discoveryengine.v1.Document] resource ID.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string id = 1;</code>
      *
      * @return Whether the id field is set.
      */
@@ -874,10 +974,10 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource ID.
+     * The [Document][google.cloud.discoveryengine.v1.Document] resource ID.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string id = 1;</code>
      *
      * @return The id.
      */
@@ -902,10 +1002,10 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource ID.
+     * The [Document][google.cloud.discoveryengine.v1.Document] resource ID.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string id = 1;</code>
      *
      * @return The bytes for id.
      */
@@ -930,10 +1030,10 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource ID.
+     * The [Document][google.cloud.discoveryengine.v1.Document] resource ID.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string id = 1;</code>
      *
      * @param value The id to set.
      * @return This builder for chaining.
@@ -951,10 +1051,10 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource ID.
+     * The [Document][google.cloud.discoveryengine.v1.Document] resource ID.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string id = 1;</code>
      *
      * @return This builder for chaining.
      */
@@ -970,10 +1070,10 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource ID.
+     * The [Document][google.cloud.discoveryengine.v1.Document] resource ID.
      * </pre>
      *
-     * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string id = 1;</code>
      *
      * @param value The bytes for id to set.
      * @return This builder for chaining.
@@ -993,13 +1093,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource full name, of the form:
+     * The [Document][google.cloud.discoveryengine.v1.Document] resource full
+     * name, of the form:
      * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
      * </pre>
      *
-     * <code>
-     * string name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return Whether the name field is set.
      */
@@ -1011,13 +1110,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource full name, of the form:
+     * The [Document][google.cloud.discoveryengine.v1.Document] resource full
+     * name, of the form:
      * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
      * </pre>
      *
-     * <code>
-     * string name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The name.
      */
@@ -1042,13 +1140,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource full name, of the form:
+     * The [Document][google.cloud.discoveryengine.v1.Document] resource full
+     * name, of the form:
      * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
      * </pre>
      *
-     * <code>
-     * string name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for name.
      */
@@ -1073,13 +1170,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource full name, of the form:
+     * The [Document][google.cloud.discoveryengine.v1.Document] resource full
+     * name, of the form:
      * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
      * </pre>
      *
-     * <code>
-     * string name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1097,13 +1193,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource full name, of the form:
+     * The [Document][google.cloud.discoveryengine.v1.Document] resource full
+     * name, of the form:
      * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
      * </pre>
      *
-     * <code>
-     * string name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -1119,13 +1214,12 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Document resource full name, of the form:
+     * The [Document][google.cloud.discoveryengine.v1.Document] resource full
+     * name, of the form:
      * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
      * </pre>
      *
-     * <code>
-     * string name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-     * </code>
+     * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -1136,6 +1230,146 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       documentDescriptorCase_ = 2;
+      documentDescriptor_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The [Document][google.cloud.discoveryengine.v1.Document] URI - only
+     * allowed for website data stores.
+     * </pre>
+     *
+     * <code>string uri = 6;</code>
+     *
+     * @return Whether the uri field is set.
+     */
+    @java.lang.Override
+    public boolean hasUri() {
+      return documentDescriptorCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [Document][google.cloud.discoveryengine.v1.Document] URI - only
+     * allowed for website data stores.
+     * </pre>
+     *
+     * <code>string uri = 6;</code>
+     *
+     * @return The uri.
+     */
+    @java.lang.Override
+    public java.lang.String getUri() {
+      java.lang.Object ref = "";
+      if (documentDescriptorCase_ == 6) {
+        ref = documentDescriptor_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (documentDescriptorCase_ == 6) {
+          documentDescriptor_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [Document][google.cloud.discoveryengine.v1.Document] URI - only
+     * allowed for website data stores.
+     * </pre>
+     *
+     * <code>string uri = 6;</code>
+     *
+     * @return The bytes for uri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getUriBytes() {
+      java.lang.Object ref = "";
+      if (documentDescriptorCase_ == 6) {
+        ref = documentDescriptor_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (documentDescriptorCase_ == 6) {
+          documentDescriptor_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [Document][google.cloud.discoveryengine.v1.Document] URI - only
+     * allowed for website data stores.
+     * </pre>
+     *
+     * <code>string uri = 6;</code>
+     *
+     * @param value The uri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      documentDescriptorCase_ = 6;
+      documentDescriptor_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [Document][google.cloud.discoveryengine.v1.Document] URI - only
+     * allowed for website data stores.
+     * </pre>
+     *
+     * <code>string uri = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUri() {
+      if (documentDescriptorCase_ == 6) {
+        documentDescriptorCase_ = 0;
+        documentDescriptor_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The [Document][google.cloud.discoveryengine.v1.Document] URI - only
+     * allowed for website data stores.
+     * </pre>
+     *
+     * <code>string uri = 6;</code>
+     *
+     * @param value The bytes for uri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      documentDescriptorCase_ = 6;
       documentDescriptor_ = value;
       onChanged();
       return this;
@@ -1163,7 +1397,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasQuantity() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1211,7 +1445,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder setQuantity(int value) {
 
       quantity_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1235,7 +1469,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearQuantity() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       quantity_ = 0;
       onChanged();
       return this;
@@ -1248,7 +1482,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       if (!promotionIds_.isModifiable()) {
         promotionIds_ = new com.google.protobuf.LazyStringArrayList(promotionIds_);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
     }
     /**
      *
@@ -1333,7 +1567,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePromotionIdsIsMutable();
       promotionIds_.set(index, value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1356,7 +1590,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       }
       ensurePromotionIdsIsMutable();
       promotionIds_.add(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1376,7 +1610,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllPromotionIds(java.lang.Iterable<java.lang.String> values) {
       ensurePromotionIdsIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, promotionIds_);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1394,7 +1628,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPromotionIds() {
       promotionIds_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       ;
       onChanged();
       return this;
@@ -1419,7 +1653,7 @@ public final class DocumentInfo extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensurePromotionIdsIsMutable();
       promotionIds_.add(value);
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

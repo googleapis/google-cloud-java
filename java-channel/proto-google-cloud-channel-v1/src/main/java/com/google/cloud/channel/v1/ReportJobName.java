@@ -137,7 +137,7 @@ public class ReportJobName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       ReportJobName that = ((ReportJobName) o);
       return Objects.equals(this.account, that.account)
           && Objects.equals(this.reportJob, that.reportJob);

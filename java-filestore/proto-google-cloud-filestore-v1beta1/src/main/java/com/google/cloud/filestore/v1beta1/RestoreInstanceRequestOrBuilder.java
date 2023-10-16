@@ -58,7 +58,7 @@ public interface RestoreInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the file share in the Filestore instance that the snapshot
+   * Required. Name of the file share in the Filestore instance that the backup
    * is being restored to.
    * </pre>
    *
@@ -71,7 +71,7 @@ public interface RestoreInstanceRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Name of the file share in the Filestore instance that the snapshot
+   * Required. Name of the file share in the Filestore instance that the backup
    * is being restored to.
    * </pre>
    *
@@ -89,10 +89,14 @@ public interface RestoreInstanceRequestOrBuilder
    * `projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}`.
    * </pre>
    *
-   * <code>string source_snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
+   * <code>string source_snapshot = 3 [deprecated = true, (.google.api.resource_reference) = { ... }
+   * </code>
    *
+   * @deprecated google.cloud.filestore.v1beta1.RestoreInstanceRequest.source_snapshot is
+   *     deprecated. See google/cloud/filestore/v1beta1/cloud_filestore_service.proto;l=765
    * @return Whether the sourceSnapshot field is set.
    */
+  @java.lang.Deprecated
   boolean hasSourceSnapshot();
   /**
    *
@@ -102,10 +106,14 @@ public interface RestoreInstanceRequestOrBuilder
    * `projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}`.
    * </pre>
    *
-   * <code>string source_snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
+   * <code>string source_snapshot = 3 [deprecated = true, (.google.api.resource_reference) = { ... }
+   * </code>
    *
+   * @deprecated google.cloud.filestore.v1beta1.RestoreInstanceRequest.source_snapshot is
+   *     deprecated. See google/cloud/filestore/v1beta1/cloud_filestore_service.proto;l=765
    * @return The sourceSnapshot.
    */
+  @java.lang.Deprecated
   java.lang.String getSourceSnapshot();
   /**
    *
@@ -115,10 +123,14 @@ public interface RestoreInstanceRequestOrBuilder
    * `projects/{project_id}/locations/{location_id}/snapshots/{snapshot_id}`.
    * </pre>
    *
-   * <code>string source_snapshot = 3 [(.google.api.resource_reference) = { ... }</code>
+   * <code>string source_snapshot = 3 [deprecated = true, (.google.api.resource_reference) = { ... }
+   * </code>
    *
+   * @deprecated google.cloud.filestore.v1beta1.RestoreInstanceRequest.source_snapshot is
+   *     deprecated. See google/cloud/filestore/v1beta1/cloud_filestore_service.proto;l=765
    * @return The bytes for sourceSnapshot.
    */
+  @java.lang.Deprecated
   com.google.protobuf.ByteString getSourceSnapshotBytes();
 
   /**

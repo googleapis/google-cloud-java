@@ -21,6 +21,7 @@ import com.google.cloud.kms.inventory.v1.KeyTrackingServiceClient;
 import com.google.cloud.kms.inventory.v1.OrganizationName;
 import com.google.cloud.kms.inventory.v1.ProtectedResource;
 import com.google.cloud.kms.inventory.v1.SearchProtectedResourcesRequest;
+import java.util.ArrayList;
 
 public class SyncSearchProtectedResources {
 
@@ -41,6 +42,7 @@ public class SyncSearchProtectedResources {
               .setCryptoKey(OrganizationName.of("[ORGANIZATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .addAllResourceTypes(new ArrayList<String>())
               .build();
       for (ProtectedResource element :
           keyTrackingServiceClient.searchProtectedResources(request).iterateAll()) {

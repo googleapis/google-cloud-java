@@ -32,7 +32,8 @@ public final class SynonymSetServiceGrpc {
 
   private SynonymSetServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.contentwarehouse.v1.SynonymSetService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.contentwarehouse.v1.SynonymSetService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -843,9 +844,9 @@ public final class SynonymSetServiceGrpc {
   private static final class SynonymSetServiceMethodDescriptorSupplier
       extends SynonymSetServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    SynonymSetServiceMethodDescriptorSupplier(String methodName) {
+    SynonymSetServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

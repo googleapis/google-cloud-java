@@ -18,6 +18,7 @@ package com.google.cloud.dialogflow.cx.v3.samples;
 
 // [START dialogflow_v3_generated_Flows_ImportFlow_sync]
 import com.google.cloud.dialogflow.cx.v3.AgentName;
+import com.google.cloud.dialogflow.cx.v3.FlowImportStrategy;
 import com.google.cloud.dialogflow.cx.v3.FlowsClient;
 import com.google.cloud.dialogflow.cx.v3.ImportFlowRequest;
 import com.google.cloud.dialogflow.cx.v3.ImportFlowResponse;
@@ -38,6 +39,7 @@ public class SyncImportFlow {
       ImportFlowRequest request =
           ImportFlowRequest.newBuilder()
               .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+              .setFlowImportStrategy(FlowImportStrategy.newBuilder().build())
               .build();
       ImportFlowResponse response = flowsClient.importFlowAsync(request).get();
     }

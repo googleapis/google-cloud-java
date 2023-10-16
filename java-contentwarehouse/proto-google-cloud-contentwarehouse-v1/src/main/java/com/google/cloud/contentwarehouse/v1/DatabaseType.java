@@ -55,8 +55,9 @@ public enum DatabaseType implements com.google.protobuf.ProtocolMessageEnum {
    * Cloud Sql with a Postgres Sql instance
    * </pre>
    *
-   * <code>DB_CLOUD_SQL_POSTGRES = 2;</code>
+   * <code>DB_CLOUD_SQL_POSTGRES = 2 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   DB_CLOUD_SQL_POSTGRES(2),
   UNRECOGNIZED(-1),
   ;
@@ -88,9 +89,9 @@ public enum DatabaseType implements com.google.protobuf.ProtocolMessageEnum {
    * Cloud Sql with a Postgres Sql instance
    * </pre>
    *
-   * <code>DB_CLOUD_SQL_POSTGRES = 2;</code>
+   * <code>DB_CLOUD_SQL_POSTGRES = 2 [deprecated = true];</code>
    */
-  public static final int DB_CLOUD_SQL_POSTGRES_VALUE = 2;
+  @java.lang.Deprecated public static final int DB_CLOUD_SQL_POSTGRES_VALUE = 2;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {

@@ -615,6 +615,9 @@ message NodeKubeletConfig {
   // Controls the maximum number of processes allowed to run in a pod. The value
   // must be greater than or equal to 1024 and less than 4194304.
   int64 pod_pids_limit = 4;
+
+  // Enable or disable Kubelet read only port.
+  optional bool insecure_kubelet_readonly_port_enabled = 7;
 }
 
 // Parameters that describe the nodes in a cluster.
@@ -917,6 +920,44 @@ message NodeNetworkConfig {
   // Example: max_pods_per_node of 30 will result in 32 IPs (/27) when
   // overprovisioning is disabled.
   PodCIDROverprovisionConfig pod_cidr_overprovision_config = 13;
+
+  // We specify the additional node networks for this node pool using this list.
+  // Each node network corresponds to an additional interface
+  repeated AdditionalNodeNetworkConfig additional_node_network_configs = 14;
+
+  // We specify the additional pod networks for this node pool using this list.
+  // Each pod network corresponds to an additional alias IP range for the node
+  repeated AdditionalPodNetworkConfig additional_pod_network_configs = 15;
+
+  // Output only. [Output only] The utilization of the IPv4 range for the pod.
+  // The ratio is Usage/[Total number of IPs in the secondary range],
+  // Usage=numNodes*numZones*podIPsPerNode.
+  double pod_ipv4_range_utilization = 16
+      [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
+// AdditionalNodeNetworkConfig is the configuration for additional node networks
+// within the NodeNetworkConfig message
+message AdditionalNodeNetworkConfig {
+  // Name of the VPC where the additional interface belongs
+  string network = 1;
+
+  // Name of the subnetwork where the additional interface belongs
+  string subnetwork = 2;
+}
+
+// AdditionalPodNetworkConfig is the configuration for additional pod networks
+// within the NodeNetworkConfig message
+message AdditionalPodNetworkConfig {
+  // Name of the subnetwork where the additional pod network belongs
+  string subnetwork = 1;
+
+  // The name of the secondary range on the subnet which provides IP address for
+  // this pod range
+  string secondary_pod_range = 2;
+
+  // The maximum number of pods per node which use this pod network
+  optional MaxPodsConstraint max_pods_per_node = 3;
 }
 
 // A set of Shielded Instance options.
@@ -1178,6 +1219,9 @@ message AddonsConfig {
 
   // Configuration for the Backup for GKE agent addon.
   GkeBackupAgentConfig gke_backup_agent_config = 16;
+
+  // Configuration for the Cloud Storage Fuse CSI driver.
+  GcsFuseCsiDriverConfig gcs_fuse_csi_driver_config = 17;
 }
 
 // Configuration options for the HTTP (L7) load balancing controller addon,
@@ -1305,6 +1349,12 @@ message GcePersistentDiskCsiDriverConfig {
 // Configuration for the GCP Filestore CSI driver.
 message GcpFilestoreCsiDriverConfig {
   // Whether the GCP Filestore CSI driver is enabled for this cluster.
+  bool enabled = 1;
+}
+
+// Configuration for the Cloud Storage Fuse CSI driver.
+message GcsFuseCsiDriverConfig {
+  // Whether the Cloud Storage Fuse CSI driver is enabled for this cluster.
   bool enabled = 1;
 }
 
@@ -1554,6 +1604,12 @@ message IPAllocationPolicy {
   // automatically. Once the range is removed it will not show up in
   // IPAllocationPolicy.
   AdditionalPodRangesConfig additional_pod_ranges_config = 24
+      [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. [Output only] The utilization of the cluster default IPv4
+  // range for the pod. The ratio is Usage/[Total number of IPs in the secondary
+  // range], Usage=numNodes*numZones*podIPsPerNode.
+  double default_pod_ipv4_range_utilization = 25
       [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
@@ -2204,6 +2260,19 @@ message ClusterUpdate {
 message AdditionalPodRangesConfig {
   // Name for pod secondary ipv4 range which has the actual range defined ahead.
   repeated string pod_range_names = 1;
+
+  // Output only. [Output only] Information for additional pod range.
+  repeated RangeInfo pod_range_info = 2
+      [(google.api.field_behavior) = OUTPUT_ONLY];
+}
+
+// RangeInfo contains the range name and the range utilization by this cluster.
+message RangeInfo {
+  // Output only. [Output only] Name of a range.
+  string range_name = 1 [(google.api.field_behavior) = OUTPUT_ONLY];
+
+  // Output only. [Output only] The utilization of the range.
+  double utilization = 2 [(google.api.field_behavior) = OUTPUT_ONLY];
 }
 
 // This operation resource represents operations that may have happened or are
@@ -2638,6 +2707,24 @@ message UpdateNodePoolRequest {
 
   // Parameters that can be configured on Windows nodes.
   WindowsNodeConfig windows_node_config = 34;
+
+  // Optional. The desired [Google Compute Engine machine
+  // type](https://cloud.google.com/compute/docs/machine-types) for nodes in the
+  // node pool. Initiates an upgrade operation that migrates the nodes in the
+  // node pool to the specified machine type.
+  string machine_type = 36 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The desired disk type (e.g. 'pd-standard', 'pd-ssd' or
+  // 'pd-balanced') for nodes in the node pool.
+  // Initiates an upgrade operation that migrates the nodes in the
+  // node pool to the specified disk type.
+  string disk_type = 37 [(google.api.field_behavior) = OPTIONAL];
+
+  // Optional. The desired disk size for nodes in the node pool specified in GB.
+  // The smallest allowed disk size is 10GB.
+  // Initiates an upgrade operation that migrates the nodes in the
+  // node pool to the specified disk size.
+  int64 disk_size_gb = 38 [(google.api.field_behavior) = OPTIONAL];
 }
 
 // SetNodePoolAutoscalingRequest sets the autoscaler settings of a node pool.
@@ -3357,6 +3444,15 @@ message NodePool {
 
     // The type of placement.
     Type type = 1;
+
+    // Optional. TPU placement topology for pod slice node pool.
+    // https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
+    string tpu_topology = 2 [(google.api.field_behavior) = OPTIONAL];
+
+    // If set, refers to the name of a custom resource policy supplied by the
+    // user. The resource policy must be in the same project and region as the
+    // node pool. If not found, InvalidArgument error is returned.
+    string policy_name = 3;
   }
 
   // The name of the node pool.
@@ -3815,6 +3911,9 @@ message AutoprovisioningNodePoolDefaults {
   // https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for
   // available image types.
   string image_type = 10;
+
+  // Enable or disable Kubelet read only port.
+  optional bool insecure_kubelet_readonly_port_enabled = 13;
 }
 
 // Contains information about amount of some resource in the cluster.
@@ -4227,6 +4326,9 @@ message NetworkConfig {
   // cluster.
   GatewayAPIConfig gateway_api_config = 16;
 
+  // Whether multi-networking is enabled for this cluster.
+  bool enable_multi_networking = 17;
+
   // Network bandwidth tier configuration.
   ClusterNetworkPerformanceConfig network_performance_config = 18;
 
@@ -4467,7 +4569,7 @@ message DNSConfig {
     // Use CloudDNS for DNS resolution.
     CLOUD_DNS = 2;
 
-    // Use KubeDNS for DNS resolution
+    // Use KubeDNS for DNS resolution.
     KUBE_DNS = 3;
   }
 
@@ -4931,6 +5033,35 @@ message MonitoringConfig {
   // Enable Google Cloud Managed Service for Prometheus
   // in the cluster.
   ManagedPrometheusConfig managed_prometheus_config = 2;
+
+  // Configuration of Advanced Datapath Observability features.
+  AdvancedDatapathObservabilityConfig advanced_datapath_observability_config =
+      3;
+}
+
+// AdvancedDatapathObservabilityConfig specifies configuration of observability
+// features of advanced datapath.
+message AdvancedDatapathObservabilityConfig {
+  // Supported Relay modes
+  enum RelayMode {
+    // Default value. This shouldn't be used.
+    RELAY_MODE_UNSPECIFIED = 0;
+
+    // disabled
+    DISABLED = 1;
+
+    // exposed via internal load balancer
+    INTERNAL_VPC_LB = 3;
+
+    // exposed via external load balancer
+    EXTERNAL_LB = 4;
+  }
+
+  // Expose flow metrics on nodes
+  bool enable_metrics = 1;
+
+  // Method used to make Relay available
+  RelayMode relay_mode = 2;
 }
 
 // NodePoolLoggingConfig specifies logging configuration for nodepools.
@@ -4975,6 +5106,24 @@ message MonitoringComponentConfig {
 
     // kube-controller-manager
     CONTROLLER_MANAGER = 5;
+
+    // Storage
+    STORAGE = 7;
+
+    // Horizontal Pod Autoscaling
+    HPA = 8;
+
+    // Pod
+    POD = 9;
+
+    // DaemonSet
+    DAEMONSET = 10;
+
+    // Deployment
+    DEPLOYMENT = 11;
+
+    // Statefulset
+    STATEFULSET = 12;
   }
 
   // Select components to collect metrics. An empty set would disable all

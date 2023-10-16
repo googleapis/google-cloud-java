@@ -93,11 +93,11 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
    *
-   * Algorithms beginning with "RSA_SIGN_" are usable with
+   * Algorithms beginning with `RSA_SIGN_` are usable with
    * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN].
    *
-   * The fields in the name after "RSA_SIGN_" correspond to the following
+   * The fields in the name after `RSA_SIGN_` correspond to the following
    * parameters: padding algorithm, modulus bit length, and digest algorithm.
    *
    * For PSS, the salt length used is equal to the length of digest
@@ -105,25 +105,25 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
    * [RSA_SIGN_PSS_2048_SHA256][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm.RSA_SIGN_PSS_2048_SHA256]
    * will use PSS with a salt length of 256 bits or 32 bytes.
    *
-   * Algorithms beginning with "RSA_DECRYPT_" are usable with
+   * Algorithms beginning with `RSA_DECRYPT_` are usable with
    * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ASYMMETRIC_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_DECRYPT].
    *
-   * The fields in the name after "RSA_DECRYPT_" correspond to the following
+   * The fields in the name after `RSA_DECRYPT_` correspond to the following
    * parameters: padding algorithm, modulus bit length, and digest algorithm.
    *
-   * Algorithms beginning with "EC_SIGN_" are usable with
+   * Algorithms beginning with `EC_SIGN_` are usable with
    * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [ASYMMETRIC_SIGN][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ASYMMETRIC_SIGN].
    *
-   * The fields in the name after "EC_SIGN_" correspond to the following
+   * The fields in the name after `EC_SIGN_` correspond to the following
    * parameters: elliptic curve, digest algorithm.
    *
-   * Algorithms beginning with "HMAC_" are usable with
+   * Algorithms beginning with `HMAC_` are usable with
    * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
    * [MAC][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.MAC].
    *
-   * The suffix following "HMAC_" corresponds to the hash algorithm being used
+   * The suffix following `HMAC_` corresponds to the hash algorithm being used
    * (eg. SHA256).
    *
    * For more information, see [Key purposes and algorithms]
@@ -173,6 +173,46 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      * <code>AES_256_GCM = 19;</code>
      */
     AES_256_GCM(19),
+    /**
+     *
+     *
+     * <pre>
+     * AES-CBC (Cipher Block Chaining Mode) using 128-bit keys.
+     * </pre>
+     *
+     * <code>AES_128_CBC = 42;</code>
+     */
+    AES_128_CBC(42),
+    /**
+     *
+     *
+     * <pre>
+     * AES-CBC (Cipher Block Chaining Mode) using 256-bit keys.
+     * </pre>
+     *
+     * <code>AES_256_CBC = 43;</code>
+     */
+    AES_256_CBC(43),
+    /**
+     *
+     *
+     * <pre>
+     * AES-CTR (Counter Mode) using 128-bit keys.
+     * </pre>
+     *
+     * <code>AES_128_CTR = 44;</code>
+     */
+    AES_128_CTR(44),
+    /**
+     *
+     *
+     * <pre>
+     * AES-CTR (Counter Mode) using 256-bit keys.
+     * </pre>
+     *
+     * <code>AES_256_CTR = 45;</code>
+     */
+    AES_256_CTR(45),
     /**
      *
      *
@@ -497,6 +537,46 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
+     * AES-CBC (Cipher Block Chaining Mode) using 128-bit keys.
+     * </pre>
+     *
+     * <code>AES_128_CBC = 42;</code>
+     */
+    public static final int AES_128_CBC_VALUE = 42;
+    /**
+     *
+     *
+     * <pre>
+     * AES-CBC (Cipher Block Chaining Mode) using 256-bit keys.
+     * </pre>
+     *
+     * <code>AES_256_CBC = 43;</code>
+     */
+    public static final int AES_256_CBC_VALUE = 43;
+    /**
+     *
+     *
+     * <pre>
+     * AES-CTR (Counter Mode) using 128-bit keys.
+     * </pre>
+     *
+     * <code>AES_128_CTR = 44;</code>
+     */
+    public static final int AES_128_CTR_VALUE = 44;
+    /**
+     *
+     *
+     * <pre>
+     * AES-CTR (Counter Mode) using 256-bit keys.
+     * </pre>
+     *
+     * <code>AES_256_CTR = 45;</code>
+     */
+    public static final int AES_256_CTR_VALUE = 45;
+    /**
+     *
+     *
+     * <pre>
      * RSASSA-PSS 2048 bit key with a SHA256 digest.
      * </pre>
      *
@@ -803,6 +883,14 @@ public final class CryptoKeyVersion extends com.google.protobuf.GeneratedMessage
           return AES_128_GCM;
         case 19:
           return AES_256_GCM;
+        case 42:
+          return AES_128_CBC;
+        case 43:
+          return AES_256_CBC;
+        case 44:
+          return AES_128_CTR;
+        case 45:
+          return AES_256_CTR;
         case 2:
           return RSA_SIGN_PSS_2048_SHA256;
         case 3:

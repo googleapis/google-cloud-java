@@ -138,7 +138,7 @@ public class InstallStatusName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       InstallStatusName that = ((InstallStatusName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.deployment, that.deployment);

@@ -27,7 +27,8 @@ public interface ServerNetworkTemplateOrBuilder
    *
    *
    * <pre>
-   * Output only. Template's unique name. The full resource name follows the pattern:
+   * Output only. Template's unique name. The full resource name follows the
+   * pattern:
    * `projects/{project}/locations/{location}/serverNetworkTemplate/{server_network_template}`
    * Generally, the {server_network_template} follows the syntax of
    * "bond&lt;interface_type_index&gt;&lt;bond_mode&gt;" or "nic&lt;interface_type_index&gt;".
@@ -42,7 +43,8 @@ public interface ServerNetworkTemplateOrBuilder
    *
    *
    * <pre>
-   * Output only. Template's unique name. The full resource name follows the pattern:
+   * Output only. Template's unique name. The full resource name follows the
+   * pattern:
    * `projects/{project}/locations/{location}/serverNetworkTemplate/{server_network_template}`
    * Generally, the {server_network_template} follows the syntax of
    * "bond&lt;interface_type_index&gt;&lt;bond_mode&gt;" or "nic&lt;interface_type_index&gt;".

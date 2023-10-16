@@ -137,7 +137,7 @@ public class HubName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       HubName that = ((HubName) o);
       return Objects.equals(this.project, that.project) && Objects.equals(this.hub, that.hub);
     }

@@ -27,10 +27,10 @@ public interface DocumentInfoOrBuilder
    *
    *
    * <pre>
-   * Required. The Document resource ID.
+   * The [Document][google.cloud.discoveryengine.v1beta.Document] resource ID.
    * </pre>
    *
-   * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string id = 1;</code>
    *
    * @return Whether the id field is set.
    */
@@ -39,10 +39,10 @@ public interface DocumentInfoOrBuilder
    *
    *
    * <pre>
-   * Required. The Document resource ID.
+   * The [Document][google.cloud.discoveryengine.v1beta.Document] resource ID.
    * </pre>
    *
-   * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string id = 1;</code>
    *
    * @return The id.
    */
@@ -51,10 +51,10 @@ public interface DocumentInfoOrBuilder
    *
    *
    * <pre>
-   * Required. The Document resource ID.
+   * The [Document][google.cloud.discoveryengine.v1beta.Document] resource ID.
    * </pre>
    *
-   * <code>string id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string id = 1;</code>
    *
    * @return The bytes for id.
    */
@@ -64,13 +64,12 @@ public interface DocumentInfoOrBuilder
    *
    *
    * <pre>
-   * Required. The Document resource full name, of the form:
+   * The [Document][google.cloud.discoveryengine.v1beta.Document] resource
+   * full name, of the form:
    * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
    * </pre>
    *
-   * <code>
-   * string name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return Whether the name field is set.
    */
@@ -79,13 +78,12 @@ public interface DocumentInfoOrBuilder
    *
    *
    * <pre>
-   * Required. The Document resource full name, of the form:
+   * The [Document][google.cloud.discoveryengine.v1beta.Document] resource
+   * full name, of the form:
    * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
    * </pre>
    *
-   * <code>
-   * string name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The name.
    */
@@ -94,17 +92,56 @@ public interface DocumentInfoOrBuilder
    *
    *
    * <pre>
-   * Required. The Document resource full name, of the form:
+   * The [Document][google.cloud.discoveryengine.v1beta.Document] resource
+   * full name, of the form:
    * `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
    * </pre>
    *
-   * <code>
-   * string name = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string name = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The [Document][google.cloud.discoveryengine.v1beta.Document] URI - only
+   * allowed for website data stores.
+   * </pre>
+   *
+   * <code>string uri = 6;</code>
+   *
+   * @return Whether the uri field is set.
+   */
+  boolean hasUri();
+  /**
+   *
+   *
+   * <pre>
+   * The [Document][google.cloud.discoveryengine.v1beta.Document] URI - only
+   * allowed for website data stores.
+   * </pre>
+   *
+   * <code>string uri = 6;</code>
+   *
+   * @return The uri.
+   */
+  java.lang.String getUri();
+  /**
+   *
+   *
+   * <pre>
+   * The [Document][google.cloud.discoveryengine.v1beta.Document] URI - only
+   * allowed for website data stores.
+   * </pre>
+   *
+   * <code>string uri = 6;</code>
+   *
+   * @return The bytes for uri.
+   */
+  com.google.protobuf.ByteString getUriBytes();
 
   /**
    *

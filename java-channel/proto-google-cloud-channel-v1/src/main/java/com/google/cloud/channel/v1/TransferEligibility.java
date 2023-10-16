@@ -113,6 +113,17 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
      * <code>SKU_SUSPENDED = 3;</code>
      */
     SKU_SUSPENDED(3),
+    /**
+     *
+     *
+     * <pre>
+     * The reseller is not authorized to transact on this Product. See
+     * https://support.google.com/channelservices/answer/9759265
+     * </pre>
+     *
+     * <code>CHANNEL_PARTNER_NOT_AUTHORIZED_FOR_SKU = 4;</code>
+     */
+    CHANNEL_PARTNER_NOT_AUTHORIZED_FOR_SKU(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -156,6 +167,17 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
      * <code>SKU_SUSPENDED = 3;</code>
      */
     public static final int SKU_SUSPENDED_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * The reseller is not authorized to transact on this Product. See
+     * https://support.google.com/channelservices/answer/9759265
+     * </pre>
+     *
+     * <code>CHANNEL_PARTNER_NOT_AUTHORIZED_FOR_SKU = 4;</code>
+     */
+    public static final int CHANNEL_PARTNER_NOT_AUTHORIZED_FOR_SKU_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -189,6 +211,8 @@ public final class TransferEligibility extends com.google.protobuf.GeneratedMess
           return SKU_NOT_ELIGIBLE;
         case 3:
           return SKU_SUSPENDED;
+        case 4:
+          return CHANNEL_PARTNER_NOT_AUTHORIZED_FOR_SKU;
         default:
           return null;
       }

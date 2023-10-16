@@ -80,6 +80,58 @@ public interface SearchResponseOrBuilder
    *
    *
    * <pre>
+   * Results of facets requested by user.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.discoveryengine.v1.SearchResponse.Facet facets = 2;</code>
+   */
+  java.util.List<com.google.cloud.discoveryengine.v1.SearchResponse.Facet> getFacetsList();
+  /**
+   *
+   *
+   * <pre>
+   * Results of facets requested by user.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.discoveryengine.v1.SearchResponse.Facet facets = 2;</code>
+   */
+  com.google.cloud.discoveryengine.v1.SearchResponse.Facet getFacets(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Results of facets requested by user.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.discoveryengine.v1.SearchResponse.Facet facets = 2;</code>
+   */
+  int getFacetsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Results of facets requested by user.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.discoveryengine.v1.SearchResponse.Facet facets = 2;</code>
+   */
+  java.util.List<? extends com.google.cloud.discoveryengine.v1.SearchResponse.FacetOrBuilder>
+      getFacetsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Results of facets requested by user.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.discoveryengine.v1.SearchResponse.Facet facets = 2;</code>
+   */
+  com.google.cloud.discoveryengine.v1.SearchResponse.FacetOrBuilder getFacetsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * The estimated total count of matched items irrespective of pagination. The
    * count of [results][google.cloud.discoveryengine.v1.SearchResponse.results]
    * returned by pagination may be less than the
@@ -123,6 +175,41 @@ public interface SearchResponseOrBuilder
    * @return The bytes for attributionToken.
    */
   com.google.protobuf.ByteString getAttributionTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The URI of a customer-defined redirect page. If redirect action is
+   * triggered, no search is performed, and only
+   * [redirect_uri][google.cloud.discoveryengine.v1.SearchResponse.redirect_uri]
+   * and
+   * [attribution_token][google.cloud.discoveryengine.v1.SearchResponse.attribution_token]
+   * are set in the response.
+   * </pre>
+   *
+   * <code>string redirect_uri = 12;</code>
+   *
+   * @return The redirectUri.
+   */
+  java.lang.String getRedirectUri();
+  /**
+   *
+   *
+   * <pre>
+   * The URI of a customer-defined redirect page. If redirect action is
+   * triggered, no search is performed, and only
+   * [redirect_uri][google.cloud.discoveryengine.v1.SearchResponse.redirect_uri]
+   * and
+   * [attribution_token][google.cloud.discoveryengine.v1.SearchResponse.attribution_token]
+   * are set in the response.
+   * </pre>
+   *
+   * <code>string redirect_uri = 12;</code>
+   *
+   * @return The bytes for redirectUri.
+   */
+  com.google.protobuf.ByteString getRedirectUriBytes();
 
   /**
    *
@@ -183,4 +270,90 @@ public interface SearchResponseOrBuilder
    * @return The bytes for correctedQuery.
    */
   com.google.protobuf.ByteString getCorrectedQueryBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * A summary as part of the search results.
+   * This field is only returned if
+   * [SearchRequest.ContentSearchSpec.summary_spec][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.summary_spec]
+   * is set.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchResponse.Summary summary = 9;</code>
+   *
+   * @return Whether the summary field is set.
+   */
+  boolean hasSummary();
+  /**
+   *
+   *
+   * <pre>
+   * A summary as part of the search results.
+   * This field is only returned if
+   * [SearchRequest.ContentSearchSpec.summary_spec][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.summary_spec]
+   * is set.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchResponse.Summary summary = 9;</code>
+   *
+   * @return The summary.
+   */
+  com.google.cloud.discoveryengine.v1.SearchResponse.Summary getSummary();
+  /**
+   *
+   *
+   * <pre>
+   * A summary as part of the search results.
+   * This field is only returned if
+   * [SearchRequest.ContentSearchSpec.summary_spec][google.cloud.discoveryengine.v1.SearchRequest.ContentSearchSpec.summary_spec]
+   * is set.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1.SearchResponse.Summary summary = 9;</code>
+   */
+  com.google.cloud.discoveryengine.v1.SearchResponse.SummaryOrBuilder getSummaryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Query expansion information for the returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchResponse.QueryExpansionInfo query_expansion_info = 14;
+   * </code>
+   *
+   * @return Whether the queryExpansionInfo field is set.
+   */
+  boolean hasQueryExpansionInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Query expansion information for the returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchResponse.QueryExpansionInfo query_expansion_info = 14;
+   * </code>
+   *
+   * @return The queryExpansionInfo.
+   */
+  com.google.cloud.discoveryengine.v1.SearchResponse.QueryExpansionInfo getQueryExpansionInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Query expansion information for the returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchResponse.QueryExpansionInfo query_expansion_info = 14;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1.SearchResponse.QueryExpansionInfoOrBuilder
+      getQueryExpansionInfoOrBuilder();
 }

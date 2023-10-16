@@ -133,11 +133,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * The list of fields to update.
    * The only currently supported fields are:
-   *   `snapshot_auto_delete_behavior`
-   *   `snapshot_schedule_policy_name`
    *   'labels'
-   *   'snapshot_enabled'
-   *   'snapshot_reservation_detail.reserved_space_percent'
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -154,11 +150,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * The list of fields to update.
    * The only currently supported fields are:
-   *   `snapshot_auto_delete_behavior`
-   *   `snapshot_schedule_policy_name`
    *   'labels'
-   *   'snapshot_enabled'
-   *   'snapshot_reservation_detail.reserved_space_percent'
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -175,11 +167,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
    * <pre>
    * The list of fields to update.
    * The only currently supported fields are:
-   *   `snapshot_auto_delete_behavior`
-   *   `snapshot_schedule_policy_name`
    *   'labels'
-   *   'snapshot_enabled'
-   *   'snapshot_reservation_detail.reserved_space_percent'
    * </pre>
    *
    * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -810,11 +798,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The list of fields to update.
      * The only currently supported fields are:
-     *   `snapshot_auto_delete_behavior`
-     *   `snapshot_schedule_policy_name`
      *   'labels'
-     *   'snapshot_enabled'
-     *   'snapshot_reservation_detail.reserved_space_percent'
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -830,11 +814,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The list of fields to update.
      * The only currently supported fields are:
-     *   `snapshot_auto_delete_behavior`
-     *   `snapshot_schedule_policy_name`
      *   'labels'
-     *   'snapshot_enabled'
-     *   'snapshot_reservation_detail.reserved_space_percent'
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -856,11 +836,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The list of fields to update.
      * The only currently supported fields are:
-     *   `snapshot_auto_delete_behavior`
-     *   `snapshot_schedule_policy_name`
      *   'labels'
-     *   'snapshot_enabled'
-     *   'snapshot_reservation_detail.reserved_space_percent'
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -884,11 +860,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The list of fields to update.
      * The only currently supported fields are:
-     *   `snapshot_auto_delete_behavior`
-     *   `snapshot_schedule_policy_name`
      *   'labels'
-     *   'snapshot_enabled'
-     *   'snapshot_reservation_detail.reserved_space_percent'
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -909,11 +881,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The list of fields to update.
      * The only currently supported fields are:
-     *   `snapshot_auto_delete_behavior`
-     *   `snapshot_schedule_policy_name`
      *   'labels'
-     *   'snapshot_enabled'
-     *   'snapshot_reservation_detail.reserved_space_percent'
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -940,11 +908,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The list of fields to update.
      * The only currently supported fields are:
-     *   `snapshot_auto_delete_behavior`
-     *   `snapshot_schedule_policy_name`
      *   'labels'
-     *   'snapshot_enabled'
-     *   'snapshot_reservation_detail.reserved_space_percent'
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -965,11 +929,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The list of fields to update.
      * The only currently supported fields are:
-     *   `snapshot_auto_delete_behavior`
-     *   `snapshot_schedule_policy_name`
      *   'labels'
-     *   'snapshot_enabled'
-     *   'snapshot_reservation_detail.reserved_space_percent'
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -985,11 +945,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The list of fields to update.
      * The only currently supported fields are:
-     *   `snapshot_auto_delete_behavior`
-     *   `snapshot_schedule_policy_name`
      *   'labels'
-     *   'snapshot_enabled'
-     *   'snapshot_reservation_detail.reserved_space_percent'
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
@@ -1009,11 +965,7 @@ public final class UpdateVolumeRequest extends com.google.protobuf.GeneratedMess
      * <pre>
      * The list of fields to update.
      * The only currently supported fields are:
-     *   `snapshot_auto_delete_behavior`
-     *   `snapshot_schedule_policy_name`
      *   'labels'
-     *   'snapshot_enabled'
-     *   'snapshot_reservation_detail.reserved_space_percent'
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>

@@ -22,7 +22,8 @@ package com.google.cloud.servicedirectory.v1beta1;
  *
  *
  * <pre>
- * The request message for [RegistrationService.UpdateEndpoint][google.cloud.servicedirectory.v1beta1.RegistrationService.UpdateEndpoint].
+ * The request message for
+ * [RegistrationService.UpdateEndpoint][google.cloud.servicedirectory.v1beta1.RegistrationService.UpdateEndpoint].
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicedirectory.v1beta1.UpdateEndpointRequest}
@@ -348,7 +349,8 @@ public final class UpdateEndpointRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The request message for [RegistrationService.UpdateEndpoint][google.cloud.servicedirectory.v1beta1.RegistrationService.UpdateEndpoint].
+   * The request message for
+   * [RegistrationService.UpdateEndpoint][google.cloud.servicedirectory.v1beta1.RegistrationService.UpdateEndpoint].
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicedirectory.v1beta1.UpdateEndpointRequest}

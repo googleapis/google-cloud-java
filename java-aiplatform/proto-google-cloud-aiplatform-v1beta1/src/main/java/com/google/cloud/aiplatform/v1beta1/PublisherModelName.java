@@ -137,7 +137,7 @@ public class PublisherModelName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       PublisherModelName that = ((PublisherModelName) o);
       return Objects.equals(this.publisher, that.publisher)
           && Objects.equals(this.model, that.model);

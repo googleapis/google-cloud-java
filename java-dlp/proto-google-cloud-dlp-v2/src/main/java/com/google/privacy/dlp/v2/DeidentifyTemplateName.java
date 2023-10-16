@@ -304,7 +304,7 @@ public class DeidentifyTemplateName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       DeidentifyTemplateName that = ((DeidentifyTemplateName) o);
       return Objects.equals(this.organization, that.organization)
           && Objects.equals(this.deidentifyTemplate, that.deidentifyTemplate)

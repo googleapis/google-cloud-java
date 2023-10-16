@@ -43,8 +43,8 @@ public enum ExecutionView implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Includes only basic metadata about the execution.
-   * Following fields are returned: name, start_time, end_time, state
-   * and workflow_revision_id.
+   * The following fields are returned: name, start_time, end_time, duration,
+   * state, and workflow_revision_id.
    * </pre>
    *
    * <code>BASIC = 1;</code>
@@ -78,8 +78,8 @@ public enum ExecutionView implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Includes only basic metadata about the execution.
-   * Following fields are returned: name, start_time, end_time, state
-   * and workflow_revision_id.
+   * The following fields are returned: name, start_time, end_time, duration,
+   * state, and workflow_revision_id.
    * </pre>
    *
    * <code>BASIC = 1;</code>

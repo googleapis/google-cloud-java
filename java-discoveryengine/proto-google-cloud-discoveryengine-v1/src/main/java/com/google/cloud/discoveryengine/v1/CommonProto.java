@@ -28,6 +28,10 @@ public final class CommonProto {
   }
 
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_discoveryengine_v1_Interval_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_discoveryengine_v1_Interval_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_discoveryengine_v1_CustomAttribute_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_discoveryengine_v1_CustomAttribute_fieldAccessorTable;
@@ -46,34 +50,37 @@ public final class CommonProto {
     java.lang.String[] descriptorData = {
       "\n,google/cloud/discoveryengine/v1/common"
           + ".proto\022\037google.cloud.discoveryengine.v1\032"
-          + "\031google/api/resource.proto\"0\n\017CustomAttr"
-          + "ibute\022\014\n\004text\030\001 \003(\t\022\017\n\007numbers\030\002 \003(\001\"/\n\010"
-          + "UserInfo\022\017\n\007user_id\030\001 \001(\t\022\022\n\nuser_agent\030"
-          + "\002 \001(\tB\276\007\n#com.google.cloud.discoveryengi"
-          + "ne.v1B\013CommonProtoP\001ZMcloud.google.com/g"
-          + "o/discoveryengine/apiv1/discoveryenginep"
-          + "b;discoveryenginepb\242\002\017DISCOVERYENGINE\252\002\037"
-          + "Google.Cloud.DiscoveryEngine.V1\312\002\037Google"
-          + "\\Cloud\\DiscoveryEngine\\V1\352\002\"Google::Clou"
-          + "d::DiscoveryEngine::V1\352A\346\001\n%discoveryeng"
-          + "ine.googleapis.com/Branch\022Qprojects/{pro"
-          + "ject}/locations/{location}/dataStores/{d"
-          + "ata_store}/branches/{branch}\022jprojects/{"
-          + "project}/locations/{location}/collection"
-          + "s/{collection}/dataStores/{data_store}/b"
-          + "ranches/{branch}\352A\305\001\n(discoveryengine.go"
-          + "ogleapis.com/DataStore\022?projects/{projec"
-          + "t}/locations/{location}/dataStores/{data"
-          + "_store}\022Xprojects/{project}/locations/{l"
-          + "ocation}/collections/{collection}/dataSt"
-          + "ores/{data_store}\352A\211\002\n,discoveryengine.g"
-          + "oogleapis.com/ServingConfig\022_projects/{p"
+          + "\031google/api/resource.proto\"x\n\010Interval\022\021"
+          + "\n\007minimum\030\001 \001(\001H\000\022\033\n\021exclusive_minimum\030\002"
+          + " \001(\001H\000\022\021\n\007maximum\030\003 \001(\001H\001\022\033\n\021exclusive_m"
+          + "aximum\030\004 \001(\001H\001B\005\n\003minB\005\n\003max\"0\n\017CustomAt"
+          + "tribute\022\014\n\004text\030\001 \003(\t\022\017\n\007numbers\030\002 \003(\001\"/"
+          + "\n\010UserInfo\022\017\n\007user_id\030\001 \001(\t\022\022\n\nuser_agen"
+          + "t\030\002 \001(\tB\276\007\n#com.google.cloud.discoveryen"
+          + "gine.v1B\013CommonProtoP\001ZMcloud.google.com"
+          + "/go/discoveryengine/apiv1/discoveryengin"
+          + "epb;discoveryenginepb\242\002\017DISCOVERYENGINE\252"
+          + "\002\037Google.Cloud.DiscoveryEngine.V1\312\002\037Goog"
+          + "le\\Cloud\\DiscoveryEngine\\V1\352\002\"Google::Cl"
+          + "oud::DiscoveryEngine::V1\352A\346\001\n%discoverye"
+          + "ngine.googleapis.com/Branch\022Qprojects/{p"
           + "roject}/locations/{location}/dataStores/"
-          + "{data_store}/servingConfigs/{serving_con"
-          + "fig}\022xprojects/{project}/locations/{loca"
-          + "tion}/collections/{collection}/dataStore"
+          + "{data_store}/branches/{branch}\022jprojects"
+          + "/{project}/locations/{location}/collecti"
+          + "ons/{collection}/dataStores/{data_store}"
+          + "/branches/{branch}\352A\305\001\n(discoveryengine."
+          + "googleapis.com/DataStore\022?projects/{proj"
+          + "ect}/locations/{location}/dataStores/{da"
+          + "ta_store}\022Xprojects/{project}/locations/"
+          + "{location}/collections/{collection}/data"
+          + "Stores/{data_store}\352A\211\002\n,discoveryengine"
+          + ".googleapis.com/ServingConfig\022_projects/"
+          + "{project}/locations/{location}/dataStore"
           + "s/{data_store}/servingConfigs/{serving_c"
-          + "onfig}b\006proto3"
+          + "onfig}\022xprojects/{project}/locations/{lo"
+          + "cation}/collections/{collection}/dataSto"
+          + "res/{data_store}/servingConfigs/{serving"
+          + "_config}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -81,8 +88,16 @@ public final class CommonProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.ResourceProto.getDescriptor(),
             });
-    internal_static_google_cloud_discoveryengine_v1_CustomAttribute_descriptor =
+    internal_static_google_cloud_discoveryengine_v1_Interval_descriptor =
         getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_discoveryengine_v1_Interval_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_discoveryengine_v1_Interval_descriptor,
+            new java.lang.String[] {
+              "Minimum", "ExclusiveMinimum", "Maximum", "ExclusiveMaximum", "Min", "Max",
+            });
+    internal_static_google_cloud_discoveryengine_v1_CustomAttribute_descriptor =
+        getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_discoveryengine_v1_CustomAttribute_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_CustomAttribute_descriptor,
@@ -90,7 +105,7 @@ public final class CommonProto {
               "Text", "Numbers",
             });
     internal_static_google_cloud_discoveryengine_v1_UserInfo_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_discoveryengine_v1_UserInfo_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_discoveryengine_v1_UserInfo_descriptor,

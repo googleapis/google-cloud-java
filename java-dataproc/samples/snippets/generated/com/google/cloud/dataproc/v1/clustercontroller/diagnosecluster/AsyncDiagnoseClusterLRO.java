@@ -22,6 +22,8 @@ import com.google.cloud.dataproc.v1.ClusterControllerClient;
 import com.google.cloud.dataproc.v1.ClusterOperationMetadata;
 import com.google.cloud.dataproc.v1.DiagnoseClusterRequest;
 import com.google.cloud.dataproc.v1.DiagnoseClusterResults;
+import com.google.type.Interval;
+import java.util.ArrayList;
 
 public class AsyncDiagnoseClusterLRO {
 
@@ -41,6 +43,10 @@ public class AsyncDiagnoseClusterLRO {
               .setProjectId("projectId-894832108")
               .setRegion("region-934795532")
               .setClusterName("clusterName-1141738587")
+              .setTarballGcsDir("tarballGcsDir-1602093510")
+              .setDiagnosisInterval(Interval.newBuilder().build())
+              .addAllJobs(new ArrayList<String>())
+              .addAllYarnApplicationIds(new ArrayList<String>())
               .build();
       OperationFuture<DiagnoseClusterResults, ClusterOperationMetadata> future =
           clusterControllerClient.diagnoseClusterOperationCallable().futureCall(request);

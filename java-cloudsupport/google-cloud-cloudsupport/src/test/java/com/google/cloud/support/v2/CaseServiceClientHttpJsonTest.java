@@ -600,7 +600,7 @@ public class CaseServiceClientHttpJsonTest {
 
     Case case_ =
         Case.newBuilder()
-            .setName(CaseName.ofOrganizationCaseName("[ORGANIZATION]", "[CASE]").toString())
+            .setName(CaseName.ofProjectCaseName("[PROJECT]", "[CASE]").toString())
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
             .setClassification(CaseClassification.newBuilder().build())
@@ -644,7 +644,7 @@ public class CaseServiceClientHttpJsonTest {
     try {
       Case case_ =
           Case.newBuilder()
-              .setName(CaseName.ofOrganizationCaseName("[ORGANIZATION]", "[CASE]").toString())
+              .setName(CaseName.ofProjectCaseName("[PROJECT]", "[CASE]").toString())
               .setDisplayName("displayName1714148973")
               .setDescription("description-1724546052")
               .setClassification(CaseClassification.newBuilder().build())

@@ -42,6 +42,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     metric_ = "";
     unit_ = "";
     quotaBuckets_ = java.util.Collections.emptyList();
+    supportedLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -364,6 +365,74 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     return quotaBuckets_.get(index);
   }
 
+  public static final int SUPPORTED_LOCATIONS_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList supportedLocations_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * List of all supported locations.
+   * This field is present only if the limit has a {region} or {zone} dimension.
+   * </pre>
+   *
+   * <code>repeated string supported_locations = 11;</code>
+   *
+   * @return A list containing the supportedLocations.
+   */
+  public com.google.protobuf.ProtocolStringList getSupportedLocationsList() {
+    return supportedLocations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of all supported locations.
+   * This field is present only if the limit has a {region} or {zone} dimension.
+   * </pre>
+   *
+   * <code>repeated string supported_locations = 11;</code>
+   *
+   * @return The count of supportedLocations.
+   */
+  public int getSupportedLocationsCount() {
+    return supportedLocations_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of all supported locations.
+   * This field is present only if the limit has a {region} or {zone} dimension.
+   * </pre>
+   *
+   * <code>repeated string supported_locations = 11;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The supportedLocations at the given index.
+   */
+  public java.lang.String getSupportedLocations(int index) {
+    return supportedLocations_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * List of all supported locations.
+   * This field is present only if the limit has a {region} or {zone} dimension.
+   * </pre>
+   *
+   * <code>repeated string supported_locations = 11;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the supportedLocations at the given index.
+   */
+  public com.google.protobuf.ByteString getSupportedLocationsBytes(int index) {
+    return supportedLocations_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -396,6 +465,9 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < quotaBuckets_.size(); i++) {
       output.writeMessage(9, quotaBuckets_.get(i));
     }
+    for (int i = 0; i < supportedLocations_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, supportedLocations_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -423,6 +495,14 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     for (int i = 0; i < quotaBuckets_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, quotaBuckets_.get(i));
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < supportedLocations_.size(); i++) {
+        dataSize += computeStringSizeNoTag(supportedLocations_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getSupportedLocationsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -445,6 +525,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     if (getIsPrecise() != other.getIsPrecise()) return false;
     if (getAllowsAdminOverrides() != other.getAllowsAdminOverrides()) return false;
     if (!getQuotaBucketsList().equals(other.getQuotaBucketsList())) return false;
+    if (!getSupportedLocationsList().equals(other.getSupportedLocationsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -469,6 +550,10 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
     if (getQuotaBucketsCount() > 0) {
       hash = (37 * hash) + QUOTA_BUCKETS_FIELD_NUMBER;
       hash = (53 * hash) + getQuotaBucketsList().hashCode();
+    }
+    if (getSupportedLocationsCount() > 0) {
+      hash = (37 * hash) + SUPPORTED_LOCATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getSupportedLocationsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -622,6 +707,7 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
         quotaBucketsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000020);
+      supportedLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -686,6 +772,10 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.allowsAdminOverrides_ = allowsAdminOverrides_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        supportedLocations_.makeImmutable();
+        result.supportedLocations_ = supportedLocations_;
       }
     }
 
@@ -783,6 +873,16 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
           }
         }
       }
+      if (!other.supportedLocations_.isEmpty()) {
+        if (supportedLocations_.isEmpty()) {
+          supportedLocations_ = other.supportedLocations_;
+          bitField0_ |= 0x00000040;
+        } else {
+          ensureSupportedLocationsIsMutable();
+          supportedLocations_.addAll(other.supportedLocations_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -853,6 +953,13 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
                 }
                 break;
               } // case 74
+            case 90:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSupportedLocationsIsMutable();
+                supportedLocations_.add(s);
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1756,6 +1863,189 @@ public final class ConsumerQuotaLimit extends com.google.protobuf.GeneratedMessa
         quotaBuckets_ = null;
       }
       return quotaBucketsBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList supportedLocations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureSupportedLocationsIsMutable() {
+      if (!supportedLocations_.isModifiable()) {
+        supportedLocations_ = new com.google.protobuf.LazyStringArrayList(supportedLocations_);
+      }
+      bitField0_ |= 0x00000040;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of all supported locations.
+     * This field is present only if the limit has a {region} or {zone} dimension.
+     * </pre>
+     *
+     * <code>repeated string supported_locations = 11;</code>
+     *
+     * @return A list containing the supportedLocations.
+     */
+    public com.google.protobuf.ProtocolStringList getSupportedLocationsList() {
+      supportedLocations_.makeImmutable();
+      return supportedLocations_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of all supported locations.
+     * This field is present only if the limit has a {region} or {zone} dimension.
+     * </pre>
+     *
+     * <code>repeated string supported_locations = 11;</code>
+     *
+     * @return The count of supportedLocations.
+     */
+    public int getSupportedLocationsCount() {
+      return supportedLocations_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of all supported locations.
+     * This field is present only if the limit has a {region} or {zone} dimension.
+     * </pre>
+     *
+     * <code>repeated string supported_locations = 11;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The supportedLocations at the given index.
+     */
+    public java.lang.String getSupportedLocations(int index) {
+      return supportedLocations_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of all supported locations.
+     * This field is present only if the limit has a {region} or {zone} dimension.
+     * </pre>
+     *
+     * <code>repeated string supported_locations = 11;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the supportedLocations at the given index.
+     */
+    public com.google.protobuf.ByteString getSupportedLocationsBytes(int index) {
+      return supportedLocations_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of all supported locations.
+     * This field is present only if the limit has a {region} or {zone} dimension.
+     * </pre>
+     *
+     * <code>repeated string supported_locations = 11;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The supportedLocations to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSupportedLocations(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSupportedLocationsIsMutable();
+      supportedLocations_.set(index, value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of all supported locations.
+     * This field is present only if the limit has a {region} or {zone} dimension.
+     * </pre>
+     *
+     * <code>repeated string supported_locations = 11;</code>
+     *
+     * @param value The supportedLocations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSupportedLocations(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSupportedLocationsIsMutable();
+      supportedLocations_.add(value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of all supported locations.
+     * This field is present only if the limit has a {region} or {zone} dimension.
+     * </pre>
+     *
+     * <code>repeated string supported_locations = 11;</code>
+     *
+     * @param values The supportedLocations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSupportedLocations(java.lang.Iterable<java.lang.String> values) {
+      ensureSupportedLocationsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, supportedLocations_);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of all supported locations.
+     * This field is present only if the limit has a {region} or {zone} dimension.
+     * </pre>
+     *
+     * <code>repeated string supported_locations = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSupportedLocations() {
+      supportedLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * List of all supported locations.
+     * This field is present only if the limit has a {region} or {zone} dimension.
+     * </pre>
+     *
+     * <code>repeated string supported_locations = 11;</code>
+     *
+     * @param value The bytes of the supportedLocations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSupportedLocationsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSupportedLocationsIsMutable();
+      supportedLocations_.add(value);
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

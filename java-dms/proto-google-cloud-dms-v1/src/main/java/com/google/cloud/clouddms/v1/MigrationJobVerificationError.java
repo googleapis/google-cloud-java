@@ -281,6 +281,16 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      *
      *
      * <pre>
+     * The source already has a replication setup.
+     * </pre>
+     *
+     * <code>SOURCE_ALREADY_SETUP = 23;</code>
+     */
+    SOURCE_ALREADY_SETUP(23),
+    /**
+     *
+     *
+     * <pre>
      * The source has tables with limited support.
      * E.g. PostgreSQL tables without primary keys.
      * </pre>
@@ -329,6 +339,27 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>SOURCE_SIZE_EXCEEDS_THRESHOLD = 28;</code>
      */
     SOURCE_SIZE_EXCEEDS_THRESHOLD(28),
+    /**
+     *
+     *
+     * <pre>
+     * The destination DB contains existing databases that are conflicting with
+     * those in the source DB.
+     * </pre>
+     *
+     * <code>EXISTING_CONFLICTING_DATABASES = 29;</code>
+     */
+    EXISTING_CONFLICTING_DATABASES(29),
+    /**
+     *
+     *
+     * <pre>
+     * Insufficient privilege to enable the parallelism configuration.
+     * </pre>
+     *
+     * <code>PARALLEL_IMPORT_INSUFFICIENT_PRIVILEGE = 30;</code>
+     */
+    PARALLEL_IMPORT_INSUFFICIENT_PRIVILEGE(30),
     UNRECOGNIZED(-1),
     ;
 
@@ -539,6 +570,16 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      *
      *
      * <pre>
+     * The source already has a replication setup.
+     * </pre>
+     *
+     * <code>SOURCE_ALREADY_SETUP = 23;</code>
+     */
+    public static final int SOURCE_ALREADY_SETUP_VALUE = 23;
+    /**
+     *
+     *
+     * <pre>
      * The source has tables with limited support.
      * E.g. PostgreSQL tables without primary keys.
      * </pre>
@@ -587,6 +628,27 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
      * <code>SOURCE_SIZE_EXCEEDS_THRESHOLD = 28;</code>
      */
     public static final int SOURCE_SIZE_EXCEEDS_THRESHOLD_VALUE = 28;
+    /**
+     *
+     *
+     * <pre>
+     * The destination DB contains existing databases that are conflicting with
+     * those in the source DB.
+     * </pre>
+     *
+     * <code>EXISTING_CONFLICTING_DATABASES = 29;</code>
+     */
+    public static final int EXISTING_CONFLICTING_DATABASES_VALUE = 29;
+    /**
+     *
+     *
+     * <pre>
+     * Insufficient privilege to enable the parallelism configuration.
+     * </pre>
+     *
+     * <code>PARALLEL_IMPORT_INSUFFICIENT_PRIVILEGE = 30;</code>
+     */
+    public static final int PARALLEL_IMPORT_INSUFFICIENT_PRIVILEGE_VALUE = 30;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -652,6 +714,8 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
           return UNSUPPORTED_DEFINER;
         case 21:
           return CANT_RESTART_RUNNING_MIGRATION;
+        case 23:
+          return SOURCE_ALREADY_SETUP;
         case 24:
           return TABLES_WITH_LIMITED_SUPPORT;
         case 25:
@@ -662,6 +726,10 @@ public final class MigrationJobVerificationError extends com.google.protobuf.Gen
           return ERROR_RDBMS;
         case 28:
           return SOURCE_SIZE_EXCEEDS_THRESHOLD;
+        case 29:
+          return EXISTING_CONFLICTING_DATABASES;
+        case 30:
+          return PARALLEL_IMPORT_INSUFFICIENT_PRIVILEGE;
         default:
           return null;
       }

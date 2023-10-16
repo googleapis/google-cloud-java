@@ -180,6 +180,25 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int USE_TIMEOUT_BASED_ENDPOINTING_FIELD_NUMBER = 11;
+  private boolean useTimeoutBasedEndpointing_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Use timeout based endpointing, interpreting endpointer sensitivy as
+   * seconds of timeout value.
+   * </pre>
+   *
+   * <code>bool use_timeout_based_endpointing = 11;</code>
+   *
+   * @return The useTimeoutBasedEndpointing.
+   */
+  @java.lang.Override
+  public boolean getUseTimeoutBasedEndpointing() {
+    return useTimeoutBasedEndpointing_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -202,6 +221,9 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, model_);
     }
+    if (useTimeoutBasedEndpointing_ != false) {
+      output.writeBool(11, useTimeoutBasedEndpointing_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -218,6 +240,10 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(model_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, model_);
+    }
+    if (useTimeoutBasedEndpointing_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(11, useTimeoutBasedEndpointing_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -237,6 +263,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
 
     if (speechModelVariant_ != other.speechModelVariant_) return false;
     if (!getModel().equals(other.getModel())) return false;
+    if (getUseTimeoutBasedEndpointing() != other.getUseTimeoutBasedEndpointing()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -252,6 +279,8 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + speechModelVariant_;
     hash = (37 * hash) + MODEL_FIELD_NUMBER;
     hash = (53 * hash) + getModel().hashCode();
+    hash = (37 * hash) + USE_TIMEOUT_BASED_ENDPOINTING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseTimeoutBasedEndpointing());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -395,6 +424,7 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       bitField0_ = 0;
       speechModelVariant_ = 0;
       model_ = "";
+      useTimeoutBasedEndpointing_ = false;
       return this;
     }
 
@@ -436,6 +466,9 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.model_ = model_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.useTimeoutBasedEndpointing_ = useTimeoutBasedEndpointing_;
       }
     }
 
@@ -493,6 +526,9 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.getUseTimeoutBasedEndpointing() != false) {
+        setUseTimeoutBasedEndpointing(other.getUseTimeoutBasedEndpointing());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -531,6 +567,12 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 88:
+              {
+                useTimeoutBasedEndpointing_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 88
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -815,6 +857,62 @@ public final class SpeechToTextConfig extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       model_ = value;
       bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private boolean useTimeoutBasedEndpointing_;
+    /**
+     *
+     *
+     * <pre>
+     * Use timeout based endpointing, interpreting endpointer sensitivy as
+     * seconds of timeout value.
+     * </pre>
+     *
+     * <code>bool use_timeout_based_endpointing = 11;</code>
+     *
+     * @return The useTimeoutBasedEndpointing.
+     */
+    @java.lang.Override
+    public boolean getUseTimeoutBasedEndpointing() {
+      return useTimeoutBasedEndpointing_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use timeout based endpointing, interpreting endpointer sensitivy as
+     * seconds of timeout value.
+     * </pre>
+     *
+     * <code>bool use_timeout_based_endpointing = 11;</code>
+     *
+     * @param value The useTimeoutBasedEndpointing to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUseTimeoutBasedEndpointing(boolean value) {
+
+      useTimeoutBasedEndpointing_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Use timeout based endpointing, interpreting endpointer sensitivy as
+     * seconds of timeout value.
+     * </pre>
+     *
+     * <code>bool use_timeout_based_endpointing = 11;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUseTimeoutBasedEndpointing() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      useTimeoutBasedEndpointing_ = false;
       onChanged();
       return this;
     }

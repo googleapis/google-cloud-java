@@ -30,6 +30,7 @@ import com.google.cloud.alloydb.v1.Backup;
 import com.google.cloud.alloydb.v1.BatchCreateInstancesRequest;
 import com.google.cloud.alloydb.v1.BatchCreateInstancesResponse;
 import com.google.cloud.alloydb.v1.Cluster;
+import com.google.cloud.alloydb.v1.ConnectionInfo;
 import com.google.cloud.alloydb.v1.CreateBackupRequest;
 import com.google.cloud.alloydb.v1.CreateClusterRequest;
 import com.google.cloud.alloydb.v1.CreateInstanceRequest;
@@ -41,8 +42,11 @@ import com.google.cloud.alloydb.v1.DeleteClusterRequest;
 import com.google.cloud.alloydb.v1.DeleteInstanceRequest;
 import com.google.cloud.alloydb.v1.DeleteUserRequest;
 import com.google.cloud.alloydb.v1.FailoverInstanceRequest;
+import com.google.cloud.alloydb.v1.GenerateClientCertificateRequest;
+import com.google.cloud.alloydb.v1.GenerateClientCertificateResponse;
 import com.google.cloud.alloydb.v1.GetBackupRequest;
 import com.google.cloud.alloydb.v1.GetClusterRequest;
+import com.google.cloud.alloydb.v1.GetConnectionInfoRequest;
 import com.google.cloud.alloydb.v1.GetInstanceRequest;
 import com.google.cloud.alloydb.v1.GetUserRequest;
 import com.google.cloud.alloydb.v1.InjectFaultRequest;
@@ -297,6 +301,15 @@ public abstract class AlloyDBAdminStub implements BackgroundResource {
       listSupportedDatabaseFlagsCallable() {
     throw new UnsupportedOperationException(
         "Not implemented: listSupportedDatabaseFlagsCallable()");
+  }
+
+  public UnaryCallable<GenerateClientCertificateRequest, GenerateClientCertificateResponse>
+      generateClientCertificateCallable() {
+    throw new UnsupportedOperationException("Not implemented: generateClientCertificateCallable()");
+  }
+
+  public UnaryCallable<GetConnectionInfoRequest, ConnectionInfo> getConnectionInfoCallable() {
+    throw new UnsupportedOperationException("Not implemented: getConnectionInfoCallable()");
   }
 
   public UnaryCallable<ListUsersRequest, ListUsersPagedResponse> listUsersPagedCallable() {

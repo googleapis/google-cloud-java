@@ -25,6 +25,9 @@
             "GetAgentValidationResult": {
               "methods": ["getAgentValidationResult", "getAgentValidationResult", "getAgentValidationResult", "getAgentValidationResultCallable"]
             },
+            "GetGenerativeSettings": {
+              "methods": ["getGenerativeSettings", "getGenerativeSettings", "getGenerativeSettings", "getGenerativeSettingsCallable"]
+            },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
             },
@@ -39,6 +42,9 @@
             },
             "UpdateAgent": {
               "methods": ["updateAgent", "updateAgent", "updateAgentCallable"]
+            },
+            "UpdateGenerativeSettings": {
+              "methods": ["updateGenerativeSettings", "updateGenerativeSettings", "updateGenerativeSettingsCallable"]
             },
             "ValidateAgent": {
               "methods": ["validateAgent", "validateAgentCallable"]
@@ -253,11 +259,17 @@
             "DeleteIntent": {
               "methods": ["deleteIntent", "deleteIntent", "deleteIntent", "deleteIntentCallable"]
             },
+            "ExportIntents": {
+              "methods": ["exportIntentsAsync", "exportIntentsOperationCallable", "exportIntentsCallable"]
+            },
             "GetIntent": {
               "methods": ["getIntent", "getIntent", "getIntent", "getIntentCallable"]
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ImportIntents": {
+              "methods": ["importIntentsAsync", "importIntentsOperationCallable", "importIntentsCallable"]
             },
             "ListIntents": {
               "methods": ["listIntents", "listIntents", "listIntents", "listIntentsPagedCallable", "listIntentsCallable"]
@@ -446,7 +458,7 @@
           "libraryClient": "TransitionRouteGroupsClient",
           "rpcs": {
             "CreateTransitionRouteGroup": {
-              "methods": ["createTransitionRouteGroup", "createTransitionRouteGroup", "createTransitionRouteGroup", "createTransitionRouteGroupCallable"]
+              "methods": ["createTransitionRouteGroup", "createTransitionRouteGroup", "createTransitionRouteGroup", "createTransitionRouteGroup", "createTransitionRouteGroupCallable"]
             },
             "DeleteTransitionRouteGroup": {
               "methods": ["deleteTransitionRouteGroup", "deleteTransitionRouteGroup", "deleteTransitionRouteGroup", "deleteTransitionRouteGroupCallable"]
@@ -461,7 +473,7 @@
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
             "ListTransitionRouteGroups": {
-              "methods": ["listTransitionRouteGroups", "listTransitionRouteGroups", "listTransitionRouteGroups", "listTransitionRouteGroupsPagedCallable", "listTransitionRouteGroupsCallable"]
+              "methods": ["listTransitionRouteGroups", "listTransitionRouteGroups", "listTransitionRouteGroups", "listTransitionRouteGroups", "listTransitionRouteGroupsPagedCallable", "listTransitionRouteGroupsCallable"]
             },
             "UpdateTransitionRouteGroup": {
               "methods": ["updateTransitionRouteGroup", "updateTransitionRouteGroup", "updateTransitionRouteGroupCallable"]

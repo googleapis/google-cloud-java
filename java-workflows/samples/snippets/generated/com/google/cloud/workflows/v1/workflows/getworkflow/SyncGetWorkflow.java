@@ -38,6 +38,7 @@ public class SyncGetWorkflow {
       GetWorkflowRequest request =
           GetWorkflowRequest.newBuilder()
               .setName(WorkflowName.of("[PROJECT]", "[LOCATION]", "[WORKFLOW]").toString())
+              .setRevisionId("revisionId-1507445162")
               .build();
       Workflow response = workflowsClient.getWorkflow(request);
     }

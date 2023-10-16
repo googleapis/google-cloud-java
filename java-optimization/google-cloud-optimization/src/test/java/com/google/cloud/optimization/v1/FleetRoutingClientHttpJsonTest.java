@@ -94,7 +94,6 @@ public class FleetRoutingClientHttpJsonTest {
             .setParent("projects/project-5833/locations/location-5833")
             .setTimeout(Duration.newBuilder().build())
             .setModel(ShipmentModel.newBuilder().build())
-            .setMaxValidationErrors(-1367418922)
             .addAllInjectedFirstSolutionRoutes(new ArrayList<ShipmentRoute>())
             .setInjectedSolutionConstraint(InjectedSolutionConstraint.newBuilder().build())
             .addAllRefreshDetailsRoutes(new ArrayList<ShipmentRoute>())
@@ -105,6 +104,7 @@ public class FleetRoutingClientHttpJsonTest {
             .setAllowLargeDeadlineDespiteInterruptionRisk(true)
             .setUseGeodesicDistances(true)
             .setGeodesicMetersPerSecond(-2129658905)
+            .setMaxValidationErrors(-1367418922)
             .setLabel("label102727412")
             .setPopulateTravelStepPolylines(true)
             .build();
@@ -140,7 +140,6 @@ public class FleetRoutingClientHttpJsonTest {
               .setParent("projects/project-5833/locations/location-5833")
               .setTimeout(Duration.newBuilder().build())
               .setModel(ShipmentModel.newBuilder().build())
-              .setMaxValidationErrors(-1367418922)
               .addAllInjectedFirstSolutionRoutes(new ArrayList<ShipmentRoute>())
               .setInjectedSolutionConstraint(InjectedSolutionConstraint.newBuilder().build())
               .addAllRefreshDetailsRoutes(new ArrayList<ShipmentRoute>())
@@ -151,6 +150,7 @@ public class FleetRoutingClientHttpJsonTest {
               .setAllowLargeDeadlineDespiteInterruptionRisk(true)
               .setUseGeodesicDistances(true)
               .setGeodesicMetersPerSecond(-2129658905)
+              .setMaxValidationErrors(-1367418922)
               .setLabel("label102727412")
               .setPopulateTravelStepPolylines(true)
               .build();

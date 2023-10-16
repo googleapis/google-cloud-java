@@ -41,6 +41,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
 
   private Namespace() {
     name_ = "";
+    uid_ = "";
   }
 
   @java.lang.Override
@@ -158,8 +159,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Resource labels associated with this Namespace.
-   * No more than 64 user labels can be associated with a given resource.  Label
+   * Optional. Resource labels associated with this namespace.
+   * No more than 64 user labels can be associated with a given resource. Label
    * keys and values can be no longer than 63 characters.
    * </pre>
    *
@@ -182,8 +183,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Resource labels associated with this Namespace.
-   * No more than 64 user labels can be associated with a given resource.  Label
+   * Optional. Resource labels associated with this namespace.
+   * No more than 64 user labels can be associated with a given resource. Label
    * keys and values can be no longer than 63 characters.
    * </pre>
    *
@@ -197,8 +198,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Resource labels associated with this Namespace.
-   * No more than 64 user labels can be associated with a given resource.  Label
+   * Optional. Resource labels associated with this namespace.
+   * No more than 64 user labels can be associated with a given resource. Label
    * keys and values can be no longer than 63 characters.
    * </pre>
    *
@@ -219,8 +220,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Resource labels associated with this Namespace.
-   * No more than 64 user labels can be associated with a given resource.  Label
+   * Optional. Resource labels associated with this namespace.
+   * No more than 64 user labels can be associated with a given resource. Label
    * keys and values can be no longer than 63 characters.
    * </pre>
    *
@@ -236,6 +237,59 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
+  }
+
+  public static final int UID_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uid_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The globally unique identifier of the namespace in the UUID4
+   * format.
+   * </pre>
+   *
+   * <code>string uid = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The uid.
+   */
+  @java.lang.Override
+  public java.lang.String getUid() {
+    java.lang.Object ref = uid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      uid_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The globally unique identifier of the namespace in the UUID4
+   * format.
+   * </pre>
+   *
+   * <code>string uid = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for uid.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getUidBytes() {
+    java.lang.Object ref = uid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      uid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -257,6 +311,9 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 2);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uid_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, uid_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -279,6 +336,9 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, labels__);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uid_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, uid_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -297,6 +357,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
 
     if (!getName().equals(other.getName())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (!getUid().equals(other.getUid())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -314,6 +375,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
+    hash = (37 * hash) + UID_FIELD_NUMBER;
+    hash = (53 * hash) + getUid().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -477,6 +540,7 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       name_ = "";
       internalGetMutableLabels().clear();
+      uid_ = "";
       return this;
     }
 
@@ -519,6 +583,9 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.uid_ = uid_;
       }
     }
 
@@ -574,6 +641,11 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       bitField0_ |= 0x00000002;
+      if (!other.getUid().isEmpty()) {
+        uid_ = other.uid_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -618,6 +690,12 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 42:
+              {
+                uid_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -777,8 +855,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource labels associated with this Namespace.
-     * No more than 64 user labels can be associated with a given resource.  Label
+     * Optional. Resource labels associated with this namespace.
+     * No more than 64 user labels can be associated with a given resource. Label
      * keys and values can be no longer than 63 characters.
      * </pre>
      *
@@ -801,8 +879,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource labels associated with this Namespace.
-     * No more than 64 user labels can be associated with a given resource.  Label
+     * Optional. Resource labels associated with this namespace.
+     * No more than 64 user labels can be associated with a given resource. Label
      * keys and values can be no longer than 63 characters.
      * </pre>
      *
@@ -816,8 +894,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource labels associated with this Namespace.
-     * No more than 64 user labels can be associated with a given resource.  Label
+     * Optional. Resource labels associated with this namespace.
+     * No more than 64 user labels can be associated with a given resource. Label
      * keys and values can be no longer than 63 characters.
      * </pre>
      *
@@ -838,8 +916,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource labels associated with this Namespace.
-     * No more than 64 user labels can be associated with a given resource.  Label
+     * Optional. Resource labels associated with this namespace.
+     * No more than 64 user labels can be associated with a given resource. Label
      * keys and values can be no longer than 63 characters.
      * </pre>
      *
@@ -866,8 +944,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource labels associated with this Namespace.
-     * No more than 64 user labels can be associated with a given resource.  Label
+     * Optional. Resource labels associated with this namespace.
+     * No more than 64 user labels can be associated with a given resource. Label
      * keys and values can be no longer than 63 characters.
      * </pre>
      *
@@ -890,8 +968,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource labels associated with this Namespace.
-     * No more than 64 user labels can be associated with a given resource.  Label
+     * Optional. Resource labels associated with this namespace.
+     * No more than 64 user labels can be associated with a given resource. Label
      * keys and values can be no longer than 63 characters.
      * </pre>
      *
@@ -912,8 +990,8 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Resource labels associated with this Namespace.
-     * No more than 64 user labels can be associated with a given resource.  Label
+     * Optional. Resource labels associated with this namespace.
+     * No more than 64 user labels can be associated with a given resource. Label
      * keys and values can be no longer than 63 characters.
      * </pre>
      *
@@ -922,6 +1000,117 @@ public final class Namespace extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
       bitField0_ |= 0x00000002;
+      return this;
+    }
+
+    private java.lang.Object uid_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The globally unique identifier of the namespace in the UUID4
+     * format.
+     * </pre>
+     *
+     * <code>string uid = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The uid.
+     */
+    public java.lang.String getUid() {
+      java.lang.Object ref = uid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The globally unique identifier of the namespace in the UUID4
+     * format.
+     * </pre>
+     *
+     * <code>string uid = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for uid.
+     */
+    public com.google.protobuf.ByteString getUidBytes() {
+      java.lang.Object ref = uid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        uid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The globally unique identifier of the namespace in the UUID4
+     * format.
+     * </pre>
+     *
+     * <code>string uid = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The uid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUid(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      uid_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The globally unique identifier of the namespace in the UUID4
+     * format.
+     * </pre>
+     *
+     * <code>string uid = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUid() {
+      uid_ = getDefaultInstance().getUid();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The globally unique identifier of the namespace in the UUID4
+     * format.
+     * </pre>
+     *
+     * <code>string uid = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bytes for uid to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUidBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      uid_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
       return this;
     }
 

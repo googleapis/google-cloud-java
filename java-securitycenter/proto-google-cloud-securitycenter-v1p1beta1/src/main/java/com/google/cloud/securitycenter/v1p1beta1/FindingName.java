@@ -286,7 +286,7 @@ public class FindingName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       FindingName that = ((FindingName) o);
       return Objects.equals(this.organization, that.organization)
           && Objects.equals(this.source, that.source)

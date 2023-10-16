@@ -22,7 +22,7 @@ package com.google.cloud.dialogflow.cx.v3;
  *
  *
  * <pre>
- * An TransitionRouteGroup represents a group of
+ * A TransitionRouteGroup represents a group of
  * [`TransitionRoutes`][google.cloud.dialogflow.cx.v3.TransitionRoute] to be
  * used by a [Page][google.cloud.dialogflow.cx.v3.Page].
  * </pre>
@@ -78,7 +78,8 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
    * [TransitionRouteGroups.CreateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.CreateTransitionRouteGroup]
    * populates the name automatically. Format: `projects/&lt;Project
    * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
-   * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
+   * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`
+   * .
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -105,7 +106,8 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
    * [TransitionRouteGroups.CreateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.CreateTransitionRouteGroup]
    * populates the name automatically. Format: `projects/&lt;Project
    * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
-   * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
+   * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`
+   * .
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -440,7 +442,7 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * An TransitionRouteGroup represents a group of
+   * A TransitionRouteGroup represents a group of
    * [`TransitionRoutes`][google.cloud.dialogflow.cx.v3.TransitionRoute] to be
    * used by a [Page][google.cloud.dialogflow.cx.v3.Page].
    * </pre>
@@ -707,7 +709,8 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
      * [TransitionRouteGroups.CreateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.CreateTransitionRouteGroup]
      * populates the name automatically. Format: `projects/&lt;Project
      * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
-     * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
+     * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`
+     * .
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -733,7 +736,8 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
      * [TransitionRouteGroups.CreateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.CreateTransitionRouteGroup]
      * populates the name automatically. Format: `projects/&lt;Project
      * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
-     * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
+     * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`
+     * .
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -759,7 +763,8 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
      * [TransitionRouteGroups.CreateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.CreateTransitionRouteGroup]
      * populates the name automatically. Format: `projects/&lt;Project
      * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
-     * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
+     * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`
+     * .
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -784,7 +789,8 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
      * [TransitionRouteGroups.CreateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.CreateTransitionRouteGroup]
      * populates the name automatically. Format: `projects/&lt;Project
      * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
-     * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
+     * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`
+     * .
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -805,7 +811,8 @@ public final class TransitionRouteGroup extends com.google.protobuf.GeneratedMes
      * [TransitionRouteGroups.CreateTransitionRouteGroup][google.cloud.dialogflow.cx.v3.TransitionRouteGroups.CreateTransitionRouteGroup]
      * populates the name automatically. Format: `projects/&lt;Project
      * ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;/flows/&lt;Flow
-     * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`.
+     * ID&gt;/transitionRouteGroups/&lt;Transition Route Group ID&gt;`
+     * .
      * </pre>
      *
      * <code>string name = 1;</code>

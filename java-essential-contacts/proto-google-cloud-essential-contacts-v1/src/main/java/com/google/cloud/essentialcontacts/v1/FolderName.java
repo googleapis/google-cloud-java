@@ -127,7 +127,7 @@ public class FolderName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       FolderName that = ((FolderName) o);
       return Objects.equals(this.folder, that.folder);
     }

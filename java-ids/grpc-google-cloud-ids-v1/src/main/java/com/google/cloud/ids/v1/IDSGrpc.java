@@ -32,7 +32,7 @@ public final class IDSGrpc {
 
   private IDSGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.ids.v1.IDS";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.ids.v1.IDS";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -658,9 +658,9 @@ public final class IDSGrpc {
 
   private static final class IDSMethodDescriptorSupplier extends IDSBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    IDSMethodDescriptorSupplier(String methodName) {
+    IDSMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

@@ -331,6 +331,19 @@ public interface NetworkConfigOrBuilder
    *
    *
    * <pre>
+   * Whether multi-networking is enabled for this cluster.
+   * </pre>
+   *
+   * <code>bool enable_multi_networking = 17;</code>
+   *
+   * @return The enableMultiNetworking.
+   */
+  boolean getEnableMultiNetworking();
+
+  /**
+   *
+   *
+   * <pre>
    * Network bandwidth tier configuration.
    * </pre>
    *

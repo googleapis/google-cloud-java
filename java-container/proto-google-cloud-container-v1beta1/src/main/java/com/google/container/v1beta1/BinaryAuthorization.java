@@ -39,6 +39,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
 
   private BinaryAuthorization() {
     evaluationMode_ = 0;
+    policyBindings_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -104,6 +105,27 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>PROJECT_SINGLETON_POLICY_ENFORCE = 2;</code>
      */
     PROJECT_SINGLETON_POLICY_ENFORCE(2),
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary Authorization with the policies specified in policy_bindings.
+     * </pre>
+     *
+     * <code>POLICY_BINDINGS = 5;</code>
+     */
+    POLICY_BINDINGS(5),
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary Authorization with the policies specified in policy_bindings,
+     * and also with the project's singleton policy in enforcement mode.
+     * </pre>
+     *
+     * <code>POLICY_BINDINGS_AND_PROJECT_SINGLETON_POLICY_ENFORCE = 6;</code>
+     */
+    POLICY_BINDINGS_AND_PROJECT_SINGLETON_POLICY_ENFORCE(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -139,6 +161,27 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>PROJECT_SINGLETON_POLICY_ENFORCE = 2;</code>
      */
     public static final int PROJECT_SINGLETON_POLICY_ENFORCE_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary Authorization with the policies specified in policy_bindings.
+     * </pre>
+     *
+     * <code>POLICY_BINDINGS = 5;</code>
+     */
+    public static final int POLICY_BINDINGS_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Use Binary Authorization with the policies specified in policy_bindings,
+     * and also with the project's singleton policy in enforcement mode.
+     * </pre>
+     *
+     * <code>POLICY_BINDINGS_AND_PROJECT_SINGLETON_POLICY_ENFORCE = 6;</code>
+     */
+    public static final int POLICY_BINDINGS_AND_PROJECT_SINGLETON_POLICY_ENFORCE_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -170,6 +213,10 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
           return DISABLED;
         case 2:
           return PROJECT_SINGLETON_POLICY_ENFORCE;
+        case 5:
+          return POLICY_BINDINGS;
+        case 6:
+          return POLICY_BINDINGS_AND_PROJECT_SINGLETON_POLICY_ENFORCE;
         default:
           return null;
       }
@@ -223,6 +270,729 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     // @@protoc_insertion_point(enum_scope:google.container.v1beta1.BinaryAuthorization.EvaluationMode)
   }
 
+  public interface PolicyBindingOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.container.v1beta1.BinaryAuthorization.PolicyBinding)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The relative resource name of the binauthz platform policy to audit. GKE
+     * platform policies have the following format:
+     * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
+     * </pre>
+     *
+     * <code>optional string name = 1;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    boolean hasName();
+    /**
+     *
+     *
+     * <pre>
+     * The relative resource name of the binauthz platform policy to audit. GKE
+     * platform policies have the following format:
+     * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
+     * </pre>
+     *
+     * <code>optional string name = 1;</code>
+     *
+     * @return The name.
+     */
+    java.lang.String getName();
+    /**
+     *
+     *
+     * <pre>
+     * The relative resource name of the binauthz platform policy to audit. GKE
+     * platform policies have the following format:
+     * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
+     * </pre>
+     *
+     * <code>optional string name = 1;</code>
+     *
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString getNameBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Binauthz policy that applies to this cluster.
+   * </pre>
+   *
+   * Protobuf type {@code google.container.v1beta1.BinaryAuthorization.PolicyBinding}
+   */
+  public static final class PolicyBinding extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.container.v1beta1.BinaryAuthorization.PolicyBinding)
+      PolicyBindingOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PolicyBinding.newBuilder() to construct.
+    private PolicyBinding(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PolicyBinding() {
+      name_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PolicyBinding();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1beta1.ClusterServiceProto
+          .internal_static_google_container_v1beta1_BinaryAuthorization_PolicyBinding_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.container.v1beta1.ClusterServiceProto
+          .internal_static_google_container_v1beta1_BinaryAuthorization_PolicyBinding_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.container.v1beta1.BinaryAuthorization.PolicyBinding.class,
+              com.google.container.v1beta1.BinaryAuthorization.PolicyBinding.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int NAME_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object name_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The relative resource name of the binauthz platform policy to audit. GKE
+     * platform policies have the following format:
+     * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
+     * </pre>
+     *
+     * <code>optional string name = 1;</code>
+     *
+     * @return Whether the name field is set.
+     */
+    @java.lang.Override
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The relative resource name of the binauthz platform policy to audit. GKE
+     * platform policies have the following format:
+     * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
+     * </pre>
+     *
+     * <code>optional string name = 1;</code>
+     *
+     * @return The name.
+     */
+    @java.lang.Override
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The relative resource name of the binauthz platform policy to audit. GKE
+     * platform policies have the following format:
+     * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
+     * </pre>
+     *
+     * <code>optional string name = 1;</code>
+     *
+     * @return The bytes for name.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.container.v1beta1.BinaryAuthorization.PolicyBinding)) {
+        return super.equals(obj);
+      }
+      com.google.container.v1beta1.BinaryAuthorization.PolicyBinding other =
+          (com.google.container.v1beta1.BinaryAuthorization.PolicyBinding) obj;
+
+      if (hasName() != other.hasName()) return false;
+      if (hasName()) {
+        if (!getName().equals(other.getName())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasName()) {
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.container.v1beta1.BinaryAuthorization.PolicyBinding parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.BinaryAuthorization.PolicyBinding parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.BinaryAuthorization.PolicyBinding parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.BinaryAuthorization.PolicyBinding parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.BinaryAuthorization.PolicyBinding parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.container.v1beta1.BinaryAuthorization.PolicyBinding parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.BinaryAuthorization.PolicyBinding parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.BinaryAuthorization.PolicyBinding parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.BinaryAuthorization.PolicyBinding parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.BinaryAuthorization.PolicyBinding parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.container.v1beta1.BinaryAuthorization.PolicyBinding parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.container.v1beta1.BinaryAuthorization.PolicyBinding parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.container.v1beta1.BinaryAuthorization.PolicyBinding prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Binauthz policy that applies to this cluster.
+     * </pre>
+     *
+     * Protobuf type {@code google.container.v1beta1.BinaryAuthorization.PolicyBinding}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.container.v1beta1.BinaryAuthorization.PolicyBinding)
+        com.google.container.v1beta1.BinaryAuthorization.PolicyBindingOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_BinaryAuthorization_PolicyBinding_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_BinaryAuthorization_PolicyBinding_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.container.v1beta1.BinaryAuthorization.PolicyBinding.class,
+                com.google.container.v1beta1.BinaryAuthorization.PolicyBinding.Builder.class);
+      }
+
+      // Construct using com.google.container.v1beta1.BinaryAuthorization.PolicyBinding.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        name_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.container.v1beta1.ClusterServiceProto
+            .internal_static_google_container_v1beta1_BinaryAuthorization_PolicyBinding_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.BinaryAuthorization.PolicyBinding
+          getDefaultInstanceForType() {
+        return com.google.container.v1beta1.BinaryAuthorization.PolicyBinding.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.BinaryAuthorization.PolicyBinding build() {
+        com.google.container.v1beta1.BinaryAuthorization.PolicyBinding result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.container.v1beta1.BinaryAuthorization.PolicyBinding buildPartial() {
+        com.google.container.v1beta1.BinaryAuthorization.PolicyBinding result =
+            new com.google.container.v1beta1.BinaryAuthorization.PolicyBinding(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.container.v1beta1.BinaryAuthorization.PolicyBinding result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.name_ = name_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.container.v1beta1.BinaryAuthorization.PolicyBinding) {
+          return mergeFrom((com.google.container.v1beta1.BinaryAuthorization.PolicyBinding) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.container.v1beta1.BinaryAuthorization.PolicyBinding other) {
+        if (other
+            == com.google.container.v1beta1.BinaryAuthorization.PolicyBinding.getDefaultInstance())
+          return this;
+        if (other.hasName()) {
+          name_ = other.name_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  name_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object name_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * The relative resource name of the binauthz platform policy to audit. GKE
+       * platform policies have the following format:
+       * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
+       * </pre>
+       *
+       * <code>optional string name = 1;</code>
+       *
+       * @return Whether the name field is set.
+       */
+      public boolean hasName() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The relative resource name of the binauthz platform policy to audit. GKE
+       * platform policies have the following format:
+       * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
+       * </pre>
+       *
+       * <code>optional string name = 1;</code>
+       *
+       * @return The name.
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The relative resource name of the binauthz platform policy to audit. GKE
+       * platform policies have the following format:
+       * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
+       * </pre>
+       *
+       * <code>optional string name = 1;</code>
+       *
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The relative resource name of the binauthz platform policy to audit. GKE
+       * platform policies have the following format:
+       * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
+       * </pre>
+       *
+       * <code>optional string name = 1;</code>
+       *
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The relative resource name of the binauthz platform policy to audit. GKE
+       * platform policies have the following format:
+       * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
+       * </pre>
+       *
+       * <code>optional string name = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The relative resource name of the binauthz platform policy to audit. GKE
+       * platform policies have the following format:
+       * `projects/{project_number}/platforms/gke/policies/{policy_id}`.
+       * </pre>
+       *
+       * <code>optional string name = 1;</code>
+       *
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.container.v1beta1.BinaryAuthorization.PolicyBinding)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.container.v1beta1.BinaryAuthorization.PolicyBinding)
+    private static final com.google.container.v1beta1.BinaryAuthorization.PolicyBinding
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.container.v1beta1.BinaryAuthorization.PolicyBinding();
+    }
+
+    public static com.google.container.v1beta1.BinaryAuthorization.PolicyBinding
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PolicyBinding> PARSER =
+        new com.google.protobuf.AbstractParser<PolicyBinding>() {
+          @java.lang.Override
+          public PolicyBinding parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PolicyBinding> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PolicyBinding> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.container.v1beta1.BinaryAuthorization.PolicyBinding
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int ENABLED_FIELD_NUMBER = 1;
   private boolean enabled_ = false;
   /**
@@ -237,7 +1007,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
    * <code>bool enabled = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1674
+   *     google/container/v1beta1/cluster_service.proto;l=1758
    * @return The enabled.
    */
   @java.lang.Override
@@ -285,6 +1055,92 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
         : result;
   }
 
+  public static final int POLICY_BINDINGS_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.container.v1beta1.BinaryAuthorization.PolicyBinding>
+      policyBindings_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Binauthz policies that apply to this cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.container.v1beta1.BinaryAuthorization.PolicyBinding>
+      getPolicyBindingsList() {
+    return policyBindings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Binauthz policies that apply to this cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.container.v1beta1.BinaryAuthorization.PolicyBindingOrBuilder>
+      getPolicyBindingsOrBuilderList() {
+    return policyBindings_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Binauthz policies that apply to this cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getPolicyBindingsCount() {
+    return policyBindings_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Binauthz policies that apply to this cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.BinaryAuthorization.PolicyBinding getPolicyBindings(
+      int index) {
+    return policyBindings_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Binauthz policies that apply to this cluster.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.BinaryAuthorization.PolicyBindingOrBuilder
+      getPolicyBindingsOrBuilder(int index) {
+    return policyBindings_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -308,6 +1164,9 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       output.writeEnum(2, evaluationMode_);
     }
+    for (int i = 0; i < policyBindings_.size(); i++) {
+      output.writeMessage(5, policyBindings_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -325,6 +1184,9 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
             .EVALUATION_MODE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, evaluationMode_);
+    }
+    for (int i = 0; i < policyBindings_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, policyBindings_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -344,6 +1206,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
 
     if (getEnabled() != other.getEnabled()) return false;
     if (evaluationMode_ != other.evaluationMode_) return false;
+    if (!getPolicyBindingsList().equals(other.getPolicyBindingsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -359,6 +1222,10 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
     hash = (37 * hash) + EVALUATION_MODE_FIELD_NUMBER;
     hash = (53 * hash) + evaluationMode_;
+    if (getPolicyBindingsCount() > 0) {
+      hash = (37 * hash) + POLICY_BINDINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getPolicyBindingsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -500,6 +1367,13 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       bitField0_ = 0;
       enabled_ = false;
       evaluationMode_ = 0;
+      if (policyBindingsBuilder_ == null) {
+        policyBindings_ = java.util.Collections.emptyList();
+      } else {
+        policyBindings_ = null;
+        policyBindingsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       return this;
     }
 
@@ -527,11 +1401,25 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
     public com.google.container.v1beta1.BinaryAuthorization buildPartial() {
       com.google.container.v1beta1.BinaryAuthorization result =
           new com.google.container.v1beta1.BinaryAuthorization(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.container.v1beta1.BinaryAuthorization result) {
+      if (policyBindingsBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          policyBindings_ = java.util.Collections.unmodifiableList(policyBindings_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.policyBindings_ = policyBindings_;
+      } else {
+        result.policyBindings_ = policyBindingsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.container.v1beta1.BinaryAuthorization result) {
@@ -596,6 +1484,33 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       if (other.evaluationMode_ != 0) {
         setEvaluationModeValue(other.getEvaluationModeValue());
       }
+      if (policyBindingsBuilder_ == null) {
+        if (!other.policyBindings_.isEmpty()) {
+          if (policyBindings_.isEmpty()) {
+            policyBindings_ = other.policyBindings_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensurePolicyBindingsIsMutable();
+            policyBindings_.addAll(other.policyBindings_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.policyBindings_.isEmpty()) {
+          if (policyBindingsBuilder_.isEmpty()) {
+            policyBindingsBuilder_.dispose();
+            policyBindingsBuilder_ = null;
+            policyBindings_ = other.policyBindings_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            policyBindingsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPolicyBindingsFieldBuilder()
+                    : null;
+          } else {
+            policyBindingsBuilder_.addAllMessages(other.policyBindings_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -634,6 +1549,20 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 42:
+              {
+                com.google.container.v1beta1.BinaryAuthorization.PolicyBinding m =
+                    input.readMessage(
+                        com.google.container.v1beta1.BinaryAuthorization.PolicyBinding.parser(),
+                        extensionRegistry);
+                if (policyBindingsBuilder_ == null) {
+                  ensurePolicyBindingsIsMutable();
+                  policyBindings_.add(m);
+                } else {
+                  policyBindingsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -666,7 +1595,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1674
+     *     google/container/v1beta1/cluster_service.proto;l=1758
      * @return The enabled.
      */
     @java.lang.Override
@@ -686,7 +1615,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1674
+     *     google/container/v1beta1/cluster_service.proto;l=1758
      * @param value The enabled to set.
      * @return This builder for chaining.
      */
@@ -710,7 +1639,7 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
      * <code>bool enabled = 1 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.BinaryAuthorization.enabled is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1674
+     *     google/container/v1beta1/cluster_service.proto;l=1758
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -823,6 +1752,413 @@ public final class BinaryAuthorization extends com.google.protobuf.GeneratedMess
       evaluationMode_ = 0;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.container.v1beta1.BinaryAuthorization.PolicyBinding>
+        policyBindings_ = java.util.Collections.emptyList();
+
+    private void ensurePolicyBindingsIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        policyBindings_ =
+            new java.util.ArrayList<com.google.container.v1beta1.BinaryAuthorization.PolicyBinding>(
+                policyBindings_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1beta1.BinaryAuthorization.PolicyBinding,
+            com.google.container.v1beta1.BinaryAuthorization.PolicyBinding.Builder,
+            com.google.container.v1beta1.BinaryAuthorization.PolicyBindingOrBuilder>
+        policyBindingsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binauthz policies that apply to this cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.container.v1beta1.BinaryAuthorization.PolicyBinding>
+        getPolicyBindingsList() {
+      if (policyBindingsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(policyBindings_);
+      } else {
+        return policyBindingsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binauthz policies that apply to this cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getPolicyBindingsCount() {
+      if (policyBindingsBuilder_ == null) {
+        return policyBindings_.size();
+      } else {
+        return policyBindingsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binauthz policies that apply to this cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.BinaryAuthorization.PolicyBinding getPolicyBindings(
+        int index) {
+      if (policyBindingsBuilder_ == null) {
+        return policyBindings_.get(index);
+      } else {
+        return policyBindingsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binauthz policies that apply to this cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPolicyBindings(
+        int index, com.google.container.v1beta1.BinaryAuthorization.PolicyBinding value) {
+      if (policyBindingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePolicyBindingsIsMutable();
+        policyBindings_.set(index, value);
+        onChanged();
+      } else {
+        policyBindingsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binauthz policies that apply to this cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPolicyBindings(
+        int index,
+        com.google.container.v1beta1.BinaryAuthorization.PolicyBinding.Builder builderForValue) {
+      if (policyBindingsBuilder_ == null) {
+        ensurePolicyBindingsIsMutable();
+        policyBindings_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        policyBindingsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binauthz policies that apply to this cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPolicyBindings(
+        com.google.container.v1beta1.BinaryAuthorization.PolicyBinding value) {
+      if (policyBindingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePolicyBindingsIsMutable();
+        policyBindings_.add(value);
+        onChanged();
+      } else {
+        policyBindingsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binauthz policies that apply to this cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPolicyBindings(
+        int index, com.google.container.v1beta1.BinaryAuthorization.PolicyBinding value) {
+      if (policyBindingsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensurePolicyBindingsIsMutable();
+        policyBindings_.add(index, value);
+        onChanged();
+      } else {
+        policyBindingsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binauthz policies that apply to this cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPolicyBindings(
+        com.google.container.v1beta1.BinaryAuthorization.PolicyBinding.Builder builderForValue) {
+      if (policyBindingsBuilder_ == null) {
+        ensurePolicyBindingsIsMutable();
+        policyBindings_.add(builderForValue.build());
+        onChanged();
+      } else {
+        policyBindingsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binauthz policies that apply to this cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addPolicyBindings(
+        int index,
+        com.google.container.v1beta1.BinaryAuthorization.PolicyBinding.Builder builderForValue) {
+      if (policyBindingsBuilder_ == null) {
+        ensurePolicyBindingsIsMutable();
+        policyBindings_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        policyBindingsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binauthz policies that apply to this cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllPolicyBindings(
+        java.lang.Iterable<? extends com.google.container.v1beta1.BinaryAuthorization.PolicyBinding>
+            values) {
+      if (policyBindingsBuilder_ == null) {
+        ensurePolicyBindingsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, policyBindings_);
+        onChanged();
+      } else {
+        policyBindingsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binauthz policies that apply to this cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPolicyBindings() {
+      if (policyBindingsBuilder_ == null) {
+        policyBindings_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        policyBindingsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binauthz policies that apply to this cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removePolicyBindings(int index) {
+      if (policyBindingsBuilder_ == null) {
+        ensurePolicyBindingsIsMutable();
+        policyBindings_.remove(index);
+        onChanged();
+      } else {
+        policyBindingsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binauthz policies that apply to this cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.BinaryAuthorization.PolicyBinding.Builder
+        getPolicyBindingsBuilder(int index) {
+      return getPolicyBindingsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binauthz policies that apply to this cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.BinaryAuthorization.PolicyBindingOrBuilder
+        getPolicyBindingsOrBuilder(int index) {
+      if (policyBindingsBuilder_ == null) {
+        return policyBindings_.get(index);
+      } else {
+        return policyBindingsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binauthz policies that apply to this cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.container.v1beta1.BinaryAuthorization.PolicyBindingOrBuilder>
+        getPolicyBindingsOrBuilderList() {
+      if (policyBindingsBuilder_ != null) {
+        return policyBindingsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(policyBindings_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binauthz policies that apply to this cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.BinaryAuthorization.PolicyBinding.Builder
+        addPolicyBindingsBuilder() {
+      return getPolicyBindingsFieldBuilder()
+          .addBuilder(
+              com.google.container.v1beta1.BinaryAuthorization.PolicyBinding.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binauthz policies that apply to this cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.BinaryAuthorization.PolicyBinding.Builder
+        addPolicyBindingsBuilder(int index) {
+      return getPolicyBindingsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.container.v1beta1.BinaryAuthorization.PolicyBinding.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Binauthz policies that apply to this cluster.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.BinaryAuthorization.PolicyBinding policy_bindings = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.container.v1beta1.BinaryAuthorization.PolicyBinding.Builder>
+        getPolicyBindingsBuilderList() {
+      return getPolicyBindingsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1beta1.BinaryAuthorization.PolicyBinding,
+            com.google.container.v1beta1.BinaryAuthorization.PolicyBinding.Builder,
+            com.google.container.v1beta1.BinaryAuthorization.PolicyBindingOrBuilder>
+        getPolicyBindingsFieldBuilder() {
+      if (policyBindingsBuilder_ == null) {
+        policyBindingsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.container.v1beta1.BinaryAuthorization.PolicyBinding,
+                com.google.container.v1beta1.BinaryAuthorization.PolicyBinding.Builder,
+                com.google.container.v1beta1.BinaryAuthorization.PolicyBindingOrBuilder>(
+                policyBindings_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        policyBindings_ = null;
+      }
+      return policyBindingsBuilder_;
     }
 
     @java.lang.Override

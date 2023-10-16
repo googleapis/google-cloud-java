@@ -16,6 +16,7 @@
 
 package com.google.cloud.documentai.v1beta3;
 
+import static com.google.cloud.documentai.v1beta3.DocumentServiceClient.ListDocumentsPagedResponse;
 import static com.google.cloud.documentai.v1beta3.DocumentServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.gax.core.NoCredentialsProvider;
@@ -93,7 +94,10 @@ public class DocumentServiceClientTest {
 
   @Test
   public void updateDatasetTest() throws Exception {
-    Dataset expectedResponse = Dataset.newBuilder().setName("name3373707").build();
+    Dataset expectedResponse =
+        Dataset.newBuilder()
+            .setName(DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+            .build();
     Operation resultOperation =
         Operation.newBuilder()
             .setName("updateDatasetTest")
@@ -129,6 +133,297 @@ public class DocumentServiceClientTest {
       Dataset dataset = Dataset.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDatasetAsync(dataset, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void importDocumentsTest() throws Exception {
+    ImportDocumentsResponse expectedResponse = ImportDocumentsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importDocumentsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDocumentService.addResponse(resultOperation);
+
+    DatasetName dataset = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+
+    ImportDocumentsResponse actualResponse = client.importDocumentsAsync(dataset).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportDocumentsRequest actualRequest = ((ImportDocumentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(dataset.toString(), actualRequest.getDataset());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importDocumentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentService.addException(exception);
+
+    try {
+      DatasetName dataset = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+      client.importDocumentsAsync(dataset).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void importDocumentsTest2() throws Exception {
+    ImportDocumentsResponse expectedResponse = ImportDocumentsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importDocumentsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDocumentService.addResponse(resultOperation);
+
+    String dataset = "dataset1443214456";
+
+    ImportDocumentsResponse actualResponse = client.importDocumentsAsync(dataset).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportDocumentsRequest actualRequest = ((ImportDocumentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(dataset, actualRequest.getDataset());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importDocumentsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentService.addException(exception);
+
+    try {
+      String dataset = "dataset1443214456";
+      client.importDocumentsAsync(dataset).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void getDocumentTest() throws Exception {
+    GetDocumentResponse expectedResponse =
+        GetDocumentResponse.newBuilder().setDocument(Document.newBuilder().build()).build();
+    mockDocumentService.addResponse(expectedResponse);
+
+    DatasetName dataset = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+
+    GetDocumentResponse actualResponse = client.getDocument(dataset);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDocumentRequest actualRequest = ((GetDocumentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(dataset.toString(), actualRequest.getDataset());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDocumentExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentService.addException(exception);
+
+    try {
+      DatasetName dataset = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+      client.getDocument(dataset);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDocumentTest2() throws Exception {
+    GetDocumentResponse expectedResponse =
+        GetDocumentResponse.newBuilder().setDocument(Document.newBuilder().build()).build();
+    mockDocumentService.addResponse(expectedResponse);
+
+    String dataset = "dataset1443214456";
+
+    GetDocumentResponse actualResponse = client.getDocument(dataset);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDocumentRequest actualRequest = ((GetDocumentRequest) actualRequests.get(0));
+
+    Assert.assertEquals(dataset, actualRequest.getDataset());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDocumentExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentService.addException(exception);
+
+    try {
+      String dataset = "dataset1443214456";
+      client.getDocument(dataset);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDocumentsTest() throws Exception {
+    DocumentMetadata responsesElement = DocumentMetadata.newBuilder().build();
+    ListDocumentsResponse expectedResponse =
+        ListDocumentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDocumentMetadata(Arrays.asList(responsesElement))
+            .build();
+    mockDocumentService.addResponse(expectedResponse);
+
+    DatasetName dataset = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+
+    ListDocumentsPagedResponse pagedListResponse = client.listDocuments(dataset);
+
+    List<DocumentMetadata> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDocumentMetadataList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDocumentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDocumentsRequest actualRequest = ((ListDocumentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(dataset.toString(), actualRequest.getDataset());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDocumentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentService.addException(exception);
+
+    try {
+      DatasetName dataset = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+      client.listDocuments(dataset);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDocumentsTest2() throws Exception {
+    DocumentMetadata responsesElement = DocumentMetadata.newBuilder().build();
+    ListDocumentsResponse expectedResponse =
+        ListDocumentsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDocumentMetadata(Arrays.asList(responsesElement))
+            .build();
+    mockDocumentService.addResponse(expectedResponse);
+
+    String dataset = "dataset1443214456";
+
+    ListDocumentsPagedResponse pagedListResponse = client.listDocuments(dataset);
+
+    List<DocumentMetadata> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDocumentMetadataList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockDocumentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDocumentsRequest actualRequest = ((ListDocumentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(dataset, actualRequest.getDataset());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDocumentsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentService.addException(exception);
+
+    try {
+      String dataset = "dataset1443214456";
+      client.listDocuments(dataset);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchDeleteDocumentsTest() throws Exception {
+    BatchDeleteDocumentsResponse expectedResponse =
+        BatchDeleteDocumentsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("batchDeleteDocumentsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockDocumentService.addResponse(resultOperation);
+
+    String dataset = "dataset1443214456";
+
+    BatchDeleteDocumentsResponse actualResponse = client.batchDeleteDocumentsAsync(dataset).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockDocumentService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchDeleteDocumentsRequest actualRequest =
+        ((BatchDeleteDocumentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(dataset, actualRequest.getDataset());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchDeleteDocumentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockDocumentService.addException(exception);
+
+    try {
+      String dataset = "dataset1443214456";
+      client.batchDeleteDocumentsAsync(dataset).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());

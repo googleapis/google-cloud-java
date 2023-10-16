@@ -26,11 +26,13 @@ import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.api.gax.grpc.testing.MockServiceHelper;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.InvalidArgumentException;
+import com.google.api.gax.rpc.StatusCode;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.Lists;
+import com.google.longrunning.Operation;
 import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.Any;
 import com.google.protobuf.Empty;
@@ -42,6 +44,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.ExecutionException;
 import javax.annotation.Generated;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -478,6 +481,118 @@ public class IntentsClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void importIntentsTest() throws Exception {
+    ImportIntentsResponse expectedResponse =
+        ImportIntentsResponse.newBuilder()
+            .addAllIntents(new ArrayList<String>())
+            .setConflictingResources(
+                ImportIntentsResponse.ConflictingResources.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("importIntentsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockIntents.addResponse(resultOperation);
+
+    ImportIntentsRequest request =
+        ImportIntentsRequest.newBuilder()
+            .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .build();
+
+    ImportIntentsResponse actualResponse = client.importIntentsAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ImportIntentsRequest actualRequest = ((ImportIntentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getIntentsUri(), actualRequest.getIntentsUri());
+    Assert.assertEquals(request.getIntentsContent(), actualRequest.getIntentsContent());
+    Assert.assertEquals(request.getMergeOption(), actualRequest.getMergeOption());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void importIntentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIntents.addException(exception);
+
+    try {
+      ImportIntentsRequest request =
+          ImportIntentsRequest.newBuilder()
+              .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+              .build();
+      client.importIntentsAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void exportIntentsTest() throws Exception {
+    ExportIntentsResponse expectedResponse = ExportIntentsResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("exportIntentsTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockIntents.addResponse(resultOperation);
+
+    ExportIntentsRequest request =
+        ExportIntentsRequest.newBuilder()
+            .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .addAllIntents(new ArrayList<String>())
+            .build();
+
+    ExportIntentsResponse actualResponse = client.exportIntentsAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockIntents.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExportIntentsRequest actualRequest = ((ExportIntentsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getIntentsList(), actualRequest.getIntentsList());
+    Assert.assertEquals(request.getIntentsUri(), actualRequest.getIntentsUri());
+    Assert.assertEquals(request.getIntentsContentInline(), actualRequest.getIntentsContentInline());
+    Assert.assertEquals(request.getDataFormat(), actualRequest.getDataFormat());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void exportIntentsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockIntents.addException(exception);
+
+    try {
+      ExportIntentsRequest request =
+          ExportIntentsRequest.newBuilder()
+              .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+              .addAllIntents(new ArrayList<String>())
+              .build();
+      client.exportIntentsAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

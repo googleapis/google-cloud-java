@@ -510,6 +510,65 @@ public interface DocumentQueryOrBuilder
    *
    *
    * <pre>
+   * Search the documents in the list.
+   * Format:
+   * projects/{project_number}/locations/{location}/documents/{document_id}.
+   * </pre>
+   *
+   * <code>repeated string document_name_filter = 14;</code>
+   *
+   * @return A list containing the documentNameFilter.
+   */
+  java.util.List<java.lang.String> getDocumentNameFilterList();
+  /**
+   *
+   *
+   * <pre>
+   * Search the documents in the list.
+   * Format:
+   * projects/{project_number}/locations/{location}/documents/{document_id}.
+   * </pre>
+   *
+   * <code>repeated string document_name_filter = 14;</code>
+   *
+   * @return The count of documentNameFilter.
+   */
+  int getDocumentNameFilterCount();
+  /**
+   *
+   *
+   * <pre>
+   * Search the documents in the list.
+   * Format:
+   * projects/{project_number}/locations/{location}/documents/{document_id}.
+   * </pre>
+   *
+   * <code>repeated string document_name_filter = 14;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The documentNameFilter at the given index.
+   */
+  java.lang.String getDocumentNameFilter(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Search the documents in the list.
+   * Format:
+   * projects/{project_number}/locations/{location}/documents/{document_id}.
+   * </pre>
+   *
+   * <code>repeated string document_name_filter = 14;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the documentNameFilter at the given index.
+   */
+  com.google.protobuf.ByteString getDocumentNameFilterBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * For custom synonyms.
    * Customers provide the synonyms based on context. One customer can provide
    * multiple set of synonyms based on different context. The search query will

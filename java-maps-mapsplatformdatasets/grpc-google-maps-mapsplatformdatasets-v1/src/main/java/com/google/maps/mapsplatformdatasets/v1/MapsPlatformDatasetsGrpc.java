@@ -32,7 +32,7 @@ public final class MapsPlatformDatasetsGrpc {
 
   private MapsPlatformDatasetsGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.maps.mapsplatformdatasets.v1.MapsPlatformDatasets";
 
   // Static method descriptors that strictly reflect the proto.
@@ -820,9 +820,9 @@ public final class MapsPlatformDatasetsGrpc {
   private static final class MapsPlatformDatasetsMethodDescriptorSupplier
       extends MapsPlatformDatasetsBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    MapsPlatformDatasetsMethodDescriptorSupplier(String methodName) {
+    MapsPlatformDatasetsMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

@@ -33,6 +33,7 @@ import com.google.cloud.recommender.v1.ListRecommendationsRequest;
 import com.google.cloud.recommender.v1.ListRecommendationsResponse;
 import com.google.cloud.recommender.v1.MarkInsightAcceptedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationClaimedRequest;
+import com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationFailedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationSucceededRequest;
 import com.google.cloud.recommender.v1.Recommendation;
@@ -78,6 +79,12 @@ public abstract class RecommenderStub implements BackgroundResource {
 
   public UnaryCallable<GetRecommendationRequest, Recommendation> getRecommendationCallable() {
     throw new UnsupportedOperationException("Not implemented: getRecommendationCallable()");
+  }
+
+  public UnaryCallable<MarkRecommendationDismissedRequest, Recommendation>
+      markRecommendationDismissedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: markRecommendationDismissedCallable()");
   }
 
   public UnaryCallable<MarkRecommendationClaimedRequest, Recommendation>

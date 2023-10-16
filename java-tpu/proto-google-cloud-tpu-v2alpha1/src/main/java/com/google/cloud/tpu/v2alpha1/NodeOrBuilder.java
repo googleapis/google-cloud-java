@@ -907,4 +907,45 @@ public interface NodeOrBuilder
    * @return The multisliceNode.
    */
   boolean getMultisliceNode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Boot disk configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.BootDiskConfig boot_disk_config = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the bootDiskConfig field is set.
+   */
+  boolean hasBootDiskConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Boot disk configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.BootDiskConfig boot_disk_config = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bootDiskConfig.
+   */
+  com.google.cloud.tpu.v2alpha1.BootDiskConfig getBootDiskConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Boot disk configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.tpu.v2alpha1.BootDiskConfig boot_disk_config = 49 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.tpu.v2alpha1.BootDiskConfigOrBuilder getBootDiskConfigOrBuilder();
 }

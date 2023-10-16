@@ -249,7 +249,7 @@ public final class VideoStitcherServiceProto {
           + "uf.FieldMaskB\004\342A\001\002\"O\n\022DeleteSlateRequest"
           + "\0229\n\004name\030\001 \001(\tB+\342A\001\002\372A$\n\"videostitcher.g"
           + "oogleapis.com/Slate\"\246\001\n\030CreateLiveSessio"
-          + "nRequest\022A\n\006parent\030\001 \001(\tB1\342A\001\002\372A*\n(video"
+          + "nRequest\022A\n\006parent\030\001 \001(\tB1\342A\001\002\372A*\022(video"
           + "stitcher.googleapis.com/LiveSession\022G\n\014l"
           + "ive_session\030\002 \001(\0132+.google.cloud.video.s"
           + "titcher.v1.LiveSessionB\004\342A\001\002\"X\n\025GetLiveS"

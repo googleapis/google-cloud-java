@@ -32,7 +32,7 @@ public final class DataPolicyServiceGrpc {
 
   private DataPolicyServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.bigquery.datapolicies.v1.DataPolicyService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -1284,9 +1284,9 @@ public final class DataPolicyServiceGrpc {
   private static final class DataPolicyServiceMethodDescriptorSupplier
       extends DataPolicyServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DataPolicyServiceMethodDescriptorSupplier(String methodName) {
+    DataPolicyServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

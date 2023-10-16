@@ -86,7 +86,7 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Y coordinate.
+   * Y coordinate (starts from the top of the image).
    * </pre>
    *
    * <code>float y = 2;</code>
@@ -522,7 +522,7 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Y coordinate.
+     * Y coordinate (starts from the top of the image).
      * </pre>
      *
      * <code>float y = 2;</code>
@@ -537,7 +537,7 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Y coordinate.
+     * Y coordinate (starts from the top of the image).
      * </pre>
      *
      * <code>float y = 2;</code>
@@ -556,7 +556,7 @@ public final class NormalizedVertex extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Y coordinate.
+     * Y coordinate (starts from the top of the image).
      * </pre>
      *
      * <code>float y = 2;</code>

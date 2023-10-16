@@ -32,7 +32,7 @@ public final class ChangelogsGrpc {
 
   private ChangelogsGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.dialogflow.cx.v3.Changelogs";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.dialogflow.cx.v3.Changelogs";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -455,9 +455,9 @@ public final class ChangelogsGrpc {
   private static final class ChangelogsMethodDescriptorSupplier
       extends ChangelogsBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ChangelogsMethodDescriptorSupplier(String methodName) {
+    ChangelogsMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

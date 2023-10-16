@@ -45,6 +45,7 @@ public class AsyncCompleteQuery {
               .setQuery("query107944136")
               .setQueryModel("queryModel-184930495")
               .setUserPseudoId("userPseudoId-1155274652")
+              .setIncludeTailSuggestions(true)
               .build();
       ApiFuture<CompleteQueryResponse> future =
           completionServiceClient.completeQueryCallable().futureCall(request);

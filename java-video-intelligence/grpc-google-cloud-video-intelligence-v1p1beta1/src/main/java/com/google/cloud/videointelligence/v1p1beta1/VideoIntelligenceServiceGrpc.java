@@ -32,7 +32,7 @@ public final class VideoIntelligenceServiceGrpc {
 
   private VideoIntelligenceServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.videointelligence.v1p1beta1.VideoIntelligenceService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -357,9 +357,9 @@ public final class VideoIntelligenceServiceGrpc {
   private static final class VideoIntelligenceServiceMethodDescriptorSupplier
       extends VideoIntelligenceServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    VideoIntelligenceServiceMethodDescriptorSupplier(String methodName) {
+    VideoIntelligenceServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

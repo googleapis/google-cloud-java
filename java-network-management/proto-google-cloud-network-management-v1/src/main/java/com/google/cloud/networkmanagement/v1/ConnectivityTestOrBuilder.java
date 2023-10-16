@@ -28,7 +28,7 @@ public interface ConnectivityTestOrBuilder
    *
    * <pre>
    * Required. Unique name of the resource using the form:
-   *     `projects/{project_id}/locations/global/connectivityTests/{test_id}`
+   *     `projects/{project_id}/locations/global/connectivityTests/{test}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,7 +41,7 @@ public interface ConnectivityTestOrBuilder
    *
    * <pre>
    * Required. Unique name of the resource using the form:
-   *     `projects/{project_id}/locations/global/connectivityTests/{test_id}`
+   *     `projects/{project_id}/locations/global/connectivityTests/{test}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -559,4 +559,54 @@ public interface ConnectivityTestOrBuilder
    */
   com.google.cloud.networkmanagement.v1.ReachabilityDetailsOrBuilder
       getReachabilityDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The probing details of this test from the latest run, present
+   * for applicable tests only. The details are updated when creating a new
+   * test, updating an existing test, or triggering a one-time rerun of an
+   * existing test.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.ProbingDetails probing_details = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the probingDetails field is set.
+   */
+  boolean hasProbingDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The probing details of this test from the latest run, present
+   * for applicable tests only. The details are updated when creating a new
+   * test, updating an existing test, or triggering a one-time rerun of an
+   * existing test.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.ProbingDetails probing_details = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The probingDetails.
+   */
+  com.google.cloud.networkmanagement.v1.ProbingDetails getProbingDetails();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The probing details of this test from the latest run, present
+   * for applicable tests only. The details are updated when creating a new
+   * test, updating an existing test, or triggering a one-time rerun of an
+   * existing test.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.networkmanagement.v1.ProbingDetails probing_details = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.networkmanagement.v1.ProbingDetailsOrBuilder getProbingDetailsOrBuilder();
 }

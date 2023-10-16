@@ -209,7 +209,7 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * The UTF-8 encoded natural language text to be processed. Must be sent if
    * `text_config` is set in the first message. Text length must not exceed
    * 256 bytes for virtual agent interactions. The `input_text` field can be
-   * only sent once.
+   * only sent once, and would cancel the speech recognition if any ongoing.
    * </pre>
    *
    * <code>string input_text = 6;</code>
@@ -224,7 +224,7 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * The UTF-8 encoded natural language text to be processed. Must be sent if
    * `text_config` is set in the first message. Text length must not exceed
    * 256 bytes for virtual agent interactions. The `input_text` field can be
-   * only sent once.
+   * only sent once, and would cancel the speech recognition if any ongoing.
    * </pre>
    *
    * <code>string input_text = 6;</code>
@@ -239,7 +239,7 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * The UTF-8 encoded natural language text to be processed. Must be sent if
    * `text_config` is set in the first message. Text length must not exceed
    * 256 bytes for virtual agent interactions. The `input_text` field can be
-   * only sent once.
+   * only sent once, and would cancel the speech recognition if any ongoing.
    * </pre>
    *
    * <code>string input_text = 6;</code>
@@ -463,6 +463,37 @@ public interface StreamingAnalyzeContentRequestOrBuilder
    * @return The bytes for cxCurrentPage.
    */
   com.google.protobuf.ByteString getCxCurrentPageBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enable full bidirectional streaming. You can keep streaming the
+   * audio until timeout, and there's no need to half close the stream to get
+   * the response.
+   *
+   * Restrictions:
+   *
+   * - Timeout: 3 mins.
+   * - Audio Encoding: only supports
+   * [AudioEncoding.AUDIO_ENCODING_LINEAR_16][google.cloud.dialogflow.v2beta1.AudioEncoding.AUDIO_ENCODING_LINEAR_16]
+   * and
+   * [AudioEncoding.AUDIO_ENCODING_MULAW][google.cloud.dialogflow.v2beta1.AudioEncoding.AUDIO_ENCODING_MULAW]
+   * - Lifecycle: conversation should be in `Assist Stage`, go to
+   *   [Conversation.CreateConversation][] for more information.
+   *
+   * InvalidArgument Error will be returned if the one of restriction checks
+   * failed.
+   *
+   * You can find more details in
+   * https://cloud.google.com/agent-assist/docs/extended-streaming
+   * </pre>
+   *
+   * <code>bool enable_extended_streaming = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableExtendedStreaming.
+   */
+  boolean getEnableExtendedStreaming();
 
   /**
    *

@@ -19,6 +19,8 @@ package com.google.cloud.bigquery.analyticshub.v1;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListDataExchangesPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListListingsPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListOrgDataExchangesPagedResponse;
+import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSharedResourceSubscriptionsPagedResponse;
+import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSubscriptionsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.BetaApi;
@@ -29,6 +31,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -38,6 +41,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
@@ -150,6 +154,73 @@ public class AnalyticsHubServiceSettings extends ClientSettings<AnalyticsHubServ
   public UnaryCallSettings<SubscribeListingRequest, SubscribeListingResponse>
       subscribeListingSettings() {
     return ((AnalyticsHubServiceStubSettings) getStubSettings()).subscribeListingSettings();
+  }
+
+  /** Returns the object with the settings used for calls to subscribeDataExchange. */
+  public UnaryCallSettings<SubscribeDataExchangeRequest, Operation>
+      subscribeDataExchangeSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings()).subscribeDataExchangeSettings();
+  }
+
+  /** Returns the object with the settings used for calls to subscribeDataExchange. */
+  public OperationCallSettings<
+          SubscribeDataExchangeRequest, SubscribeDataExchangeResponse, OperationMetadata>
+      subscribeDataExchangeOperationSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings())
+        .subscribeDataExchangeOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to refreshSubscription. */
+  public UnaryCallSettings<RefreshSubscriptionRequest, Operation> refreshSubscriptionSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings()).refreshSubscriptionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to refreshSubscription. */
+  public OperationCallSettings<
+          RefreshSubscriptionRequest, RefreshSubscriptionResponse, OperationMetadata>
+      refreshSubscriptionOperationSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings())
+        .refreshSubscriptionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getSubscription. */
+  public UnaryCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings()).getSubscriptionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSubscriptions. */
+  public PagedCallSettings<
+          ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
+      listSubscriptionsSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings()).listSubscriptionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listSharedResourceSubscriptions. */
+  public PagedCallSettings<
+          ListSharedResourceSubscriptionsRequest,
+          ListSharedResourceSubscriptionsResponse,
+          ListSharedResourceSubscriptionsPagedResponse>
+      listSharedResourceSubscriptionsSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings())
+        .listSharedResourceSubscriptionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to revokeSubscription. */
+  public UnaryCallSettings<RevokeSubscriptionRequest, RevokeSubscriptionResponse>
+      revokeSubscriptionSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings()).revokeSubscriptionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSubscription. */
+  public UnaryCallSettings<DeleteSubscriptionRequest, Operation> deleteSubscriptionSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings()).deleteSubscriptionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteSubscription. */
+  public OperationCallSettings<DeleteSubscriptionRequest, Empty, OperationMetadata>
+      deleteSubscriptionOperationSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings())
+        .deleteSubscriptionOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to getIamPolicy. */
@@ -354,6 +425,72 @@ public class AnalyticsHubServiceSettings extends ClientSettings<AnalyticsHubServ
     public UnaryCallSettings.Builder<SubscribeListingRequest, SubscribeListingResponse>
         subscribeListingSettings() {
       return getStubSettingsBuilder().subscribeListingSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to subscribeDataExchange. */
+    public UnaryCallSettings.Builder<SubscribeDataExchangeRequest, Operation>
+        subscribeDataExchangeSettings() {
+      return getStubSettingsBuilder().subscribeDataExchangeSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to subscribeDataExchange. */
+    public OperationCallSettings.Builder<
+            SubscribeDataExchangeRequest, SubscribeDataExchangeResponse, OperationMetadata>
+        subscribeDataExchangeOperationSettings() {
+      return getStubSettingsBuilder().subscribeDataExchangeOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to refreshSubscription. */
+    public UnaryCallSettings.Builder<RefreshSubscriptionRequest, Operation>
+        refreshSubscriptionSettings() {
+      return getStubSettingsBuilder().refreshSubscriptionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to refreshSubscription. */
+    public OperationCallSettings.Builder<
+            RefreshSubscriptionRequest, RefreshSubscriptionResponse, OperationMetadata>
+        refreshSubscriptionOperationSettings() {
+      return getStubSettingsBuilder().refreshSubscriptionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getSubscription. */
+    public UnaryCallSettings.Builder<GetSubscriptionRequest, Subscription>
+        getSubscriptionSettings() {
+      return getStubSettingsBuilder().getSubscriptionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSubscriptions. */
+    public PagedCallSettings.Builder<
+            ListSubscriptionsRequest, ListSubscriptionsResponse, ListSubscriptionsPagedResponse>
+        listSubscriptionsSettings() {
+      return getStubSettingsBuilder().listSubscriptionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listSharedResourceSubscriptions. */
+    public PagedCallSettings.Builder<
+            ListSharedResourceSubscriptionsRequest,
+            ListSharedResourceSubscriptionsResponse,
+            ListSharedResourceSubscriptionsPagedResponse>
+        listSharedResourceSubscriptionsSettings() {
+      return getStubSettingsBuilder().listSharedResourceSubscriptionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to revokeSubscription. */
+    public UnaryCallSettings.Builder<RevokeSubscriptionRequest, RevokeSubscriptionResponse>
+        revokeSubscriptionSettings() {
+      return getStubSettingsBuilder().revokeSubscriptionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSubscription. */
+    public UnaryCallSettings.Builder<DeleteSubscriptionRequest, Operation>
+        deleteSubscriptionSettings() {
+      return getStubSettingsBuilder().deleteSubscriptionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSubscription. */
+    public OperationCallSettings.Builder<DeleteSubscriptionRequest, Empty, OperationMetadata>
+        deleteSubscriptionOperationSettings() {
+      return getStubSettingsBuilder().deleteSubscriptionOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getIamPolicy. */

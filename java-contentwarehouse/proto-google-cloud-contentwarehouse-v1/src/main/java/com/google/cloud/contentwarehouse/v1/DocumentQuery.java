@@ -36,6 +36,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     documentSchemaNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
     propertyFilter_ = java.util.Collections.emptyList();
     folderNameFilter_ = "";
+    documentNameFilter_ = com.google.protobuf.LazyStringArrayList.emptyList();
     queryContext_ = com.google.protobuf.LazyStringArrayList.emptyList();
     documentCreatorFilter_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
@@ -695,6 +696,78 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int DOCUMENT_NAME_FILTER_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList documentNameFilter_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Search the documents in the list.
+   * Format:
+   * projects/{project_number}/locations/{location}/documents/{document_id}.
+   * </pre>
+   *
+   * <code>repeated string document_name_filter = 14;</code>
+   *
+   * @return A list containing the documentNameFilter.
+   */
+  public com.google.protobuf.ProtocolStringList getDocumentNameFilterList() {
+    return documentNameFilter_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Search the documents in the list.
+   * Format:
+   * projects/{project_number}/locations/{location}/documents/{document_id}.
+   * </pre>
+   *
+   * <code>repeated string document_name_filter = 14;</code>
+   *
+   * @return The count of documentNameFilter.
+   */
+  public int getDocumentNameFilterCount() {
+    return documentNameFilter_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Search the documents in the list.
+   * Format:
+   * projects/{project_number}/locations/{location}/documents/{document_id}.
+   * </pre>
+   *
+   * <code>repeated string document_name_filter = 14;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The documentNameFilter at the given index.
+   */
+  public java.lang.String getDocumentNameFilter(int index) {
+    return documentNameFilter_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Search the documents in the list.
+   * Format:
+   * projects/{project_number}/locations/{location}/documents/{document_id}.
+   * </pre>
+   *
+   * <code>repeated string document_name_filter = 14;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the documentNameFilter at the given index.
+   */
+  public com.google.protobuf.ByteString getDocumentNameFilterBytes(int index) {
+    return documentNameFilter_.getByteString(index);
+  }
+
   public static final int QUERY_CONTEXT_FIELD_NUMBER = 10;
 
   @SuppressWarnings("serial")
@@ -981,6 +1054,9 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     if (customWeightsMetadata_ != null) {
       output.writeMessage(13, getCustomWeightsMetadata());
     }
+    for (int i = 0; i < documentNameFilter_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 14, documentNameFilter_.getRaw(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1039,6 +1115,14 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(13, getCustomWeightsMetadata());
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < documentNameFilter_.size(); i++) {
+        dataSize += computeStringSizeNoTag(documentNameFilter_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getDocumentNameFilterList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1066,6 +1150,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       if (!getFileTypeFilter().equals(other.getFileTypeFilter())) return false;
     }
     if (!getFolderNameFilter().equals(other.getFolderNameFilter())) return false;
+    if (!getDocumentNameFilterList().equals(other.getDocumentNameFilterList())) return false;
     if (!getQueryContextList().equals(other.getQueryContextList())) return false;
     if (!getDocumentCreatorFilterList().equals(other.getDocumentCreatorFilterList())) return false;
     if (hasCustomWeightsMetadata() != other.hasCustomWeightsMetadata()) return false;
@@ -1107,6 +1192,10 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + FOLDER_NAME_FILTER_FIELD_NUMBER;
     hash = (53 * hash) + getFolderNameFilter().hashCode();
+    if (getDocumentNameFilterCount() > 0) {
+      hash = (37 * hash) + DOCUMENT_NAME_FILTER_FIELD_NUMBER;
+      hash = (53 * hash) + getDocumentNameFilterList().hashCode();
+    }
     if (getQueryContextCount() > 0) {
       hash = (37 * hash) + QUERY_CONTEXT_FIELD_NUMBER;
       hash = (53 * hash) + getQueryContextList().hashCode();
@@ -1274,6 +1363,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         fileTypeFilterBuilder_ = null;
       }
       folderNameFilter_ = "";
+      documentNameFilter_ = com.google.protobuf.LazyStringArrayList.emptyList();
       queryContext_ = com.google.protobuf.LazyStringArrayList.emptyList();
       documentCreatorFilter_ = com.google.protobuf.LazyStringArrayList.emptyList();
       customWeightsMetadata_ = null;
@@ -1361,14 +1451,18 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         result.folderNameFilter_ = folderNameFilter_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        documentNameFilter_.makeImmutable();
+        result.documentNameFilter_ = documentNameFilter_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         queryContext_.makeImmutable();
         result.queryContext_ = queryContext_;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         documentCreatorFilter_.makeImmutable();
         result.documentCreatorFilter_ = documentCreatorFilter_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.customWeightsMetadata_ =
             customWeightsMetadataBuilder_ == null
                 ? customWeightsMetadata_
@@ -1507,10 +1601,20 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000080;
         onChanged();
       }
+      if (!other.documentNameFilter_.isEmpty()) {
+        if (documentNameFilter_.isEmpty()) {
+          documentNameFilter_ = other.documentNameFilter_;
+          bitField0_ |= 0x00000100;
+        } else {
+          ensureDocumentNameFilterIsMutable();
+          documentNameFilter_.addAll(other.documentNameFilter_);
+        }
+        onChanged();
+      }
       if (!other.queryContext_.isEmpty()) {
         if (queryContext_.isEmpty()) {
           queryContext_ = other.queryContext_;
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000200;
         } else {
           ensureQueryContextIsMutable();
           queryContext_.addAll(other.queryContext_);
@@ -1520,7 +1624,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       if (!other.documentCreatorFilter_.isEmpty()) {
         if (documentCreatorFilter_.isEmpty()) {
           documentCreatorFilter_ = other.documentCreatorFilter_;
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000400;
         } else {
           ensureDocumentCreatorFilterIsMutable();
           documentCreatorFilter_.addAll(other.documentCreatorFilter_);
@@ -1639,9 +1743,16 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getCustomWeightsMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 106
+            case 114:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDocumentNameFilterIsMutable();
+                documentNameFilter_.add(s);
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3638,6 +3749,198 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.LazyStringArrayList documentNameFilter_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureDocumentNameFilterIsMutable() {
+      if (!documentNameFilter_.isModifiable()) {
+        documentNameFilter_ = new com.google.protobuf.LazyStringArrayList(documentNameFilter_);
+      }
+      bitField0_ |= 0x00000100;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Search the documents in the list.
+     * Format:
+     * projects/{project_number}/locations/{location}/documents/{document_id}.
+     * </pre>
+     *
+     * <code>repeated string document_name_filter = 14;</code>
+     *
+     * @return A list containing the documentNameFilter.
+     */
+    public com.google.protobuf.ProtocolStringList getDocumentNameFilterList() {
+      documentNameFilter_.makeImmutable();
+      return documentNameFilter_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Search the documents in the list.
+     * Format:
+     * projects/{project_number}/locations/{location}/documents/{document_id}.
+     * </pre>
+     *
+     * <code>repeated string document_name_filter = 14;</code>
+     *
+     * @return The count of documentNameFilter.
+     */
+    public int getDocumentNameFilterCount() {
+      return documentNameFilter_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Search the documents in the list.
+     * Format:
+     * projects/{project_number}/locations/{location}/documents/{document_id}.
+     * </pre>
+     *
+     * <code>repeated string document_name_filter = 14;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The documentNameFilter at the given index.
+     */
+    public java.lang.String getDocumentNameFilter(int index) {
+      return documentNameFilter_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Search the documents in the list.
+     * Format:
+     * projects/{project_number}/locations/{location}/documents/{document_id}.
+     * </pre>
+     *
+     * <code>repeated string document_name_filter = 14;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the documentNameFilter at the given index.
+     */
+    public com.google.protobuf.ByteString getDocumentNameFilterBytes(int index) {
+      return documentNameFilter_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Search the documents in the list.
+     * Format:
+     * projects/{project_number}/locations/{location}/documents/{document_id}.
+     * </pre>
+     *
+     * <code>repeated string document_name_filter = 14;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The documentNameFilter to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDocumentNameFilter(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDocumentNameFilterIsMutable();
+      documentNameFilter_.set(index, value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Search the documents in the list.
+     * Format:
+     * projects/{project_number}/locations/{location}/documents/{document_id}.
+     * </pre>
+     *
+     * <code>repeated string document_name_filter = 14;</code>
+     *
+     * @param value The documentNameFilter to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDocumentNameFilter(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDocumentNameFilterIsMutable();
+      documentNameFilter_.add(value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Search the documents in the list.
+     * Format:
+     * projects/{project_number}/locations/{location}/documents/{document_id}.
+     * </pre>
+     *
+     * <code>repeated string document_name_filter = 14;</code>
+     *
+     * @param values The documentNameFilter to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDocumentNameFilter(java.lang.Iterable<java.lang.String> values) {
+      ensureDocumentNameFilterIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, documentNameFilter_);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Search the documents in the list.
+     * Format:
+     * projects/{project_number}/locations/{location}/documents/{document_id}.
+     * </pre>
+     *
+     * <code>repeated string document_name_filter = 14;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDocumentNameFilter() {
+      documentNameFilter_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Search the documents in the list.
+     * Format:
+     * projects/{project_number}/locations/{location}/documents/{document_id}.
+     * </pre>
+     *
+     * <code>repeated string document_name_filter = 14;</code>
+     *
+     * @param value The bytes of the documentNameFilter to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDocumentNameFilterBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureDocumentNameFilterIsMutable();
+      documentNameFilter_.add(value);
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
     private com.google.protobuf.LazyStringArrayList queryContext_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
 
@@ -3645,7 +3948,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       if (!queryContext_.isModifiable()) {
         queryContext_ = new com.google.protobuf.LazyStringArrayList(queryContext_);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
     }
     /**
      *
@@ -3755,7 +4058,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       ensureQueryContextIsMutable();
       queryContext_.set(index, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3783,7 +4086,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       ensureQueryContextIsMutable();
       queryContext_.add(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3808,7 +4111,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllQueryContext(java.lang.Iterable<java.lang.String> values) {
       ensureQueryContextIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, queryContext_);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3831,7 +4134,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearQueryContext() {
       queryContext_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       ;
       onChanged();
       return this;
@@ -3861,7 +4164,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureQueryContextIsMutable();
       queryContext_.add(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3874,7 +4177,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
         documentCreatorFilter_ =
             new com.google.protobuf.LazyStringArrayList(documentCreatorFilter_);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
     }
     /**
      *
@@ -3979,7 +4282,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDocumentCreatorFilterIsMutable();
       documentCreatorFilter_.set(index, value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4006,7 +4309,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       }
       ensureDocumentCreatorFilterIsMutable();
       documentCreatorFilter_.add(value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4030,7 +4333,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public Builder addAllDocumentCreatorFilter(java.lang.Iterable<java.lang.String> values) {
       ensureDocumentCreatorFilterIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, documentCreatorFilter_);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4052,7 +4355,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDocumentCreatorFilter() {
       documentCreatorFilter_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       ;
       onChanged();
       return this;
@@ -4081,7 +4384,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       ensureDocumentCreatorFilterIsMutable();
       documentCreatorFilter_.add(value);
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4109,7 +4412,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the customWeightsMetadata field is set.
      */
     public boolean hasCustomWeightsMetadata() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -4160,7 +4463,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       } else {
         customWeightsMetadataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4185,7 +4488,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       } else {
         customWeightsMetadataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4206,7 +4509,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeCustomWeightsMetadata(
         com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata value) {
       if (customWeightsMetadataBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && customWeightsMetadata_ != null
             && customWeightsMetadata_
                 != com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata
@@ -4218,7 +4521,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
       } else {
         customWeightsMetadataBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4237,7 +4540,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCustomWeightsMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       customWeightsMetadata_ = null;
       if (customWeightsMetadataBuilder_ != null) {
         customWeightsMetadataBuilder_.dispose();
@@ -4262,7 +4565,7 @@ public final class DocumentQuery extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.contentwarehouse.v1.CustomWeightsMetadata.Builder
         getCustomWeightsMetadataBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getCustomWeightsMetadataFieldBuilder().getBuilder();
     }

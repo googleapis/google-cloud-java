@@ -671,6 +671,56 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int LOCAL_SSD_RECOVERY_TIMEOUT_FIELD_NUMBER = 268015590;
+  private com.google.cloud.compute.v1.Duration localSsdRecoveryTimeout_;
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;</code>
+   *
+   * @return Whether the localSsdRecoveryTimeout field is set.
+   */
+  @java.lang.Override
+  public boolean hasLocalSsdRecoveryTimeout() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;</code>
+   *
+   * @return The localSsdRecoveryTimeout.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.Duration getLocalSsdRecoveryTimeout() {
+    return localSsdRecoveryTimeout_ == null
+        ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+        : localSsdRecoveryTimeout_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.DurationOrBuilder getLocalSsdRecoveryTimeoutOrBuilder() {
+    return localSsdRecoveryTimeout_ == null
+        ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+        : localSsdRecoveryTimeout_;
+  }
+
   public static final int LOCATION_HINT_FIELD_NUMBER = 350519505;
 
   @SuppressWarnings("serial")
@@ -688,7 +738,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasLocationHint() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
   /**
    *
@@ -752,7 +802,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasMinNodeCpus() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
   /**
    *
@@ -866,7 +916,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasOnHostMaintenance() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
   /**
    *
@@ -932,7 +982,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPreemptible() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
   /**
    *
@@ -968,7 +1018,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasProvisioningModel() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
   /**
    *
@@ -1033,23 +1083,26 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 494423, provisioningModel_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 64616796, onHostMaintenance_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 107380667, instanceTerminationAction_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(268015590, getLocalSsdRecoveryTimeout());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeInt32(317231675, minNodeCpus_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeBool(324203169, preemptible_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 350519505, locationHint_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -1067,10 +1120,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(494423, provisioningModel_);
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(64616796, onHostMaintenance_);
     }
@@ -1079,13 +1132,18 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               107380667, instanceTerminationAction_);
     }
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              268015590, getLocalSsdRecoveryTimeout());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(317231675, minNodeCpus_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(324203169, preemptible_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(350519505, locationHint_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -1119,6 +1177,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (hasInstanceTerminationAction()) {
       if (!getInstanceTerminationAction().equals(other.getInstanceTerminationAction()))
         return false;
+    }
+    if (hasLocalSsdRecoveryTimeout() != other.hasLocalSsdRecoveryTimeout()) return false;
+    if (hasLocalSsdRecoveryTimeout()) {
+      if (!getLocalSsdRecoveryTimeout().equals(other.getLocalSsdRecoveryTimeout())) return false;
     }
     if (hasLocationHint() != other.hasLocationHint()) return false;
     if (hasLocationHint()) {
@@ -1159,6 +1221,10 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     if (hasInstanceTerminationAction()) {
       hash = (37 * hash) + INSTANCE_TERMINATION_ACTION_FIELD_NUMBER;
       hash = (53 * hash) + getInstanceTerminationAction().hashCode();
+    }
+    if (hasLocalSsdRecoveryTimeout()) {
+      hash = (37 * hash) + LOCAL_SSD_RECOVERY_TIMEOUT_FIELD_NUMBER;
+      hash = (53 * hash) + getLocalSsdRecoveryTimeout().hashCode();
     }
     if (hasLocationHint()) {
       hash = (37 * hash) + LOCATION_HINT_FIELD_NUMBER;
@@ -1313,10 +1379,20 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     }
 
     // Construct using com.google.cloud.compute.v1.Scheduling.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getLocalSsdRecoveryTimeoutFieldBuilder();
+        getNodeAffinitiesFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -1325,6 +1401,11 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       automaticRestart_ = false;
       instanceTerminationAction_ = "";
+      localSsdRecoveryTimeout_ = null;
+      if (localSsdRecoveryTimeoutBuilder_ != null) {
+        localSsdRecoveryTimeoutBuilder_.dispose();
+        localSsdRecoveryTimeoutBuilder_ = null;
+      }
       locationHint_ = "";
       minNodeCpus_ = 0;
       if (nodeAffinitiesBuilder_ == null) {
@@ -1333,7 +1414,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         nodeAffinities_ = null;
         nodeAffinitiesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onHostMaintenance_ = "";
       preemptible_ = false;
       provisioningModel_ = "";
@@ -1374,9 +1455,9 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.compute.v1.Scheduling result) {
       if (nodeAffinitiesBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           nodeAffinities_ = java.util.Collections.unmodifiableList(nodeAffinities_);
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.nodeAffinities_ = nodeAffinities_;
       } else {
@@ -1396,24 +1477,31 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.locationHint_ = locationHint_;
+        result.localSsdRecoveryTimeout_ =
+            localSsdRecoveryTimeoutBuilder_ == null
+                ? localSsdRecoveryTimeout_
+                : localSsdRecoveryTimeoutBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.minNodeCpus_ = minNodeCpus_;
+        result.locationHint_ = locationHint_;
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.onHostMaintenance_ = onHostMaintenance_;
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.minNodeCpus_ = minNodeCpus_;
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.preemptible_ = preemptible_;
+        result.onHostMaintenance_ = onHostMaintenance_;
         to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.provisioningModel_ = provisioningModel_;
+        result.preemptible_ = preemptible_;
         to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.provisioningModel_ = provisioningModel_;
+        to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1471,9 +1559,12 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasLocalSsdRecoveryTimeout()) {
+        mergeLocalSsdRecoveryTimeout(other.getLocalSsdRecoveryTimeout());
+      }
       if (other.hasLocationHint()) {
         locationHint_ = other.locationHint_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasMinNodeCpus()) {
@@ -1483,7 +1574,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         if (!other.nodeAffinities_.isEmpty()) {
           if (nodeAffinities_.isEmpty()) {
             nodeAffinities_ = other.nodeAffinities_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureNodeAffinitiesIsMutable();
             nodeAffinities_.addAll(other.nodeAffinities_);
@@ -1496,7 +1587,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
             nodeAffinitiesBuilder_.dispose();
             nodeAffinitiesBuilder_ = null;
             nodeAffinities_ = other.nodeAffinities_;
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000020);
             nodeAffinitiesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getNodeAffinitiesFieldBuilder()
@@ -1508,7 +1599,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasOnHostMaintenance()) {
         onHostMaintenance_ = other.onHostMaintenance_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (other.hasPreemptible()) {
@@ -1516,7 +1607,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasProvisioningModel()) {
         provisioningModel_ = other.provisioningModel_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -1548,13 +1639,13 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
             case 3955386:
               {
                 provisioningModel_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 3955386
             case 516934370:
               {
                 onHostMaintenance_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 516934370
             case 859045338:
@@ -1563,22 +1654,29 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 859045338
+            case 2144124722:
+              {
+                input.readMessage(
+                    getLocalSsdRecoveryTimeoutFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 2144124722
             case -1757113896:
               {
                 minNodeCpus_ = input.readInt32();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case -1757113896
             case -1701341944:
               {
                 preemptible_ = input.readBool();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case -1701341944
             case -1490811254:
               {
                 locationHint_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -1490811254
             case -1488396328:
@@ -1814,6 +1912,200 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.cloud.compute.v1.Duration localSsdRecoveryTimeout_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.Duration,
+            com.google.cloud.compute.v1.Duration.Builder,
+            com.google.cloud.compute.v1.DurationOrBuilder>
+        localSsdRecoveryTimeoutBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;
+     * </code>
+     *
+     * @return Whether the localSsdRecoveryTimeout field is set.
+     */
+    public boolean hasLocalSsdRecoveryTimeout() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;
+     * </code>
+     *
+     * @return The localSsdRecoveryTimeout.
+     */
+    public com.google.cloud.compute.v1.Duration getLocalSsdRecoveryTimeout() {
+      if (localSsdRecoveryTimeoutBuilder_ == null) {
+        return localSsdRecoveryTimeout_ == null
+            ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+            : localSsdRecoveryTimeout_;
+      } else {
+        return localSsdRecoveryTimeoutBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;
+     * </code>
+     */
+    public Builder setLocalSsdRecoveryTimeout(com.google.cloud.compute.v1.Duration value) {
+      if (localSsdRecoveryTimeoutBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        localSsdRecoveryTimeout_ = value;
+      } else {
+        localSsdRecoveryTimeoutBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;
+     * </code>
+     */
+    public Builder setLocalSsdRecoveryTimeout(
+        com.google.cloud.compute.v1.Duration.Builder builderForValue) {
+      if (localSsdRecoveryTimeoutBuilder_ == null) {
+        localSsdRecoveryTimeout_ = builderForValue.build();
+      } else {
+        localSsdRecoveryTimeoutBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;
+     * </code>
+     */
+    public Builder mergeLocalSsdRecoveryTimeout(com.google.cloud.compute.v1.Duration value) {
+      if (localSsdRecoveryTimeoutBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && localSsdRecoveryTimeout_ != null
+            && localSsdRecoveryTimeout_
+                != com.google.cloud.compute.v1.Duration.getDefaultInstance()) {
+          getLocalSsdRecoveryTimeoutBuilder().mergeFrom(value);
+        } else {
+          localSsdRecoveryTimeout_ = value;
+        }
+      } else {
+        localSsdRecoveryTimeoutBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;
+     * </code>
+     */
+    public Builder clearLocalSsdRecoveryTimeout() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      localSsdRecoveryTimeout_ = null;
+      if (localSsdRecoveryTimeoutBuilder_ != null) {
+        localSsdRecoveryTimeoutBuilder_.dispose();
+        localSsdRecoveryTimeoutBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.Duration.Builder getLocalSsdRecoveryTimeoutBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getLocalSsdRecoveryTimeoutFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.DurationOrBuilder getLocalSsdRecoveryTimeoutOrBuilder() {
+      if (localSsdRecoveryTimeoutBuilder_ != null) {
+        return localSsdRecoveryTimeoutBuilder_.getMessageOrBuilder();
+      } else {
+        return localSsdRecoveryTimeout_ == null
+            ? com.google.cloud.compute.v1.Duration.getDefaultInstance()
+            : localSsdRecoveryTimeout_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
+     * </pre>
+     *
+     * <code>optional .google.cloud.compute.v1.Duration local_ssd_recovery_timeout = 268015590;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.Duration,
+            com.google.cloud.compute.v1.Duration.Builder,
+            com.google.cloud.compute.v1.DurationOrBuilder>
+        getLocalSsdRecoveryTimeoutFieldBuilder() {
+      if (localSsdRecoveryTimeoutBuilder_ == null) {
+        localSsdRecoveryTimeoutBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.Duration,
+                com.google.cloud.compute.v1.Duration.Builder,
+                com.google.cloud.compute.v1.DurationOrBuilder>(
+                getLocalSsdRecoveryTimeout(), getParentForChildren(), isClean());
+        localSsdRecoveryTimeout_ = null;
+      }
+      return localSsdRecoveryTimeoutBuilder_;
+    }
+
     private java.lang.Object locationHint_ = "";
     /**
      *
@@ -1827,7 +2119,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the locationHint field is set.
      */
     public boolean hasLocationHint() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -1890,7 +2182,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       locationHint_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1907,7 +2199,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearLocationHint() {
       locationHint_ = getDefaultInstance().getLocationHint();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1929,7 +2221,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       locationHint_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1948,7 +2240,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasMinNodeCpus() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1980,7 +2272,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public Builder setMinNodeCpus(int value) {
 
       minNodeCpus_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1996,7 +2288,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearMinNodeCpus() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       minNodeCpus_ = 0;
       onChanged();
       return this;
@@ -2006,11 +2298,11 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureNodeAffinitiesIsMutable() {
-      if (!((bitField0_ & 0x00000010) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         nodeAffinities_ =
             new java.util.ArrayList<com.google.cloud.compute.v1.SchedulingNodeAffinity>(
                 nodeAffinities_);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -2240,7 +2532,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public Builder clearNodeAffinities() {
       if (nodeAffinitiesBuilder_ == null) {
         nodeAffinities_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         nodeAffinitiesBuilder_.clear();
@@ -2374,7 +2666,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.compute.v1.SchedulingNodeAffinity.Builder,
                 com.google.cloud.compute.v1.SchedulingNodeAffinityOrBuilder>(
                 nodeAffinities_,
-                ((bitField0_ & 0x00000010) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         nodeAffinities_ = null;
@@ -2396,7 +2688,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the onHostMaintenance field is set.
      */
     public boolean hasOnHostMaintenance() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -2462,7 +2754,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       onHostMaintenance_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2480,7 +2772,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearOnHostMaintenance() {
       onHostMaintenance_ = getDefaultInstance().getOnHostMaintenance();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -2503,7 +2795,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       onHostMaintenance_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2522,7 +2814,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasPreemptible() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2554,7 +2846,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
     public Builder setPreemptible(boolean value) {
 
       preemptible_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2570,7 +2862,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearPreemptible() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       preemptible_ = false;
       onChanged();
       return this;
@@ -2590,7 +2882,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the provisioningModel field is set.
      */
     public boolean hasProvisioningModel() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2656,7 +2948,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       provisioningModel_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2674,7 +2966,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearProvisioningModel() {
       provisioningModel_ = getDefaultInstance().getProvisioningModel();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2697,7 +2989,7 @@ public final class Scheduling extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       provisioningModel_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }

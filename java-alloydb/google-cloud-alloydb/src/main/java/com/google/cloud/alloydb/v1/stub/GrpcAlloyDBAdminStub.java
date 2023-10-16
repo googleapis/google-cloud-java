@@ -35,6 +35,7 @@ import com.google.cloud.alloydb.v1.Backup;
 import com.google.cloud.alloydb.v1.BatchCreateInstancesRequest;
 import com.google.cloud.alloydb.v1.BatchCreateInstancesResponse;
 import com.google.cloud.alloydb.v1.Cluster;
+import com.google.cloud.alloydb.v1.ConnectionInfo;
 import com.google.cloud.alloydb.v1.CreateBackupRequest;
 import com.google.cloud.alloydb.v1.CreateClusterRequest;
 import com.google.cloud.alloydb.v1.CreateInstanceRequest;
@@ -46,8 +47,11 @@ import com.google.cloud.alloydb.v1.DeleteClusterRequest;
 import com.google.cloud.alloydb.v1.DeleteInstanceRequest;
 import com.google.cloud.alloydb.v1.DeleteUserRequest;
 import com.google.cloud.alloydb.v1.FailoverInstanceRequest;
+import com.google.cloud.alloydb.v1.GenerateClientCertificateRequest;
+import com.google.cloud.alloydb.v1.GenerateClientCertificateResponse;
 import com.google.cloud.alloydb.v1.GetBackupRequest;
 import com.google.cloud.alloydb.v1.GetClusterRequest;
+import com.google.cloud.alloydb.v1.GetConnectionInfoRequest;
 import com.google.cloud.alloydb.v1.GetInstanceRequest;
 import com.google.cloud.alloydb.v1.GetUserRequest;
 import com.google.cloud.alloydb.v1.InjectFaultRequest;
@@ -325,6 +329,29 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   ProtoUtils.marshaller(ListSupportedDatabaseFlagsResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          GenerateClientCertificateRequest, GenerateClientCertificateResponse>
+      generateClientCertificateMethodDescriptor =
+          MethodDescriptor
+              .<GenerateClientCertificateRequest, GenerateClientCertificateResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.alloydb.v1.AlloyDBAdmin/GenerateClientCertificate")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GenerateClientCertificateRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GenerateClientCertificateResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetConnectionInfoRequest, ConnectionInfo>
+      getConnectionInfoMethodDescriptor =
+          MethodDescriptor.<GetConnectionInfoRequest, ConnectionInfo>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.alloydb.v1.AlloyDBAdmin/GetConnectionInfo")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetConnectionInfoRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ConnectionInfo.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ListUsersRequest, ListUsersResponse>
       listUsersMethodDescriptor =
           MethodDescriptor.<ListUsersRequest, ListUsersResponse>newBuilder()
@@ -456,6 +483,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
   private final UnaryCallable<
           ListSupportedDatabaseFlagsRequest, ListSupportedDatabaseFlagsPagedResponse>
       listSupportedDatabaseFlagsPagedCallable;
+  private final UnaryCallable<GenerateClientCertificateRequest, GenerateClientCertificateResponse>
+      generateClientCertificateCallable;
+  private final UnaryCallable<GetConnectionInfoRequest, ConnectionInfo> getConnectionInfoCallable;
   private final UnaryCallable<ListUsersRequest, ListUsersResponse> listUsersCallable;
   private final UnaryCallable<ListUsersRequest, ListUsersPagedResponse> listUsersPagedCallable;
   private final UnaryCallable<GetUserRequest, User> getUserCallable;
@@ -753,6 +783,28 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<GenerateClientCertificateRequest, GenerateClientCertificateResponse>
+        generateClientCertificateTransportSettings =
+            GrpcCallSettings
+                .<GenerateClientCertificateRequest, GenerateClientCertificateResponse>newBuilder()
+                .setMethodDescriptor(generateClientCertificateMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetConnectionInfoRequest, ConnectionInfo> getConnectionInfoTransportSettings =
+        GrpcCallSettings.<GetConnectionInfoRequest, ConnectionInfo>newBuilder()
+            .setMethodDescriptor(getConnectionInfoMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListUsersRequest, ListUsersResponse> listUsersTransportSettings =
         GrpcCallSettings.<ListUsersRequest, ListUsersResponse>newBuilder()
             .setMethodDescriptor(listUsersMethodDescriptor)
@@ -1019,6 +1071,16 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
         callableFactory.createPagedCallable(
             listSupportedDatabaseFlagsTransportSettings,
             settings.listSupportedDatabaseFlagsSettings(),
+            clientContext);
+    this.generateClientCertificateCallable =
+        callableFactory.createUnaryCallable(
+            generateClientCertificateTransportSettings,
+            settings.generateClientCertificateSettings(),
+            clientContext);
+    this.getConnectionInfoCallable =
+        callableFactory.createUnaryCallable(
+            getConnectionInfoTransportSettings,
+            settings.getConnectionInfoSettings(),
             clientContext);
     this.listUsersCallable =
         callableFactory.createUnaryCallable(
@@ -1301,6 +1363,17 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
   public UnaryCallable<ListSupportedDatabaseFlagsRequest, ListSupportedDatabaseFlagsPagedResponse>
       listSupportedDatabaseFlagsPagedCallable() {
     return listSupportedDatabaseFlagsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GenerateClientCertificateRequest, GenerateClientCertificateResponse>
+      generateClientCertificateCallable() {
+    return generateClientCertificateCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetConnectionInfoRequest, ConnectionInfo> getConnectionInfoCallable() {
+    return getConnectionInfoCallable;
   }
 
   @Override

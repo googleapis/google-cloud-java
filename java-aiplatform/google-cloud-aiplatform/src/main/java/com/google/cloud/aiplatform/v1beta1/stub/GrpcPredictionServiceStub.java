@@ -26,12 +26,17 @@ import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
+import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1beta1.CountTokensRequest;
+import com.google.cloud.aiplatform.v1beta1.CountTokensResponse;
 import com.google.cloud.aiplatform.v1beta1.ExplainRequest;
 import com.google.cloud.aiplatform.v1beta1.ExplainResponse;
 import com.google.cloud.aiplatform.v1beta1.PredictRequest;
 import com.google.cloud.aiplatform.v1beta1.PredictResponse;
 import com.google.cloud.aiplatform.v1beta1.RawPredictRequest;
+import com.google.cloud.aiplatform.v1beta1.StreamingPredictRequest;
+import com.google.cloud.aiplatform.v1beta1.StreamingPredictResponse;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -73,6 +78,18 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(HttpBody.getDefaultInstance()))
           .build();
 
+  private static final MethodDescriptor<StreamingPredictRequest, StreamingPredictResponse>
+      serverStreamingPredictMethodDescriptor =
+          MethodDescriptor.<StreamingPredictRequest, StreamingPredictResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.SERVER_STREAMING)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1beta1.PredictionService/ServerStreamingPredict")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StreamingPredictRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(StreamingPredictResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<ExplainRequest, ExplainResponse> explainMethodDescriptor =
       MethodDescriptor.<ExplainRequest, ExplainResponse>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -80,6 +97,16 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           .setRequestMarshaller(ProtoUtils.marshaller(ExplainRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(ExplainResponse.getDefaultInstance()))
           .build();
+
+  private static final MethodDescriptor<CountTokensRequest, CountTokensResponse>
+      countTokensMethodDescriptor =
+          MethodDescriptor.<CountTokensRequest, CountTokensResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.aiplatform.v1beta1.PredictionService/CountTokens")
+              .setRequestMarshaller(ProtoUtils.marshaller(CountTokensRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(CountTokensResponse.getDefaultInstance()))
+              .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
@@ -129,7 +156,10 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
 
   private final UnaryCallable<PredictRequest, PredictResponse> predictCallable;
   private final UnaryCallable<RawPredictRequest, HttpBody> rawPredictCallable;
+  private final ServerStreamingCallable<StreamingPredictRequest, StreamingPredictResponse>
+      serverStreamingPredictCallable;
   private final UnaryCallable<ExplainRequest, ExplainResponse> explainCallable;
+  private final UnaryCallable<CountTokensRequest, CountTokensResponse> countTokensCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -203,9 +233,30 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<StreamingPredictRequest, StreamingPredictResponse>
+        serverStreamingPredictTransportSettings =
+            GrpcCallSettings.<StreamingPredictRequest, StreamingPredictResponse>newBuilder()
+                .setMethodDescriptor(serverStreamingPredictMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("endpoint", String.valueOf(request.getEndpoint()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ExplainRequest, ExplainResponse> explainTransportSettings =
         GrpcCallSettings.<ExplainRequest, ExplainResponse>newBuilder()
             .setMethodDescriptor(explainMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("endpoint", String.valueOf(request.getEndpoint()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CountTokensRequest, CountTokensResponse> countTokensTransportSettings =
+        GrpcCallSettings.<CountTokensRequest, CountTokensResponse>newBuilder()
+            .setMethodDescriptor(countTokensMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -271,9 +322,17 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
     this.rawPredictCallable =
         callableFactory.createUnaryCallable(
             rawPredictTransportSettings, settings.rawPredictSettings(), clientContext);
+    this.serverStreamingPredictCallable =
+        callableFactory.createServerStreamingCallable(
+            serverStreamingPredictTransportSettings,
+            settings.serverStreamingPredictSettings(),
+            clientContext);
     this.explainCallable =
         callableFactory.createUnaryCallable(
             explainTransportSettings, settings.explainSettings(), clientContext);
+    this.countTokensCallable =
+        callableFactory.createUnaryCallable(
+            countTokensTransportSettings, settings.countTokensSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -314,8 +373,19 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
   }
 
   @Override
+  public ServerStreamingCallable<StreamingPredictRequest, StreamingPredictResponse>
+      serverStreamingPredictCallable() {
+    return serverStreamingPredictCallable;
+  }
+
+  @Override
   public UnaryCallable<ExplainRequest, ExplainResponse> explainCallable() {
     return explainCallable;
+  }
+
+  @Override
+  public UnaryCallable<CountTokensRequest, CountTokensResponse> countTokensCallable() {
+    return countTokensCallable;
   }
 
   @Override

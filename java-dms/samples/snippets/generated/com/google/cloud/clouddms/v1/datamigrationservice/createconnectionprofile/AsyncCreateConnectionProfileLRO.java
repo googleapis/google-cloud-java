@@ -19,9 +19,9 @@ package com.google.cloud.clouddms.v1.samples;
 // [START datamigration_v1_generated_DataMigrationService_CreateConnectionProfile_LRO_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.clouddms.v1.ConnectionProfile;
-import com.google.cloud.clouddms.v1.ConnectionProfileName;
 import com.google.cloud.clouddms.v1.CreateConnectionProfileRequest;
 import com.google.cloud.clouddms.v1.DataMigrationServiceClient;
+import com.google.cloud.clouddms.v1.LocationName;
 import com.google.cloud.clouddms.v1.OperationMetadata;
 
 public class AsyncCreateConnectionProfileLRO {
@@ -40,9 +40,7 @@ public class AsyncCreateConnectionProfileLRO {
         DataMigrationServiceClient.create()) {
       CreateConnectionProfileRequest request =
           CreateConnectionProfileRequest.newBuilder()
-              .setParent(
-                  ConnectionProfileName.of("[PROJECT]", "[LOCATION]", "[CONNECTION_PROFILE]")
-                      .toString())
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setConnectionProfileId("connectionProfileId597575526")
               .setConnectionProfile(ConnectionProfile.newBuilder().build())
               .setRequestId("requestId693933066")

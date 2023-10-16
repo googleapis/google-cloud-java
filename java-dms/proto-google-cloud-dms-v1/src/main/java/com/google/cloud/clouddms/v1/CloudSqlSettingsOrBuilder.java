@@ -670,4 +670,33 @@ public interface CloudSqlSettingsOrBuilder
    * @return The availabilityType.
    */
   com.google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType getAvailabilityType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The edition of the given Cloud SQL instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.CloudSqlSettings.Edition edition = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for edition.
+   */
+  int getEditionValue();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The edition of the given Cloud SQL instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.CloudSqlSettings.Edition edition = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The edition.
+   */
+  com.google.cloud.clouddms.v1.CloudSqlSettings.Edition getEdition();
 }

@@ -10,6 +10,9 @@
         "grpc": {
           "libraryClient": "LivestreamServiceClient",
           "rpcs": {
+            "CreateAsset": {
+              "methods": ["createAssetAsync", "createAssetAsync", "createAssetAsync", "createAssetOperationCallable", "createAssetCallable"]
+            },
             "CreateChannel": {
               "methods": ["createChannelAsync", "createChannelAsync", "createChannelAsync", "createChannelOperationCallable", "createChannelCallable"]
             },
@@ -19,6 +22,9 @@
             "CreateInput": {
               "methods": ["createInputAsync", "createInputAsync", "createInputAsync", "createInputOperationCallable", "createInputCallable"]
             },
+            "DeleteAsset": {
+              "methods": ["deleteAssetAsync", "deleteAssetAsync", "deleteAssetAsync", "deleteAssetOperationCallable", "deleteAssetCallable"]
+            },
             "DeleteChannel": {
               "methods": ["deleteChannelAsync", "deleteChannelAsync", "deleteChannelAsync", "deleteChannelOperationCallable", "deleteChannelCallable"]
             },
@@ -27,6 +33,9 @@
             },
             "DeleteInput": {
               "methods": ["deleteInputAsync", "deleteInputAsync", "deleteInputAsync", "deleteInputOperationCallable", "deleteInputCallable"]
+            },
+            "GetAsset": {
+              "methods": ["getAsset", "getAsset", "getAsset", "getAssetCallable"]
             },
             "GetChannel": {
               "methods": ["getChannel", "getChannel", "getChannel", "getChannelCallable"]
@@ -39,6 +48,12 @@
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetPool": {
+              "methods": ["getPool", "getPool", "getPool", "getPoolCallable"]
+            },
+            "ListAssets": {
+              "methods": ["listAssets", "listAssets", "listAssets", "listAssetsPagedCallable", "listAssetsCallable"]
             },
             "ListChannels": {
               "methods": ["listChannels", "listChannels", "listChannels", "listChannelsPagedCallable", "listChannelsCallable"]
@@ -63,6 +78,9 @@
             },
             "UpdateInput": {
               "methods": ["updateInputAsync", "updateInputAsync", "updateInputOperationCallable", "updateInputCallable"]
+            },
+            "UpdatePool": {
+              "methods": ["updatePoolAsync", "updatePoolAsync", "updatePoolOperationCallable", "updatePoolCallable"]
             }
           }
         }

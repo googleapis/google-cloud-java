@@ -142,8 +142,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User agent as included in the HTTP header. Required for getting
-   * [SearchResponse.sponsored_results][].
+   * User agent as included in the HTTP header.
    *
    * The field must be a UTF-8 encoded string with a length limit of 1,000
    * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
@@ -176,8 +175,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User agent as included in the HTTP header. Required for getting
-   * [SearchResponse.sponsored_results][].
+   * User agent as included in the HTTP header.
    *
    * The field must be a UTF-8 encoded string with a length limit of 1,000
    * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
@@ -734,8 +732,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User agent as included in the HTTP header. Required for getting
-     * [SearchResponse.sponsored_results][].
+     * User agent as included in the HTTP header.
      *
      * The field must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
@@ -767,8 +764,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User agent as included in the HTTP header. Required for getting
-     * [SearchResponse.sponsored_results][].
+     * User agent as included in the HTTP header.
      *
      * The field must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
@@ -800,8 +796,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User agent as included in the HTTP header. Required for getting
-     * [SearchResponse.sponsored_results][].
+     * User agent as included in the HTTP header.
      *
      * The field must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
@@ -832,8 +827,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User agent as included in the HTTP header. Required for getting
-     * [SearchResponse.sponsored_results][].
+     * User agent as included in the HTTP header.
      *
      * The field must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
@@ -860,8 +854,7 @@ public final class UserInfo extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User agent as included in the HTTP header. Required for getting
-     * [SearchResponse.sponsored_results][].
+     * User agent as included in the HTTP header.
      *
      * The field must be a UTF-8 encoded string with a length limit of 1,000
      * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.

@@ -368,8 +368,9 @@ public class DocumentServiceClient implements BackgroundResource {
    * @param parent Required. The parent branch resource name, such as
    *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
    *     Use `default_branch` as the branch ID, to list documents under the default branch.
-   *     <p>If the caller does not have permission to list [Documents][]s under this branch,
-   *     regardless of whether or not this branch exists, a `PERMISSION_DENIED` error is returned.
+   *     <p>If the caller does not have permission to list
+   *     [Document][google.cloud.discoveryengine.v1beta.Document]s under this branch, regardless of
+   *     whether or not this branch exists, a `PERMISSION_DENIED` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDocumentsPagedResponse listDocuments(BranchName parent) {
@@ -406,8 +407,9 @@ public class DocumentServiceClient implements BackgroundResource {
    * @param parent Required. The parent branch resource name, such as
    *     `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}`.
    *     Use `default_branch` as the branch ID, to list documents under the default branch.
-   *     <p>If the caller does not have permission to list [Documents][]s under this branch,
-   *     regardless of whether or not this branch exists, a `PERMISSION_DENIED` error is returned.
+   *     <p>If the caller does not have permission to list
+   *     [Document][google.cloud.discoveryengine.v1beta.Document]s under this branch, regardless of
+   *     whether or not this branch exists, a `PERMISSION_DENIED` error is returned.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDocumentsPagedResponse listDocuments(String parent) {

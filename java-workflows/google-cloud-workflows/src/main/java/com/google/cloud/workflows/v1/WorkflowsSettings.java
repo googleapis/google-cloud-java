@@ -16,6 +16,7 @@
 
 package com.google.cloud.workflows.v1;
 
+import static com.google.cloud.workflows.v1.WorkflowsClient.ListLocationsPagedResponse;
 import static com.google.cloud.workflows.v1.WorkflowsClient.ListWorkflowsPagedResponse;
 
 import com.google.api.core.ApiFunction;
@@ -31,6 +32,10 @@ import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.workflows.v1.stub.WorkflowsStubSettings;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
@@ -119,6 +124,17 @@ public class WorkflowsSettings extends ClientSettings<WorkflowsSettings> {
   public OperationCallSettings<UpdateWorkflowRequest, Workflow, OperationMetadata>
       updateWorkflowOperationSettings() {
     return ((WorkflowsStubSettings) getStubSettings()).updateWorkflowOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listLocations. */
+  public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+      listLocationsSettings() {
+    return ((WorkflowsStubSettings) getStubSettings()).listLocationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getLocation. */
+  public UnaryCallSettings<GetLocationRequest, Location> getLocationSettings() {
+    return ((WorkflowsStubSettings) getStubSettings()).getLocationSettings();
   }
 
   public static final WorkflowsSettings create(WorkflowsStubSettings stub) throws IOException {
@@ -278,6 +294,18 @@ public class WorkflowsSettings extends ClientSettings<WorkflowsSettings> {
     public OperationCallSettings.Builder<UpdateWorkflowRequest, Workflow, OperationMetadata>
         updateWorkflowOperationSettings() {
       return getStubSettingsBuilder().updateWorkflowOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listLocations. */
+    public PagedCallSettings.Builder<
+            ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
+        listLocationsSettings() {
+      return getStubSettingsBuilder().listLocationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getLocation. */
+    public UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings() {
+      return getStubSettingsBuilder().getLocationSettings();
     }
 
     @Override

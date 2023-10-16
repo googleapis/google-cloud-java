@@ -56,8 +56,8 @@ import javax.annotation.Generated;
  * // - It may require specifying regional endpoints when creating the service client as shown in
  * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
  * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
- *   DatasetSchemaName name = DatasetSchemaName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
- *   DatasetSchema response = documentServiceClient.getDatasetSchema(name);
+ *   DatasetName dataset = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+ *   GetDocumentResponse response = documentServiceClient.getDocument(dataset);
  * }
  * }</pre>
  *
@@ -329,6 +329,574 @@ public class DocumentServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdateDatasetRequest, Operation> updateDatasetCallable() {
     return stub.updateDatasetCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Import documents into a dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   DatasetName dataset = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+   *   ImportDocumentsResponse response = documentServiceClient.importDocumentsAsync(dataset).get();
+   * }
+   * }</pre>
+   *
+   * @param dataset Required. The dataset resource name. Format:
+   *     projects/{project}/locations/{location}/processors/{processor}/dataset
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportDocumentsResponse, ImportDocumentsMetadata>
+      importDocumentsAsync(DatasetName dataset) {
+    ImportDocumentsRequest request =
+        ImportDocumentsRequest.newBuilder()
+            .setDataset(dataset == null ? null : dataset.toString())
+            .build();
+    return importDocumentsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Import documents into a dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   String dataset = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
+   *   ImportDocumentsResponse response = documentServiceClient.importDocumentsAsync(dataset).get();
+   * }
+   * }</pre>
+   *
+   * @param dataset Required. The dataset resource name. Format:
+   *     projects/{project}/locations/{location}/processors/{processor}/dataset
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportDocumentsResponse, ImportDocumentsMetadata>
+      importDocumentsAsync(String dataset) {
+    ImportDocumentsRequest request =
+        ImportDocumentsRequest.newBuilder().setDataset(dataset).build();
+    return importDocumentsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Import documents into a dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   ImportDocumentsRequest request =
+   *       ImportDocumentsRequest.newBuilder()
+   *           .setDataset(DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .addAllBatchDocumentsImportConfigs(
+   *               new ArrayList<ImportDocumentsRequest.BatchDocumentsImportConfig>())
+   *           .build();
+   *   ImportDocumentsResponse response = documentServiceClient.importDocumentsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<ImportDocumentsResponse, ImportDocumentsMetadata>
+      importDocumentsAsync(ImportDocumentsRequest request) {
+    return importDocumentsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Import documents into a dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   ImportDocumentsRequest request =
+   *       ImportDocumentsRequest.newBuilder()
+   *           .setDataset(DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .addAllBatchDocumentsImportConfigs(
+   *               new ArrayList<ImportDocumentsRequest.BatchDocumentsImportConfig>())
+   *           .build();
+   *   OperationFuture<ImportDocumentsResponse, ImportDocumentsMetadata> future =
+   *       documentServiceClient.importDocumentsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ImportDocumentsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          ImportDocumentsRequest, ImportDocumentsResponse, ImportDocumentsMetadata>
+      importDocumentsOperationCallable() {
+    return stub.importDocumentsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Import documents into a dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   ImportDocumentsRequest request =
+   *       ImportDocumentsRequest.newBuilder()
+   *           .setDataset(DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .addAllBatchDocumentsImportConfigs(
+   *               new ArrayList<ImportDocumentsRequest.BatchDocumentsImportConfig>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       documentServiceClient.importDocumentsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ImportDocumentsRequest, Operation> importDocumentsCallable() {
+    return stub.importDocumentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns relevant fields present in the requested document.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   DatasetName dataset = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+   *   GetDocumentResponse response = documentServiceClient.getDocument(dataset);
+   * }
+   * }</pre>
+   *
+   * @param dataset Required. The resource name of the dataset that the document belongs to .
+   *     Format: projects/{project}/locations/{location}/processors/{processor}/dataset
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GetDocumentResponse getDocument(DatasetName dataset) {
+    GetDocumentRequest request =
+        GetDocumentRequest.newBuilder()
+            .setDataset(dataset == null ? null : dataset.toString())
+            .build();
+    return getDocument(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns relevant fields present in the requested document.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   String dataset = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
+   *   GetDocumentResponse response = documentServiceClient.getDocument(dataset);
+   * }
+   * }</pre>
+   *
+   * @param dataset Required. The resource name of the dataset that the document belongs to .
+   *     Format: projects/{project}/locations/{location}/processors/{processor}/dataset
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GetDocumentResponse getDocument(String dataset) {
+    GetDocumentRequest request = GetDocumentRequest.newBuilder().setDataset(dataset).build();
+    return getDocument(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns relevant fields present in the requested document.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   GetDocumentRequest request =
+   *       GetDocumentRequest.newBuilder()
+   *           .setDataset(DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setDocumentId(DocumentId.newBuilder().build())
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setPageRange(DocumentPageRange.newBuilder().build())
+   *           .build();
+   *   GetDocumentResponse response = documentServiceClient.getDocument(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final GetDocumentResponse getDocument(GetDocumentRequest request) {
+    return getDocumentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns relevant fields present in the requested document.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   GetDocumentRequest request =
+   *       GetDocumentRequest.newBuilder()
+   *           .setDataset(DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setDocumentId(DocumentId.newBuilder().build())
+   *           .setReadMask(FieldMask.newBuilder().build())
+   *           .setPageRange(DocumentPageRange.newBuilder().build())
+   *           .build();
+   *   ApiFuture<GetDocumentResponse> future =
+   *       documentServiceClient.getDocumentCallable().futureCall(request);
+   *   // Do something.
+   *   GetDocumentResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetDocumentRequest, GetDocumentResponse> getDocumentCallable() {
+    return stub.getDocumentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of documents present in the dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   DatasetName dataset = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]");
+   *   for (DocumentMetadata element : documentServiceClient.listDocuments(dataset).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param dataset Required. The resource name of the dataset to be listed. Format:
+   *     projects/{project}/locations/{location}/processors/{processor}/dataset
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDocumentsPagedResponse listDocuments(DatasetName dataset) {
+    ListDocumentsRequest request =
+        ListDocumentsRequest.newBuilder()
+            .setDataset(dataset == null ? null : dataset.toString())
+            .build();
+    return listDocuments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of documents present in the dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   String dataset = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
+   *   for (DocumentMetadata element : documentServiceClient.listDocuments(dataset).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param dataset Required. The resource name of the dataset to be listed. Format:
+   *     projects/{project}/locations/{location}/processors/{processor}/dataset
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDocumentsPagedResponse listDocuments(String dataset) {
+    ListDocumentsRequest request = ListDocumentsRequest.newBuilder().setDataset(dataset).build();
+    return listDocuments(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of documents present in the dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   ListDocumentsRequest request =
+   *       ListDocumentsRequest.newBuilder()
+   *           .setDataset(DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setReturnTotalSize(true)
+   *           .setSkip(3532159)
+   *           .build();
+   *   for (DocumentMetadata element : documentServiceClient.listDocuments(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListDocumentsPagedResponse listDocuments(ListDocumentsRequest request) {
+    return listDocumentsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of documents present in the dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   ListDocumentsRequest request =
+   *       ListDocumentsRequest.newBuilder()
+   *           .setDataset(DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setReturnTotalSize(true)
+   *           .setSkip(3532159)
+   *           .build();
+   *   ApiFuture<DocumentMetadata> future =
+   *       documentServiceClient.listDocumentsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (DocumentMetadata element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse>
+      listDocumentsPagedCallable() {
+    return stub.listDocumentsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns a list of documents present in the dataset.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   ListDocumentsRequest request =
+   *       ListDocumentsRequest.newBuilder()
+   *           .setDataset(DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .setFilter("filter-1274492040")
+   *           .setReturnTotalSize(true)
+   *           .setSkip(3532159)
+   *           .build();
+   *   while (true) {
+   *     ListDocumentsResponse response =
+   *         documentServiceClient.listDocumentsCallable().call(request);
+   *     for (DocumentMetadata element : response.getDocumentMetadataList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> listDocumentsCallable() {
+    return stub.listDocumentsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a set of documents.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   String dataset = "dataset1443214456";
+   *   BatchDeleteDocumentsResponse response =
+   *       documentServiceClient.batchDeleteDocumentsAsync(dataset).get();
+   * }
+   * }</pre>
+   *
+   * @param dataset Required. The dataset resource name. Format:
+   *     projects/{project}/locations/{location}/processors/{processor}/dataset
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BatchDeleteDocumentsResponse, BatchDeleteDocumentsMetadata>
+      batchDeleteDocumentsAsync(String dataset) {
+    BatchDeleteDocumentsRequest request =
+        BatchDeleteDocumentsRequest.newBuilder().setDataset(dataset).build();
+    return batchDeleteDocumentsAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a set of documents.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   BatchDeleteDocumentsRequest request =
+   *       BatchDeleteDocumentsRequest.newBuilder()
+   *           .setDataset("dataset1443214456")
+   *           .setDatasetDocuments(BatchDatasetDocuments.newBuilder().build())
+   *           .build();
+   *   BatchDeleteDocumentsResponse response =
+   *       documentServiceClient.batchDeleteDocumentsAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<BatchDeleteDocumentsResponse, BatchDeleteDocumentsMetadata>
+      batchDeleteDocumentsAsync(BatchDeleteDocumentsRequest request) {
+    return batchDeleteDocumentsOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a set of documents.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   BatchDeleteDocumentsRequest request =
+   *       BatchDeleteDocumentsRequest.newBuilder()
+   *           .setDataset("dataset1443214456")
+   *           .setDatasetDocuments(BatchDatasetDocuments.newBuilder().build())
+   *           .build();
+   *   OperationFuture<BatchDeleteDocumentsResponse, BatchDeleteDocumentsMetadata> future =
+   *       documentServiceClient.batchDeleteDocumentsOperationCallable().futureCall(request);
+   *   // Do something.
+   *   BatchDeleteDocumentsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<
+          BatchDeleteDocumentsRequest, BatchDeleteDocumentsResponse, BatchDeleteDocumentsMetadata>
+      batchDeleteDocumentsOperationCallable() {
+    return stub.batchDeleteDocumentsOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a set of documents.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (DocumentServiceClient documentServiceClient = DocumentServiceClient.create()) {
+   *   BatchDeleteDocumentsRequest request =
+   *       BatchDeleteDocumentsRequest.newBuilder()
+   *           .setDataset("dataset1443214456")
+   *           .setDatasetDocuments(BatchDatasetDocuments.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       documentServiceClient.batchDeleteDocumentsCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<BatchDeleteDocumentsRequest, Operation>
+      batchDeleteDocumentsCallable() {
+    return stub.batchDeleteDocumentsCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -721,6 +1289,82 @@ public class DocumentServiceClient implements BackgroundResource {
   @Override
   public boolean awaitTermination(long duration, TimeUnit unit) throws InterruptedException {
     return stub.awaitTermination(duration, unit);
+  }
+
+  public static class ListDocumentsPagedResponse
+      extends AbstractPagedListResponse<
+          ListDocumentsRequest,
+          ListDocumentsResponse,
+          DocumentMetadata,
+          ListDocumentsPage,
+          ListDocumentsFixedSizeCollection> {
+
+    public static ApiFuture<ListDocumentsPagedResponse> createAsync(
+        PageContext<ListDocumentsRequest, ListDocumentsResponse, DocumentMetadata> context,
+        ApiFuture<ListDocumentsResponse> futureResponse) {
+      ApiFuture<ListDocumentsPage> futurePage =
+          ListDocumentsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListDocumentsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListDocumentsPagedResponse(ListDocumentsPage page) {
+      super(page, ListDocumentsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListDocumentsPage
+      extends AbstractPage<
+          ListDocumentsRequest, ListDocumentsResponse, DocumentMetadata, ListDocumentsPage> {
+
+    private ListDocumentsPage(
+        PageContext<ListDocumentsRequest, ListDocumentsResponse, DocumentMetadata> context,
+        ListDocumentsResponse response) {
+      super(context, response);
+    }
+
+    private static ListDocumentsPage createEmptyPage() {
+      return new ListDocumentsPage(null, null);
+    }
+
+    @Override
+    protected ListDocumentsPage createPage(
+        PageContext<ListDocumentsRequest, ListDocumentsResponse, DocumentMetadata> context,
+        ListDocumentsResponse response) {
+      return new ListDocumentsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListDocumentsPage> createPageAsync(
+        PageContext<ListDocumentsRequest, ListDocumentsResponse, DocumentMetadata> context,
+        ApiFuture<ListDocumentsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListDocumentsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListDocumentsRequest,
+          ListDocumentsResponse,
+          DocumentMetadata,
+          ListDocumentsPage,
+          ListDocumentsFixedSizeCollection> {
+
+    private ListDocumentsFixedSizeCollection(List<ListDocumentsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListDocumentsFixedSizeCollection createEmptyCollection() {
+      return new ListDocumentsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListDocumentsFixedSizeCollection createCollection(
+        List<ListDocumentsPage> pages, int collectionSize) {
+      return new ListDocumentsFixedSizeCollection(pages, collectionSize);
+    }
   }
 
   public static class ListLocationsPagedResponse

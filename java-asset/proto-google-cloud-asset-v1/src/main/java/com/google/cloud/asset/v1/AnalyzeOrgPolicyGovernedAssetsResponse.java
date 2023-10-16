@@ -1818,7 +1818,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The full resource name of the resource associated with this IAM policy.
+     * The full resource name of the resource on which this IAM policy is set.
      * Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Cloud Asset Inventory Resource Name
@@ -1835,7 +1835,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The full resource name of the resource associated with this IAM policy.
+     * The full resource name of the resource on which this IAM policy is set.
      * Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Cloud Asset Inventory Resource Name
@@ -2060,7 +2060,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The full resource name of the resource associated with this IAM policy.
+     * The full resource name of the resource on which this IAM policy is set.
      * Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Cloud Asset Inventory Resource Name
@@ -2088,7 +2088,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
      *
      *
      * <pre>
-     * The full resource name of the resource associated with this IAM policy.
+     * The full resource name of the resource on which this IAM policy is set.
      * Example:
      * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
      * See [Cloud Asset Inventory Resource Name
@@ -2840,7 +2840,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The full resource name of the resource associated with this IAM policy.
+       * The full resource name of the resource on which this IAM policy is set.
        * Example:
        * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
        * See [Cloud Asset Inventory Resource Name
@@ -2867,7 +2867,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The full resource name of the resource associated with this IAM policy.
+       * The full resource name of the resource on which this IAM policy is set.
        * Example:
        * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
        * See [Cloud Asset Inventory Resource Name
@@ -2894,7 +2894,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The full resource name of the resource associated with this IAM policy.
+       * The full resource name of the resource on which this IAM policy is set.
        * Example:
        * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
        * See [Cloud Asset Inventory Resource Name
@@ -2920,7 +2920,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The full resource name of the resource associated with this IAM policy.
+       * The full resource name of the resource on which this IAM policy is set.
        * Example:
        * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
        * See [Cloud Asset Inventory Resource Name
@@ -2942,7 +2942,7 @@ public final class AnalyzeOrgPolicyGovernedAssetsResponse
        *
        *
        * <pre>
-       * The full resource name of the resource associated with this IAM policy.
+       * The full resource name of the resource on which this IAM policy is set.
        * Example:
        * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
        * See [Cloud Asset Inventory Resource Name

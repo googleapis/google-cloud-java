@@ -25,7 +25,7 @@ package com.google.cloud.run.v2;
  * A single application container.
  * This specifies both the container to run, the command to run in the container
  * and the arguments to supply to it.
- * Note that additional arguments may be supplied by the system to the container
+ * Note that additional arguments can be supplied by the system to the container
  * at runtime.
  * </pre>
  *
@@ -50,6 +50,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     ports_ = java.util.Collections.emptyList();
     volumeMounts_ = java.util.Collections.emptyList();
     workingDir_ = "";
+    dependsOn_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -769,6 +770,70 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         : startupProbe_;
   }
 
+  public static final int DEPENDS_ON_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList dependsOn_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Names of the containers that must start before this container.
+   * </pre>
+   *
+   * <code>repeated string depends_on = 12;</code>
+   *
+   * @return A list containing the dependsOn.
+   */
+  public com.google.protobuf.ProtocolStringList getDependsOnList() {
+    return dependsOn_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Names of the containers that must start before this container.
+   * </pre>
+   *
+   * <code>repeated string depends_on = 12;</code>
+   *
+   * @return The count of dependsOn.
+   */
+  public int getDependsOnCount() {
+    return dependsOn_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Names of the containers that must start before this container.
+   * </pre>
+   *
+   * <code>repeated string depends_on = 12;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The dependsOn at the given index.
+   */
+  public java.lang.String getDependsOn(int index) {
+    return dependsOn_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Names of the containers that must start before this container.
+   * </pre>
+   *
+   * <code>repeated string depends_on = 12;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the dependsOn at the given index.
+   */
+  public com.google.protobuf.ByteString getDependsOnBytes(int index) {
+    return dependsOn_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -815,6 +880,9 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     }
     if (startupProbe_ != null) {
       output.writeMessage(11, getStartupProbe());
+    }
+    for (int i = 0; i < dependsOn_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, dependsOn_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -868,6 +936,14 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     if (startupProbe_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getStartupProbe());
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < dependsOn_.size(); i++) {
+        dataSize += computeStringSizeNoTag(dependsOn_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getDependsOnList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -903,6 +979,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     if (hasStartupProbe()) {
       if (!getStartupProbe().equals(other.getStartupProbe())) return false;
     }
+    if (!getDependsOnList().equals(other.getDependsOnList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -951,6 +1028,10 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
     if (hasStartupProbe()) {
       hash = (37 * hash) + STARTUP_PROBE_FIELD_NUMBER;
       hash = (53 * hash) + getStartupProbe().hashCode();
+    }
+    if (getDependsOnCount() > 0) {
+      hash = (37 * hash) + DEPENDS_ON_FIELD_NUMBER;
+      hash = (53 * hash) + getDependsOnList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1058,7 +1139,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
    * A single application container.
    * This specifies both the container to run, the command to run in the container
    * and the arguments to supply to it.
-   * Note that additional arguments may be supplied by the system to the container
+   * Note that additional arguments can be supplied by the system to the container
    * at runtime.
    * </pre>
    *
@@ -1135,6 +1216,7 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         startupProbeBuilder_.dispose();
         startupProbeBuilder_ = null;
       }
+      dependsOn_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1228,6 +1310,10 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000400) != 0)) {
         result.startupProbe_ =
             startupProbeBuilder_ == null ? startupProbe_ : startupProbeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        dependsOn_.makeImmutable();
+        result.dependsOn_ = dependsOn_;
       }
     }
 
@@ -1401,6 +1487,16 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
       if (other.hasStartupProbe()) {
         mergeStartupProbe(other.getStartupProbe());
       }
+      if (!other.dependsOn_.isEmpty()) {
+        if (dependsOn_.isEmpty()) {
+          dependsOn_ = other.dependsOn_;
+          bitField0_ |= 0x00000800;
+        } else {
+          ensureDependsOnIsMutable();
+          dependsOn_.addAll(other.dependsOn_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1515,6 +1611,13 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000400;
                 break;
               } // case 90
+            case 98:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDependsOnIsMutable();
+                dependsOn_.add(s);
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3951,6 +4054,180 @@ public final class Container extends com.google.protobuf.GeneratedMessageV3
         startupProbe_ = null;
       }
       return startupProbeBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList dependsOn_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureDependsOnIsMutable() {
+      if (!dependsOn_.isModifiable()) {
+        dependsOn_ = new com.google.protobuf.LazyStringArrayList(dependsOn_);
+      }
+      bitField0_ |= 0x00000800;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of the containers that must start before this container.
+     * </pre>
+     *
+     * <code>repeated string depends_on = 12;</code>
+     *
+     * @return A list containing the dependsOn.
+     */
+    public com.google.protobuf.ProtocolStringList getDependsOnList() {
+      dependsOn_.makeImmutable();
+      return dependsOn_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of the containers that must start before this container.
+     * </pre>
+     *
+     * <code>repeated string depends_on = 12;</code>
+     *
+     * @return The count of dependsOn.
+     */
+    public int getDependsOnCount() {
+      return dependsOn_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of the containers that must start before this container.
+     * </pre>
+     *
+     * <code>repeated string depends_on = 12;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The dependsOn at the given index.
+     */
+    public java.lang.String getDependsOn(int index) {
+      return dependsOn_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of the containers that must start before this container.
+     * </pre>
+     *
+     * <code>repeated string depends_on = 12;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the dependsOn at the given index.
+     */
+    public com.google.protobuf.ByteString getDependsOnBytes(int index) {
+      return dependsOn_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of the containers that must start before this container.
+     * </pre>
+     *
+     * <code>repeated string depends_on = 12;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The dependsOn to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDependsOn(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDependsOnIsMutable();
+      dependsOn_.set(index, value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of the containers that must start before this container.
+     * </pre>
+     *
+     * <code>repeated string depends_on = 12;</code>
+     *
+     * @param value The dependsOn to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDependsOn(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDependsOnIsMutable();
+      dependsOn_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of the containers that must start before this container.
+     * </pre>
+     *
+     * <code>repeated string depends_on = 12;</code>
+     *
+     * @param values The dependsOn to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDependsOn(java.lang.Iterable<java.lang.String> values) {
+      ensureDependsOnIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dependsOn_);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of the containers that must start before this container.
+     * </pre>
+     *
+     * <code>repeated string depends_on = 12;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDependsOn() {
+      dependsOn_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Names of the containers that must start before this container.
+     * </pre>
+     *
+     * <code>repeated string depends_on = 12;</code>
+     *
+     * @param value The bytes of the dependsOn to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDependsOnBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureDependsOnIsMutable();
+      dependsOn_.add(value);
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

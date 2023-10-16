@@ -4472,6 +4472,35 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for tpuTopology.
      */
     com.google.protobuf.ByteString getTpuTopologyBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * If set, refers to the name of a custom resource policy supplied by the
+     * user. The resource policy must be in the same project and region as the
+     * node pool. If not found, InvalidArgument error is returned.
+     * </pre>
+     *
+     * <code>string policy_name = 3;</code>
+     *
+     * @return The policyName.
+     */
+    java.lang.String getPolicyName();
+    /**
+     *
+     *
+     * <pre>
+     * If set, refers to the name of a custom resource policy supplied by the
+     * user. The resource policy must be in the same project and region as the
+     * node pool. If not found, InvalidArgument error is returned.
+     * </pre>
+     *
+     * <code>string policy_name = 3;</code>
+     *
+     * @return The bytes for policyName.
+     */
+    com.google.protobuf.ByteString getPolicyNameBytes();
   }
   /**
    *
@@ -4495,6 +4524,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
     private PlacementPolicy() {
       type_ = 0;
       tpuTopology_ = "";
+      policyName_ = "";
     }
 
     @java.lang.Override
@@ -4749,6 +4779,61 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int POLICY_NAME_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object policyName_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * If set, refers to the name of a custom resource policy supplied by the
+     * user. The resource policy must be in the same project and region as the
+     * node pool. If not found, InvalidArgument error is returned.
+     * </pre>
+     *
+     * <code>string policy_name = 3;</code>
+     *
+     * @return The policyName.
+     */
+    @java.lang.Override
+    public java.lang.String getPolicyName() {
+      java.lang.Object ref = policyName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        policyName_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If set, refers to the name of a custom resource policy supplied by the
+     * user. The resource policy must be in the same project and region as the
+     * node pool. If not found, InvalidArgument error is returned.
+     * </pre>
+     *
+     * <code>string policy_name = 3;</code>
+     *
+     * @return The bytes for policyName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPolicyNameBytes() {
+      java.lang.Object ref = policyName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        policyName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -4771,6 +4856,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tpuTopology_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tpuTopology_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(policyName_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, policyName_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -4787,6 +4875,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tpuTopology_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tpuTopology_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(policyName_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, policyName_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4806,6 +4897,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
 
       if (type_ != other.type_) return false;
       if (!getTpuTopology().equals(other.getTpuTopology())) return false;
+      if (!getPolicyName().equals(other.getPolicyName())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -4821,6 +4913,8 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + type_;
       hash = (37 * hash) + TPU_TOPOLOGY_FIELD_NUMBER;
       hash = (53 * hash) + getTpuTopology().hashCode();
+      hash = (37 * hash) + POLICY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getPolicyName().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4965,6 +5059,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = 0;
         type_ = 0;
         tpuTopology_ = "";
+        policyName_ = "";
         return this;
       }
 
@@ -5006,6 +5101,9 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.tpuTopology_ = tpuTopology_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.policyName_ = policyName_;
         }
       }
 
@@ -5065,6 +5163,11 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (!other.getPolicyName().isEmpty()) {
+          policyName_ = other.policyName_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -5103,6 +5206,12 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 26:
+                {
+                  policyName_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5321,6 +5430,122 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         tpuTopology_ = value;
         bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object policyName_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * If set, refers to the name of a custom resource policy supplied by the
+       * user. The resource policy must be in the same project and region as the
+       * node pool. If not found, InvalidArgument error is returned.
+       * </pre>
+       *
+       * <code>string policy_name = 3;</code>
+       *
+       * @return The policyName.
+       */
+      public java.lang.String getPolicyName() {
+        java.lang.Object ref = policyName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          policyName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, refers to the name of a custom resource policy supplied by the
+       * user. The resource policy must be in the same project and region as the
+       * node pool. If not found, InvalidArgument error is returned.
+       * </pre>
+       *
+       * <code>string policy_name = 3;</code>
+       *
+       * @return The bytes for policyName.
+       */
+      public com.google.protobuf.ByteString getPolicyNameBytes() {
+        java.lang.Object ref = policyName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          policyName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, refers to the name of a custom resource policy supplied by the
+       * user. The resource policy must be in the same project and region as the
+       * node pool. If not found, InvalidArgument error is returned.
+       * </pre>
+       *
+       * <code>string policy_name = 3;</code>
+       *
+       * @param value The policyName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPolicyName(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        policyName_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, refers to the name of a custom resource policy supplied by the
+       * user. The resource policy must be in the same project and region as the
+       * node pool. If not found, InvalidArgument error is returned.
+       * </pre>
+       *
+       * <code>string policy_name = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPolicyName() {
+        policyName_ = getDefaultInstance().getPolicyName();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * If set, refers to the name of a custom resource policy supplied by the
+       * user. The resource policy must be in the same project and region as the
+       * node pool. If not found, InvalidArgument error is returned.
+       * </pre>
+       *
+       * <code>string policy_name = 3;</code>
+       *
+       * @param value The bytes for policyName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPolicyNameBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        policyName_ = value;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -5897,7 +6122,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3794
+   *     google/container/v1beta1/cluster_service.proto;l=3916
    * @return The statusMessage.
    */
   @java.lang.Override
@@ -5925,7 +6150,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
    * <code>string status_message = 104 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=3794
+   *     google/container/v1beta1/cluster_service.proto;l=3916
    * @return The bytes for statusMessage.
    */
   @java.lang.Override
@@ -8758,7 +8983,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3794
+     *     google/container/v1beta1/cluster_service.proto;l=3916
      * @return The statusMessage.
      */
     @java.lang.Deprecated
@@ -8785,7 +9010,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3794
+     *     google/container/v1beta1/cluster_service.proto;l=3916
      * @return The bytes for statusMessage.
      */
     @java.lang.Deprecated
@@ -8812,7 +9037,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3794
+     *     google/container/v1beta1/cluster_service.proto;l=3916
      * @param value The statusMessage to set.
      * @return This builder for chaining.
      */
@@ -8838,7 +9063,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3794
+     *     google/container/v1beta1/cluster_service.proto;l=3916
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -8860,7 +9085,7 @@ public final class NodePool extends com.google.protobuf.GeneratedMessageV3
      * <code>string status_message = 104 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.NodePool.status_message is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=3794
+     *     google/container/v1beta1/cluster_service.proto;l=3916
      * @param value The bytes for statusMessage to set.
      * @return This builder for chaining.
      */

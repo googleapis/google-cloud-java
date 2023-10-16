@@ -139,7 +139,7 @@ public class GoogleAdsLinkName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       GoogleAdsLinkName that = ((GoogleAdsLinkName) o);
       return Objects.equals(this.property, that.property)
           && Objects.equals(this.googleAdsLink, that.googleAdsLink);

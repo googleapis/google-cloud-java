@@ -184,7 +184,7 @@ public enum ReportView implements com.google.protobuf.ProtocolMessageEnum {
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.migrationcenter.v1.MigrationCenterProto.getDescriptor()
         .getEnumTypes()
-        .get(9);
+        .get(10);
   }
 
   private static final ReportView[] VALUES = values();

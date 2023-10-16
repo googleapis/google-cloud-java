@@ -44,6 +44,11 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     state_ = 0;
     snapshotAutoDeleteBehavior_ = 0;
     pod_ = "";
+    protocol_ = 0;
+    performanceTier_ = 0;
+    notes_ = "";
+    workloadProfile_ = 0;
+    instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -285,6 +290,27 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETING = 3;</code>
      */
     DELETING(3),
+    /**
+     *
+     *
+     * <pre>
+     * The storage volume is being updated.
+     * </pre>
+     *
+     * <code>UPDATING = 4;</code>
+     */
+    UPDATING(4),
+    /**
+     *
+     *
+     * <pre>
+     * The storage volume is in cool off state. It will be deleted after
+     * `expire_time`.
+     * </pre>
+     *
+     * <code>COOL_OFF = 5;</code>
+     */
+    COOL_OFF(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -328,6 +354,27 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETING = 3;</code>
      */
     public static final int DELETING_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * The storage volume is being updated.
+     * </pre>
+     *
+     * <code>UPDATING = 4;</code>
+     */
+    public static final int UPDATING_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * The storage volume is in cool off state. It will be deleted after
+     * `expire_time`.
+     * </pre>
+     *
+     * <code>COOL_OFF = 5;</code>
+     */
+    public static final int COOL_OFF_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -361,6 +408,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
           return READY;
         case 3:
           return DELETING;
+        case 4:
+          return UPDATING;
+        case 5:
+          return COOL_OFF;
         default:
           return null;
       }
@@ -597,6 +648,324 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.baremetalsolution.v2.Volume.SnapshotAutoDeleteBehavior)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Storage protocol.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.baremetalsolution.v2.Volume.Protocol}
+   */
+  public enum Protocol implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Value is not specified.
+     * </pre>
+     *
+     * <code>PROTOCOL_UNSPECIFIED = 0;</code>
+     */
+    PROTOCOL_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Fibre Channel protocol.
+     * </pre>
+     *
+     * <code>FIBRE_CHANNEL = 1;</code>
+     */
+    FIBRE_CHANNEL(1),
+    /**
+     *
+     *
+     * <pre>
+     * NFS protocol means Volume is a NFS Share volume.
+     * Such volumes cannot be manipulated via Volumes API.
+     * </pre>
+     *
+     * <code>NFS = 2;</code>
+     */
+    NFS(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Value is not specified.
+     * </pre>
+     *
+     * <code>PROTOCOL_UNSPECIFIED = 0;</code>
+     */
+    public static final int PROTOCOL_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Fibre Channel protocol.
+     * </pre>
+     *
+     * <code>FIBRE_CHANNEL = 1;</code>
+     */
+    public static final int FIBRE_CHANNEL_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * NFS protocol means Volume is a NFS Share volume.
+     * Such volumes cannot be manipulated via Volumes API.
+     * </pre>
+     *
+     * <code>NFS = 2;</code>
+     */
+    public static final int NFS_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Protocol valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Protocol forNumber(int value) {
+      switch (value) {
+        case 0:
+          return PROTOCOL_UNSPECIFIED;
+        case 1:
+          return FIBRE_CHANNEL;
+        case 2:
+          return NFS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Protocol> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Protocol> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Protocol>() {
+          public Protocol findValueByNumber(int number) {
+            return Protocol.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.baremetalsolution.v2.Volume.getDescriptor().getEnumTypes().get(3);
+    }
+
+    private static final Protocol[] VALUES = values();
+
+    public static Protocol valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Protocol(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.baremetalsolution.v2.Volume.Protocol)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The possible values for a workload profile.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.baremetalsolution.v2.Volume.WorkloadProfile}
+   */
+  public enum WorkloadProfile implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The workload profile is in an unknown state.
+     * </pre>
+     *
+     * <code>WORKLOAD_PROFILE_UNSPECIFIED = 0;</code>
+     */
+    WORKLOAD_PROFILE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The workload profile is generic.
+     * </pre>
+     *
+     * <code>GENERIC = 1;</code>
+     */
+    GENERIC(1),
+    /**
+     *
+     *
+     * <pre>
+     * The workload profile is hana.
+     * </pre>
+     *
+     * <code>HANA = 2;</code>
+     */
+    HANA(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The workload profile is in an unknown state.
+     * </pre>
+     *
+     * <code>WORKLOAD_PROFILE_UNSPECIFIED = 0;</code>
+     */
+    public static final int WORKLOAD_PROFILE_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The workload profile is generic.
+     * </pre>
+     *
+     * <code>GENERIC = 1;</code>
+     */
+    public static final int GENERIC_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The workload profile is hana.
+     * </pre>
+     *
+     * <code>HANA = 2;</code>
+     */
+    public static final int HANA_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static WorkloadProfile valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static WorkloadProfile forNumber(int value) {
+      switch (value) {
+        case 0:
+          return WORKLOAD_PROFILE_UNSPECIFIED;
+        case 1:
+          return GENERIC;
+        case 2:
+          return HANA;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<WorkloadProfile> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<WorkloadProfile>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<WorkloadProfile>() {
+              public WorkloadProfile findValueByNumber(int number) {
+                return WorkloadProfile.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.baremetalsolution.v2.Volume.getDescriptor().getEnumTypes().get(4);
+    }
+
+    private static final WorkloadProfile[] VALUES = values();
+
+    public static WorkloadProfile valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private WorkloadProfile(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.baremetalsolution.v2.Volume.WorkloadProfile)
   }
 
   public interface SnapshotReservationDetailOrBuilder
@@ -1717,6 +2086,24 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     return requestedSizeGib_;
   }
 
+  public static final int ORIGINALLY_REQUESTED_SIZE_GIB_FIELD_NUMBER = 16;
+  private long originallyRequestedSizeGib_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Originally requested size, in GiB.
+   * </pre>
+   *
+   * <code>int64 originally_requested_size_gib = 16;</code>
+   *
+   * @return The originallyRequestedSizeGib.
+   */
+  @java.lang.Override
+  public long getOriginallyRequestedSizeGib() {
+    return originallyRequestedSizeGib_;
+  }
+
   public static final int CURRENT_SIZE_GIB_FIELD_NUMBER = 5;
   private long currentSizeGib_ = 0L;
   /**
@@ -1754,6 +2141,24 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
   @java.lang.Override
   public long getEmergencySizeGib() {
     return emergencySizeGib_;
+  }
+
+  public static final int MAX_SIZE_GIB_FIELD_NUMBER = 17;
+  private long maxSizeGib_ = 0L;
+  /**
+   *
+   *
+   * <pre>
+   * Maximum size volume can be expanded to in case of evergency, in GiB.
+   * </pre>
+   *
+   * <code>int64 max_size_gib = 17;</code>
+   *
+   * @return The maxSizeGib.
+   */
+  @java.lang.Override
+  public long getMaxSizeGib() {
+    return maxSizeGib_;
   }
 
   public static final int AUTO_GROWN_SIZE_GIB_FIELD_NUMBER = 6;
@@ -2069,6 +2474,347 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PROTOCOL_FIELD_NUMBER = 18;
+  private int protocol_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Storage protocol for the Volume.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.baremetalsolution.v2.Volume.Protocol protocol = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for protocol.
+   */
+  @java.lang.Override
+  public int getProtocolValue() {
+    return protocol_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Storage protocol for the Volume.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.baremetalsolution.v2.Volume.Protocol protocol = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The protocol.
+   */
+  @java.lang.Override
+  public com.google.cloud.baremetalsolution.v2.Volume.Protocol getProtocol() {
+    com.google.cloud.baremetalsolution.v2.Volume.Protocol result =
+        com.google.cloud.baremetalsolution.v2.Volume.Protocol.forNumber(protocol_);
+    return result == null
+        ? com.google.cloud.baremetalsolution.v2.Volume.Protocol.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int BOOT_VOLUME_FIELD_NUMBER = 19;
+  private boolean bootVolume_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether this volume is a boot volume. A boot volume is one
+   * which contains a boot LUN.
+   * </pre>
+   *
+   * <code>bool boot_volume = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bootVolume.
+   */
+  @java.lang.Override
+  public boolean getBootVolume() {
+    return bootVolume_;
+  }
+
+  public static final int PERFORMANCE_TIER_FIELD_NUMBER = 20;
+  private int performanceTier_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Performance tier of the Volume.
+   * Default is SHARED.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.baremetalsolution.v2.VolumePerformanceTier performance_tier = 20 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for performanceTier.
+   */
+  @java.lang.Override
+  public int getPerformanceTierValue() {
+    return performanceTier_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Performance tier of the Volume.
+   * Default is SHARED.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.baremetalsolution.v2.VolumePerformanceTier performance_tier = 20 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The performanceTier.
+   */
+  @java.lang.Override
+  public com.google.cloud.baremetalsolution.v2.VolumePerformanceTier getPerformanceTier() {
+    com.google.cloud.baremetalsolution.v2.VolumePerformanceTier result =
+        com.google.cloud.baremetalsolution.v2.VolumePerformanceTier.forNumber(performanceTier_);
+    return result == null
+        ? com.google.cloud.baremetalsolution.v2.VolumePerformanceTier.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int NOTES_FIELD_NUMBER = 21;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object notes_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Input only. User-specified notes for new Volume.
+   * Used to provision Volumes that require manual intervention.
+   * </pre>
+   *
+   * <code>string notes = 21 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The notes.
+   */
+  @java.lang.Override
+  public java.lang.String getNotes() {
+    java.lang.Object ref = notes_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      notes_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Input only. User-specified notes for new Volume.
+   * Used to provision Volumes that require manual intervention.
+   * </pre>
+   *
+   * <code>string notes = 21 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+   *
+   * @return The bytes for notes.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getNotesBytes() {
+    java.lang.Object ref = notes_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      notes_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int WORKLOAD_PROFILE_FIELD_NUMBER = 22;
+  private int workloadProfile_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * The workload profile for the volume.
+   * </pre>
+   *
+   * <code>.google.cloud.baremetalsolution.v2.Volume.WorkloadProfile workload_profile = 22;</code>
+   *
+   * @return The enum numeric value on the wire for workloadProfile.
+   */
+  @java.lang.Override
+  public int getWorkloadProfileValue() {
+    return workloadProfile_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The workload profile for the volume.
+   * </pre>
+   *
+   * <code>.google.cloud.baremetalsolution.v2.Volume.WorkloadProfile workload_profile = 22;</code>
+   *
+   * @return The workloadProfile.
+   */
+  @java.lang.Override
+  public com.google.cloud.baremetalsolution.v2.Volume.WorkloadProfile getWorkloadProfile() {
+    com.google.cloud.baremetalsolution.v2.Volume.WorkloadProfile result =
+        com.google.cloud.baremetalsolution.v2.Volume.WorkloadProfile.forNumber(workloadProfile_);
+    return result == null
+        ? com.google.cloud.baremetalsolution.v2.Volume.WorkloadProfile.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int EXPIRE_TIME_FIELD_NUMBER = 24;
+  private com.google.protobuf.Timestamp expireTime_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time after which volume will be fully deleted.
+   * It is filled only for volumes in COOLOFF state.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the expireTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasExpireTime() {
+    return expireTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time after which volume will be fully deleted.
+   * It is filled only for volumes in COOLOFF state.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The expireTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getExpireTime() {
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Time after which volume will be fully deleted.
+   * It is filled only for volumes in COOLOFF state.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
+    return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
+  }
+
+  public static final int INSTANCES_FIELD_NUMBER = 25;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList instances_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instances this Volume is attached to.
+   * This field is set only in Get requests.
+   * </pre>
+   *
+   * <code>
+   * repeated string instances = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return A list containing the instances.
+   */
+  public com.google.protobuf.ProtocolStringList getInstancesList() {
+    return instances_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instances this Volume is attached to.
+   * This field is set only in Get requests.
+   * </pre>
+   *
+   * <code>
+   * repeated string instances = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return The count of instances.
+   */
+  public int getInstancesCount() {
+    return instances_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instances this Volume is attached to.
+   * This field is set only in Get requests.
+   * </pre>
+   *
+   * <code>
+   * repeated string instances = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The instances at the given index.
+   */
+  public java.lang.String getInstances(int index) {
+    return instances_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Instances this Volume is attached to.
+   * This field is set only in Get requests.
+   * </pre>
+   *
+   * <code>
+   * repeated string instances = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the instances at the given index.
+   */
+  public com.google.protobuf.ByteString getInstancesBytes(int index) {
+    return instances_.getByteString(index);
+  }
+
+  public static final int ATTACHED_FIELD_NUMBER = 26;
+  private boolean attached_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Is the Volume attached at at least one instance.
+   * This field is a lightweight counterpart of `instances` field.
+   * It is filled in List responses as well.
+   * </pre>
+   *
+   * <code>bool attached = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The attached.
+   */
+  @java.lang.Override
+  public boolean getAttached() {
+    return attached_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2129,6 +2875,42 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pod_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, pod_);
+    }
+    if (originallyRequestedSizeGib_ != 0L) {
+      output.writeInt64(16, originallyRequestedSizeGib_);
+    }
+    if (maxSizeGib_ != 0L) {
+      output.writeInt64(17, maxSizeGib_);
+    }
+    if (protocol_
+        != com.google.cloud.baremetalsolution.v2.Volume.Protocol.PROTOCOL_UNSPECIFIED.getNumber()) {
+      output.writeEnum(18, protocol_);
+    }
+    if (bootVolume_ != false) {
+      output.writeBool(19, bootVolume_);
+    }
+    if (performanceTier_
+        != com.google.cloud.baremetalsolution.v2.VolumePerformanceTier
+            .VOLUME_PERFORMANCE_TIER_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(20, performanceTier_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notes_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 21, notes_);
+    }
+    if (workloadProfile_
+        != com.google.cloud.baremetalsolution.v2.Volume.WorkloadProfile.WORKLOAD_PROFILE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(22, workloadProfile_);
+    }
+    if (expireTime_ != null) {
+      output.writeMessage(24, getExpireTime());
+    }
+    for (int i = 0; i < instances_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 25, instances_.getRaw(i));
+    }
+    if (attached_ != false) {
+      output.writeBool(26, attached_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2196,6 +2978,48 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pod_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, pod_);
     }
+    if (originallyRequestedSizeGib_ != 0L) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt64Size(16, originallyRequestedSizeGib_);
+    }
+    if (maxSizeGib_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(17, maxSizeGib_);
+    }
+    if (protocol_
+        != com.google.cloud.baremetalsolution.v2.Volume.Protocol.PROTOCOL_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(18, protocol_);
+    }
+    if (bootVolume_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, bootVolume_);
+    }
+    if (performanceTier_
+        != com.google.cloud.baremetalsolution.v2.VolumePerformanceTier
+            .VOLUME_PERFORMANCE_TIER_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(20, performanceTier_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notes_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, notes_);
+    }
+    if (workloadProfile_
+        != com.google.cloud.baremetalsolution.v2.Volume.WorkloadProfile.WORKLOAD_PROFILE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(22, workloadProfile_);
+    }
+    if (expireTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getExpireTime());
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < instances_.size(); i++) {
+        dataSize += computeStringSizeNoTag(instances_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getInstancesList().size();
+    }
+    if (attached_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(26, attached_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2217,8 +3041,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     if (storageType_ != other.storageType_) return false;
     if (state_ != other.state_) return false;
     if (getRequestedSizeGib() != other.getRequestedSizeGib()) return false;
+    if (getOriginallyRequestedSizeGib() != other.getOriginallyRequestedSizeGib()) return false;
     if (getCurrentSizeGib() != other.getCurrentSizeGib()) return false;
     if (getEmergencySizeGib() != other.getEmergencySizeGib()) return false;
+    if (getMaxSizeGib() != other.getMaxSizeGib()) return false;
     if (getAutoGrownSizeGib() != other.getAutoGrownSizeGib()) return false;
     if (getRemainingSpaceGib() != other.getRemainingSpaceGib()) return false;
     if (hasSnapshotReservationDetail() != other.hasSnapshotReservationDetail()) return false;
@@ -2230,6 +3056,17 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (getSnapshotEnabled() != other.getSnapshotEnabled()) return false;
     if (!getPod().equals(other.getPod())) return false;
+    if (protocol_ != other.protocol_) return false;
+    if (getBootVolume() != other.getBootVolume()) return false;
+    if (performanceTier_ != other.performanceTier_) return false;
+    if (!getNotes().equals(other.getNotes())) return false;
+    if (workloadProfile_ != other.workloadProfile_) return false;
+    if (hasExpireTime() != other.hasExpireTime()) return false;
+    if (hasExpireTime()) {
+      if (!getExpireTime().equals(other.getExpireTime())) return false;
+    }
+    if (!getInstancesList().equals(other.getInstancesList())) return false;
+    if (getAttached() != other.getAttached()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2251,10 +3088,14 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + state_;
     hash = (37 * hash) + REQUESTED_SIZE_GIB_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getRequestedSizeGib());
+    hash = (37 * hash) + ORIGINALLY_REQUESTED_SIZE_GIB_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getOriginallyRequestedSizeGib());
     hash = (37 * hash) + CURRENT_SIZE_GIB_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCurrentSizeGib());
     hash = (37 * hash) + EMERGENCY_SIZE_GIB_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getEmergencySizeGib());
+    hash = (37 * hash) + MAX_SIZE_GIB_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxSizeGib());
     hash = (37 * hash) + AUTO_GROWN_SIZE_GIB_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getAutoGrownSizeGib());
     hash = (37 * hash) + REMAINING_SPACE_GIB_FIELD_NUMBER;
@@ -2273,6 +3114,26 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSnapshotEnabled());
     hash = (37 * hash) + POD_FIELD_NUMBER;
     hash = (53 * hash) + getPod().hashCode();
+    hash = (37 * hash) + PROTOCOL_FIELD_NUMBER;
+    hash = (53 * hash) + protocol_;
+    hash = (37 * hash) + BOOT_VOLUME_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getBootVolume());
+    hash = (37 * hash) + PERFORMANCE_TIER_FIELD_NUMBER;
+    hash = (53 * hash) + performanceTier_;
+    hash = (37 * hash) + NOTES_FIELD_NUMBER;
+    hash = (53 * hash) + getNotes().hashCode();
+    hash = (37 * hash) + WORKLOAD_PROFILE_FIELD_NUMBER;
+    hash = (53 * hash) + workloadProfile_;
+    if (hasExpireTime()) {
+      hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getExpireTime().hashCode();
+    }
+    if (getInstancesCount() > 0) {
+      hash = (37 * hash) + INSTANCES_FIELD_NUMBER;
+      hash = (53 * hash) + getInstancesList().hashCode();
+    }
+    hash = (37 * hash) + ATTACHED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAttached());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2437,8 +3298,10 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       storageType_ = 0;
       state_ = 0;
       requestedSizeGib_ = 0L;
+      originallyRequestedSizeGib_ = 0L;
       currentSizeGib_ = 0L;
       emergencySizeGib_ = 0L;
+      maxSizeGib_ = 0L;
       autoGrownSizeGib_ = 0L;
       remainingSpaceGib_ = 0L;
       snapshotReservationDetail_ = null;
@@ -2450,6 +3313,18 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().clear();
       snapshotEnabled_ = false;
       pod_ = "";
+      protocol_ = 0;
+      bootVolume_ = false;
+      performanceTier_ = 0;
+      notes_ = "";
+      workloadProfile_ = 0;
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
+        expireTimeBuilder_ = null;
+      }
+      instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      attached_ = false;
       return this;
     }
 
@@ -2502,35 +3377,66 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         result.requestedSizeGib_ = requestedSizeGib_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.currentSizeGib_ = currentSizeGib_;
+        result.originallyRequestedSizeGib_ = originallyRequestedSizeGib_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.emergencySizeGib_ = emergencySizeGib_;
+        result.currentSizeGib_ = currentSizeGib_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.autoGrownSizeGib_ = autoGrownSizeGib_;
+        result.emergencySizeGib_ = emergencySizeGib_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.remainingSpaceGib_ = remainingSpaceGib_;
+        result.maxSizeGib_ = maxSizeGib_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.autoGrownSizeGib_ = autoGrownSizeGib_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.remainingSpaceGib_ = remainingSpaceGib_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.snapshotReservationDetail_ =
             snapshotReservationDetailBuilder_ == null
                 ? snapshotReservationDetail_
                 : snapshotReservationDetailBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.snapshotAutoDeleteBehavior_ = snapshotAutoDeleteBehavior_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.snapshotEnabled_ = snapshotEnabled_;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.pod_ = pod_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.protocol_ = protocol_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.bootVolume_ = bootVolume_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.performanceTier_ = performanceTier_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.notes_ = notes_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.workloadProfile_ = workloadProfile_;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.expireTime_ = expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        instances_.makeImmutable();
+        result.instances_ = instances_;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.attached_ = attached_;
       }
     }
 
@@ -2598,11 +3504,17 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (other.getRequestedSizeGib() != 0L) {
         setRequestedSizeGib(other.getRequestedSizeGib());
       }
+      if (other.getOriginallyRequestedSizeGib() != 0L) {
+        setOriginallyRequestedSizeGib(other.getOriginallyRequestedSizeGib());
+      }
       if (other.getCurrentSizeGib() != 0L) {
         setCurrentSizeGib(other.getCurrentSizeGib());
       }
       if (other.getEmergencySizeGib() != 0L) {
         setEmergencySizeGib(other.getEmergencySizeGib());
+      }
+      if (other.getMaxSizeGib() != 0L) {
+        setMaxSizeGib(other.getMaxSizeGib());
       }
       if (other.getAutoGrownSizeGib() != 0L) {
         setAutoGrownSizeGib(other.getAutoGrownSizeGib());
@@ -2617,14 +3529,47 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         setSnapshotAutoDeleteBehaviorValue(other.getSnapshotAutoDeleteBehaviorValue());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       if (other.getSnapshotEnabled() != false) {
         setSnapshotEnabled(other.getSnapshotEnabled());
       }
       if (!other.getPod().isEmpty()) {
         pod_ = other.pod_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00008000;
         onChanged();
+      }
+      if (other.protocol_ != 0) {
+        setProtocolValue(other.getProtocolValue());
+      }
+      if (other.getBootVolume() != false) {
+        setBootVolume(other.getBootVolume());
+      }
+      if (other.performanceTier_ != 0) {
+        setPerformanceTierValue(other.getPerformanceTierValue());
+      }
+      if (!other.getNotes().isEmpty()) {
+        notes_ = other.notes_;
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      if (other.workloadProfile_ != 0) {
+        setWorkloadProfileValue(other.getWorkloadProfileValue());
+      }
+      if (other.hasExpireTime()) {
+        mergeExpireTime(other.getExpireTime());
+      }
+      if (!other.instances_.isEmpty()) {
+        if (instances_.isEmpty()) {
+          instances_ = other.instances_;
+          bitField0_ |= 0x00400000;
+        } else {
+          ensureInstancesIsMutable();
+          instances_.addAll(other.instances_);
+        }
+        onChanged();
+      }
+      if (other.getAttached() != false) {
+        setAttached(other.getAttached());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2679,32 +3624,32 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
             case 40:
               {
                 currentSizeGib_ = input.readInt64();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 40
             case 48:
               {
                 autoGrownSizeGib_ = input.readInt64();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 48
             case 56:
               {
                 remainingSpaceGib_ = input.readInt64();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 56
             case 66:
               {
                 input.readMessage(
                     getSnapshotReservationDetailFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 66
             case 72:
               {
                 snapshotAutoDeleteBehavior_ = input.readEnum();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 72
             case 90:
@@ -2722,27 +3667,88 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 98
             case 104:
               {
                 snapshotEnabled_ = input.readBool();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 104
             case 112:
               {
                 emergencySizeGib_ = input.readInt64();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 112
             case 122:
               {
                 pod_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 122
+            case 128:
+              {
+                originallyRequestedSizeGib_ = input.readInt64();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 128
+            case 136:
+              {
+                maxSizeGib_ = input.readInt64();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 136
+            case 144:
+              {
+                protocol_ = input.readEnum();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 144
+            case 152:
+              {
+                bootVolume_ = input.readBool();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 152
+            case 160:
+              {
+                performanceTier_ = input.readEnum();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 160
+            case 170:
+              {
+                notes_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 170
+            case 176:
+              {
+                workloadProfile_ = input.readEnum();
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 176
+            case 194:
+              {
+                input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 194
+            case 202:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureInstancesIsMutable();
+                instances_.add(s);
+                break;
+              } // case 202
+            case 208:
+              {
+                attached_ = input.readBool();
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 208
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3231,6 +4237,59 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private long originallyRequestedSizeGib_;
+    /**
+     *
+     *
+     * <pre>
+     * Originally requested size, in GiB.
+     * </pre>
+     *
+     * <code>int64 originally_requested_size_gib = 16;</code>
+     *
+     * @return The originallyRequestedSizeGib.
+     */
+    @java.lang.Override
+    public long getOriginallyRequestedSizeGib() {
+      return originallyRequestedSizeGib_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Originally requested size, in GiB.
+     * </pre>
+     *
+     * <code>int64 originally_requested_size_gib = 16;</code>
+     *
+     * @param value The originallyRequestedSizeGib to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOriginallyRequestedSizeGib(long value) {
+
+      originallyRequestedSizeGib_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Originally requested size, in GiB.
+     * </pre>
+     *
+     * <code>int64 originally_requested_size_gib = 16;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOriginallyRequestedSizeGib() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      originallyRequestedSizeGib_ = 0L;
+      onChanged();
+      return this;
+    }
+
     private long currentSizeGib_;
     /**
      *
@@ -3266,7 +4325,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public Builder setCurrentSizeGib(long value) {
 
       currentSizeGib_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3284,7 +4343,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearCurrentSizeGib() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       currentSizeGib_ = 0L;
       onChanged();
       return this;
@@ -3323,7 +4382,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public Builder setEmergencySizeGib(long value) {
 
       emergencySizeGib_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3340,8 +4399,61 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEmergencySizeGib() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       emergencySizeGib_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long maxSizeGib_;
+    /**
+     *
+     *
+     * <pre>
+     * Maximum size volume can be expanded to in case of evergency, in GiB.
+     * </pre>
+     *
+     * <code>int64 max_size_gib = 17;</code>
+     *
+     * @return The maxSizeGib.
+     */
+    @java.lang.Override
+    public long getMaxSizeGib() {
+      return maxSizeGib_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maximum size volume can be expanded to in case of evergency, in GiB.
+     * </pre>
+     *
+     * <code>int64 max_size_gib = 17;</code>
+     *
+     * @param value The maxSizeGib to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxSizeGib(long value) {
+
+      maxSizeGib_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Maximum size volume can be expanded to in case of evergency, in GiB.
+     * </pre>
+     *
+     * <code>int64 max_size_gib = 17;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxSizeGib() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      maxSizeGib_ = 0L;
       onChanged();
       return this;
     }
@@ -3379,7 +4491,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public Builder setAutoGrownSizeGib(long value) {
 
       autoGrownSizeGib_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3396,7 +4508,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearAutoGrownSizeGib() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000200);
       autoGrownSizeGib_ = 0L;
       onChanged();
       return this;
@@ -3435,7 +4547,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public Builder setRemainingSpaceGib(long value) {
 
       remainingSpaceGib_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3452,7 +4564,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearRemainingSpaceGib() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000400);
       remainingSpaceGib_ = 0L;
       onChanged();
       return this;
@@ -3479,7 +4591,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the snapshotReservationDetail field is set.
      */
     public boolean hasSnapshotReservationDetail() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3526,7 +4638,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       } else {
         snapshotReservationDetailBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3549,7 +4661,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       } else {
         snapshotReservationDetailBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3567,7 +4679,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeSnapshotReservationDetail(
         com.google.cloud.baremetalsolution.v2.Volume.SnapshotReservationDetail value) {
       if (snapshotReservationDetailBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && snapshotReservationDetail_ != null
             && snapshotReservationDetail_
                 != com.google.cloud.baremetalsolution.v2.Volume.SnapshotReservationDetail
@@ -3579,7 +4691,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       } else {
         snapshotReservationDetailBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3595,7 +4707,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearSnapshotReservationDetail() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000800);
       snapshotReservationDetail_ = null;
       if (snapshotReservationDetailBuilder_ != null) {
         snapshotReservationDetailBuilder_.dispose();
@@ -3617,7 +4729,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.baremetalsolution.v2.Volume.SnapshotReservationDetail.Builder
         getSnapshotReservationDetailBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getSnapshotReservationDetailFieldBuilder().getBuilder();
     }
@@ -3705,7 +4817,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setSnapshotAutoDeleteBehaviorValue(int value) {
       snapshotAutoDeleteBehavior_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3751,7 +4863,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00001000;
       snapshotAutoDeleteBehavior_ = value.getNumber();
       onChanged();
       return this;
@@ -3770,7 +4882,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSnapshotAutoDeleteBehavior() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00001000);
       snapshotAutoDeleteBehavior_ = 0;
       onChanged();
       return this;
@@ -3793,7 +4905,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       onChanged();
       return labels_;
     }
@@ -3878,7 +4990,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00002000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3901,7 +5013,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       return internalGetMutableLabels().getMutableMap();
     }
     /**
@@ -3921,7 +5033,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       return this;
     }
     /**
@@ -3935,7 +5047,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00002000;
       return this;
     }
 
@@ -3970,7 +5082,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     public Builder setSnapshotEnabled(boolean value) {
 
       snapshotEnabled_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -3986,7 +5098,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSnapshotEnabled() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00004000);
       snapshotEnabled_ = false;
       onChanged();
       return this;
@@ -4054,7 +5166,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       pod_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4071,7 +5183,7 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPod() {
       pod_ = getDefaultInstance().getPod();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4093,7 +5205,947 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       pod_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    private int protocol_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Storage protocol for the Volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.baremetalsolution.v2.Volume.Protocol protocol = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for protocol.
+     */
+    @java.lang.Override
+    public int getProtocolValue() {
+      return protocol_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Storage protocol for the Volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.baremetalsolution.v2.Volume.Protocol protocol = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for protocol to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProtocolValue(int value) {
+      protocol_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Storage protocol for the Volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.baremetalsolution.v2.Volume.Protocol protocol = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The protocol.
+     */
+    @java.lang.Override
+    public com.google.cloud.baremetalsolution.v2.Volume.Protocol getProtocol() {
+      com.google.cloud.baremetalsolution.v2.Volume.Protocol result =
+          com.google.cloud.baremetalsolution.v2.Volume.Protocol.forNumber(protocol_);
+      return result == null
+          ? com.google.cloud.baremetalsolution.v2.Volume.Protocol.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Storage protocol for the Volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.baremetalsolution.v2.Volume.Protocol protocol = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The protocol to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProtocol(com.google.cloud.baremetalsolution.v2.Volume.Protocol value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00010000;
+      protocol_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Storage protocol for the Volume.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.baremetalsolution.v2.Volume.Protocol protocol = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProtocol() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      protocol_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean bootVolume_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether this volume is a boot volume. A boot volume is one
+     * which contains a boot LUN.
+     * </pre>
+     *
+     * <code>bool boot_volume = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bootVolume.
+     */
+    @java.lang.Override
+    public boolean getBootVolume() {
+      return bootVolume_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether this volume is a boot volume. A boot volume is one
+     * which contains a boot LUN.
+     * </pre>
+     *
+     * <code>bool boot_volume = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The bootVolume to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBootVolume(boolean value) {
+
+      bootVolume_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether this volume is a boot volume. A boot volume is one
+     * which contains a boot LUN.
+     * </pre>
+     *
+     * <code>bool boot_volume = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBootVolume() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      bootVolume_ = false;
+      onChanged();
+      return this;
+    }
+
+    private int performanceTier_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Performance tier of the Volume.
+     * Default is SHARED.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.baremetalsolution.v2.VolumePerformanceTier performance_tier = 20 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for performanceTier.
+     */
+    @java.lang.Override
+    public int getPerformanceTierValue() {
+      return performanceTier_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Performance tier of the Volume.
+     * Default is SHARED.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.baremetalsolution.v2.VolumePerformanceTier performance_tier = 20 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for performanceTier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPerformanceTierValue(int value) {
+      performanceTier_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Performance tier of the Volume.
+     * Default is SHARED.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.baremetalsolution.v2.VolumePerformanceTier performance_tier = 20 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The performanceTier.
+     */
+    @java.lang.Override
+    public com.google.cloud.baremetalsolution.v2.VolumePerformanceTier getPerformanceTier() {
+      com.google.cloud.baremetalsolution.v2.VolumePerformanceTier result =
+          com.google.cloud.baremetalsolution.v2.VolumePerformanceTier.forNumber(performanceTier_);
+      return result == null
+          ? com.google.cloud.baremetalsolution.v2.VolumePerformanceTier.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Performance tier of the Volume.
+     * Default is SHARED.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.baremetalsolution.v2.VolumePerformanceTier performance_tier = 20 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The performanceTier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPerformanceTier(
+        com.google.cloud.baremetalsolution.v2.VolumePerformanceTier value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00040000;
+      performanceTier_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Performance tier of the Volume.
+     * Default is SHARED.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.baremetalsolution.v2.VolumePerformanceTier performance_tier = 20 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPerformanceTier() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      performanceTier_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object notes_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Input only. User-specified notes for new Volume.
+     * Used to provision Volumes that require manual intervention.
+     * </pre>
+     *
+     * <code>string notes = 21 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return The notes.
+     */
+    public java.lang.String getNotes() {
+      java.lang.Object ref = notes_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        notes_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. User-specified notes for new Volume.
+     * Used to provision Volumes that require manual intervention.
+     * </pre>
+     *
+     * <code>string notes = 21 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return The bytes for notes.
+     */
+    public com.google.protobuf.ByteString getNotesBytes() {
+      java.lang.Object ref = notes_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        notes_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. User-specified notes for new Volume.
+     * Used to provision Volumes that require manual intervention.
+     * </pre>
+     *
+     * <code>string notes = 21 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @param value The notes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotes(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      notes_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. User-specified notes for new Volume.
+     * Used to provision Volumes that require manual intervention.
+     * </pre>
+     *
+     * <code>string notes = 21 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNotes() {
+      notes_ = getDefaultInstance().getNotes();
+      bitField0_ = (bitField0_ & ~0x00080000);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. User-specified notes for new Volume.
+     * Used to provision Volumes that require manual intervention.
+     * </pre>
+     *
+     * <code>string notes = 21 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @param value The bytes for notes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNotesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      notes_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    private int workloadProfile_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The workload profile for the volume.
+     * </pre>
+     *
+     * <code>.google.cloud.baremetalsolution.v2.Volume.WorkloadProfile workload_profile = 22;</code>
+     *
+     * @return The enum numeric value on the wire for workloadProfile.
+     */
+    @java.lang.Override
+    public int getWorkloadProfileValue() {
+      return workloadProfile_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The workload profile for the volume.
+     * </pre>
+     *
+     * <code>.google.cloud.baremetalsolution.v2.Volume.WorkloadProfile workload_profile = 22;</code>
+     *
+     * @param value The enum numeric value on the wire for workloadProfile to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkloadProfileValue(int value) {
+      workloadProfile_ = value;
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The workload profile for the volume.
+     * </pre>
+     *
+     * <code>.google.cloud.baremetalsolution.v2.Volume.WorkloadProfile workload_profile = 22;</code>
+     *
+     * @return The workloadProfile.
+     */
+    @java.lang.Override
+    public com.google.cloud.baremetalsolution.v2.Volume.WorkloadProfile getWorkloadProfile() {
+      com.google.cloud.baremetalsolution.v2.Volume.WorkloadProfile result =
+          com.google.cloud.baremetalsolution.v2.Volume.WorkloadProfile.forNumber(workloadProfile_);
+      return result == null
+          ? com.google.cloud.baremetalsolution.v2.Volume.WorkloadProfile.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The workload profile for the volume.
+     * </pre>
+     *
+     * <code>.google.cloud.baremetalsolution.v2.Volume.WorkloadProfile workload_profile = 22;</code>
+     *
+     * @param value The workloadProfile to set.
+     * @return This builder for chaining.
+     */
+    public Builder setWorkloadProfile(
+        com.google.cloud.baremetalsolution.v2.Volume.WorkloadProfile value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00100000;
+      workloadProfile_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The workload profile for the volume.
+     * </pre>
+     *
+     * <code>.google.cloud.baremetalsolution.v2.Volume.WorkloadProfile workload_profile = 22;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearWorkloadProfile() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      workloadProfile_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.Timestamp expireTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        expireTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time after which volume will be fully deleted.
+     * It is filled only for volumes in COOLOFF state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the expireTime field is set.
+     */
+    public boolean hasExpireTime() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time after which volume will be fully deleted.
+     * It is filled only for volumes in COOLOFF state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The expireTime.
+     */
+    public com.google.protobuf.Timestamp getExpireTime() {
+      if (expireTimeBuilder_ == null) {
+        return expireTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : expireTime_;
+      } else {
+        return expireTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time after which volume will be fully deleted.
+     * It is filled only for volumes in COOLOFF state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setExpireTime(com.google.protobuf.Timestamp value) {
+      if (expireTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        expireTime_ = value;
+      } else {
+        expireTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time after which volume will be fully deleted.
+     * It is filled only for volumes in COOLOFF state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (expireTimeBuilder_ == null) {
+        expireTime_ = builderForValue.build();
+      } else {
+        expireTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time after which volume will be fully deleted.
+     * It is filled only for volumes in COOLOFF state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
+      if (expireTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00200000) != 0)
+            && expireTime_ != null
+            && expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getExpireTimeBuilder().mergeFrom(value);
+        } else {
+          expireTime_ = value;
+        }
+      } else {
+        expireTimeBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time after which volume will be fully deleted.
+     * It is filled only for volumes in COOLOFF state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearExpireTime() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      expireTime_ = null;
+      if (expireTimeBuilder_ != null) {
+        expireTimeBuilder_.dispose();
+        expireTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time after which volume will be fully deleted.
+     * It is filled only for volumes in COOLOFF state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return getExpireTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time after which volume will be fully deleted.
+     * It is filled only for volumes in COOLOFF state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
+      if (expireTimeBuilder_ != null) {
+        return expireTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return expireTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : expireTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Time after which volume will be fully deleted.
+     * It is filled only for volumes in COOLOFF state.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getExpireTimeFieldBuilder() {
+      if (expireTimeBuilder_ == null) {
+        expireTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getExpireTime(), getParentForChildren(), isClean());
+        expireTime_ = null;
+      }
+      return expireTimeBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringArrayList instances_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureInstancesIsMutable() {
+      if (!instances_.isModifiable()) {
+        instances_ = new com.google.protobuf.LazyStringArrayList(instances_);
+      }
+      bitField0_ |= 0x00400000;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instances this Volume is attached to.
+     * This field is set only in Get requests.
+     * </pre>
+     *
+     * <code>
+     * repeated string instances = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return A list containing the instances.
+     */
+    public com.google.protobuf.ProtocolStringList getInstancesList() {
+      instances_.makeImmutable();
+      return instances_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instances this Volume is attached to.
+     * This field is set only in Get requests.
+     * </pre>
+     *
+     * <code>
+     * repeated string instances = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The count of instances.
+     */
+    public int getInstancesCount() {
+      return instances_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instances this Volume is attached to.
+     * This field is set only in Get requests.
+     * </pre>
+     *
+     * <code>
+     * repeated string instances = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The instances at the given index.
+     */
+    public java.lang.String getInstances(int index) {
+      return instances_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instances this Volume is attached to.
+     * This field is set only in Get requests.
+     * </pre>
+     *
+     * <code>
+     * repeated string instances = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the instances at the given index.
+     */
+    public com.google.protobuf.ByteString getInstancesBytes(int index) {
+      return instances_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instances this Volume is attached to.
+     * This field is set only in Get requests.
+     * </pre>
+     *
+     * <code>
+     * repeated string instances = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The instances to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInstances(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureInstancesIsMutable();
+      instances_.set(index, value);
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instances this Volume is attached to.
+     * This field is set only in Get requests.
+     * </pre>
+     *
+     * <code>
+     * repeated string instances = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The instances to add.
+     * @return This builder for chaining.
+     */
+    public Builder addInstances(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureInstancesIsMutable();
+      instances_.add(value);
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instances this Volume is attached to.
+     * This field is set only in Get requests.
+     * </pre>
+     *
+     * <code>
+     * repeated string instances = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param values The instances to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllInstances(java.lang.Iterable<java.lang.String> values) {
+      ensureInstancesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instances_);
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instances this Volume is attached to.
+     * This field is set only in Get requests.
+     * </pre>
+     *
+     * <code>
+     * repeated string instances = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInstances() {
+      instances_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00400000);
+      ;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Instances this Volume is attached to.
+     * This field is set only in Get requests.
+     * </pre>
+     *
+     * <code>
+     * repeated string instances = 25 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @param value The bytes of the instances to add.
+     * @return This builder for chaining.
+     */
+    public Builder addInstancesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureInstancesIsMutable();
+      instances_.add(value);
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    private boolean attached_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Is the Volume attached at at least one instance.
+     * This field is a lightweight counterpart of `instances` field.
+     * It is filled in List responses as well.
+     * </pre>
+     *
+     * <code>bool attached = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The attached.
+     */
+    @java.lang.Override
+    public boolean getAttached() {
+      return attached_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Is the Volume attached at at least one instance.
+     * This field is a lightweight counterpart of `instances` field.
+     * It is filled in List responses as well.
+     * </pre>
+     *
+     * <code>bool attached = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The attached to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAttached(boolean value) {
+
+      attached_ = value;
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Is the Volume attached at at least one instance.
+     * This field is a lightweight counterpart of `instances` field.
+     * It is filled in List responses as well.
+     * </pre>
+     *
+     * <code>bool attached = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAttached() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      attached_ = false;
       onChanged();
       return this;
     }

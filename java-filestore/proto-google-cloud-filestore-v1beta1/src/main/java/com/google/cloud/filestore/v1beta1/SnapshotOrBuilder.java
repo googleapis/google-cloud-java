@@ -206,7 +206,8 @@ public interface SnapshotOrBuilder
    *
    *
    * <pre>
-   * Output only. The amount of bytes needed to allocate a full copy of the snapshot content
+   * Output only. The amount of bytes needed to allocate a full copy of the
+   * snapshot content
    * </pre>
    *
    * <code>int64 filesystem_used_bytes = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

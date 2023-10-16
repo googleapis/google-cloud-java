@@ -136,28 +136,30 @@ public interface ConversionWorkspaceOrBuilder
    *
    *
    * <pre>
-   * A generic list of settings for the workspace.
+   * Optional. A generic list of settings for the workspace.
    * The settings are database pair dependant and can indicate default behavior
    * for the mapping rules engine or turn on or off specific features.
    * Such examples can be: convert_foreign_key_to_interleave=true,
    * skip_triggers=false, ignore_non_table_synonyms=true
    * </pre>
    *
-   * <code>map&lt;string, string&gt; global_settings = 4;</code>
+   * <code>map&lt;string, string&gt; global_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   int getGlobalSettingsCount();
   /**
    *
    *
    * <pre>
-   * A generic list of settings for the workspace.
+   * Optional. A generic list of settings for the workspace.
    * The settings are database pair dependant and can indicate default behavior
    * for the mapping rules engine or turn on or off specific features.
    * Such examples can be: convert_foreign_key_to_interleave=true,
    * skip_triggers=false, ignore_non_table_synonyms=true
    * </pre>
    *
-   * <code>map&lt;string, string&gt; global_settings = 4;</code>
+   * <code>map&lt;string, string&gt; global_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   boolean containsGlobalSettings(java.lang.String key);
   /** Use {@link #getGlobalSettingsMap()} instead. */
@@ -167,28 +169,30 @@ public interface ConversionWorkspaceOrBuilder
    *
    *
    * <pre>
-   * A generic list of settings for the workspace.
+   * Optional. A generic list of settings for the workspace.
    * The settings are database pair dependant and can indicate default behavior
    * for the mapping rules engine or turn on or off specific features.
    * Such examples can be: convert_foreign_key_to_interleave=true,
    * skip_triggers=false, ignore_non_table_synonyms=true
    * </pre>
    *
-   * <code>map&lt;string, string&gt; global_settings = 4;</code>
+   * <code>map&lt;string, string&gt; global_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.util.Map<java.lang.String, java.lang.String> getGlobalSettingsMap();
   /**
    *
    *
    * <pre>
-   * A generic list of settings for the workspace.
+   * Optional. A generic list of settings for the workspace.
    * The settings are database pair dependant and can indicate default behavior
    * for the mapping rules engine or turn on or off specific features.
    * Such examples can be: convert_foreign_key_to_interleave=true,
    * skip_triggers=false, ignore_non_table_synonyms=true
    * </pre>
    *
-   * <code>map&lt;string, string&gt; global_settings = 4;</code>
+   * <code>map&lt;string, string&gt; global_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   /* nullable */
   java.lang.String getGlobalSettingsOrDefault(
@@ -199,14 +203,15 @@ public interface ConversionWorkspaceOrBuilder
    *
    *
    * <pre>
-   * A generic list of settings for the workspace.
+   * Optional. A generic list of settings for the workspace.
    * The settings are database pair dependant and can indicate default behavior
    * for the mapping rules engine or turn on or off specific features.
    * Such examples can be: convert_foreign_key_to_interleave=true,
    * skip_triggers=false, ignore_non_table_synonyms=true
    * </pre>
    *
-   * <code>map&lt;string, string&gt; global_settings = 4;</code>
+   * <code>map&lt;string, string&gt; global_settings = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
    */
   java.lang.String getGlobalSettingsOrThrow(java.lang.String key);
 
@@ -370,10 +375,10 @@ public interface ConversionWorkspaceOrBuilder
    *
    *
    * <pre>
-   * The display name for the workspace.
+   * Optional. The display name for the workspace.
    * </pre>
    *
-   * <code>string display_name = 11;</code>
+   * <code>string display_name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The displayName.
    */
@@ -382,10 +387,10 @@ public interface ConversionWorkspaceOrBuilder
    *
    *
    * <pre>
-   * The display name for the workspace.
+   * Optional. The display name for the workspace.
    * </pre>
    *
-   * <code>string display_name = 11;</code>
+   * <code>string display_name = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for displayName.
    */

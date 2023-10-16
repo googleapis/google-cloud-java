@@ -29,12 +29,15 @@ import com.google.cloud.dialogflow.cx.v3beta1.CreateAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ExportAgentResponse;
+import com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings;
 import com.google.cloud.dialogflow.cx.v3beta1.GetAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.GetGenerativeSettingsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListAgentsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListAgentsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.RestoreAgentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.UpdateAgentRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.UpdateGenerativeSettingsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ValidateAgentRequest;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
@@ -112,6 +115,16 @@ public abstract class AgentsStub implements BackgroundResource {
   public UnaryCallable<GetAgentValidationResultRequest, AgentValidationResult>
       getAgentValidationResultCallable() {
     throw new UnsupportedOperationException("Not implemented: getAgentValidationResultCallable()");
+  }
+
+  public UnaryCallable<GetGenerativeSettingsRequest, GenerativeSettings>
+      getGenerativeSettingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: getGenerativeSettingsCallable()");
+  }
+
+  public UnaryCallable<UpdateGenerativeSettingsRequest, GenerativeSettings>
+      updateGenerativeSettingsCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateGenerativeSettingsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

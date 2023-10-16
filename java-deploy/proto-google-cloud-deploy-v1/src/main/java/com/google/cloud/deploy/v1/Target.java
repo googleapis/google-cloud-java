@@ -22,7 +22,7 @@ package com.google.cloud.deploy.v1;
  *
  *
  * <pre>
- * A `Target` resource in the Google Cloud Deploy API.
+ * A `Target` resource in the Cloud Deploy API.
  *
  * A `Target` defines a location to which a Skaffold configuration
  * can be deployed.
@@ -378,7 +378,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. User annotations. These attributes can only be set and used by
-   * the user, and not by Google Cloud Deploy. See
+   * the user, and not by Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -404,7 +404,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. User annotations. These attributes can only be set and used by
-   * the user, and not by Google Cloud Deploy. See
+   * the user, and not by Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -421,7 +421,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. User annotations. These attributes can only be set and used by
-   * the user, and not by Google Cloud Deploy. See
+   * the user, and not by Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -445,7 +445,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. User annotations. These attributes can only be set and used by
-   * the user, and not by Google Cloud Deploy. See
+   * the user, and not by Cloud Deploy. See
    * https://google.aip.dev/128#annotations for more details such as format and
    * size limitations.
    * </pre>
@@ -496,8 +496,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -529,8 +528,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -553,8 +551,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -584,8 +581,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -1587,7 +1583,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A `Target` resource in the Google Cloud Deploy API.
+   * A `Target` resource in the Cloud Deploy API.
    *
    * A `Target` defines a location to which a Skaffold configuration
    * can be deployed.
@@ -2578,7 +2574,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. User annotations. These attributes can only be set and used by
-     * the user, and not by Google Cloud Deploy. See
+     * the user, and not by Cloud Deploy. See
      * https://google.aip.dev/128#annotations for more details such as format and
      * size limitations.
      * </pre>
@@ -2604,7 +2600,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. User annotations. These attributes can only be set and used by
-     * the user, and not by Google Cloud Deploy. See
+     * the user, and not by Cloud Deploy. See
      * https://google.aip.dev/128#annotations for more details such as format and
      * size limitations.
      * </pre>
@@ -2621,7 +2617,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. User annotations. These attributes can only be set and used by
-     * the user, and not by Google Cloud Deploy. See
+     * the user, and not by Cloud Deploy. See
      * https://google.aip.dev/128#annotations for more details such as format and
      * size limitations.
      * </pre>
@@ -2645,7 +2641,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. User annotations. These attributes can only be set and used by
-     * the user, and not by Google Cloud Deploy. See
+     * the user, and not by Cloud Deploy. See
      * https://google.aip.dev/128#annotations for more details such as format and
      * size limitations.
      * </pre>
@@ -2675,7 +2671,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. User annotations. These attributes can only be set and used by
-     * the user, and not by Google Cloud Deploy. See
+     * the user, and not by Cloud Deploy. See
      * https://google.aip.dev/128#annotations for more details such as format and
      * size limitations.
      * </pre>
@@ -2701,7 +2697,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. User annotations. These attributes can only be set and used by
-     * the user, and not by Google Cloud Deploy. See
+     * the user, and not by Cloud Deploy. See
      * https://google.aip.dev/128#annotations for more details such as format and
      * size limitations.
      * </pre>
@@ -2725,7 +2721,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. User annotations. These attributes can only be set and used by
-     * the user, and not by Google Cloud Deploy. See
+     * the user, and not by Cloud Deploy. See
      * https://google.aip.dev/128#annotations for more details such as format and
      * size limitations.
      * </pre>
@@ -2769,8 +2765,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
      *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
@@ -2802,8 +2797,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
      *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
@@ -2826,8 +2820,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
      *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
@@ -2857,8 +2850,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
      *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
@@ -2894,8 +2886,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
      *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
@@ -2927,8 +2918,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
      *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
@@ -2958,8 +2948,7 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
      *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.

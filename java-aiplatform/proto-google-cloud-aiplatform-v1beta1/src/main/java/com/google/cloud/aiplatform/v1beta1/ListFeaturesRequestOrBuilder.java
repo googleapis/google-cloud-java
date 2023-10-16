@@ -30,6 +30,7 @@ public interface ListFeaturesRequestOrBuilder
    * Required. The resource name of the Location to list Features.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * </pre>
    *
    * <code>
@@ -46,6 +47,7 @@ public interface ListFeaturesRequestOrBuilder
    * Required. The resource name of the Location to list Features.
    * Format:
    * `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}`
+   * `projects/{project}/locations/{location}/featureGroups/{feature_group}`
    * </pre>
    *
    * <code>
@@ -181,7 +183,7 @@ public interface ListFeaturesRequestOrBuilder
    * Supported fields:
    *
    *   * `feature_id`
-   *   * `value_type`
+   *   * `value_type` (Not supported for FeatureRegistry Feature)
    *   * `create_time`
    *   * `update_time`
    * </pre>
@@ -200,7 +202,7 @@ public interface ListFeaturesRequestOrBuilder
    * Supported fields:
    *
    *   * `feature_id`
-   *   * `value_type`
+   *   * `value_type` (Not supported for FeatureRegistry Feature)
    *   * `create_time`
    *   * `update_time`
    * </pre>

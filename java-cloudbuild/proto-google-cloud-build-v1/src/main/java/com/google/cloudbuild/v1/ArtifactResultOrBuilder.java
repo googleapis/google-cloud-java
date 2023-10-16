@@ -27,7 +27,7 @@ public interface ArtifactResultOrBuilder
    *
    *
    * <pre>
-   * The path of an artifact in a Google Cloud Storage bucket, with the
+   * The path of an artifact in a Cloud Storage bucket, with the
    * generation number. For example,
    * `gs://mybucket/path/to/output.jar#generation`.
    * </pre>
@@ -41,7 +41,7 @@ public interface ArtifactResultOrBuilder
    *
    *
    * <pre>
-   * The path of an artifact in a Google Cloud Storage bucket, with the
+   * The path of an artifact in a Cloud Storage bucket, with the
    * generation number. For example,
    * `gs://mybucket/path/to/output.jar#generation`.
    * </pre>

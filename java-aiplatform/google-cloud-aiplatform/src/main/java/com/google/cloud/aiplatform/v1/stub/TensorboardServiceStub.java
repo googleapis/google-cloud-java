@@ -59,6 +59,8 @@ import com.google.cloud.aiplatform.v1.ListTensorboardsRequest;
 import com.google.cloud.aiplatform.v1.ListTensorboardsResponse;
 import com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataRequest;
 import com.google.cloud.aiplatform.v1.ReadTensorboardBlobDataResponse;
+import com.google.cloud.aiplatform.v1.ReadTensorboardSizeRequest;
+import com.google.cloud.aiplatform.v1.ReadTensorboardSizeResponse;
 import com.google.cloud.aiplatform.v1.ReadTensorboardTimeSeriesDataRequest;
 import com.google.cloud.aiplatform.v1.ReadTensorboardTimeSeriesDataResponse;
 import com.google.cloud.aiplatform.v1.ReadTensorboardUsageRequest;
@@ -118,11 +120,6 @@ public abstract class TensorboardServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: getTensorboardCallable()");
   }
 
-  public UnaryCallable<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
-      readTensorboardUsageCallable() {
-    throw new UnsupportedOperationException("Not implemented: readTensorboardUsageCallable()");
-  }
-
   public OperationCallable<
           UpdateTensorboardRequest, Tensorboard, UpdateTensorboardOperationMetadata>
       updateTensorboardOperationCallable() {
@@ -152,6 +149,16 @@ public abstract class TensorboardServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteTensorboardRequest, Operation> deleteTensorboardCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteTensorboardCallable()");
+  }
+
+  public UnaryCallable<ReadTensorboardUsageRequest, ReadTensorboardUsageResponse>
+      readTensorboardUsageCallable() {
+    throw new UnsupportedOperationException("Not implemented: readTensorboardUsageCallable()");
+  }
+
+  public UnaryCallable<ReadTensorboardSizeRequest, ReadTensorboardSizeResponse>
+      readTensorboardSizeCallable() {
+    throw new UnsupportedOperationException("Not implemented: readTensorboardSizeCallable()");
   }
 
   public UnaryCallable<CreateTensorboardExperimentRequest, TensorboardExperiment>

@@ -49,6 +49,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     collation_ = "";
     cmekKeyName_ = "";
     availabilityType_ = 0;
+    edition_ = 0;
   }
 
   @java.lang.Override
@@ -514,6 +515,16 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * <code>POSTGRES_14 = 17;</code>
      */
     POSTGRES_14(17),
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL 15.
+     * </pre>
+     *
+     * <code>POSTGRES_15 = 18;</code>
+     */
+    POSTGRES_15(18),
     UNRECOGNIZED(-1),
     ;
 
@@ -617,6 +628,16 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
      * <code>POSTGRES_14 = 17;</code>
      */
     public static final int POSTGRES_14_VALUE = 17;
+    /**
+     *
+     *
+     * <pre>
+     * PostgreSQL 15.
+     * </pre>
+     *
+     * <code>POSTGRES_15 = 18;</code>
+     */
+    public static final int POSTGRES_15_VALUE = 18;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -662,6 +683,8 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
           return POSTGRES_13;
         case 17:
           return POSTGRES_14;
+        case 18:
+          return POSTGRES_15;
         default:
           return null;
       }
@@ -876,6 +899,164 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.clouddms.v1.CloudSqlSettings.SqlAvailabilityType)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The edition of the given Cloud SQL instance.
+   * Can be ENTERPRISE or ENTERPRISE_PLUS.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.clouddms.v1.CloudSqlSettings.Edition}
+   */
+  public enum Edition implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The instance did not specify the edition.
+     * </pre>
+     *
+     * <code>EDITION_UNSPECIFIED = 0;</code>
+     */
+    EDITION_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The instance is an enterprise edition.
+     * </pre>
+     *
+     * <code>ENTERPRISE = 2;</code>
+     */
+    ENTERPRISE(2),
+    /**
+     *
+     *
+     * <pre>
+     * The instance is an enterprise plus edition.
+     * </pre>
+     *
+     * <code>ENTERPRISE_PLUS = 3;</code>
+     */
+    ENTERPRISE_PLUS(3),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The instance did not specify the edition.
+     * </pre>
+     *
+     * <code>EDITION_UNSPECIFIED = 0;</code>
+     */
+    public static final int EDITION_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The instance is an enterprise edition.
+     * </pre>
+     *
+     * <code>ENTERPRISE = 2;</code>
+     */
+    public static final int ENTERPRISE_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * The instance is an enterprise plus edition.
+     * </pre>
+     *
+     * <code>ENTERPRISE_PLUS = 3;</code>
+     */
+    public static final int ENTERPRISE_PLUS_VALUE = 3;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Edition valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Edition forNumber(int value) {
+      switch (value) {
+        case 0:
+          return EDITION_UNSPECIFIED;
+        case 2:
+          return ENTERPRISE;
+        case 3:
+          return ENTERPRISE_PLUS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Edition> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Edition> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Edition>() {
+          public Edition findValueByNumber(int number) {
+            return Edition.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.clouddms.v1.CloudSqlSettings.getDescriptor().getEnumTypes().get(4);
+    }
+
+    private static final Edition[] VALUES = values();
+
+    public static Edition valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Edition(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.clouddms.v1.CloudSqlSettings.Edition)
   }
 
   public static final int DATABASE_VERSION_FIELD_NUMBER = 1;
@@ -1908,6 +2089,47 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
         : result;
   }
 
+  public static final int EDITION_FIELD_NUMBER = 19;
+  private int edition_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The edition of the given Cloud SQL instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.CloudSqlSettings.Edition edition = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for edition.
+   */
+  @java.lang.Override
+  public int getEditionValue() {
+    return edition_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The edition of the given Cloud SQL instance.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.CloudSqlSettings.Edition edition = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The edition.
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.CloudSqlSettings.Edition getEdition() {
+    com.google.cloud.clouddms.v1.CloudSqlSettings.Edition result =
+        com.google.cloud.clouddms.v1.CloudSqlSettings.Edition.forNumber(edition_);
+    return result == null
+        ? com.google.cloud.clouddms.v1.CloudSqlSettings.Edition.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1985,6 +2207,10 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secondaryZone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, secondaryZone_);
+    }
+    if (edition_
+        != com.google.cloud.clouddms.v1.CloudSqlSettings.Edition.EDITION_UNSPECIFIED.getNumber()) {
+      output.writeEnum(19, edition_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2076,6 +2302,10 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secondaryZone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, secondaryZone_);
     }
+    if (edition_
+        != com.google.cloud.clouddms.v1.CloudSqlSettings.Edition.EDITION_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(19, edition_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2122,6 +2352,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     if (!getCollation().equals(other.getCollation())) return false;
     if (!getCmekKeyName().equals(other.getCmekKeyName())) return false;
     if (availabilityType_ != other.availabilityType_) return false;
+    if (edition_ != other.edition_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2181,6 +2412,8 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getCmekKeyName().hashCode();
     hash = (37 * hash) + AVAILABILITY_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + availabilityType_;
+    hash = (37 * hash) + EDITION_FIELD_NUMBER;
+    hash = (53 * hash) + edition_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2378,6 +2611,7 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
       collation_ = "";
       cmekKeyName_ = "";
       availabilityType_ = 0;
+      edition_ = 0;
       return this;
     }
 
@@ -2476,6 +2710,9 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
         result.availabilityType_ = availabilityType_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.edition_ = edition_;
       }
     }
 
@@ -2589,6 +2826,9 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
       }
       if (other.availabilityType_ != 0) {
         setAvailabilityTypeValue(other.getAvailabilityTypeValue());
+      }
+      if (other.edition_ != 0) {
+        setEditionValue(other.getEditionValue());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2738,6 +2978,12 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000800;
                 break;
               } // case 146
+            case 152:
+              {
+                edition_ = input.readEnum();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 152
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5227,6 +5473,108 @@ public final class CloudSqlSettings extends com.google.protobuf.GeneratedMessage
     public Builder clearAvailabilityType() {
       bitField0_ = (bitField0_ & ~0x00020000);
       availabilityType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int edition_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The edition of the given Cloud SQL instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.CloudSqlSettings.Edition edition = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for edition.
+     */
+    @java.lang.Override
+    public int getEditionValue() {
+      return edition_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The edition of the given Cloud SQL instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.CloudSqlSettings.Edition edition = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for edition to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEditionValue(int value) {
+      edition_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The edition of the given Cloud SQL instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.CloudSqlSettings.Edition edition = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The edition.
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.CloudSqlSettings.Edition getEdition() {
+      com.google.cloud.clouddms.v1.CloudSqlSettings.Edition result =
+          com.google.cloud.clouddms.v1.CloudSqlSettings.Edition.forNumber(edition_);
+      return result == null
+          ? com.google.cloud.clouddms.v1.CloudSqlSettings.Edition.UNRECOGNIZED
+          : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The edition of the given Cloud SQL instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.CloudSqlSettings.Edition edition = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The edition to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEdition(com.google.cloud.clouddms.v1.CloudSqlSettings.Edition value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00040000;
+      edition_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The edition of the given Cloud SQL instance.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.CloudSqlSettings.Edition edition = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEdition() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      edition_ = 0;
       onChanged();
       return this;
     }

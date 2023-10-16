@@ -16,15 +16,26 @@
 
 package com.google.cloud.documentai.v1beta3.stub;
 
+import static com.google.cloud.documentai.v1beta3.DocumentServiceClient.ListDocumentsPagedResponse;
 import static com.google.cloud.documentai.v1beta3.DocumentServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsMetadata;
+import com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsRequest;
+import com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsResponse;
 import com.google.cloud.documentai.v1beta3.Dataset;
 import com.google.cloud.documentai.v1beta3.DatasetSchema;
 import com.google.cloud.documentai.v1beta3.GetDatasetSchemaRequest;
+import com.google.cloud.documentai.v1beta3.GetDocumentRequest;
+import com.google.cloud.documentai.v1beta3.GetDocumentResponse;
+import com.google.cloud.documentai.v1beta3.ImportDocumentsMetadata;
+import com.google.cloud.documentai.v1beta3.ImportDocumentsRequest;
+import com.google.cloud.documentai.v1beta3.ImportDocumentsResponse;
+import com.google.cloud.documentai.v1beta3.ListDocumentsRequest;
+import com.google.cloud.documentai.v1beta3.ListDocumentsResponse;
 import com.google.cloud.documentai.v1beta3.UpdateDatasetOperationMetadata;
 import com.google.cloud.documentai.v1beta3.UpdateDatasetRequest;
 import com.google.cloud.documentai.v1beta3.UpdateDatasetSchemaRequest;
@@ -61,6 +72,39 @@ public abstract class DocumentServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateDatasetRequest, Operation> updateDatasetCallable() {
     throw new UnsupportedOperationException("Not implemented: updateDatasetCallable()");
+  }
+
+  public OperationCallable<ImportDocumentsRequest, ImportDocumentsResponse, ImportDocumentsMetadata>
+      importDocumentsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: importDocumentsOperationCallable()");
+  }
+
+  public UnaryCallable<ImportDocumentsRequest, Operation> importDocumentsCallable() {
+    throw new UnsupportedOperationException("Not implemented: importDocumentsCallable()");
+  }
+
+  public UnaryCallable<GetDocumentRequest, GetDocumentResponse> getDocumentCallable() {
+    throw new UnsupportedOperationException("Not implemented: getDocumentCallable()");
+  }
+
+  public UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse>
+      listDocumentsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDocumentsPagedCallable()");
+  }
+
+  public UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> listDocumentsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDocumentsCallable()");
+  }
+
+  public OperationCallable<
+          BatchDeleteDocumentsRequest, BatchDeleteDocumentsResponse, BatchDeleteDocumentsMetadata>
+      batchDeleteDocumentsOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: batchDeleteDocumentsOperationCallable()");
+  }
+
+  public UnaryCallable<BatchDeleteDocumentsRequest, Operation> batchDeleteDocumentsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchDeleteDocumentsCallable()");
   }
 
   public UnaryCallable<GetDatasetSchemaRequest, DatasetSchema> getDatasetSchemaCallable() {

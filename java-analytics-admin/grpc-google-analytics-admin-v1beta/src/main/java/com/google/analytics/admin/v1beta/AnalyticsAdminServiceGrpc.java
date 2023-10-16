@@ -32,7 +32,8 @@ public final class AnalyticsAdminServiceGrpc {
 
   private AnalyticsAdminServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.analytics.admin.v1beta.AnalyticsAdminService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.analytics.admin.v1beta.AnalyticsAdminService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1360,6 +1361,58 @@ public final class AnalyticsAdminServiceGrpc {
       }
     }
     return getCreateConversionEventMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1beta.UpdateConversionEventRequest,
+          com.google.analytics.admin.v1beta.ConversionEvent>
+      getUpdateConversionEventMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateConversionEvent",
+      requestType = com.google.analytics.admin.v1beta.UpdateConversionEventRequest.class,
+      responseType = com.google.analytics.admin.v1beta.ConversionEvent.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1beta.UpdateConversionEventRequest,
+          com.google.analytics.admin.v1beta.ConversionEvent>
+      getUpdateConversionEventMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1beta.UpdateConversionEventRequest,
+            com.google.analytics.admin.v1beta.ConversionEvent>
+        getUpdateConversionEventMethod;
+    if ((getUpdateConversionEventMethod = AnalyticsAdminServiceGrpc.getUpdateConversionEventMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateConversionEventMethod =
+                AnalyticsAdminServiceGrpc.getUpdateConversionEventMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateConversionEventMethod =
+              getUpdateConversionEventMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1beta.UpdateConversionEventRequest,
+                          com.google.analytics.admin.v1beta.ConversionEvent>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateConversionEvent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1beta.UpdateConversionEventRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1beta.ConversionEvent
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateConversionEvent"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateConversionEventMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -2872,6 +2925,21 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Updates a conversion event with the specified attributes.
+     * </pre>
+     */
+    default void updateConversionEvent(
+        com.google.analytics.admin.v1beta.UpdateConversionEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.ConversionEvent>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateConversionEventMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Retrieve a single conversion event.
      * </pre>
      */
@@ -3710,6 +3778,23 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Updates a conversion event with the specified attributes.
+     * </pre>
+     */
+    public void updateConversionEvent(
+        com.google.analytics.admin.v1beta.UpdateConversionEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.ConversionEvent>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateConversionEventMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Retrieve a single conversion event.
      * </pre>
      */
@@ -4480,6 +4565,19 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Updates a conversion event with the specified attributes.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1beta.ConversionEvent updateConversionEvent(
+        com.google.analytics.admin.v1beta.UpdateConversionEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateConversionEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Retrieve a single conversion event.
      * </pre>
      */
@@ -5205,6 +5303,21 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Updates a conversion event with the specified attributes.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1beta.ConversionEvent>
+        updateConversionEvent(
+            com.google.analytics.admin.v1beta.UpdateConversionEventRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateConversionEventMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Retrieve a single conversion event.
      * </pre>
      */
@@ -5538,27 +5651,28 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_ACKNOWLEDGE_USER_DATA_COLLECTION = 24;
   private static final int METHODID_SEARCH_CHANGE_HISTORY_EVENTS = 25;
   private static final int METHODID_CREATE_CONVERSION_EVENT = 26;
-  private static final int METHODID_GET_CONVERSION_EVENT = 27;
-  private static final int METHODID_DELETE_CONVERSION_EVENT = 28;
-  private static final int METHODID_LIST_CONVERSION_EVENTS = 29;
-  private static final int METHODID_CREATE_CUSTOM_DIMENSION = 30;
-  private static final int METHODID_UPDATE_CUSTOM_DIMENSION = 31;
-  private static final int METHODID_LIST_CUSTOM_DIMENSIONS = 32;
-  private static final int METHODID_ARCHIVE_CUSTOM_DIMENSION = 33;
-  private static final int METHODID_GET_CUSTOM_DIMENSION = 34;
-  private static final int METHODID_CREATE_CUSTOM_METRIC = 35;
-  private static final int METHODID_UPDATE_CUSTOM_METRIC = 36;
-  private static final int METHODID_LIST_CUSTOM_METRICS = 37;
-  private static final int METHODID_ARCHIVE_CUSTOM_METRIC = 38;
-  private static final int METHODID_GET_CUSTOM_METRIC = 39;
-  private static final int METHODID_GET_DATA_RETENTION_SETTINGS = 40;
-  private static final int METHODID_UPDATE_DATA_RETENTION_SETTINGS = 41;
-  private static final int METHODID_CREATE_DATA_STREAM = 42;
-  private static final int METHODID_DELETE_DATA_STREAM = 43;
-  private static final int METHODID_UPDATE_DATA_STREAM = 44;
-  private static final int METHODID_LIST_DATA_STREAMS = 45;
-  private static final int METHODID_GET_DATA_STREAM = 46;
-  private static final int METHODID_RUN_ACCESS_REPORT = 47;
+  private static final int METHODID_UPDATE_CONVERSION_EVENT = 27;
+  private static final int METHODID_GET_CONVERSION_EVENT = 28;
+  private static final int METHODID_DELETE_CONVERSION_EVENT = 29;
+  private static final int METHODID_LIST_CONVERSION_EVENTS = 30;
+  private static final int METHODID_CREATE_CUSTOM_DIMENSION = 31;
+  private static final int METHODID_UPDATE_CUSTOM_DIMENSION = 32;
+  private static final int METHODID_LIST_CUSTOM_DIMENSIONS = 33;
+  private static final int METHODID_ARCHIVE_CUSTOM_DIMENSION = 34;
+  private static final int METHODID_GET_CUSTOM_DIMENSION = 35;
+  private static final int METHODID_CREATE_CUSTOM_METRIC = 36;
+  private static final int METHODID_UPDATE_CUSTOM_METRIC = 37;
+  private static final int METHODID_LIST_CUSTOM_METRICS = 38;
+  private static final int METHODID_ARCHIVE_CUSTOM_METRIC = 39;
+  private static final int METHODID_GET_CUSTOM_METRIC = 40;
+  private static final int METHODID_GET_DATA_RETENTION_SETTINGS = 41;
+  private static final int METHODID_UPDATE_DATA_RETENTION_SETTINGS = 42;
+  private static final int METHODID_CREATE_DATA_STREAM = 43;
+  private static final int METHODID_DELETE_DATA_STREAM = 44;
+  private static final int METHODID_UPDATE_DATA_STREAM = 45;
+  private static final int METHODID_LIST_DATA_STREAMS = 46;
+  private static final int METHODID_GET_DATA_STREAM = 47;
+  private static final int METHODID_RUN_ACCESS_REPORT = 48;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -5743,6 +5857,12 @@ public final class AnalyticsAdminServiceGrpc {
         case METHODID_CREATE_CONVERSION_EVENT:
           serviceImpl.createConversionEvent(
               (com.google.analytics.admin.v1beta.CreateConversionEventRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.ConversionEvent>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_CONVERSION_EVENT:
+          serviceImpl.updateConversionEvent(
+              (com.google.analytics.admin.v1beta.UpdateConversionEventRequest) request,
               (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1beta.ConversionEvent>)
                   responseObserver);
           break;
@@ -6072,6 +6192,13 @@ public final class AnalyticsAdminServiceGrpc {
                     com.google.analytics.admin.v1beta.ConversionEvent>(
                     service, METHODID_CREATE_CONVERSION_EVENT)))
         .addMethod(
+            getUpdateConversionEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1beta.UpdateConversionEventRequest,
+                    com.google.analytics.admin.v1beta.ConversionEvent>(
+                    service, METHODID_UPDATE_CONVERSION_EVENT)))
+        .addMethod(
             getGetConversionEventMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -6241,9 +6368,9 @@ public final class AnalyticsAdminServiceGrpc {
   private static final class AnalyticsAdminServiceMethodDescriptorSupplier
       extends AnalyticsAdminServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    AnalyticsAdminServiceMethodDescriptorSupplier(String methodName) {
+    AnalyticsAdminServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -6292,6 +6419,7 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getAcknowledgeUserDataCollectionMethod())
                       .addMethod(getSearchChangeHistoryEventsMethod())
                       .addMethod(getCreateConversionEventMethod())
+                      .addMethod(getUpdateConversionEventMethod())
                       .addMethod(getGetConversionEventMethod())
                       .addMethod(getDeleteConversionEventMethod())
                       .addMethod(getListConversionEventsMethod())

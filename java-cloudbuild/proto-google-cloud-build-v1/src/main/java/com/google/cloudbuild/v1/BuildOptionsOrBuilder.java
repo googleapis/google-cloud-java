@@ -212,7 +212,21 @@ public interface BuildOptionsOrBuilder
    *
    *
    * <pre>
-   * Option to define build log streaming behavior to Google Cloud
+   * Option to include built-in and custom substitutions as env variables
+   * for all build steps.
+   * </pre>
+   *
+   * <code>bool automap_substitutions = 22;</code>
+   *
+   * @return The automapSubstitutions.
+   */
+  boolean getAutomapSubstitutions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Option to define build log streaming behavior to Cloud
    * Storage.
    * </pre>
    *
@@ -226,7 +240,7 @@ public interface BuildOptionsOrBuilder
    *
    *
    * <pre>
-   * Option to define build log streaming behavior to Google Cloud
+   * Option to define build log streaming behavior to Cloud
    * Storage.
    * </pre>
    *
@@ -247,7 +261,7 @@ public interface BuildOptionsOrBuilder
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2017
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2266
    * @return The workerPool.
    */
   @java.lang.Deprecated
@@ -262,7 +276,7 @@ public interface BuildOptionsOrBuilder
    * <code>string worker_pool = 7 [deprecated = true];</code>
    *
    * @deprecated google.devtools.cloudbuild.v1.BuildOptions.worker_pool is deprecated. See
-   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2017
+   *     google/devtools/cloudbuild/v1/cloudbuild.proto;l=2266
    * @return The bytes for workerPool.
    */
   @java.lang.Deprecated

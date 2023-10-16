@@ -24,11 +24,11 @@ package com.google.cloud.datacatalog.v1beta1;
  * <pre>
  * Detailed counts on the entry's usage.
  * Caveats:
- *   - Only BigQuery tables have usage stats
- *   - The usage stats only include BigQuery query jobs
- *   - The usage stats might be underestimated, e.g. wildcard table references
- *     are not yet counted in usage computation
- *     https://cloud.google.com/bigquery/docs/querying-wildcard-tables
+ * - Only BigQuery tables have usage stats
+ * - The usage stats only include BigQuery query jobs
+ * - The usage stats might be underestimated, e.g. wildcard table references
+ * are not yet counted in usage computation
+ * https://cloud.google.com/bigquery/docs/querying-wildcard-tables
  * </pre>
  *
  * Protobuf type {@code google.cloud.datacatalog.v1beta1.UsageStats}
@@ -340,11 +340,11 @@ public final class UsageStats extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Detailed counts on the entry's usage.
    * Caveats:
-   *   - Only BigQuery tables have usage stats
-   *   - The usage stats only include BigQuery query jobs
-   *   - The usage stats might be underestimated, e.g. wildcard table references
-   *     are not yet counted in usage computation
-   *     https://cloud.google.com/bigquery/docs/querying-wildcard-tables
+   * - Only BigQuery tables have usage stats
+   * - The usage stats only include BigQuery query jobs
+   * - The usage stats might be underestimated, e.g. wildcard table references
+   * are not yet counted in usage computation
+   * https://cloud.google.com/bigquery/docs/querying-wildcard-tables
    * </pre>
    *
    * Protobuf type {@code google.cloud.datacatalog.v1beta1.UsageStats}

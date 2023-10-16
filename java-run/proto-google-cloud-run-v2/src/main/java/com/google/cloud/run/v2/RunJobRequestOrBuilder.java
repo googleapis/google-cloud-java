@@ -96,4 +96,42 @@ public interface RunJobRequestOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Overrides specification for a given execution of a job. If provided,
+   * overrides will be applied to update the execution or task spec.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.RunJobRequest.Overrides overrides = 4;</code>
+   *
+   * @return Whether the overrides field is set.
+   */
+  boolean hasOverrides();
+  /**
+   *
+   *
+   * <pre>
+   * Overrides specification for a given execution of a job. If provided,
+   * overrides will be applied to update the execution or task spec.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.RunJobRequest.Overrides overrides = 4;</code>
+   *
+   * @return The overrides.
+   */
+  com.google.cloud.run.v2.RunJobRequest.Overrides getOverrides();
+  /**
+   *
+   *
+   * <pre>
+   * Overrides specification for a given execution of a job. If provided,
+   * overrides will be applied to update the execution or task spec.
+   * </pre>
+   *
+   * <code>.google.cloud.run.v2.RunJobRequest.Overrides overrides = 4;</code>
+   */
+  com.google.cloud.run.v2.RunJobRequest.OverridesOrBuilder getOverridesOrBuilder();
 }

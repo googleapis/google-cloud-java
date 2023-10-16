@@ -233,4 +233,21 @@ public interface SearchCatalogRequestOrBuilder
    * @return The bytes for orderBy.
    */
   com.google.protobuf.ByteString getOrderByBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, use searchAll permission granted on organizations from
+   * `include_org_ids` and projects from `include_project_ids` instead of the
+   * fine grained per resource permissions when filtering the search results.
+   * The only allowed `order_by` criteria for admin_search mode is `default`.
+   * Using this flags guarantees a full recall of the search results.
+   * </pre>
+   *
+   * <code>bool admin_search = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The adminSearch.
+   */
+  boolean getAdminSearch();
 }

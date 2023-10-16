@@ -44,6 +44,7 @@ public final class ChangeOfferRequest extends com.google.protobuf.GeneratedMessa
     parameters_ = java.util.Collections.emptyList();
     purchaseOrderId_ = "";
     requestId_ = "";
+    billingAccount_ = "";
   }
 
   @java.lang.Override
@@ -399,6 +400,65 @@ public final class ChangeOfferRequest extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int BILLING_ACCOUNT_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object billingAccount_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The billing account resource name that is used to pay for this
+   * entitlement when setting up billing on a trial subscription.
+   *
+   * This field is only relevant for multi-currency accounts. It should be
+   * left empty for single currency accounts.
+   * </pre>
+   *
+   * <code>string billing_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The billingAccount.
+   */
+  @java.lang.Override
+  public java.lang.String getBillingAccount() {
+    java.lang.Object ref = billingAccount_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      billingAccount_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The billing account resource name that is used to pay for this
+   * entitlement when setting up billing on a trial subscription.
+   *
+   * This field is only relevant for multi-currency accounts. It should be
+   * left empty for single currency accounts.
+   * </pre>
+   *
+   * <code>string billing_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for billingAccount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBillingAccountBytes() {
+    java.lang.Object ref = billingAccount_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      billingAccount_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -428,6 +488,9 @@ public final class ChangeOfferRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, requestId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billingAccount_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, billingAccount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -452,6 +515,9 @@ public final class ChangeOfferRequest extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(requestId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, requestId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billingAccount_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, billingAccount_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -473,6 +539,7 @@ public final class ChangeOfferRequest extends com.google.protobuf.GeneratedMessa
     if (!getParametersList().equals(other.getParametersList())) return false;
     if (!getPurchaseOrderId().equals(other.getPurchaseOrderId())) return false;
     if (!getRequestId().equals(other.getRequestId())) return false;
+    if (!getBillingAccount().equals(other.getBillingAccount())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -496,6 +563,8 @@ public final class ChangeOfferRequest extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getPurchaseOrderId().hashCode();
     hash = (37 * hash) + REQUEST_ID_FIELD_NUMBER;
     hash = (53 * hash) + getRequestId().hashCode();
+    hash = (37 * hash) + BILLING_ACCOUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getBillingAccount().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -647,6 +716,7 @@ public final class ChangeOfferRequest extends com.google.protobuf.GeneratedMessa
       bitField0_ = (bitField0_ & ~0x00000004);
       purchaseOrderId_ = "";
       requestId_ = "";
+      billingAccount_ = "";
       return this;
     }
 
@@ -707,6 +777,9 @@ public final class ChangeOfferRequest extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.requestId_ = requestId_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.billingAccount_ = billingAccount_;
       }
     }
 
@@ -802,6 +875,11 @@ public final class ChangeOfferRequest extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (!other.getBillingAccount().isEmpty()) {
+        billingAccount_ = other.billingAccount_;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -865,6 +943,12 @@ public final class ChangeOfferRequest extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000010;
                 break;
               } // case 50
+            case 58:
+              {
+                billingAccount_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1823,6 +1907,132 @@ public final class ChangeOfferRequest extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       requestId_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object billingAccount_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The billing account resource name that is used to pay for this
+     * entitlement when setting up billing on a trial subscription.
+     *
+     * This field is only relevant for multi-currency accounts. It should be
+     * left empty for single currency accounts.
+     * </pre>
+     *
+     * <code>string billing_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The billingAccount.
+     */
+    public java.lang.String getBillingAccount() {
+      java.lang.Object ref = billingAccount_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        billingAccount_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The billing account resource name that is used to pay for this
+     * entitlement when setting up billing on a trial subscription.
+     *
+     * This field is only relevant for multi-currency accounts. It should be
+     * left empty for single currency accounts.
+     * </pre>
+     *
+     * <code>string billing_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for billingAccount.
+     */
+    public com.google.protobuf.ByteString getBillingAccountBytes() {
+      java.lang.Object ref = billingAccount_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        billingAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The billing account resource name that is used to pay for this
+     * entitlement when setting up billing on a trial subscription.
+     *
+     * This field is only relevant for multi-currency accounts. It should be
+     * left empty for single currency accounts.
+     * </pre>
+     *
+     * <code>string billing_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The billingAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBillingAccount(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      billingAccount_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The billing account resource name that is used to pay for this
+     * entitlement when setting up billing on a trial subscription.
+     *
+     * This field is only relevant for multi-currency accounts. It should be
+     * left empty for single currency accounts.
+     * </pre>
+     *
+     * <code>string billing_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBillingAccount() {
+      billingAccount_ = getDefaultInstance().getBillingAccount();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The billing account resource name that is used to pay for this
+     * entitlement when setting up billing on a trial subscription.
+     *
+     * This field is only relevant for multi-currency accounts. It should be
+     * left empty for single currency accounts.
+     * </pre>
+     *
+     * <code>string billing_account = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for billingAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBillingAccountBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      billingAccount_ = value;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

@@ -16,6 +16,8 @@
 
 package com.google.cloud.documentai.v1beta2.stub;
 
+import static com.google.cloud.documentai.v1beta2.DocumentUnderstandingServiceClient.ListLocationsPagedResponse;
+
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
@@ -25,6 +27,10 @@ import com.google.cloud.documentai.v1beta2.BatchProcessDocumentsResponse;
 import com.google.cloud.documentai.v1beta2.Document;
 import com.google.cloud.documentai.v1beta2.OperationMetadata;
 import com.google.cloud.documentai.v1beta2.ProcessDocumentRequest;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import javax.annotation.Generated;
@@ -56,6 +62,19 @@ public abstract class DocumentUnderstandingServiceStub implements BackgroundReso
 
   public UnaryCallable<ProcessDocumentRequest, Document> processDocumentCallable() {
     throw new UnsupportedOperationException("Not implemented: processDocumentCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsPagedCallable()");
+  }
+
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listLocationsCallable()");
+  }
+
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    throw new UnsupportedOperationException("Not implemented: getLocationCallable()");
   }
 
   @Override

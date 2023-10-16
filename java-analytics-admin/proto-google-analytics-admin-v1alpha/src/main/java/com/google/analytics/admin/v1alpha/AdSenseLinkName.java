@@ -137,7 +137,7 @@ public class AdSenseLinkName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       AdSenseLinkName that = ((AdSenseLinkName) o);
       return Objects.equals(this.property, that.property)
           && Objects.equals(this.adsenseLink, that.adsenseLink);

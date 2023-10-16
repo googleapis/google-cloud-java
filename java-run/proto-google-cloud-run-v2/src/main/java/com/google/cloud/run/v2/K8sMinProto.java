@@ -76,6 +76,10 @@ public final class K8sMinProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_run_v2_CloudSqlInstance_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_run_v2_EmptyDirVolumeSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_run_v2_EmptyDirVolumeSource_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_run_v2_Probe_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_run_v2_Probe_fieldAccessorTable;
@@ -106,7 +110,7 @@ public final class K8sMinProto {
     java.lang.String[] descriptorData = {
       "\n!google/cloud/run/v2/k8s.min.proto\022\023goo"
           + "gle.cloud.run.v2\032\037google/api/field_behav"
-          + "ior.proto\032\031google/api/resource.proto\"\235\003\n"
+          + "ior.proto\032\031google/api/resource.proto\"\261\003\n"
           + "\tContainer\022\014\n\004name\030\001 \001(\t\022\023\n\005image\030\002 \001(\tB"
           + "\004\342A\001\002\022\017\n\007command\030\003 \003(\t\022\014\n\004args\030\004 \003(\t\022(\n\003"
           + "env\030\005 \003(\0132\033.google.cloud.run.v2.EnvVar\022<"
@@ -117,59 +121,65 @@ public final class K8sMinProto {
           + "umeMount\022\023\n\013working_dir\030\t \001(\t\0222\n\016livenes"
           + "s_probe\030\n \001(\0132\032.google.cloud.run.v2.Prob"
           + "e\0221\n\rstartup_probe\030\013 \001(\0132\032.google.cloud."
-          + "run.v2.Probe\"\271\001\n\024ResourceRequirements\022E\n"
-          + "\006limits\030\001 \003(\01325.google.cloud.run.v2.Reso"
-          + "urceRequirements.LimitsEntry\022\020\n\010cpu_idle"
-          + "\030\002 \001(\010\022\031\n\021startup_cpu_boost\030\003 \001(\010\032-\n\013Lim"
-          + "itsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001"
-          + "\"r\n\006EnvVar\022\022\n\004name\030\001 \001(\tB\004\342A\001\002\022\017\n\005value\030"
-          + "\002 \001(\tH\000\0229\n\014value_source\030\003 \001(\0132!.google.c"
-          + "loud.run.v2.EnvVarSourceH\000B\010\n\006values\"N\n\014"
-          + "EnvVarSource\022>\n\016secret_key_ref\030\001 \001(\0132&.g"
-          + "oogle.cloud.run.v2.SecretKeySelector\"\223\001\n"
-          + "\021SecretKeySelector\022<\n\006secret\030\001 \001(\tB,\342A\001\002"
-          + "\372A%\n#secretmanager.googleapis.com/Secret"
-          + "\022@\n\007version\030\002 \001(\tB/\372A,\n*secretmanager.go"
-          + "ogleapis.com/SecretVersion\"5\n\rContainerP"
-          + "ort\022\014\n\004name\030\001 \001(\t\022\026\n\016container_port\030\003 \001("
-          + "\005\";\n\013VolumeMount\022\022\n\004name\030\001 \001(\tB\004\342A\001\002\022\030\n\n"
-          + "mount_path\030\003 \001(\tB\004\342A\001\002\"\253\001\n\006Volume\022\022\n\004nam"
-          + "e\030\001 \001(\tB\004\342A\001\002\0229\n\006secret\030\002 \001(\0132\'.google.c"
-          + "loud.run.v2.SecretVolumeSourceH\000\022C\n\022clou"
-          + "d_sql_instance\030\003 \001(\0132%.google.cloud.run."
-          + "v2.CloudSqlInstanceH\000B\r\n\013volume_type\"s\n\022"
-          + "SecretVolumeSource\022\024\n\006secret\030\001 \001(\tB\004\342A\001\002"
-          + "\0221\n\005items\030\002 \003(\0132\".google.cloud.run.v2.Ve"
-          + "rsionToPath\022\024\n\014default_mode\030\003 \001(\005\"B\n\rVer"
-          + "sionToPath\022\022\n\004path\030\001 \001(\tB\004\342A\001\002\022\017\n\007versio"
-          + "n\030\002 \001(\t\022\014\n\004mode\030\003 \001(\005\"%\n\020CloudSqlInstanc"
-          + "e\022\021\n\tinstances\030\001 \003(\t\"\245\002\n\005Probe\022\035\n\025initia"
-          + "l_delay_seconds\030\001 \001(\005\022\027\n\017timeout_seconds"
-          + "\030\002 \001(\005\022\026\n\016period_seconds\030\003 \001(\005\022\031\n\021failur"
-          + "e_threshold\030\004 \001(\005\0226\n\010http_get\030\005 \001(\0132\".go"
-          + "ogle.cloud.run.v2.HTTPGetActionH\000\022:\n\ntcp"
-          + "_socket\030\006 \001(\0132$.google.cloud.run.v2.TCPS"
-          + "ocketActionH\000\022/\n\004grpc\030\007 \001(\0132\037.google.clo"
-          + "ud.run.v2.GRPCActionH\000B\014\n\nprobe_type\"b\n\r"
-          + "HTTPGetAction\022\014\n\004path\030\001 \001(\t\0225\n\014http_head"
-          + "ers\030\004 \003(\0132\037.google.cloud.run.v2.HTTPHead"
-          + "er\022\014\n\004port\030\005 \001(\005\"/\n\nHTTPHeader\022\022\n\004name\030\001"
-          + " \001(\tB\004\342A\001\002\022\r\n\005value\030\002 \001(\t\"\037\n\017TCPSocketAc"
-          + "tion\022\014\n\004port\030\001 \001(\005\"+\n\nGRPCAction\022\014\n\004port"
-          + "\030\001 \001(\005\022\017\n\007service\030\002 \001(\tB\351\003\n\027com.google.c"
-          + "loud.run.v2B\013K8sMinProtoP\001Z)cloud.google"
-          + ".com/go/run/apiv2/runpb;runpb\352Ax\n!cloudk"
-          + "ms.googleapis.com/CryptoKey\022Sprojects/{p"
-          + "roject}/locations/{location}/keyRings/{k"
-          + "ey_ring}/cryptoKeys/{crypto_key}\352AJ\n#sec"
-          + "retmanager.googleapis.com/Secret\022#projec"
-          + "ts/{project}/secrets/{secret}\352Ad\n*secret"
-          + "manager.googleapis.com/SecretVersion\0226pr"
-          + "ojects/{project}/secrets/{secret}/versio"
-          + "ns/{version}\352Ad\n\"vpcaccess.googleapis.co"
-          + "m/Connector\022>projects/{project}/location"
-          + "s/{location}/connectors/{connector}b\006pro"
-          + "to3"
+          + "run.v2.Probe\022\022\n\ndepends_on\030\014 \003(\t\"\271\001\n\024Res"
+          + "ourceRequirements\022E\n\006limits\030\001 \003(\01325.goog"
+          + "le.cloud.run.v2.ResourceRequirements.Lim"
+          + "itsEntry\022\020\n\010cpu_idle\030\002 \001(\010\022\031\n\021startup_cp"
+          + "u_boost\030\003 \001(\010\032-\n\013LimitsEntry\022\013\n\003key\030\001 \001("
+          + "\t\022\r\n\005value\030\002 \001(\t:\0028\001\"r\n\006EnvVar\022\022\n\004name\030\001"
+          + " \001(\tB\004\342A\001\002\022\017\n\005value\030\002 \001(\tH\000\0229\n\014value_sou"
+          + "rce\030\003 \001(\0132!.google.cloud.run.v2.EnvVarSo"
+          + "urceH\000B\010\n\006values\"N\n\014EnvVarSource\022>\n\016secr"
+          + "et_key_ref\030\001 \001(\0132&.google.cloud.run.v2.S"
+          + "ecretKeySelector\"\223\001\n\021SecretKeySelector\022<"
+          + "\n\006secret\030\001 \001(\tB,\342A\001\002\372A%\n#secretmanager.g"
+          + "oogleapis.com/Secret\022@\n\007version\030\002 \001(\tB/\372"
+          + "A,\n*secretmanager.googleapis.com/SecretV"
+          + "ersion\"5\n\rContainerPort\022\014\n\004name\030\001 \001(\t\022\026\n"
+          + "\016container_port\030\003 \001(\005\";\n\013VolumeMount\022\022\n\004"
+          + "name\030\001 \001(\tB\004\342A\001\002\022\030\n\nmount_path\030\003 \001(\tB\004\342A"
+          + "\001\002\"\353\001\n\006Volume\022\022\n\004name\030\001 \001(\tB\004\342A\001\002\0229\n\006sec"
+          + "ret\030\002 \001(\0132\'.google.cloud.run.v2.SecretVo"
+          + "lumeSourceH\000\022C\n\022cloud_sql_instance\030\003 \001(\013"
+          + "2%.google.cloud.run.v2.CloudSqlInstanceH"
+          + "\000\022>\n\tempty_dir\030\004 \001(\0132).google.cloud.run."
+          + "v2.EmptyDirVolumeSourceH\000B\r\n\013volume_type"
+          + "\"s\n\022SecretVolumeSource\022\024\n\006secret\030\001 \001(\tB\004"
+          + "\342A\001\002\0221\n\005items\030\002 \003(\0132\".google.cloud.run.v"
+          + "2.VersionToPath\022\024\n\014default_mode\030\003 \001(\005\"B\n"
+          + "\rVersionToPath\022\022\n\004path\030\001 \001(\tB\004\342A\001\002\022\017\n\007ve"
+          + "rsion\030\002 \001(\t\022\014\n\004mode\030\003 \001(\005\"%\n\020CloudSqlIns"
+          + "tance\022\021\n\tinstances\030\001 \003(\t\"\232\001\n\024EmptyDirVol"
+          + "umeSource\022@\n\006medium\030\001 \001(\01620.google.cloud"
+          + ".run.v2.EmptyDirVolumeSource.Medium\022\022\n\ns"
+          + "ize_limit\030\002 \001(\t\",\n\006Medium\022\026\n\022MEDIUM_UNSP"
+          + "ECIFIED\020\000\022\n\n\006MEMORY\020\001\"\245\002\n\005Probe\022\035\n\025initi"
+          + "al_delay_seconds\030\001 \001(\005\022\027\n\017timeout_second"
+          + "s\030\002 \001(\005\022\026\n\016period_seconds\030\003 \001(\005\022\031\n\021failu"
+          + "re_threshold\030\004 \001(\005\0226\n\010http_get\030\005 \001(\0132\".g"
+          + "oogle.cloud.run.v2.HTTPGetActionH\000\022:\n\ntc"
+          + "p_socket\030\006 \001(\0132$.google.cloud.run.v2.TCP"
+          + "SocketActionH\000\022/\n\004grpc\030\007 \001(\0132\037.google.cl"
+          + "oud.run.v2.GRPCActionH\000B\014\n\nprobe_type\"b\n"
+          + "\rHTTPGetAction\022\014\n\004path\030\001 \001(\t\0225\n\014http_hea"
+          + "ders\030\004 \003(\0132\037.google.cloud.run.v2.HTTPHea"
+          + "der\022\014\n\004port\030\005 \001(\005\"/\n\nHTTPHeader\022\022\n\004name\030"
+          + "\001 \001(\tB\004\342A\001\002\022\r\n\005value\030\002 \001(\t\"\037\n\017TCPSocketA"
+          + "ction\022\014\n\004port\030\001 \001(\005\"+\n\nGRPCAction\022\014\n\004por"
+          + "t\030\001 \001(\005\022\017\n\007service\030\002 \001(\tB\351\003\n\027com.google."
+          + "cloud.run.v2B\013K8sMinProtoP\001Z)cloud.googl"
+          + "e.com/go/run/apiv2/runpb;runpb\352Ax\n!cloud"
+          + "kms.googleapis.com/CryptoKey\022Sprojects/{"
+          + "project}/locations/{location}/keyRings/{"
+          + "key_ring}/cryptoKeys/{crypto_key}\352AJ\n#se"
+          + "cretmanager.googleapis.com/Secret\022#proje"
+          + "cts/{project}/secrets/{secret}\352Ad\n*secre"
+          + "tmanager.googleapis.com/SecretVersion\0226p"
+          + "rojects/{project}/secrets/{secret}/versi"
+          + "ons/{version}\352Ad\n\"vpcaccess.googleapis.c"
+          + "om/Connector\022>projects/{project}/locatio"
+          + "ns/{location}/connectors/{connector}b\006pr"
+          + "oto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -195,6 +205,7 @@ public final class K8sMinProto {
               "WorkingDir",
               "LivenessProbe",
               "StartupProbe",
+              "DependsOn",
             });
     internal_static_google_cloud_run_v2_ResourceRequirements_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -258,7 +269,7 @@ public final class K8sMinProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_run_v2_Volume_descriptor,
             new java.lang.String[] {
-              "Name", "Secret", "CloudSqlInstance", "VolumeType",
+              "Name", "Secret", "CloudSqlInstance", "EmptyDir", "VolumeType",
             });
     internal_static_google_cloud_run_v2_SecretVolumeSource_descriptor =
         getDescriptor().getMessageTypes().get(8);
@@ -284,8 +295,16 @@ public final class K8sMinProto {
             new java.lang.String[] {
               "Instances",
             });
-    internal_static_google_cloud_run_v2_Probe_descriptor =
+    internal_static_google_cloud_run_v2_EmptyDirVolumeSource_descriptor =
         getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_run_v2_EmptyDirVolumeSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_run_v2_EmptyDirVolumeSource_descriptor,
+            new java.lang.String[] {
+              "Medium", "SizeLimit",
+            });
+    internal_static_google_cloud_run_v2_Probe_descriptor =
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_run_v2_Probe_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_run_v2_Probe_descriptor,
@@ -300,7 +319,7 @@ public final class K8sMinProto {
               "ProbeType",
             });
     internal_static_google_cloud_run_v2_HTTPGetAction_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_run_v2_HTTPGetAction_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_run_v2_HTTPGetAction_descriptor,
@@ -308,7 +327,7 @@ public final class K8sMinProto {
               "Path", "HttpHeaders", "Port",
             });
     internal_static_google_cloud_run_v2_HTTPHeader_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_run_v2_HTTPHeader_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_run_v2_HTTPHeader_descriptor,
@@ -316,7 +335,7 @@ public final class K8sMinProto {
               "Name", "Value",
             });
     internal_static_google_cloud_run_v2_TCPSocketAction_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_run_v2_TCPSocketAction_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_run_v2_TCPSocketAction_descriptor,
@@ -324,7 +343,7 @@ public final class K8sMinProto {
               "Port",
             });
     internal_static_google_cloud_run_v2_GRPCAction_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_run_v2_GRPCAction_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_run_v2_GRPCAction_descriptor,

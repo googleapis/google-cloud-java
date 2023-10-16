@@ -24,6 +24,7 @@ import com.google.cloud.documentai.v1.BatchProcessRequest;
 import com.google.cloud.documentai.v1.BatchProcessResponse;
 import com.google.cloud.documentai.v1.DocumentOutputConfig;
 import com.google.cloud.documentai.v1.DocumentProcessorServiceClient;
+import com.google.cloud.documentai.v1.ProcessOptions;
 import com.google.cloud.documentai.v1.ProcessorName;
 
 public class AsyncBatchProcessDocumentsLRO {
@@ -46,6 +47,7 @@ public class AsyncBatchProcessDocumentsLRO {
               .setInputDocuments(BatchDocumentsInputConfig.newBuilder().build())
               .setDocumentOutputConfig(DocumentOutputConfig.newBuilder().build())
               .setSkipHumanReview(true)
+              .setProcessOptions(ProcessOptions.newBuilder().build())
               .build();
       OperationFuture<BatchProcessResponse, BatchProcessMetadata> future =
           documentProcessorServiceClient

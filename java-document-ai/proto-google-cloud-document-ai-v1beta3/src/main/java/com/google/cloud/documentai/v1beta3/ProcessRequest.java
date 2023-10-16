@@ -75,6 +75,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     INLINE_DOCUMENT(4),
     RAW_DOCUMENT(5),
+    GCS_DOCUMENT(8),
     SOURCE_NOT_SET(0);
     private final int value;
 
@@ -97,6 +98,8 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
           return INLINE_DOCUMENT;
         case 5:
           return RAW_DOCUMENT;
+        case 8:
+          return GCS_DOCUMENT;
         case 0:
           return SOURCE_NOT_SET;
         default:
@@ -215,6 +218,57 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.documentai.v1beta3.RawDocument.getDefaultInstance();
   }
 
+  public static final int GCS_DOCUMENT_FIELD_NUMBER = 8;
+  /**
+   *
+   *
+   * <pre>
+   * A raw document on Google Cloud Storage.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.GcsDocument gcs_document = 8;</code>
+   *
+   * @return Whether the gcsDocument field is set.
+   */
+  @java.lang.Override
+  public boolean hasGcsDocument() {
+    return sourceCase_ == 8;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A raw document on Google Cloud Storage.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.GcsDocument gcs_document = 8;</code>
+   *
+   * @return The gcsDocument.
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.GcsDocument getGcsDocument() {
+    if (sourceCase_ == 8) {
+      return (com.google.cloud.documentai.v1beta3.GcsDocument) source_;
+    }
+    return com.google.cloud.documentai.v1beta3.GcsDocument.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A raw document on Google Cloud Storage.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1beta3.GcsDocument gcs_document = 8;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.documentai.v1beta3.GcsDocumentOrBuilder getGcsDocumentOrBuilder() {
+    if (sourceCase_ == 8) {
+      return (com.google.cloud.documentai.v1beta3.GcsDocument) source_;
+    }
+    return com.google.cloud.documentai.v1beta3.GcsDocument.getDefaultInstance();
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -303,7 +357,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=381
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=416
    * @return Whether the document field is set.
    */
   @java.lang.Override
@@ -324,7 +378,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=381
+   *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=416
    * @return The document.
    */
   @java.lang.Override
@@ -513,6 +567,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     if (processOptions_ != null) {
       output.writeMessage(7, getProcessOptions());
     }
+    if (sourceCase_ == 8) {
+      output.writeMessage(8, (com.google.cloud.documentai.v1beta3.GcsDocument) source_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -546,6 +603,11 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     }
     if (processOptions_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getProcessOptions());
+    }
+    if (sourceCase_ == 8) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, (com.google.cloud.documentai.v1beta3.GcsDocument) source_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -585,6 +647,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       case 5:
         if (!getRawDocument().equals(other.getRawDocument())) return false;
         break;
+      case 8:
+        if (!getGcsDocument().equals(other.getGcsDocument())) return false;
+        break;
       case 0:
       default:
     }
@@ -623,6 +688,10 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       case 5:
         hash = (37 * hash) + RAW_DOCUMENT_FIELD_NUMBER;
         hash = (53 * hash) + getRawDocument().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + GCS_DOCUMENT_FIELD_NUMBER;
+        hash = (53 * hash) + getGcsDocument().hashCode();
         break;
       case 0:
       default:
@@ -774,6 +843,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       if (rawDocumentBuilder_ != null) {
         rawDocumentBuilder_.clear();
       }
+      if (gcsDocumentBuilder_ != null) {
+        gcsDocumentBuilder_.clear();
+      }
       name_ = "";
       document_ = null;
       if (documentBuilder_ != null) {
@@ -830,19 +902,19 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.documentai.v1beta3.ProcessRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.document_ = documentBuilder_ == null ? document_ : documentBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.skipHumanReview_ = skipHumanReview_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.fieldMask_ = fieldMaskBuilder_ == null ? fieldMask_ : fieldMaskBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.processOptions_ =
             processOptionsBuilder_ == null ? processOptions_ : processOptionsBuilder_.build();
       }
@@ -856,6 +928,9 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (sourceCase_ == 5 && rawDocumentBuilder_ != null) {
         result.source_ = rawDocumentBuilder_.build();
+      }
+      if (sourceCase_ == 8 && gcsDocumentBuilder_ != null) {
+        result.source_ = gcsDocumentBuilder_.build();
       }
     }
 
@@ -907,7 +982,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasDocument()) {
@@ -931,6 +1006,11 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
         case RAW_DOCUMENT:
           {
             mergeRawDocument(other.getRawDocument());
+            break;
+          }
+        case GCS_DOCUMENT:
+          {
+            mergeGcsDocument(other.getGcsDocument());
             break;
           }
         case SOURCE_NOT_SET:
@@ -967,19 +1047,19 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getDocumentFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 18
             case 24:
               {
                 skipHumanReview_ = input.readBool();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 24
             case 34:
@@ -997,15 +1077,21 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
             case 50:
               {
                 input.readMessage(getFieldMaskFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getProcessOptionsFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(getGcsDocumentFieldBuilder().getBuilder(), extensionRegistry);
+                sourceCase_ = 8;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1457,6 +1543,215 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       return rawDocumentBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.GcsDocument,
+            com.google.cloud.documentai.v1beta3.GcsDocument.Builder,
+            com.google.cloud.documentai.v1beta3.GcsDocumentOrBuilder>
+        gcsDocumentBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A raw document on Google Cloud Storage.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.GcsDocument gcs_document = 8;</code>
+     *
+     * @return Whether the gcsDocument field is set.
+     */
+    @java.lang.Override
+    public boolean hasGcsDocument() {
+      return sourceCase_ == 8;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A raw document on Google Cloud Storage.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.GcsDocument gcs_document = 8;</code>
+     *
+     * @return The gcsDocument.
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.GcsDocument getGcsDocument() {
+      if (gcsDocumentBuilder_ == null) {
+        if (sourceCase_ == 8) {
+          return (com.google.cloud.documentai.v1beta3.GcsDocument) source_;
+        }
+        return com.google.cloud.documentai.v1beta3.GcsDocument.getDefaultInstance();
+      } else {
+        if (sourceCase_ == 8) {
+          return gcsDocumentBuilder_.getMessage();
+        }
+        return com.google.cloud.documentai.v1beta3.GcsDocument.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A raw document on Google Cloud Storage.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.GcsDocument gcs_document = 8;</code>
+     */
+    public Builder setGcsDocument(com.google.cloud.documentai.v1beta3.GcsDocument value) {
+      if (gcsDocumentBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        source_ = value;
+        onChanged();
+      } else {
+        gcsDocumentBuilder_.setMessage(value);
+      }
+      sourceCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A raw document on Google Cloud Storage.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.GcsDocument gcs_document = 8;</code>
+     */
+    public Builder setGcsDocument(
+        com.google.cloud.documentai.v1beta3.GcsDocument.Builder builderForValue) {
+      if (gcsDocumentBuilder_ == null) {
+        source_ = builderForValue.build();
+        onChanged();
+      } else {
+        gcsDocumentBuilder_.setMessage(builderForValue.build());
+      }
+      sourceCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A raw document on Google Cloud Storage.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.GcsDocument gcs_document = 8;</code>
+     */
+    public Builder mergeGcsDocument(com.google.cloud.documentai.v1beta3.GcsDocument value) {
+      if (gcsDocumentBuilder_ == null) {
+        if (sourceCase_ == 8
+            && source_ != com.google.cloud.documentai.v1beta3.GcsDocument.getDefaultInstance()) {
+          source_ =
+              com.google.cloud.documentai.v1beta3.GcsDocument.newBuilder(
+                      (com.google.cloud.documentai.v1beta3.GcsDocument) source_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          source_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceCase_ == 8) {
+          gcsDocumentBuilder_.mergeFrom(value);
+        } else {
+          gcsDocumentBuilder_.setMessage(value);
+        }
+      }
+      sourceCase_ = 8;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A raw document on Google Cloud Storage.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.GcsDocument gcs_document = 8;</code>
+     */
+    public Builder clearGcsDocument() {
+      if (gcsDocumentBuilder_ == null) {
+        if (sourceCase_ == 8) {
+          sourceCase_ = 0;
+          source_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceCase_ == 8) {
+          sourceCase_ = 0;
+          source_ = null;
+        }
+        gcsDocumentBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A raw document on Google Cloud Storage.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.GcsDocument gcs_document = 8;</code>
+     */
+    public com.google.cloud.documentai.v1beta3.GcsDocument.Builder getGcsDocumentBuilder() {
+      return getGcsDocumentFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A raw document on Google Cloud Storage.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.GcsDocument gcs_document = 8;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1beta3.GcsDocumentOrBuilder getGcsDocumentOrBuilder() {
+      if ((sourceCase_ == 8) && (gcsDocumentBuilder_ != null)) {
+        return gcsDocumentBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceCase_ == 8) {
+          return (com.google.cloud.documentai.v1beta3.GcsDocument) source_;
+        }
+        return com.google.cloud.documentai.v1beta3.GcsDocument.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A raw document on Google Cloud Storage.
+     * </pre>
+     *
+     * <code>.google.cloud.documentai.v1beta3.GcsDocument gcs_document = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.documentai.v1beta3.GcsDocument,
+            com.google.cloud.documentai.v1beta3.GcsDocument.Builder,
+            com.google.cloud.documentai.v1beta3.GcsDocumentOrBuilder>
+        getGcsDocumentFieldBuilder() {
+      if (gcsDocumentBuilder_ == null) {
+        if (!(sourceCase_ == 8)) {
+          source_ = com.google.cloud.documentai.v1beta3.GcsDocument.getDefaultInstance();
+        }
+        gcsDocumentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.documentai.v1beta3.GcsDocument,
+                com.google.cloud.documentai.v1beta3.GcsDocument.Builder,
+                com.google.cloud.documentai.v1beta3.GcsDocumentOrBuilder>(
+                (com.google.cloud.documentai.v1beta3.GcsDocument) source_,
+                getParentForChildren(),
+                isClean());
+        source_ = null;
+      }
+      sourceCase_ = 8;
+      onChanged();
+      return gcsDocumentBuilder_;
+    }
+
     private java.lang.Object name_ = "";
     /**
      *
@@ -1552,7 +1847,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1580,7 +1875,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1613,7 +1908,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1637,12 +1932,12 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=381
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=416
      * @return Whether the document field is set.
      */
     @java.lang.Deprecated
     public boolean hasDocument() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1657,7 +1952,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1beta3.Document document = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1beta3.ProcessRequest.document is deprecated. See
-     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=381
+     *     google/cloud/documentai/v1beta3/document_processor_service.proto;l=416
      * @return The document.
      */
     @java.lang.Deprecated
@@ -1692,7 +1987,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         documentBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1716,7 +2011,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         documentBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1735,7 +2030,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Deprecated
     public Builder mergeDocument(com.google.cloud.documentai.v1beta3.Document value) {
       if (documentBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && document_ != null
             && document_ != com.google.cloud.documentai.v1beta3.Document.getDefaultInstance()) {
           getDocumentBuilder().mergeFrom(value);
@@ -1745,7 +2040,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         documentBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1763,7 +2058,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public Builder clearDocument() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       document_ = null;
       if (documentBuilder_ != null) {
         documentBuilder_.dispose();
@@ -1786,7 +2081,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Deprecated
     public com.google.cloud.documentai.v1beta3.Document.Builder getDocumentBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
@@ -1874,7 +2169,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder setSkipHumanReview(boolean value) {
 
       skipHumanReview_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1891,7 +2186,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearSkipHumanReview() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       skipHumanReview_ = false;
       onChanged();
       return this;
@@ -1918,7 +2213,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the fieldMask field is set.
      */
     public boolean hasFieldMask() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      *
@@ -1962,7 +2257,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         fieldMaskBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1984,7 +2279,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         fieldMaskBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2002,7 +2297,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeFieldMask(com.google.protobuf.FieldMask value) {
       if (fieldMaskBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && fieldMask_ != null
             && fieldMask_ != com.google.protobuf.FieldMask.getDefaultInstance()) {
           getFieldMaskBuilder().mergeFrom(value);
@@ -2012,7 +2307,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         fieldMaskBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2029,7 +2324,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
      */
     public Builder clearFieldMask() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       fieldMask_ = null;
       if (fieldMaskBuilder_ != null) {
         fieldMaskBuilder_.dispose();
@@ -2051,7 +2346,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.FieldMask field_mask = 6;</code>
      */
     public com.google.protobuf.FieldMask.Builder getFieldMaskBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getFieldMaskFieldBuilder().getBuilder();
     }
@@ -2121,7 +2416,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the processOptions field is set.
      */
     public boolean hasProcessOptions() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      *
@@ -2161,7 +2456,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         processOptionsBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2181,7 +2476,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         processOptionsBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2196,7 +2491,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeProcessOptions(com.google.cloud.documentai.v1beta3.ProcessOptions value) {
       if (processOptionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && processOptions_ != null
             && processOptions_
                 != com.google.cloud.documentai.v1beta3.ProcessOptions.getDefaultInstance()) {
@@ -2207,7 +2502,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         processOptionsBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2221,7 +2516,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
      */
     public Builder clearProcessOptions() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       processOptions_ = null;
       if (processOptionsBuilder_ != null) {
         processOptionsBuilder_.dispose();
@@ -2240,7 +2535,7 @@ public final class ProcessRequest extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.documentai.v1beta3.ProcessOptions process_options = 7;</code>
      */
     public com.google.cloud.documentai.v1beta3.ProcessOptions.Builder getProcessOptionsBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getProcessOptionsFieldBuilder().getBuilder();
     }

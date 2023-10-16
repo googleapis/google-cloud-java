@@ -832,6 +832,125 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for routerIp.
      */
     com.google.protobuf.ByteString getRouterIpBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Pairing key.
+     * </pre>
+     *
+     * <code>string pairing_key = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return The pairingKey.
+     */
+    java.lang.String getPairingKey();
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Pairing key.
+     * </pre>
+     *
+     * <code>string pairing_key = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return The bytes for pairingKey.
+     */
+    com.google.protobuf.ByteString getPairingKeyBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The QOS policy applied to this VLAN attachment.
+     * This value should be preferred to using qos at vrf level.
+     * </pre>
+     *
+     * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 5;</code>
+     *
+     * @return Whether the qosPolicy field is set.
+     */
+    boolean hasQosPolicy();
+    /**
+     *
+     *
+     * <pre>
+     * The QOS policy applied to this VLAN attachment.
+     * This value should be preferred to using qos at vrf level.
+     * </pre>
+     *
+     * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 5;</code>
+     *
+     * @return The qosPolicy.
+     */
+    com.google.cloud.baremetalsolution.v2.VRF.QosPolicy getQosPolicy();
+    /**
+     *
+     *
+     * <pre>
+     * The QOS policy applied to this VLAN attachment.
+     * This value should be preferred to using qos at vrf level.
+     * </pre>
+     *
+     * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 5;</code>
+     */
+    com.google.cloud.baremetalsolution.v2.VRF.QosPolicyOrBuilder getQosPolicyOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The identifier of the attachment within vrf.
+     * </pre>
+     *
+     * <code>string id = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The identifier of the attachment within vrf.
+     * </pre>
+     *
+     * <code>string id = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString getIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the vlan attachment within vrf. This is of the form
+     * projects/{project_number}/regions/{region}/interconnectAttachments/{interconnect_attachment}
+     * </pre>
+     *
+     * <code>
+     * string interconnect_attachment = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The interconnectAttachment.
+     */
+    java.lang.String getInterconnectAttachment();
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the vlan attachment within vrf. This is of the form
+     * projects/{project_number}/regions/{region}/interconnectAttachments/{interconnect_attachment}
+     * </pre>
+     *
+     * <code>
+     * string interconnect_attachment = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for interconnectAttachment.
+     */
+    com.google.protobuf.ByteString getInterconnectAttachmentBytes();
   }
   /**
    *
@@ -855,6 +974,9 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
     private VlanAttachment() {
       peerIp_ = "";
       routerIp_ = "";
+      pairingKey_ = "";
+      id_ = "";
+      interconnectAttachment_ = "";
     }
 
     @java.lang.Override
@@ -998,6 +1120,218 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int PAIRING_KEY_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object pairingKey_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Pairing key.
+     * </pre>
+     *
+     * <code>string pairing_key = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return The pairingKey.
+     */
+    @java.lang.Override
+    public java.lang.String getPairingKey() {
+      java.lang.Object ref = pairingKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pairingKey_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Pairing key.
+     * </pre>
+     *
+     * <code>string pairing_key = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return The bytes for pairingKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getPairingKeyBytes() {
+      java.lang.Object ref = pairingKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        pairingKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int QOS_POLICY_FIELD_NUMBER = 5;
+    private com.google.cloud.baremetalsolution.v2.VRF.QosPolicy qosPolicy_;
+    /**
+     *
+     *
+     * <pre>
+     * The QOS policy applied to this VLAN attachment.
+     * This value should be preferred to using qos at vrf level.
+     * </pre>
+     *
+     * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 5;</code>
+     *
+     * @return Whether the qosPolicy field is set.
+     */
+    @java.lang.Override
+    public boolean hasQosPolicy() {
+      return qosPolicy_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The QOS policy applied to this VLAN attachment.
+     * This value should be preferred to using qos at vrf level.
+     * </pre>
+     *
+     * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 5;</code>
+     *
+     * @return The qosPolicy.
+     */
+    @java.lang.Override
+    public com.google.cloud.baremetalsolution.v2.VRF.QosPolicy getQosPolicy() {
+      return qosPolicy_ == null
+          ? com.google.cloud.baremetalsolution.v2.VRF.QosPolicy.getDefaultInstance()
+          : qosPolicy_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The QOS policy applied to this VLAN attachment.
+     * This value should be preferred to using qos at vrf level.
+     * </pre>
+     *
+     * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.baremetalsolution.v2.VRF.QosPolicyOrBuilder getQosPolicyOrBuilder() {
+      return qosPolicy_ == null
+          ? com.google.cloud.baremetalsolution.v2.VRF.QosPolicy.getDefaultInstance()
+          : qosPolicy_;
+    }
+
+    public static final int ID_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The identifier of the attachment within vrf.
+     * </pre>
+     *
+     * <code>string id = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The identifier of the attachment within vrf.
+     * </pre>
+     *
+     * <code>string id = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int INTERCONNECT_ATTACHMENT_FIELD_NUMBER = 7;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object interconnectAttachment_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the vlan attachment within vrf. This is of the form
+     * projects/{project_number}/regions/{region}/interconnectAttachments/{interconnect_attachment}
+     * </pre>
+     *
+     * <code>
+     * string interconnect_attachment = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The interconnectAttachment.
+     */
+    @java.lang.Override
+    public java.lang.String getInterconnectAttachment() {
+      java.lang.Object ref = interconnectAttachment_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        interconnectAttachment_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the vlan attachment within vrf. This is of the form
+     * projects/{project_number}/regions/{region}/interconnectAttachments/{interconnect_attachment}
+     * </pre>
+     *
+     * <code>
+     * string interconnect_attachment = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return The bytes for interconnectAttachment.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getInterconnectAttachmentBytes() {
+      java.lang.Object ref = interconnectAttachment_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        interconnectAttachment_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1021,6 +1355,18 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routerIp_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, routerIp_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pairingKey_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, pairingKey_);
+      }
+      if (qosPolicy_ != null) {
+        output.writeMessage(5, getQosPolicy());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(interconnectAttachment_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, interconnectAttachment_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1038,6 +1384,19 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(routerIp_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, routerIp_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(pairingKey_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pairingKey_);
+      }
+      if (qosPolicy_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getQosPolicy());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(interconnectAttachment_)) {
+        size +=
+            com.google.protobuf.GeneratedMessageV3.computeStringSize(7, interconnectAttachment_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1058,6 +1417,13 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       if (getPeerVlanId() != other.getPeerVlanId()) return false;
       if (!getPeerIp().equals(other.getPeerIp())) return false;
       if (!getRouterIp().equals(other.getRouterIp())) return false;
+      if (!getPairingKey().equals(other.getPairingKey())) return false;
+      if (hasQosPolicy() != other.hasQosPolicy()) return false;
+      if (hasQosPolicy()) {
+        if (!getQosPolicy().equals(other.getQosPolicy())) return false;
+      }
+      if (!getId().equals(other.getId())) return false;
+      if (!getInterconnectAttachment().equals(other.getInterconnectAttachment())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1075,6 +1441,16 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getPeerIp().hashCode();
       hash = (37 * hash) + ROUTER_IP_FIELD_NUMBER;
       hash = (53 * hash) + getRouterIp().hashCode();
+      hash = (37 * hash) + PAIRING_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getPairingKey().hashCode();
+      if (hasQosPolicy()) {
+        hash = (37 * hash) + QOS_POLICY_FIELD_NUMBER;
+        hash = (53 * hash) + getQosPolicy().hashCode();
+      }
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + INTERCONNECT_ATTACHMENT_FIELD_NUMBER;
+      hash = (53 * hash) + getInterconnectAttachment().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1220,6 +1596,14 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         peerVlanId_ = 0L;
         peerIp_ = "";
         routerIp_ = "";
+        pairingKey_ = "";
+        qosPolicy_ = null;
+        if (qosPolicyBuilder_ != null) {
+          qosPolicyBuilder_.dispose();
+          qosPolicyBuilder_ = null;
+        }
+        id_ = "";
+        interconnectAttachment_ = "";
         return this;
       }
 
@@ -1264,6 +1648,18 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.routerIp_ = routerIp_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.pairingKey_ = pairingKey_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.qosPolicy_ = qosPolicyBuilder_ == null ? qosPolicy_ : qosPolicyBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.interconnectAttachment_ = interconnectAttachment_;
         }
       }
 
@@ -1328,6 +1724,24 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000004;
           onChanged();
         }
+        if (!other.getPairingKey().isEmpty()) {
+          pairingKey_ = other.pairingKey_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (other.hasQosPolicy()) {
+          mergeQosPolicy(other.getQosPolicy());
+        }
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        if (!other.getInterconnectAttachment().isEmpty()) {
+          interconnectAttachment_ = other.interconnectAttachment_;
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1372,6 +1786,30 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 26
+              case 34:
+                {
+                  pairingKey_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  input.readMessage(getQosPolicyFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
+              case 50:
+                {
+                  id_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
+              case 58:
+                {
+                  interconnectAttachment_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 58
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1656,6 +2094,533 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private java.lang.Object pairingKey_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Input only. Pairing key.
+       * </pre>
+       *
+       * <code>string pairing_key = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+       *
+       * @return The pairingKey.
+       */
+      public java.lang.String getPairingKey() {
+        java.lang.Object ref = pairingKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pairingKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Input only. Pairing key.
+       * </pre>
+       *
+       * <code>string pairing_key = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+       *
+       * @return The bytes for pairingKey.
+       */
+      public com.google.protobuf.ByteString getPairingKeyBytes() {
+        java.lang.Object ref = pairingKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          pairingKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Input only. Pairing key.
+       * </pre>
+       *
+       * <code>string pairing_key = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+       *
+       * @param value The pairingKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPairingKey(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        pairingKey_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Input only. Pairing key.
+       * </pre>
+       *
+       * <code>string pairing_key = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPairingKey() {
+        pairingKey_ = getDefaultInstance().getPairingKey();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Input only. Pairing key.
+       * </pre>
+       *
+       * <code>string pairing_key = 4 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+       *
+       * @param value The bytes for pairingKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPairingKeyBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        pairingKey_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.baremetalsolution.v2.VRF.QosPolicy qosPolicy_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.baremetalsolution.v2.VRF.QosPolicy,
+              com.google.cloud.baremetalsolution.v2.VRF.QosPolicy.Builder,
+              com.google.cloud.baremetalsolution.v2.VRF.QosPolicyOrBuilder>
+          qosPolicyBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The QOS policy applied to this VLAN attachment.
+       * This value should be preferred to using qos at vrf level.
+       * </pre>
+       *
+       * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 5;</code>
+       *
+       * @return Whether the qosPolicy field is set.
+       */
+      public boolean hasQosPolicy() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The QOS policy applied to this VLAN attachment.
+       * This value should be preferred to using qos at vrf level.
+       * </pre>
+       *
+       * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 5;</code>
+       *
+       * @return The qosPolicy.
+       */
+      public com.google.cloud.baremetalsolution.v2.VRF.QosPolicy getQosPolicy() {
+        if (qosPolicyBuilder_ == null) {
+          return qosPolicy_ == null
+              ? com.google.cloud.baremetalsolution.v2.VRF.QosPolicy.getDefaultInstance()
+              : qosPolicy_;
+        } else {
+          return qosPolicyBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The QOS policy applied to this VLAN attachment.
+       * This value should be preferred to using qos at vrf level.
+       * </pre>
+       *
+       * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 5;</code>
+       */
+      public Builder setQosPolicy(com.google.cloud.baremetalsolution.v2.VRF.QosPolicy value) {
+        if (qosPolicyBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          qosPolicy_ = value;
+        } else {
+          qosPolicyBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The QOS policy applied to this VLAN attachment.
+       * This value should be preferred to using qos at vrf level.
+       * </pre>
+       *
+       * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 5;</code>
+       */
+      public Builder setQosPolicy(
+          com.google.cloud.baremetalsolution.v2.VRF.QosPolicy.Builder builderForValue) {
+        if (qosPolicyBuilder_ == null) {
+          qosPolicy_ = builderForValue.build();
+        } else {
+          qosPolicyBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The QOS policy applied to this VLAN attachment.
+       * This value should be preferred to using qos at vrf level.
+       * </pre>
+       *
+       * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 5;</code>
+       */
+      public Builder mergeQosPolicy(com.google.cloud.baremetalsolution.v2.VRF.QosPolicy value) {
+        if (qosPolicyBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)
+              && qosPolicy_ != null
+              && qosPolicy_
+                  != com.google.cloud.baremetalsolution.v2.VRF.QosPolicy.getDefaultInstance()) {
+            getQosPolicyBuilder().mergeFrom(value);
+          } else {
+            qosPolicy_ = value;
+          }
+        } else {
+          qosPolicyBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The QOS policy applied to this VLAN attachment.
+       * This value should be preferred to using qos at vrf level.
+       * </pre>
+       *
+       * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 5;</code>
+       */
+      public Builder clearQosPolicy() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        qosPolicy_ = null;
+        if (qosPolicyBuilder_ != null) {
+          qosPolicyBuilder_.dispose();
+          qosPolicyBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The QOS policy applied to this VLAN attachment.
+       * This value should be preferred to using qos at vrf level.
+       * </pre>
+       *
+       * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 5;</code>
+       */
+      public com.google.cloud.baremetalsolution.v2.VRF.QosPolicy.Builder getQosPolicyBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getQosPolicyFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The QOS policy applied to this VLAN attachment.
+       * This value should be preferred to using qos at vrf level.
+       * </pre>
+       *
+       * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 5;</code>
+       */
+      public com.google.cloud.baremetalsolution.v2.VRF.QosPolicyOrBuilder getQosPolicyOrBuilder() {
+        if (qosPolicyBuilder_ != null) {
+          return qosPolicyBuilder_.getMessageOrBuilder();
+        } else {
+          return qosPolicy_ == null
+              ? com.google.cloud.baremetalsolution.v2.VRF.QosPolicy.getDefaultInstance()
+              : qosPolicy_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The QOS policy applied to this VLAN attachment.
+       * This value should be preferred to using qos at vrf level.
+       * </pre>
+       *
+       * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 5;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.baremetalsolution.v2.VRF.QosPolicy,
+              com.google.cloud.baremetalsolution.v2.VRF.QosPolicy.Builder,
+              com.google.cloud.baremetalsolution.v2.VRF.QosPolicyOrBuilder>
+          getQosPolicyFieldBuilder() {
+        if (qosPolicyBuilder_ == null) {
+          qosPolicyBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.baremetalsolution.v2.VRF.QosPolicy,
+                  com.google.cloud.baremetalsolution.v2.VRF.QosPolicy.Builder,
+                  com.google.cloud.baremetalsolution.v2.VRF.QosPolicyOrBuilder>(
+                  getQosPolicy(), getParentForChildren(), isClean());
+          qosPolicy_ = null;
+        }
+        return qosPolicyBuilder_;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The identifier of the attachment within vrf.
+       * </pre>
+       *
+       * <code>string id = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The identifier of the attachment within vrf.
+       * </pre>
+       *
+       * <code>string id = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The identifier of the attachment within vrf.
+       * </pre>
+       *
+       * <code>string id = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        id_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The identifier of the attachment within vrf.
+       * </pre>
+       *
+       * <code>string id = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The identifier of the attachment within vrf.
+       * </pre>
+       *
+       * <code>string id = 6 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        id_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object interconnectAttachment_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the vlan attachment within vrf. This is of the form
+       * projects/{project_number}/regions/{region}/interconnectAttachments/{interconnect_attachment}
+       * </pre>
+       *
+       * <code>
+       * string interconnect_attachment = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The interconnectAttachment.
+       */
+      public java.lang.String getInterconnectAttachment() {
+        java.lang.Object ref = interconnectAttachment_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          interconnectAttachment_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the vlan attachment within vrf. This is of the form
+       * projects/{project_number}/regions/{region}/interconnectAttachments/{interconnect_attachment}
+       * </pre>
+       *
+       * <code>
+       * string interconnect_attachment = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return The bytes for interconnectAttachment.
+       */
+      public com.google.protobuf.ByteString getInterconnectAttachmentBytes() {
+        java.lang.Object ref = interconnectAttachment_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          interconnectAttachment_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the vlan attachment within vrf. This is of the form
+       * projects/{project_number}/regions/{region}/interconnectAttachments/{interconnect_attachment}
+       * </pre>
+       *
+       * <code>
+       * string interconnect_attachment = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The interconnectAttachment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInterconnectAttachment(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        interconnectAttachment_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the vlan attachment within vrf. This is of the form
+       * projects/{project_number}/regions/{region}/interconnectAttachments/{interconnect_attachment}
+       * </pre>
+       *
+       * <code>
+       * string interconnect_attachment = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearInterconnectAttachment() {
+        interconnectAttachment_ = getDefaultInstance().getInterconnectAttachment();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the vlan attachment within vrf. This is of the form
+       * projects/{project_number}/regions/{region}/interconnectAttachments/{interconnect_attachment}
+       * </pre>
+       *
+       * <code>
+       * string interconnect_attachment = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+       * </code>
+       *
+       * @param value The bytes for interconnectAttachment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInterconnectAttachmentBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        interconnectAttachment_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1813,6 +2778,9 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The QOS policy applied to this VRF.
+   * The value is only meaningful when all the vlan attachments have the same
+   * QoS. This field should not be used for new integrations, use vlan
+   * attachment level qos instead. The field is left for backward-compatibility.
    * </pre>
    *
    * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 6;</code>
@@ -1828,6 +2796,9 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The QOS policy applied to this VRF.
+   * The value is only meaningful when all the vlan attachments have the same
+   * QoS. This field should not be used for new integrations, use vlan
+   * attachment level qos instead. The field is left for backward-compatibility.
    * </pre>
    *
    * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 6;</code>
@@ -1845,6 +2816,9 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The QOS policy applied to this VRF.
+   * The value is only meaningful when all the vlan attachments have the same
+   * QoS. This field should not be used for new integrations, use vlan
+   * attachment level qos instead. The field is left for backward-compatibility.
    * </pre>
    *
    * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 6;</code>
@@ -2607,6 +3581,9 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The QOS policy applied to this VRF.
+     * The value is only meaningful when all the vlan attachments have the same
+     * QoS. This field should not be used for new integrations, use vlan
+     * attachment level qos instead. The field is left for backward-compatibility.
      * </pre>
      *
      * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 6;</code>
@@ -2621,6 +3598,9 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The QOS policy applied to this VRF.
+     * The value is only meaningful when all the vlan attachments have the same
+     * QoS. This field should not be used for new integrations, use vlan
+     * attachment level qos instead. The field is left for backward-compatibility.
      * </pre>
      *
      * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 6;</code>
@@ -2641,6 +3621,9 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The QOS policy applied to this VRF.
+     * The value is only meaningful when all the vlan attachments have the same
+     * QoS. This field should not be used for new integrations, use vlan
+     * attachment level qos instead. The field is left for backward-compatibility.
      * </pre>
      *
      * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 6;</code>
@@ -2663,6 +3646,9 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The QOS policy applied to this VRF.
+     * The value is only meaningful when all the vlan attachments have the same
+     * QoS. This field should not be used for new integrations, use vlan
+     * attachment level qos instead. The field is left for backward-compatibility.
      * </pre>
      *
      * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 6;</code>
@@ -2683,6 +3669,9 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The QOS policy applied to this VRF.
+     * The value is only meaningful when all the vlan attachments have the same
+     * QoS. This field should not be used for new integrations, use vlan
+     * attachment level qos instead. The field is left for backward-compatibility.
      * </pre>
      *
      * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 6;</code>
@@ -2709,6 +3698,9 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The QOS policy applied to this VRF.
+     * The value is only meaningful when all the vlan attachments have the same
+     * QoS. This field should not be used for new integrations, use vlan
+     * attachment level qos instead. The field is left for backward-compatibility.
      * </pre>
      *
      * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 6;</code>
@@ -2728,6 +3720,9 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The QOS policy applied to this VRF.
+     * The value is only meaningful when all the vlan attachments have the same
+     * QoS. This field should not be used for new integrations, use vlan
+     * attachment level qos instead. The field is left for backward-compatibility.
      * </pre>
      *
      * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 6;</code>
@@ -2742,6 +3737,9 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The QOS policy applied to this VRF.
+     * The value is only meaningful when all the vlan attachments have the same
+     * QoS. This field should not be used for new integrations, use vlan
+     * attachment level qos instead. The field is left for backward-compatibility.
      * </pre>
      *
      * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 6;</code>
@@ -2760,6 +3758,9 @@ public final class VRF extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The QOS policy applied to this VRF.
+     * The value is only meaningful when all the vlan attachments have the same
+     * QoS. This field should not be used for new integrations, use vlan
+     * attachment level qos instead. The field is left for backward-compatibility.
      * </pre>
      *
      * <code>.google.cloud.baremetalsolution.v2.VRF.QosPolicy qos_policy = 6;</code>

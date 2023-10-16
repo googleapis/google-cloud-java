@@ -32,7 +32,7 @@ public final class AlloyDBAdminGrpc {
 
   private AlloyDBAdminGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.alloydb.v1.AlloyDBAdmin";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.alloydb.v1.AlloyDBAdmin";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1084,6 +1084,103 @@ public final class AlloyDBAdminGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.GenerateClientCertificateRequest,
+          com.google.cloud.alloydb.v1.GenerateClientCertificateResponse>
+      getGenerateClientCertificateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateClientCertificate",
+      requestType = com.google.cloud.alloydb.v1.GenerateClientCertificateRequest.class,
+      responseType = com.google.cloud.alloydb.v1.GenerateClientCertificateResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.GenerateClientCertificateRequest,
+          com.google.cloud.alloydb.v1.GenerateClientCertificateResponse>
+      getGenerateClientCertificateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.alloydb.v1.GenerateClientCertificateRequest,
+            com.google.cloud.alloydb.v1.GenerateClientCertificateResponse>
+        getGenerateClientCertificateMethod;
+    if ((getGenerateClientCertificateMethod = AlloyDBAdminGrpc.getGenerateClientCertificateMethod)
+        == null) {
+      synchronized (AlloyDBAdminGrpc.class) {
+        if ((getGenerateClientCertificateMethod =
+                AlloyDBAdminGrpc.getGenerateClientCertificateMethod)
+            == null) {
+          AlloyDBAdminGrpc.getGenerateClientCertificateMethod =
+              getGenerateClientCertificateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.alloydb.v1.GenerateClientCertificateRequest,
+                          com.google.cloud.alloydb.v1.GenerateClientCertificateResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GenerateClientCertificate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1.GenerateClientCertificateRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1.GenerateClientCertificateResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlloyDBAdminMethodDescriptorSupplier("GenerateClientCertificate"))
+                      .build();
+        }
+      }
+    }
+    return getGenerateClientCertificateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.GetConnectionInfoRequest,
+          com.google.cloud.alloydb.v1.ConnectionInfo>
+      getGetConnectionInfoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetConnectionInfo",
+      requestType = com.google.cloud.alloydb.v1.GetConnectionInfoRequest.class,
+      responseType = com.google.cloud.alloydb.v1.ConnectionInfo.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1.GetConnectionInfoRequest,
+          com.google.cloud.alloydb.v1.ConnectionInfo>
+      getGetConnectionInfoMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.alloydb.v1.GetConnectionInfoRequest,
+            com.google.cloud.alloydb.v1.ConnectionInfo>
+        getGetConnectionInfoMethod;
+    if ((getGetConnectionInfoMethod = AlloyDBAdminGrpc.getGetConnectionInfoMethod) == null) {
+      synchronized (AlloyDBAdminGrpc.class) {
+        if ((getGetConnectionInfoMethod = AlloyDBAdminGrpc.getGetConnectionInfoMethod) == null) {
+          AlloyDBAdminGrpc.getGetConnectionInfoMethod =
+              getGetConnectionInfoMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.alloydb.v1.GetConnectionInfoRequest,
+                          com.google.cloud.alloydb.v1.ConnectionInfo>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetConnectionInfo"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1.GetConnectionInfoRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1.ConnectionInfo.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlloyDBAdminMethodDescriptorSupplier("GetConnectionInfo"))
+                      .build();
+        }
+      }
+    }
+    return getGetConnectionInfoMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.alloydb.v1.ListUsersRequest,
           com.google.cloud.alloydb.v1.ListUsersResponse>
       getListUsersMethod;
@@ -1701,6 +1798,39 @@ public final class AlloyDBAdminGrpc {
      *
      *
      * <pre>
+     * Generate a client certificate signed by a Cluster CA.
+     * The sole purpose of this endpoint is to support AlloyDB connectors and the
+     * Auth Proxy client. The endpoint's behavior is subject to change without
+     * notice, so do not rely on its behavior remaining constant. Future changes
+     * will not break AlloyDB connectors or the Auth Proxy client.
+     * </pre>
+     */
+    default void generateClientCertificate(
+        com.google.cloud.alloydb.v1.GenerateClientCertificateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1.GenerateClientCertificateResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGenerateClientCertificateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get instance metadata used for a connection.
+     * </pre>
+     */
+    default void getConnectionInfo(
+        com.google.cloud.alloydb.v1.GetConnectionInfoRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1.ConnectionInfo> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetConnectionInfoMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Users in a given project and location.
      * </pre>
      */
@@ -2205,6 +2335,43 @@ public final class AlloyDBAdminGrpc {
      *
      *
      * <pre>
+     * Generate a client certificate signed by a Cluster CA.
+     * The sole purpose of this endpoint is to support AlloyDB connectors and the
+     * Auth Proxy client. The endpoint's behavior is subject to change without
+     * notice, so do not rely on its behavior remaining constant. Future changes
+     * will not break AlloyDB connectors or the Auth Proxy client.
+     * </pre>
+     */
+    public void generateClientCertificate(
+        com.google.cloud.alloydb.v1.GenerateClientCertificateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1.GenerateClientCertificateResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGenerateClientCertificateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get instance metadata used for a connection.
+     * </pre>
+     */
+    public void getConnectionInfo(
+        com.google.cloud.alloydb.v1.GetConnectionInfoRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1.ConnectionInfo> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetConnectionInfoMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Users in a given project and location.
      * </pre>
      */
@@ -2622,6 +2789,36 @@ public final class AlloyDBAdminGrpc {
             com.google.cloud.alloydb.v1.ListSupportedDatabaseFlagsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListSupportedDatabaseFlagsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Generate a client certificate signed by a Cluster CA.
+     * The sole purpose of this endpoint is to support AlloyDB connectors and the
+     * Auth Proxy client. The endpoint's behavior is subject to change without
+     * notice, so do not rely on its behavior remaining constant. Future changes
+     * will not break AlloyDB connectors or the Auth Proxy client.
+     * </pre>
+     */
+    public com.google.cloud.alloydb.v1.GenerateClientCertificateResponse generateClientCertificate(
+        com.google.cloud.alloydb.v1.GenerateClientCertificateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateClientCertificateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get instance metadata used for a connection.
+     * </pre>
+     */
+    public com.google.cloud.alloydb.v1.ConnectionInfo getConnectionInfo(
+        com.google.cloud.alloydb.v1.GetConnectionInfoRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetConnectionInfoMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3050,6 +3247,39 @@ public final class AlloyDBAdminGrpc {
      *
      *
      * <pre>
+     * Generate a client certificate signed by a Cluster CA.
+     * The sole purpose of this endpoint is to support AlloyDB connectors and the
+     * Auth Proxy client. The endpoint's behavior is subject to change without
+     * notice, so do not rely on its behavior remaining constant. Future changes
+     * will not break AlloyDB connectors or the Auth Proxy client.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.alloydb.v1.GenerateClientCertificateResponse>
+        generateClientCertificate(
+            com.google.cloud.alloydb.v1.GenerateClientCertificateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGenerateClientCertificateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get instance metadata used for a connection.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.alloydb.v1.ConnectionInfo>
+        getConnectionInfo(com.google.cloud.alloydb.v1.GetConnectionInfoRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetConnectionInfoMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists Users in a given project and location.
      * </pre>
      */
@@ -3137,11 +3367,13 @@ public final class AlloyDBAdminGrpc {
   private static final int METHODID_UPDATE_BACKUP = 21;
   private static final int METHODID_DELETE_BACKUP = 22;
   private static final int METHODID_LIST_SUPPORTED_DATABASE_FLAGS = 23;
-  private static final int METHODID_LIST_USERS = 24;
-  private static final int METHODID_GET_USER = 25;
-  private static final int METHODID_CREATE_USER = 26;
-  private static final int METHODID_UPDATE_USER = 27;
-  private static final int METHODID_DELETE_USER = 28;
+  private static final int METHODID_GENERATE_CLIENT_CERTIFICATE = 24;
+  private static final int METHODID_GET_CONNECTION_INFO = 25;
+  private static final int METHODID_LIST_USERS = 26;
+  private static final int METHODID_GET_USER = 27;
+  private static final int METHODID_CREATE_USER = 28;
+  private static final int METHODID_UPDATE_USER = 29;
+  private static final int METHODID_DELETE_USER = 30;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -3283,6 +3515,19 @@ public final class AlloyDBAdminGrpc {
               (com.google.cloud.alloydb.v1.ListSupportedDatabaseFlagsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.alloydb.v1.ListSupportedDatabaseFlagsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GENERATE_CLIENT_CERTIFICATE:
+          serviceImpl.generateClientCertificate(
+              (com.google.cloud.alloydb.v1.GenerateClientCertificateRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.alloydb.v1.GenerateClientCertificateResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_CONNECTION_INFO:
+          serviceImpl.getConnectionInfo(
+              (com.google.cloud.alloydb.v1.GetConnectionInfoRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1.ConnectionInfo>)
                   responseObserver);
           break;
         case METHODID_LIST_USERS:
@@ -3478,6 +3723,20 @@ public final class AlloyDBAdminGrpc {
                     com.google.cloud.alloydb.v1.ListSupportedDatabaseFlagsResponse>(
                     service, METHODID_LIST_SUPPORTED_DATABASE_FLAGS)))
         .addMethod(
+            getGenerateClientCertificateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.alloydb.v1.GenerateClientCertificateRequest,
+                    com.google.cloud.alloydb.v1.GenerateClientCertificateResponse>(
+                    service, METHODID_GENERATE_CLIENT_CERTIFICATE)))
+        .addMethod(
+            getGetConnectionInfoMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.alloydb.v1.GetConnectionInfoRequest,
+                    com.google.cloud.alloydb.v1.ConnectionInfo>(
+                    service, METHODID_GET_CONNECTION_INFO)))
+        .addMethod(
             getListUsersMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -3534,9 +3793,9 @@ public final class AlloyDBAdminGrpc {
   private static final class AlloyDBAdminMethodDescriptorSupplier
       extends AlloyDBAdminBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    AlloyDBAdminMethodDescriptorSupplier(String methodName) {
+    AlloyDBAdminMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -3582,6 +3841,8 @@ public final class AlloyDBAdminGrpc {
                       .addMethod(getUpdateBackupMethod())
                       .addMethod(getDeleteBackupMethod())
                       .addMethod(getListSupportedDatabaseFlagsMethod())
+                      .addMethod(getGenerateClientCertificateMethod())
+                      .addMethod(getGetConnectionInfoMethod())
                       .addMethod(getListUsersMethod())
                       .addMethod(getGetUserMethod())
                       .addMethod(getCreateUserMethod())

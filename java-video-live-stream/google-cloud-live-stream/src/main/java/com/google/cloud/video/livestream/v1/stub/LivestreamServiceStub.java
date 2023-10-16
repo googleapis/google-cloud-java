@@ -16,6 +16,7 @@
 
 package com.google.cloud.video.livestream.v1.stub;
 
+import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListAssetsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListChannelsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListEventsPagedResponse;
 import static com.google.cloud.video.livestream.v1.LivestreamServiceClient.ListInputsPagedResponse;
@@ -28,19 +29,26 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.cloud.video.livestream.v1.Asset;
 import com.google.cloud.video.livestream.v1.Channel;
 import com.google.cloud.video.livestream.v1.ChannelOperationResponse;
+import com.google.cloud.video.livestream.v1.CreateAssetRequest;
 import com.google.cloud.video.livestream.v1.CreateChannelRequest;
 import com.google.cloud.video.livestream.v1.CreateEventRequest;
 import com.google.cloud.video.livestream.v1.CreateInputRequest;
+import com.google.cloud.video.livestream.v1.DeleteAssetRequest;
 import com.google.cloud.video.livestream.v1.DeleteChannelRequest;
 import com.google.cloud.video.livestream.v1.DeleteEventRequest;
 import com.google.cloud.video.livestream.v1.DeleteInputRequest;
 import com.google.cloud.video.livestream.v1.Event;
+import com.google.cloud.video.livestream.v1.GetAssetRequest;
 import com.google.cloud.video.livestream.v1.GetChannelRequest;
 import com.google.cloud.video.livestream.v1.GetEventRequest;
 import com.google.cloud.video.livestream.v1.GetInputRequest;
+import com.google.cloud.video.livestream.v1.GetPoolRequest;
 import com.google.cloud.video.livestream.v1.Input;
+import com.google.cloud.video.livestream.v1.ListAssetsRequest;
+import com.google.cloud.video.livestream.v1.ListAssetsResponse;
 import com.google.cloud.video.livestream.v1.ListChannelsRequest;
 import com.google.cloud.video.livestream.v1.ListChannelsResponse;
 import com.google.cloud.video.livestream.v1.ListEventsRequest;
@@ -48,10 +56,12 @@ import com.google.cloud.video.livestream.v1.ListEventsResponse;
 import com.google.cloud.video.livestream.v1.ListInputsRequest;
 import com.google.cloud.video.livestream.v1.ListInputsResponse;
 import com.google.cloud.video.livestream.v1.OperationMetadata;
+import com.google.cloud.video.livestream.v1.Pool;
 import com.google.cloud.video.livestream.v1.StartChannelRequest;
 import com.google.cloud.video.livestream.v1.StopChannelRequest;
 import com.google.cloud.video.livestream.v1.UpdateChannelRequest;
 import com.google.cloud.video.livestream.v1.UpdateInputRequest;
+import com.google.cloud.video.livestream.v1.UpdatePoolRequest;
 import com.google.longrunning.Operation;
 import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
@@ -188,6 +198,49 @@ public abstract class LivestreamServiceStub implements BackgroundResource {
 
   public UnaryCallable<DeleteEventRequest, Empty> deleteEventCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteEventCallable()");
+  }
+
+  public OperationCallable<CreateAssetRequest, Asset, OperationMetadata>
+      createAssetOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createAssetOperationCallable()");
+  }
+
+  public UnaryCallable<CreateAssetRequest, Operation> createAssetCallable() {
+    throw new UnsupportedOperationException("Not implemented: createAssetCallable()");
+  }
+
+  public OperationCallable<DeleteAssetRequest, Empty, OperationMetadata>
+      deleteAssetOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAssetOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteAssetRequest, Operation> deleteAssetCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteAssetCallable()");
+  }
+
+  public UnaryCallable<GetAssetRequest, Asset> getAssetCallable() {
+    throw new UnsupportedOperationException("Not implemented: getAssetCallable()");
+  }
+
+  public UnaryCallable<ListAssetsRequest, ListAssetsPagedResponse> listAssetsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAssetsPagedCallable()");
+  }
+
+  public UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listAssetsCallable()");
+  }
+
+  public UnaryCallable<GetPoolRequest, Pool> getPoolCallable() {
+    throw new UnsupportedOperationException("Not implemented: getPoolCallable()");
+  }
+
+  public OperationCallable<UpdatePoolRequest, Pool, OperationMetadata>
+      updatePoolOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updatePoolOperationCallable()");
+  }
+
+  public UnaryCallable<UpdatePoolRequest, Operation> updatePoolCallable() {
+    throw new UnsupportedOperationException("Not implemented: updatePoolCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

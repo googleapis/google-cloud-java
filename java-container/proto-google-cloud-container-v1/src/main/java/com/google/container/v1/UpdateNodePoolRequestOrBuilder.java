@@ -35,7 +35,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2537
+   *     google/container/v1/cluster_service.proto;l=2606
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -52,7 +52,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string project_id = 1 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2537
+   *     google/container/v1/cluster_service.proto;l=2606
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -71,7 +71,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2543
+   *     google/container/v1/cluster_service.proto;l=2612
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -89,7 +89,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2543
+   *     google/container/v1/cluster_service.proto;l=2612
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -106,7 +106,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2547
+   *     google/container/v1/cluster_service.proto;l=2616
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -122,7 +122,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string cluster_id = 3 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2547
+   *     google/container/v1/cluster_service.proto;l=2616
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -139,7 +139,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2551
+   *     google/container/v1/cluster_service.proto;l=2620
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -155,7 +155,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string node_pool_id = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2551
+   *     google/container/v1/cluster_service.proto;l=2620
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated
@@ -908,4 +908,82 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>.google.container.v1.WindowsNodeConfig windows_node_config = 34;</code>
    */
   com.google.container.v1.WindowsNodeConfigOrBuilder getWindowsNodeConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired [Google Compute Engine machine
+   * type](https://cloud.google.com/compute/docs/machine-types) for nodes in the
+   * node pool. Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified machine type.
+   * </pre>
+   *
+   * <code>string machine_type = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The machineType.
+   */
+  java.lang.String getMachineType();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired [Google Compute Engine machine
+   * type](https://cloud.google.com/compute/docs/machine-types) for nodes in the
+   * node pool. Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified machine type.
+   * </pre>
+   *
+   * <code>string machine_type = 36 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for machineType.
+   */
+  com.google.protobuf.ByteString getMachineTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired disk type (e.g. 'pd-standard', 'pd-ssd' or
+   * 'pd-balanced') for nodes in the node pool.
+   * Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified disk type.
+   * </pre>
+   *
+   * <code>string disk_type = 37 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The diskType.
+   */
+  java.lang.String getDiskType();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired disk type (e.g. 'pd-standard', 'pd-ssd' or
+   * 'pd-balanced') for nodes in the node pool.
+   * Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified disk type.
+   * </pre>
+   *
+   * <code>string disk_type = 37 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for diskType.
+   */
+  com.google.protobuf.ByteString getDiskTypeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The desired disk size for nodes in the node pool specified in GB.
+   * The smallest allowed disk size is 10GB.
+   * Initiates an upgrade operation that migrates the nodes in the
+   * node pool to the specified disk size.
+   * </pre>
+   *
+   * <code>int64 disk_size_gb = 38 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The diskSizeGb.
+   */
+  long getDiskSizeGb();
 }

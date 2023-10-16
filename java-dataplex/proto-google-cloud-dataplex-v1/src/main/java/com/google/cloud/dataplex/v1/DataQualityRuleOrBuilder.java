@@ -27,7 +27,7 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value lies between a
+   * Row-level rule which evaluates whether each column value lies between a
    * specified range.
    * </pre>
    *
@@ -40,7 +40,7 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value lies between a
+   * Row-level rule which evaluates whether each column value lies between a
    * specified range.
    * </pre>
    *
@@ -53,7 +53,7 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value lies between a
+   * Row-level rule which evaluates whether each column value lies between a
    * specified range.
    * </pre>
    *
@@ -66,7 +66,7 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value is null.
+   * Row-level rule which evaluates whether each column value is null.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation non_null_expectation = 2;
@@ -79,7 +79,7 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value is null.
+   * Row-level rule which evaluates whether each column value is null.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation non_null_expectation = 2;
@@ -92,7 +92,7 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value is null.
+   * Row-level rule which evaluates whether each column value is null.
    * </pre>
    *
    * <code>.google.cloud.dataplex.v1.DataQualityRule.NonNullExpectation non_null_expectation = 2;
@@ -105,7 +105,7 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value is contained by
+   * Row-level rule which evaluates whether each column value is contained by
    * a specified set.
    * </pre>
    *
@@ -118,7 +118,7 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value is contained by
+   * Row-level rule which evaluates whether each column value is contained by
    * a specified set.
    * </pre>
    *
@@ -131,7 +131,7 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value is contained by
+   * Row-level rule which evaluates whether each column value is contained by
    * a specified set.
    * </pre>
    *
@@ -143,7 +143,7 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value matches a
+   * Row-level rule which evaluates whether each column value matches a
    * specified regex.
    * </pre>
    *
@@ -156,7 +156,7 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value matches a
+   * Row-level rule which evaluates whether each column value matches a
    * specified regex.
    * </pre>
    *
@@ -169,7 +169,7 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * ColumnMap rule which evaluates whether each column value matches a
+   * Row-level rule which evaluates whether each column value matches a
    * specified regex.
    * </pre>
    *
@@ -182,7 +182,7 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * ColumnAggregate rule which evaluates whether the column has duplicates.
+   * Row-level rule which evaluates whether each column value is unique.
    * </pre>
    *
    * <code>
@@ -196,7 +196,7 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * ColumnAggregate rule which evaluates whether the column has duplicates.
+   * Row-level rule which evaluates whether each column value is unique.
    * </pre>
    *
    * <code>
@@ -210,7 +210,7 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * ColumnAggregate rule which evaluates whether the column has duplicates.
+   * Row-level rule which evaluates whether each column value is unique.
    * </pre>
    *
    * <code>
@@ -224,7 +224,7 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * ColumnAggregate rule which evaluates whether the column aggregate
+   * Aggregate rule which evaluates whether the column aggregate
    * statistic lies between a specified range.
    * </pre>
    *
@@ -239,7 +239,7 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * ColumnAggregate rule which evaluates whether the column aggregate
+   * Aggregate rule which evaluates whether the column aggregate
    * statistic lies between a specified range.
    * </pre>
    *
@@ -255,7 +255,7 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * ColumnAggregate rule which evaluates whether the column aggregate
+   * Aggregate rule which evaluates whether the column aggregate
    * statistic lies between a specified range.
    * </pre>
    *
@@ -270,8 +270,8 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * Table rule which evaluates whether each row passes the specified
-   * condition.
+   * Row-level rule which evaluates whether each row in a table passes the
+   * specified condition.
    * </pre>
    *
    * <code>
@@ -285,8 +285,8 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * Table rule which evaluates whether each row passes the specified
-   * condition.
+   * Row-level rule which evaluates whether each row in a table passes the
+   * specified condition.
    * </pre>
    *
    * <code>
@@ -300,8 +300,8 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * Table rule which evaluates whether each row passes the specified
-   * condition.
+   * Row-level rule which evaluates whether each row in a table passes the
+   * specified condition.
    * </pre>
    *
    * <code>
@@ -315,7 +315,8 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * Table rule which evaluates whether the provided expression is true.
+   * Aggregate rule which evaluates whether the provided expression is true
+   * for a table.
    * </pre>
    *
    * <code>
@@ -329,7 +330,8 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * Table rule which evaluates whether the provided expression is true.
+   * Aggregate rule which evaluates whether the provided expression is true
+   * for a table.
    * </pre>
    *
    * <code>
@@ -344,7 +346,8 @@ public interface DataQualityRuleOrBuilder
    *
    *
    * <pre>
-   * Table rule which evaluates whether the provided expression is true.
+   * Aggregate rule which evaluates whether the provided expression is true
+   * for a table.
    * </pre>
    *
    * <code>
@@ -387,7 +390,7 @@ public interface DataQualityRuleOrBuilder
    * `ignore_null` is `true`. In that case, such `null` rows are trivially
    * considered passing.
    *
-   * Only applicable to ColumnMap rules.
+   * This field is only valid for row-level type rules.
    * </pre>
    *
    * <code>bool ignore_null = 501 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -433,6 +436,8 @@ public interface DataQualityRuleOrBuilder
    * pass this rule, with a range of [0.0, 1.0].
    *
    * 0 indicates default value (i.e. 1.0).
+   *
+   * This field is only valid for row-level type rules.
    * </pre>
    *
    * <code>double threshold = 503 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -440,6 +445,72 @@ public interface DataQualityRuleOrBuilder
    * @return The threshold.
    */
   double getThreshold();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A mutable name for the rule.
+   *
+   * * The name must contain only letters (a-z, A-Z), numbers (0-9), or
+   * hyphens (-).
+   * * The maximum length is 63 characters.
+   * * Must start with a letter.
+   * * Must end with a number or a letter.
+   * </pre>
+   *
+   * <code>string name = 504 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A mutable name for the rule.
+   *
+   * * The name must contain only letters (a-z, A-Z), numbers (0-9), or
+   * hyphens (-).
+   * * The maximum length is 63 characters.
+   * * Must start with a letter.
+   * * Must end with a number or a letter.
+   * </pre>
+   *
+   * <code>string name = 504 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Description of the rule.
+   *
+   * * The maximum length is 1,024 characters.
+   * </pre>
+   *
+   * <code>string description = 505 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
+   */
+  java.lang.String getDescription();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Description of the rule.
+   *
+   * * The maximum length is 1,024 characters.
+   * </pre>
+   *
+   * <code>string description = 505 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
 
   com.google.cloud.dataplex.v1.DataQualityRule.RuleTypeCase getRuleTypeCase();
 }

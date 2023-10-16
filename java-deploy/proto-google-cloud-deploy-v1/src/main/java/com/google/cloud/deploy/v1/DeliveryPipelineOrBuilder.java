@@ -105,7 +105,7 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy.
+   * user, and not by Cloud Deploy.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -116,7 +116,7 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy.
+   * user, and not by Cloud Deploy.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -130,7 +130,7 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy.
+   * user, and not by Cloud Deploy.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -141,7 +141,7 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy.
+   * user, and not by Cloud Deploy.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -156,7 +156,7 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy.
+   * user, and not by Cloud Deploy.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -168,8 +168,7 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -189,8 +188,7 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -213,8 +211,7 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -234,8 +231,7 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -259,8 +255,7 @@ public interface DeliveryPipelineOrBuilder
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.

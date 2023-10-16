@@ -22,8 +22,8 @@ package com.google.cloud.translate.v3;
  *
  *
  * <pre>
- * Configures which glossary should be used for a specific target language,
- * and defines options for applying that glossary.
+ * Configures which glossary is used for a specific target language and defines
+ * options for applying that glossary.
  * </pre>
  *
  * Protobuf type {@code google.cloud.translation.v3.TranslateTextGlossaryConfig}
@@ -316,8 +316,8 @@ public final class TranslateTextGlossaryConfig extends com.google.protobuf.Gener
    *
    *
    * <pre>
-   * Configures which glossary should be used for a specific target language,
-   * and defines options for applying that glossary.
+   * Configures which glossary is used for a specific target language and defines
+   * options for applying that glossary.
    * </pre>
    *
    * Protobuf type {@code google.cloud.translation.v3.TranslateTextGlossaryConfig}

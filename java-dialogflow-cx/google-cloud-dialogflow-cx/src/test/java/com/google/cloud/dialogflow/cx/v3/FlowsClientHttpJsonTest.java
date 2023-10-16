@@ -98,6 +98,8 @@ public class FlowsClientHttpJsonTest {
             .addAllEventHandlers(new ArrayList<EventHandler>())
             .addAllTransitionRouteGroups(new ArrayList<String>())
             .setNluSettings(NluSettings.newBuilder().build())
+            .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -150,6 +152,8 @@ public class FlowsClientHttpJsonTest {
             .addAllEventHandlers(new ArrayList<EventHandler>())
             .addAllTransitionRouteGroups(new ArrayList<String>())
             .setNluSettings(NluSettings.newBuilder().build())
+            .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -383,6 +387,8 @@ public class FlowsClientHttpJsonTest {
             .addAllEventHandlers(new ArrayList<EventHandler>())
             .addAllTransitionRouteGroups(new ArrayList<String>())
             .setNluSettings(NluSettings.newBuilder().build())
+            .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -433,6 +439,8 @@ public class FlowsClientHttpJsonTest {
             .addAllEventHandlers(new ArrayList<EventHandler>())
             .addAllTransitionRouteGroups(new ArrayList<String>())
             .setNluSettings(NluSettings.newBuilder().build())
+            .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -484,6 +492,8 @@ public class FlowsClientHttpJsonTest {
             .addAllEventHandlers(new ArrayList<EventHandler>())
             .addAllTransitionRouteGroups(new ArrayList<String>())
             .setNluSettings(NluSettings.newBuilder().build())
+            .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -496,6 +506,8 @@ public class FlowsClientHttpJsonTest {
             .addAllEventHandlers(new ArrayList<EventHandler>())
             .addAllTransitionRouteGroups(new ArrayList<String>())
             .setNluSettings(NluSettings.newBuilder().build())
+            .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+            .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -534,6 +546,8 @@ public class FlowsClientHttpJsonTest {
               .addAllEventHandlers(new ArrayList<EventHandler>())
               .addAllTransitionRouteGroups(new ArrayList<String>())
               .setNluSettings(NluSettings.newBuilder().build())
+              .setAdvancedSettings(AdvancedSettings.newBuilder().build())
+              .setKnowledgeConnectorSettings(KnowledgeConnectorSettings.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateFlow(flow, updateMask);
@@ -807,6 +821,7 @@ public class FlowsClientHttpJsonTest {
     ImportFlowRequest request =
         ImportFlowRequest.newBuilder()
             .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .setFlowImportStrategy(FlowImportStrategy.newBuilder().build())
             .build();
 
     ImportFlowResponse actualResponse = client.importFlowAsync(request).get();
@@ -838,6 +853,7 @@ public class FlowsClientHttpJsonTest {
       ImportFlowRequest request =
           ImportFlowRequest.newBuilder()
               .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+              .setFlowImportStrategy(FlowImportStrategy.newBuilder().build())
               .build();
       client.importFlowAsync(request).get();
       Assert.fail("No exception raised");

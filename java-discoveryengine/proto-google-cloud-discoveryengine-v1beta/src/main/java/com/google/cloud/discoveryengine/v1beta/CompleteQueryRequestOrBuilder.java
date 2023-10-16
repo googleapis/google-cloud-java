@@ -103,8 +103,7 @@ public interface CompleteQueryRequestOrBuilder
    *
    * * `document` is the default model for regular dataStores.
    * * `search-history` is the default model for
-   * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-   * dataStores.
+   * [IndustryVertical.SITE_SEARCH][] dataStores.
    * </pre>
    *
    * <code>string query_model = 3;</code>
@@ -132,8 +131,7 @@ public interface CompleteQueryRequestOrBuilder
    *
    * * `document` is the default model for regular dataStores.
    * * `search-history` is the default model for
-   * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-   * dataStores.
+   * [IndustryVertical.SITE_SEARCH][] dataStores.
    * </pre>
    *
    * <code>string query_model = 3;</code>
@@ -192,4 +190,20 @@ public interface CompleteQueryRequestOrBuilder
    * @return The bytes for userPseudoId.
    */
   com.google.protobuf.ByteString getUserPseudoIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Indicates if tail suggestions should be returned if there are no
+   * suggestions that match the full query. Even if set to true, if there are
+   * suggestions that match the full query, those are returned and no
+   * tail suggestions are returned.
+   * </pre>
+   *
+   * <code>bool include_tail_suggestions = 5;</code>
+   *
+   * @return The includeTailSuggestions.
+   */
+  boolean getIncludeTailSuggestions();
 }

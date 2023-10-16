@@ -1,5 +1,64 @@
 # Changelog
 
+## 4.34.0 (2023-10-11)
+
+### Features
+
+* Add the enable_partial_automated_agent_reply flag ([#9924](https://github.com/googleapis/google-cloud-java/issues/9924)) ([cfcf828](https://github.com/googleapis/google-cloud-java/commit/cfcf828228ac5b8355a7e24b70994298e2666958))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.5.8 ([#9941](https://github.com/googleapis/google-cloud-java/issues/9941)) ([f818d26](https://github.com/googleapis/google-cloud-java/commit/f818d26968e1f19d302da1f1ea0145b2cc496ce0))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.17.0 ([#9942](https://github.com/googleapis/google-cloud-java/issues/9942)) ([2cc7888](https://github.com/googleapis/google-cloud-java/commit/2cc78885d76ae5e7dfc4cc9f3034c25fa22c6cc1))
+
+
+## 4.33.0 (2023-09-28)
+
+* No change
+
+
+## 4.31.0 (2023-09-27)
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.16.0 ([#9866](https://github.com/googleapis/google-cloud-java/issues/9866)) ([aa36b2c](https://github.com/googleapis/google-cloud-java/commit/aa36b2c3c31b817052239fd771a21d20108b2c31))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.16.1 ([#9881](https://github.com/googleapis/google-cloud-java/issues/9881)) ([8a29511](https://github.com/googleapis/google-cloud-java/commit/8a2951166eb0305be040cc0ae38be105c437ba25))
+
+
+## 4.30.0 (2023-09-11)
+
+### Features
+
+* added baseline model version used to generate the summary ([411a707](https://github.com/googleapis/google-cloud-java/commit/411a707e2bf040ffeab897518d2d4781512012ca))
+* added baseline model version used to generate the summary ([411a707](https://github.com/googleapis/google-cloud-java/commit/411a707e2bf040ffeab897518d2d4781512012ca))
+* added speech endpointing setting ([411a707](https://github.com/googleapis/google-cloud-java/commit/411a707e2bf040ffeab897518d2d4781512012ca))
+* added speech endpointing setting ([#9760](https://github.com/googleapis/google-cloud-java/issues/9760)) ([411a707](https://github.com/googleapis/google-cloud-java/commit/411a707e2bf040ffeab897518d2d4781512012ca))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.15.0 ([#9809](https://github.com/googleapis/google-cloud-java/issues/9809)) ([09dbd85](https://github.com/googleapis/google-cloud-java/commit/09dbd855f683b40a462c4f918511bee4671e0174))
+
+
+## 4.29.0 (2023-08-08)
+
+### Features
+
+* Minor formatting ([#9719](https://github.com/googleapis/google-cloud-java/issues/9719)) ([c26f79b](https://github.com/googleapis/google-cloud-java/commit/c26f79b5ac3d78a2dde25f26178cb6a5ebea5da1))
+* Minor formatting ([#9731](https://github.com/googleapis/google-cloud-java/issues/9731)) ([c5ac114](https://github.com/googleapis/google-cloud-java/commit/c5ac114500fb68eb0e9e0e1bd7a91a3bebce9a1b))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.14.0 ([#9722](https://github.com/googleapis/google-cloud-java/issues/9722)) ([c7011db](https://github.com/googleapis/google-cloud-java/commit/c7011dbd69189330de1c2946b736cd712d5c1f4e))
+
+
+## 4.28.0 (2023-07-21)
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.5.7 ([#9651](https://github.com/googleapis/google-cloud-java/issues/9651)) ([c88d623](https://github.com/googleapis/google-cloud-java/commit/c88d623d12a4342b74e31d6a6a05cde0debe871f))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.13.1 ([#9655](https://github.com/googleapis/google-cloud-java/issues/9655)) ([affebee](https://github.com/googleapis/google-cloud-java/commit/affebeeb37b1cf88ad5964684e1f112cababcab7))
+
+
 ## 4.27.0 (2023-07-11)
 
 ### Features

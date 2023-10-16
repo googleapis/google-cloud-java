@@ -208,6 +208,7 @@ public class AgentsClientHttpJsonTest {
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
+            .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -269,6 +270,7 @@ public class AgentsClientHttpJsonTest {
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
+            .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -330,6 +332,7 @@ public class AgentsClientHttpJsonTest {
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
+            .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -393,6 +396,7 @@ public class AgentsClientHttpJsonTest {
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
+            .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -456,6 +460,7 @@ public class AgentsClientHttpJsonTest {
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
+            .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -479,6 +484,7 @@ public class AgentsClientHttpJsonTest {
             .setAdvancedSettings(AdvancedSettings.newBuilder().build())
             .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
             .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
+            .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -528,6 +534,7 @@ public class AgentsClientHttpJsonTest {
               .setAdvancedSettings(AdvancedSettings.newBuilder().build())
               .setGitIntegrationSettings(Agent.GitIntegrationSettings.newBuilder().build())
               .setTextToSpeechSettings(TextToSpeechSettings.newBuilder().build())
+              .setGenAppBuilderSettings(Agent.GenAppBuilderSettings.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateAgent(agent, updateMask);
@@ -873,6 +880,185 @@ public class AgentsClientHttpJsonTest {
       String name =
           "projects/project-7481/locations/location-7481/agents/agent-7481/validationResult";
       client.getAgentValidationResult(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGenerativeSettingsTest() throws Exception {
+    GenerativeSettings expectedResponse =
+        GenerativeSettings.newBuilder()
+            .setName(
+                AgentGenerativeSettingsName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .setFallbackSettings(GenerativeSettings.FallbackSettings.newBuilder().build())
+            .setGenerativeSafetySettings(SafetySettings.newBuilder().build())
+            .setKnowledgeConnectorSettings(
+                GenerativeSettings.KnowledgeConnectorSettings.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    AgentGenerativeSettingsName name =
+        AgentGenerativeSettingsName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+    String languageCode = "languageCode-2092349083";
+
+    GenerativeSettings actualResponse = client.getGenerativeSettings(name, languageCode);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getGenerativeSettingsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      AgentGenerativeSettingsName name =
+          AgentGenerativeSettingsName.of("[PROJECT]", "[LOCATION]", "[AGENT]");
+      String languageCode = "languageCode-2092349083";
+      client.getGenerativeSettings(name, languageCode);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getGenerativeSettingsTest2() throws Exception {
+    GenerativeSettings expectedResponse =
+        GenerativeSettings.newBuilder()
+            .setName(
+                AgentGenerativeSettingsName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .setFallbackSettings(GenerativeSettings.FallbackSettings.newBuilder().build())
+            .setGenerativeSafetySettings(SafetySettings.newBuilder().build())
+            .setKnowledgeConnectorSettings(
+                GenerativeSettings.KnowledgeConnectorSettings.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-2948/locations/location-2948/agents/agent-2948/generativeSettings";
+    String languageCode = "languageCode-2092349083";
+
+    GenerativeSettings actualResponse = client.getGenerativeSettings(name, languageCode);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getGenerativeSettingsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-2948/locations/location-2948/agents/agent-2948/generativeSettings";
+      String languageCode = "languageCode-2092349083";
+      client.getGenerativeSettings(name, languageCode);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateGenerativeSettingsTest() throws Exception {
+    GenerativeSettings expectedResponse =
+        GenerativeSettings.newBuilder()
+            .setName(
+                AgentGenerativeSettingsName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .setFallbackSettings(GenerativeSettings.FallbackSettings.newBuilder().build())
+            .setGenerativeSafetySettings(SafetySettings.newBuilder().build())
+            .setKnowledgeConnectorSettings(
+                GenerativeSettings.KnowledgeConnectorSettings.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    GenerativeSettings generativeSettings =
+        GenerativeSettings.newBuilder()
+            .setName(
+                AgentGenerativeSettingsName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+            .setFallbackSettings(GenerativeSettings.FallbackSettings.newBuilder().build())
+            .setGenerativeSafetySettings(SafetySettings.newBuilder().build())
+            .setKnowledgeConnectorSettings(
+                GenerativeSettings.KnowledgeConnectorSettings.newBuilder().build())
+            .setLanguageCode("languageCode-2092349083")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    GenerativeSettings actualResponse =
+        client.updateGenerativeSettings(generativeSettings, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateGenerativeSettingsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      GenerativeSettings generativeSettings =
+          GenerativeSettings.newBuilder()
+              .setName(
+                  AgentGenerativeSettingsName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+              .setFallbackSettings(GenerativeSettings.FallbackSettings.newBuilder().build())
+              .setGenerativeSafetySettings(SafetySettings.newBuilder().build())
+              .setKnowledgeConnectorSettings(
+                  GenerativeSettings.KnowledgeConnectorSettings.newBuilder().build())
+              .setLanguageCode("languageCode-2092349083")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateGenerativeSettings(generativeSettings, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

@@ -116,10 +116,10 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
      * * FLOAT: 0.0
      * * NUMERIC: 0
      * * BOOLEAN: FALSE
-     * * TIMESTAMP: 0001-01-01 00:00:00 UTC
-     * * DATE: 0001-01-01
+     * * TIMESTAMP: 1970-01-01 00:00:00 UTC
+     * * DATE: 1970-01-01
      * * TIME: 00:00:00
-     * * DATETIME: 0001-01-01T00:00:00
+     * * DATETIME: 1970-01-01T00:00:00
      * * GEOGRAPHY: POINT(0 0)
      * * BIGNUMERIC: 0
      * * ARRAY: []
@@ -130,6 +130,76 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
      * <code>DEFAULT_MASKING_VALUE = 7;</code>
      */
     DEFAULT_MASKING_VALUE(7),
+    /**
+     *
+     *
+     * <pre>
+     * Masking expression shows the last four characters of text.
+     * The masking behavior is as follows:
+     *
+     * * If text length &gt; 4 characters: Replace text with XXXXX, append last
+     * four characters of original text.
+     * * If text length &lt;= 4 characters: Apply SHA-256 hash.
+     * </pre>
+     *
+     * <code>LAST_FOUR_CHARACTERS = 9;</code>
+     */
+    LAST_FOUR_CHARACTERS(9),
+    /**
+     *
+     *
+     * <pre>
+     * Masking expression shows the first four characters of text.
+     * The masking behavior is as follows:
+     *
+     * * If text length &gt; 4 characters: Replace text with XXXXX, prepend first
+     * four characters of original text.
+     * * If text length &lt;= 4 characters: Apply SHA-256 hash.
+     * </pre>
+     *
+     * <code>FIRST_FOUR_CHARACTERS = 10;</code>
+     */
+    FIRST_FOUR_CHARACTERS(10),
+    /**
+     *
+     *
+     * <pre>
+     * Masking expression for email addresses.
+     * The masking behavior is as follows:
+     *
+     * * Syntax-valid email address: Replace username with XXXXX. For example,
+     * cloudysanfrancisco&#64;gmail.com becomes XXXXX&#64;gmail.com.
+     * * Syntax-invalid email address: Apply SHA-256 hash.
+     *
+     * For more information, see [Email
+     * mask](https://cloud.google.com/bigquery/docs/column-data-masking-intro#masking_options).
+     * </pre>
+     *
+     * <code>EMAIL_MASK = 12;</code>
+     */
+    EMAIL_MASK(12),
+    /**
+     *
+     *
+     * <pre>
+     * Masking expression to only show the year of `Date`,
+     * `DateTime` and `TimeStamp`. For example, with the
+     * year 2076:
+     *
+     * * DATE         :  2076-01-01
+     * * DATETIME     :  2076-01-01T00:00:00
+     * * TIMESTAMP    :  2076-01-01 00:00:00 UTC
+     *
+     * Truncation occurs according to the UTC time zone. To change this, adjust
+     * the default time zone using the `time_zone` system variable.
+     * For more information, see the &lt;a
+     * href="https://cloud.google.com/bigquery/docs/reference/system-variables"&gt;System
+     * variables reference&lt;/a&gt;.
+     * </pre>
+     *
+     * <code>DATE_YEAR_MASK = 13;</code>
+     */
+    DATE_YEAR_MASK(13),
     UNRECOGNIZED(-1),
     ;
 
@@ -177,10 +247,10 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
      * * FLOAT: 0.0
      * * NUMERIC: 0
      * * BOOLEAN: FALSE
-     * * TIMESTAMP: 0001-01-01 00:00:00 UTC
-     * * DATE: 0001-01-01
+     * * TIMESTAMP: 1970-01-01 00:00:00 UTC
+     * * DATE: 1970-01-01
      * * TIME: 00:00:00
-     * * DATETIME: 0001-01-01T00:00:00
+     * * DATETIME: 1970-01-01T00:00:00
      * * GEOGRAPHY: POINT(0 0)
      * * BIGNUMERIC: 0
      * * ARRAY: []
@@ -191,6 +261,76 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
      * <code>DEFAULT_MASKING_VALUE = 7;</code>
      */
     public static final int DEFAULT_MASKING_VALUE_VALUE = 7;
+    /**
+     *
+     *
+     * <pre>
+     * Masking expression shows the last four characters of text.
+     * The masking behavior is as follows:
+     *
+     * * If text length &gt; 4 characters: Replace text with XXXXX, append last
+     * four characters of original text.
+     * * If text length &lt;= 4 characters: Apply SHA-256 hash.
+     * </pre>
+     *
+     * <code>LAST_FOUR_CHARACTERS = 9;</code>
+     */
+    public static final int LAST_FOUR_CHARACTERS_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * Masking expression shows the first four characters of text.
+     * The masking behavior is as follows:
+     *
+     * * If text length &gt; 4 characters: Replace text with XXXXX, prepend first
+     * four characters of original text.
+     * * If text length &lt;= 4 characters: Apply SHA-256 hash.
+     * </pre>
+     *
+     * <code>FIRST_FOUR_CHARACTERS = 10;</code>
+     */
+    public static final int FIRST_FOUR_CHARACTERS_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * Masking expression for email addresses.
+     * The masking behavior is as follows:
+     *
+     * * Syntax-valid email address: Replace username with XXXXX. For example,
+     * cloudysanfrancisco&#64;gmail.com becomes XXXXX&#64;gmail.com.
+     * * Syntax-invalid email address: Apply SHA-256 hash.
+     *
+     * For more information, see [Email
+     * mask](https://cloud.google.com/bigquery/docs/column-data-masking-intro#masking_options).
+     * </pre>
+     *
+     * <code>EMAIL_MASK = 12;</code>
+     */
+    public static final int EMAIL_MASK_VALUE = 12;
+    /**
+     *
+     *
+     * <pre>
+     * Masking expression to only show the year of `Date`,
+     * `DateTime` and `TimeStamp`. For example, with the
+     * year 2076:
+     *
+     * * DATE         :  2076-01-01
+     * * DATETIME     :  2076-01-01T00:00:00
+     * * TIMESTAMP    :  2076-01-01 00:00:00 UTC
+     *
+     * Truncation occurs according to the UTC time zone. To change this, adjust
+     * the default time zone using the `time_zone` system variable.
+     * For more information, see the &lt;a
+     * href="https://cloud.google.com/bigquery/docs/reference/system-variables"&gt;System
+     * variables reference&lt;/a&gt;.
+     * </pre>
+     *
+     * <code>DATE_YEAR_MASK = 13;</code>
+     */
+    public static final int DATE_YEAR_MASK_VALUE = 13;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -224,6 +364,14 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
           return ALWAYS_NULL;
         case 7:
           return DEFAULT_MASKING_VALUE;
+        case 9:
+          return LAST_FOUR_CHARACTERS;
+        case 10:
+          return FIRST_FOUR_CHARACTERS;
+        case 12:
+          return EMAIL_MASK;
+        case 13:
+          return DATE_YEAR_MASK;
         default:
           return null;
       }
@@ -292,6 +440,7 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PREDEFINED_EXPRESSION(1),
+    ROUTINE(3),
     MASKINGEXPRESSION_NOT_SET(0);
     private final int value;
 
@@ -312,6 +461,8 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
       switch (value) {
         case 1:
           return PREDEFINED_EXPRESSION;
+        case 3:
+          return ROUTINE;
         case 0:
           return MASKINGEXPRESSION_NOT_SET;
         default:
@@ -392,6 +543,82 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
         .PREDEFINED_EXPRESSION_UNSPECIFIED;
   }
 
+  public static final int ROUTINE_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * The name of the BigQuery routine that contains the custom masking
+   * routine, in the format of
+   * `projects/{project_number}/datasets/{dataset_id}/routines/{routine_id}`.
+   * </pre>
+   *
+   * <code>string routine = 3;</code>
+   *
+   * @return Whether the routine field is set.
+   */
+  public boolean hasRoutine() {
+    return maskingExpressionCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The name of the BigQuery routine that contains the custom masking
+   * routine, in the format of
+   * `projects/{project_number}/datasets/{dataset_id}/routines/{routine_id}`.
+   * </pre>
+   *
+   * <code>string routine = 3;</code>
+   *
+   * @return The routine.
+   */
+  public java.lang.String getRoutine() {
+    java.lang.Object ref = "";
+    if (maskingExpressionCase_ == 3) {
+      ref = maskingExpression_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (maskingExpressionCase_ == 3) {
+        maskingExpression_ = s;
+      }
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The name of the BigQuery routine that contains the custom masking
+   * routine, in the format of
+   * `projects/{project_number}/datasets/{dataset_id}/routines/{routine_id}`.
+   * </pre>
+   *
+   * <code>string routine = 3;</code>
+   *
+   * @return The bytes for routine.
+   */
+  public com.google.protobuf.ByteString getRoutineBytes() {
+    java.lang.Object ref = "";
+    if (maskingExpressionCase_ == 3) {
+      ref = maskingExpression_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (maskingExpressionCase_ == 3) {
+        maskingExpression_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -409,6 +636,9 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
     if (maskingExpressionCase_ == 1) {
       output.writeEnum(1, ((java.lang.Integer) maskingExpression_));
     }
+    if (maskingExpressionCase_ == 3) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, maskingExpression_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -422,6 +652,9 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeEnumSize(
               1, ((java.lang.Integer) maskingExpression_));
+    }
+    if (maskingExpressionCase_ == 3) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, maskingExpression_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -444,6 +677,9 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
       case 1:
         if (getPredefinedExpressionValue() != other.getPredefinedExpressionValue()) return false;
         break;
+      case 3:
+        if (!getRoutine().equals(other.getRoutine())) return false;
+        break;
       case 0:
       default:
     }
@@ -462,6 +698,10 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
       case 1:
         hash = (37 * hash) + PREDEFINED_EXPRESSION_FIELD_NUMBER;
         hash = (53 * hash) + getPredefinedExpressionValue();
+        break;
+      case 3:
+        hash = (37 * hash) + ROUTINE_FIELD_NUMBER;
+        hash = (53 * hash) + getRoutine().hashCode();
         break;
       case 0:
       default:
@@ -705,6 +945,13 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
             setPredefinedExpressionValue(other.getPredefinedExpressionValue());
             break;
           }
+        case ROUTINE:
+          {
+            maskingExpressionCase_ = 3;
+            maskingExpression_ = other.maskingExpression_;
+            onChanged();
+            break;
+          }
         case MASKINGEXPRESSION_NOT_SET:
           {
             break;
@@ -743,6 +990,13 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
                 maskingExpression_ = rawValue;
                 break;
               } // case 8
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                maskingExpressionCase_ = 3;
+                maskingExpression_ = s;
+                break;
+              } // case 26
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -904,6 +1158,152 @@ public final class DataMaskingPolicy extends com.google.protobuf.GeneratedMessag
         maskingExpression_ = null;
         onChanged();
       }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The name of the BigQuery routine that contains the custom masking
+     * routine, in the format of
+     * `projects/{project_number}/datasets/{dataset_id}/routines/{routine_id}`.
+     * </pre>
+     *
+     * <code>string routine = 3;</code>
+     *
+     * @return Whether the routine field is set.
+     */
+    @java.lang.Override
+    public boolean hasRoutine() {
+      return maskingExpressionCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the BigQuery routine that contains the custom masking
+     * routine, in the format of
+     * `projects/{project_number}/datasets/{dataset_id}/routines/{routine_id}`.
+     * </pre>
+     *
+     * <code>string routine = 3;</code>
+     *
+     * @return The routine.
+     */
+    @java.lang.Override
+    public java.lang.String getRoutine() {
+      java.lang.Object ref = "";
+      if (maskingExpressionCase_ == 3) {
+        ref = maskingExpression_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (maskingExpressionCase_ == 3) {
+          maskingExpression_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the BigQuery routine that contains the custom masking
+     * routine, in the format of
+     * `projects/{project_number}/datasets/{dataset_id}/routines/{routine_id}`.
+     * </pre>
+     *
+     * <code>string routine = 3;</code>
+     *
+     * @return The bytes for routine.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getRoutineBytes() {
+      java.lang.Object ref = "";
+      if (maskingExpressionCase_ == 3) {
+        ref = maskingExpression_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (maskingExpressionCase_ == 3) {
+          maskingExpression_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the BigQuery routine that contains the custom masking
+     * routine, in the format of
+     * `projects/{project_number}/datasets/{dataset_id}/routines/{routine_id}`.
+     * </pre>
+     *
+     * <code>string routine = 3;</code>
+     *
+     * @param value The routine to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoutine(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      maskingExpressionCase_ = 3;
+      maskingExpression_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the BigQuery routine that contains the custom masking
+     * routine, in the format of
+     * `projects/{project_number}/datasets/{dataset_id}/routines/{routine_id}`.
+     * </pre>
+     *
+     * <code>string routine = 3;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRoutine() {
+      if (maskingExpressionCase_ == 3) {
+        maskingExpressionCase_ = 0;
+        maskingExpression_ = null;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The name of the BigQuery routine that contains the custom masking
+     * routine, in the format of
+     * `projects/{project_number}/datasets/{dataset_id}/routines/{routine_id}`.
+     * </pre>
+     *
+     * <code>string routine = 3;</code>
+     *
+     * @param value The bytes for routine to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoutineBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      maskingExpressionCase_ = 3;
+      maskingExpression_ = value;
+      onChanged();
       return this;
     }
 

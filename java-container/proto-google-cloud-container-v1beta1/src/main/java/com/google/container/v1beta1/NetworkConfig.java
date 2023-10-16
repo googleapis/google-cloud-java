@@ -1373,6 +1373,24 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         : gatewayApiConfig_;
   }
 
+  public static final int ENABLE_MULTI_NETWORKING_FIELD_NUMBER = 17;
+  private boolean enableMultiNetworking_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Whether multi-networking is enabled for this cluster.
+   * </pre>
+   *
+   * <code>bool enable_multi_networking = 17;</code>
+   *
+   * @return The enableMultiNetworking.
+   */
+  @java.lang.Override
+  public boolean getEnableMultiNetworking() {
+    return enableMultiNetworking_;
+  }
+
   public static final int NETWORK_PERFORMANCE_CONFIG_FIELD_NUMBER = 18;
   private com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
       networkPerformanceConfig_;
@@ -1516,6 +1534,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (gatewayApiConfig_ != null) {
       output.writeMessage(16, getGatewayApiConfig());
     }
+    if (enableMultiNetworking_ != false) {
+      output.writeBool(17, enableMultiNetworking_);
+    }
     if (networkPerformanceConfig_ != null) {
       output.writeMessage(18, getNetworkPerformanceConfig());
     }
@@ -1568,6 +1589,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (gatewayApiConfig_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getGatewayApiConfig());
     }
+    if (enableMultiNetworking_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(17, enableMultiNetworking_);
+    }
     if (networkPerformanceConfig_ != null) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -1614,6 +1638,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     if (hasGatewayApiConfig()) {
       if (!getGatewayApiConfig().equals(other.getGatewayApiConfig())) return false;
     }
+    if (getEnableMultiNetworking() != other.getEnableMultiNetworking()) return false;
     if (hasNetworkPerformanceConfig() != other.hasNetworkPerformanceConfig()) return false;
     if (hasNetworkPerformanceConfig()) {
       if (!getNetworkPerformanceConfig().equals(other.getNetworkPerformanceConfig())) return false;
@@ -1661,6 +1686,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + GATEWAY_API_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getGatewayApiConfig().hashCode();
     }
+    hash = (37 * hash) + ENABLE_MULTI_NETWORKING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableMultiNetworking());
     if (hasNetworkPerformanceConfig()) {
       hash = (37 * hash) + NETWORK_PERFORMANCE_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getNetworkPerformanceConfig().hashCode();
@@ -1834,6 +1861,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
         gatewayApiConfigBuilder_.dispose();
         gatewayApiConfigBuilder_ = null;
       }
+      enableMultiNetworking_ = false;
       networkPerformanceConfig_ = null;
       if (networkPerformanceConfigBuilder_ != null) {
         networkPerformanceConfigBuilder_.dispose();
@@ -1914,13 +1942,16 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
             gatewayApiConfigBuilder_ == null ? gatewayApiConfig_ : gatewayApiConfigBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.enableMultiNetworking_ = enableMultiNetworking_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.networkPerformanceConfig_ =
             networkPerformanceConfigBuilder_ == null
                 ? networkPerformanceConfig_
                 : networkPerformanceConfigBuilder_.build();
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.enableFqdnNetworkPolicy_ = enableFqdnNetworkPolicy_;
         to_bitField0_ |= 0x00000001;
       }
@@ -2005,6 +2036,9 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasGatewayApiConfig()) {
         mergeGatewayApiConfig(other.getGatewayApiConfig());
+      }
+      if (other.getEnableMultiNetworking() != false) {
+        setEnableMultiNetworking(other.getEnableMultiNetworking());
       }
       if (other.hasNetworkPerformanceConfig()) {
         mergeNetworkPerformanceConfig(other.getNetworkPerformanceConfig());
@@ -2101,17 +2135,23 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000200;
                 break;
               } // case 130
+            case 136:
+              {
+                enableMultiNetworking_ = input.readBool();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 136
             case 146:
               {
                 input.readMessage(
                     getNetworkPerformanceConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 146
             case 152:
               {
                 enableFqdnNetworkPolicy_ = input.readBool();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 152
             default:
@@ -3483,6 +3523,59 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       return gatewayApiConfigBuilder_;
     }
 
+    private boolean enableMultiNetworking_;
+    /**
+     *
+     *
+     * <pre>
+     * Whether multi-networking is enabled for this cluster.
+     * </pre>
+     *
+     * <code>bool enable_multi_networking = 17;</code>
+     *
+     * @return The enableMultiNetworking.
+     */
+    @java.lang.Override
+    public boolean getEnableMultiNetworking() {
+      return enableMultiNetworking_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether multi-networking is enabled for this cluster.
+     * </pre>
+     *
+     * <code>bool enable_multi_networking = 17;</code>
+     *
+     * @param value The enableMultiNetworking to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableMultiNetworking(boolean value) {
+
+      enableMultiNetworking_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Whether multi-networking is enabled for this cluster.
+     * </pre>
+     *
+     * <code>bool enable_multi_networking = 17;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableMultiNetworking() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      enableMultiNetworking_ = false;
+      onChanged();
+      return this;
+    }
+
     private com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
         networkPerformanceConfig_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -3504,7 +3597,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the networkPerformanceConfig field is set.
      */
     public boolean hasNetworkPerformanceConfig() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      *
@@ -3551,7 +3644,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         networkPerformanceConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3574,7 +3667,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         networkPerformanceConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3592,7 +3685,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeNetworkPerformanceConfig(
         com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig value) {
       if (networkPerformanceConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && networkPerformanceConfig_ != null
             && networkPerformanceConfig_
                 != com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig
@@ -3604,7 +3697,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
       } else {
         networkPerformanceConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3620,7 +3713,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearNetworkPerformanceConfig() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       networkPerformanceConfig_ = null;
       if (networkPerformanceConfigBuilder_ != null) {
         networkPerformanceConfigBuilder_.dispose();
@@ -3642,7 +3735,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.container.v1beta1.NetworkConfig.ClusterNetworkPerformanceConfig.Builder
         getNetworkPerformanceConfigBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getNetworkPerformanceConfigFieldBuilder().getBuilder();
     }
@@ -3711,7 +3804,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      */
     @java.lang.Override
     public boolean hasEnableFqdnNetworkPolicy() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      *
@@ -3743,7 +3836,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder setEnableFqdnNetworkPolicy(boolean value) {
 
       enableFqdnNetworkPolicy_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3759,7 +3852,7 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearEnableFqdnNetworkPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       enableFqdnNetworkPolicy_ = false;
       onChanged();
       return this;

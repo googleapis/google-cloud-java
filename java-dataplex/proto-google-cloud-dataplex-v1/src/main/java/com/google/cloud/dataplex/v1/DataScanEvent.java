@@ -24,6 +24,7 @@ package com.google.cloud.dataplex.v1;
  * <pre>
  * These messages contain information about the execution of a datascan.
  * The monitored resource is 'DataScan'
+ * Next ID: 13
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataplex.v1.DataScanEvent}
@@ -251,7 +252,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Data scan started.
+     * Data scan job started.
      * </pre>
      *
      * <code>STARTED = 1;</code>
@@ -261,7 +262,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Data scan successfully completed.
+     * Data scan job successfully completed.
      * </pre>
      *
      * <code>SUCCEEDED = 2;</code>
@@ -271,7 +272,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Data scan was unsuccessful.
+     * Data scan job was unsuccessful.
      * </pre>
      *
      * <code>FAILED = 3;</code>
@@ -281,12 +282,22 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Data scan was cancelled.
+     * Data scan job was cancelled.
      * </pre>
      *
      * <code>CANCELLED = 4;</code>
      */
     CANCELLED(4),
+    /**
+     *
+     *
+     * <pre>
+     * Data scan job was createed.
+     * </pre>
+     *
+     * <code>CREATED = 5;</code>
+     */
+    CREATED(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -304,7 +315,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Data scan started.
+     * Data scan job started.
      * </pre>
      *
      * <code>STARTED = 1;</code>
@@ -314,7 +325,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Data scan successfully completed.
+     * Data scan job successfully completed.
      * </pre>
      *
      * <code>SUCCEEDED = 2;</code>
@@ -324,7 +335,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Data scan was unsuccessful.
+     * Data scan job was unsuccessful.
      * </pre>
      *
      * <code>FAILED = 3;</code>
@@ -334,12 +345,22 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Data scan was cancelled.
+     * Data scan job was cancelled.
      * </pre>
      *
      * <code>CANCELLED = 4;</code>
      */
     public static final int CANCELLED_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Data scan job was createed.
+     * </pre>
+     *
+     * <code>CREATED = 5;</code>
+     */
+    public static final int CREATED_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -375,6 +396,8 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
           return FAILED;
         case 4:
           return CANCELLED;
+        case 5:
+          return CREATED;
         default:
           return null;
       }
@@ -2378,6 +2401,3380 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface DataProfileAppliedConfigsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The percentage of the records selected from the dataset for DataScan.
+     *
+     * * Value ranges between 0.0 and 100.0.
+     * * Value 0.0 or 100.0 imply that sampling was not applied.
+     * </pre>
+     *
+     * <code>float sampling_percent = 1;</code>
+     *
+     * @return The samplingPercent.
+     */
+    float getSamplingPercent();
+
+    /**
+     *
+     *
+     * <pre>
+     * Boolean indicating whether a row filter was applied in the DataScan job.
+     * </pre>
+     *
+     * <code>bool row_filter_applied = 2;</code>
+     *
+     * @return The rowFilterApplied.
+     */
+    boolean getRowFilterApplied();
+
+    /**
+     *
+     *
+     * <pre>
+     * Boolean indicating whether a column filter was applied in the DataScan
+     * job.
+     * </pre>
+     *
+     * <code>bool column_filter_applied = 3;</code>
+     *
+     * @return The columnFilterApplied.
+     */
+    boolean getColumnFilterApplied();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Applied configs for data profile type data scan job.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs}
+   */
+  public static final class DataProfileAppliedConfigs extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs)
+      DataProfileAppliedConfigsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use DataProfileAppliedConfigs.newBuilder() to construct.
+    private DataProfileAppliedConfigs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DataProfileAppliedConfigs() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DataProfileAppliedConfigs();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.LogsProto
+          .internal_static_google_cloud_dataplex_v1_DataScanEvent_DataProfileAppliedConfigs_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataplex.v1.LogsProto
+          .internal_static_google_cloud_dataplex_v1_DataScanEvent_DataProfileAppliedConfigs_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs.class,
+              com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs.Builder.class);
+    }
+
+    public static final int SAMPLING_PERCENT_FIELD_NUMBER = 1;
+    private float samplingPercent_ = 0F;
+    /**
+     *
+     *
+     * <pre>
+     * The percentage of the records selected from the dataset for DataScan.
+     *
+     * * Value ranges between 0.0 and 100.0.
+     * * Value 0.0 or 100.0 imply that sampling was not applied.
+     * </pre>
+     *
+     * <code>float sampling_percent = 1;</code>
+     *
+     * @return The samplingPercent.
+     */
+    @java.lang.Override
+    public float getSamplingPercent() {
+      return samplingPercent_;
+    }
+
+    public static final int ROW_FILTER_APPLIED_FIELD_NUMBER = 2;
+    private boolean rowFilterApplied_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Boolean indicating whether a row filter was applied in the DataScan job.
+     * </pre>
+     *
+     * <code>bool row_filter_applied = 2;</code>
+     *
+     * @return The rowFilterApplied.
+     */
+    @java.lang.Override
+    public boolean getRowFilterApplied() {
+      return rowFilterApplied_;
+    }
+
+    public static final int COLUMN_FILTER_APPLIED_FIELD_NUMBER = 3;
+    private boolean columnFilterApplied_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Boolean indicating whether a column filter was applied in the DataScan
+     * job.
+     * </pre>
+     *
+     * <code>bool column_filter_applied = 3;</code>
+     *
+     * @return The columnFilterApplied.
+     */
+    @java.lang.Override
+    public boolean getColumnFilterApplied() {
+      return columnFilterApplied_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (java.lang.Float.floatToRawIntBits(samplingPercent_) != 0) {
+        output.writeFloat(1, samplingPercent_);
+      }
+      if (rowFilterApplied_ != false) {
+        output.writeBool(2, rowFilterApplied_);
+      }
+      if (columnFilterApplied_ != false) {
+        output.writeBool(3, columnFilterApplied_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (java.lang.Float.floatToRawIntBits(samplingPercent_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, samplingPercent_);
+      }
+      if (rowFilterApplied_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, rowFilterApplied_);
+      }
+      if (columnFilterApplied_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, columnFilterApplied_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs other =
+          (com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs) obj;
+
+      if (java.lang.Float.floatToIntBits(getSamplingPercent())
+          != java.lang.Float.floatToIntBits(other.getSamplingPercent())) return false;
+      if (getRowFilterApplied() != other.getRowFilterApplied()) return false;
+      if (getColumnFilterApplied() != other.getColumnFilterApplied()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SAMPLING_PERCENT_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getSamplingPercent());
+      hash = (37 * hash) + ROW_FILTER_APPLIED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRowFilterApplied());
+      hash = (37 * hash) + COLUMN_FILTER_APPLIED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getColumnFilterApplied());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Applied configs for data profile type data scan job.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs)
+        com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.LogsProto
+            .internal_static_google_cloud_dataplex_v1_DataScanEvent_DataProfileAppliedConfigs_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.LogsProto
+            .internal_static_google_cloud_dataplex_v1_DataScanEvent_DataProfileAppliedConfigs_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs.class,
+                com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        samplingPercent_ = 0F;
+        rowFilterApplied_ = false;
+        columnFilterApplied_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataplex.v1.LogsProto
+            .internal_static_google_cloud_dataplex_v1_DataScanEvent_DataProfileAppliedConfigs_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs
+          getDefaultInstanceForType() {
+        return com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs build() {
+        com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs buildPartial() {
+        com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs result =
+            new com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.samplingPercent_ = samplingPercent_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.rowFilterApplied_ = rowFilterApplied_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.columnFilterApplied_ = columnFilterApplied_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs) {
+          return mergeFrom(
+              (com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs other) {
+        if (other
+            == com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs
+                .getDefaultInstance()) return this;
+        if (other.getSamplingPercent() != 0F) {
+          setSamplingPercent(other.getSamplingPercent());
+        }
+        if (other.getRowFilterApplied() != false) {
+          setRowFilterApplied(other.getRowFilterApplied());
+        }
+        if (other.getColumnFilterApplied() != false) {
+          setColumnFilterApplied(other.getColumnFilterApplied());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13:
+                {
+                  samplingPercent_ = input.readFloat();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 13
+              case 16:
+                {
+                  rowFilterApplied_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  columnFilterApplied_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private float samplingPercent_;
+      /**
+       *
+       *
+       * <pre>
+       * The percentage of the records selected from the dataset for DataScan.
+       *
+       * * Value ranges between 0.0 and 100.0.
+       * * Value 0.0 or 100.0 imply that sampling was not applied.
+       * </pre>
+       *
+       * <code>float sampling_percent = 1;</code>
+       *
+       * @return The samplingPercent.
+       */
+      @java.lang.Override
+      public float getSamplingPercent() {
+        return samplingPercent_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The percentage of the records selected from the dataset for DataScan.
+       *
+       * * Value ranges between 0.0 and 100.0.
+       * * Value 0.0 or 100.0 imply that sampling was not applied.
+       * </pre>
+       *
+       * <code>float sampling_percent = 1;</code>
+       *
+       * @param value The samplingPercent to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSamplingPercent(float value) {
+
+        samplingPercent_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The percentage of the records selected from the dataset for DataScan.
+       *
+       * * Value ranges between 0.0 and 100.0.
+       * * Value 0.0 or 100.0 imply that sampling was not applied.
+       * </pre>
+       *
+       * <code>float sampling_percent = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSamplingPercent() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        samplingPercent_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private boolean rowFilterApplied_;
+      /**
+       *
+       *
+       * <pre>
+       * Boolean indicating whether a row filter was applied in the DataScan job.
+       * </pre>
+       *
+       * <code>bool row_filter_applied = 2;</code>
+       *
+       * @return The rowFilterApplied.
+       */
+      @java.lang.Override
+      public boolean getRowFilterApplied() {
+        return rowFilterApplied_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Boolean indicating whether a row filter was applied in the DataScan job.
+       * </pre>
+       *
+       * <code>bool row_filter_applied = 2;</code>
+       *
+       * @param value The rowFilterApplied to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRowFilterApplied(boolean value) {
+
+        rowFilterApplied_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Boolean indicating whether a row filter was applied in the DataScan job.
+       * </pre>
+       *
+       * <code>bool row_filter_applied = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRowFilterApplied() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        rowFilterApplied_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean columnFilterApplied_;
+      /**
+       *
+       *
+       * <pre>
+       * Boolean indicating whether a column filter was applied in the DataScan
+       * job.
+       * </pre>
+       *
+       * <code>bool column_filter_applied = 3;</code>
+       *
+       * @return The columnFilterApplied.
+       */
+      @java.lang.Override
+      public boolean getColumnFilterApplied() {
+        return columnFilterApplied_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Boolean indicating whether a column filter was applied in the DataScan
+       * job.
+       * </pre>
+       *
+       * <code>bool column_filter_applied = 3;</code>
+       *
+       * @param value The columnFilterApplied to set.
+       * @return This builder for chaining.
+       */
+      public Builder setColumnFilterApplied(boolean value) {
+
+        columnFilterApplied_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Boolean indicating whether a column filter was applied in the DataScan
+       * job.
+       * </pre>
+       *
+       * <code>bool column_filter_applied = 3;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearColumnFilterApplied() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        columnFilterApplied_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs)
+    private static final com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs();
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DataProfileAppliedConfigs> PARSER =
+        new com.google.protobuf.AbstractParser<DataProfileAppliedConfigs>() {
+          @java.lang.Override
+          public DataProfileAppliedConfigs parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DataProfileAppliedConfigs> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DataProfileAppliedConfigs> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface DataQualityAppliedConfigsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The percentage of the records selected from the dataset for DataScan.
+     *
+     * * Value ranges between 0.0 and 100.0.
+     * * Value 0.0 or 100.0 imply that sampling was not applied.
+     * </pre>
+     *
+     * <code>float sampling_percent = 1;</code>
+     *
+     * @return The samplingPercent.
+     */
+    float getSamplingPercent();
+
+    /**
+     *
+     *
+     * <pre>
+     * Boolean indicating whether a row filter was applied in the DataScan job.
+     * </pre>
+     *
+     * <code>bool row_filter_applied = 2;</code>
+     *
+     * @return The rowFilterApplied.
+     */
+    boolean getRowFilterApplied();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Applied configs for data quality type data scan job.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs}
+   */
+  public static final class DataQualityAppliedConfigs extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs)
+      DataQualityAppliedConfigsOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use DataQualityAppliedConfigs.newBuilder() to construct.
+    private DataQualityAppliedConfigs(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DataQualityAppliedConfigs() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DataQualityAppliedConfigs();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.LogsProto
+          .internal_static_google_cloud_dataplex_v1_DataScanEvent_DataQualityAppliedConfigs_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataplex.v1.LogsProto
+          .internal_static_google_cloud_dataplex_v1_DataScanEvent_DataQualityAppliedConfigs_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs.class,
+              com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs.Builder.class);
+    }
+
+    public static final int SAMPLING_PERCENT_FIELD_NUMBER = 1;
+    private float samplingPercent_ = 0F;
+    /**
+     *
+     *
+     * <pre>
+     * The percentage of the records selected from the dataset for DataScan.
+     *
+     * * Value ranges between 0.0 and 100.0.
+     * * Value 0.0 or 100.0 imply that sampling was not applied.
+     * </pre>
+     *
+     * <code>float sampling_percent = 1;</code>
+     *
+     * @return The samplingPercent.
+     */
+    @java.lang.Override
+    public float getSamplingPercent() {
+      return samplingPercent_;
+    }
+
+    public static final int ROW_FILTER_APPLIED_FIELD_NUMBER = 2;
+    private boolean rowFilterApplied_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Boolean indicating whether a row filter was applied in the DataScan job.
+     * </pre>
+     *
+     * <code>bool row_filter_applied = 2;</code>
+     *
+     * @return The rowFilterApplied.
+     */
+    @java.lang.Override
+    public boolean getRowFilterApplied() {
+      return rowFilterApplied_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (java.lang.Float.floatToRawIntBits(samplingPercent_) != 0) {
+        output.writeFloat(1, samplingPercent_);
+      }
+      if (rowFilterApplied_ != false) {
+        output.writeBool(2, rowFilterApplied_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (java.lang.Float.floatToRawIntBits(samplingPercent_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(1, samplingPercent_);
+      }
+      if (rowFilterApplied_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, rowFilterApplied_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs other =
+          (com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs) obj;
+
+      if (java.lang.Float.floatToIntBits(getSamplingPercent())
+          != java.lang.Float.floatToIntBits(other.getSamplingPercent())) return false;
+      if (getRowFilterApplied() != other.getRowFilterApplied()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SAMPLING_PERCENT_FIELD_NUMBER;
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getSamplingPercent());
+      hash = (37 * hash) + ROW_FILTER_APPLIED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRowFilterApplied());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Applied configs for data quality type data scan job.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs)
+        com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.LogsProto
+            .internal_static_google_cloud_dataplex_v1_DataScanEvent_DataQualityAppliedConfigs_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.LogsProto
+            .internal_static_google_cloud_dataplex_v1_DataScanEvent_DataQualityAppliedConfigs_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs.class,
+                com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        samplingPercent_ = 0F;
+        rowFilterApplied_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataplex.v1.LogsProto
+            .internal_static_google_cloud_dataplex_v1_DataScanEvent_DataQualityAppliedConfigs_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs
+          getDefaultInstanceForType() {
+        return com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs build() {
+        com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs buildPartial() {
+        com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs result =
+            new com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.samplingPercent_ = samplingPercent_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.rowFilterApplied_ = rowFilterApplied_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs) {
+          return mergeFrom(
+              (com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs other) {
+        if (other
+            == com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs
+                .getDefaultInstance()) return this;
+        if (other.getSamplingPercent() != 0F) {
+          setSamplingPercent(other.getSamplingPercent());
+        }
+        if (other.getRowFilterApplied() != false) {
+          setRowFilterApplied(other.getRowFilterApplied());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 13:
+                {
+                  samplingPercent_ = input.readFloat();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 13
+              case 16:
+                {
+                  rowFilterApplied_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private float samplingPercent_;
+      /**
+       *
+       *
+       * <pre>
+       * The percentage of the records selected from the dataset for DataScan.
+       *
+       * * Value ranges between 0.0 and 100.0.
+       * * Value 0.0 or 100.0 imply that sampling was not applied.
+       * </pre>
+       *
+       * <code>float sampling_percent = 1;</code>
+       *
+       * @return The samplingPercent.
+       */
+      @java.lang.Override
+      public float getSamplingPercent() {
+        return samplingPercent_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The percentage of the records selected from the dataset for DataScan.
+       *
+       * * Value ranges between 0.0 and 100.0.
+       * * Value 0.0 or 100.0 imply that sampling was not applied.
+       * </pre>
+       *
+       * <code>float sampling_percent = 1;</code>
+       *
+       * @param value The samplingPercent to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSamplingPercent(float value) {
+
+        samplingPercent_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The percentage of the records selected from the dataset for DataScan.
+       *
+       * * Value ranges between 0.0 and 100.0.
+       * * Value 0.0 or 100.0 imply that sampling was not applied.
+       * </pre>
+       *
+       * <code>float sampling_percent = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSamplingPercent() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        samplingPercent_ = 0F;
+        onChanged();
+        return this;
+      }
+
+      private boolean rowFilterApplied_;
+      /**
+       *
+       *
+       * <pre>
+       * Boolean indicating whether a row filter was applied in the DataScan job.
+       * </pre>
+       *
+       * <code>bool row_filter_applied = 2;</code>
+       *
+       * @return The rowFilterApplied.
+       */
+      @java.lang.Override
+      public boolean getRowFilterApplied() {
+        return rowFilterApplied_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Boolean indicating whether a row filter was applied in the DataScan job.
+       * </pre>
+       *
+       * <code>bool row_filter_applied = 2;</code>
+       *
+       * @param value The rowFilterApplied to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRowFilterApplied(boolean value) {
+
+        rowFilterApplied_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Boolean indicating whether a row filter was applied in the DataScan job.
+       * </pre>
+       *
+       * <code>bool row_filter_applied = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearRowFilterApplied() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        rowFilterApplied_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs)
+    private static final com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs();
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DataQualityAppliedConfigs> PARSER =
+        new com.google.protobuf.AbstractParser<DataQualityAppliedConfigs>() {
+          @java.lang.Override
+          public DataQualityAppliedConfigs parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DataQualityAppliedConfigs> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DataQualityAppliedConfigs> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface PostScanActionsResultOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * The result of BigQuery export post scan action.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult bigquery_export_result = 1;
+     * </code>
+     *
+     * @return Whether the bigqueryExportResult field is set.
+     */
+    boolean hasBigqueryExportResult();
+    /**
+     *
+     *
+     * <pre>
+     * The result of BigQuery export post scan action.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult bigquery_export_result = 1;
+     * </code>
+     *
+     * @return The bigqueryExportResult.
+     */
+    com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+        getBigqueryExportResult();
+    /**
+     *
+     *
+     * <pre>
+     * The result of BigQuery export post scan action.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult bigquery_export_result = 1;
+     * </code>
+     */
+    com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResultOrBuilder
+        getBigqueryExportResultOrBuilder();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Post scan actions result for data scan job.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult}
+   */
+  public static final class PostScanActionsResult extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult)
+      PostScanActionsResultOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PostScanActionsResult.newBuilder() to construct.
+    private PostScanActionsResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PostScanActionsResult() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PostScanActionsResult();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.LogsProto
+          .internal_static_google_cloud_dataplex_v1_DataScanEvent_PostScanActionsResult_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.dataplex.v1.LogsProto
+          .internal_static_google_cloud_dataplex_v1_DataScanEvent_PostScanActionsResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.class,
+              com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.Builder.class);
+    }
+
+    public interface BigQueryExportResultOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Execution state for the BigQuery exporting.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult.State state = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for state.
+       */
+      int getStateValue();
+      /**
+       *
+       *
+       * <pre>
+       * Execution state for the BigQuery exporting.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult.State state = 1;
+       * </code>
+       *
+       * @return The state.
+       */
+      com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult.State
+          getState();
+
+      /**
+       *
+       *
+       * <pre>
+       * Additional information about the BigQuery exporting.
+       * </pre>
+       *
+       * <code>string message = 2;</code>
+       *
+       * @return The message.
+       */
+      java.lang.String getMessage();
+      /**
+       *
+       *
+       * <pre>
+       * Additional information about the BigQuery exporting.
+       * </pre>
+       *
+       * <code>string message = 2;</code>
+       *
+       * @return The bytes for message.
+       */
+      com.google.protobuf.ByteString getMessageBytes();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The result of BigQuery export post scan action.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult}
+     */
+    public static final class BigQueryExportResult extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult)
+        BigQueryExportResultOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use BigQueryExportResult.newBuilder() to construct.
+      private BigQueryExportResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private BigQueryExportResult() {
+        state_ = 0;
+        message_ = "";
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new BigQueryExportResult();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.LogsProto
+            .internal_static_google_cloud_dataplex_v1_DataScanEvent_PostScanActionsResult_BigQueryExportResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.LogsProto
+            .internal_static_google_cloud_dataplex_v1_DataScanEvent_PostScanActionsResult_BigQueryExportResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                    .BigQueryExportResult.class,
+                com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                    .BigQueryExportResult.Builder.class);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Execution state for the exporting.
+       * </pre>
+       *
+       * Protobuf enum {@code
+       * google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult.State}
+       */
+      public enum State implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * The exporting state is unspecified.
+         * </pre>
+         *
+         * <code>STATE_UNSPECIFIED = 0;</code>
+         */
+        STATE_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * The exporting completed successfully.
+         * </pre>
+         *
+         * <code>SUCCEEDED = 1;</code>
+         */
+        SUCCEEDED(1),
+        /**
+         *
+         *
+         * <pre>
+         * The exporting is no longer running due to an error.
+         * </pre>
+         *
+         * <code>FAILED = 2;</code>
+         */
+        FAILED(2),
+        /**
+         *
+         *
+         * <pre>
+         * The exporting is skipped due to no valid scan result to export
+         * (usually caused by scan failed).
+         * </pre>
+         *
+         * <code>SKIPPED = 3;</code>
+         */
+        SKIPPED(3),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         *
+         *
+         * <pre>
+         * The exporting state is unspecified.
+         * </pre>
+         *
+         * <code>STATE_UNSPECIFIED = 0;</code>
+         */
+        public static final int STATE_UNSPECIFIED_VALUE = 0;
+        /**
+         *
+         *
+         * <pre>
+         * The exporting completed successfully.
+         * </pre>
+         *
+         * <code>SUCCEEDED = 1;</code>
+         */
+        public static final int SUCCEEDED_VALUE = 1;
+        /**
+         *
+         *
+         * <pre>
+         * The exporting is no longer running due to an error.
+         * </pre>
+         *
+         * <code>FAILED = 2;</code>
+         */
+        public static final int FAILED_VALUE = 2;
+        /**
+         *
+         *
+         * <pre>
+         * The exporting is skipped due to no valid scan result to export
+         * (usually caused by scan failed).
+         * </pre>
+         *
+         * <code>SKIPPED = 3;</code>
+         */
+        public static final int SKIPPED_VALUE = 3;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static State valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static State forNumber(int value) {
+          switch (value) {
+            case 0:
+              return STATE_UNSPECIFIED;
+            case 1:
+              return SUCCEEDED;
+            case 2:
+              return FAILED;
+            case 3:
+              return SKIPPED;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<State>() {
+              public State findValueByNumber(int number) {
+                return State.forNumber(number);
+              }
+            };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+              .BigQueryExportResult.getDescriptor()
+              .getEnumTypes()
+              .get(0);
+        }
+
+        private static final State[] VALUES = values();
+
+        public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private State(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult.State)
+      }
+
+      public static final int STATE_FIELD_NUMBER = 1;
+      private int state_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Execution state for the BigQuery exporting.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult.State state = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for state.
+       */
+      @java.lang.Override
+      public int getStateValue() {
+        return state_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Execution state for the BigQuery exporting.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult.State state = 1;
+       * </code>
+       *
+       * @return The state.
+       */
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+              .State
+          getState() {
+        com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult.State
+            result =
+                com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                    .BigQueryExportResult.State.forNumber(state_);
+        return result == null
+            ? com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+                .State.UNRECOGNIZED
+            : result;
+      }
+
+      public static final int MESSAGE_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object message_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Additional information about the BigQuery exporting.
+       * </pre>
+       *
+       * <code>string message = 2;</code>
+       *
+       * @return The message.
+       */
+      @java.lang.Override
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional information about the BigQuery exporting.
+       * </pre>
+       *
+       * <code>string message = 2;</code>
+       *
+       * @return The bytes for message.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (state_
+            != com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+                .State.STATE_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(1, state_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (state_
+            != com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+                .State.STATE_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, state_);
+        }
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                .BigQueryExportResult)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+            other =
+                (com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                        .BigQueryExportResult)
+                    obj;
+
+        if (state_ != other.state_) return false;
+        if (!getMessage().equals(other.getMessage())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + STATE_FIELD_NUMBER;
+        hash = (53 * hash) + state_;
+        hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getMessage().hashCode();
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+              .BigQueryExportResult
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+              .BigQueryExportResult
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+              .BigQueryExportResult
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+              .BigQueryExportResult
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+              .BigQueryExportResult
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+              .BigQueryExportResult
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+              .BigQueryExportResult
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+              .BigQueryExportResult
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+              .BigQueryExportResult
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+              .BigQueryExportResult
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+              .BigQueryExportResult
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+              .BigQueryExportResult
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The result of BigQuery export post scan action.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult)
+          com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+              .BigQueryExportResultOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.dataplex.v1.LogsProto
+              .internal_static_google_cloud_dataplex_v1_DataScanEvent_PostScanActionsResult_BigQueryExportResult_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.dataplex.v1.LogsProto
+              .internal_static_google_cloud_dataplex_v1_DataScanEvent_PostScanActionsResult_BigQueryExportResult_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                      .BigQueryExportResult.class,
+                  com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                      .BigQueryExportResult.Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          state_ = 0;
+          message_ = "";
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.dataplex.v1.LogsProto
+              .internal_static_google_cloud_dataplex_v1_DataScanEvent_PostScanActionsResult_BigQueryExportResult_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+            getDefaultInstanceForType() {
+          return com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+              .BigQueryExportResult.getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+            build() {
+          com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+              result = buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+            buildPartial() {
+          com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+              result =
+                  new com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                      .BigQueryExportResult(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.state_ = state_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.message_ = message_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                  .BigQueryExportResult) {
+            return mergeFrom(
+                (com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                        .BigQueryExportResult)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+                other) {
+          if (other
+              == com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                  .BigQueryExportResult.getDefaultInstance()) return this;
+          if (other.state_ != 0) {
+            setStateValue(other.getStateValue());
+          }
+          if (!other.getMessage().isEmpty()) {
+            message_ = other.message_;
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 8:
+                  {
+                    state_ = input.readEnum();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 8
+                case 18:
+                  {
+                    message_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private int state_ = 0;
+        /**
+         *
+         *
+         * <pre>
+         * Execution state for the BigQuery exporting.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult.State state = 1;
+         * </code>
+         *
+         * @return The enum numeric value on the wire for state.
+         */
+        @java.lang.Override
+        public int getStateValue() {
+          return state_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Execution state for the BigQuery exporting.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult.State state = 1;
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for state to set.
+         * @return This builder for chaining.
+         */
+        public Builder setStateValue(int value) {
+          state_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Execution state for the BigQuery exporting.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult.State state = 1;
+         * </code>
+         *
+         * @return The state.
+         */
+        @java.lang.Override
+        public com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+                .State
+            getState() {
+          com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+                  .State
+              result =
+                  com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                      .BigQueryExportResult.State.forNumber(state_);
+          return result == null
+              ? com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                  .BigQueryExportResult.State.UNRECOGNIZED
+              : result;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Execution state for the BigQuery exporting.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult.State state = 1;
+         * </code>
+         *
+         * @param value The state to set.
+         * @return This builder for chaining.
+         */
+        public Builder setState(
+            com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+                    .State
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000001;
+          state_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Execution state for the BigQuery exporting.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult.State state = 1;
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearState() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          state_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private java.lang.Object message_ = "";
+        /**
+         *
+         *
+         * <pre>
+         * Additional information about the BigQuery exporting.
+         * </pre>
+         *
+         * <code>string message = 2;</code>
+         *
+         * @return The message.
+         */
+        public java.lang.String getMessage() {
+          java.lang.Object ref = message_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            message_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Additional information about the BigQuery exporting.
+         * </pre>
+         *
+         * <code>string message = 2;</code>
+         *
+         * @return The bytes for message.
+         */
+        public com.google.protobuf.ByteString getMessageBytes() {
+          java.lang.Object ref = message_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            message_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Additional information about the BigQuery exporting.
+         * </pre>
+         *
+         * <code>string message = 2;</code>
+         *
+         * @param value The message to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMessage(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          message_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Additional information about the BigQuery exporting.
+         * </pre>
+         *
+         * <code>string message = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearMessage() {
+          message_ = getDefaultInstance().getMessage();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * Additional information about the BigQuery exporting.
+         * </pre>
+         *
+         * <code>string message = 2;</code>
+         *
+         * @param value The bytes for message to set.
+         * @return This builder for chaining.
+         */
+        public Builder setMessageBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          message_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult)
+      private static final com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+              .BigQueryExportResult
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                .BigQueryExportResult();
+      }
+
+      public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+              .BigQueryExportResult
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<BigQueryExportResult> PARSER =
+          new com.google.protobuf.AbstractParser<BigQueryExportResult>() {
+            @java.lang.Override
+            public BigQueryExportResult parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<BigQueryExportResult> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<BigQueryExportResult> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    public static final int BIGQUERY_EXPORT_RESULT_FIELD_NUMBER = 1;
+    private com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+        bigqueryExportResult_;
+    /**
+     *
+     *
+     * <pre>
+     * The result of BigQuery export post scan action.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult bigquery_export_result = 1;
+     * </code>
+     *
+     * @return Whether the bigqueryExportResult field is set.
+     */
+    @java.lang.Override
+    public boolean hasBigqueryExportResult() {
+      return bigqueryExportResult_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The result of BigQuery export post scan action.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult bigquery_export_result = 1;
+     * </code>
+     *
+     * @return The bigqueryExportResult.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+        getBigqueryExportResult() {
+      return bigqueryExportResult_ == null
+          ? com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+              .getDefaultInstance()
+          : bigqueryExportResult_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The result of BigQuery export post scan action.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult bigquery_export_result = 1;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+            .BigQueryExportResultOrBuilder
+        getBigqueryExportResultOrBuilder() {
+      return bigqueryExportResult_ == null
+          ? com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+              .getDefaultInstance()
+          : bigqueryExportResult_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (bigqueryExportResult_ != null) {
+        output.writeMessage(1, getBigqueryExportResult());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (bigqueryExportResult_ != null) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(1, getBigqueryExportResult());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult other =
+          (com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult) obj;
+
+      if (hasBigqueryExportResult() != other.hasBigqueryExportResult()) return false;
+      if (hasBigqueryExportResult()) {
+        if (!getBigqueryExportResult().equals(other.getBigqueryExportResult())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBigqueryExportResult()) {
+        hash = (37 * hash) + BIGQUERY_EXPORT_RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getBigqueryExportResult().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Post scan actions result for data scan job.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult)
+        com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dataplex.v1.LogsProto
+            .internal_static_google_cloud_dataplex_v1_DataScanEvent_PostScanActionsResult_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.dataplex.v1.LogsProto
+            .internal_static_google_cloud_dataplex_v1_DataScanEvent_PostScanActionsResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.class,
+                com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        bigqueryExportResult_ = null;
+        if (bigqueryExportResultBuilder_ != null) {
+          bigqueryExportResultBuilder_.dispose();
+          bigqueryExportResultBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dataplex.v1.LogsProto
+            .internal_static_google_cloud_dataplex_v1_DataScanEvent_PostScanActionsResult_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+          getDefaultInstanceForType() {
+        return com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult build() {
+        com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult buildPartial() {
+        com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult result =
+            new com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.bigqueryExportResult_ =
+              bigqueryExportResultBuilder_ == null
+                  ? bigqueryExportResult_
+                  : bigqueryExportResultBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult) {
+          return mergeFrom(
+              (com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult other) {
+        if (other
+            == com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                .getDefaultInstance()) return this;
+        if (other.hasBigqueryExportResult()) {
+          mergeBigqueryExportResult(other.getBigqueryExportResult());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(
+                      getBigqueryExportResultFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+          bigqueryExportResult_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult,
+              com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+                  .Builder,
+              com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                  .BigQueryExportResultOrBuilder>
+          bigqueryExportResultBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * The result of BigQuery export post scan action.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult bigquery_export_result = 1;
+       * </code>
+       *
+       * @return Whether the bigqueryExportResult field is set.
+       */
+      public boolean hasBigqueryExportResult() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The result of BigQuery export post scan action.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult bigquery_export_result = 1;
+       * </code>
+       *
+       * @return The bigqueryExportResult.
+       */
+      public com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+          getBigqueryExportResult() {
+        if (bigqueryExportResultBuilder_ == null) {
+          return bigqueryExportResult_ == null
+              ? com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                  .BigQueryExportResult.getDefaultInstance()
+              : bigqueryExportResult_;
+        } else {
+          return bigqueryExportResultBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The result of BigQuery export post scan action.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult bigquery_export_result = 1;
+       * </code>
+       */
+      public Builder setBigqueryExportResult(
+          com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+              value) {
+        if (bigqueryExportResultBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bigqueryExportResult_ = value;
+        } else {
+          bigqueryExportResultBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The result of BigQuery export post scan action.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult bigquery_export_result = 1;
+       * </code>
+       */
+      public Builder setBigqueryExportResult(
+          com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+                  .Builder
+              builderForValue) {
+        if (bigqueryExportResultBuilder_ == null) {
+          bigqueryExportResult_ = builderForValue.build();
+        } else {
+          bigqueryExportResultBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The result of BigQuery export post scan action.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult bigquery_export_result = 1;
+       * </code>
+       */
+      public Builder mergeBigqueryExportResult(
+          com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+              value) {
+        if (bigqueryExportResultBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && bigqueryExportResult_ != null
+              && bigqueryExportResult_
+                  != com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                      .BigQueryExportResult.getDefaultInstance()) {
+            getBigqueryExportResultBuilder().mergeFrom(value);
+          } else {
+            bigqueryExportResult_ = value;
+          }
+        } else {
+          bigqueryExportResultBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The result of BigQuery export post scan action.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult bigquery_export_result = 1;
+       * </code>
+       */
+      public Builder clearBigqueryExportResult() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        bigqueryExportResult_ = null;
+        if (bigqueryExportResultBuilder_ != null) {
+          bigqueryExportResultBuilder_.dispose();
+          bigqueryExportResultBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The result of BigQuery export post scan action.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult bigquery_export_result = 1;
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+              .Builder
+          getBigqueryExportResultBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getBigqueryExportResultFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The result of BigQuery export post scan action.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult bigquery_export_result = 1;
+       * </code>
+       */
+      public com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+              .BigQueryExportResultOrBuilder
+          getBigqueryExportResultOrBuilder() {
+        if (bigqueryExportResultBuilder_ != null) {
+          return bigqueryExportResultBuilder_.getMessageOrBuilder();
+        } else {
+          return bigqueryExportResult_ == null
+              ? com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                  .BigQueryExportResult.getDefaultInstance()
+              : bigqueryExportResult_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The result of BigQuery export post scan action.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult bigquery_export_result = 1;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult,
+              com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.BigQueryExportResult
+                  .Builder,
+              com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                  .BigQueryExportResultOrBuilder>
+          getBigqueryExportResultFieldBuilder() {
+        if (bigqueryExportResultBuilder_ == null) {
+          bigqueryExportResultBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                      .BigQueryExportResult,
+                  com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                      .BigQueryExportResult.Builder,
+                  com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                      .BigQueryExportResultOrBuilder>(
+                  getBigqueryExportResult(), getParentForChildren(), isClean());
+          bigqueryExportResult_ = null;
+        }
+        return bigqueryExportResultBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult)
+    private static final com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult();
+    }
+
+    public static com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PostScanActionsResult> PARSER =
+        new com.google.protobuf.AbstractParser<PostScanActionsResult>() {
+          @java.lang.Override
+          public PostScanActionsResult parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PostScanActionsResult> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PostScanActionsResult> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int resultCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -2425,6 +5822,55 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
 
   public ResultCase getResultCase() {
     return ResultCase.forNumber(resultCase_);
+  }
+
+  private int appliedConfigsCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object appliedConfigs_;
+
+  public enum AppliedConfigsCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    DATA_PROFILE_CONFIGS(201),
+    DATA_QUALITY_CONFIGS(202),
+    APPLIEDCONFIGS_NOT_SET(0);
+    private final int value;
+
+    private AppliedConfigsCase(int value) {
+      this.value = value;
+    }
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AppliedConfigsCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static AppliedConfigsCase forNumber(int value) {
+      switch (value) {
+        case 201:
+          return DATA_PROFILE_CONFIGS;
+        case 202:
+          return DATA_QUALITY_CONFIGS;
+        case 0:
+          return APPLIEDCONFIGS_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public AppliedConfigsCase getAppliedConfigsCase() {
+    return AppliedConfigsCase.forNumber(appliedConfigsCase_);
   }
 
   public static final int DATA_SOURCE_FIELD_NUMBER = 1;
@@ -2527,6 +5973,52 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int CREATE_TIME_FIELD_NUMBER = 12;
+  private com.google.protobuf.Timestamp createTime_;
+  /**
+   *
+   *
+   * <pre>
+   * The time when the data scan job was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12;</code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreateTime() {
+    return createTime_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The time when the data scan job was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12;</code>
+   *
+   * @return The createTime.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getCreateTime() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The time when the data scan job was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 12;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+    return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
 
   public static final int START_TIME_FIELD_NUMBER = 3;
@@ -2971,6 +6463,186 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.dataplex.v1.DataScanEvent.DataQualityResult.getDefaultInstance();
   }
 
+  public static final int DATA_PROFILE_CONFIGS_FIELD_NUMBER = 201;
+  /**
+   *
+   *
+   * <pre>
+   * Applied configs for data profile type data scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs data_profile_configs = 201;
+   * </code>
+   *
+   * @return Whether the dataProfileConfigs field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataProfileConfigs() {
+    return appliedConfigsCase_ == 201;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Applied configs for data profile type data scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs data_profile_configs = 201;
+   * </code>
+   *
+   * @return The dataProfileConfigs.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs
+      getDataProfileConfigs() {
+    if (appliedConfigsCase_ == 201) {
+      return (com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs) appliedConfigs_;
+    }
+    return com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Applied configs for data profile type data scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs data_profile_configs = 201;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigsOrBuilder
+      getDataProfileConfigsOrBuilder() {
+    if (appliedConfigsCase_ == 201) {
+      return (com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs) appliedConfigs_;
+    }
+    return com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs
+        .getDefaultInstance();
+  }
+
+  public static final int DATA_QUALITY_CONFIGS_FIELD_NUMBER = 202;
+  /**
+   *
+   *
+   * <pre>
+   * Applied configs for data quality type data scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs data_quality_configs = 202;
+   * </code>
+   *
+   * @return Whether the dataQualityConfigs field is set.
+   */
+  @java.lang.Override
+  public boolean hasDataQualityConfigs() {
+    return appliedConfigsCase_ == 202;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Applied configs for data quality type data scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs data_quality_configs = 202;
+   * </code>
+   *
+   * @return The dataQualityConfigs.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs
+      getDataQualityConfigs() {
+    if (appliedConfigsCase_ == 202) {
+      return (com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs) appliedConfigs_;
+    }
+    return com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs
+        .getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Applied configs for data quality type data scan.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs data_quality_configs = 202;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigsOrBuilder
+      getDataQualityConfigsOrBuilder() {
+    if (appliedConfigsCase_ == 202) {
+      return (com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs) appliedConfigs_;
+    }
+    return com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs
+        .getDefaultInstance();
+  }
+
+  public static final int POST_SCAN_ACTIONS_RESULT_FIELD_NUMBER = 11;
+  private com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult postScanActionsResult_;
+  /**
+   *
+   *
+   * <pre>
+   * The result of post scan actions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult post_scan_actions_result = 11;
+   * </code>
+   *
+   * @return Whether the postScanActionsResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasPostScanActionsResult() {
+    return postScanActionsResult_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The result of post scan actions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult post_scan_actions_result = 11;
+   * </code>
+   *
+   * @return The postScanActionsResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+      getPostScanActionsResult() {
+    return postScanActionsResult_ == null
+        ? com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.getDefaultInstance()
+        : postScanActionsResult_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The result of post scan actions.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult post_scan_actions_result = 11;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResultOrBuilder
+      getPostScanActionsResultOrBuilder() {
+    return postScanActionsResult_ == null
+        ? com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.getDefaultInstance()
+        : postScanActionsResult_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3017,6 +6689,12 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
     if (scope_ != com.google.cloud.dataplex.v1.DataScanEvent.Scope.SCOPE_UNSPECIFIED.getNumber()) {
       output.writeEnum(10, scope_);
     }
+    if (postScanActionsResult_ != null) {
+      output.writeMessage(11, getPostScanActionsResult());
+    }
+    if (createTime_ != null) {
+      output.writeMessage(12, getCreateTime());
+    }
     if (resultCase_ == 101) {
       output.writeMessage(
           101, (com.google.cloud.dataplex.v1.DataScanEvent.DataProfileResult) result_);
@@ -3024,6 +6702,16 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
     if (resultCase_ == 102) {
       output.writeMessage(
           102, (com.google.cloud.dataplex.v1.DataScanEvent.DataQualityResult) result_);
+    }
+    if (appliedConfigsCase_ == 201) {
+      output.writeMessage(
+          201,
+          (com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs) appliedConfigs_);
+    }
+    if (appliedConfigsCase_ == 202) {
+      output.writeMessage(
+          202,
+          (com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs) appliedConfigs_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -3066,6 +6754,13 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
     if (scope_ != com.google.cloud.dataplex.v1.DataScanEvent.Scope.SCOPE_UNSPECIFIED.getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, scope_);
     }
+    if (postScanActionsResult_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(11, getPostScanActionsResult());
+    }
+    if (createTime_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getCreateTime());
+    }
     if (resultCase_ == 101) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -3075,6 +6770,20 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               102, (com.google.cloud.dataplex.v1.DataScanEvent.DataQualityResult) result_);
+    }
+    if (appliedConfigsCase_ == 201) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              201,
+              (com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs)
+                  appliedConfigs_);
+    }
+    if (appliedConfigsCase_ == 202) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              202,
+              (com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs)
+                  appliedConfigs_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3094,6 +6803,10 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
 
     if (!getDataSource().equals(other.getDataSource())) return false;
     if (!getJobId().equals(other.getJobId())) return false;
+    if (hasCreateTime() != other.hasCreateTime()) return false;
+    if (hasCreateTime()) {
+      if (!getCreateTime().equals(other.getCreateTime())) return false;
+    }
     if (hasStartTime() != other.hasStartTime()) return false;
     if (hasStartTime()) {
       if (!getStartTime().equals(other.getStartTime())) return false;
@@ -3108,6 +6821,10 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
     if (!getSpecVersion().equals(other.getSpecVersion())) return false;
     if (trigger_ != other.trigger_) return false;
     if (scope_ != other.scope_) return false;
+    if (hasPostScanActionsResult() != other.hasPostScanActionsResult()) return false;
+    if (hasPostScanActionsResult()) {
+      if (!getPostScanActionsResult().equals(other.getPostScanActionsResult())) return false;
+    }
     if (!getResultCase().equals(other.getResultCase())) return false;
     switch (resultCase_) {
       case 101:
@@ -3115,6 +6832,17 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
         break;
       case 102:
         if (!getDataQuality().equals(other.getDataQuality())) return false;
+        break;
+      case 0:
+      default:
+    }
+    if (!getAppliedConfigsCase().equals(other.getAppliedConfigsCase())) return false;
+    switch (appliedConfigsCase_) {
+      case 201:
+        if (!getDataProfileConfigs().equals(other.getDataProfileConfigs())) return false;
+        break;
+      case 202:
+        if (!getDataQualityConfigs().equals(other.getDataQualityConfigs())) return false;
         break;
       case 0:
       default:
@@ -3134,6 +6862,10 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDataSource().hashCode();
     hash = (37 * hash) + JOB_ID_FIELD_NUMBER;
     hash = (53 * hash) + getJobId().hashCode();
+    if (hasCreateTime()) {
+      hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + getCreateTime().hashCode();
+    }
     if (hasStartTime()) {
       hash = (37 * hash) + START_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getStartTime().hashCode();
@@ -3154,6 +6886,10 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + trigger_;
     hash = (37 * hash) + SCOPE_FIELD_NUMBER;
     hash = (53 * hash) + scope_;
+    if (hasPostScanActionsResult()) {
+      hash = (37 * hash) + POST_SCAN_ACTIONS_RESULT_FIELD_NUMBER;
+      hash = (53 * hash) + getPostScanActionsResult().hashCode();
+    }
     switch (resultCase_) {
       case 101:
         hash = (37 * hash) + DATA_PROFILE_FIELD_NUMBER;
@@ -3162,6 +6898,18 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       case 102:
         hash = (37 * hash) + DATA_QUALITY_FIELD_NUMBER;
         hash = (53 * hash) + getDataQuality().hashCode();
+        break;
+      case 0:
+      default:
+    }
+    switch (appliedConfigsCase_) {
+      case 201:
+        hash = (37 * hash) + DATA_PROFILE_CONFIGS_FIELD_NUMBER;
+        hash = (53 * hash) + getDataProfileConfigs().hashCode();
+        break;
+      case 202:
+        hash = (37 * hash) + DATA_QUALITY_CONFIGS_FIELD_NUMBER;
+        hash = (53 * hash) + getDataQualityConfigs().hashCode();
         break;
       case 0:
       default:
@@ -3272,6 +7020,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * These messages contain information about the execution of a datascan.
    * The monitored resource is 'DataScan'
+   * Next ID: 13
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.DataScanEvent}
@@ -3308,6 +7057,11 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       dataSource_ = "";
       jobId_ = "";
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
       startTime_ = null;
       if (startTimeBuilder_ != null) {
         startTimeBuilder_.dispose();
@@ -3330,8 +7084,21 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       if (dataQualityBuilder_ != null) {
         dataQualityBuilder_.clear();
       }
+      if (dataProfileConfigsBuilder_ != null) {
+        dataProfileConfigsBuilder_.clear();
+      }
+      if (dataQualityConfigsBuilder_ != null) {
+        dataQualityConfigsBuilder_.clear();
+      }
+      postScanActionsResult_ = null;
+      if (postScanActionsResultBuilder_ != null) {
+        postScanActionsResultBuilder_.dispose();
+        postScanActionsResultBuilder_ = null;
+      }
       resultCase_ = 0;
       result_ = null;
+      appliedConfigsCase_ = 0;
+      appliedConfigs_ = null;
       return this;
     }
 
@@ -3376,28 +7143,37 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
         result.jobId_ = jobId_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
+        result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
+        result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.type_ = type_;
+        result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.state_ = state_;
+        result.type_ = type_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.message_ = message_;
+        result.state_ = state_;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.specVersion_ = specVersion_;
+        result.message_ = message_;
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
-        result.trigger_ = trigger_;
+        result.specVersion_ = specVersion_;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.trigger_ = trigger_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.scope_ = scope_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.postScanActionsResult_ =
+            postScanActionsResultBuilder_ == null
+                ? postScanActionsResult_
+                : postScanActionsResultBuilder_.build();
       }
     }
 
@@ -3409,6 +7185,14 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       }
       if (resultCase_ == 102 && dataQualityBuilder_ != null) {
         result.result_ = dataQualityBuilder_.build();
+      }
+      result.appliedConfigsCase_ = appliedConfigsCase_;
+      result.appliedConfigs_ = this.appliedConfigs_;
+      if (appliedConfigsCase_ == 201 && dataProfileConfigsBuilder_ != null) {
+        result.appliedConfigs_ = dataProfileConfigsBuilder_.build();
+      }
+      if (appliedConfigsCase_ == 202 && dataQualityConfigsBuilder_ != null) {
+        result.appliedConfigs_ = dataQualityConfigsBuilder_.build();
       }
     }
 
@@ -3467,6 +7251,9 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasCreateTime()) {
+        mergeCreateTime(other.getCreateTime());
+      }
       if (other.hasStartTime()) {
         mergeStartTime(other.getStartTime());
       }
@@ -3481,12 +7268,12 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getSpecVersion().isEmpty()) {
         specVersion_ = other.specVersion_;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.trigger_ != 0) {
@@ -3494,6 +7281,9 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.scope_ != 0) {
         setScopeValue(other.getScopeValue());
+      }
+      if (other.hasPostScanActionsResult()) {
+        mergePostScanActionsResult(other.getPostScanActionsResult());
       }
       switch (other.getResultCase()) {
         case DATA_PROFILE:
@@ -3507,6 +7297,22 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
             break;
           }
         case RESULT_NOT_SET:
+          {
+            break;
+          }
+      }
+      switch (other.getAppliedConfigsCase()) {
+        case DATA_PROFILE_CONFIGS:
+          {
+            mergeDataProfileConfigs(other.getDataProfileConfigs());
+            break;
+          }
+        case DATA_QUALITY_CONFIGS:
+          {
+            mergeDataQualityConfigs(other.getDataQualityConfigs());
+            break;
+          }
+        case APPLIEDCONFIGS_NOT_SET:
           {
             break;
           }
@@ -3552,51 +7358,64 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
             case 26:
               {
                 input.readMessage(getStartTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getEndTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 40:
               {
                 type_ = input.readEnum();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 40
             case 48:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 48
             case 58:
               {
                 message_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 58
             case 66:
               {
                 specVersion_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 66
             case 72:
               {
                 trigger_ = input.readEnum();
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 72
             case 80:
               {
                 scope_ = input.readEnum();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 80
+            case 90:
+              {
+                input.readMessage(
+                    getPostScanActionsResultFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 90
+            case 98:
+              {
+                input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 98
             case 810:
               {
                 input.readMessage(getDataProfileFieldBuilder().getBuilder(), extensionRegistry);
@@ -3609,6 +7428,20 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
                 resultCase_ = 102;
                 break;
               } // case 818
+            case 1610:
+              {
+                input.readMessage(
+                    getDataProfileConfigsFieldBuilder().getBuilder(), extensionRegistry);
+                appliedConfigsCase_ = 201;
+                break;
+              } // case 1610
+            case 1618:
+              {
+                input.readMessage(
+                    getDataQualityConfigsFieldBuilder().getBuilder(), extensionRegistry);
+                appliedConfigsCase_ = 202;
+                break;
+              } // case 1618
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3636,6 +7469,20 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
     public Builder clearResult() {
       resultCase_ = 0;
       result_ = null;
+      onChanged();
+      return this;
+    }
+
+    private int appliedConfigsCase_ = 0;
+    private java.lang.Object appliedConfigs_;
+
+    public AppliedConfigsCase getAppliedConfigsCase() {
+      return AppliedConfigsCase.forNumber(appliedConfigsCase_);
+    }
+
+    public Builder clearAppliedConfigs() {
+      appliedConfigsCase_ = 0;
+      appliedConfigs_ = null;
       onChanged();
       return this;
     }
@@ -3854,6 +7701,189 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.Timestamp createTime_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The time when the data scan job was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 12;</code>
+     *
+     * @return Whether the createTime field is set.
+     */
+    public boolean hasCreateTime() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time when the data scan job was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 12;</code>
+     *
+     * @return The createTime.
+     */
+    public com.google.protobuf.Timestamp getCreateTime() {
+      if (createTimeBuilder_ == null) {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      } else {
+        return createTimeBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time when the data scan job was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 12;</code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createTime_ = value;
+      } else {
+        createTimeBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time when the data scan job was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 12;</code>
+     */
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createTimeBuilder_ == null) {
+        createTime_ = builderForValue.build();
+      } else {
+        createTimeBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time when the data scan job was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 12;</code>
+     */
+    public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
+      if (createTimeBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && createTime_ != null
+            && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getCreateTimeBuilder().mergeFrom(value);
+        } else {
+          createTime_ = value;
+        }
+      } else {
+        createTimeBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time when the data scan job was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 12;</code>
+     */
+    public Builder clearCreateTime() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      createTime_ = null;
+      if (createTimeBuilder_ != null) {
+        createTimeBuilder_.dispose();
+        createTimeBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time when the data scan job was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 12;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getCreateTimeFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time when the data scan job was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 12;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder() {
+      if (createTimeBuilder_ != null) {
+        return createTimeBuilder_.getMessageOrBuilder();
+      } else {
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The time when the data scan job was created.
+     * </pre>
+     *
+     * <code>.google.protobuf.Timestamp create_time = 12;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        getCreateTimeFieldBuilder() {
+      if (createTimeBuilder_ == null) {
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
+        createTime_ = null;
+      }
+      return createTimeBuilder_;
+    }
+
     private com.google.protobuf.Timestamp startTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -3872,7 +7902,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the startTime field is set.
      */
     public boolean hasStartTime() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      *
@@ -3910,7 +7940,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       } else {
         startTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3929,7 +7959,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       } else {
         startTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3944,7 +7974,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
       if (startTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && startTime_ != null
             && startTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getStartTimeBuilder().mergeFrom(value);
@@ -3954,7 +7984,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       } else {
         startTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -3968,7 +7998,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
      */
     public Builder clearStartTime() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       startTime_ = null;
       if (startTimeBuilder_ != null) {
         startTimeBuilder_.dispose();
@@ -3987,7 +8017,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp start_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
@@ -4051,7 +8081,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endTime field is set.
      */
     public boolean hasEndTime() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -4089,7 +8119,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       } else {
         endTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4108,7 +8138,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       } else {
         endTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4123,7 +8153,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
       if (endTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && endTime_ != null
             && endTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getEndTimeBuilder().mergeFrom(value);
@@ -4133,7 +8163,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       } else {
         endTimeBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -4147,7 +8177,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp end_time = 4;</code>
      */
     public Builder clearEndTime() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       endTime_ = null;
       if (endTimeBuilder_ != null) {
         endTimeBuilder_.dispose();
@@ -4166,7 +8196,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Timestamp end_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
@@ -4242,7 +8272,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setTypeValue(int value) {
       type_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -4281,7 +8311,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       type_ = value.getNumber();
       onChanged();
       return this;
@@ -4298,7 +8328,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearType() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       type_ = 0;
       onChanged();
       return this;
@@ -4334,7 +8364,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -4373,7 +8403,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -4390,7 +8420,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       state_ = 0;
       onChanged();
       return this;
@@ -4458,7 +8488,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       message_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4475,7 +8505,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearMessage() {
       message_ = getDefaultInstance().getMessage();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -4497,7 +8527,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       message_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -4564,7 +8594,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       specVersion_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4581,7 +8611,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSpecVersion() {
       specVersion_ = getDefaultInstance().getSpecVersion();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -4603,7 +8633,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       specVersion_ = value;
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4638,7 +8668,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setTriggerValue(int value) {
       trigger_ = value;
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4677,7 +8707,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       trigger_ = value.getNumber();
       onChanged();
       return this;
@@ -4694,7 +8724,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearTrigger() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       trigger_ = 0;
       onChanged();
       return this;
@@ -4730,7 +8760,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setScopeValue(int value) {
       scope_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4769,7 +8799,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       scope_ = value.getNumber();
       onChanged();
       return this;
@@ -4786,7 +8816,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearScope() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       scope_ = 0;
       onChanged();
       return this;
@@ -5222,6 +9252,703 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       resultCase_ = 102;
       onChanged();
       return dataQualityBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs,
+            com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs.Builder,
+            com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigsOrBuilder>
+        dataProfileConfigsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Applied configs for data profile type data scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs data_profile_configs = 201;
+     * </code>
+     *
+     * @return Whether the dataProfileConfigs field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataProfileConfigs() {
+      return appliedConfigsCase_ == 201;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Applied configs for data profile type data scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs data_profile_configs = 201;
+     * </code>
+     *
+     * @return The dataProfileConfigs.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs
+        getDataProfileConfigs() {
+      if (dataProfileConfigsBuilder_ == null) {
+        if (appliedConfigsCase_ == 201) {
+          return (com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs)
+              appliedConfigs_;
+        }
+        return com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs
+            .getDefaultInstance();
+      } else {
+        if (appliedConfigsCase_ == 201) {
+          return dataProfileConfigsBuilder_.getMessage();
+        }
+        return com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Applied configs for data profile type data scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs data_profile_configs = 201;
+     * </code>
+     */
+    public Builder setDataProfileConfigs(
+        com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs value) {
+      if (dataProfileConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        appliedConfigs_ = value;
+        onChanged();
+      } else {
+        dataProfileConfigsBuilder_.setMessage(value);
+      }
+      appliedConfigsCase_ = 201;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Applied configs for data profile type data scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs data_profile_configs = 201;
+     * </code>
+     */
+    public Builder setDataProfileConfigs(
+        com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs.Builder
+            builderForValue) {
+      if (dataProfileConfigsBuilder_ == null) {
+        appliedConfigs_ = builderForValue.build();
+        onChanged();
+      } else {
+        dataProfileConfigsBuilder_.setMessage(builderForValue.build());
+      }
+      appliedConfigsCase_ = 201;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Applied configs for data profile type data scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs data_profile_configs = 201;
+     * </code>
+     */
+    public Builder mergeDataProfileConfigs(
+        com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs value) {
+      if (dataProfileConfigsBuilder_ == null) {
+        if (appliedConfigsCase_ == 201
+            && appliedConfigs_
+                != com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs
+                    .getDefaultInstance()) {
+          appliedConfigs_ =
+              com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs.newBuilder(
+                      (com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs)
+                          appliedConfigs_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          appliedConfigs_ = value;
+        }
+        onChanged();
+      } else {
+        if (appliedConfigsCase_ == 201) {
+          dataProfileConfigsBuilder_.mergeFrom(value);
+        } else {
+          dataProfileConfigsBuilder_.setMessage(value);
+        }
+      }
+      appliedConfigsCase_ = 201;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Applied configs for data profile type data scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs data_profile_configs = 201;
+     * </code>
+     */
+    public Builder clearDataProfileConfigs() {
+      if (dataProfileConfigsBuilder_ == null) {
+        if (appliedConfigsCase_ == 201) {
+          appliedConfigsCase_ = 0;
+          appliedConfigs_ = null;
+          onChanged();
+        }
+      } else {
+        if (appliedConfigsCase_ == 201) {
+          appliedConfigsCase_ = 0;
+          appliedConfigs_ = null;
+        }
+        dataProfileConfigsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Applied configs for data profile type data scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs data_profile_configs = 201;
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs.Builder
+        getDataProfileConfigsBuilder() {
+      return getDataProfileConfigsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Applied configs for data profile type data scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs data_profile_configs = 201;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigsOrBuilder
+        getDataProfileConfigsOrBuilder() {
+      if ((appliedConfigsCase_ == 201) && (dataProfileConfigsBuilder_ != null)) {
+        return dataProfileConfigsBuilder_.getMessageOrBuilder();
+      } else {
+        if (appliedConfigsCase_ == 201) {
+          return (com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs)
+              appliedConfigs_;
+        }
+        return com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Applied configs for data profile type data scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs data_profile_configs = 201;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs,
+            com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs.Builder,
+            com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigsOrBuilder>
+        getDataProfileConfigsFieldBuilder() {
+      if (dataProfileConfigsBuilder_ == null) {
+        if (!(appliedConfigsCase_ == 201)) {
+          appliedConfigs_ =
+              com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs
+                  .getDefaultInstance();
+        }
+        dataProfileConfigsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs,
+                com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs.Builder,
+                com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigsOrBuilder>(
+                (com.google.cloud.dataplex.v1.DataScanEvent.DataProfileAppliedConfigs)
+                    appliedConfigs_,
+                getParentForChildren(),
+                isClean());
+        appliedConfigs_ = null;
+      }
+      appliedConfigsCase_ = 201;
+      onChanged();
+      return dataProfileConfigsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs,
+            com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs.Builder,
+            com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigsOrBuilder>
+        dataQualityConfigsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Applied configs for data quality type data scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs data_quality_configs = 202;
+     * </code>
+     *
+     * @return Whether the dataQualityConfigs field is set.
+     */
+    @java.lang.Override
+    public boolean hasDataQualityConfigs() {
+      return appliedConfigsCase_ == 202;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Applied configs for data quality type data scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs data_quality_configs = 202;
+     * </code>
+     *
+     * @return The dataQualityConfigs.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs
+        getDataQualityConfigs() {
+      if (dataQualityConfigsBuilder_ == null) {
+        if (appliedConfigsCase_ == 202) {
+          return (com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs)
+              appliedConfigs_;
+        }
+        return com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs
+            .getDefaultInstance();
+      } else {
+        if (appliedConfigsCase_ == 202) {
+          return dataQualityConfigsBuilder_.getMessage();
+        }
+        return com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Applied configs for data quality type data scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs data_quality_configs = 202;
+     * </code>
+     */
+    public Builder setDataQualityConfigs(
+        com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs value) {
+      if (dataQualityConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        appliedConfigs_ = value;
+        onChanged();
+      } else {
+        dataQualityConfigsBuilder_.setMessage(value);
+      }
+      appliedConfigsCase_ = 202;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Applied configs for data quality type data scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs data_quality_configs = 202;
+     * </code>
+     */
+    public Builder setDataQualityConfigs(
+        com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs.Builder
+            builderForValue) {
+      if (dataQualityConfigsBuilder_ == null) {
+        appliedConfigs_ = builderForValue.build();
+        onChanged();
+      } else {
+        dataQualityConfigsBuilder_.setMessage(builderForValue.build());
+      }
+      appliedConfigsCase_ = 202;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Applied configs for data quality type data scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs data_quality_configs = 202;
+     * </code>
+     */
+    public Builder mergeDataQualityConfigs(
+        com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs value) {
+      if (dataQualityConfigsBuilder_ == null) {
+        if (appliedConfigsCase_ == 202
+            && appliedConfigs_
+                != com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs
+                    .getDefaultInstance()) {
+          appliedConfigs_ =
+              com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs.newBuilder(
+                      (com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs)
+                          appliedConfigs_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          appliedConfigs_ = value;
+        }
+        onChanged();
+      } else {
+        if (appliedConfigsCase_ == 202) {
+          dataQualityConfigsBuilder_.mergeFrom(value);
+        } else {
+          dataQualityConfigsBuilder_.setMessage(value);
+        }
+      }
+      appliedConfigsCase_ = 202;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Applied configs for data quality type data scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs data_quality_configs = 202;
+     * </code>
+     */
+    public Builder clearDataQualityConfigs() {
+      if (dataQualityConfigsBuilder_ == null) {
+        if (appliedConfigsCase_ == 202) {
+          appliedConfigsCase_ = 0;
+          appliedConfigs_ = null;
+          onChanged();
+        }
+      } else {
+        if (appliedConfigsCase_ == 202) {
+          appliedConfigsCase_ = 0;
+          appliedConfigs_ = null;
+        }
+        dataQualityConfigsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Applied configs for data quality type data scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs data_quality_configs = 202;
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs.Builder
+        getDataQualityConfigsBuilder() {
+      return getDataQualityConfigsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Applied configs for data quality type data scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs data_quality_configs = 202;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigsOrBuilder
+        getDataQualityConfigsOrBuilder() {
+      if ((appliedConfigsCase_ == 202) && (dataQualityConfigsBuilder_ != null)) {
+        return dataQualityConfigsBuilder_.getMessageOrBuilder();
+      } else {
+        if (appliedConfigsCase_ == 202) {
+          return (com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs)
+              appliedConfigs_;
+        }
+        return com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs
+            .getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Applied configs for data quality type data scan.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs data_quality_configs = 202;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs,
+            com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs.Builder,
+            com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigsOrBuilder>
+        getDataQualityConfigsFieldBuilder() {
+      if (dataQualityConfigsBuilder_ == null) {
+        if (!(appliedConfigsCase_ == 202)) {
+          appliedConfigs_ =
+              com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs
+                  .getDefaultInstance();
+        }
+        dataQualityConfigsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs,
+                com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs.Builder,
+                com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigsOrBuilder>(
+                (com.google.cloud.dataplex.v1.DataScanEvent.DataQualityAppliedConfigs)
+                    appliedConfigs_,
+                getParentForChildren(),
+                isClean());
+        appliedConfigs_ = null;
+      }
+      appliedConfigsCase_ = 202;
+      onChanged();
+      return dataQualityConfigsBuilder_;
+    }
+
+    private com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult postScanActionsResult_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult,
+            com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.Builder,
+            com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResultOrBuilder>
+        postScanActionsResultBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The result of post scan actions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult post_scan_actions_result = 11;
+     * </code>
+     *
+     * @return Whether the postScanActionsResult field is set.
+     */
+    public boolean hasPostScanActionsResult() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The result of post scan actions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult post_scan_actions_result = 11;
+     * </code>
+     *
+     * @return The postScanActionsResult.
+     */
+    public com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+        getPostScanActionsResult() {
+      if (postScanActionsResultBuilder_ == null) {
+        return postScanActionsResult_ == null
+            ? com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.getDefaultInstance()
+            : postScanActionsResult_;
+      } else {
+        return postScanActionsResultBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The result of post scan actions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult post_scan_actions_result = 11;
+     * </code>
+     */
+    public Builder setPostScanActionsResult(
+        com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult value) {
+      if (postScanActionsResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        postScanActionsResult_ = value;
+      } else {
+        postScanActionsResultBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The result of post scan actions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult post_scan_actions_result = 11;
+     * </code>
+     */
+    public Builder setPostScanActionsResult(
+        com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.Builder builderForValue) {
+      if (postScanActionsResultBuilder_ == null) {
+        postScanActionsResult_ = builderForValue.build();
+      } else {
+        postScanActionsResultBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The result of post scan actions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult post_scan_actions_result = 11;
+     * </code>
+     */
+    public Builder mergePostScanActionsResult(
+        com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult value) {
+      if (postScanActionsResultBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)
+            && postScanActionsResult_ != null
+            && postScanActionsResult_
+                != com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult
+                    .getDefaultInstance()) {
+          getPostScanActionsResultBuilder().mergeFrom(value);
+        } else {
+          postScanActionsResult_ = value;
+        }
+      } else {
+        postScanActionsResultBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The result of post scan actions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult post_scan_actions_result = 11;
+     * </code>
+     */
+    public Builder clearPostScanActionsResult() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      postScanActionsResult_ = null;
+      if (postScanActionsResultBuilder_ != null) {
+        postScanActionsResultBuilder_.dispose();
+        postScanActionsResultBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The result of post scan actions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult post_scan_actions_result = 11;
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.Builder
+        getPostScanActionsResultBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return getPostScanActionsResultFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The result of post scan actions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult post_scan_actions_result = 11;
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResultOrBuilder
+        getPostScanActionsResultOrBuilder() {
+      if (postScanActionsResultBuilder_ != null) {
+        return postScanActionsResultBuilder_.getMessageOrBuilder();
+      } else {
+        return postScanActionsResult_ == null
+            ? com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.getDefaultInstance()
+            : postScanActionsResult_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The result of post scan actions.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult post_scan_actions_result = 11;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult,
+            com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.Builder,
+            com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResultOrBuilder>
+        getPostScanActionsResultFieldBuilder() {
+      if (postScanActionsResultBuilder_ == null) {
+        postScanActionsResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult,
+                com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResult.Builder,
+                com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResultOrBuilder>(
+                getPostScanActionsResult(), getParentForChildren(), isClean());
+        postScanActionsResult_ = null;
+      }
+      return postScanActionsResultBuilder_;
     }
 
     @java.lang.Override

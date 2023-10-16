@@ -154,7 +154,7 @@ public class InputName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       InputName that = ((InputName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)

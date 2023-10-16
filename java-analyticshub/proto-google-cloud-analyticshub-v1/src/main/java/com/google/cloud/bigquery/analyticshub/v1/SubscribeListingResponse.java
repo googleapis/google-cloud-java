@@ -60,6 +60,57 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
             com.google.cloud.bigquery.analyticshub.v1.SubscribeListingResponse.Builder.class);
   }
 
+  public static final int SUBSCRIPTION_FIELD_NUMBER = 1;
+  private com.google.cloud.bigquery.analyticshub.v1.Subscription subscription_;
+  /**
+   *
+   *
+   * <pre>
+   * Subscription object created from this subscribe action.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.analyticshub.v1.Subscription subscription = 1;</code>
+   *
+   * @return Whether the subscription field is set.
+   */
+  @java.lang.Override
+  public boolean hasSubscription() {
+    return subscription_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Subscription object created from this subscribe action.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.analyticshub.v1.Subscription subscription = 1;</code>
+   *
+   * @return The subscription.
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.analyticshub.v1.Subscription getSubscription() {
+    return subscription_ == null
+        ? com.google.cloud.bigquery.analyticshub.v1.Subscription.getDefaultInstance()
+        : subscription_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Subscription object created from this subscribe action.
+   * </pre>
+   *
+   * <code>.google.cloud.bigquery.analyticshub.v1.Subscription subscription = 1;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.bigquery.analyticshub.v1.SubscriptionOrBuilder
+      getSubscriptionOrBuilder() {
+    return subscription_ == null
+        ? com.google.cloud.bigquery.analyticshub.v1.Subscription.getDefaultInstance()
+        : subscription_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -74,6 +125,9 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (subscription_ != null) {
+      output.writeMessage(1, getSubscription());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -83,6 +137,9 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
+    if (subscription_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getSubscription());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -99,6 +156,10 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
     com.google.cloud.bigquery.analyticshub.v1.SubscribeListingResponse other =
         (com.google.cloud.bigquery.analyticshub.v1.SubscribeListingResponse) obj;
 
+    if (hasSubscription() != other.hasSubscription()) return false;
+    if (hasSubscription()) {
+      if (!getSubscription().equals(other.getSubscription())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -110,6 +171,10 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasSubscription()) {
+      hash = (37 * hash) + SUBSCRIPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getSubscription().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -251,6 +316,12 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      subscription_ = null;
+      if (subscriptionBuilder_ != null) {
+        subscriptionBuilder_.dispose();
+        subscriptionBuilder_ = null;
+      }
       return this;
     }
 
@@ -280,8 +351,20 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
     public com.google.cloud.bigquery.analyticshub.v1.SubscribeListingResponse buildPartial() {
       com.google.cloud.bigquery.analyticshub.v1.SubscribeListingResponse result =
           new com.google.cloud.bigquery.analyticshub.v1.SubscribeListingResponse(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(
+        com.google.cloud.bigquery.analyticshub.v1.SubscribeListingResponse result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.subscription_ =
+            subscriptionBuilder_ == null ? subscription_ : subscriptionBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -333,6 +416,9 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
       if (other
           == com.google.cloud.bigquery.analyticshub.v1.SubscribeListingResponse
               .getDefaultInstance()) return this;
+      if (other.hasSubscription()) {
+        mergeSubscription(other.getSubscription());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -359,6 +445,12 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
             case 0:
               done = true;
               break;
+            case 10:
+              {
+                input.readMessage(getSubscriptionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -374,6 +466,194 @@ public final class SubscribeListingResponse extends com.google.protobuf.Generate
         onChanged();
       } // finally
       return this;
+    }
+
+    private int bitField0_;
+
+    private com.google.cloud.bigquery.analyticshub.v1.Subscription subscription_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.analyticshub.v1.Subscription,
+            com.google.cloud.bigquery.analyticshub.v1.Subscription.Builder,
+            com.google.cloud.bigquery.analyticshub.v1.SubscriptionOrBuilder>
+        subscriptionBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Subscription object created from this subscribe action.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.analyticshub.v1.Subscription subscription = 1;</code>
+     *
+     * @return Whether the subscription field is set.
+     */
+    public boolean hasSubscription() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Subscription object created from this subscribe action.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.analyticshub.v1.Subscription subscription = 1;</code>
+     *
+     * @return The subscription.
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.Subscription getSubscription() {
+      if (subscriptionBuilder_ == null) {
+        return subscription_ == null
+            ? com.google.cloud.bigquery.analyticshub.v1.Subscription.getDefaultInstance()
+            : subscription_;
+      } else {
+        return subscriptionBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Subscription object created from this subscribe action.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.analyticshub.v1.Subscription subscription = 1;</code>
+     */
+    public Builder setSubscription(com.google.cloud.bigquery.analyticshub.v1.Subscription value) {
+      if (subscriptionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        subscription_ = value;
+      } else {
+        subscriptionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Subscription object created from this subscribe action.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.analyticshub.v1.Subscription subscription = 1;</code>
+     */
+    public Builder setSubscription(
+        com.google.cloud.bigquery.analyticshub.v1.Subscription.Builder builderForValue) {
+      if (subscriptionBuilder_ == null) {
+        subscription_ = builderForValue.build();
+      } else {
+        subscriptionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Subscription object created from this subscribe action.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.analyticshub.v1.Subscription subscription = 1;</code>
+     */
+    public Builder mergeSubscription(com.google.cloud.bigquery.analyticshub.v1.Subscription value) {
+      if (subscriptionBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && subscription_ != null
+            && subscription_
+                != com.google.cloud.bigquery.analyticshub.v1.Subscription.getDefaultInstance()) {
+          getSubscriptionBuilder().mergeFrom(value);
+        } else {
+          subscription_ = value;
+        }
+      } else {
+        subscriptionBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Subscription object created from this subscribe action.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.analyticshub.v1.Subscription subscription = 1;</code>
+     */
+    public Builder clearSubscription() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      subscription_ = null;
+      if (subscriptionBuilder_ != null) {
+        subscriptionBuilder_.dispose();
+        subscriptionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Subscription object created from this subscribe action.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.analyticshub.v1.Subscription subscription = 1;</code>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.Subscription.Builder getSubscriptionBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getSubscriptionFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Subscription object created from this subscribe action.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.analyticshub.v1.Subscription subscription = 1;</code>
+     */
+    public com.google.cloud.bigquery.analyticshub.v1.SubscriptionOrBuilder
+        getSubscriptionOrBuilder() {
+      if (subscriptionBuilder_ != null) {
+        return subscriptionBuilder_.getMessageOrBuilder();
+      } else {
+        return subscription_ == null
+            ? com.google.cloud.bigquery.analyticshub.v1.Subscription.getDefaultInstance()
+            : subscription_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Subscription object created from this subscribe action.
+     * </pre>
+     *
+     * <code>.google.cloud.bigquery.analyticshub.v1.Subscription subscription = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.bigquery.analyticshub.v1.Subscription,
+            com.google.cloud.bigquery.analyticshub.v1.Subscription.Builder,
+            com.google.cloud.bigquery.analyticshub.v1.SubscriptionOrBuilder>
+        getSubscriptionFieldBuilder() {
+      if (subscriptionBuilder_ == null) {
+        subscriptionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.bigquery.analyticshub.v1.Subscription,
+                com.google.cloud.bigquery.analyticshub.v1.Subscription.Builder,
+                com.google.cloud.bigquery.analyticshub.v1.SubscriptionOrBuilder>(
+                getSubscription(), getParentForChildren(), isClean());
+        subscription_ = null;
+      }
+      return subscriptionBuilder_;
     }
 
     @java.lang.Override

@@ -22,7 +22,8 @@ package com.google.cloud.servicedirectory.v1beta1;
  *
  *
  * <pre>
- * The request message for [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
+ * The request message for
+ * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicedirectory.v1beta1.ListEndpointsRequest}
@@ -206,8 +207,8 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    * General `filter` string syntax:
    * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
    *
-   * *   `&lt;field&gt;` can be `name`, `address`, `port`, or `metadata.&lt;key&gt;` for map
-   *     field
+   * *   `&lt;field&gt;` can be `name`, `address`, `port`, `metadata.&lt;key&gt;` for map
+   *     field, or `attributes.&lt;field&gt;` for attributes field
    * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
    *     means `HAS`, and is roughly the same as `=`
    * *   `&lt;value&gt;` must be the same data type as field
@@ -231,6 +232,8 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    * *   `doesnotexist.foo=bar` returns an empty list. Note that endpoint
    *     doesn't have a field called "doesnotexist". Since the filter does not
    *     match any endpoints, it returns no results
+   * *   `attributes.kubernetes_resource_type=KUBERNETES_RESOURCE_TYPE_CLUSTER_
+   *     IP` returns endpoints with the corresponding kubernetes_resource_type
    *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
@@ -261,8 +264,8 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    * General `filter` string syntax:
    * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
    *
-   * *   `&lt;field&gt;` can be `name`, `address`, `port`, or `metadata.&lt;key&gt;` for map
-   *     field
+   * *   `&lt;field&gt;` can be `name`, `address`, `port`, `metadata.&lt;key&gt;` for map
+   *     field, or `attributes.&lt;field&gt;` for attributes field
    * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
    *     means `HAS`, and is roughly the same as `=`
    * *   `&lt;value&gt;` must be the same data type as field
@@ -286,6 +289,8 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    * *   `doesnotexist.foo=bar` returns an empty list. Note that endpoint
    *     doesn't have a field called "doesnotexist". Since the filter does not
    *     match any endpoints, it returns no results
+   * *   `attributes.kubernetes_resource_type=KUBERNETES_RESOURCE_TYPE_CLUSTER_
+   *     IP` returns endpoints with the corresponding kubernetes_resource_type
    *
    * For more information about filtering, see
    * [API Filtering](https://aip.dev/160).
@@ -577,7 +582,8 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request message for [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
+   * The request message for
+   * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1beta1.RegistrationService.ListEndpoints].
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicedirectory.v1beta1.ListEndpointsRequest}
@@ -1112,8 +1118,8 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * General `filter` string syntax:
      * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
      *
-     * *   `&lt;field&gt;` can be `name`, `address`, `port`, or `metadata.&lt;key&gt;` for map
-     *     field
+     * *   `&lt;field&gt;` can be `name`, `address`, `port`, `metadata.&lt;key&gt;` for map
+     *     field, or `attributes.&lt;field&gt;` for attributes field
      * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
      *     means `HAS`, and is roughly the same as `=`
      * *   `&lt;value&gt;` must be the same data type as field
@@ -1137,6 +1143,8 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * *   `doesnotexist.foo=bar` returns an empty list. Note that endpoint
      *     doesn't have a field called "doesnotexist". Since the filter does not
      *     match any endpoints, it returns no results
+     * *   `attributes.kubernetes_resource_type=KUBERNETES_RESOURCE_TYPE_CLUSTER_
+     *     IP` returns endpoints with the corresponding kubernetes_resource_type
      *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
@@ -1166,8 +1174,8 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * General `filter` string syntax:
      * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
      *
-     * *   `&lt;field&gt;` can be `name`, `address`, `port`, or `metadata.&lt;key&gt;` for map
-     *     field
+     * *   `&lt;field&gt;` can be `name`, `address`, `port`, `metadata.&lt;key&gt;` for map
+     *     field, or `attributes.&lt;field&gt;` for attributes field
      * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
      *     means `HAS`, and is roughly the same as `=`
      * *   `&lt;value&gt;` must be the same data type as field
@@ -1191,6 +1199,8 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * *   `doesnotexist.foo=bar` returns an empty list. Note that endpoint
      *     doesn't have a field called "doesnotexist". Since the filter does not
      *     match any endpoints, it returns no results
+     * *   `attributes.kubernetes_resource_type=KUBERNETES_RESOURCE_TYPE_CLUSTER_
+     *     IP` returns endpoints with the corresponding kubernetes_resource_type
      *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
@@ -1220,8 +1230,8 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * General `filter` string syntax:
      * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
      *
-     * *   `&lt;field&gt;` can be `name`, `address`, `port`, or `metadata.&lt;key&gt;` for map
-     *     field
+     * *   `&lt;field&gt;` can be `name`, `address`, `port`, `metadata.&lt;key&gt;` for map
+     *     field, or `attributes.&lt;field&gt;` for attributes field
      * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
      *     means `HAS`, and is roughly the same as `=`
      * *   `&lt;value&gt;` must be the same data type as field
@@ -1245,6 +1255,8 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * *   `doesnotexist.foo=bar` returns an empty list. Note that endpoint
      *     doesn't have a field called "doesnotexist". Since the filter does not
      *     match any endpoints, it returns no results
+     * *   `attributes.kubernetes_resource_type=KUBERNETES_RESOURCE_TYPE_CLUSTER_
+     *     IP` returns endpoints with the corresponding kubernetes_resource_type
      *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
@@ -1273,8 +1285,8 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * General `filter` string syntax:
      * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
      *
-     * *   `&lt;field&gt;` can be `name`, `address`, `port`, or `metadata.&lt;key&gt;` for map
-     *     field
+     * *   `&lt;field&gt;` can be `name`, `address`, `port`, `metadata.&lt;key&gt;` for map
+     *     field, or `attributes.&lt;field&gt;` for attributes field
      * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
      *     means `HAS`, and is roughly the same as `=`
      * *   `&lt;value&gt;` must be the same data type as field
@@ -1298,6 +1310,8 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * *   `doesnotexist.foo=bar` returns an empty list. Note that endpoint
      *     doesn't have a field called "doesnotexist". Since the filter does not
      *     match any endpoints, it returns no results
+     * *   `attributes.kubernetes_resource_type=KUBERNETES_RESOURCE_TYPE_CLUSTER_
+     *     IP` returns endpoints with the corresponding kubernetes_resource_type
      *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).
@@ -1322,8 +1336,8 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * General `filter` string syntax:
      * `&lt;field&gt; &lt;operator&gt; &lt;value&gt; (&lt;logical connector&gt;)`
      *
-     * *   `&lt;field&gt;` can be `name`, `address`, `port`, or `metadata.&lt;key&gt;` for map
-     *     field
+     * *   `&lt;field&gt;` can be `name`, `address`, `port`, `metadata.&lt;key&gt;` for map
+     *     field, or `attributes.&lt;field&gt;` for attributes field
      * *   `&lt;operator&gt;` can be `&lt;`, `&gt;`, `&lt;=`, `&gt;=`, `!=`, `=`, `:`. Of which `:`
      *     means `HAS`, and is roughly the same as `=`
      * *   `&lt;value&gt;` must be the same data type as field
@@ -1347,6 +1361,8 @@ public final class ListEndpointsRequest extends com.google.protobuf.GeneratedMes
      * *   `doesnotexist.foo=bar` returns an empty list. Note that endpoint
      *     doesn't have a field called "doesnotexist". Since the filter does not
      *     match any endpoints, it returns no results
+     * *   `attributes.kubernetes_resource_type=KUBERNETES_RESOURCE_TYPE_CLUSTER_
+     *     IP` returns endpoints with the corresponding kubernetes_resource_type
      *
      * For more information about filtering, see
      * [API Filtering](https://aip.dev/160).

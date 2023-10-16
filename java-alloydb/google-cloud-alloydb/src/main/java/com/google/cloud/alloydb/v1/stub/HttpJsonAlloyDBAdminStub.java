@@ -44,6 +44,7 @@ import com.google.cloud.alloydb.v1.Backup;
 import com.google.cloud.alloydb.v1.BatchCreateInstancesRequest;
 import com.google.cloud.alloydb.v1.BatchCreateInstancesResponse;
 import com.google.cloud.alloydb.v1.Cluster;
+import com.google.cloud.alloydb.v1.ConnectionInfo;
 import com.google.cloud.alloydb.v1.CreateBackupRequest;
 import com.google.cloud.alloydb.v1.CreateClusterRequest;
 import com.google.cloud.alloydb.v1.CreateInstanceRequest;
@@ -55,8 +56,11 @@ import com.google.cloud.alloydb.v1.DeleteClusterRequest;
 import com.google.cloud.alloydb.v1.DeleteInstanceRequest;
 import com.google.cloud.alloydb.v1.DeleteUserRequest;
 import com.google.cloud.alloydb.v1.FailoverInstanceRequest;
+import com.google.cloud.alloydb.v1.GenerateClientCertificateRequest;
+import com.google.cloud.alloydb.v1.GenerateClientCertificateResponse;
 import com.google.cloud.alloydb.v1.GetBackupRequest;
 import com.google.cloud.alloydb.v1.GetClusterRequest;
+import com.google.cloud.alloydb.v1.GetConnectionInfoRequest;
 import com.google.cloud.alloydb.v1.GetInstanceRequest;
 import com.google.cloud.alloydb.v1.GetUserRequest;
 import com.google.cloud.alloydb.v1.InjectFaultRequest;
@@ -1095,6 +1099,80 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<
+          GenerateClientCertificateRequest, GenerateClientCertificateResponse>
+      generateClientCertificateMethodDescriptor =
+          ApiMethodDescriptor
+              .<GenerateClientCertificateRequest, GenerateClientCertificateResponse>newBuilder()
+              .setFullMethodName("google.cloud.alloydb.v1.AlloyDBAdmin/GenerateClientCertificate")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GenerateClientCertificateRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/clusters/*}:generateClientCertificate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateClientCertificateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GenerateClientCertificateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<GenerateClientCertificateResponse>newBuilder()
+                      .setDefaultInstance(GenerateClientCertificateResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetConnectionInfoRequest, ConnectionInfo>
+      getConnectionInfoMethodDescriptor =
+          ApiMethodDescriptor.<GetConnectionInfoRequest, ConnectionInfo>newBuilder()
+              .setFullMethodName("google.cloud.alloydb.v1.AlloyDBAdmin/GetConnectionInfo")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetConnectionInfoRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/clusters/*/instances/*}/connectionInfo",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetConnectionInfoRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetConnectionInfoRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "requestId", request.getRequestId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ConnectionInfo>newBuilder()
+                      .setDefaultInstance(ConnectionInfo.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListUsersRequest, ListUsersResponse>
       listUsersMethodDescriptor =
           ApiMethodDescriptor.<ListUsersRequest, ListUsersResponse>newBuilder()
@@ -1417,6 +1495,9 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
   private final UnaryCallable<
           ListSupportedDatabaseFlagsRequest, ListSupportedDatabaseFlagsPagedResponse>
       listSupportedDatabaseFlagsPagedCallable;
+  private final UnaryCallable<GenerateClientCertificateRequest, GenerateClientCertificateResponse>
+      generateClientCertificateCallable;
+  private final UnaryCallable<GetConnectionInfoRequest, ConnectionInfo> getConnectionInfoCallable;
   private final UnaryCallable<ListUsersRequest, ListUsersResponse> listUsersCallable;
   private final UnaryCallable<ListUsersRequest, ListUsersPagedResponse> listUsersPagedCallable;
   private final UnaryCallable<GetUserRequest, User> getUserCallable;
@@ -1768,6 +1849,31 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<GenerateClientCertificateRequest, GenerateClientCertificateResponse>
+        generateClientCertificateTransportSettings =
+            HttpJsonCallSettings
+                .<GenerateClientCertificateRequest, GenerateClientCertificateResponse>newBuilder()
+                .setMethodDescriptor(generateClientCertificateMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetConnectionInfoRequest, ConnectionInfo>
+        getConnectionInfoTransportSettings =
+            HttpJsonCallSettings.<GetConnectionInfoRequest, ConnectionInfo>newBuilder()
+                .setMethodDescriptor(getConnectionInfoMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<ListUsersRequest, ListUsersResponse> listUsersTransportSettings =
         HttpJsonCallSettings.<ListUsersRequest, ListUsersResponse>newBuilder()
             .setMethodDescriptor(listUsersMethodDescriptor)
@@ -2043,6 +2149,16 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
             listSupportedDatabaseFlagsTransportSettings,
             settings.listSupportedDatabaseFlagsSettings(),
             clientContext);
+    this.generateClientCertificateCallable =
+        callableFactory.createUnaryCallable(
+            generateClientCertificateTransportSettings,
+            settings.generateClientCertificateSettings(),
+            clientContext);
+    this.getConnectionInfoCallable =
+        callableFactory.createUnaryCallable(
+            getConnectionInfoTransportSettings,
+            settings.getConnectionInfoSettings(),
+            clientContext);
     this.listUsersCallable =
         callableFactory.createUnaryCallable(
             listUsersTransportSettings, settings.listUsersSettings(), clientContext);
@@ -2102,6 +2218,8 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
     methodDescriptors.add(updateBackupMethodDescriptor);
     methodDescriptors.add(deleteBackupMethodDescriptor);
     methodDescriptors.add(listSupportedDatabaseFlagsMethodDescriptor);
+    methodDescriptors.add(generateClientCertificateMethodDescriptor);
+    methodDescriptors.add(getConnectionInfoMethodDescriptor);
     methodDescriptors.add(listUsersMethodDescriptor);
     methodDescriptors.add(getUserMethodDescriptor);
     methodDescriptors.add(createUserMethodDescriptor);
@@ -2361,6 +2479,17 @@ public class HttpJsonAlloyDBAdminStub extends AlloyDBAdminStub {
   public UnaryCallable<ListSupportedDatabaseFlagsRequest, ListSupportedDatabaseFlagsPagedResponse>
       listSupportedDatabaseFlagsPagedCallable() {
     return listSupportedDatabaseFlagsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GenerateClientCertificateRequest, GenerateClientCertificateResponse>
+      generateClientCertificateCallable() {
+    return generateClientCertificateCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetConnectionInfoRequest, ConnectionInfo> getConnectionInfoCallable() {
+    return getConnectionInfoCallable;
   }
 
   @Override

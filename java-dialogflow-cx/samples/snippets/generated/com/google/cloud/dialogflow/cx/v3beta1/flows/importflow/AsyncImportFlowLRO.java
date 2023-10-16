@@ -19,6 +19,7 @@ package com.google.cloud.dialogflow.cx.v3beta1.samples;
 // [START dialogflow_v3beta1_generated_Flows_ImportFlow_LRO_async]
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.dialogflow.cx.v3beta1.AgentName;
+import com.google.cloud.dialogflow.cx.v3beta1.FlowImportStrategy;
 import com.google.cloud.dialogflow.cx.v3beta1.FlowsClient;
 import com.google.cloud.dialogflow.cx.v3beta1.ImportFlowRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ImportFlowResponse;
@@ -40,6 +41,7 @@ public class AsyncImportFlowLRO {
       ImportFlowRequest request =
           ImportFlowRequest.newBuilder()
               .setParent(AgentName.of("[PROJECT]", "[LOCATION]", "[AGENT]").toString())
+              .setFlowImportStrategy(FlowImportStrategy.newBuilder().build())
               .build();
       OperationFuture<ImportFlowResponse, Struct> future =
           flowsClient.importFlowOperationCallable().futureCall(request);

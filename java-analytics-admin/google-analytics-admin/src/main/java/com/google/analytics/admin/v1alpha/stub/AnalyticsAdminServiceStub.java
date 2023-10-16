@@ -36,6 +36,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
@@ -90,6 +91,7 @@ import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
+import com.google.analytics.admin.v1alpha.CreateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.CustomDimension;
@@ -112,6 +114,7 @@ import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
+import com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
@@ -146,6 +149,7 @@ import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.GetPropertyRequest;
+import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.GetUserLinkRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
@@ -191,6 +195,8 @@ import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1alpha.ListPropertiesRequest;
 import com.google.analytics.admin.v1alpha.ListPropertiesResponse;
+import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest;
+import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasResponse;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse;
 import com.google.analytics.admin.v1alpha.ListUserLinksRequest;
@@ -201,6 +207,7 @@ import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
 import com.google.analytics.admin.v1alpha.RunAccessReportRequest;
 import com.google.analytics.admin.v1alpha.RunAccessReportResponse;
+import com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema;
 import com.google.analytics.admin.v1alpha.SearchAds360Link;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
@@ -211,6 +218,7 @@ import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
 import com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest;
+import com.google.analytics.admin.v1alpha.UpdateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
@@ -223,6 +231,7 @@ import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
+import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.UserLink;
@@ -448,6 +457,48 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
         "Not implemented: acknowledgeUserDataCollectionCallable()");
   }
 
+  public UnaryCallable<GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      getSKAdNetworkConversionValueSchemaCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: getSKAdNetworkConversionValueSchemaCallable()");
+  }
+
+  public UnaryCallable<
+          CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      createSKAdNetworkConversionValueSchemaCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createSKAdNetworkConversionValueSchemaCallable()");
+  }
+
+  public UnaryCallable<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>
+      deleteSKAdNetworkConversionValueSchemaCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteSKAdNetworkConversionValueSchemaCallable()");
+  }
+
+  public UnaryCallable<
+          UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      updateSKAdNetworkConversionValueSchemaCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateSKAdNetworkConversionValueSchemaCallable()");
+  }
+
+  public UnaryCallable<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasPagedResponse>
+      listSKAdNetworkConversionValueSchemasPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listSKAdNetworkConversionValueSchemasPagedCallable()");
+  }
+
+  public UnaryCallable<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasResponse>
+      listSKAdNetworkConversionValueSchemasCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listSKAdNetworkConversionValueSchemasCallable()");
+  }
+
   public UnaryCallable<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsPagedResponse>
       searchChangeHistoryEventsPagedCallable() {
     throw new UnsupportedOperationException(
@@ -473,6 +524,11 @@ public abstract class AnalyticsAdminServiceStub implements BackgroundResource {
   public UnaryCallable<CreateConversionEventRequest, ConversionEvent>
       createConversionEventCallable() {
     throw new UnsupportedOperationException("Not implemented: createConversionEventCallable()");
+  }
+
+  public UnaryCallable<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateConversionEventCallable()");
   }
 
   public UnaryCallable<GetConversionEventRequest, ConversionEvent> getConversionEventCallable() {

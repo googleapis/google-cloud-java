@@ -18,6 +18,7 @@ package com.google.cloud.aiplatform.v1beta1.stub;
 
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListAnnotationsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListDataItemsPagedResponse;
+import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListDatasetVersionsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListDatasetsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListLocationsPagedResponse;
 import static com.google.cloud.aiplatform.v1beta1.DatasetServiceClient.ListSavedQueriesPagedResponse;
@@ -30,14 +31,20 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.aiplatform.v1beta1.AnnotationSpec;
 import com.google.cloud.aiplatform.v1beta1.CreateDatasetOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.CreateDatasetRequest;
+import com.google.cloud.aiplatform.v1beta1.CreateDatasetVersionOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.CreateDatasetVersionRequest;
 import com.google.cloud.aiplatform.v1beta1.Dataset;
+import com.google.cloud.aiplatform.v1beta1.DatasetVersion;
 import com.google.cloud.aiplatform.v1beta1.DeleteDatasetRequest;
+import com.google.cloud.aiplatform.v1beta1.DeleteDatasetVersionRequest;
 import com.google.cloud.aiplatform.v1beta1.DeleteOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.DeleteSavedQueryRequest;
 import com.google.cloud.aiplatform.v1beta1.ExportDataOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.ExportDataRequest;
 import com.google.cloud.aiplatform.v1beta1.ExportDataResponse;
 import com.google.cloud.aiplatform.v1beta1.GetAnnotationSpecRequest;
 import com.google.cloud.aiplatform.v1beta1.GetDatasetRequest;
+import com.google.cloud.aiplatform.v1beta1.GetDatasetVersionRequest;
 import com.google.cloud.aiplatform.v1beta1.ImportDataOperationMetadata;
 import com.google.cloud.aiplatform.v1beta1.ImportDataRequest;
 import com.google.cloud.aiplatform.v1beta1.ImportDataResponse;
@@ -45,10 +52,14 @@ import com.google.cloud.aiplatform.v1beta1.ListAnnotationsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListAnnotationsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListDataItemsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListDataItemsResponse;
+import com.google.cloud.aiplatform.v1beta1.ListDatasetVersionsRequest;
+import com.google.cloud.aiplatform.v1beta1.ListDatasetVersionsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListDatasetsRequest;
 import com.google.cloud.aiplatform.v1beta1.ListDatasetsResponse;
 import com.google.cloud.aiplatform.v1beta1.ListSavedQueriesRequest;
 import com.google.cloud.aiplatform.v1beta1.ListSavedQueriesResponse;
+import com.google.cloud.aiplatform.v1beta1.RestoreDatasetVersionOperationMetadata;
+import com.google.cloud.aiplatform.v1beta1.RestoreDatasetVersionRequest;
 import com.google.cloud.aiplatform.v1beta1.SearchDataItemsRequest;
 import com.google.cloud.aiplatform.v1beta1.SearchDataItemsResponse;
 import com.google.cloud.aiplatform.v1beta1.UpdateDatasetRequest;
@@ -132,6 +143,52 @@ public abstract class DatasetServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: exportDataCallable()");
   }
 
+  public OperationCallable<
+          CreateDatasetVersionRequest, DatasetVersion, CreateDatasetVersionOperationMetadata>
+      createDatasetVersionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createDatasetVersionOperationCallable()");
+  }
+
+  public UnaryCallable<CreateDatasetVersionRequest, Operation> createDatasetVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: createDatasetVersionCallable()");
+  }
+
+  public OperationCallable<DeleteDatasetVersionRequest, Empty, DeleteOperationMetadata>
+      deleteDatasetVersionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteDatasetVersionOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteDatasetVersionRequest, Operation> deleteDatasetVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteDatasetVersionCallable()");
+  }
+
+  public UnaryCallable<GetDatasetVersionRequest, DatasetVersion> getDatasetVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: getDatasetVersionCallable()");
+  }
+
+  public UnaryCallable<ListDatasetVersionsRequest, ListDatasetVersionsPagedResponse>
+      listDatasetVersionsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDatasetVersionsPagedCallable()");
+  }
+
+  public UnaryCallable<ListDatasetVersionsRequest, ListDatasetVersionsResponse>
+      listDatasetVersionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDatasetVersionsCallable()");
+  }
+
+  public OperationCallable<
+          RestoreDatasetVersionRequest, DatasetVersion, RestoreDatasetVersionOperationMetadata>
+      restoreDatasetVersionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: restoreDatasetVersionOperationCallable()");
+  }
+
+  public UnaryCallable<RestoreDatasetVersionRequest, Operation> restoreDatasetVersionCallable() {
+    throw new UnsupportedOperationException("Not implemented: restoreDatasetVersionCallable()");
+  }
+
   public UnaryCallable<ListDataItemsRequest, ListDataItemsPagedResponse>
       listDataItemsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listDataItemsPagedCallable()");
@@ -158,6 +215,15 @@ public abstract class DatasetServiceStub implements BackgroundResource {
   public UnaryCallable<ListSavedQueriesRequest, ListSavedQueriesResponse>
       listSavedQueriesCallable() {
     throw new UnsupportedOperationException("Not implemented: listSavedQueriesCallable()");
+  }
+
+  public OperationCallable<DeleteSavedQueryRequest, Empty, DeleteOperationMetadata>
+      deleteSavedQueryOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSavedQueryOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteSavedQueryRequest, Operation> deleteSavedQueryCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteSavedQueryCallable()");
   }
 
   public UnaryCallable<GetAnnotationSpecRequest, AnnotationSpec> getAnnotationSpecCallable() {

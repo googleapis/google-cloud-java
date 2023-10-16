@@ -40,6 +40,7 @@ public class SyncListDataScanJobs {
               .setParent(DataScanName.of("[PROJECT]", "[LOCATION]", "[DATASCAN]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setFilter("filter-1274492040")
               .build();
       for (DataScanJob element : dataScanServiceClient.listDataScanJobs(request).iterateAll()) {
         // doThingsWith(element);

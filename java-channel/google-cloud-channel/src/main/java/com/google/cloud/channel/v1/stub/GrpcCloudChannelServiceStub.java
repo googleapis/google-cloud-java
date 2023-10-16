@@ -103,6 +103,8 @@ import com.google.cloud.channel.v1.LookupOfferRequest;
 import com.google.cloud.channel.v1.Offer;
 import com.google.cloud.channel.v1.OperationMetadata;
 import com.google.cloud.channel.v1.ProvisionCloudIdentityRequest;
+import com.google.cloud.channel.v1.QueryEligibleBillingAccountsRequest;
+import com.google.cloud.channel.v1.QueryEligibleBillingAccountsResponse;
 import com.google.cloud.channel.v1.RegisterSubscriberRequest;
 import com.google.cloud.channel.v1.RegisterSubscriberResponse;
 import com.google.cloud.channel.v1.StartPaidServiceRequest;
@@ -640,6 +642,21 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                   ProtoUtils.marshaller(ListPurchasableOffersResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<
+          QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+      queryEligibleBillingAccountsMethodDescriptor =
+          MethodDescriptor
+              .<QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.channel.v1.CloudChannelService/QueryEligibleBillingAccounts")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(QueryEligibleBillingAccountsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(QueryEligibleBillingAccountsResponse.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<RegisterSubscriberRequest, RegisterSubscriberResponse>
       registerSubscriberMethodDescriptor =
           MethodDescriptor.<RegisterSubscriberRequest, RegisterSubscriberResponse>newBuilder()
@@ -814,6 +831,9 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
       listPurchasableOffersCallable;
   private final UnaryCallable<ListPurchasableOffersRequest, ListPurchasableOffersPagedResponse>
       listPurchasableOffersPagedCallable;
+  private final UnaryCallable<
+          QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+      queryEligibleBillingAccountsCallable;
   private final UnaryCallable<RegisterSubscriberRequest, RegisterSubscriberResponse>
       registerSubscriberCallable;
   private final UnaryCallable<UnregisterSubscriberRequest, UnregisterSubscriberResponse>
@@ -1355,6 +1375,19 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+        queryEligibleBillingAccountsTransportSettings =
+            GrpcCallSettings
+                .<QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+                    newBuilder()
+                .setMethodDescriptor(queryEligibleBillingAccountsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("customer", String.valueOf(request.getCustomer()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<RegisterSubscriberRequest, RegisterSubscriberResponse>
         registerSubscriberTransportSettings =
             GrpcCallSettings.<RegisterSubscriberRequest, RegisterSubscriberResponse>newBuilder()
@@ -1712,6 +1745,11 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
         callableFactory.createPagedCallable(
             listPurchasableOffersTransportSettings,
             settings.listPurchasableOffersSettings(),
+            clientContext);
+    this.queryEligibleBillingAccountsCallable =
+        callableFactory.createUnaryCallable(
+            queryEligibleBillingAccountsTransportSettings,
+            settings.queryEligibleBillingAccountsSettings(),
             clientContext);
     this.registerSubscriberCallable =
         callableFactory.createUnaryCallable(
@@ -2141,6 +2179,12 @@ public class GrpcCloudChannelServiceStub extends CloudChannelServiceStub {
   public UnaryCallable<ListPurchasableOffersRequest, ListPurchasableOffersPagedResponse>
       listPurchasableOffersPagedCallable() {
     return listPurchasableOffersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<QueryEligibleBillingAccountsRequest, QueryEligibleBillingAccountsResponse>
+      queryEligibleBillingAccountsCallable() {
+    return queryEligibleBillingAccountsCallable;
   }
 
   @Override

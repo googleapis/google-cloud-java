@@ -22,7 +22,8 @@ package com.google.cloud.servicedirectory.v1beta1;
  *
  *
  * <pre>
- * The response message for [RegistrationService.ListNamespaces][google.cloud.servicedirectory.v1beta1.RegistrationService.ListNamespaces].
+ * The response message for
+ * [RegistrationService.ListNamespaces][google.cloud.servicedirectory.v1beta1.RegistrationService.ListNamespaces].
  * </pre>
  *
  * Protobuf type {@code google.cloud.servicedirectory.v1beta1.ListNamespacesResponse}
@@ -363,7 +364,8 @@ public final class ListNamespacesResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The response message for [RegistrationService.ListNamespaces][google.cloud.servicedirectory.v1beta1.RegistrationService.ListNamespaces].
+   * The response message for
+   * [RegistrationService.ListNamespaces][google.cloud.servicedirectory.v1beta1.RegistrationService.ListNamespaces].
    * </pre>
    *
    * Protobuf type {@code google.cloud.servicedirectory.v1beta1.ListNamespacesResponse}

@@ -72,7 +72,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The path of an artifact in a Google Cloud Storage bucket, with the
+   * The path of an artifact in a Cloud Storage bucket, with the
    * generation number. For example,
    * `gs://mybucket/path/to/output.jar#generation`.
    * </pre>
@@ -97,7 +97,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The path of an artifact in a Google Cloud Storage bucket, with the
+   * The path of an artifact in a Cloud Storage bucket, with the
    * generation number. For example,
    * `gs://mybucket/path/to/output.jar#generation`.
    * </pre>
@@ -607,7 +607,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The path of an artifact in a Google Cloud Storage bucket, with the
+     * The path of an artifact in a Cloud Storage bucket, with the
      * generation number. For example,
      * `gs://mybucket/path/to/output.jar#generation`.
      * </pre>
@@ -631,7 +631,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The path of an artifact in a Google Cloud Storage bucket, with the
+     * The path of an artifact in a Cloud Storage bucket, with the
      * generation number. For example,
      * `gs://mybucket/path/to/output.jar#generation`.
      * </pre>
@@ -655,7 +655,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The path of an artifact in a Google Cloud Storage bucket, with the
+     * The path of an artifact in a Cloud Storage bucket, with the
      * generation number. For example,
      * `gs://mybucket/path/to/output.jar#generation`.
      * </pre>
@@ -678,7 +678,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The path of an artifact in a Google Cloud Storage bucket, with the
+     * The path of an artifact in a Cloud Storage bucket, with the
      * generation number. For example,
      * `gs://mybucket/path/to/output.jar#generation`.
      * </pre>
@@ -697,7 +697,7 @@ public final class ArtifactResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The path of an artifact in a Google Cloud Storage bucket, with the
+     * The path of an artifact in a Cloud Storage bucket, with the
      * generation number. For example,
      * `gs://mybucket/path/to/output.jar#generation`.
      * </pre>

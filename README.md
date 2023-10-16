@@ -60,7 +60,6 @@ Libraries are available on GitHub and Maven Central for developing Java applicat
 | [Fleet Routing](https://github.com/googleapis/google-cloud-java/tree/main/java-optimization) | [![stable][stable-stability]][stable-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-optimization.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-optimization&core=gav) |
 | [Functions](https://github.com/googleapis/google-cloud-java/tree/main/java-functions) | [![stable][stable-stability]][stable-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-functions.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-functions&core=gav) |
 | [GKE Hub API](https://github.com/googleapis/google-cloud-java/tree/main/java-gkehub) | [![stable][stable-stability]][stable-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-gkehub.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-gkehub&core=gav) |
-| [Gaming](https://github.com/googleapis/google-cloud-java/tree/main/java-game-servers) | [![stable][stable-stability]][stable-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-game-servers.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-game-servers&core=gav) |
 | [IAM](https://github.com/googleapis/google-cloud-java/tree/main/java-iam) | [![stable][stable-stability]][stable-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-iam-policy.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-iam-policy&core=gav) |
 | [IAM Admin API](https://github.com/googleapis/google-cloud-java/tree/main/java-iam-admin) | [![stable][stable-stability]][stable-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-iam-admin.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-iam-admin&core=gav) |
 | [IAM Policy Troubleshooter API](https://github.com/googleapis/google-cloud-java/tree/main/java-policy-troubleshooter) | [![stable][stable-stability]][stable-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-policy-troubleshooter.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-policy-troubleshooter&core=gav) |
@@ -128,6 +127,7 @@ Libraries are available on GitHub and Maven Central for developing Java applicat
 | [Address Validation API](https://github.com/googleapis/google-cloud-java/tree/main/java-maps-addressvalidation) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.maps/google-maps-addressvalidation.svg)](https://search.maven.org/search?q=g:com.google.maps%20AND%20a:google-maps-addressvalidation&core=gav) |
 | [Advisory Notifications API](https://github.com/googleapis/google-cloud-java/tree/main/java-advisorynotifications) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-advisorynotifications.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-advisorynotifications&core=gav) |
 | [AlloyDB](https://github.com/googleapis/google-cloud-java/tree/main/java-alloydb) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-alloydb.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-alloydb&core=gav) |
+| [AlloyDB connectors](https://github.com/googleapis/google-cloud-java/tree/main/java-alloydb-connectors) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-alloydb-connectors.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-alloydb-connectors&core=gav) |
 | [Analytics Admin](https://github.com/googleapis/google-cloud-java/tree/main/java-analytics-admin) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.analytics/google-analytics-admin.svg)](https://search.maven.org/search?q=g:com.google.analytics%20AND%20a:google-analytics-admin&core=gav) |
 | [Analytics Data](https://github.com/googleapis/google-cloud-java/tree/main/java-analytics-data) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.analytics/google-analytics-data.svg)](https://search.maven.org/search?q=g:com.google.analytics%20AND%20a:google-analytics-data&core=gav) |
 | [Analytics Hub](https://github.com/googleapis/google-cloud-java/tree/main/java-bigquery-data-exchange) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-bigquery-data-exchange.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-bigquery-data-exchange&core=gav) |
@@ -160,6 +160,7 @@ Libraries are available on GitHub and Maven Central for developing Java applicat
 | [Enterprise Knowledge Graph](https://github.com/googleapis/google-cloud-java/tree/main/java-enterpriseknowledgegraph) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-enterpriseknowledgegraph.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-enterpriseknowledgegraph&core=gav) |
 | [Error Reporting](https://github.com/googleapis/google-cloud-java/tree/main/java-errorreporting) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-errorreporting.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-errorreporting&core=gav) |
 | [Eventarc Publishing](https://github.com/googleapis/google-cloud-java/tree/main/java-eventarc-publishing) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-eventarc-publishing.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-eventarc-publishing&core=gav) |
+| [Infrastructure Manager API](https://github.com/googleapis/google-cloud-java/tree/main/java-infra-manager) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-infra-manager.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-infra-manager&core=gav) |
 | [KMS Inventory API](https://github.com/googleapis/google-cloud-java/tree/main/java-kmsinventory) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-kmsinventory.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-kmsinventory&core=gav) |
 | [Life Sciences](https://github.com/googleapis/google-cloud-java/tree/main/java-life-sciences) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-life-sciences.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-life-sciences&core=gav) |
 | [Live Stream API](https://github.com/googleapis/google-cloud-java/tree/main/java-video-live-stream) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-live-stream.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-live-stream&core=gav) |
@@ -167,11 +168,15 @@ Libraries are available on GitHub and Maven Central for developing Java applicat
 | [Logging Servlet Initializer](https://github.com/googleapis/java-logging-servlet-initializer) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-logging-servlet-initializer.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-logging-servlet-initializer&core=gav) |
 | [Maps Platform Datasets API](https://github.com/googleapis/google-cloud-java/tree/main/java-maps-mapsplatformdatasets) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.maps/google-maps-mapsplatformdatasets.svg)](https://search.maven.org/search?q=g:com.google.maps%20AND%20a:google-maps-mapsplatformdatasets&core=gav) |
 | [Media Translation API](https://github.com/googleapis/google-cloud-java/tree/main/java-mediatranslation) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-mediatranslation.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-mediatranslation&core=gav) |
+| [Merchant API](https://github.com/googleapis/google-cloud-java/tree/main/java-shopping-merchant-reports) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.shopping/google-shopping-merchant-reports.svg)](https://search.maven.org/search?q=g:com.google.shopping%20AND%20a:google-shopping-merchant-reports&core=gav) |
+| [Merchant API](https://github.com/googleapis/google-cloud-java/tree/main/java-shopping-merchant-inventories) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.shopping/google-shopping-merchant-inventories.svg)](https://search.maven.org/search?q=g:com.google.shopping%20AND%20a:google-shopping-merchant-inventories&core=gav) |
 | [Migration Center API](https://github.com/googleapis/google-cloud-java/tree/main/java-migrationcenter) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-migrationcenter.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-migrationcenter&core=gav) |
 | [Monitoring Metrics Scopes](https://github.com/googleapis/google-cloud-java/tree/main/java-monitoring-metricsscope) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-monitoring-metricsscope.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-monitoring-metricsscope&core=gav) |
 | [NIO Filesystem Provider for Storage](https://github.com/googleapis/java-storage-nio) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-nio.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-nio&core=gav) |
+| [NetApp API](https://github.com/googleapis/google-cloud-java/tree/main/java-netapp) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-netapp.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-netapp&core=gav) |
 | [Network Security API](https://github.com/googleapis/google-cloud-java/tree/main/java-network-security) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-network-security.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-network-security&core=gav) |
 | [Phishing Protection](https://github.com/googleapis/google-cloud-java/tree/main/java-phishingprotection) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-phishingprotection.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-phishingprotection&core=gav) |
+| [Policy Simulator API](https://github.com/googleapis/google-cloud-java/tree/main/java-policysimulator) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-policysimulator.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-policysimulator&core=gav) |
 | [Private Catalog](https://github.com/googleapis/google-cloud-java/tree/main/java-private-catalog) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-private-catalog.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-private-catalog&core=gav) |
 | [Pub/Sub Lite Flink Connector](https://github.com/googleapis/java-pubsublite-flink) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-pubsublite-flink.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-pubsublite-flink&core=gav) |
 | [Public Certificate Authority](https://github.com/googleapis/google-cloud-java/tree/main/java-publicca) | [![preview][preview-stability]][preview-description] | [![Maven](https://img.shields.io/maven-central/v/com.google.cloud/google-cloud-publicca.svg)](https://search.maven.org/search?q=g:com.google.cloud%20AND%20a:google-cloud-publicca&core=gav) |
@@ -382,20 +387,81 @@ public CloudTasksClient getService() throws IOException {
 ## Long Running Operations
 
 Long running operations (LROs) are often used for API calls that are expected to
-take a long time to complete (e.g. provisioning a GCE instance or a Dataflow pipeline).
-The initial API call creates an "operation" on the server and returns an operation ID
-to track its progress.
+take a long time to complete (i.e. provisioning a GCE instance or a Dataflow pipeline).
+The initial API call creates an "operation" on the server and returns an Operation ID
+to track its progress. LRO RPCs have the suffix `Async` appended to the call name
+(i.e. `clusterControllerClient.createClusterAsync()`)
 
-Our generated gRPC clients provide a nice interface for starting the operation and
+Our generated clients provide a nice interface for starting the operation and
 then waiting for the operation to complete. This is accomplished by returning an
 [`OperationFuture`](https://cloud.google.com/java/docs/reference/gax/latest/com.google.api.gax.longrunning.OperationFuture).
-When you call `get()` on the `OperationFuture` we poll the operation endpoint to
-check on the operation. These polling operations have a default timeout that
-varies from service to service and will throw a `java.util.concurrent.CancellationException`
-with the message: `Task was cancelled.` after that timeout has been reached.
+When calling `get()` on the `OperationFuture`, the client library will poll the operation to
+check the operation's status.
+
+For example, take a sample `createCluster` Operation in google-cloud-dataproc v4.20.0:
+```java
+try (ClusterControllerClient clusterControllerClient = ClusterControllerClient.create()) {
+  CreateClusterRequest request =
+      CreateClusterRequest.newBuilder()
+          .setProjectId("{PROJECT_ID}")
+          .setRegion("{REGION}")
+          .setCluster(Cluster.newBuilder().build())
+          .setRequestId("{REQUEST_ID}")
+          .setActionOnFailedPrimaryWorkers(FailureAction.forNumber(0))
+          .build();
+  OperationFuture<Cluster, ClusterOperationMetadata> future =
+      clusterControllerClient.createClusterOperationCallable().futureCall(request);
+  // Do something.
+  Cluster response = future.get();
+} catch (CancellationException e) {
+  // Exceeded the default RPC timeout without the Operation completing.
+  // Library is no longer polling for the Operation status. Consider 
+  // increasing the timeout.
+}
+```
+
+### LRO Timeouts
+The polling operations have a default timeout that varies from service to service.
+The library will throw a `java.util.concurrent.CancellationException` with the message:
+`Task was cancelled.` if the timeout exceeds the operation. A `CancellationException`
+does not mean that the backend GCP Operation was cancelled. This exception is thrown from the
+client library when it has exceeded the total timeout without receiving a successful status from the operation.
+Our client libraries respect the configured values set in the OperationTimedPollAlgorithm for each RPC.
+
+Note: The client library handles the Operation's polling mechanism for you. By default, there is no need
+to manually poll the status yourself.
+
+### Default LRO Values
+Each LRO RPC has a pre-configured default values. You can find these values by 
+searching in each Client's `StubSettings`'s class. The default LRO settings are initialized
+inside the `initDefaults()` method in the nested Builder class.
+
+For example, in google-cloud-aiplatform v3.24.0, the default [OperationTimedPollAlgorithm](https://github.com/googleapis/google-cloud-java/blob/9ae786d1acdc7354adf86b78691570668caa293d/java-aiplatform/google-cloud-aiplatform/src/main/java/com/google/cloud/aiplatform/v1/stub/EndpointServiceStubSettings.java#L755-L765) 
+has these default values:
+```java
+OperationTimedPollAlgorithm.create(
+    RetrySettings.newBuilder()
+        .setInitialRetryDelay(Duration.ofMillis(5000L))
+        .setRetryDelayMultiplier(1.5)
+        .setMaxRetryDelay(Duration.ofMillis(45000L))
+        .setInitialRpcTimeout(Duration.ZERO)
+        .setRpcTimeoutMultiplier(1.0)
+        .setMaxRpcTimeout(Duration.ZERO)
+        .setTotalTimeout(Duration.ofMillis(300000L))
+        .build())
+```
+Both retries and LROs share the same RetrySettings class. Note the corresponding link:
+- Total Timeout (Max Time allowed for polling): 5 minutes
+- Initial Retry Delay (Initial delay before first poll): 5 seconds
+- Max Retry Delay (Maximum delay between each poll): 45 seconds
+- Retry Delay Multiplier (Multiplier value to increase the poll delay): 1.5
+
+The RPC Timeout values have no use in LROs and can be omitted or set to the default values
+(`Duration.ZERO` for Timeouts or `1.0` for the multiplier).
 
 ### Configuring LRO Timeouts
-
+To configure the LRO values, create an OperationTimedPollAlgorithm object and update the
+RPC's polling algorithm. For example:
 ```java
 ClusterControllerSettings.Builder settingsBuilder = ClusterControllerSettings.newBuilder();
 TimedRetryAlgorithm timedRetryAlgorithm = OperationTimedPollAlgorithm.create(
@@ -412,6 +478,9 @@ settingsBuilder.createClusterOperationSettings()
 		.setPollingAlgorithm(timedRetryAlgorithm);
 ClusterControllerClient clusterControllerClient = ClusterControllerClient.create(settingsBuilder.build());
 ```
+
+Note: The configuration above *only* modifies the LRO values for the `createClusterOperation` RPC.
+The other RPCs in the Client will still use each RPC's pre-configured LRO values. 
 
 ## Managing Dependencies
 

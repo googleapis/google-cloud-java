@@ -32,7 +32,8 @@ public final class SearchServiceGrpc {
 
   private SearchServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.discoveryengine.v1beta.SearchService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.discoveryengine.v1beta.SearchService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -340,9 +341,9 @@ public final class SearchServiceGrpc {
   private static final class SearchServiceMethodDescriptorSupplier
       extends SearchServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    SearchServiceMethodDescriptorSupplier(String methodName) {
+    SearchServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

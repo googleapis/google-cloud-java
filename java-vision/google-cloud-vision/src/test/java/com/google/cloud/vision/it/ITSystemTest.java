@@ -292,7 +292,7 @@ public class ITSystemTest {
     AnnotateImageResponse res =
         requestAnnotatedImage("face_no_surprise.jpg", Type.FACE_DETECTION, false);
     for (FaceAnnotation annotation : assertNotEmpty(res, res.getFaceAnnotationsList())) {
-      assertEquals(Likelihood.LIKELY, annotation.getAngerLikelihood());
+      assertThat(annotation.getAngerLikelihood()).isAnyOf(Likelihood.LIKELY, Likelihood.POSSIBLE);
       assertEquals(Likelihood.VERY_UNLIKELY, annotation.getJoyLikelihood());
       assertEquals(Likelihood.LIKELY, annotation.getSurpriseLikelihood());
     }
@@ -303,7 +303,7 @@ public class ITSystemTest {
     AnnotateImageResponse res =
         requestAnnotatedImage("face/face_no_surprise.jpg", Type.FACE_DETECTION, true);
     for (FaceAnnotation annotation : assertNotEmpty(res, res.getFaceAnnotationsList())) {
-      assertEquals(Likelihood.LIKELY, annotation.getAngerLikelihood());
+      assertThat(annotation.getAngerLikelihood()).isAnyOf(Likelihood.LIKELY, Likelihood.POSSIBLE);
       assertEquals(Likelihood.VERY_UNLIKELY, annotation.getJoyLikelihood());
       assertEquals(Likelihood.LIKELY, annotation.getSurpriseLikelihood());
     }

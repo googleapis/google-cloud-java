@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-tasks</artifactId>
-  <version>2.21.0</version><!-- {x-version-update:google-cloud-tasks:current} -->
+  <version>2.28.0</version><!-- {x-version-update:google-cloud-tasks:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Tasks</name>
   <description>Java idiomatic client for Google Cloud Tasks</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-tasks-parent</artifactId>
-    <version>2.21.0</version><!-- {x-version-update:google-cloud-tasks:current} -->
+    <version>2.28.0</version><!-- {x-version-update:google-cloud-tasks:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-tasks</site.installationModule>
@@ -121,6 +121,11 @@
     <groupId>com.google.api</groupId>
       <artifactId>gax-httpjson</artifactId>
       <classifier>testlib</classifier>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-common-protos</artifactId>
       <scope>test</scope>
     </dependency>
   </dependencies>

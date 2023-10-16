@@ -103,6 +103,12 @@ public class RecommenderSettings extends ClientSettings<RecommenderSettings> {
     return ((RecommenderStubSettings) getStubSettings()).getRecommendationSettings();
   }
 
+  /** Returns the object with the settings used for calls to markRecommendationDismissed. */
+  public UnaryCallSettings<MarkRecommendationDismissedRequest, Recommendation>
+      markRecommendationDismissedSettings() {
+    return ((RecommenderStubSettings) getStubSettings()).markRecommendationDismissedSettings();
+  }
+
   /** Returns the object with the settings used for calls to markRecommendationClaimed. */
   public UnaryCallSettings<MarkRecommendationClaimedRequest, Recommendation>
       markRecommendationClaimedSettings() {
@@ -290,6 +296,12 @@ public class RecommenderSettings extends ClientSettings<RecommenderSettings> {
     public UnaryCallSettings.Builder<GetRecommendationRequest, Recommendation>
         getRecommendationSettings() {
       return getStubSettingsBuilder().getRecommendationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to markRecommendationDismissed. */
+    public UnaryCallSettings.Builder<MarkRecommendationDismissedRequest, Recommendation>
+        markRecommendationDismissedSettings() {
+      return getStubSettingsBuilder().markRecommendationDismissedSettings();
     }
 
     /** Returns the builder for the settings used for calls to markRecommendationClaimed. */

@@ -135,10 +135,10 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Total number of rows in the import job.
+   * Output only. Total number of rows in the import job.
    * </pre>
    *
-   * <code>int32 total_rows_count = 3;</code>
+   * <code>int32 total_rows_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The totalRowsCount.
    */
@@ -787,10 +787,10 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Total number of rows in the import job.
+     * Output only. Total number of rows in the import job.
      * </pre>
      *
-     * <code>int32 total_rows_count = 3;</code>
+     * <code>int32 total_rows_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The totalRowsCount.
      */
@@ -802,10 +802,10 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Total number of rows in the import job.
+     * Output only. Total number of rows in the import job.
      * </pre>
      *
-     * <code>int32 total_rows_count = 3;</code>
+     * <code>int32 total_rows_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The totalRowsCount to set.
      * @return This builder for chaining.
@@ -821,10 +821,10 @@ public final class ExecutionReport extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Total number of rows in the import job.
+     * Output only. Total number of rows in the import job.
      * </pre>
      *
-     * <code>int32 total_rows_count = 3;</code>
+     * <code>int32 total_rows_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */

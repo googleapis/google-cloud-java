@@ -734,6 +734,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  @java.lang.Deprecated
   public interface ChannelPartnerGranularityOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity)
@@ -745,10 +746,14 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    * Applies the repricing configuration at the channel partner level.
    * The channel partner value is derived from the resource name. Takes an
    * empty json object.
+   * Deprecated: This is no longer supported. Use
+   * [RepricingConfig.EntitlementGranularity][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity]
+   * instead.
    * </pre>
    *
    * Protobuf type {@code google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity}
    */
+  @java.lang.Deprecated
   public static final class ChannelPartnerGranularity extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity)
@@ -942,6 +947,9 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      * Applies the repricing configuration at the channel partner level.
      * The channel partner value is derived from the resource name. Takes an
      * empty json object.
+     * Deprecated: This is no longer supported. Use
+     * [RepricingConfig.EntitlementGranularity][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity]
+     * instead.
      * </pre>
      *
      * Protobuf type {@code google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity}
@@ -1185,6 +1193,7 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     ENTITLEMENT_GRANULARITY(4),
+    @java.lang.Deprecated
     CHANNEL_PARTNER_GRANULARITY(5),
     GRANULARITY_NOT_SET(0);
     private final int value;
@@ -1229,8 +1238,20 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Applies the repricing configuration at the entitlement level. This is
-   * the only supported value for CustomerRepricingConfig.
+   * Applies the repricing configuration at the entitlement level.
+   *
+   * Note: If a
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * using
+   * [RepricingConfig.EntitlementGranularity][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity]
+   * becomes effective, then no existing or future
+   * [RepricingConfig.ChannelPartnerGranularity][google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity]
+   * will apply to the
+   * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+   * This is the recommended value for both
+   * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   * and
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig].
    * </pre>
    *
    * <code>
@@ -1247,8 +1268,20 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Applies the repricing configuration at the entitlement level. This is
-   * the only supported value for CustomerRepricingConfig.
+   * Applies the repricing configuration at the entitlement level.
+   *
+   * Note: If a
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * using
+   * [RepricingConfig.EntitlementGranularity][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity]
+   * becomes effective, then no existing or future
+   * [RepricingConfig.ChannelPartnerGranularity][google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity]
+   * will apply to the
+   * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+   * This is the recommended value for both
+   * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   * and
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig].
    * </pre>
    *
    * <code>
@@ -1269,8 +1302,20 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Applies the repricing configuration at the entitlement level. This is
-   * the only supported value for CustomerRepricingConfig.
+   * Applies the repricing configuration at the entitlement level.
+   *
+   * Note: If a
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * using
+   * [RepricingConfig.EntitlementGranularity][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity]
+   * becomes effective, then no existing or future
+   * [RepricingConfig.ChannelPartnerGranularity][google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity]
+   * will apply to the
+   * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+   * This is the recommended value for both
+   * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+   * and
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig].
    * </pre>
    *
    * <code>
@@ -1292,16 +1337,23 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Applies the repricing configuration at the channel partner level.
-   * This is the only supported value for ChannelPartnerRepricingConfig.
+   * Only
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * supports this value. Deprecated: This is no longer supported. Use
+   * [RepricingConfig.entitlement_granularity][google.cloud.channel.v1.RepricingConfig.entitlement_granularity]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5;
+   * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.channel.v1.RepricingConfig.channel_partner_granularity is deprecated.
+   *     See google/cloud/channel/v1/repricing.proto;l=139
    * @return Whether the channelPartnerGranularity field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasChannelPartnerGranularity() {
     return granularityCase_ == 5;
   }
@@ -1310,16 +1362,23 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Applies the repricing configuration at the channel partner level.
-   * This is the only supported value for ChannelPartnerRepricingConfig.
+   * Only
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * supports this value. Deprecated: This is no longer supported. Use
+   * [RepricingConfig.entitlement_granularity][google.cloud.channel.v1.RepricingConfig.entitlement_granularity]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5;
+   * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5 [deprecated = true];
    * </code>
    *
+   * @deprecated google.cloud.channel.v1.RepricingConfig.channel_partner_granularity is deprecated.
+   *     See google/cloud/channel/v1/repricing.proto;l=139
    * @return The channelPartnerGranularity.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity
       getChannelPartnerGranularity() {
     if (granularityCase_ == 5) {
@@ -1333,14 +1392,19 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Applies the repricing configuration at the channel partner level.
-   * This is the only supported value for ChannelPartnerRepricingConfig.
+   * Only
+   * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+   * supports this value. Deprecated: This is no longer supported. Use
+   * [RepricingConfig.entitlement_granularity][google.cloud.channel.v1.RepricingConfig.entitlement_granularity]
+   * instead.
    * </pre>
    *
    * <code>
-   * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5;
+   * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5 [deprecated = true];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularityOrBuilder
       getChannelPartnerGranularityOrBuilder() {
     if (granularityCase_ == 5) {
@@ -2185,8 +2249,20 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Applies the repricing configuration at the entitlement level. This is
-     * the only supported value for CustomerRepricingConfig.
+     * Applies the repricing configuration at the entitlement level.
+     *
+     * Note: If a
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+     * using
+     * [RepricingConfig.EntitlementGranularity][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity]
+     * becomes effective, then no existing or future
+     * [RepricingConfig.ChannelPartnerGranularity][google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity]
+     * will apply to the
+     * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+     * This is the recommended value for both
+     * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+     * and
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig].
      * </pre>
      *
      * <code>
@@ -2203,8 +2279,20 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Applies the repricing configuration at the entitlement level. This is
-     * the only supported value for CustomerRepricingConfig.
+     * Applies the repricing configuration at the entitlement level.
+     *
+     * Note: If a
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+     * using
+     * [RepricingConfig.EntitlementGranularity][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity]
+     * becomes effective, then no existing or future
+     * [RepricingConfig.ChannelPartnerGranularity][google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity]
+     * will apply to the
+     * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+     * This is the recommended value for both
+     * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+     * and
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig].
      * </pre>
      *
      * <code>
@@ -2234,8 +2322,20 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Applies the repricing configuration at the entitlement level. This is
-     * the only supported value for CustomerRepricingConfig.
+     * Applies the repricing configuration at the entitlement level.
+     *
+     * Note: If a
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+     * using
+     * [RepricingConfig.EntitlementGranularity][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity]
+     * becomes effective, then no existing or future
+     * [RepricingConfig.ChannelPartnerGranularity][google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity]
+     * will apply to the
+     * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+     * This is the recommended value for both
+     * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+     * and
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig].
      * </pre>
      *
      * <code>
@@ -2260,8 +2360,20 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Applies the repricing configuration at the entitlement level. This is
-     * the only supported value for CustomerRepricingConfig.
+     * Applies the repricing configuration at the entitlement level.
+     *
+     * Note: If a
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+     * using
+     * [RepricingConfig.EntitlementGranularity][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity]
+     * becomes effective, then no existing or future
+     * [RepricingConfig.ChannelPartnerGranularity][google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity]
+     * will apply to the
+     * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+     * This is the recommended value for both
+     * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+     * and
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig].
      * </pre>
      *
      * <code>
@@ -2284,8 +2396,20 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Applies the repricing configuration at the entitlement level. This is
-     * the only supported value for CustomerRepricingConfig.
+     * Applies the repricing configuration at the entitlement level.
+     *
+     * Note: If a
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+     * using
+     * [RepricingConfig.EntitlementGranularity][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity]
+     * becomes effective, then no existing or future
+     * [RepricingConfig.ChannelPartnerGranularity][google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity]
+     * will apply to the
+     * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+     * This is the recommended value for both
+     * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+     * and
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig].
      * </pre>
      *
      * <code>
@@ -2323,8 +2447,20 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Applies the repricing configuration at the entitlement level. This is
-     * the only supported value for CustomerRepricingConfig.
+     * Applies the repricing configuration at the entitlement level.
+     *
+     * Note: If a
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+     * using
+     * [RepricingConfig.EntitlementGranularity][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity]
+     * becomes effective, then no existing or future
+     * [RepricingConfig.ChannelPartnerGranularity][google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity]
+     * will apply to the
+     * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+     * This is the recommended value for both
+     * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+     * and
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig].
      * </pre>
      *
      * <code>
@@ -2351,8 +2487,20 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Applies the repricing configuration at the entitlement level. This is
-     * the only supported value for CustomerRepricingConfig.
+     * Applies the repricing configuration at the entitlement level.
+     *
+     * Note: If a
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+     * using
+     * [RepricingConfig.EntitlementGranularity][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity]
+     * becomes effective, then no existing or future
+     * [RepricingConfig.ChannelPartnerGranularity][google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity]
+     * will apply to the
+     * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+     * This is the recommended value for both
+     * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+     * and
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig].
      * </pre>
      *
      * <code>
@@ -2367,8 +2515,20 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Applies the repricing configuration at the entitlement level. This is
-     * the only supported value for CustomerRepricingConfig.
+     * Applies the repricing configuration at the entitlement level.
+     *
+     * Note: If a
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+     * using
+     * [RepricingConfig.EntitlementGranularity][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity]
+     * becomes effective, then no existing or future
+     * [RepricingConfig.ChannelPartnerGranularity][google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity]
+     * will apply to the
+     * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+     * This is the recommended value for both
+     * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+     * and
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig].
      * </pre>
      *
      * <code>
@@ -2392,8 +2552,20 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * Applies the repricing configuration at the entitlement level. This is
-     * the only supported value for CustomerRepricingConfig.
+     * Applies the repricing configuration at the entitlement level.
+     *
+     * Note: If a
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+     * using
+     * [RepricingConfig.EntitlementGranularity][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity]
+     * becomes effective, then no existing or future
+     * [RepricingConfig.ChannelPartnerGranularity][google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity]
+     * will apply to the
+     * [RepricingConfig.EntitlementGranularity.entitlement][google.cloud.channel.v1.RepricingConfig.EntitlementGranularity.entitlement].
+     * This is the recommended value for both
+     * [CustomerRepricingConfig][google.cloud.channel.v1.CustomerRepricingConfig]
+     * and
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig].
      * </pre>
      *
      * <code>
@@ -2436,16 +2608,23 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Applies the repricing configuration at the channel partner level.
-     * This is the only supported value for ChannelPartnerRepricingConfig.
+     * Only
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+     * supports this value. Deprecated: This is no longer supported. Use
+     * [RepricingConfig.entitlement_granularity][google.cloud.channel.v1.RepricingConfig.entitlement_granularity]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5;
+     * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.channel.v1.RepricingConfig.channel_partner_granularity is
+     *     deprecated. See google/cloud/channel/v1/repricing.proto;l=139
      * @return Whether the channelPartnerGranularity field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasChannelPartnerGranularity() {
       return granularityCase_ == 5;
     }
@@ -2454,16 +2633,23 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Applies the repricing configuration at the channel partner level.
-     * This is the only supported value for ChannelPartnerRepricingConfig.
+     * Only
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+     * supports this value. Deprecated: This is no longer supported. Use
+     * [RepricingConfig.entitlement_granularity][google.cloud.channel.v1.RepricingConfig.entitlement_granularity]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5;
+     * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5 [deprecated = true];
      * </code>
      *
+     * @deprecated google.cloud.channel.v1.RepricingConfig.channel_partner_granularity is
+     *     deprecated. See google/cloud/channel/v1/repricing.proto;l=139
      * @return The channelPartnerGranularity.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity
         getChannelPartnerGranularity() {
       if (channelPartnerGranularityBuilder_ == null) {
@@ -2486,13 +2672,18 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Applies the repricing configuration at the channel partner level.
-     * This is the only supported value for ChannelPartnerRepricingConfig.
+     * Only
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+     * supports this value. Deprecated: This is no longer supported. Use
+     * [RepricingConfig.entitlement_granularity][google.cloud.channel.v1.RepricingConfig.entitlement_granularity]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5;
+     * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setChannelPartnerGranularity(
         com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity value) {
       if (channelPartnerGranularityBuilder_ == null) {
@@ -2512,13 +2703,18 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Applies the repricing configuration at the channel partner level.
-     * This is the only supported value for ChannelPartnerRepricingConfig.
+     * Only
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+     * supports this value. Deprecated: This is no longer supported. Use
+     * [RepricingConfig.entitlement_granularity][google.cloud.channel.v1.RepricingConfig.entitlement_granularity]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5;
+     * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setChannelPartnerGranularity(
         com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity.Builder
             builderForValue) {
@@ -2536,13 +2732,18 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Applies the repricing configuration at the channel partner level.
-     * This is the only supported value for ChannelPartnerRepricingConfig.
+     * Only
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+     * supports this value. Deprecated: This is no longer supported. Use
+     * [RepricingConfig.entitlement_granularity][google.cloud.channel.v1.RepricingConfig.entitlement_granularity]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5;
+     * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeChannelPartnerGranularity(
         com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity value) {
       if (channelPartnerGranularityBuilder_ == null) {
@@ -2575,13 +2776,18 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Applies the repricing configuration at the channel partner level.
-     * This is the only supported value for ChannelPartnerRepricingConfig.
+     * Only
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+     * supports this value. Deprecated: This is no longer supported. Use
+     * [RepricingConfig.entitlement_granularity][google.cloud.channel.v1.RepricingConfig.entitlement_granularity]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5;
+     * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearChannelPartnerGranularity() {
       if (channelPartnerGranularityBuilder_ == null) {
         if (granularityCase_ == 5) {
@@ -2603,13 +2809,18 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Applies the repricing configuration at the channel partner level.
-     * This is the only supported value for ChannelPartnerRepricingConfig.
+     * Only
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+     * supports this value. Deprecated: This is no longer supported. Use
+     * [RepricingConfig.entitlement_granularity][google.cloud.channel.v1.RepricingConfig.entitlement_granularity]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5;
+     * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5 [deprecated = true];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity.Builder
         getChannelPartnerGranularityBuilder() {
       return getChannelPartnerGranularityFieldBuilder().getBuilder();
@@ -2619,14 +2830,19 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Applies the repricing configuration at the channel partner level.
-     * This is the only supported value for ChannelPartnerRepricingConfig.
+     * Only
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+     * supports this value. Deprecated: This is no longer supported. Use
+     * [RepricingConfig.entitlement_granularity][google.cloud.channel.v1.RepricingConfig.entitlement_granularity]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5;
+     * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5 [deprecated = true];
      * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularityOrBuilder
         getChannelPartnerGranularityOrBuilder() {
       if ((granularityCase_ == 5) && (channelPartnerGranularityBuilder_ != null)) {
@@ -2645,11 +2861,15 @@ public final class RepricingConfig extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Applies the repricing configuration at the channel partner level.
-     * This is the only supported value for ChannelPartnerRepricingConfig.
+     * Only
+     * [ChannelPartnerRepricingConfig][google.cloud.channel.v1.ChannelPartnerRepricingConfig]
+     * supports this value. Deprecated: This is no longer supported. Use
+     * [RepricingConfig.entitlement_granularity][google.cloud.channel.v1.RepricingConfig.entitlement_granularity]
+     * instead.
      * </pre>
      *
      * <code>
-     * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5;
+     * .google.cloud.channel.v1.RepricingConfig.ChannelPartnerGranularity channel_partner_granularity = 5 [deprecated = true];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

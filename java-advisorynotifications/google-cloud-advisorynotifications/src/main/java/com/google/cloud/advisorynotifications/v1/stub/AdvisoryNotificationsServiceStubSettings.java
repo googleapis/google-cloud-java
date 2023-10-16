@@ -44,9 +44,12 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.advisorynotifications.v1.GetNotificationRequest;
+import com.google.cloud.advisorynotifications.v1.GetSettingsRequest;
 import com.google.cloud.advisorynotifications.v1.ListNotificationsRequest;
 import com.google.cloud.advisorynotifications.v1.ListNotificationsResponse;
 import com.google.cloud.advisorynotifications.v1.Notification;
+import com.google.cloud.advisorynotifications.v1.Settings;
+import com.google.cloud.advisorynotifications.v1.UpdateSettingsRequest;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -106,6 +109,8 @@ public class AdvisoryNotificationsServiceStubSettings
           ListNotificationsRequest, ListNotificationsResponse, ListNotificationsPagedResponse>
       listNotificationsSettings;
   private final UnaryCallSettings<GetNotificationRequest, Notification> getNotificationSettings;
+  private final UnaryCallSettings<GetSettingsRequest, Settings> getSettingsSettings;
+  private final UnaryCallSettings<UpdateSettingsRequest, Settings> updateSettingsSettings;
 
   private static final PagedListDescriptor<
           ListNotificationsRequest, ListNotificationsResponse, Notification>
@@ -178,6 +183,16 @@ public class AdvisoryNotificationsServiceStubSettings
   /** Returns the object with the settings used for calls to getNotification. */
   public UnaryCallSettings<GetNotificationRequest, Notification> getNotificationSettings() {
     return getNotificationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getSettings. */
+  public UnaryCallSettings<GetSettingsRequest, Settings> getSettingsSettings() {
+    return getSettingsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateSettings. */
+  public UnaryCallSettings<UpdateSettingsRequest, Settings> updateSettingsSettings() {
+    return updateSettingsSettings;
   }
 
   public AdvisoryNotificationsServiceStub createStub() throws IOException {
@@ -290,6 +305,8 @@ public class AdvisoryNotificationsServiceStubSettings
 
     listNotificationsSettings = settingsBuilder.listNotificationsSettings().build();
     getNotificationSettings = settingsBuilder.getNotificationSettings().build();
+    getSettingsSettings = settingsBuilder.getSettingsSettings().build();
+    updateSettingsSettings = settingsBuilder.updateSettingsSettings().build();
   }
 
   /** Builder for AdvisoryNotificationsServiceStubSettings. */
@@ -301,6 +318,8 @@ public class AdvisoryNotificationsServiceStubSettings
         listNotificationsSettings;
     private final UnaryCallSettings.Builder<GetNotificationRequest, Notification>
         getNotificationSettings;
+    private final UnaryCallSettings.Builder<GetSettingsRequest, Settings> getSettingsSettings;
+    private final UnaryCallSettings.Builder<UpdateSettingsRequest, Settings> updateSettingsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -310,6 +329,7 @@ public class AdvisoryNotificationsServiceStubSettings
       definitions.put(
           "retry_policy_0_codes",
           ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put("no_retry_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -329,6 +349,8 @@ public class AdvisoryNotificationsServiceStubSettings
               .setTotalTimeout(Duration.ofMillis(60000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
+      settings = RetrySettings.newBuilder().setRpcTimeoutMultiplier(1.0).build();
+      definitions.put("no_retry_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -341,10 +363,15 @@ public class AdvisoryNotificationsServiceStubSettings
 
       listNotificationsSettings = PagedCallSettings.newBuilder(LIST_NOTIFICATIONS_PAGE_STR_FACT);
       getNotificationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateSettingsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listNotificationsSettings, getNotificationSettings);
+              listNotificationsSettings,
+              getNotificationSettings,
+              getSettingsSettings,
+              updateSettingsSettings);
       initDefaults(this);
     }
 
@@ -353,10 +380,15 @@ public class AdvisoryNotificationsServiceStubSettings
 
       listNotificationsSettings = settings.listNotificationsSettings.toBuilder();
       getNotificationSettings = settings.getNotificationSettings.toBuilder();
+      getSettingsSettings = settings.getSettingsSettings.toBuilder();
+      updateSettingsSettings = settings.updateSettingsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
-              listNotificationsSettings, getNotificationSettings);
+              listNotificationsSettings,
+              getNotificationSettings,
+              getSettingsSettings,
+              updateSettingsSettings);
     }
 
     private static Builder createDefault() {
@@ -396,6 +428,16 @@ public class AdvisoryNotificationsServiceStubSettings
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
+      builder
+          .getSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateSettingsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
       return builder;
     }
 
@@ -425,6 +467,16 @@ public class AdvisoryNotificationsServiceStubSettings
     public UnaryCallSettings.Builder<GetNotificationRequest, Notification>
         getNotificationSettings() {
       return getNotificationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getSettings. */
+    public UnaryCallSettings.Builder<GetSettingsRequest, Settings> getSettingsSettings() {
+      return getSettingsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateSettings. */
+    public UnaryCallSettings.Builder<UpdateSettingsRequest, Settings> updateSettingsSettings() {
+      return updateSettingsSettings;
     }
 
     @Override

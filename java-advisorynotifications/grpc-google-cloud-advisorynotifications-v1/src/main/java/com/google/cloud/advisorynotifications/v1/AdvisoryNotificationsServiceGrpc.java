@@ -32,7 +32,7 @@ public final class AdvisoryNotificationsServiceGrpc {
 
   private AdvisoryNotificationsServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.advisorynotifications.v1.AdvisoryNotificationsService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -137,6 +137,104 @@ public final class AdvisoryNotificationsServiceGrpc {
     return getGetNotificationMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.advisorynotifications.v1.GetSettingsRequest,
+          com.google.cloud.advisorynotifications.v1.Settings>
+      getGetSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSettings",
+      requestType = com.google.cloud.advisorynotifications.v1.GetSettingsRequest.class,
+      responseType = com.google.cloud.advisorynotifications.v1.Settings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.advisorynotifications.v1.GetSettingsRequest,
+          com.google.cloud.advisorynotifications.v1.Settings>
+      getGetSettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.advisorynotifications.v1.GetSettingsRequest,
+            com.google.cloud.advisorynotifications.v1.Settings>
+        getGetSettingsMethod;
+    if ((getGetSettingsMethod = AdvisoryNotificationsServiceGrpc.getGetSettingsMethod) == null) {
+      synchronized (AdvisoryNotificationsServiceGrpc.class) {
+        if ((getGetSettingsMethod = AdvisoryNotificationsServiceGrpc.getGetSettingsMethod)
+            == null) {
+          AdvisoryNotificationsServiceGrpc.getGetSettingsMethod =
+              getGetSettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.advisorynotifications.v1.GetSettingsRequest,
+                          com.google.cloud.advisorynotifications.v1.Settings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetSettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.advisorynotifications.v1.GetSettingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.advisorynotifications.v1.Settings
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AdvisoryNotificationsServiceMethodDescriptorSupplier("GetSettings"))
+                      .build();
+        }
+      }
+    }
+    return getGetSettingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.advisorynotifications.v1.UpdateSettingsRequest,
+          com.google.cloud.advisorynotifications.v1.Settings>
+      getUpdateSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSettings",
+      requestType = com.google.cloud.advisorynotifications.v1.UpdateSettingsRequest.class,
+      responseType = com.google.cloud.advisorynotifications.v1.Settings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.advisorynotifications.v1.UpdateSettingsRequest,
+          com.google.cloud.advisorynotifications.v1.Settings>
+      getUpdateSettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.advisorynotifications.v1.UpdateSettingsRequest,
+            com.google.cloud.advisorynotifications.v1.Settings>
+        getUpdateSettingsMethod;
+    if ((getUpdateSettingsMethod = AdvisoryNotificationsServiceGrpc.getUpdateSettingsMethod)
+        == null) {
+      synchronized (AdvisoryNotificationsServiceGrpc.class) {
+        if ((getUpdateSettingsMethod = AdvisoryNotificationsServiceGrpc.getUpdateSettingsMethod)
+            == null) {
+          AdvisoryNotificationsServiceGrpc.getUpdateSettingsMethod =
+              getUpdateSettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.advisorynotifications.v1.UpdateSettingsRequest,
+                          com.google.cloud.advisorynotifications.v1.Settings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateSettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.advisorynotifications.v1.UpdateSettingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.advisorynotifications.v1.Settings
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AdvisoryNotificationsServiceMethodDescriptorSupplier(
+                              "UpdateSettings"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateSettingsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AdvisoryNotificationsServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AdvisoryNotificationsServiceStub> factory =
@@ -217,6 +315,36 @@ public final class AdvisoryNotificationsServiceGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetNotificationMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get notification settings.
+     * </pre>
+     */
+    default void getSettings(
+        com.google.cloud.advisorynotifications.v1.GetSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.advisorynotifications.v1.Settings>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetSettingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update notification settings.
+     * </pre>
+     */
+    default void updateSettings(
+        com.google.cloud.advisorynotifications.v1.UpdateSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.advisorynotifications.v1.Settings>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSettingsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -289,6 +417,40 @@ public final class AdvisoryNotificationsServiceGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get notification settings.
+     * </pre>
+     */
+    public void getSettings(
+        com.google.cloud.advisorynotifications.v1.GetSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.advisorynotifications.v1.Settings>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update notification settings.
+     * </pre>
+     */
+    public void updateSettings(
+        com.google.cloud.advisorynotifications.v1.UpdateSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.advisorynotifications.v1.Settings>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -335,6 +497,32 @@ public final class AdvisoryNotificationsServiceGrpc {
         com.google.cloud.advisorynotifications.v1.GetNotificationRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetNotificationMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get notification settings.
+     * </pre>
+     */
+    public com.google.cloud.advisorynotifications.v1.Settings getSettings(
+        com.google.cloud.advisorynotifications.v1.GetSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update notification settings.
+     * </pre>
+     */
+    public com.google.cloud.advisorynotifications.v1.Settings updateSettings(
+        com.google.cloud.advisorynotifications.v1.UpdateSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSettingsMethod(), getCallOptions(), request);
     }
   }
 
@@ -387,10 +575,40 @@ public final class AdvisoryNotificationsServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetNotificationMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Get notification settings.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.advisorynotifications.v1.Settings>
+        getSettings(com.google.cloud.advisorynotifications.v1.GetSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSettingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update notification settings.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.advisorynotifications.v1.Settings>
+        updateSettings(com.google.cloud.advisorynotifications.v1.UpdateSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSettingsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_NOTIFICATIONS = 0;
   private static final int METHODID_GET_NOTIFICATION = 1;
+  private static final int METHODID_GET_SETTINGS = 2;
+  private static final int METHODID_UPDATE_SETTINGS = 3;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -420,6 +638,18 @@ public final class AdvisoryNotificationsServiceGrpc {
           serviceImpl.getNotification(
               (com.google.cloud.advisorynotifications.v1.GetNotificationRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.advisorynotifications.v1.Notification>)
+                  responseObserver);
+          break;
+        case METHODID_GET_SETTINGS:
+          serviceImpl.getSettings(
+              (com.google.cloud.advisorynotifications.v1.GetSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.advisorynotifications.v1.Settings>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_SETTINGS:
+          serviceImpl.updateSettings(
+              (com.google.cloud.advisorynotifications.v1.UpdateSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.advisorynotifications.v1.Settings>)
                   responseObserver);
           break;
         default:
@@ -454,6 +684,20 @@ public final class AdvisoryNotificationsServiceGrpc {
                     com.google.cloud.advisorynotifications.v1.GetNotificationRequest,
                     com.google.cloud.advisorynotifications.v1.Notification>(
                     service, METHODID_GET_NOTIFICATION)))
+        .addMethod(
+            getGetSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.advisorynotifications.v1.GetSettingsRequest,
+                    com.google.cloud.advisorynotifications.v1.Settings>(
+                    service, METHODID_GET_SETTINGS)))
+        .addMethod(
+            getUpdateSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.advisorynotifications.v1.UpdateSettingsRequest,
+                    com.google.cloud.advisorynotifications.v1.Settings>(
+                    service, METHODID_UPDATE_SETTINGS)))
         .build();
   }
 
@@ -481,9 +725,9 @@ public final class AdvisoryNotificationsServiceGrpc {
   private static final class AdvisoryNotificationsServiceMethodDescriptorSupplier
       extends AdvisoryNotificationsServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    AdvisoryNotificationsServiceMethodDescriptorSupplier(String methodName) {
+    AdvisoryNotificationsServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -507,6 +751,8 @@ public final class AdvisoryNotificationsServiceGrpc {
                       .setSchemaDescriptor(new AdvisoryNotificationsServiceFileDescriptorSupplier())
                       .addMethod(getListNotificationsMethod())
                       .addMethod(getGetNotificationMethod())
+                      .addMethod(getGetSettingsMethod())
+                      .addMethod(getUpdateSettingsMethod())
                       .build();
         }
       }

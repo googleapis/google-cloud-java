@@ -58,7 +58,6 @@ import javax.annotation.Generated;
  *           .setParent("parent-995424086")
  *           .setTimeout(Duration.newBuilder().build())
  *           .setModel(ShipmentModel.newBuilder().build())
- *           .setMaxValidationErrors(-1367418922)
  *           .addAllInjectedFirstSolutionRoutes(new ArrayList<ShipmentRoute>())
  *           .setInjectedSolutionConstraint(InjectedSolutionConstraint.newBuilder().build())
  *           .addAllRefreshDetailsRoutes(new ArrayList<ShipmentRoute>())
@@ -69,6 +68,7 @@ import javax.annotation.Generated;
  *           .setAllowLargeDeadlineDespiteInterruptionRisk(true)
  *           .setUseGeodesicDistances(true)
  *           .setGeodesicMetersPerSecond(-2129658905)
+ *           .setMaxValidationErrors(-1367418922)
  *           .setLabel("label102727412")
  *           .setPopulateTravelStepPolylines(true)
  *           .build();
@@ -248,7 +248,6 @@ public class FleetRoutingClient implements BackgroundResource {
    *           .setParent("parent-995424086")
    *           .setTimeout(Duration.newBuilder().build())
    *           .setModel(ShipmentModel.newBuilder().build())
-   *           .setMaxValidationErrors(-1367418922)
    *           .addAllInjectedFirstSolutionRoutes(new ArrayList<ShipmentRoute>())
    *           .setInjectedSolutionConstraint(InjectedSolutionConstraint.newBuilder().build())
    *           .addAllRefreshDetailsRoutes(new ArrayList<ShipmentRoute>())
@@ -259,6 +258,7 @@ public class FleetRoutingClient implements BackgroundResource {
    *           .setAllowLargeDeadlineDespiteInterruptionRisk(true)
    *           .setUseGeodesicDistances(true)
    *           .setGeodesicMetersPerSecond(-2129658905)
+   *           .setMaxValidationErrors(-1367418922)
    *           .setLabel("label102727412")
    *           .setPopulateTravelStepPolylines(true)
    *           .build();
@@ -302,7 +302,6 @@ public class FleetRoutingClient implements BackgroundResource {
    *           .setParent("parent-995424086")
    *           .setTimeout(Duration.newBuilder().build())
    *           .setModel(ShipmentModel.newBuilder().build())
-   *           .setMaxValidationErrors(-1367418922)
    *           .addAllInjectedFirstSolutionRoutes(new ArrayList<ShipmentRoute>())
    *           .setInjectedSolutionConstraint(InjectedSolutionConstraint.newBuilder().build())
    *           .addAllRefreshDetailsRoutes(new ArrayList<ShipmentRoute>())
@@ -313,6 +312,7 @@ public class FleetRoutingClient implements BackgroundResource {
    *           .setAllowLargeDeadlineDespiteInterruptionRisk(true)
    *           .setUseGeodesicDistances(true)
    *           .setGeodesicMetersPerSecond(-2129658905)
+   *           .setMaxValidationErrors(-1367418922)
    *           .setLabel("label102727412")
    *           .setPopulateTravelStepPolylines(true)
    *           .build();

@@ -56,23 +56,22 @@ public interface ServiceOrBuilder
    * <pre>
    * Optional. Annotations for the service. This data can be consumed by service
    * clients.
+   *
    * Restrictions:
-   *  - The entire annotations dictionary may contain up to 2000 characters,
-   *    spread accoss all key-value pairs. Annotations that goes beyond any
-   *    these limits will be rejected.
-   *  - Valid annotation keys have two segments: an optional prefix and name,
-   *    separated by a slash (/). The name segment is required and must be 63
-   *    characters or less, beginning and ending with an alphanumeric character
-   *    ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
-   *    alphanumerics between. The prefix is optional. If specified, the prefix
-   *    must be a DNS subdomain: a series of DNS labels separated by dots (.),
-   *    not longer than 253 characters in total, followed by a slash (/).
-   *    Annotations that fails to meet these requirements will be rejected.
-   *  - The '(*.)google.com/' and '(*.)googleapis.com/' prefixes are reserved
-   *    for system annotations managed by Service Directory. If the user tries
-   *    to write to these keyspaces, those entries will be silently ignored by
-   *    the system.
-   * Note: This field is equivalent to the 'metadata' field in the v1beta1 API.
+   *
+   * *   The entire annotations dictionary may contain up to 2000 characters,
+   *     spread accoss all key-value pairs. Annotations that go beyond this
+   *     limit are rejected
+   * *   Valid annotation keys have two segments: an optional prefix and name,
+   *     separated by a slash (/). The name segment is required and must be 63
+   *     characters or less, beginning and ending with an alphanumeric character
+   *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+   *     alphanumerics between. The prefix is optional. If specified, the prefix
+   *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+   *     not longer than 253 characters in total, followed by a slash (/).
+   *     Annotations that fails to meet these requirements are rejected
+   *
+   * Note: This field is equivalent to the `metadata` field in the v1beta1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.
    * </pre>
@@ -87,23 +86,22 @@ public interface ServiceOrBuilder
    * <pre>
    * Optional. Annotations for the service. This data can be consumed by service
    * clients.
+   *
    * Restrictions:
-   *  - The entire annotations dictionary may contain up to 2000 characters,
-   *    spread accoss all key-value pairs. Annotations that goes beyond any
-   *    these limits will be rejected.
-   *  - Valid annotation keys have two segments: an optional prefix and name,
-   *    separated by a slash (/). The name segment is required and must be 63
-   *    characters or less, beginning and ending with an alphanumeric character
-   *    ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
-   *    alphanumerics between. The prefix is optional. If specified, the prefix
-   *    must be a DNS subdomain: a series of DNS labels separated by dots (.),
-   *    not longer than 253 characters in total, followed by a slash (/).
-   *    Annotations that fails to meet these requirements will be rejected.
-   *  - The '(*.)google.com/' and '(*.)googleapis.com/' prefixes are reserved
-   *    for system annotations managed by Service Directory. If the user tries
-   *    to write to these keyspaces, those entries will be silently ignored by
-   *    the system.
-   * Note: This field is equivalent to the 'metadata' field in the v1beta1 API.
+   *
+   * *   The entire annotations dictionary may contain up to 2000 characters,
+   *     spread accoss all key-value pairs. Annotations that go beyond this
+   *     limit are rejected
+   * *   Valid annotation keys have two segments: an optional prefix and name,
+   *     separated by a slash (/). The name segment is required and must be 63
+   *     characters or less, beginning and ending with an alphanumeric character
+   *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+   *     alphanumerics between. The prefix is optional. If specified, the prefix
+   *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+   *     not longer than 253 characters in total, followed by a slash (/).
+   *     Annotations that fails to meet these requirements are rejected
+   *
+   * Note: This field is equivalent to the `metadata` field in the v1beta1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.
    * </pre>
@@ -121,23 +119,22 @@ public interface ServiceOrBuilder
    * <pre>
    * Optional. Annotations for the service. This data can be consumed by service
    * clients.
+   *
    * Restrictions:
-   *  - The entire annotations dictionary may contain up to 2000 characters,
-   *    spread accoss all key-value pairs. Annotations that goes beyond any
-   *    these limits will be rejected.
-   *  - Valid annotation keys have two segments: an optional prefix and name,
-   *    separated by a slash (/). The name segment is required and must be 63
-   *    characters or less, beginning and ending with an alphanumeric character
-   *    ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
-   *    alphanumerics between. The prefix is optional. If specified, the prefix
-   *    must be a DNS subdomain: a series of DNS labels separated by dots (.),
-   *    not longer than 253 characters in total, followed by a slash (/).
-   *    Annotations that fails to meet these requirements will be rejected.
-   *  - The '(*.)google.com/' and '(*.)googleapis.com/' prefixes are reserved
-   *    for system annotations managed by Service Directory. If the user tries
-   *    to write to these keyspaces, those entries will be silently ignored by
-   *    the system.
-   * Note: This field is equivalent to the 'metadata' field in the v1beta1 API.
+   *
+   * *   The entire annotations dictionary may contain up to 2000 characters,
+   *     spread accoss all key-value pairs. Annotations that go beyond this
+   *     limit are rejected
+   * *   Valid annotation keys have two segments: an optional prefix and name,
+   *     separated by a slash (/). The name segment is required and must be 63
+   *     characters or less, beginning and ending with an alphanumeric character
+   *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+   *     alphanumerics between. The prefix is optional. If specified, the prefix
+   *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+   *     not longer than 253 characters in total, followed by a slash (/).
+   *     Annotations that fails to meet these requirements are rejected
+   *
+   * Note: This field is equivalent to the `metadata` field in the v1beta1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.
    * </pre>
@@ -152,23 +149,22 @@ public interface ServiceOrBuilder
    * <pre>
    * Optional. Annotations for the service. This data can be consumed by service
    * clients.
+   *
    * Restrictions:
-   *  - The entire annotations dictionary may contain up to 2000 characters,
-   *    spread accoss all key-value pairs. Annotations that goes beyond any
-   *    these limits will be rejected.
-   *  - Valid annotation keys have two segments: an optional prefix and name,
-   *    separated by a slash (/). The name segment is required and must be 63
-   *    characters or less, beginning and ending with an alphanumeric character
-   *    ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
-   *    alphanumerics between. The prefix is optional. If specified, the prefix
-   *    must be a DNS subdomain: a series of DNS labels separated by dots (.),
-   *    not longer than 253 characters in total, followed by a slash (/).
-   *    Annotations that fails to meet these requirements will be rejected.
-   *  - The '(*.)google.com/' and '(*.)googleapis.com/' prefixes are reserved
-   *    for system annotations managed by Service Directory. If the user tries
-   *    to write to these keyspaces, those entries will be silently ignored by
-   *    the system.
-   * Note: This field is equivalent to the 'metadata' field in the v1beta1 API.
+   *
+   * *   The entire annotations dictionary may contain up to 2000 characters,
+   *     spread accoss all key-value pairs. Annotations that go beyond this
+   *     limit are rejected
+   * *   Valid annotation keys have two segments: an optional prefix and name,
+   *     separated by a slash (/). The name segment is required and must be 63
+   *     characters or less, beginning and ending with an alphanumeric character
+   *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+   *     alphanumerics between. The prefix is optional. If specified, the prefix
+   *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+   *     not longer than 253 characters in total, followed by a slash (/).
+   *     Annotations that fails to meet these requirements are rejected
+   *
+   * Note: This field is equivalent to the `metadata` field in the v1beta1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.
    * </pre>
@@ -187,23 +183,22 @@ public interface ServiceOrBuilder
    * <pre>
    * Optional. Annotations for the service. This data can be consumed by service
    * clients.
+   *
    * Restrictions:
-   *  - The entire annotations dictionary may contain up to 2000 characters,
-   *    spread accoss all key-value pairs. Annotations that goes beyond any
-   *    these limits will be rejected.
-   *  - Valid annotation keys have two segments: an optional prefix and name,
-   *    separated by a slash (/). The name segment is required and must be 63
-   *    characters or less, beginning and ending with an alphanumeric character
-   *    ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
-   *    alphanumerics between. The prefix is optional. If specified, the prefix
-   *    must be a DNS subdomain: a series of DNS labels separated by dots (.),
-   *    not longer than 253 characters in total, followed by a slash (/).
-   *    Annotations that fails to meet these requirements will be rejected.
-   *  - The '(*.)google.com/' and '(*.)googleapis.com/' prefixes are reserved
-   *    for system annotations managed by Service Directory. If the user tries
-   *    to write to these keyspaces, those entries will be silently ignored by
-   *    the system.
-   * Note: This field is equivalent to the 'metadata' field in the v1beta1 API.
+   *
+   * *   The entire annotations dictionary may contain up to 2000 characters,
+   *     spread accoss all key-value pairs. Annotations that go beyond this
+   *     limit are rejected
+   * *   Valid annotation keys have two segments: an optional prefix and name,
+   *     separated by a slash (/). The name segment is required and must be 63
+   *     characters or less, beginning and ending with an alphanumeric character
+   *     ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and
+   *     alphanumerics between. The prefix is optional. If specified, the prefix
+   *     must be a DNS subdomain: a series of DNS labels separated by dots (.),
+   *     not longer than 253 characters in total, followed by a slash (/).
+   *     Annotations that fails to meet these requirements are rejected
+   *
+   * Note: This field is equivalent to the `metadata` field in the v1beta1 API.
    * They have the same syntax and read/write to the same location in Service
    * Directory.
    * </pre>
@@ -218,8 +213,9 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * Output only. Endpoints associated with this service. Returned on
-   * LookupService.Resolve. Control plane clients should use
-   * RegistrationService.ListEndpoints.
+   * [LookupService.ResolveService][google.cloud.servicedirectory.v1.LookupService.ResolveService].
+   * Control plane clients should use
+   * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1.RegistrationService.ListEndpoints].
    * </pre>
    *
    * <code>
@@ -232,8 +228,9 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * Output only. Endpoints associated with this service. Returned on
-   * LookupService.Resolve. Control plane clients should use
-   * RegistrationService.ListEndpoints.
+   * [LookupService.ResolveService][google.cloud.servicedirectory.v1.LookupService.ResolveService].
+   * Control plane clients should use
+   * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1.RegistrationService.ListEndpoints].
    * </pre>
    *
    * <code>
@@ -246,8 +243,9 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * Output only. Endpoints associated with this service. Returned on
-   * LookupService.Resolve. Control plane clients should use
-   * RegistrationService.ListEndpoints.
+   * [LookupService.ResolveService][google.cloud.servicedirectory.v1.LookupService.ResolveService].
+   * Control plane clients should use
+   * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1.RegistrationService.ListEndpoints].
    * </pre>
    *
    * <code>
@@ -260,8 +258,9 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * Output only. Endpoints associated with this service. Returned on
-   * LookupService.Resolve. Control plane clients should use
-   * RegistrationService.ListEndpoints.
+   * [LookupService.ResolveService][google.cloud.servicedirectory.v1.LookupService.ResolveService].
+   * Control plane clients should use
+   * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1.RegistrationService.ListEndpoints].
    * </pre>
    *
    * <code>
@@ -275,8 +274,9 @@ public interface ServiceOrBuilder
    *
    * <pre>
    * Output only. Endpoints associated with this service. Returned on
-   * LookupService.Resolve. Control plane clients should use
-   * RegistrationService.ListEndpoints.
+   * [LookupService.ResolveService][google.cloud.servicedirectory.v1.LookupService.ResolveService].
+   * Control plane clients should use
+   * [RegistrationService.ListEndpoints][google.cloud.servicedirectory.v1.RegistrationService.ListEndpoints].
    * </pre>
    *
    * <code>
@@ -284,4 +284,31 @@ public interface ServiceOrBuilder
    * </code>
    */
   com.google.cloud.servicedirectory.v1.EndpointOrBuilder getEndpointsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The globally unique identifier of the service in the UUID4
+   * format.
+   * </pre>
+   *
+   * <code>string uid = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The uid.
+   */
+  java.lang.String getUid();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The globally unique identifier of the service in the UUID4
+   * format.
+   * </pre>
+   *
+   * <code>string uid = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for uid.
+   */
+  com.google.protobuf.ByteString getUidBytes();
 }

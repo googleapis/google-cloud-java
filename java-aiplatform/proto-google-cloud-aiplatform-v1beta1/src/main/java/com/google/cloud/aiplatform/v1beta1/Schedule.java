@@ -1450,10 +1450,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the Schedule.
+   * Immutable. The resource name of the Schedule.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The name.
    */
@@ -1473,10 +1473,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The resource name of the Schedule.
+   * Immutable. The resource name of the Schedule.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The bytes for name.
    */
@@ -3463,10 +3463,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Schedule.
+     * Immutable. The resource name of the Schedule.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The name.
      */
@@ -3485,10 +3485,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Schedule.
+     * Immutable. The resource name of the Schedule.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return The bytes for name.
      */
@@ -3507,10 +3507,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Schedule.
+     * Immutable. The resource name of the Schedule.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -3528,10 +3528,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Schedule.
+     * Immutable. The resource name of the Schedule.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @return This builder for chaining.
      */
@@ -3545,10 +3545,10 @@ public final class Schedule extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The resource name of the Schedule.
+     * Immutable. The resource name of the Schedule.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

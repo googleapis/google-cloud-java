@@ -451,6 +451,7 @@ public class ServiceUsageClientTest {
             .setIsPrecise(true)
             .setAllowsAdminOverrides(true)
             .addAllQuotaBuckets(new ArrayList<QuotaBucket>())
+            .addAllSupportedLocations(new ArrayList<String>())
             .build();
     mockServiceUsage.addResponse(expectedResponse);
 

@@ -35,7 +35,7 @@ public final class RecommenderGrpc {
 
   private RecommenderGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.recommender.v1.Recommender";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.recommender.v1.Recommender";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -268,6 +268,57 @@ public final class RecommenderGrpc {
       }
     }
     return getGetRecommendationMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest,
+          com.google.cloud.recommender.v1.Recommendation>
+      getMarkRecommendationDismissedMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "MarkRecommendationDismissed",
+      requestType = com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest.class,
+      responseType = com.google.cloud.recommender.v1.Recommendation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest,
+          com.google.cloud.recommender.v1.Recommendation>
+      getMarkRecommendationDismissedMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest,
+            com.google.cloud.recommender.v1.Recommendation>
+        getMarkRecommendationDismissedMethod;
+    if ((getMarkRecommendationDismissedMethod =
+            RecommenderGrpc.getMarkRecommendationDismissedMethod)
+        == null) {
+      synchronized (RecommenderGrpc.class) {
+        if ((getMarkRecommendationDismissedMethod =
+                RecommenderGrpc.getMarkRecommendationDismissedMethod)
+            == null) {
+          RecommenderGrpc.getMarkRecommendationDismissedMethod =
+              getMarkRecommendationDismissedMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest,
+                          com.google.cloud.recommender.v1.Recommendation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "MarkRecommendationDismissed"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.recommender.v1.Recommendation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RecommenderMethodDescriptorSupplier("MarkRecommendationDismissed"))
+                      .build();
+        }
+      }
+    }
+    return getMarkRecommendationDismissedMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -754,6 +805,27 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
+     * Mark the Recommendation State as Dismissed. Users can use this method to
+     * indicate to the Recommender API that an ACTIVE recommendation has to
+     * be marked back as DISMISSED.
+     * MarkRecommendationDismissed can be applied to recommendations in ACTIVE
+     * state.
+     * Requires the recommender.*.update IAM permission for the specified
+     * recommender.
+     * </pre>
+     */
+    default void markRecommendationDismissed(
+        com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.Recommendation>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getMarkRecommendationDismissedMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Marks the Recommendation State as Claimed. Users can use this method to
      * indicate to the Recommender API that they are starting to apply the
      * recommendation themselves. This stops the recommendation content from being
@@ -1016,6 +1088,29 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
+     * Mark the Recommendation State as Dismissed. Users can use this method to
+     * indicate to the Recommender API that an ACTIVE recommendation has to
+     * be marked back as DISMISSED.
+     * MarkRecommendationDismissed can be applied to recommendations in ACTIVE
+     * state.
+     * Requires the recommender.*.update IAM permission for the specified
+     * recommender.
+     * </pre>
+     */
+    public void markRecommendationDismissed(
+        com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.Recommendation>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getMarkRecommendationDismissedMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Marks the Recommendation State as Claimed. Users can use this method to
      * indicate to the Recommender API that they are starting to apply the
      * recommendation themselves. This stops the recommendation content from being
@@ -1258,6 +1353,25 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
+     * Mark the Recommendation State as Dismissed. Users can use this method to
+     * indicate to the Recommender API that an ACTIVE recommendation has to
+     * be marked back as DISMISSED.
+     * MarkRecommendationDismissed can be applied to recommendations in ACTIVE
+     * state.
+     * Requires the recommender.*.update IAM permission for the specified
+     * recommender.
+     * </pre>
+     */
+    public com.google.cloud.recommender.v1.Recommendation markRecommendationDismissed(
+        com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getMarkRecommendationDismissedMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Marks the Recommendation State as Claimed. Users can use this method to
      * indicate to the Recommender API that they are starting to apply the
      * recommendation themselves. This stops the recommendation content from being
@@ -1477,6 +1591,27 @@ public final class RecommenderGrpc {
      *
      *
      * <pre>
+     * Mark the Recommendation State as Dismissed. Users can use this method to
+     * indicate to the Recommender API that an ACTIVE recommendation has to
+     * be marked back as DISMISSED.
+     * MarkRecommendationDismissed can be applied to recommendations in ACTIVE
+     * state.
+     * Requires the recommender.*.update IAM permission for the specified
+     * recommender.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.recommender.v1.Recommendation>
+        markRecommendationDismissed(
+            com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getMarkRecommendationDismissedMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Marks the Recommendation State as Claimed. Users can use this method to
      * indicate to the Recommender API that they are starting to apply the
      * recommendation themselves. This stops the recommendation content from being
@@ -1609,13 +1744,14 @@ public final class RecommenderGrpc {
   private static final int METHODID_MARK_INSIGHT_ACCEPTED = 2;
   private static final int METHODID_LIST_RECOMMENDATIONS = 3;
   private static final int METHODID_GET_RECOMMENDATION = 4;
-  private static final int METHODID_MARK_RECOMMENDATION_CLAIMED = 5;
-  private static final int METHODID_MARK_RECOMMENDATION_SUCCEEDED = 6;
-  private static final int METHODID_MARK_RECOMMENDATION_FAILED = 7;
-  private static final int METHODID_GET_RECOMMENDER_CONFIG = 8;
-  private static final int METHODID_UPDATE_RECOMMENDER_CONFIG = 9;
-  private static final int METHODID_GET_INSIGHT_TYPE_CONFIG = 10;
-  private static final int METHODID_UPDATE_INSIGHT_TYPE_CONFIG = 11;
+  private static final int METHODID_MARK_RECOMMENDATION_DISMISSED = 5;
+  private static final int METHODID_MARK_RECOMMENDATION_CLAIMED = 6;
+  private static final int METHODID_MARK_RECOMMENDATION_SUCCEEDED = 7;
+  private static final int METHODID_MARK_RECOMMENDATION_FAILED = 8;
+  private static final int METHODID_GET_RECOMMENDER_CONFIG = 9;
+  private static final int METHODID_UPDATE_RECOMMENDER_CONFIG = 10;
+  private static final int METHODID_GET_INSIGHT_TYPE_CONFIG = 11;
+  private static final int METHODID_UPDATE_INSIGHT_TYPE_CONFIG = 12;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1662,6 +1798,12 @@ public final class RecommenderGrpc {
         case METHODID_GET_RECOMMENDATION:
           serviceImpl.getRecommendation(
               (com.google.cloud.recommender.v1.GetRecommendationRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.Recommendation>)
+                  responseObserver);
+          break;
+        case METHODID_MARK_RECOMMENDATION_DISMISSED:
+          serviceImpl.markRecommendationDismissed(
+              (com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.recommender.v1.Recommendation>)
                   responseObserver);
           break;
@@ -1760,6 +1902,13 @@ public final class RecommenderGrpc {
                     com.google.cloud.recommender.v1.Recommendation>(
                     service, METHODID_GET_RECOMMENDATION)))
         .addMethod(
+            getMarkRecommendationDismissedMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest,
+                    com.google.cloud.recommender.v1.Recommendation>(
+                    service, METHODID_MARK_RECOMMENDATION_DISMISSED)))
+        .addMethod(
             getMarkRecommendationClaimedMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -1835,9 +1984,9 @@ public final class RecommenderGrpc {
   private static final class RecommenderMethodDescriptorSupplier
       extends RecommenderBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    RecommenderMethodDescriptorSupplier(String methodName) {
+    RecommenderMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -1864,6 +2013,7 @@ public final class RecommenderGrpc {
                       .addMethod(getMarkInsightAcceptedMethod())
                       .addMethod(getListRecommendationsMethod())
                       .addMethod(getGetRecommendationMethod())
+                      .addMethod(getMarkRecommendationDismissedMethod())
                       .addMethod(getMarkRecommendationClaimedMethod())
                       .addMethod(getMarkRecommendationSucceededMethod())
                       .addMethod(getMarkRecommendationFailedMethod())

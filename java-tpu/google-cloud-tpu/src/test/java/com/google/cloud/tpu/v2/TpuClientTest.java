@@ -207,6 +207,8 @@ public class TpuClientTest {
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
+            .setQueuedResource("queuedResource94310049")
+            .setMultisliceNode(true)
             .build();
     mockTpu.addResponse(expectedResponse);
 
@@ -263,6 +265,8 @@ public class TpuClientTest {
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
+            .setQueuedResource("queuedResource94310049")
+            .setMultisliceNode(true)
             .build();
     mockTpu.addResponse(expectedResponse);
 
@@ -319,6 +323,8 @@ public class TpuClientTest {
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
+            .setQueuedResource("queuedResource94310049")
+            .setMultisliceNode(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -389,6 +395,8 @@ public class TpuClientTest {
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
+            .setQueuedResource("queuedResource94310049")
+            .setMultisliceNode(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -543,6 +551,8 @@ public class TpuClientTest {
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
+            .setQueuedResource("queuedResource94310049")
+            .setMultisliceNode(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -613,6 +623,8 @@ public class TpuClientTest {
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
+            .setQueuedResource("queuedResource94310049")
+            .setMultisliceNode(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -683,6 +695,8 @@ public class TpuClientTest {
             .addAllSymptoms(new ArrayList<Symptom>())
             .setShieldedInstanceConfig(ShieldedInstanceConfig.newBuilder().build())
             .setAcceleratorConfig(AcceleratorConfig.newBuilder().build())
+            .setQueuedResource("queuedResource94310049")
+            .setMultisliceNode(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

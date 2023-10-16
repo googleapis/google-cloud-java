@@ -85,6 +85,31 @@ public interface QuotaExceededInfoOrBuilder
    *
    *
    * <pre>
+   * Future quota limit being rolled out. The limit's unit depends on the quota type or metric.
+   * </pre>
+   *
+   * <code>optional double future_limit = 456564287;</code>
+   *
+   * @return Whether the futureLimit field is set.
+   */
+  boolean hasFutureLimit();
+  /**
+   *
+   *
+   * <pre>
+   * Future quota limit being rolled out. The limit's unit depends on the quota type or metric.
+   * </pre>
+   *
+   * <code>optional double future_limit = 456564287;</code>
+   *
+   * @return The futureLimit.
+   */
+  double getFutureLimit();
+
+  /**
+   *
+   *
+   * <pre>
    * Current effective quota limit. The limit's unit depends on the quota type or metric.
    * </pre>
    *
@@ -179,4 +204,44 @@ public interface QuotaExceededInfoOrBuilder
    * @return The bytes for metricName.
    */
   com.google.protobuf.ByteString getMetricNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Rollout status of the future quota limit.
+   * Check the RolloutStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string rollout_status = 476426816;</code>
+   *
+   * @return Whether the rolloutStatus field is set.
+   */
+  boolean hasRolloutStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Rollout status of the future quota limit.
+   * Check the RolloutStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string rollout_status = 476426816;</code>
+   *
+   * @return The rolloutStatus.
+   */
+  java.lang.String getRolloutStatus();
+  /**
+   *
+   *
+   * <pre>
+   * Rollout status of the future quota limit.
+   * Check the RolloutStatus enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string rollout_status = 476426816;</code>
+   *
+   * @return The bytes for rolloutStatus.
+   */
+  com.google.protobuf.ByteString getRolloutStatusBytes();
 }

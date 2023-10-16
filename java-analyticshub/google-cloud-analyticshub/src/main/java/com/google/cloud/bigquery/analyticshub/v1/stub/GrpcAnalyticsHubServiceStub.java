@@ -19,12 +19,15 @@ package com.google.cloud.bigquery.analyticshub.v1.stub;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListDataExchangesPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListListingsPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListOrgDataExchangesPagedResponse;
+import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSharedResourceSubscriptionsPagedResponse;
+import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSubscriptionsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.bigquery.analyticshub.v1.CreateDataExchangeRequest;
@@ -32,17 +35,31 @@ import com.google.cloud.bigquery.analyticshub.v1.CreateListingRequest;
 import com.google.cloud.bigquery.analyticshub.v1.DataExchange;
 import com.google.cloud.bigquery.analyticshub.v1.DeleteDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.DeleteListingRequest;
+import com.google.cloud.bigquery.analyticshub.v1.DeleteSubscriptionRequest;
 import com.google.cloud.bigquery.analyticshub.v1.GetDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.GetListingRequest;
+import com.google.cloud.bigquery.analyticshub.v1.GetSubscriptionRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListDataExchangesRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListDataExchangesResponse;
 import com.google.cloud.bigquery.analyticshub.v1.ListListingsRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListListingsResponse;
 import com.google.cloud.bigquery.analyticshub.v1.ListOrgDataExchangesRequest;
 import com.google.cloud.bigquery.analyticshub.v1.ListOrgDataExchangesResponse;
+import com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsRequest;
+import com.google.cloud.bigquery.analyticshub.v1.ListSharedResourceSubscriptionsResponse;
+import com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsRequest;
+import com.google.cloud.bigquery.analyticshub.v1.ListSubscriptionsResponse;
 import com.google.cloud.bigquery.analyticshub.v1.Listing;
+import com.google.cloud.bigquery.analyticshub.v1.OperationMetadata;
+import com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionRequest;
+import com.google.cloud.bigquery.analyticshub.v1.RefreshSubscriptionResponse;
+import com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionRequest;
+import com.google.cloud.bigquery.analyticshub.v1.RevokeSubscriptionResponse;
+import com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeRequest;
+import com.google.cloud.bigquery.analyticshub.v1.SubscribeDataExchangeResponse;
 import com.google.cloud.bigquery.analyticshub.v1.SubscribeListingRequest;
 import com.google.cloud.bigquery.analyticshub.v1.SubscribeListingResponse;
+import com.google.cloud.bigquery.analyticshub.v1.Subscription;
 import com.google.cloud.bigquery.analyticshub.v1.UpdateDataExchangeRequest;
 import com.google.cloud.bigquery.analyticshub.v1.UpdateListingRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
@@ -50,6 +67,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
 import io.grpc.MethodDescriptor;
@@ -196,6 +214,91 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                   ProtoUtils.marshaller(SubscribeListingResponse.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<SubscribeDataExchangeRequest, Operation>
+      subscribeDataExchangeMethodDescriptor =
+          MethodDescriptor.<SubscribeDataExchangeRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/SubscribeDataExchange")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(SubscribeDataExchangeRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RefreshSubscriptionRequest, Operation>
+      refreshSubscriptionMethodDescriptor =
+          MethodDescriptor.<RefreshSubscriptionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/RefreshSubscription")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RefreshSubscriptionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetSubscriptionRequest, Subscription>
+      getSubscriptionMethodDescriptor =
+          MethodDescriptor.<GetSubscriptionRequest, Subscription>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/GetSubscription")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetSubscriptionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Subscription.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListSubscriptionsRequest, ListSubscriptionsResponse>
+      listSubscriptionsMethodDescriptor =
+          MethodDescriptor.<ListSubscriptionsRequest, ListSubscriptionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/ListSubscriptions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListSubscriptionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListSubscriptionsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListSharedResourceSubscriptionsRequest, ListSharedResourceSubscriptionsResponse>
+      listSharedResourceSubscriptionsMethodDescriptor =
+          MethodDescriptor
+              .<ListSharedResourceSubscriptionsRequest, ListSharedResourceSubscriptionsResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/ListSharedResourceSubscriptions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListSharedResourceSubscriptionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListSharedResourceSubscriptionsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<RevokeSubscriptionRequest, RevokeSubscriptionResponse>
+      revokeSubscriptionMethodDescriptor =
+          MethodDescriptor.<RevokeSubscriptionRequest, RevokeSubscriptionResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/RevokeSubscription")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RevokeSubscriptionRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(RevokeSubscriptionResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteSubscriptionRequest, Operation>
+      deleteSubscriptionMethodDescriptor =
+          MethodDescriptor.<DeleteSubscriptionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.bigquery.analyticshub.v1.AnalyticsHubService/DeleteSubscription")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteSubscriptionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
       MethodDescriptor.<GetIamPolicyRequest, Policy>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -247,6 +350,31 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
   private final UnaryCallable<DeleteListingRequest, Empty> deleteListingCallable;
   private final UnaryCallable<SubscribeListingRequest, SubscribeListingResponse>
       subscribeListingCallable;
+  private final UnaryCallable<SubscribeDataExchangeRequest, Operation>
+      subscribeDataExchangeCallable;
+  private final OperationCallable<
+          SubscribeDataExchangeRequest, SubscribeDataExchangeResponse, OperationMetadata>
+      subscribeDataExchangeOperationCallable;
+  private final UnaryCallable<RefreshSubscriptionRequest, Operation> refreshSubscriptionCallable;
+  private final OperationCallable<
+          RefreshSubscriptionRequest, RefreshSubscriptionResponse, OperationMetadata>
+      refreshSubscriptionOperationCallable;
+  private final UnaryCallable<GetSubscriptionRequest, Subscription> getSubscriptionCallable;
+  private final UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
+      listSubscriptionsCallable;
+  private final UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsPagedResponse>
+      listSubscriptionsPagedCallable;
+  private final UnaryCallable<
+          ListSharedResourceSubscriptionsRequest, ListSharedResourceSubscriptionsResponse>
+      listSharedResourceSubscriptionsCallable;
+  private final UnaryCallable<
+          ListSharedResourceSubscriptionsRequest, ListSharedResourceSubscriptionsPagedResponse>
+      listSharedResourceSubscriptionsPagedCallable;
+  private final UnaryCallable<RevokeSubscriptionRequest, RevokeSubscriptionResponse>
+      revokeSubscriptionCallable;
+  private final UnaryCallable<DeleteSubscriptionRequest, Operation> deleteSubscriptionCallable;
+  private final OperationCallable<DeleteSubscriptionRequest, Empty, OperationMetadata>
+      deleteSubscriptionOperationCallable;
   private final UnaryCallable<GetIamPolicyRequest, Policy> getIamPolicyCallable;
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;
   private final UnaryCallable<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -420,6 +548,83 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<SubscribeDataExchangeRequest, Operation>
+        subscribeDataExchangeTransportSettings =
+            GrpcCallSettings.<SubscribeDataExchangeRequest, Operation>newBuilder()
+                .setMethodDescriptor(subscribeDataExchangeMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<RefreshSubscriptionRequest, Operation> refreshSubscriptionTransportSettings =
+        GrpcCallSettings.<RefreshSubscriptionRequest, Operation>newBuilder()
+            .setMethodDescriptor(refreshSubscriptionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetSubscriptionRequest, Subscription> getSubscriptionTransportSettings =
+        GrpcCallSettings.<GetSubscriptionRequest, Subscription>newBuilder()
+            .setMethodDescriptor(getSubscriptionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListSubscriptionsRequest, ListSubscriptionsResponse>
+        listSubscriptionsTransportSettings =
+            GrpcCallSettings.<ListSubscriptionsRequest, ListSubscriptionsResponse>newBuilder()
+                .setMethodDescriptor(listSubscriptionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            ListSharedResourceSubscriptionsRequest, ListSharedResourceSubscriptionsResponse>
+        listSharedResourceSubscriptionsTransportSettings =
+            GrpcCallSettings
+                .<ListSharedResourceSubscriptionsRequest, ListSharedResourceSubscriptionsResponse>
+                    newBuilder()
+                .setMethodDescriptor(listSharedResourceSubscriptionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<RevokeSubscriptionRequest, RevokeSubscriptionResponse>
+        revokeSubscriptionTransportSettings =
+            GrpcCallSettings.<RevokeSubscriptionRequest, RevokeSubscriptionResponse>newBuilder()
+                .setMethodDescriptor(revokeSubscriptionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteSubscriptionRequest, Operation> deleteSubscriptionTransportSettings =
+        GrpcCallSettings.<DeleteSubscriptionRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteSubscriptionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<GetIamPolicyRequest, Policy> getIamPolicyTransportSettings =
         GrpcCallSettings.<GetIamPolicyRequest, Policy>newBuilder()
             .setMethodDescriptor(getIamPolicyMethodDescriptor)
@@ -511,6 +716,67 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
     this.subscribeListingCallable =
         callableFactory.createUnaryCallable(
             subscribeListingTransportSettings, settings.subscribeListingSettings(), clientContext);
+    this.subscribeDataExchangeCallable =
+        callableFactory.createUnaryCallable(
+            subscribeDataExchangeTransportSettings,
+            settings.subscribeDataExchangeSettings(),
+            clientContext);
+    this.subscribeDataExchangeOperationCallable =
+        callableFactory.createOperationCallable(
+            subscribeDataExchangeTransportSettings,
+            settings.subscribeDataExchangeOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.refreshSubscriptionCallable =
+        callableFactory.createUnaryCallable(
+            refreshSubscriptionTransportSettings,
+            settings.refreshSubscriptionSettings(),
+            clientContext);
+    this.refreshSubscriptionOperationCallable =
+        callableFactory.createOperationCallable(
+            refreshSubscriptionTransportSettings,
+            settings.refreshSubscriptionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getSubscriptionCallable =
+        callableFactory.createUnaryCallable(
+            getSubscriptionTransportSettings, settings.getSubscriptionSettings(), clientContext);
+    this.listSubscriptionsCallable =
+        callableFactory.createUnaryCallable(
+            listSubscriptionsTransportSettings,
+            settings.listSubscriptionsSettings(),
+            clientContext);
+    this.listSubscriptionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSubscriptionsTransportSettings,
+            settings.listSubscriptionsSettings(),
+            clientContext);
+    this.listSharedResourceSubscriptionsCallable =
+        callableFactory.createUnaryCallable(
+            listSharedResourceSubscriptionsTransportSettings,
+            settings.listSharedResourceSubscriptionsSettings(),
+            clientContext);
+    this.listSharedResourceSubscriptionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listSharedResourceSubscriptionsTransportSettings,
+            settings.listSharedResourceSubscriptionsSettings(),
+            clientContext);
+    this.revokeSubscriptionCallable =
+        callableFactory.createUnaryCallable(
+            revokeSubscriptionTransportSettings,
+            settings.revokeSubscriptionSettings(),
+            clientContext);
+    this.deleteSubscriptionCallable =
+        callableFactory.createUnaryCallable(
+            deleteSubscriptionTransportSettings,
+            settings.deleteSubscriptionSettings(),
+            clientContext);
+    this.deleteSubscriptionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteSubscriptionTransportSettings,
+            settings.deleteSubscriptionOperationSettings(),
+            clientContext,
+            operationsStub);
     this.getIamPolicyCallable =
         callableFactory.createUnaryCallable(
             getIamPolicyTransportSettings, settings.getIamPolicySettings(), clientContext);
@@ -609,6 +875,78 @@ public class GrpcAnalyticsHubServiceStub extends AnalyticsHubServiceStub {
   public UnaryCallable<SubscribeListingRequest, SubscribeListingResponse>
       subscribeListingCallable() {
     return subscribeListingCallable;
+  }
+
+  @Override
+  public UnaryCallable<SubscribeDataExchangeRequest, Operation> subscribeDataExchangeCallable() {
+    return subscribeDataExchangeCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          SubscribeDataExchangeRequest, SubscribeDataExchangeResponse, OperationMetadata>
+      subscribeDataExchangeOperationCallable() {
+    return subscribeDataExchangeOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RefreshSubscriptionRequest, Operation> refreshSubscriptionCallable() {
+    return refreshSubscriptionCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          RefreshSubscriptionRequest, RefreshSubscriptionResponse, OperationMetadata>
+      refreshSubscriptionOperationCallable() {
+    return refreshSubscriptionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSubscriptionRequest, Subscription> getSubscriptionCallable() {
+    return getSubscriptionCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsResponse>
+      listSubscriptionsCallable() {
+    return listSubscriptionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListSubscriptionsRequest, ListSubscriptionsPagedResponse>
+      listSubscriptionsPagedCallable() {
+    return listSubscriptionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListSharedResourceSubscriptionsRequest, ListSharedResourceSubscriptionsResponse>
+      listSharedResourceSubscriptionsCallable() {
+    return listSharedResourceSubscriptionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListSharedResourceSubscriptionsRequest, ListSharedResourceSubscriptionsPagedResponse>
+      listSharedResourceSubscriptionsPagedCallable() {
+    return listSharedResourceSubscriptionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<RevokeSubscriptionRequest, RevokeSubscriptionResponse>
+      revokeSubscriptionCallable() {
+    return revokeSubscriptionCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSubscriptionRequest, Operation> deleteSubscriptionCallable() {
+    return deleteSubscriptionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteSubscriptionRequest, Empty, OperationMetadata>
+      deleteSubscriptionOperationCallable() {
+    return deleteSubscriptionOperationCallable;
   }
 
   @Override

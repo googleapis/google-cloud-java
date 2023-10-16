@@ -118,5 +118,80 @@ public interface ImpactOrBuilder
    */
   com.google.cloud.recommender.v1.SecurityProjectionOrBuilder getSecurityProjectionOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Use with CategoryType.SUSTAINABILITY
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1.SustainabilityProjection sustainability_projection = 102;
+   * </code>
+   *
+   * @return Whether the sustainabilityProjection field is set.
+   */
+  boolean hasSustainabilityProjection();
+  /**
+   *
+   *
+   * <pre>
+   * Use with CategoryType.SUSTAINABILITY
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1.SustainabilityProjection sustainability_projection = 102;
+   * </code>
+   *
+   * @return The sustainabilityProjection.
+   */
+  com.google.cloud.recommender.v1.SustainabilityProjection getSustainabilityProjection();
+  /**
+   *
+   *
+   * <pre>
+   * Use with CategoryType.SUSTAINABILITY
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1.SustainabilityProjection sustainability_projection = 102;
+   * </code>
+   */
+  com.google.cloud.recommender.v1.SustainabilityProjectionOrBuilder
+      getSustainabilityProjectionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Use with CategoryType.RELAIBILITY
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1.ReliabilityProjection reliability_projection = 103;</code>
+   *
+   * @return Whether the reliabilityProjection field is set.
+   */
+  boolean hasReliabilityProjection();
+  /**
+   *
+   *
+   * <pre>
+   * Use with CategoryType.RELAIBILITY
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1.ReliabilityProjection reliability_projection = 103;</code>
+   *
+   * @return The reliabilityProjection.
+   */
+  com.google.cloud.recommender.v1.ReliabilityProjection getReliabilityProjection();
+  /**
+   *
+   *
+   * <pre>
+   * Use with CategoryType.RELAIBILITY
+   * </pre>
+   *
+   * <code>.google.cloud.recommender.v1.ReliabilityProjection reliability_projection = 103;</code>
+   */
+  com.google.cloud.recommender.v1.ReliabilityProjectionOrBuilder
+      getReliabilityProjectionOrBuilder();
+
   com.google.cloud.recommender.v1.Impact.ProjectionCase getProjectionCase();
 }

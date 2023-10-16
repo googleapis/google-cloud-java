@@ -623,4 +623,34 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * @return The bytes for customizedAttribution.
    */
   com.google.protobuf.ByteString getCustomizedAttributionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, use the text removal server to remove the shadow text on
+   * background image for native pdf translation.
+   * Shadow removal feature can only be enabled when
+   * is_translate_native_pdf_only: false &amp;&amp; pdf_native_only: false
+   * </pre>
+   *
+   * <code>bool enable_shadow_removal_native_pdf = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enableShadowRemovalNativePdf.
+   */
+  boolean getEnableShadowRemovalNativePdf();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, enable auto rotation correction in DVS.
+   * </pre>
+   *
+   * <code>bool enable_rotation_correction = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableRotationCorrection.
+   */
+  boolean getEnableRotationCorrection();
 }

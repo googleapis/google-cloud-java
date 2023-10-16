@@ -137,7 +137,7 @@ public class CustomMetricName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       CustomMetricName that = ((CustomMetricName) o);
       return Objects.equals(this.property, that.property)
           && Objects.equals(this.customMetric, that.customMetric);

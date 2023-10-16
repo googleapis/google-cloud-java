@@ -32,7 +32,7 @@ public final class ConfidentialComputingGrpc {
 
   private ConfidentialComputingGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.confidentialcomputing.v1.ConfidentialComputing";
 
   // Static method descriptors that strictly reflect the proto.
@@ -476,9 +476,9 @@ public final class ConfidentialComputingGrpc {
   private static final class ConfidentialComputingMethodDescriptorSupplier
       extends ConfidentialComputingBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ConfidentialComputingMethodDescriptorSupplier(String methodName) {
+    ConfidentialComputingMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

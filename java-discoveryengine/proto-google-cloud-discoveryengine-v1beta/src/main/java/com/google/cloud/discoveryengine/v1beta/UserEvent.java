@@ -187,7 +187,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * quality.
    *
    * The field must be a UTF-8 encoded string with a length limit of 128
-   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    *
    * The field should not contain PII or user-data. We recommend to use Google
    * Analytics [Client
@@ -226,7 +226,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * quality.
    *
    * The field must be a UTF-8 encoded string with a length limit of 128
-   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    *
    * The field should not contain PII or user-data. We recommend to use Google
    * Analytics [Client
@@ -520,20 +520,20 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * The value must be one of:
    *
-   * * [PredictResponse.attribution_token][] for events that are the result of
+   * * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1beta.RecommendResponse.attribution_token] for events that are the result of
    * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend].
    * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token] for events that are the result of
    * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search].
-   * * [CompleteQueryResponse.attribution_token][] for events that are the
-   * result of
-   * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery].
    *
    * This token enables us to accurately attribute page view or conversion
    * completion back to the event and the particular predict response containing
    * this clicked/purchased product. If user clicks on product K in the
-   * recommendation results, pass [PredictResponse.attribution_token][] as a URL
-   * parameter to product K's page. When recording events on product K's page,
-   * log the [PredictResponse.attribution_token][] to this field.
+   * recommendation results, pass
+   * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1beta.RecommendResponse.attribution_token]
+   * as a URL parameter to product K's page. When recording events on product
+   * K's page, log the
+   * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1beta.RecommendResponse.attribution_token]
+   * to this field.
    * </pre>
    *
    * <code>string attribution_token = 8;</code>
@@ -565,20 +565,20 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    * The value must be one of:
    *
-   * * [PredictResponse.attribution_token][] for events that are the result of
+   * * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1beta.RecommendResponse.attribution_token] for events that are the result of
    * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend].
    * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token] for events that are the result of
    * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search].
-   * * [CompleteQueryResponse.attribution_token][] for events that are the
-   * result of
-   * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery].
    *
    * This token enables us to accurately attribute page view or conversion
    * completion back to the event and the particular predict response containing
    * this clicked/purchased product. If user clicks on product K in the
-   * recommendation results, pass [PredictResponse.attribution_token][] as a URL
-   * parameter to product K's page. When recording events on product K's page,
-   * log the [PredictResponse.attribution_token][] to this field.
+   * recommendation results, pass
+   * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1beta.RecommendResponse.attribution_token]
+   * as a URL parameter to product K's page. When recording events on product
+   * K's page, log the
+   * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1beta.RecommendResponse.attribution_token]
+   * to this field.
    * </pre>
    *
    * <code>string attribution_token = 8;</code>
@@ -621,7 +621,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * to https://google.aip.dev/160#filtering.
    *
    * The value must be a UTF-8 encoded string with a length limit of 1,000
-   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
    * <code>string filter = 9;</code>
@@ -659,7 +659,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * to https://google.aip.dev/160#filtering.
    *
    * The value must be a UTF-8 encoded string with a length limit of 1,000
-   * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+   * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
    * <code>string filter = 9;</code>
@@ -687,7 +687,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of Documents associated with this user event.
+   * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+   * associated with this user event.
    *
    * This field is optional except for the following event types:
    *
@@ -716,7 +717,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of Documents associated with this user event.
+   * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+   * associated with this user event.
    *
    * This field is optional except for the following event types:
    *
@@ -746,7 +748,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of Documents associated with this user event.
+   * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+   * associated with this user event.
    *
    * This field is optional except for the following event types:
    *
@@ -775,7 +778,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of Documents associated with this user event.
+   * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+   * associated with this user event.
    *
    * This field is optional except for the following event types:
    *
@@ -804,7 +808,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * List of Documents associated with this user event.
+   * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+   * associated with this user event.
    *
    * This field is optional except for the following event types:
    *
@@ -887,7 +892,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Search API details related to the event.
+   * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
+   * details related to the event.
    *
    * This field should be set for `search` event.
    * </pre>
@@ -904,7 +910,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Search API details related to the event.
+   * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
+   * details related to the event.
    *
    * This field should be set for `search` event.
    * </pre>
@@ -923,7 +930,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Search API details related to the event.
+   * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
+   * details related to the event.
    *
    * This field should be set for `search` event.
    * </pre>
@@ -943,7 +951,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * CompleteQuery API details related to the event.
+   * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery]
+   * details related to the event.
    *
    * This field should be set for `search` event when autocomplete function is
    * enabled and the user clicks a suggestion for search.
@@ -961,7 +970,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * CompleteQuery API details related to the event.
+   * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery]
+   * details related to the event.
    *
    * This field should be set for `search` event when autocomplete function is
    * enabled and the user clicks a suggestion for search.
@@ -981,7 +991,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * CompleteQuery API details related to the event.
+   * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery]
+   * details related to the event.
    *
    * This field should be set for `search` event when autocomplete function is
    * enabled and the user clicks a suggestion for search.
@@ -1249,7 +1260,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * * For number attributes, at most 400 values are allowed.
    *
    * For product recommendations, an example of extra user information is
-   * ` traffic_channel`, which is how a user arrives at the site. Users can
+   * `traffic_channel`, which is how a user arrives at the site. Users can
    * arrive
    * at the site by coming to the site directly, coming through Google
    * search, or in other ways.
@@ -1298,7 +1309,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * * For number attributes, at most 400 values are allowed.
    *
    * For product recommendations, an example of extra user information is
-   * ` traffic_channel`, which is how a user arrives at the site. Users can
+   * `traffic_channel`, which is how a user arrives at the site. Users can
    * arrive
    * at the site by coming to the site directly, coming through Google
    * search, or in other ways.
@@ -1338,7 +1349,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * * For number attributes, at most 400 values are allowed.
    *
    * For product recommendations, an example of extra user information is
-   * ` traffic_channel`, which is how a user arrives at the site. Users can
+   * `traffic_channel`, which is how a user arrives at the site. Users can
    * arrive
    * at the site by coming to the site directly, coming through Google
    * search, or in other ways.
@@ -1386,7 +1397,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
    * * For number attributes, at most 400 values are allowed.
    *
    * For product recommendations, an example of extra user information is
-   * ` traffic_channel`, which is how a user arrives at the site. Users can
+   * `traffic_channel`, which is how a user arrives at the site. Users can
    * arrive
    * at the site by coming to the site directly, coming through Google
    * search, or in other ways.
@@ -2592,7 +2603,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * quality.
      *
      * The field must be a UTF-8 encoded string with a length limit of 128
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      *
      * The field should not contain PII or user-data. We recommend to use Google
      * Analytics [Client
@@ -2630,7 +2641,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * quality.
      *
      * The field must be a UTF-8 encoded string with a length limit of 128
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      *
      * The field should not contain PII or user-data. We recommend to use Google
      * Analytics [Client
@@ -2668,7 +2679,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * quality.
      *
      * The field must be a UTF-8 encoded string with a length limit of 128
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      *
      * The field should not contain PII or user-data. We recommend to use Google
      * Analytics [Client
@@ -2705,7 +2716,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * quality.
      *
      * The field must be a UTF-8 encoded string with a length limit of 128
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      *
      * The field should not contain PII or user-data. We recommend to use Google
      * Analytics [Client
@@ -2738,7 +2749,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * quality.
      *
      * The field must be a UTF-8 encoded string with a length limit of 128
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      *
      * The field should not contain PII or user-data. We recommend to use Google
      * Analytics [Client
@@ -3584,20 +3595,20 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * The value must be one of:
      *
-     * * [PredictResponse.attribution_token][] for events that are the result of
+     * * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1beta.RecommendResponse.attribution_token] for events that are the result of
      * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend].
      * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token] for events that are the result of
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search].
-     * * [CompleteQueryResponse.attribution_token][] for events that are the
-     * result of
-     * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery].
      *
      * This token enables us to accurately attribute page view or conversion
      * completion back to the event and the particular predict response containing
      * this clicked/purchased product. If user clicks on product K in the
-     * recommendation results, pass [PredictResponse.attribution_token][] as a URL
-     * parameter to product K's page. When recording events on product K's page,
-     * log the [PredictResponse.attribution_token][] to this field.
+     * recommendation results, pass
+     * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1beta.RecommendResponse.attribution_token]
+     * as a URL parameter to product K's page. When recording events on product
+     * K's page, log the
+     * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1beta.RecommendResponse.attribution_token]
+     * to this field.
      * </pre>
      *
      * <code>string attribution_token = 8;</code>
@@ -3628,20 +3639,20 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * The value must be one of:
      *
-     * * [PredictResponse.attribution_token][] for events that are the result of
+     * * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1beta.RecommendResponse.attribution_token] for events that are the result of
      * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend].
      * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token] for events that are the result of
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search].
-     * * [CompleteQueryResponse.attribution_token][] for events that are the
-     * result of
-     * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery].
      *
      * This token enables us to accurately attribute page view or conversion
      * completion back to the event and the particular predict response containing
      * this clicked/purchased product. If user clicks on product K in the
-     * recommendation results, pass [PredictResponse.attribution_token][] as a URL
-     * parameter to product K's page. When recording events on product K's page,
-     * log the [PredictResponse.attribution_token][] to this field.
+     * recommendation results, pass
+     * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1beta.RecommendResponse.attribution_token]
+     * as a URL parameter to product K's page. When recording events on product
+     * K's page, log the
+     * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1beta.RecommendResponse.attribution_token]
+     * to this field.
      * </pre>
      *
      * <code>string attribution_token = 8;</code>
@@ -3672,20 +3683,20 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * The value must be one of:
      *
-     * * [PredictResponse.attribution_token][] for events that are the result of
+     * * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1beta.RecommendResponse.attribution_token] for events that are the result of
      * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend].
      * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token] for events that are the result of
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search].
-     * * [CompleteQueryResponse.attribution_token][] for events that are the
-     * result of
-     * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery].
      *
      * This token enables us to accurately attribute page view or conversion
      * completion back to the event and the particular predict response containing
      * this clicked/purchased product. If user clicks on product K in the
-     * recommendation results, pass [PredictResponse.attribution_token][] as a URL
-     * parameter to product K's page. When recording events on product K's page,
-     * log the [PredictResponse.attribution_token][] to this field.
+     * recommendation results, pass
+     * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1beta.RecommendResponse.attribution_token]
+     * as a URL parameter to product K's page. When recording events on product
+     * K's page, log the
+     * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1beta.RecommendResponse.attribution_token]
+     * to this field.
      * </pre>
      *
      * <code>string attribution_token = 8;</code>
@@ -3715,20 +3726,20 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * The value must be one of:
      *
-     * * [PredictResponse.attribution_token][] for events that are the result of
+     * * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1beta.RecommendResponse.attribution_token] for events that are the result of
      * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend].
      * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token] for events that are the result of
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search].
-     * * [CompleteQueryResponse.attribution_token][] for events that are the
-     * result of
-     * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery].
      *
      * This token enables us to accurately attribute page view or conversion
      * completion back to the event and the particular predict response containing
      * this clicked/purchased product. If user clicks on product K in the
-     * recommendation results, pass [PredictResponse.attribution_token][] as a URL
-     * parameter to product K's page. When recording events on product K's page,
-     * log the [PredictResponse.attribution_token][] to this field.
+     * recommendation results, pass
+     * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1beta.RecommendResponse.attribution_token]
+     * as a URL parameter to product K's page. When recording events on product
+     * K's page, log the
+     * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1beta.RecommendResponse.attribution_token]
+     * to this field.
      * </pre>
      *
      * <code>string attribution_token = 8;</code>
@@ -3754,20 +3765,20 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      * The value must be one of:
      *
-     * * [PredictResponse.attribution_token][] for events that are the result of
+     * * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1beta.RecommendResponse.attribution_token] for events that are the result of
      * [RecommendationService.Recommend][google.cloud.discoveryengine.v1beta.RecommendationService.Recommend].
      * * [SearchResponse.attribution_token][google.cloud.discoveryengine.v1beta.SearchResponse.attribution_token] for events that are the result of
      * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search].
-     * * [CompleteQueryResponse.attribution_token][] for events that are the
-     * result of
-     * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery].
      *
      * This token enables us to accurately attribute page view or conversion
      * completion back to the event and the particular predict response containing
      * this clicked/purchased product. If user clicks on product K in the
-     * recommendation results, pass [PredictResponse.attribution_token][] as a URL
-     * parameter to product K's page. When recording events on product K's page,
-     * log the [PredictResponse.attribution_token][] to this field.
+     * recommendation results, pass
+     * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1beta.RecommendResponse.attribution_token]
+     * as a URL parameter to product K's page. When recording events on product
+     * K's page, log the
+     * [RecommendResponse.attribution_token][google.cloud.discoveryengine.v1beta.RecommendResponse.attribution_token]
+     * to this field.
      * </pre>
      *
      * <code>string attribution_token = 8;</code>
@@ -3806,7 +3817,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * to https://google.aip.dev/160#filtering.
      *
      * The value must be a UTF-8 encoded string with a length limit of 1,000
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string filter = 9;</code>
@@ -3843,7 +3854,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * to https://google.aip.dev/160#filtering.
      *
      * The value must be a UTF-8 encoded string with a length limit of 1,000
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string filter = 9;</code>
@@ -3880,7 +3891,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * to https://google.aip.dev/160#filtering.
      *
      * The value must be a UTF-8 encoded string with a length limit of 1,000
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string filter = 9;</code>
@@ -3916,7 +3927,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * to https://google.aip.dev/160#filtering.
      *
      * The value must be a UTF-8 encoded string with a length limit of 1,000
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string filter = 9;</code>
@@ -3948,7 +3959,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * to https://google.aip.dev/160#filtering.
      *
      * The value must be a UTF-8 encoded string with a length limit of 1,000
-     * characters. Otherwise, an INVALID_ARGUMENT error is returned.
+     * characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string filter = 9;</code>
@@ -3989,7 +4000,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Documents associated with this user event.
+     * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+     * associated with this user event.
      *
      * This field is optional except for the following event types:
      *
@@ -4021,7 +4033,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Documents associated with this user event.
+     * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+     * associated with this user event.
      *
      * This field is optional except for the following event types:
      *
@@ -4053,7 +4066,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Documents associated with this user event.
+     * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+     * associated with this user event.
      *
      * This field is optional except for the following event types:
      *
@@ -4085,7 +4099,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Documents associated with this user event.
+     * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+     * associated with this user event.
      *
      * This field is optional except for the following event types:
      *
@@ -4124,7 +4139,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Documents associated with this user event.
+     * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+     * associated with this user event.
      *
      * This field is optional except for the following event types:
      *
@@ -4160,7 +4176,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Documents associated with this user event.
+     * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+     * associated with this user event.
      *
      * This field is optional except for the following event types:
      *
@@ -4198,7 +4215,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Documents associated with this user event.
+     * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+     * associated with this user event.
      *
      * This field is optional except for the following event types:
      *
@@ -4237,7 +4255,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Documents associated with this user event.
+     * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+     * associated with this user event.
      *
      * This field is optional except for the following event types:
      *
@@ -4273,7 +4292,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Documents associated with this user event.
+     * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+     * associated with this user event.
      *
      * This field is optional except for the following event types:
      *
@@ -4309,7 +4329,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Documents associated with this user event.
+     * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+     * associated with this user event.
      *
      * This field is optional except for the following event types:
      *
@@ -4345,7 +4366,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Documents associated with this user event.
+     * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+     * associated with this user event.
      *
      * This field is optional except for the following event types:
      *
@@ -4380,7 +4402,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Documents associated with this user event.
+     * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+     * associated with this user event.
      *
      * This field is optional except for the following event types:
      *
@@ -4415,7 +4438,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Documents associated with this user event.
+     * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+     * associated with this user event.
      *
      * This field is optional except for the following event types:
      *
@@ -4444,7 +4468,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Documents associated with this user event.
+     * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+     * associated with this user event.
      *
      * This field is optional except for the following event types:
      *
@@ -4477,7 +4502,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Documents associated with this user event.
+     * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+     * associated with this user event.
      *
      * This field is optional except for the following event types:
      *
@@ -4510,7 +4536,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Documents associated with this user event.
+     * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+     * associated with this user event.
      *
      * This field is optional except for the following event types:
      *
@@ -4539,7 +4566,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Documents associated with this user event.
+     * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+     * associated with this user event.
      *
      * This field is optional except for the following event types:
      *
@@ -4570,7 +4598,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * List of Documents associated with this user event.
+     * List of [Document][google.cloud.discoveryengine.v1beta.Document]s
+     * associated with this user event.
      *
      * This field is optional except for the following event types:
      *
@@ -4807,7 +4836,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Search API details related to the event.
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
+     * details related to the event.
      *
      * This field should be set for `search` event.
      * </pre>
@@ -4823,7 +4853,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Search API details related to the event.
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
+     * details related to the event.
      *
      * This field should be set for `search` event.
      * </pre>
@@ -4845,7 +4876,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Search API details related to the event.
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
+     * details related to the event.
      *
      * This field should be set for `search` event.
      * </pre>
@@ -4869,7 +4901,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Search API details related to the event.
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
+     * details related to the event.
      *
      * This field should be set for `search` event.
      * </pre>
@@ -4891,7 +4924,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Search API details related to the event.
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
+     * details related to the event.
      *
      * This field should be set for `search` event.
      * </pre>
@@ -4919,7 +4953,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Search API details related to the event.
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
+     * details related to the event.
      *
      * This field should be set for `search` event.
      * </pre>
@@ -4940,7 +4975,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Search API details related to the event.
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
+     * details related to the event.
      *
      * This field should be set for `search` event.
      * </pre>
@@ -4956,7 +4992,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Search API details related to the event.
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
+     * details related to the event.
      *
      * This field should be set for `search` event.
      * </pre>
@@ -4976,7 +5013,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Search API details related to the event.
+     * [SearchService.Search][google.cloud.discoveryengine.v1beta.SearchService.Search]
+     * details related to the event.
      *
      * This field should be set for `search` event.
      * </pre>
@@ -5010,7 +5048,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * CompleteQuery API details related to the event.
+     * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery]
+     * details related to the event.
      *
      * This field should be set for `search` event when autocomplete function is
      * enabled and the user clicks a suggestion for search.
@@ -5027,7 +5066,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * CompleteQuery API details related to the event.
+     * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery]
+     * details related to the event.
      *
      * This field should be set for `search` event when autocomplete function is
      * enabled and the user clicks a suggestion for search.
@@ -5050,7 +5090,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * CompleteQuery API details related to the event.
+     * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery]
+     * details related to the event.
      *
      * This field should be set for `search` event when autocomplete function is
      * enabled and the user clicks a suggestion for search.
@@ -5075,7 +5116,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * CompleteQuery API details related to the event.
+     * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery]
+     * details related to the event.
      *
      * This field should be set for `search` event when autocomplete function is
      * enabled and the user clicks a suggestion for search.
@@ -5098,7 +5140,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * CompleteQuery API details related to the event.
+     * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery]
+     * details related to the event.
      *
      * This field should be set for `search` event when autocomplete function is
      * enabled and the user clicks a suggestion for search.
@@ -5128,7 +5171,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * CompleteQuery API details related to the event.
+     * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery]
+     * details related to the event.
      *
      * This field should be set for `search` event when autocomplete function is
      * enabled and the user clicks a suggestion for search.
@@ -5150,7 +5194,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * CompleteQuery API details related to the event.
+     * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery]
+     * details related to the event.
      *
      * This field should be set for `search` event when autocomplete function is
      * enabled and the user clicks a suggestion for search.
@@ -5168,7 +5213,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * CompleteQuery API details related to the event.
+     * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery]
+     * details related to the event.
      *
      * This field should be set for `search` event when autocomplete function is
      * enabled and the user clicks a suggestion for search.
@@ -5190,7 +5236,8 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * CompleteQuery API details related to the event.
+     * [CompletionService.CompleteQuery][google.cloud.discoveryengine.v1beta.CompletionService.CompleteQuery]
+     * details related to the event.
      *
      * This field should be set for `search` event when autocomplete function is
      * enabled and the user clicks a suggestion for search.
@@ -5837,7 +5884,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * For number attributes, at most 400 values are allowed.
      *
      * For product recommendations, an example of extra user information is
-     * ` traffic_channel`, which is how a user arrives at the site. Users can
+     * `traffic_channel`, which is how a user arrives at the site. Users can
      * arrive
      * at the site by coming to the site directly, coming through Google
      * search, or in other ways.
@@ -5887,7 +5934,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * For number attributes, at most 400 values are allowed.
      *
      * For product recommendations, an example of extra user information is
-     * ` traffic_channel`, which is how a user arrives at the site. Users can
+     * `traffic_channel`, which is how a user arrives at the site. Users can
      * arrive
      * at the site by coming to the site directly, coming through Google
      * search, or in other ways.
@@ -5928,7 +5975,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * For number attributes, at most 400 values are allowed.
      *
      * For product recommendations, an example of extra user information is
-     * ` traffic_channel`, which is how a user arrives at the site. Users can
+     * `traffic_channel`, which is how a user arrives at the site. Users can
      * arrive
      * at the site by coming to the site directly, coming through Google
      * search, or in other ways.
@@ -5977,7 +6024,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * For number attributes, at most 400 values are allowed.
      *
      * For product recommendations, an example of extra user information is
-     * ` traffic_channel`, which is how a user arrives at the site. Users can
+     * `traffic_channel`, which is how a user arrives at the site. Users can
      * arrive
      * at the site by coming to the site directly, coming through Google
      * search, or in other ways.
@@ -6032,7 +6079,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * For number attributes, at most 400 values are allowed.
      *
      * For product recommendations, an example of extra user information is
-     * ` traffic_channel`, which is how a user arrives at the site. Users can
+     * `traffic_channel`, which is how a user arrives at the site. Users can
      * arrive
      * at the site by coming to the site directly, coming through Google
      * search, or in other ways.
@@ -6082,7 +6129,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * For number attributes, at most 400 values are allowed.
      *
      * For product recommendations, an example of extra user information is
-     * ` traffic_channel`, which is how a user arrives at the site. Users can
+     * `traffic_channel`, which is how a user arrives at the site. Users can
      * arrive
      * at the site by coming to the site directly, coming through Google
      * search, or in other ways.
@@ -6130,7 +6177,7 @@ public final class UserEvent extends com.google.protobuf.GeneratedMessageV3
      * * For number attributes, at most 400 values are allowed.
      *
      * For product recommendations, an example of extra user information is
-     * ` traffic_channel`, which is how a user arrives at the site. Users can
+     * `traffic_channel`, which is how a user arrives at the site. Users can
      * arrive
      * at the site by coming to the site directly, coming through Google
      * search, or in other ways.

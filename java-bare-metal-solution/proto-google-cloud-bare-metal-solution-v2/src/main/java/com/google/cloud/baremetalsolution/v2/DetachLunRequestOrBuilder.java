@@ -80,4 +80,17 @@ public interface DetachLunRequestOrBuilder
    * @return The bytes for lun.
    */
   com.google.protobuf.ByteString getLunBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, performs lun unmapping without instance reboot.
+   * </pre>
+   *
+   * <code>bool skip_reboot = 3;</code>
+   *
+   * @return The skipReboot.
+   */
+  boolean getSkipReboot();
 }

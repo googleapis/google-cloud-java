@@ -32,7 +32,7 @@ public final class AgentsGrpc {
 
   private AgentsGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.dialogflow.cx.v3beta1.Agents";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.dialogflow.cx.v3beta1.Agents";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -444,6 +444,104 @@ public final class AgentsGrpc {
     return getGetAgentValidationResultMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.GetGenerativeSettingsRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings>
+      getGetGenerativeSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetGenerativeSettings",
+      requestType = com.google.cloud.dialogflow.cx.v3beta1.GetGenerativeSettingsRequest.class,
+      responseType = com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.GetGenerativeSettingsRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings>
+      getGetGenerativeSettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3beta1.GetGenerativeSettingsRequest,
+            com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings>
+        getGetGenerativeSettingsMethod;
+    if ((getGetGenerativeSettingsMethod = AgentsGrpc.getGetGenerativeSettingsMethod) == null) {
+      synchronized (AgentsGrpc.class) {
+        if ((getGetGenerativeSettingsMethod = AgentsGrpc.getGetGenerativeSettingsMethod) == null) {
+          AgentsGrpc.getGetGenerativeSettingsMethod =
+              getGetGenerativeSettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3beta1.GetGenerativeSettingsRequest,
+                          com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetGenerativeSettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.GetGenerativeSettingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AgentsMethodDescriptorSupplier("GetGenerativeSettings"))
+                      .build();
+        }
+      }
+    }
+    return getGetGenerativeSettingsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.UpdateGenerativeSettingsRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings>
+      getUpdateGenerativeSettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateGenerativeSettings",
+      requestType = com.google.cloud.dialogflow.cx.v3beta1.UpdateGenerativeSettingsRequest.class,
+      responseType = com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3beta1.UpdateGenerativeSettingsRequest,
+          com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings>
+      getUpdateGenerativeSettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3beta1.UpdateGenerativeSettingsRequest,
+            com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings>
+        getUpdateGenerativeSettingsMethod;
+    if ((getUpdateGenerativeSettingsMethod = AgentsGrpc.getUpdateGenerativeSettingsMethod)
+        == null) {
+      synchronized (AgentsGrpc.class) {
+        if ((getUpdateGenerativeSettingsMethod = AgentsGrpc.getUpdateGenerativeSettingsMethod)
+            == null) {
+          AgentsGrpc.getUpdateGenerativeSettingsMethod =
+              getUpdateGenerativeSettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3beta1.UpdateGenerativeSettingsRequest,
+                          com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateGenerativeSettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.UpdateGenerativeSettingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AgentsMethodDescriptorSupplier("UpdateGenerativeSettings"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateGenerativeSettingsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AgentsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AgentsStub> factory =
@@ -649,6 +747,36 @@ public final class AgentsGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getGetAgentValidationResultMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the generative settings for the agent.
+     * </pre>
+     */
+    default void getGenerativeSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.GetGenerativeSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetGenerativeSettingsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the generative settings for the agent.
+     * </pre>
+     */
+    default void updateGenerativeSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.UpdateGenerativeSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateGenerativeSettingsMethod(), responseObserver);
     }
   }
 
@@ -857,6 +985,40 @@ public final class AgentsGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the generative settings for the agent.
+     * </pre>
+     */
+    public void getGenerativeSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.GetGenerativeSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetGenerativeSettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the generative settings for the agent.
+     * </pre>
+     */
+    public void updateGenerativeSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.UpdateGenerativeSettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateGenerativeSettingsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -1020,6 +1182,32 @@ public final class AgentsGrpc {
         com.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetAgentValidationResultMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the generative settings for the agent.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings getGenerativeSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.GetGenerativeSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetGenerativeSettingsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the generative settings for the agent.
+     * </pre>
+     */
+    public com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings updateGenerativeSettings(
+        com.google.cloud.dialogflow.cx.v3beta1.UpdateGenerativeSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateGenerativeSettingsMethod(), getCallOptions(), request);
     }
   }
 
@@ -1192,6 +1380,36 @@ public final class AgentsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetAgentValidationResultMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the generative settings for the agent.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings>
+        getGenerativeSettings(
+            com.google.cloud.dialogflow.cx.v3beta1.GetGenerativeSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetGenerativeSettingsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates the generative settings for the agent.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings>
+        updateGenerativeSettings(
+            com.google.cloud.dialogflow.cx.v3beta1.UpdateGenerativeSettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateGenerativeSettingsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_AGENTS = 0;
@@ -1203,6 +1421,8 @@ public final class AgentsGrpc {
   private static final int METHODID_RESTORE_AGENT = 6;
   private static final int METHODID_VALIDATE_AGENT = 7;
   private static final int METHODID_GET_AGENT_VALIDATION_RESULT = 8;
+  private static final int METHODID_GET_GENERATIVE_SETTINGS = 9;
+  private static final int METHODID_UPDATE_GENERATIVE_SETTINGS = 10;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1273,6 +1493,20 @@ public final class AgentsGrpc {
               (com.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult>)
+                  responseObserver);
+          break;
+        case METHODID_GET_GENERATIVE_SETTINGS:
+          serviceImpl.getGenerativeSettings(
+              (com.google.cloud.dialogflow.cx.v3beta1.GetGenerativeSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_GENERATIVE_SETTINGS:
+          serviceImpl.updateGenerativeSettings(
+              (com.google.cloud.dialogflow.cx.v3beta1.UpdateGenerativeSettingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings>)
                   responseObserver);
           break;
         default:
@@ -1350,6 +1584,20 @@ public final class AgentsGrpc {
                     com.google.cloud.dialogflow.cx.v3beta1.GetAgentValidationResultRequest,
                     com.google.cloud.dialogflow.cx.v3beta1.AgentValidationResult>(
                     service, METHODID_GET_AGENT_VALIDATION_RESULT)))
+        .addMethod(
+            getGetGenerativeSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.GetGenerativeSettingsRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings>(
+                    service, METHODID_GET_GENERATIVE_SETTINGS)))
+        .addMethod(
+            getUpdateGenerativeSettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3beta1.UpdateGenerativeSettingsRequest,
+                    com.google.cloud.dialogflow.cx.v3beta1.GenerativeSettings>(
+                    service, METHODID_UPDATE_GENERATIVE_SETTINGS)))
         .build();
   }
 
@@ -1375,9 +1623,9 @@ public final class AgentsGrpc {
 
   private static final class AgentsMethodDescriptorSupplier extends AgentsBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    AgentsMethodDescriptorSupplier(String methodName) {
+    AgentsMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -1408,6 +1656,8 @@ public final class AgentsGrpc {
                       .addMethod(getRestoreAgentMethod())
                       .addMethod(getValidateAgentMethod())
                       .addMethod(getGetAgentValidationResultMethod())
+                      .addMethod(getGetGenerativeSettingsMethod())
+                      .addMethod(getUpdateGenerativeSettingsMethod())
                       .build();
         }
       }

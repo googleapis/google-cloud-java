@@ -236,7 +236,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    * Immutable. The ID of the DeployedModel. If not provided upon deployment,
    * Vertex AI will generate a value for this ID.
    *
-   * This value should be 1-10 characters, and valid characters are /[0-9]/.
+   * This value should be 1-10 characters, and valid characters are `/[0-9]/`.
    * </pre>
    *
    * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -262,7 +262,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
    * Immutable. The ID of the DeployedModel. If not provided upon deployment,
    * Vertex AI will generate a value for this ID.
    *
-   * This value should be 1-10 characters, and valid characters are /[0-9]/.
+   * This value should be 1-10 characters, and valid characters are `/[0-9]/`.
    * </pre>
    *
    * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1919,7 +1919,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * Immutable. The ID of the DeployedModel. If not provided upon deployment,
      * Vertex AI will generate a value for this ID.
      *
-     * This value should be 1-10 characters, and valid characters are /[0-9]/.
+     * This value should be 1-10 characters, and valid characters are `/[0-9]/`.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1944,7 +1944,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * Immutable. The ID of the DeployedModel. If not provided upon deployment,
      * Vertex AI will generate a value for this ID.
      *
-     * This value should be 1-10 characters, and valid characters are /[0-9]/.
+     * This value should be 1-10 characters, and valid characters are `/[0-9]/`.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1969,7 +1969,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * Immutable. The ID of the DeployedModel. If not provided upon deployment,
      * Vertex AI will generate a value for this ID.
      *
-     * This value should be 1-10 characters, and valid characters are /[0-9]/.
+     * This value should be 1-10 characters, and valid characters are `/[0-9]/`.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1993,7 +1993,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * Immutable. The ID of the DeployedModel. If not provided upon deployment,
      * Vertex AI will generate a value for this ID.
      *
-     * This value should be 1-10 characters, and valid characters are /[0-9]/.
+     * This value should be 1-10 characters, and valid characters are `/[0-9]/`.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -2013,7 +2013,7 @@ public final class DeployedModel extends com.google.protobuf.GeneratedMessageV3
      * Immutable. The ID of the DeployedModel. If not provided upon deployment,
      * Vertex AI will generate a value for this ID.
      *
-     * This value should be 1-10 characters, and valid characters are /[0-9]/.
+     * This value should be 1-10 characters, and valid characters are `/[0-9]/`.
      * </pre>
      *
      * <code>string id = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>

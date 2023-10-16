@@ -278,4 +278,137 @@ public interface JobOrBuilder
    * @return The bytes for message.
    */
   com.google.protobuf.ByteString getMessageBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. User-defined labels for the task.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getLabelsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. User-defined labels for the task.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. User-defined labels for the task.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. User-defined labels for the task.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. User-defined labels for the task.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Job execution trigger.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.Job.Trigger trigger = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for trigger.
+   */
+  int getTriggerValue();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Job execution trigger.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.Job.Trigger trigger = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The trigger.
+   */
+  com.google.cloud.dataplex.v1.Job.Trigger getTrigger();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Spec related to how a task is executed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.Task.ExecutionSpec execution_spec = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the executionSpec field is set.
+   */
+  boolean hasExecutionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Spec related to how a task is executed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.Task.ExecutionSpec execution_spec = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The executionSpec.
+   */
+  com.google.cloud.dataplex.v1.Task.ExecutionSpec getExecutionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Spec related to how a task is executed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.Task.ExecutionSpec execution_spec = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.Task.ExecutionSpecOrBuilder getExecutionSpecOrBuilder();
 }

@@ -32,7 +32,8 @@ public final class DataMigrationServiceGrpc {
 
   private DataMigrationServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.clouddms.v1.DataMigrationService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.clouddms.v1.DataMigrationService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -590,6 +591,57 @@ public final class DataMigrationServiceGrpc {
       }
     }
     return getGenerateSshScriptMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.clouddms.v1.GenerateTcpProxyScriptRequest,
+          com.google.cloud.clouddms.v1.TcpProxyScript>
+      getGenerateTcpProxyScriptMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GenerateTcpProxyScript",
+      requestType = com.google.cloud.clouddms.v1.GenerateTcpProxyScriptRequest.class,
+      responseType = com.google.cloud.clouddms.v1.TcpProxyScript.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.clouddms.v1.GenerateTcpProxyScriptRequest,
+          com.google.cloud.clouddms.v1.TcpProxyScript>
+      getGenerateTcpProxyScriptMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.clouddms.v1.GenerateTcpProxyScriptRequest,
+            com.google.cloud.clouddms.v1.TcpProxyScript>
+        getGenerateTcpProxyScriptMethod;
+    if ((getGenerateTcpProxyScriptMethod = DataMigrationServiceGrpc.getGenerateTcpProxyScriptMethod)
+        == null) {
+      synchronized (DataMigrationServiceGrpc.class) {
+        if ((getGenerateTcpProxyScriptMethod =
+                DataMigrationServiceGrpc.getGenerateTcpProxyScriptMethod)
+            == null) {
+          DataMigrationServiceGrpc.getGenerateTcpProxyScriptMethod =
+              getGenerateTcpProxyScriptMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.clouddms.v1.GenerateTcpProxyScriptRequest,
+                          com.google.cloud.clouddms.v1.TcpProxyScript>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GenerateTcpProxyScript"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.clouddms.v1.GenerateTcpProxyScriptRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.clouddms.v1.TcpProxyScript.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataMigrationServiceMethodDescriptorSupplier(
+                              "GenerateTcpProxyScript"))
+                      .build();
+        }
+      }
+    }
+    return getGenerateTcpProxyScriptMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -1313,6 +1365,193 @@ public final class DataMigrationServiceGrpc {
       }
     }
     return getDeleteConversionWorkspaceMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.clouddms.v1.CreateMappingRuleRequest,
+          com.google.cloud.clouddms.v1.MappingRule>
+      getCreateMappingRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateMappingRule",
+      requestType = com.google.cloud.clouddms.v1.CreateMappingRuleRequest.class,
+      responseType = com.google.cloud.clouddms.v1.MappingRule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.clouddms.v1.CreateMappingRuleRequest,
+          com.google.cloud.clouddms.v1.MappingRule>
+      getCreateMappingRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.clouddms.v1.CreateMappingRuleRequest,
+            com.google.cloud.clouddms.v1.MappingRule>
+        getCreateMappingRuleMethod;
+    if ((getCreateMappingRuleMethod = DataMigrationServiceGrpc.getCreateMappingRuleMethod)
+        == null) {
+      synchronized (DataMigrationServiceGrpc.class) {
+        if ((getCreateMappingRuleMethod = DataMigrationServiceGrpc.getCreateMappingRuleMethod)
+            == null) {
+          DataMigrationServiceGrpc.getCreateMappingRuleMethod =
+              getCreateMappingRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.clouddms.v1.CreateMappingRuleRequest,
+                          com.google.cloud.clouddms.v1.MappingRule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateMappingRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.clouddms.v1.CreateMappingRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.clouddms.v1.MappingRule.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataMigrationServiceMethodDescriptorSupplier("CreateMappingRule"))
+                      .build();
+        }
+      }
+    }
+    return getCreateMappingRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.clouddms.v1.DeleteMappingRuleRequest, com.google.protobuf.Empty>
+      getDeleteMappingRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteMappingRule",
+      requestType = com.google.cloud.clouddms.v1.DeleteMappingRuleRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.clouddms.v1.DeleteMappingRuleRequest, com.google.protobuf.Empty>
+      getDeleteMappingRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.clouddms.v1.DeleteMappingRuleRequest, com.google.protobuf.Empty>
+        getDeleteMappingRuleMethod;
+    if ((getDeleteMappingRuleMethod = DataMigrationServiceGrpc.getDeleteMappingRuleMethod)
+        == null) {
+      synchronized (DataMigrationServiceGrpc.class) {
+        if ((getDeleteMappingRuleMethod = DataMigrationServiceGrpc.getDeleteMappingRuleMethod)
+            == null) {
+          DataMigrationServiceGrpc.getDeleteMappingRuleMethod =
+              getDeleteMappingRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.clouddms.v1.DeleteMappingRuleRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DeleteMappingRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.clouddms.v1.DeleteMappingRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataMigrationServiceMethodDescriptorSupplier("DeleteMappingRule"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteMappingRuleMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.clouddms.v1.ListMappingRulesRequest,
+          com.google.cloud.clouddms.v1.ListMappingRulesResponse>
+      getListMappingRulesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListMappingRules",
+      requestType = com.google.cloud.clouddms.v1.ListMappingRulesRequest.class,
+      responseType = com.google.cloud.clouddms.v1.ListMappingRulesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.clouddms.v1.ListMappingRulesRequest,
+          com.google.cloud.clouddms.v1.ListMappingRulesResponse>
+      getListMappingRulesMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.clouddms.v1.ListMappingRulesRequest,
+            com.google.cloud.clouddms.v1.ListMappingRulesResponse>
+        getListMappingRulesMethod;
+    if ((getListMappingRulesMethod = DataMigrationServiceGrpc.getListMappingRulesMethod) == null) {
+      synchronized (DataMigrationServiceGrpc.class) {
+        if ((getListMappingRulesMethod = DataMigrationServiceGrpc.getListMappingRulesMethod)
+            == null) {
+          DataMigrationServiceGrpc.getListMappingRulesMethod =
+              getListMappingRulesMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.clouddms.v1.ListMappingRulesRequest,
+                          com.google.cloud.clouddms.v1.ListMappingRulesResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListMappingRules"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.clouddms.v1.ListMappingRulesRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.clouddms.v1.ListMappingRulesResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataMigrationServiceMethodDescriptorSupplier("ListMappingRules"))
+                      .build();
+        }
+      }
+    }
+    return getListMappingRulesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.clouddms.v1.GetMappingRuleRequest,
+          com.google.cloud.clouddms.v1.MappingRule>
+      getGetMappingRuleMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetMappingRule",
+      requestType = com.google.cloud.clouddms.v1.GetMappingRuleRequest.class,
+      responseType = com.google.cloud.clouddms.v1.MappingRule.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.clouddms.v1.GetMappingRuleRequest,
+          com.google.cloud.clouddms.v1.MappingRule>
+      getGetMappingRuleMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.clouddms.v1.GetMappingRuleRequest,
+            com.google.cloud.clouddms.v1.MappingRule>
+        getGetMappingRuleMethod;
+    if ((getGetMappingRuleMethod = DataMigrationServiceGrpc.getGetMappingRuleMethod) == null) {
+      synchronized (DataMigrationServiceGrpc.class) {
+        if ((getGetMappingRuleMethod = DataMigrationServiceGrpc.getGetMappingRuleMethod) == null) {
+          DataMigrationServiceGrpc.getGetMappingRuleMethod =
+              getGetMappingRuleMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.clouddms.v1.GetMappingRuleRequest,
+                          com.google.cloud.clouddms.v1.MappingRule>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetMappingRule"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.clouddms.v1.GetMappingRuleRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.clouddms.v1.MappingRule.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DataMigrationServiceMethodDescriptorSupplier("GetMappingRule"))
+                      .build();
+        }
+      }
+    }
+    return getGetMappingRuleMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -2057,6 +2296,21 @@ public final class DataMigrationServiceGrpc {
      *
      *
      * <pre>
+     * Generate a TCP Proxy configuration script to configure a cloud-hosted VM
+     * running a TCP Proxy.
+     * </pre>
+     */
+    default void generateTcpProxyScript(
+        com.google.cloud.clouddms.v1.GenerateTcpProxyScriptRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.clouddms.v1.TcpProxyScript> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGenerateTcpProxyScriptMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Retrieves a list of all connection profiles in a given project and
      * location.
      * </pre>
@@ -2256,6 +2510,63 @@ public final class DataMigrationServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteConversionWorkspaceMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new mapping rule for a given conversion workspace.
+     * </pre>
+     */
+    default void createMappingRule(
+        com.google.cloud.clouddms.v1.CreateMappingRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.clouddms.v1.MappingRule> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateMappingRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single mapping rule.
+     * </pre>
+     */
+    default void deleteMappingRule(
+        com.google.cloud.clouddms.v1.DeleteMappingRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteMappingRuleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the mapping rules for a specific conversion workspace.
+     * </pre>
+     */
+    default void listMappingRules(
+        com.google.cloud.clouddms.v1.ListMappingRulesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.clouddms.v1.ListMappingRulesResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListMappingRulesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a mapping rule.
+     * </pre>
+     */
+    default void getMappingRule(
+        com.google.cloud.clouddms.v1.GetMappingRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.clouddms.v1.MappingRule> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetMappingRuleMethod(), responseObserver);
     }
 
     /**
@@ -2654,6 +2965,23 @@ public final class DataMigrationServiceGrpc {
      *
      *
      * <pre>
+     * Generate a TCP Proxy configuration script to configure a cloud-hosted VM
+     * running a TCP Proxy.
+     * </pre>
+     */
+    public void generateTcpProxyScript(
+        com.google.cloud.clouddms.v1.GenerateTcpProxyScriptRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.clouddms.v1.TcpProxyScript> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGenerateTcpProxyScriptMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Retrieves a list of all connection profiles in a given project and
      * location.
      * </pre>
@@ -2879,6 +3207,71 @@ public final class DataMigrationServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteConversionWorkspaceMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new mapping rule for a given conversion workspace.
+     * </pre>
+     */
+    public void createMappingRule(
+        com.google.cloud.clouddms.v1.CreateMappingRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.clouddms.v1.MappingRule> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateMappingRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single mapping rule.
+     * </pre>
+     */
+    public void deleteMappingRule(
+        com.google.cloud.clouddms.v1.DeleteMappingRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteMappingRuleMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the mapping rules for a specific conversion workspace.
+     * </pre>
+     */
+    public void listMappingRules(
+        com.google.cloud.clouddms.v1.ListMappingRulesRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.clouddms.v1.ListMappingRulesResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListMappingRulesMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a mapping rule.
+     * </pre>
+     */
+    public void getMappingRule(
+        com.google.cloud.clouddms.v1.GetMappingRuleRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.clouddms.v1.MappingRule> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetMappingRuleMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -3247,6 +3640,20 @@ public final class DataMigrationServiceGrpc {
      *
      *
      * <pre>
+     * Generate a TCP Proxy configuration script to configure a cloud-hosted VM
+     * running a TCP Proxy.
+     * </pre>
+     */
+    public com.google.cloud.clouddms.v1.TcpProxyScript generateTcpProxyScript(
+        com.google.cloud.clouddms.v1.GenerateTcpProxyScriptRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGenerateTcpProxyScriptMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Retrieves a list of all connection profiles in a given project and
      * location.
      * </pre>
@@ -3426,6 +3833,58 @@ public final class DataMigrationServiceGrpc {
         com.google.cloud.clouddms.v1.DeleteConversionWorkspaceRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteConversionWorkspaceMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new mapping rule for a given conversion workspace.
+     * </pre>
+     */
+    public com.google.cloud.clouddms.v1.MappingRule createMappingRule(
+        com.google.cloud.clouddms.v1.CreateMappingRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateMappingRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single mapping rule.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteMappingRule(
+        com.google.cloud.clouddms.v1.DeleteMappingRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDeleteMappingRuleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the mapping rules for a specific conversion workspace.
+     * </pre>
+     */
+    public com.google.cloud.clouddms.v1.ListMappingRulesResponse listMappingRules(
+        com.google.cloud.clouddms.v1.ListMappingRulesRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListMappingRulesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a mapping rule.
+     * </pre>
+     */
+    public com.google.cloud.clouddms.v1.MappingRule getMappingRule(
+        com.google.cloud.clouddms.v1.GetMappingRuleRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetMappingRuleMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3761,6 +4220,21 @@ public final class DataMigrationServiceGrpc {
      *
      *
      * <pre>
+     * Generate a TCP Proxy configuration script to configure a cloud-hosted VM
+     * running a TCP Proxy.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.clouddms.v1.TcpProxyScript>
+        generateTcpProxyScript(com.google.cloud.clouddms.v1.GenerateTcpProxyScriptRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGenerateTcpProxyScriptMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Retrieves a list of all connection profiles in a given project and
      * location.
      * </pre>
@@ -3961,6 +4435,61 @@ public final class DataMigrationServiceGrpc {
      *
      *
      * <pre>
+     * Creates a new mapping rule for a given conversion workspace.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.clouddms.v1.MappingRule>
+        createMappingRule(com.google.cloud.clouddms.v1.CreateMappingRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateMappingRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a single mapping rule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteMappingRule(com.google.cloud.clouddms.v1.DeleteMappingRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteMappingRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists the mapping rules for a specific conversion workspace.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.clouddms.v1.ListMappingRulesResponse>
+        listMappingRules(com.google.cloud.clouddms.v1.ListMappingRulesRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListMappingRulesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Gets the details of a mapping rule.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.clouddms.v1.MappingRule>
+        getMappingRule(com.google.cloud.clouddms.v1.GetMappingRuleRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetMappingRuleMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Imports a snapshot of the source database into the
      * conversion workspace.
      * </pre>
@@ -4124,30 +4653,35 @@ public final class DataMigrationServiceGrpc {
   private static final int METHODID_VERIFY_MIGRATION_JOB = 9;
   private static final int METHODID_RESTART_MIGRATION_JOB = 10;
   private static final int METHODID_GENERATE_SSH_SCRIPT = 11;
-  private static final int METHODID_LIST_CONNECTION_PROFILES = 12;
-  private static final int METHODID_GET_CONNECTION_PROFILE = 13;
-  private static final int METHODID_CREATE_CONNECTION_PROFILE = 14;
-  private static final int METHODID_UPDATE_CONNECTION_PROFILE = 15;
-  private static final int METHODID_DELETE_CONNECTION_PROFILE = 16;
-  private static final int METHODID_CREATE_PRIVATE_CONNECTION = 17;
-  private static final int METHODID_GET_PRIVATE_CONNECTION = 18;
-  private static final int METHODID_LIST_PRIVATE_CONNECTIONS = 19;
-  private static final int METHODID_DELETE_PRIVATE_CONNECTION = 20;
-  private static final int METHODID_GET_CONVERSION_WORKSPACE = 21;
-  private static final int METHODID_LIST_CONVERSION_WORKSPACES = 22;
-  private static final int METHODID_CREATE_CONVERSION_WORKSPACE = 23;
-  private static final int METHODID_UPDATE_CONVERSION_WORKSPACE = 24;
-  private static final int METHODID_DELETE_CONVERSION_WORKSPACE = 25;
-  private static final int METHODID_SEED_CONVERSION_WORKSPACE = 26;
-  private static final int METHODID_IMPORT_MAPPING_RULES = 27;
-  private static final int METHODID_CONVERT_CONVERSION_WORKSPACE = 28;
-  private static final int METHODID_COMMIT_CONVERSION_WORKSPACE = 29;
-  private static final int METHODID_ROLLBACK_CONVERSION_WORKSPACE = 30;
-  private static final int METHODID_APPLY_CONVERSION_WORKSPACE = 31;
-  private static final int METHODID_DESCRIBE_DATABASE_ENTITIES = 32;
-  private static final int METHODID_SEARCH_BACKGROUND_JOBS = 33;
-  private static final int METHODID_DESCRIBE_CONVERSION_WORKSPACE_REVISIONS = 34;
-  private static final int METHODID_FETCH_STATIC_IPS = 35;
+  private static final int METHODID_GENERATE_TCP_PROXY_SCRIPT = 12;
+  private static final int METHODID_LIST_CONNECTION_PROFILES = 13;
+  private static final int METHODID_GET_CONNECTION_PROFILE = 14;
+  private static final int METHODID_CREATE_CONNECTION_PROFILE = 15;
+  private static final int METHODID_UPDATE_CONNECTION_PROFILE = 16;
+  private static final int METHODID_DELETE_CONNECTION_PROFILE = 17;
+  private static final int METHODID_CREATE_PRIVATE_CONNECTION = 18;
+  private static final int METHODID_GET_PRIVATE_CONNECTION = 19;
+  private static final int METHODID_LIST_PRIVATE_CONNECTIONS = 20;
+  private static final int METHODID_DELETE_PRIVATE_CONNECTION = 21;
+  private static final int METHODID_GET_CONVERSION_WORKSPACE = 22;
+  private static final int METHODID_LIST_CONVERSION_WORKSPACES = 23;
+  private static final int METHODID_CREATE_CONVERSION_WORKSPACE = 24;
+  private static final int METHODID_UPDATE_CONVERSION_WORKSPACE = 25;
+  private static final int METHODID_DELETE_CONVERSION_WORKSPACE = 26;
+  private static final int METHODID_CREATE_MAPPING_RULE = 27;
+  private static final int METHODID_DELETE_MAPPING_RULE = 28;
+  private static final int METHODID_LIST_MAPPING_RULES = 29;
+  private static final int METHODID_GET_MAPPING_RULE = 30;
+  private static final int METHODID_SEED_CONVERSION_WORKSPACE = 31;
+  private static final int METHODID_IMPORT_MAPPING_RULES = 32;
+  private static final int METHODID_CONVERT_CONVERSION_WORKSPACE = 33;
+  private static final int METHODID_COMMIT_CONVERSION_WORKSPACE = 34;
+  private static final int METHODID_ROLLBACK_CONVERSION_WORKSPACE = 35;
+  private static final int METHODID_APPLY_CONVERSION_WORKSPACE = 36;
+  private static final int METHODID_DESCRIBE_DATABASE_ENTITIES = 37;
+  private static final int METHODID_SEARCH_BACKGROUND_JOBS = 38;
+  private static final int METHODID_DESCRIBE_CONVERSION_WORKSPACE_REVISIONS = 39;
+  private static final int METHODID_FETCH_STATIC_IPS = 40;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4229,6 +4763,12 @@ public final class DataMigrationServiceGrpc {
               (io.grpc.stub.StreamObserver<com.google.cloud.clouddms.v1.SshScript>)
                   responseObserver);
           break;
+        case METHODID_GENERATE_TCP_PROXY_SCRIPT:
+          serviceImpl.generateTcpProxyScript(
+              (com.google.cloud.clouddms.v1.GenerateTcpProxyScriptRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.clouddms.v1.TcpProxyScript>)
+                  responseObserver);
+          break;
         case METHODID_LIST_CONNECTION_PROFILES:
           serviceImpl.listConnectionProfiles(
               (com.google.cloud.clouddms.v1.ListConnectionProfilesRequest) request,
@@ -4307,6 +4847,29 @@ public final class DataMigrationServiceGrpc {
           serviceImpl.deleteConversionWorkspace(
               (com.google.cloud.clouddms.v1.DeleteConversionWorkspaceRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_CREATE_MAPPING_RULE:
+          serviceImpl.createMappingRule(
+              (com.google.cloud.clouddms.v1.CreateMappingRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.clouddms.v1.MappingRule>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_MAPPING_RULE:
+          serviceImpl.deleteMappingRule(
+              (com.google.cloud.clouddms.v1.DeleteMappingRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_LIST_MAPPING_RULES:
+          serviceImpl.listMappingRules(
+              (com.google.cloud.clouddms.v1.ListMappingRulesRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.clouddms.v1.ListMappingRulesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_GET_MAPPING_RULE:
+          serviceImpl.getMappingRule(
+              (com.google.cloud.clouddms.v1.GetMappingRuleRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.clouddms.v1.MappingRule>)
+                  responseObserver);
           break;
         case METHODID_SEED_CONVERSION_WORKSPACE:
           serviceImpl.seedConversionWorkspace(
@@ -4458,6 +5021,13 @@ public final class DataMigrationServiceGrpc {
                     com.google.cloud.clouddms.v1.GenerateSshScriptRequest,
                     com.google.cloud.clouddms.v1.SshScript>(service, METHODID_GENERATE_SSH_SCRIPT)))
         .addMethod(
+            getGenerateTcpProxyScriptMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.clouddms.v1.GenerateTcpProxyScriptRequest,
+                    com.google.cloud.clouddms.v1.TcpProxyScript>(
+                    service, METHODID_GENERATE_TCP_PROXY_SCRIPT)))
+        .addMethod(
             getListConnectionProfilesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -4550,6 +5120,32 @@ public final class DataMigrationServiceGrpc {
                     com.google.cloud.clouddms.v1.DeleteConversionWorkspaceRequest,
                     com.google.longrunning.Operation>(
                     service, METHODID_DELETE_CONVERSION_WORKSPACE)))
+        .addMethod(
+            getCreateMappingRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.clouddms.v1.CreateMappingRuleRequest,
+                    com.google.cloud.clouddms.v1.MappingRule>(
+                    service, METHODID_CREATE_MAPPING_RULE)))
+        .addMethod(
+            getDeleteMappingRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.clouddms.v1.DeleteMappingRuleRequest,
+                    com.google.protobuf.Empty>(service, METHODID_DELETE_MAPPING_RULE)))
+        .addMethod(
+            getListMappingRulesMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.clouddms.v1.ListMappingRulesRequest,
+                    com.google.cloud.clouddms.v1.ListMappingRulesResponse>(
+                    service, METHODID_LIST_MAPPING_RULES)))
+        .addMethod(
+            getGetMappingRuleMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.clouddms.v1.GetMappingRuleRequest,
+                    com.google.cloud.clouddms.v1.MappingRule>(service, METHODID_GET_MAPPING_RULE)))
         .addMethod(
             getSeedConversionWorkspaceMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -4645,9 +5241,9 @@ public final class DataMigrationServiceGrpc {
   private static final class DataMigrationServiceMethodDescriptorSupplier
       extends DataMigrationServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DataMigrationServiceMethodDescriptorSupplier(String methodName) {
+    DataMigrationServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -4681,6 +5277,7 @@ public final class DataMigrationServiceGrpc {
                       .addMethod(getVerifyMigrationJobMethod())
                       .addMethod(getRestartMigrationJobMethod())
                       .addMethod(getGenerateSshScriptMethod())
+                      .addMethod(getGenerateTcpProxyScriptMethod())
                       .addMethod(getListConnectionProfilesMethod())
                       .addMethod(getGetConnectionProfileMethod())
                       .addMethod(getCreateConnectionProfileMethod())
@@ -4695,6 +5292,10 @@ public final class DataMigrationServiceGrpc {
                       .addMethod(getCreateConversionWorkspaceMethod())
                       .addMethod(getUpdateConversionWorkspaceMethod())
                       .addMethod(getDeleteConversionWorkspaceMethod())
+                      .addMethod(getCreateMappingRuleMethod())
+                      .addMethod(getDeleteMappingRuleMethod())
+                      .addMethod(getListMappingRulesMethod())
+                      .addMethod(getGetMappingRuleMethod())
                       .addMethod(getSeedConversionWorkspaceMethod())
                       .addMethod(getImportMappingRulesMethod())
                       .addMethod(getConvertConversionWorkspaceMethod())

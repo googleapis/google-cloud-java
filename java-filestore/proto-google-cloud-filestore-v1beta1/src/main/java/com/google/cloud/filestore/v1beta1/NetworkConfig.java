@@ -620,8 +620,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
-   * IPv6 addresses in the format
+   * Output only. IPv4 addresses in the format
+   * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
    * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
    * </pre>
    *
@@ -636,8 +636,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
-   * IPv6 addresses in the format
+   * Output only. IPv4 addresses in the format
+   * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
    * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
    * </pre>
    *
@@ -652,8 +652,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
-   * IPv6 addresses in the format
+   * Output only. IPv4 addresses in the format
+   * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
    * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
    * </pre>
    *
@@ -669,8 +669,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
-   * IPv6 addresses in the format
+   * Output only. IPv4 addresses in the format
+   * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
    * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
    * </pre>
    *
@@ -1779,8 +1779,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
-     * IPv6 addresses in the format
+     * Output only. IPv4 addresses in the format
+     * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
      * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
      * </pre>
      *
@@ -1796,8 +1796,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
-     * IPv6 addresses in the format
+     * Output only. IPv4 addresses in the format
+     * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
      * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
      * </pre>
      *
@@ -1812,8 +1812,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
-     * IPv6 addresses in the format
+     * Output only. IPv4 addresses in the format
+     * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
      * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
      * </pre>
      *
@@ -1829,8 +1829,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
-     * IPv6 addresses in the format
+     * Output only. IPv4 addresses in the format
+     * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
      * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
      * </pre>
      *
@@ -1846,8 +1846,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
-     * IPv6 addresses in the format
+     * Output only. IPv4 addresses in the format
+     * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
      * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
      * </pre>
      *
@@ -1871,8 +1871,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
-     * IPv6 addresses in the format
+     * Output only. IPv4 addresses in the format
+     * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
      * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
      * </pre>
      *
@@ -1895,8 +1895,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
-     * IPv6 addresses in the format
+     * Output only. IPv4 addresses in the format
+     * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
      * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
      * </pre>
      *
@@ -1916,8 +1916,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
-     * IPv6 addresses in the format
+     * Output only. IPv4 addresses in the format
+     * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
      * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
      * </pre>
      *
@@ -1936,8 +1936,8 @@ public final class NetworkConfig extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. IPv4 addresses in the format `{octet1}.{octet2}.{octet3}.{octet4}` or
-     * IPv6 addresses in the format
+     * Output only. IPv4 addresses in the format
+     * `{octet1}.{octet2}.{octet3}.{octet4}` or IPv6 addresses in the format
      * `{block1}:{block2}:{block3}:{block4}:{block5}:{block6}:{block7}:{block8}`.
      * </pre>
      *

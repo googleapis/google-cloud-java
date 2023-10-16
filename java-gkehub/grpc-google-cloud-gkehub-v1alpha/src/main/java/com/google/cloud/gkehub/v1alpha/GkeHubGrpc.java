@@ -41,7 +41,7 @@ public final class GkeHubGrpc {
 
   private GkeHubGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.gkehub.v1alpha.GkeHub";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.gkehub.v1alpha.GkeHub";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -832,9 +832,9 @@ public final class GkeHubGrpc {
 
   private static final class GkeHubMethodDescriptorSupplier extends GkeHubBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    GkeHubMethodDescriptorSupplier(String methodName) {
+    GkeHubMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

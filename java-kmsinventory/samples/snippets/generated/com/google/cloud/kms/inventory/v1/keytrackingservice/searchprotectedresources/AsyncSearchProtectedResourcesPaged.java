@@ -23,6 +23,7 @@ import com.google.cloud.kms.inventory.v1.ProtectedResource;
 import com.google.cloud.kms.inventory.v1.SearchProtectedResourcesRequest;
 import com.google.cloud.kms.inventory.v1.SearchProtectedResourcesResponse;
 import com.google.common.base.Strings;
+import java.util.ArrayList;
 
 public class AsyncSearchProtectedResourcesPaged {
 
@@ -43,6 +44,7 @@ public class AsyncSearchProtectedResourcesPaged {
               .setCryptoKey(OrganizationName.of("[ORGANIZATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .addAllResourceTypes(new ArrayList<String>())
               .build();
       while (true) {
         SearchProtectedResourcesResponse response =

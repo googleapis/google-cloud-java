@@ -38,6 +38,7 @@ import com.google.cloud.recommender.v1.ListRecommendationsRequest;
 import com.google.cloud.recommender.v1.ListRecommendationsResponse;
 import com.google.cloud.recommender.v1.MarkInsightAcceptedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationClaimedRequest;
+import com.google.cloud.recommender.v1.MarkRecommendationDismissedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationFailedRequest;
 import com.google.cloud.recommender.v1.MarkRecommendationSucceededRequest;
 import com.google.cloud.recommender.v1.Recommendation;
@@ -105,6 +106,17 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setFullMethodName("google.cloud.recommender.v1.Recommender/GetRecommendation")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRecommendationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Recommendation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<MarkRecommendationDismissedRequest, Recommendation>
+      markRecommendationDismissedMethodDescriptor =
+          MethodDescriptor.<MarkRecommendationDismissedRequest, Recommendation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.recommender.v1.Recommender/MarkRecommendationDismissed")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(MarkRecommendationDismissedRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Recommendation.getDefaultInstance()))
               .build();
 
@@ -190,6 +202,8 @@ public class GrpcRecommenderStub extends RecommenderStub {
   private final UnaryCallable<ListRecommendationsRequest, ListRecommendationsPagedResponse>
       listRecommendationsPagedCallable;
   private final UnaryCallable<GetRecommendationRequest, Recommendation> getRecommendationCallable;
+  private final UnaryCallable<MarkRecommendationDismissedRequest, Recommendation>
+      markRecommendationDismissedCallable;
   private final UnaryCallable<MarkRecommendationClaimedRequest, Recommendation>
       markRecommendationClaimedCallable;
   private final UnaryCallable<MarkRecommendationSucceededRequest, Recommendation>
@@ -298,6 +312,17 @@ public class GrpcRecommenderStub extends RecommenderStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<MarkRecommendationDismissedRequest, Recommendation>
+        markRecommendationDismissedTransportSettings =
+            GrpcCallSettings.<MarkRecommendationDismissedRequest, Recommendation>newBuilder()
+                .setMethodDescriptor(markRecommendationDismissedMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<MarkRecommendationClaimedRequest, Recommendation>
         markRecommendationClaimedTransportSettings =
             GrpcCallSettings.<MarkRecommendationClaimedRequest, Recommendation>newBuilder()
@@ -409,6 +434,11 @@ public class GrpcRecommenderStub extends RecommenderStub {
             getRecommendationTransportSettings,
             settings.getRecommendationSettings(),
             clientContext);
+    this.markRecommendationDismissedCallable =
+        callableFactory.createUnaryCallable(
+            markRecommendationDismissedTransportSettings,
+            settings.markRecommendationDismissedSettings(),
+            clientContext);
     this.markRecommendationClaimedCallable =
         callableFactory.createUnaryCallable(
             markRecommendationClaimedTransportSettings,
@@ -488,6 +518,12 @@ public class GrpcRecommenderStub extends RecommenderStub {
   @Override
   public UnaryCallable<GetRecommendationRequest, Recommendation> getRecommendationCallable() {
     return getRecommendationCallable;
+  }
+
+  @Override
+  public UnaryCallable<MarkRecommendationDismissedRequest, Recommendation>
+      markRecommendationDismissedCallable() {
+    return markRecommendationDismissedCallable;
   }
 
   @Override

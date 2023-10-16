@@ -219,6 +219,88 @@ public interface JobOrBuilder
    *
    *
    * <pre>
+   * Output only. A predeploy Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PredeployJob predeploy_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the predeployJob field is set.
+   */
+  boolean hasPredeployJob();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A predeploy Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PredeployJob predeploy_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The predeployJob.
+   */
+  com.google.cloud.deploy.v1.PredeployJob getPredeployJob();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A predeploy Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PredeployJob predeploy_job = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.PredeployJobOrBuilder getPredeployJobOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A postdeploy Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PostdeployJob postdeploy_job = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the postdeployJob field is set.
+   */
+  boolean hasPostdeployJob();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A postdeploy Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PostdeployJob postdeploy_job = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The postdeployJob.
+   */
+  com.google.cloud.deploy.v1.PostdeployJob getPostdeployJob();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. A postdeploy Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.deploy.v1.PostdeployJob postdeploy_job = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.deploy.v1.PostdeployJobOrBuilder getPostdeployJobOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. A createChildRollout Job.
    * </pre>
    *

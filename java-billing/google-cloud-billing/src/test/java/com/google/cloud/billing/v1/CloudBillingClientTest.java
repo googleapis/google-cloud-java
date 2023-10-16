@@ -443,14 +443,14 @@ public class CloudBillingClientTest {
   public void getProjectBillingInfoTest() throws Exception {
     ProjectBillingInfo expectedResponse =
         ProjectBillingInfo.newBuilder()
-            .setName(ProjectBillingInfoName.of("[PROJECT]").toString())
+            .setName("name3373707")
             .setProjectId("projectId-894832108")
             .setBillingAccountName("billingAccountName929322205")
             .setBillingEnabled(true)
             .build();
     mockCloudBilling.addResponse(expectedResponse);
 
-    ProjectBillingInfoName name = ProjectBillingInfoName.of("[PROJECT]");
+    ProjectName name = ProjectName.of("[PROJECT]");
 
     ProjectBillingInfo actualResponse = client.getProjectBillingInfo(name);
     Assert.assertEquals(expectedResponse, actualResponse);
@@ -473,7 +473,7 @@ public class CloudBillingClientTest {
     mockCloudBilling.addException(exception);
 
     try {
-      ProjectBillingInfoName name = ProjectBillingInfoName.of("[PROJECT]");
+      ProjectName name = ProjectName.of("[PROJECT]");
       client.getProjectBillingInfo(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
@@ -485,7 +485,7 @@ public class CloudBillingClientTest {
   public void getProjectBillingInfoTest2() throws Exception {
     ProjectBillingInfo expectedResponse =
         ProjectBillingInfo.newBuilder()
-            .setName(ProjectBillingInfoName.of("[PROJECT]").toString())
+            .setName("name3373707")
             .setProjectId("projectId-894832108")
             .setBillingAccountName("billingAccountName929322205")
             .setBillingEnabled(true)
@@ -527,7 +527,7 @@ public class CloudBillingClientTest {
   public void updateProjectBillingInfoTest() throws Exception {
     ProjectBillingInfo expectedResponse =
         ProjectBillingInfo.newBuilder()
-            .setName(ProjectBillingInfoName.of("[PROJECT]").toString())
+            .setName("name3373707")
             .setProjectId("projectId-894832108")
             .setBillingAccountName("billingAccountName929322205")
             .setBillingEnabled(true)

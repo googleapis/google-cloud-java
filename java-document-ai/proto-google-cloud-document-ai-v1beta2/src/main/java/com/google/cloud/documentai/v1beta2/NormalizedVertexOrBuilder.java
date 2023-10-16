@@ -40,7 +40,7 @@ public interface NormalizedVertexOrBuilder
    *
    *
    * <pre>
-   * Y coordinate.
+   * Y coordinate (starts from the top of the image).
    * </pre>
    *
    * <code>float y = 2;</code>

@@ -248,6 +248,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .setConversation(Conversation.newBuilder().build())
             .setConversationId("conversationId-1676095234")
             .setRedactionConfig(RedactionConfig.newBuilder().build())
+            .setSpeechConfig(SpeechConfig.newBuilder().build())
             .build();
 
     Conversation actualResponse = client.uploadConversationAsync(request).get();
@@ -282,6 +283,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
               .setConversation(Conversation.newBuilder().build())
               .setConversationId("conversationId-1676095234")
               .setRedactionConfig(RedactionConfig.newBuilder().build())
+              .setSpeechConfig(SpeechConfig.newBuilder().build())
               .build();
       client.uploadConversationAsync(request).get();
       Assert.fail("No exception raised");
@@ -3032,6 +3034,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .putAllPubsubNotificationSettings(new HashMap<String, String>())
             .setAnalysisConfig(Settings.AnalysisConfig.newBuilder().build())
             .setRedactionConfig(RedactionConfig.newBuilder().build())
+            .setSpeechConfig(SpeechConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3083,6 +3086,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .putAllPubsubNotificationSettings(new HashMap<String, String>())
             .setAnalysisConfig(Settings.AnalysisConfig.newBuilder().build())
             .setRedactionConfig(RedactionConfig.newBuilder().build())
+            .setSpeechConfig(SpeechConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3134,6 +3138,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .putAllPubsubNotificationSettings(new HashMap<String, String>())
             .setAnalysisConfig(Settings.AnalysisConfig.newBuilder().build())
             .setRedactionConfig(RedactionConfig.newBuilder().build())
+            .setSpeechConfig(SpeechConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3147,6 +3152,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
             .putAllPubsubNotificationSettings(new HashMap<String, String>())
             .setAnalysisConfig(Settings.AnalysisConfig.newBuilder().build())
             .setRedactionConfig(RedactionConfig.newBuilder().build())
+            .setSpeechConfig(SpeechConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -3186,6 +3192,7 @@ public class ContactCenterInsightsClientHttpJsonTest {
               .putAllPubsubNotificationSettings(new HashMap<String, String>())
               .setAnalysisConfig(Settings.AnalysisConfig.newBuilder().build())
               .setRedactionConfig(RedactionConfig.newBuilder().build())
+              .setSpeechConfig(SpeechConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSettings(settings, updateMask);

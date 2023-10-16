@@ -34,7 +34,7 @@ public final class WorkflowsGrpc {
 
   private WorkflowsGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.workflows.v1.Workflows";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.workflows.v1.Workflows";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -307,7 +307,7 @@ public final class WorkflowsGrpc {
      *
      *
      * <pre>
-     * Lists Workflows in a given project and location.
+     * Lists workflows in a given project and location.
      * The default order is not specified.
      * </pre>
      */
@@ -323,7 +323,7 @@ public final class WorkflowsGrpc {
      *
      *
      * <pre>
-     * Gets details of a single Workflow.
+     * Gets details of a single workflow.
      * </pre>
      */
     default void getWorkflow(
@@ -339,7 +339,7 @@ public final class WorkflowsGrpc {
      * <pre>
      * Creates a new workflow. If a workflow with the specified name already
      * exists in the specified project and location, the long running operation
-     * will return [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
+     * returns a [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
      * </pre>
      */
     default void createWorkflow(
@@ -371,8 +371,8 @@ public final class WorkflowsGrpc {
      * <pre>
      * Updates an existing workflow.
      * Running this method has no impact on already running executions of the
-     * workflow. A new revision of the workflow may be created as a result of a
-     * successful update operation. In that case, such revision will be used
+     * workflow. A new revision of the workflow might be created as a result of a
+     * successful update operation. In that case, the new revision is used
      * in new workflow executions.
      * </pre>
      */
@@ -424,7 +424,7 @@ public final class WorkflowsGrpc {
      *
      *
      * <pre>
-     * Lists Workflows in a given project and location.
+     * Lists workflows in a given project and location.
      * The default order is not specified.
      * </pre>
      */
@@ -442,7 +442,7 @@ public final class WorkflowsGrpc {
      *
      *
      * <pre>
-     * Gets details of a single Workflow.
+     * Gets details of a single workflow.
      * </pre>
      */
     public void getWorkflow(
@@ -460,7 +460,7 @@ public final class WorkflowsGrpc {
      * <pre>
      * Creates a new workflow. If a workflow with the specified name already
      * exists in the specified project and location, the long running operation
-     * will return [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
+     * returns a [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
      * </pre>
      */
     public void createWorkflow(
@@ -496,8 +496,8 @@ public final class WorkflowsGrpc {
      * <pre>
      * Updates an existing workflow.
      * Running this method has no impact on already running executions of the
-     * workflow. A new revision of the workflow may be created as a result of a
-     * successful update operation. In that case, such revision will be used
+     * workflow. A new revision of the workflow might be created as a result of a
+     * successful update operation. In that case, the new revision is used
      * in new workflow executions.
      * </pre>
      */
@@ -536,7 +536,7 @@ public final class WorkflowsGrpc {
      *
      *
      * <pre>
-     * Lists Workflows in a given project and location.
+     * Lists workflows in a given project and location.
      * The default order is not specified.
      * </pre>
      */
@@ -550,7 +550,7 @@ public final class WorkflowsGrpc {
      *
      *
      * <pre>
-     * Gets details of a single Workflow.
+     * Gets details of a single workflow.
      * </pre>
      */
     public com.google.cloud.workflows.v1.Workflow getWorkflow(
@@ -565,7 +565,7 @@ public final class WorkflowsGrpc {
      * <pre>
      * Creates a new workflow. If a workflow with the specified name already
      * exists in the specified project and location, the long running operation
-     * will return [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
+     * returns a [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
      * </pre>
      */
     public com.google.longrunning.Operation createWorkflow(
@@ -595,8 +595,8 @@ public final class WorkflowsGrpc {
      * <pre>
      * Updates an existing workflow.
      * Running this method has no impact on already running executions of the
-     * workflow. A new revision of the workflow may be created as a result of a
-     * successful update operation. In that case, such revision will be used
+     * workflow. A new revision of the workflow might be created as a result of a
+     * successful update operation. In that case, the new revision is used
      * in new workflow executions.
      * </pre>
      */
@@ -631,7 +631,7 @@ public final class WorkflowsGrpc {
      *
      *
      * <pre>
-     * Lists Workflows in a given project and location.
+     * Lists workflows in a given project and location.
      * The default order is not specified.
      * </pre>
      */
@@ -646,7 +646,7 @@ public final class WorkflowsGrpc {
      *
      *
      * <pre>
-     * Gets details of a single Workflow.
+     * Gets details of a single workflow.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -662,7 +662,7 @@ public final class WorkflowsGrpc {
      * <pre>
      * Creates a new workflow. If a workflow with the specified name already
      * exists in the specified project and location, the long running operation
-     * will return [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
+     * returns a [ALREADY_EXISTS][google.rpc.Code.ALREADY_EXISTS] error.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -692,8 +692,8 @@ public final class WorkflowsGrpc {
      * <pre>
      * Updates an existing workflow.
      * Running this method has no impact on already running executions of the
-     * workflow. A new revision of the workflow may be created as a result of a
-     * successful update operation. In that case, such revision will be used
+     * workflow. A new revision of the workflow might be created as a result of a
+     * successful update operation. In that case, the new revision is used
      * in new workflow executions.
      * </pre>
      */
@@ -830,9 +830,9 @@ public final class WorkflowsGrpc {
   private static final class WorkflowsMethodDescriptorSupplier
       extends WorkflowsBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    WorkflowsMethodDescriptorSupplier(String methodName) {
+    WorkflowsMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

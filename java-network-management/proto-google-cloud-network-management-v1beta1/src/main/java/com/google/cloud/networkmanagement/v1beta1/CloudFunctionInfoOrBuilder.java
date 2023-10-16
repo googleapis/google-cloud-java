@@ -27,7 +27,7 @@ public interface CloudFunctionInfoOrBuilder
    *
    *
    * <pre>
-   * Name of a Cloud function.
+   * Name of a Cloud Function.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -39,7 +39,7 @@ public interface CloudFunctionInfoOrBuilder
    *
    *
    * <pre>
-   * Name of a Cloud function.
+   * Name of a Cloud Function.
    * </pre>
    *
    * <code>string display_name = 1;</code>
@@ -52,7 +52,7 @@ public interface CloudFunctionInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a Cloud function.
+   * URI of a Cloud Function.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -64,7 +64,7 @@ public interface CloudFunctionInfoOrBuilder
    *
    *
    * <pre>
-   * URI of a Cloud function.
+   * URI of a Cloud Function.
    * </pre>
    *
    * <code>string uri = 2;</code>
@@ -77,7 +77,7 @@ public interface CloudFunctionInfoOrBuilder
    *
    *
    * <pre>
-   * Location in which the Cloud function is deployed.
+   * Location in which the Cloud Function is deployed.
    * </pre>
    *
    * <code>string location = 3;</code>
@@ -89,7 +89,7 @@ public interface CloudFunctionInfoOrBuilder
    *
    *
    * <pre>
-   * Location in which the Cloud function is deployed.
+   * Location in which the Cloud Function is deployed.
    * </pre>
    *
    * <code>string location = 3;</code>
@@ -102,7 +102,7 @@ public interface CloudFunctionInfoOrBuilder
    *
    *
    * <pre>
-   * Latest successfully deployed version id of the Cloud function.
+   * Latest successfully deployed version id of the Cloud Function.
    * </pre>
    *
    * <code>int64 version_id = 4;</code>

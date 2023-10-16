@@ -267,7 +267,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
-   *   String name = DatasetSchemaName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
+   *   String name = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
    *   ProcessResponse response = documentProcessorServiceClient.processDocument(name);
    * }
    * }</pre>
@@ -403,7 +403,7 @@ public class DocumentProcessorServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (DocumentProcessorServiceClient documentProcessorServiceClient =
    *     DocumentProcessorServiceClient.create()) {
-   *   String name = DatasetSchemaName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
+   *   String name = DatasetName.of("[PROJECT]", "[LOCATION]", "[PROCESSOR]").toString();
    *   BatchProcessResponse response =
    *       documentProcessorServiceClient.batchProcessDocumentsAsync(name).get();
    * }

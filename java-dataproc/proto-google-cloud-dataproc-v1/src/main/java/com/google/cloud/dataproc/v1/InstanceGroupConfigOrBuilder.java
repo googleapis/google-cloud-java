@@ -100,6 +100,68 @@ public interface InstanceGroupConfigOrBuilder
    *
    *
    * <pre>
+   * Output only. List of references to Compute Engine instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.dataproc.v1.InstanceReference> getInstanceReferencesList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of references to Compute Engine instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.InstanceReference getInstanceReferences(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of references to Compute Engine instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getInstanceReferencesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of references to Compute Engine instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.dataproc.v1.InstanceReferenceOrBuilder>
+      getInstanceReferencesOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of references to Compute Engine instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.InstanceReferenceOrBuilder getInstanceReferencesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The Compute Engine image resource used for cluster instances.
    *
    * The URI can represent an image or image family.
@@ -442,4 +504,75 @@ public interface InstanceGroupConfigOrBuilder
    * @return The bytes for minCpuPlatform.
    */
   com.google.protobuf.ByteString getMinCpuPlatformBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The minimum number of primary worker instances to create.
+   * If `min_num_instances` is set, cluster creation will succeed if
+   * the number of primary workers created is at least equal to the
+   * `min_num_instances` number.
+   *
+   * Example: Cluster creation request with `num_instances` = `5` and
+   * `min_num_instances` = `3`:
+   *
+   * *  If 4 VMs are created and 1 instance fails,
+   *    the failed VM is deleted. The cluster is
+   *    resized to 4 instances and placed in a `RUNNING` state.
+   * *  If 2 instances are created and 3 instances fail,
+   *    the cluster in placed in an `ERROR` state. The failed VMs
+   *    are not deleted.
+   * </pre>
+   *
+   * <code>int32 min_num_instances = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The minNumInstances.
+   */
+  int getMinNumInstances();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instance flexibility Policy allowing a mixture of VM shapes and
+   * provisioning models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy instance_flexibility_policy = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the instanceFlexibilityPolicy field is set.
+   */
+  boolean hasInstanceFlexibilityPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instance flexibility Policy allowing a mixture of VM shapes and
+   * provisioning models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy instance_flexibility_policy = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The instanceFlexibilityPolicy.
+   */
+  com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy getInstanceFlexibilityPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instance flexibility Policy allowing a mixture of VM shapes and
+   * provisioning models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy instance_flexibility_policy = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.dataproc.v1.InstanceFlexibilityPolicyOrBuilder
+      getInstanceFlexibilityPolicyOrBuilder();
 }

@@ -60,10 +60,12 @@ public interface ImportMappingRulesRequestOrBuilder
    *
    *
    * <pre>
-   * The format of the rules content file.
+   * Required. The format of the rules content file.
    * </pre>
    *
-   * <code>.google.cloud.clouddms.v1.ImportRulesFileFormat rules_format = 2;</code>
+   * <code>
+   * .google.cloud.clouddms.v1.ImportRulesFileFormat rules_format = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The enum numeric value on the wire for rulesFormat.
    */
@@ -72,10 +74,12 @@ public interface ImportMappingRulesRequestOrBuilder
    *
    *
    * <pre>
-   * The format of the rules content file.
+   * Required. The format of the rules content file.
    * </pre>
    *
-   * <code>.google.cloud.clouddms.v1.ImportRulesFileFormat rules_format = 2;</code>
+   * <code>
+   * .google.cloud.clouddms.v1.ImportRulesFileFormat rules_format = 2 [(.google.api.field_behavior) = REQUIRED];
+   * </code>
    *
    * @return The rulesFormat.
    */
@@ -85,10 +89,11 @@ public interface ImportMappingRulesRequestOrBuilder
    *
    *
    * <pre>
-   * One or more rules files.
+   * Required. One or more rules files.
    * </pre>
    *
-   * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+   * <code>
+   * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   java.util.List<com.google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile>
@@ -97,10 +102,11 @@ public interface ImportMappingRulesRequestOrBuilder
    *
    *
    * <pre>
-   * One or more rules files.
+   * Required. One or more rules files.
    * </pre>
    *
-   * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+   * <code>
+   * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile getRulesFiles(int index);
@@ -108,10 +114,11 @@ public interface ImportMappingRulesRequestOrBuilder
    *
    *
    * <pre>
-   * One or more rules files.
+   * Required. One or more rules files.
    * </pre>
    *
-   * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+   * <code>
+   * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   int getRulesFilesCount();
@@ -119,10 +126,11 @@ public interface ImportMappingRulesRequestOrBuilder
    *
    *
    * <pre>
-   * One or more rules files.
+   * Required. One or more rules files.
    * </pre>
    *
-   * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+   * <code>
+   * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   java.util.List<
@@ -132,10 +140,11 @@ public interface ImportMappingRulesRequestOrBuilder
    *
    *
    * <pre>
-   * One or more rules files.
+   * Required. One or more rules files.
    * </pre>
    *
-   * <code>repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3;
+   * <code>
+   * repeated .google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFile rules_files = 3 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.cloud.clouddms.v1.ImportMappingRulesRequest.RulesFileOrBuilder getRulesFilesOrBuilder(
@@ -145,11 +154,11 @@ public interface ImportMappingRulesRequestOrBuilder
    *
    *
    * <pre>
-   * Should the conversion workspace be committed automatically after the
-   * import operation.
+   * Required. Should the conversion workspace be committed automatically after
+   * the import operation.
    * </pre>
    *
-   * <code>bool auto_commit = 6;</code>
+   * <code>bool auto_commit = 6 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The autoCommit.
    */

@@ -76,7 +76,9 @@ public final class CreateTransitionRouteGroupRequest extends com.google.protobuf
    * Required. The flow to create an
    * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
    * for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`
+   * for agent-level groups.
    * </pre>
    *
    * <code>
@@ -104,7 +106,9 @@ public final class CreateTransitionRouteGroupRequest extends com.google.protobuf
    * Required. The flow to create an
    * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
    * for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-   * ID&gt;/flows/&lt;Flow ID&gt;`.
+   * ID&gt;/flows/&lt;Flow ID&gt;`
+   * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`
+   * for agent-level groups.
    * </pre>
    *
    * <code>
@@ -678,7 +682,9 @@ public final class CreateTransitionRouteGroupRequest extends com.google.protobuf
      * Required. The flow to create an
      * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
      * for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>
@@ -705,7 +711,9 @@ public final class CreateTransitionRouteGroupRequest extends com.google.protobuf
      * Required. The flow to create an
      * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
      * for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>
@@ -732,7 +740,9 @@ public final class CreateTransitionRouteGroupRequest extends com.google.protobuf
      * Required. The flow to create an
      * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
      * for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>
@@ -758,7 +768,9 @@ public final class CreateTransitionRouteGroupRequest extends com.google.protobuf
      * Required. The flow to create an
      * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
      * for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>
@@ -780,7 +792,9 @@ public final class CreateTransitionRouteGroupRequest extends com.google.protobuf
      * Required. The flow to create an
      * [TransitionRouteGroup][google.cloud.dialogflow.cx.v3beta1.TransitionRouteGroup]
      * for. Format: `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent
-     * ID&gt;/flows/&lt;Flow ID&gt;`.
+     * ID&gt;/flows/&lt;Flow ID&gt;`
+     * or `projects/&lt;Project ID&gt;/locations/&lt;Location ID&gt;/agents/&lt;Agent ID&gt;`
+     * for agent-level groups.
      * </pre>
      *
      * <code>

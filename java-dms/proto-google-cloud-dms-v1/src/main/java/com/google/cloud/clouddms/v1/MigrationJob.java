@@ -2744,6 +2744,839 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface PerformanceConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.clouddms.v1.MigrationJob.PerformanceConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Initial dump parallelism level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel dump_parallel_level = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for dumpParallelLevel.
+     */
+    int getDumpParallelLevelValue();
+    /**
+     *
+     *
+     * <pre>
+     * Initial dump parallelism level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel dump_parallel_level = 1;
+     * </code>
+     *
+     * @return The dumpParallelLevel.
+     */
+    com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel
+        getDumpParallelLevel();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Performance configuration definition.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.clouddms.v1.MigrationJob.PerformanceConfig}
+   */
+  public static final class PerformanceConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.clouddms.v1.MigrationJob.PerformanceConfig)
+      PerformanceConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use PerformanceConfig.newBuilder() to construct.
+    private PerformanceConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private PerformanceConfig() {
+      dumpParallelLevel_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new PerformanceConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
+          .internal_static_google_cloud_clouddms_v1_MigrationJob_PerformanceConfig_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
+          .internal_static_google_cloud_clouddms_v1_MigrationJob_PerformanceConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.class,
+              com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Describes the parallelism level during initial dump.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel}
+     */
+    public enum DumpParallelLevel implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Unknown dump parallel level. Will be defaulted to OPTIMAL.
+       * </pre>
+       *
+       * <code>DUMP_PARALLEL_LEVEL_UNSPECIFIED = 0;</code>
+       */
+      DUMP_PARALLEL_LEVEL_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Minimal parallel level.
+       * </pre>
+       *
+       * <code>MIN = 1;</code>
+       */
+      MIN(1),
+      /**
+       *
+       *
+       * <pre>
+       * Optimal parallel level.
+       * </pre>
+       *
+       * <code>OPTIMAL = 2;</code>
+       */
+      OPTIMAL(2),
+      /**
+       *
+       *
+       * <pre>
+       * Maximum parallel level.
+       * </pre>
+       *
+       * <code>MAX = 3;</code>
+       */
+      MAX(3),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Unknown dump parallel level. Will be defaulted to OPTIMAL.
+       * </pre>
+       *
+       * <code>DUMP_PARALLEL_LEVEL_UNSPECIFIED = 0;</code>
+       */
+      public static final int DUMP_PARALLEL_LEVEL_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Minimal parallel level.
+       * </pre>
+       *
+       * <code>MIN = 1;</code>
+       */
+      public static final int MIN_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * Optimal parallel level.
+       * </pre>
+       *
+       * <code>OPTIMAL = 2;</code>
+       */
+      public static final int OPTIMAL_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * Maximum parallel level.
+       * </pre>
+       *
+       * <code>MAX = 3;</code>
+       */
+      public static final int MAX_VALUE = 3;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static DumpParallelLevel valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static DumpParallelLevel forNumber(int value) {
+        switch (value) {
+          case 0:
+            return DUMP_PARALLEL_LEVEL_UNSPECIFIED;
+          case 1:
+            return MIN;
+          case 2:
+            return OPTIMAL;
+          case 3:
+            return MAX;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<DumpParallelLevel>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<DumpParallelLevel>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<DumpParallelLevel>() {
+                public DumpParallelLevel findValueByNumber(int number) {
+                  return DumpParallelLevel.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final DumpParallelLevel[] VALUES = values();
+
+      public static DumpParallelLevel valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private DumpParallelLevel(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel)
+    }
+
+    public static final int DUMP_PARALLEL_LEVEL_FIELD_NUMBER = 1;
+    private int dumpParallelLevel_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Initial dump parallelism level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel dump_parallel_level = 1;
+     * </code>
+     *
+     * @return The enum numeric value on the wire for dumpParallelLevel.
+     */
+    @java.lang.Override
+    public int getDumpParallelLevelValue() {
+      return dumpParallelLevel_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Initial dump parallelism level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel dump_parallel_level = 1;
+     * </code>
+     *
+     * @return The dumpParallelLevel.
+     */
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel
+        getDumpParallelLevel() {
+      com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel result =
+          com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel.forNumber(
+              dumpParallelLevel_);
+      return result == null
+          ? com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel
+              .UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (dumpParallelLevel_
+          != com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel
+              .DUMP_PARALLEL_LEVEL_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, dumpParallelLevel_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (dumpParallelLevel_
+          != com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel
+              .DUMP_PARALLEL_LEVEL_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, dumpParallelLevel_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig other =
+          (com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig) obj;
+
+      if (dumpParallelLevel_ != other.dumpParallelLevel_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DUMP_PARALLEL_LEVEL_FIELD_NUMBER;
+      hash = (53 * hash) + dumpParallelLevel_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Performance configuration definition.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.clouddms.v1.MigrationJob.PerformanceConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.clouddms.v1.MigrationJob.PerformanceConfig)
+        com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
+            .internal_static_google_cloud_clouddms_v1_MigrationJob_PerformanceConfig_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
+            .internal_static_google_cloud_clouddms_v1_MigrationJob_PerformanceConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.class,
+                com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        dumpParallelLevel_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.clouddms.v1.ClouddmsResourcesProto
+            .internal_static_google_cloud_clouddms_v1_MigrationJob_PerformanceConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig
+          getDefaultInstanceForType() {
+        return com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig build() {
+        com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig buildPartial() {
+        com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig result =
+            new com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.dumpParallelLevel_ = dumpParallelLevel_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig) {
+          return mergeFrom((com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig other) {
+        if (other
+            == com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.getDefaultInstance())
+          return this;
+        if (other.dumpParallelLevel_ != 0) {
+          setDumpParallelLevelValue(other.getDumpParallelLevelValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  dumpParallelLevel_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int dumpParallelLevel_ = 0;
+      /**
+       *
+       *
+       * <pre>
+       * Initial dump parallelism level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel dump_parallel_level = 1;
+       * </code>
+       *
+       * @return The enum numeric value on the wire for dumpParallelLevel.
+       */
+      @java.lang.Override
+      public int getDumpParallelLevelValue() {
+        return dumpParallelLevel_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Initial dump parallelism level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel dump_parallel_level = 1;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for dumpParallelLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDumpParallelLevelValue(int value) {
+        dumpParallelLevel_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Initial dump parallelism level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel dump_parallel_level = 1;
+       * </code>
+       *
+       * @return The dumpParallelLevel.
+       */
+      @java.lang.Override
+      public com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel
+          getDumpParallelLevel() {
+        com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel result =
+            com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel.forNumber(
+                dumpParallelLevel_);
+        return result == null
+            ? com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel
+                .UNRECOGNIZED
+            : result;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Initial dump parallelism level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel dump_parallel_level = 1;
+       * </code>
+       *
+       * @param value The dumpParallelLevel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDumpParallelLevel(
+          com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        dumpParallelLevel_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Initial dump parallelism level.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.DumpParallelLevel dump_parallel_level = 1;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDumpParallelLevel() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        dumpParallelLevel_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.clouddms.v1.MigrationJob.PerformanceConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.clouddms.v1.MigrationJob.PerformanceConfig)
+    private static final com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig();
+    }
+
+    public static com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<PerformanceConfig> PARSER =
+        new com.google.protobuf.AbstractParser<PerformanceConfig>() {
+          @java.lang.Override
+          public PerformanceConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<PerformanceConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<PerformanceConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int connectivityCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -4044,6 +4877,66 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int PERFORMANCE_CONFIG_FIELD_NUMBER = 22;
+  private com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performanceConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data dump parallelism settings used by the migration.
+   * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the performanceConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasPerformanceConfig() {
+    return performanceConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data dump parallelism settings used by the migration.
+   * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The performanceConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig getPerformanceConfig() {
+    return performanceConfig_ == null
+        ? com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.getDefaultInstance()
+        : performanceConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Data dump parallelism settings used by the migration.
+   * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfigOrBuilder
+      getPerformanceConfigOrBuilder() {
+    return performanceConfig_ == null
+        ? com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.getDefaultInstance()
+        : performanceConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4116,6 +5009,9 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cmekKeyName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 21, cmekKeyName_);
+    }
+    if (performanceConfig_ != null) {
+      output.writeMessage(22, getPerformanceConfig());
     }
     if (connectivityCase_ == 101) {
       output.writeMessage(101, (com.google.cloud.clouddms.v1.ReverseSshConnectivity) connectivity_);
@@ -4204,6 +5100,9 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cmekKeyName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, cmekKeyName_);
     }
+    if (performanceConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(22, getPerformanceConfig());
+    }
     if (connectivityCase_ == 101) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -4282,6 +5181,10 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getFilter().equals(other.getFilter())) return false;
     if (!getCmekKeyName().equals(other.getCmekKeyName())) return false;
+    if (hasPerformanceConfig() != other.hasPerformanceConfig()) return false;
+    if (hasPerformanceConfig()) {
+      if (!getPerformanceConfig().equals(other.getPerformanceConfig())) return false;
+    }
     if (!getConnectivityCase().equals(other.getConnectivityCase())) return false;
     switch (connectivityCase_) {
       case 101:
@@ -4367,6 +5270,10 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getFilter().hashCode();
     hash = (37 * hash) + CMEK_KEY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getCmekKeyName().hashCode();
+    if (hasPerformanceConfig()) {
+      hash = (37 * hash) + PERFORMANCE_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getPerformanceConfig().hashCode();
+    }
     switch (connectivityCase_) {
       case 101:
         hash = (37 * hash) + REVERSE_SSH_CONNECTIVITY_FIELD_NUMBER;
@@ -4607,6 +5514,11 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       }
       filter_ = "";
       cmekKeyName_ = "";
+      performanceConfig_ = null;
+      if (performanceConfigBuilder_ != null) {
+        performanceConfigBuilder_.dispose();
+        performanceConfigBuilder_ = null;
+      }
       connectivityCase_ = 0;
       connectivity_ = null;
       return this;
@@ -4713,6 +5625,12 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
         result.cmekKeyName_ = cmekKeyName_;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.performanceConfig_ =
+            performanceConfigBuilder_ == null
+                ? performanceConfig_
+                : performanceConfigBuilder_.build();
       }
     }
 
@@ -4847,6 +5765,9 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
         cmekKeyName_ = other.cmekKeyName_;
         bitField0_ |= 0x00400000;
         onChanged();
+      }
+      if (other.hasPerformanceConfig()) {
+        mergePerformanceConfig(other.getPerformanceConfig());
       }
       switch (other.getConnectivityCase()) {
         case REVERSE_SSH_CONNECTIVITY:
@@ -5023,6 +5944,13 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00400000;
                 break;
               } // case 170
+            case 178:
+              {
+                input.readMessage(
+                    getPerformanceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 178
             case 810:
               {
                 input.readMessage(
@@ -8801,6 +9729,223 @@ public final class MigrationJob extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00400000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performanceConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig,
+            com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.Builder,
+            com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfigOrBuilder>
+        performanceConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data dump parallelism settings used by the migration.
+     * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the performanceConfig field is set.
+     */
+    public boolean hasPerformanceConfig() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data dump parallelism settings used by the migration.
+     * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The performanceConfig.
+     */
+    public com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig getPerformanceConfig() {
+      if (performanceConfigBuilder_ == null) {
+        return performanceConfig_ == null
+            ? com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.getDefaultInstance()
+            : performanceConfig_;
+      } else {
+        return performanceConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data dump parallelism settings used by the migration.
+     * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPerformanceConfig(
+        com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig value) {
+      if (performanceConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        performanceConfig_ = value;
+      } else {
+        performanceConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data dump parallelism settings used by the migration.
+     * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setPerformanceConfig(
+        com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.Builder builderForValue) {
+      if (performanceConfigBuilder_ == null) {
+        performanceConfig_ = builderForValue.build();
+      } else {
+        performanceConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data dump parallelism settings used by the migration.
+     * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergePerformanceConfig(
+        com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig value) {
+      if (performanceConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00800000) != 0)
+            && performanceConfig_ != null
+            && performanceConfig_
+                != com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig
+                    .getDefaultInstance()) {
+          getPerformanceConfigBuilder().mergeFrom(value);
+        } else {
+          performanceConfig_ = value;
+        }
+      } else {
+        performanceConfigBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data dump parallelism settings used by the migration.
+     * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearPerformanceConfig() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      performanceConfig_ = null;
+      if (performanceConfigBuilder_ != null) {
+        performanceConfigBuilder_.dispose();
+        performanceConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data dump parallelism settings used by the migration.
+     * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.Builder
+        getPerformanceConfigBuilder() {
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return getPerformanceConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data dump parallelism settings used by the migration.
+     * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfigOrBuilder
+        getPerformanceConfigOrBuilder() {
+      if (performanceConfigBuilder_ != null) {
+        return performanceConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return performanceConfig_ == null
+            ? com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.getDefaultInstance()
+            : performanceConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Data dump parallelism settings used by the migration.
+     * Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.clouddms.v1.MigrationJob.PerformanceConfig performance_config = 22 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig,
+            com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.Builder,
+            com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfigOrBuilder>
+        getPerformanceConfigFieldBuilder() {
+      if (performanceConfigBuilder_ == null) {
+        performanceConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig,
+                com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfig.Builder,
+                com.google.cloud.clouddms.v1.MigrationJob.PerformanceConfigOrBuilder>(
+                getPerformanceConfig(), getParentForChildren(), isClean());
+        performanceConfig_ = null;
+      }
+      return performanceConfigBuilder_;
     }
 
     @java.lang.Override

@@ -3053,7 +3053,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param measurementProtocolSecret Required. The measurement protocol secret to update.
-   * @param updateMask The list of fields to be updated. Omitted fields will not be updated.
+   * @param updateMask Required. The list of fields to be updated. Omitted fields will not be
+   *     updated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final MeasurementProtocolSecret updateMeasurementProtocolSecret(
@@ -3459,6 +3460,105 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   public final UnaryCallable<CreateConversionEventRequest, ConversionEvent>
       createConversionEventCallable() {
     return stub.createConversionEventCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a conversion event with the specified attributes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ConversionEvent conversionEvent = ConversionEvent.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ConversionEvent response =
+   *       analyticsAdminServiceClient.updateConversionEvent(conversionEvent, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param conversionEvent Required. The conversion event to update. The `name` field is used to
+   *     identify the settings to be updated.
+   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
+   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ConversionEvent updateConversionEvent(
+      ConversionEvent conversionEvent, FieldMask updateMask) {
+    UpdateConversionEventRequest request =
+        UpdateConversionEventRequest.newBuilder()
+            .setConversionEvent(conversionEvent)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateConversionEvent(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a conversion event with the specified attributes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateConversionEventRequest request =
+   *       UpdateConversionEventRequest.newBuilder()
+   *           .setConversionEvent(ConversionEvent.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ConversionEvent response = analyticsAdminServiceClient.updateConversionEvent(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ConversionEvent updateConversionEvent(UpdateConversionEventRequest request) {
+    return updateConversionEventCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a conversion event with the specified attributes.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateConversionEventRequest request =
+   *       UpdateConversionEventRequest.newBuilder()
+   *           .setConversionEvent(ConversionEvent.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ConversionEvent> future =
+   *       analyticsAdminServiceClient.updateConversionEventCallable().futureCall(request);
+   *   // Do something.
+   *   ConversionEvent response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventCallable() {
+    return stub.updateConversionEventCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

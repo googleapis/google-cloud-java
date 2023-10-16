@@ -511,4 +511,55 @@ public interface ContainerOrBuilder
    * <code>.google.cloud.run.v2.Probe startup_probe = 11;</code>
    */
   com.google.cloud.run.v2.ProbeOrBuilder getStartupProbeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Names of the containers that must start before this container.
+   * </pre>
+   *
+   * <code>repeated string depends_on = 12;</code>
+   *
+   * @return A list containing the dependsOn.
+   */
+  java.util.List<java.lang.String> getDependsOnList();
+  /**
+   *
+   *
+   * <pre>
+   * Names of the containers that must start before this container.
+   * </pre>
+   *
+   * <code>repeated string depends_on = 12;</code>
+   *
+   * @return The count of dependsOn.
+   */
+  int getDependsOnCount();
+  /**
+   *
+   *
+   * <pre>
+   * Names of the containers that must start before this container.
+   * </pre>
+   *
+   * <code>repeated string depends_on = 12;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The dependsOn at the given index.
+   */
+  java.lang.String getDependsOn(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Names of the containers that must start before this container.
+   * </pre>
+   *
+   * <code>repeated string depends_on = 12;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the dependsOn at the given index.
+   */
+  com.google.protobuf.ByteString getDependsOnBytes(int index);
 }

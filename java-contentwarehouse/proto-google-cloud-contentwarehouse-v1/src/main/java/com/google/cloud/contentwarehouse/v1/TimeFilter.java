@@ -102,6 +102,16 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>UPDATE_TIME = 2;</code>
      */
     UPDATE_TIME(2),
+    /**
+     *
+     *
+     * <pre>
+     * Time when document becomes mutable again.
+     * </pre>
+     *
+     * <code>DISPOSITION_TIME = 3;</code>
+     */
+    DISPOSITION_TIME(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -135,6 +145,16 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
      * <code>UPDATE_TIME = 2;</code>
      */
     public static final int UPDATE_TIME_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * Time when document becomes mutable again.
+     * </pre>
+     *
+     * <code>DISPOSITION_TIME = 3;</code>
+     */
+    public static final int DISPOSITION_TIME_VALUE = 3;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -166,6 +186,8 @@ public final class TimeFilter extends com.google.protobuf.GeneratedMessageV3
           return CREATE_TIME;
         case 2:
           return UPDATE_TIME;
+        case 3:
+          return DISPOSITION_TIME;
         default:
           return null;
       }

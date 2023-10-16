@@ -33,7 +33,7 @@ public final class CloudTasksGrpc {
 
   private CloudTasksGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.tasks.v2beta2.CloudTasks";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.tasks.v2beta2.CloudTasks";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -373,6 +373,49 @@ public final class CloudTasksGrpc {
       }
     }
     return getResumeQueueMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.tasks.v2beta2.UploadQueueYamlRequest, com.google.protobuf.Empty>
+      getUploadQueueYamlMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UploadQueueYaml",
+      requestType = com.google.cloud.tasks.v2beta2.UploadQueueYamlRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.tasks.v2beta2.UploadQueueYamlRequest, com.google.protobuf.Empty>
+      getUploadQueueYamlMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.tasks.v2beta2.UploadQueueYamlRequest, com.google.protobuf.Empty>
+        getUploadQueueYamlMethod;
+    if ((getUploadQueueYamlMethod = CloudTasksGrpc.getUploadQueueYamlMethod) == null) {
+      synchronized (CloudTasksGrpc.class) {
+        if ((getUploadQueueYamlMethod = CloudTasksGrpc.getUploadQueueYamlMethod) == null) {
+          CloudTasksGrpc.getUploadQueueYamlMethod =
+              getUploadQueueYamlMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.tasks.v2beta2.UploadQueueYamlRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UploadQueueYaml"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.tasks.v2beta2.UploadQueueYamlRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new CloudTasksMethodDescriptorSupplier("UploadQueueYaml"))
+                      .build();
+        }
+      }
+    }
+    return getUploadQueueYamlMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -877,6 +920,52 @@ public final class CloudTasksGrpc {
     return getRunTaskMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.tasks.v2beta2.BufferTaskRequest,
+          com.google.cloud.tasks.v2beta2.BufferTaskResponse>
+      getBufferTaskMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BufferTask",
+      requestType = com.google.cloud.tasks.v2beta2.BufferTaskRequest.class,
+      responseType = com.google.cloud.tasks.v2beta2.BufferTaskResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.tasks.v2beta2.BufferTaskRequest,
+          com.google.cloud.tasks.v2beta2.BufferTaskResponse>
+      getBufferTaskMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.tasks.v2beta2.BufferTaskRequest,
+            com.google.cloud.tasks.v2beta2.BufferTaskResponse>
+        getBufferTaskMethod;
+    if ((getBufferTaskMethod = CloudTasksGrpc.getBufferTaskMethod) == null) {
+      synchronized (CloudTasksGrpc.class) {
+        if ((getBufferTaskMethod = CloudTasksGrpc.getBufferTaskMethod) == null) {
+          CloudTasksGrpc.getBufferTaskMethod =
+              getBufferTaskMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.tasks.v2beta2.BufferTaskRequest,
+                          com.google.cloud.tasks.v2beta2.BufferTaskResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BufferTask"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.tasks.v2beta2.BufferTaskRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.tasks.v2beta2.BufferTaskResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(new CloudTasksMethodDescriptorSupplier("BufferTask"))
+                      .build();
+        }
+      }
+    }
+    return getBufferTaskMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static CloudTasksStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<CloudTasksStub> factory =
@@ -1085,6 +1174,23 @@ public final class CloudTasksGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Queue> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getResumeQueueMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update queue list by uploading a queue.yaml file.
+     * The queue.yaml file is supplied in the request body as a YAML encoded
+     * string. This method was added to support gcloud clients versions before
+     * 322.0.0. New clients should use CreateQueue instead of this method.
+     * </pre>
+     */
+    default void uploadQueueYaml(
+        com.google.cloud.tasks.v2beta2.UploadQueueYamlRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUploadQueueYamlMethod(), responseObserver);
     }
 
     /**
@@ -1345,6 +1451,30 @@ public final class CloudTasksGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Task> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRunTaskMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates and buffers a new task without the need to explicitly define a Task
+     * message. The queue must have [HTTP
+     * target][google.cloud.tasks.v2beta2.HttpTarget]. To create the task with a
+     * custom ID, use the following format and set TASK_ID to your desired ID:
+     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer
+     * To create the task with an automatically generated ID, use the following
+     * format:
+     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer.
+     * Note: This feature is in its experimental stage. You must request access to
+     * the API through the [Cloud Tasks BufferTask Experiment Signup
+     * form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
+     * </pre>
+     */
+    default void bufferTask(
+        com.google.cloud.tasks.v2beta2.BufferTaskRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.BufferTaskResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getBufferTaskMethod(), responseObserver);
+    }
   }
 
   /**
@@ -1549,6 +1679,25 @@ public final class CloudTasksGrpc {
         io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Queue> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getResumeQueueMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update queue list by uploading a queue.yaml file.
+     * The queue.yaml file is supplied in the request body as a YAML encoded
+     * string. This method was added to support gcloud clients versions before
+     * 322.0.0. New clients should use CreateQueue instead of this method.
+     * </pre>
+     */
+    public void uploadQueueYaml(
+        com.google.cloud.tasks.v2beta2.UploadQueueYamlRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUploadQueueYamlMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -1828,6 +1977,31 @@ public final class CloudTasksGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getRunTaskMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates and buffers a new task without the need to explicitly define a Task
+     * message. The queue must have [HTTP
+     * target][google.cloud.tasks.v2beta2.HttpTarget]. To create the task with a
+     * custom ID, use the following format and set TASK_ID to your desired ID:
+     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer
+     * To create the task with an automatically generated ID, use the following
+     * format:
+     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer.
+     * Note: This feature is in its experimental stage. You must request access to
+     * the API through the [Cloud Tasks BufferTask Experiment Signup
+     * form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
+     * </pre>
+     */
+    public void bufferTask(
+        com.google.cloud.tasks.v2beta2.BufferTaskRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.BufferTaskResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBufferTaskMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -2003,6 +2177,22 @@ public final class CloudTasksGrpc {
         com.google.cloud.tasks.v2beta2.ResumeQueueRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getResumeQueueMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update queue list by uploading a queue.yaml file.
+     * The queue.yaml file is supplied in the request body as a YAML encoded
+     * string. This method was added to support gcloud clients versions before
+     * 322.0.0. New clients should use CreateQueue instead of this method.
+     * </pre>
+     */
+    public com.google.protobuf.Empty uploadQueueYaml(
+        com.google.cloud.tasks.v2beta2.UploadQueueYamlRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUploadQueueYamlMethod(), getCallOptions(), request);
     }
 
     /**
@@ -2253,6 +2443,29 @@ public final class CloudTasksGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getRunTaskMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates and buffers a new task without the need to explicitly define a Task
+     * message. The queue must have [HTTP
+     * target][google.cloud.tasks.v2beta2.HttpTarget]. To create the task with a
+     * custom ID, use the following format and set TASK_ID to your desired ID:
+     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer
+     * To create the task with an automatically generated ID, use the following
+     * format:
+     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer.
+     * Note: This feature is in its experimental stage. You must request access to
+     * the API through the [Cloud Tasks BufferTask Experiment Signup
+     * form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
+     * </pre>
+     */
+    public com.google.cloud.tasks.v2beta2.BufferTaskResponse bufferTask(
+        com.google.cloud.tasks.v2beta2.BufferTaskRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBufferTaskMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -2428,6 +2641,22 @@ public final class CloudTasksGrpc {
         resumeQueue(com.google.cloud.tasks.v2beta2.ResumeQueueRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getResumeQueueMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Update queue list by uploading a queue.yaml file.
+     * The queue.yaml file is supplied in the request body as a YAML encoded
+     * string. This method was added to support gcloud clients versions before
+     * 322.0.0. New clients should use CreateQueue instead of this method.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        uploadQueueYaml(com.google.cloud.tasks.v2beta2.UploadQueueYamlRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUploadQueueYamlMethod(), getCallOptions()), request);
     }
 
     /**
@@ -2683,6 +2912,30 @@ public final class CloudTasksGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getRunTaskMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates and buffers a new task without the need to explicitly define a Task
+     * message. The queue must have [HTTP
+     * target][google.cloud.tasks.v2beta2.HttpTarget]. To create the task with a
+     * custom ID, use the following format and set TASK_ID to your desired ID:
+     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks/TASK_ID:buffer
+     * To create the task with an automatically generated ID, use the following
+     * format:
+     * projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID/tasks:buffer.
+     * Note: This feature is in its experimental stage. You must request access to
+     * the API through the [Cloud Tasks BufferTask Experiment Signup
+     * form](https://forms.gle/X8Zr5hiXH5tTGFqh8).
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.tasks.v2beta2.BufferTaskResponse>
+        bufferTask(com.google.cloud.tasks.v2beta2.BufferTaskRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBufferTaskMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_QUEUES = 0;
@@ -2693,18 +2946,20 @@ public final class CloudTasksGrpc {
   private static final int METHODID_PURGE_QUEUE = 5;
   private static final int METHODID_PAUSE_QUEUE = 6;
   private static final int METHODID_RESUME_QUEUE = 7;
-  private static final int METHODID_GET_IAM_POLICY = 8;
-  private static final int METHODID_SET_IAM_POLICY = 9;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 10;
-  private static final int METHODID_LIST_TASKS = 11;
-  private static final int METHODID_GET_TASK = 12;
-  private static final int METHODID_CREATE_TASK = 13;
-  private static final int METHODID_DELETE_TASK = 14;
-  private static final int METHODID_LEASE_TASKS = 15;
-  private static final int METHODID_ACKNOWLEDGE_TASK = 16;
-  private static final int METHODID_RENEW_LEASE = 17;
-  private static final int METHODID_CANCEL_LEASE = 18;
-  private static final int METHODID_RUN_TASK = 19;
+  private static final int METHODID_UPLOAD_QUEUE_YAML = 8;
+  private static final int METHODID_GET_IAM_POLICY = 9;
+  private static final int METHODID_SET_IAM_POLICY = 10;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 11;
+  private static final int METHODID_LIST_TASKS = 12;
+  private static final int METHODID_GET_TASK = 13;
+  private static final int METHODID_CREATE_TASK = 14;
+  private static final int METHODID_DELETE_TASK = 15;
+  private static final int METHODID_LEASE_TASKS = 16;
+  private static final int METHODID_ACKNOWLEDGE_TASK = 17;
+  private static final int METHODID_RENEW_LEASE = 18;
+  private static final int METHODID_CANCEL_LEASE = 19;
+  private static final int METHODID_RUN_TASK = 20;
+  private static final int METHODID_BUFFER_TASK = 21;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -2763,6 +3018,11 @@ public final class CloudTasksGrpc {
           serviceImpl.resumeQueue(
               (com.google.cloud.tasks.v2beta2.ResumeQueueRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Queue>) responseObserver);
+          break;
+        case METHODID_UPLOAD_QUEUE_YAML:
+          serviceImpl.uploadQueueYaml(
+              (com.google.cloud.tasks.v2beta2.UploadQueueYamlRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_GET_IAM_POLICY:
           serviceImpl.getIamPolicy(
@@ -2826,6 +3086,12 @@ public final class CloudTasksGrpc {
           serviceImpl.runTask(
               (com.google.cloud.tasks.v2beta2.RunTaskRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.Task>) responseObserver);
+          break;
+        case METHODID_BUFFER_TASK:
+          serviceImpl.bufferTask(
+              (com.google.cloud.tasks.v2beta2.BufferTaskRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.tasks.v2beta2.BufferTaskResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -2894,6 +3160,12 @@ public final class CloudTasksGrpc {
                 new MethodHandlers<
                     com.google.cloud.tasks.v2beta2.ResumeQueueRequest,
                     com.google.cloud.tasks.v2beta2.Queue>(service, METHODID_RESUME_QUEUE)))
+        .addMethod(
+            getUploadQueueYamlMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2beta2.UploadQueueYamlRequest,
+                    com.google.protobuf.Empty>(service, METHODID_UPLOAD_QUEUE_YAML)))
         .addMethod(
             getGetIamPolicyMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -2967,6 +3239,13 @@ public final class CloudTasksGrpc {
                 new MethodHandlers<
                     com.google.cloud.tasks.v2beta2.RunTaskRequest,
                     com.google.cloud.tasks.v2beta2.Task>(service, METHODID_RUN_TASK)))
+        .addMethod(
+            getBufferTaskMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.tasks.v2beta2.BufferTaskRequest,
+                    com.google.cloud.tasks.v2beta2.BufferTaskResponse>(
+                    service, METHODID_BUFFER_TASK)))
         .build();
   }
 
@@ -2994,9 +3273,9 @@ public final class CloudTasksGrpc {
   private static final class CloudTasksMethodDescriptorSupplier
       extends CloudTasksBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    CloudTasksMethodDescriptorSupplier(String methodName) {
+    CloudTasksMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -3026,6 +3305,7 @@ public final class CloudTasksGrpc {
                       .addMethod(getPurgeQueueMethod())
                       .addMethod(getPauseQueueMethod())
                       .addMethod(getResumeQueueMethod())
+                      .addMethod(getUploadQueueYamlMethod())
                       .addMethod(getGetIamPolicyMethod())
                       .addMethod(getSetIamPolicyMethod())
                       .addMethod(getTestIamPermissionsMethod())
@@ -3038,6 +3318,7 @@ public final class CloudTasksGrpc {
                       .addMethod(getRenewLeaseMethod())
                       .addMethod(getCancelLeaseMethod())
                       .addMethod(getRunTaskMethod())
+                      .addMethod(getBufferTaskMethod())
                       .build();
         }
       }

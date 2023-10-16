@@ -299,6 +299,7 @@ public class DataCatalogClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setAdminSearch(true)
    *           .build();
    *   for (SearchCatalogResult element : dataCatalogClient.searchCatalog(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -344,6 +345,7 @@ public class DataCatalogClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setAdminSearch(true)
    *           .build();
    *   ApiFuture<SearchCatalogResult> future =
    *       dataCatalogClient.searchCatalogPagedCallable().futureCall(request);
@@ -390,6 +392,7 @@ public class DataCatalogClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setOrderBy("orderBy-1207110587")
+   *           .setAdminSearch(true)
    *           .build();
    *   while (true) {
    *     SearchCatalogResponse response = dataCatalogClient.searchCatalogCallable().call(request);

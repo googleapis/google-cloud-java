@@ -423,6 +423,76 @@ public interface ResponseMessageOrBuilder
    *
    *
    * <pre>
+   * Represents info card for knowledge answers, to be better rendered in
+   * Dialogflow Messenger.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.ResponseMessage.KnowledgeInfoCard knowledge_info_card = 20;
+   * </code>
+   *
+   * @return Whether the knowledgeInfoCard field is set.
+   */
+  boolean hasKnowledgeInfoCard();
+  /**
+   *
+   *
+   * <pre>
+   * Represents info card for knowledge answers, to be better rendered in
+   * Dialogflow Messenger.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.ResponseMessage.KnowledgeInfoCard knowledge_info_card = 20;
+   * </code>
+   *
+   * @return The knowledgeInfoCard.
+   */
+  com.google.cloud.dialogflow.cx.v3.ResponseMessage.KnowledgeInfoCard getKnowledgeInfoCard();
+  /**
+   *
+   *
+   * <pre>
+   * Represents info card for knowledge answers, to be better rendered in
+   * Dialogflow Messenger.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.cx.v3.ResponseMessage.KnowledgeInfoCard knowledge_info_card = 20;
+   * </code>
+   */
+  com.google.cloud.dialogflow.cx.v3.ResponseMessage.KnowledgeInfoCardOrBuilder
+      getKnowledgeInfoCardOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Response type.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.ResponseMessage.ResponseType response_type = 4;</code>
+   *
+   * @return The enum numeric value on the wire for responseType.
+   */
+  int getResponseTypeValue();
+  /**
+   *
+   *
+   * <pre>
+   * Response type.
+   * </pre>
+   *
+   * <code>.google.cloud.dialogflow.cx.v3.ResponseMessage.ResponseType response_type = 4;</code>
+   *
+   * @return The responseType.
+   */
+  com.google.cloud.dialogflow.cx.v3.ResponseMessage.ResponseType getResponseType();
+
+  /**
+   *
+   *
+   * <pre>
    * The channel which the response is associated with. Clients can specify the
    * channel via
    * [QueryParameters.channel][google.cloud.dialogflow.cx.v3.QueryParameters.channel],

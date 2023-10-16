@@ -998,6 +998,28 @@ public class MockCloudChannelServiceImpl extends CloudChannelServiceImplBase {
   }
 
   @Override
+  public void queryEligibleBillingAccounts(
+      QueryEligibleBillingAccountsRequest request,
+      StreamObserver<QueryEligibleBillingAccountsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof QueryEligibleBillingAccountsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((QueryEligibleBillingAccountsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method QueryEligibleBillingAccounts, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  QueryEligibleBillingAccountsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void registerSubscriber(
       RegisterSubscriberRequest request,
       StreamObserver<RegisterSubscriberResponse> responseObserver) {

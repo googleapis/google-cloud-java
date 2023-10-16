@@ -40,6 +40,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
 
   private InstanceGroupConfig() {
     instanceNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    instanceReferences_ = java.util.Collections.emptyList();
     imageUri_ = "";
     machineTypeUri_ = "";
     preemptibility_ = 0;
@@ -368,6 +369,89 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
    */
   public com.google.protobuf.ByteString getInstanceNamesBytes(int index) {
     return instanceNames_.getByteString(index);
+  }
+
+  public static final int INSTANCE_REFERENCES_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.dataproc.v1.InstanceReference> instanceReferences_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of references to Compute Engine instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.dataproc.v1.InstanceReference>
+      getInstanceReferencesList() {
+    return instanceReferences_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of references to Compute Engine instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.dataproc.v1.InstanceReferenceOrBuilder>
+      getInstanceReferencesOrBuilderList() {
+    return instanceReferences_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of references to Compute Engine instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getInstanceReferencesCount() {
+    return instanceReferences_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of references to Compute Engine instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.InstanceReference getInstanceReferences(int index) {
+    return instanceReferences_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. List of references to Compute Engine instances.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.InstanceReferenceOrBuilder getInstanceReferencesOrBuilder(
+      int index) {
+    return instanceReferences_.get(index);
   }
 
   public static final int IMAGE_URI_FIELD_NUMBER = 3;
@@ -862,6 +946,97 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int MIN_NUM_INSTANCES_FIELD_NUMBER = 12;
+  private int minNumInstances_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The minimum number of primary worker instances to create.
+   * If `min_num_instances` is set, cluster creation will succeed if
+   * the number of primary workers created is at least equal to the
+   * `min_num_instances` number.
+   *
+   * Example: Cluster creation request with `num_instances` = `5` and
+   * `min_num_instances` = `3`:
+   *
+   * *  If 4 VMs are created and 1 instance fails,
+   *    the failed VM is deleted. The cluster is
+   *    resized to 4 instances and placed in a `RUNNING` state.
+   * *  If 2 instances are created and 3 instances fail,
+   *    the cluster in placed in an `ERROR` state. The failed VMs
+   *    are not deleted.
+   * </pre>
+   *
+   * <code>int32 min_num_instances = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The minNumInstances.
+   */
+  @java.lang.Override
+  public int getMinNumInstances() {
+    return minNumInstances_;
+  }
+
+  public static final int INSTANCE_FLEXIBILITY_POLICY_FIELD_NUMBER = 13;
+  private com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy instanceFlexibilityPolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instance flexibility Policy allowing a mixture of VM shapes and
+   * provisioning models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy instance_flexibility_policy = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the instanceFlexibilityPolicy field is set.
+   */
+  @java.lang.Override
+  public boolean hasInstanceFlexibilityPolicy() {
+    return instanceFlexibilityPolicy_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instance flexibility Policy allowing a mixture of VM shapes and
+   * provisioning models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy instance_flexibility_policy = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The instanceFlexibilityPolicy.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy getInstanceFlexibilityPolicy() {
+    return instanceFlexibilityPolicy_ == null
+        ? com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.getDefaultInstance()
+        : instanceFlexibilityPolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Instance flexibility Policy allowing a mixture of VM shapes and
+   * provisioning models.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy instance_flexibility_policy = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataproc.v1.InstanceFlexibilityPolicyOrBuilder
+      getInstanceFlexibilityPolicyOrBuilder() {
+    return instanceFlexibilityPolicy_ == null
+        ? com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.getDefaultInstance()
+        : instanceFlexibilityPolicy_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -908,6 +1083,15 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             .PREEMPTIBILITY_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(10, preemptibility_);
+    }
+    for (int i = 0; i < instanceReferences_.size(); i++) {
+      output.writeMessage(11, instanceReferences_.get(i));
+    }
+    if (minNumInstances_ != 0) {
+      output.writeInt32(12, minNumInstances_);
+    }
+    if (instanceFlexibilityPolicy_ != null) {
+      output.writeMessage(13, getInstanceFlexibilityPolicy());
     }
     getUnknownFields().writeTo(output);
   }
@@ -956,6 +1140,18 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, preemptibility_);
     }
+    for (int i = 0; i < instanceReferences_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(11, instanceReferences_.get(i));
+    }
+    if (minNumInstances_ != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(12, minNumInstances_);
+    }
+    if (instanceFlexibilityPolicy_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, getInstanceFlexibilityPolicy());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -974,6 +1170,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
 
     if (getNumInstances() != other.getNumInstances()) return false;
     if (!getInstanceNamesList().equals(other.getInstanceNamesList())) return false;
+    if (!getInstanceReferencesList().equals(other.getInstanceReferencesList())) return false;
     if (!getImageUri().equals(other.getImageUri())) return false;
     if (!getMachineTypeUri().equals(other.getMachineTypeUri())) return false;
     if (hasDiskConfig() != other.hasDiskConfig()) return false;
@@ -988,6 +1185,12 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     }
     if (!getAcceleratorsList().equals(other.getAcceleratorsList())) return false;
     if (!getMinCpuPlatform().equals(other.getMinCpuPlatform())) return false;
+    if (getMinNumInstances() != other.getMinNumInstances()) return false;
+    if (hasInstanceFlexibilityPolicy() != other.hasInstanceFlexibilityPolicy()) return false;
+    if (hasInstanceFlexibilityPolicy()) {
+      if (!getInstanceFlexibilityPolicy().equals(other.getInstanceFlexibilityPolicy()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1004,6 +1207,10 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     if (getInstanceNamesCount() > 0) {
       hash = (37 * hash) + INSTANCE_NAMES_FIELD_NUMBER;
       hash = (53 * hash) + getInstanceNamesList().hashCode();
+    }
+    if (getInstanceReferencesCount() > 0) {
+      hash = (37 * hash) + INSTANCE_REFERENCES_FIELD_NUMBER;
+      hash = (53 * hash) + getInstanceReferencesList().hashCode();
     }
     hash = (37 * hash) + IMAGE_URI_FIELD_NUMBER;
     hash = (53 * hash) + getImageUri().hashCode();
@@ -1027,6 +1234,12 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + MIN_CPU_PLATFORM_FIELD_NUMBER;
     hash = (53 * hash) + getMinCpuPlatform().hashCode();
+    hash = (37 * hash) + MIN_NUM_INSTANCES_FIELD_NUMBER;
+    hash = (53 * hash) + getMinNumInstances();
+    if (hasInstanceFlexibilityPolicy()) {
+      hash = (37 * hash) + INSTANCE_FLEXIBILITY_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getInstanceFlexibilityPolicy().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1169,6 +1382,13 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       bitField0_ = 0;
       numInstances_ = 0;
       instanceNames_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      if (instanceReferencesBuilder_ == null) {
+        instanceReferences_ = java.util.Collections.emptyList();
+      } else {
+        instanceReferences_ = null;
+        instanceReferencesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
       imageUri_ = "";
       machineTypeUri_ = "";
       diskConfig_ = null;
@@ -1189,8 +1409,14 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         accelerators_ = null;
         acceleratorsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       minCpuPlatform_ = "";
+      minNumInstances_ = 0;
+      instanceFlexibilityPolicy_ = null;
+      if (instanceFlexibilityPolicyBuilder_ != null) {
+        instanceFlexibilityPolicyBuilder_.dispose();
+        instanceFlexibilityPolicyBuilder_ = null;
+      }
       return this;
     }
 
@@ -1228,10 +1454,19 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
 
     private void buildPartialRepeatedFields(
         com.google.cloud.dataproc.v1.InstanceGroupConfig result) {
+      if (instanceReferencesBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          instanceReferences_ = java.util.Collections.unmodifiableList(instanceReferences_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.instanceReferences_ = instanceReferences_;
+      } else {
+        result.instanceReferences_ = instanceReferencesBuilder_.build();
+      }
       if (acceleratorsBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)) {
+        if (((bitField0_ & 0x00000200) != 0)) {
           accelerators_ = java.util.Collections.unmodifiableList(accelerators_);
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.accelerators_ = accelerators_;
       } else {
@@ -1248,29 +1483,38 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         instanceNames_.makeImmutable();
         result.instanceNames_ = instanceNames_;
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.imageUri_ = imageUri_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.machineTypeUri_ = machineTypeUri_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.diskConfig_ = diskConfigBuilder_ == null ? diskConfig_ : diskConfigBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.isPreemptible_ = isPreemptible_;
       }
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.preemptibility_ = preemptibility_;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.managedGroupConfig_ =
             managedGroupConfigBuilder_ == null
                 ? managedGroupConfig_
                 : managedGroupConfigBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.minCpuPlatform_ = minCpuPlatform_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.minNumInstances_ = minNumInstances_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.instanceFlexibilityPolicy_ =
+            instanceFlexibilityPolicyBuilder_ == null
+                ? instanceFlexibilityPolicy_
+                : instanceFlexibilityPolicyBuilder_.build();
       }
     }
 
@@ -1333,14 +1577,41 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         }
         onChanged();
       }
+      if (instanceReferencesBuilder_ == null) {
+        if (!other.instanceReferences_.isEmpty()) {
+          if (instanceReferences_.isEmpty()) {
+            instanceReferences_ = other.instanceReferences_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureInstanceReferencesIsMutable();
+            instanceReferences_.addAll(other.instanceReferences_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.instanceReferences_.isEmpty()) {
+          if (instanceReferencesBuilder_.isEmpty()) {
+            instanceReferencesBuilder_.dispose();
+            instanceReferencesBuilder_ = null;
+            instanceReferences_ = other.instanceReferences_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            instanceReferencesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getInstanceReferencesFieldBuilder()
+                    : null;
+          } else {
+            instanceReferencesBuilder_.addAllMessages(other.instanceReferences_);
+          }
+        }
+      }
       if (!other.getImageUri().isEmpty()) {
         imageUri_ = other.imageUri_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (!other.getMachineTypeUri().isEmpty()) {
         machineTypeUri_ = other.machineTypeUri_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasDiskConfig()) {
@@ -1359,7 +1630,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         if (!other.accelerators_.isEmpty()) {
           if (accelerators_.isEmpty()) {
             accelerators_ = other.accelerators_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
           } else {
             ensureAcceleratorsIsMutable();
             accelerators_.addAll(other.accelerators_);
@@ -1372,7 +1643,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             acceleratorsBuilder_.dispose();
             acceleratorsBuilder_ = null;
             accelerators_ = other.accelerators_;
-            bitField0_ = (bitField0_ & ~0x00000100);
+            bitField0_ = (bitField0_ & ~0x00000200);
             acceleratorsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getAcceleratorsFieldBuilder()
@@ -1384,8 +1655,14 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       if (!other.getMinCpuPlatform().isEmpty()) {
         minCpuPlatform_ = other.minCpuPlatform_;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         onChanged();
+      }
+      if (other.getMinNumInstances() != 0) {
+        setMinNumInstances(other.getMinNumInstances());
+      }
+      if (other.hasInstanceFlexibilityPolicy()) {
+        mergeInstanceFlexibilityPolicy(other.getInstanceFlexibilityPolicy());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1429,32 +1706,32 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             case 26:
               {
                 imageUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 26
             case 34:
               {
                 machineTypeUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getDiskConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 42
             case 48:
               {
                 isPreemptible_ = input.readBool();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 48
             case 58:
               {
                 input.readMessage(
                     getManagedGroupConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 58
             case 66:
@@ -1473,15 +1750,41 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
             case 74:
               {
                 minCpuPlatform_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 74
             case 80:
               {
                 preemptibility_ = input.readEnum();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 80
+            case 90:
+              {
+                com.google.cloud.dataproc.v1.InstanceReference m =
+                    input.readMessage(
+                        com.google.cloud.dataproc.v1.InstanceReference.parser(), extensionRegistry);
+                if (instanceReferencesBuilder_ == null) {
+                  ensureInstanceReferencesIsMutable();
+                  instanceReferences_.add(m);
+                } else {
+                  instanceReferencesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 90
+            case 96:
+              {
+                minNumInstances_ = input.readInt32();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 96
+            case 106:
+              {
+                input.readMessage(
+                    getInstanceFlexibilityPolicyFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1752,6 +2055,403 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private java.util.List<com.google.cloud.dataproc.v1.InstanceReference> instanceReferences_ =
+        java.util.Collections.emptyList();
+
+    private void ensureInstanceReferencesIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        instanceReferences_ =
+            new java.util.ArrayList<com.google.cloud.dataproc.v1.InstanceReference>(
+                instanceReferences_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dataproc.v1.InstanceReference,
+            com.google.cloud.dataproc.v1.InstanceReference.Builder,
+            com.google.cloud.dataproc.v1.InstanceReferenceOrBuilder>
+        instanceReferencesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of references to Compute Engine instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dataproc.v1.InstanceReference>
+        getInstanceReferencesList() {
+      if (instanceReferencesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(instanceReferences_);
+      } else {
+        return instanceReferencesBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of references to Compute Engine instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getInstanceReferencesCount() {
+      if (instanceReferencesBuilder_ == null) {
+        return instanceReferences_.size();
+      } else {
+        return instanceReferencesBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of references to Compute Engine instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.InstanceReference getInstanceReferences(int index) {
+      if (instanceReferencesBuilder_ == null) {
+        return instanceReferences_.get(index);
+      } else {
+        return instanceReferencesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of references to Compute Engine instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setInstanceReferences(
+        int index, com.google.cloud.dataproc.v1.InstanceReference value) {
+      if (instanceReferencesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInstanceReferencesIsMutable();
+        instanceReferences_.set(index, value);
+        onChanged();
+      } else {
+        instanceReferencesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of references to Compute Engine instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setInstanceReferences(
+        int index, com.google.cloud.dataproc.v1.InstanceReference.Builder builderForValue) {
+      if (instanceReferencesBuilder_ == null) {
+        ensureInstanceReferencesIsMutable();
+        instanceReferences_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        instanceReferencesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of references to Compute Engine instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addInstanceReferences(com.google.cloud.dataproc.v1.InstanceReference value) {
+      if (instanceReferencesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInstanceReferencesIsMutable();
+        instanceReferences_.add(value);
+        onChanged();
+      } else {
+        instanceReferencesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of references to Compute Engine instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addInstanceReferences(
+        int index, com.google.cloud.dataproc.v1.InstanceReference value) {
+      if (instanceReferencesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureInstanceReferencesIsMutable();
+        instanceReferences_.add(index, value);
+        onChanged();
+      } else {
+        instanceReferencesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of references to Compute Engine instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addInstanceReferences(
+        com.google.cloud.dataproc.v1.InstanceReference.Builder builderForValue) {
+      if (instanceReferencesBuilder_ == null) {
+        ensureInstanceReferencesIsMutable();
+        instanceReferences_.add(builderForValue.build());
+        onChanged();
+      } else {
+        instanceReferencesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of references to Compute Engine instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addInstanceReferences(
+        int index, com.google.cloud.dataproc.v1.InstanceReference.Builder builderForValue) {
+      if (instanceReferencesBuilder_ == null) {
+        ensureInstanceReferencesIsMutable();
+        instanceReferences_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        instanceReferencesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of references to Compute Engine instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllInstanceReferences(
+        java.lang.Iterable<? extends com.google.cloud.dataproc.v1.InstanceReference> values) {
+      if (instanceReferencesBuilder_ == null) {
+        ensureInstanceReferencesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, instanceReferences_);
+        onChanged();
+      } else {
+        instanceReferencesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of references to Compute Engine instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearInstanceReferences() {
+      if (instanceReferencesBuilder_ == null) {
+        instanceReferences_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        instanceReferencesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of references to Compute Engine instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeInstanceReferences(int index) {
+      if (instanceReferencesBuilder_ == null) {
+        ensureInstanceReferencesIsMutable();
+        instanceReferences_.remove(index);
+        onChanged();
+      } else {
+        instanceReferencesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of references to Compute Engine instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.InstanceReference.Builder getInstanceReferencesBuilder(
+        int index) {
+      return getInstanceReferencesFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of references to Compute Engine instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.InstanceReferenceOrBuilder getInstanceReferencesOrBuilder(
+        int index) {
+      if (instanceReferencesBuilder_ == null) {
+        return instanceReferences_.get(index);
+      } else {
+        return instanceReferencesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of references to Compute Engine instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.dataproc.v1.InstanceReferenceOrBuilder>
+        getInstanceReferencesOrBuilderList() {
+      if (instanceReferencesBuilder_ != null) {
+        return instanceReferencesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(instanceReferences_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of references to Compute Engine instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.InstanceReference.Builder addInstanceReferencesBuilder() {
+      return getInstanceReferencesFieldBuilder()
+          .addBuilder(com.google.cloud.dataproc.v1.InstanceReference.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of references to Compute Engine instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.InstanceReference.Builder addInstanceReferencesBuilder(
+        int index) {
+      return getInstanceReferencesFieldBuilder()
+          .addBuilder(index, com.google.cloud.dataproc.v1.InstanceReference.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. List of references to Compute Engine instances.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataproc.v1.InstanceReference instance_references = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dataproc.v1.InstanceReference.Builder>
+        getInstanceReferencesBuilderList() {
+      return getInstanceReferencesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dataproc.v1.InstanceReference,
+            com.google.cloud.dataproc.v1.InstanceReference.Builder,
+            com.google.cloud.dataproc.v1.InstanceReferenceOrBuilder>
+        getInstanceReferencesFieldBuilder() {
+      if (instanceReferencesBuilder_ == null) {
+        instanceReferencesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dataproc.v1.InstanceReference,
+                com.google.cloud.dataproc.v1.InstanceReference.Builder,
+                com.google.cloud.dataproc.v1.InstanceReferenceOrBuilder>(
+                instanceReferences_,
+                ((bitField0_ & 0x00000004) != 0),
+                getParentForChildren(),
+                isClean());
+        instanceReferences_ = null;
+      }
+      return instanceReferencesBuilder_;
+    }
+
     private java.lang.Object imageUri_ = "";
     /**
      *
@@ -1865,7 +2565,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       imageUri_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1899,7 +2599,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder clearImageUri() {
       imageUri_ = getDefaultInstance().getImageUri();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1938,7 +2638,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       imageUri_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -2041,7 +2741,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       machineTypeUri_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2070,7 +2770,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder clearMachineTypeUri() {
       machineTypeUri_ = getDefaultInstance().getMachineTypeUri();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -2104,7 +2804,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       machineTypeUri_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -2129,7 +2829,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * @return Whether the diskConfig field is set.
      */
     public boolean hasDiskConfig() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
@@ -2173,7 +2873,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       } else {
         diskConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2194,7 +2894,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       } else {
         diskConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2211,7 +2911,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeDiskConfig(com.google.cloud.dataproc.v1.DiskConfig value) {
       if (diskConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && diskConfig_ != null
             && diskConfig_ != com.google.cloud.dataproc.v1.DiskConfig.getDefaultInstance()) {
           getDiskConfigBuilder().mergeFrom(value);
@@ -2221,7 +2921,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       } else {
         diskConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2237,7 +2937,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearDiskConfig() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       diskConfig_ = null;
       if (diskConfigBuilder_ != null) {
         diskConfigBuilder_.dispose();
@@ -2258,7 +2958,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.dataproc.v1.DiskConfig.Builder getDiskConfigBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getDiskConfigFieldBuilder().getBuilder();
     }
@@ -2343,7 +3043,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     public Builder setIsPreemptible(boolean value) {
 
       isPreemptible_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -2360,7 +3060,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearIsPreemptible() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       isPreemptible_ = false;
       onChanged();
       return this;
@@ -2412,7 +3112,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder setPreemptibilityValue(int value) {
       preemptibility_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -2469,7 +3169,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       preemptibility_ = value.getNumber();
       onChanged();
       return this;
@@ -2494,7 +3194,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * @return This builder for chaining.
      */
     public Builder clearPreemptibility() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       preemptibility_ = 0;
       onChanged();
       return this;
@@ -2522,7 +3222,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * @return Whether the managedGroupConfig field is set.
      */
     public boolean hasManagedGroupConfig() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      *
@@ -2570,7 +3270,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       } else {
         managedGroupConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2594,7 +3294,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       } else {
         managedGroupConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2613,7 +3313,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeManagedGroupConfig(com.google.cloud.dataproc.v1.ManagedGroupConfig value) {
       if (managedGroupConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && managedGroupConfig_ != null
             && managedGroupConfig_
                 != com.google.cloud.dataproc.v1.ManagedGroupConfig.getDefaultInstance()) {
@@ -2624,7 +3324,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       } else {
         managedGroupConfigBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2642,7 +3342,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearManagedGroupConfig() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       managedGroupConfig_ = null;
       if (managedGroupConfigBuilder_ != null) {
         managedGroupConfigBuilder_.dispose();
@@ -2665,7 +3365,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.cloud.dataproc.v1.ManagedGroupConfig.Builder getManagedGroupConfigBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getManagedGroupConfigFieldBuilder().getBuilder();
     }
@@ -2726,10 +3426,10 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureAcceleratorsIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000200) != 0)) {
         accelerators_ =
             new java.util.ArrayList<com.google.cloud.dataproc.v1.AcceleratorConfig>(accelerators_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
       }
     }
 
@@ -2980,7 +3680,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
     public Builder clearAccelerators() {
       if (acceleratorsBuilder_ == null) {
         accelerators_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
       } else {
         acceleratorsBuilder_.clear();
@@ -3126,7 +3826,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
                 com.google.cloud.dataproc.v1.AcceleratorConfig,
                 com.google.cloud.dataproc.v1.AcceleratorConfig.Builder,
                 com.google.cloud.dataproc.v1.AcceleratorConfigOrBuilder>(
-                accelerators_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
+                accelerators_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
         accelerators_ = null;
       }
       return acceleratorsBuilder_;
@@ -3200,7 +3900,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       minCpuPlatform_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3219,7 +3919,7 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
      */
     public Builder clearMinCpuPlatform() {
       minCpuPlatform_ = getDefaultInstance().getMinCpuPlatform();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -3243,9 +3943,317 @@ public final class InstanceGroupConfig extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       minCpuPlatform_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
+    }
+
+    private int minNumInstances_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The minimum number of primary worker instances to create.
+     * If `min_num_instances` is set, cluster creation will succeed if
+     * the number of primary workers created is at least equal to the
+     * `min_num_instances` number.
+     *
+     * Example: Cluster creation request with `num_instances` = `5` and
+     * `min_num_instances` = `3`:
+     *
+     * *  If 4 VMs are created and 1 instance fails,
+     *    the failed VM is deleted. The cluster is
+     *    resized to 4 instances and placed in a `RUNNING` state.
+     * *  If 2 instances are created and 3 instances fail,
+     *    the cluster in placed in an `ERROR` state. The failed VMs
+     *    are not deleted.
+     * </pre>
+     *
+     * <code>int32 min_num_instances = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The minNumInstances.
+     */
+    @java.lang.Override
+    public int getMinNumInstances() {
+      return minNumInstances_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The minimum number of primary worker instances to create.
+     * If `min_num_instances` is set, cluster creation will succeed if
+     * the number of primary workers created is at least equal to the
+     * `min_num_instances` number.
+     *
+     * Example: Cluster creation request with `num_instances` = `5` and
+     * `min_num_instances` = `3`:
+     *
+     * *  If 4 VMs are created and 1 instance fails,
+     *    the failed VM is deleted. The cluster is
+     *    resized to 4 instances and placed in a `RUNNING` state.
+     * *  If 2 instances are created and 3 instances fail,
+     *    the cluster in placed in an `ERROR` state. The failed VMs
+     *    are not deleted.
+     * </pre>
+     *
+     * <code>int32 min_num_instances = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The minNumInstances to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMinNumInstances(int value) {
+
+      minNumInstances_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The minimum number of primary worker instances to create.
+     * If `min_num_instances` is set, cluster creation will succeed if
+     * the number of primary workers created is at least equal to the
+     * `min_num_instances` number.
+     *
+     * Example: Cluster creation request with `num_instances` = `5` and
+     * `min_num_instances` = `3`:
+     *
+     * *  If 4 VMs are created and 1 instance fails,
+     *    the failed VM is deleted. The cluster is
+     *    resized to 4 instances and placed in a `RUNNING` state.
+     * *  If 2 instances are created and 3 instances fail,
+     *    the cluster in placed in an `ERROR` state. The failed VMs
+     *    are not deleted.
+     * </pre>
+     *
+     * <code>int32 min_num_instances = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMinNumInstances() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      minNumInstances_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy instanceFlexibilityPolicy_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy,
+            com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.Builder,
+            com.google.cloud.dataproc.v1.InstanceFlexibilityPolicyOrBuilder>
+        instanceFlexibilityPolicyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instance flexibility Policy allowing a mixture of VM shapes and
+     * provisioning models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy instance_flexibility_policy = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the instanceFlexibilityPolicy field is set.
+     */
+    public boolean hasInstanceFlexibilityPolicy() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instance flexibility Policy allowing a mixture of VM shapes and
+     * provisioning models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy instance_flexibility_policy = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The instanceFlexibilityPolicy.
+     */
+    public com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy getInstanceFlexibilityPolicy() {
+      if (instanceFlexibilityPolicyBuilder_ == null) {
+        return instanceFlexibilityPolicy_ == null
+            ? com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.getDefaultInstance()
+            : instanceFlexibilityPolicy_;
+      } else {
+        return instanceFlexibilityPolicyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instance flexibility Policy allowing a mixture of VM shapes and
+     * provisioning models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy instance_flexibility_policy = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setInstanceFlexibilityPolicy(
+        com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy value) {
+      if (instanceFlexibilityPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        instanceFlexibilityPolicy_ = value;
+      } else {
+        instanceFlexibilityPolicyBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instance flexibility Policy allowing a mixture of VM shapes and
+     * provisioning models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy instance_flexibility_policy = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setInstanceFlexibilityPolicy(
+        com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.Builder builderForValue) {
+      if (instanceFlexibilityPolicyBuilder_ == null) {
+        instanceFlexibilityPolicy_ = builderForValue.build();
+      } else {
+        instanceFlexibilityPolicyBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instance flexibility Policy allowing a mixture of VM shapes and
+     * provisioning models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy instance_flexibility_policy = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeInstanceFlexibilityPolicy(
+        com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy value) {
+      if (instanceFlexibilityPolicyBuilder_ == null) {
+        if (((bitField0_ & 0x00001000) != 0)
+            && instanceFlexibilityPolicy_ != null
+            && instanceFlexibilityPolicy_
+                != com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.getDefaultInstance()) {
+          getInstanceFlexibilityPolicyBuilder().mergeFrom(value);
+        } else {
+          instanceFlexibilityPolicy_ = value;
+        }
+      } else {
+        instanceFlexibilityPolicyBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instance flexibility Policy allowing a mixture of VM shapes and
+     * provisioning models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy instance_flexibility_policy = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearInstanceFlexibilityPolicy() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      instanceFlexibilityPolicy_ = null;
+      if (instanceFlexibilityPolicyBuilder_ != null) {
+        instanceFlexibilityPolicyBuilder_.dispose();
+        instanceFlexibilityPolicyBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instance flexibility Policy allowing a mixture of VM shapes and
+     * provisioning models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy instance_flexibility_policy = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.Builder
+        getInstanceFlexibilityPolicyBuilder() {
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return getInstanceFlexibilityPolicyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instance flexibility Policy allowing a mixture of VM shapes and
+     * provisioning models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy instance_flexibility_policy = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.dataproc.v1.InstanceFlexibilityPolicyOrBuilder
+        getInstanceFlexibilityPolicyOrBuilder() {
+      if (instanceFlexibilityPolicyBuilder_ != null) {
+        return instanceFlexibilityPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return instanceFlexibilityPolicy_ == null
+            ? com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.getDefaultInstance()
+            : instanceFlexibilityPolicy_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Instance flexibility Policy allowing a mixture of VM shapes and
+     * provisioning models.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataproc.v1.InstanceFlexibilityPolicy instance_flexibility_policy = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy,
+            com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.Builder,
+            com.google.cloud.dataproc.v1.InstanceFlexibilityPolicyOrBuilder>
+        getInstanceFlexibilityPolicyFieldBuilder() {
+      if (instanceFlexibilityPolicyBuilder_ == null) {
+        instanceFlexibilityPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy,
+                com.google.cloud.dataproc.v1.InstanceFlexibilityPolicy.Builder,
+                com.google.cloud.dataproc.v1.InstanceFlexibilityPolicyOrBuilder>(
+                getInstanceFlexibilityPolicy(), getParentForChildren(), isClean());
+        instanceFlexibilityPolicy_ = null;
+      }
+      return instanceFlexibilityPolicyBuilder_;
     }
 
     @java.lang.Override

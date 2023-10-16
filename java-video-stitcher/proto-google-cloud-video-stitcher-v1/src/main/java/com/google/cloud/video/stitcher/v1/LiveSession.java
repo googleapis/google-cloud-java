@@ -111,8 +111,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Defines fields related to Google Ad Manager (GAM). This should be set if
-   * GAM
-   * is being used for ads.
+   * GAM is being used for ads.
    * </pre>
    *
    * Protobuf type {@code google.cloud.video.stitcher.v1.LiveSession.GamSettings}
@@ -369,8 +368,7 @@ public final class LiveSession extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Defines fields related to Google Ad Manager (GAM). This should be set if
-     * GAM
-     * is being used for ads.
+     * GAM is being used for ads.
      * </pre>
      *
      * Protobuf type {@code google.cloud.video.stitcher.v1.LiveSession.GamSettings}

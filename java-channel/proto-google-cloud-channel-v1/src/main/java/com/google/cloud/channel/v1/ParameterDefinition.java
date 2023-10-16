@@ -115,6 +115,16 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * <code>DOUBLE = 3;</code>
      */
     DOUBLE(3),
+    /**
+     *
+     *
+     * <pre>
+     * Boolean type.
+     * </pre>
+     *
+     * <code>BOOLEAN = 4;</code>
+     */
+    BOOLEAN(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -158,6 +168,16 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
      * <code>DOUBLE = 3;</code>
      */
     public static final int DOUBLE_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Boolean type.
+     * </pre>
+     *
+     * <code>BOOLEAN = 4;</code>
+     */
+    public static final int BOOLEAN_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -191,6 +211,8 @@ public final class ParameterDefinition extends com.google.protobuf.GeneratedMess
           return STRING;
         case 3:
           return DOUBLE;
+        case 4:
+          return BOOLEAN;
         default:
           return null;
       }

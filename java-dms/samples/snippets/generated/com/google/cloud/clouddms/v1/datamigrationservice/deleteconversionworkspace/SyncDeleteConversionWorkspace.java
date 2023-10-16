@@ -42,6 +42,7 @@ public class SyncDeleteConversionWorkspace {
                   ConversionWorkspaceName.of("[PROJECT]", "[LOCATION]", "[CONVERSION_WORKSPACE]")
                       .toString())
               .setRequestId("requestId693933066")
+              .setForce(true)
               .build();
       dataMigrationServiceClient.deleteConversionWorkspaceAsync(request).get();
     }

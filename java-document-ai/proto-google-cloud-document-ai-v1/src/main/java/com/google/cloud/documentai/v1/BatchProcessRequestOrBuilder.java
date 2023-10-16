@@ -157,4 +157,39 @@ public interface BatchProcessRequestOrBuilder
    * @return The skipHumanReview.
    */
   boolean getSkipHumanReview();
+
+  /**
+   *
+   *
+   * <pre>
+   * Inference-time options for the process API
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.ProcessOptions process_options = 7;</code>
+   *
+   * @return Whether the processOptions field is set.
+   */
+  boolean hasProcessOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Inference-time options for the process API
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.ProcessOptions process_options = 7;</code>
+   *
+   * @return The processOptions.
+   */
+  com.google.cloud.documentai.v1.ProcessOptions getProcessOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Inference-time options for the process API
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.ProcessOptions process_options = 7;</code>
+   */
+  com.google.cloud.documentai.v1.ProcessOptionsOrBuilder getProcessOptionsOrBuilder();
 }

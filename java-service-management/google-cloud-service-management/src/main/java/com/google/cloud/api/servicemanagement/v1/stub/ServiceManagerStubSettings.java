@@ -76,6 +76,11 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
+import com.google.iam.v1.GetIamPolicyRequest;
+import com.google.iam.v1.Policy;
+import com.google.iam.v1.SetIamPolicyRequest;
+import com.google.iam.v1.TestIamPermissionsRequest;
+import com.google.iam.v1.TestIamPermissionsResponse;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import java.io.IOException;
@@ -165,6 +170,10 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
       createServiceRolloutOperationSettings;
   private final UnaryCallSettings<GenerateConfigReportRequest, GenerateConfigReportResponse>
       generateConfigReportSettings;
+  private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
+  private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
+  private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<
           ListServicesRequest, ListServicesResponse, ManagedService>
@@ -444,6 +453,22 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
     return generateConfigReportSettings;
   }
 
+  /** Returns the object with the settings used for calls to setIamPolicy. */
+  public UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+    return setIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to getIamPolicy. */
+  public UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+    return getIamPolicySettings;
+  }
+
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   public ServiceManagerStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -570,6 +595,9 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
     createServiceRolloutOperationSettings =
         settingsBuilder.createServiceRolloutOperationSettings().build();
     generateConfigReportSettings = settingsBuilder.generateConfigReportSettings().build();
+    setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
+    getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for ServiceManagerStubSettings. */
@@ -618,6 +646,10 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
     private final UnaryCallSettings.Builder<
             GenerateConfigReportRequest, GenerateConfigReportResponse>
         generateConfigReportSettings;
+    private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
+    private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
+    private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -671,6 +703,9 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
       createServiceRolloutSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createServiceRolloutOperationSettings = OperationCallSettings.newBuilder();
       generateConfigReportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -686,7 +721,10 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
               listServiceRolloutsSettings,
               getServiceRolloutSettings,
               createServiceRolloutSettings,
-              generateConfigReportSettings);
+              generateConfigReportSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -713,6 +751,9 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
       createServiceRolloutOperationSettings =
           settings.createServiceRolloutOperationSettings.toBuilder();
       generateConfigReportSettings = settings.generateConfigReportSettings.toBuilder();
+      setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
+      getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -728,7 +769,10 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
               listServiceRolloutsSettings,
               getServiceRolloutSettings,
               createServiceRolloutSettings,
-              generateConfigReportSettings);
+              generateConfigReportSettings,
+              setIamPolicySettings,
+              getIamPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -820,6 +864,21 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
 
       builder
           .generateConfigReportSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .setIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getIamPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -1080,6 +1139,22 @@ public class ServiceManagerStubSettings extends StubSettings<ServiceManagerStubS
     public UnaryCallSettings.Builder<GenerateConfigReportRequest, GenerateConfigReportResponse>
         generateConfigReportSettings() {
       return generateConfigReportSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to setIamPolicy. */
+    public UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings() {
+      return setIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getIamPolicy. */
+    public UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings() {
+      return getIamPolicySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

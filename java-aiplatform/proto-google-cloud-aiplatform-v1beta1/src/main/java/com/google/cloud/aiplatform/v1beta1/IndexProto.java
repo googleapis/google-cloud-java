@@ -64,47 +64,50 @@ public final class IndexProto {
           + "proto\022\037google.cloud.aiplatform.v1beta1\032\037"
           + "google/api/field_behavior.proto\032\031google/"
           + "api/resource.proto\0328google/cloud/aiplatf"
-          + "orm/v1beta1/deployed_index_ref.proto\032\034go"
-          + "ogle/protobuf/struct.proto\032\037google/proto"
-          + "buf/timestamp.proto\"\276\006\n\005Index\022\022\n\004name\030\001 "
-          + "\001(\tB\004\342A\001\003\022\032\n\014display_name\030\002 \001(\tB\004\342A\001\002\022\023\n"
-          + "\013description\030\003 \001(\t\022!\n\023metadata_schema_ur"
-          + "i\030\004 \001(\tB\004\342A\001\005\022(\n\010metadata\030\006 \001(\0132\026.google"
-          + ".protobuf.Value\022Q\n\020deployed_indexes\030\007 \003("
-          + "\01321.google.cloud.aiplatform.v1beta1.Depl"
-          + "oyedIndexRefB\004\342A\001\003\022\014\n\004etag\030\010 \001(\t\022B\n\006labe"
-          + "ls\030\t \003(\01322.google.cloud.aiplatform.v1bet"
-          + "a1.Index.LabelsEntry\0225\n\013create_time\030\n \001("
-          + "\0132\032.google.protobuf.TimestampB\004\342A\001\003\0225\n\013u"
-          + "pdate_time\030\013 \001(\0132\032.google.protobuf.Times"
-          + "tampB\004\342A\001\003\022F\n\013index_stats\030\016 \001(\0132+.google"
-          + ".cloud.aiplatform.v1beta1.IndexStatsB\004\342A"
-          + "\001\003\022[\n\023index_update_method\030\020 \001(\01628.google"
-          + ".cloud.aiplatform.v1beta1.Index.IndexUpd"
-          + "ateMethodB\004\342A\001\005\032-\n\013LabelsEntry\022\013\n\003key\030\001 "
-          + "\001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"]\n\021IndexUpdateMet"
-          + "hod\022#\n\037INDEX_UPDATE_METHOD_UNSPECIFIED\020\000"
-          + "\022\020\n\014BATCH_UPDATE\020\001\022\021\n\rSTREAM_UPDATE\020\002:]\352"
-          + "AZ\n\037aiplatform.googleapis.com/Index\0227pro"
-          + "jects/{project}/locations/{location}/ind"
-          + "exes/{index}\"\355\002\n\016IndexDatapoint\022\032\n\014datap"
-          + "oint_id\030\001 \001(\tB\004\342A\001\002\022\034\n\016feature_vector\030\002 "
-          + "\003(\002B\004\342A\001\002\022T\n\trestricts\030\004 \003(\0132;.google.cl"
-          + "oud.aiplatform.v1beta1.IndexDatapoint.Re"
-          + "strictionB\004\342A\001\001\022W\n\014crowding_tag\030\005 \001(\0132;."
-          + "google.cloud.aiplatform.v1beta1.IndexDat"
-          + "apoint.CrowdingTagB\004\342A\001\001\032G\n\013Restriction\022"
-          + "\021\n\tnamespace\030\001 \001(\t\022\022\n\nallow_list\030\002 \003(\t\022\021"
-          + "\n\tdeny_list\030\003 \003(\t\032)\n\013CrowdingTag\022\032\n\022crow"
-          + "ding_attribute\030\001 \001(\t\"E\n\nIndexStats\022\033\n\rve"
-          + "ctors_count\030\001 \001(\003B\004\342A\001\003\022\032\n\014shards_count\030"
-          + "\002 \001(\005B\004\342A\001\003B\341\001\n#com.google.cloud.aiplatf"
-          + "orm.v1beta1B\nIndexProtoP\001ZCcloud.google."
-          + "com/go/aiplatform/apiv1beta1/aiplatformp"
-          + "b;aiplatformpb\252\002\037Google.Cloud.AIPlatform"
-          + ".V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1bet"
-          + "a1\352\002\"Google::Cloud::AIPlatform::V1beta1b"
-          + "\006proto3"
+          + "orm/v1beta1/deployed_index_ref.proto\0325go"
+          + "ogle/cloud/aiplatform/v1beta1/encryption"
+          + "_spec.proto\032\034google/protobuf/struct.prot"
+          + "o\032\037google/protobuf/timestamp.proto\"\216\007\n\005I"
+          + "ndex\022\022\n\004name\030\001 \001(\tB\004\342A\001\003\022\032\n\014display_name"
+          + "\030\002 \001(\tB\004\342A\001\002\022\023\n\013description\030\003 \001(\t\022!\n\023met"
+          + "adata_schema_uri\030\004 \001(\tB\004\342A\001\005\022(\n\010metadata"
+          + "\030\006 \001(\0132\026.google.protobuf.Value\022Q\n\020deploy"
+          + "ed_indexes\030\007 \003(\01321.google.cloud.aiplatfo"
+          + "rm.v1beta1.DeployedIndexRefB\004\342A\001\003\022\014\n\004eta"
+          + "g\030\010 \001(\t\022B\n\006labels\030\t \003(\01322.google.cloud.a"
+          + "iplatform.v1beta1.Index.LabelsEntry\0225\n\013c"
+          + "reate_time\030\n \001(\0132\032.google.protobuf.Times"
+          + "tampB\004\342A\001\003\0225\n\013update_time\030\013 \001(\0132\032.google"
+          + ".protobuf.TimestampB\004\342A\001\003\022F\n\013index_stats"
+          + "\030\016 \001(\0132+.google.cloud.aiplatform.v1beta1"
+          + ".IndexStatsB\004\342A\001\003\022[\n\023index_update_method"
+          + "\030\020 \001(\01628.google.cloud.aiplatform.v1beta1"
+          + ".Index.IndexUpdateMethodB\004\342A\001\005\022N\n\017encryp"
+          + "tion_spec\030\021 \001(\0132/.google.cloud.aiplatfor"
+          + "m.v1beta1.EncryptionSpecB\004\342A\001\005\032-\n\013Labels"
+          + "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"]\n"
+          + "\021IndexUpdateMethod\022#\n\037INDEX_UPDATE_METHO"
+          + "D_UNSPECIFIED\020\000\022\020\n\014BATCH_UPDATE\020\001\022\021\n\rSTR"
+          + "EAM_UPDATE\020\002:]\352AZ\n\037aiplatform.googleapis"
+          + ".com/Index\0227projects/{project}/locations"
+          + "/{location}/indexes/{index}\"\355\002\n\016IndexDat"
+          + "apoint\022\032\n\014datapoint_id\030\001 \001(\tB\004\342A\001\002\022\034\n\016fe"
+          + "ature_vector\030\002 \003(\002B\004\342A\001\002\022T\n\trestricts\030\004 "
+          + "\003(\0132;.google.cloud.aiplatform.v1beta1.In"
+          + "dexDatapoint.RestrictionB\004\342A\001\001\022W\n\014crowdi"
+          + "ng_tag\030\005 \001(\0132;.google.cloud.aiplatform.v"
+          + "1beta1.IndexDatapoint.CrowdingTagB\004\342A\001\001\032"
+          + "G\n\013Restriction\022\021\n\tnamespace\030\001 \001(\t\022\022\n\nall"
+          + "ow_list\030\002 \003(\t\022\021\n\tdeny_list\030\003 \003(\t\032)\n\013Crow"
+          + "dingTag\022\032\n\022crowding_attribute\030\001 \001(\t\"E\n\nI"
+          + "ndexStats\022\033\n\rvectors_count\030\001 \001(\003B\004\342A\001\003\022\032"
+          + "\n\014shards_count\030\002 \001(\005B\004\342A\001\003B\341\001\n#com.googl"
+          + "e.cloud.aiplatform.v1beta1B\nIndexProtoP\001"
+          + "ZCcloud.google.com/go/aiplatform/apiv1be"
+          + "ta1/aiplatformpb;aiplatformpb\252\002\037Google.C"
+          + "loud.AIPlatform.V1Beta1\312\002\037Google\\Cloud\\A"
+          + "IPlatform\\V1beta1\352\002\"Google::Cloud::AIPla"
+          + "tform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -113,6 +116,7 @@ public final class IndexProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.aiplatform.v1beta1.DeployedIndexRefProto.getDescriptor(),
+              com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor(),
               com.google.protobuf.StructProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
             });
@@ -134,6 +138,7 @@ public final class IndexProto {
               "UpdateTime",
               "IndexStats",
               "IndexUpdateMethod",
+              "EncryptionSpec",
             });
     internal_static_google_cloud_aiplatform_v1beta1_Index_LabelsEntry_descriptor =
         internal_static_google_cloud_aiplatform_v1beta1_Index_descriptor.getNestedTypes().get(0);
@@ -188,6 +193,7 @@ public final class IndexProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.aiplatform.v1beta1.DeployedIndexRefProto.getDescriptor();
+    com.google.cloud.aiplatform.v1beta1.EncryptionSpecProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
   }

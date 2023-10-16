@@ -36,6 +36,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
@@ -90,6 +91,7 @@ import com.google.analytics.admin.v1alpha.CreateFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.CreateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.CreatePropertyRequest;
+import com.google.analytics.admin.v1alpha.CreateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.CreateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.CreateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.CustomDimension;
@@ -112,6 +114,7 @@ import com.google.analytics.admin.v1alpha.DeleteFirebaseLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.DeletePropertyRequest;
+import com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.DeleteSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.DeleteUserLinkRequest;
 import com.google.analytics.admin.v1alpha.DisplayVideo360AdvertiserLink;
@@ -146,6 +149,7 @@ import com.google.analytics.admin.v1alpha.GetGlobalSiteTagRequest;
 import com.google.analytics.admin.v1alpha.GetGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.GetMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.GetPropertyRequest;
+import com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.GetSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.GetUserLinkRequest;
 import com.google.analytics.admin.v1alpha.GlobalSiteTag;
@@ -191,6 +195,8 @@ import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsRequest;
 import com.google.analytics.admin.v1alpha.ListMeasurementProtocolSecretsResponse;
 import com.google.analytics.admin.v1alpha.ListPropertiesRequest;
 import com.google.analytics.admin.v1alpha.ListPropertiesResponse;
+import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest;
+import com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasResponse;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksRequest;
 import com.google.analytics.admin.v1alpha.ListSearchAds360LinksResponse;
 import com.google.analytics.admin.v1alpha.ListUserLinksRequest;
@@ -201,6 +207,7 @@ import com.google.analytics.admin.v1alpha.ProvisionAccountTicketRequest;
 import com.google.analytics.admin.v1alpha.ProvisionAccountTicketResponse;
 import com.google.analytics.admin.v1alpha.RunAccessReportRequest;
 import com.google.analytics.admin.v1alpha.RunAccessReportResponse;
+import com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema;
 import com.google.analytics.admin.v1alpha.SearchAds360Link;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest;
 import com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse;
@@ -211,6 +218,7 @@ import com.google.analytics.admin.v1alpha.UpdateAccountRequest;
 import com.google.analytics.admin.v1alpha.UpdateAttributionSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateAudienceRequest;
 import com.google.analytics.admin.v1alpha.UpdateChannelGroupRequest;
+import com.google.analytics.admin.v1alpha.UpdateConversionEventRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomDimensionRequest;
 import com.google.analytics.admin.v1alpha.UpdateCustomMetricRequest;
 import com.google.analytics.admin.v1alpha.UpdateDataRetentionSettingsRequest;
@@ -223,6 +231,7 @@ import com.google.analytics.admin.v1alpha.UpdateGoogleAdsLinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateGoogleSignalsSettingsRequest;
 import com.google.analytics.admin.v1alpha.UpdateMeasurementProtocolSecretRequest;
 import com.google.analytics.admin.v1alpha.UpdatePropertyRequest;
+import com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest;
 import com.google.analytics.admin.v1alpha.UpdateSearchAds360LinkRequest;
 import com.google.analytics.admin.v1alpha.UpdateUserLinkRequest;
 import com.google.analytics.admin.v1alpha.UserLink;
@@ -670,6 +679,85 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .build();
 
   private static final MethodDescriptor<
+          GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      getSKAdNetworkConversionValueSchemaMethodDescriptor =
+          MethodDescriptor
+              .<GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/GetSKAdNetworkConversionValueSchema")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      GetSKAdNetworkConversionValueSchemaRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SKAdNetworkConversionValueSchema.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      createSKAdNetworkConversionValueSchemaMethodDescriptor =
+          MethodDescriptor
+              .<CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateSKAdNetworkConversionValueSchema")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      CreateSKAdNetworkConversionValueSchemaRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SKAdNetworkConversionValueSchema.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>
+      deleteSKAdNetworkConversionValueSchemaMethodDescriptor =
+          MethodDescriptor.<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/DeleteSKAdNetworkConversionValueSchema")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      DeleteSKAdNetworkConversionValueSchemaRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      updateSKAdNetworkConversionValueSchemaMethodDescriptor =
+          MethodDescriptor
+              .<UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateSKAdNetworkConversionValueSchema")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      UpdateSKAdNetworkConversionValueSchemaRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(SKAdNetworkConversionValueSchema.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasResponse>
+      listSKAdNetworkConversionValueSchemasMethodDescriptor =
+          MethodDescriptor
+              .<ListSKAdNetworkConversionValueSchemasRequest,
+                  ListSKAdNetworkConversionValueSchemasResponse>
+                  newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/ListSKAdNetworkConversionValueSchemas")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(
+                      ListSKAdNetworkConversionValueSchemasRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(
+                      ListSKAdNetworkConversionValueSchemasResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<
           SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
       searchChangeHistoryEventsMethodDescriptor =
           MethodDescriptor
@@ -715,6 +803,17 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   "google.analytics.admin.v1alpha.AnalyticsAdminService/CreateConversionEvent")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConversionEventRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ConversionEvent.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventMethodDescriptor =
+          MethodDescriptor.<UpdateConversionEventRequest, ConversionEvent>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.analytics.admin.v1alpha.AnalyticsAdminService/UpdateConversionEvent")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateConversionEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ConversionEvent.getDefaultInstance()))
               .build();
 
@@ -1799,6 +1898,25 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   private final UnaryCallable<
           AcknowledgeUserDataCollectionRequest, AcknowledgeUserDataCollectionResponse>
       acknowledgeUserDataCollectionCallable;
+  private final UnaryCallable<
+          GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      getSKAdNetworkConversionValueSchemaCallable;
+  private final UnaryCallable<
+          CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      createSKAdNetworkConversionValueSchemaCallable;
+  private final UnaryCallable<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>
+      deleteSKAdNetworkConversionValueSchemaCallable;
+  private final UnaryCallable<
+          UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      updateSKAdNetworkConversionValueSchemaCallable;
+  private final UnaryCallable<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasResponse>
+      listSKAdNetworkConversionValueSchemasCallable;
+  private final UnaryCallable<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasPagedResponse>
+      listSKAdNetworkConversionValueSchemasPagedCallable;
   private final UnaryCallable<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
       searchChangeHistoryEventsCallable;
   private final UnaryCallable<
@@ -1810,6 +1928,8 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
       updateGoogleSignalsSettingsCallable;
   private final UnaryCallable<CreateConversionEventRequest, ConversionEvent>
       createConversionEventCallable;
+  private final UnaryCallable<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventCallable;
   private final UnaryCallable<GetConversionEventRequest, ConversionEvent>
       getConversionEventCallable;
   private final UnaryCallable<DeleteConversionEventRequest, Empty> deleteConversionEventCallable;
@@ -2395,6 +2515,76 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+        getSKAdNetworkConversionValueSchemaTransportSettings =
+            GrpcCallSettings
+                .<GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+                    newBuilder()
+                .setMethodDescriptor(getSKAdNetworkConversionValueSchemaMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+        createSKAdNetworkConversionValueSchemaTransportSettings =
+            GrpcCallSettings
+                .<CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+                    newBuilder()
+                .setMethodDescriptor(createSKAdNetworkConversionValueSchemaMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>
+        deleteSKAdNetworkConversionValueSchemaTransportSettings =
+            GrpcCallSettings.<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>newBuilder()
+                .setMethodDescriptor(deleteSKAdNetworkConversionValueSchemaMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+        updateSKAdNetworkConversionValueSchemaTransportSettings =
+            GrpcCallSettings
+                .<UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+                    newBuilder()
+                .setMethodDescriptor(updateSKAdNetworkConversionValueSchemaMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "skadnetwork_conversion_value_schema.name",
+                          String.valueOf(request.getSkadnetworkConversionValueSchema().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<
+            ListSKAdNetworkConversionValueSchemasRequest,
+            ListSKAdNetworkConversionValueSchemasResponse>
+        listSKAdNetworkConversionValueSchemasTransportSettings =
+            GrpcCallSettings
+                .<ListSKAdNetworkConversionValueSchemasRequest,
+                    ListSKAdNetworkConversionValueSchemasResponse>
+                    newBuilder()
+                .setMethodDescriptor(listSKAdNetworkConversionValueSchemasMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
         searchChangeHistoryEventsTransportSettings =
             GrpcCallSettings
@@ -2439,6 +2629,19 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
                       builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateConversionEventRequest, ConversionEvent>
+        updateConversionEventTransportSettings =
+            GrpcCallSettings.<UpdateConversionEventRequest, ConversionEvent>newBuilder()
+                .setMethodDescriptor(updateConversionEventMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "conversion_event.name",
+                          String.valueOf(request.getConversionEvent().getName()));
                       return builder.build();
                     })
                 .build();
@@ -3533,6 +3736,36 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
             acknowledgeUserDataCollectionTransportSettings,
             settings.acknowledgeUserDataCollectionSettings(),
             clientContext);
+    this.getSKAdNetworkConversionValueSchemaCallable =
+        callableFactory.createUnaryCallable(
+            getSKAdNetworkConversionValueSchemaTransportSettings,
+            settings.getSKAdNetworkConversionValueSchemaSettings(),
+            clientContext);
+    this.createSKAdNetworkConversionValueSchemaCallable =
+        callableFactory.createUnaryCallable(
+            createSKAdNetworkConversionValueSchemaTransportSettings,
+            settings.createSKAdNetworkConversionValueSchemaSettings(),
+            clientContext);
+    this.deleteSKAdNetworkConversionValueSchemaCallable =
+        callableFactory.createUnaryCallable(
+            deleteSKAdNetworkConversionValueSchemaTransportSettings,
+            settings.deleteSKAdNetworkConversionValueSchemaSettings(),
+            clientContext);
+    this.updateSKAdNetworkConversionValueSchemaCallable =
+        callableFactory.createUnaryCallable(
+            updateSKAdNetworkConversionValueSchemaTransportSettings,
+            settings.updateSKAdNetworkConversionValueSchemaSettings(),
+            clientContext);
+    this.listSKAdNetworkConversionValueSchemasCallable =
+        callableFactory.createUnaryCallable(
+            listSKAdNetworkConversionValueSchemasTransportSettings,
+            settings.listSKAdNetworkConversionValueSchemasSettings(),
+            clientContext);
+    this.listSKAdNetworkConversionValueSchemasPagedCallable =
+        callableFactory.createPagedCallable(
+            listSKAdNetworkConversionValueSchemasTransportSettings,
+            settings.listSKAdNetworkConversionValueSchemasSettings(),
+            clientContext);
     this.searchChangeHistoryEventsCallable =
         callableFactory.createUnaryCallable(
             searchChangeHistoryEventsTransportSettings,
@@ -3557,6 +3790,11 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
         callableFactory.createUnaryCallable(
             createConversionEventTransportSettings,
             settings.createConversionEventSettings(),
+            clientContext);
+    this.updateConversionEventCallable =
+        callableFactory.createUnaryCallable(
+            updateConversionEventTransportSettings,
+            settings.updateConversionEventSettings(),
             clientContext);
     this.getConversionEventCallable =
         callableFactory.createUnaryCallable(
@@ -4251,6 +4489,48 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   }
 
   @Override
+  public UnaryCallable<GetSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      getSKAdNetworkConversionValueSchemaCallable() {
+    return getSKAdNetworkConversionValueSchemaCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          CreateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      createSKAdNetworkConversionValueSchemaCallable() {
+    return createSKAdNetworkConversionValueSchemaCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSKAdNetworkConversionValueSchemaRequest, Empty>
+      deleteSKAdNetworkConversionValueSchemaCallable() {
+    return deleteSKAdNetworkConversionValueSchemaCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          UpdateSKAdNetworkConversionValueSchemaRequest, SKAdNetworkConversionValueSchema>
+      updateSKAdNetworkConversionValueSchemaCallable() {
+    return updateSKAdNetworkConversionValueSchemaCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasResponse>
+      listSKAdNetworkConversionValueSchemasCallable() {
+    return listSKAdNetworkConversionValueSchemasCallable;
+  }
+
+  @Override
+  public UnaryCallable<
+          ListSKAdNetworkConversionValueSchemasRequest,
+          ListSKAdNetworkConversionValueSchemasPagedResponse>
+      listSKAdNetworkConversionValueSchemasPagedCallable() {
+    return listSKAdNetworkConversionValueSchemasPagedCallable;
+  }
+
+  @Override
   public UnaryCallable<SearchChangeHistoryEventsRequest, SearchChangeHistoryEventsResponse>
       searchChangeHistoryEventsCallable() {
     return searchChangeHistoryEventsCallable;
@@ -4278,6 +4558,12 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
   public UnaryCallable<CreateConversionEventRequest, ConversionEvent>
       createConversionEventCallable() {
     return createConversionEventCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateConversionEventRequest, ConversionEvent>
+      updateConversionEventCallable() {
+    return updateConversionEventCallable;
   }
 
   @Override

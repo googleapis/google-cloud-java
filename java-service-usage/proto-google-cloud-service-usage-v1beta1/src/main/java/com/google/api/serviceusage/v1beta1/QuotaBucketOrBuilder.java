@@ -160,6 +160,42 @@ public interface QuotaBucketOrBuilder
    *
    *
    * <pre>
+   * Producer policy inherited from the closet ancestor of the current consumer.
+   * </pre>
+   *
+   * <code>.google.api.serviceusage.v1beta1.ProducerQuotaPolicy producer_quota_policy = 7;</code>
+   *
+   * @return Whether the producerQuotaPolicy field is set.
+   */
+  boolean hasProducerQuotaPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Producer policy inherited from the closet ancestor of the current consumer.
+   * </pre>
+   *
+   * <code>.google.api.serviceusage.v1beta1.ProducerQuotaPolicy producer_quota_policy = 7;</code>
+   *
+   * @return The producerQuotaPolicy.
+   */
+  com.google.api.serviceusage.v1beta1.ProducerQuotaPolicy getProducerQuotaPolicy();
+  /**
+   *
+   *
+   * <pre>
+   * Producer policy inherited from the closet ancestor of the current consumer.
+   * </pre>
+   *
+   * <code>.google.api.serviceusage.v1beta1.ProducerQuotaPolicy producer_quota_policy = 7;</code>
+   */
+  com.google.api.serviceusage.v1beta1.ProducerQuotaPolicyOrBuilder
+      getProducerQuotaPolicyOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The dimensions of this quota bucket.
    *
    * If this map is empty, this is the global bucket, which is the default quota

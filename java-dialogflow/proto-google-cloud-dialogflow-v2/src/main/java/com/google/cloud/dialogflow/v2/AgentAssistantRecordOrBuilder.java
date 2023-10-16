@@ -105,5 +105,47 @@ public interface AgentAssistantRecordOrBuilder
    */
   com.google.cloud.dialogflow.v2.FaqAnswerOrBuilder getFaqAnswerOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Dialogflow assist answer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.DialogflowAssistAnswer dialogflow_assist_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the dialogflowAssistAnswer field is set.
+   */
+  boolean hasDialogflowAssistAnswer();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Dialogflow assist answer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.DialogflowAssistAnswer dialogflow_assist_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The dialogflowAssistAnswer.
+   */
+  com.google.cloud.dialogflow.v2.DialogflowAssistAnswer getDialogflowAssistAnswer();
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Dialogflow assist answer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dialogflow.v2.DialogflowAssistAnswer dialogflow_assist_answer = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dialogflow.v2.DialogflowAssistAnswerOrBuilder
+      getDialogflowAssistAnswerOrBuilder();
+
   com.google.cloud.dialogflow.v2.AgentAssistantRecord.AnswerCase getAnswerCase();
 }

@@ -44,6 +44,7 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     service_ = 0;
     serviceJob_ = "";
     message_ = "";
+    trigger_ = 0;
   }
 
   @java.lang.Override
@@ -55,6 +56,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.dataplex.v1.TasksProto
         .internal_static_google_cloud_dataplex_v1_Job_descriptor;
+  }
+
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 10:
+        return internalGetLabels();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
   }
 
   @java.lang.Override
@@ -428,6 +440,165 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.dataplex.v1.Job.State)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Job execution trigger.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.dataplex.v1.Job.Trigger}
+   */
+  public enum Trigger implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * The trigger is unspecified.
+     * </pre>
+     *
+     * <code>TRIGGER_UNSPECIFIED = 0;</code>
+     */
+    TRIGGER_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * The job was triggered by Dataplex based on trigger spec from task
+     * definition.
+     * </pre>
+     *
+     * <code>TASK_CONFIG = 1;</code>
+     */
+    TASK_CONFIG(1),
+    /**
+     *
+     *
+     * <pre>
+     * The job was triggered by the explicit call of Task API.
+     * </pre>
+     *
+     * <code>RUN_REQUEST = 2;</code>
+     */
+    RUN_REQUEST(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * The trigger is unspecified.
+     * </pre>
+     *
+     * <code>TRIGGER_UNSPECIFIED = 0;</code>
+     */
+    public static final int TRIGGER_UNSPECIFIED_VALUE = 0;
+    /**
+     *
+     *
+     * <pre>
+     * The job was triggered by Dataplex based on trigger spec from task
+     * definition.
+     * </pre>
+     *
+     * <code>TASK_CONFIG = 1;</code>
+     */
+    public static final int TASK_CONFIG_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * The job was triggered by the explicit call of Task API.
+     * </pre>
+     *
+     * <code>RUN_REQUEST = 2;</code>
+     */
+    public static final int RUN_REQUEST_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static Trigger valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static Trigger forNumber(int value) {
+      switch (value) {
+        case 0:
+          return TRIGGER_UNSPECIFIED;
+        case 1:
+          return TASK_CONFIG;
+        case 2:
+          return RUN_REQUEST;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<Trigger> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<Trigger> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Trigger>() {
+          public Trigger findValueByNumber(int number) {
+            return Trigger.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.dataplex.v1.Job.getDescriptor().getEnumTypes().get(2);
+    }
+
+    private static final Trigger[] VALUES = values();
+
+    public static Trigger valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private Trigger(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.dataplex.v1.Job.Trigger)
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -837,6 +1008,207 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int LABELS_FIELD_NUMBER = 10;
+
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.dataplex.v1.TasksProto
+                .internal_static_google_cloud_dataplex_v1_Job_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. User-defined labels for the task.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+    return getLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. User-defined labels for the task.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. User-defined labels for the task.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. User-defined labels for the task.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int TRIGGER_FIELD_NUMBER = 11;
+  private int trigger_ = 0;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Job execution trigger.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.Job.Trigger trigger = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for trigger.
+   */
+  @java.lang.Override
+  public int getTriggerValue() {
+    return trigger_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Job execution trigger.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.Job.Trigger trigger = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The trigger.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.Job.Trigger getTrigger() {
+    com.google.cloud.dataplex.v1.Job.Trigger result =
+        com.google.cloud.dataplex.v1.Job.Trigger.forNumber(trigger_);
+    return result == null ? com.google.cloud.dataplex.v1.Job.Trigger.UNRECOGNIZED : result;
+  }
+
+  public static final int EXECUTION_SPEC_FIELD_NUMBER = 100;
+  private com.google.cloud.dataplex.v1.Task.ExecutionSpec executionSpec_;
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Spec related to how a task is executed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.Task.ExecutionSpec execution_spec = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the executionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasExecutionSpec() {
+    return executionSpec_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Spec related to how a task is executed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.Task.ExecutionSpec execution_spec = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The executionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.Task.ExecutionSpec getExecutionSpec() {
+    return executionSpec_ == null
+        ? com.google.cloud.dataplex.v1.Task.ExecutionSpec.getDefaultInstance()
+        : executionSpec_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Spec related to how a task is executed.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.dataplex.v1.Task.ExecutionSpec execution_spec = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.Task.ExecutionSpecOrBuilder getExecutionSpecOrBuilder() {
+    return executionSpec_ == null
+        ? com.google.cloud.dataplex.v1.Task.ExecutionSpec.getDefaultInstance()
+        : executionSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -878,6 +1250,14 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, message_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 10);
+    if (trigger_ != com.google.cloud.dataplex.v1.Job.Trigger.TRIGGER_UNSPECIFIED.getNumber()) {
+      output.writeEnum(11, trigger_);
+    }
+    if (executionSpec_ != null) {
+      output.writeMessage(100, getExecutionSpec());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -914,6 +1294,22 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(message_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, message_);
     }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, labels__);
+    }
+    if (trigger_ != com.google.cloud.dataplex.v1.Job.Trigger.TRIGGER_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(11, trigger_);
+    }
+    if (executionSpec_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(100, getExecutionSpec());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -944,6 +1340,12 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     if (service_ != other.service_) return false;
     if (!getServiceJob().equals(other.getServiceJob())) return false;
     if (!getMessage().equals(other.getMessage())) return false;
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (trigger_ != other.trigger_) return false;
+    if (hasExecutionSpec() != other.hasExecutionSpec()) return false;
+    if (hasExecutionSpec()) {
+      if (!getExecutionSpec().equals(other.getExecutionSpec())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -977,6 +1379,16 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getServiceJob().hashCode();
     hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getMessage().hashCode();
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    hash = (37 * hash) + TRIGGER_FIELD_NUMBER;
+    hash = (53 * hash) + trigger_;
+    if (hasExecutionSpec()) {
+      hash = (37 * hash) + EXECUTION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getExecutionSpec().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1094,6 +1506,26 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_dataplex_v1_Job_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 10:
+          return internalGetLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 10:
+          return internalGetMutableLabels();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1132,6 +1564,13 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       service_ = 0;
       serviceJob_ = "";
       message_ = "";
+      internalGetMutableLabels().clear();
+      trigger_ = 0;
+      executionSpec_ = null;
+      if (executionSpecBuilder_ != null) {
+        executionSpecBuilder_.dispose();
+        executionSpecBuilder_ = null;
+      }
       return this;
     }
 
@@ -1193,6 +1632,17 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.message_ = message_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.trigger_ = trigger_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.executionSpec_ =
+            executionSpecBuilder_ == null ? executionSpec_ : executionSpecBuilder_.build();
       }
     }
 
@@ -1276,6 +1726,14 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000100;
         onChanged();
       }
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000200;
+      if (other.trigger_ != 0) {
+        setTriggerValue(other.getTriggerValue());
+      }
+      if (other.hasExecutionSpec()) {
+        mergeExecutionSpec(other.getExecutionSpec());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1356,6 +1814,30 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000100;
                 break;
               } // case 74
+            case 82:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
+            case 88:
+              {
+                trigger_ = input.readEnum();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 88
+            case 802:
+              {
+                input.readMessage(getExecutionSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 802
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2449,6 +2931,479 @@ public final class Job extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000100;
       onChanged();
       return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableLabels() {
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return labels_;
+    }
+
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. User-defined labels for the task.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. User-defined labels for the task.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. User-defined labels for the task.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. User-defined labels for the task.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      internalGetMutableLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. User-defined labels for the task.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000200;
+      return internalGetMutableLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. User-defined labels for the task.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000200;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. User-defined labels for the task.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000200;
+      return this;
+    }
+
+    private int trigger_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Job execution trigger.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Job.Trigger trigger = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for trigger.
+     */
+    @java.lang.Override
+    public int getTriggerValue() {
+      return trigger_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Job execution trigger.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Job.Trigger trigger = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for trigger to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTriggerValue(int value) {
+      trigger_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Job execution trigger.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Job.Trigger trigger = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The trigger.
+     */
+    @java.lang.Override
+    public com.google.cloud.dataplex.v1.Job.Trigger getTrigger() {
+      com.google.cloud.dataplex.v1.Job.Trigger result =
+          com.google.cloud.dataplex.v1.Job.Trigger.forNumber(trigger_);
+      return result == null ? com.google.cloud.dataplex.v1.Job.Trigger.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Job execution trigger.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Job.Trigger trigger = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The trigger to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTrigger(com.google.cloud.dataplex.v1.Job.Trigger value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000400;
+      trigger_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Job execution trigger.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Job.Trigger trigger = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTrigger() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      trigger_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.dataplex.v1.Task.ExecutionSpec executionSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.Task.ExecutionSpec,
+            com.google.cloud.dataplex.v1.Task.ExecutionSpec.Builder,
+            com.google.cloud.dataplex.v1.Task.ExecutionSpecOrBuilder>
+        executionSpecBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Spec related to how a task is executed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.ExecutionSpec execution_spec = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the executionSpec field is set.
+     */
+    public boolean hasExecutionSpec() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Spec related to how a task is executed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.ExecutionSpec execution_spec = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The executionSpec.
+     */
+    public com.google.cloud.dataplex.v1.Task.ExecutionSpec getExecutionSpec() {
+      if (executionSpecBuilder_ == null) {
+        return executionSpec_ == null
+            ? com.google.cloud.dataplex.v1.Task.ExecutionSpec.getDefaultInstance()
+            : executionSpec_;
+      } else {
+        return executionSpecBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Spec related to how a task is executed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.ExecutionSpec execution_spec = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setExecutionSpec(com.google.cloud.dataplex.v1.Task.ExecutionSpec value) {
+      if (executionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        executionSpec_ = value;
+      } else {
+        executionSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Spec related to how a task is executed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.ExecutionSpec execution_spec = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setExecutionSpec(
+        com.google.cloud.dataplex.v1.Task.ExecutionSpec.Builder builderForValue) {
+      if (executionSpecBuilder_ == null) {
+        executionSpec_ = builderForValue.build();
+      } else {
+        executionSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Spec related to how a task is executed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.ExecutionSpec execution_spec = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeExecutionSpec(com.google.cloud.dataplex.v1.Task.ExecutionSpec value) {
+      if (executionSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00000800) != 0)
+            && executionSpec_ != null
+            && executionSpec_
+                != com.google.cloud.dataplex.v1.Task.ExecutionSpec.getDefaultInstance()) {
+          getExecutionSpecBuilder().mergeFrom(value);
+        } else {
+          executionSpec_ = value;
+        }
+      } else {
+        executionSpecBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Spec related to how a task is executed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.ExecutionSpec execution_spec = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearExecutionSpec() {
+      bitField0_ = (bitField0_ & ~0x00000800);
+      executionSpec_ = null;
+      if (executionSpecBuilder_ != null) {
+        executionSpecBuilder_.dispose();
+        executionSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Spec related to how a task is executed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.ExecutionSpec execution_spec = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.Task.ExecutionSpec.Builder getExecutionSpecBuilder() {
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return getExecutionSpecFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Spec related to how a task is executed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.ExecutionSpec execution_spec = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.Task.ExecutionSpecOrBuilder getExecutionSpecOrBuilder() {
+      if (executionSpecBuilder_ != null) {
+        return executionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return executionSpec_ == null
+            ? com.google.cloud.dataplex.v1.Task.ExecutionSpec.getDefaultInstance()
+            : executionSpec_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Spec related to how a task is executed.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.Task.ExecutionSpec execution_spec = 100 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.Task.ExecutionSpec,
+            com.google.cloud.dataplex.v1.Task.ExecutionSpec.Builder,
+            com.google.cloud.dataplex.v1.Task.ExecutionSpecOrBuilder>
+        getExecutionSpecFieldBuilder() {
+      if (executionSpecBuilder_ == null) {
+        executionSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.Task.ExecutionSpec,
+                com.google.cloud.dataplex.v1.Task.ExecutionSpec.Builder,
+                com.google.cloud.dataplex.v1.Task.ExecutionSpecOrBuilder>(
+                getExecutionSpec(), getParentForChildren(), isClean());
+        executionSpec_ = null;
+      }
+      return executionSpecBuilder_;
     }
 
     @java.lang.Override

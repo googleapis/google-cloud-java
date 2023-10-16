@@ -613,8 +613,10 @@ public class PipelineServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setNetwork("network1843485230")
+            .addAllReservedIpRanges(new ArrayList<String>())
             .setTemplateUri("templateUri1769633426")
             .setTemplateMetadata(PipelineTemplateMetadata.newBuilder().build())
+            .setScheduleName("scheduleName1161977282")
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -673,8 +675,10 @@ public class PipelineServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setNetwork("network1843485230")
+            .addAllReservedIpRanges(new ArrayList<String>())
             .setTemplateUri("templateUri1769633426")
             .setTemplateMetadata(PipelineTemplateMetadata.newBuilder().build())
+            .setScheduleName("scheduleName1161977282")
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -733,8 +737,10 @@ public class PipelineServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setNetwork("network1843485230")
+            .addAllReservedIpRanges(new ArrayList<String>())
             .setTemplateUri("templateUri1769633426")
             .setTemplateMetadata(PipelineTemplateMetadata.newBuilder().build())
+            .setScheduleName("scheduleName1161977282")
             .build();
     mockPipelineService.addResponse(expectedResponse);
 
@@ -787,8 +793,10 @@ public class PipelineServiceClientTest {
             .setEncryptionSpec(EncryptionSpec.newBuilder().build())
             .setServiceAccount("serviceAccount1079137720")
             .setNetwork("network1843485230")
+            .addAllReservedIpRanges(new ArrayList<String>())
             .setTemplateUri("templateUri1769633426")
             .setTemplateMetadata(PipelineTemplateMetadata.newBuilder().build())
+            .setScheduleName("scheduleName1161977282")
             .build();
     mockPipelineService.addResponse(expectedResponse);
 

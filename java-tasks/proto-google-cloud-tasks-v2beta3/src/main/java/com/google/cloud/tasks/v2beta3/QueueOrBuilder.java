@@ -137,6 +137,41 @@ public interface QueueOrBuilder
    *
    *
    * <pre>
+   * Modifies HTTP target for HTTP tasks.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.HttpTarget http_target = 13;</code>
+   *
+   * @return Whether the httpTarget field is set.
+   */
+  boolean hasHttpTarget();
+  /**
+   *
+   *
+   * <pre>
+   * Modifies HTTP target for HTTP tasks.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.HttpTarget http_target = 13;</code>
+   *
+   * @return The httpTarget.
+   */
+  com.google.cloud.tasks.v2beta3.HttpTarget getHttpTarget();
+  /**
+   *
+   *
+   * <pre>
+   * Modifies HTTP target for HTTP tasks.
+   * </pre>
+   *
+   * <code>.google.cloud.tasks.v2beta3.HttpTarget http_target = 13;</code>
+   */
+  com.google.cloud.tasks.v2beta3.HttpTargetOrBuilder getHttpTargetOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Rate limits for task dispatches.
    *
    * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
@@ -317,7 +352,7 @@ public interface QueueOrBuilder
    * <pre>
    * Output only. The state of the queue.
    *
-   * `state` can only be changed by calling
+   * `state` can only be changed by called
    * [PauseQueue][google.cloud.tasks.v2beta3.CloudTasks.PauseQueue],
    * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or
    * uploading
@@ -337,7 +372,7 @@ public interface QueueOrBuilder
    * <pre>
    * Output only. The state of the queue.
    *
-   * `state` can only be changed by calling
+   * `state` can only be changed by called
    * [PauseQueue][google.cloud.tasks.v2beta3.CloudTasks.PauseQueue],
    * [ResumeQueue][google.cloud.tasks.v2beta3.CloudTasks.ResumeQueue], or
    * uploading

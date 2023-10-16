@@ -41,7 +41,7 @@ public final class ProductSearchGrpc {
 
   private ProductSearchGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.vision.v1.ProductSearch";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.vision.v1.ProductSearch";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -2833,9 +2833,9 @@ public final class ProductSearchGrpc {
   private static final class ProductSearchMethodDescriptorSupplier
       extends ProductSearchBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ProductSearchMethodDescriptorSupplier(String methodName) {
+    ProductSearchMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

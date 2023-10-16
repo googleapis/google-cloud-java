@@ -22,7 +22,8 @@ package com.google.cloud.tasks.v2;
  *
  *
  * <pre>
- * Request message for getting a task using [GetTask][google.cloud.tasks.v2.CloudTasks.GetTask].
+ * Request message for getting a task using
+ * [GetTask][google.cloud.tasks.v2.CloudTasks.GetTask].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2.GetTaskRequest}
@@ -126,11 +127,11 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The response_view specifies which subset of the [Task][google.cloud.tasks.v2.Task] will be
-   * returned.
+   * The response_view specifies which subset of the
+   * [Task][google.cloud.tasks.v2.Task] will be returned.
    *
-   * By default response_view is [BASIC][google.cloud.tasks.v2.Task.View.BASIC]; not all
-   * information is retrieved by default because some data, such as
+   * By default response_view is [BASIC][google.cloud.tasks.v2.Task.View.BASIC];
+   * not all information is retrieved by default because some data, such as
    * payloads, might be desirable to return only when needed because
    * of its large size or because of the sensitivity of data that it
    * contains.
@@ -152,11 +153,11 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The response_view specifies which subset of the [Task][google.cloud.tasks.v2.Task] will be
-   * returned.
+   * The response_view specifies which subset of the
+   * [Task][google.cloud.tasks.v2.Task] will be returned.
    *
-   * By default response_view is [BASIC][google.cloud.tasks.v2.Task.View.BASIC]; not all
-   * information is retrieved by default because some data, such as
+   * By default response_view is [BASIC][google.cloud.tasks.v2.Task.View.BASIC];
+   * not all information is retrieved by default because some data, such as
    * payloads, might be desirable to return only when needed because
    * of its large size or because of the sensitivity of data that it
    * contains.
@@ -348,7 +349,8 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Request message for getting a task using [GetTask][google.cloud.tasks.v2.CloudTasks.GetTask].
+   * Request message for getting a task using
+   * [GetTask][google.cloud.tasks.v2.CloudTasks.GetTask].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2.GetTaskRequest}
@@ -665,11 +667,11 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2.Task] will be
-     * returned.
+     * The response_view specifies which subset of the
+     * [Task][google.cloud.tasks.v2.Task] will be returned.
      *
-     * By default response_view is [BASIC][google.cloud.tasks.v2.Task.View.BASIC]; not all
-     * information is retrieved by default because some data, such as
+     * By default response_view is [BASIC][google.cloud.tasks.v2.Task.View.BASIC];
+     * not all information is retrieved by default because some data, such as
      * payloads, might be desirable to return only when needed because
      * of its large size or because of the sensitivity of data that it
      * contains.
@@ -691,11 +693,11 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2.Task] will be
-     * returned.
+     * The response_view specifies which subset of the
+     * [Task][google.cloud.tasks.v2.Task] will be returned.
      *
-     * By default response_view is [BASIC][google.cloud.tasks.v2.Task.View.BASIC]; not all
-     * information is retrieved by default because some data, such as
+     * By default response_view is [BASIC][google.cloud.tasks.v2.Task.View.BASIC];
+     * not all information is retrieved by default because some data, such as
      * payloads, might be desirable to return only when needed because
      * of its large size or because of the sensitivity of data that it
      * contains.
@@ -720,11 +722,11 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2.Task] will be
-     * returned.
+     * The response_view specifies which subset of the
+     * [Task][google.cloud.tasks.v2.Task] will be returned.
      *
-     * By default response_view is [BASIC][google.cloud.tasks.v2.Task.View.BASIC]; not all
-     * information is retrieved by default because some data, such as
+     * By default response_view is [BASIC][google.cloud.tasks.v2.Task.View.BASIC];
+     * not all information is retrieved by default because some data, such as
      * payloads, might be desirable to return only when needed because
      * of its large size or because of the sensitivity of data that it
      * contains.
@@ -748,11 +750,11 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2.Task] will be
-     * returned.
+     * The response_view specifies which subset of the
+     * [Task][google.cloud.tasks.v2.Task] will be returned.
      *
-     * By default response_view is [BASIC][google.cloud.tasks.v2.Task.View.BASIC]; not all
-     * information is retrieved by default because some data, such as
+     * By default response_view is [BASIC][google.cloud.tasks.v2.Task.View.BASIC];
+     * not all information is retrieved by default because some data, such as
      * payloads, might be desirable to return only when needed because
      * of its large size or because of the sensitivity of data that it
      * contains.
@@ -780,11 +782,11 @@ public final class GetTaskRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The response_view specifies which subset of the [Task][google.cloud.tasks.v2.Task] will be
-     * returned.
+     * The response_view specifies which subset of the
+     * [Task][google.cloud.tasks.v2.Task] will be returned.
      *
-     * By default response_view is [BASIC][google.cloud.tasks.v2.Task.View.BASIC]; not all
-     * information is retrieved by default because some data, such as
+     * By default response_view is [BASIC][google.cloud.tasks.v2.Task.View.BASIC];
+     * not all information is retrieved by default because some data, such as
      * payloads, might be desirable to return only when needed because
      * of its large size or because of the sensitivity of data that it
      * contains.

@@ -97,6 +97,41 @@ public interface ProcessRequestOrBuilder
    *
    *
    * <pre>
+   * A raw document on Google Cloud Storage.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.GcsDocument gcs_document = 8;</code>
+   *
+   * @return Whether the gcsDocument field is set.
+   */
+  boolean hasGcsDocument();
+  /**
+   *
+   *
+   * <pre>
+   * A raw document on Google Cloud Storage.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.GcsDocument gcs_document = 8;</code>
+   *
+   * @return The gcsDocument.
+   */
+  com.google.cloud.documentai.v1.GcsDocument getGcsDocument();
+  /**
+   *
+   *
+   * <pre>
+   * A raw document on Google Cloud Storage.
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.GcsDocument gcs_document = 8;</code>
+   */
+  com.google.cloud.documentai.v1.GcsDocumentOrBuilder getGcsDocumentOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Required. The resource name of the
    * [Processor][google.cloud.documentai.v1.Processor] or
    * [ProcessorVersion][google.cloud.documentai.v1.ProcessorVersion]
@@ -197,6 +232,41 @@ public interface ProcessRequestOrBuilder
    * <code>.google.protobuf.FieldMask field_mask = 6;</code>
    */
   com.google.protobuf.FieldMaskOrBuilder getFieldMaskOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Inference-time options for the process API
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.ProcessOptions process_options = 7;</code>
+   *
+   * @return Whether the processOptions field is set.
+   */
+  boolean hasProcessOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Inference-time options for the process API
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.ProcessOptions process_options = 7;</code>
+   *
+   * @return The processOptions.
+   */
+  com.google.cloud.documentai.v1.ProcessOptions getProcessOptions();
+  /**
+   *
+   *
+   * <pre>
+   * Inference-time options for the process API
+   * </pre>
+   *
+   * <code>.google.cloud.documentai.v1.ProcessOptions process_options = 7;</code>
+   */
+  com.google.cloud.documentai.v1.ProcessOptionsOrBuilder getProcessOptionsOrBuilder();
 
   com.google.cloud.documentai.v1.ProcessRequest.SourceCase getSourceCase();
 }

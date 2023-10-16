@@ -172,6 +172,20 @@ public interface DatasetOrBuilder
    *
    *
    * <pre>
+   * Output only. The number of DataItems in this Dataset. Only apply for
+   * non-structured Dataset.
+   * </pre>
+   *
+   * <code>int64 data_item_count = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The dataItemCount.
+   */
+  long getDataItemCount();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Timestamp when this Dataset was created.
    * </pre>
    *

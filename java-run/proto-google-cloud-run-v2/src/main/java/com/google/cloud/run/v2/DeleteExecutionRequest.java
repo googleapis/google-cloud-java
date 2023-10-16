@@ -73,8 +73,8 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The name of the Execution to delete.
    * Format:
-   * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-   * where {project} can be project id or number.
+   * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+   * where `{project}` can be project id or number.
    * </pre>
    *
    * <code>
@@ -101,8 +101,8 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
    * <pre>
    * Required. The name of the Execution to delete.
    * Format:
-   * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-   * where {project} can be project id or number.
+   * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+   * where `{project}` can be project id or number.
    * </pre>
    *
    * <code>
@@ -590,8 +590,8 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The name of the Execution to delete.
      * Format:
-     * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-     * where {project} can be project id or number.
+     * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -617,8 +617,8 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The name of the Execution to delete.
      * Format:
-     * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-     * where {project} can be project id or number.
+     * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -644,8 +644,8 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The name of the Execution to delete.
      * Format:
-     * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-     * where {project} can be project id or number.
+     * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -670,8 +670,8 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The name of the Execution to delete.
      * Format:
-     * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-     * where {project} can be project id or number.
+     * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>
@@ -692,8 +692,8 @@ public final class DeleteExecutionRequest extends com.google.protobuf.GeneratedM
      * <pre>
      * Required. The name of the Execution to delete.
      * Format:
-     * projects/{project}/locations/{location}/jobs/{job}/executions/{execution},
-     * where {project} can be project id or number.
+     * `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`,
+     * where `{project}` can be project id or number.
      * </pre>
      *
      * <code>

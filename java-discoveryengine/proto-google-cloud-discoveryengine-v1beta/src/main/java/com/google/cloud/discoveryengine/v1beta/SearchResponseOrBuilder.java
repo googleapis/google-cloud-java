@@ -416,4 +416,46 @@ public interface SearchResponseOrBuilder
    * @return The bytes of the appliedControls at the given index.
    */
   com.google.protobuf.ByteString getAppliedControlsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Query expansion information for the returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo query_expansion_info = 14;
+   * </code>
+   *
+   * @return Whether the queryExpansionInfo field is set.
+   */
+  boolean hasQueryExpansionInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Query expansion information for the returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo query_expansion_info = 14;
+   * </code>
+   *
+   * @return The queryExpansionInfo.
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo getQueryExpansionInfo();
+  /**
+   *
+   *
+   * <pre>
+   * Query expansion information for the returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo query_expansion_info = 14;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfoOrBuilder
+      getQueryExpansionInfoOrBuilder();
 }

@@ -635,7 +635,7 @@ public interface BuildOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage bucket where logs should be written (see
+   * Cloud Storage bucket where logs should be written (see
    * [Bucket Name
    * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
    * Logs file names will be of the format `${logs_bucket}/log-${build_id}.txt`.
@@ -650,7 +650,7 @@ public interface BuildOrBuilder
    *
    *
    * <pre>
-   * Google Cloud Storage bucket where logs should be written (see
+   * Cloud Storage bucket where logs should be written (see
    * [Bucket Name
    * Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
    * Logs file names will be of the format `${logs_bucket}/log-${build_id}.txt`.

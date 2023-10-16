@@ -242,6 +242,124 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         : tpmAttestation_;
   }
 
+  public static final int CONFIDENTIAL_SPACE_INFO_FIELD_NUMBER = 4;
+  private com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo confidentialSpaceInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional information related to the Confidential Space TEE.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo confidential_space_info = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the confidentialSpaceInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasConfidentialSpaceInfo() {
+    return confidentialSpaceInfo_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional information related to the Confidential Space TEE.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo confidential_space_info = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The confidentialSpaceInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo
+      getConfidentialSpaceInfo() {
+    return confidentialSpaceInfo_ == null
+        ? com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo.getDefaultInstance()
+        : confidentialSpaceInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional information related to the Confidential Space TEE.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo confidential_space_info = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfoOrBuilder
+      getConfidentialSpaceInfoOrBuilder() {
+    return confidentialSpaceInfo_ == null
+        ? com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo.getDefaultInstance()
+        : confidentialSpaceInfo_;
+  }
+
+  public static final int TOKEN_OPTIONS_FIELD_NUMBER = 5;
+  private com.google.cloud.confidentialcomputing.v1.TokenOptions tokenOptions_;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A collection of optional, workload-specified claims that modify
+   * the token output.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TokenOptions token_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the tokenOptions field is set.
+   */
+  @java.lang.Override
+  public boolean hasTokenOptions() {
+    return tokenOptions_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A collection of optional, workload-specified claims that modify
+   * the token output.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TokenOptions token_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The tokenOptions.
+   */
+  @java.lang.Override
+  public com.google.cloud.confidentialcomputing.v1.TokenOptions getTokenOptions() {
+    return tokenOptions_ == null
+        ? com.google.cloud.confidentialcomputing.v1.TokenOptions.getDefaultInstance()
+        : tokenOptions_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A collection of optional, workload-specified claims that modify
+   * the token output.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.confidentialcomputing.v1.TokenOptions token_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.confidentialcomputing.v1.TokenOptionsOrBuilder
+      getTokenOptionsOrBuilder() {
+    return tokenOptions_ == null
+        ? com.google.cloud.confidentialcomputing.v1.TokenOptions.getDefaultInstance()
+        : tokenOptions_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -265,6 +383,12 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     if (tpmAttestation_ != null) {
       output.writeMessage(3, getTpmAttestation());
     }
+    if (confidentialSpaceInfo_ != null) {
+      output.writeMessage(4, getConfidentialSpaceInfo());
+    }
+    if (tokenOptions_ != null) {
+      output.writeMessage(5, getTokenOptions());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -282,6 +406,13 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     }
     if (tpmAttestation_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getTpmAttestation());
+    }
+    if (confidentialSpaceInfo_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(4, getConfidentialSpaceInfo());
+    }
+    if (tokenOptions_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getTokenOptions());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -308,6 +439,14 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     if (hasTpmAttestation()) {
       if (!getTpmAttestation().equals(other.getTpmAttestation())) return false;
     }
+    if (hasConfidentialSpaceInfo() != other.hasConfidentialSpaceInfo()) return false;
+    if (hasConfidentialSpaceInfo()) {
+      if (!getConfidentialSpaceInfo().equals(other.getConfidentialSpaceInfo())) return false;
+    }
+    if (hasTokenOptions() != other.hasTokenOptions()) return false;
+    if (hasTokenOptions()) {
+      if (!getTokenOptions().equals(other.getTokenOptions())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -328,6 +467,14 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
     if (hasTpmAttestation()) {
       hash = (37 * hash) + TPM_ATTESTATION_FIELD_NUMBER;
       hash = (53 * hash) + getTpmAttestation().hashCode();
+    }
+    if (hasConfidentialSpaceInfo()) {
+      hash = (37 * hash) + CONFIDENTIAL_SPACE_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getConfidentialSpaceInfo().hashCode();
+    }
+    if (hasTokenOptions()) {
+      hash = (37 * hash) + TOKEN_OPTIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getTokenOptions().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -483,6 +630,16 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         tpmAttestationBuilder_.dispose();
         tpmAttestationBuilder_ = null;
       }
+      confidentialSpaceInfo_ = null;
+      if (confidentialSpaceInfoBuilder_ != null) {
+        confidentialSpaceInfoBuilder_.dispose();
+        confidentialSpaceInfoBuilder_ = null;
+      }
+      tokenOptions_ = null;
+      if (tokenOptionsBuilder_ != null) {
+        tokenOptionsBuilder_.dispose();
+        tokenOptionsBuilder_ = null;
+      }
       return this;
     }
 
@@ -532,6 +689,16 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.tpmAttestation_ =
             tpmAttestationBuilder_ == null ? tpmAttestation_ : tpmAttestationBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.confidentialSpaceInfo_ =
+            confidentialSpaceInfoBuilder_ == null
+                ? confidentialSpaceInfo_
+                : confidentialSpaceInfoBuilder_.build();
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.tokenOptions_ =
+            tokenOptionsBuilder_ == null ? tokenOptions_ : tokenOptionsBuilder_.build();
       }
     }
 
@@ -595,6 +762,12 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
       if (other.hasTpmAttestation()) {
         mergeTpmAttestation(other.getTpmAttestation());
       }
+      if (other.hasConfidentialSpaceInfo()) {
+        mergeConfidentialSpaceInfo(other.getConfidentialSpaceInfo());
+      }
+      if (other.hasTokenOptions()) {
+        mergeTokenOptions(other.getTokenOptions());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -639,6 +812,19 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(
+                    getConfidentialSpaceInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 42:
+              {
+                input.readMessage(getTokenOptionsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1214,6 +1400,428 @@ public final class VerifyAttestationRequest extends com.google.protobuf.Generate
         tpmAttestation_ = null;
       }
       return tpmAttestationBuilder_;
+    }
+
+    private com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo confidentialSpaceInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo,
+            com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo.Builder,
+            com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfoOrBuilder>
+        confidentialSpaceInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional information related to the Confidential Space TEE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo confidential_space_info = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the confidentialSpaceInfo field is set.
+     */
+    public boolean hasConfidentialSpaceInfo() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional information related to the Confidential Space TEE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo confidential_space_info = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The confidentialSpaceInfo.
+     */
+    public com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo
+        getConfidentialSpaceInfo() {
+      if (confidentialSpaceInfoBuilder_ == null) {
+        return confidentialSpaceInfo_ == null
+            ? com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo.getDefaultInstance()
+            : confidentialSpaceInfo_;
+      } else {
+        return confidentialSpaceInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional information related to the Confidential Space TEE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo confidential_space_info = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setConfidentialSpaceInfo(
+        com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo value) {
+      if (confidentialSpaceInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        confidentialSpaceInfo_ = value;
+      } else {
+        confidentialSpaceInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional information related to the Confidential Space TEE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo confidential_space_info = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setConfidentialSpaceInfo(
+        com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo.Builder builderForValue) {
+      if (confidentialSpaceInfoBuilder_ == null) {
+        confidentialSpaceInfo_ = builderForValue.build();
+      } else {
+        confidentialSpaceInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional information related to the Confidential Space TEE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo confidential_space_info = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeConfidentialSpaceInfo(
+        com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo value) {
+      if (confidentialSpaceInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && confidentialSpaceInfo_ != null
+            && confidentialSpaceInfo_
+                != com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo
+                    .getDefaultInstance()) {
+          getConfidentialSpaceInfoBuilder().mergeFrom(value);
+        } else {
+          confidentialSpaceInfo_ = value;
+        }
+      } else {
+        confidentialSpaceInfoBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional information related to the Confidential Space TEE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo confidential_space_info = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearConfidentialSpaceInfo() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      confidentialSpaceInfo_ = null;
+      if (confidentialSpaceInfoBuilder_ != null) {
+        confidentialSpaceInfoBuilder_.dispose();
+        confidentialSpaceInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional information related to the Confidential Space TEE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo confidential_space_info = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo.Builder
+        getConfidentialSpaceInfoBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getConfidentialSpaceInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional information related to the Confidential Space TEE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo confidential_space_info = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfoOrBuilder
+        getConfidentialSpaceInfoOrBuilder() {
+      if (confidentialSpaceInfoBuilder_ != null) {
+        return confidentialSpaceInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return confidentialSpaceInfo_ == null
+            ? com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo.getDefaultInstance()
+            : confidentialSpaceInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional information related to the Confidential Space TEE.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo confidential_space_info = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo,
+            com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo.Builder,
+            com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfoOrBuilder>
+        getConfidentialSpaceInfoFieldBuilder() {
+      if (confidentialSpaceInfoBuilder_ == null) {
+        confidentialSpaceInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo,
+                com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfo.Builder,
+                com.google.cloud.confidentialcomputing.v1.ConfidentialSpaceInfoOrBuilder>(
+                getConfidentialSpaceInfo(), getParentForChildren(), isClean());
+        confidentialSpaceInfo_ = null;
+      }
+      return confidentialSpaceInfoBuilder_;
+    }
+
+    private com.google.cloud.confidentialcomputing.v1.TokenOptions tokenOptions_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.confidentialcomputing.v1.TokenOptions,
+            com.google.cloud.confidentialcomputing.v1.TokenOptions.Builder,
+            com.google.cloud.confidentialcomputing.v1.TokenOptionsOrBuilder>
+        tokenOptionsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A collection of optional, workload-specified claims that modify
+     * the token output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions token_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the tokenOptions field is set.
+     */
+    public boolean hasTokenOptions() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A collection of optional, workload-specified claims that modify
+     * the token output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions token_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The tokenOptions.
+     */
+    public com.google.cloud.confidentialcomputing.v1.TokenOptions getTokenOptions() {
+      if (tokenOptionsBuilder_ == null) {
+        return tokenOptions_ == null
+            ? com.google.cloud.confidentialcomputing.v1.TokenOptions.getDefaultInstance()
+            : tokenOptions_;
+      } else {
+        return tokenOptionsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A collection of optional, workload-specified claims that modify
+     * the token output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions token_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTokenOptions(com.google.cloud.confidentialcomputing.v1.TokenOptions value) {
+      if (tokenOptionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tokenOptions_ = value;
+      } else {
+        tokenOptionsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A collection of optional, workload-specified claims that modify
+     * the token output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions token_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setTokenOptions(
+        com.google.cloud.confidentialcomputing.v1.TokenOptions.Builder builderForValue) {
+      if (tokenOptionsBuilder_ == null) {
+        tokenOptions_ = builderForValue.build();
+      } else {
+        tokenOptionsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A collection of optional, workload-specified claims that modify
+     * the token output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions token_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeTokenOptions(com.google.cloud.confidentialcomputing.v1.TokenOptions value) {
+      if (tokenOptionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && tokenOptions_ != null
+            && tokenOptions_
+                != com.google.cloud.confidentialcomputing.v1.TokenOptions.getDefaultInstance()) {
+          getTokenOptionsBuilder().mergeFrom(value);
+        } else {
+          tokenOptions_ = value;
+        }
+      } else {
+        tokenOptionsBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A collection of optional, workload-specified claims that modify
+     * the token output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions token_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearTokenOptions() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      tokenOptions_ = null;
+      if (tokenOptionsBuilder_ != null) {
+        tokenOptionsBuilder_.dispose();
+        tokenOptionsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A collection of optional, workload-specified claims that modify
+     * the token output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions token_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.confidentialcomputing.v1.TokenOptions.Builder getTokenOptionsBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getTokenOptionsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A collection of optional, workload-specified claims that modify
+     * the token output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions token_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.confidentialcomputing.v1.TokenOptionsOrBuilder
+        getTokenOptionsOrBuilder() {
+      if (tokenOptionsBuilder_ != null) {
+        return tokenOptionsBuilder_.getMessageOrBuilder();
+      } else {
+        return tokenOptions_ == null
+            ? com.google.cloud.confidentialcomputing.v1.TokenOptions.getDefaultInstance()
+            : tokenOptions_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A collection of optional, workload-specified claims that modify
+     * the token output.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.confidentialcomputing.v1.TokenOptions token_options = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.confidentialcomputing.v1.TokenOptions,
+            com.google.cloud.confidentialcomputing.v1.TokenOptions.Builder,
+            com.google.cloud.confidentialcomputing.v1.TokenOptionsOrBuilder>
+        getTokenOptionsFieldBuilder() {
+      if (tokenOptionsBuilder_ == null) {
+        tokenOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.confidentialcomputing.v1.TokenOptions,
+                com.google.cloud.confidentialcomputing.v1.TokenOptions.Builder,
+                com.google.cloud.confidentialcomputing.v1.TokenOptionsOrBuilder>(
+                getTokenOptions(), getParentForChildren(), isClean());
+        tokenOptions_ = null;
+      }
+      return tokenOptionsBuilder_;
     }
 
     @java.lang.Override

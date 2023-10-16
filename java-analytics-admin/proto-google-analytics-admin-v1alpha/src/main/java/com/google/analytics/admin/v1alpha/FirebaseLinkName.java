@@ -137,7 +137,7 @@ public class FirebaseLinkName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       FirebaseLinkName that = ((FirebaseLinkName) o);
       return Objects.equals(this.property, that.property)
           && Objects.equals(this.firebaseLink, that.firebaseLink);

@@ -203,8 +203,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    * * `document` is the default model for regular dataStores.
    * * `search-history` is the default model for
-   * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-   * dataStores.
+   * [IndustryVertical.SITE_SEARCH][] dataStores.
    * </pre>
    *
    * <code>string query_model = 3;</code>
@@ -243,8 +242,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
    *
    * * `document` is the default model for regular dataStores.
    * * `search-history` is the default model for
-   * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-   * dataStores.
+   * [IndustryVertical.SITE_SEARCH][] dataStores.
    * </pre>
    *
    * <code>string query_model = 3;</code>
@@ -341,6 +339,27 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int INCLUDE_TAIL_SUGGESTIONS_FIELD_NUMBER = 5;
+  private boolean includeTailSuggestions_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Indicates if tail suggestions should be returned if there are no
+   * suggestions that match the full query. Even if set to true, if there are
+   * suggestions that match the full query, those are returned and no
+   * tail suggestions are returned.
+   * </pre>
+   *
+   * <code>bool include_tail_suggestions = 5;</code>
+   *
+   * @return The includeTailSuggestions.
+   */
+  @java.lang.Override
+  public boolean getIncludeTailSuggestions() {
+    return includeTailSuggestions_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -367,6 +386,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userPseudoId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userPseudoId_);
     }
+    if (includeTailSuggestions_ != false) {
+      output.writeBool(5, includeTailSuggestions_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -388,6 +410,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(userPseudoId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, userPseudoId_);
     }
+    if (includeTailSuggestions_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, includeTailSuggestions_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -408,6 +433,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     if (!getQuery().equals(other.getQuery())) return false;
     if (!getQueryModel().equals(other.getQueryModel())) return false;
     if (!getUserPseudoId().equals(other.getUserPseudoId())) return false;
+    if (getIncludeTailSuggestions() != other.getIncludeTailSuggestions()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -427,6 +453,8 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + getQueryModel().hashCode();
     hash = (37 * hash) + USER_PSEUDO_ID_FIELD_NUMBER;
     hash = (53 * hash) + getUserPseudoId().hashCode();
+    hash = (37 * hash) + INCLUDE_TAIL_SUGGESTIONS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIncludeTailSuggestions());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -573,6 +601,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       query_ = "";
       queryModel_ = "";
       userPseudoId_ = "";
+      includeTailSuggestions_ = false;
       return this;
     }
 
@@ -622,6 +651,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.userPseudoId_ = userPseudoId_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.includeTailSuggestions_ = includeTailSuggestions_;
       }
     }
 
@@ -692,6 +724,9 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.getIncludeTailSuggestions() != false) {
+        setIncludeTailSuggestions(other.getIncludeTailSuggestions());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -742,6 +777,12 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 40:
+              {
+                includeTailSuggestions_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1019,8 +1060,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * * `document` is the default model for regular dataStores.
      * * `search-history` is the default model for
-     * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-     * dataStores.
+     * [IndustryVertical.SITE_SEARCH][] dataStores.
      * </pre>
      *
      * <code>string query_model = 3;</code>
@@ -1058,8 +1098,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * * `document` is the default model for regular dataStores.
      * * `search-history` is the default model for
-     * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-     * dataStores.
+     * [IndustryVertical.SITE_SEARCH][] dataStores.
      * </pre>
      *
      * <code>string query_model = 3;</code>
@@ -1097,8 +1136,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * * `document` is the default model for regular dataStores.
      * * `search-history` is the default model for
-     * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-     * dataStores.
+     * [IndustryVertical.SITE_SEARCH][] dataStores.
      * </pre>
      *
      * <code>string query_model = 3;</code>
@@ -1135,8 +1173,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * * `document` is the default model for regular dataStores.
      * * `search-history` is the default model for
-     * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-     * dataStores.
+     * [IndustryVertical.SITE_SEARCH][] dataStores.
      * </pre>
      *
      * <code>string query_model = 3;</code>
@@ -1169,8 +1206,7 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
      *
      * * `document` is the default model for regular dataStores.
      * * `search-history` is the default model for
-     * [IndustryVertical.SITE_SEARCH][google.cloud.discoveryengine.v1beta.IndustryVertical.SITE_SEARCH]
-     * dataStores.
+     * [IndustryVertical.SITE_SEARCH][] dataStores.
      * </pre>
      *
      * <code>string query_model = 3;</code>
@@ -1356,6 +1392,68 @@ public final class CompleteQueryRequest extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       userPseudoId_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private boolean includeTailSuggestions_;
+    /**
+     *
+     *
+     * <pre>
+     * Indicates if tail suggestions should be returned if there are no
+     * suggestions that match the full query. Even if set to true, if there are
+     * suggestions that match the full query, those are returned and no
+     * tail suggestions are returned.
+     * </pre>
+     *
+     * <code>bool include_tail_suggestions = 5;</code>
+     *
+     * @return The includeTailSuggestions.
+     */
+    @java.lang.Override
+    public boolean getIncludeTailSuggestions() {
+      return includeTailSuggestions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates if tail suggestions should be returned if there are no
+     * suggestions that match the full query. Even if set to true, if there are
+     * suggestions that match the full query, those are returned and no
+     * tail suggestions are returned.
+     * </pre>
+     *
+     * <code>bool include_tail_suggestions = 5;</code>
+     *
+     * @param value The includeTailSuggestions to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIncludeTailSuggestions(boolean value) {
+
+      includeTailSuggestions_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Indicates if tail suggestions should be returned if there are no
+     * suggestions that match the full query. Even if set to true, if there are
+     * suggestions that match the full query, those are returned and no
+     * tail suggestions are returned.
+     * </pre>
+     *
+     * <code>bool include_tail_suggestions = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIncludeTailSuggestions() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      includeTailSuggestions_ = false;
       onChanged();
       return this;
     }

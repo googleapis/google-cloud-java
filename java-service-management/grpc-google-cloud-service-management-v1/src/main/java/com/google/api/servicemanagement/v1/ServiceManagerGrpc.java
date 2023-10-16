@@ -33,7 +33,8 @@ public final class ServiceManagerGrpc {
 
   private ServiceManagerGrpc() {}
 
-  public static final String SERVICE_NAME = "google.api.servicemanagement.v1.ServiceManager";
+  public static final java.lang.String SERVICE_NAME =
+      "google.api.servicemanagement.v1.ServiceManager";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1997,9 +1998,9 @@ public final class ServiceManagerGrpc {
   private static final class ServiceManagerMethodDescriptorSupplier
       extends ServiceManagerBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ServiceManagerMethodDescriptorSupplier(String methodName) {
+    ServiceManagerMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

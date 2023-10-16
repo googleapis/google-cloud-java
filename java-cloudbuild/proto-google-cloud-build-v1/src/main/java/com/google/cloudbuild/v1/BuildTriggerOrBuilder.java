@@ -481,6 +481,41 @@ public interface BuildTriggerOrBuilder
    *
    *
    * <pre>
+   * The file source describing the local or remote Build template.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitFileSource git_file_source = 24;</code>
+   *
+   * @return Whether the gitFileSource field is set.
+   */
+  boolean hasGitFileSource();
+  /**
+   *
+   *
+   * <pre>
+   * The file source describing the local or remote Build template.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitFileSource git_file_source = 24;</code>
+   *
+   * @return The gitFileSource.
+   */
+  com.google.cloudbuild.v1.GitFileSource getGitFileSource();
+  /**
+   *
+   *
+   * <pre>
+   * The file source describing the local or remote Build template.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitFileSource git_file_source = 24;</code>
+   */
+  com.google.cloudbuild.v1.GitFileSourceOrBuilder getGitFileSourceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Time when the trigger was created.
    * </pre>
    *
@@ -777,6 +812,56 @@ public interface BuildTriggerOrBuilder
    * @return The bytes for filter.
    */
   com.google.protobuf.ByteString getFilterBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The repo and ref of the repository from which to build. This field
+   * is used only for those triggers that do not respond to SCM events.
+   * Triggers that respond to such events build source at whatever commit
+   * caused the event.
+   * This field is currently only used by Webhook, Pub/Sub, Manual, and Cron
+   * triggers.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitRepoSource source_to_build = 26;</code>
+   *
+   * @return Whether the sourceToBuild field is set.
+   */
+  boolean hasSourceToBuild();
+  /**
+   *
+   *
+   * <pre>
+   * The repo and ref of the repository from which to build. This field
+   * is used only for those triggers that do not respond to SCM events.
+   * Triggers that respond to such events build source at whatever commit
+   * caused the event.
+   * This field is currently only used by Webhook, Pub/Sub, Manual, and Cron
+   * triggers.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitRepoSource source_to_build = 26;</code>
+   *
+   * @return The sourceToBuild.
+   */
+  com.google.cloudbuild.v1.GitRepoSource getSourceToBuild();
+  /**
+   *
+   *
+   * <pre>
+   * The repo and ref of the repository from which to build. This field
+   * is used only for those triggers that do not respond to SCM events.
+   * Triggers that respond to such events build source at whatever commit
+   * caused the event.
+   * This field is currently only used by Webhook, Pub/Sub, Manual, and Cron
+   * triggers.
+   * </pre>
+   *
+   * <code>.google.devtools.cloudbuild.v1.GitRepoSource source_to_build = 26;</code>
+   */
+  com.google.cloudbuild.v1.GitRepoSourceOrBuilder getSourceToBuildOrBuilder();
 
   /**
    *

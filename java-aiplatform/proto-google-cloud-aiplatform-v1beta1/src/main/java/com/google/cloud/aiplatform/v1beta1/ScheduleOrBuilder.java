@@ -130,10 +130,10 @@ public interface ScheduleOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the Schedule.
+   * Immutable. The resource name of the Schedule.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The name.
    */
@@ -142,10 +142,10 @@ public interface ScheduleOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name of the Schedule.
+   * Immutable. The resource name of the Schedule.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
    *
    * @return The bytes for name.
    */

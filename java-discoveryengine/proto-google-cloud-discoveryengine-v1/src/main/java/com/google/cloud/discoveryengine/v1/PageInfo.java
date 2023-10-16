@@ -77,7 +77,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * This should be kept the same for all user events triggered from the same
    * pageview. For example, an item detail page view could trigger multiple
-   * events as the user is browsing the page. The `pageViewId` property should
+   * events as the user is browsing the page. The `pageview_id` property should
    * be kept the same for all these events so that they can be grouped together
    * properly.
    *
@@ -109,7 +109,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * This should be kept the same for all user events triggered from the same
    * pageview. For example, an item detail page view could trigger multiple
-   * events as the user is browsing the page. The `pageViewId` property should
+   * events as the user is browsing the page. The `pageview_id` property should
    * be kept the same for all these events so that they can be grouped together
    * properly.
    *
@@ -150,10 +150,10 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
-   * "pageCategory" : "Sales &gt; 2017 Black Friday Deals".
+   * `"pageCategory" : "Sales &gt; 2017 Black Friday Deals"`.
    *
    * Required for `view-category-page` events. Other event types should not set
-   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
    * <code>string page_category = 2;</code>
@@ -184,10 +184,10 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
    *
    * Category pages include special pages such as sales or promotions. For
    * instance, a special sale page may have the category hierarchy:
-   * "pageCategory" : "Sales &gt; 2017 Black Friday Deals".
+   * `"pageCategory" : "Sales &gt; 2017 Black Friday Deals"`.
    *
    * Required for `view-category-page` events. Other event types should not set
-   * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+   * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
    * </pre>
    *
    * <code>string page_category = 2;</code>
@@ -747,7 +747,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * This should be kept the same for all user events triggered from the same
      * pageview. For example, an item detail page view could trigger multiple
-     * events as the user is browsing the page. The `pageViewId` property should
+     * events as the user is browsing the page. The `pageview_id` property should
      * be kept the same for all these events so that they can be grouped together
      * properly.
      *
@@ -778,7 +778,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * This should be kept the same for all user events triggered from the same
      * pageview. For example, an item detail page view could trigger multiple
-     * events as the user is browsing the page. The `pageViewId` property should
+     * events as the user is browsing the page. The `pageview_id` property should
      * be kept the same for all these events so that they can be grouped together
      * properly.
      *
@@ -809,7 +809,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * This should be kept the same for all user events triggered from the same
      * pageview. For example, an item detail page view could trigger multiple
-     * events as the user is browsing the page. The `pageViewId` property should
+     * events as the user is browsing the page. The `pageview_id` property should
      * be kept the same for all these events so that they can be grouped together
      * properly.
      *
@@ -839,7 +839,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * This should be kept the same for all user events triggered from the same
      * pageview. For example, an item detail page view could trigger multiple
-     * events as the user is browsing the page. The `pageViewId` property should
+     * events as the user is browsing the page. The `pageview_id` property should
      * be kept the same for all these events so that they can be grouped together
      * properly.
      *
@@ -865,7 +865,7 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * This should be kept the same for all user events triggered from the same
      * pageview. For example, an item detail page view could trigger multiple
-     * events as the user is browsing the page. The `pageViewId` property should
+     * events as the user is browsing the page. The `pageview_id` property should
      * be kept the same for all these events so that they can be grouped together
      * properly.
      *
@@ -902,10 +902,10 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
-     * "pageCategory" : "Sales &gt; 2017 Black Friday Deals".
+     * `"pageCategory" : "Sales &gt; 2017 Black Friday Deals"`.
      *
      * Required for `view-category-page` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string page_category = 2;</code>
@@ -935,10 +935,10 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
-     * "pageCategory" : "Sales &gt; 2017 Black Friday Deals".
+     * `"pageCategory" : "Sales &gt; 2017 Black Friday Deals"`.
      *
      * Required for `view-category-page` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string page_category = 2;</code>
@@ -968,10 +968,10 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
-     * "pageCategory" : "Sales &gt; 2017 Black Friday Deals".
+     * `"pageCategory" : "Sales &gt; 2017 Black Friday Deals"`.
      *
      * Required for `view-category-page` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string page_category = 2;</code>
@@ -1000,10 +1000,10 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
-     * "pageCategory" : "Sales &gt; 2017 Black Friday Deals".
+     * `"pageCategory" : "Sales &gt; 2017 Black Friday Deals"`.
      *
      * Required for `view-category-page` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string page_category = 2;</code>
@@ -1028,10 +1028,10 @@ public final class PageInfo extends com.google.protobuf.GeneratedMessageV3
      *
      * Category pages include special pages such as sales or promotions. For
      * instance, a special sale page may have the category hierarchy:
-     * "pageCategory" : "Sales &gt; 2017 Black Friday Deals".
+     * `"pageCategory" : "Sales &gt; 2017 Black Friday Deals"`.
      *
      * Required for `view-category-page` events. Other event types should not set
-     * this field. Otherwise, an INVALID_ARGUMENT error is returned.
+     * this field. Otherwise, an `INVALID_ARGUMENT` error is returned.
      * </pre>
      *
      * <code>string page_category = 2;</code>

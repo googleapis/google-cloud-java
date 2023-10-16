@@ -538,4 +538,48 @@ public interface IndexOrBuilder
    * @return The indexUpdateMethod.
    */
   com.google.cloud.aiplatform.v1beta1.Index.IndexUpdateMethod getIndexUpdateMethod();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Customer-managed encryption key spec for an Index. If set, this
+   * Index and all sub-resources of this Index will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 17 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Customer-managed encryption key spec for an Index. If set, this
+   * Index and all sub-resources of this Index will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 17 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Customer-managed encryption key spec for an Index. If set, this
+   * Index and all sub-resources of this Index will be secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 17 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
 }

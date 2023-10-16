@@ -32,6 +32,18 @@ public final class DataProfileProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_DataProfileSpec_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataProfileSpec_PostScanActions_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataProfileSpec_PostScanActions_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataProfileSpec_PostScanActions_BigQueryExport_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataProfileSpec_PostScanActions_BigQueryExport_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataProfileSpec_SelectedFields_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataProfileSpec_SelectedFields_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_dataplex_v1_DataProfileResult_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_DataProfileResult_fieldAccessorTable;
@@ -63,6 +75,14 @@ public final class DataProfileProto {
       internal_static_google_cloud_dataplex_v1_DataProfileResult_Profile_Field_ProfileInfo_TopNValue_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_dataplex_v1_DataProfileResult_Profile_Field_ProfileInfo_TopNValue_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataProfileResult_PostScanActionsResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataProfileResult_PostScanActionsResult_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_dataplex_v1_DataProfileResult_PostScanActionsResult_BigQueryExportResult_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_dataplex_v1_DataProfileResult_PostScanActionsResult_BigQueryExportResult_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -75,42 +95,68 @@ public final class DataProfileProto {
       "\n+google/cloud/dataplex/v1/data_profile."
           + "proto\022\030google.cloud.dataplex.v1\032\037google/"
           + "api/field_behavior.proto\032)google/cloud/d"
-          + "ataplex/v1/processing.proto\"\021\n\017DataProfi"
-          + "leSpec\"\353\t\n\021DataProfileResult\022\021\n\trow_coun"
-          + "t\030\003 \001(\003\022D\n\007profile\030\004 \001(\01323.google.cloud."
-          + "dataplex.v1.DataProfileResult.Profile\022;\n"
-          + "\014scanned_data\030\005 \001(\0132%.google.cloud.datap"
-          + "lex.v1.ScannedData\032\277\010\n\007Profile\022I\n\006fields"
-          + "\030\002 \003(\01329.google.cloud.dataplex.v1.DataPr"
-          + "ofileResult.Profile.Field\032\350\007\n\005Field\022\014\n\004n"
-          + "ame\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\014\n\004mode\030\003 \001(\t\022V\n"
-          + "\007profile\030\004 \001(\0132E.google.cloud.dataplex.v"
-          + "1.DataProfileResult.Profile.Field.Profil"
-          + "eInfo\032\334\006\n\013ProfileInfo\022\022\n\nnull_ratio\030\002 \001("
-          + "\001\022\026\n\016distinct_ratio\030\003 \001(\001\022e\n\014top_n_value"
-          + "s\030\004 \003(\0132O.google.cloud.dataplex.v1.DataP"
-          + "rofileResult.Profile.Field.ProfileInfo.T"
-          + "opNValue\022o\n\016string_profile\030e \001(\0132U.googl"
-          + "e.cloud.dataplex.v1.DataProfileResult.Pr"
-          + "ofile.Field.ProfileInfo.StringFieldInfoH"
-          + "\000\022q\n\017integer_profile\030f \001(\0132V.google.clou"
-          + "d.dataplex.v1.DataProfileResult.Profile."
-          + "Field.ProfileInfo.IntegerFieldInfoH\000\022o\n\016"
-          + "double_profile\030g \001(\0132U.google.cloud.data"
-          + "plex.v1.DataProfileResult.Profile.Field."
-          + "ProfileInfo.DoubleFieldInfoH\000\032Q\n\017StringF"
-          + "ieldInfo\022\022\n\nmin_length\030\001 \001(\003\022\022\n\nmax_leng"
-          + "th\030\002 \001(\003\022\026\n\016average_length\030\003 \001(\001\032l\n\020Inte"
-          + "gerFieldInfo\022\017\n\007average\030\001 \001(\001\022\032\n\022standar"
-          + "d_deviation\030\003 \001(\001\022\013\n\003min\030\004 \001(\003\022\021\n\tquarti"
-          + "les\030\006 \003(\003\022\013\n\003max\030\005 \001(\003\032k\n\017DoubleFieldInf"
-          + "o\022\017\n\007average\030\001 \001(\001\022\032\n\022standard_deviation"
-          + "\030\003 \001(\001\022\013\n\003min\030\004 \001(\001\022\021\n\tquartiles\030\006 \003(\001\022\013"
-          + "\n\003max\030\005 \001(\001\032)\n\tTopNValue\022\r\n\005value\030\001 \001(\t\022"
-          + "\r\n\005count\030\002 \001(\003B\014\n\nfield_infoBl\n\034com.goog"
-          + "le.cloud.dataplex.v1B\020DataProfileProtoP\001"
-          + "Z8cloud.google.com/go/dataplex/apiv1/dat"
-          + "aplexpb;dataplexpbb\006proto3"
+          + "ataplex/v1/processing.proto\"\260\004\n\017DataProf"
+          + "ileSpec\022\036\n\020sampling_percent\030\002 \001(\002B\004\342A\001\001\022"
+          + "\030\n\nrow_filter\030\003 \001(\tB\004\342A\001\001\022Z\n\021post_scan_a"
+          + "ctions\030\004 \001(\01329.google.cloud.dataplex.v1."
+          + "DataProfileSpec.PostScanActionsB\004\342A\001\001\022V\n"
+          + "\016include_fields\030\005 \001(\01328.google.cloud.dat"
+          + "aplex.v1.DataProfileSpec.SelectedFieldsB"
+          + "\004\342A\001\001\022V\n\016exclude_fields\030\006 \001(\01328.google.c"
+          + "loud.dataplex.v1.DataProfileSpec.Selecte"
+          + "dFieldsB\004\342A\001\001\032\251\001\n\017PostScanActions\022g\n\017big"
+          + "query_export\030\001 \001(\0132H.google.cloud.datapl"
+          + "ex.v1.DataProfileSpec.PostScanActions.Bi"
+          + "gQueryExportB\004\342A\001\001\032-\n\016BigQueryExport\022\033\n\r"
+          + "results_table\030\001 \001(\tB\004\342A\001\001\032+\n\016SelectedFie"
+          + "lds\022\031\n\013field_names\030\001 \003(\tB\004\342A\001\001\"\350\r\n\021DataP"
+          + "rofileResult\022\021\n\trow_count\030\003 \001(\003\022D\n\007profi"
+          + "le\030\004 \001(\01323.google.cloud.dataplex.v1.Data"
+          + "ProfileResult.Profile\022;\n\014scanned_data\030\005 "
+          + "\001(\0132%.google.cloud.dataplex.v1.ScannedDa"
+          + "ta\022i\n\030post_scan_actions_result\030\006 \001(\0132A.g"
+          + "oogle.cloud.dataplex.v1.DataProfileResul"
+          + "t.PostScanActionsResultB\004\342A\001\003\032\316\010\n\007Profil"
+          + "e\022I\n\006fields\030\002 \003(\01329.google.cloud.dataple"
+          + "x.v1.DataProfileResult.Profile.Field\032\367\007\n"
+          + "\005Field\022\014\n\004name\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\014\n\004mo"
+          + "de\030\003 \001(\t\022V\n\007profile\030\004 \001(\0132E.google.cloud"
+          + ".dataplex.v1.DataProfileResult.Profile.F"
+          + "ield.ProfileInfo\032\353\006\n\013ProfileInfo\022\022\n\nnull"
+          + "_ratio\030\002 \001(\001\022\026\n\016distinct_ratio\030\003 \001(\001\022e\n\014"
+          + "top_n_values\030\004 \003(\0132O.google.cloud.datapl"
+          + "ex.v1.DataProfileResult.Profile.Field.Pr"
+          + "ofileInfo.TopNValue\022o\n\016string_profile\030e "
+          + "\001(\0132U.google.cloud.dataplex.v1.DataProfi"
+          + "leResult.Profile.Field.ProfileInfo.Strin"
+          + "gFieldInfoH\000\022q\n\017integer_profile\030f \001(\0132V."
+          + "google.cloud.dataplex.v1.DataProfileResu"
+          + "lt.Profile.Field.ProfileInfo.IntegerFiel"
+          + "dInfoH\000\022o\n\016double_profile\030g \001(\0132U.google"
+          + ".cloud.dataplex.v1.DataProfileResult.Pro"
+          + "file.Field.ProfileInfo.DoubleFieldInfoH\000"
+          + "\032Q\n\017StringFieldInfo\022\022\n\nmin_length\030\001 \001(\003\022"
+          + "\022\n\nmax_length\030\002 \001(\003\022\026\n\016average_length\030\003 "
+          + "\001(\001\032l\n\020IntegerFieldInfo\022\017\n\007average\030\001 \001(\001"
+          + "\022\032\n\022standard_deviation\030\003 \001(\001\022\013\n\003min\030\004 \001("
+          + "\003\022\021\n\tquartiles\030\006 \003(\003\022\013\n\003max\030\005 \001(\003\032k\n\017Dou"
+          + "bleFieldInfo\022\017\n\007average\030\001 \001(\001\022\032\n\022standar"
+          + "d_deviation\030\003 \001(\001\022\013\n\003min\030\004 \001(\001\022\021\n\tquarti"
+          + "les\030\006 \003(\001\022\013\n\003max\030\005 \001(\001\0328\n\tTopNValue\022\r\n\005v"
+          + "alue\030\001 \001(\t\022\r\n\005count\030\002 \001(\003\022\r\n\005ratio\030\003 \001(\001"
+          + "B\014\n\nfield_info\032\200\003\n\025PostScanActionsResult"
+          + "\022|\n\026bigquery_export_result\030\001 \001(\0132V.googl"
+          + "e.cloud.dataplex.v1.DataProfileResult.Po"
+          + "stScanActionsResult.BigQueryExportResult"
+          + "B\004\342A\001\003\032\350\001\n\024BigQueryExportResult\022q\n\005state"
+          + "\030\001 \001(\0162\\.google.cloud.dataplex.v1.DataPr"
+          + "ofileResult.PostScanActionsResult.BigQue"
+          + "ryExportResult.StateB\004\342A\001\003\022\025\n\007message\030\002 "
+          + "\001(\tB\004\342A\001\003\"F\n\005State\022\025\n\021STATE_UNSPECIFIED\020"
+          + "\000\022\r\n\tSUCCEEDED\020\001\022\n\n\006FAILED\020\002\022\013\n\007SKIPPED\020"
+          + "\003Bl\n\034com.google.cloud.dataplex.v1B\020DataP"
+          + "rofileProtoP\001Z8cloud.google.com/go/datap"
+          + "lex/apiv1/dataplexpb;dataplexpbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -124,14 +170,42 @@ public final class DataProfileProto {
     internal_static_google_cloud_dataplex_v1_DataProfileSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_DataProfileSpec_descriptor,
-            new java.lang.String[] {});
+            new java.lang.String[] {
+              "SamplingPercent", "RowFilter", "PostScanActions", "IncludeFields", "ExcludeFields",
+            });
+    internal_static_google_cloud_dataplex_v1_DataProfileSpec_PostScanActions_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataProfileSpec_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_dataplex_v1_DataProfileSpec_PostScanActions_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataProfileSpec_PostScanActions_descriptor,
+            new java.lang.String[] {
+              "BigqueryExport",
+            });
+    internal_static_google_cloud_dataplex_v1_DataProfileSpec_PostScanActions_BigQueryExport_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataProfileSpec_PostScanActions_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dataplex_v1_DataProfileSpec_PostScanActions_BigQueryExport_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataProfileSpec_PostScanActions_BigQueryExport_descriptor,
+            new java.lang.String[] {
+              "ResultsTable",
+            });
+    internal_static_google_cloud_dataplex_v1_DataProfileSpec_SelectedFields_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataProfileSpec_descriptor.getNestedTypes().get(1);
+    internal_static_google_cloud_dataplex_v1_DataProfileSpec_SelectedFields_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataProfileSpec_SelectedFields_descriptor,
+            new java.lang.String[] {
+              "FieldNames",
+            });
     internal_static_google_cloud_dataplex_v1_DataProfileResult_descriptor =
         getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_dataplex_v1_DataProfileResult_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_DataProfileResult_descriptor,
             new java.lang.String[] {
-              "RowCount", "Profile", "ScannedData",
+              "RowCount", "Profile", "ScannedData", "PostScanActionsResult",
             });
     internal_static_google_cloud_dataplex_v1_DataProfileResult_Profile_descriptor =
         internal_static_google_cloud_dataplex_v1_DataProfileResult_descriptor
@@ -207,8 +281,33 @@ public final class DataProfileProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_dataplex_v1_DataProfileResult_Profile_Field_ProfileInfo_TopNValue_descriptor,
             new java.lang.String[] {
-              "Value", "Count",
+              "Value", "Count", "Ratio",
             });
+    internal_static_google_cloud_dataplex_v1_DataProfileResult_PostScanActionsResult_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataProfileResult_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_dataplex_v1_DataProfileResult_PostScanActionsResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataProfileResult_PostScanActionsResult_descriptor,
+            new java.lang.String[] {
+              "BigqueryExportResult",
+            });
+    internal_static_google_cloud_dataplex_v1_DataProfileResult_PostScanActionsResult_BigQueryExportResult_descriptor =
+        internal_static_google_cloud_dataplex_v1_DataProfileResult_PostScanActionsResult_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_dataplex_v1_DataProfileResult_PostScanActionsResult_BigQueryExportResult_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_dataplex_v1_DataProfileResult_PostScanActionsResult_BigQueryExportResult_descriptor,
+            new java.lang.String[] {
+              "State", "Message",
+            });
+    com.google.protobuf.ExtensionRegistry registry =
+        com.google.protobuf.ExtensionRegistry.newInstance();
+    registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
+        descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.cloud.dataplex.v1.ProcessingProto.getDescriptor();
   }

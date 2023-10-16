@@ -36,6 +36,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListGoogleAdsLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListMeasurementProtocolSecretsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListPropertiesPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListUserLinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
@@ -2682,6 +2683,435 @@ public class AnalyticsAdminServiceClientTest {
   }
 
   @Test
+  public void getSKAdNetworkConversionValueSchemaTest() throws Exception {
+    SKAdNetworkConversionValueSchema expectedResponse =
+        SKAdNetworkConversionValueSchema.newBuilder()
+            .setName(
+                SKAdNetworkConversionValueSchemaName.of(
+                        "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]")
+                    .toString())
+            .setPostbackWindowOne(PostbackWindow.newBuilder().build())
+            .setPostbackWindowTwo(PostbackWindow.newBuilder().build())
+            .setPostbackWindowThree(PostbackWindow.newBuilder().build())
+            .setApplyConversionValues(true)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    SKAdNetworkConversionValueSchemaName name =
+        SKAdNetworkConversionValueSchemaName.of(
+            "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]");
+
+    SKAdNetworkConversionValueSchema actualResponse =
+        client.getSKAdNetworkConversionValueSchema(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSKAdNetworkConversionValueSchemaRequest actualRequest =
+        ((GetSKAdNetworkConversionValueSchemaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSKAdNetworkConversionValueSchemaExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      SKAdNetworkConversionValueSchemaName name =
+          SKAdNetworkConversionValueSchemaName.of(
+              "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]");
+      client.getSKAdNetworkConversionValueSchema(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSKAdNetworkConversionValueSchemaTest2() throws Exception {
+    SKAdNetworkConversionValueSchema expectedResponse =
+        SKAdNetworkConversionValueSchema.newBuilder()
+            .setName(
+                SKAdNetworkConversionValueSchemaName.of(
+                        "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]")
+                    .toString())
+            .setPostbackWindowOne(PostbackWindow.newBuilder().build())
+            .setPostbackWindowTwo(PostbackWindow.newBuilder().build())
+            .setPostbackWindowThree(PostbackWindow.newBuilder().build())
+            .setApplyConversionValues(true)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    SKAdNetworkConversionValueSchema actualResponse =
+        client.getSKAdNetworkConversionValueSchema(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetSKAdNetworkConversionValueSchemaRequest actualRequest =
+        ((GetSKAdNetworkConversionValueSchemaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getSKAdNetworkConversionValueSchemaExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getSKAdNetworkConversionValueSchema(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSKAdNetworkConversionValueSchemaTest() throws Exception {
+    SKAdNetworkConversionValueSchema expectedResponse =
+        SKAdNetworkConversionValueSchema.newBuilder()
+            .setName(
+                SKAdNetworkConversionValueSchemaName.of(
+                        "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]")
+                    .toString())
+            .setPostbackWindowOne(PostbackWindow.newBuilder().build())
+            .setPostbackWindowTwo(PostbackWindow.newBuilder().build())
+            .setPostbackWindowThree(PostbackWindow.newBuilder().build())
+            .setApplyConversionValues(true)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    DataStreamName parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
+    SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema =
+        SKAdNetworkConversionValueSchema.newBuilder().build();
+
+    SKAdNetworkConversionValueSchema actualResponse =
+        client.createSKAdNetworkConversionValueSchema(parent, skadnetworkConversionValueSchema);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSKAdNetworkConversionValueSchemaRequest actualRequest =
+        ((CreateSKAdNetworkConversionValueSchemaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(
+        skadnetworkConversionValueSchema, actualRequest.getSkadnetworkConversionValueSchema());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSKAdNetworkConversionValueSchemaExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      DataStreamName parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
+      SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema =
+          SKAdNetworkConversionValueSchema.newBuilder().build();
+      client.createSKAdNetworkConversionValueSchema(parent, skadnetworkConversionValueSchema);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createSKAdNetworkConversionValueSchemaTest2() throws Exception {
+    SKAdNetworkConversionValueSchema expectedResponse =
+        SKAdNetworkConversionValueSchema.newBuilder()
+            .setName(
+                SKAdNetworkConversionValueSchemaName.of(
+                        "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]")
+                    .toString())
+            .setPostbackWindowOne(PostbackWindow.newBuilder().build())
+            .setPostbackWindowTwo(PostbackWindow.newBuilder().build())
+            .setPostbackWindowThree(PostbackWindow.newBuilder().build())
+            .setApplyConversionValues(true)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema =
+        SKAdNetworkConversionValueSchema.newBuilder().build();
+
+    SKAdNetworkConversionValueSchema actualResponse =
+        client.createSKAdNetworkConversionValueSchema(parent, skadnetworkConversionValueSchema);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateSKAdNetworkConversionValueSchemaRequest actualRequest =
+        ((CreateSKAdNetworkConversionValueSchemaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(
+        skadnetworkConversionValueSchema, actualRequest.getSkadnetworkConversionValueSchema());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createSKAdNetworkConversionValueSchemaExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema =
+          SKAdNetworkConversionValueSchema.newBuilder().build();
+      client.createSKAdNetworkConversionValueSchema(parent, skadnetworkConversionValueSchema);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSKAdNetworkConversionValueSchemaTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    SKAdNetworkConversionValueSchemaName name =
+        SKAdNetworkConversionValueSchemaName.of(
+            "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]");
+
+    client.deleteSKAdNetworkConversionValueSchema(name);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSKAdNetworkConversionValueSchemaRequest actualRequest =
+        ((DeleteSKAdNetworkConversionValueSchemaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSKAdNetworkConversionValueSchemaExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      SKAdNetworkConversionValueSchemaName name =
+          SKAdNetworkConversionValueSchemaName.of(
+              "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]");
+      client.deleteSKAdNetworkConversionValueSchema(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteSKAdNetworkConversionValueSchemaTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    client.deleteSKAdNetworkConversionValueSchema(name);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteSKAdNetworkConversionValueSchemaRequest actualRequest =
+        ((DeleteSKAdNetworkConversionValueSchemaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteSKAdNetworkConversionValueSchemaExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteSKAdNetworkConversionValueSchema(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSKAdNetworkConversionValueSchemaTest() throws Exception {
+    SKAdNetworkConversionValueSchema expectedResponse =
+        SKAdNetworkConversionValueSchema.newBuilder()
+            .setName(
+                SKAdNetworkConversionValueSchemaName.of(
+                        "[PROPERTY]", "[DATA_STREAM]", "[SKADNETWORK_CONVERSION_VALUE_SCHEMA]")
+                    .toString())
+            .setPostbackWindowOne(PostbackWindow.newBuilder().build())
+            .setPostbackWindowTwo(PostbackWindow.newBuilder().build())
+            .setPostbackWindowThree(PostbackWindow.newBuilder().build())
+            .setApplyConversionValues(true)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema =
+        SKAdNetworkConversionValueSchema.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    SKAdNetworkConversionValueSchema actualResponse =
+        client.updateSKAdNetworkConversionValueSchema(skadnetworkConversionValueSchema, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateSKAdNetworkConversionValueSchemaRequest actualRequest =
+        ((UpdateSKAdNetworkConversionValueSchemaRequest) actualRequests.get(0));
+
+    Assert.assertEquals(
+        skadnetworkConversionValueSchema, actualRequest.getSkadnetworkConversionValueSchema());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateSKAdNetworkConversionValueSchemaExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      SKAdNetworkConversionValueSchema skadnetworkConversionValueSchema =
+          SKAdNetworkConversionValueSchema.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSKAdNetworkConversionValueSchema(skadnetworkConversionValueSchema, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSKAdNetworkConversionValueSchemasTest() throws Exception {
+    SKAdNetworkConversionValueSchema responsesElement =
+        SKAdNetworkConversionValueSchema.newBuilder().build();
+    ListSKAdNetworkConversionValueSchemasResponse expectedResponse =
+        ListSKAdNetworkConversionValueSchemasResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSkadnetworkConversionValueSchemas(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    DataStreamName parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
+
+    ListSKAdNetworkConversionValueSchemasPagedResponse pagedListResponse =
+        client.listSKAdNetworkConversionValueSchemas(parent);
+
+    List<SKAdNetworkConversionValueSchema> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getSkadnetworkConversionValueSchemasList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSKAdNetworkConversionValueSchemasRequest actualRequest =
+        ((ListSKAdNetworkConversionValueSchemasRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSKAdNetworkConversionValueSchemasExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      DataStreamName parent = DataStreamName.of("[PROPERTY]", "[DATA_STREAM]");
+      client.listSKAdNetworkConversionValueSchemas(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSKAdNetworkConversionValueSchemasTest2() throws Exception {
+    SKAdNetworkConversionValueSchema responsesElement =
+        SKAdNetworkConversionValueSchema.newBuilder().build();
+    ListSKAdNetworkConversionValueSchemasResponse expectedResponse =
+        ListSKAdNetworkConversionValueSchemasResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSkadnetworkConversionValueSchemas(Arrays.asList(responsesElement))
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListSKAdNetworkConversionValueSchemasPagedResponse pagedListResponse =
+        client.listSKAdNetworkConversionValueSchemas(parent);
+
+    List<SKAdNetworkConversionValueSchema> resources =
+        Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(
+        expectedResponse.getSkadnetworkConversionValueSchemasList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListSKAdNetworkConversionValueSchemasRequest actualRequest =
+        ((ListSKAdNetworkConversionValueSchemasRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listSKAdNetworkConversionValueSchemasExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listSKAdNetworkConversionValueSchemas(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void searchChangeHistoryEventsTest() throws Exception {
     ChangeHistoryEvent responsesElement = ChangeHistoryEvent.newBuilder().build();
     SearchChangeHistoryEventsResponse expectedResponse =
@@ -2970,6 +3400,52 @@ public class AnalyticsAdminServiceClientTest {
       String parent = "parent-995424086";
       ConversionEvent conversionEvent = ConversionEvent.newBuilder().build();
       client.createConversionEvent(parent, conversionEvent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateConversionEventTest() throws Exception {
+    ConversionEvent expectedResponse =
+        ConversionEvent.newBuilder()
+            .setName(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
+            .setEventName("eventName31228997")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDeletable(true)
+            .setCustom(true)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    ConversionEvent conversionEvent = ConversionEvent.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ConversionEvent actualResponse = client.updateConversionEvent(conversionEvent, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateConversionEventRequest actualRequest =
+        ((UpdateConversionEventRequest) actualRequests.get(0));
+
+    Assert.assertEquals(conversionEvent, actualRequest.getConversionEvent());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateConversionEventExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      ConversionEvent conversionEvent = ConversionEvent.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateConversionEvent(conversionEvent, updateMask);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -7869,7 +8345,7 @@ public class AnalyticsAdminServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDailyExportEnabled(true)
             .setStreamingExportEnabled(true)
-            .setIntradayExportEnabled(true)
+            .setFreshDailyExportEnabled(true)
             .setIncludeAdvertisingId(true)
             .addAllExportStreams(new ArrayList<String>())
             .addAllExcludedEvents(new ArrayList<String>())
@@ -7915,7 +8391,7 @@ public class AnalyticsAdminServiceClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setDailyExportEnabled(true)
             .setStreamingExportEnabled(true)
-            .setIntradayExportEnabled(true)
+            .setFreshDailyExportEnabled(true)
             .setIncludeAdvertisingId(true)
             .addAllExportStreams(new ArrayList<String>())
             .addAllExcludedEvents(new ArrayList<String>())

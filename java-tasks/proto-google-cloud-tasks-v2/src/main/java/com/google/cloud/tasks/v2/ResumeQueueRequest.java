@@ -22,7 +22,8 @@ package com.google.cloud.tasks.v2;
  *
  *
  * <pre>
- * Request message for [ResumeQueue][google.cloud.tasks.v2.CloudTasks.ResumeQueue].
+ * Request message for
+ * [ResumeQueue][google.cloud.tasks.v2.CloudTasks.ResumeQueue].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2.ResumeQueueRequest}
@@ -282,7 +283,8 @@ public final class ResumeQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [ResumeQueue][google.cloud.tasks.v2.CloudTasks.ResumeQueue].
+   * Request message for
+   * [ResumeQueue][google.cloud.tasks.v2.CloudTasks.ResumeQueue].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2.ResumeQueueRequest}

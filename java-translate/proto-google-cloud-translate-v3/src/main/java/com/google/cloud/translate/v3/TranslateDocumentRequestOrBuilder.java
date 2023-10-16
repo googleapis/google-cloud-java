@@ -455,8 +455,9 @@ public interface TranslateDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If true, the page limit of online native pdf translation is 300
-   * and only native pdf pages will be translated.
+   * Optional. is_translate_native_pdf_only field for external customers.
+   * If true, the page limit of online native pdf translation is 300 and only
+   * native pdf pages will be translated.
    * </pre>
    *
    * <code>bool is_translate_native_pdf_only = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -469,10 +470,10 @@ public interface TranslateDocumentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. If true, use the text removal to remove the shadow text on
+   * Optional. If true, use the text removal server to remove the shadow text on
    * background image for native pdf translation.
    * Shadow removal feature can only be enabled when
-   * is_translate_native_pdf_only is false
+   * is_translate_native_pdf_only: false &amp;&amp; pdf_native_only: false
    * </pre>
    *
    * <code>bool enable_shadow_removal_native_pdf = 12 [(.google.api.field_behavior) = OPTIONAL];
@@ -481,4 +482,17 @@ public interface TranslateDocumentRequestOrBuilder
    * @return The enableShadowRemovalNativePdf.
    */
   boolean getEnableShadowRemovalNativePdf();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, enable auto rotation correction in DVS.
+   * </pre>
+   *
+   * <code>bool enable_rotation_correction = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableRotationCorrection.
+   */
+  boolean getEnableRotationCorrection();
 }

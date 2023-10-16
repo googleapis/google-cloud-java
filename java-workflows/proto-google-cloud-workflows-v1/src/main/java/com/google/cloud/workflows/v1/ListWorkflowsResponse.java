@@ -74,7 +74,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The workflows which match the request.
+   * The workflows that match the request.
    * </pre>
    *
    * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
@@ -87,7 +87,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The workflows which match the request.
+   * The workflows that match the request.
    * </pre>
    *
    * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
@@ -101,7 +101,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The workflows which match the request.
+   * The workflows that match the request.
    * </pre>
    *
    * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
@@ -114,7 +114,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The workflows which match the request.
+   * The workflows that match the request.
    * </pre>
    *
    * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
@@ -127,7 +127,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The workflows which match the request.
+   * The workflows that match the request.
    * </pre>
    *
    * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
@@ -728,7 +728,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The workflows which match the request.
+     * The workflows that match the request.
      * </pre>
      *
      * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
@@ -744,7 +744,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The workflows which match the request.
+     * The workflows that match the request.
      * </pre>
      *
      * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
@@ -760,7 +760,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The workflows which match the request.
+     * The workflows that match the request.
      * </pre>
      *
      * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
@@ -776,7 +776,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The workflows which match the request.
+     * The workflows that match the request.
      * </pre>
      *
      * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
@@ -798,7 +798,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The workflows which match the request.
+     * The workflows that match the request.
      * </pre>
      *
      * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
@@ -818,7 +818,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The workflows which match the request.
+     * The workflows that match the request.
      * </pre>
      *
      * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
@@ -840,7 +840,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The workflows which match the request.
+     * The workflows that match the request.
      * </pre>
      *
      * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
@@ -862,7 +862,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The workflows which match the request.
+     * The workflows that match the request.
      * </pre>
      *
      * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
@@ -881,7 +881,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The workflows which match the request.
+     * The workflows that match the request.
      * </pre>
      *
      * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
@@ -901,7 +901,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The workflows which match the request.
+     * The workflows that match the request.
      * </pre>
      *
      * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
@@ -921,7 +921,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The workflows which match the request.
+     * The workflows that match the request.
      * </pre>
      *
      * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
@@ -940,7 +940,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The workflows which match the request.
+     * The workflows that match the request.
      * </pre>
      *
      * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
@@ -959,7 +959,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The workflows which match the request.
+     * The workflows that match the request.
      * </pre>
      *
      * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
@@ -971,7 +971,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The workflows which match the request.
+     * The workflows that match the request.
      * </pre>
      *
      * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
@@ -987,7 +987,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The workflows which match the request.
+     * The workflows that match the request.
      * </pre>
      *
      * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
@@ -1004,7 +1004,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The workflows which match the request.
+     * The workflows that match the request.
      * </pre>
      *
      * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
@@ -1017,7 +1017,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The workflows which match the request.
+     * The workflows that match the request.
      * </pre>
      *
      * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>
@@ -1030,7 +1030,7 @@ public final class ListWorkflowsResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The workflows which match the request.
+     * The workflows that match the request.
      * </pre>
      *
      * <code>repeated .google.cloud.workflows.v1.Workflow workflows = 1;</code>

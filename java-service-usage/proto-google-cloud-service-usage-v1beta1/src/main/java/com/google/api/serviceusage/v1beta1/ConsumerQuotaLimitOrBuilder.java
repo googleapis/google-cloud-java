@@ -213,4 +213,59 @@ public interface ConsumerQuotaLimitOrBuilder
    * <code>repeated .google.api.serviceusage.v1beta1.QuotaBucket quota_buckets = 9;</code>
    */
   com.google.api.serviceusage.v1beta1.QuotaBucketOrBuilder getQuotaBucketsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * List of all supported locations.
+   * This field is present only if the limit has a {region} or {zone} dimension.
+   * </pre>
+   *
+   * <code>repeated string supported_locations = 11;</code>
+   *
+   * @return A list containing the supportedLocations.
+   */
+  java.util.List<java.lang.String> getSupportedLocationsList();
+  /**
+   *
+   *
+   * <pre>
+   * List of all supported locations.
+   * This field is present only if the limit has a {region} or {zone} dimension.
+   * </pre>
+   *
+   * <code>repeated string supported_locations = 11;</code>
+   *
+   * @return The count of supportedLocations.
+   */
+  int getSupportedLocationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * List of all supported locations.
+   * This field is present only if the limit has a {region} or {zone} dimension.
+   * </pre>
+   *
+   * <code>repeated string supported_locations = 11;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The supportedLocations at the given index.
+   */
+  java.lang.String getSupportedLocations(int index);
+  /**
+   *
+   *
+   * <pre>
+   * List of all supported locations.
+   * This field is present only if the limit has a {region} or {zone} dimension.
+   * </pre>
+   *
+   * <code>repeated string supported_locations = 11;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the supportedLocations at the given index.
+   */
+  com.google.protobuf.ByteString getSupportedLocationsBytes(int index);
 }

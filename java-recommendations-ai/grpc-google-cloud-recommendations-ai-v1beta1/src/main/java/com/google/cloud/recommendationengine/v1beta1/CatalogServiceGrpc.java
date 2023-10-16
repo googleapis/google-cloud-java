@@ -32,7 +32,7 @@ public final class CatalogServiceGrpc {
 
   private CatalogServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.recommendationengine.v1beta1.CatalogService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -966,9 +966,9 @@ public final class CatalogServiceGrpc {
   private static final class CatalogServiceMethodDescriptorSupplier
       extends CatalogServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    CatalogServiceMethodDescriptorSupplier(String methodName) {
+    CatalogServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

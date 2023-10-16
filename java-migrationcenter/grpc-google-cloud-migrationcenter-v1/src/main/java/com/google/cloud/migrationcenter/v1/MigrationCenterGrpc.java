@@ -32,7 +32,8 @@ public final class MigrationCenterGrpc {
 
   private MigrationCenterGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.migrationcenter.v1.MigrationCenter";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.migrationcenter.v1.MigrationCenter";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -5805,9 +5806,9 @@ public final class MigrationCenterGrpc {
   private static final class MigrationCenterMethodDescriptorSupplier
       extends MigrationCenterBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    MigrationCenterMethodDescriptorSupplier(String methodName) {
+    MigrationCenterMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

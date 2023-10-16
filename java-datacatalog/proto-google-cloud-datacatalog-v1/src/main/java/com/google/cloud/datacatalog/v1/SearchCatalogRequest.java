@@ -2471,6 +2471,28 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int ADMIN_SEARCH_FIELD_NUMBER = 17;
+  private boolean adminSearch_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, use searchAll permission granted on organizations from
+   * `include_org_ids` and projects from `include_project_ids` instead of the
+   * fine grained per resource permissions when filtering the search results.
+   * The only allowed `order_by` criteria for admin_search mode is `default`.
+   * Using this flags guarantees a full recall of the search results.
+   * </pre>
+   *
+   * <code>bool admin_search = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The adminSearch.
+   */
+  @java.lang.Override
+  public boolean getAdminSearch() {
+    return adminSearch_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2500,6 +2522,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     if (scope_ != null) {
       output.writeMessage(6, getScope());
     }
+    if (adminSearch_ != false) {
+      output.writeBool(17, adminSearch_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2523,6 +2548,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     }
     if (scope_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getScope());
+    }
+    if (adminSearch_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(17, adminSearch_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2548,6 +2576,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     if (getPageSize() != other.getPageSize()) return false;
     if (!getPageToken().equals(other.getPageToken())) return false;
     if (!getOrderBy().equals(other.getOrderBy())) return false;
+    if (getAdminSearch() != other.getAdminSearch()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2571,6 +2600,8 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + getPageToken().hashCode();
     hash = (37 * hash) + ORDER_BY_FIELD_NUMBER;
     hash = (53 * hash) + getOrderBy().hashCode();
+    hash = (37 * hash) + ADMIN_SEARCH_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAdminSearch());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2720,6 +2751,7 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       pageSize_ = 0;
       pageToken_ = "";
       orderBy_ = "";
+      adminSearch_ = false;
       return this;
     }
 
@@ -2770,6 +2802,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.orderBy_ = orderBy_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.adminSearch_ = adminSearch_;
       }
     }
 
@@ -2840,6 +2875,9 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (other.getAdminSearch() != false) {
+        setAdminSearch(other.getAdminSearch());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2896,6 +2934,12 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000001;
                 break;
               } // case 50
+            case 136:
+              {
+                adminSearch_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 136
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3699,6 +3743,71 @@ public final class SearchCatalogRequest extends com.google.protobuf.GeneratedMes
       checkByteStringIsUtf8(value);
       orderBy_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private boolean adminSearch_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, use searchAll permission granted on organizations from
+     * `include_org_ids` and projects from `include_project_ids` instead of the
+     * fine grained per resource permissions when filtering the search results.
+     * The only allowed `order_by` criteria for admin_search mode is `default`.
+     * Using this flags guarantees a full recall of the search results.
+     * </pre>
+     *
+     * <code>bool admin_search = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The adminSearch.
+     */
+    @java.lang.Override
+    public boolean getAdminSearch() {
+      return adminSearch_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, use searchAll permission granted on organizations from
+     * `include_org_ids` and projects from `include_project_ids` instead of the
+     * fine grained per resource permissions when filtering the search results.
+     * The only allowed `order_by` criteria for admin_search mode is `default`.
+     * Using this flags guarantees a full recall of the search results.
+     * </pre>
+     *
+     * <code>bool admin_search = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The adminSearch to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAdminSearch(boolean value) {
+
+      adminSearch_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If set, use searchAll permission granted on organizations from
+     * `include_org_ids` and projects from `include_project_ids` instead of the
+     * fine grained per resource permissions when filtering the search results.
+     * The only allowed `order_by` criteria for admin_search mode is `default`.
+     * Using this flags guarantees a full recall of the search results.
+     * </pre>
+     *
+     * <code>bool admin_search = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearAdminSearch() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      adminSearch_ = false;
       onChanged();
       return this;
     }

@@ -472,7 +472,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    * The UTF-8 encoded natural language text to be processed. Must be sent if
    * `text_config` is set in the first message. Text length must not exceed
    * 256 bytes for virtual agent interactions. The `input_text` field can be
-   * only sent once.
+   * only sent once, and would cancel the speech recognition if any ongoing.
    * </pre>
    *
    * <code>string input_text = 6;</code>
@@ -489,7 +489,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    * The UTF-8 encoded natural language text to be processed. Must be sent if
    * `text_config` is set in the first message. Text length must not exceed
    * 256 bytes for virtual agent interactions. The `input_text` field can be
-   * only sent once.
+   * only sent once, and would cancel the speech recognition if any ongoing.
    * </pre>
    *
    * <code>string input_text = 6;</code>
@@ -519,7 +519,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
    * The UTF-8 encoded natural language text to be processed. Must be sent if
    * `text_config` is set in the first message. Text length must not exceed
    * 256 bytes for virtual agent interactions. The `input_text` field can be
-   * only sent once.
+   * only sent once, and would cancel the speech recognition if any ongoing.
    * </pre>
    *
    * <code>string input_text = 6;</code>
@@ -765,6 +765,42 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     return cxParameters_ == null ? com.google.protobuf.Struct.getDefaultInstance() : cxParameters_;
   }
 
+  public static final int ENABLE_EXTENDED_STREAMING_FIELD_NUMBER = 11;
+  private boolean enableExtendedStreaming_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Enable full bidirectional streaming. You can keep streaming the
+   * audio until timeout, and there's no need to half close the stream to get
+   * the response.
+   *
+   * Restrictions:
+   *
+   * - Timeout: 3 mins.
+   * - Audio Encoding: only supports
+   * [AudioEncoding.AUDIO_ENCODING_LINEAR_16][google.cloud.dialogflow.v2.AudioEncoding.AUDIO_ENCODING_LINEAR_16]
+   * and
+   * [AudioEncoding.AUDIO_ENCODING_MULAW][google.cloud.dialogflow.v2.AudioEncoding.AUDIO_ENCODING_MULAW]
+   * - Lifecycle: conversation should be in `Assist Stage`, go to
+   *   [Conversation.CreateConversation][] for more information.
+   *
+   * InvalidArgument Error will be returned if the one of restriction checks
+   * failed.
+   *
+   * You can find more details in
+   * https://cloud.google.com/agent-assist/docs/extended-streaming
+   * </pre>
+   *
+   * <code>bool enable_extended_streaming = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableExtendedStreaming.
+   */
+  @java.lang.Override
+  public boolean getEnableExtendedStreaming() {
+    return enableExtendedStreaming_;
+  }
+
   public static final int ENABLE_PARTIAL_AUTOMATED_AGENT_REPLY_FIELD_NUMBER = 12;
   private boolean enablePartialAutomatedAgentReply_ = false;
   /**
@@ -846,6 +882,9 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     if (inputCase_ == 9) {
       output.writeMessage(9, (com.google.cloud.dialogflow.v2.TelephonyDtmfEvents) input_);
     }
+    if (enableExtendedStreaming_ != false) {
+      output.writeBool(11, enableExtendedStreaming_);
+    }
     if (enablePartialAutomatedAgentReply_ != false) {
       output.writeBool(12, enablePartialAutomatedAgentReply_);
     }
@@ -899,6 +938,9 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               9, (com.google.cloud.dialogflow.v2.TelephonyDtmfEvents) input_);
     }
+    if (enableExtendedStreaming_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, enableExtendedStreaming_);
+    }
     if (enablePartialAutomatedAgentReply_ != false) {
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(
@@ -943,6 +985,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     if (hasCxParameters()) {
       if (!getCxParameters().equals(other.getCxParameters())) return false;
     }
+    if (getEnableExtendedStreaming() != other.getEnableExtendedStreaming()) return false;
     if (getEnablePartialAutomatedAgentReply() != other.getEnablePartialAutomatedAgentReply())
       return false;
     if (getEnableDebuggingInfo() != other.getEnableDebuggingInfo()) return false;
@@ -1000,6 +1043,8 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       hash = (37 * hash) + CX_PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getCxParameters().hashCode();
     }
+    hash = (37 * hash) + ENABLE_EXTENDED_STREAMING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableExtendedStreaming());
     hash = (37 * hash) + ENABLE_PARTIAL_AUTOMATED_AGENT_REPLY_FIELD_NUMBER;
     hash =
         (53 * hash)
@@ -1242,6 +1287,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
         cxParametersBuilder_.dispose();
         cxParametersBuilder_ = null;
       }
+      enableExtendedStreaming_ = false;
       enablePartialAutomatedAgentReply_ = false;
       enableDebuggingInfo_ = false;
       configCase_ = 0;
@@ -1309,9 +1355,12 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
             cxParametersBuilder_ == null ? cxParameters_ : cxParametersBuilder_.build();
       }
       if (((from_bitField0_ & 0x00000400) != 0)) {
-        result.enablePartialAutomatedAgentReply_ = enablePartialAutomatedAgentReply_;
+        result.enableExtendedStreaming_ = enableExtendedStreaming_;
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.enablePartialAutomatedAgentReply_ = enablePartialAutomatedAgentReply_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.enableDebuggingInfo_ = enableDebuggingInfo_;
       }
     }
@@ -1396,6 +1445,9 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       }
       if (other.hasCxParameters()) {
         mergeCxParameters(other.getCxParameters());
+      }
+      if (other.getEnableExtendedStreaming() != false) {
+        setEnableExtendedStreaming(other.getEnableExtendedStreaming());
       }
       if (other.getEnablePartialAutomatedAgentReply() != false) {
         setEnablePartialAutomatedAgentReply(other.getEnablePartialAutomatedAgentReply());
@@ -1525,10 +1577,16 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
                 inputCase_ = 9;
                 break;
               } // case 74
+            case 88:
+              {
+                enableExtendedStreaming_ = input.readBool();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 88
             case 96:
               {
                 enablePartialAutomatedAgentReply_ = input.readBool();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 96
             case 106:
@@ -1540,7 +1598,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
             case 152:
               {
                 enableDebuggingInfo_ = input.readBool();
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 152
             default:
@@ -2443,7 +2501,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * The UTF-8 encoded natural language text to be processed. Must be sent if
      * `text_config` is set in the first message. Text length must not exceed
      * 256 bytes for virtual agent interactions. The `input_text` field can be
-     * only sent once.
+     * only sent once, and would cancel the speech recognition if any ongoing.
      * </pre>
      *
      * <code>string input_text = 6;</code>
@@ -2461,7 +2519,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * The UTF-8 encoded natural language text to be processed. Must be sent if
      * `text_config` is set in the first message. Text length must not exceed
      * 256 bytes for virtual agent interactions. The `input_text` field can be
-     * only sent once.
+     * only sent once, and would cancel the speech recognition if any ongoing.
      * </pre>
      *
      * <code>string input_text = 6;</code>
@@ -2492,7 +2550,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * The UTF-8 encoded natural language text to be processed. Must be sent if
      * `text_config` is set in the first message. Text length must not exceed
      * 256 bytes for virtual agent interactions. The `input_text` field can be
-     * only sent once.
+     * only sent once, and would cancel the speech recognition if any ongoing.
      * </pre>
      *
      * <code>string input_text = 6;</code>
@@ -2523,7 +2581,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * The UTF-8 encoded natural language text to be processed. Must be sent if
      * `text_config` is set in the first message. Text length must not exceed
      * 256 bytes for virtual agent interactions. The `input_text` field can be
-     * only sent once.
+     * only sent once, and would cancel the speech recognition if any ongoing.
      * </pre>
      *
      * <code>string input_text = 6;</code>
@@ -2547,7 +2605,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * The UTF-8 encoded natural language text to be processed. Must be sent if
      * `text_config` is set in the first message. Text length must not exceed
      * 256 bytes for virtual agent interactions. The `input_text` field can be
-     * only sent once.
+     * only sent once, and would cancel the speech recognition if any ongoing.
      * </pre>
      *
      * <code>string input_text = 6;</code>
@@ -2569,7 +2627,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * The UTF-8 encoded natural language text to be processed. Must be sent if
      * `text_config` is set in the first message. Text length must not exceed
      * 256 bytes for virtual agent interactions. The `input_text` field can be
-     * only sent once.
+     * only sent once, and would cancel the speech recognition if any ongoing.
      * </pre>
      *
      * <code>string input_text = 6;</code>
@@ -3426,6 +3484,113 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
       return cxParametersBuilder_;
     }
 
+    private boolean enableExtendedStreaming_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enable full bidirectional streaming. You can keep streaming the
+     * audio until timeout, and there's no need to half close the stream to get
+     * the response.
+     *
+     * Restrictions:
+     *
+     * - Timeout: 3 mins.
+     * - Audio Encoding: only supports
+     * [AudioEncoding.AUDIO_ENCODING_LINEAR_16][google.cloud.dialogflow.v2.AudioEncoding.AUDIO_ENCODING_LINEAR_16]
+     * and
+     * [AudioEncoding.AUDIO_ENCODING_MULAW][google.cloud.dialogflow.v2.AudioEncoding.AUDIO_ENCODING_MULAW]
+     * - Lifecycle: conversation should be in `Assist Stage`, go to
+     *   [Conversation.CreateConversation][] for more information.
+     *
+     * InvalidArgument Error will be returned if the one of restriction checks
+     * failed.
+     *
+     * You can find more details in
+     * https://cloud.google.com/agent-assist/docs/extended-streaming
+     * </pre>
+     *
+     * <code>bool enable_extended_streaming = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableExtendedStreaming.
+     */
+    @java.lang.Override
+    public boolean getEnableExtendedStreaming() {
+      return enableExtendedStreaming_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enable full bidirectional streaming. You can keep streaming the
+     * audio until timeout, and there's no need to half close the stream to get
+     * the response.
+     *
+     * Restrictions:
+     *
+     * - Timeout: 3 mins.
+     * - Audio Encoding: only supports
+     * [AudioEncoding.AUDIO_ENCODING_LINEAR_16][google.cloud.dialogflow.v2.AudioEncoding.AUDIO_ENCODING_LINEAR_16]
+     * and
+     * [AudioEncoding.AUDIO_ENCODING_MULAW][google.cloud.dialogflow.v2.AudioEncoding.AUDIO_ENCODING_MULAW]
+     * - Lifecycle: conversation should be in `Assist Stage`, go to
+     *   [Conversation.CreateConversation][] for more information.
+     *
+     * InvalidArgument Error will be returned if the one of restriction checks
+     * failed.
+     *
+     * You can find more details in
+     * https://cloud.google.com/agent-assist/docs/extended-streaming
+     * </pre>
+     *
+     * <code>bool enable_extended_streaming = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableExtendedStreaming to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableExtendedStreaming(boolean value) {
+
+      enableExtendedStreaming_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Enable full bidirectional streaming. You can keep streaming the
+     * audio until timeout, and there's no need to half close the stream to get
+     * the response.
+     *
+     * Restrictions:
+     *
+     * - Timeout: 3 mins.
+     * - Audio Encoding: only supports
+     * [AudioEncoding.AUDIO_ENCODING_LINEAR_16][google.cloud.dialogflow.v2.AudioEncoding.AUDIO_ENCODING_LINEAR_16]
+     * and
+     * [AudioEncoding.AUDIO_ENCODING_MULAW][google.cloud.dialogflow.v2.AudioEncoding.AUDIO_ENCODING_MULAW]
+     * - Lifecycle: conversation should be in `Assist Stage`, go to
+     *   [Conversation.CreateConversation][] for more information.
+     *
+     * InvalidArgument Error will be returned if the one of restriction checks
+     * failed.
+     *
+     * You can find more details in
+     * https://cloud.google.com/agent-assist/docs/extended-streaming
+     * </pre>
+     *
+     * <code>bool enable_extended_streaming = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableExtendedStreaming() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      enableExtendedStreaming_ = false;
+      onChanged();
+      return this;
+    }
+
     private boolean enablePartialAutomatedAgentReply_;
     /**
      *
@@ -3463,7 +3628,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public Builder setEnablePartialAutomatedAgentReply(boolean value) {
 
       enablePartialAutomatedAgentReply_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -3482,7 +3647,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearEnablePartialAutomatedAgentReply() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       enablePartialAutomatedAgentReply_ = false;
       onChanged();
       return this;
@@ -3521,7 +3686,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
     public Builder setEnableDebuggingInfo(boolean value) {
 
       enableDebuggingInfo_ = value;
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -3538,7 +3703,7 @@ public final class StreamingAnalyzeContentRequest extends com.google.protobuf.Ge
      * @return This builder for chaining.
      */
     public Builder clearEnableDebuggingInfo() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       enableDebuggingInfo_ = false;
       onChanged();
       return this;

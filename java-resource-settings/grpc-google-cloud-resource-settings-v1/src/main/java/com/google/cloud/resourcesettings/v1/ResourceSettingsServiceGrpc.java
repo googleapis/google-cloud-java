@@ -41,7 +41,7 @@ public final class ResourceSettingsServiceGrpc {
 
   private ResourceSettingsServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.resourcesettings.v1.ResourceSettingsService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -694,9 +694,9 @@ public final class ResourceSettingsServiceGrpc {
   private static final class ResourceSettingsServiceMethodDescriptorSupplier
       extends ResourceSettingsServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ResourceSettingsServiceMethodDescriptorSupplier(String methodName) {
+    ResourceSettingsServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

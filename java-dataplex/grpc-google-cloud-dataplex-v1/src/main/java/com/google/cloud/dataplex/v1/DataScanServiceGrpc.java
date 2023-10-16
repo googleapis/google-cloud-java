@@ -34,7 +34,7 @@ public final class DataScanServiceGrpc {
 
   private DataScanServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.dataplex.v1.DataScanService";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.dataplex.v1.DataScanService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1155,9 +1155,9 @@ public final class DataScanServiceGrpc {
   private static final class DataScanServiceMethodDescriptorSupplier
       extends DataScanServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DataScanServiceMethodDescriptorSupplier(String methodName) {
+    DataScanServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

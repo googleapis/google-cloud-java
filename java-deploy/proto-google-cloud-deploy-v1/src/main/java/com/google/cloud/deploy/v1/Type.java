@@ -72,6 +72,26 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Restriction check failed.
+   * </pre>
+   *
+   * <code>TYPE_RESTRICTION_VIOLATED = 5;</code>
+   */
+  TYPE_RESTRICTION_VIOLATED(5),
+  /**
+   *
+   *
+   * <pre>
+   * Resource deleted.
+   * </pre>
+   *
+   * <code>TYPE_RESOURCE_DELETED = 6;</code>
+   */
+  TYPE_RESOURCE_DELETED(6),
+  /**
+   *
+   *
+   * <pre>
    * Deprecated: This field is never used. Use release_render log type instead.
    * </pre>
    *
@@ -126,6 +146,26 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Restriction check failed.
+   * </pre>
+   *
+   * <code>TYPE_RESTRICTION_VIOLATED = 5;</code>
+   */
+  public static final int TYPE_RESTRICTION_VIOLATED_VALUE = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Resource deleted.
+   * </pre>
+   *
+   * <code>TYPE_RESOURCE_DELETED = 6;</code>
+   */
+  public static final int TYPE_RESOURCE_DELETED_VALUE = 6;
+  /**
+   *
+   *
+   * <pre>
    * Deprecated: This field is never used. Use release_render log type instead.
    * </pre>
    *
@@ -165,6 +205,10 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
         return TYPE_RESOURCE_STATE_CHANGE;
       case 4:
         return TYPE_PROCESS_ABORTED;
+      case 5:
+        return TYPE_RESTRICTION_VIOLATED;
+      case 6:
+        return TYPE_RESOURCE_DELETED;
       case 2:
         return TYPE_RENDER_STATUES_CHANGE;
       default:

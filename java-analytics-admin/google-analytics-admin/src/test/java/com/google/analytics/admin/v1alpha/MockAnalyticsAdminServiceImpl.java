@@ -824,6 +824,116 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
   }
 
   @Override
+  public void getSKAdNetworkConversionValueSchema(
+      GetSKAdNetworkConversionValueSchemaRequest request,
+      StreamObserver<SKAdNetworkConversionValueSchema> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SKAdNetworkConversionValueSchema) {
+      requests.add(request);
+      responseObserver.onNext(((SKAdNetworkConversionValueSchema) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetSKAdNetworkConversionValueSchema, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SKAdNetworkConversionValueSchema.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createSKAdNetworkConversionValueSchema(
+      CreateSKAdNetworkConversionValueSchemaRequest request,
+      StreamObserver<SKAdNetworkConversionValueSchema> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SKAdNetworkConversionValueSchema) {
+      requests.add(request);
+      responseObserver.onNext(((SKAdNetworkConversionValueSchema) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateSKAdNetworkConversionValueSchema, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SKAdNetworkConversionValueSchema.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteSKAdNetworkConversionValueSchema(
+      DeleteSKAdNetworkConversionValueSchemaRequest request,
+      StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteSKAdNetworkConversionValueSchema, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateSKAdNetworkConversionValueSchema(
+      UpdateSKAdNetworkConversionValueSchemaRequest request,
+      StreamObserver<SKAdNetworkConversionValueSchema> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SKAdNetworkConversionValueSchema) {
+      requests.add(request);
+      responseObserver.onNext(((SKAdNetworkConversionValueSchema) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateSKAdNetworkConversionValueSchema, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SKAdNetworkConversionValueSchema.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listSKAdNetworkConversionValueSchemas(
+      ListSKAdNetworkConversionValueSchemasRequest request,
+      StreamObserver<ListSKAdNetworkConversionValueSchemasResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListSKAdNetworkConversionValueSchemasResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListSKAdNetworkConversionValueSchemasResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListSKAdNetworkConversionValueSchemas, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListSKAdNetworkConversionValueSchemasResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void searchChangeHistoryEvents(
       SearchChangeHistoryEventsRequest request,
       StreamObserver<SearchChangeHistoryEventsResponse> responseObserver) {
@@ -904,6 +1014,27 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method CreateConversionEvent, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ConversionEvent.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateConversionEvent(
+      UpdateConversionEventRequest request, StreamObserver<ConversionEvent> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ConversionEvent) {
+      requests.add(request);
+      responseObserver.onNext(((ConversionEvent) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateConversionEvent, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   ConversionEvent.class.getName(),
                   Exception.class.getName())));

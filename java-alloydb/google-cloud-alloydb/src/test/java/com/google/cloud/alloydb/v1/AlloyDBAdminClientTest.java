@@ -201,6 +201,7 @@ public class AlloyDBAdminClientTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -259,6 +260,7 @@ public class AlloyDBAdminClientTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -317,6 +319,7 @@ public class AlloyDBAdminClientTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -389,6 +392,7 @@ public class AlloyDBAdminClientTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -461,6 +465,7 @@ public class AlloyDBAdminClientTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -614,6 +619,7 @@ public class AlloyDBAdminClientTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -680,6 +686,7 @@ public class AlloyDBAdminClientTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -746,6 +753,7 @@ public class AlloyDBAdminClientTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -833,6 +841,7 @@ public class AlloyDBAdminClientTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -906,6 +915,7 @@ public class AlloyDBAdminClientTest {
             .setDeleteTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDatabaseVersion(DatabaseVersion.forNumber(0))
+            .setNetworkConfig(Cluster.NetworkConfig.newBuilder().build())
             .setNetwork("network1843485230")
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
@@ -1078,6 +1088,7 @@ public class AlloyDBAdminClientTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     mockAlloyDBAdmin.addResponse(expectedResponse);
 
@@ -1134,6 +1145,7 @@ public class AlloyDBAdminClientTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     mockAlloyDBAdmin.addResponse(expectedResponse);
 
@@ -1190,6 +1202,7 @@ public class AlloyDBAdminClientTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1260,6 +1273,7 @@ public class AlloyDBAdminClientTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1330,6 +1344,7 @@ public class AlloyDBAdminClientTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1402,6 +1417,7 @@ public class AlloyDBAdminClientTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1533,6 +1549,7 @@ public class AlloyDBAdminClientTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1684,6 +1701,7 @@ public class AlloyDBAdminClientTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1748,6 +1766,7 @@ public class AlloyDBAdminClientTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1812,6 +1831,7 @@ public class AlloyDBAdminClientTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1879,6 +1899,7 @@ public class AlloyDBAdminClientTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1946,6 +1967,7 @@ public class AlloyDBAdminClientTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2010,6 +2032,7 @@ public class AlloyDBAdminClientTest {
             .setReconciling(true)
             .setEtag("etag3123477")
             .putAllAnnotations(new HashMap<String, String>())
+            .setClientConnectionConfig(Instance.ClientConnectionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2160,6 +2183,8 @@ public class AlloyDBAdminClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     mockAlloyDBAdmin.addResponse(expectedResponse);
 
@@ -2214,6 +2239,8 @@ public class AlloyDBAdminClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     mockAlloyDBAdmin.addResponse(expectedResponse);
 
@@ -2268,6 +2295,8 @@ public class AlloyDBAdminClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2336,6 +2365,8 @@ public class AlloyDBAdminClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2404,6 +2435,8 @@ public class AlloyDBAdminClientTest {
             .putAllAnnotations(new HashMap<String, String>())
             .setSizeBytes(-1796325715)
             .setExpiryTime(Timestamp.newBuilder().build())
+            .setExpiryQuantity(Backup.QuantityBasedExpiry.newBuilder().build())
+            .setDatabaseVersion(DatabaseVersion.forNumber(0))
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2618,6 +2651,166 @@ public class AlloyDBAdminClientTest {
     try {
       String parent = "parent-995424086";
       client.listSupportedDatabaseFlags(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void generateClientCertificateTest() throws Exception {
+    GenerateClientCertificateResponse expectedResponse =
+        GenerateClientCertificateResponse.newBuilder()
+            .addAllPemCertificateChain(new ArrayList<String>())
+            .setCaCert("caCert-1369003102")
+            .build();
+    mockAlloyDBAdmin.addResponse(expectedResponse);
+
+    ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+
+    GenerateClientCertificateResponse actualResponse = client.generateClientCertificate(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlloyDBAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GenerateClientCertificateRequest actualRequest =
+        ((GenerateClientCertificateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void generateClientCertificateExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlloyDBAdmin.addException(exception);
+
+    try {
+      ClusterName parent = ClusterName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]");
+      client.generateClientCertificate(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void generateClientCertificateTest2() throws Exception {
+    GenerateClientCertificateResponse expectedResponse =
+        GenerateClientCertificateResponse.newBuilder()
+            .addAllPemCertificateChain(new ArrayList<String>())
+            .setCaCert("caCert-1369003102")
+            .build();
+    mockAlloyDBAdmin.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    GenerateClientCertificateResponse actualResponse = client.generateClientCertificate(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlloyDBAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GenerateClientCertificateRequest actualRequest =
+        ((GenerateClientCertificateRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void generateClientCertificateExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlloyDBAdmin.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.generateClientCertificate(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getConnectionInfoTest() throws Exception {
+    ConnectionInfo expectedResponse =
+        ConnectionInfo.newBuilder()
+            .setName("name3373707")
+            .setIpAddress("ipAddress1634032845")
+            .setInstanceUid("instanceUid-2102004869")
+            .build();
+    mockAlloyDBAdmin.addResponse(expectedResponse);
+
+    InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]");
+
+    ConnectionInfo actualResponse = client.getConnectionInfo(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlloyDBAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetConnectionInfoRequest actualRequest = ((GetConnectionInfoRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getConnectionInfoExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlloyDBAdmin.addException(exception);
+
+    try {
+      InstanceName parent = InstanceName.of("[PROJECT]", "[LOCATION]", "[CLUSTER]", "[INSTANCE]");
+      client.getConnectionInfo(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getConnectionInfoTest2() throws Exception {
+    ConnectionInfo expectedResponse =
+        ConnectionInfo.newBuilder()
+            .setName("name3373707")
+            .setIpAddress("ipAddress1634032845")
+            .setInstanceUid("instanceUid-2102004869")
+            .build();
+    mockAlloyDBAdmin.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ConnectionInfo actualResponse = client.getConnectionInfo(parent);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAlloyDBAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetConnectionInfoRequest actualRequest = ((GetConnectionInfoRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getConnectionInfoExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAlloyDBAdmin.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.getConnectionInfo(parent);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

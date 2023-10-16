@@ -2067,6 +2067,52 @@ public class AnalyticsAdminServiceClientTest {
   }
 
   @Test
+  public void updateConversionEventTest() throws Exception {
+    ConversionEvent expectedResponse =
+        ConversionEvent.newBuilder()
+            .setName(ConversionEventName.of("[PROPERTY]", "[CONVERSION_EVENT]").toString())
+            .setEventName("eventName31228997")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setDeletable(true)
+            .setCustom(true)
+            .build();
+    mockAnalyticsAdminService.addResponse(expectedResponse);
+
+    ConversionEvent conversionEvent = ConversionEvent.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ConversionEvent actualResponse = client.updateConversionEvent(conversionEvent, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockAnalyticsAdminService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateConversionEventRequest actualRequest =
+        ((UpdateConversionEventRequest) actualRequests.get(0));
+
+    Assert.assertEquals(conversionEvent, actualRequest.getConversionEvent());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateConversionEventExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockAnalyticsAdminService.addException(exception);
+
+    try {
+      ConversionEvent conversionEvent = ConversionEvent.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateConversionEvent(conversionEvent, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getConversionEventTest() throws Exception {
     ConversionEvent expectedResponse =
         ConversionEvent.newBuilder()

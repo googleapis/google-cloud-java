@@ -32,7 +32,7 @@ public final class MerchantCenterAccountLinkServiceGrpc {
 
   private MerchantCenterAccountLinkServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.cloud.retail.v2alpha.MerchantCenterAccountLinkService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -639,9 +639,9 @@ public final class MerchantCenterAccountLinkServiceGrpc {
   private static final class MerchantCenterAccountLinkServiceMethodDescriptorSupplier
       extends MerchantCenterAccountLinkServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    MerchantCenterAccountLinkServiceMethodDescriptorSupplier(String methodName) {
+    MerchantCenterAccountLinkServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

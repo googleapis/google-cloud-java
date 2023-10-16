@@ -32,7 +32,8 @@ public final class ServingConfigServiceGrpc {
 
   private ServingConfigServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.retail.v2alpha.ServingConfigService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.retail.v2alpha.ServingConfigService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1122,9 +1123,9 @@ public final class ServingConfigServiceGrpc {
   private static final class ServingConfigServiceMethodDescriptorSupplier
       extends ServingConfigServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ServingConfigServiceMethodDescriptorSupplier(String methodName) {
+    ServingConfigServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

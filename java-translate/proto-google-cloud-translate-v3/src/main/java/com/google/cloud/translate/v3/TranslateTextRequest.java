@@ -419,7 +419,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * For example,
    * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
    *
-   * If not provided, the default Google model (NMT) will be used.
+   * If not provided, the default Google model (NMT) will be used
    * </pre>
    *
    * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -457,7 +457,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
    * For example,
    * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
    *
-   * If not provided, the default Google model (NMT) will be used.
+   * If not provided, the default Google model (NMT) will be used
    * </pre>
    *
    * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1979,7 +1979,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * For example,
      * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
      *
-     * If not provided, the default Google model (NMT) will be used.
+     * If not provided, the default Google model (NMT) will be used
      * </pre>
      *
      * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2016,7 +2016,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * For example,
      * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
      *
-     * If not provided, the default Google model (NMT) will be used.
+     * If not provided, the default Google model (NMT) will be used
      * </pre>
      *
      * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2053,7 +2053,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * For example,
      * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
      *
-     * If not provided, the default Google model (NMT) will be used.
+     * If not provided, the default Google model (NMT) will be used
      * </pre>
      *
      * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2089,7 +2089,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * For example,
      * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
      *
-     * If not provided, the default Google model (NMT) will be used.
+     * If not provided, the default Google model (NMT) will be used
      * </pre>
      *
      * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2121,7 +2121,7 @@ public final class TranslateTextRequest extends com.google.protobuf.GeneratedMes
      * For example,
      * `projects/{project-number-or-id}/locations/global/models/general/nmt`.
      *
-     * If not provided, the default Google model (NMT) will be used.
+     * If not provided, the default Google model (NMT) will be used
      * </pre>
      *
      * <code>string model = 6 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -257,7 +257,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+   * The type of update process. You can specify either PROACTIVE so that the MIG automatically updates VMs to the latest configurations or OPPORTUNISTIC so that you can select the VMs that you want to update.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -270,7 +270,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+   * The type of update process. You can specify either PROACTIVE so that the MIG automatically updates VMs to the latest configurations or OPPORTUNISTIC so that you can select the VMs that you want to update.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -283,7 +283,7 @@ public interface InstanceGroupManagerUpdatePolicyOrBuilder
    *
    *
    * <pre>
-   * The type of update process. You can specify either PROACTIVE so that the instance group manager proactively executes actions in order to bring instances to their target versions or OPPORTUNISTIC so that no action is proactively executed but the update will be performed as part of other actions (for example, resizes or recreateInstances calls).
+   * The type of update process. You can specify either PROACTIVE so that the MIG automatically updates VMs to the latest configurations or OPPORTUNISTIC so that you can select the VMs that you want to update.
    * Check the Type enum for the list of possible values.
    * </pre>
    *

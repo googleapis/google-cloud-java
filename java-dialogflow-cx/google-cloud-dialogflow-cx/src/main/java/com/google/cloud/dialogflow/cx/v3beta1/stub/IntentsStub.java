@@ -21,10 +21,17 @@ import static com.google.cloud.dialogflow.cx.v3beta1.IntentsClient.ListLocations
 
 import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.dialogflow.cx.v3beta1.CreateIntentRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.DeleteIntentRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ExportIntentsMetadata;
+import com.google.cloud.dialogflow.cx.v3beta1.ExportIntentsRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ExportIntentsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.GetIntentRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ImportIntentsMetadata;
+import com.google.cloud.dialogflow.cx.v3beta1.ImportIntentsRequest;
+import com.google.cloud.dialogflow.cx.v3beta1.ImportIntentsResponse;
 import com.google.cloud.dialogflow.cx.v3beta1.Intent;
 import com.google.cloud.dialogflow.cx.v3beta1.ListIntentsRequest;
 import com.google.cloud.dialogflow.cx.v3beta1.ListIntentsResponse;
@@ -33,6 +40,8 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.longrunning.Operation;
+import com.google.longrunning.stub.OperationsStub;
 import com.google.protobuf.Empty;
 import javax.annotation.Generated;
 
@@ -45,6 +54,14 @@ import javax.annotation.Generated;
 @BetaApi
 @Generated("by gapic-generator-java")
 public abstract class IntentsStub implements BackgroundResource {
+
+  public OperationsStub getOperationsStub() {
+    return null;
+  }
+
+  public com.google.api.gax.httpjson.longrunning.stub.OperationsStub getHttpJsonOperationsStub() {
+    return null;
+  }
 
   public UnaryCallable<ListIntentsRequest, ListIntentsPagedResponse> listIntentsPagedCallable() {
     throw new UnsupportedOperationException("Not implemented: listIntentsPagedCallable()");
@@ -68,6 +85,24 @@ public abstract class IntentsStub implements BackgroundResource {
 
   public UnaryCallable<DeleteIntentRequest, Empty> deleteIntentCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteIntentCallable()");
+  }
+
+  public OperationCallable<ImportIntentsRequest, ImportIntentsResponse, ImportIntentsMetadata>
+      importIntentsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: importIntentsOperationCallable()");
+  }
+
+  public UnaryCallable<ImportIntentsRequest, Operation> importIntentsCallable() {
+    throw new UnsupportedOperationException("Not implemented: importIntentsCallable()");
+  }
+
+  public OperationCallable<ExportIntentsRequest, ExportIntentsResponse, ExportIntentsMetadata>
+      exportIntentsOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportIntentsOperationCallable()");
+  }
+
+  public UnaryCallable<ExportIntentsRequest, Operation> exportIntentsCallable() {
+    throw new UnsupportedOperationException("Not implemented: exportIntentsCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

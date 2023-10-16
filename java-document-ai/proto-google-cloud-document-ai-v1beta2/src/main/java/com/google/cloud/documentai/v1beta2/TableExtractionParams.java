@@ -179,8 +179,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Table header hints. The extraction will bias towards producing
-   * these terms as table headers, which may improve accuracy.
+   * Optional. Reserved for future use.
    * </pre>
    *
    * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -194,8 +193,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Table header hints. The extraction will bias towards producing
-   * these terms as table headers, which may improve accuracy.
+   * Optional. Reserved for future use.
    * </pre>
    *
    * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -209,8 +207,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Table header hints. The extraction will bias towards producing
-   * these terms as table headers, which may improve accuracy.
+   * Optional. Reserved for future use.
    * </pre>
    *
    * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -225,8 +222,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Table header hints. The extraction will bias towards producing
-   * these terms as table headers, which may improve accuracy.
+   * Optional. Reserved for future use.
    * </pre>
    *
    * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1249,8 +1245,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Table header hints. The extraction will bias towards producing
-     * these terms as table headers, which may improve accuracy.
+     * Optional. Reserved for future use.
      * </pre>
      *
      * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1265,8 +1260,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Table header hints. The extraction will bias towards producing
-     * these terms as table headers, which may improve accuracy.
+     * Optional. Reserved for future use.
      * </pre>
      *
      * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1280,8 +1274,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Table header hints. The extraction will bias towards producing
-     * these terms as table headers, which may improve accuracy.
+     * Optional. Reserved for future use.
      * </pre>
      *
      * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1296,8 +1289,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Table header hints. The extraction will bias towards producing
-     * these terms as table headers, which may improve accuracy.
+     * Optional. Reserved for future use.
      * </pre>
      *
      * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1312,8 +1304,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Table header hints. The extraction will bias towards producing
-     * these terms as table headers, which may improve accuracy.
+     * Optional. Reserved for future use.
      * </pre>
      *
      * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1336,8 +1327,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Table header hints. The extraction will bias towards producing
-     * these terms as table headers, which may improve accuracy.
+     * Optional. Reserved for future use.
      * </pre>
      *
      * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1359,8 +1349,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Table header hints. The extraction will bias towards producing
-     * these terms as table headers, which may improve accuracy.
+     * Optional. Reserved for future use.
      * </pre>
      *
      * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1379,8 +1368,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Table header hints. The extraction will bias towards producing
-     * these terms as table headers, which may improve accuracy.
+     * Optional. Reserved for future use.
      * </pre>
      *
      * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1398,8 +1386,7 @@ public final class TableExtractionParams extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Table header hints. The extraction will bias towards producing
-     * these terms as table headers, which may improve accuracy.
+     * Optional. Reserved for future use.
      * </pre>
      *
      * <code>repeated string header_hints = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

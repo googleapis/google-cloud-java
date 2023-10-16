@@ -20,6 +20,7 @@ import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.DescribeDa
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.FetchStaticIpsPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListConnectionProfilesPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListConversionWorkspacesPagedResponse;
+import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListMappingRulesPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListMigrationJobsPagedResponse;
 import static com.google.cloud.clouddms.v1.DataMigrationServiceClient.ListPrivateConnectionsPagedResponse;
 
@@ -33,10 +34,12 @@ import com.google.cloud.clouddms.v1.ConversionWorkspace;
 import com.google.cloud.clouddms.v1.ConvertConversionWorkspaceRequest;
 import com.google.cloud.clouddms.v1.CreateConnectionProfileRequest;
 import com.google.cloud.clouddms.v1.CreateConversionWorkspaceRequest;
+import com.google.cloud.clouddms.v1.CreateMappingRuleRequest;
 import com.google.cloud.clouddms.v1.CreateMigrationJobRequest;
 import com.google.cloud.clouddms.v1.CreatePrivateConnectionRequest;
 import com.google.cloud.clouddms.v1.DeleteConnectionProfileRequest;
 import com.google.cloud.clouddms.v1.DeleteConversionWorkspaceRequest;
+import com.google.cloud.clouddms.v1.DeleteMappingRuleRequest;
 import com.google.cloud.clouddms.v1.DeleteMigrationJobRequest;
 import com.google.cloud.clouddms.v1.DeletePrivateConnectionRequest;
 import com.google.cloud.clouddms.v1.DescribeConversionWorkspaceRevisionsRequest;
@@ -46,8 +49,10 @@ import com.google.cloud.clouddms.v1.DescribeDatabaseEntitiesResponse;
 import com.google.cloud.clouddms.v1.FetchStaticIpsRequest;
 import com.google.cloud.clouddms.v1.FetchStaticIpsResponse;
 import com.google.cloud.clouddms.v1.GenerateSshScriptRequest;
+import com.google.cloud.clouddms.v1.GenerateTcpProxyScriptRequest;
 import com.google.cloud.clouddms.v1.GetConnectionProfileRequest;
 import com.google.cloud.clouddms.v1.GetConversionWorkspaceRequest;
+import com.google.cloud.clouddms.v1.GetMappingRuleRequest;
 import com.google.cloud.clouddms.v1.GetMigrationJobRequest;
 import com.google.cloud.clouddms.v1.GetPrivateConnectionRequest;
 import com.google.cloud.clouddms.v1.ImportMappingRulesRequest;
@@ -55,10 +60,13 @@ import com.google.cloud.clouddms.v1.ListConnectionProfilesRequest;
 import com.google.cloud.clouddms.v1.ListConnectionProfilesResponse;
 import com.google.cloud.clouddms.v1.ListConversionWorkspacesRequest;
 import com.google.cloud.clouddms.v1.ListConversionWorkspacesResponse;
+import com.google.cloud.clouddms.v1.ListMappingRulesRequest;
+import com.google.cloud.clouddms.v1.ListMappingRulesResponse;
 import com.google.cloud.clouddms.v1.ListMigrationJobsRequest;
 import com.google.cloud.clouddms.v1.ListMigrationJobsResponse;
 import com.google.cloud.clouddms.v1.ListPrivateConnectionsRequest;
 import com.google.cloud.clouddms.v1.ListPrivateConnectionsResponse;
+import com.google.cloud.clouddms.v1.MappingRule;
 import com.google.cloud.clouddms.v1.MigrationJob;
 import com.google.cloud.clouddms.v1.OperationMetadata;
 import com.google.cloud.clouddms.v1.PrivateConnection;
@@ -72,6 +80,7 @@ import com.google.cloud.clouddms.v1.SeedConversionWorkspaceRequest;
 import com.google.cloud.clouddms.v1.SshScript;
 import com.google.cloud.clouddms.v1.StartMigrationJobRequest;
 import com.google.cloud.clouddms.v1.StopMigrationJobRequest;
+import com.google.cloud.clouddms.v1.TcpProxyScript;
 import com.google.cloud.clouddms.v1.UpdateConnectionProfileRequest;
 import com.google.cloud.clouddms.v1.UpdateConversionWorkspaceRequest;
 import com.google.cloud.clouddms.v1.UpdateMigrationJobRequest;
@@ -199,6 +208,11 @@ public abstract class DataMigrationServiceStub implements BackgroundResource {
 
   public UnaryCallable<GenerateSshScriptRequest, SshScript> generateSshScriptCallable() {
     throw new UnsupportedOperationException("Not implemented: generateSshScriptCallable()");
+  }
+
+  public UnaryCallable<GenerateTcpProxyScriptRequest, TcpProxyScript>
+      generateTcpProxyScriptCallable() {
+    throw new UnsupportedOperationException("Not implemented: generateTcpProxyScriptCallable()");
   }
 
   public UnaryCallable<ListConnectionProfilesRequest, ListConnectionProfilesPagedResponse>
@@ -335,6 +349,28 @@ public abstract class DataMigrationServiceStub implements BackgroundResource {
   public UnaryCallable<DeleteConversionWorkspaceRequest, Operation>
       deleteConversionWorkspaceCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteConversionWorkspaceCallable()");
+  }
+
+  public UnaryCallable<CreateMappingRuleRequest, MappingRule> createMappingRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: createMappingRuleCallable()");
+  }
+
+  public UnaryCallable<DeleteMappingRuleRequest, Empty> deleteMappingRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteMappingRuleCallable()");
+  }
+
+  public UnaryCallable<ListMappingRulesRequest, ListMappingRulesPagedResponse>
+      listMappingRulesPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMappingRulesPagedCallable()");
+  }
+
+  public UnaryCallable<ListMappingRulesRequest, ListMappingRulesResponse>
+      listMappingRulesCallable() {
+    throw new UnsupportedOperationException("Not implemented: listMappingRulesCallable()");
+  }
+
+  public UnaryCallable<GetMappingRuleRequest, MappingRule> getMappingRuleCallable() {
+    throw new UnsupportedOperationException("Not implemented: getMappingRuleCallable()");
   }
 
   public OperationCallable<SeedConversionWorkspaceRequest, ConversionWorkspace, OperationMetadata>

@@ -34,7 +34,7 @@ public final class BatchServiceGrpc {
 
   private BatchServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.batch.v1alpha.BatchService";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.batch.v1alpha.BatchService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -888,9 +888,9 @@ public final class BatchServiceGrpc {
   private static final class BatchServiceMethodDescriptorSupplier
       extends BatchServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    BatchServiceMethodDescriptorSupplier(String methodName) {
+    BatchServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

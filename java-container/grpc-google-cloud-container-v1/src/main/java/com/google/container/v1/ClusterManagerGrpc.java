@@ -32,7 +32,7 @@ public final class ClusterManagerGrpc {
 
   private ClusterManagerGrpc() {}
 
-  public static final String SERVICE_NAME = "google.container.v1.ClusterManager";
+  public static final java.lang.String SERVICE_NAME = "google.container.v1.ClusterManager";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -4167,9 +4167,9 @@ public final class ClusterManagerGrpc {
   private static final class ClusterManagerMethodDescriptorSupplier
       extends ClusterManagerBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ClusterManagerMethodDescriptorSupplier(String methodName) {
+    ClusterManagerMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

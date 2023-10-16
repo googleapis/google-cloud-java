@@ -245,6 +245,7 @@ public class ContactCenterInsightsClientTest {
             .setConversation(Conversation.newBuilder().build())
             .setConversationId("conversationId-1676095234")
             .setRedactionConfig(RedactionConfig.newBuilder().build())
+            .setSpeechConfig(SpeechConfig.newBuilder().build())
             .build();
 
     Conversation actualResponse = client.uploadConversationAsync(request).get();
@@ -258,6 +259,7 @@ public class ContactCenterInsightsClientTest {
     Assert.assertEquals(request.getConversation(), actualRequest.getConversation());
     Assert.assertEquals(request.getConversationId(), actualRequest.getConversationId());
     Assert.assertEquals(request.getRedactionConfig(), actualRequest.getRedactionConfig());
+    Assert.assertEquals(request.getSpeechConfig(), actualRequest.getSpeechConfig());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -276,6 +278,7 @@ public class ContactCenterInsightsClientTest {
               .setConversation(Conversation.newBuilder().build())
               .setConversationId("conversationId-1676095234")
               .setRedactionConfig(RedactionConfig.newBuilder().build())
+              .setSpeechConfig(SpeechConfig.newBuilder().build())
               .build();
       client.uploadConversationAsync(request).get();
       Assert.fail("No exception raised");
@@ -2664,6 +2667,7 @@ public class ContactCenterInsightsClientTest {
             .putAllPubsubNotificationSettings(new HashMap<String, String>())
             .setAnalysisConfig(Settings.AnalysisConfig.newBuilder().build())
             .setRedactionConfig(RedactionConfig.newBuilder().build())
+            .setSpeechConfig(SpeechConfig.newBuilder().build())
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -2709,6 +2713,7 @@ public class ContactCenterInsightsClientTest {
             .putAllPubsubNotificationSettings(new HashMap<String, String>())
             .setAnalysisConfig(Settings.AnalysisConfig.newBuilder().build())
             .setRedactionConfig(RedactionConfig.newBuilder().build())
+            .setSpeechConfig(SpeechConfig.newBuilder().build())
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 
@@ -2754,6 +2759,7 @@ public class ContactCenterInsightsClientTest {
             .putAllPubsubNotificationSettings(new HashMap<String, String>())
             .setAnalysisConfig(Settings.AnalysisConfig.newBuilder().build())
             .setRedactionConfig(RedactionConfig.newBuilder().build())
+            .setSpeechConfig(SpeechConfig.newBuilder().build())
             .build();
     mockContactCenterInsights.addResponse(expectedResponse);
 

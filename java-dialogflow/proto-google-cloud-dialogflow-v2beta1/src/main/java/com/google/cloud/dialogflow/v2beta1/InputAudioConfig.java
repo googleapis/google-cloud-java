@@ -225,15 +225,15 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    *
-   * This field is deprecated. Please use [speech_contexts]() instead. If you
-   * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-   * treat the [phrase_hints]() as a single additional [SpeechContext]().
+   * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+   * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+   * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
    * </pre>
    *
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=172
+   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
    * @return A list containing the phraseHints.
    */
   @java.lang.Deprecated
@@ -251,15 +251,15 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    *
-   * This field is deprecated. Please use [speech_contexts]() instead. If you
-   * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-   * treat the [phrase_hints]() as a single additional [SpeechContext]().
+   * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+   * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+   * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
    * </pre>
    *
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=172
+   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
    * @return The count of phraseHints.
    */
   @java.lang.Deprecated
@@ -277,15 +277,15 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    *
-   * This field is deprecated. Please use [speech_contexts]() instead. If you
-   * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-   * treat the [phrase_hints]() as a single additional [SpeechContext]().
+   * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+   * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+   * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
    * </pre>
    *
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=172
+   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
    * @param index The index of the element to return.
    * @return The phraseHints at the given index.
    */
@@ -304,15 +304,15 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
    * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
    * for more details.
    *
-   * This field is deprecated. Please use [speech_contexts]() instead. If you
-   * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-   * treat the [phrase_hints]() as a single additional [SpeechContext]().
+   * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+   * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+   * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
    * </pre>
    *
    * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
    *
    * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=172
+   *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
    * @param index The index of the value to return.
    * @return The bytes of the phraseHints at the given index.
    */
@@ -1707,15 +1707,15 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      *
-     * This field is deprecated. Please use [speech_contexts]() instead. If you
-     * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-     * treat the [phrase_hints]() as a single additional [SpeechContext]().
+     * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+     * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+     * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
      * </pre>
      *
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=172
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
      * @return A list containing the phraseHints.
      */
     @java.lang.Deprecated
@@ -1734,15 +1734,15 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      *
-     * This field is deprecated. Please use [speech_contexts]() instead. If you
-     * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-     * treat the [phrase_hints]() as a single additional [SpeechContext]().
+     * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+     * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+     * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
      * </pre>
      *
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=172
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
      * @return The count of phraseHints.
      */
     @java.lang.Deprecated
@@ -1760,15 +1760,15 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      *
-     * This field is deprecated. Please use [speech_contexts]() instead. If you
-     * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-     * treat the [phrase_hints]() as a single additional [SpeechContext]().
+     * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+     * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+     * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
      * </pre>
      *
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=172
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
      * @param index The index of the element to return.
      * @return The phraseHints at the given index.
      */
@@ -1787,15 +1787,15 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      *
-     * This field is deprecated. Please use [speech_contexts]() instead. If you
-     * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-     * treat the [phrase_hints]() as a single additional [SpeechContext]().
+     * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+     * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+     * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
      * </pre>
      *
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=172
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
      * @param index The index of the value to return.
      * @return The bytes of the phraseHints at the given index.
      */
@@ -1814,15 +1814,15 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      *
-     * This field is deprecated. Please use [speech_contexts]() instead. If you
-     * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-     * treat the [phrase_hints]() as a single additional [SpeechContext]().
+     * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+     * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+     * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
      * </pre>
      *
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=172
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
      * @param index The index to set the value at.
      * @param value The phraseHints to set.
      * @return This builder for chaining.
@@ -1849,15 +1849,15 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      *
-     * This field is deprecated. Please use [speech_contexts]() instead. If you
-     * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-     * treat the [phrase_hints]() as a single additional [SpeechContext]().
+     * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+     * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+     * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
      * </pre>
      *
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=172
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
      * @param value The phraseHints to add.
      * @return This builder for chaining.
      */
@@ -1883,15 +1883,15 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      *
-     * This field is deprecated. Please use [speech_contexts]() instead. If you
-     * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-     * treat the [phrase_hints]() as a single additional [SpeechContext]().
+     * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+     * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+     * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
      * </pre>
      *
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=172
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
      * @param values The phraseHints to add.
      * @return This builder for chaining.
      */
@@ -1914,15 +1914,15 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      *
-     * This field is deprecated. Please use [speech_contexts]() instead. If you
-     * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-     * treat the [phrase_hints]() as a single additional [SpeechContext]().
+     * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+     * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+     * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
      * </pre>
      *
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=172
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1944,15 +1944,15 @@ public final class InputAudioConfig extends com.google.protobuf.GeneratedMessage
      * documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints)
      * for more details.
      *
-     * This field is deprecated. Please use [speech_contexts]() instead. If you
-     * specify both [phrase_hints]() and [speech_contexts](), Dialogflow will
-     * treat the [phrase_hints]() as a single additional [SpeechContext]().
+     * This field is deprecated. Please use [`speech_contexts`]() instead. If you
+     * specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will
+     * treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
      * </pre>
      *
      * <code>repeated string phrase_hints = 4 [deprecated = true];</code>
      *
      * @deprecated google.cloud.dialogflow.v2beta1.InputAudioConfig.phrase_hints is deprecated. See
-     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=172
+     *     google/cloud/dialogflow/v2beta1/audio_config.proto;l=174
      * @param value The bytes of the phraseHints to add.
      * @return This builder for chaining.
      */

@@ -51,6 +51,8 @@ public class SyncBatchTranslateDocument {
               .putAllGlossaries(new HashMap<String, TranslateTextGlossaryConfig>())
               .putAllFormatConversions(new HashMap<String, String>())
               .setCustomizedAttribution("customizedAttribution557650238")
+              .setEnableShadowRemovalNativePdf(true)
+              .setEnableRotationCorrection(true)
               .build();
       BatchTranslateDocumentResponse response =
           translationServiceClient.batchTranslateDocumentAsync(request).get();

@@ -127,7 +127,7 @@ public class AuthorizationName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       AuthorizationName that = ((AuthorizationName) o);
       return Objects.equals(this.project, that.project);
     }

@@ -28,8 +28,8 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * The structured JSON data for the document. It should conform to the
-   * registered [Schema.schema][google.cloud.discoveryengine.v1.Schema.schema]
-   * or an `INVALID_ARGUMENT` error is thrown.
+   * registered [Schema][google.cloud.discoveryengine.v1.Schema] or an
+   * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
    * <code>.google.protobuf.Struct struct_data = 4;</code>
@@ -42,8 +42,8 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * The structured JSON data for the document. It should conform to the
-   * registered [Schema.schema][google.cloud.discoveryengine.v1.Schema.schema]
-   * or an `INVALID_ARGUMENT` error is thrown.
+   * registered [Schema][google.cloud.discoveryengine.v1.Schema] or an
+   * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
    * <code>.google.protobuf.Struct struct_data = 4;</code>
@@ -56,8 +56,8 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * The structured JSON data for the document. It should conform to the
-   * registered [Schema.schema][google.cloud.discoveryengine.v1.Schema.schema]
-   * or an `INVALID_ARGUMENT` error is thrown.
+   * registered [Schema][google.cloud.discoveryengine.v1.Schema] or an
+   * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
    * <code>.google.protobuf.Struct struct_data = 4;</code>
@@ -69,8 +69,8 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * The JSON string representation of the document. It should conform to the
-   * registered [Schema.schema][google.cloud.discoveryengine.v1.Schema.schema]
-   * or an `INVALID_ARGUMENT` error is thrown.
+   * registered [Schema][google.cloud.discoveryengine.v1.Schema] or an
+   * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
    * <code>string json_data = 5;</code>
@@ -83,8 +83,8 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * The JSON string representation of the document. It should conform to the
-   * registered [Schema.schema][google.cloud.discoveryengine.v1.Schema.schema]
-   * or an `INVALID_ARGUMENT` error is thrown.
+   * registered [Schema][google.cloud.discoveryengine.v1.Schema] or an
+   * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
    * <code>string json_data = 5;</code>
@@ -97,8 +97,8 @@ public interface DocumentOrBuilder
    *
    * <pre>
    * The JSON string representation of the document. It should conform to the
-   * registered [Schema.schema][google.cloud.discoveryengine.v1.Schema.schema]
-   * or an `INVALID_ARGUMENT` error is thrown.
+   * registered [Schema][google.cloud.discoveryengine.v1.Schema] or an
+   * `INVALID_ARGUMENT` error is thrown.
    * </pre>
    *
    * <code>string json_data = 5;</code>

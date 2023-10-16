@@ -22,7 +22,7 @@ package com.google.cloud.deploy.v1;
  *
  *
  * <pre>
- * A `Release` resource in the Google Cloud Deploy API.
+ * A `Release` resource in the Cloud Deploy API.
  *
  * A `Release` defines a specific Skaffold configuration instance
  * that can be deployed.
@@ -694,8 +694,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Cloud Build is not available, either because it is not enabled or
-       * because Google Cloud Deploy has insufficient permissions. See [required
-       * permission](/deploy/docs/cloud-deploy-service-account#required_permissions).
+       * because Cloud Deploy has insufficient permissions. See [required
+       * permission](https://cloud.google.com/deploy/docs/cloud-deploy-service-account#required_permissions).
        * </pre>
        *
        * <code>CLOUD_BUILD_UNAVAILABLE = 1;</code>
@@ -716,13 +716,25 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Cloud Build failed to fulfill Google Cloud Deploy's request. See
+       * Cloud Build failed to fulfill Cloud Deploy's request. See
        * failure_message for additional details.
        * </pre>
        *
        * <code>CLOUD_BUILD_REQUEST_FAILED = 3;</code>
        */
       CLOUD_BUILD_REQUEST_FAILED(3),
+      /**
+       *
+       *
+       * <pre>
+       * The render operation did not complete successfully because the custom
+       * action required for predeploy or postdeploy was not found in the
+       * skaffold configuration. See failure_message for additional details.
+       * </pre>
+       *
+       * <code>CUSTOM_ACTION_NOT_FOUND = 5;</code>
+       */
+      CUSTOM_ACTION_NOT_FOUND(5),
       UNRECOGNIZED(-1),
       ;
 
@@ -741,8 +753,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Cloud Build is not available, either because it is not enabled or
-       * because Google Cloud Deploy has insufficient permissions. See [required
-       * permission](/deploy/docs/cloud-deploy-service-account#required_permissions).
+       * because Cloud Deploy has insufficient permissions. See [required
+       * permission](https://cloud.google.com/deploy/docs/cloud-deploy-service-account#required_permissions).
        * </pre>
        *
        * <code>CLOUD_BUILD_UNAVAILABLE = 1;</code>
@@ -763,13 +775,25 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Cloud Build failed to fulfill Google Cloud Deploy's request. See
+       * Cloud Build failed to fulfill Cloud Deploy's request. See
        * failure_message for additional details.
        * </pre>
        *
        * <code>CLOUD_BUILD_REQUEST_FAILED = 3;</code>
        */
       public static final int CLOUD_BUILD_REQUEST_FAILED_VALUE = 3;
+      /**
+       *
+       *
+       * <pre>
+       * The render operation did not complete successfully because the custom
+       * action required for predeploy or postdeploy was not found in the
+       * skaffold configuration. See failure_message for additional details.
+       * </pre>
+       *
+       * <code>CUSTOM_ACTION_NOT_FOUND = 5;</code>
+       */
+      public static final int CUSTOM_ACTION_NOT_FOUND_VALUE = 5;
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -803,6 +827,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
             return EXECUTION_FAILED;
           case 3:
             return CLOUD_BUILD_REQUEST_FAILED;
+          case 5:
+            return CUSTOM_ACTION_NOT_FOUND;
           default:
             return null;
         }
@@ -5525,9 +5551,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -5550,9 +5575,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -5566,9 +5590,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -5589,9 +5612,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * User annotations. These attributes can only be set and used by the
-   * user, and not by Google Cloud Deploy. See
-   * https://google.aip.dev/128#annotations for more details such as format and
-   * size limitations.
+   * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+   * for more details such as format and size limitations.
    * </pre>
    *
    * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -5639,8 +5661,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -5672,8 +5693,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -5696,8 +5716,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -5727,8 +5746,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Labels are attributes that can be set and used by both the
-   * user and by Google Cloud Deploy. Labels must meet the following
-   * constraints:
+   * user and by Cloud Deploy. Labels must meet the following constraints:
    *
    * * Keys and values can contain only lowercase letters, numeric characters,
    * underscores, and dashes.
@@ -6350,8 +6368,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The Skaffold version to use when operating on this release, such as
-   * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
-   * specific set of versions.
+   * "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set
+   * of versions.
    *
    * If unset, the most recent supported Skaffold version will be used.
    * </pre>
@@ -6377,8 +6395,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The Skaffold version to use when operating on this release, such as
-   * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
-   * specific set of versions.
+   * "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set
+   * of versions.
    *
    * If unset, the most recent supported Skaffold version will be used.
    * </pre>
@@ -7237,7 +7255,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A `Release` resource in the Google Cloud Deploy API.
+   * A `Release` resource in the Cloud Deploy API.
    *
    * A `Release` defines a specific Skaffold configuration instance
    * that can be deployed.
@@ -8237,9 +8255,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -8262,9 +8279,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -8278,9 +8294,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -8301,9 +8316,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -8330,9 +8344,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -8355,9 +8368,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -8378,9 +8390,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * User annotations. These attributes can only be set and used by the
-     * user, and not by Google Cloud Deploy. See
-     * https://google.aip.dev/128#annotations for more details such as format and
-     * size limitations.
+     * user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations
+     * for more details such as format and size limitations.
      * </pre>
      *
      * <code>map&lt;string, string&gt; annotations = 4;</code>
@@ -8421,8 +8432,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
      *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
@@ -8454,8 +8464,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
      *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
@@ -8478,8 +8487,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
      *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
@@ -8509,8 +8517,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
      *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
@@ -8546,8 +8553,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
      *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
@@ -8579,8 +8585,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
      *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
@@ -8610,8 +8615,7 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Labels are attributes that can be set and used by both the
-     * user and by Google Cloud Deploy. Labels must meet the following
-     * constraints:
+     * user and by Cloud Deploy. Labels must meet the following constraints:
      *
      * * Keys and values can contain only lowercase letters, numeric characters,
      * underscores, and dashes.
@@ -10679,8 +10683,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Skaffold version to use when operating on this release, such as
-     * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
-     * specific set of versions.
+     * "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set
+     * of versions.
      *
      * If unset, the most recent supported Skaffold version will be used.
      * </pre>
@@ -10705,8 +10709,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Skaffold version to use when operating on this release, such as
-     * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
-     * specific set of versions.
+     * "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set
+     * of versions.
      *
      * If unset, the most recent supported Skaffold version will be used.
      * </pre>
@@ -10731,8 +10735,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Skaffold version to use when operating on this release, such as
-     * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
-     * specific set of versions.
+     * "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set
+     * of versions.
      *
      * If unset, the most recent supported Skaffold version will be used.
      * </pre>
@@ -10756,8 +10760,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Skaffold version to use when operating on this release, such as
-     * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
-     * specific set of versions.
+     * "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set
+     * of versions.
      *
      * If unset, the most recent supported Skaffold version will be used.
      * </pre>
@@ -10777,8 +10781,8 @@ public final class Release extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The Skaffold version to use when operating on this release, such as
-     * "1.20.0". Not all versions are valid; Google Cloud Deploy supports a
-     * specific set of versions.
+     * "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set
+     * of versions.
      *
      * If unset, the most recent supported Skaffold version will be used.
      * </pre>

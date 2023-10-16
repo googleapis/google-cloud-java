@@ -139,6 +139,71 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.discoveryengine.v1beta.Document document = 2;</code>
      */
     com.google.cloud.discoveryengine.v1beta.DocumentOrBuilder getDocumentOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Google provided available scores.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+     * </code>
+     */
+    int getModelScoresCount();
+    /**
+     *
+     *
+     * <pre>
+     * Google provided available scores.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+     * </code>
+     */
+    boolean containsModelScores(java.lang.String key);
+    /** Use {@link #getModelScoresMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList>
+        getModelScores();
+    /**
+     *
+     *
+     * <pre>
+     * Google provided available scores.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+     * </code>
+     */
+    java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList>
+        getModelScoresMap();
+    /**
+     *
+     *
+     * <pre>
+     * Google provided available scores.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+     * </code>
+     */
+    /* nullable */
+    com.google.cloud.discoveryengine.v1beta.DoubleList getModelScoresOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.discoveryengine.v1beta.DoubleList defaultValue);
+    /**
+     *
+     *
+     * <pre>
+     * Google provided available scores.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1beta.DoubleList getModelScoresOrThrow(java.lang.String key);
   }
   /**
    *
@@ -172,6 +237,17 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
           .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 4:
+          return internalGetModelScores();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
     }
 
     @java.lang.Override
@@ -290,6 +366,127 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           : document_;
     }
 
+    public static final int MODEL_SCORES_FIELD_NUMBER = 4;
+
+    private static final class ModelScoresDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList>
+          defaultEntry =
+              com.google.protobuf.MapEntry
+                  .<java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList>
+                      newDefaultInstance(
+                          com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_ModelScoresEntry_descriptor,
+                          com.google.protobuf.WireFormat.FieldType.STRING,
+                          "",
+                          com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                          com.google.cloud.discoveryengine.v1beta.DoubleList.getDefaultInstance());
+    }
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList>
+        modelScores_;
+
+    private com.google.protobuf.MapField<
+            java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList>
+        internalGetModelScores() {
+      if (modelScores_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ModelScoresDefaultEntryHolder.defaultEntry);
+      }
+      return modelScores_;
+    }
+
+    public int getModelScoresCount() {
+      return internalGetModelScores().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Google provided available scores.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsModelScores(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetModelScores().getMap().containsKey(key);
+    }
+    /** Use {@link #getModelScoresMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList>
+        getModelScores() {
+      return getModelScoresMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Google provided available scores.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList>
+        getModelScoresMap() {
+      return internalGetModelScores().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Google provided available scores.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.discoveryengine.v1beta.DoubleList
+        getModelScoresOrDefault(
+            java.lang.String key,
+            /* nullable */
+            com.google.cloud.discoveryengine.v1beta.DoubleList defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList> map =
+          internalGetModelScores().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Google provided available scores.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.DoubleList getModelScoresOrThrow(
+        java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList> map =
+          internalGetModelScores().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -310,6 +507,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (document_ != null) {
         output.writeMessage(2, getDocument());
       }
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetModelScores(), ModelScoresDefaultEntryHolder.defaultEntry, 4);
       getUnknownFields().writeTo(output);
     }
 
@@ -324,6 +523,18 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       if (document_ != null) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDocument());
+      }
+      for (java.util.Map.Entry<java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList>
+          entry : internalGetModelScores().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<
+                java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList>
+            modelScores__ =
+                ModelScoresDefaultEntryHolder.defaultEntry
+                    .newBuilderForType()
+                    .setKey(entry.getKey())
+                    .setValue(entry.getValue())
+                    .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, modelScores__);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -346,6 +557,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (hasDocument()) {
         if (!getDocument().equals(other.getDocument())) return false;
       }
+      if (!internalGetModelScores().equals(other.internalGetModelScores())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -362,6 +574,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (hasDocument()) {
         hash = (37 * hash) + DOCUMENT_FIELD_NUMBER;
         hash = (53 * hash) + getDocument().hashCode();
+      }
+      if (!internalGetModelScores().getMap().isEmpty()) {
+        hash = (37 * hash) + MODEL_SCORES_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetModelScores().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -485,6 +701,26 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(int number) {
+        switch (number) {
+          case 4:
+            return internalGetModelScores();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+        switch (number) {
+          case 4:
+            return internalGetMutableModelScores();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -513,6 +749,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           documentBuilder_.dispose();
           documentBuilder_ = null;
         }
+        internalGetMutableModelScores().clear();
         return this;
       }
 
@@ -557,6 +794,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.document_ = documentBuilder_ == null ? document_ : documentBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.modelScores_ = internalGetModelScores();
+          result.modelScores_.makeImmutable();
         }
       }
 
@@ -619,6 +860,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (other.hasDocument()) {
           mergeDocument(other.getDocument());
         }
+        internalGetMutableModelScores().mergeFrom(other.internalGetModelScores());
+        bitField0_ |= 0x00000004;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -657,6 +900,20 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 34:
+                {
+                  com.google.protobuf.MapEntry<
+                          java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList>
+                      modelScores__ =
+                          input.readMessage(
+                              ModelScoresDefaultEntryHolder.defaultEntry.getParserForType(),
+                              extensionRegistry);
+                  internalGetMutableModelScores()
+                      .getMutableMap()
+                      .put(modelScores__.getKey(), modelScores__.getValue());
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -979,6 +1236,193 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           document_ = null;
         }
         return documentBuilder_;
+      }
+
+      private com.google.protobuf.MapField<
+              java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList>
+          modelScores_;
+
+      private com.google.protobuf.MapField<
+              java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList>
+          internalGetModelScores() {
+        if (modelScores_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ModelScoresDefaultEntryHolder.defaultEntry);
+        }
+        return modelScores_;
+      }
+
+      private com.google.protobuf.MapField<
+              java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList>
+          internalGetMutableModelScores() {
+        if (modelScores_ == null) {
+          modelScores_ =
+              com.google.protobuf.MapField.newMapField(ModelScoresDefaultEntryHolder.defaultEntry);
+        }
+        if (!modelScores_.isMutable()) {
+          modelScores_ = modelScores_.copy();
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return modelScores_;
+      }
+
+      public int getModelScoresCount() {
+        return internalGetModelScores().getMap().size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google provided available scores.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+       * </code>
+       */
+      @java.lang.Override
+      public boolean containsModelScores(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetModelScores().getMap().containsKey(key);
+      }
+      /** Use {@link #getModelScoresMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList>
+          getModelScores() {
+        return getModelScoresMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google provided available scores.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList>
+          getModelScoresMap() {
+        return internalGetModelScores().getMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google provided available scores.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+       * </code>
+       */
+      @java.lang.Override
+      public /* nullable */ com.google.cloud.discoveryengine.v1beta.DoubleList
+          getModelScoresOrDefault(
+              java.lang.String key,
+              /* nullable */
+              com.google.cloud.discoveryengine.v1beta.DoubleList defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList> map =
+            internalGetModelScores().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google provided available scores.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.DoubleList getModelScoresOrThrow(
+          java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList> map =
+            internalGetModelScores().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearModelScores() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        internalGetMutableModelScores().getMutableMap().clear();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google provided available scores.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+       * </code>
+       */
+      public Builder removeModelScores(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableModelScores().getMutableMap().remove(key);
+        return this;
+      }
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList>
+          getMutableModelScores() {
+        bitField0_ |= 0x00000004;
+        return internalGetMutableModelScores().getMutableMap();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google provided available scores.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+       * </code>
+       */
+      public Builder putModelScores(
+          java.lang.String key, com.google.cloud.discoveryengine.v1beta.DoubleList value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        if (value == null) {
+          throw new NullPointerException("map value");
+        }
+        internalGetMutableModelScores().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000004;
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Google provided available scores.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.discoveryengine.v1beta.DoubleList&gt; model_scores = 4;
+       * </code>
+       */
+      public Builder putAllModelScores(
+          java.util.Map<java.lang.String, com.google.cloud.discoveryengine.v1beta.DoubleList>
+              values) {
+        internalGetMutableModelScores().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000004;
+        return this;
       }
 
       @java.lang.Override
@@ -3810,6 +4254,57 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.discoveryengine.v1beta.SearchResponse.GuidedSearchResult
             .RefinementAttributeOrBuilder
         getRefinementAttributesOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Suggested follow-up questions.
+     * </pre>
+     *
+     * <code>repeated string follow_up_questions = 2;</code>
+     *
+     * @return A list containing the followUpQuestions.
+     */
+    java.util.List<java.lang.String> getFollowUpQuestionsList();
+    /**
+     *
+     *
+     * <pre>
+     * Suggested follow-up questions.
+     * </pre>
+     *
+     * <code>repeated string follow_up_questions = 2;</code>
+     *
+     * @return The count of followUpQuestions.
+     */
+    int getFollowUpQuestionsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Suggested follow-up questions.
+     * </pre>
+     *
+     * <code>repeated string follow_up_questions = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The followUpQuestions at the given index.
+     */
+    java.lang.String getFollowUpQuestions(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Suggested follow-up questions.
+     * </pre>
+     *
+     * <code>repeated string follow_up_questions = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the followUpQuestions at the given index.
+     */
+    com.google.protobuf.ByteString getFollowUpQuestionsBytes(int index);
   }
   /**
    *
@@ -3833,6 +4328,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
 
     private GuidedSearchResult() {
       refinementAttributes_ = java.util.Collections.emptyList();
+      followUpQuestions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     @java.lang.Override
@@ -4870,6 +5366,70 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       return refinementAttributes_.get(index);
     }
 
+    public static final int FOLLOW_UP_QUESTIONS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList followUpQuestions_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     *
+     *
+     * <pre>
+     * Suggested follow-up questions.
+     * </pre>
+     *
+     * <code>repeated string follow_up_questions = 2;</code>
+     *
+     * @return A list containing the followUpQuestions.
+     */
+    public com.google.protobuf.ProtocolStringList getFollowUpQuestionsList() {
+      return followUpQuestions_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggested follow-up questions.
+     * </pre>
+     *
+     * <code>repeated string follow_up_questions = 2;</code>
+     *
+     * @return The count of followUpQuestions.
+     */
+    public int getFollowUpQuestionsCount() {
+      return followUpQuestions_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggested follow-up questions.
+     * </pre>
+     *
+     * <code>repeated string follow_up_questions = 2;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The followUpQuestions at the given index.
+     */
+    public java.lang.String getFollowUpQuestions(int index) {
+      return followUpQuestions_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Suggested follow-up questions.
+     * </pre>
+     *
+     * <code>repeated string follow_up_questions = 2;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the followUpQuestions at the given index.
+     */
+    public com.google.protobuf.ByteString getFollowUpQuestionsBytes(int index) {
+      return followUpQuestions_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -4887,6 +5447,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < refinementAttributes_.size(); i++) {
         output.writeMessage(1, refinementAttributes_.get(i));
       }
+      for (int i = 0; i < followUpQuestions_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, followUpQuestions_.getRaw(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -4900,6 +5463,14 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 1, refinementAttributes_.get(i));
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < followUpQuestions_.size(); i++) {
+          dataSize += computeStringSizeNoTag(followUpQuestions_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getFollowUpQuestionsList().size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4919,6 +5490,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.discoveryengine.v1beta.SearchResponse.GuidedSearchResult) obj;
 
       if (!getRefinementAttributesList().equals(other.getRefinementAttributesList())) return false;
+      if (!getFollowUpQuestionsList().equals(other.getFollowUpQuestionsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -4933,6 +5505,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (getRefinementAttributesCount() > 0) {
         hash = (37 * hash) + REFINEMENT_ATTRIBUTES_FIELD_NUMBER;
         hash = (53 * hash) + getRefinementAttributesList().hashCode();
+      }
+      if (getFollowUpQuestionsCount() > 0) {
+        hash = (37 * hash) + FOLLOW_UP_QUESTIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getFollowUpQuestionsList().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -5092,6 +5668,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           refinementAttributesBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000001);
+        followUpQuestions_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -5147,6 +5724,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       private void buildPartial0(
           com.google.cloud.discoveryengine.v1beta.SearchResponse.GuidedSearchResult result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          followUpQuestions_.makeImmutable();
+          result.followUpQuestions_ = followUpQuestions_;
+        }
       }
 
       @java.lang.Override
@@ -5228,6 +5809,16 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             }
           }
         }
+        if (!other.followUpQuestions_.isEmpty()) {
+          if (followUpQuestions_.isEmpty()) {
+            followUpQuestions_ = other.followUpQuestions_;
+            bitField0_ |= 0x00000002;
+          } else {
+            ensureFollowUpQuestionsIsMutable();
+            followUpQuestions_.addAll(other.followUpQuestions_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -5271,6 +5862,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                   }
                   break;
                 } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureFollowUpQuestionsIsMutable();
+                  followUpQuestions_.add(s);
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5739,6 +6337,180 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return refinementAttributesBuilder_;
       }
 
+      private com.google.protobuf.LazyStringArrayList followUpQuestions_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureFollowUpQuestionsIsMutable() {
+        if (!followUpQuestions_.isModifiable()) {
+          followUpQuestions_ = new com.google.protobuf.LazyStringArrayList(followUpQuestions_);
+        }
+        bitField0_ |= 0x00000002;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested follow-up questions.
+       * </pre>
+       *
+       * <code>repeated string follow_up_questions = 2;</code>
+       *
+       * @return A list containing the followUpQuestions.
+       */
+      public com.google.protobuf.ProtocolStringList getFollowUpQuestionsList() {
+        followUpQuestions_.makeImmutable();
+        return followUpQuestions_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested follow-up questions.
+       * </pre>
+       *
+       * <code>repeated string follow_up_questions = 2;</code>
+       *
+       * @return The count of followUpQuestions.
+       */
+      public int getFollowUpQuestionsCount() {
+        return followUpQuestions_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested follow-up questions.
+       * </pre>
+       *
+       * <code>repeated string follow_up_questions = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The followUpQuestions at the given index.
+       */
+      public java.lang.String getFollowUpQuestions(int index) {
+        return followUpQuestions_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested follow-up questions.
+       * </pre>
+       *
+       * <code>repeated string follow_up_questions = 2;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the followUpQuestions at the given index.
+       */
+      public com.google.protobuf.ByteString getFollowUpQuestionsBytes(int index) {
+        return followUpQuestions_.getByteString(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested follow-up questions.
+       * </pre>
+       *
+       * <code>repeated string follow_up_questions = 2;</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The followUpQuestions to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFollowUpQuestions(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFollowUpQuestionsIsMutable();
+        followUpQuestions_.set(index, value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested follow-up questions.
+       * </pre>
+       *
+       * <code>repeated string follow_up_questions = 2;</code>
+       *
+       * @param value The followUpQuestions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFollowUpQuestions(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFollowUpQuestionsIsMutable();
+        followUpQuestions_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested follow-up questions.
+       * </pre>
+       *
+       * <code>repeated string follow_up_questions = 2;</code>
+       *
+       * @param values The followUpQuestions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllFollowUpQuestions(java.lang.Iterable<java.lang.String> values) {
+        ensureFollowUpQuestionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, followUpQuestions_);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested follow-up questions.
+       * </pre>
+       *
+       * <code>repeated string follow_up_questions = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFollowUpQuestions() {
+        followUpQuestions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        ;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Suggested follow-up questions.
+       * </pre>
+       *
+       * <code>repeated string follow_up_questions = 2;</code>
+       *
+       * @param value The bytes of the followUpQuestions to add.
+       * @return This builder for chaining.
+       */
+      public Builder addFollowUpQuestionsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureFollowUpQuestionsIsMutable();
+        followUpQuestions_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -5836,6 +6608,133 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for summaryText.
      */
     com.google.protobuf.ByteString getSummaryTextBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Additional summary-skipped reasons. This provides the reason for ignored
+     * cases. If nothing is skipped, this field is not set.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+     * </code>
+     *
+     * @return A list containing the summarySkippedReasons.
+     */
+    java.util.List<
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason>
+        getSummarySkippedReasonsList();
+    /**
+     *
+     *
+     * <pre>
+     * Additional summary-skipped reasons. This provides the reason for ignored
+     * cases. If nothing is skipped, this field is not set.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+     * </code>
+     *
+     * @return The count of summarySkippedReasons.
+     */
+    int getSummarySkippedReasonsCount();
+    /**
+     *
+     *
+     * <pre>
+     * Additional summary-skipped reasons. This provides the reason for ignored
+     * cases. If nothing is skipped, this field is not set.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The summarySkippedReasons at the given index.
+     */
+    com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason
+        getSummarySkippedReasons(int index);
+    /**
+     *
+     *
+     * <pre>
+     * Additional summary-skipped reasons. This provides the reason for ignored
+     * cases. If nothing is skipped, this field is not set.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for summarySkippedReasons.
+     */
+    java.util.List<java.lang.Integer> getSummarySkippedReasonsValueList();
+    /**
+     *
+     *
+     * <pre>
+     * Additional summary-skipped reasons. This provides the reason for ignored
+     * cases. If nothing is skipped, this field is not set.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of summarySkippedReasons at the given index.
+     */
+    int getSummarySkippedReasonsValue(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * A collection of Safety Attribute categories and their associated
+     * confidence scores.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes safety_attributes = 3;
+     * </code>
+     *
+     * @return Whether the safetyAttributes field is set.
+     */
+    boolean hasSafetyAttributes();
+    /**
+     *
+     *
+     * <pre>
+     * A collection of Safety Attribute categories and their associated
+     * confidence scores.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes safety_attributes = 3;
+     * </code>
+     *
+     * @return The safetyAttributes.
+     */
+    com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+        getSafetyAttributes();
+    /**
+     *
+     *
+     * <pre>
+     * A collection of Safety Attribute categories and their associated
+     * confidence scores.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes safety_attributes = 3;
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributesOrBuilder
+        getSafetyAttributesOrBuilder();
   }
   /**
    *
@@ -5858,6 +6757,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
 
     private Summary() {
       summaryText_ = "";
+      summarySkippedReasons_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -5879,6 +6779,1380 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           .ensureFieldAccessorsInitialized(
               com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.class,
               com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * An Enum for summary-skipped reasons.
+     * </pre>
+     *
+     * Protobuf enum {@code
+     * google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason}
+     */
+    public enum SummarySkippedReason implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Default value. The summary skipped reason is not specified.
+       * </pre>
+       *
+       * <code>SUMMARY_SKIPPED_REASON_UNSPECIFIED = 0;</code>
+       */
+      SUMMARY_SKIPPED_REASON_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * The adversarial query ignored case.
+       *
+       * Only populated when
+       * [SummarySpec.ignore_adversarial_query][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec.ignore_adversarial_query]
+       * is set to `true`.
+       * </pre>
+       *
+       * <code>ADVERSARIAL_QUERY_IGNORED = 1;</code>
+       */
+      ADVERSARIAL_QUERY_IGNORED(1),
+      /**
+       *
+       *
+       * <pre>
+       * The non-summary seeking query ignored case.
+       *
+       * Only populated when
+       * [SummarySpec.ignore_non_summary_seeking_query][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec.ignore_non_summary_seeking_query]
+       * is set to `true`.
+       * </pre>
+       *
+       * <code>NON_SUMMARY_SEEKING_QUERY_IGNORED = 2;</code>
+       */
+      NON_SUMMARY_SEEKING_QUERY_IGNORED(2),
+      /**
+       *
+       *
+       * <pre>
+       * The out-of-domain query ignored case.
+       *
+       * Google skips the summary if there are no high-relevance search results.
+       * For example, the data store contains facts about company A but the
+       * user query is asking questions about company B.
+       * </pre>
+       *
+       * <code>OUT_OF_DOMAIN_QUERY_IGNORED = 3;</code>
+       */
+      OUT_OF_DOMAIN_QUERY_IGNORED(3),
+      /**
+       *
+       *
+       * <pre>
+       * The potential policy violation case.
+       *
+       * Google skips the summary if there is a potential policy violation
+       * detected. This includes content that may be violent or toxic.
+       * </pre>
+       *
+       * <code>POTENTIAL_POLICY_VIOLATION = 4;</code>
+       */
+      POTENTIAL_POLICY_VIOLATION(4),
+      /**
+       *
+       *
+       * <pre>
+       * The LLM addon not enabled case.
+       *
+       * Google skips the summary if the LLM addon is not enabled.
+       * </pre>
+       *
+       * <code>LLM_ADDON_NOT_ENABLED = 5;</code>
+       */
+      LLM_ADDON_NOT_ENABLED(5),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default value. The summary skipped reason is not specified.
+       * </pre>
+       *
+       * <code>SUMMARY_SKIPPED_REASON_UNSPECIFIED = 0;</code>
+       */
+      public static final int SUMMARY_SKIPPED_REASON_UNSPECIFIED_VALUE = 0;
+      /**
+       *
+       *
+       * <pre>
+       * The adversarial query ignored case.
+       *
+       * Only populated when
+       * [SummarySpec.ignore_adversarial_query][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec.ignore_adversarial_query]
+       * is set to `true`.
+       * </pre>
+       *
+       * <code>ADVERSARIAL_QUERY_IGNORED = 1;</code>
+       */
+      public static final int ADVERSARIAL_QUERY_IGNORED_VALUE = 1;
+      /**
+       *
+       *
+       * <pre>
+       * The non-summary seeking query ignored case.
+       *
+       * Only populated when
+       * [SummarySpec.ignore_non_summary_seeking_query][google.cloud.discoveryengine.v1beta.SearchRequest.ContentSearchSpec.SummarySpec.ignore_non_summary_seeking_query]
+       * is set to `true`.
+       * </pre>
+       *
+       * <code>NON_SUMMARY_SEEKING_QUERY_IGNORED = 2;</code>
+       */
+      public static final int NON_SUMMARY_SEEKING_QUERY_IGNORED_VALUE = 2;
+      /**
+       *
+       *
+       * <pre>
+       * The out-of-domain query ignored case.
+       *
+       * Google skips the summary if there are no high-relevance search results.
+       * For example, the data store contains facts about company A but the
+       * user query is asking questions about company B.
+       * </pre>
+       *
+       * <code>OUT_OF_DOMAIN_QUERY_IGNORED = 3;</code>
+       */
+      public static final int OUT_OF_DOMAIN_QUERY_IGNORED_VALUE = 3;
+      /**
+       *
+       *
+       * <pre>
+       * The potential policy violation case.
+       *
+       * Google skips the summary if there is a potential policy violation
+       * detected. This includes content that may be violent or toxic.
+       * </pre>
+       *
+       * <code>POTENTIAL_POLICY_VIOLATION = 4;</code>
+       */
+      public static final int POTENTIAL_POLICY_VIOLATION_VALUE = 4;
+      /**
+       *
+       *
+       * <pre>
+       * The LLM addon not enabled case.
+       *
+       * Google skips the summary if the LLM addon is not enabled.
+       * </pre>
+       *
+       * <code>LLM_ADDON_NOT_ENABLED = 5;</code>
+       */
+      public static final int LLM_ADDON_NOT_ENABLED_VALUE = 5;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static SummarySkippedReason valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static SummarySkippedReason forNumber(int value) {
+        switch (value) {
+          case 0:
+            return SUMMARY_SKIPPED_REASON_UNSPECIFIED;
+          case 1:
+            return ADVERSARIAL_QUERY_IGNORED;
+          case 2:
+            return NON_SUMMARY_SEEKING_QUERY_IGNORED;
+          case 3:
+            return OUT_OF_DOMAIN_QUERY_IGNORED;
+          case 4:
+            return POTENTIAL_POLICY_VIOLATION;
+          case 5:
+            return LLM_ADDON_NOT_ENABLED;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<SummarySkippedReason>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<SummarySkippedReason>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<SummarySkippedReason>() {
+                public SummarySkippedReason findValueByNumber(int number) {
+                  return SummarySkippedReason.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final SummarySkippedReason[] VALUES = values();
+
+      public static SummarySkippedReason valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private SummarySkippedReason(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason)
+    }
+
+    public interface SafetyAttributesOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * The display names of Safety Attribute categories associated with the
+       * generated content. Order matches the Scores.
+       * </pre>
+       *
+       * <code>repeated string categories = 1;</code>
+       *
+       * @return A list containing the categories.
+       */
+      java.util.List<java.lang.String> getCategoriesList();
+      /**
+       *
+       *
+       * <pre>
+       * The display names of Safety Attribute categories associated with the
+       * generated content. Order matches the Scores.
+       * </pre>
+       *
+       * <code>repeated string categories = 1;</code>
+       *
+       * @return The count of categories.
+       */
+      int getCategoriesCount();
+      /**
+       *
+       *
+       * <pre>
+       * The display names of Safety Attribute categories associated with the
+       * generated content. Order matches the Scores.
+       * </pre>
+       *
+       * <code>repeated string categories = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The categories at the given index.
+       */
+      java.lang.String getCategories(int index);
+      /**
+       *
+       *
+       * <pre>
+       * The display names of Safety Attribute categories associated with the
+       * generated content. Order matches the Scores.
+       * </pre>
+       *
+       * <code>repeated string categories = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the categories at the given index.
+       */
+      com.google.protobuf.ByteString getCategoriesBytes(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * The confidence scores of the each category, higher
+       * value means higher confidence. Order matches the Categories.
+       * </pre>
+       *
+       * <code>repeated float scores = 2;</code>
+       *
+       * @return A list containing the scores.
+       */
+      java.util.List<java.lang.Float> getScoresList();
+      /**
+       *
+       *
+       * <pre>
+       * The confidence scores of the each category, higher
+       * value means higher confidence. Order matches the Categories.
+       * </pre>
+       *
+       * <code>repeated float scores = 2;</code>
+       *
+       * @return The count of scores.
+       */
+      int getScoresCount();
+      /**
+       *
+       *
+       * <pre>
+       * The confidence scores of the each category, higher
+       * value means higher confidence. Order matches the Categories.
+       * </pre>
+       *
+       * <code>repeated float scores = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The scores at the given index.
+       */
+      float getScores(int index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Safety Attribute categories and their associated confidence scores.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes}
+     */
+    public static final class SafetyAttributes extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes)
+        SafetyAttributesOrBuilder {
+      private static final long serialVersionUID = 0L;
+      // Use SafetyAttributes.newBuilder() to construct.
+      private SafetyAttributes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private SafetyAttributes() {
+        categories_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        scores_ = emptyFloatList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new SafetyAttributes();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_SafetyAttributes_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_SafetyAttributes_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+                    .class,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+                    .Builder.class);
+      }
+
+      public static final int CATEGORIES_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.LazyStringArrayList categories_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      /**
+       *
+       *
+       * <pre>
+       * The display names of Safety Attribute categories associated with the
+       * generated content. Order matches the Scores.
+       * </pre>
+       *
+       * <code>repeated string categories = 1;</code>
+       *
+       * @return A list containing the categories.
+       */
+      public com.google.protobuf.ProtocolStringList getCategoriesList() {
+        return categories_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The display names of Safety Attribute categories associated with the
+       * generated content. Order matches the Scores.
+       * </pre>
+       *
+       * <code>repeated string categories = 1;</code>
+       *
+       * @return The count of categories.
+       */
+      public int getCategoriesCount() {
+        return categories_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The display names of Safety Attribute categories associated with the
+       * generated content. Order matches the Scores.
+       * </pre>
+       *
+       * <code>repeated string categories = 1;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The categories at the given index.
+       */
+      public java.lang.String getCategories(int index) {
+        return categories_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The display names of Safety Attribute categories associated with the
+       * generated content. Order matches the Scores.
+       * </pre>
+       *
+       * <code>repeated string categories = 1;</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the categories at the given index.
+       */
+      public com.google.protobuf.ByteString getCategoriesBytes(int index) {
+        return categories_.getByteString(index);
+      }
+
+      public static final int SCORES_FIELD_NUMBER = 2;
+
+      @SuppressWarnings("serial")
+      private com.google.protobuf.Internal.FloatList scores_;
+      /**
+       *
+       *
+       * <pre>
+       * The confidence scores of the each category, higher
+       * value means higher confidence. Order matches the Categories.
+       * </pre>
+       *
+       * <code>repeated float scores = 2;</code>
+       *
+       * @return A list containing the scores.
+       */
+      @java.lang.Override
+      public java.util.List<java.lang.Float> getScoresList() {
+        return scores_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The confidence scores of the each category, higher
+       * value means higher confidence. Order matches the Categories.
+       * </pre>
+       *
+       * <code>repeated float scores = 2;</code>
+       *
+       * @return The count of scores.
+       */
+      public int getScoresCount() {
+        return scores_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The confidence scores of the each category, higher
+       * value means higher confidence. Order matches the Categories.
+       * </pre>
+       *
+       * <code>repeated float scores = 2;</code>
+       *
+       * @param index The index of the element to return.
+       * @return The scores at the given index.
+       */
+      public float getScores(int index) {
+        return scores_.getFloat(index);
+      }
+
+      private int scoresMemoizedSerializedSize = -1;
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        getSerializedSize();
+        for (int i = 0; i < categories_.size(); i++) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, categories_.getRaw(i));
+        }
+        if (getScoresList().size() > 0) {
+          output.writeUInt32NoTag(18);
+          output.writeUInt32NoTag(scoresMemoizedSerializedSize);
+        }
+        for (int i = 0; i < scores_.size(); i++) {
+          output.writeFloatNoTag(scores_.getFloat(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        {
+          int dataSize = 0;
+          for (int i = 0; i < categories_.size(); i++) {
+            dataSize += computeStringSizeNoTag(categories_.getRaw(i));
+          }
+          size += dataSize;
+          size += 1 * getCategoriesList().size();
+        }
+        {
+          int dataSize = 0;
+          dataSize = 4 * getScoresList().size();
+          size += dataSize;
+          if (!getScoresList().isEmpty()) {
+            size += 1;
+            size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+          }
+          scoresMemoizedSerializedSize = dataSize;
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes other =
+            (com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes) obj;
+
+        if (!getCategoriesList().equals(other.getCategoriesList())) return false;
+        if (!getScoresList().equals(other.getScoresList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getCategoriesCount() > 0) {
+          hash = (37 * hash) + CATEGORIES_FIELD_NUMBER;
+          hash = (53 * hash) + getCategoriesList().hashCode();
+        }
+        if (getScoresCount() > 0) {
+          hash = (37 * hash) + SCORES_FIELD_NUMBER;
+          hash = (53 * hash) + getScoresList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Safety Attribute categories and their associated confidence scores.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes)
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributesOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_SafetyAttributes_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_SafetyAttributes_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+                      .class,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          categories_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          scores_ = emptyFloatList();
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_Summary_SafetyAttributes_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+            build() {
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes result =
+              new com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes(
+                  this);
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+                result) {
+          if (((bitField0_ & 0x00000002) != 0)) {
+            scores_.makeImmutable();
+            bitField0_ = (bitField0_ & ~0x00000002);
+          }
+          result.scores_ = scores_;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            categories_.makeImmutable();
+            result.categories_ = categories_;
+          }
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+                  .getDefaultInstance()) return this;
+          if (!other.categories_.isEmpty()) {
+            if (categories_.isEmpty()) {
+              categories_ = other.categories_;
+              bitField0_ |= 0x00000001;
+            } else {
+              ensureCategoriesIsMutable();
+              categories_.addAll(other.categories_);
+            }
+            onChanged();
+          }
+          if (!other.scores_.isEmpty()) {
+            if (scores_.isEmpty()) {
+              scores_ = other.scores_;
+              bitField0_ = (bitField0_ & ~0x00000002);
+            } else {
+              ensureScoresIsMutable();
+              scores_.addAll(other.scores_);
+            }
+            onChanged();
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    java.lang.String s = input.readStringRequireUtf8();
+                    ensureCategoriesIsMutable();
+                    categories_.add(s);
+                    break;
+                  } // case 10
+                case 21:
+                  {
+                    float v = input.readFloat();
+                    ensureScoresIsMutable();
+                    scores_.addFloat(v);
+                    break;
+                  } // case 21
+                case 18:
+                  {
+                    int length = input.readRawVarint32();
+                    int limit = input.pushLimit(length);
+                    ensureScoresIsMutable();
+                    while (input.getBytesUntilLimit() > 0) {
+                      scores_.addFloat(input.readFloat());
+                    }
+                    input.popLimit(limit);
+                    break;
+                  } // case 18
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.LazyStringArrayList categories_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+
+        private void ensureCategoriesIsMutable() {
+          if (!categories_.isModifiable()) {
+            categories_ = new com.google.protobuf.LazyStringArrayList(categories_);
+          }
+          bitField0_ |= 0x00000001;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The display names of Safety Attribute categories associated with the
+         * generated content. Order matches the Scores.
+         * </pre>
+         *
+         * <code>repeated string categories = 1;</code>
+         *
+         * @return A list containing the categories.
+         */
+        public com.google.protobuf.ProtocolStringList getCategoriesList() {
+          categories_.makeImmutable();
+          return categories_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The display names of Safety Attribute categories associated with the
+         * generated content. Order matches the Scores.
+         * </pre>
+         *
+         * <code>repeated string categories = 1;</code>
+         *
+         * @return The count of categories.
+         */
+        public int getCategoriesCount() {
+          return categories_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The display names of Safety Attribute categories associated with the
+         * generated content. Order matches the Scores.
+         * </pre>
+         *
+         * <code>repeated string categories = 1;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The categories at the given index.
+         */
+        public java.lang.String getCategories(int index) {
+          return categories_.get(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The display names of Safety Attribute categories associated with the
+         * generated content. Order matches the Scores.
+         * </pre>
+         *
+         * <code>repeated string categories = 1;</code>
+         *
+         * @param index The index of the value to return.
+         * @return The bytes of the categories at the given index.
+         */
+        public com.google.protobuf.ByteString getCategoriesBytes(int index) {
+          return categories_.getByteString(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The display names of Safety Attribute categories associated with the
+         * generated content. Order matches the Scores.
+         * </pre>
+         *
+         * <code>repeated string categories = 1;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The categories to set.
+         * @return This builder for chaining.
+         */
+        public Builder setCategories(int index, java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCategoriesIsMutable();
+          categories_.set(index, value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The display names of Safety Attribute categories associated with the
+         * generated content. Order matches the Scores.
+         * </pre>
+         *
+         * <code>repeated string categories = 1;</code>
+         *
+         * @param value The categories to add.
+         * @return This builder for chaining.
+         */
+        public Builder addCategories(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCategoriesIsMutable();
+          categories_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The display names of Safety Attribute categories associated with the
+         * generated content. Order matches the Scores.
+         * </pre>
+         *
+         * <code>repeated string categories = 1;</code>
+         *
+         * @param values The categories to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllCategories(java.lang.Iterable<java.lang.String> values) {
+          ensureCategoriesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, categories_);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The display names of Safety Attribute categories associated with the
+         * generated content. Order matches the Scores.
+         * </pre>
+         *
+         * <code>repeated string categories = 1;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearCategories() {
+          categories_ = com.google.protobuf.LazyStringArrayList.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          ;
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The display names of Safety Attribute categories associated with the
+         * generated content. Order matches the Scores.
+         * </pre>
+         *
+         * <code>repeated string categories = 1;</code>
+         *
+         * @param value The bytes of the categories to add.
+         * @return This builder for chaining.
+         */
+        public Builder addCategoriesBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          ensureCategoriesIsMutable();
+          categories_.add(value);
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private com.google.protobuf.Internal.FloatList scores_ = emptyFloatList();
+
+        private void ensureScoresIsMutable() {
+          if (!((bitField0_ & 0x00000002) != 0)) {
+            scores_ = mutableCopy(scores_);
+            bitField0_ |= 0x00000002;
+          }
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The confidence scores of the each category, higher
+         * value means higher confidence. Order matches the Categories.
+         * </pre>
+         *
+         * <code>repeated float scores = 2;</code>
+         *
+         * @return A list containing the scores.
+         */
+        public java.util.List<java.lang.Float> getScoresList() {
+          return ((bitField0_ & 0x00000002) != 0)
+              ? java.util.Collections.unmodifiableList(scores_)
+              : scores_;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The confidence scores of the each category, higher
+         * value means higher confidence. Order matches the Categories.
+         * </pre>
+         *
+         * <code>repeated float scores = 2;</code>
+         *
+         * @return The count of scores.
+         */
+        public int getScoresCount() {
+          return scores_.size();
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The confidence scores of the each category, higher
+         * value means higher confidence. Order matches the Categories.
+         * </pre>
+         *
+         * <code>repeated float scores = 2;</code>
+         *
+         * @param index The index of the element to return.
+         * @return The scores at the given index.
+         */
+        public float getScores(int index) {
+          return scores_.getFloat(index);
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The confidence scores of the each category, higher
+         * value means higher confidence. Order matches the Categories.
+         * </pre>
+         *
+         * <code>repeated float scores = 2;</code>
+         *
+         * @param index The index to set the value at.
+         * @param value The scores to set.
+         * @return This builder for chaining.
+         */
+        public Builder setScores(int index, float value) {
+
+          ensureScoresIsMutable();
+          scores_.setFloat(index, value);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The confidence scores of the each category, higher
+         * value means higher confidence. Order matches the Categories.
+         * </pre>
+         *
+         * <code>repeated float scores = 2;</code>
+         *
+         * @param value The scores to add.
+         * @return This builder for chaining.
+         */
+        public Builder addScores(float value) {
+
+          ensureScoresIsMutable();
+          scores_.addFloat(value);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The confidence scores of the each category, higher
+         * value means higher confidence. Order matches the Categories.
+         * </pre>
+         *
+         * <code>repeated float scores = 2;</code>
+         *
+         * @param values The scores to add.
+         * @return This builder for chaining.
+         */
+        public Builder addAllScores(java.lang.Iterable<? extends java.lang.Float> values) {
+          ensureScoresIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, scores_);
+          onChanged();
+          return this;
+        }
+        /**
+         *
+         *
+         * <pre>
+         * The confidence scores of the each category, higher
+         * value means higher confidence. Order matches the Categories.
+         * </pre>
+         *
+         * <code>repeated float scores = 2;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearScores() {
+          scores_ = emptyFloatList();
+          bitField0_ = (bitField0_ & ~0x00000002);
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes)
+      private static final com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+              .SafetyAttributes
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes();
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<SafetyAttributes> PARSER =
+          new com.google.protobuf.AbstractParser<SafetyAttributes>() {
+            @java.lang.Override
+            public SafetyAttributes parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<SafetyAttributes> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<SafetyAttributes> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
     }
 
     public static final int SUMMARY_TEXT_FIELD_NUMBER = 1;
@@ -5932,6 +8206,197 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int SUMMARY_SKIPPED_REASONS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private java.util.List<java.lang.Integer> summarySkippedReasons_;
+
+    private static final com.google.protobuf.Internal.ListAdapter.Converter<
+            java.lang.Integer,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason>
+        summarySkippedReasons_converter_ =
+            new com.google.protobuf.Internal.ListAdapter.Converter<
+                java.lang.Integer,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                    .SummarySkippedReason>() {
+              public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                      .SummarySkippedReason
+                  convert(java.lang.Integer from) {
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason
+                    result =
+                        com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                            .SummarySkippedReason.forNumber(from);
+                return result == null
+                    ? com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                        .SummarySkippedReason.UNRECOGNIZED
+                    : result;
+              }
+            };
+    /**
+     *
+     *
+     * <pre>
+     * Additional summary-skipped reasons. This provides the reason for ignored
+     * cases. If nothing is skipped, this field is not set.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+     * </code>
+     *
+     * @return A list containing the summarySkippedReasons.
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason>
+        getSummarySkippedReasonsList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer,
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason>(
+          summarySkippedReasons_, summarySkippedReasons_converter_);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional summary-skipped reasons. This provides the reason for ignored
+     * cases. If nothing is skipped, this field is not set.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+     * </code>
+     *
+     * @return The count of summarySkippedReasons.
+     */
+    @java.lang.Override
+    public int getSummarySkippedReasonsCount() {
+      return summarySkippedReasons_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional summary-skipped reasons. This provides the reason for ignored
+     * cases. If nothing is skipped, this field is not set.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The summarySkippedReasons at the given index.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason
+        getSummarySkippedReasons(int index) {
+      return summarySkippedReasons_converter_.convert(summarySkippedReasons_.get(index));
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional summary-skipped reasons. This provides the reason for ignored
+     * cases. If nothing is skipped, this field is not set.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for summarySkippedReasons.
+     */
+    @java.lang.Override
+    public java.util.List<java.lang.Integer> getSummarySkippedReasonsValueList() {
+      return summarySkippedReasons_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Additional summary-skipped reasons. This provides the reason for ignored
+     * cases. If nothing is skipped, this field is not set.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of summarySkippedReasons at the given index.
+     */
+    @java.lang.Override
+    public int getSummarySkippedReasonsValue(int index) {
+      return summarySkippedReasons_.get(index);
+    }
+
+    private int summarySkippedReasonsMemoizedSerializedSize;
+
+    public static final int SAFETY_ATTRIBUTES_FIELD_NUMBER = 3;
+    private com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+        safetyAttributes_;
+    /**
+     *
+     *
+     * <pre>
+     * A collection of Safety Attribute categories and their associated
+     * confidence scores.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes safety_attributes = 3;
+     * </code>
+     *
+     * @return Whether the safetyAttributes field is set.
+     */
+    @java.lang.Override
+    public boolean hasSafetyAttributes() {
+      return safetyAttributes_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A collection of Safety Attribute categories and their associated
+     * confidence scores.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes safety_attributes = 3;
+     * </code>
+     *
+     * @return The safetyAttributes.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+        getSafetyAttributes() {
+      return safetyAttributes_ == null
+          ? com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+              .getDefaultInstance()
+          : safetyAttributes_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A collection of Safety Attribute categories and their associated
+     * confidence scores.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes safety_attributes = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributesOrBuilder
+        getSafetyAttributesOrBuilder() {
+      return safetyAttributes_ == null
+          ? com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+              .getDefaultInstance()
+          : safetyAttributes_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -5946,8 +8411,19 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getSerializedSize();
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(summaryText_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, summaryText_);
+      }
+      if (getSummarySkippedReasonsList().size() > 0) {
+        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(summarySkippedReasonsMemoizedSerializedSize);
+      }
+      for (int i = 0; i < summarySkippedReasons_.size(); i++) {
+        output.writeEnumNoTag(summarySkippedReasons_.get(i));
+      }
+      if (safetyAttributes_ != null) {
+        output.writeMessage(3, getSafetyAttributes());
       }
       getUnknownFields().writeTo(output);
     }
@@ -5960,6 +8436,23 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(summaryText_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, summaryText_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < summarySkippedReasons_.size(); i++) {
+          dataSize +=
+              com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(
+                  summarySkippedReasons_.get(i));
+        }
+        size += dataSize;
+        if (!getSummarySkippedReasonsList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+        }
+        summarySkippedReasonsMemoizedSerializedSize = dataSize;
+      }
+      if (safetyAttributes_ != null) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getSafetyAttributes());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -5978,6 +8471,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary) obj;
 
       if (!getSummaryText().equals(other.getSummaryText())) return false;
+      if (!summarySkippedReasons_.equals(other.summarySkippedReasons_)) return false;
+      if (hasSafetyAttributes() != other.hasSafetyAttributes()) return false;
+      if (hasSafetyAttributes()) {
+        if (!getSafetyAttributes().equals(other.getSafetyAttributes())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -5991,6 +8489,14 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + SUMMARY_TEXT_FIELD_NUMBER;
       hash = (53 * hash) + getSummaryText().hashCode();
+      if (getSummarySkippedReasonsCount() > 0) {
+        hash = (37 * hash) + SUMMARY_SKIPPED_REASONS_FIELD_NUMBER;
+        hash = (53 * hash) + summarySkippedReasons_.hashCode();
+      }
+      if (hasSafetyAttributes()) {
+        hash = (37 * hash) + SAFETY_ATTRIBUTES_FIELD_NUMBER;
+        hash = (53 * hash) + getSafetyAttributes().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -6134,6 +8640,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         summaryText_ = "";
+        summarySkippedReasons_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        safetyAttributes_ = null;
+        if (safetyAttributesBuilder_ != null) {
+          safetyAttributesBuilder_.dispose();
+          safetyAttributesBuilder_ = null;
+        }
         return this;
       }
 
@@ -6162,6 +8675,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary buildPartial() {
         com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary result =
             new com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary(this);
+        buildPartialRepeatedFields(result);
         if (bitField0_ != 0) {
           buildPartial0(result);
         }
@@ -6169,11 +8683,26 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return result;
       }
 
+      private void buildPartialRepeatedFields(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary result) {
+        if (((bitField0_ & 0x00000002) != 0)) {
+          summarySkippedReasons_ = java.util.Collections.unmodifiableList(summarySkippedReasons_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.summarySkippedReasons_ = summarySkippedReasons_;
+      }
+
       private void buildPartial0(
           com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.summaryText_ = summaryText_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.safetyAttributes_ =
+              safetyAttributesBuilder_ == null
+                  ? safetyAttributes_
+                  : safetyAttributesBuilder_.build();
         }
       }
 
@@ -6232,6 +8761,19 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000001;
           onChanged();
         }
+        if (!other.summarySkippedReasons_.isEmpty()) {
+          if (summarySkippedReasons_.isEmpty()) {
+            summarySkippedReasons_ = other.summarySkippedReasons_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureSummarySkippedReasonsIsMutable();
+            summarySkippedReasons_.addAll(other.summarySkippedReasons_);
+          }
+          onChanged();
+        }
+        if (other.hasSafetyAttributes()) {
+          mergeSafetyAttributes(other.getSafetyAttributes());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -6264,6 +8806,32 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 16:
+                {
+                  int tmpRaw = input.readEnum();
+                  ensureSummarySkippedReasonsIsMutable();
+                  summarySkippedReasons_.add(tmpRaw);
+                  break;
+                } // case 16
+              case 18:
+                {
+                  int length = input.readRawVarint32();
+                  int oldLimit = input.pushLimit(length);
+                  while (input.getBytesUntilLimit() > 0) {
+                    int tmpRaw = input.readEnum();
+                    ensureSummarySkippedReasonsIsMutable();
+                    summarySkippedReasons_.add(tmpRaw);
+                  }
+                  input.popLimit(oldLimit);
+                  break;
+                } // case 18
+              case 26:
+                {
+                  input.readMessage(
+                      getSafetyAttributesFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -6389,6 +8957,509 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         return this;
       }
 
+      private java.util.List<java.lang.Integer> summarySkippedReasons_ =
+          java.util.Collections.emptyList();
+
+      private void ensureSummarySkippedReasonsIsMutable() {
+        if (!((bitField0_ & 0x00000002) != 0)) {
+          summarySkippedReasons_ =
+              new java.util.ArrayList<java.lang.Integer>(summarySkippedReasons_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @return A list containing the summarySkippedReasons.
+       */
+      public java.util.List<
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason>
+          getSummarySkippedReasonsList() {
+        return new com.google.protobuf.Internal.ListAdapter<
+            java.lang.Integer,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason>(
+            summarySkippedReasons_, summarySkippedReasons_converter_);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @return The count of summarySkippedReasons.
+       */
+      public int getSummarySkippedReasonsCount() {
+        return summarySkippedReasons_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The summarySkippedReasons at the given index.
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason
+          getSummarySkippedReasons(int index) {
+        return summarySkippedReasons_converter_.convert(summarySkippedReasons_.get(index));
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The summarySkippedReasons to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSummarySkippedReasons(
+          int index,
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSummarySkippedReasonsIsMutable();
+        summarySkippedReasons_.set(index, value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @param value The summarySkippedReasons to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSummarySkippedReasons(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason
+              value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSummarySkippedReasonsIsMutable();
+        summarySkippedReasons_.add(value.getNumber());
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @param values The summarySkippedReasons to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllSummarySkippedReasons(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                          .SummarySkippedReason>
+              values) {
+        ensureSummarySkippedReasonsIsMutable();
+        for (com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason
+            value : values) {
+          summarySkippedReasons_.add(value.getNumber());
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSummarySkippedReasons() {
+        summarySkippedReasons_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @return A list containing the enum numeric values on the wire for summarySkippedReasons.
+       */
+      public java.util.List<java.lang.Integer> getSummarySkippedReasonsValueList() {
+        return java.util.Collections.unmodifiableList(summarySkippedReasons_);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The enum numeric value on the wire of summarySkippedReasons at the given index.
+       */
+      public int getSummarySkippedReasonsValue(int index) {
+        return summarySkippedReasons_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The enum numeric value on the wire for summarySkippedReasons to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSummarySkippedReasonsValue(int index, int value) {
+        ensureSummarySkippedReasonsIsMutable();
+        summarySkippedReasons_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for summarySkippedReasons to add.
+       * @return This builder for chaining.
+       */
+      public Builder addSummarySkippedReasonsValue(int value) {
+        ensureSummarySkippedReasonsIsMutable();
+        summarySkippedReasons_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Additional summary-skipped reasons. This provides the reason for ignored
+       * cases. If nothing is skipped, this field is not set.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SummarySkippedReason summary_skipped_reasons = 2;
+       * </code>
+       *
+       * @param values The enum numeric values on the wire for summarySkippedReasons to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllSummarySkippedReasonsValue(
+          java.lang.Iterable<java.lang.Integer> values) {
+        ensureSummarySkippedReasonsIsMutable();
+        for (int value : values) {
+          summarySkippedReasons_.add(value);
+        }
+        onChanged();
+        return this;
+      }
+
+      private com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+          safetyAttributes_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+                  .Builder,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                  .SafetyAttributesOrBuilder>
+          safetyAttributesBuilder_;
+      /**
+       *
+       *
+       * <pre>
+       * A collection of Safety Attribute categories and their associated
+       * confidence scores.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes safety_attributes = 3;
+       * </code>
+       *
+       * @return Whether the safetyAttributes field is set.
+       */
+      public boolean hasSafetyAttributes() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A collection of Safety Attribute categories and their associated
+       * confidence scores.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes safety_attributes = 3;
+       * </code>
+       *
+       * @return The safetyAttributes.
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+          getSafetyAttributes() {
+        if (safetyAttributesBuilder_ == null) {
+          return safetyAttributes_ == null
+              ? com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+                  .getDefaultInstance()
+              : safetyAttributes_;
+        } else {
+          return safetyAttributesBuilder_.getMessage();
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A collection of Safety Attribute categories and their associated
+       * confidence scores.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes safety_attributes = 3;
+       * </code>
+       */
+      public Builder setSafetyAttributes(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes value) {
+        if (safetyAttributesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          safetyAttributes_ = value;
+        } else {
+          safetyAttributesBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A collection of Safety Attribute categories and their associated
+       * confidence scores.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes safety_attributes = 3;
+       * </code>
+       */
+      public Builder setSafetyAttributes(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes.Builder
+              builderForValue) {
+        if (safetyAttributesBuilder_ == null) {
+          safetyAttributes_ = builderForValue.build();
+        } else {
+          safetyAttributesBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A collection of Safety Attribute categories and their associated
+       * confidence scores.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes safety_attributes = 3;
+       * </code>
+       */
+      public Builder mergeSafetyAttributes(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes value) {
+        if (safetyAttributesBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && safetyAttributes_ != null
+              && safetyAttributes_
+                  != com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+                      .getDefaultInstance()) {
+            getSafetyAttributesBuilder().mergeFrom(value);
+          } else {
+            safetyAttributes_ = value;
+          }
+        } else {
+          safetyAttributesBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A collection of Safety Attribute categories and their associated
+       * confidence scores.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes safety_attributes = 3;
+       * </code>
+       */
+      public Builder clearSafetyAttributes() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        safetyAttributes_ = null;
+        if (safetyAttributesBuilder_ != null) {
+          safetyAttributesBuilder_.dispose();
+          safetyAttributesBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A collection of Safety Attribute categories and their associated
+       * confidence scores.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes safety_attributes = 3;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes.Builder
+          getSafetyAttributesBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getSafetyAttributesFieldBuilder().getBuilder();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A collection of Safety Attribute categories and their associated
+       * confidence scores.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes safety_attributes = 3;
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+              .SafetyAttributesOrBuilder
+          getSafetyAttributesOrBuilder() {
+        if (safetyAttributesBuilder_ != null) {
+          return safetyAttributesBuilder_.getMessageOrBuilder();
+        } else {
+          return safetyAttributes_ == null
+              ? com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+                  .getDefaultInstance()
+              : safetyAttributes_;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * A collection of Safety Attribute categories and their associated
+       * confidence scores.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes safety_attributes = 3;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+                  .Builder,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                  .SafetyAttributesOrBuilder>
+          getSafetyAttributesFieldBuilder() {
+        if (safetyAttributesBuilder_ == null) {
+          safetyAttributesBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary.SafetyAttributes
+                      .Builder,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+                      .SafetyAttributesOrBuilder>(
+                  getSafetyAttributes(), getParentForChildren(), isClean());
+          safetyAttributes_ = null;
+        }
+        return safetyAttributesBuilder_;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -6451,6 +9522,692 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public com.google.cloud.discoveryengine.v1beta.SearchResponse.Summary
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  public interface QueryExpansionInfoOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Bool describing whether query expansion has occurred.
+     * </pre>
+     *
+     * <code>bool expanded_query = 1;</code>
+     *
+     * @return The expandedQuery.
+     */
+    boolean getExpandedQuery();
+
+    /**
+     *
+     *
+     * <pre>
+     * Number of pinned results. This field will only be set when expansion
+     * happens and
+     * [SearchRequest.QueryExpansionSpec.pin_unexpanded_results][google.cloud.discoveryengine.v1beta.SearchRequest.QueryExpansionSpec.pin_unexpanded_results]
+     * is set to true.
+     * </pre>
+     *
+     * <code>int64 pinned_result_count = 2;</code>
+     *
+     * @return The pinnedResultCount.
+     */
+    long getPinnedResultCount();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Information describing query expansion including whether expansion has
+   * occurred.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo}
+   */
+  public static final class QueryExpansionInfo extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo)
+      QueryExpansionInfoOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use QueryExpansionInfo.newBuilder() to construct.
+    private QueryExpansionInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private QueryExpansionInfo() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new QueryExpansionInfo();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_QueryExpansionInfo_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+          .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_QueryExpansionInfo_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo.class,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo.Builder
+                  .class);
+    }
+
+    public static final int EXPANDED_QUERY_FIELD_NUMBER = 1;
+    private boolean expandedQuery_ = false;
+    /**
+     *
+     *
+     * <pre>
+     * Bool describing whether query expansion has occurred.
+     * </pre>
+     *
+     * <code>bool expanded_query = 1;</code>
+     *
+     * @return The expandedQuery.
+     */
+    @java.lang.Override
+    public boolean getExpandedQuery() {
+      return expandedQuery_;
+    }
+
+    public static final int PINNED_RESULT_COUNT_FIELD_NUMBER = 2;
+    private long pinnedResultCount_ = 0L;
+    /**
+     *
+     *
+     * <pre>
+     * Number of pinned results. This field will only be set when expansion
+     * happens and
+     * [SearchRequest.QueryExpansionSpec.pin_unexpanded_results][google.cloud.discoveryengine.v1beta.SearchRequest.QueryExpansionSpec.pin_unexpanded_results]
+     * is set to true.
+     * </pre>
+     *
+     * <code>int64 pinned_result_count = 2;</code>
+     *
+     * @return The pinnedResultCount.
+     */
+    @java.lang.Override
+    public long getPinnedResultCount() {
+      return pinnedResultCount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (expandedQuery_ != false) {
+        output.writeBool(1, expandedQuery_);
+      }
+      if (pinnedResultCount_ != 0L) {
+        output.writeInt64(2, pinnedResultCount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (expandedQuery_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, expandedQuery_);
+      }
+      if (pinnedResultCount_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, pinnedResultCount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo other =
+          (com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo) obj;
+
+      if (getExpandedQuery() != other.getExpandedQuery()) return false;
+      if (getPinnedResultCount() != other.getPinnedResultCount()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + EXPANDED_QUERY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExpandedQuery());
+      hash = (37 * hash) + PINNED_RESULT_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getPinnedResultCount());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Information describing query expansion including whether expansion has
+     * occurred.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo)
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_QueryExpansionInfo_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_QueryExpansionInfo_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo.class,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        expandedQuery_ = false;
+        pinnedResultCount_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_QueryExpansionInfo_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+          getDefaultInstanceForType() {
+        return com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo build() {
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+          buildPartial() {
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo result =
+            new com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.expandedQuery_ = expandedQuery_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.pinnedResultCount_ = pinnedResultCount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo) {
+          return mergeFrom(
+              (com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo other) {
+        if (other
+            == com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+                .getDefaultInstance()) return this;
+        if (other.getExpandedQuery() != false) {
+          setExpandedQuery(other.getExpandedQuery());
+        }
+        if (other.getPinnedResultCount() != 0L) {
+          setPinnedResultCount(other.getPinnedResultCount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  expandedQuery_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  pinnedResultCount_ = input.readInt64();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean expandedQuery_;
+      /**
+       *
+       *
+       * <pre>
+       * Bool describing whether query expansion has occurred.
+       * </pre>
+       *
+       * <code>bool expanded_query = 1;</code>
+       *
+       * @return The expandedQuery.
+       */
+      @java.lang.Override
+      public boolean getExpandedQuery() {
+        return expandedQuery_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Bool describing whether query expansion has occurred.
+       * </pre>
+       *
+       * <code>bool expanded_query = 1;</code>
+       *
+       * @param value The expandedQuery to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExpandedQuery(boolean value) {
+
+        expandedQuery_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Bool describing whether query expansion has occurred.
+       * </pre>
+       *
+       * <code>bool expanded_query = 1;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearExpandedQuery() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        expandedQuery_ = false;
+        onChanged();
+        return this;
+      }
+
+      private long pinnedResultCount_;
+      /**
+       *
+       *
+       * <pre>
+       * Number of pinned results. This field will only be set when expansion
+       * happens and
+       * [SearchRequest.QueryExpansionSpec.pin_unexpanded_results][google.cloud.discoveryengine.v1beta.SearchRequest.QueryExpansionSpec.pin_unexpanded_results]
+       * is set to true.
+       * </pre>
+       *
+       * <code>int64 pinned_result_count = 2;</code>
+       *
+       * @return The pinnedResultCount.
+       */
+      @java.lang.Override
+      public long getPinnedResultCount() {
+        return pinnedResultCount_;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of pinned results. This field will only be set when expansion
+       * happens and
+       * [SearchRequest.QueryExpansionSpec.pin_unexpanded_results][google.cloud.discoveryengine.v1beta.SearchRequest.QueryExpansionSpec.pin_unexpanded_results]
+       * is set to true.
+       * </pre>
+       *
+       * <code>int64 pinned_result_count = 2;</code>
+       *
+       * @param value The pinnedResultCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPinnedResultCount(long value) {
+
+        pinnedResultCount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Number of pinned results. This field will only be set when expansion
+       * happens and
+       * [SearchRequest.QueryExpansionSpec.pin_unexpanded_results][google.cloud.discoveryengine.v1beta.SearchRequest.QueryExpansionSpec.pin_unexpanded_results]
+       * is set to true.
+       * </pre>
+       *
+       * <code>int64 pinned_result_count = 2;</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPinnedResultCount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        pinnedResultCount_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo)
+    private static final com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo();
+    }
+
+    public static com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<QueryExpansionInfo> PARSER =
+        new com.google.protobuf.AbstractParser<QueryExpansionInfo>() {
+          @java.lang.Override
+          public QueryExpansionInfo parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<QueryExpansionInfo> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<QueryExpansionInfo> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
         getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
@@ -7048,6 +10805,67 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     return appliedControls_.getByteString(index);
   }
 
+  public static final int QUERY_EXPANSION_INFO_FIELD_NUMBER = 14;
+  private com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+      queryExpansionInfo_;
+  /**
+   *
+   *
+   * <pre>
+   * Query expansion information for the returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo query_expansion_info = 14;
+   * </code>
+   *
+   * @return Whether the queryExpansionInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasQueryExpansionInfo() {
+    return queryExpansionInfo_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Query expansion information for the returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo query_expansion_info = 14;
+   * </code>
+   *
+   * @return The queryExpansionInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+      getQueryExpansionInfo() {
+    return queryExpansionInfo_ == null
+        ? com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+            .getDefaultInstance()
+        : queryExpansionInfo_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Query expansion information for the returned results.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo query_expansion_info = 14;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfoOrBuilder
+      getQueryExpansionInfoOrBuilder() {
+    return queryExpansionInfo_ == null
+        ? com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+            .getDefaultInstance()
+        : queryExpansionInfo_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -7091,6 +10909,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(redirectUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 12, redirectUri_);
+    }
+    if (queryExpansionInfo_ != null) {
+      output.writeMessage(14, getQueryExpansionInfo());
     }
     getUnknownFields().writeTo(output);
   }
@@ -7136,6 +10957,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(redirectUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, redirectUri_);
     }
+    if (queryExpansionInfo_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getQueryExpansionInfo());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -7168,6 +10992,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (!getSummary().equals(other.getSummary())) return false;
     }
     if (!getAppliedControlsList().equals(other.getAppliedControlsList())) return false;
+    if (hasQueryExpansionInfo() != other.hasQueryExpansionInfo()) return false;
+    if (hasQueryExpansionInfo()) {
+      if (!getQueryExpansionInfo().equals(other.getQueryExpansionInfo())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -7208,6 +11036,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
     if (getAppliedControlsCount() > 0) {
       hash = (37 * hash) + APPLIED_CONTROLS_FIELD_NUMBER;
       hash = (53 * hash) + getAppliedControlsList().hashCode();
+    }
+    if (hasQueryExpansionInfo()) {
+      hash = (37 * hash) + QUERY_EXPANSION_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getQueryExpansionInfo().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -7381,6 +11213,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         summaryBuilder_ = null;
       }
       appliedControls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      queryExpansionInfo_ = null;
+      if (queryExpansionInfoBuilder_ != null) {
+        queryExpansionInfoBuilder_.dispose();
+        queryExpansionInfoBuilder_ = null;
+      }
       return this;
     }
 
@@ -7467,6 +11304,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000200) != 0)) {
         appliedControls_.makeImmutable();
         result.appliedControls_ = appliedControls_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.queryExpansionInfo_ =
+            queryExpansionInfoBuilder_ == null
+                ? queryExpansionInfo_
+                : queryExpansionInfoBuilder_.build();
       }
     }
 
@@ -7609,6 +11452,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (other.hasQueryExpansionInfo()) {
+        mergeQueryExpansionInfo(other.getQueryExpansionInfo());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -7714,6 +11560,13 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 98
+            case 114:
+              {
+                input.readMessage(
+                    getQueryExpansionInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -9650,6 +13503,219 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000200;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+        queryExpansionInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo.Builder,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfoOrBuilder>
+        queryExpansionInfoBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Query expansion information for the returned results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo query_expansion_info = 14;
+     * </code>
+     *
+     * @return Whether the queryExpansionInfo field is set.
+     */
+    public boolean hasQueryExpansionInfo() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Query expansion information for the returned results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo query_expansion_info = 14;
+     * </code>
+     *
+     * @return The queryExpansionInfo.
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+        getQueryExpansionInfo() {
+      if (queryExpansionInfoBuilder_ == null) {
+        return queryExpansionInfo_ == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+                .getDefaultInstance()
+            : queryExpansionInfo_;
+      } else {
+        return queryExpansionInfoBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Query expansion information for the returned results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo query_expansion_info = 14;
+     * </code>
+     */
+    public Builder setQueryExpansionInfo(
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo value) {
+      if (queryExpansionInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        queryExpansionInfo_ = value;
+      } else {
+        queryExpansionInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Query expansion information for the returned results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo query_expansion_info = 14;
+     * </code>
+     */
+    public Builder setQueryExpansionInfo(
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo.Builder
+            builderForValue) {
+      if (queryExpansionInfoBuilder_ == null) {
+        queryExpansionInfo_ = builderForValue.build();
+      } else {
+        queryExpansionInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Query expansion information for the returned results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo query_expansion_info = 14;
+     * </code>
+     */
+    public Builder mergeQueryExpansionInfo(
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo value) {
+      if (queryExpansionInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && queryExpansionInfo_ != null
+            && queryExpansionInfo_
+                != com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+                    .getDefaultInstance()) {
+          getQueryExpansionInfoBuilder().mergeFrom(value);
+        } else {
+          queryExpansionInfo_ = value;
+        }
+      } else {
+        queryExpansionInfoBuilder_.mergeFrom(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Query expansion information for the returned results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo query_expansion_info = 14;
+     * </code>
+     */
+    public Builder clearQueryExpansionInfo() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      queryExpansionInfo_ = null;
+      if (queryExpansionInfoBuilder_ != null) {
+        queryExpansionInfoBuilder_.dispose();
+        queryExpansionInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Query expansion information for the returned results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo query_expansion_info = 14;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo.Builder
+        getQueryExpansionInfoBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getQueryExpansionInfoFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Query expansion information for the returned results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo query_expansion_info = 14;
+     * </code>
+     */
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfoOrBuilder
+        getQueryExpansionInfoOrBuilder() {
+      if (queryExpansionInfoBuilder_ != null) {
+        return queryExpansionInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return queryExpansionInfo_ == null
+            ? com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo
+                .getDefaultInstance()
+            : queryExpansionInfo_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Query expansion information for the returned results.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo query_expansion_info = 14;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo.Builder,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfoOrBuilder>
+        getQueryExpansionInfoFieldBuilder() {
+      if (queryExpansionInfoBuilder_ == null) {
+        queryExpansionInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfo.Builder,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.QueryExpansionInfoOrBuilder>(
+                getQueryExpansionInfo(), getParentForChildren(), isClean());
+        queryExpansionInfo_ = null;
+      }
+      return queryExpansionInfoBuilder_;
     }
 
     @java.lang.Override

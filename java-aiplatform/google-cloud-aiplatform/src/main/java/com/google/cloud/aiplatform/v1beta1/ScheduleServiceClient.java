@@ -1096,8 +1096,9 @@ public class ScheduleServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param schedule Required. The Schedule which replaces the resource on the server. The following
-   *     restrictions will be applied: &#42; The scheduled request type cannot be changed. &#42; The
-   *     output_only fields will be ignored if specified.
+   *     restrictions will be applied:
+   *     <p>&#42; The scheduled request type cannot be changed. &#42; The non-empty fields cannot be
+   *     unset. &#42; The output_only fields will be ignored if specified.
    * @param updateMask Required. The update mask applies to the resource. See
    *     [google.protobuf.FieldMask][google.protobuf.FieldMask].
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails

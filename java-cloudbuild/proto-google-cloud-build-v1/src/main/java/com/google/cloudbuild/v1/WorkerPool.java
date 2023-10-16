@@ -149,6 +149,16 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETED = 4;</code>
      */
     DELETED(4),
+    /**
+     *
+     *
+     * <pre>
+     * `WorkerPool` is being updated; new builds cannot be run.
+     * </pre>
+     *
+     * <code>UPDATING = 5;</code>
+     */
+    UPDATING(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -202,6 +212,16 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
      * <code>DELETED = 4;</code>
      */
     public static final int DELETED_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * `WorkerPool` is being updated; new builds cannot be run.
+     * </pre>
+     *
+     * <code>UPDATING = 5;</code>
+     */
+    public static final int UPDATING_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -237,6 +257,8 @@ public final class WorkerPool extends com.google.protobuf.GeneratedMessageV3
           return DELETING;
         case 4:
           return DELETED;
+        case 5:
+          return UPDATING;
         default:
           return null;
       }

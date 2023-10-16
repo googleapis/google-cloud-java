@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-notebooks</artifactId>
-  <version>1.19.0</version><!-- {x-version-update:google-cloud-notebooks:current} -->
+  <version>1.26.0</version><!-- {x-version-update:google-cloud-notebooks:current} -->
   <packaging>jar</packaging>
   <name>Google AI Platform Notebooks</name>
   <description>is a managed service that offers an integrated and secure JupyterLab environment for data scientists and machine learning developers to experiment, develop, and deploy models into production. Users can create instances running JupyterLab that come pre-installed with the latest data science and machine learning frameworks in a single click.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-notebooks-parent</artifactId>
-    <version>1.19.0</version><!-- {x-version-update:google-cloud-notebooks:current} -->
+    <version>1.26.0</version><!-- {x-version-update:google-cloud-notebooks:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-notebooks</site.installationModule>
@@ -41,6 +41,14 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
+      <artifactId>proto-google-cloud-notebooks-v2</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-httpjson</artifactId>
+    </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>proto-google-cloud-notebooks-v1</artifactId>
@@ -84,6 +92,11 @@
     </dependency>
     <dependency>
       <groupId>com.google.api.grpc</groupId>
+      <artifactId>grpc-google-cloud-notebooks-v2</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-notebooks-v1</artifactId>
       <scope>test</scope>
     </dependency>
@@ -99,6 +112,25 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>gax-grpc</artifactId>
+      <classifier>testlib</classifier>
+      <scope>test</scope>
+    </dependency>
+    <!-- Need testing utility classes for generated gRPC clients tests -->
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax</artifactId>
+      <classifier>testlib</classifier>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-grpc</artifactId>
+      <classifier>testlib</classifier>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.api</groupId>
+      <artifactId>gax-httpjson</artifactId>
       <classifier>testlib</classifier>
       <scope>test</scope>
     </dependency>

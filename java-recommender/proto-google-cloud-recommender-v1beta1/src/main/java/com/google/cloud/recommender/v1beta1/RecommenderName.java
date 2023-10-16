@@ -43,6 +43,8 @@ public class RecommenderName implements ResourceName {
   private static final PathTemplate ORGANIZATION_LOCATION_RECOMMENDER =
       PathTemplate.createWithoutUrlEncoding(
           "organizations/{organization}/locations/{location}/recommenders/{recommender}");
+  private static final PathTemplate RECOMMENDER =
+      PathTemplate.createWithoutUrlEncoding("recommenders/{recommender}");
   private volatile Map<String, String> fieldValuesMap;
   private PathTemplate pathTemplate;
   private String fixedValue;
@@ -103,6 +105,16 @@ public class RecommenderName implements ResourceName {
     pathTemplate = ORGANIZATION_LOCATION_RECOMMENDER;
   }
 
+  private RecommenderName(RecommenderBuilder builder) {
+    recommender = Preconditions.checkNotNull(builder.getRecommender());
+    project = null;
+    location = null;
+    billingAccount = null;
+    folder = null;
+    organization = null;
+    pathTemplate = RECOMMENDER;
+  }
+
   public String getProject() {
     return project;
   }
@@ -150,6 +162,11 @@ public class RecommenderName implements ResourceName {
   @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
   public static OrganizationLocationRecommenderBuilder newOrganizationLocationRecommenderBuilder() {
     return new OrganizationLocationRecommenderBuilder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static RecommenderBuilder newRecommenderBuilder() {
+    return new RecommenderBuilder();
   }
 
   public Builder toBuilder() {
@@ -202,6 +219,11 @@ public class RecommenderName implements ResourceName {
         .setLocation(location)
         .setRecommender(recommender)
         .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static RecommenderName ofRecommenderName(String recommender) {
+    return newRecommenderBuilder().setRecommender(recommender).build();
   }
 
   public static String format(String project, String location, String recommender) {
@@ -257,6 +279,11 @@ public class RecommenderName implements ResourceName {
         .toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatRecommenderName(String recommender) {
+    return newRecommenderBuilder().setRecommender(recommender).build().toString();
+  }
+
   public static RecommenderName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
@@ -277,6 +304,9 @@ public class RecommenderName implements ResourceName {
       Map<String, String> matchMap = ORGANIZATION_LOCATION_RECOMMENDER.match(formattedString);
       return ofOrganizationLocationRecommenderName(
           matchMap.get("organization"), matchMap.get("location"), matchMap.get("recommender"));
+    } else if (RECOMMENDER.matches(formattedString)) {
+      Map<String, String> matchMap = RECOMMENDER.match(formattedString);
+      return ofRecommenderName(matchMap.get("recommender"));
     }
     throw new ValidationException("RecommenderName.parse: formattedString not in valid format");
   }
@@ -305,7 +335,8 @@ public class RecommenderName implements ResourceName {
     return PROJECT_LOCATION_RECOMMENDER.matches(formattedString)
         || BILLING_ACCOUNT_LOCATION_RECOMMENDER.matches(formattedString)
         || FOLDER_LOCATION_RECOMMENDER.matches(formattedString)
-        || ORGANIZATION_LOCATION_RECOMMENDER.matches(formattedString);
+        || ORGANIZATION_LOCATION_RECOMMENDER.matches(formattedString)
+        || RECOMMENDER.matches(formattedString);
   }
 
   @Override
@@ -353,7 +384,7 @@ public class RecommenderName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       RecommenderName that = ((RecommenderName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
@@ -550,6 +581,27 @@ public class RecommenderName implements ResourceName {
     }
 
     public OrganizationLocationRecommenderBuilder setRecommender(String recommender) {
+      this.recommender = recommender;
+      return this;
+    }
+
+    public RecommenderName build() {
+      return new RecommenderName(this);
+    }
+  }
+
+  /** Builder for recommenders/{recommender}. */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class RecommenderBuilder {
+    private String recommender;
+
+    protected RecommenderBuilder() {}
+
+    public String getRecommender() {
+      return recommender;
+    }
+
+    public RecommenderBuilder setRecommender(String recommender) {
       this.recommender = recommender;
       return this;
     }

@@ -404,6 +404,31 @@ public final class NotificationsRule extends com.google.protobuf.GeneratedMessag
     return disableDefaultIamRecipients_;
   }
 
+  public static final int ENABLE_PROJECT_LEVEL_RECIPIENTS_FIELD_NUMBER = 5;
+  private boolean enableProjectLevelRecipients_ = false;
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When set to true, and when the budget has a single project
+   * configured, notifications will be sent to project level recipients of that
+   * project. This field will be ignored if the budget has multiple or no
+   * project configured.
+   *
+   * Currently, project level recipients are the users with `Owner` role on a
+   * cloud project.
+   * </pre>
+   *
+   * <code>bool enable_project_level_recipients = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enableProjectLevelRecipients.
+   */
+  @java.lang.Override
+  public boolean getEnableProjectLevelRecipients() {
+    return enableProjectLevelRecipients_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -430,6 +455,9 @@ public final class NotificationsRule extends com.google.protobuf.GeneratedMessag
     }
     if (disableDefaultIamRecipients_ != false) {
       output.writeBool(4, disableDefaultIamRecipients_);
+    }
+    if (enableProjectLevelRecipients_ != false) {
+      output.writeBool(5, enableProjectLevelRecipients_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -458,6 +486,10 @@ public final class NotificationsRule extends com.google.protobuf.GeneratedMessag
       size +=
           com.google.protobuf.CodedOutputStream.computeBoolSize(4, disableDefaultIamRecipients_);
     }
+    if (enableProjectLevelRecipients_ != false) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(5, enableProjectLevelRecipients_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -479,6 +511,7 @@ public final class NotificationsRule extends com.google.protobuf.GeneratedMessag
     if (!getMonitoringNotificationChannelsList()
         .equals(other.getMonitoringNotificationChannelsList())) return false;
     if (getDisableDefaultIamRecipients() != other.getDisableDefaultIamRecipients()) return false;
+    if (getEnableProjectLevelRecipients() != other.getEnableProjectLevelRecipients()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -500,6 +533,9 @@ public final class NotificationsRule extends com.google.protobuf.GeneratedMessag
     }
     hash = (37 * hash) + DISABLE_DEFAULT_IAM_RECIPIENTS_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableDefaultIamRecipients());
+    hash = (37 * hash) + ENABLE_PROJECT_LEVEL_RECIPIENTS_FIELD_NUMBER;
+    hash =
+        (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableProjectLevelRecipients());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -645,6 +681,7 @@ public final class NotificationsRule extends com.google.protobuf.GeneratedMessag
       schemaVersion_ = "";
       monitoringNotificationChannels_ = com.google.protobuf.LazyStringArrayList.emptyList();
       disableDefaultIamRecipients_ = false;
+      enableProjectLevelRecipients_ = false;
       return this;
     }
 
@@ -693,6 +730,9 @@ public final class NotificationsRule extends com.google.protobuf.GeneratedMessag
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.disableDefaultIamRecipients_ = disableDefaultIamRecipients_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.enableProjectLevelRecipients_ = enableProjectLevelRecipients_;
       }
     }
 
@@ -765,6 +805,9 @@ public final class NotificationsRule extends com.google.protobuf.GeneratedMessag
       if (other.getDisableDefaultIamRecipients() != false) {
         setDisableDefaultIamRecipients(other.getDisableDefaultIamRecipients());
       }
+      if (other.getEnableProjectLevelRecipients() != false) {
+        setEnableProjectLevelRecipients(other.getEnableProjectLevelRecipients());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -816,6 +859,12 @@ public final class NotificationsRule extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
+            case 40:
+              {
+                enableProjectLevelRecipients_ = input.readBool();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1642,6 +1691,80 @@ public final class NotificationsRule extends com.google.protobuf.GeneratedMessag
     public Builder clearDisableDefaultIamRecipients() {
       bitField0_ = (bitField0_ & ~0x00000008);
       disableDefaultIamRecipients_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableProjectLevelRecipients_;
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When set to true, and when the budget has a single project
+     * configured, notifications will be sent to project level recipients of that
+     * project. This field will be ignored if the budget has multiple or no
+     * project configured.
+     *
+     * Currently, project level recipients are the users with `Owner` role on a
+     * cloud project.
+     * </pre>
+     *
+     * <code>bool enable_project_level_recipients = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enableProjectLevelRecipients.
+     */
+    @java.lang.Override
+    public boolean getEnableProjectLevelRecipients() {
+      return enableProjectLevelRecipients_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When set to true, and when the budget has a single project
+     * configured, notifications will be sent to project level recipients of that
+     * project. This field will be ignored if the budget has multiple or no
+     * project configured.
+     *
+     * Currently, project level recipients are the users with `Owner` role on a
+     * cloud project.
+     * </pre>
+     *
+     * <code>bool enable_project_level_recipients = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enableProjectLevelRecipients to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableProjectLevelRecipients(boolean value) {
+
+      enableProjectLevelRecipients_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. When set to true, and when the budget has a single project
+     * configured, notifications will be sent to project level recipients of that
+     * project. This field will be ignored if the budget has multiple or no
+     * project configured.
+     *
+     * Currently, project level recipients are the users with `Owner` role on a
+     * cloud project.
+     * </pre>
+     *
+     * <code>bool enable_project_level_recipients = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableProjectLevelRecipients() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      enableProjectLevelRecipients_ = false;
       onChanged();
       return this;
     }

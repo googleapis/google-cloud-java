@@ -16,6 +16,7 @@
 
 package com.google.cloud.tasks.v2beta2.stub;
 
+import static com.google.cloud.tasks.v2beta2.CloudTasksClient.ListLocationsPagedResponse;
 import static com.google.cloud.tasks.v2beta2.CloudTasksClient.ListQueuesPagedResponse;
 import static com.google.cloud.tasks.v2beta2.CloudTasksClient.ListTasksPagedResponse;
 
@@ -32,7 +33,13 @@ import com.google.api.gax.httpjson.ProtoRestSerializer;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.location.GetLocationRequest;
+import com.google.cloud.location.ListLocationsRequest;
+import com.google.cloud.location.ListLocationsResponse;
+import com.google.cloud.location.Location;
 import com.google.cloud.tasks.v2beta2.AcknowledgeTaskRequest;
+import com.google.cloud.tasks.v2beta2.BufferTaskRequest;
+import com.google.cloud.tasks.v2beta2.BufferTaskResponse;
 import com.google.cloud.tasks.v2beta2.CancelLeaseRequest;
 import com.google.cloud.tasks.v2beta2.CreateQueueRequest;
 import com.google.cloud.tasks.v2beta2.CreateTaskRequest;
@@ -54,6 +61,7 @@ import com.google.cloud.tasks.v2beta2.ResumeQueueRequest;
 import com.google.cloud.tasks.v2beta2.RunTaskRequest;
 import com.google.cloud.tasks.v2beta2.Task;
 import com.google.cloud.tasks.v2beta2.UpdateQueueRequest;
+import com.google.cloud.tasks.v2beta2.UploadQueueYamlRequest;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -799,6 +807,115 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<BufferTaskRequest, BufferTaskResponse>
+      bufferTaskMethodDescriptor =
+          ApiMethodDescriptor.<BufferTaskRequest, BufferTaskResponse>newBuilder()
+              .setFullMethodName("google.cloud.tasks.v2beta2.CloudTasks/BufferTask")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BufferTaskRequest>newBuilder()
+                      .setPath(
+                          "/v2beta2/{queue=projects/*/locations/*/queues/*}/tasks/{taskId}:buffer",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BufferTaskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "queue", request.getQueue());
+                            serializer.putPathParam(fields, "taskId", request.getTaskId());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BufferTaskRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "*",
+                                      request.toBuilder().clearQueue().clearTaskId().build(),
+                                      true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BufferTaskResponse>newBuilder()
+                      .setDefaultInstance(BufferTaskResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
+      listLocationsMethodDescriptor =
+          ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+              .setFullMethodName("google.cloud.location.Locations/ListLocations")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<ListLocationsRequest>newBuilder()
+                      .setPath(
+                          "/v2beta2/{name=projects/*}/locations",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<ListLocationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<ListLocationsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ListLocationsResponse>newBuilder()
+                      .setDefaultInstance(ListLocationsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetLocationRequest, Location>
+      getLocationMethodDescriptor =
+          ApiMethodDescriptor.<GetLocationRequest, Location>newBuilder()
+              .setFullMethodName("google.cloud.location.Locations/GetLocation")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetLocationRequest>newBuilder()
+                      .setPath(
+                          "/v2beta2/{name=projects/*/locations/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetLocationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetLocationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Location>newBuilder()
+                      .setDefaultInstance(Location.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<ListQueuesRequest, ListQueuesResponse> listQueuesCallable;
   private final UnaryCallable<ListQueuesRequest, ListQueuesPagedResponse> listQueuesPagedCallable;
   private final UnaryCallable<GetQueueRequest, Queue> getQueueCallable;
@@ -822,6 +939,11 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
   private final UnaryCallable<RenewLeaseRequest, Task> renewLeaseCallable;
   private final UnaryCallable<CancelLeaseRequest, Task> cancelLeaseCallable;
   private final UnaryCallable<RunTaskRequest, Task> runTaskCallable;
+  private final UnaryCallable<BufferTaskRequest, BufferTaskResponse> bufferTaskCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
+  private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable;
+  private final UnaryCallable<GetLocationRequest, Location> getLocationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -1086,6 +1208,41 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<BufferTaskRequest, BufferTaskResponse> bufferTaskTransportSettings =
+        HttpJsonCallSettings.<BufferTaskRequest, BufferTaskResponse>newBuilder()
+            .setMethodDescriptor(bufferTaskMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("queue", String.valueOf(request.getQueue()));
+                  builder.add("task_id", String.valueOf(request.getTaskId()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
+        listLocationsTransportSettings =
+            HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
+                .setMethodDescriptor(listLocationsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<GetLocationRequest, Location> getLocationTransportSettings =
+        HttpJsonCallSettings.<GetLocationRequest, Location>newBuilder()
+            .setMethodDescriptor(getLocationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.listQueuesCallable =
         callableFactory.createUnaryCallable(
@@ -1155,6 +1312,18 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
     this.runTaskCallable =
         callableFactory.createUnaryCallable(
             runTaskTransportSettings, settings.runTaskSettings(), clientContext);
+    this.bufferTaskCallable =
+        callableFactory.createUnaryCallable(
+            bufferTaskTransportSettings, settings.bufferTaskSettings(), clientContext);
+    this.listLocationsCallable =
+        callableFactory.createUnaryCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.listLocationsPagedCallable =
+        callableFactory.createPagedCallable(
+            listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
+    this.getLocationCallable =
+        callableFactory.createUnaryCallable(
+            getLocationTransportSettings, settings.getLocationSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1183,6 +1352,9 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
     methodDescriptors.add(renewLeaseMethodDescriptor);
     methodDescriptors.add(cancelLeaseMethodDescriptor);
     methodDescriptors.add(runTaskMethodDescriptor);
+    methodDescriptors.add(bufferTaskMethodDescriptor);
+    methodDescriptors.add(listLocationsMethodDescriptor);
+    methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1295,6 +1467,33 @@ public class HttpJsonCloudTasksStub extends CloudTasksStub {
   @Override
   public UnaryCallable<RunTaskRequest, Task> runTaskCallable() {
     return runTaskCallable;
+  }
+
+  @Override
+  public UnaryCallable<BufferTaskRequest, BufferTaskResponse> bufferTaskCallable() {
+    return bufferTaskCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable() {
+    return listLocationsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
+      listLocationsPagedCallable() {
+    return listLocationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetLocationRequest, Location> getLocationCallable() {
+    return getLocationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UploadQueueYamlRequest, Empty> uploadQueueYamlCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: uploadQueueYamlCallable(). REST transport is not implemented for this method yet.");
   }
 
   @Override

@@ -16,7 +16,9 @@
 
 package com.google.cloud.aiplatform.v1beta1;
 
+import com.google.api.core.BetaApi;
 import com.google.api.pathtemplate.PathTemplate;
+import com.google.api.pathtemplate.ValidationException;
 import com.google.api.resourcenames.ResourceName;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
@@ -32,12 +34,18 @@ public class FeatureName implements ResourceName {
   private static final PathTemplate PROJECT_LOCATION_FEATURESTORE_ENTITY_TYPE_FEATURE =
       PathTemplate.createWithoutUrlEncoding(
           "projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}");
+  private static final PathTemplate PROJECT_LOCATION_FEATURE_GROUP_FEATURE =
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}");
   private volatile Map<String, String> fieldValuesMap;
+  private PathTemplate pathTemplate;
+  private String fixedValue;
   private final String project;
   private final String location;
   private final String featurestore;
   private final String entityType;
   private final String feature;
+  private final String featureGroup;
 
   @Deprecated
   protected FeatureName() {
@@ -46,6 +54,7 @@ public class FeatureName implements ResourceName {
     featurestore = null;
     entityType = null;
     feature = null;
+    featureGroup = null;
   }
 
   private FeatureName(Builder builder) {
@@ -54,6 +63,18 @@ public class FeatureName implements ResourceName {
     featurestore = Preconditions.checkNotNull(builder.getFeaturestore());
     entityType = Preconditions.checkNotNull(builder.getEntityType());
     feature = Preconditions.checkNotNull(builder.getFeature());
+    featureGroup = null;
+    pathTemplate = PROJECT_LOCATION_FEATURESTORE_ENTITY_TYPE_FEATURE;
+  }
+
+  private FeatureName(ProjectLocationFeatureGroupFeatureBuilder builder) {
+    project = Preconditions.checkNotNull(builder.getProject());
+    location = Preconditions.checkNotNull(builder.getLocation());
+    featureGroup = Preconditions.checkNotNull(builder.getFeatureGroup());
+    feature = Preconditions.checkNotNull(builder.getFeature());
+    featurestore = null;
+    entityType = null;
+    pathTemplate = PROJECT_LOCATION_FEATURE_GROUP_FEATURE;
   }
 
   public String getProject() {
@@ -76,8 +97,23 @@ public class FeatureName implements ResourceName {
     return feature;
   }
 
+  public String getFeatureGroup() {
+    return featureGroup;
+  }
+
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static Builder newProjectLocationFeaturestoreEntityTypeFeatureBuilder() {
+    return new Builder();
+  }
+
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static ProjectLocationFeatureGroupFeatureBuilder
+      newProjectLocationFeatureGroupFeatureBuilder() {
+    return new ProjectLocationFeatureGroupFeatureBuilder();
   }
 
   public Builder toBuilder() {
@@ -95,6 +131,29 @@ public class FeatureName implements ResourceName {
         .build();
   }
 
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static FeatureName ofProjectLocationFeaturestoreEntityTypeFeatureName(
+      String project, String location, String featurestore, String entityType, String feature) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setFeaturestore(featurestore)
+        .setEntityType(entityType)
+        .setFeature(feature)
+        .build();
+  }
+
+  @BetaApi("The static create methods are not stable yet and may be changed in the future.")
+  public static FeatureName ofProjectLocationFeatureGroupFeatureName(
+      String project, String location, String featureGroup, String feature) {
+    return newProjectLocationFeatureGroupFeatureBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setFeatureGroup(featureGroup)
+        .setFeature(feature)
+        .build();
+  }
+
   public static String format(
       String project, String location, String featurestore, String entityType, String feature) {
     return newBuilder()
@@ -107,19 +166,53 @@ public class FeatureName implements ResourceName {
         .toString();
   }
 
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectLocationFeaturestoreEntityTypeFeatureName(
+      String project, String location, String featurestore, String entityType, String feature) {
+    return newBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setFeaturestore(featurestore)
+        .setEntityType(entityType)
+        .setFeature(feature)
+        .build()
+        .toString();
+  }
+
+  @BetaApi("The static format methods are not stable yet and may be changed in the future.")
+  public static String formatProjectLocationFeatureGroupFeatureName(
+      String project, String location, String featureGroup, String feature) {
+    return newProjectLocationFeatureGroupFeatureBuilder()
+        .setProject(project)
+        .setLocation(location)
+        .setFeatureGroup(featureGroup)
+        .setFeature(feature)
+        .build()
+        .toString();
+  }
+
   public static FeatureName parse(String formattedString) {
     if (formattedString.isEmpty()) {
       return null;
     }
-    Map<String, String> matchMap =
-        PROJECT_LOCATION_FEATURESTORE_ENTITY_TYPE_FEATURE.validatedMatch(
-            formattedString, "FeatureName.parse: formattedString not in valid format");
-    return of(
-        matchMap.get("project"),
-        matchMap.get("location"),
-        matchMap.get("featurestore"),
-        matchMap.get("entity_type"),
-        matchMap.get("feature"));
+    if (PROJECT_LOCATION_FEATURESTORE_ENTITY_TYPE_FEATURE.matches(formattedString)) {
+      Map<String, String> matchMap =
+          PROJECT_LOCATION_FEATURESTORE_ENTITY_TYPE_FEATURE.match(formattedString);
+      return ofProjectLocationFeaturestoreEntityTypeFeatureName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("featurestore"),
+          matchMap.get("entity_type"),
+          matchMap.get("feature"));
+    } else if (PROJECT_LOCATION_FEATURE_GROUP_FEATURE.matches(formattedString)) {
+      Map<String, String> matchMap = PROJECT_LOCATION_FEATURE_GROUP_FEATURE.match(formattedString);
+      return ofProjectLocationFeatureGroupFeatureName(
+          matchMap.get("project"),
+          matchMap.get("location"),
+          matchMap.get("feature_group"),
+          matchMap.get("feature"));
+    }
+    throw new ValidationException("FeatureName.parse: formattedString not in valid format");
   }
 
   public static List<FeatureName> parseList(List<String> formattedStrings) {
@@ -143,7 +236,8 @@ public class FeatureName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PROJECT_LOCATION_FEATURESTORE_ENTITY_TYPE_FEATURE.matches(formattedString);
+    return PROJECT_LOCATION_FEATURESTORE_ENTITY_TYPE_FEATURE.matches(formattedString)
+        || PROJECT_LOCATION_FEATURE_GROUP_FEATURE.matches(formattedString);
   }
 
   @Override
@@ -167,6 +261,9 @@ public class FeatureName implements ResourceName {
           if (feature != null) {
             fieldMapBuilder.put("feature", feature);
           }
+          if (featureGroup != null) {
+            fieldMapBuilder.put("feature_group", featureGroup);
+          }
           fieldValuesMap = fieldMapBuilder.build();
         }
       }
@@ -180,17 +277,7 @@ public class FeatureName implements ResourceName {
 
   @Override
   public String toString() {
-    return PROJECT_LOCATION_FEATURESTORE_ENTITY_TYPE_FEATURE.instantiate(
-        "project",
-        project,
-        "location",
-        location,
-        "featurestore",
-        featurestore,
-        "entity_type",
-        entityType,
-        "feature",
-        feature);
+    return fixedValue != null ? fixedValue : pathTemplate.instantiate(getFieldValuesMap());
   }
 
   @Override
@@ -198,13 +285,14 @@ public class FeatureName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       FeatureName that = ((FeatureName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)
           && Objects.equals(this.featurestore, that.featurestore)
           && Objects.equals(this.entityType, that.entityType)
-          && Objects.equals(this.feature, that.feature);
+          && Objects.equals(this.feature, that.feature)
+          && Objects.equals(this.featureGroup, that.featureGroup);
     }
     return false;
   }
@@ -212,6 +300,8 @@ public class FeatureName implements ResourceName {
   @Override
   public int hashCode() {
     int h = 1;
+    h *= 1000003;
+    h ^= Objects.hashCode(fixedValue);
     h *= 1000003;
     h ^= Objects.hashCode(project);
     h *= 1000003;
@@ -222,6 +312,8 @@ public class FeatureName implements ResourceName {
     h ^= Objects.hashCode(entityType);
     h *= 1000003;
     h ^= Objects.hashCode(feature);
+    h *= 1000003;
+    h ^= Objects.hashCode(featureGroup);
     return h;
   }
 
@@ -284,11 +376,69 @@ public class FeatureName implements ResourceName {
     }
 
     private Builder(FeatureName featureName) {
+      Preconditions.checkArgument(
+          Objects.equals(
+              featureName.pathTemplate, PROJECT_LOCATION_FEATURESTORE_ENTITY_TYPE_FEATURE),
+          "toBuilder is only supported when FeatureName has the pattern of projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}");
       this.project = featureName.project;
       this.location = featureName.location;
       this.featurestore = featureName.featurestore;
       this.entityType = featureName.entityType;
       this.feature = featureName.feature;
+    }
+
+    public FeatureName build() {
+      return new FeatureName(this);
+    }
+  }
+
+  /**
+   * Builder for
+   * projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}.
+   */
+  @BetaApi("The per-pattern Builders are not stable yet and may be changed in the future.")
+  public static class ProjectLocationFeatureGroupFeatureBuilder {
+    private String project;
+    private String location;
+    private String featureGroup;
+    private String feature;
+
+    protected ProjectLocationFeatureGroupFeatureBuilder() {}
+
+    public String getProject() {
+      return project;
+    }
+
+    public String getLocation() {
+      return location;
+    }
+
+    public String getFeatureGroup() {
+      return featureGroup;
+    }
+
+    public String getFeature() {
+      return feature;
+    }
+
+    public ProjectLocationFeatureGroupFeatureBuilder setProject(String project) {
+      this.project = project;
+      return this;
+    }
+
+    public ProjectLocationFeatureGroupFeatureBuilder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
+    public ProjectLocationFeatureGroupFeatureBuilder setFeatureGroup(String featureGroup) {
+      this.featureGroup = featureGroup;
+      return this;
+    }
+
+    public ProjectLocationFeatureGroupFeatureBuilder setFeature(String feature) {
+      this.feature = feature;
+      return this;
     }
 
     public FeatureName build() {

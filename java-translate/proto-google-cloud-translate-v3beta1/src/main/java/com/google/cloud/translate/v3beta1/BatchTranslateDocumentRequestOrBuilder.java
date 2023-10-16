@@ -74,7 +74,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * <pre>
    * Required. The BCP-47 language code of the input document if known, for
    * example, "en-US" or "sr-Latn". Supported language codes are listed in
-   * Language Support (https://cloud.google.com/translate/docs/languages).
+   * [Language Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -88,7 +88,7 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * <pre>
    * Required. The BCP-47 language code of the input document if known, for
    * example, "en-US" or "sr-Latn". Supported language codes are listed in
-   * Language Support (https://cloud.google.com/translate/docs/languages).
+   * [Language Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>string source_language_code = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -592,4 +592,65 @@ public interface BatchTranslateDocumentRequestOrBuilder
    * </code>
    */
   java.lang.String getFormatConversionsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This flag is to support user customized attribution.
+   * If not provided, the default is `Machine Translated by Google`.
+   * Customized attribution should follow rules in
+   * https://cloud.google.com/translate/attribution#attribution_and_logos
+   * </pre>
+   *
+   * <code>string customized_attribution = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The customizedAttribution.
+   */
+  java.lang.String getCustomizedAttribution();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This flag is to support user customized attribution.
+   * If not provided, the default is `Machine Translated by Google`.
+   * Customized attribution should follow rules in
+   * https://cloud.google.com/translate/attribution#attribution_and_logos
+   * </pre>
+   *
+   * <code>string customized_attribution = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for customizedAttribution.
+   */
+  com.google.protobuf.ByteString getCustomizedAttributionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, use the text removal server to remove the shadow text on
+   * background image for native pdf translation.
+   * Shadow removal feature can only be enabled when
+   * is_translate_native_pdf_only: false &amp;&amp; pdf_native_only: false
+   * </pre>
+   *
+   * <code>bool enable_shadow_removal_native_pdf = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enableShadowRemovalNativePdf.
+   */
+  boolean getEnableShadowRemovalNativePdf();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If true, enable auto rotation correction in DVS.
+   * </pre>
+   *
+   * <code>bool enable_rotation_correction = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableRotationCorrection.
+   */
+  boolean getEnableRotationCorrection();
 }

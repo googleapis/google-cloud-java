@@ -127,7 +127,7 @@ public class AttributionSettingsName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       AttributionSettingsName that = ((AttributionSettingsName) o);
       return Objects.equals(this.property, that.property);
     }

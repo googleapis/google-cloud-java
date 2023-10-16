@@ -32,7 +32,8 @@ public final class SchemaServiceGrpc {
 
   private SchemaServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.discoveryengine.v1beta.SchemaService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.discoveryengine.v1beta.SchemaService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -800,9 +801,9 @@ public final class SchemaServiceGrpc {
   private static final class SchemaServiceMethodDescriptorSupplier
       extends SchemaServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    SchemaServiceMethodDescriptorSupplier(String methodName) {
+    SchemaServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

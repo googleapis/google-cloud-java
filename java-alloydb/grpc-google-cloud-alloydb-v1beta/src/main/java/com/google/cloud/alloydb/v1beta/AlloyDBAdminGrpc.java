@@ -32,7 +32,7 @@ public final class AlloyDBAdminGrpc {
 
   private AlloyDBAdminGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.alloydb.v1beta.AlloyDBAdmin";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.alloydb.v1beta.AlloyDBAdmin";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1827,10 +1827,10 @@ public final class AlloyDBAdminGrpc {
      *
      * <pre>
      * Generate a client certificate signed by a Cluster CA.
-     * The sole purpose of this endpoint is to support the Auth Proxy client and
-     * the endpoint's behavior is subject to change without notice, so do not rely
-     * on its behavior remaining constant. Future changes will not break the Auth
-     * Proxy client.
+     * The sole purpose of this endpoint is to support AlloyDB connectors and the
+     * Auth Proxy client. The endpoint's behavior is subject to change without
+     * notice, so do not rely on its behavior remaining constant. Future changes
+     * will not break AlloyDB connectors or the Auth Proxy client.
      * </pre>
      */
     default void generateClientCertificate(
@@ -2367,10 +2367,10 @@ public final class AlloyDBAdminGrpc {
      *
      * <pre>
      * Generate a client certificate signed by a Cluster CA.
-     * The sole purpose of this endpoint is to support the Auth Proxy client and
-     * the endpoint's behavior is subject to change without notice, so do not rely
-     * on its behavior remaining constant. Future changes will not break the Auth
-     * Proxy client.
+     * The sole purpose of this endpoint is to support AlloyDB connectors and the
+     * Auth Proxy client. The endpoint's behavior is subject to change without
+     * notice, so do not rely on its behavior remaining constant. Future changes
+     * will not break AlloyDB connectors or the Auth Proxy client.
      * </pre>
      */
     public void generateClientCertificate(
@@ -2829,10 +2829,10 @@ public final class AlloyDBAdminGrpc {
      *
      * <pre>
      * Generate a client certificate signed by a Cluster CA.
-     * The sole purpose of this endpoint is to support the Auth Proxy client and
-     * the endpoint's behavior is subject to change without notice, so do not rely
-     * on its behavior remaining constant. Future changes will not break the Auth
-     * Proxy client.
+     * The sole purpose of this endpoint is to support AlloyDB connectors and the
+     * Auth Proxy client. The endpoint's behavior is subject to change without
+     * notice, so do not rely on its behavior remaining constant. Future changes
+     * will not break AlloyDB connectors or the Auth Proxy client.
      * </pre>
      */
     public com.google.cloud.alloydb.v1beta.GenerateClientCertificateResponse
@@ -3286,10 +3286,10 @@ public final class AlloyDBAdminGrpc {
      *
      * <pre>
      * Generate a client certificate signed by a Cluster CA.
-     * The sole purpose of this endpoint is to support the Auth Proxy client and
-     * the endpoint's behavior is subject to change without notice, so do not rely
-     * on its behavior remaining constant. Future changes will not break the Auth
-     * Proxy client.
+     * The sole purpose of this endpoint is to support AlloyDB connectors and the
+     * Auth Proxy client. The endpoint's behavior is subject to change without
+     * notice, so do not rely on its behavior remaining constant. Future changes
+     * will not break AlloyDB connectors or the Auth Proxy client.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -3835,9 +3835,9 @@ public final class AlloyDBAdminGrpc {
   private static final class AlloyDBAdminMethodDescriptorSupplier
       extends AlloyDBAdminBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    AlloyDBAdminMethodDescriptorSupplier(String methodName) {
+    AlloyDBAdminMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

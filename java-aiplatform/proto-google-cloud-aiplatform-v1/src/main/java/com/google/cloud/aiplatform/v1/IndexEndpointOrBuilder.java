@@ -435,7 +435,7 @@ public interface IndexEndpointOrBuilder
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.IndexEndpoint.enable_private_service_connect is
-   *     deprecated. See google/cloud/aiplatform/v1/index_endpoint.proto;l=103
+   *     deprecated. See google/cloud/aiplatform/v1/index_endpoint.proto;l=104
    * @return The enablePrivateServiceConnect.
    */
   @java.lang.Deprecated
@@ -541,4 +541,51 @@ public interface IndexEndpointOrBuilder
    * @return The bytes for publicEndpointDomainName.
    */
   com.google.protobuf.ByteString getPublicEndpointDomainNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Customer-managed encryption key spec for an IndexEndpoint. If
+   * set, this IndexEndpoint and all sub-resources of this IndexEndpoint will be
+   * secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 15 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  boolean hasEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Customer-managed encryption key spec for an IndexEndpoint. If
+   * set, this IndexEndpoint and all sub-resources of this IndexEndpoint will be
+   * secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 15 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The encryptionSpec.
+   */
+  com.google.cloud.aiplatform.v1.EncryptionSpec getEncryptionSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Customer-managed encryption key spec for an IndexEndpoint. If
+   * set, this IndexEndpoint and all sub-resources of this IndexEndpoint will be
+   * secured by this key.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.EncryptionSpec encryption_spec = 15 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder();
 }

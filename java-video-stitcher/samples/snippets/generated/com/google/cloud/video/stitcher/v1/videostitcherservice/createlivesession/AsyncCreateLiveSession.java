@@ -20,7 +20,7 @@ package com.google.cloud.video.stitcher.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.video.stitcher.v1.CreateLiveSessionRequest;
 import com.google.cloud.video.stitcher.v1.LiveSession;
-import com.google.cloud.video.stitcher.v1.LiveSessionName;
+import com.google.cloud.video.stitcher.v1.LocationName;
 import com.google.cloud.video.stitcher.v1.VideoStitcherServiceClient;
 
 public class AsyncCreateLiveSession {
@@ -39,7 +39,7 @@ public class AsyncCreateLiveSession {
         VideoStitcherServiceClient.create()) {
       CreateLiveSessionRequest request =
           CreateLiveSessionRequest.newBuilder()
-              .setParent(LiveSessionName.of("[PROJECT]", "[LOCATION]", "[LIVE_SESSION]").toString())
+              .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setLiveSession(LiveSession.newBuilder().build())
               .build();
       ApiFuture<LiveSession> future =

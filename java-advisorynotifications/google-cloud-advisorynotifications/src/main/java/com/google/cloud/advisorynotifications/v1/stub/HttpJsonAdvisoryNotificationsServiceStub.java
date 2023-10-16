@@ -32,9 +32,12 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.advisorynotifications.v1.GetNotificationRequest;
+import com.google.cloud.advisorynotifications.v1.GetSettingsRequest;
 import com.google.cloud.advisorynotifications.v1.ListNotificationsRequest;
 import com.google.cloud.advisorynotifications.v1.ListNotificationsResponse;
 import com.google.cloud.advisorynotifications.v1.Notification;
+import com.google.cloud.advisorynotifications.v1.Settings;
+import com.google.cloud.advisorynotifications.v1.UpdateSettingsRequest;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -132,11 +135,87 @@ public class HttpJsonAdvisoryNotificationsServiceStub extends AdvisoryNotificati
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<GetSettingsRequest, Settings>
+      getSettingsMethodDescriptor =
+          ApiMethodDescriptor.<GetSettingsRequest, Settings>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.advisorynotifications.v1.AdvisoryNotificationsService/GetSettings")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetSettingsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=organizations/*/locations/*/settings}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSettingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetSettingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Settings>newBuilder()
+                      .setDefaultInstance(Settings.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateSettingsRequest, Settings>
+      updateSettingsMethodDescriptor =
+          ApiMethodDescriptor.<UpdateSettingsRequest, Settings>newBuilder()
+              .setFullMethodName(
+                  "google.cloud.advisorynotifications.v1.AdvisoryNotificationsService/UpdateSettings")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateSettingsRequest>newBuilder()
+                      .setPath(
+                          "/v1/{settings.name=organizations/*/locations/*/settings}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSettingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "settings.name", request.getSettings().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateSettingsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("settings", request.getSettings(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Settings>newBuilder()
+                      .setDefaultInstance(Settings.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<ListNotificationsRequest, ListNotificationsResponse>
       listNotificationsCallable;
   private final UnaryCallable<ListNotificationsRequest, ListNotificationsPagedResponse>
       listNotificationsPagedCallable;
   private final UnaryCallable<GetNotificationRequest, Notification> getNotificationCallable;
+  private final UnaryCallable<GetSettingsRequest, Settings> getSettingsCallable;
+  private final UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonStubCallableFactory callableFactory;
@@ -206,6 +285,28 @@ public class HttpJsonAdvisoryNotificationsServiceStub extends AdvisoryNotificati
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<GetSettingsRequest, Settings> getSettingsTransportSettings =
+        HttpJsonCallSettings.<GetSettingsRequest, Settings>newBuilder()
+            .setMethodDescriptor(getSettingsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<UpdateSettingsRequest, Settings> updateSettingsTransportSettings =
+        HttpJsonCallSettings.<UpdateSettingsRequest, Settings>newBuilder()
+            .setMethodDescriptor(updateSettingsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("settings.name", String.valueOf(request.getSettings().getName()));
+                  return builder.build();
+                })
+            .build();
 
     this.listNotificationsCallable =
         callableFactory.createUnaryCallable(
@@ -220,6 +321,12 @@ public class HttpJsonAdvisoryNotificationsServiceStub extends AdvisoryNotificati
     this.getNotificationCallable =
         callableFactory.createUnaryCallable(
             getNotificationTransportSettings, settings.getNotificationSettings(), clientContext);
+    this.getSettingsCallable =
+        callableFactory.createUnaryCallable(
+            getSettingsTransportSettings, settings.getSettingsSettings(), clientContext);
+    this.updateSettingsCallable =
+        callableFactory.createUnaryCallable(
+            updateSettingsTransportSettings, settings.updateSettingsSettings(), clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -230,6 +337,8 @@ public class HttpJsonAdvisoryNotificationsServiceStub extends AdvisoryNotificati
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(listNotificationsMethodDescriptor);
     methodDescriptors.add(getNotificationMethodDescriptor);
+    methodDescriptors.add(getSettingsMethodDescriptor);
+    methodDescriptors.add(updateSettingsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -248,6 +357,16 @@ public class HttpJsonAdvisoryNotificationsServiceStub extends AdvisoryNotificati
   @Override
   public UnaryCallable<GetNotificationRequest, Notification> getNotificationCallable() {
     return getNotificationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetSettingsRequest, Settings> getSettingsCallable() {
+    return getSettingsCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateSettingsRequest, Settings> updateSettingsCallable() {
+    return updateSettingsCallable;
   }
 
   @Override

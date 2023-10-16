@@ -44,6 +44,19 @@ public final class RunTaskRequest extends com.google.protobuf.GeneratedMessageV3
         .internal_static_google_cloud_dataplex_v1_RunTaskRequest_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
+    switch (number) {
+      case 3:
+        return internalGetLabels();
+      case 4:
+        return internalGetArgs();
+      default:
+        throw new RuntimeException("Invalid map field number: " + number);
+    }
+  }
+
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -111,6 +124,258 @@ public final class RunTaskRequest extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int LABELS_FIELD_NUMBER = 3;
+
+  private static final class LabelsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.dataplex.v1.ServiceProto
+                .internal_static_google_cloud_dataplex_v1_RunTaskRequest_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+    if (labels_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+    }
+    return labels_;
+  }
+
+  public int getLabelsCount() {
+    return internalGetLabels().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined labels for the task. If the map is left empty, the
+   * task will run with existing labels from task definition. If the map
+   * contains an entry with a new key, the same will be added to existing set of
+   * labels. If the map contains an entry with an existing label key in task
+   * definition, the task will run with new label value for that entry. Clearing
+   * an existing label will require label value to be explicitly set to a hyphen
+   * "-". The label value cannot be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetLabels().getMap().containsKey(key);
+  }
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+    return getLabelsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined labels for the task. If the map is left empty, the
+   * task will run with existing labels from task definition. If the map
+   * contains an entry with a new key, the same will be added to existing set of
+   * labels. If the map contains an entry with an existing label key in task
+   * definition, the task will run with new label value for that entry. Clearing
+   * an existing label will require label value to be explicitly set to a hyphen
+   * "-". The label value cannot be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+    return internalGetLabels().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined labels for the task. If the map is left empty, the
+   * task will run with existing labels from task definition. If the map
+   * contains an entry with a new key, the same will be added to existing set of
+   * labels. If the map contains an entry with an existing label key in task
+   * definition, the task will run with new label value for that entry. Clearing
+   * an existing label will require label value to be explicitly set to a hyphen
+   * "-". The label value cannot be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined labels for the task. If the map is left empty, the
+   * task will run with existing labels from task definition. If the map
+   * contains an entry with a new key, the same will be added to existing set of
+   * labels. If the map contains an entry with an existing label key in task
+   * definition, the task will run with new label value for that entry. Clearing
+   * an existing label will require label value to be explicitly set to a hyphen
+   * "-". The label value cannot be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
+  public static final int ARGS_FIELD_NUMBER = 4;
+
+  private static final class ArgsDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.dataplex.v1.ServiceProto
+                .internal_static_google_cloud_dataplex_v1_RunTaskRequest_ArgsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> args_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetArgs() {
+    if (args_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(ArgsDefaultEntryHolder.defaultEntry);
+    }
+    return args_;
+  }
+
+  public int getArgsCount() {
+    return internalGetArgs().getMap().size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Execution spec arguments. If the map is left empty, the task will
+   * run with existing execution spec args from task definition. If the map
+   * contains an entry with a new key, the same will be added to existing set of
+   * args. If the map contains an entry with an existing arg key in task
+   * definition, the task will run with new arg value for that entry. Clearing
+   * an existing arg will require arg value to be explicitly set to a hyphen
+   * "-". The arg value cannot be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; args = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public boolean containsArgs(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    return internalGetArgs().getMap().containsKey(key);
+  }
+  /** Use {@link #getArgsMap()} instead. */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getArgs() {
+    return getArgsMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Execution spec arguments. If the map is left empty, the task will
+   * run with existing execution spec args from task definition. If the map
+   * contains an entry with a new key, the same will be added to existing set of
+   * args. If the map contains an entry with an existing arg key in task
+   * definition, the task will run with new arg value for that entry. Clearing
+   * an existing arg will require arg value to be explicitly set to a hyphen
+   * "-". The arg value cannot be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; args = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getArgsMap() {
+    return internalGetArgs().getMap();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Execution spec arguments. If the map is left empty, the task will
+   * run with existing execution spec args from task definition. If the map
+   * contains an entry with a new key, the same will be added to existing set of
+   * args. If the map contains an entry with an existing arg key in task
+   * definition, the task will run with new arg value for that entry. Clearing
+   * an existing arg will require arg value to be explicitly set to a hyphen
+   * "-". The arg value cannot be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; args = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public /* nullable */ java.lang.String getArgsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetArgs().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Execution spec arguments. If the map is left empty, the task will
+   * run with existing execution spec args from task definition. If the map
+   * contains an entry with a new key, the same will be added to existing set of
+   * args. If the map contains an entry with an existing arg key in task
+   * definition, the task will run with new arg value for that entry. Clearing
+   * an existing arg will require arg value to be explicitly set to a hyphen
+   * "-". The arg value cannot be empty.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; args = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  @java.lang.Override
+  public java.lang.String getArgsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new NullPointerException("map key");
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetArgs().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -128,6 +393,10 @@ public final class RunTaskRequest extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 3);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetArgs(), ArgsDefaultEntryHolder.defaultEntry, 4);
     getUnknownFields().writeTo(output);
   }
 
@@ -139,6 +408,26 @@ public final class RunTaskRequest extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, labels__);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetArgs().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> args__ =
+          ArgsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, args__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -157,6 +446,8 @@ public final class RunTaskRequest extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.dataplex.v1.RunTaskRequest) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (!internalGetArgs().equals(other.internalGetArgs())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -170,6 +461,14 @@ public final class RunTaskRequest extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    if (!internalGetLabels().getMap().isEmpty()) {
+      hash = (37 * hash) + LABELS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetLabels().hashCode();
+    }
+    if (!internalGetArgs().getMap().isEmpty()) {
+      hash = (37 * hash) + ARGS_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetArgs().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -280,6 +579,30 @@ public final class RunTaskRequest extends com.google.protobuf.GeneratedMessageV3
           .internal_static_google_cloud_dataplex_v1_RunTaskRequest_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
+      switch (number) {
+        case 3:
+          return internalGetLabels();
+        case 4:
+          return internalGetArgs();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
+      switch (number) {
+        case 3:
+          return internalGetMutableLabels();
+        case 4:
+          return internalGetMutableArgs();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -302,6 +625,8 @@ public final class RunTaskRequest extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      internalGetMutableLabels().clear();
+      internalGetMutableArgs().clear();
       return this;
     }
 
@@ -340,6 +665,14 @@ public final class RunTaskRequest extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.labels_ = internalGetLabels();
+        result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.args_ = internalGetArgs();
+        result.args_.makeImmutable();
       }
     }
 
@@ -393,6 +726,10 @@ public final class RunTaskRequest extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      bitField0_ |= 0x00000002;
+      internalGetMutableArgs().mergeFrom(other.internalGetArgs());
+      bitField0_ |= 0x00000004;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -425,6 +762,27 @@ public final class RunTaskRequest extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 26:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                    input.readMessage(
+                        LabelsDefaultEntryHolder.defaultEntry.getParserForType(),
+                        extensionRegistry);
+                internalGetMutableLabels()
+                    .getMutableMap()
+                    .put(labels__.getKey(), labels__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 26
+            case 34:
+              {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String> args__ =
+                    input.readMessage(
+                        ArgsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableArgs().getMutableMap().put(args__.getKey(), args__.getValue());
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -562,6 +920,416 @@ public final class RunTaskRequest extends com.google.protobuf.GeneratedMessageV3
       name_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
+      if (labels_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      return labels_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableLabels() {
+      if (labels_ == null) {
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+      }
+      if (!labels_.isMutable()) {
+        labels_ = labels_.copy();
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return labels_;
+    }
+
+    public int getLabelsCount() {
+      return internalGetLabels().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined labels for the task. If the map is left empty, the
+     * task will run with existing labels from task definition. If the map
+     * contains an entry with a new key, the same will be added to existing set of
+     * labels. If the map contains an entry with an existing label key in task
+     * definition, the task will run with new label value for that entry. Clearing
+     * an existing label will require label value to be explicitly set to a hyphen
+     * "-". The label value cannot be empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetLabels().getMap().containsKey(key);
+    }
+    /** Use {@link #getLabelsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getLabels() {
+      return getLabelsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined labels for the task. If the map is left empty, the
+     * task will run with existing labels from task definition. If the map
+     * contains an entry with a new key, the same will be added to existing set of
+     * labels. If the map contains an entry with an existing label key in task
+     * definition, the task will run with new label value for that entry. Clearing
+     * an existing label will require label value to be explicitly set to a hyphen
+     * "-". The label value cannot be empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
+      return internalGetLabels().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined labels for the task. If the map is left empty, the
+     * task will run with existing labels from task definition. If the map
+     * contains an entry with a new key, the same will be added to existing set of
+     * labels. If the map contains an entry with an existing label key in task
+     * definition, the task will run with new label value for that entry. Clearing
+     * an existing label will require label value to be explicitly set to a hyphen
+     * "-". The label value cannot be empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getLabelsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined labels for the task. If the map is left empty, the
+     * task will run with existing labels from task definition. If the map
+     * contains an entry with a new key, the same will be added to existing set of
+     * labels. If the map contains an entry with an existing label key in task
+     * definition, the task will run with new label value for that entry. Clearing
+     * an existing label will require label value to be explicitly set to a hyphen
+     * "-". The label value cannot be empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearLabels() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      internalGetMutableLabels().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined labels for the task. If the map is left empty, the
+     * task will run with existing labels from task definition. If the map
+     * contains an entry with a new key, the same will be added to existing set of
+     * labels. If the map contains an entry with an existing label key in task
+     * definition, the task will run with new label value for that entry. Clearing
+     * an existing label will require label value to be explicitly set to a hyphen
+     * "-". The label value cannot be empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
+      bitField0_ |= 0x00000002;
+      return internalGetMutableLabels().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined labels for the task. If the map is left empty, the
+     * task will run with existing labels from task definition. If the map
+     * contains an entry with a new key, the same will be added to existing set of
+     * labels. If the map contains an entry with an existing label key in task
+     * definition, the task will run with new label value for that entry. Clearing
+     * an existing label will require label value to be explicitly set to a hyphen
+     * "-". The label value cannot be empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined labels for the task. If the map is left empty, the
+     * task will run with existing labels from task definition. If the map
+     * contains an entry with a new key, the same will be added to existing set of
+     * labels. If the map contains an entry with an existing label key in task
+     * definition, the task will run with new label value for that entry. Clearing
+     * an existing label will require label value to be explicitly set to a hyphen
+     * "-". The label value cannot be empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; labels = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000002;
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> args_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetArgs() {
+      if (args_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(ArgsDefaultEntryHolder.defaultEntry);
+      }
+      return args_;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableArgs() {
+      if (args_ == null) {
+        args_ = com.google.protobuf.MapField.newMapField(ArgsDefaultEntryHolder.defaultEntry);
+      }
+      if (!args_.isMutable()) {
+        args_ = args_.copy();
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return args_;
+    }
+
+    public int getArgsCount() {
+      return internalGetArgs().getMap().size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Execution spec arguments. If the map is left empty, the task will
+     * run with existing execution spec args from task definition. If the map
+     * contains an entry with a new key, the same will be added to existing set of
+     * args. If the map contains an entry with an existing arg key in task
+     * definition, the task will run with new arg value for that entry. Clearing
+     * an existing arg will require arg value to be explicitly set to a hyphen
+     * "-". The arg value cannot be empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; args = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public boolean containsArgs(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetArgs().getMap().containsKey(key);
+    }
+    /** Use {@link #getArgsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getArgs() {
+      return getArgsMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Execution spec arguments. If the map is left empty, the task will
+     * run with existing execution spec args from task definition. If the map
+     * contains an entry with a new key, the same will be added to existing set of
+     * args. If the map contains an entry with an existing arg key in task
+     * definition, the task will run with new arg value for that entry. Clearing
+     * an existing arg will require arg value to be explicitly set to a hyphen
+     * "-". The arg value cannot be empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; args = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getArgsMap() {
+      return internalGetArgs().getMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Execution spec arguments. If the map is left empty, the task will
+     * run with existing execution spec args from task definition. If the map
+     * contains an entry with a new key, the same will be added to existing set of
+     * args. If the map contains an entry with an existing arg key in task
+     * definition, the task will run with new arg value for that entry. Clearing
+     * an existing arg will require arg value to be explicitly set to a hyphen
+     * "-". The arg value cannot be empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; args = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getArgsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetArgs().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Execution spec arguments. If the map is left empty, the task will
+     * run with existing execution spec args from task definition. If the map
+     * contains an entry with a new key, the same will be added to existing set of
+     * args. If the map contains an entry with an existing arg key in task
+     * definition, the task will run with new arg value for that entry. Clearing
+     * an existing arg will require arg value to be explicitly set to a hyphen
+     * "-". The arg value cannot be empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; args = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.lang.String getArgsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetArgs().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public Builder clearArgs() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      internalGetMutableArgs().getMutableMap().clear();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Execution spec arguments. If the map is left empty, the task will
+     * run with existing execution spec args from task definition. If the map
+     * contains an entry with a new key, the same will be added to existing set of
+     * args. If the map contains an entry with an existing arg key in task
+     * definition, the task will run with new arg value for that entry. Clearing
+     * an existing arg will require arg value to be explicitly set to a hyphen
+     * "-". The arg value cannot be empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; args = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder removeArgs(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      internalGetMutableArgs().getMutableMap().remove(key);
+      return this;
+    }
+    /** Use alternate mutation accessors instead. */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMutableArgs() {
+      bitField0_ |= 0x00000004;
+      return internalGetMutableArgs().getMutableMap();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Execution spec arguments. If the map is left empty, the task will
+     * run with existing execution spec args from task definition. If the map
+     * contains an entry with a new key, the same will be added to existing set of
+     * args. If the map contains an entry with an existing arg key in task
+     * definition, the task will run with new arg value for that entry. Clearing
+     * an existing arg will require arg value to be explicitly set to a hyphen
+     * "-". The arg value cannot be empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; args = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder putArgs(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      if (value == null) {
+        throw new NullPointerException("map value");
+      }
+      internalGetMutableArgs().getMutableMap().put(key, value);
+      bitField0_ |= 0x00000004;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Execution spec arguments. If the map is left empty, the task will
+     * run with existing execution spec args from task definition. If the map
+     * contains an entry with a new key, the same will be added to existing set of
+     * args. If the map contains an entry with an existing arg key in task
+     * definition, the task will run with new arg value for that entry. Clearing
+     * an existing arg will require arg value to be explicitly set to a hyphen
+     * "-". The arg value cannot be empty.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; args = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    public Builder putAllArgs(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableArgs().getMutableMap().putAll(values);
+      bitField0_ |= 0x00000004;
       return this;
     }
 

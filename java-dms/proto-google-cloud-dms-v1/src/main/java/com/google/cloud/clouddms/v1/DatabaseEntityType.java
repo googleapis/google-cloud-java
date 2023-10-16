@@ -440,7 +440,7 @@ public enum DatabaseEntityType implements com.google.protobuf.ProtocolMessageEnu
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.clouddms.v1.ConversionWorkspaceResourcesProto.getDescriptor()
         .getEnumTypes()
-        .get(0);
+        .get(1);
   }
 
   private static final DatabaseEntityType[] VALUES = values();

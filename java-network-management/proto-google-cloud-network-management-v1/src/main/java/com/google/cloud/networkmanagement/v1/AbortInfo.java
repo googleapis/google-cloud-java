@@ -249,6 +249,72 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>UNSUPPORTED = 15;</code>
      */
     UNSUPPORTED(15),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the source and destination resources have no common IP
+     * version.
+     * </pre>
+     *
+     * <code>MISMATCHED_IP_VERSION = 16;</code>
+     */
+    MISMATCHED_IP_VERSION(16),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the connection between the control plane and the node of
+     * the source cluster is initiated by the node and managed by the
+     * Konnectivity proxy.
+     * </pre>
+     *
+     * <code>GKE_KONNECTIVITY_PROXY_UNSUPPORTED = 17;</code>
+     */
+    GKE_KONNECTIVITY_PROXY_UNSUPPORTED(17),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because expected resource configuration was missing.
+     * </pre>
+     *
+     * <code>RESOURCE_CONFIG_NOT_FOUND = 18;</code>
+     */
+    RESOURCE_CONFIG_NOT_FOUND(18),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because a PSC endpoint selection for the Google-managed service
+     * is ambiguous (several PSC endpoints satisfy test input).
+     * </pre>
+     *
+     * <code>GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT = 19;</code>
+     */
+    GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT(19),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because tests with a PSC-based Cloud SQL instance as a source are
+     * not supported.
+     * </pre>
+     *
+     * <code>SOURCE_PSC_CLOUD_SQL_UNSUPPORTED = 20;</code>
+     */
+    SOURCE_PSC_CLOUD_SQL_UNSUPPORTED(20),
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because tests with a forwarding rule as a source are not
+     * supported.
+     * </pre>
+     *
+     * <code>SOURCE_FORWARDING_RULE_UNSUPPORTED = 21;</code>
+     */
+    SOURCE_FORWARDING_RULE_UNSUPPORTED(21),
     UNRECOGNIZED(-1),
     ;
 
@@ -427,6 +493,72 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>UNSUPPORTED = 15;</code>
      */
     public static final int UNSUPPORTED_VALUE = 15;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the source and destination resources have no common IP
+     * version.
+     * </pre>
+     *
+     * <code>MISMATCHED_IP_VERSION = 16;</code>
+     */
+    public static final int MISMATCHED_IP_VERSION_VALUE = 16;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because the connection between the control plane and the node of
+     * the source cluster is initiated by the node and managed by the
+     * Konnectivity proxy.
+     * </pre>
+     *
+     * <code>GKE_KONNECTIVITY_PROXY_UNSUPPORTED = 17;</code>
+     */
+    public static final int GKE_KONNECTIVITY_PROXY_UNSUPPORTED_VALUE = 17;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because expected resource configuration was missing.
+     * </pre>
+     *
+     * <code>RESOURCE_CONFIG_NOT_FOUND = 18;</code>
+     */
+    public static final int RESOURCE_CONFIG_NOT_FOUND_VALUE = 18;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because a PSC endpoint selection for the Google-managed service
+     * is ambiguous (several PSC endpoints satisfy test input).
+     * </pre>
+     *
+     * <code>GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT = 19;</code>
+     */
+    public static final int GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT_VALUE = 19;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because tests with a PSC-based Cloud SQL instance as a source are
+     * not supported.
+     * </pre>
+     *
+     * <code>SOURCE_PSC_CLOUD_SQL_UNSUPPORTED = 20;</code>
+     */
+    public static final int SOURCE_PSC_CLOUD_SQL_UNSUPPORTED_VALUE = 20;
+    /**
+     *
+     *
+     * <pre>
+     * Aborted because tests with a forwarding rule as a source are not
+     * supported.
+     * </pre>
+     *
+     * <code>SOURCE_FORWARDING_RULE_UNSUPPORTED = 21;</code>
+     */
+    public static final int SOURCE_FORWARDING_RULE_UNSUPPORTED_VALUE = 21;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -484,6 +616,18 @@ public final class AbortInfo extends com.google.protobuf.GeneratedMessageV3
           return MISMATCHED_DESTINATION_NETWORK;
         case 15:
           return UNSUPPORTED;
+        case 16:
+          return MISMATCHED_IP_VERSION;
+        case 17:
+          return GKE_KONNECTIVITY_PROXY_UNSUPPORTED;
+        case 18:
+          return RESOURCE_CONFIG_NOT_FOUND;
+        case 19:
+          return GOOGLE_MANAGED_SERVICE_AMBIGUOUS_PSC_ENDPOINT;
+        case 20:
+          return SOURCE_PSC_CLOUD_SQL_UNSUPPORTED;
+        case 21:
+          return SOURCE_FORWARDING_RULE_UNSUPPORTED;
         default:
           return null;
       }

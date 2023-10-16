@@ -40,7 +40,7 @@ public final class AlertPolicyServiceGrpc {
 
   private AlertPolicyServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.monitoring.v3.AlertPolicyService";
+  public static final java.lang.String SERVICE_NAME = "google.monitoring.v3.AlertPolicyService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -357,6 +357,9 @@ public final class AlertPolicyServiceGrpc {
      *
      * <pre>
      * Creates a new alerting policy.
+     * Design your application to single-thread API calls that modify the state of
+     * alerting policies in a single project. This includes calls to
+     * CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.
      * </pre>
      */
     default void createAlertPolicy(
@@ -371,6 +374,9 @@ public final class AlertPolicyServiceGrpc {
      *
      * <pre>
      * Deletes an alerting policy.
+     * Design your application to single-thread API calls that modify the state of
+     * alerting policies in a single project. This includes calls to
+     * CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.
      * </pre>
      */
     default void deleteAlertPolicy(
@@ -388,6 +394,9 @@ public final class AlertPolicyServiceGrpc {
      * a new one or replace only certain fields in the current alerting policy by
      * specifying the fields to be updated via `updateMask`. Returns the
      * updated alerting policy.
+     * Design your application to single-thread API calls that modify the state of
+     * alerting policies in a single project. This includes calls to
+     * CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.
      * </pre>
      */
     default void updateAlertPolicy(
@@ -487,6 +496,9 @@ public final class AlertPolicyServiceGrpc {
      *
      * <pre>
      * Creates a new alerting policy.
+     * Design your application to single-thread API calls that modify the state of
+     * alerting policies in a single project. This includes calls to
+     * CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.
      * </pre>
      */
     public void createAlertPolicy(
@@ -503,6 +515,9 @@ public final class AlertPolicyServiceGrpc {
      *
      * <pre>
      * Deletes an alerting policy.
+     * Design your application to single-thread API calls that modify the state of
+     * alerting policies in a single project. This includes calls to
+     * CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.
      * </pre>
      */
     public void deleteAlertPolicy(
@@ -522,6 +537,9 @@ public final class AlertPolicyServiceGrpc {
      * a new one or replace only certain fields in the current alerting policy by
      * specifying the fields to be updated via `updateMask`. Returns the
      * updated alerting policy.
+     * Design your application to single-thread API calls that modify the state of
+     * alerting policies in a single project. This includes calls to
+     * CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.
      * </pre>
      */
     public void updateAlertPolicy(
@@ -593,6 +611,9 @@ public final class AlertPolicyServiceGrpc {
      *
      * <pre>
      * Creates a new alerting policy.
+     * Design your application to single-thread API calls that modify the state of
+     * alerting policies in a single project. This includes calls to
+     * CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.
      * </pre>
      */
     public com.google.monitoring.v3.AlertPolicy createAlertPolicy(
@@ -606,6 +627,9 @@ public final class AlertPolicyServiceGrpc {
      *
      * <pre>
      * Deletes an alerting policy.
+     * Design your application to single-thread API calls that modify the state of
+     * alerting policies in a single project. This includes calls to
+     * CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.
      * </pre>
      */
     public com.google.protobuf.Empty deleteAlertPolicy(
@@ -622,6 +646,9 @@ public final class AlertPolicyServiceGrpc {
      * a new one or replace only certain fields in the current alerting policy by
      * specifying the fields to be updated via `updateMask`. Returns the
      * updated alerting policy.
+     * Design your application to single-thread API calls that modify the state of
+     * alerting policies in a single project. This includes calls to
+     * CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.
      * </pre>
      */
     public com.google.monitoring.v3.AlertPolicy updateAlertPolicy(
@@ -690,6 +717,9 @@ public final class AlertPolicyServiceGrpc {
      *
      * <pre>
      * Creates a new alerting policy.
+     * Design your application to single-thread API calls that modify the state of
+     * alerting policies in a single project. This includes calls to
+     * CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.monitoring.v3.AlertPolicy>
@@ -703,6 +733,9 @@ public final class AlertPolicyServiceGrpc {
      *
      * <pre>
      * Deletes an alerting policy.
+     * Design your application to single-thread API calls that modify the state of
+     * alerting policies in a single project. This includes calls to
+     * CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
@@ -719,6 +752,9 @@ public final class AlertPolicyServiceGrpc {
      * a new one or replace only certain fields in the current alerting policy by
      * specifying the fields to be updated via `updateMask`. Returns the
      * updated alerting policy.
+     * Design your application to single-thread API calls that modify the state of
+     * alerting policies in a single project. This includes calls to
+     * CreateAlertPolicy, DeleteAlertPolicy and UpdateAlertPolicy.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.monitoring.v3.AlertPolicy>
@@ -853,9 +889,9 @@ public final class AlertPolicyServiceGrpc {
   private static final class AlertPolicyServiceMethodDescriptorSupplier
       extends AlertPolicyServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    AlertPolicyServiceMethodDescriptorSupplier(String methodName) {
+    AlertPolicyServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

@@ -99,6 +99,17 @@ public class ExecutionsSettings extends ClientSettings<ExecutionsSettings> {
     return ((ExecutionsStubSettings) getStubSettings()).deleteExecutionOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to cancelExecution. */
+  public UnaryCallSettings<CancelExecutionRequest, Operation> cancelExecutionSettings() {
+    return ((ExecutionsStubSettings) getStubSettings()).cancelExecutionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cancelExecution. */
+  public OperationCallSettings<CancelExecutionRequest, Execution, Execution>
+      cancelExecutionOperationSettings() {
+    return ((ExecutionsStubSettings) getStubSettings()).cancelExecutionOperationSettings();
+  }
+
   public static final ExecutionsSettings create(ExecutionsStubSettings stub) throws IOException {
     return new ExecutionsSettings.Builder(stub.toBuilder()).build();
   }
@@ -234,6 +245,17 @@ public class ExecutionsSettings extends ClientSettings<ExecutionsSettings> {
     public OperationCallSettings.Builder<DeleteExecutionRequest, Execution, Execution>
         deleteExecutionOperationSettings() {
       return getStubSettingsBuilder().deleteExecutionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelExecution. */
+    public UnaryCallSettings.Builder<CancelExecutionRequest, Operation> cancelExecutionSettings() {
+      return getStubSettingsBuilder().cancelExecutionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cancelExecution. */
+    public OperationCallSettings.Builder<CancelExecutionRequest, Execution, Execution>
+        cancelExecutionOperationSettings() {
+      return getStubSettingsBuilder().cancelExecutionOperationSettings();
     }
 
     @Override

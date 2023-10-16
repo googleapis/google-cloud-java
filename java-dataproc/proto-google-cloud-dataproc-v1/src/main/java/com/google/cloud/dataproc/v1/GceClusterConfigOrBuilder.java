@@ -426,24 +426,24 @@ public interface GceClusterConfigOrBuilder
    *
    *
    * <pre>
-   * The Compute Engine metadata entries to add to all instances (see
+   * Optional. The Compute Engine metadata entries to add to all instances (see
    * [Project and instance
    * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; metadata = 5;</code>
+   * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   int getMetadataCount();
   /**
    *
    *
    * <pre>
-   * The Compute Engine metadata entries to add to all instances (see
+   * Optional. The Compute Engine metadata entries to add to all instances (see
    * [Project and instance
    * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; metadata = 5;</code>
+   * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   boolean containsMetadata(java.lang.String key);
   /** Use {@link #getMetadataMap()} instead. */
@@ -453,24 +453,24 @@ public interface GceClusterConfigOrBuilder
    *
    *
    * <pre>
-   * The Compute Engine metadata entries to add to all instances (see
+   * Optional. The Compute Engine metadata entries to add to all instances (see
    * [Project and instance
    * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; metadata = 5;</code>
+   * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
   /**
    *
    *
    * <pre>
-   * The Compute Engine metadata entries to add to all instances (see
+   * Optional. The Compute Engine metadata entries to add to all instances (see
    * [Project and instance
    * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; metadata = 5;</code>
+   * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   /* nullable */
   java.lang.String getMetadataOrDefault(
@@ -481,12 +481,12 @@ public interface GceClusterConfigOrBuilder
    *
    *
    * <pre>
-   * The Compute Engine metadata entries to add to all instances (see
+   * Optional. The Compute Engine metadata entries to add to all instances (see
    * [Project and instance
    * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
    * </pre>
    *
-   * <code>map&lt;string, string&gt; metadata = 5;</code>
+   * <code>map&lt;string, string&gt; metadata = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getMetadataOrThrow(java.lang.String key);
 

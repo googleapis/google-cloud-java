@@ -33,7 +33,7 @@ public final class ClusterControllerGrpc {
 
   private ClusterControllerGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.dataproc.v1.ClusterController";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.dataproc.v1.ClusterController";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1184,9 +1184,9 @@ public final class ClusterControllerGrpc {
   private static final class ClusterControllerMethodDescriptorSupplier
       extends ClusterControllerBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ClusterControllerMethodDescriptorSupplier(String methodName) {
+    ClusterControllerMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

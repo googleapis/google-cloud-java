@@ -71,6 +71,7 @@ public interface ListEndpointsRequestOrBuilder
    *     * A key including a space must be quoted. `labels."a key"`.
    *
    * Some examples:
+   *
    *   * `endpoint=1`
    *   * `displayName="myDisplayName"`
    *   * `labels.myKey="myValue"`
@@ -98,6 +99,7 @@ public interface ListEndpointsRequestOrBuilder
    *     * A key including a space must be quoted. `labels."a key"`.
    *
    * Some examples:
+   *
    *   * `endpoint=1`
    *   * `displayName="myDisplayName"`
    *   * `labels.myKey="myValue"`
@@ -202,6 +204,7 @@ public interface ListEndpointsRequestOrBuilder
    * A comma-separated list of fields to order by, sorted in ascending order.
    * Use "desc" after a field name for descending.
    * Supported fields:
+   *
    *   * `display_name`
    *   * `create_time`
    *   * `update_time`
@@ -221,6 +224,7 @@ public interface ListEndpointsRequestOrBuilder
    * A comma-separated list of fields to order by, sorted in ascending order.
    * Use "desc" after a field name for descending.
    * Supported fields:
+   *
    *   * `display_name`
    *   * `create_time`
    *   * `update_time`

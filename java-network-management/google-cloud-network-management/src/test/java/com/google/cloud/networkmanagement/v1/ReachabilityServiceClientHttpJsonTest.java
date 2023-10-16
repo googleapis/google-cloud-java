@@ -148,6 +148,7 @@ public class ReachabilityServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
+            .setProbingDetails(ProbingDetails.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -203,6 +204,7 @@ public class ReachabilityServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
+            .setProbingDetails(ProbingDetails.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -267,6 +269,7 @@ public class ReachabilityServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
+            .setProbingDetails(ProbingDetails.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -291,6 +294,7 @@ public class ReachabilityServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
+            .setProbingDetails(ProbingDetails.newBuilder().build())
             .build();
 
     ConnectivityTest actualResponse =
@@ -335,6 +339,7 @@ public class ReachabilityServiceClientHttpJsonTest {
               .setCreateTime(Timestamp.newBuilder().build())
               .setUpdateTime(Timestamp.newBuilder().build())
               .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
+              .setProbingDetails(ProbingDetails.newBuilder().build())
               .build();
       client.updateConnectivityTestAsync(updateMask, resource).get();
       Assert.fail("No exception raised");
@@ -357,6 +362,7 @@ public class ReachabilityServiceClientHttpJsonTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setReachabilityDetails(ReachabilityDetails.newBuilder().build())
+            .setProbingDetails(ProbingDetails.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

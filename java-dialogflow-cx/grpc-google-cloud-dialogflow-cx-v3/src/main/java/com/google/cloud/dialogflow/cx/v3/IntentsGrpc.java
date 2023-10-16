@@ -32,7 +32,7 @@ public final class IntentsGrpc {
 
   private IntentsGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.dialogflow.cx.v3.Intents";
+  public static final java.lang.String SERVICE_NAME = "google.cloud.dialogflow.cx.v3.Intents";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -258,6 +258,92 @@ public final class IntentsGrpc {
     return getDeleteIntentMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3.ImportIntentsRequest, com.google.longrunning.Operation>
+      getImportIntentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportIntents",
+      requestType = com.google.cloud.dialogflow.cx.v3.ImportIntentsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3.ImportIntentsRequest, com.google.longrunning.Operation>
+      getImportIntentsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3.ImportIntentsRequest,
+            com.google.longrunning.Operation>
+        getImportIntentsMethod;
+    if ((getImportIntentsMethod = IntentsGrpc.getImportIntentsMethod) == null) {
+      synchronized (IntentsGrpc.class) {
+        if ((getImportIntentsMethod = IntentsGrpc.getImportIntentsMethod) == null) {
+          IntentsGrpc.getImportIntentsMethod =
+              getImportIntentsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3.ImportIntentsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ImportIntents"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3.ImportIntentsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new IntentsMethodDescriptorSupplier("ImportIntents"))
+                      .build();
+        }
+      }
+    }
+    return getImportIntentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3.ExportIntentsRequest, com.google.longrunning.Operation>
+      getExportIntentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ExportIntents",
+      requestType = com.google.cloud.dialogflow.cx.v3.ExportIntentsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.dialogflow.cx.v3.ExportIntentsRequest, com.google.longrunning.Operation>
+      getExportIntentsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.dialogflow.cx.v3.ExportIntentsRequest,
+            com.google.longrunning.Operation>
+        getExportIntentsMethod;
+    if ((getExportIntentsMethod = IntentsGrpc.getExportIntentsMethod) == null) {
+      synchronized (IntentsGrpc.class) {
+        if ((getExportIntentsMethod = IntentsGrpc.getExportIntentsMethod) == null) {
+          IntentsGrpc.getExportIntentsMethod =
+              getExportIntentsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.dialogflow.cx.v3.ExportIntentsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ExportIntents"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.dialogflow.cx.v3.ExportIntentsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(new IntentsMethodDescriptorSupplier("ExportIntents"))
+                      .build();
+        }
+      }
+    }
+    return getExportIntentsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static IntentsStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<IntentsStub> factory =
@@ -385,6 +471,48 @@ public final class IntentsGrpc {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteIntentMethod(), responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified intents into the agent.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [ImportIntentsMetadata][google.cloud.dialogflow.cx.v3.ImportIntentsMetadata]
+     * - `response`:
+     * [ImportIntentsResponse][google.cloud.dialogflow.cx.v3.ImportIntentsResponse]
+     * </pre>
+     */
+    default void importIntents(
+        com.google.cloud.dialogflow.cx.v3.ImportIntentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getImportIntentsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports the selected intents.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [ExportIntentsMetadata][google.cloud.dialogflow.cx.v3.ExportIntentsMetadata]
+     * - `response`:
+     * [ExportIntentsResponse][google.cloud.dialogflow.cx.v3.ExportIntentsResponse]
+     * </pre>
+     */
+    default void exportIntents(
+        com.google.cloud.dialogflow.cx.v3.ExportIntentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getExportIntentsMethod(), responseObserver);
+    }
   }
 
   /**
@@ -506,6 +634,52 @@ public final class IntentsGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified intents into the agent.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [ImportIntentsMetadata][google.cloud.dialogflow.cx.v3.ImportIntentsMetadata]
+     * - `response`:
+     * [ImportIntentsResponse][google.cloud.dialogflow.cx.v3.ImportIntentsResponse]
+     * </pre>
+     */
+    public void importIntents(
+        com.google.cloud.dialogflow.cx.v3.ImportIntentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getImportIntentsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports the selected intents.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [ExportIntentsMetadata][google.cloud.dialogflow.cx.v3.ExportIntentsMetadata]
+     * - `response`:
+     * [ExportIntentsResponse][google.cloud.dialogflow.cx.v3.ExportIntentsResponse]
+     * </pre>
+     */
+    public void exportIntents(
+        com.google.cloud.dialogflow.cx.v3.ExportIntentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getExportIntentsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -598,6 +772,46 @@ public final class IntentsGrpc {
         com.google.cloud.dialogflow.cx.v3.DeleteIntentRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteIntentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified intents into the agent.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [ImportIntentsMetadata][google.cloud.dialogflow.cx.v3.ImportIntentsMetadata]
+     * - `response`:
+     * [ImportIntentsResponse][google.cloud.dialogflow.cx.v3.ImportIntentsResponse]
+     * </pre>
+     */
+    public com.google.longrunning.Operation importIntents(
+        com.google.cloud.dialogflow.cx.v3.ImportIntentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportIntentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports the selected intents.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [ExportIntentsMetadata][google.cloud.dialogflow.cx.v3.ExportIntentsMetadata]
+     * - `response`:
+     * [ExportIntentsResponse][google.cloud.dialogflow.cx.v3.ExportIntentsResponse]
+     * </pre>
+     */
+    public com.google.longrunning.Operation exportIntents(
+        com.google.cloud.dialogflow.cx.v3.ExportIntentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getExportIntentsMethod(), getCallOptions(), request);
     }
   }
 
@@ -696,6 +910,46 @@ public final class IntentsGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteIntentMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Imports the specified intents into the agent.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [ImportIntentsMetadata][google.cloud.dialogflow.cx.v3.ImportIntentsMetadata]
+     * - `response`:
+     * [ImportIntentsResponse][google.cloud.dialogflow.cx.v3.ImportIntentsResponse]
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        importIntents(com.google.cloud.dialogflow.cx.v3.ImportIntentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getImportIntentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Exports the selected intents.
+     * This method is a [long-running
+     * operation](https://cloud.google.com/dialogflow/cx/docs/how/long-running-operation).
+     * The returned `Operation` type has the following method-specific fields:
+     * - `metadata`:
+     * [ExportIntentsMetadata][google.cloud.dialogflow.cx.v3.ExportIntentsMetadata]
+     * - `response`:
+     * [ExportIntentsResponse][google.cloud.dialogflow.cx.v3.ExportIntentsResponse]
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        exportIntents(com.google.cloud.dialogflow.cx.v3.ExportIntentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getExportIntentsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_INTENTS = 0;
@@ -703,6 +957,8 @@ public final class IntentsGrpc {
   private static final int METHODID_CREATE_INTENT = 2;
   private static final int METHODID_UPDATE_INTENT = 3;
   private static final int METHODID_DELETE_INTENT = 4;
+  private static final int METHODID_IMPORT_INTENTS = 5;
+  private static final int METHODID_EXPORT_INTENTS = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -749,6 +1005,16 @@ public final class IntentsGrpc {
           serviceImpl.deleteIntent(
               (com.google.cloud.dialogflow.cx.v3.DeleteIntentRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_IMPORT_INTENTS:
+          serviceImpl.importIntents(
+              (com.google.cloud.dialogflow.cx.v3.ImportIntentsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_EXPORT_INTENTS:
+          serviceImpl.exportIntents(
+              (com.google.cloud.dialogflow.cx.v3.ExportIntentsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -799,6 +1065,18 @@ public final class IntentsGrpc {
                 new MethodHandlers<
                     com.google.cloud.dialogflow.cx.v3.DeleteIntentRequest,
                     com.google.protobuf.Empty>(service, METHODID_DELETE_INTENT)))
+        .addMethod(
+            getImportIntentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.ImportIntentsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_INTENTS)))
+        .addMethod(
+            getExportIntentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.dialogflow.cx.v3.ExportIntentsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_EXPORT_INTENTS)))
         .build();
   }
 
@@ -824,9 +1102,9 @@ public final class IntentsGrpc {
 
   private static final class IntentsMethodDescriptorSupplier extends IntentsBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    IntentsMethodDescriptorSupplier(String methodName) {
+    IntentsMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -853,6 +1131,8 @@ public final class IntentsGrpc {
                       .addMethod(getCreateIntentMethod())
                       .addMethod(getUpdateIntentMethod())
                       .addMethod(getDeleteIntentMethod())
+                      .addMethod(getImportIntentsMethod())
+                      .addMethod(getExportIntentsMethod())
                       .build();
         }
       }

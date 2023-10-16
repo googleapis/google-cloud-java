@@ -171,4 +171,48 @@ public interface UploadConversationRequestOrBuilder
    * </code>
    */
   com.google.cloud.contactcenterinsights.v1.RedactionConfigOrBuilder getRedactionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default Speech-to-Text configuration. Optional, will default to
+   * the config specified in Settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the speechConfig field is set.
+   */
+  boolean hasSpeechConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default Speech-to-Text configuration. Optional, will default to
+   * the config specified in Settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The speechConfig.
+   */
+  com.google.cloud.contactcenterinsights.v1.SpeechConfig getSpeechConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Default Speech-to-Text configuration. Optional, will default to
+   * the config specified in Settings.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.contactcenterinsights.v1.SpeechConfig speech_config = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.contactcenterinsights.v1.SpeechConfigOrBuilder getSpeechConfigOrBuilder();
 }

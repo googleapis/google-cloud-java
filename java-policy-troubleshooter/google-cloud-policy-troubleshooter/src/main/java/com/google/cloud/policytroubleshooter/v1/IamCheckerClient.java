@@ -167,8 +167,8 @@ public class IamCheckerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Checks whether a member has a specific permission for a specific resource, and explains why the
-   * member does or does not have that permission.
+   * Checks whether a principal has a specific permission for a specific resource, and explains why
+   * the principal does or does not have that permission.
    *
    * <p>Sample code:
    *
@@ -197,8 +197,8 @@ public class IamCheckerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Checks whether a member has a specific permission for a specific resource, and explains why the
-   * member does or does not have that permission.
+   * Checks whether a principal has a specific permission for a specific resource, and explains why
+   * the principal does or does not have that permission.
    *
    * <p>Sample code:
    *

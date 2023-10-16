@@ -159,7 +159,7 @@ public class EventCreateRuleName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       EventCreateRuleName that = ((EventCreateRuleName) o);
       return Objects.equals(this.property, that.property)
           && Objects.equals(this.dataStream, that.dataStream)

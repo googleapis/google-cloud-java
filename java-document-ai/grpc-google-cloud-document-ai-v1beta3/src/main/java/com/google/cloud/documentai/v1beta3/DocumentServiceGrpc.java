@@ -32,7 +32,8 @@ public final class DocumentServiceGrpc {
 
   private DocumentServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.documentai.v1beta3.DocumentService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.documentai.v1beta3.DocumentService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -79,6 +80,195 @@ public final class DocumentServiceGrpc {
       }
     }
     return getUpdateDatasetMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.documentai.v1beta3.ImportDocumentsRequest,
+          com.google.longrunning.Operation>
+      getImportDocumentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ImportDocuments",
+      requestType = com.google.cloud.documentai.v1beta3.ImportDocumentsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.documentai.v1beta3.ImportDocumentsRequest,
+          com.google.longrunning.Operation>
+      getImportDocumentsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.documentai.v1beta3.ImportDocumentsRequest,
+            com.google.longrunning.Operation>
+        getImportDocumentsMethod;
+    if ((getImportDocumentsMethod = DocumentServiceGrpc.getImportDocumentsMethod) == null) {
+      synchronized (DocumentServiceGrpc.class) {
+        if ((getImportDocumentsMethod = DocumentServiceGrpc.getImportDocumentsMethod) == null) {
+          DocumentServiceGrpc.getImportDocumentsMethod =
+              getImportDocumentsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.documentai.v1beta3.ImportDocumentsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ImportDocuments"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.documentai.v1beta3.ImportDocumentsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DocumentServiceMethodDescriptorSupplier("ImportDocuments"))
+                      .build();
+        }
+      }
+    }
+    return getImportDocumentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.documentai.v1beta3.GetDocumentRequest,
+          com.google.cloud.documentai.v1beta3.GetDocumentResponse>
+      getGetDocumentMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetDocument",
+      requestType = com.google.cloud.documentai.v1beta3.GetDocumentRequest.class,
+      responseType = com.google.cloud.documentai.v1beta3.GetDocumentResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.documentai.v1beta3.GetDocumentRequest,
+          com.google.cloud.documentai.v1beta3.GetDocumentResponse>
+      getGetDocumentMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.documentai.v1beta3.GetDocumentRequest,
+            com.google.cloud.documentai.v1beta3.GetDocumentResponse>
+        getGetDocumentMethod;
+    if ((getGetDocumentMethod = DocumentServiceGrpc.getGetDocumentMethod) == null) {
+      synchronized (DocumentServiceGrpc.class) {
+        if ((getGetDocumentMethod = DocumentServiceGrpc.getGetDocumentMethod) == null) {
+          DocumentServiceGrpc.getGetDocumentMethod =
+              getGetDocumentMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.documentai.v1beta3.GetDocumentRequest,
+                          com.google.cloud.documentai.v1beta3.GetDocumentResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "GetDocument"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.documentai.v1beta3.GetDocumentRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.documentai.v1beta3.GetDocumentResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DocumentServiceMethodDescriptorSupplier("GetDocument"))
+                      .build();
+        }
+      }
+    }
+    return getGetDocumentMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.documentai.v1beta3.ListDocumentsRequest,
+          com.google.cloud.documentai.v1beta3.ListDocumentsResponse>
+      getListDocumentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListDocuments",
+      requestType = com.google.cloud.documentai.v1beta3.ListDocumentsRequest.class,
+      responseType = com.google.cloud.documentai.v1beta3.ListDocumentsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.documentai.v1beta3.ListDocumentsRequest,
+          com.google.cloud.documentai.v1beta3.ListDocumentsResponse>
+      getListDocumentsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.documentai.v1beta3.ListDocumentsRequest,
+            com.google.cloud.documentai.v1beta3.ListDocumentsResponse>
+        getListDocumentsMethod;
+    if ((getListDocumentsMethod = DocumentServiceGrpc.getListDocumentsMethod) == null) {
+      synchronized (DocumentServiceGrpc.class) {
+        if ((getListDocumentsMethod = DocumentServiceGrpc.getListDocumentsMethod) == null) {
+          DocumentServiceGrpc.getListDocumentsMethod =
+              getListDocumentsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.documentai.v1beta3.ListDocumentsRequest,
+                          com.google.cloud.documentai.v1beta3.ListDocumentsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "ListDocuments"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.documentai.v1beta3.ListDocumentsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.documentai.v1beta3.ListDocumentsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DocumentServiceMethodDescriptorSupplier("ListDocuments"))
+                      .build();
+        }
+      }
+    }
+    return getListDocumentsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsRequest,
+          com.google.longrunning.Operation>
+      getBatchDeleteDocumentsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchDeleteDocuments",
+      requestType = com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsRequest,
+          com.google.longrunning.Operation>
+      getBatchDeleteDocumentsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsRequest,
+            com.google.longrunning.Operation>
+        getBatchDeleteDocumentsMethod;
+    if ((getBatchDeleteDocumentsMethod = DocumentServiceGrpc.getBatchDeleteDocumentsMethod)
+        == null) {
+      synchronized (DocumentServiceGrpc.class) {
+        if ((getBatchDeleteDocumentsMethod = DocumentServiceGrpc.getBatchDeleteDocumentsMethod)
+            == null) {
+          DocumentServiceGrpc.getBatchDeleteDocumentsMethod =
+              getBatchDeleteDocumentsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BatchDeleteDocuments"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DocumentServiceMethodDescriptorSupplier("BatchDeleteDocuments"))
+                      .build();
+        }
+      }
+    }
+    return getBatchDeleteDocumentsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -245,6 +435,64 @@ public final class DocumentServiceGrpc {
      *
      *
      * <pre>
+     * Import documents into a dataset.
+     * </pre>
+     */
+    default void importDocuments(
+        com.google.cloud.documentai.v1beta3.ImportDocumentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getImportDocumentsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns relevant fields present in the requested document.
+     * </pre>
+     */
+    default void getDocument(
+        com.google.cloud.documentai.v1beta3.GetDocumentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.documentai.v1beta3.GetDocumentResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetDocumentMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of documents present in the dataset.
+     * </pre>
+     */
+    default void listDocuments(
+        com.google.cloud.documentai.v1beta3.ListDocumentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.documentai.v1beta3.ListDocumentsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListDocumentsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a set of documents.
+     * </pre>
+     */
+    default void batchDeleteDocuments(
+        com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchDeleteDocumentsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the `DatasetSchema` of a `Dataset`.
      * </pre>
      */
@@ -326,6 +574,72 @@ public final class DocumentServiceGrpc {
      *
      *
      * <pre>
+     * Import documents into a dataset.
+     * </pre>
+     */
+    public void importDocuments(
+        com.google.cloud.documentai.v1beta3.ImportDocumentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getImportDocumentsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns relevant fields present in the requested document.
+     * </pre>
+     */
+    public void getDocument(
+        com.google.cloud.documentai.v1beta3.GetDocumentRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.documentai.v1beta3.GetDocumentResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetDocumentMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of documents present in the dataset.
+     * </pre>
+     */
+    public void listDocuments(
+        com.google.cloud.documentai.v1beta3.ListDocumentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.documentai.v1beta3.ListDocumentsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListDocumentsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a set of documents.
+     * </pre>
+     */
+    public void batchDeleteDocuments(
+        com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchDeleteDocumentsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the `DatasetSchema` of a `Dataset`.
      * </pre>
      */
@@ -393,6 +707,58 @@ public final class DocumentServiceGrpc {
      *
      *
      * <pre>
+     * Import documents into a dataset.
+     * </pre>
+     */
+    public com.google.longrunning.Operation importDocuments(
+        com.google.cloud.documentai.v1beta3.ImportDocumentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getImportDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns relevant fields present in the requested document.
+     * </pre>
+     */
+    public com.google.cloud.documentai.v1beta3.GetDocumentResponse getDocument(
+        com.google.cloud.documentai.v1beta3.GetDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetDocumentMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of documents present in the dataset.
+     * </pre>
+     */
+    public com.google.cloud.documentai.v1beta3.ListDocumentsResponse listDocuments(
+        com.google.cloud.documentai.v1beta3.ListDocumentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a set of documents.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchDeleteDocuments(
+        com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchDeleteDocumentsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the `DatasetSchema` of a `Dataset`.
      * </pre>
      */
@@ -452,6 +818,61 @@ public final class DocumentServiceGrpc {
      *
      *
      * <pre>
+     * Import documents into a dataset.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        importDocuments(com.google.cloud.documentai.v1beta3.ImportDocumentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getImportDocumentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns relevant fields present in the requested document.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.documentai.v1beta3.GetDocumentResponse>
+        getDocument(com.google.cloud.documentai.v1beta3.GetDocumentRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetDocumentMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns a list of documents present in the dataset.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.documentai.v1beta3.ListDocumentsResponse>
+        listDocuments(com.google.cloud.documentai.v1beta3.ListDocumentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListDocumentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes a set of documents.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        batchDeleteDocuments(
+            com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchDeleteDocumentsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Gets the `DatasetSchema` of a `Dataset`.
      * </pre>
      */
@@ -479,8 +900,12 @@ public final class DocumentServiceGrpc {
   }
 
   private static final int METHODID_UPDATE_DATASET = 0;
-  private static final int METHODID_GET_DATASET_SCHEMA = 1;
-  private static final int METHODID_UPDATE_DATASET_SCHEMA = 2;
+  private static final int METHODID_IMPORT_DOCUMENTS = 1;
+  private static final int METHODID_GET_DOCUMENT = 2;
+  private static final int METHODID_LIST_DOCUMENTS = 3;
+  private static final int METHODID_BATCH_DELETE_DOCUMENTS = 4;
+  private static final int METHODID_GET_DATASET_SCHEMA = 5;
+  private static final int METHODID_UPDATE_DATASET_SCHEMA = 6;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -502,6 +927,29 @@ public final class DocumentServiceGrpc {
         case METHODID_UPDATE_DATASET:
           serviceImpl.updateDataset(
               (com.google.cloud.documentai.v1beta3.UpdateDatasetRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_IMPORT_DOCUMENTS:
+          serviceImpl.importDocuments(
+              (com.google.cloud.documentai.v1beta3.ImportDocumentsRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_GET_DOCUMENT:
+          serviceImpl.getDocument(
+              (com.google.cloud.documentai.v1beta3.GetDocumentRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.documentai.v1beta3.GetDocumentResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_DOCUMENTS:
+          serviceImpl.listDocuments(
+              (com.google.cloud.documentai.v1beta3.ListDocumentsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.cloud.documentai.v1beta3.ListDocumentsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_BATCH_DELETE_DOCUMENTS:
+          serviceImpl.batchDeleteDocuments(
+              (com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_GET_DATASET_SCHEMA:
@@ -540,6 +988,32 @@ public final class DocumentServiceGrpc {
                 new MethodHandlers<
                     com.google.cloud.documentai.v1beta3.UpdateDatasetRequest,
                     com.google.longrunning.Operation>(service, METHODID_UPDATE_DATASET)))
+        .addMethod(
+            getImportDocumentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.ImportDocumentsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_IMPORT_DOCUMENTS)))
+        .addMethod(
+            getGetDocumentMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.GetDocumentRequest,
+                    com.google.cloud.documentai.v1beta3.GetDocumentResponse>(
+                    service, METHODID_GET_DOCUMENT)))
+        .addMethod(
+            getListDocumentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.ListDocumentsRequest,
+                    com.google.cloud.documentai.v1beta3.ListDocumentsResponse>(
+                    service, METHODID_LIST_DOCUMENTS)))
+        .addMethod(
+            getBatchDeleteDocumentsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BATCH_DELETE_DOCUMENTS)))
         .addMethod(
             getGetDatasetSchemaMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -581,9 +1055,9 @@ public final class DocumentServiceGrpc {
   private static final class DocumentServiceMethodDescriptorSupplier
       extends DocumentServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    DocumentServiceMethodDescriptorSupplier(String methodName) {
+    DocumentServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -606,6 +1080,10 @@ public final class DocumentServiceGrpc {
                   io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
                       .setSchemaDescriptor(new DocumentServiceFileDescriptorSupplier())
                       .addMethod(getUpdateDatasetMethod())
+                      .addMethod(getImportDocumentsMethod())
+                      .addMethod(getGetDocumentMethod())
+                      .addMethod(getListDocumentsMethod())
+                      .addMethod(getBatchDeleteDocumentsMethod())
                       .addMethod(getGetDatasetSchemaMethod())
                       .addMethod(getUpdateDatasetSchemaMethod())
                       .build();

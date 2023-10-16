@@ -16,6 +16,7 @@
 
 package com.google.cloud.documentai.v1beta3.stub;
 
+import static com.google.cloud.documentai.v1beta3.DocumentServiceClient.ListDocumentsPagedResponse;
 import static com.google.cloud.documentai.v1beta3.DocumentServiceClient.ListLocationsPagedResponse;
 
 import com.google.api.core.BetaApi;
@@ -27,9 +28,19 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsMetadata;
+import com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsRequest;
+import com.google.cloud.documentai.v1beta3.BatchDeleteDocumentsResponse;
 import com.google.cloud.documentai.v1beta3.Dataset;
 import com.google.cloud.documentai.v1beta3.DatasetSchema;
 import com.google.cloud.documentai.v1beta3.GetDatasetSchemaRequest;
+import com.google.cloud.documentai.v1beta3.GetDocumentRequest;
+import com.google.cloud.documentai.v1beta3.GetDocumentResponse;
+import com.google.cloud.documentai.v1beta3.ImportDocumentsMetadata;
+import com.google.cloud.documentai.v1beta3.ImportDocumentsRequest;
+import com.google.cloud.documentai.v1beta3.ImportDocumentsResponse;
+import com.google.cloud.documentai.v1beta3.ListDocumentsRequest;
+import com.google.cloud.documentai.v1beta3.ListDocumentsResponse;
 import com.google.cloud.documentai.v1beta3.UpdateDatasetOperationMetadata;
 import com.google.cloud.documentai.v1beta3.UpdateDatasetRequest;
 import com.google.cloud.documentai.v1beta3.UpdateDatasetSchemaRequest;
@@ -61,6 +72,48 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setFullMethodName("google.cloud.documentai.v1beta3.DocumentService/UpdateDataset")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDatasetRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ImportDocumentsRequest, Operation>
+      importDocumentsMethodDescriptor =
+          MethodDescriptor.<ImportDocumentsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.documentai.v1beta3.DocumentService/ImportDocuments")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ImportDocumentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetDocumentRequest, GetDocumentResponse>
+      getDocumentMethodDescriptor =
+          MethodDescriptor.<GetDocumentRequest, GetDocumentResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.documentai.v1beta3.DocumentService/GetDocument")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetDocumentRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(GetDocumentResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListDocumentsRequest, ListDocumentsResponse>
+      listDocumentsMethodDescriptor =
+          MethodDescriptor.<ListDocumentsRequest, ListDocumentsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.documentai.v1beta3.DocumentService/ListDocuments")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListDocumentsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListDocumentsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<BatchDeleteDocumentsRequest, Operation>
+      batchDeleteDocumentsMethodDescriptor =
+          MethodDescriptor.<BatchDeleteDocumentsRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.documentai.v1beta3.DocumentService/BatchDeleteDocuments")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchDeleteDocumentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .build();
 
@@ -107,6 +160,18 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
   private final UnaryCallable<UpdateDatasetRequest, Operation> updateDatasetCallable;
   private final OperationCallable<UpdateDatasetRequest, Dataset, UpdateDatasetOperationMetadata>
       updateDatasetOperationCallable;
+  private final UnaryCallable<ImportDocumentsRequest, Operation> importDocumentsCallable;
+  private final OperationCallable<
+          ImportDocumentsRequest, ImportDocumentsResponse, ImportDocumentsMetadata>
+      importDocumentsOperationCallable;
+  private final UnaryCallable<GetDocumentRequest, GetDocumentResponse> getDocumentCallable;
+  private final UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> listDocumentsCallable;
+  private final UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse>
+      listDocumentsPagedCallable;
+  private final UnaryCallable<BatchDeleteDocumentsRequest, Operation> batchDeleteDocumentsCallable;
+  private final OperationCallable<
+          BatchDeleteDocumentsRequest, BatchDeleteDocumentsResponse, BatchDeleteDocumentsMetadata>
+      batchDeleteDocumentsOperationCallable;
   private final UnaryCallable<GetDatasetSchemaRequest, DatasetSchema> getDatasetSchemaCallable;
   private final UnaryCallable<UpdateDatasetSchemaRequest, DatasetSchema>
       updateDatasetSchemaCallable;
@@ -169,6 +234,46 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ImportDocumentsRequest, Operation> importDocumentsTransportSettings =
+        GrpcCallSettings.<ImportDocumentsRequest, Operation>newBuilder()
+            .setMethodDescriptor(importDocumentsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("dataset", String.valueOf(request.getDataset()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetDocumentRequest, GetDocumentResponse> getDocumentTransportSettings =
+        GrpcCallSettings.<GetDocumentRequest, GetDocumentResponse>newBuilder()
+            .setMethodDescriptor(getDocumentMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("dataset", String.valueOf(request.getDataset()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListDocumentsRequest, ListDocumentsResponse> listDocumentsTransportSettings =
+        GrpcCallSettings.<ListDocumentsRequest, ListDocumentsResponse>newBuilder()
+            .setMethodDescriptor(listDocumentsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("dataset", String.valueOf(request.getDataset()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<BatchDeleteDocumentsRequest, Operation> batchDeleteDocumentsTransportSettings =
+        GrpcCallSettings.<BatchDeleteDocumentsRequest, Operation>newBuilder()
+            .setMethodDescriptor(batchDeleteDocumentsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("dataset", String.valueOf(request.getDataset()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<GetDatasetSchemaRequest, DatasetSchema> getDatasetSchemaTransportSettings =
         GrpcCallSettings.<GetDatasetSchemaRequest, DatasetSchema>newBuilder()
             .setMethodDescriptor(getDatasetSchemaMethodDescriptor)
@@ -222,6 +327,35 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
             settings.updateDatasetOperationSettings(),
             clientContext,
             operationsStub);
+    this.importDocumentsCallable =
+        callableFactory.createUnaryCallable(
+            importDocumentsTransportSettings, settings.importDocumentsSettings(), clientContext);
+    this.importDocumentsOperationCallable =
+        callableFactory.createOperationCallable(
+            importDocumentsTransportSettings,
+            settings.importDocumentsOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getDocumentCallable =
+        callableFactory.createUnaryCallable(
+            getDocumentTransportSettings, settings.getDocumentSettings(), clientContext);
+    this.listDocumentsCallable =
+        callableFactory.createUnaryCallable(
+            listDocumentsTransportSettings, settings.listDocumentsSettings(), clientContext);
+    this.listDocumentsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDocumentsTransportSettings, settings.listDocumentsSettings(), clientContext);
+    this.batchDeleteDocumentsCallable =
+        callableFactory.createUnaryCallable(
+            batchDeleteDocumentsTransportSettings,
+            settings.batchDeleteDocumentsSettings(),
+            clientContext);
+    this.batchDeleteDocumentsOperationCallable =
+        callableFactory.createOperationCallable(
+            batchDeleteDocumentsTransportSettings,
+            settings.batchDeleteDocumentsOperationSettings(),
+            clientContext,
+            operationsStub);
     this.getDatasetSchemaCallable =
         callableFactory.createUnaryCallable(
             getDatasetSchemaTransportSettings, settings.getDatasetSchemaSettings(), clientContext);
@@ -257,6 +391,45 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
   public OperationCallable<UpdateDatasetRequest, Dataset, UpdateDatasetOperationMetadata>
       updateDatasetOperationCallable() {
     return updateDatasetOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ImportDocumentsRequest, Operation> importDocumentsCallable() {
+    return importDocumentsCallable;
+  }
+
+  @Override
+  public OperationCallable<ImportDocumentsRequest, ImportDocumentsResponse, ImportDocumentsMetadata>
+      importDocumentsOperationCallable() {
+    return importDocumentsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDocumentRequest, GetDocumentResponse> getDocumentCallable() {
+    return getDocumentCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDocumentsRequest, ListDocumentsResponse> listDocumentsCallable() {
+    return listDocumentsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDocumentsRequest, ListDocumentsPagedResponse>
+      listDocumentsPagedCallable() {
+    return listDocumentsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchDeleteDocumentsRequest, Operation> batchDeleteDocumentsCallable() {
+    return batchDeleteDocumentsCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          BatchDeleteDocumentsRequest, BatchDeleteDocumentsResponse, BatchDeleteDocumentsMetadata>
+      batchDeleteDocumentsOperationCallable() {
+    return batchDeleteDocumentsOperationCallable;
   }
 
   @Override

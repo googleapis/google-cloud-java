@@ -2751,7 +2751,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
    * <code>double total_cost = 2 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.OptimizeToursResponse.total_cost is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=425
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=433
    * @return The totalCost.
    */
   @java.lang.Override
@@ -4881,7 +4881,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <code>double total_cost = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.OptimizeToursResponse.total_cost is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=425
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=433
      * @return The totalCost.
      */
     @java.lang.Override
@@ -4903,7 +4903,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <code>double total_cost = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.OptimizeToursResponse.total_cost is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=425
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=433
      * @param value The totalCost to set.
      * @return This builder for chaining.
      */
@@ -4929,7 +4929,7 @@ public final class OptimizeToursResponse extends com.google.protobuf.GeneratedMe
      * <code>double total_cost = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.OptimizeToursResponse.total_cost is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=425
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=433
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

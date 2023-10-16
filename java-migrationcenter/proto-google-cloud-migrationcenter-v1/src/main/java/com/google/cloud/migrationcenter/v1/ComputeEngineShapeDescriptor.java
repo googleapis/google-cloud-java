@@ -40,6 +40,7 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
   private ComputeEngineShapeDescriptor() {
     series_ = "";
     machineType_ = "";
+    storage_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -219,6 +220,80 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
     }
   }
 
+  public static final int STORAGE_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor> storage_;
+  /**
+   *
+   *
+   * <pre>
+   * Compute Engine storage. Never empty.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor>
+      getStorageList() {
+    return storage_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Compute Engine storage. Never empty.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.migrationcenter.v1.ComputeStorageDescriptorOrBuilder>
+      getStorageOrBuilderList() {
+    return storage_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Compute Engine storage. Never empty.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+   */
+  @java.lang.Override
+  public int getStorageCount() {
+    return storage_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Compute Engine storage. Never empty.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor getStorage(int index) {
+    return storage_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Compute Engine storage. Never empty.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.migrationcenter.v1.ComputeStorageDescriptorOrBuilder getStorageOrBuilder(
+      int index) {
+    return storage_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -248,6 +323,9 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, machineType_);
     }
+    for (int i = 0; i < storage_.size(); i++) {
+      output.writeMessage(6, storage_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -272,6 +350,9 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(machineType_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, machineType_);
     }
+    for (int i = 0; i < storage_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, storage_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -293,6 +374,7 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
     if (getLogicalCoreCount() != other.getLogicalCoreCount()) return false;
     if (!getSeries().equals(other.getSeries())) return false;
     if (!getMachineType().equals(other.getMachineType())) return false;
+    if (!getStorageList().equals(other.getStorageList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -314,6 +396,10 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
     hash = (53 * hash) + getSeries().hashCode();
     hash = (37 * hash) + MACHINE_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + getMachineType().hashCode();
+    if (getStorageCount() > 0) {
+      hash = (37 * hash) + STORAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getStorageList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -459,6 +545,13 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
       logicalCoreCount_ = 0;
       series_ = "";
       machineType_ = "";
+      if (storageBuilder_ == null) {
+        storage_ = java.util.Collections.emptyList();
+      } else {
+        storage_ = null;
+        storageBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -487,11 +580,25 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
     public com.google.cloud.migrationcenter.v1.ComputeEngineShapeDescriptor buildPartial() {
       com.google.cloud.migrationcenter.v1.ComputeEngineShapeDescriptor result =
           new com.google.cloud.migrationcenter.v1.ComputeEngineShapeDescriptor(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.migrationcenter.v1.ComputeEngineShapeDescriptor result) {
+      if (storageBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          storage_ = java.util.Collections.unmodifiableList(storage_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.storage_ = storage_;
+      } else {
+        result.storage_ = storageBuilder_.build();
+      }
     }
 
     private void buildPartial0(
@@ -581,6 +688,33 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (storageBuilder_ == null) {
+        if (!other.storage_.isEmpty()) {
+          if (storage_.isEmpty()) {
+            storage_ = other.storage_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureStorageIsMutable();
+            storage_.addAll(other.storage_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.storage_.isEmpty()) {
+          if (storageBuilder_.isEmpty()) {
+            storageBuilder_.dispose();
+            storageBuilder_ = null;
+            storage_ = other.storage_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            storageBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getStorageFieldBuilder()
+                    : null;
+          } else {
+            storageBuilder_.addAllMessages(other.storage_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -637,6 +771,20 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 50:
+              {
+                com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor m =
+                    input.readMessage(
+                        com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor.parser(),
+                        extensionRegistry);
+                if (storageBuilder_ == null) {
+                  ensureStorageIsMutable();
+                  storage_.add(m);
+                } else {
+                  storageBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1025,6 +1173,372 @@ public final class ComputeEngineShapeDescriptor extends com.google.protobuf.Gene
       bitField0_ |= 0x00000010;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor> storage_ =
+        java.util.Collections.emptyList();
+
+    private void ensureStorageIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        storage_ =
+            new java.util.ArrayList<com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor>(
+                storage_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor,
+            com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor.Builder,
+            com.google.cloud.migrationcenter.v1.ComputeStorageDescriptorOrBuilder>
+        storageBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine storage. Never empty.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+     */
+    public java.util.List<com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor>
+        getStorageList() {
+      if (storageBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(storage_);
+      } else {
+        return storageBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine storage. Never empty.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+     */
+    public int getStorageCount() {
+      if (storageBuilder_ == null) {
+        return storage_.size();
+      } else {
+        return storageBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine storage. Never empty.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+     */
+    public com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor getStorage(int index) {
+      if (storageBuilder_ == null) {
+        return storage_.get(index);
+      } else {
+        return storageBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine storage. Never empty.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+     */
+    public Builder setStorage(
+        int index, com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor value) {
+      if (storageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureStorageIsMutable();
+        storage_.set(index, value);
+        onChanged();
+      } else {
+        storageBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine storage. Never empty.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+     */
+    public Builder setStorage(
+        int index,
+        com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor.Builder builderForValue) {
+      if (storageBuilder_ == null) {
+        ensureStorageIsMutable();
+        storage_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        storageBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine storage. Never empty.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+     */
+    public Builder addStorage(com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor value) {
+      if (storageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureStorageIsMutable();
+        storage_.add(value);
+        onChanged();
+      } else {
+        storageBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine storage. Never empty.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+     */
+    public Builder addStorage(
+        int index, com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor value) {
+      if (storageBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureStorageIsMutable();
+        storage_.add(index, value);
+        onChanged();
+      } else {
+        storageBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine storage. Never empty.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+     */
+    public Builder addStorage(
+        com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor.Builder builderForValue) {
+      if (storageBuilder_ == null) {
+        ensureStorageIsMutable();
+        storage_.add(builderForValue.build());
+        onChanged();
+      } else {
+        storageBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine storage. Never empty.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+     */
+    public Builder addStorage(
+        int index,
+        com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor.Builder builderForValue) {
+      if (storageBuilder_ == null) {
+        ensureStorageIsMutable();
+        storage_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        storageBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine storage. Never empty.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+     */
+    public Builder addAllStorage(
+        java.lang.Iterable<? extends com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor>
+            values) {
+      if (storageBuilder_ == null) {
+        ensureStorageIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, storage_);
+        onChanged();
+      } else {
+        storageBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine storage. Never empty.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+     */
+    public Builder clearStorage() {
+      if (storageBuilder_ == null) {
+        storage_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        storageBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine storage. Never empty.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+     */
+    public Builder removeStorage(int index) {
+      if (storageBuilder_ == null) {
+        ensureStorageIsMutable();
+        storage_.remove(index);
+        onChanged();
+      } else {
+        storageBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine storage. Never empty.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+     */
+    public com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor.Builder getStorageBuilder(
+        int index) {
+      return getStorageFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine storage. Never empty.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+     */
+    public com.google.cloud.migrationcenter.v1.ComputeStorageDescriptorOrBuilder
+        getStorageOrBuilder(int index) {
+      if (storageBuilder_ == null) {
+        return storage_.get(index);
+      } else {
+        return storageBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine storage. Never empty.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.migrationcenter.v1.ComputeStorageDescriptorOrBuilder>
+        getStorageOrBuilderList() {
+      if (storageBuilder_ != null) {
+        return storageBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(storage_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine storage. Never empty.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+     */
+    public com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor.Builder
+        addStorageBuilder() {
+      return getStorageFieldBuilder()
+          .addBuilder(
+              com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine storage. Never empty.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+     */
+    public com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor.Builder addStorageBuilder(
+        int index) {
+      return getStorageFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Compute Engine storage. Never empty.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.migrationcenter.v1.ComputeStorageDescriptor storage = 6;</code>
+     */
+    public java.util.List<com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor.Builder>
+        getStorageBuilderList() {
+      return getStorageFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor,
+            com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor.Builder,
+            com.google.cloud.migrationcenter.v1.ComputeStorageDescriptorOrBuilder>
+        getStorageFieldBuilder() {
+      if (storageBuilder_ == null) {
+        storageBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor,
+                com.google.cloud.migrationcenter.v1.ComputeStorageDescriptor.Builder,
+                com.google.cloud.migrationcenter.v1.ComputeStorageDescriptorOrBuilder>(
+                storage_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+        storage_ = null;
+      }
+      return storageBuilder_;
     }
 
     @java.lang.Override

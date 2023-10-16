@@ -264,6 +264,41 @@ public interface StepOrBuilder
    *
    *
    * <pre>
+   * Display information of a Google service
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.GoogleServiceInfo google_service = 24;</code>
+   *
+   * @return Whether the googleService field is set.
+   */
+  boolean hasGoogleService();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Google service
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.GoogleServiceInfo google_service = 24;</code>
+   *
+   * @return The googleService.
+   */
+  com.google.cloud.networkmanagement.v1.GoogleServiceInfo getGoogleService();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Google service
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.GoogleServiceInfo google_service = 24;</code>
+   */
+  com.google.cloud.networkmanagement.v1.GoogleServiceInfoOrBuilder getGoogleServiceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Display information of a Compute Engine forwarding rule.
    * </pre>
    *
@@ -364,6 +399,41 @@ public interface StepOrBuilder
    * <code>.google.cloud.networkmanagement.v1.VpnTunnelInfo vpn_tunnel = 11;</code>
    */
   com.google.cloud.networkmanagement.v1.VpnTunnelInfoOrBuilder getVpnTunnelOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a VPC connector.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.VpcConnectorInfo vpc_connector = 21;</code>
+   *
+   * @return Whether the vpcConnector field is set.
+   */
+  boolean hasVpcConnector();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a VPC connector.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.VpcConnectorInfo vpc_connector = 21;</code>
+   *
+   * @return The vpcConnector.
+   */
+  com.google.cloud.networkmanagement.v1.VpcConnectorInfo getVpcConnector();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a VPC connector.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.VpcConnectorInfo vpc_connector = 21;</code>
+   */
+  com.google.cloud.networkmanagement.v1.VpcConnectorInfoOrBuilder getVpcConnectorOrBuilder();
 
   /**
    *
@@ -645,6 +715,113 @@ public interface StepOrBuilder
    */
   com.google.cloud.networkmanagement.v1.CloudSQLInstanceInfoOrBuilder
       getCloudSqlInstanceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud Function.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.CloudFunctionInfo cloud_function = 20;</code>
+   *
+   * @return Whether the cloudFunction field is set.
+   */
+  boolean hasCloudFunction();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud Function.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.CloudFunctionInfo cloud_function = 20;</code>
+   *
+   * @return The cloudFunction.
+   */
+  com.google.cloud.networkmanagement.v1.CloudFunctionInfo getCloudFunction();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud Function.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.CloudFunctionInfo cloud_function = 20;</code>
+   */
+  com.google.cloud.networkmanagement.v1.CloudFunctionInfoOrBuilder getCloudFunctionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of an App Engine service version.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.AppEngineVersionInfo app_engine_version = 22;</code>
+   *
+   * @return Whether the appEngineVersion field is set.
+   */
+  boolean hasAppEngineVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of an App Engine service version.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.AppEngineVersionInfo app_engine_version = 22;</code>
+   *
+   * @return The appEngineVersion.
+   */
+  com.google.cloud.networkmanagement.v1.AppEngineVersionInfo getAppEngineVersion();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of an App Engine service version.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.AppEngineVersionInfo app_engine_version = 22;</code>
+   */
+  com.google.cloud.networkmanagement.v1.AppEngineVersionInfoOrBuilder
+      getAppEngineVersionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud Run revision.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.CloudRunRevisionInfo cloud_run_revision = 23;</code>
+   *
+   * @return Whether the cloudRunRevision field is set.
+   */
+  boolean hasCloudRunRevision();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud Run revision.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.CloudRunRevisionInfo cloud_run_revision = 23;</code>
+   *
+   * @return The cloudRunRevision.
+   */
+  com.google.cloud.networkmanagement.v1.CloudRunRevisionInfo getCloudRunRevision();
+  /**
+   *
+   *
+   * <pre>
+   * Display information of a Cloud Run revision.
+   * </pre>
+   *
+   * <code>.google.cloud.networkmanagement.v1.CloudRunRevisionInfo cloud_run_revision = 23;</code>
+   */
+  com.google.cloud.networkmanagement.v1.CloudRunRevisionInfoOrBuilder
+      getCloudRunRevisionOrBuilder();
 
   com.google.cloud.networkmanagement.v1.Step.StepInfoCase getStepInfoCase();
 }

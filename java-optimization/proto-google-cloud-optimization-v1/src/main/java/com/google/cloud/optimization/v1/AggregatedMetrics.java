@@ -354,10 +354,10 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The total duration should be equal to the sum of all durations above.
-   * For routes, it also corresponds to
+   * For routes, it also corresponds to:
    * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time]
-   * -
-   * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+   * `-`
+   * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time]
    * </pre>
    *
    * <code>.google.protobuf.Duration total_duration = 7;</code>
@@ -373,10 +373,10 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The total duration should be equal to the sum of all durations above.
-   * For routes, it also corresponds to
+   * For routes, it also corresponds to:
    * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time]
-   * -
-   * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+   * `-`
+   * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time]
    * </pre>
    *
    * <code>.google.protobuf.Duration total_duration = 7;</code>
@@ -394,10 +394,10 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * The total duration should be equal to the sum of all durations above.
-   * For routes, it also corresponds to
+   * For routes, it also corresponds to:
    * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time]
-   * -
-   * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+   * `-`
+   * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time]
    * </pre>
    *
    * <code>.google.protobuf.Duration total_duration = 7;</code>
@@ -704,7 +704,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
    * <code>double total_cost = 11 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.AggregatedMetrics.total_cost is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=2331
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=2351
    * @return The totalCost.
    */
   @java.lang.Override
@@ -2383,10 +2383,10 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The total duration should be equal to the sum of all durations above.
-     * For routes, it also corresponds to
+     * For routes, it also corresponds to:
      * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time]
-     * -
-     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+     * `-`
+     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time]
      * </pre>
      *
      * <code>.google.protobuf.Duration total_duration = 7;</code>
@@ -2401,10 +2401,10 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The total duration should be equal to the sum of all durations above.
-     * For routes, it also corresponds to
+     * For routes, it also corresponds to:
      * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time]
-     * -
-     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+     * `-`
+     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time]
      * </pre>
      *
      * <code>.google.protobuf.Duration total_duration = 7;</code>
@@ -2425,10 +2425,10 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The total duration should be equal to the sum of all durations above.
-     * For routes, it also corresponds to
+     * For routes, it also corresponds to:
      * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time]
-     * -
-     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+     * `-`
+     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time]
      * </pre>
      *
      * <code>.google.protobuf.Duration total_duration = 7;</code>
@@ -2451,10 +2451,10 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The total duration should be equal to the sum of all durations above.
-     * For routes, it also corresponds to
+     * For routes, it also corresponds to:
      * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time]
-     * -
-     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+     * `-`
+     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time]
      * </pre>
      *
      * <code>.google.protobuf.Duration total_duration = 7;</code>
@@ -2474,10 +2474,10 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The total duration should be equal to the sum of all durations above.
-     * For routes, it also corresponds to
+     * For routes, it also corresponds to:
      * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time]
-     * -
-     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+     * `-`
+     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time]
      * </pre>
      *
      * <code>.google.protobuf.Duration total_duration = 7;</code>
@@ -2503,10 +2503,10 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The total duration should be equal to the sum of all durations above.
-     * For routes, it also corresponds to
+     * For routes, it also corresponds to:
      * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time]
-     * -
-     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+     * `-`
+     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time]
      * </pre>
      *
      * <code>.google.protobuf.Duration total_duration = 7;</code>
@@ -2526,10 +2526,10 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The total duration should be equal to the sum of all durations above.
-     * For routes, it also corresponds to
+     * For routes, it also corresponds to:
      * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time]
-     * -
-     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+     * `-`
+     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time]
      * </pre>
      *
      * <code>.google.protobuf.Duration total_duration = 7;</code>
@@ -2544,10 +2544,10 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The total duration should be equal to the sum of all durations above.
-     * For routes, it also corresponds to
+     * For routes, it also corresponds to:
      * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time]
-     * -
-     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+     * `-`
+     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time]
      * </pre>
      *
      * <code>.google.protobuf.Duration total_duration = 7;</code>
@@ -2566,10 +2566,10 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * The total duration should be equal to the sum of all durations above.
-     * For routes, it also corresponds to
+     * For routes, it also corresponds to:
      * [ShipmentRoute.vehicle_end_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_end_time]
-     * -
-     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time].
+     * `-`
+     * [ShipmentRoute.vehicle_start_time][google.cloud.optimization.v1.ShipmentRoute.vehicle_start_time]
      * </pre>
      *
      * <code>.google.protobuf.Duration total_duration = 7;</code>
@@ -3087,7 +3087,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * <code>double total_cost = 11 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.AggregatedMetrics.total_cost is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=2331
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=2351
      * @return The totalCost.
      */
     @java.lang.Override
@@ -3109,7 +3109,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * <code>double total_cost = 11 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.AggregatedMetrics.total_cost is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=2331
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=2351
      * @param value The totalCost to set.
      * @return This builder for chaining.
      */
@@ -3135,7 +3135,7 @@ public final class AggregatedMetrics extends com.google.protobuf.GeneratedMessag
      * <code>double total_cost = 11 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.AggregatedMetrics.total_cost is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=2331
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=2351
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

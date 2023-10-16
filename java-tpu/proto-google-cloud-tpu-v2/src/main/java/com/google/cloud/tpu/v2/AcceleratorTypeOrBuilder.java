@@ -52,7 +52,7 @@ public interface AcceleratorTypeOrBuilder
    *
    *
    * <pre>
-   * the accelerator type.
+   * The accelerator type.
    * </pre>
    *
    * <code>string type = 2;</code>
@@ -64,7 +64,7 @@ public interface AcceleratorTypeOrBuilder
    *
    *
    * <pre>
-   * the accelerator type.
+   * The accelerator type.
    * </pre>
    *
    * <code>string type = 2;</code>

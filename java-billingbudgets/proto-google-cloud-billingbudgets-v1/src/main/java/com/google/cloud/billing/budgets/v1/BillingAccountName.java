@@ -127,7 +127,7 @@ public class BillingAccountName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       BillingAccountName that = ((BillingAccountName) o);
       return Objects.equals(this.billingAccount, that.billingAccount);
     }

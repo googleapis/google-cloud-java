@@ -121,6 +121,16 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>DRIVING = 1;</code>
      */
     DRIVING(1),
+    /**
+     *
+     *
+     * <pre>
+     * Travel mode corresponding to walking directions.
+     * </pre>
+     *
+     * <code>WALKING = 2;</code>
+     */
+    WALKING(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -144,6 +154,16 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>DRIVING = 1;</code>
      */
     public static final int DRIVING_VALUE = 1;
+    /**
+     *
+     *
+     * <pre>
+     * Travel mode corresponding to walking directions.
+     * </pre>
+     *
+     * <code>WALKING = 2;</code>
+     */
+    public static final int WALKING_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -173,6 +193,8 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
           return TRAVEL_MODE_UNSPECIFIED;
         case 1:
           return DRIVING;
+        case 2:
+          return WALKING;
         default:
           return null;
       }
@@ -6173,7 +6195,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=1443
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1454
    * @return A list containing the breakRuleIndices.
    */
   @java.lang.Override
@@ -6196,7 +6218,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=1443
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1454
    * @return The count of breakRuleIndices.
    */
   @java.lang.Deprecated
@@ -6218,7 +6240,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=1443
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1454
    * @param index The index of the element to return.
    * @return The breakRuleIndices at the given index.
    */
@@ -12463,7 +12485,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=1443
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=1454
      * @return A list containing the breakRuleIndices.
      */
     @java.lang.Deprecated
@@ -12487,7 +12509,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=1443
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=1454
      * @return The count of breakRuleIndices.
      */
     @java.lang.Deprecated
@@ -12509,7 +12531,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=1443
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=1454
      * @param index The index of the element to return.
      * @return The breakRuleIndices at the given index.
      */
@@ -12532,7 +12554,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=1443
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=1454
      * @param index The index to set the value at.
      * @param value The breakRuleIndices to set.
      * @return This builder for chaining.
@@ -12560,7 +12582,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=1443
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=1454
      * @param value The breakRuleIndices to add.
      * @return This builder for chaining.
      */
@@ -12587,7 +12609,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=1443
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=1454
      * @param values The breakRuleIndices to add.
      * @return This builder for chaining.
      */
@@ -12613,7 +12635,7 @@ public final class Vehicle extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=1443
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=1454
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

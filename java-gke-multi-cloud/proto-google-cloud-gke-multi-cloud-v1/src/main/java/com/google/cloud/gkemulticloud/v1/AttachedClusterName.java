@@ -158,7 +158,7 @@ public class AttachedClusterName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       AttachedClusterName that = ((AttachedClusterName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.location, that.location)

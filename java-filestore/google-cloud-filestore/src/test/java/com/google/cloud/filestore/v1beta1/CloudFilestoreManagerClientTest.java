@@ -200,6 +200,7 @@ public class CloudFilestoreManagerClientTest {
             .setMaxShareCount(-1758695852)
             .setCapacityGb(-1923585408)
             .setMultiShareEnabled(true)
+            .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
             .build();
     mockCloudFilestoreManager.addResponse(expectedResponse);
 
@@ -253,6 +254,7 @@ public class CloudFilestoreManagerClientTest {
             .setMaxShareCount(-1758695852)
             .setCapacityGb(-1923585408)
             .setMultiShareEnabled(true)
+            .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
             .build();
     mockCloudFilestoreManager.addResponse(expectedResponse);
 
@@ -306,6 +308,7 @@ public class CloudFilestoreManagerClientTest {
             .setMaxShareCount(-1758695852)
             .setCapacityGb(-1923585408)
             .setMultiShareEnabled(true)
+            .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -373,6 +376,7 @@ public class CloudFilestoreManagerClientTest {
             .setMaxShareCount(-1758695852)
             .setCapacityGb(-1923585408)
             .setMultiShareEnabled(true)
+            .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -440,6 +444,7 @@ public class CloudFilestoreManagerClientTest {
             .setMaxShareCount(-1758695852)
             .setCapacityGb(-1923585408)
             .setMultiShareEnabled(true)
+            .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -504,6 +509,7 @@ public class CloudFilestoreManagerClientTest {
             .setMaxShareCount(-1758695852)
             .setCapacityGb(-1923585408)
             .setMultiShareEnabled(true)
+            .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -576,6 +582,7 @@ public class CloudFilestoreManagerClientTest {
             .setMaxShareCount(-1758695852)
             .setCapacityGb(-1923585408)
             .setMultiShareEnabled(true)
+            .setDirectoryServices(DirectoryServicesConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

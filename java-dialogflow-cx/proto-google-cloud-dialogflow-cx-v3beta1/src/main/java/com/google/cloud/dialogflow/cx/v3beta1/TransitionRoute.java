@@ -54,6 +54,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
 
   private TransitionRoute() {
     name_ = "";
+    description_ = "";
     intent_ = "";
     condition_ = "";
   }
@@ -173,6 +174,59 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DESCRIPTION_FIELD_NUMBER = 8;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The description of the transition route. The maximum length is
+   * 500 characters.
+   * </pre>
+   *
+   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
+   */
+  @java.lang.Override
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The description of the transition route. The maximum length is
+   * 500 characters.
+   * </pre>
+   *
+   * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      description_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -554,6 +608,9 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, name_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, description_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -581,6 +638,9 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, description_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -598,6 +658,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
         (com.google.cloud.dialogflow.cx.v3beta1.TransitionRoute) obj;
 
     if (!getName().equals(other.getName())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
     if (!getIntent().equals(other.getIntent())) return false;
     if (!getCondition().equals(other.getCondition())) return false;
     if (hasTriggerFulfillment() != other.hasTriggerFulfillment()) return false;
@@ -628,6 +689,8 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + INTENT_FIELD_NUMBER;
     hash = (53 * hash) + getIntent().hashCode();
     hash = (37 * hash) + CONDITION_FIELD_NUMBER;
@@ -804,6 +867,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
       super.clear();
       bitField0_ = 0;
       name_ = "";
+      description_ = "";
       intent_ = "";
       condition_ = "";
       triggerFulfillment_ = null;
@@ -854,12 +918,15 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
         result.name_ = name_;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.intent_ = intent_;
+        result.description_ = description_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.condition_ = condition_;
+        result.intent_ = intent_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.condition_ = condition_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.triggerFulfillment_ =
             triggerFulfillmentBuilder_ == null
                 ? triggerFulfillment_
@@ -923,14 +990,19 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
       if (!other.getIntent().isEmpty()) {
         intent_ = other.intent_;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (!other.getCondition().isEmpty()) {
         condition_ = other.condition_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasTriggerFulfillment()) {
@@ -985,20 +1057,20 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 intent_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 10
             case 18:
               {
                 condition_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(
                     getTriggerFulfillmentFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 26
             case 34:
@@ -1021,6 +1093,12 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000001;
                 break;
               } // case 50
+            case 66:
+              {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1160,6 +1238,117 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
       return this;
     }
 
+    private java.lang.Object description_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The description of the transition route. The maximum length is
+     * 500 characters.
+     * </pre>
+     *
+     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The description of the transition route. The maximum length is
+     * 500 characters.
+     * </pre>
+     *
+     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The description of the transition route. The maximum length is
+     * 500 characters.
+     * </pre>
+     *
+     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      description_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The description of the transition route. The maximum length is
+     * 500 characters.
+     * </pre>
+     *
+     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+      description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The description of the transition route. The maximum length is
+     * 500 characters.
+     * </pre>
+     *
+     * <code>string description = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      description_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object intent_ = "";
     /**
      *
@@ -1246,7 +1435,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       intent_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1271,7 +1460,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearIntent() {
       intent_ = getDefaultInstance().getIntent();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
@@ -1301,7 +1490,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       intent_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1392,7 +1581,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       condition_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1417,7 +1606,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearCondition() {
       condition_ = getDefaultInstance().getCondition();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -1447,7 +1636,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       condition_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1472,7 +1661,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
      * @return Whether the triggerFulfillment field is set.
      */
     public boolean hasTriggerFulfillment() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
      *
@@ -1516,7 +1705,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
       } else {
         triggerFulfillmentBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1538,7 +1727,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
       } else {
         triggerFulfillmentBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1556,7 +1745,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
     public Builder mergeTriggerFulfillment(
         com.google.cloud.dialogflow.cx.v3beta1.Fulfillment value) {
       if (triggerFulfillmentBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && triggerFulfillment_ != null
             && triggerFulfillment_
                 != com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.getDefaultInstance()) {
@@ -1567,7 +1756,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
       } else {
         triggerFulfillmentBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1583,7 +1772,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
      * <code>.google.cloud.dialogflow.cx.v3beta1.Fulfillment trigger_fulfillment = 3;</code>
      */
     public Builder clearTriggerFulfillment() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       triggerFulfillment_ = null;
       if (triggerFulfillmentBuilder_ != null) {
         triggerFulfillmentBuilder_.dispose();
@@ -1605,7 +1794,7 @@ public final class TransitionRoute extends com.google.protobuf.GeneratedMessageV
      */
     public com.google.cloud.dialogflow.cx.v3beta1.Fulfillment.Builder
         getTriggerFulfillmentBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getTriggerFulfillmentFieldBuilder().getBuilder();
     }

@@ -33,7 +33,7 @@ public final class ErrorStatsServiceGrpc {
 
   private ErrorStatsServiceGrpc() {}
 
-  public static final String SERVICE_NAME =
+  public static final java.lang.String SERVICE_NAME =
       "google.devtools.clouderrorreporting.v1beta1.ErrorStatsService";
 
   // Static method descriptors that strictly reflect the proto.
@@ -600,9 +600,9 @@ public final class ErrorStatsServiceGrpc {
   private static final class ErrorStatsServiceMethodDescriptorSupplier
       extends ErrorStatsServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ErrorStatsServiceMethodDescriptorSupplier(String methodName) {
+    ErrorStatsServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

@@ -140,6 +140,30 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>SERVERLESS_VPC_ACCESS_MANAGED_FIREWALL_RULE = 4;</code>
      */
     SERVERLESS_VPC_ACCESS_MANAGED_FIREWALL_RULE(4),
+    /**
+     *
+     *
+     * <pre>
+     * Global network firewall policy rule.
+     * For details, see [Network firewall
+     * policies](https://cloud.google.com/vpc/docs/network-firewall-policies).
+     * </pre>
+     *
+     * <code>NETWORK_FIREWALL_POLICY_RULE = 5;</code>
+     */
+    NETWORK_FIREWALL_POLICY_RULE(5),
+    /**
+     *
+     *
+     * <pre>
+     * Regional network firewall policy rule.
+     * For details, see [Regional network firewall
+     * policies](https://cloud.google.com/firewall/docs/regional-firewall-policies).
+     * </pre>
+     *
+     * <code>NETWORK_REGIONAL_FIREWALL_POLICY_RULE = 6;</code>
+     */
+    NETWORK_REGIONAL_FIREWALL_POLICY_RULE(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -202,6 +226,30 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
      * <code>SERVERLESS_VPC_ACCESS_MANAGED_FIREWALL_RULE = 4;</code>
      */
     public static final int SERVERLESS_VPC_ACCESS_MANAGED_FIREWALL_RULE_VALUE = 4;
+    /**
+     *
+     *
+     * <pre>
+     * Global network firewall policy rule.
+     * For details, see [Network firewall
+     * policies](https://cloud.google.com/vpc/docs/network-firewall-policies).
+     * </pre>
+     *
+     * <code>NETWORK_FIREWALL_POLICY_RULE = 5;</code>
+     */
+    public static final int NETWORK_FIREWALL_POLICY_RULE_VALUE = 5;
+    /**
+     *
+     *
+     * <pre>
+     * Regional network firewall policy rule.
+     * For details, see [Regional network firewall
+     * policies](https://cloud.google.com/firewall/docs/regional-firewall-policies).
+     * </pre>
+     *
+     * <code>NETWORK_REGIONAL_FIREWALL_POLICY_RULE = 6;</code>
+     */
+    public static final int NETWORK_REGIONAL_FIREWALL_POLICY_RULE_VALUE = 6;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -237,6 +285,10 @@ public final class FirewallInfo extends com.google.protobuf.GeneratedMessageV3
           return IMPLIED_VPC_FIREWALL_RULE;
         case 4:
           return SERVERLESS_VPC_ACCESS_MANAGED_FIREWALL_RULE;
+        case 5:
+          return NETWORK_FIREWALL_POLICY_RULE;
+        case 6:
+          return NETWORK_REGIONAL_FIREWALL_POLICY_RULE;
         default:
           return null;
       }

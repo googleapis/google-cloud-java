@@ -137,7 +137,7 @@ public class ScanConfigName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       ScanConfigName that = ((ScanConfigName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.scanConfig, that.scanConfig);

@@ -133,15 +133,16 @@ public final class CustomJobProto {
           + "Spec\022 \n\022executor_image_uri\030\001 \001(\tB\004\342A\001\002\022\032"
           + "\n\014package_uris\030\002 \003(\tB\004\342A\001\002\022\033\n\rpython_mod"
           + "ule\030\003 \001(\tB\004\342A\001\002\022\014\n\004args\030\004 \003(\t\022/\n\003env\030\005 \003"
-          + "(\0132\".google.cloud.aiplatform.v1.EnvVar\"_"
+          + "(\0132\".google.cloud.aiplatform.v1.EnvVar\"~"
           + "\n\nScheduling\022*\n\007timeout\030\001 \001(\0132\031.google.p"
           + "rotobuf.Duration\022%\n\035restart_job_on_worke"
-          + "r_restart\030\003 \001(\010B\314\001\n\036com.google.cloud.aip"
-          + "latform.v1B\016CustomJobProtoP\001Z>cloud.goog"
-          + "le.com/go/aiplatform/apiv1/aiplatformpb;"
-          + "aiplatformpb\252\002\032Google.Cloud.AIPlatform.V"
-          + "1\312\002\032Google\\Cloud\\AIPlatform\\V1\352\002\035Google:"
-          + ":Cloud::AIPlatform::V1b\006proto3"
+          + "r_restart\030\003 \001(\010\022\035\n\017disable_retries\030\005 \001(\010"
+          + "B\004\342A\001\001B\314\001\n\036com.google.cloud.aiplatform.v"
+          + "1B\016CustomJobProtoP\001Z>cloud.google.com/go"
+          + "/aiplatform/apiv1/aiplatformpb;aiplatfor"
+          + "mpb\252\002\032Google.Cloud.AIPlatform.V1\312\002\032Googl"
+          + "e\\Cloud\\AIPlatform\\V1\352\002\035Google::Cloud::A"
+          + "IPlatform::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -247,7 +248,7 @@ public final class CustomJobProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1_Scheduling_descriptor,
             new java.lang.String[] {
-              "Timeout", "RestartJobOnWorkerRestart",
+              "Timeout", "RestartJobOnWorkerRestart", "DisableRetries",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

@@ -1250,8 +1250,8 @@ public final class TrainProcessorVersionRequest extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Training Method for CDE. TRAINING_METHOD_UNSPECIFIED will fallback to
-     * MODEL_BASED.
+     * Training Method for CDE. `TRAINING_METHOD_UNSPECIFIED` will fall back to
+     * `MODEL_BASED`.
      * </pre>
      *
      * Protobuf enum {@code

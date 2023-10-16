@@ -2834,7 +2834,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
-   *   LiveSessionName parent = LiveSessionName.of("[PROJECT]", "[LOCATION]", "[LIVE_SESSION]");
+   *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
    *   LiveSession liveSession = LiveSession.newBuilder().build();
    *   LiveSession response = videoStitcherServiceClient.createLiveSession(parent, liveSession);
    * }
@@ -2845,7 +2845,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * @param liveSession Required. Parameters for creating a live session.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  public final LiveSession createLiveSession(LiveSessionName parent, LiveSession liveSession) {
+  public final LiveSession createLiveSession(LocationName parent, LiveSession liveSession) {
     CreateLiveSessionRequest request =
         CreateLiveSessionRequest.newBuilder()
             .setParent(parent == null ? null : parent.toString())
@@ -2868,7 +2868,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
    * try (VideoStitcherServiceClient videoStitcherServiceClient =
    *     VideoStitcherServiceClient.create()) {
-   *   String parent = LiveSessionName.of("[PROJECT]", "[LOCATION]", "[LIVE_SESSION]").toString();
+   *   String parent = LocationName.of("[PROJECT]", "[LOCATION]").toString();
    *   LiveSession liveSession = LiveSession.newBuilder().build();
    *   LiveSession response = videoStitcherServiceClient.createLiveSession(parent, liveSession);
    * }
@@ -2901,7 +2901,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     VideoStitcherServiceClient.create()) {
    *   CreateLiveSessionRequest request =
    *       CreateLiveSessionRequest.newBuilder()
-   *           .setParent(LiveSessionName.of("[PROJECT]", "[LOCATION]", "[LIVE_SESSION]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setLiveSession(LiveSession.newBuilder().build())
    *           .build();
    *   LiveSession response = videoStitcherServiceClient.createLiveSession(request);
@@ -2931,7 +2931,7 @@ public class VideoStitcherServiceClient implements BackgroundResource {
    *     VideoStitcherServiceClient.create()) {
    *   CreateLiveSessionRequest request =
    *       CreateLiveSessionRequest.newBuilder()
-   *           .setParent(LiveSessionName.of("[PROJECT]", "[LOCATION]", "[LIVE_SESSION]").toString())
+   *           .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
    *           .setLiveSession(LiveSession.newBuilder().build())
    *           .build();
    *   ApiFuture<LiveSession> future =

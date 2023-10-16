@@ -137,7 +137,7 @@ public class AudienceName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       AudienceName that = ((AudienceName) o);
       return Objects.equals(this.property, that.property)
           && Objects.equals(this.audience, that.audience);

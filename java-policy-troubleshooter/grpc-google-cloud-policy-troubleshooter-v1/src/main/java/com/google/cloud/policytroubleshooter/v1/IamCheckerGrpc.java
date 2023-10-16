@@ -33,7 +33,8 @@ public final class IamCheckerGrpc {
 
   private IamCheckerGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.policytroubleshooter.v1.IamChecker";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.policytroubleshooter.v1.IamChecker";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -139,8 +140,9 @@ public final class IamCheckerGrpc {
      *
      *
      * <pre>
-     * Checks whether a member has a specific permission for a specific resource,
-     * and explains why the member does or does not have that permission.
+     * Checks whether a principal has a specific permission for a specific
+     * resource, and explains why the principal does or does not have that
+     * permission.
      * </pre>
      */
     default void troubleshootIamPolicy(
@@ -191,8 +193,9 @@ public final class IamCheckerGrpc {
      *
      *
      * <pre>
-     * Checks whether a member has a specific permission for a specific resource,
-     * and explains why the member does or does not have that permission.
+     * Checks whether a principal has a specific permission for a specific
+     * resource, and explains why the principal does or does not have that
+     * permission.
      * </pre>
      */
     public void troubleshootIamPolicy(
@@ -231,8 +234,9 @@ public final class IamCheckerGrpc {
      *
      *
      * <pre>
-     * Checks whether a member has a specific permission for a specific resource,
-     * and explains why the member does or does not have that permission.
+     * Checks whether a principal has a specific permission for a specific
+     * resource, and explains why the principal does or does not have that
+     * permission.
      * </pre>
      */
     public com.google.cloud.policytroubleshooter.v1.TroubleshootIamPolicyResponse
@@ -266,8 +270,9 @@ public final class IamCheckerGrpc {
      *
      *
      * <pre>
-     * Checks whether a member has a specific permission for a specific resource,
-     * and explains why the member does or does not have that permission.
+     * Checks whether a principal has a specific permission for a specific
+     * resource, and explains why the principal does or does not have that
+     * permission.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -357,9 +362,9 @@ public final class IamCheckerGrpc {
   private static final class IamCheckerMethodDescriptorSupplier
       extends IamCheckerBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    IamCheckerMethodDescriptorSupplier(String methodName) {
+    IamCheckerMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

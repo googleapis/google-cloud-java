@@ -16,8 +16,10 @@
 
 package com.google.cloud.recommender.v1beta1.stub;
 
+import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListInsightTypesPagedResponse;
 import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListInsightsPagedResponse;
 import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListRecommendationsPagedResponse;
+import static com.google.cloud.recommender.v1beta1.RecommenderClient.ListRecommendersPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -49,17 +51,23 @@ import com.google.cloud.recommender.v1beta1.GetInsightTypeConfigRequest;
 import com.google.cloud.recommender.v1beta1.GetRecommendationRequest;
 import com.google.cloud.recommender.v1beta1.GetRecommenderConfigRequest;
 import com.google.cloud.recommender.v1beta1.Insight;
+import com.google.cloud.recommender.v1beta1.InsightType;
 import com.google.cloud.recommender.v1beta1.InsightTypeConfig;
+import com.google.cloud.recommender.v1beta1.ListInsightTypesRequest;
+import com.google.cloud.recommender.v1beta1.ListInsightTypesResponse;
 import com.google.cloud.recommender.v1beta1.ListInsightsRequest;
 import com.google.cloud.recommender.v1beta1.ListInsightsResponse;
 import com.google.cloud.recommender.v1beta1.ListRecommendationsRequest;
 import com.google.cloud.recommender.v1beta1.ListRecommendationsResponse;
+import com.google.cloud.recommender.v1beta1.ListRecommendersRequest;
+import com.google.cloud.recommender.v1beta1.ListRecommendersResponse;
 import com.google.cloud.recommender.v1beta1.MarkInsightAcceptedRequest;
 import com.google.cloud.recommender.v1beta1.MarkRecommendationClaimedRequest;
 import com.google.cloud.recommender.v1beta1.MarkRecommendationFailedRequest;
 import com.google.cloud.recommender.v1beta1.MarkRecommendationSucceededRequest;
 import com.google.cloud.recommender.v1beta1.Recommendation;
 import com.google.cloud.recommender.v1beta1.RecommenderConfig;
+import com.google.cloud.recommender.v1beta1.RecommenderType;
 import com.google.cloud.recommender.v1beta1.UpdateInsightTypeConfigRequest;
 import com.google.cloud.recommender.v1beta1.UpdateRecommenderConfigRequest;
 import com.google.common.collect.ImmutableList;
@@ -139,6 +147,12 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
       getInsightTypeConfigSettings;
   private final UnaryCallSettings<UpdateInsightTypeConfigRequest, InsightTypeConfig>
       updateInsightTypeConfigSettings;
+  private final PagedCallSettings<
+          ListRecommendersRequest, ListRecommendersResponse, ListRecommendersPagedResponse>
+      listRecommendersSettings;
+  private final PagedCallSettings<
+          ListInsightTypesRequest, ListInsightTypesResponse, ListInsightTypesPagedResponse>
+      listInsightTypesSettings;
 
   private static final PagedListDescriptor<ListInsightsRequest, ListInsightsResponse, Insight>
       LIST_INSIGHTS_PAGE_STR_DESC =
@@ -216,6 +230,86 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
             }
           };
 
+  private static final PagedListDescriptor<
+          ListRecommendersRequest, ListRecommendersResponse, RecommenderType>
+      LIST_RECOMMENDERS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListRecommendersRequest, ListRecommendersResponse, RecommenderType>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListRecommendersRequest injectToken(
+                ListRecommendersRequest payload, String token) {
+              return ListRecommendersRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListRecommendersRequest injectPageSize(
+                ListRecommendersRequest payload, int pageSize) {
+              return ListRecommendersRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListRecommendersRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListRecommendersResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<RecommenderType> extractResources(ListRecommendersResponse payload) {
+              return payload.getRecommendersList() == null
+                  ? ImmutableList.<RecommenderType>of()
+                  : payload.getRecommendersList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListInsightTypesRequest, ListInsightTypesResponse, InsightType>
+      LIST_INSIGHT_TYPES_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListInsightTypesRequest, ListInsightTypesResponse, InsightType>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListInsightTypesRequest injectToken(
+                ListInsightTypesRequest payload, String token) {
+              return ListInsightTypesRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListInsightTypesRequest injectPageSize(
+                ListInsightTypesRequest payload, int pageSize) {
+              return ListInsightTypesRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListInsightTypesRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListInsightTypesResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<InsightType> extractResources(ListInsightTypesResponse payload) {
+              return payload.getInsightTypesList() == null
+                  ? ImmutableList.<InsightType>of()
+                  : payload.getInsightTypesList();
+            }
+          };
+
   private static final PagedListResponseFactory<
           ListInsightsRequest, ListInsightsResponse, ListInsightsPagedResponse>
       LIST_INSIGHTS_PAGE_STR_FACT =
@@ -251,6 +345,44 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
                       PageContext.create(
                           callable, LIST_RECOMMENDATIONS_PAGE_STR_DESC, request, context);
               return ListRecommendationsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListRecommendersRequest, ListRecommendersResponse, ListRecommendersPagedResponse>
+      LIST_RECOMMENDERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListRecommendersRequest, ListRecommendersResponse, ListRecommendersPagedResponse>() {
+            @Override
+            public ApiFuture<ListRecommendersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListRecommendersRequest, ListRecommendersResponse> callable,
+                ListRecommendersRequest request,
+                ApiCallContext context,
+                ApiFuture<ListRecommendersResponse> futureResponse) {
+              PageContext<ListRecommendersRequest, ListRecommendersResponse, RecommenderType>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_RECOMMENDERS_PAGE_STR_DESC, request, context);
+              return ListRecommendersPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListInsightTypesRequest, ListInsightTypesResponse, ListInsightTypesPagedResponse>
+      LIST_INSIGHT_TYPES_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListInsightTypesRequest, ListInsightTypesResponse, ListInsightTypesPagedResponse>() {
+            @Override
+            public ApiFuture<ListInsightTypesPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListInsightTypesRequest, ListInsightTypesResponse> callable,
+                ListInsightTypesRequest request,
+                ApiCallContext context,
+                ApiFuture<ListInsightTypesResponse> futureResponse) {
+              PageContext<ListInsightTypesRequest, ListInsightTypesResponse, InsightType>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_INSIGHT_TYPES_PAGE_STR_DESC, request, context);
+              return ListInsightTypesPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -322,6 +454,20 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
   public UnaryCallSettings<UpdateInsightTypeConfigRequest, InsightTypeConfig>
       updateInsightTypeConfigSettings() {
     return updateInsightTypeConfigSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listRecommenders. */
+  public PagedCallSettings<
+          ListRecommendersRequest, ListRecommendersResponse, ListRecommendersPagedResponse>
+      listRecommendersSettings() {
+    return listRecommendersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listInsightTypes. */
+  public PagedCallSettings<
+          ListInsightTypesRequest, ListInsightTypesResponse, ListInsightTypesPagedResponse>
+      listInsightTypesSettings() {
+    return listInsightTypesSettings;
   }
 
   public RecommenderStub createStub() throws IOException {
@@ -443,6 +589,8 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
     updateRecommenderConfigSettings = settingsBuilder.updateRecommenderConfigSettings().build();
     getInsightTypeConfigSettings = settingsBuilder.getInsightTypeConfigSettings().build();
     updateInsightTypeConfigSettings = settingsBuilder.updateInsightTypeConfigSettings().build();
+    listRecommendersSettings = settingsBuilder.listRecommendersSettings().build();
+    listInsightTypesSettings = settingsBuilder.listInsightTypesSettings().build();
   }
 
   /** Builder for RecommenderStubSettings. */
@@ -475,6 +623,12 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
         getInsightTypeConfigSettings;
     private final UnaryCallSettings.Builder<UpdateInsightTypeConfigRequest, InsightTypeConfig>
         updateInsightTypeConfigSettings;
+    private final PagedCallSettings.Builder<
+            ListRecommendersRequest, ListRecommendersResponse, ListRecommendersPagedResponse>
+        listRecommendersSettings;
+    private final PagedCallSettings.Builder<
+            ListInsightTypesRequest, ListInsightTypesResponse, ListInsightTypesPagedResponse>
+        listInsightTypesSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -541,6 +695,8 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
       updateRecommenderConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       getInsightTypeConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateInsightTypeConfigSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listRecommendersSettings = PagedCallSettings.newBuilder(LIST_RECOMMENDERS_PAGE_STR_FACT);
+      listInsightTypesSettings = PagedCallSettings.newBuilder(LIST_INSIGHT_TYPES_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -555,7 +711,9 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
               getRecommenderConfigSettings,
               updateRecommenderConfigSettings,
               getInsightTypeConfigSettings,
-              updateInsightTypeConfigSettings);
+              updateInsightTypeConfigSettings,
+              listRecommendersSettings,
+              listInsightTypesSettings);
       initDefaults(this);
     }
 
@@ -575,6 +733,8 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
       updateRecommenderConfigSettings = settings.updateRecommenderConfigSettings.toBuilder();
       getInsightTypeConfigSettings = settings.getInsightTypeConfigSettings.toBuilder();
       updateInsightTypeConfigSettings = settings.updateInsightTypeConfigSettings.toBuilder();
+      listRecommendersSettings = settings.listRecommendersSettings.toBuilder();
+      listInsightTypesSettings = settings.listInsightTypesSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -589,7 +749,9 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
               getRecommenderConfigSettings,
               updateRecommenderConfigSettings,
               getInsightTypeConfigSettings,
-              updateInsightTypeConfigSettings);
+              updateInsightTypeConfigSettings,
+              listRecommendersSettings,
+              listInsightTypesSettings);
     }
 
     private static Builder createDefault() {
@@ -676,6 +838,16 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
 
       builder
           .updateInsightTypeConfigSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listRecommendersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listInsightTypesSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -770,6 +942,20 @@ public class RecommenderStubSettings extends StubSettings<RecommenderStubSetting
     public UnaryCallSettings.Builder<UpdateInsightTypeConfigRequest, InsightTypeConfig>
         updateInsightTypeConfigSettings() {
       return updateInsightTypeConfigSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listRecommenders. */
+    public PagedCallSettings.Builder<
+            ListRecommendersRequest, ListRecommendersResponse, ListRecommendersPagedResponse>
+        listRecommendersSettings() {
+      return listRecommendersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listInsightTypes. */
+    public PagedCallSettings.Builder<
+            ListInsightTypesRequest, ListInsightTypesResponse, ListInsightTypesPagedResponse>
+        listInsightTypesSettings() {
+      return listInsightTypesSettings;
     }
 
     @Override

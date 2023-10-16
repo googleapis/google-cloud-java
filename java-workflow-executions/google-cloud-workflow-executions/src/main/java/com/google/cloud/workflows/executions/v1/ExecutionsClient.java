@@ -256,6 +256,8 @@ public class ExecutionsClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setView(ExecutionView.forNumber(0))
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   for (Execution element : executionsClient.listExecutions(request).iterateAll()) {
    *     // doThingsWith(element);
@@ -291,6 +293,8 @@ public class ExecutionsClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setView(ExecutionView.forNumber(0))
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   ApiFuture<Execution> future =
    *       executionsClient.listExecutionsPagedCallable().futureCall(request);
@@ -327,6 +331,8 @@ public class ExecutionsClient implements BackgroundResource {
    *           .setPageSize(883849137)
    *           .setPageToken("pageToken873572522")
    *           .setView(ExecutionView.forNumber(0))
+   *           .setFilter("filter-1274492040")
+   *           .setOrderBy("orderBy-1207110587")
    *           .build();
    *   while (true) {
    *     ListExecutionsResponse response = executionsClient.listExecutionsCallable().call(request);

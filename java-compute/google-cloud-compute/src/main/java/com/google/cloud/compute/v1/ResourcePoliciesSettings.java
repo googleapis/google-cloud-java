@@ -123,6 +123,17 @@ public class ResourcePoliciesSettings extends ClientSettings<ResourcePoliciesSet
     return ((ResourcePoliciesStubSettings) getStubSettings()).listSettings();
   }
 
+  /** Returns the object with the settings used for calls to patch. */
+  public UnaryCallSettings<PatchResourcePolicyRequest, Operation> patchSettings() {
+    return ((ResourcePoliciesStubSettings) getStubSettings()).patchSettings();
+  }
+
+  /** Returns the object with the settings used for calls to patch. */
+  public OperationCallSettings<PatchResourcePolicyRequest, Operation, Operation>
+      patchOperationSettings() {
+    return ((ResourcePoliciesStubSettings) getStubSettings()).patchOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to setIamPolicy. */
   public UnaryCallSettings<SetIamPolicyResourcePolicyRequest, Policy> setIamPolicySettings() {
     return ((ResourcePoliciesStubSettings) getStubSettings()).setIamPolicySettings();
@@ -279,6 +290,17 @@ public class ResourcePoliciesSettings extends ClientSettings<ResourcePoliciesSet
             ListResourcePoliciesRequest, ResourcePolicyList, ListPagedResponse>
         listSettings() {
       return getStubSettingsBuilder().listSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    public UnaryCallSettings.Builder<PatchResourcePolicyRequest, Operation> patchSettings() {
+      return getStubSettingsBuilder().patchSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to patch. */
+    public OperationCallSettings.Builder<PatchResourcePolicyRequest, Operation, Operation>
+        patchOperationSettings() {
+      return getStubSettingsBuilder().patchOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

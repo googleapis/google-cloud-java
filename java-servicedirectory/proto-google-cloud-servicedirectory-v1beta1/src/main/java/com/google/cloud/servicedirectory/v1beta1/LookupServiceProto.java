@@ -47,10 +47,10 @@ public final class LookupServiceProto {
       "\n:google/cloud/servicedirectory/v1beta1/"
           + "lookup_service.proto\022%google.cloud.servi"
           + "cedirectory.v1beta1\032\034google/api/annotati"
-          + "ons.proto\032\037google/api/field_behavior.pro"
-          + "to\032\031google/api/resource.proto\0323google/cl"
-          + "oud/servicedirectory/v1beta1/service.pro"
-          + "to\032\027google/api/client.proto\"\223\001\n\025ResolveS"
+          + "ons.proto\032\027google/api/client.proto\032\037goog"
+          + "le/api/field_behavior.proto\032\031google/api/"
+          + "resource.proto\0323google/cloud/servicedire"
+          + "ctory/v1beta1/service.proto\"\223\001\n\025ResolveS"
           + "erviceRequest\022>\n\004name\030\001 \001(\tB0\342A\001\002\372A)\n\'se"
           + "rvicedirectory.googleapis.com/Service\022\033\n"
           + "\rmax_endpoints\030\002 \001(\005B\004\342A\001\001\022\035\n\017endpoint_f"
@@ -79,10 +79,10 @@ public final class LookupServiceProto {
             descriptorData,
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.AnnotationsProto.getDescriptor(),
+              com.google.api.ClientProto.getDescriptor(),
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.servicedirectory.v1beta1.ServiceProto.getDescriptor(),
-              com.google.api.ClientProto.getDescriptor(),
             });
     internal_static_google_cloud_servicedirectory_v1beta1_ResolveServiceRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -110,10 +110,10 @@ public final class LookupServiceProto {
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
+    com.google.api.ClientProto.getDescriptor();
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.servicedirectory.v1beta1.ServiceProto.getDescriptor();
-    com.google.api.ClientProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

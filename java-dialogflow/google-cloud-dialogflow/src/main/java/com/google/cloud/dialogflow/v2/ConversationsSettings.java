@@ -121,6 +121,12 @@ public class ConversationsSettings extends ClientSettings<ConversationsSettings>
     return ((ConversationsStubSettings) getStubSettings()).generateStatelessSummarySettings();
   }
 
+  /** Returns the object with the settings used for calls to searchKnowledge. */
+  public UnaryCallSettings<SearchKnowledgeRequest, SearchKnowledgeResponse>
+      searchKnowledgeSettings() {
+    return ((ConversationsStubSettings) getStubSettings()).searchKnowledgeSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -291,6 +297,12 @@ public class ConversationsSettings extends ClientSettings<ConversationsSettings>
             GenerateStatelessSummaryRequest, GenerateStatelessSummaryResponse>
         generateStatelessSummarySettings() {
       return getStubSettingsBuilder().generateStatelessSummarySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to searchKnowledge. */
+    public UnaryCallSettings.Builder<SearchKnowledgeRequest, SearchKnowledgeResponse>
+        searchKnowledgeSettings() {
+      return getStubSettingsBuilder().searchKnowledgeSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

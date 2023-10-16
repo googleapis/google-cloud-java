@@ -154,7 +154,7 @@ public class DataItemName implements ResourceName {
     if (o == this) {
       return true;
     }
-    if (o != null || getClass() == o.getClass()) {
+    if (o != null && getClass() == o.getClass()) {
       DataItemName that = ((DataItemName) o);
       return Objects.equals(this.project, that.project)
           && Objects.equals(this.dataset, that.dataset)

@@ -33,7 +33,8 @@ public final class ExperimentsGrpc {
 
   private ExperimentsGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.dialogflow.cx.v3beta1.Experiments";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.dialogflow.cx.v3beta1.Experiments";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1101,9 +1102,9 @@ public final class ExperimentsGrpc {
   private static final class ExperimentsMethodDescriptorSupplier
       extends ExperimentsBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    ExperimentsMethodDescriptorSupplier(String methodName) {
+    ExperimentsMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

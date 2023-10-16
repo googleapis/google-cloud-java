@@ -32,7 +32,8 @@ public final class CaseAttachmentServiceGrpc {
 
   private CaseAttachmentServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.cloud.support.v2.CaseAttachmentService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.cloud.support.v2.CaseAttachmentService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -349,9 +350,9 @@ public final class CaseAttachmentServiceGrpc {
   private static final class CaseAttachmentServiceMethodDescriptorSupplier
       extends CaseAttachmentServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    CaseAttachmentServiceMethodDescriptorSupplier(String methodName) {
+    CaseAttachmentServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 

@@ -22,11 +22,17 @@
             "GetRecommenderConfig": {
               "methods": ["getRecommenderConfig", "getRecommenderConfig", "getRecommenderConfig", "getRecommenderConfigCallable"]
             },
+            "ListInsightTypes": {
+              "methods": ["listInsightTypes", "listInsightTypesPagedCallable", "listInsightTypesCallable"]
+            },
             "ListInsights": {
               "methods": ["listInsights", "listInsights", "listInsights", "listInsightsPagedCallable", "listInsightsCallable"]
             },
             "ListRecommendations": {
               "methods": ["listRecommendations", "listRecommendations", "listRecommendations", "listRecommendationsPagedCallable", "listRecommendationsCallable"]
+            },
+            "ListRecommenders": {
+              "methods": ["listRecommenders", "listRecommendersPagedCallable", "listRecommendersCallable"]
             },
             "MarkInsightAccepted": {
               "methods": ["markInsightAccepted", "markInsightAccepted", "markInsightAccepted", "markInsightAcceptedCallable"]

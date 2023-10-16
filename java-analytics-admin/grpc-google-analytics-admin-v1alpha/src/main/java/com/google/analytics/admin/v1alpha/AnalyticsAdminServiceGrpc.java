@@ -32,7 +32,8 @@ public final class AnalyticsAdminServiceGrpc {
 
   private AnalyticsAdminServiceGrpc() {}
 
-  public static final String SERVICE_NAME = "google.analytics.admin.v1alpha.AnalyticsAdminService";
+  public static final java.lang.String SERVICE_NAME =
+      "google.analytics.admin.v1alpha.AnalyticsAdminService";
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<
@@ -1784,6 +1785,292 @@ public final class AnalyticsAdminServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest,
+          com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>
+      getGetSKAdNetworkConversionValueSchemaMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSKAdNetworkConversionValueSchema",
+      requestType =
+          com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest,
+          com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>
+      getGetSKAdNetworkConversionValueSchemaMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest,
+            com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>
+        getGetSKAdNetworkConversionValueSchemaMethod;
+    if ((getGetSKAdNetworkConversionValueSchemaMethod =
+            AnalyticsAdminServiceGrpc.getGetSKAdNetworkConversionValueSchemaMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetSKAdNetworkConversionValueSchemaMethod =
+                AnalyticsAdminServiceGrpc.getGetSKAdNetworkConversionValueSchemaMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetSKAdNetworkConversionValueSchemaMethod =
+              getGetSKAdNetworkConversionValueSchemaMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha
+                              .GetSKAdNetworkConversionValueSchemaRequest,
+                          com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "GetSKAdNetworkConversionValueSchema"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .GetSKAdNetworkConversionValueSchemaRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "GetSKAdNetworkConversionValueSchema"))
+                      .build();
+        }
+      }
+    }
+    return getGetSKAdNetworkConversionValueSchemaMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateSKAdNetworkConversionValueSchemaRequest,
+          com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>
+      getCreateSKAdNetworkConversionValueSchemaMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateSKAdNetworkConversionValueSchema",
+      requestType =
+          com.google.analytics.admin.v1alpha.CreateSKAdNetworkConversionValueSchemaRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.CreateSKAdNetworkConversionValueSchemaRequest,
+          com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>
+      getCreateSKAdNetworkConversionValueSchemaMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.CreateSKAdNetworkConversionValueSchemaRequest,
+            com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>
+        getCreateSKAdNetworkConversionValueSchemaMethod;
+    if ((getCreateSKAdNetworkConversionValueSchemaMethod =
+            AnalyticsAdminServiceGrpc.getCreateSKAdNetworkConversionValueSchemaMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getCreateSKAdNetworkConversionValueSchemaMethod =
+                AnalyticsAdminServiceGrpc.getCreateSKAdNetworkConversionValueSchemaMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getCreateSKAdNetworkConversionValueSchemaMethod =
+              getCreateSKAdNetworkConversionValueSchemaMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha
+                              .CreateSKAdNetworkConversionValueSchemaRequest,
+                          com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "CreateSKAdNetworkConversionValueSchema"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .CreateSKAdNetworkConversionValueSchemaRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "CreateSKAdNetworkConversionValueSchema"))
+                      .build();
+        }
+      }
+    }
+    return getCreateSKAdNetworkConversionValueSchemaMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest,
+          com.google.protobuf.Empty>
+      getDeleteSKAdNetworkConversionValueSchemaMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DeleteSKAdNetworkConversionValueSchema",
+      requestType =
+          com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest,
+          com.google.protobuf.Empty>
+      getDeleteSKAdNetworkConversionValueSchemaMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest,
+            com.google.protobuf.Empty>
+        getDeleteSKAdNetworkConversionValueSchemaMethod;
+    if ((getDeleteSKAdNetworkConversionValueSchemaMethod =
+            AnalyticsAdminServiceGrpc.getDeleteSKAdNetworkConversionValueSchemaMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getDeleteSKAdNetworkConversionValueSchemaMethod =
+                AnalyticsAdminServiceGrpc.getDeleteSKAdNetworkConversionValueSchemaMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getDeleteSKAdNetworkConversionValueSchemaMethod =
+              getDeleteSKAdNetworkConversionValueSchemaMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha
+                              .DeleteSKAdNetworkConversionValueSchemaRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "DeleteSKAdNetworkConversionValueSchema"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .DeleteSKAdNetworkConversionValueSchemaRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "DeleteSKAdNetworkConversionValueSchema"))
+                      .build();
+        }
+      }
+    }
+    return getDeleteSKAdNetworkConversionValueSchemaMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest,
+          com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>
+      getUpdateSKAdNetworkConversionValueSchemaMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSKAdNetworkConversionValueSchema",
+      requestType =
+          com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest,
+          com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>
+      getUpdateSKAdNetworkConversionValueSchemaMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest,
+            com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>
+        getUpdateSKAdNetworkConversionValueSchemaMethod;
+    if ((getUpdateSKAdNetworkConversionValueSchemaMethod =
+            AnalyticsAdminServiceGrpc.getUpdateSKAdNetworkConversionValueSchemaMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateSKAdNetworkConversionValueSchemaMethod =
+                AnalyticsAdminServiceGrpc.getUpdateSKAdNetworkConversionValueSchemaMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateSKAdNetworkConversionValueSchemaMethod =
+              getUpdateSKAdNetworkConversionValueSchemaMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha
+                              .UpdateSKAdNetworkConversionValueSchemaRequest,
+                          com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "UpdateSKAdNetworkConversionValueSchema"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .UpdateSKAdNetworkConversionValueSchemaRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateSKAdNetworkConversionValueSchema"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateSKAdNetworkConversionValueSchemaMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest,
+          com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasResponse>
+      getListSKAdNetworkConversionValueSchemasMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSKAdNetworkConversionValueSchemas",
+      requestType =
+          com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest.class,
+      responseType =
+          com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest,
+          com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasResponse>
+      getListSKAdNetworkConversionValueSchemasMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest,
+            com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasResponse>
+        getListSKAdNetworkConversionValueSchemasMethod;
+    if ((getListSKAdNetworkConversionValueSchemasMethod =
+            AnalyticsAdminServiceGrpc.getListSKAdNetworkConversionValueSchemasMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListSKAdNetworkConversionValueSchemasMethod =
+                AnalyticsAdminServiceGrpc.getListSKAdNetworkConversionValueSchemasMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListSKAdNetworkConversionValueSchemasMethod =
+              getListSKAdNetworkConversionValueSchemasMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha
+                              .ListSKAdNetworkConversionValueSchemasRequest,
+                          com.google.analytics.admin.v1alpha
+                              .ListSKAdNetworkConversionValueSchemasResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              SERVICE_NAME, "ListSKAdNetworkConversionValueSchemas"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .ListSKAdNetworkConversionValueSchemasRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha
+                                  .ListSKAdNetworkConversionValueSchemasResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "ListSKAdNetworkConversionValueSchemas"))
+                      .build();
+        }
+      }
+    }
+    return getListSKAdNetworkConversionValueSchemasMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest,
           com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsResponse>
       getSearchChangeHistoryEventsMethod;
@@ -1992,6 +2279,58 @@ public final class AnalyticsAdminServiceGrpc {
       }
     }
     return getCreateConversionEventMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateConversionEventRequest,
+          com.google.analytics.admin.v1alpha.ConversionEvent>
+      getUpdateConversionEventMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateConversionEvent",
+      requestType = com.google.analytics.admin.v1alpha.UpdateConversionEventRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ConversionEvent.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateConversionEventRequest,
+          com.google.analytics.admin.v1alpha.ConversionEvent>
+      getUpdateConversionEventMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateConversionEventRequest,
+            com.google.analytics.admin.v1alpha.ConversionEvent>
+        getUpdateConversionEventMethod;
+    if ((getUpdateConversionEventMethod = AnalyticsAdminServiceGrpc.getUpdateConversionEventMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateConversionEventMethod =
+                AnalyticsAdminServiceGrpc.getUpdateConversionEventMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateConversionEventMethod =
+              getUpdateConversionEventMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateConversionEventRequest,
+                          com.google.analytics.admin.v1alpha.ConversionEvent>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateConversionEvent"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateConversionEventRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ConversionEvent
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateConversionEvent"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateConversionEventMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -6796,6 +7135,85 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Looks up a single SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    default void getSKAdNetworkConversionValueSchema(
+        com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetSKAdNetworkConversionValueSchemaMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    default void createSKAdNetworkConversionValueSchema(
+        com.google.analytics.admin.v1alpha.CreateSKAdNetworkConversionValueSchemaRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateSKAdNetworkConversionValueSchemaMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes target SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    default void deleteSKAdNetworkConversionValueSchema(
+        com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDeleteSKAdNetworkConversionValueSchemaMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    default void updateSKAdNetworkConversionValueSchema(
+        com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSKAdNetworkConversionValueSchemaMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists SKAdNetworkConversionValueSchema on a stream.
+     * Properties can have at most one SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    default void listSKAdNetworkConversionValueSchemas(
+        com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSKAdNetworkConversionValueSchemasMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Searches through all changes to an account or its children given the
      * specified set of filters.
      * </pre>
@@ -6852,6 +7270,21 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getCreateConversionEventMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a conversion event with the specified attributes.
+     * </pre>
+     */
+    default void updateConversionEvent(
+        com.google.analytics.admin.v1alpha.UpdateConversionEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ConversionEvent>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateConversionEventMethod(), responseObserver);
     }
 
     /**
@@ -8814,6 +9247,95 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Looks up a single SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    public void getSKAdNetworkConversionValueSchema(
+        com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSKAdNetworkConversionValueSchemaMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    public void createSKAdNetworkConversionValueSchema(
+        com.google.analytics.admin.v1alpha.CreateSKAdNetworkConversionValueSchemaRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateSKAdNetworkConversionValueSchemaMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes target SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    public void deleteSKAdNetworkConversionValueSchema(
+        com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDeleteSKAdNetworkConversionValueSchemaMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    public void updateSKAdNetworkConversionValueSchema(
+        com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSKAdNetworkConversionValueSchemaMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists SKAdNetworkConversionValueSchema on a stream.
+     * Properties can have at most one SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    public void listSKAdNetworkConversionValueSchemas(
+        com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSKAdNetworkConversionValueSchemasMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Searches through all changes to an account or its children given the
      * specified set of filters.
      * </pre>
@@ -8876,6 +9398,23 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getCreateConversionEventMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a conversion event with the specified attributes.
+     * </pre>
+     */
+    public void updateConversionEvent(
+        com.google.analytics.admin.v1alpha.UpdateConversionEventRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ConversionEvent>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateConversionEventMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -10870,6 +11409,91 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Looks up a single SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
+        getSKAdNetworkConversionValueSchema(
+            com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSKAdNetworkConversionValueSchemaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
+        createSKAdNetworkConversionValueSchema(
+            com.google.analytics.admin.v1alpha.CreateSKAdNetworkConversionValueSchemaRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getCreateSKAdNetworkConversionValueSchemaMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes target SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    public com.google.protobuf.Empty deleteSKAdNetworkConversionValueSchema(
+        com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getDeleteSKAdNetworkConversionValueSchemaMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema
+        updateSKAdNetworkConversionValueSchema(
+            com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getUpdateSKAdNetworkConversionValueSchemaMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists SKAdNetworkConversionValueSchema on a stream.
+     * Properties can have at most one SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasResponse
+        listSKAdNetworkConversionValueSchemas(
+            com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest
+                request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(),
+          getListSKAdNetworkConversionValueSchemasMethod(),
+          getCallOptions(),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Searches through all changes to an account or its children given the
      * specified set of filters.
      * </pre>
@@ -10918,6 +11542,19 @@ public final class AnalyticsAdminServiceGrpc {
         com.google.analytics.admin.v1alpha.CreateConversionEventRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getCreateConversionEventMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a conversion event with the specified attributes.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ConversionEvent updateConversionEvent(
+        com.google.analytics.admin.v1alpha.UpdateConversionEventRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateConversionEventMethod(), getCallOptions(), request);
     }
 
     /**
@@ -12653,6 +13290,90 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
+     * Looks up a single SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>
+        getSKAdNetworkConversionValueSchema(
+            com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSKAdNetworkConversionValueSchemaMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>
+        createSKAdNetworkConversionValueSchema(
+            com.google.analytics.admin.v1alpha.CreateSKAdNetworkConversionValueSchemaRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateSKAdNetworkConversionValueSchemaMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes target SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        deleteSKAdNetworkConversionValueSchema(
+            com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDeleteSKAdNetworkConversionValueSchemaMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>
+        updateSKAdNetworkConversionValueSchema(
+            com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSKAdNetworkConversionValueSchemaMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lists SKAdNetworkConversionValueSchema on a stream.
+     * Properties can have at most one SKAdNetworkConversionValueSchema.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasResponse>
+        listSKAdNetworkConversionValueSchemas(
+            com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest
+                request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSKAdNetworkConversionValueSchemasMethod(), getCallOptions()),
+          request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Searches through all changes to an account or its children given the
      * specified set of filters.
      * </pre>
@@ -12708,6 +13429,21 @@ public final class AnalyticsAdminServiceGrpc {
             com.google.analytics.admin.v1alpha.CreateConversionEventRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getCreateConversionEventMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a conversion event with the specified attributes.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ConversionEvent>
+        updateConversionEvent(
+            com.google.analytics.admin.v1alpha.UpdateConversionEventRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateConversionEventMethod(), getCallOptions()), request);
     }
 
     /**
@@ -13997,92 +14733,98 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_DELETE_MEASUREMENT_PROTOCOL_SECRET = 33;
   private static final int METHODID_UPDATE_MEASUREMENT_PROTOCOL_SECRET = 34;
   private static final int METHODID_ACKNOWLEDGE_USER_DATA_COLLECTION = 35;
-  private static final int METHODID_SEARCH_CHANGE_HISTORY_EVENTS = 36;
-  private static final int METHODID_GET_GOOGLE_SIGNALS_SETTINGS = 37;
-  private static final int METHODID_UPDATE_GOOGLE_SIGNALS_SETTINGS = 38;
-  private static final int METHODID_CREATE_CONVERSION_EVENT = 39;
-  private static final int METHODID_GET_CONVERSION_EVENT = 40;
-  private static final int METHODID_DELETE_CONVERSION_EVENT = 41;
-  private static final int METHODID_LIST_CONVERSION_EVENTS = 42;
-  private static final int METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK = 43;
-  private static final int METHODID_LIST_DISPLAY_VIDEO360ADVERTISER_LINKS = 44;
-  private static final int METHODID_CREATE_DISPLAY_VIDEO360ADVERTISER_LINK = 45;
-  private static final int METHODID_DELETE_DISPLAY_VIDEO360ADVERTISER_LINK = 46;
-  private static final int METHODID_UPDATE_DISPLAY_VIDEO360ADVERTISER_LINK = 47;
-  private static final int METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 48;
-  private static final int METHODID_LIST_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSALS = 49;
-  private static final int METHODID_CREATE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 50;
-  private static final int METHODID_DELETE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 51;
-  private static final int METHODID_APPROVE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 52;
-  private static final int METHODID_CANCEL_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 53;
-  private static final int METHODID_CREATE_CUSTOM_DIMENSION = 54;
-  private static final int METHODID_UPDATE_CUSTOM_DIMENSION = 55;
-  private static final int METHODID_LIST_CUSTOM_DIMENSIONS = 56;
-  private static final int METHODID_ARCHIVE_CUSTOM_DIMENSION = 57;
-  private static final int METHODID_GET_CUSTOM_DIMENSION = 58;
-  private static final int METHODID_CREATE_CUSTOM_METRIC = 59;
-  private static final int METHODID_UPDATE_CUSTOM_METRIC = 60;
-  private static final int METHODID_LIST_CUSTOM_METRICS = 61;
-  private static final int METHODID_ARCHIVE_CUSTOM_METRIC = 62;
-  private static final int METHODID_GET_CUSTOM_METRIC = 63;
-  private static final int METHODID_GET_DATA_RETENTION_SETTINGS = 64;
-  private static final int METHODID_UPDATE_DATA_RETENTION_SETTINGS = 65;
-  private static final int METHODID_CREATE_DATA_STREAM = 66;
-  private static final int METHODID_DELETE_DATA_STREAM = 67;
-  private static final int METHODID_UPDATE_DATA_STREAM = 68;
-  private static final int METHODID_LIST_DATA_STREAMS = 69;
-  private static final int METHODID_GET_DATA_STREAM = 70;
-  private static final int METHODID_GET_AUDIENCE = 71;
-  private static final int METHODID_LIST_AUDIENCES = 72;
-  private static final int METHODID_CREATE_AUDIENCE = 73;
-  private static final int METHODID_UPDATE_AUDIENCE = 74;
-  private static final int METHODID_ARCHIVE_AUDIENCE = 75;
-  private static final int METHODID_GET_SEARCH_ADS360LINK = 76;
-  private static final int METHODID_LIST_SEARCH_ADS360LINKS = 77;
-  private static final int METHODID_CREATE_SEARCH_ADS360LINK = 78;
-  private static final int METHODID_DELETE_SEARCH_ADS360LINK = 79;
-  private static final int METHODID_UPDATE_SEARCH_ADS360LINK = 80;
-  private static final int METHODID_GET_ATTRIBUTION_SETTINGS = 81;
-  private static final int METHODID_UPDATE_ATTRIBUTION_SETTINGS = 82;
-  private static final int METHODID_RUN_ACCESS_REPORT = 83;
-  private static final int METHODID_CREATE_ACCESS_BINDING = 84;
-  private static final int METHODID_GET_ACCESS_BINDING = 85;
-  private static final int METHODID_UPDATE_ACCESS_BINDING = 86;
-  private static final int METHODID_DELETE_ACCESS_BINDING = 87;
-  private static final int METHODID_LIST_ACCESS_BINDINGS = 88;
-  private static final int METHODID_BATCH_CREATE_ACCESS_BINDINGS = 89;
-  private static final int METHODID_BATCH_GET_ACCESS_BINDINGS = 90;
-  private static final int METHODID_BATCH_UPDATE_ACCESS_BINDINGS = 91;
-  private static final int METHODID_BATCH_DELETE_ACCESS_BINDINGS = 92;
-  private static final int METHODID_GET_EXPANDED_DATA_SET = 93;
-  private static final int METHODID_LIST_EXPANDED_DATA_SETS = 94;
-  private static final int METHODID_CREATE_EXPANDED_DATA_SET = 95;
-  private static final int METHODID_UPDATE_EXPANDED_DATA_SET = 96;
-  private static final int METHODID_DELETE_EXPANDED_DATA_SET = 97;
-  private static final int METHODID_GET_CHANNEL_GROUP = 98;
-  private static final int METHODID_LIST_CHANNEL_GROUPS = 99;
-  private static final int METHODID_CREATE_CHANNEL_GROUP = 100;
-  private static final int METHODID_UPDATE_CHANNEL_GROUP = 101;
-  private static final int METHODID_DELETE_CHANNEL_GROUP = 102;
-  private static final int METHODID_SET_AUTOMATED_GA4CONFIGURATION_OPT_OUT = 103;
-  private static final int METHODID_FETCH_AUTOMATED_GA4CONFIGURATION_OPT_OUT = 104;
-  private static final int METHODID_GET_BIG_QUERY_LINK = 105;
-  private static final int METHODID_LIST_BIG_QUERY_LINKS = 106;
-  private static final int METHODID_GET_ENHANCED_MEASUREMENT_SETTINGS = 107;
-  private static final int METHODID_UPDATE_ENHANCED_MEASUREMENT_SETTINGS = 108;
-  private static final int METHODID_CREATE_CONNECTED_SITE_TAG = 109;
-  private static final int METHODID_DELETE_CONNECTED_SITE_TAG = 110;
-  private static final int METHODID_LIST_CONNECTED_SITE_TAGS = 111;
-  private static final int METHODID_FETCH_CONNECTED_GA4PROPERTY = 112;
-  private static final int METHODID_GET_AD_SENSE_LINK = 113;
-  private static final int METHODID_CREATE_AD_SENSE_LINK = 114;
-  private static final int METHODID_DELETE_AD_SENSE_LINK = 115;
-  private static final int METHODID_LIST_AD_SENSE_LINKS = 116;
-  private static final int METHODID_GET_EVENT_CREATE_RULE = 117;
-  private static final int METHODID_LIST_EVENT_CREATE_RULES = 118;
-  private static final int METHODID_CREATE_EVENT_CREATE_RULE = 119;
-  private static final int METHODID_UPDATE_EVENT_CREATE_RULE = 120;
-  private static final int METHODID_DELETE_EVENT_CREATE_RULE = 121;
+  private static final int METHODID_GET_SKAD_NETWORK_CONVERSION_VALUE_SCHEMA = 36;
+  private static final int METHODID_CREATE_SKAD_NETWORK_CONVERSION_VALUE_SCHEMA = 37;
+  private static final int METHODID_DELETE_SKAD_NETWORK_CONVERSION_VALUE_SCHEMA = 38;
+  private static final int METHODID_UPDATE_SKAD_NETWORK_CONVERSION_VALUE_SCHEMA = 39;
+  private static final int METHODID_LIST_SKAD_NETWORK_CONVERSION_VALUE_SCHEMAS = 40;
+  private static final int METHODID_SEARCH_CHANGE_HISTORY_EVENTS = 41;
+  private static final int METHODID_GET_GOOGLE_SIGNALS_SETTINGS = 42;
+  private static final int METHODID_UPDATE_GOOGLE_SIGNALS_SETTINGS = 43;
+  private static final int METHODID_CREATE_CONVERSION_EVENT = 44;
+  private static final int METHODID_UPDATE_CONVERSION_EVENT = 45;
+  private static final int METHODID_GET_CONVERSION_EVENT = 46;
+  private static final int METHODID_DELETE_CONVERSION_EVENT = 47;
+  private static final int METHODID_LIST_CONVERSION_EVENTS = 48;
+  private static final int METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK = 49;
+  private static final int METHODID_LIST_DISPLAY_VIDEO360ADVERTISER_LINKS = 50;
+  private static final int METHODID_CREATE_DISPLAY_VIDEO360ADVERTISER_LINK = 51;
+  private static final int METHODID_DELETE_DISPLAY_VIDEO360ADVERTISER_LINK = 52;
+  private static final int METHODID_UPDATE_DISPLAY_VIDEO360ADVERTISER_LINK = 53;
+  private static final int METHODID_GET_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 54;
+  private static final int METHODID_LIST_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSALS = 55;
+  private static final int METHODID_CREATE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 56;
+  private static final int METHODID_DELETE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 57;
+  private static final int METHODID_APPROVE_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 58;
+  private static final int METHODID_CANCEL_DISPLAY_VIDEO360ADVERTISER_LINK_PROPOSAL = 59;
+  private static final int METHODID_CREATE_CUSTOM_DIMENSION = 60;
+  private static final int METHODID_UPDATE_CUSTOM_DIMENSION = 61;
+  private static final int METHODID_LIST_CUSTOM_DIMENSIONS = 62;
+  private static final int METHODID_ARCHIVE_CUSTOM_DIMENSION = 63;
+  private static final int METHODID_GET_CUSTOM_DIMENSION = 64;
+  private static final int METHODID_CREATE_CUSTOM_METRIC = 65;
+  private static final int METHODID_UPDATE_CUSTOM_METRIC = 66;
+  private static final int METHODID_LIST_CUSTOM_METRICS = 67;
+  private static final int METHODID_ARCHIVE_CUSTOM_METRIC = 68;
+  private static final int METHODID_GET_CUSTOM_METRIC = 69;
+  private static final int METHODID_GET_DATA_RETENTION_SETTINGS = 70;
+  private static final int METHODID_UPDATE_DATA_RETENTION_SETTINGS = 71;
+  private static final int METHODID_CREATE_DATA_STREAM = 72;
+  private static final int METHODID_DELETE_DATA_STREAM = 73;
+  private static final int METHODID_UPDATE_DATA_STREAM = 74;
+  private static final int METHODID_LIST_DATA_STREAMS = 75;
+  private static final int METHODID_GET_DATA_STREAM = 76;
+  private static final int METHODID_GET_AUDIENCE = 77;
+  private static final int METHODID_LIST_AUDIENCES = 78;
+  private static final int METHODID_CREATE_AUDIENCE = 79;
+  private static final int METHODID_UPDATE_AUDIENCE = 80;
+  private static final int METHODID_ARCHIVE_AUDIENCE = 81;
+  private static final int METHODID_GET_SEARCH_ADS360LINK = 82;
+  private static final int METHODID_LIST_SEARCH_ADS360LINKS = 83;
+  private static final int METHODID_CREATE_SEARCH_ADS360LINK = 84;
+  private static final int METHODID_DELETE_SEARCH_ADS360LINK = 85;
+  private static final int METHODID_UPDATE_SEARCH_ADS360LINK = 86;
+  private static final int METHODID_GET_ATTRIBUTION_SETTINGS = 87;
+  private static final int METHODID_UPDATE_ATTRIBUTION_SETTINGS = 88;
+  private static final int METHODID_RUN_ACCESS_REPORT = 89;
+  private static final int METHODID_CREATE_ACCESS_BINDING = 90;
+  private static final int METHODID_GET_ACCESS_BINDING = 91;
+  private static final int METHODID_UPDATE_ACCESS_BINDING = 92;
+  private static final int METHODID_DELETE_ACCESS_BINDING = 93;
+  private static final int METHODID_LIST_ACCESS_BINDINGS = 94;
+  private static final int METHODID_BATCH_CREATE_ACCESS_BINDINGS = 95;
+  private static final int METHODID_BATCH_GET_ACCESS_BINDINGS = 96;
+  private static final int METHODID_BATCH_UPDATE_ACCESS_BINDINGS = 97;
+  private static final int METHODID_BATCH_DELETE_ACCESS_BINDINGS = 98;
+  private static final int METHODID_GET_EXPANDED_DATA_SET = 99;
+  private static final int METHODID_LIST_EXPANDED_DATA_SETS = 100;
+  private static final int METHODID_CREATE_EXPANDED_DATA_SET = 101;
+  private static final int METHODID_UPDATE_EXPANDED_DATA_SET = 102;
+  private static final int METHODID_DELETE_EXPANDED_DATA_SET = 103;
+  private static final int METHODID_GET_CHANNEL_GROUP = 104;
+  private static final int METHODID_LIST_CHANNEL_GROUPS = 105;
+  private static final int METHODID_CREATE_CHANNEL_GROUP = 106;
+  private static final int METHODID_UPDATE_CHANNEL_GROUP = 107;
+  private static final int METHODID_DELETE_CHANNEL_GROUP = 108;
+  private static final int METHODID_SET_AUTOMATED_GA4CONFIGURATION_OPT_OUT = 109;
+  private static final int METHODID_FETCH_AUTOMATED_GA4CONFIGURATION_OPT_OUT = 110;
+  private static final int METHODID_GET_BIG_QUERY_LINK = 111;
+  private static final int METHODID_LIST_BIG_QUERY_LINKS = 112;
+  private static final int METHODID_GET_ENHANCED_MEASUREMENT_SETTINGS = 113;
+  private static final int METHODID_UPDATE_ENHANCED_MEASUREMENT_SETTINGS = 114;
+  private static final int METHODID_CREATE_CONNECTED_SITE_TAG = 115;
+  private static final int METHODID_DELETE_CONNECTED_SITE_TAG = 116;
+  private static final int METHODID_LIST_CONNECTED_SITE_TAGS = 117;
+  private static final int METHODID_FETCH_CONNECTED_GA4PROPERTY = 118;
+  private static final int METHODID_GET_AD_SENSE_LINK = 119;
+  private static final int METHODID_CREATE_AD_SENSE_LINK = 120;
+  private static final int METHODID_DELETE_AD_SENSE_LINK = 121;
+  private static final int METHODID_LIST_AD_SENSE_LINKS = 122;
+  private static final int METHODID_GET_EVENT_CREATE_RULE = 123;
+  private static final int METHODID_LIST_EVENT_CREATE_RULES = 124;
+  private static final int METHODID_CREATE_EVENT_CREATE_RULE = 125;
+  private static final int METHODID_UPDATE_EVENT_CREATE_RULE = 126;
+  private static final int METHODID_DELETE_EVENT_CREATE_RULE = 127;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -14326,6 +15068,45 @@ public final class AnalyticsAdminServiceGrpc {
                       com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse>)
                   responseObserver);
           break;
+        case METHODID_GET_SKAD_NETWORK_CONVERSION_VALUE_SCHEMA:
+          serviceImpl.getSKAdNetworkConversionValueSchema(
+              (com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_SKAD_NETWORK_CONVERSION_VALUE_SCHEMA:
+          serviceImpl.createSKAdNetworkConversionValueSchema(
+              (com.google.analytics.admin.v1alpha.CreateSKAdNetworkConversionValueSchemaRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>)
+                  responseObserver);
+          break;
+        case METHODID_DELETE_SKAD_NETWORK_CONVERSION_VALUE_SCHEMA:
+          serviceImpl.deleteSKAdNetworkConversionValueSchema(
+              (com.google.analytics.admin.v1alpha.DeleteSKAdNetworkConversionValueSchemaRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_UPDATE_SKAD_NETWORK_CONVERSION_VALUE_SCHEMA:
+          serviceImpl.updateSKAdNetworkConversionValueSchema(
+              (com.google.analytics.admin.v1alpha.UpdateSKAdNetworkConversionValueSchemaRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_SKAD_NETWORK_CONVERSION_VALUE_SCHEMAS:
+          serviceImpl.listSKAdNetworkConversionValueSchemas(
+              (com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest)
+                  request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha
+                          .ListSKAdNetworkConversionValueSchemasResponse>)
+                  responseObserver);
+          break;
         case METHODID_SEARCH_CHANGE_HISTORY_EVENTS:
           serviceImpl.searchChangeHistoryEvents(
               (com.google.analytics.admin.v1alpha.SearchChangeHistoryEventsRequest) request,
@@ -14350,6 +15131,12 @@ public final class AnalyticsAdminServiceGrpc {
         case METHODID_CREATE_CONVERSION_EVENT:
           serviceImpl.createConversionEvent(
               (com.google.analytics.admin.v1alpha.CreateConversionEventRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ConversionEvent>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_CONVERSION_EVENT:
+          serviceImpl.updateConversionEvent(
+              (com.google.analytics.admin.v1alpha.UpdateConversionEventRequest) request,
               (io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ConversionEvent>)
                   responseObserver);
           break;
@@ -15147,6 +15934,45 @@ public final class AnalyticsAdminServiceGrpc {
                     com.google.analytics.admin.v1alpha.AcknowledgeUserDataCollectionResponse>(
                     service, METHODID_ACKNOWLEDGE_USER_DATA_COLLECTION)))
         .addMethod(
+            getGetSKAdNetworkConversionValueSchemaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetSKAdNetworkConversionValueSchemaRequest,
+                    com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>(
+                    service, METHODID_GET_SKAD_NETWORK_CONVERSION_VALUE_SCHEMA)))
+        .addMethod(
+            getCreateSKAdNetworkConversionValueSchemaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha
+                        .CreateSKAdNetworkConversionValueSchemaRequest,
+                    com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>(
+                    service, METHODID_CREATE_SKAD_NETWORK_CONVERSION_VALUE_SCHEMA)))
+        .addMethod(
+            getDeleteSKAdNetworkConversionValueSchemaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha
+                        .DeleteSKAdNetworkConversionValueSchemaRequest,
+                    com.google.protobuf.Empty>(
+                    service, METHODID_DELETE_SKAD_NETWORK_CONVERSION_VALUE_SCHEMA)))
+        .addMethod(
+            getUpdateSKAdNetworkConversionValueSchemaMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha
+                        .UpdateSKAdNetworkConversionValueSchemaRequest,
+                    com.google.analytics.admin.v1alpha.SKAdNetworkConversionValueSchema>(
+                    service, METHODID_UPDATE_SKAD_NETWORK_CONVERSION_VALUE_SCHEMA)))
+        .addMethod(
+            getListSKAdNetworkConversionValueSchemasMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListSKAdNetworkConversionValueSchemasRequest,
+                    com.google.analytics.admin.v1alpha
+                        .ListSKAdNetworkConversionValueSchemasResponse>(
+                    service, METHODID_LIST_SKAD_NETWORK_CONVERSION_VALUE_SCHEMAS)))
+        .addMethod(
             getSearchChangeHistoryEventsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -15174,6 +16000,13 @@ public final class AnalyticsAdminServiceGrpc {
                     com.google.analytics.admin.v1alpha.CreateConversionEventRequest,
                     com.google.analytics.admin.v1alpha.ConversionEvent>(
                     service, METHODID_CREATE_CONVERSION_EVENT)))
+        .addMethod(
+            getUpdateConversionEventMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateConversionEventRequest,
+                    com.google.analytics.admin.v1alpha.ConversionEvent>(
+                    service, METHODID_UPDATE_CONVERSION_EVENT)))
         .addMethod(
             getGetConversionEventMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -15770,9 +16603,9 @@ public final class AnalyticsAdminServiceGrpc {
   private static final class AnalyticsAdminServiceMethodDescriptorSupplier
       extends AnalyticsAdminServiceBaseDescriptorSupplier
       implements io.grpc.protobuf.ProtoMethodDescriptorSupplier {
-    private final String methodName;
+    private final java.lang.String methodName;
 
-    AnalyticsAdminServiceMethodDescriptorSupplier(String methodName) {
+    AnalyticsAdminServiceMethodDescriptorSupplier(java.lang.String methodName) {
       this.methodName = methodName;
     }
 
@@ -15830,10 +16663,16 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getDeleteMeasurementProtocolSecretMethod())
                       .addMethod(getUpdateMeasurementProtocolSecretMethod())
                       .addMethod(getAcknowledgeUserDataCollectionMethod())
+                      .addMethod(getGetSKAdNetworkConversionValueSchemaMethod())
+                      .addMethod(getCreateSKAdNetworkConversionValueSchemaMethod())
+                      .addMethod(getDeleteSKAdNetworkConversionValueSchemaMethod())
+                      .addMethod(getUpdateSKAdNetworkConversionValueSchemaMethod())
+                      .addMethod(getListSKAdNetworkConversionValueSchemasMethod())
                       .addMethod(getSearchChangeHistoryEventsMethod())
                       .addMethod(getGetGoogleSignalsSettingsMethod())
                       .addMethod(getUpdateGoogleSignalsSettingsMethod())
                       .addMethod(getCreateConversionEventMethod())
+                      .addMethod(getUpdateConversionEventMethod())
                       .addMethod(getGetConversionEventMethod())
                       .addMethod(getDeleteConversionEventMethod())
                       .addMethod(getListConversionEventsMethod())

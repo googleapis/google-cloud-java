@@ -120,9 +120,45 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
+   * Raw image query.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery image_query = 19;</code>
+   *
+   * @return Whether the imageQuery field is set.
+   */
+  boolean hasImageQuery();
+  /**
+   *
+   *
+   * <pre>
+   * Raw image query.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery image_query = 19;</code>
+   *
+   * @return The imageQuery.
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery getImageQuery();
+  /**
+   *
+   *
+   * <pre>
+   * Raw image query.
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQuery image_query = 19;</code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchRequest.ImageQueryOrBuilder
+      getImageQueryOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Maximum number of [Document][google.cloud.discoveryengine.v1beta.Document]s
    * to return. If unspecified, defaults to a reasonable value. The maximum
-   * allowed value is 100. Values above 100 will be coerced to 100.
+   * allowed value is 100. Values above 100 are coerced to 100.
    *
    * If this field is negative, an  `INVALID_ARGUMENT`  is returned.
    * </pre>
@@ -229,12 +265,12 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * The order in which documents are returned. Document can be ordered by
+   * The order in which documents are returned. Documents can be ordered by
    * a field in an [Document][google.cloud.discoveryengine.v1beta.Document]
-   * object. Leave it unset if ordered by relevance. OrderBy expression is
+   * object. Leave it unset if ordered by relevance. `order_by` expression is
    * case-sensitive.
    *
-   * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+   * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
    * </pre>
    *
    * <code>string order_by = 8;</code>
@@ -246,12 +282,12 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * The order in which documents are returned. Document can be ordered by
+   * The order in which documents are returned. Documents can be ordered by
    * a field in an [Document][google.cloud.discoveryengine.v1beta.Document]
-   * object. Leave it unset if ordered by relevance. OrderBy expression is
+   * object. Leave it unset if ordered by relevance. `order_by` expression is
    * case-sensitive.
    *
-   * If this field is unrecognizable, an  `INVALID_ARGUMENT`  is returned.
+   * If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
    * </pre>
    *
    * <code>string order_by = 8;</code>
@@ -265,8 +301,9 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Information about the end user.
-   * Highly recommended for analytics. The user_agent string in UserInfo will
-   * be used to deduce device_type for analytics.
+   * Highly recommended for analytics.
+   * [UserInfo.user_agent][google.cloud.discoveryengine.v1beta.UserInfo.user_agent]
+   * is used to deduce `device_type` for analytics.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
@@ -279,8 +316,9 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Information about the end user.
-   * Highly recommended for analytics. The user_agent string in UserInfo will
-   * be used to deduce device_type for analytics.
+   * Highly recommended for analytics.
+   * [UserInfo.user_agent][google.cloud.discoveryengine.v1beta.UserInfo.user_agent]
+   * is used to deduce `device_type` for analytics.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
@@ -293,8 +331,9 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * Information about the end user.
-   * Highly recommended for analytics. The user_agent string in UserInfo will
-   * be used to deduce device_type for analytics.
+   * Highly recommended for analytics.
+   * [UserInfo.user_agent][google.cloud.discoveryengine.v1beta.UserInfo.user_agent]
+   * is used to deduce `device_type` for analytics.
    * </pre>
    *
    * <code>.google.cloud.discoveryengine.v1beta.UserInfo user_info = 21;</code>
@@ -513,7 +552,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur.
+   * query expansion occurs.
    * </pre>
    *
    * <code>
@@ -528,7 +567,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur.
+   * query expansion occurs.
    * </pre>
    *
    * <code>
@@ -543,7 +582,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The query expansion specification that specifies the conditions under which
-   * query expansion will occur.
+   * query expansion occurs.
    * </pre>
    *
    * <code>
@@ -558,7 +597,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The spell correction specification that specifies the mode under
-   * which spell correction will take effect.
+   * which spell correction takes effect.
    * </pre>
    *
    * <code>
@@ -573,7 +612,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The spell correction specification that specifies the mode under
-   * which spell correction will take effect.
+   * which spell correction takes effect.
    * </pre>
    *
    * <code>
@@ -589,7 +628,7 @@ public interface SearchRequestOrBuilder
    *
    * <pre>
    * The spell correction specification that specifies the mode under
-   * which spell correction will take effect.
+   * which spell correction takes effect.
    * </pre>
    *
    * <code>
@@ -654,8 +693,7 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * The content search spec that configs the desired behavior of content
-   * search.
+   * A specification for configuring the behavior of content search.
    * </pre>
    *
    * <code>
@@ -669,8 +707,7 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * The content search spec that configs the desired behavior of content
-   * search.
+   * A specification for configuring the behavior of content search.
    * </pre>
    *
    * <code>
@@ -684,8 +721,7 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
-   * The content search spec that configs the desired behavior of content
-   * search.
+   * A specification for configuring the behavior of content search.
    * </pre>
    *
    * <code>
@@ -699,8 +735,129 @@ public interface SearchRequestOrBuilder
    *
    *
    * <pre>
+   * Uses the provided embedding to do additional semantic document retrieval.
+   * The retrieval is based on the dot product of
+   * [SearchRequest.embedding_spec.embedding_vectors.vector][] and the document
+   * embedding that is provided in
+   * [SearchRequest.embedding_spec.embedding_vectors.field_path][].
+   *
+   * If [SearchRequest.embedding_spec.embedding_vectors.field_path][] is not
+   * provided, it will use [ServingConfig.embedding_config.field_paths][].
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec embedding_spec = 23;
+   * </code>
+   *
+   * @return Whether the embeddingSpec field is set.
+   */
+  boolean hasEmbeddingSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Uses the provided embedding to do additional semantic document retrieval.
+   * The retrieval is based on the dot product of
+   * [SearchRequest.embedding_spec.embedding_vectors.vector][] and the document
+   * embedding that is provided in
+   * [SearchRequest.embedding_spec.embedding_vectors.field_path][].
+   *
+   * If [SearchRequest.embedding_spec.embedding_vectors.field_path][] is not
+   * provided, it will use [ServingConfig.embedding_config.field_paths][].
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec embedding_spec = 23;
+   * </code>
+   *
+   * @return The embeddingSpec.
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec getEmbeddingSpec();
+  /**
+   *
+   *
+   * <pre>
+   * Uses the provided embedding to do additional semantic document retrieval.
+   * The retrieval is based on the dot product of
+   * [SearchRequest.embedding_spec.embedding_vectors.vector][] and the document
+   * embedding that is provided in
+   * [SearchRequest.embedding_spec.embedding_vectors.field_path][].
+   *
+   * If [SearchRequest.embedding_spec.embedding_vectors.field_path][] is not
+   * provided, it will use [ServingConfig.embedding_config.field_paths][].
+   * </pre>
+   *
+   * <code>.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpec embedding_spec = 23;
+   * </code>
+   */
+  com.google.cloud.discoveryengine.v1beta.SearchRequest.EmbeddingSpecOrBuilder
+      getEmbeddingSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The ranking expression controls the customized ranking on retrieval
+   * documents. This overrides [ServingConfig.ranking_expression][].
+   * The ranking expression is a single function or multiple functions that are
+   * joint by "+".
+   *   * ranking_expression = function, { " + ", function };
+   * Supported functions:
+   *   * double * relevance_score
+   *   * double * dotProduct(embedding_field_path)
+   * Function variables:
+   *   `relevance_score`: pre-defined keywords, used for measure relevance
+   *   between query and document.
+   *   `embedding_field_path`: the document embedding field
+   *   used with query embedding vector.
+   *   `dotProduct`: embedding function between embedding_field_path and query
+   *   embedding vector.
+   *
+   *  Example ranking expression:
+   *    If document has an embedding field doc_embedding, the ranking expression
+   *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
+   * </pre>
+   *
+   * <code>string ranking_expression = 26;</code>
+   *
+   * @return The rankingExpression.
+   */
+  java.lang.String getRankingExpression();
+  /**
+   *
+   *
+   * <pre>
+   * The ranking expression controls the customized ranking on retrieval
+   * documents. This overrides [ServingConfig.ranking_expression][].
+   * The ranking expression is a single function or multiple functions that are
+   * joint by "+".
+   *   * ranking_expression = function, { " + ", function };
+   * Supported functions:
+   *   * double * relevance_score
+   *   * double * dotProduct(embedding_field_path)
+   * Function variables:
+   *   `relevance_score`: pre-defined keywords, used for measure relevance
+   *   between query and document.
+   *   `embedding_field_path`: the document embedding field
+   *   used with query embedding vector.
+   *   `dotProduct`: embedding function between embedding_field_path and query
+   *   embedding vector.
+   *
+   *  Example ranking expression:
+   *    If document has an embedding field doc_embedding, the ranking expression
+   *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
+   * </pre>
+   *
+   * <code>string ranking_expression = 26;</code>
+   *
+   * @return The bytes for rankingExpression.
+   */
+  com.google.protobuf.ByteString getRankingExpressionBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Whether to turn on safe search. This is only supported for
-   * [ContentConfig.PUBLIC_WEBSITE][].
+   * website search.
    * </pre>
    *
    * <code>bool safe_search = 20;</code>

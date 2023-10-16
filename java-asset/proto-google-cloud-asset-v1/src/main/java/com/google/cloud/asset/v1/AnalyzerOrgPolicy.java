@@ -234,7 +234,10 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Represents a rule defined in an organization policy
+   * This rule message is a customized version of the one defined in the
+   * Organization Policy system. In addition to the fields defined in the
+   * original organization policy, it contains additional field(s) under
+   * specific circumstances to support analysis results.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1.AnalyzerOrgPolicy.Rule}
@@ -1881,7 +1884,10 @@ public final class AnalyzerOrgPolicy extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Represents a rule defined in an organization policy
+     * This rule message is a customized version of the one defined in the
+     * Organization Policy system. In addition to the fields defined in the
+     * original organization policy, it contains additional field(s) under
+     * specific circumstances to support analysis results.
      * </pre>
      *
      * Protobuf type {@code google.cloud.asset.v1.AnalyzerOrgPolicy.Rule}
