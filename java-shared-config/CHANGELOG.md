@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/googleapis/java-shared-config/compare/v1.5.8...v1.6.0) (2023-10-17)
+
+
+### Features
+
+* Add graal-sdk dependency management to java-shared-config ([#683](https://github.com/googleapis/java-shared-config/issues/683)) ([5cd1d84](https://github.com/googleapis/java-shared-config/commit/5cd1d84bf2d68dbe8f9fa7e02d9065082bd56726))
+
 ## [1.5.8](https://github.com/googleapis/java-shared-config/compare/v1.5.7...v1.5.8) (2023-10-05)
 
 
