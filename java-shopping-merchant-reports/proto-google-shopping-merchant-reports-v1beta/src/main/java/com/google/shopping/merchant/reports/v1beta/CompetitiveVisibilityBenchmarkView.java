@@ -257,7 +257,8 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
    * Required in the `SELECT` clause.
    * </pre>
    *
-   * <code>optional .google.shopping.merchant.reports.v1beta.TrafficSource traffic_source = 4;
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum traffic_source = 4;
    * </code>
    *
    * @return Whether the trafficSource field is set.
@@ -275,7 +276,8 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
    * Required in the `SELECT` clause.
    * </pre>
    *
-   * <code>optional .google.shopping.merchant.reports.v1beta.TrafficSource traffic_source = 4;
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum traffic_source = 4;
    * </code>
    *
    * @return The enum numeric value on the wire for trafficSource.
@@ -293,17 +295,20 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
    * Required in the `SELECT` clause.
    * </pre>
    *
-   * <code>optional .google.shopping.merchant.reports.v1beta.TrafficSource traffic_source = 4;
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum traffic_source = 4;
    * </code>
    *
    * @return The trafficSource.
    */
   @java.lang.Override
-  public com.google.shopping.merchant.reports.v1beta.TrafficSource getTrafficSource() {
-    com.google.shopping.merchant.reports.v1beta.TrafficSource result =
-        com.google.shopping.merchant.reports.v1beta.TrafficSource.forNumber(trafficSource_);
+  public com.google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum
+      getTrafficSource() {
+    com.google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum result =
+        com.google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum.forNumber(
+            trafficSource_);
     return result == null
-        ? com.google.shopping.merchant.reports.v1beta.TrafficSource.UNRECOGNIZED
+        ? com.google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum.UNRECOGNIZED
         : result;
   }
 
@@ -1362,7 +1367,8 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
      * Required in the `SELECT` clause.
      * </pre>
      *
-     * <code>optional .google.shopping.merchant.reports.v1beta.TrafficSource traffic_source = 4;
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum traffic_source = 4;
      * </code>
      *
      * @return Whether the trafficSource field is set.
@@ -1380,7 +1386,8 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
      * Required in the `SELECT` clause.
      * </pre>
      *
-     * <code>optional .google.shopping.merchant.reports.v1beta.TrafficSource traffic_source = 4;
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum traffic_source = 4;
      * </code>
      *
      * @return The enum numeric value on the wire for trafficSource.
@@ -1398,7 +1405,8 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
      * Required in the `SELECT` clause.
      * </pre>
      *
-     * <code>optional .google.shopping.merchant.reports.v1beta.TrafficSource traffic_source = 4;
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum traffic_source = 4;
      * </code>
      *
      * @param value The enum numeric value on the wire for trafficSource to set.
@@ -1419,17 +1427,20 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
      * Required in the `SELECT` clause.
      * </pre>
      *
-     * <code>optional .google.shopping.merchant.reports.v1beta.TrafficSource traffic_source = 4;
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum traffic_source = 4;
      * </code>
      *
      * @return The trafficSource.
      */
     @java.lang.Override
-    public com.google.shopping.merchant.reports.v1beta.TrafficSource getTrafficSource() {
-      com.google.shopping.merchant.reports.v1beta.TrafficSource result =
-          com.google.shopping.merchant.reports.v1beta.TrafficSource.forNumber(trafficSource_);
+    public com.google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum
+        getTrafficSource() {
+      com.google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum result =
+          com.google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum.forNumber(
+              trafficSource_);
       return result == null
-          ? com.google.shopping.merchant.reports.v1beta.TrafficSource.UNRECOGNIZED
+          ? com.google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum.UNRECOGNIZED
           : result;
     }
     /**
@@ -1441,14 +1452,15 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
      * Required in the `SELECT` clause.
      * </pre>
      *
-     * <code>optional .google.shopping.merchant.reports.v1beta.TrafficSource traffic_source = 4;
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum traffic_source = 4;
      * </code>
      *
      * @param value The trafficSource to set.
      * @return This builder for chaining.
      */
     public Builder setTrafficSource(
-        com.google.shopping.merchant.reports.v1beta.TrafficSource value) {
+        com.google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1466,7 +1478,8 @@ public final class CompetitiveVisibilityBenchmarkView extends com.google.protobu
      * Required in the `SELECT` clause.
      * </pre>
      *
-     * <code>optional .google.shopping.merchant.reports.v1beta.TrafficSource traffic_source = 4;
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.TrafficSource.TrafficSourceEnum traffic_source = 4;
      * </code>
      *
      * @return This builder for chaining.

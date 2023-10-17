@@ -182,11 +182,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Number of `ReportRows` to retrieve in a single page. Defaults to the
-   * maximum of 1000. Values above 1000 are coerced to 1000.
+   * Optional. Number of `ReportRows` to retrieve in a single page. Defaults to
+   * the maximum of 1000. Values above 1000 are coerced to 1000.
    * </pre>
    *
-   * <code>int32 page_size = 3;</code>
+   * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageSize.
    */
@@ -203,12 +203,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Token of the page to retrieve. If not specified, the first page of results
-   * is returned. In order to request the next page of results, the value
-   * obtained from `next_page_token` in the previous response should be used.
+   * Optional. Token of the page to retrieve. If not specified, the first page
+   * of results is returned. In order to request the next page of results, the
+   * value obtained from `next_page_token` in the previous response should be
+   * used.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The pageToken.
    */
@@ -228,12 +229,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Token of the page to retrieve. If not specified, the first page of results
-   * is returned. In order to request the next page of results, the value
-   * obtained from `next_page_token` in the previous response should be used.
+   * Optional. Token of the page to retrieve. If not specified, the first page
+   * of results is returned. In order to request the next page of results, the
+   * value obtained from `next_page_token` in the previous response should be
+   * used.
    * </pre>
    *
-   * <code>string page_token = 4;</code>
+   * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for pageToken.
    */
@@ -905,11 +907,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Number of `ReportRows` to retrieve in a single page. Defaults to the
-     * maximum of 1000. Values above 1000 are coerced to 1000.
+     * Optional. Number of `ReportRows` to retrieve in a single page. Defaults to
+     * the maximum of 1000. Values above 1000 are coerced to 1000.
      * </pre>
      *
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageSize.
      */
@@ -921,11 +923,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Number of `ReportRows` to retrieve in a single page. Defaults to the
-     * maximum of 1000. Values above 1000 are coerced to 1000.
+     * Optional. Number of `ReportRows` to retrieve in a single page. Defaults to
+     * the maximum of 1000. Values above 1000 are coerced to 1000.
      * </pre>
      *
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageSize to set.
      * @return This builder for chaining.
@@ -941,11 +943,11 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Number of `ReportRows` to retrieve in a single page. Defaults to the
-     * maximum of 1000. Values above 1000 are coerced to 1000.
+     * Optional. Number of `ReportRows` to retrieve in a single page. Defaults to
+     * the maximum of 1000. Values above 1000 are coerced to 1000.
      * </pre>
      *
-     * <code>int32 page_size = 3;</code>
+     * <code>int32 page_size = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -961,12 +963,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Token of the page to retrieve. If not specified, the first page of results
-     * is returned. In order to request the next page of results, the value
-     * obtained from `next_page_token` in the previous response should be used.
+     * Optional. Token of the page to retrieve. If not specified, the first page
+     * of results is returned. In order to request the next page of results, the
+     * value obtained from `next_page_token` in the previous response should be
+     * used.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The pageToken.
      */
@@ -985,12 +988,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Token of the page to retrieve. If not specified, the first page of results
-     * is returned. In order to request the next page of results, the value
-     * obtained from `next_page_token` in the previous response should be used.
+     * Optional. Token of the page to retrieve. If not specified, the first page
+     * of results is returned. In order to request the next page of results, the
+     * value obtained from `next_page_token` in the previous response should be
+     * used.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for pageToken.
      */
@@ -1009,12 +1013,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Token of the page to retrieve. If not specified, the first page of results
-     * is returned. In order to request the next page of results, the value
-     * obtained from `next_page_token` in the previous response should be used.
+     * Optional. Token of the page to retrieve. If not specified, the first page
+     * of results is returned. In order to request the next page of results, the
+     * value obtained from `next_page_token` in the previous response should be
+     * used.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The pageToken to set.
      * @return This builder for chaining.
@@ -1032,12 +1037,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Token of the page to retrieve. If not specified, the first page of results
-     * is returned. In order to request the next page of results, the value
-     * obtained from `next_page_token` in the previous response should be used.
+     * Optional. Token of the page to retrieve. If not specified, the first page
+     * of results is returned. In order to request the next page of results, the
+     * value obtained from `next_page_token` in the previous response should be
+     * used.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1051,12 +1057,13 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Token of the page to retrieve. If not specified, the first page of results
-     * is returned. In order to request the next page of results, the value
-     * obtained from `next_page_token` in the previous response should be used.
+     * Optional. Token of the page to retrieve. If not specified, the first page
+     * of results is returned. In order to request the next page of results, the
+     * value obtained from `next_page_token` in the previous response should be
+     * used.
      * </pre>
      *
-     * <code>string page_token = 4;</code>
+     * <code>string page_token = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for pageToken to set.
      * @return This builder for chaining.

@@ -35,6 +35,18 @@ public final class TypesProto {
       internal_static_google_shopping_type_CustomAttribute_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_type_CustomAttribute_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_type_Destination_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_type_Destination_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_type_ReportingContext_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_type_ReportingContext_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_type_Channel_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_type_Channel_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -51,14 +63,26 @@ public final class TypesProto {
           + "\n\017CustomAttribute\022\021\n\004name\030\001 \001(\tH\000\210\001\001\022\022\n\005"
           + "value\030\002 \001(\tH\001\210\001\001\022;\n\014group_values\030\003 \003(\0132%"
           + ".google.shopping.type.CustomAttributeB\007\n"
-          + "\005_nameB\010\n\006_value*\201\001\n\013Destination\022\033\n\027DEST"
-          + "INATION_UNSPECIFIED\020\000\022\020\n\014SHOPPING_ADS\020\001\022"
-          + "\027\n\023LOCAL_INVENTORY_ADS\020\002\022\021\n\rFREE_LISTING"
-          + "S\020\003\022\027\n\023FREE_LOCAL_LISTINGS\020\004B\200\001\n\030com.goo"
-          + "gle.shopping.typeB\nTypesProtoP\001Z?google."
-          + "golang.org/genproto/googleapis/shopping/"
-          + "type/types;types\252\002\024Google.Shopping.Typeb"
-          + "\006proto3"
+          + "\005_nameB\010\n\006_value\"\301\001\n\013Destination\"\261\001\n\017Des"
+          + "tinationEnum\022 \n\034DESTINATION_ENUM_UNSPECI"
+          + "FIED\020\000\022\020\n\014SHOPPING_ADS\020\001\022\017\n\013DISPLAY_ADS\020"
+          + "\002\022\027\n\023LOCAL_INVENTORY_ADS\020\003\022\021\n\rFREE_LISTI"
+          + "NGS\020\004\022\027\n\023FREE_LOCAL_LISTINGS\020\005\022\024\n\020YOUTUB"
+          + "E_SHOPPING\020\006\"\331\002\n\020ReportingContext\"\304\002\n\024Re"
+          + "portingContextEnum\022&\n\"REPORTING_CONTEXT_"
+          + "ENUM_UNSPECIFIED\020\000\022\020\n\014SHOPPING_ADS\020\001\022\021\n\r"
+          + "DISCOVERY_ADS\020\002\022\r\n\tVIDEO_ADS\020\003\022\017\n\013DISPLA"
+          + "Y_ADS\020\004\022\027\n\023LOCAL_INVENTORY_ADS\020\005\022\031\n\025VEHI"
+          + "CLE_INVENTORY_ADS\020\006\022\021\n\rFREE_LISTINGS\020\007\022\027"
+          + "\n\023FREE_LOCAL_LISTINGS\020\010\022\037\n\033FREE_LOCAL_VE"
+          + "HICLE_LISTINGS\020\t\022\024\n\020YOUTUBE_SHOPPING\020\n\022\020"
+          + "\n\014CLOUD_RETAIL\020\013\022\026\n\022LOCAL_CLOUD_RETAIL\020\014"
+          + "\"M\n\007Channel\"B\n\013ChannelEnum\022\034\n\030CHANNEL_EN"
+          + "UM_UNSPECIFIED\020\000\022\n\n\006ONLINE\020\001\022\t\n\005LOCAL\020\002B"
+          + "p\n\030com.google.shopping.typeB\nTypesProtoP"
+          + "\001Z/cloud.google.com/go/shopping/type/typ"
+          + "epb;typepb\252\002\024Google.Shopping.Typeb\006proto"
+          + "3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -79,6 +103,22 @@ public final class TypesProto {
             new java.lang.String[] {
               "Name", "Value", "GroupValues", "Name", "Value",
             });
+    internal_static_google_shopping_type_Destination_descriptor =
+        getDescriptor().getMessageTypes().get(2);
+    internal_static_google_shopping_type_Destination_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_type_Destination_descriptor, new java.lang.String[] {});
+    internal_static_google_shopping_type_ReportingContext_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_shopping_type_ReportingContext_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_type_ReportingContext_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_shopping_type_Channel_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_shopping_type_Channel_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_type_Channel_descriptor, new java.lang.String[] {});
   }
 
   // @@protoc_insertion_point(outer_class_scope)

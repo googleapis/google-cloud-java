@@ -22,54 +22,56 @@ package com.google.shopping.merchant.reports.v1beta;
  *
  *
  * <pre>
- * Relative demand of a product cluster or brand in the Best sellers report.
+ * Marketing method used to promote your products on Google (organic versus
+ * ads).
  * </pre>
  *
- * Protobuf type {@code google.shopping.merchant.reports.v1beta.RelativeDemand}
+ * Protobuf type {@code google.shopping.merchant.reports.v1beta.MarketingMethod}
  */
-public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
+public final class MarketingMethod extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.shopping.merchant.reports.v1beta.RelativeDemand)
-    RelativeDemandOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.shopping.merchant.reports.v1beta.MarketingMethod)
+    MarketingMethodOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use RelativeDemand.newBuilder() to construct.
-  private RelativeDemand(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use MarketingMethod.newBuilder() to construct.
+  private MarketingMethod(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private RelativeDemand() {}
+  private MarketingMethod() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new RelativeDemand();
+    return new MarketingMethod();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.shopping.merchant.reports.v1beta.ReportsProto
-        .internal_static_google_shopping_merchant_reports_v1beta_RelativeDemand_descriptor;
+        .internal_static_google_shopping_merchant_reports_v1beta_MarketingMethod_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.shopping.merchant.reports.v1beta.ReportsProto
-        .internal_static_google_shopping_merchant_reports_v1beta_RelativeDemand_fieldAccessorTable
+        .internal_static_google_shopping_merchant_reports_v1beta_MarketingMethod_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.shopping.merchant.reports.v1beta.RelativeDemand.class,
-            com.google.shopping.merchant.reports.v1beta.RelativeDemand.Builder.class);
+            com.google.shopping.merchant.reports.v1beta.MarketingMethod.class,
+            com.google.shopping.merchant.reports.v1beta.MarketingMethod.Builder.class);
   }
 
   /**
    *
    *
    * <pre>
-   * Relative demand values.
+   * Marketing method values.
    * </pre>
    *
-   * Protobuf enum {@code google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum}
+   * Protobuf enum {@code
+   * google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum}
    */
-  public enum RelativeDemandEnum implements com.google.protobuf.ProtocolMessageEnum {
+  public enum MarketingMethodEnum implements com.google.protobuf.ProtocolMessageEnum {
     /**
      *
      *
@@ -77,64 +79,29 @@ public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
      * Not specified.
      * </pre>
      *
-     * <code>RELATIVE_DEMAND_ENUM_UNSPECIFIED = 0;</code>
+     * <code>MARKETING_METHOD_ENUM_UNSPECIFIED = 0;</code>
      */
-    RELATIVE_DEMAND_ENUM_UNSPECIFIED(0),
+    MARKETING_METHOD_ENUM_UNSPECIFIED(0),
     /**
      *
      *
      * <pre>
-     * Demand is 0-5% of the demand of the highest ranked product cluster or
-     * brand.
+     * Organic marketing.
      * </pre>
      *
-     * <code>VERY_LOW = 10;</code>
+     * <code>ORGANIC = 1;</code>
      */
-    VERY_LOW(10),
+    ORGANIC(1),
     /**
      *
      *
      * <pre>
-     * Demand is 6-10% of the demand of the highest ranked product cluster or
-     * brand.
+     * Ads-based marketing.
      * </pre>
      *
-     * <code>LOW = 20;</code>
+     * <code>ADS = 2;</code>
      */
-    LOW(20),
-    /**
-     *
-     *
-     * <pre>
-     * Demand is 11-20% of the demand of the highest ranked product cluster or
-     * brand.
-     * </pre>
-     *
-     * <code>MEDIUM = 30;</code>
-     */
-    MEDIUM(30),
-    /**
-     *
-     *
-     * <pre>
-     * Demand is 21-50% of the demand of the highest ranked product cluster or
-     * brand.
-     * </pre>
-     *
-     * <code>HIGH = 40;</code>
-     */
-    HIGH(40),
-    /**
-     *
-     *
-     * <pre>
-     * Demand is 51-100% of the demand of the highest ranked product cluster or
-     * brand.
-     * </pre>
-     *
-     * <code>VERY_HIGH = 50;</code>
-     */
-    VERY_HIGH(50),
+    ADS(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -145,64 +112,29 @@ public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
      * Not specified.
      * </pre>
      *
-     * <code>RELATIVE_DEMAND_ENUM_UNSPECIFIED = 0;</code>
+     * <code>MARKETING_METHOD_ENUM_UNSPECIFIED = 0;</code>
      */
-    public static final int RELATIVE_DEMAND_ENUM_UNSPECIFIED_VALUE = 0;
+    public static final int MARKETING_METHOD_ENUM_UNSPECIFIED_VALUE = 0;
     /**
      *
      *
      * <pre>
-     * Demand is 0-5% of the demand of the highest ranked product cluster or
-     * brand.
+     * Organic marketing.
      * </pre>
      *
-     * <code>VERY_LOW = 10;</code>
+     * <code>ORGANIC = 1;</code>
      */
-    public static final int VERY_LOW_VALUE = 10;
+    public static final int ORGANIC_VALUE = 1;
     /**
      *
      *
      * <pre>
-     * Demand is 6-10% of the demand of the highest ranked product cluster or
-     * brand.
+     * Ads-based marketing.
      * </pre>
      *
-     * <code>LOW = 20;</code>
+     * <code>ADS = 2;</code>
      */
-    public static final int LOW_VALUE = 20;
-    /**
-     *
-     *
-     * <pre>
-     * Demand is 11-20% of the demand of the highest ranked product cluster or
-     * brand.
-     * </pre>
-     *
-     * <code>MEDIUM = 30;</code>
-     */
-    public static final int MEDIUM_VALUE = 30;
-    /**
-     *
-     *
-     * <pre>
-     * Demand is 21-50% of the demand of the highest ranked product cluster or
-     * brand.
-     * </pre>
-     *
-     * <code>HIGH = 40;</code>
-     */
-    public static final int HIGH_VALUE = 40;
-    /**
-     *
-     *
-     * <pre>
-     * Demand is 51-100% of the demand of the highest ranked product cluster or
-     * brand.
-     * </pre>
-     *
-     * <code>VERY_HIGH = 50;</code>
-     */
-    public static final int VERY_HIGH_VALUE = 50;
+    public static final int ADS_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -218,7 +150,7 @@ public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static RelativeDemandEnum valueOf(int value) {
+    public static MarketingMethodEnum valueOf(int value) {
       return forNumber(value);
     }
 
@@ -226,35 +158,29 @@ public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
      * @param value The numeric wire value of the corresponding enum entry.
      * @return The enum associated with the given numeric wire value.
      */
-    public static RelativeDemandEnum forNumber(int value) {
+    public static MarketingMethodEnum forNumber(int value) {
       switch (value) {
         case 0:
-          return RELATIVE_DEMAND_ENUM_UNSPECIFIED;
-        case 10:
-          return VERY_LOW;
-        case 20:
-          return LOW;
-        case 30:
-          return MEDIUM;
-        case 40:
-          return HIGH;
-        case 50:
-          return VERY_HIGH;
+          return MARKETING_METHOD_ENUM_UNSPECIFIED;
+        case 1:
+          return ORGANIC;
+        case 2:
+          return ADS;
         default:
           return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<RelativeDemandEnum>
+    public static com.google.protobuf.Internal.EnumLiteMap<MarketingMethodEnum>
         internalGetValueMap() {
       return internalValueMap;
     }
 
-    private static final com.google.protobuf.Internal.EnumLiteMap<RelativeDemandEnum>
+    private static final com.google.protobuf.Internal.EnumLiteMap<MarketingMethodEnum>
         internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<RelativeDemandEnum>() {
-              public RelativeDemandEnum findValueByNumber(int number) {
-                return RelativeDemandEnum.forNumber(number);
+            new com.google.protobuf.Internal.EnumLiteMap<MarketingMethodEnum>() {
+              public MarketingMethodEnum findValueByNumber(int number) {
+                return MarketingMethodEnum.forNumber(number);
               }
             };
 
@@ -271,14 +197,14 @@ public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.shopping.merchant.reports.v1beta.RelativeDemand.getDescriptor()
+      return com.google.shopping.merchant.reports.v1beta.MarketingMethod.getDescriptor()
           .getEnumTypes()
           .get(0);
     }
 
-    private static final RelativeDemandEnum[] VALUES = values();
+    private static final MarketingMethodEnum[] VALUES = values();
 
-    public static RelativeDemandEnum valueOf(
+    public static MarketingMethodEnum valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
@@ -291,11 +217,11 @@ public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
 
     private final int value;
 
-    private RelativeDemandEnum(int value) {
+    private MarketingMethodEnum(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum)
+    // @@protoc_insertion_point(enum_scope:google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum)
   }
 
   private byte memoizedIsInitialized = -1;
@@ -331,11 +257,11 @@ public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.shopping.merchant.reports.v1beta.RelativeDemand)) {
+    if (!(obj instanceof com.google.shopping.merchant.reports.v1beta.MarketingMethod)) {
       return super.equals(obj);
     }
-    com.google.shopping.merchant.reports.v1beta.RelativeDemand other =
-        (com.google.shopping.merchant.reports.v1beta.RelativeDemand) obj;
+    com.google.shopping.merchant.reports.v1beta.MarketingMethod other =
+        (com.google.shopping.merchant.reports.v1beta.MarketingMethod) obj;
 
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -353,71 +279,71 @@ public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
     return hash;
   }
 
-  public static com.google.shopping.merchant.reports.v1beta.RelativeDemand parseFrom(
+  public static com.google.shopping.merchant.reports.v1beta.MarketingMethod parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.shopping.merchant.reports.v1beta.RelativeDemand parseFrom(
+  public static com.google.shopping.merchant.reports.v1beta.MarketingMethod parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.shopping.merchant.reports.v1beta.RelativeDemand parseFrom(
+  public static com.google.shopping.merchant.reports.v1beta.MarketingMethod parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.shopping.merchant.reports.v1beta.RelativeDemand parseFrom(
+  public static com.google.shopping.merchant.reports.v1beta.MarketingMethod parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.shopping.merchant.reports.v1beta.RelativeDemand parseFrom(byte[] data)
+  public static com.google.shopping.merchant.reports.v1beta.MarketingMethod parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.shopping.merchant.reports.v1beta.RelativeDemand parseFrom(
+  public static com.google.shopping.merchant.reports.v1beta.MarketingMethod parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.shopping.merchant.reports.v1beta.RelativeDemand parseFrom(
+  public static com.google.shopping.merchant.reports.v1beta.MarketingMethod parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.shopping.merchant.reports.v1beta.RelativeDemand parseFrom(
+  public static com.google.shopping.merchant.reports.v1beta.MarketingMethod parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.shopping.merchant.reports.v1beta.RelativeDemand parseDelimitedFrom(
+  public static com.google.shopping.merchant.reports.v1beta.MarketingMethod parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.shopping.merchant.reports.v1beta.RelativeDemand parseDelimitedFrom(
+  public static com.google.shopping.merchant.reports.v1beta.MarketingMethod parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.shopping.merchant.reports.v1beta.RelativeDemand parseFrom(
+  public static com.google.shopping.merchant.reports.v1beta.MarketingMethod parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.shopping.merchant.reports.v1beta.RelativeDemand parseFrom(
+  public static com.google.shopping.merchant.reports.v1beta.MarketingMethod parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -435,7 +361,7 @@ public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static Builder newBuilder(
-      com.google.shopping.merchant.reports.v1beta.RelativeDemand prototype) {
+      com.google.shopping.merchant.reports.v1beta.MarketingMethod prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -453,31 +379,32 @@ public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Relative demand of a product cluster or brand in the Best sellers report.
+   * Marketing method used to promote your products on Google (organic versus
+   * ads).
    * </pre>
    *
-   * Protobuf type {@code google.shopping.merchant.reports.v1beta.RelativeDemand}
+   * Protobuf type {@code google.shopping.merchant.reports.v1beta.MarketingMethod}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.shopping.merchant.reports.v1beta.RelativeDemand)
-      com.google.shopping.merchant.reports.v1beta.RelativeDemandOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.shopping.merchant.reports.v1beta.MarketingMethod)
+      com.google.shopping.merchant.reports.v1beta.MarketingMethodOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.shopping.merchant.reports.v1beta.ReportsProto
-          .internal_static_google_shopping_merchant_reports_v1beta_RelativeDemand_descriptor;
+          .internal_static_google_shopping_merchant_reports_v1beta_MarketingMethod_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.shopping.merchant.reports.v1beta.ReportsProto
-          .internal_static_google_shopping_merchant_reports_v1beta_RelativeDemand_fieldAccessorTable
+          .internal_static_google_shopping_merchant_reports_v1beta_MarketingMethod_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.shopping.merchant.reports.v1beta.RelativeDemand.class,
-              com.google.shopping.merchant.reports.v1beta.RelativeDemand.Builder.class);
+              com.google.shopping.merchant.reports.v1beta.MarketingMethod.class,
+              com.google.shopping.merchant.reports.v1beta.MarketingMethod.Builder.class);
     }
 
-    // Construct using com.google.shopping.merchant.reports.v1beta.RelativeDemand.newBuilder()
+    // Construct using com.google.shopping.merchant.reports.v1beta.MarketingMethod.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -493,17 +420,17 @@ public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.shopping.merchant.reports.v1beta.ReportsProto
-          .internal_static_google_shopping_merchant_reports_v1beta_RelativeDemand_descriptor;
+          .internal_static_google_shopping_merchant_reports_v1beta_MarketingMethod_descriptor;
     }
 
     @java.lang.Override
-    public com.google.shopping.merchant.reports.v1beta.RelativeDemand getDefaultInstanceForType() {
-      return com.google.shopping.merchant.reports.v1beta.RelativeDemand.getDefaultInstance();
+    public com.google.shopping.merchant.reports.v1beta.MarketingMethod getDefaultInstanceForType() {
+      return com.google.shopping.merchant.reports.v1beta.MarketingMethod.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.shopping.merchant.reports.v1beta.RelativeDemand build() {
-      com.google.shopping.merchant.reports.v1beta.RelativeDemand result = buildPartial();
+    public com.google.shopping.merchant.reports.v1beta.MarketingMethod build() {
+      com.google.shopping.merchant.reports.v1beta.MarketingMethod result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -511,9 +438,9 @@ public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.shopping.merchant.reports.v1beta.RelativeDemand buildPartial() {
-      com.google.shopping.merchant.reports.v1beta.RelativeDemand result =
-          new com.google.shopping.merchant.reports.v1beta.RelativeDemand(this);
+    public com.google.shopping.merchant.reports.v1beta.MarketingMethod buildPartial() {
+      com.google.shopping.merchant.reports.v1beta.MarketingMethod result =
+          new com.google.shopping.merchant.reports.v1beta.MarketingMethod(this);
       onBuilt();
       return result;
     }
@@ -553,16 +480,16 @@ public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.shopping.merchant.reports.v1beta.RelativeDemand) {
-        return mergeFrom((com.google.shopping.merchant.reports.v1beta.RelativeDemand) other);
+      if (other instanceof com.google.shopping.merchant.reports.v1beta.MarketingMethod) {
+        return mergeFrom((com.google.shopping.merchant.reports.v1beta.MarketingMethod) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.shopping.merchant.reports.v1beta.RelativeDemand other) {
-      if (other == com.google.shopping.merchant.reports.v1beta.RelativeDemand.getDefaultInstance())
+    public Builder mergeFrom(com.google.shopping.merchant.reports.v1beta.MarketingMethod other) {
+      if (other == com.google.shopping.merchant.reports.v1beta.MarketingMethod.getDefaultInstance())
         return this;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -618,24 +545,24 @@ public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.shopping.merchant.reports.v1beta.RelativeDemand)
+    // @@protoc_insertion_point(builder_scope:google.shopping.merchant.reports.v1beta.MarketingMethod)
   }
 
-  // @@protoc_insertion_point(class_scope:google.shopping.merchant.reports.v1beta.RelativeDemand)
-  private static final com.google.shopping.merchant.reports.v1beta.RelativeDemand DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.shopping.merchant.reports.v1beta.MarketingMethod)
+  private static final com.google.shopping.merchant.reports.v1beta.MarketingMethod DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.shopping.merchant.reports.v1beta.RelativeDemand();
+    DEFAULT_INSTANCE = new com.google.shopping.merchant.reports.v1beta.MarketingMethod();
   }
 
-  public static com.google.shopping.merchant.reports.v1beta.RelativeDemand getDefaultInstance() {
+  public static com.google.shopping.merchant.reports.v1beta.MarketingMethod getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RelativeDemand> PARSER =
-      new com.google.protobuf.AbstractParser<RelativeDemand>() {
+  private static final com.google.protobuf.Parser<MarketingMethod> PARSER =
+      new com.google.protobuf.AbstractParser<MarketingMethod>() {
         @java.lang.Override
-        public RelativeDemand parsePartialFrom(
+        public MarketingMethod parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -654,17 +581,17 @@ public final class RelativeDemand extends com.google.protobuf.GeneratedMessageV3
         }
       };
 
-  public static com.google.protobuf.Parser<RelativeDemand> parser() {
+  public static com.google.protobuf.Parser<MarketingMethod> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<RelativeDemand> getParserForType() {
+  public com.google.protobuf.Parser<MarketingMethod> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.shopping.merchant.reports.v1beta.RelativeDemand getDefaultInstanceForType() {
+  public com.google.shopping.merchant.reports.v1beta.MarketingMethod getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

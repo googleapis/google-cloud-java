@@ -60,9 +60,9 @@ public final class ReportsProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_IssueSeverityPerDestination_descriptor;
+      internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_IssueSeverityPerReportingContext_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_IssueSeverityPerDestination_fieldAccessorTable;
+      internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_IssueSeverityPerReportingContext_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_shopping_merchant_reports_v1beta_PriceCompetitivenessProductView_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -95,6 +95,26 @@ public final class ReportsProto {
       internal_static_google_shopping_merchant_reports_v1beta_CompetitiveVisibilityBenchmarkView_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_merchant_reports_v1beta_CompetitiveVisibilityBenchmarkView_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_reports_v1beta_MarketingMethod_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_merchant_reports_v1beta_MarketingMethod_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_reports_v1beta_ReportGranularity_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_merchant_reports_v1beta_ReportGranularity_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_reports_v1beta_RelativeDemand_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_merchant_reports_v1beta_RelativeDemand_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_reports_v1beta_RelativeDemandChangeType_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_merchant_reports_v1beta_RelativeDemandChangeType_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_reports_v1beta_TrafficSource_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_merchant_reports_v1beta_TrafficSource_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -110,314 +130,326 @@ public final class ReportsProto {
           + ".proto\032\027google/api/client.proto\032\037google/"
           + "api/field_behavior.proto\032\037google/protobu"
           + "f/timestamp.proto\032 google/shopping/type/"
-          + "types.proto\032\026google/type/date.proto\"a\n\rS"
+          + "types.proto\032\026google/type/date.proto\"m\n\rS"
           + "earchRequest\022\024\n\006parent\030\001 \001(\tB\004\342A\001\002\022\023\n\005qu"
-          + "ery\030\002 \001(\tB\004\342A\001\002\022\021\n\tpage_size\030\003 \001(\005\022\022\n\npa"
-          + "ge_token\030\004 \001(\t\"n\n\016SearchResponse\022C\n\007resu"
-          + "lts\030\001 \003(\01322.google.shopping.merchant.rep"
-          + "orts.v1beta.ReportRow\022\027\n\017next_page_token"
-          + "\030\002 \001(\t\"\320\010\n\tReportRow\022a\n\030product_performa"
-          + "nce_view\030\001 \001(\0132?.google.shopping.merchan"
-          + "t.reports.v1beta.ProductPerformanceView\022"
-          + "h\n\034non_product_performance_view\030\007 \001(\0132B."
+          + "ery\030\002 \001(\tB\004\342A\001\002\022\027\n\tpage_size\030\003 \001(\005B\004\342A\001\001"
+          + "\022\030\n\npage_token\030\004 \001(\tB\004\342A\001\001\"n\n\016SearchResp"
+          + "onse\022C\n\007results\030\001 \003(\01322.google.shopping."
+          + "merchant.reports.v1beta.ReportRow\022\027\n\017nex"
+          + "t_page_token\030\002 \001(\t\"\320\010\n\tReportRow\022a\n\030prod"
+          + "uct_performance_view\030\001 \001(\0132?.google.shop"
+          + "ping.merchant.reports.v1beta.ProductPerf"
+          + "ormanceView\022h\n\034non_product_performance_v"
+          + "iew\030\007 \001(\0132B.google.shopping.merchant.rep"
+          + "orts.v1beta.NonProductPerformanceView\022J\n"
+          + "\014product_view\030\002 \001(\01324.google.shopping.me"
+          + "rchant.reports.v1beta.ProductView\022t\n\"pri"
+          + "ce_competitiveness_product_view\030\003 \001(\0132H."
           + "google.shopping.merchant.reports.v1beta."
-          + "NonProductPerformanceView\022J\n\014product_vie"
-          + "w\030\002 \001(\01324.google.shopping.merchant.repor"
-          + "ts.v1beta.ProductView\022t\n\"price_competiti"
-          + "veness_product_view\030\003 \001(\0132H.google.shopp"
-          + "ing.merchant.reports.v1beta.PriceCompeti"
-          + "tivenessProductView\022f\n\033price_insights_pr"
-          + "oduct_view\030\004 \001(\0132A.google.shopping.merch"
-          + "ant.reports.v1beta.PriceInsightsProductV"
-          + "iew\022q\n!best_sellers_product_cluster_view"
-          + "\030\005 \001(\0132F.google.shopping.merchant.report"
-          + "s.v1beta.BestSellersProductClusterView\022^"
-          + "\n\027best_sellers_brand_view\030\006 \001(\0132=.google"
-          + ".shopping.merchant.reports.v1beta.BestSe"
-          + "llersBrandView\022|\n&competitive_visibility"
-          + "_competitor_view\030\010 \001(\0132L.google.shopping"
-          + ".merchant.reports.v1beta.CompetitiveVisi"
-          + "bilityCompetitorView\022\177\n(competitive_visi"
-          + "bility_top_merchant_view\030\t \001(\0132M.google."
-          + "shopping.merchant.reports.v1beta.Competi"
-          + "tiveVisibilityTopMerchantView\022z\n%competi"
-          + "tive_visibility_benchmark_view\030\n \001(\0132K.g"
-          + "oogle.shopping.merchant.reports.v1beta.C"
-          + "ompetitiveVisibilityBenchmarkView\"\252\013\n\026Pr"
-          + "oductPerformanceView\022;\n\013destination\030\001 \001("
-          + "\0162!.google.shopping.type.DestinationH\000\210\001"
-          + "\001\022\037\n\004date\030\002 \001(\0132\021.google.type.Date\022\037\n\004we"
-          + "ek\030\003 \001(\0132\021.google.type.Date\022\"\n\025customer_"
-          + "country_code\030\004 \001(\tH\001\210\001\001\022\027\n\naccount_id\030\035 "
-          + "\001(\003H\002\210\001\001\022!\n\024account_display_name\030\036 \001(\tH\003"
-          + "\210\001\001\022 \n\023external_account_id\030\037 \001(\tH\004\210\001\001\022\025\n"
-          + "\010offer_id\030\005 \001(\tH\005\210\001\001\022\022\n\005title\030\006 \001(\tH\006\210\001\001"
-          + "\022\022\n\005brand\030\007 \001(\tH\007\210\001\001\022\030\n\013category_l1\030\010 \001("
-          + "\tH\010\210\001\001\022\030\n\013category_l2\030\t \001(\tH\t\210\001\001\022\030\n\013cate"
-          + "gory_l3\030\n \001(\tH\n\210\001\001\022\030\n\013category_l4\030\013 \001(\tH"
-          + "\013\210\001\001\022\030\n\013category_l5\030\014 \001(\tH\014\210\001\001\022\034\n\017produc"
-          + "t_type_l1\030\r \001(\tH\r\210\001\001\022\034\n\017product_type_l2\030"
-          + "\016 \001(\tH\016\210\001\001\022\034\n\017product_type_l3\030\017 \001(\tH\017\210\001\001"
-          + "\022\034\n\017product_type_l4\030\020 \001(\tH\020\210\001\001\022\034\n\017produc"
-          + "t_type_l5\030\021 \001(\tH\021\210\001\001\022\032\n\rcustom_label0\030\022 "
-          + "\001(\tH\022\210\001\001\022\032\n\rcustom_label1\030\023 \001(\tH\023\210\001\001\022\032\n\r"
-          + "custom_label2\030\024 \001(\tH\024\210\001\001\022\032\n\rcustom_label"
-          + "3\030\025 \001(\tH\025\210\001\001\022\032\n\rcustom_label4\030\026 \001(\tH\026\210\001\001"
-          + "\022\023\n\006clicks\030\027 \001(\003H\027\210\001\001\022\030\n\013impressions\030\030 \001"
-          + "(\003H\030\210\001\001\022\037\n\022click_through_rate\030\031 \001(\001H\031\210\001\001"
-          + "\022\030\n\013conversions\030\032 \001(\001H\032\210\001\001\0225\n\020conversion"
-          + "_value\030\033 \001(\0132\033.google.shopping.type.Pric"
-          + "e\022\034\n\017conversion_rate\030\034 \001(\001H\033\210\001\001B\016\n\014_dest"
-          + "inationB\030\n\026_customer_country_codeB\r\n\013_ac"
-          + "count_idB\027\n\025_account_display_nameB\026\n\024_ex"
-          + "ternal_account_idB\013\n\t_offer_idB\010\n\006_title"
-          + "B\010\n\006_brandB\016\n\014_category_l1B\016\n\014_category_"
-          + "l2B\016\n\014_category_l3B\016\n\014_category_l4B\016\n\014_c"
-          + "ategory_l5B\022\n\020_product_type_l1B\022\n\020_produ"
-          + "ct_type_l2B\022\n\020_product_type_l3B\022\n\020_produ"
-          + "ct_type_l4B\022\n\020_product_type_l5B\020\n\016_custo"
-          + "m_label0B\020\n\016_custom_label1B\020\n\016_custom_la"
-          + "bel2B\020\n\016_custom_label3B\020\n\016_custom_label4"
-          + "B\t\n\007_clicksB\016\n\014_impressionsB\025\n\023_click_th"
-          + "rough_rateB\016\n\014_conversionsB\022\n\020_conversio"
-          + "n_rate\"\266\024\n\013ProductView\022\017\n\002id\030\001 \001(\tH\000\210\001\001\022"
-          + "\032\n\rlanguage_code\030\002 \001(\tH\001\210\001\001\022\027\n\nfeed_labe"
-          + "l\030\003 \001(\tH\002\210\001\001\022\025\n\010offer_id\030\004 \001(\tH\003\210\001\001\022\022\n\005t"
-          + "itle\030\005 \001(\tH\004\210\001\001\022\022\n\005brand\030\006 \001(\tH\005\210\001\001\022\030\n\013c"
-          + "ategory_l1\030\007 \001(\tH\006\210\001\001\022\030\n\013category_l2\030\010 \001"
-          + "(\tH\007\210\001\001\022\030\n\013category_l3\030\t \001(\tH\010\210\001\001\022\030\n\013cat"
-          + "egory_l4\030\n \001(\tH\t\210\001\001\022\030\n\013category_l5\030\013 \001(\t"
-          + "H\n\210\001\001\022\034\n\017product_type_l1\030\014 \001(\tH\013\210\001\001\022\034\n\017p"
-          + "roduct_type_l2\030\r \001(\tH\014\210\001\001\022\034\n\017product_typ"
-          + "e_l3\030\016 \001(\tH\r\210\001\001\022\034\n\017product_type_l4\030\017 \001(\t"
-          + "H\016\210\001\001\022\034\n\017product_type_l5\030\020 \001(\tH\017\210\001\001\022*\n\005p"
-          + "rice\030\021 \001(\0132\033.google.shopping.type.Price\022"
-          + "\026\n\tcondition\030\022 \001(\tH\020\210\001\001\022\031\n\014availability\030"
-          + "\023 \001(\tH\021\210\001\001\022\033\n\016shipping_label\030\024 \001(\tH\022\210\001\001\022"
-          + "\014\n\004gtin\030\025 \003(\t\022\032\n\ritem_group_id\030\026 \001(\tH\023\210\001"
-          + "\001\022\033\n\016thumbnail_link\030\027 \001(\tH\024\210\001\001\0221\n\rcreati"
-          + "on_time\030\030 \001(\0132\032.google.protobuf.Timestam"
-          + "p\022*\n\017expiration_date\030\031 \001(\0132\021.google.type"
-          + ".Date\022|\n\035aggregated_destination_status\030\032"
-          + " \001(\0162P.google.shopping.merchant.reports."
-          + "v1beta.ProductView.AggregatedDestination"
-          + "StatusH\025\210\001\001\022S\n\013item_issues\030\033 \003(\0132>.googl"
-          + "e.shopping.merchant.reports.v1beta.Produ"
-          + "ctView.ItemIssue\032\375\010\n\tItemIssue\022Z\n\004type\030\001"
-          + " \001(\0132L.google.shopping.merchant.reports."
-          + "v1beta.ProductView.ItemIssue.ItemIssueTy"
-          + "pe\022b\n\010severity\030\002 \001(\0132P.google.shopping.m"
-          + "erchant.reports.v1beta.ProductView.ItemI"
-          + "ssue.ItemIssueSeverity\022k\n\nresolution\030\003 \001"
-          + "(\0162R.google.shopping.merchant.reports.v1"
-          + "beta.ProductView.ItemIssue.ItemIssueReso"
-          + "lutionH\000\210\001\001\032e\n\rItemIssueType\022\021\n\004code\030\001 \001"
-          + "(\tH\000\210\001\001\022 \n\023canonical_attribute\030\002 \001(\tH\001\210\001"
-          + "\001B\007\n\005_codeB\026\n\024_canonical_attribute\032\341\004\n\021I"
-          + "temIssueSeverity\022\216\001\n\030severity_per_destin"
-          + "ation\030\001 \003(\0132l.google.shopping.merchant.r"
-          + "eports.v1beta.ProductView.ItemIssue.Item"
-          + "IssueSeverity.IssueSeverityPerDestinatio"
-          + "n\022\212\001\n\023aggregated_severity\030\002 \001(\0162h.google"
-          + ".shopping.merchant.reports.v1beta.Produc"
-          + "tView.ItemIssue.ItemIssueSeverity.Aggreg"
-          + "atedIssueSeverityH\000\210\001\001\032\244\001\n\033IssueSeverity"
-          + "PerDestination\022;\n\013destination\030\001 \001(\0162!.go"
-          + "ogle.shopping.type.DestinationH\000\210\001\001\022\035\n\025d"
-          + "isapproved_countries\030\002 \003(\t\022\031\n\021demoted_co"
-          + "untries\030\003 \003(\tB\016\n\014_destination\"o\n\027Aggrega"
-          + "tedIssueSeverity\022)\n%AGGREGATED_ISSUE_SEV"
-          + "ERITY_UNSPECIFIED\020\000\022\017\n\013DISAPPROVED\020\001\022\013\n\007"
-          + "DEMOTED\020\002\022\013\n\007PENDING\020\003B\026\n\024_aggregated_se"
-          + "verity\"i\n\023ItemIssueResolution\022%\n!ITEM_IS"
-          + "SUE_RESOLUTION_UNSPECIFIED\020\000\022\023\n\017MERCHANT"
-          + "_ACTION\020\001\022\026\n\022PENDING_PROCESSING\020\002B\r\n\013_re"
-          + "solution\"\236\001\n\033AggregatedDestinationStatus"
-          + "\022-\n)AGGREGATED_DESTINATION_STATUS_UNSPEC"
-          + "IFIED\020\000\022\037\n\033NOT_ELIGIBLE_OR_DISAPPROVED\020\001"
-          + "\022\013\n\007PENDING\020\002\022\024\n\020ELIGIBLE_LIMITED\020\003\022\014\n\010E"
-          + "LIGIBLE\020\004B\005\n\003_idB\020\n\016_language_codeB\r\n\013_f"
-          + "eed_labelB\013\n\t_offer_idB\010\n\006_titleB\010\n\006_bra"
-          + "ndB\016\n\014_category_l1B\016\n\014_category_l2B\016\n\014_c"
-          + "ategory_l3B\016\n\014_category_l4B\016\n\014_category_"
-          + "l5B\022\n\020_product_type_l1B\022\n\020_product_type_"
-          + "l2B\022\n\020_product_type_l3B\022\n\020_product_type_"
-          + "l4B\022\n\020_product_type_l5B\014\n\n_conditionB\017\n\r"
-          + "_availabilityB\021\n\017_shipping_labelB\020\n\016_ite"
-          + "m_group_idB\021\n\017_thumbnail_linkB \n\036_aggreg"
-          + "ated_destination_status\"\201\006\n\037PriceCompeti"
-          + "tivenessProductView\022 \n\023report_country_co"
-          + "de\030\001 \001(\tH\000\210\001\001\022\017\n\002id\030\002 \001(\tH\001\210\001\001\022\025\n\010offer_"
-          + "id\030\003 \001(\tH\002\210\001\001\022\022\n\005title\030\004 \001(\tH\003\210\001\001\022\022\n\005bra"
-          + "nd\030\005 \001(\tH\004\210\001\001\022\030\n\013category_l1\030\006 \001(\tH\005\210\001\001\022"
-          + "\030\n\013category_l2\030\007 \001(\tH\006\210\001\001\022\030\n\013category_l3"
-          + "\030\010 \001(\tH\007\210\001\001\022\030\n\013category_l4\030\t \001(\tH\010\210\001\001\022\030\n"
-          + "\013category_l5\030\n \001(\tH\t\210\001\001\022\034\n\017product_type_"
-          + "l1\030\013 \001(\tH\n\210\001\001\022\034\n\017product_type_l2\030\014 \001(\tH\013"
-          + "\210\001\001\022\034\n\017product_type_l3\030\r \001(\tH\014\210\001\001\022\034\n\017pro"
-          + "duct_type_l4\030\016 \001(\tH\r\210\001\001\022\034\n\017product_type_"
-          + "l5\030\017 \001(\tH\016\210\001\001\022*\n\005price\030\020 \001(\0132\033.google.sh"
-          + "opping.type.Price\0224\n\017benchmark_price\030\021 \001"
-          + "(\0132\033.google.shopping.type.PriceB\026\n\024_repo"
-          + "rt_country_codeB\005\n\003_idB\013\n\t_offer_idB\010\n\006_"
-          + "titleB\010\n\006_brandB\016\n\014_category_l1B\016\n\014_cate"
-          + "gory_l2B\016\n\014_category_l3B\016\n\014_category_l4B"
-          + "\016\n\014_category_l5B\022\n\020_product_type_l1B\022\n\020_"
-          + "product_type_l2B\022\n\020_product_type_l3B\022\n\020_"
-          + "product_type_l4B\022\n\020_product_type_l5\"\374\010\n\030"
-          + "PriceInsightsProductView\022\017\n\002id\030\001 \001(\tH\000\210\001"
-          + "\001\022\025\n\010offer_id\030\002 \001(\tH\001\210\001\001\022\022\n\005title\030\003 \001(\tH"
-          + "\002\210\001\001\022\022\n\005brand\030\004 \001(\tH\003\210\001\001\022\030\n\013category_l1\030"
-          + "\005 \001(\tH\004\210\001\001\022\030\n\013category_l2\030\006 \001(\tH\005\210\001\001\022\030\n\013"
-          + "category_l3\030\007 \001(\tH\006\210\001\001\022\030\n\013category_l4\030\010 "
-          + "\001(\tH\007\210\001\001\022\030\n\013category_l5\030\t \001(\tH\010\210\001\001\022\034\n\017pr"
-          + "oduct_type_l1\030\n \001(\tH\t\210\001\001\022\034\n\017product_type"
-          + "_l2\030\013 \001(\tH\n\210\001\001\022\034\n\017product_type_l3\030\014 \001(\tH"
-          + "\013\210\001\001\022\034\n\017product_type_l4\030\r \001(\tH\014\210\001\001\022\034\n\017pr"
-          + "oduct_type_l5\030\016 \001(\tH\r\210\001\001\022*\n\005price\030\017 \001(\0132"
-          + "\033.google.shopping.type.Price\0224\n\017suggeste"
-          + "d_price\030\020 \001(\0132\033.google.shopping.type.Pri"
-          + "ce\0222\n%predicted_impressions_change_fract"
-          + "ion\030\021 \001(\001H\016\210\001\001\022-\n predicted_clicks_chang"
-          + "e_fraction\030\022 \001(\001H\017\210\001\001\0222\n%predicted_conve"
-          + "rsions_change_fraction\030\023 \001(\001H\020\210\001\001\0223\n&pre"
-          + "dicted_gross_profit_change_fraction\030\024 \001("
-          + "\001H\021\210\001\001\022J\n%predicted_monthly_gross_profit"
-          + "_change\030\025 \001(\0132\033.google.shopping.type.Pri"
-          + "ceB\005\n\003_idB\013\n\t_offer_idB\010\n\006_titleB\010\n\006_bra"
-          + "ndB\016\n\014_category_l1B\016\n\014_category_l2B\016\n\014_c"
-          + "ategory_l3B\016\n\014_category_l4B\016\n\014_category_"
-          + "l5B\022\n\020_product_type_l1B\022\n\020_product_type_"
-          + "l2B\022\n\020_product_type_l3B\022\n\020_product_type_"
-          + "l4B\022\n\020_product_type_l5B(\n&_predicted_imp"
-          + "ressions_change_fractionB#\n!_predicted_c"
-          + "licks_change_fractionB(\n&_predicted_conv"
-          + "ersions_change_fractionB)\n\'_predicted_gr"
-          + "oss_profit_change_fraction\"\256\013\n\035BestSelle"
-          + "rsProductClusterView\022&\n\013report_date\030\001 \001("
-          + "\0132\021.google.type.Date\022[\n\022report_granulari"
-          + "ty\030\002 \001(\0162:.google.shopping.merchant.repo"
-          + "rts.v1beta.ReportGranularityH\000\210\001\001\022 \n\023rep"
-          + "ort_country_code\030\003 \001(\tH\001\210\001\001\022\037\n\022report_ca"
-          + "tegory_id\030\004 \001(\003H\002\210\001\001\022\017\n\002id\030\005 \001(\tH\003\210\001\001\022\022\n"
-          + "\005title\030\006 \001(\tH\004\210\001\001\022\022\n\005brand\030\007 \001(\tH\005\210\001\001\022\030\n"
-          + "\013category_l1\030\010 \001(\tH\006\210\001\001\022\030\n\013category_l2\030\t"
-          + " \001(\tH\007\210\001\001\022\030\n\013category_l3\030\n \001(\tH\010\210\001\001\022\030\n\013c"
-          + "ategory_l4\030\013 \001(\tH\t\210\001\001\022\030\n\013category_l5\030\014 \001"
-          + "(\tH\n\210\001\001\022\025\n\rvariant_gtins\030\r \003(\t\022u\n\020invent"
-          + "ory_status\030\016 \001(\0162V.google.shopping.merch"
+          + "PriceCompetitivenessProductView\022f\n\033price"
+          + "_insights_product_view\030\004 \001(\0132A.google.sh"
+          + "opping.merchant.reports.v1beta.PriceInsi"
+          + "ghtsProductView\022q\n!best_sellers_product_"
+          + "cluster_view\030\005 \001(\0132F.google.shopping.mer"
+          + "chant.reports.v1beta.BestSellersProductC"
+          + "lusterView\022^\n\027best_sellers_brand_view\030\006 "
+          + "\001(\0132=.google.shopping.merchant.reports.v"
+          + "1beta.BestSellersBrandView\022|\n&competitiv"
+          + "e_visibility_competitor_view\030\010 \001(\0132L.goo"
+          + "gle.shopping.merchant.reports.v1beta.Com"
+          + "petitiveVisibilityCompetitorView\022\177\n(comp"
+          + "etitive_visibility_top_merchant_view\030\t \001"
+          + "(\0132M.google.shopping.merchant.reports.v1"
+          + "beta.CompetitiveVisibilityTopMerchantVie"
+          + "w\022z\n%competitive_visibility_benchmark_vi"
+          + "ew\030\n \001(\0132K.google.shopping.merchant.repo"
+          + "rts.v1beta.CompetitiveVisibilityBenchmar"
+          + "kView\"\337\013\n\026ProductPerformanceView\022k\n\020mark"
+          + "eting_method\030\001 \001(\0162L.google.shopping.mer"
+          + "chant.reports.v1beta.MarketingMethod.Mar"
+          + "ketingMethodEnumH\000\210\001\001\022\037\n\004date\030\002 \001(\0132\021.go"
+          + "ogle.type.Date\022\037\n\004week\030\003 \001(\0132\021.google.ty"
+          + "pe.Date\022\"\n\025customer_country_code\030\004 \001(\tH\001"
+          + "\210\001\001\022\027\n\naccount_id\030\035 \001(\003H\002\210\001\001\022!\n\024account_"
+          + "display_name\030\036 \001(\tH\003\210\001\001\022 \n\023external_acco"
+          + "unt_id\030\037 \001(\tH\004\210\001\001\022\025\n\010offer_id\030\005 \001(\tH\005\210\001\001"
+          + "\022\022\n\005title\030\006 \001(\tH\006\210\001\001\022\022\n\005brand\030\007 \001(\tH\007\210\001\001"
+          + "\022\030\n\013category_l1\030\010 \001(\tH\010\210\001\001\022\030\n\013category_l"
+          + "2\030\t \001(\tH\t\210\001\001\022\030\n\013category_l3\030\n \001(\tH\n\210\001\001\022\030"
+          + "\n\013category_l4\030\013 \001(\tH\013\210\001\001\022\030\n\013category_l5\030"
+          + "\014 \001(\tH\014\210\001\001\022\034\n\017product_type_l1\030\r \001(\tH\r\210\001\001"
+          + "\022\034\n\017product_type_l2\030\016 \001(\tH\016\210\001\001\022\034\n\017produc"
+          + "t_type_l3\030\017 \001(\tH\017\210\001\001\022\034\n\017product_type_l4\030"
+          + "\020 \001(\tH\020\210\001\001\022\034\n\017product_type_l5\030\021 \001(\tH\021\210\001\001"
+          + "\022\032\n\rcustom_label0\030\022 \001(\tH\022\210\001\001\022\032\n\rcustom_l"
+          + "abel1\030\023 \001(\tH\023\210\001\001\022\032\n\rcustom_label2\030\024 \001(\tH"
+          + "\024\210\001\001\022\032\n\rcustom_label3\030\025 \001(\tH\025\210\001\001\022\032\n\rcust"
+          + "om_label4\030\026 \001(\tH\026\210\001\001\022\023\n\006clicks\030\027 \001(\003H\027\210\001"
+          + "\001\022\030\n\013impressions\030\030 \001(\003H\030\210\001\001\022\037\n\022click_thr"
+          + "ough_rate\030\031 \001(\001H\031\210\001\001\022\030\n\013conversions\030\032 \001("
+          + "\001H\032\210\001\001\0225\n\020conversion_value\030\033 \001(\0132\033.googl"
+          + "e.shopping.type.Price\022\034\n\017conversion_rate"
+          + "\030\034 \001(\001H\033\210\001\001B\023\n\021_marketing_methodB\030\n\026_cus"
+          + "tomer_country_codeB\r\n\013_account_idB\027\n\025_ac"
+          + "count_display_nameB\026\n\024_external_account_"
+          + "idB\013\n\t_offer_idB\010\n\006_titleB\010\n\006_brandB\016\n\014_"
+          + "category_l1B\016\n\014_category_l2B\016\n\014_category"
+          + "_l3B\016\n\014_category_l4B\016\n\014_category_l5B\022\n\020_"
+          + "product_type_l1B\022\n\020_product_type_l2B\022\n\020_"
+          + "product_type_l3B\022\n\020_product_type_l4B\022\n\020_"
+          + "product_type_l5B\020\n\016_custom_label0B\020\n\016_cu"
+          + "stom_label1B\020\n\016_custom_label2B\020\n\016_custom"
+          + "_label3B\020\n\016_custom_label4B\t\n\007_clicksB\016\n\014"
+          + "_impressionsB\025\n\023_click_through_rateB\016\n\014_"
+          + "conversionsB\022\n\020_conversion_rate\"\326\025\n\013Prod"
+          + "uctView\022\017\n\002id\030\001 \001(\tH\000\210\001\001\022?\n\007channel\030\034 \001("
+          + "\0162).google.shopping.type.Channel.Channel"
+          + "EnumH\001\210\001\001\022\032\n\rlanguage_code\030\002 \001(\tH\002\210\001\001\022\027\n"
+          + "\nfeed_label\030\003 \001(\tH\003\210\001\001\022\025\n\010offer_id\030\004 \001(\t"
+          + "H\004\210\001\001\022\022\n\005title\030\005 \001(\tH\005\210\001\001\022\022\n\005brand\030\006 \001(\t"
+          + "H\006\210\001\001\022\030\n\013category_l1\030\007 \001(\tH\007\210\001\001\022\030\n\013categ"
+          + "ory_l2\030\010 \001(\tH\010\210\001\001\022\030\n\013category_l3\030\t \001(\tH\t"
+          + "\210\001\001\022\030\n\013category_l4\030\n \001(\tH\n\210\001\001\022\030\n\013categor"
+          + "y_l5\030\013 \001(\tH\013\210\001\001\022\034\n\017product_type_l1\030\014 \001(\t"
+          + "H\014\210\001\001\022\034\n\017product_type_l2\030\r \001(\tH\r\210\001\001\022\034\n\017p"
+          + "roduct_type_l3\030\016 \001(\tH\016\210\001\001\022\034\n\017product_typ"
+          + "e_l4\030\017 \001(\tH\017\210\001\001\022\034\n\017product_type_l5\030\020 \001(\t"
+          + "H\020\210\001\001\022*\n\005price\030\021 \001(\0132\033.google.shopping.t"
+          + "ype.Price\022\026\n\tcondition\030\022 \001(\tH\021\210\001\001\022\031\n\014ava"
+          + "ilability\030\023 \001(\tH\022\210\001\001\022\033\n\016shipping_label\030\024"
+          + " \001(\tH\023\210\001\001\022\014\n\004gtin\030\025 \003(\t\022\032\n\ritem_group_id"
+          + "\030\026 \001(\tH\024\210\001\001\022\033\n\016thumbnail_link\030\027 \001(\tH\025\210\001\001"
+          + "\0221\n\rcreation_time\030\030 \001(\0132\032.google.protobu"
+          + "f.Timestamp\022*\n\017expiration_date\030\031 \001(\0132\021.g"
+          + "oogle.type.Date\022\207\001\n#aggregated_reporting"
+          + "_context_status\030\032 \001(\0162U.google.shopping."
+          + "merchant.reports.v1beta.ProductView.Aggr"
+          + "egatedReportingContextStatusH\026\210\001\001\022S\n\013ite"
+          + "m_issues\030\033 \003(\0132>.google.shopping.merchan"
+          + "t.reports.v1beta.ProductView.ItemIssue\032\263"
+          + "\t\n\tItemIssue\022Z\n\004type\030\001 \001(\0132L.google.shop"
+          + "ping.merchant.reports.v1beta.ProductView"
+          + ".ItemIssue.ItemIssueType\022b\n\010severity\030\002 \001"
+          + "(\0132P.google.shopping.merchant.reports.v1"
+          + "beta.ProductView.ItemIssue.ItemIssueSeve"
+          + "rity\022k\n\nresolution\030\003 \001(\0162R.google.shoppi"
+          + "ng.merchant.reports.v1beta.ProductView.I"
+          + "temIssue.ItemIssueResolutionH\000\210\001\001\032e\n\rIte"
+          + "mIssueType\022\021\n\004code\030\001 \001(\tH\000\210\001\001\022 \n\023canonic"
+          + "al_attribute\030\002 \001(\tH\001\210\001\001B\007\n\005_codeB\026\n\024_can"
+          + "onical_attribute\032\227\005\n\021ItemIssueSeverity\022\231"
+          + "\001\n\036severity_per_reporting_context\030\001 \003(\0132"
+          + "q.google.shopping.merchant.reports.v1bet"
+          + "a.ProductView.ItemIssue.ItemIssueSeverit"
+          + "y.IssueSeverityPerReportingContext\022\212\001\n\023a"
+          + "ggregated_severity\030\002 \001(\0162h.google.shoppi"
+          + "ng.merchant.reports.v1beta.ProductView.I"
+          + "temIssue.ItemIssueSeverity.AggregatedIss"
+          + "ueSeverityH\000\210\001\001\032\317\001\n IssueSeverityPerRepo"
+          + "rtingContext\022[\n\021reporting_context\030\001 \001(\0162"
+          + ";.google.shopping.type.ReportingContext."
+          + "ReportingContextEnumH\000\210\001\001\022\035\n\025disapproved"
+          + "_countries\030\002 \003(\t\022\031\n\021demoted_countries\030\003 "
+          + "\003(\tB\024\n\022_reporting_context\"o\n\027AggregatedI"
+          + "ssueSeverity\022)\n%AGGREGATED_ISSUE_SEVERIT"
+          + "Y_UNSPECIFIED\020\000\022\017\n\013DISAPPROVED\020\001\022\013\n\007DEMO"
+          + "TED\020\002\022\013\n\007PENDING\020\003B\026\n\024_aggregated_severi"
+          + "ty\"i\n\023ItemIssueResolution\022%\n!ITEM_ISSUE_"
+          + "RESOLUTION_UNSPECIFIED\020\000\022\023\n\017MERCHANT_ACT"
+          + "ION\020\001\022\026\n\022PENDING_PROCESSING\020\002B\r\n\013_resolu"
+          + "tion\"\251\001\n AggregatedReportingContextStatu"
+          + "s\0223\n/AGGREGATED_REPORTING_CONTEXT_STATUS"
+          + "_UNSPECIFIED\020\000\022\037\n\033NOT_ELIGIBLE_OR_DISAPP"
+          + "ROVED\020\001\022\013\n\007PENDING\020\002\022\024\n\020ELIGIBLE_LIMITED"
+          + "\020\003\022\014\n\010ELIGIBLE\020\004B\005\n\003_idB\n\n\010_channelB\020\n\016_"
+          + "language_codeB\r\n\013_feed_labelB\013\n\t_offer_i"
+          + "dB\010\n\006_titleB\010\n\006_brandB\016\n\014_category_l1B\016\n"
+          + "\014_category_l2B\016\n\014_category_l3B\016\n\014_catego"
+          + "ry_l4B\016\n\014_category_l5B\022\n\020_product_type_l"
+          + "1B\022\n\020_product_type_l2B\022\n\020_product_type_l"
+          + "3B\022\n\020_product_type_l4B\022\n\020_product_type_l"
+          + "5B\014\n\n_conditionB\017\n\r_availabilityB\021\n\017_shi"
+          + "pping_labelB\020\n\016_item_group_idB\021\n\017_thumbn"
+          + "ail_linkB&\n$_aggregated_reporting_contex"
+          + "t_status\"\201\006\n\037PriceCompetitivenessProduct"
+          + "View\022 \n\023report_country_code\030\001 \001(\tH\000\210\001\001\022\017"
+          + "\n\002id\030\002 \001(\tH\001\210\001\001\022\025\n\010offer_id\030\003 \001(\tH\002\210\001\001\022\022"
+          + "\n\005title\030\004 \001(\tH\003\210\001\001\022\022\n\005brand\030\005 \001(\tH\004\210\001\001\022\030"
+          + "\n\013category_l1\030\006 \001(\tH\005\210\001\001\022\030\n\013category_l2\030"
+          + "\007 \001(\tH\006\210\001\001\022\030\n\013category_l3\030\010 \001(\tH\007\210\001\001\022\030\n\013"
+          + "category_l4\030\t \001(\tH\010\210\001\001\022\030\n\013category_l5\030\n "
+          + "\001(\tH\t\210\001\001\022\034\n\017product_type_l1\030\013 \001(\tH\n\210\001\001\022\034"
+          + "\n\017product_type_l2\030\014 \001(\tH\013\210\001\001\022\034\n\017product_"
+          + "type_l3\030\r \001(\tH\014\210\001\001\022\034\n\017product_type_l4\030\016 "
+          + "\001(\tH\r\210\001\001\022\034\n\017product_type_l5\030\017 \001(\tH\016\210\001\001\022*"
+          + "\n\005price\030\020 \001(\0132\033.google.shopping.type.Pri"
+          + "ce\0224\n\017benchmark_price\030\021 \001(\0132\033.google.sho"
+          + "pping.type.PriceB\026\n\024_report_country_code"
+          + "B\005\n\003_idB\013\n\t_offer_idB\010\n\006_titleB\010\n\006_brand"
+          + "B\016\n\014_category_l1B\016\n\014_category_l2B\016\n\014_cat"
+          + "egory_l3B\016\n\014_category_l4B\016\n\014_category_l5"
+          + "B\022\n\020_product_type_l1B\022\n\020_product_type_l2"
+          + "B\022\n\020_product_type_l3B\022\n\020_product_type_l4"
+          + "B\022\n\020_product_type_l5\"\320\007\n\030PriceInsightsPr"
+          + "oductView\022\017\n\002id\030\001 \001(\tH\000\210\001\001\022\025\n\010offer_id\030\002"
+          + " \001(\tH\001\210\001\001\022\022\n\005title\030\003 \001(\tH\002\210\001\001\022\022\n\005brand\030\004"
+          + " \001(\tH\003\210\001\001\022\030\n\013category_l1\030\005 \001(\tH\004\210\001\001\022\030\n\013c"
+          + "ategory_l2\030\006 \001(\tH\005\210\001\001\022\030\n\013category_l3\030\007 \001"
+          + "(\tH\006\210\001\001\022\030\n\013category_l4\030\010 \001(\tH\007\210\001\001\022\030\n\013cat"
+          + "egory_l5\030\t \001(\tH\010\210\001\001\022\034\n\017product_type_l1\030\n"
+          + " \001(\tH\t\210\001\001\022\034\n\017product_type_l2\030\013 \001(\tH\n\210\001\001\022"
+          + "\034\n\017product_type_l3\030\014 \001(\tH\013\210\001\001\022\034\n\017product"
+          + "_type_l4\030\r \001(\tH\014\210\001\001\022\034\n\017product_type_l5\030\016"
+          + " \001(\tH\r\210\001\001\022*\n\005price\030\017 \001(\0132\033.google.shoppi"
+          + "ng.type.Price\0224\n\017suggested_price\030\020 \001(\0132\033"
+          + ".google.shopping.type.Price\0222\n%predicted"
+          + "_impressions_change_fraction\030\021 \001(\001H\016\210\001\001\022"
+          + "-\n predicted_clicks_change_fraction\030\022 \001("
+          + "\001H\017\210\001\001\0222\n%predicted_conversions_change_f"
+          + "raction\030\023 \001(\001H\020\210\001\001B\005\n\003_idB\013\n\t_offer_idB\010"
+          + "\n\006_titleB\010\n\006_brandB\016\n\014_category_l1B\016\n\014_c"
+          + "ategory_l2B\016\n\014_category_l3B\016\n\014_category_"
+          + "l4B\016\n\014_category_l5B\022\n\020_product_type_l1B\022"
+          + "\n\020_product_type_l2B\022\n\020_product_type_l3B\022"
+          + "\n\020_product_type_l4B\022\n\020_product_type_l5B("
+          + "\n&_predicted_impressions_change_fraction"
+          + "B#\n!_predicted_clicks_change_fractionB(\n"
+          + "&_predicted_conversions_change_fraction\""
+          + "\210\014\n\035BestSellersProductClusterView\022&\n\013rep"
+          + "ort_date\030\001 \001(\0132\021.google.type.Date\022q\n\022rep"
+          + "ort_granularity\030\002 \001(\0162P.google.shopping."
+          + "merchant.reports.v1beta.ReportGranularit"
+          + "y.ReportGranularityEnumH\000\210\001\001\022 \n\023report_c"
+          + "ountry_code\030\003 \001(\tH\001\210\001\001\022\037\n\022report_categor"
+          + "y_id\030\004 \001(\003H\002\210\001\001\022\017\n\002id\030\005 \001(\tH\003\210\001\001\022\022\n\005titl"
+          + "e\030\006 \001(\tH\004\210\001\001\022\022\n\005brand\030\007 \001(\tH\005\210\001\001\022\030\n\013cate"
+          + "gory_l1\030\010 \001(\tH\006\210\001\001\022\030\n\013category_l2\030\t \001(\tH"
+          + "\007\210\001\001\022\030\n\013category_l3\030\n \001(\tH\010\210\001\001\022\030\n\013catego"
+          + "ry_l4\030\013 \001(\tH\t\210\001\001\022\030\n\013category_l5\030\014 \001(\tH\n\210"
+          + "\001\001\022\025\n\rvariant_gtins\030\r \003(\t\022u\n\020inventory_s"
+          + "tatus\030\016 \001(\0162V.google.shopping.merchant.r"
+          + "eports.v1beta.BestSellersProductClusterV"
+          + "iew.InventoryStatusH\013\210\001\001\022{\n\026brand_invent"
+          + "ory_status\030\017 \001(\0162V.google.shopping.merch"
           + "ant.reports.v1beta.BestSellersProductClu"
-          + "sterView.InventoryStatusH\013\210\001\001\022{\n\026brand_i"
-          + "nventory_status\030\017 \001(\0162V.google.shopping."
-          + "merchant.reports.v1beta.BestSellersProdu"
-          + "ctClusterView.InventoryStatusH\014\210\001\001\022\021\n\004ra"
-          + "nk\030\020 \001(\003H\r\210\001\001\022\032\n\rprevious_rank\030\021 \001(\003H\016\210\001"
-          + "\001\022U\n\017relative_demand\030\022 \001(\01627.google.shop"
-          + "ping.merchant.reports.v1beta.RelativeDem"
-          + "andH\017\210\001\001\022^\n\030previous_relative_demand\030\023 \001"
-          + "(\01627.google.shopping.merchant.reports.v1"
-          + "beta.RelativeDemandH\020\210\001\001\022f\n\026relative_dem"
-          + "and_change\030\024 \001(\0162A.google.shopping.merch"
-          + "ant.reports.v1beta.RelativeDemandChangeT"
-          + "ypeH\021\210\001\001\"i\n\017InventoryStatus\022 \n\034INVENTORY"
-          + "_STATUS_UNSPECIFIED\020\000\022\014\n\010IN_STOCK\020\001\022\020\n\014O"
-          + "UT_OF_STOCK\020\002\022\024\n\020NOT_IN_INVENTORY\020\003B\025\n\023_"
-          + "report_granularityB\026\n\024_report_country_co"
-          + "deB\025\n\023_report_category_idB\005\n\003_idB\010\n\006_tit"
-          + "leB\010\n\006_brandB\016\n\014_category_l1B\016\n\014_categor"
-          + "y_l2B\016\n\014_category_l3B\016\n\014_category_l4B\016\n\014"
-          + "_category_l5B\023\n\021_inventory_statusB\031\n\027_br"
-          + "and_inventory_statusB\007\n\005_rankB\020\n\016_previo"
-          + "us_rankB\022\n\020_relative_demandB\033\n\031_previous"
-          + "_relative_demandB\031\n\027_relative_demand_cha"
-          + "nge\"\217\006\n\024BestSellersBrandView\022&\n\013report_d"
-          + "ate\030\001 \001(\0132\021.google.type.Date\022[\n\022report_g"
-          + "ranularity\030\002 \001(\0162:.google.shopping.merch"
-          + "ant.reports.v1beta.ReportGranularityH\000\210\001"
-          + "\001\022 \n\023report_country_code\030\003 \001(\tH\001\210\001\001\022\037\n\022r"
-          + "eport_category_id\030\004 \001(\003H\002\210\001\001\022\017\n\002id\030\005 \001(\t"
-          + "H\003\210\001\001\022\022\n\005brand\030\006 \001(\tH\004\210\001\001\022\021\n\004rank\030\007 \001(\003H"
-          + "\005\210\001\001\022\032\n\rprevious_rank\030\010 \001(\003H\006\210\001\001\022U\n\017rela"
-          + "tive_demand\030\t \001(\01627.google.shopping.merc"
-          + "hant.reports.v1beta.RelativeDemandH\007\210\001\001\022"
-          + "^\n\030previous_relative_demand\030\n \001(\01627.goog"
-          + "le.shopping.merchant.reports.v1beta.Rela"
-          + "tiveDemandH\010\210\001\001\022f\n\026relative_demand_chang"
-          + "e\030\013 \001(\0162A.google.shopping.merchant.repor"
-          + "ts.v1beta.RelativeDemandChangeTypeH\t\210\001\001B"
-          + "\025\n\023_report_granularityB\026\n\024_report_countr"
-          + "y_codeB\025\n\023_report_category_idB\005\n\003_idB\010\n\006"
-          + "_brandB\007\n\005_rankB\020\n\016_previous_rankB\022\n\020_re"
-          + "lative_demandB\033\n\031_previous_relative_dema"
-          + "ndB\031\n\027_relative_demand_change\"\337\001\n\031NonPro"
-          + "ductPerformanceView\022\037\n\004date\030\001 \001(\0132\021.goog"
-          + "le.type.Date\022\037\n\004week\030\002 \001(\0132\021.google.type"
-          + ".Date\022\023\n\006clicks\030\003 \001(\003H\000\210\001\001\022\030\n\013impression"
-          + "s\030\004 \001(\003H\001\210\001\001\022\037\n\022click_through_rate\030\005 \001(\001"
-          + "H\002\210\001\001B\t\n\007_clicksB\016\n\014_impressionsB\025\n\023_cli"
-          + "ck_through_rate\"\356\004\n#CompetitiveVisibilit"
-          + "yCompetitorView\022\037\n\004date\030\001 \001(\0132\021.google.t"
-          + "ype.Date\022\023\n\006domain\030\002 \001(\tH\000\210\001\001\022\033\n\016is_your"
-          + "_domain\030\003 \001(\010H\001\210\001\001\022 \n\023report_country_cod"
-          + "e\030\004 \001(\tH\002\210\001\001\022\037\n\022report_category_id\030\005 \001(\003"
-          + "H\003\210\001\001\022S\n\016traffic_source\030\006 \001(\01626.google.s"
-          + "hopping.merchant.reports.v1beta.TrafficS"
-          + "ourceH\004\210\001\001\022\021\n\004rank\030\007 \001(\003H\005\210\001\001\022\036\n\021ads_org"
-          + "anic_ratio\030\010 \001(\001H\006\210\001\001\022\036\n\021page_overlap_ra"
-          + "te\030\t \001(\001H\007\210\001\001\022!\n\024higher_position_rate\030\n "
-          + "\001(\001H\010\210\001\001\022 \n\023relative_visibility\030\013 \001(\001H\t\210"
-          + "\001\001B\t\n\007_domainB\021\n\017_is_your_domainB\026\n\024_rep"
-          + "ort_country_codeB\025\n\023_report_category_idB"
-          + "\021\n\017_traffic_sourceB\007\n\005_rankB\024\n\022_ads_orga"
-          + "nic_ratioB\024\n\022_page_overlap_rateB\027\n\025_high"
-          + "er_position_rateB\026\n\024_relative_visibility"
-          + "\"\265\004\n$CompetitiveVisibilityTopMerchantVie"
-          + "w\022\037\n\004date\030\001 \001(\0132\021.google.type.Date\022\023\n\006do"
-          + "main\030\002 \001(\tH\000\210\001\001\022\033\n\016is_your_domain\030\003 \001(\010H"
-          + "\001\210\001\001\022 \n\023report_country_code\030\004 \001(\tH\002\210\001\001\022\037"
-          + "\n\022report_category_id\030\005 \001(\003H\003\210\001\001\022S\n\016traff"
-          + "ic_source\030\006 \001(\01626.google.shopping.mercha"
-          + "nt.reports.v1beta.TrafficSourceH\004\210\001\001\022\021\n\004"
-          + "rank\030\007 \001(\003H\005\210\001\001\022\036\n\021ads_organic_ratio\030\010 \001"
-          + "(\001H\006\210\001\001\022\036\n\021page_overlap_rate\030\t \001(\001H\007\210\001\001\022"
-          + "!\n\024higher_position_rate\030\n \001(\001H\010\210\001\001B\t\n\007_d"
-          + "omainB\021\n\017_is_your_domainB\026\n\024_report_coun"
-          + "try_codeB\025\n\023_report_category_idB\021\n\017_traf"
-          + "fic_sourceB\007\n\005_rankB\024\n\022_ads_organic_rati"
-          + "oB\024\n\022_page_overlap_rateB\027\n\025_higher_posit"
-          + "ion_rate\"\305\003\n\"CompetitiveVisibilityBenchm"
-          + "arkView\022\037\n\004date\030\001 \001(\0132\021.google.type.Date"
-          + "\022 \n\023report_country_code\030\002 \001(\tH\000\210\001\001\022\037\n\022re"
-          + "port_category_id\030\003 \001(\003H\001\210\001\001\022S\n\016traffic_s"
-          + "ource\030\004 \001(\01626.google.shopping.merchant.r"
-          + "eports.v1beta.TrafficSourceH\002\210\001\001\022)\n\034your"
-          + "_domain_visibility_trend\030\005 \001(\001H\003\210\001\001\0220\n#c"
-          + "ategory_benchmark_visibility_trend\030\006 \001(\001"
-          + "H\004\210\001\001B\026\n\024_report_country_codeB\025\n\023_report"
-          + "_category_idB\021\n\017_traffic_sourceB\037\n\035_your"
-          + "_domain_visibility_trendB&\n$_category_be"
-          + "nchmark_visibility_trend*P\n\021ReportGranul"
-          + "arity\022\"\n\036REPORT_GRANULARITY_UNSPECIFIED\020"
-          + "\000\022\n\n\006WEEKLY\020\001\022\013\n\007MONTHLY\020\002*m\n\016RelativeDe"
-          + "mand\022\037\n\033RELATIVE_DEMAND_UNSPECIFIED\020\000\022\014\n"
-          + "\010VERY_LOW\020\n\022\007\n\003LOW\020\024\022\n\n\006MEDIUM\020\036\022\010\n\004HIGH"
-          + "\020(\022\r\n\tVERY_HIGH\0202*h\n\030RelativeDemandChang"
-          + "eType\022+\n\'RELATIVE_DEMAND_CHANGE_TYPE_UNS"
-          + "PECIFIED\020\000\022\n\n\006SINKER\020\001\022\010\n\004FLAT\020\002\022\t\n\005RISE"
-          + "R\020\003*N\n\rTrafficSource\022\036\n\032TRAFFIC_SOURCE_U"
-          + "NSPECIFIED\020\000\022\013\n\007ORGANIC\020\001\022\007\n\003ADS\020\002\022\007\n\003AL"
-          + "L\020\0032\234\002\n\rReportService\022\301\001\n\006Search\0226.googl"
-          + "e.shopping.merchant.reports.v1beta.Searc"
-          + "hRequest\0327.google.shopping.merchant.repo"
-          + "rts.v1beta.SearchResponse\"F\332A\006parent\202\323\344\223"
-          + "\0027\"2/reports/v1beta/{parent=accounts/*}/"
-          + "reports:search:\001*\032G\312A\032merchantapi.google"
-          + "apis.com\322A\'https://www.googleapis.com/au"
-          + "th/contentB\215\001\n+com.google.shopping.merch"
-          + "ant.reports.v1betaB\014ReportsProtoP\001ZNgoog"
-          + "le.golang.org/genproto/googleapis/shoppi"
-          + "ng/merchant/reports/v1beta;reportsb\006prot"
-          + "o3"
+          + "sterView.InventoryStatusH\014\210\001\001\022\021\n\004rank\030\020 "
+          + "\001(\003H\r\210\001\001\022\032\n\rprevious_rank\030\021 \001(\003H\016\210\001\001\022h\n\017"
+          + "relative_demand\030\022 \001(\0162J.google.shopping."
+          + "merchant.reports.v1beta.RelativeDemand.R"
+          + "elativeDemandEnumH\017\210\001\001\022q\n\030previous_relat"
+          + "ive_demand\030\023 \001(\0162J.google.shopping.merch"
+          + "ant.reports.v1beta.RelativeDemand.Relati"
+          + "veDemandEnumH\020\210\001\001\022\203\001\n\026relative_demand_ch"
+          + "ange\030\024 \001(\0162^.google.shopping.merchant.re"
+          + "ports.v1beta.RelativeDemandChangeType.Re"
+          + "lativeDemandChangeTypeEnumH\021\210\001\001\"i\n\017Inven"
+          + "toryStatus\022 \n\034INVENTORY_STATUS_UNSPECIFI"
+          + "ED\020\000\022\014\n\010IN_STOCK\020\001\022\020\n\014OUT_OF_STOCK\020\002\022\024\n\020"
+          + "NOT_IN_INVENTORY\020\003B\025\n\023_report_granularit"
+          + "yB\026\n\024_report_country_codeB\025\n\023_report_cat"
+          + "egory_idB\005\n\003_idB\010\n\006_titleB\010\n\006_brandB\016\n\014_"
+          + "category_l1B\016\n\014_category_l2B\016\n\014_category"
+          + "_l3B\016\n\014_category_l4B\016\n\014_category_l5B\023\n\021_"
+          + "inventory_statusB\031\n\027_brand_inventory_sta"
+          + "tusB\007\n\005_rankB\020\n\016_previous_rankB\022\n\020_relat"
+          + "ive_demandB\033\n\031_previous_relative_demandB"
+          + "\031\n\027_relative_demand_change\"\351\006\n\024BestSelle"
+          + "rsBrandView\022&\n\013report_date\030\001 \001(\0132\021.googl"
+          + "e.type.Date\022q\n\022report_granularity\030\002 \001(\0162"
+          + "P.google.shopping.merchant.reports.v1bet"
+          + "a.ReportGranularity.ReportGranularityEnu"
+          + "mH\000\210\001\001\022 \n\023report_country_code\030\003 \001(\tH\001\210\001\001"
+          + "\022\037\n\022report_category_id\030\004 \001(\003H\002\210\001\001\022\017\n\002id\030"
+          + "\005 \001(\tH\003\210\001\001\022\022\n\005brand\030\006 \001(\tH\004\210\001\001\022\021\n\004rank\030\007"
+          + " \001(\003H\005\210\001\001\022\032\n\rprevious_rank\030\010 \001(\003H\006\210\001\001\022h\n"
+          + "\017relative_demand\030\t \001(\0162J.google.shopping"
+          + ".merchant.reports.v1beta.RelativeDemand."
+          + "RelativeDemandEnumH\007\210\001\001\022q\n\030previous_rela"
+          + "tive_demand\030\n \001(\0162J.google.shopping.merc"
+          + "hant.reports.v1beta.RelativeDemand.Relat"
+          + "iveDemandEnumH\010\210\001\001\022\203\001\n\026relative_demand_c"
+          + "hange\030\013 \001(\0162^.google.shopping.merchant.r"
+          + "eports.v1beta.RelativeDemandChangeType.R"
+          + "elativeDemandChangeTypeEnumH\t\210\001\001B\025\n\023_rep"
+          + "ort_granularityB\026\n\024_report_country_codeB"
+          + "\025\n\023_report_category_idB\005\n\003_idB\010\n\006_brandB"
+          + "\007\n\005_rankB\020\n\016_previous_rankB\022\n\020_relative_"
+          + "demandB\033\n\031_previous_relative_demandB\031\n\027_"
+          + "relative_demand_change\"\337\001\n\031NonProductPer"
+          + "formanceView\022\037\n\004date\030\001 \001(\0132\021.google.type"
+          + ".Date\022\037\n\004week\030\002 \001(\0132\021.google.type.Date\022\023"
+          + "\n\006clicks\030\003 \001(\003H\000\210\001\001\022\030\n\013impressions\030\004 \001(\003"
+          + "H\001\210\001\001\022\037\n\022click_through_rate\030\005 \001(\001H\002\210\001\001B\t"
+          + "\n\007_clicksB\016\n\014_impressionsB\025\n\023_click_thro"
+          + "ugh_rate\"\200\005\n#CompetitiveVisibilityCompet"
+          + "itorView\022\037\n\004date\030\001 \001(\0132\021.google.type.Dat"
+          + "e\022\023\n\006domain\030\002 \001(\tH\000\210\001\001\022\033\n\016is_your_domain"
+          + "\030\003 \001(\010H\001\210\001\001\022 \n\023report_country_code\030\004 \001(\t"
+          + "H\002\210\001\001\022\037\n\022report_category_id\030\005 \001(\003H\003\210\001\001\022e"
+          + "\n\016traffic_source\030\006 \001(\0162H.google.shopping"
+          + ".merchant.reports.v1beta.TrafficSource.T"
+          + "rafficSourceEnumH\004\210\001\001\022\021\n\004rank\030\007 \001(\003H\005\210\001\001"
+          + "\022\036\n\021ads_organic_ratio\030\010 \001(\001H\006\210\001\001\022\036\n\021page"
+          + "_overlap_rate\030\t \001(\001H\007\210\001\001\022!\n\024higher_posit"
+          + "ion_rate\030\n \001(\001H\010\210\001\001\022 \n\023relative_visibili"
+          + "ty\030\013 \001(\001H\t\210\001\001B\t\n\007_domainB\021\n\017_is_your_dom"
+          + "ainB\026\n\024_report_country_codeB\025\n\023_report_c"
+          + "ategory_idB\021\n\017_traffic_sourceB\007\n\005_rankB\024"
+          + "\n\022_ads_organic_ratioB\024\n\022_page_overlap_ra"
+          + "teB\027\n\025_higher_position_rateB\026\n\024_relative"
+          + "_visibility\"\307\004\n$CompetitiveVisibilityTop"
+          + "MerchantView\022\037\n\004date\030\001 \001(\0132\021.google.type"
+          + ".Date\022\023\n\006domain\030\002 \001(\tH\000\210\001\001\022\033\n\016is_your_do"
+          + "main\030\003 \001(\010H\001\210\001\001\022 \n\023report_country_code\030\004"
+          + " \001(\tH\002\210\001\001\022\037\n\022report_category_id\030\005 \001(\003H\003\210"
+          + "\001\001\022e\n\016traffic_source\030\006 \001(\0162H.google.shop"
+          + "ping.merchant.reports.v1beta.TrafficSour"
+          + "ce.TrafficSourceEnumH\004\210\001\001\022\021\n\004rank\030\007 \001(\003H"
+          + "\005\210\001\001\022\036\n\021ads_organic_ratio\030\010 \001(\001H\006\210\001\001\022\036\n\021"
+          + "page_overlap_rate\030\t \001(\001H\007\210\001\001\022!\n\024higher_p"
+          + "osition_rate\030\n \001(\001H\010\210\001\001B\t\n\007_domainB\021\n\017_i"
+          + "s_your_domainB\026\n\024_report_country_codeB\025\n"
+          + "\023_report_category_idB\021\n\017_traffic_sourceB"
+          + "\007\n\005_rankB\024\n\022_ads_organic_ratioB\024\n\022_page_"
+          + "overlap_rateB\027\n\025_higher_position_rate\"\327\003"
+          + "\n\"CompetitiveVisibilityBenchmarkView\022\037\n\004"
+          + "date\030\001 \001(\0132\021.google.type.Date\022 \n\023report_"
+          + "country_code\030\002 \001(\tH\000\210\001\001\022\037\n\022report_catego"
+          + "ry_id\030\003 \001(\003H\001\210\001\001\022e\n\016traffic_source\030\004 \001(\016"
+          + "2H.google.shopping.merchant.reports.v1be"
+          + "ta.TrafficSource.TrafficSourceEnumH\002\210\001\001\022"
+          + ")\n\034your_domain_visibility_trend\030\005 \001(\001H\003\210"
+          + "\001\001\0220\n#category_benchmark_visibility_tren"
+          + "d\030\006 \001(\001H\004\210\001\001B\026\n\024_report_country_codeB\025\n\023"
+          + "_report_category_idB\021\n\017_traffic_sourceB\037"
+          + "\n\035_your_domain_visibility_trendB&\n$_cate"
+          + "gory_benchmark_visibility_trend\"e\n\017Marke"
+          + "tingMethod\"R\n\023MarketingMethodEnum\022%\n!MAR"
+          + "KETING_METHOD_ENUM_UNSPECIFIED\020\000\022\013\n\007ORGA"
+          + "NIC\020\001\022\007\n\003ADS\020\002\"n\n\021ReportGranularity\"Y\n\025R"
+          + "eportGranularityEnum\022\'\n#REPORT_GRANULARI"
+          + "TY_ENUM_UNSPECIFIED\020\000\022\n\n\006WEEKLY\020\001\022\013\n\007MON"
+          + "THLY\020\002\"\210\001\n\016RelativeDemand\"v\n\022RelativeDem"
+          + "andEnum\022$\n RELATIVE_DEMAND_ENUM_UNSPECIF"
+          + "IED\020\000\022\014\n\010VERY_LOW\020\n\022\007\n\003LOW\020\024\022\n\n\006MEDIUM\020\036"
+          + "\022\010\n\004HIGH\020(\022\r\n\tVERY_HIGH\0202\"\215\001\n\030RelativeDe"
+          + "mandChangeType\"q\n\034RelativeDemandChangeTy"
+          + "peEnum\0220\n,RELATIVE_DEMAND_CHANGE_TYPE_EN"
+          + "UM_UNSPECIFIED\020\000\022\n\n\006SINKER\020\001\022\010\n\004FLAT\020\002\022\t"
+          + "\n\005RISER\020\003\"h\n\rTrafficSource\"W\n\021TrafficSou"
+          + "rceEnum\022#\n\037TRAFFIC_SOURCE_ENUM_UNSPECIFI"
+          + "ED\020\000\022\013\n\007ORGANIC\020\001\022\007\n\003ADS\020\002\022\007\n\003ALL\020\0032\234\002\n\r"
+          + "ReportService\022\301\001\n\006Search\0226.google.shoppi"
+          + "ng.merchant.reports.v1beta.SearchRequest"
+          + "\0327.google.shopping.merchant.reports.v1be"
+          + "ta.SearchResponse\"F\332A\006parent\202\323\344\223\0027\"2/rep"
+          + "orts/v1beta/{parent=accounts/*}/reports:"
+          + "search:\001*\032G\312A\032merchantapi.googleapis.com"
+          + "\322A\'https://www.googleapis.com/auth/conte"
+          + "ntB\212\001\n+com.google.shopping.merchant.repo"
+          + "rts.v1betaB\014ReportsProtoP\001ZKcloud.google"
+          + ".com/go/shopping/merchant/reports/apiv1b"
+          + "eta/reportspb;reportspbb\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -469,7 +501,7 @@ public final class ReportsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_reports_v1beta_ProductPerformanceView_descriptor,
             new java.lang.String[] {
-              "Destination",
+              "MarketingMethod",
               "Date",
               "Week",
               "CustomerCountryCode",
@@ -500,7 +532,7 @@ public final class ReportsProto {
               "Conversions",
               "ConversionValue",
               "ConversionRate",
-              "Destination",
+              "MarketingMethod",
               "CustomerCountryCode",
               "AccountId",
               "AccountDisplayName",
@@ -536,6 +568,7 @@ public final class ReportsProto {
             internal_static_google_shopping_merchant_reports_v1beta_ProductView_descriptor,
             new java.lang.String[] {
               "Id",
+              "Channel",
               "LanguageCode",
               "FeedLabel",
               "OfferId",
@@ -560,9 +593,10 @@ public final class ReportsProto {
               "ThumbnailLink",
               "CreationTime",
               "ExpirationDate",
-              "AggregatedDestinationStatus",
+              "AggregatedReportingContextStatus",
               "ItemIssues",
               "Id",
+              "Channel",
               "LanguageCode",
               "FeedLabel",
               "OfferId",
@@ -583,7 +617,7 @@ public final class ReportsProto {
               "ShippingLabel",
               "ItemGroupId",
               "ThumbnailLink",
-              "AggregatedDestinationStatus",
+              "AggregatedReportingContextStatus",
             });
     internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_descriptor =
         internal_static_google_shopping_merchant_reports_v1beta_ProductView_descriptor
@@ -613,17 +647,17 @@ public final class ReportsProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_descriptor,
             new java.lang.String[] {
-              "SeverityPerDestination", "AggregatedSeverity", "AggregatedSeverity",
+              "SeverityPerReportingContext", "AggregatedSeverity", "AggregatedSeverity",
             });
-    internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_IssueSeverityPerDestination_descriptor =
+    internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_IssueSeverityPerReportingContext_descriptor =
         internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_descriptor
             .getNestedTypes()
             .get(0);
-    internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_IssueSeverityPerDestination_fieldAccessorTable =
+    internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_IssueSeverityPerReportingContext_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_IssueSeverityPerDestination_descriptor,
+            internal_static_google_shopping_merchant_reports_v1beta_ProductView_ItemIssue_ItemIssueSeverity_IssueSeverityPerReportingContext_descriptor,
             new java.lang.String[] {
-              "Destination", "DisapprovedCountries", "DemotedCountries", "Destination",
+              "ReportingContext", "DisapprovedCountries", "DemotedCountries", "ReportingContext",
             });
     internal_static_google_shopping_merchant_reports_v1beta_PriceCompetitivenessProductView_descriptor =
         getDescriptor().getMessageTypes().get(5);
@@ -689,8 +723,6 @@ public final class ReportsProto {
               "PredictedImpressionsChangeFraction",
               "PredictedClicksChangeFraction",
               "PredictedConversionsChangeFraction",
-              "PredictedGrossProfitChangeFraction",
-              "PredictedMonthlyGrossProfitChange",
               "Id",
               "OfferId",
               "Title",
@@ -708,7 +740,6 @@ public final class ReportsProto {
               "PredictedImpressionsChangeFraction",
               "PredictedClicksChangeFraction",
               "PredictedConversionsChangeFraction",
-              "PredictedGrossProfitChangeFraction",
             });
     internal_static_google_shopping_merchant_reports_v1beta_BestSellersProductClusterView_descriptor =
         getDescriptor().getMessageTypes().get(7);
@@ -870,6 +901,36 @@ public final class ReportsProto {
               "YourDomainVisibilityTrend",
               "CategoryBenchmarkVisibilityTrend",
             });
+    internal_static_google_shopping_merchant_reports_v1beta_MarketingMethod_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_shopping_merchant_reports_v1beta_MarketingMethod_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_merchant_reports_v1beta_MarketingMethod_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_shopping_merchant_reports_v1beta_ReportGranularity_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_shopping_merchant_reports_v1beta_ReportGranularity_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_merchant_reports_v1beta_ReportGranularity_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_shopping_merchant_reports_v1beta_RelativeDemand_descriptor =
+        getDescriptor().getMessageTypes().get(15);
+    internal_static_google_shopping_merchant_reports_v1beta_RelativeDemand_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_merchant_reports_v1beta_RelativeDemand_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_shopping_merchant_reports_v1beta_RelativeDemandChangeType_descriptor =
+        getDescriptor().getMessageTypes().get(16);
+    internal_static_google_shopping_merchant_reports_v1beta_RelativeDemandChangeType_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_merchant_reports_v1beta_RelativeDemandChangeType_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_shopping_merchant_reports_v1beta_TrafficSource_descriptor =
+        getDescriptor().getMessageTypes().get(17);
+    internal_static_google_shopping_merchant_reports_v1beta_TrafficSource_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_merchant_reports_v1beta_TrafficSource_descriptor,
+            new java.lang.String[] {});
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.ClientProto.defaultHost);

@@ -49,7 +49,7 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   }
 
   private ProductPerformanceView() {
-    destination_ = 0;
+    marketingMethod_ = 0;
     customerCountryCode_ = "";
     accountDisplayName_ = "";
     externalAccountId_ = "";
@@ -95,63 +95,65 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   }
 
   private int bitField0_;
-  public static final int DESTINATION_FIELD_NUMBER = 1;
-  private int destination_ = 0;
+  public static final int MARKETING_METHOD_FIELD_NUMBER = 1;
+  private int marketingMethod_ = 0;
   /**
    *
    *
    * <pre>
-   * Destination of the product to which metrics apply. Segment.
-   *
-   * Product performance data is not available for the LOCAL_INVENTORY_ADS
-   * destination.
+   * Marketing method to which metrics apply. Segment.
    * </pre>
    *
-   * <code>optional .google.shopping.type.Destination destination = 1;</code>
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum marketing_method = 1;
+   * </code>
    *
-   * @return Whether the destination field is set.
+   * @return Whether the marketingMethod field is set.
    */
   @java.lang.Override
-  public boolean hasDestination() {
+  public boolean hasMarketingMethod() {
     return ((bitField0_ & 0x00000001) != 0);
   }
   /**
    *
    *
    * <pre>
-   * Destination of the product to which metrics apply. Segment.
-   *
-   * Product performance data is not available for the LOCAL_INVENTORY_ADS
-   * destination.
+   * Marketing method to which metrics apply. Segment.
    * </pre>
    *
-   * <code>optional .google.shopping.type.Destination destination = 1;</code>
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum marketing_method = 1;
+   * </code>
    *
-   * @return The enum numeric value on the wire for destination.
+   * @return The enum numeric value on the wire for marketingMethod.
    */
   @java.lang.Override
-  public int getDestinationValue() {
-    return destination_;
+  public int getMarketingMethodValue() {
+    return marketingMethod_;
   }
   /**
    *
    *
    * <pre>
-   * Destination of the product to which metrics apply. Segment.
-   *
-   * Product performance data is not available for the LOCAL_INVENTORY_ADS
-   * destination.
+   * Marketing method to which metrics apply. Segment.
    * </pre>
    *
-   * <code>optional .google.shopping.type.Destination destination = 1;</code>
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum marketing_method = 1;
+   * </code>
    *
-   * @return The destination.
+   * @return The marketingMethod.
    */
   @java.lang.Override
-  public com.google.shopping.type.Destination getDestination() {
-    com.google.shopping.type.Destination result =
-        com.google.shopping.type.Destination.forNumber(destination_);
-    return result == null ? com.google.shopping.type.Destination.UNRECOGNIZED : result;
+  public com.google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum
+      getMarketingMethod() {
+    com.google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum result =
+        com.google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum.forNumber(
+            marketingMethod_);
+    return result == null
+        ? com.google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum
+            .UNRECOGNIZED
+        : result;
   }
 
   public static final int DATE_FIELD_NUMBER = 2;
@@ -2033,7 +2035,7 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
-      output.writeEnum(1, destination_);
+      output.writeEnum(1, marketingMethod_);
     }
     if (date_ != null) {
       output.writeMessage(2, getDate());
@@ -2135,7 +2137,7 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
-      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, destination_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, marketingMethod_);
     }
     if (date_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDate());
@@ -2243,9 +2245,9 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     com.google.shopping.merchant.reports.v1beta.ProductPerformanceView other =
         (com.google.shopping.merchant.reports.v1beta.ProductPerformanceView) obj;
 
-    if (hasDestination() != other.hasDestination()) return false;
-    if (hasDestination()) {
-      if (destination_ != other.destination_) return false;
+    if (hasMarketingMethod() != other.hasMarketingMethod()) return false;
+    if (hasMarketingMethod()) {
+      if (marketingMethod_ != other.marketingMethod_) return false;
     }
     if (hasDate() != other.hasDate()) return false;
     if (hasDate()) {
@@ -2381,9 +2383,9 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasDestination()) {
-      hash = (37 * hash) + DESTINATION_FIELD_NUMBER;
-      hash = (53 * hash) + destination_;
+    if (hasMarketingMethod()) {
+      hash = (37 * hash) + MARKETING_METHOD_FIELD_NUMBER;
+      hash = (53 * hash) + marketingMethod_;
     }
     if (hasDate()) {
       hash = (37 * hash) + DATE_FIELD_NUMBER;
@@ -2667,7 +2669,7 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      destination_ = 0;
+      marketingMethod_ = 0;
       date_ = null;
       if (dateBuilder_ != null) {
         dateBuilder_.dispose();
@@ -2751,7 +2753,7 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.destination_ = destination_;
+        result.marketingMethod_ = marketingMethod_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
@@ -2924,8 +2926,8 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
       if (other
           == com.google.shopping.merchant.reports.v1beta.ProductPerformanceView
               .getDefaultInstance()) return this;
-      if (other.hasDestination()) {
-        setDestination(other.getDestination());
+      if (other.hasMarketingMethod()) {
+        setMarketingMethod(other.getMarketingMethod());
       }
       if (other.hasDate()) {
         mergeDate(other.getDate());
@@ -3087,7 +3089,7 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
               break;
             case 8:
               {
-                destination_ = input.readEnum();
+                marketingMethod_ = input.readEnum();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
@@ -3290,60 +3292,57 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
 
     private int bitField0_;
 
-    private int destination_ = 0;
+    private int marketingMethod_ = 0;
     /**
      *
      *
      * <pre>
-     * Destination of the product to which metrics apply. Segment.
-     *
-     * Product performance data is not available for the LOCAL_INVENTORY_ADS
-     * destination.
+     * Marketing method to which metrics apply. Segment.
      * </pre>
      *
-     * <code>optional .google.shopping.type.Destination destination = 1;</code>
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum marketing_method = 1;
+     * </code>
      *
-     * @return Whether the destination field is set.
+     * @return Whether the marketingMethod field is set.
      */
     @java.lang.Override
-    public boolean hasDestination() {
+    public boolean hasMarketingMethod() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
      *
      * <pre>
-     * Destination of the product to which metrics apply. Segment.
-     *
-     * Product performance data is not available for the LOCAL_INVENTORY_ADS
-     * destination.
+     * Marketing method to which metrics apply. Segment.
      * </pre>
      *
-     * <code>optional .google.shopping.type.Destination destination = 1;</code>
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum marketing_method = 1;
+     * </code>
      *
-     * @return The enum numeric value on the wire for destination.
+     * @return The enum numeric value on the wire for marketingMethod.
      */
     @java.lang.Override
-    public int getDestinationValue() {
-      return destination_;
+    public int getMarketingMethodValue() {
+      return marketingMethod_;
     }
     /**
      *
      *
      * <pre>
-     * Destination of the product to which metrics apply. Segment.
-     *
-     * Product performance data is not available for the LOCAL_INVENTORY_ADS
-     * destination.
+     * Marketing method to which metrics apply. Segment.
      * </pre>
      *
-     * <code>optional .google.shopping.type.Destination destination = 1;</code>
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum marketing_method = 1;
+     * </code>
      *
-     * @param value The enum numeric value on the wire for destination to set.
+     * @param value The enum numeric value on the wire for marketingMethod to set.
      * @return This builder for chaining.
      */
-    public Builder setDestinationValue(int value) {
-      destination_ = value;
+    public Builder setMarketingMethodValue(int value) {
+      marketingMethod_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
@@ -3352,43 +3351,47 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Destination of the product to which metrics apply. Segment.
-     *
-     * Product performance data is not available for the LOCAL_INVENTORY_ADS
-     * destination.
+     * Marketing method to which metrics apply. Segment.
      * </pre>
      *
-     * <code>optional .google.shopping.type.Destination destination = 1;</code>
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum marketing_method = 1;
+     * </code>
      *
-     * @return The destination.
+     * @return The marketingMethod.
      */
     @java.lang.Override
-    public com.google.shopping.type.Destination getDestination() {
-      com.google.shopping.type.Destination result =
-          com.google.shopping.type.Destination.forNumber(destination_);
-      return result == null ? com.google.shopping.type.Destination.UNRECOGNIZED : result;
+    public com.google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum
+        getMarketingMethod() {
+      com.google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum result =
+          com.google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum.forNumber(
+              marketingMethod_);
+      return result == null
+          ? com.google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum
+              .UNRECOGNIZED
+          : result;
     }
     /**
      *
      *
      * <pre>
-     * Destination of the product to which metrics apply. Segment.
-     *
-     * Product performance data is not available for the LOCAL_INVENTORY_ADS
-     * destination.
+     * Marketing method to which metrics apply. Segment.
      * </pre>
      *
-     * <code>optional .google.shopping.type.Destination destination = 1;</code>
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum marketing_method = 1;
+     * </code>
      *
-     * @param value The destination to set.
+     * @param value The marketingMethod to set.
      * @return This builder for chaining.
      */
-    public Builder setDestination(com.google.shopping.type.Destination value) {
+    public Builder setMarketingMethod(
+        com.google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum value) {
       if (value == null) {
         throw new NullPointerException();
       }
       bitField0_ |= 0x00000001;
-      destination_ = value.getNumber();
+      marketingMethod_ = value.getNumber();
       onChanged();
       return this;
     }
@@ -3396,19 +3399,18 @@ public final class ProductPerformanceView extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Destination of the product to which metrics apply. Segment.
-     *
-     * Product performance data is not available for the LOCAL_INVENTORY_ADS
-     * destination.
+     * Marketing method to which metrics apply. Segment.
      * </pre>
      *
-     * <code>optional .google.shopping.type.Destination destination = 1;</code>
+     * <code>
+     * optional .google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum marketing_method = 1;
+     * </code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearDestination() {
+    public Builder clearMarketingMethod() {
       bitField0_ = (bitField0_ & ~0x00000001);
-      destination_ = 0;
+      marketingMethod_ = 0;
       onChanged();
       return this;
     }

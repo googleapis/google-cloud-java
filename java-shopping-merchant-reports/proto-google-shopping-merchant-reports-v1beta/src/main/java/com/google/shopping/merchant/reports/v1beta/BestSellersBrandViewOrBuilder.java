@@ -91,7 +91,7 @@ public interface BestSellersBrandViewOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
    * </code>
    *
    * @return Whether the reportGranularity field is set.
@@ -109,7 +109,7 @@ public interface BestSellersBrandViewOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
    * </code>
    *
    * @return The enum numeric value on the wire for reportGranularity.
@@ -127,12 +127,13 @@ public interface BestSellersBrandViewOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity report_granularity = 2;
+   * optional .google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum report_granularity = 2;
    * </code>
    *
    * @return The reportGranularity.
    */
-  com.google.shopping.merchant.reports.v1beta.ReportGranularity getReportGranularity();
+  com.google.shopping.merchant.reports.v1beta.ReportGranularity.ReportGranularityEnum
+      getReportGranularity();
 
   /**
    *
@@ -354,7 +355,8 @@ public interface BestSellersBrandViewOrBuilder
    * in the same category and country.
    * </pre>
    *
-   * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 9;
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 9;
    * </code>
    *
    * @return Whether the relativeDemand field is set.
@@ -368,7 +370,8 @@ public interface BestSellersBrandViewOrBuilder
    * in the same category and country.
    * </pre>
    *
-   * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 9;
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 9;
    * </code>
    *
    * @return The enum numeric value on the wire for relativeDemand.
@@ -382,12 +385,13 @@ public interface BestSellersBrandViewOrBuilder
    * in the same category and country.
    * </pre>
    *
-   * <code>optional .google.shopping.merchant.reports.v1beta.RelativeDemand relative_demand = 9;
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum relative_demand = 9;
    * </code>
    *
    * @return The relativeDemand.
    */
-  com.google.shopping.merchant.reports.v1beta.RelativeDemand getRelativeDemand();
+  com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum getRelativeDemand();
 
   /**
    *
@@ -398,7 +402,7 @@ public interface BestSellersBrandViewOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 10;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 10;
    * </code>
    *
    * @return Whether the previousRelativeDemand field is set.
@@ -413,7 +417,7 @@ public interface BestSellersBrandViewOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 10;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 10;
    * </code>
    *
    * @return The enum numeric value on the wire for previousRelativeDemand.
@@ -428,12 +432,13 @@ public interface BestSellersBrandViewOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand previous_relative_demand = 10;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum previous_relative_demand = 10;
    * </code>
    *
    * @return The previousRelativeDemand.
    */
-  com.google.shopping.merchant.reports.v1beta.RelativeDemand getPreviousRelativeDemand();
+  com.google.shopping.merchant.reports.v1beta.RelativeDemand.RelativeDemandEnum
+      getPreviousRelativeDemand();
 
   /**
    *
@@ -443,7 +448,7 @@ public interface BestSellersBrandViewOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 11;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 11;
    * </code>
    *
    * @return Whether the relativeDemandChange field is set.
@@ -457,7 +462,7 @@ public interface BestSellersBrandViewOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 11;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 11;
    * </code>
    *
    * @return The enum numeric value on the wire for relativeDemandChange.
@@ -471,10 +476,11 @@ public interface BestSellersBrandViewOrBuilder
    * </pre>
    *
    * <code>
-   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType relative_demand_change = 11;
+   * optional .google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum relative_demand_change = 11;
    * </code>
    *
    * @return The relativeDemandChange.
    */
-  com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType getRelativeDemandChange();
+  com.google.shopping.merchant.reports.v1beta.RelativeDemandChangeType.RelativeDemandChangeTypeEnum
+      getRelativeDemandChange();
 }

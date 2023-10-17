@@ -27,47 +27,45 @@ public interface ProductPerformanceViewOrBuilder
    *
    *
    * <pre>
-   * Destination of the product to which metrics apply. Segment.
-   *
-   * Product performance data is not available for the LOCAL_INVENTORY_ADS
-   * destination.
+   * Marketing method to which metrics apply. Segment.
    * </pre>
    *
-   * <code>optional .google.shopping.type.Destination destination = 1;</code>
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum marketing_method = 1;
+   * </code>
    *
-   * @return Whether the destination field is set.
+   * @return Whether the marketingMethod field is set.
    */
-  boolean hasDestination();
+  boolean hasMarketingMethod();
   /**
    *
    *
    * <pre>
-   * Destination of the product to which metrics apply. Segment.
-   *
-   * Product performance data is not available for the LOCAL_INVENTORY_ADS
-   * destination.
+   * Marketing method to which metrics apply. Segment.
    * </pre>
    *
-   * <code>optional .google.shopping.type.Destination destination = 1;</code>
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum marketing_method = 1;
+   * </code>
    *
-   * @return The enum numeric value on the wire for destination.
+   * @return The enum numeric value on the wire for marketingMethod.
    */
-  int getDestinationValue();
+  int getMarketingMethodValue();
   /**
    *
    *
    * <pre>
-   * Destination of the product to which metrics apply. Segment.
-   *
-   * Product performance data is not available for the LOCAL_INVENTORY_ADS
-   * destination.
+   * Marketing method to which metrics apply. Segment.
    * </pre>
    *
-   * <code>optional .google.shopping.type.Destination destination = 1;</code>
+   * <code>
+   * optional .google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum marketing_method = 1;
+   * </code>
    *
-   * @return The destination.
+   * @return The marketingMethod.
    */
-  com.google.shopping.type.Destination getDestination();
+  com.google.shopping.merchant.reports.v1beta.MarketingMethod.MarketingMethodEnum
+      getMarketingMethod();
 
   /**
    *
