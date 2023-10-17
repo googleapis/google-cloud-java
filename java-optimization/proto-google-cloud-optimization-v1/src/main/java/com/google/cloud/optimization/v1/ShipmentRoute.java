@@ -1616,7 +1616,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.optimization.v1.ShipmentRoute.Visit.delay_before_start is
-     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1935
+     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1965
      * @return Whether the delayBeforeStart field is set.
      */
     @java.lang.Deprecated
@@ -1635,7 +1635,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.optimization.v1.ShipmentRoute.Visit.delay_before_start is
-     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1935
+     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1965
      * @return The delayBeforeStart.
      */
     @java.lang.Deprecated
@@ -2376,7 +2376,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.optimization.v1.ShipmentRoute.Visit.delay_before_start is
-     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1935
+     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1965
      * @return Whether the delayBeforeStart field is set.
      */
     @java.lang.Override
@@ -2398,7 +2398,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.optimization.v1.ShipmentRoute.Visit.delay_before_start is
-     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1935
+     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1965
      * @return The delayBeforeStart.
      */
     @java.lang.Override
@@ -4957,7 +4957,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.optimization.v1.ShipmentRoute.Visit.delay_before_start is
-       *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1935
+       *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1965
        * @return Whether the delayBeforeStart field is set.
        */
       @java.lang.Deprecated
@@ -4978,7 +4978,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.optimization.v1.ShipmentRoute.Visit.delay_before_start is
-       *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1935
+       *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=1965
        * @return The delayBeforeStart.
        */
       @java.lang.Deprecated
@@ -14638,7 +14638,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Duration vehicle_detour = 15 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.ShipmentRoute.vehicle_detour is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=2185
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=2215
    * @return Whether the vehicleDetour field is set.
    */
   @java.lang.Override
@@ -14665,7 +14665,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.protobuf.Duration vehicle_detour = 15 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.ShipmentRoute.vehicle_detour is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=2185
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=2215
    * @return The vehicleDetour.
    */
   @java.lang.Override
@@ -14716,7 +14716,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.optimization.v1.ShipmentRoute.delay_before_vehicle_end is deprecated.
-   *     See google/cloud/optimization/v1/fleet_routing.proto;l=2189
+   *     See google/cloud/optimization/v1/fleet_routing.proto;l=2219
    * @return Whether the delayBeforeVehicleEnd field is set.
    */
   @java.lang.Override
@@ -14737,7 +14737,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.optimization.v1.ShipmentRoute.delay_before_vehicle_end is deprecated.
-   *     See google/cloud/optimization/v1/fleet_routing.proto;l=2189
+   *     See google/cloud/optimization/v1/fleet_routing.proto;l=2219
    * @return The delayBeforeVehicleEnd.
    */
   @java.lang.Override
@@ -19380,7 +19380,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration vehicle_detour = 15 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.ShipmentRoute.vehicle_detour is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=2185
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=2215
      * @return Whether the vehicleDetour field is set.
      */
     @java.lang.Deprecated
@@ -19406,7 +19406,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.protobuf.Duration vehicle_detour = 15 [deprecated = true];</code>
      *
      * @deprecated google.cloud.optimization.v1.ShipmentRoute.vehicle_detour is deprecated. See
-     *     google/cloud/optimization/v1/fleet_routing.proto;l=2185
+     *     google/cloud/optimization/v1/fleet_routing.proto;l=2215
      * @return The vehicleDetour.
      */
     @java.lang.Deprecated
@@ -19650,7 +19650,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.optimization.v1.ShipmentRoute.delay_before_vehicle_end is
-     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=2189
+     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=2219
      * @return Whether the delayBeforeVehicleEnd field is set.
      */
     @java.lang.Deprecated
@@ -19670,7 +19670,7 @@ public final class ShipmentRoute extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.optimization.v1.ShipmentRoute.delay_before_vehicle_end is
-     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=2189
+     *     deprecated. See google/cloud/optimization/v1/fleet_routing.proto;l=2219
      * @return The delayBeforeVehicleEnd.
      */
     @java.lang.Deprecated

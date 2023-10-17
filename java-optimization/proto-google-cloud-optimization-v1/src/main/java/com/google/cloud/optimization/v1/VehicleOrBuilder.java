@@ -54,6 +54,50 @@ public interface VehicleOrBuilder
    *
    *
    * <pre>
+   * Optional. A set of conditions to satisfy that affect the way routes are
+   * calculated for the given vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.optimization.v1.RouteModifiers route_modifiers = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the routeModifiers field is set.
+   */
+  boolean hasRouteModifiers();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A set of conditions to satisfy that affect the way routes are
+   * calculated for the given vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.optimization.v1.RouteModifiers route_modifiers = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The routeModifiers.
+   */
+  com.google.cloud.optimization.v1.RouteModifiers getRouteModifiers();
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A set of conditions to satisfy that affect the way routes are
+   * calculated for the given vehicle.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.optimization.v1.RouteModifiers route_modifiers = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.optimization.v1.RouteModifiersOrBuilder getRouteModifiersOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Geographic location where the vehicle starts before picking up any
    * shipments. If not specified, the vehicle starts at its first pickup.
    * If the shipment model has duration and distance matrices, `start_location`
@@ -1157,7 +1201,7 @@ public interface VehicleOrBuilder
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=1454
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1484
    * @return A list containing the breakRuleIndices.
    */
   @java.lang.Deprecated
@@ -1177,7 +1221,7 @@ public interface VehicleOrBuilder
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=1454
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1484
    * @return The count of breakRuleIndices.
    */
   @java.lang.Deprecated
@@ -1197,7 +1241,7 @@ public interface VehicleOrBuilder
    * <code>repeated int32 break_rule_indices = 29 [deprecated = true];</code>
    *
    * @deprecated google.cloud.optimization.v1.Vehicle.break_rule_indices is deprecated. See
-   *     google/cloud/optimization/v1/fleet_routing.proto;l=1454
+   *     google/cloud/optimization/v1/fleet_routing.proto;l=1484
    * @param index The index of the element to return.
    * @return The breakRuleIndices at the given index.
    */
