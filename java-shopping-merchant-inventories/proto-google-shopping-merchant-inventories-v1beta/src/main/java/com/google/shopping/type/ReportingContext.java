@@ -22,57 +22,60 @@ package com.google.shopping.type;
  *
  *
  * <pre>
- * Destinations available for a product.
+ * Reporting contexts that your account and product issues apply to.
  *
- * Destinations are used in Merchant Center to allow you to control where the
- * products from your data feed should be displayed.
+ * Reporting contexts are groups of surfaces and formats for product results on
+ * Google. They can represent the entire destination (for example, [Shopping
+ * ads](https://support.google.com/merchants/answer/6149970)) or a subset of
+ * formats within a destination (for example, [Discovery
+ * ads](https://support.google.com/merchants/answer/13389785)).
  * </pre>
  *
- * Protobuf type {@code google.shopping.type.Destination}
+ * Protobuf type {@code google.shopping.type.ReportingContext}
  */
-public final class Destination extends com.google.protobuf.GeneratedMessageV3
+public final class ReportingContext extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.shopping.type.Destination)
-    DestinationOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.shopping.type.ReportingContext)
+    ReportingContextOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use Destination.newBuilder() to construct.
-  private Destination(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ReportingContext.newBuilder() to construct.
+  private ReportingContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private Destination() {}
+  private ReportingContext() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new Destination();
+    return new ReportingContext();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.shopping.type.TypesProto
-        .internal_static_google_shopping_type_Destination_descriptor;
+        .internal_static_google_shopping_type_ReportingContext_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.shopping.type.TypesProto
-        .internal_static_google_shopping_type_Destination_fieldAccessorTable
+        .internal_static_google_shopping_type_ReportingContext_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.shopping.type.Destination.class,
-            com.google.shopping.type.Destination.Builder.class);
+            com.google.shopping.type.ReportingContext.class,
+            com.google.shopping.type.ReportingContext.Builder.class);
   }
 
   /**
    *
    *
    * <pre>
-   * Destination values.
+   * Reporting context values.
    * </pre>
    *
-   * Protobuf enum {@code google.shopping.type.Destination.DestinationEnum}
+   * Protobuf enum {@code google.shopping.type.ReportingContext.ReportingContextEnum}
    */
-  public enum DestinationEnum implements com.google.protobuf.ProtocolMessageEnum {
+  public enum ReportingContextEnum implements com.google.protobuf.ProtocolMessageEnum {
     /**
      *
      *
@@ -80,14 +83,14 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      * Not specified.
      * </pre>
      *
-     * <code>DESTINATION_ENUM_UNSPECIFIED = 0;</code>
+     * <code>REPORTING_CONTEXT_ENUM_UNSPECIFIED = 0;</code>
      */
-    DESTINATION_ENUM_UNSPECIFIED(0),
+    REPORTING_CONTEXT_ENUM_UNSPECIFIED(0),
     /**
      *
      *
      * <pre>
-     * [Shopping ads](https://support.google.com/google-ads/answer/2454022).
+     * [Shopping ads](https://support.google.com/merchants/answer/6149970).
      * </pre>
      *
      * <code>SHOPPING_ADS = 1;</code>
@@ -97,33 +100,66 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * [Discovery and Demand Gen
+     * ads](https://support.google.com/merchants/answer/13389785).
+     * </pre>
+     *
+     * <code>DISCOVERY_ADS = 2;</code>
+     */
+    DISCOVERY_ADS(2),
+    /**
+     *
+     *
+     * <pre>
+     * [Video ads](https://support.google.com/google-ads/answer/6340491).
+     * </pre>
+     *
+     * <code>VIDEO_ADS = 3;</code>
+     */
+    VIDEO_ADS(3),
+    /**
+     *
+     *
+     * <pre>
      * [Display ads](https://support.google.com/merchants/answer/6069387).
      * </pre>
      *
-     * <code>DISPLAY_ADS = 2;</code>
+     * <code>DISPLAY_ADS = 4;</code>
      */
-    DISPLAY_ADS(2),
+    DISPLAY_ADS(4),
     /**
      *
      *
      * <pre>
      * [Local inventory
-     * ads](https://support.google.com/merchants/answer/3057972).
+     * ads](https://support.google.com/merchants/answer/3271956).
      * </pre>
      *
-     * <code>LOCAL_INVENTORY_ADS = 3;</code>
+     * <code>LOCAL_INVENTORY_ADS = 5;</code>
      */
-    LOCAL_INVENTORY_ADS(3),
+    LOCAL_INVENTORY_ADS(5),
     /**
      *
      *
      * <pre>
-     * [Free listings](https://support.google.com/merchants/answer/9199328).
+     * [Vehicle inventory
+     * ads](https://support.google.com/merchants/answer/11544533).
      * </pre>
      *
-     * <code>FREE_LISTINGS = 4;</code>
+     * <code>VEHICLE_INVENTORY_ADS = 6;</code>
      */
-    FREE_LISTINGS(4),
+    VEHICLE_INVENTORY_ADS(6),
+    /**
+     *
+     *
+     * <pre>
+     * [Free product
+     * listings](https://support.google.com/merchants/answer/9199328).
+     * </pre>
+     *
+     * <code>FREE_LISTINGS = 7;</code>
+     */
+    FREE_LISTINGS(7),
     /**
      *
      *
@@ -132,19 +168,51 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      * listings](https://support.google.com/merchants/answer/9825611).
      * </pre>
      *
-     * <code>FREE_LOCAL_LISTINGS = 5;</code>
+     * <code>FREE_LOCAL_LISTINGS = 8;</code>
      */
-    FREE_LOCAL_LISTINGS(5),
+    FREE_LOCAL_LISTINGS(8),
     /**
      *
      *
      * <pre>
-     * [YouTube Shopping](https://support.google.com/merchants/answer/12362804).
+     * [Free local vehicle
+     * listings](https://support.google.com/merchants/answer/11544533).
      * </pre>
      *
-     * <code>YOUTUBE_SHOPPING = 6;</code>
+     * <code>FREE_LOCAL_VEHICLE_LISTINGS = 9;</code>
      */
-    YOUTUBE_SHOPPING(6),
+    FREE_LOCAL_VEHICLE_LISTINGS(9),
+    /**
+     *
+     *
+     * <pre>
+     * [YouTube
+     * Shopping](https://support.google.com/merchants/answer/13478370).
+     * </pre>
+     *
+     * <code>YOUTUBE_SHOPPING = 10;</code>
+     */
+    YOUTUBE_SHOPPING(10),
+    /**
+     *
+     *
+     * <pre>
+     * [Cloud retail](https://cloud.google.com/solutions/retail).
+     * </pre>
+     *
+     * <code>CLOUD_RETAIL = 11;</code>
+     */
+    CLOUD_RETAIL(11),
+    /**
+     *
+     *
+     * <pre>
+     * [Local cloud retail](https://cloud.google.com/solutions/retail).
+     * </pre>
+     *
+     * <code>LOCAL_CLOUD_RETAIL = 12;</code>
+     */
+    LOCAL_CLOUD_RETAIL(12),
     UNRECOGNIZED(-1),
     ;
 
@@ -155,14 +223,14 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      * Not specified.
      * </pre>
      *
-     * <code>DESTINATION_ENUM_UNSPECIFIED = 0;</code>
+     * <code>REPORTING_CONTEXT_ENUM_UNSPECIFIED = 0;</code>
      */
-    public static final int DESTINATION_ENUM_UNSPECIFIED_VALUE = 0;
+    public static final int REPORTING_CONTEXT_ENUM_UNSPECIFIED_VALUE = 0;
     /**
      *
      *
      * <pre>
-     * [Shopping ads](https://support.google.com/google-ads/answer/2454022).
+     * [Shopping ads](https://support.google.com/merchants/answer/6149970).
      * </pre>
      *
      * <code>SHOPPING_ADS = 1;</code>
@@ -172,33 +240,66 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * [Discovery and Demand Gen
+     * ads](https://support.google.com/merchants/answer/13389785).
+     * </pre>
+     *
+     * <code>DISCOVERY_ADS = 2;</code>
+     */
+    public static final int DISCOVERY_ADS_VALUE = 2;
+    /**
+     *
+     *
+     * <pre>
+     * [Video ads](https://support.google.com/google-ads/answer/6340491).
+     * </pre>
+     *
+     * <code>VIDEO_ADS = 3;</code>
+     */
+    public static final int VIDEO_ADS_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
      * [Display ads](https://support.google.com/merchants/answer/6069387).
      * </pre>
      *
-     * <code>DISPLAY_ADS = 2;</code>
+     * <code>DISPLAY_ADS = 4;</code>
      */
-    public static final int DISPLAY_ADS_VALUE = 2;
+    public static final int DISPLAY_ADS_VALUE = 4;
     /**
      *
      *
      * <pre>
      * [Local inventory
-     * ads](https://support.google.com/merchants/answer/3057972).
+     * ads](https://support.google.com/merchants/answer/3271956).
      * </pre>
      *
-     * <code>LOCAL_INVENTORY_ADS = 3;</code>
+     * <code>LOCAL_INVENTORY_ADS = 5;</code>
      */
-    public static final int LOCAL_INVENTORY_ADS_VALUE = 3;
+    public static final int LOCAL_INVENTORY_ADS_VALUE = 5;
     /**
      *
      *
      * <pre>
-     * [Free listings](https://support.google.com/merchants/answer/9199328).
+     * [Vehicle inventory
+     * ads](https://support.google.com/merchants/answer/11544533).
      * </pre>
      *
-     * <code>FREE_LISTINGS = 4;</code>
+     * <code>VEHICLE_INVENTORY_ADS = 6;</code>
      */
-    public static final int FREE_LISTINGS_VALUE = 4;
+    public static final int VEHICLE_INVENTORY_ADS_VALUE = 6;
+    /**
+     *
+     *
+     * <pre>
+     * [Free product
+     * listings](https://support.google.com/merchants/answer/9199328).
+     * </pre>
+     *
+     * <code>FREE_LISTINGS = 7;</code>
+     */
+    public static final int FREE_LISTINGS_VALUE = 7;
     /**
      *
      *
@@ -207,19 +308,51 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      * listings](https://support.google.com/merchants/answer/9825611).
      * </pre>
      *
-     * <code>FREE_LOCAL_LISTINGS = 5;</code>
+     * <code>FREE_LOCAL_LISTINGS = 8;</code>
      */
-    public static final int FREE_LOCAL_LISTINGS_VALUE = 5;
+    public static final int FREE_LOCAL_LISTINGS_VALUE = 8;
     /**
      *
      *
      * <pre>
-     * [YouTube Shopping](https://support.google.com/merchants/answer/12362804).
+     * [Free local vehicle
+     * listings](https://support.google.com/merchants/answer/11544533).
      * </pre>
      *
-     * <code>YOUTUBE_SHOPPING = 6;</code>
+     * <code>FREE_LOCAL_VEHICLE_LISTINGS = 9;</code>
      */
-    public static final int YOUTUBE_SHOPPING_VALUE = 6;
+    public static final int FREE_LOCAL_VEHICLE_LISTINGS_VALUE = 9;
+    /**
+     *
+     *
+     * <pre>
+     * [YouTube
+     * Shopping](https://support.google.com/merchants/answer/13478370).
+     * </pre>
+     *
+     * <code>YOUTUBE_SHOPPING = 10;</code>
+     */
+    public static final int YOUTUBE_SHOPPING_VALUE = 10;
+    /**
+     *
+     *
+     * <pre>
+     * [Cloud retail](https://cloud.google.com/solutions/retail).
+     * </pre>
+     *
+     * <code>CLOUD_RETAIL = 11;</code>
+     */
+    public static final int CLOUD_RETAIL_VALUE = 11;
+    /**
+     *
+     *
+     * <pre>
+     * [Local cloud retail](https://cloud.google.com/solutions/retail).
+     * </pre>
+     *
+     * <code>LOCAL_CLOUD_RETAIL = 12;</code>
+     */
+    public static final int LOCAL_CLOUD_RETAIL_VALUE = 12;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -235,7 +368,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static DestinationEnum valueOf(int value) {
+    public static ReportingContextEnum valueOf(int value) {
       return forNumber(value);
     }
 
@@ -243,36 +376,49 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      * @param value The numeric wire value of the corresponding enum entry.
      * @return The enum associated with the given numeric wire value.
      */
-    public static DestinationEnum forNumber(int value) {
+    public static ReportingContextEnum forNumber(int value) {
       switch (value) {
         case 0:
-          return DESTINATION_ENUM_UNSPECIFIED;
+          return REPORTING_CONTEXT_ENUM_UNSPECIFIED;
         case 1:
           return SHOPPING_ADS;
         case 2:
-          return DISPLAY_ADS;
+          return DISCOVERY_ADS;
         case 3:
-          return LOCAL_INVENTORY_ADS;
+          return VIDEO_ADS;
         case 4:
-          return FREE_LISTINGS;
+          return DISPLAY_ADS;
         case 5:
-          return FREE_LOCAL_LISTINGS;
+          return LOCAL_INVENTORY_ADS;
         case 6:
+          return VEHICLE_INVENTORY_ADS;
+        case 7:
+          return FREE_LISTINGS;
+        case 8:
+          return FREE_LOCAL_LISTINGS;
+        case 9:
+          return FREE_LOCAL_VEHICLE_LISTINGS;
+        case 10:
           return YOUTUBE_SHOPPING;
+        case 11:
+          return CLOUD_RETAIL;
+        case 12:
+          return LOCAL_CLOUD_RETAIL;
         default:
           return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<DestinationEnum> internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<ReportingContextEnum>
+        internalGetValueMap() {
       return internalValueMap;
     }
 
-    private static final com.google.protobuf.Internal.EnumLiteMap<DestinationEnum>
+    private static final com.google.protobuf.Internal.EnumLiteMap<ReportingContextEnum>
         internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<DestinationEnum>() {
-              public DestinationEnum findValueByNumber(int number) {
-                return DestinationEnum.forNumber(number);
+            new com.google.protobuf.Internal.EnumLiteMap<ReportingContextEnum>() {
+              public ReportingContextEnum findValueByNumber(int number) {
+                return ReportingContextEnum.forNumber(number);
               }
             };
 
@@ -289,12 +435,12 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.shopping.type.Destination.getDescriptor().getEnumTypes().get(0);
+      return com.google.shopping.type.ReportingContext.getDescriptor().getEnumTypes().get(0);
     }
 
-    private static final DestinationEnum[] VALUES = values();
+    private static final ReportingContextEnum[] VALUES = values();
 
-    public static DestinationEnum valueOf(
+    public static ReportingContextEnum valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
@@ -307,11 +453,11 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
 
     private final int value;
 
-    private DestinationEnum(int value) {
+    private ReportingContextEnum(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:google.shopping.type.Destination.DestinationEnum)
+    // @@protoc_insertion_point(enum_scope:google.shopping.type.ReportingContext.ReportingContextEnum)
   }
 
   private byte memoizedIsInitialized = -1;
@@ -347,10 +493,11 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.shopping.type.Destination)) {
+    if (!(obj instanceof com.google.shopping.type.ReportingContext)) {
       return super.equals(obj);
     }
-    com.google.shopping.type.Destination other = (com.google.shopping.type.Destination) obj;
+    com.google.shopping.type.ReportingContext other =
+        (com.google.shopping.type.ReportingContext) obj;
 
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -368,70 +515,71 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     return hash;
   }
 
-  public static com.google.shopping.type.Destination parseFrom(java.nio.ByteBuffer data)
+  public static com.google.shopping.type.ReportingContext parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.shopping.type.Destination parseFrom(
+  public static com.google.shopping.type.ReportingContext parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.shopping.type.Destination parseFrom(com.google.protobuf.ByteString data)
+  public static com.google.shopping.type.ReportingContext parseFrom(
+      com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.shopping.type.Destination parseFrom(
+  public static com.google.shopping.type.ReportingContext parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.shopping.type.Destination parseFrom(byte[] data)
+  public static com.google.shopping.type.ReportingContext parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.shopping.type.Destination parseFrom(
+  public static com.google.shopping.type.ReportingContext parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.shopping.type.Destination parseFrom(java.io.InputStream input)
+  public static com.google.shopping.type.ReportingContext parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.shopping.type.Destination parseFrom(
+  public static com.google.shopping.type.ReportingContext parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.shopping.type.Destination parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
+  public static com.google.shopping.type.ReportingContext parseDelimitedFrom(
+      java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.shopping.type.Destination parseDelimitedFrom(
+  public static com.google.shopping.type.ReportingContext parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.shopping.type.Destination parseFrom(
+  public static com.google.shopping.type.ReportingContext parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.shopping.type.Destination parseFrom(
+  public static com.google.shopping.type.ReportingContext parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -448,7 +596,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.shopping.type.Destination prototype) {
+  public static Builder newBuilder(com.google.shopping.type.ReportingContext prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -466,34 +614,37 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Destinations available for a product.
+   * Reporting contexts that your account and product issues apply to.
    *
-   * Destinations are used in Merchant Center to allow you to control where the
-   * products from your data feed should be displayed.
+   * Reporting contexts are groups of surfaces and formats for product results on
+   * Google. They can represent the entire destination (for example, [Shopping
+   * ads](https://support.google.com/merchants/answer/6149970)) or a subset of
+   * formats within a destination (for example, [Discovery
+   * ads](https://support.google.com/merchants/answer/13389785)).
    * </pre>
    *
-   * Protobuf type {@code google.shopping.type.Destination}
+   * Protobuf type {@code google.shopping.type.ReportingContext}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.shopping.type.Destination)
-      com.google.shopping.type.DestinationOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.shopping.type.ReportingContext)
+      com.google.shopping.type.ReportingContextOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.shopping.type.TypesProto
-          .internal_static_google_shopping_type_Destination_descriptor;
+          .internal_static_google_shopping_type_ReportingContext_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.shopping.type.TypesProto
-          .internal_static_google_shopping_type_Destination_fieldAccessorTable
+          .internal_static_google_shopping_type_ReportingContext_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.shopping.type.Destination.class,
-              com.google.shopping.type.Destination.Builder.class);
+              com.google.shopping.type.ReportingContext.class,
+              com.google.shopping.type.ReportingContext.Builder.class);
     }
 
-    // Construct using com.google.shopping.type.Destination.newBuilder()
+    // Construct using com.google.shopping.type.ReportingContext.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -509,17 +660,17 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.shopping.type.TypesProto
-          .internal_static_google_shopping_type_Destination_descriptor;
+          .internal_static_google_shopping_type_ReportingContext_descriptor;
     }
 
     @java.lang.Override
-    public com.google.shopping.type.Destination getDefaultInstanceForType() {
-      return com.google.shopping.type.Destination.getDefaultInstance();
+    public com.google.shopping.type.ReportingContext getDefaultInstanceForType() {
+      return com.google.shopping.type.ReportingContext.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.shopping.type.Destination build() {
-      com.google.shopping.type.Destination result = buildPartial();
+    public com.google.shopping.type.ReportingContext build() {
+      com.google.shopping.type.ReportingContext result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -527,8 +678,9 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.shopping.type.Destination buildPartial() {
-      com.google.shopping.type.Destination result = new com.google.shopping.type.Destination(this);
+    public com.google.shopping.type.ReportingContext buildPartial() {
+      com.google.shopping.type.ReportingContext result =
+          new com.google.shopping.type.ReportingContext(this);
       onBuilt();
       return result;
     }
@@ -568,16 +720,16 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.shopping.type.Destination) {
-        return mergeFrom((com.google.shopping.type.Destination) other);
+      if (other instanceof com.google.shopping.type.ReportingContext) {
+        return mergeFrom((com.google.shopping.type.ReportingContext) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.shopping.type.Destination other) {
-      if (other == com.google.shopping.type.Destination.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.shopping.type.ReportingContext other) {
+      if (other == com.google.shopping.type.ReportingContext.getDefaultInstance()) return this;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -632,24 +784,24 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.shopping.type.Destination)
+    // @@protoc_insertion_point(builder_scope:google.shopping.type.ReportingContext)
   }
 
-  // @@protoc_insertion_point(class_scope:google.shopping.type.Destination)
-  private static final com.google.shopping.type.Destination DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.shopping.type.ReportingContext)
+  private static final com.google.shopping.type.ReportingContext DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.shopping.type.Destination();
+    DEFAULT_INSTANCE = new com.google.shopping.type.ReportingContext();
   }
 
-  public static com.google.shopping.type.Destination getDefaultInstance() {
+  public static com.google.shopping.type.ReportingContext getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Destination> PARSER =
-      new com.google.protobuf.AbstractParser<Destination>() {
+  private static final com.google.protobuf.Parser<ReportingContext> PARSER =
+      new com.google.protobuf.AbstractParser<ReportingContext>() {
         @java.lang.Override
-        public Destination parsePartialFrom(
+        public ReportingContext parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -668,17 +820,17 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
         }
       };
 
-  public static com.google.protobuf.Parser<Destination> parser() {
+  public static com.google.protobuf.Parser<ReportingContext> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<Destination> getParserForType() {
+  public com.google.protobuf.Parser<ReportingContext> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.shopping.type.Destination getDefaultInstanceForType() {
+  public com.google.shopping.type.ReportingContext getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

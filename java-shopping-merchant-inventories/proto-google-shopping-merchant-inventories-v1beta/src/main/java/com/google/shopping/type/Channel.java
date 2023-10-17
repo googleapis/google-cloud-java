@@ -22,57 +22,55 @@ package com.google.shopping.type;
  *
  *
  * <pre>
- * Destinations available for a product.
+ * [Channel](https://support.google.com/merchants/answer/7361332) of a product.
  *
- * Destinations are used in Merchant Center to allow you to control where the
- * products from your data feed should be displayed.
+ * Channel is used to distinguish between online and local products.
  * </pre>
  *
- * Protobuf type {@code google.shopping.type.Destination}
+ * Protobuf type {@code google.shopping.type.Channel}
  */
-public final class Destination extends com.google.protobuf.GeneratedMessageV3
+public final class Channel extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.shopping.type.Destination)
-    DestinationOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.shopping.type.Channel)
+    ChannelOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use Destination.newBuilder() to construct.
-  private Destination(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use Channel.newBuilder() to construct.
+  private Channel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private Destination() {}
+  private Channel() {}
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new Destination();
+    return new Channel();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.shopping.type.TypesProto
-        .internal_static_google_shopping_type_Destination_descriptor;
+        .internal_static_google_shopping_type_Channel_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.shopping.type.TypesProto
-        .internal_static_google_shopping_type_Destination_fieldAccessorTable
+        .internal_static_google_shopping_type_Channel_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.shopping.type.Destination.class,
-            com.google.shopping.type.Destination.Builder.class);
+            com.google.shopping.type.Channel.class, com.google.shopping.type.Channel.Builder.class);
   }
 
   /**
    *
    *
    * <pre>
-   * Destination values.
+   * Channel values.
    * </pre>
    *
-   * Protobuf enum {@code google.shopping.type.Destination.DestinationEnum}
+   * Protobuf enum {@code google.shopping.type.Channel.ChannelEnum}
    */
-  public enum DestinationEnum implements com.google.protobuf.ProtocolMessageEnum {
+  public enum ChannelEnum implements com.google.protobuf.ProtocolMessageEnum {
     /**
      *
      *
@@ -80,71 +78,29 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      * Not specified.
      * </pre>
      *
-     * <code>DESTINATION_ENUM_UNSPECIFIED = 0;</code>
+     * <code>CHANNEL_ENUM_UNSPECIFIED = 0;</code>
      */
-    DESTINATION_ENUM_UNSPECIFIED(0),
+    CHANNEL_ENUM_UNSPECIFIED(0),
     /**
      *
      *
      * <pre>
-     * [Shopping ads](https://support.google.com/google-ads/answer/2454022).
+     * Online product.
      * </pre>
      *
-     * <code>SHOPPING_ADS = 1;</code>
+     * <code>ONLINE = 1;</code>
      */
-    SHOPPING_ADS(1),
+    ONLINE(1),
     /**
      *
      *
      * <pre>
-     * [Display ads](https://support.google.com/merchants/answer/6069387).
+     * Local product.
      * </pre>
      *
-     * <code>DISPLAY_ADS = 2;</code>
+     * <code>LOCAL = 2;</code>
      */
-    DISPLAY_ADS(2),
-    /**
-     *
-     *
-     * <pre>
-     * [Local inventory
-     * ads](https://support.google.com/merchants/answer/3057972).
-     * </pre>
-     *
-     * <code>LOCAL_INVENTORY_ADS = 3;</code>
-     */
-    LOCAL_INVENTORY_ADS(3),
-    /**
-     *
-     *
-     * <pre>
-     * [Free listings](https://support.google.com/merchants/answer/9199328).
-     * </pre>
-     *
-     * <code>FREE_LISTINGS = 4;</code>
-     */
-    FREE_LISTINGS(4),
-    /**
-     *
-     *
-     * <pre>
-     * [Free local product
-     * listings](https://support.google.com/merchants/answer/9825611).
-     * </pre>
-     *
-     * <code>FREE_LOCAL_LISTINGS = 5;</code>
-     */
-    FREE_LOCAL_LISTINGS(5),
-    /**
-     *
-     *
-     * <pre>
-     * [YouTube Shopping](https://support.google.com/merchants/answer/12362804).
-     * </pre>
-     *
-     * <code>YOUTUBE_SHOPPING = 6;</code>
-     */
-    YOUTUBE_SHOPPING(6),
+    LOCAL(2),
     UNRECOGNIZED(-1),
     ;
 
@@ -155,71 +111,29 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      * Not specified.
      * </pre>
      *
-     * <code>DESTINATION_ENUM_UNSPECIFIED = 0;</code>
+     * <code>CHANNEL_ENUM_UNSPECIFIED = 0;</code>
      */
-    public static final int DESTINATION_ENUM_UNSPECIFIED_VALUE = 0;
+    public static final int CHANNEL_ENUM_UNSPECIFIED_VALUE = 0;
     /**
      *
      *
      * <pre>
-     * [Shopping ads](https://support.google.com/google-ads/answer/2454022).
+     * Online product.
      * </pre>
      *
-     * <code>SHOPPING_ADS = 1;</code>
+     * <code>ONLINE = 1;</code>
      */
-    public static final int SHOPPING_ADS_VALUE = 1;
+    public static final int ONLINE_VALUE = 1;
     /**
      *
      *
      * <pre>
-     * [Display ads](https://support.google.com/merchants/answer/6069387).
+     * Local product.
      * </pre>
      *
-     * <code>DISPLAY_ADS = 2;</code>
+     * <code>LOCAL = 2;</code>
      */
-    public static final int DISPLAY_ADS_VALUE = 2;
-    /**
-     *
-     *
-     * <pre>
-     * [Local inventory
-     * ads](https://support.google.com/merchants/answer/3057972).
-     * </pre>
-     *
-     * <code>LOCAL_INVENTORY_ADS = 3;</code>
-     */
-    public static final int LOCAL_INVENTORY_ADS_VALUE = 3;
-    /**
-     *
-     *
-     * <pre>
-     * [Free listings](https://support.google.com/merchants/answer/9199328).
-     * </pre>
-     *
-     * <code>FREE_LISTINGS = 4;</code>
-     */
-    public static final int FREE_LISTINGS_VALUE = 4;
-    /**
-     *
-     *
-     * <pre>
-     * [Free local product
-     * listings](https://support.google.com/merchants/answer/9825611).
-     * </pre>
-     *
-     * <code>FREE_LOCAL_LISTINGS = 5;</code>
-     */
-    public static final int FREE_LOCAL_LISTINGS_VALUE = 5;
-    /**
-     *
-     *
-     * <pre>
-     * [YouTube Shopping](https://support.google.com/merchants/answer/12362804).
-     * </pre>
-     *
-     * <code>YOUTUBE_SHOPPING = 6;</code>
-     */
-    public static final int YOUTUBE_SHOPPING_VALUE = 6;
+    public static final int LOCAL_VALUE = 2;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -235,7 +149,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static DestinationEnum valueOf(int value) {
+    public static ChannelEnum valueOf(int value) {
       return forNumber(value);
     }
 
@@ -243,38 +157,29 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
      * @param value The numeric wire value of the corresponding enum entry.
      * @return The enum associated with the given numeric wire value.
      */
-    public static DestinationEnum forNumber(int value) {
+    public static ChannelEnum forNumber(int value) {
       switch (value) {
         case 0:
-          return DESTINATION_ENUM_UNSPECIFIED;
+          return CHANNEL_ENUM_UNSPECIFIED;
         case 1:
-          return SHOPPING_ADS;
+          return ONLINE;
         case 2:
-          return DISPLAY_ADS;
-        case 3:
-          return LOCAL_INVENTORY_ADS;
-        case 4:
-          return FREE_LISTINGS;
-        case 5:
-          return FREE_LOCAL_LISTINGS;
-        case 6:
-          return YOUTUBE_SHOPPING;
+          return LOCAL;
         default:
           return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<DestinationEnum> internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<ChannelEnum> internalGetValueMap() {
       return internalValueMap;
     }
 
-    private static final com.google.protobuf.Internal.EnumLiteMap<DestinationEnum>
-        internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<DestinationEnum>() {
-              public DestinationEnum findValueByNumber(int number) {
-                return DestinationEnum.forNumber(number);
-              }
-            };
+    private static final com.google.protobuf.Internal.EnumLiteMap<ChannelEnum> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ChannelEnum>() {
+          public ChannelEnum findValueByNumber(int number) {
+            return ChannelEnum.forNumber(number);
+          }
+        };
 
     public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       if (this == UNRECOGNIZED) {
@@ -289,13 +194,12 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     }
 
     public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-      return com.google.shopping.type.Destination.getDescriptor().getEnumTypes().get(0);
+      return com.google.shopping.type.Channel.getDescriptor().getEnumTypes().get(0);
     }
 
-    private static final DestinationEnum[] VALUES = values();
+    private static final ChannelEnum[] VALUES = values();
 
-    public static DestinationEnum valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static ChannelEnum valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
@@ -307,11 +211,11 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
 
     private final int value;
 
-    private DestinationEnum(int value) {
+    private ChannelEnum(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:google.shopping.type.Destination.DestinationEnum)
+    // @@protoc_insertion_point(enum_scope:google.shopping.type.Channel.ChannelEnum)
   }
 
   private byte memoizedIsInitialized = -1;
@@ -347,10 +251,10 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.shopping.type.Destination)) {
+    if (!(obj instanceof com.google.shopping.type.Channel)) {
       return super.equals(obj);
     }
-    com.google.shopping.type.Destination other = (com.google.shopping.type.Destination) obj;
+    com.google.shopping.type.Channel other = (com.google.shopping.type.Channel) obj;
 
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -368,70 +272,70 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     return hash;
   }
 
-  public static com.google.shopping.type.Destination parseFrom(java.nio.ByteBuffer data)
+  public static com.google.shopping.type.Channel parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.shopping.type.Destination parseFrom(
+  public static com.google.shopping.type.Channel parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.shopping.type.Destination parseFrom(com.google.protobuf.ByteString data)
+  public static com.google.shopping.type.Channel parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.shopping.type.Destination parseFrom(
+  public static com.google.shopping.type.Channel parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.shopping.type.Destination parseFrom(byte[] data)
+  public static com.google.shopping.type.Channel parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.shopping.type.Destination parseFrom(
+  public static com.google.shopping.type.Channel parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.shopping.type.Destination parseFrom(java.io.InputStream input)
+  public static com.google.shopping.type.Channel parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.shopping.type.Destination parseFrom(
+  public static com.google.shopping.type.Channel parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.shopping.type.Destination parseDelimitedFrom(java.io.InputStream input)
+  public static com.google.shopping.type.Channel parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.shopping.type.Destination parseDelimitedFrom(
+  public static com.google.shopping.type.Channel parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.shopping.type.Destination parseFrom(
+  public static com.google.shopping.type.Channel parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.shopping.type.Destination parseFrom(
+  public static com.google.shopping.type.Channel parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -448,7 +352,7 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.shopping.type.Destination prototype) {
+  public static Builder newBuilder(com.google.shopping.type.Channel prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -466,34 +370,33 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Destinations available for a product.
+   * [Channel](https://support.google.com/merchants/answer/7361332) of a product.
    *
-   * Destinations are used in Merchant Center to allow you to control where the
-   * products from your data feed should be displayed.
+   * Channel is used to distinguish between online and local products.
    * </pre>
    *
-   * Protobuf type {@code google.shopping.type.Destination}
+   * Protobuf type {@code google.shopping.type.Channel}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.shopping.type.Destination)
-      com.google.shopping.type.DestinationOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.shopping.type.Channel)
+      com.google.shopping.type.ChannelOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.shopping.type.TypesProto
-          .internal_static_google_shopping_type_Destination_descriptor;
+          .internal_static_google_shopping_type_Channel_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.shopping.type.TypesProto
-          .internal_static_google_shopping_type_Destination_fieldAccessorTable
+          .internal_static_google_shopping_type_Channel_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.shopping.type.Destination.class,
-              com.google.shopping.type.Destination.Builder.class);
+              com.google.shopping.type.Channel.class,
+              com.google.shopping.type.Channel.Builder.class);
     }
 
-    // Construct using com.google.shopping.type.Destination.newBuilder()
+    // Construct using com.google.shopping.type.Channel.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -509,17 +412,17 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.shopping.type.TypesProto
-          .internal_static_google_shopping_type_Destination_descriptor;
+          .internal_static_google_shopping_type_Channel_descriptor;
     }
 
     @java.lang.Override
-    public com.google.shopping.type.Destination getDefaultInstanceForType() {
-      return com.google.shopping.type.Destination.getDefaultInstance();
+    public com.google.shopping.type.Channel getDefaultInstanceForType() {
+      return com.google.shopping.type.Channel.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.shopping.type.Destination build() {
-      com.google.shopping.type.Destination result = buildPartial();
+    public com.google.shopping.type.Channel build() {
+      com.google.shopping.type.Channel result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -527,8 +430,8 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
     }
 
     @java.lang.Override
-    public com.google.shopping.type.Destination buildPartial() {
-      com.google.shopping.type.Destination result = new com.google.shopping.type.Destination(this);
+    public com.google.shopping.type.Channel buildPartial() {
+      com.google.shopping.type.Channel result = new com.google.shopping.type.Channel(this);
       onBuilt();
       return result;
     }
@@ -568,16 +471,16 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.shopping.type.Destination) {
-        return mergeFrom((com.google.shopping.type.Destination) other);
+      if (other instanceof com.google.shopping.type.Channel) {
+        return mergeFrom((com.google.shopping.type.Channel) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.shopping.type.Destination other) {
-      if (other == com.google.shopping.type.Destination.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.google.shopping.type.Channel other) {
+      if (other == com.google.shopping.type.Channel.getDefaultInstance()) return this;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -632,24 +535,24 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.shopping.type.Destination)
+    // @@protoc_insertion_point(builder_scope:google.shopping.type.Channel)
   }
 
-  // @@protoc_insertion_point(class_scope:google.shopping.type.Destination)
-  private static final com.google.shopping.type.Destination DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.shopping.type.Channel)
+  private static final com.google.shopping.type.Channel DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.shopping.type.Destination();
+    DEFAULT_INSTANCE = new com.google.shopping.type.Channel();
   }
 
-  public static com.google.shopping.type.Destination getDefaultInstance() {
+  public static com.google.shopping.type.Channel getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Destination> PARSER =
-      new com.google.protobuf.AbstractParser<Destination>() {
+  private static final com.google.protobuf.Parser<Channel> PARSER =
+      new com.google.protobuf.AbstractParser<Channel>() {
         @java.lang.Override
-        public Destination parsePartialFrom(
+        public Channel parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -668,17 +571,17 @@ public final class Destination extends com.google.protobuf.GeneratedMessageV3
         }
       };
 
-  public static com.google.protobuf.Parser<Destination> parser() {
+  public static com.google.protobuf.Parser<Channel> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<Destination> getParserForType() {
+  public com.google.protobuf.Parser<Channel> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.shopping.type.Destination getDefaultInstanceForType() {
+  public com.google.shopping.type.Channel getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

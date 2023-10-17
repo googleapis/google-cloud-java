@@ -30,6 +30,8 @@ public interface PriceOrBuilder
    * The price represented as a number in micros (1 million micros is an
    * equivalent to one's currency standard unit, for example, 1 USD = 1000000
    * micros).
+   * This field can also be set as infinity by setting to -1.
+   * This field only support -1 and positive value.
    * </pre>
    *
    * <code>optional int64 amount_micros = 1;</code>
@@ -44,6 +46,8 @@ public interface PriceOrBuilder
    * The price represented as a number in micros (1 million micros is an
    * equivalent to one's currency standard unit, for example, 1 USD = 1000000
    * micros).
+   * This field can also be set as infinity by setting to -1.
+   * This field only support -1 and positive value.
    * </pre>
    *
    * <code>optional int64 amount_micros = 1;</code>
