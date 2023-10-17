@@ -2,6 +2,11 @@
 
 # Script to verify the presence of GraalVM docker test images tagged with the latest java-shared-config version.
 
+set -o pipefail
+
+# Output commands executed.
+set -x
+
 function fetch_image_names() {
   imageNames="$(grep "  - gcr.io/cloud-devrel-public-resources/" .cloudbuild/cloudbuild.yaml | cut -d "/" -f 3 | cut -d ":" -f 1)"
   export imageNames
@@ -30,9 +35,10 @@ if [[ "${branchName}" == *"release-please--branches--main"* ]] && [[ ! $gitCommi
     gcloud container images describe "${fullContainerName}" > /dev/null; exit_status=$?
     if [[ $exit_status = 0 ]]; then
       echo "Success. Found $fullContainerName."
+    else
+      exit $exit_status
     fi
   done
-  RETURN_CODE=$?
 else
   echo "Skipping check for non-release and SNAPSHOT update branches"
   exit 0
