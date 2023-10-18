@@ -16,6 +16,8 @@ branchProtectionRules:
       - lint
       - OwlBot Post Processor
       - 'Kokoro - Test: Integration'
+      - 'Kokoro - Test: Java GraalVM Native Image'
+      - 'Kokoro - Test: Java 17 GraalVM Native Image'
   - pattern: 1.0.x
     isAdminEnforced: true
     requiredApprovingReviewCount: 1
