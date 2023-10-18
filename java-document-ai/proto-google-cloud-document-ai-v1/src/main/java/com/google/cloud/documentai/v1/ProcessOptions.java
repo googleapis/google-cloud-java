@@ -907,8 +907,8 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Only process certain pages from the start. Process all if the document
-   * has fewer pages.
+   * Only process certain pages from the start, process all if the document
+   * has less pages.
    * </pre>
    *
    * <code>int32 from_start = 6;</code>
@@ -923,8 +923,8 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Only process certain pages from the start. Process all if the document
-   * has fewer pages.
+   * Only process certain pages from the start, process all if the document
+   * has less pages.
    * </pre>
    *
    * <code>int32 from_start = 6;</code>
@@ -1743,8 +1743,8 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only process certain pages from the start. Process all if the document
-     * has fewer pages.
+     * Only process certain pages from the start, process all if the document
+     * has less pages.
      * </pre>
      *
      * <code>int32 from_start = 6;</code>
@@ -1758,8 +1758,8 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only process certain pages from the start. Process all if the document
-     * has fewer pages.
+     * Only process certain pages from the start, process all if the document
+     * has less pages.
      * </pre>
      *
      * <code>int32 from_start = 6;</code>
@@ -1776,8 +1776,8 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only process certain pages from the start. Process all if the document
-     * has fewer pages.
+     * Only process certain pages from the start, process all if the document
+     * has less pages.
      * </pre>
      *
      * <code>int32 from_start = 6;</code>
@@ -1796,8 +1796,8 @@ public final class ProcessOptions extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Only process certain pages from the start. Process all if the document
-     * has fewer pages.
+     * Only process certain pages from the start, process all if the document
+     * has less pages.
      * </pre>
      *
      * <code>int32 from_start = 6;</code>
