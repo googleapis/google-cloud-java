@@ -684,3 +684,5 @@ google-shopping-merchant-reports:0.4.0:0.4.0
 proto-google-shopping-merchant-reports-v1beta:0.4.0:0.4.0
 grpc-google-shopping-merchant-reports-v1beta:0.4.0:0.4.0
 proto-google-cloud-alloydb-connectors-v1:0.6.0:0.6.0
+proto-google-cloud-discoveryengine-v1alpha:0.24.0:0.24.0
+grpc-google-cloud-discoveryengine-v1alpha:0.24.0:0.24.0

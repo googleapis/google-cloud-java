@@ -41,6 +41,11 @@
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-discoveryengine-v1alpha</artifactId>
+        <version>0.24.0</version><!-- {x-version-update:grpc-google-cloud-discoveryengine-v1alpha:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-discoveryengine-v1beta</artifactId>
         <version>0.24.0</version><!-- {x-version-update:proto-google-cloud-discoveryengine-v1beta:current} -->
       </dependency>
@@ -48,6 +53,11 @@
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-discoveryengine-v1</artifactId>
         <version>0.24.0</version><!-- {x-version-update:proto-google-cloud-discoveryengine-v1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-discoveryengine-v1alpha</artifactId>
+        <version>0.24.0</version><!-- {x-version-update:proto-google-cloud-discoveryengine-v1alpha:current} -->
       </dependency>
     </dependencies>
   </dependencyManagement>
