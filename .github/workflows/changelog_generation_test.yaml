@@ -6,6 +6,9 @@ on:
     paths:
     - .github/release-note-generation/**
 
+permissions:
+  contents: read
+
 jobs:
   changelog-generation-test:
     runs-on: ubuntu-latest
