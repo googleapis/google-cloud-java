@@ -18,6 +18,8 @@ on:
   # every hour
   - cron: '0 * * * *'
 name: owlbot_lock_update
+permissions:
+  contents: read
 jobs:
   update:
     # ubuntu-22.04 has gcloud command
