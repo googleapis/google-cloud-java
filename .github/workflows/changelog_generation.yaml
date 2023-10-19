@@ -5,6 +5,9 @@ on:
 
 name: CHANGELOG.md generation upon Release Please pull requests
 
+permissions:
+  contents: read
+
 jobs:
   print-github-context:
     runs-on: ubuntu-latest
