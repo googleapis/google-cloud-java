@@ -92,6 +92,16 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Rollout updated.
+   * </pre>
+   *
+   * <code>TYPE_ROLLOUT_UPDATE = 7;</code>
+   */
+  TYPE_ROLLOUT_UPDATE(7),
+  /**
+   *
+   *
+   * <pre>
    * Deprecated: This field is never used. Use release_render log type instead.
    * </pre>
    *
@@ -166,6 +176,16 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Rollout updated.
+   * </pre>
+   *
+   * <code>TYPE_ROLLOUT_UPDATE = 7;</code>
+   */
+  public static final int TYPE_ROLLOUT_UPDATE_VALUE = 7;
+  /**
+   *
+   *
+   * <pre>
    * Deprecated: This field is never used. Use release_render log type instead.
    * </pre>
    *
@@ -209,6 +229,8 @@ public enum Type implements com.google.protobuf.ProtocolMessageEnum {
         return TYPE_RESTRICTION_VIOLATED;
       case 6:
         return TYPE_RESOURCE_DELETED;
+      case 7:
+        return TYPE_ROLLOUT_UPDATE;
       case 2:
         return TYPE_RENDER_STATUES_CHANGE;
       default:
