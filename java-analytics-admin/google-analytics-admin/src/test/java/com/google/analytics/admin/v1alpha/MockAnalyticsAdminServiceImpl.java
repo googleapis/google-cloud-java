@@ -290,218 +290,6 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
   }
 
   @Override
-  public void getUserLink(GetUserLinkRequest request, StreamObserver<UserLink> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof UserLink) {
-      requests.add(request);
-      responseObserver.onNext(((UserLink) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method GetUserLink, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  UserLink.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void batchGetUserLinks(
-      BatchGetUserLinksRequest request,
-      StreamObserver<BatchGetUserLinksResponse> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof BatchGetUserLinksResponse) {
-      requests.add(request);
-      responseObserver.onNext(((BatchGetUserLinksResponse) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method BatchGetUserLinks, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  BatchGetUserLinksResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void listUserLinks(
-      ListUserLinksRequest request, StreamObserver<ListUserLinksResponse> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof ListUserLinksResponse) {
-      requests.add(request);
-      responseObserver.onNext(((ListUserLinksResponse) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method ListUserLinks, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  ListUserLinksResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void auditUserLinks(
-      AuditUserLinksRequest request, StreamObserver<AuditUserLinksResponse> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof AuditUserLinksResponse) {
-      requests.add(request);
-      responseObserver.onNext(((AuditUserLinksResponse) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method AuditUserLinks, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  AuditUserLinksResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void createUserLink(
-      CreateUserLinkRequest request, StreamObserver<UserLink> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof UserLink) {
-      requests.add(request);
-      responseObserver.onNext(((UserLink) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method CreateUserLink, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  UserLink.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void batchCreateUserLinks(
-      BatchCreateUserLinksRequest request,
-      StreamObserver<BatchCreateUserLinksResponse> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof BatchCreateUserLinksResponse) {
-      requests.add(request);
-      responseObserver.onNext(((BatchCreateUserLinksResponse) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method BatchCreateUserLinks, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  BatchCreateUserLinksResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void updateUserLink(
-      UpdateUserLinkRequest request, StreamObserver<UserLink> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof UserLink) {
-      requests.add(request);
-      responseObserver.onNext(((UserLink) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method UpdateUserLink, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  UserLink.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void batchUpdateUserLinks(
-      BatchUpdateUserLinksRequest request,
-      StreamObserver<BatchUpdateUserLinksResponse> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof BatchUpdateUserLinksResponse) {
-      requests.add(request);
-      responseObserver.onNext(((BatchUpdateUserLinksResponse) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method BatchUpdateUserLinks, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  BatchUpdateUserLinksResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void deleteUserLink(
-      DeleteUserLinkRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Empty) {
-      requests.add(request);
-      responseObserver.onNext(((Empty) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method DeleteUserLink, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Empty.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void batchDeleteUserLinks(
-      BatchDeleteUserLinksRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Empty) {
-      requests.add(request);
-      responseObserver.onNext(((Empty) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method BatchDeleteUserLinks, expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Empty.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
   public void createFirebaseLink(
       CreateFirebaseLinkRequest request, StreamObserver<FirebaseLink> responseObserver) {
     Object response = responses.poll();
@@ -2790,6 +2578,224 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
                   "Unrecognized response type %s for method DeleteEventCreateRule, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateDataRedactionSettings(
+      UpdateDataRedactionSettingsRequest request,
+      StreamObserver<DataRedactionSettings> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DataRedactionSettings) {
+      requests.add(request);
+      responseObserver.onNext(((DataRedactionSettings) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateDataRedactionSettings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DataRedactionSettings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getDataRedactionSettings(
+      GetDataRedactionSettingsRequest request,
+      StreamObserver<DataRedactionSettings> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DataRedactionSettings) {
+      requests.add(request);
+      responseObserver.onNext(((DataRedactionSettings) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetDataRedactionSettings, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DataRedactionSettings.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createRollupProperty(
+      CreateRollupPropertyRequest request,
+      StreamObserver<CreateRollupPropertyResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CreateRollupPropertyResponse) {
+      requests.add(request);
+      responseObserver.onNext(((CreateRollupPropertyResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateRollupProperty, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CreateRollupPropertyResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getRollupPropertySourceLink(
+      GetRollupPropertySourceLinkRequest request,
+      StreamObserver<RollupPropertySourceLink> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RollupPropertySourceLink) {
+      requests.add(request);
+      responseObserver.onNext(((RollupPropertySourceLink) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetRollupPropertySourceLink, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RollupPropertySourceLink.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void listRollupPropertySourceLinks(
+      ListRollupPropertySourceLinksRequest request,
+      StreamObserver<ListRollupPropertySourceLinksResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListRollupPropertySourceLinksResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListRollupPropertySourceLinksResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListRollupPropertySourceLinks, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListRollupPropertySourceLinksResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createRollupPropertySourceLink(
+      CreateRollupPropertySourceLinkRequest request,
+      StreamObserver<RollupPropertySourceLink> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof RollupPropertySourceLink) {
+      requests.add(request);
+      responseObserver.onNext(((RollupPropertySourceLink) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateRollupPropertySourceLink, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  RollupPropertySourceLink.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteRollupPropertySourceLink(
+      DeleteRollupPropertySourceLinkRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteRollupPropertySourceLink, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createSubproperty(
+      CreateSubpropertyRequest request,
+      StreamObserver<CreateSubpropertyResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof CreateSubpropertyResponse) {
+      requests.add(request);
+      responseObserver.onNext(((CreateSubpropertyResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateSubproperty, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  CreateSubpropertyResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteSubpropertyEventFilter(
+      DeleteSubpropertyEventFilterRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteSubpropertyEventFilter, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createSubpropertyEventFilter(
+      CreateSubpropertyEventFilterRequest request,
+      StreamObserver<SubpropertyEventFilter> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SubpropertyEventFilter) {
+      requests.add(request);
+      responseObserver.onNext(((SubpropertyEventFilter) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateSubpropertyEventFilter, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SubpropertyEventFilter.class.getName(),
                   Exception.class.getName())));
     }
   }

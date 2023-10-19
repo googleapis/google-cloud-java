@@ -418,7 +418,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * restored using the Trash Can UI.
    *
    * <p>If the accounts are not restored before the expiration time, the account and all child
-   * resources (eg: Properties, GoogleAdsLinks, Streams, UserLinks) will be permanently purged.
+   * resources (eg: Properties, GoogleAdsLinks, Streams, AccessBindings) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
    * <p>Returns an error if the target is not found.
@@ -456,7 +456,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * restored using the Trash Can UI.
    *
    * <p>If the accounts are not restored before the expiration time, the account and all child
-   * resources (eg: Properties, GoogleAdsLinks, Streams, UserLinks) will be permanently purged.
+   * resources (eg: Properties, GoogleAdsLinks, Streams, AccessBindings) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
    * <p>Returns an error if the target is not found.
@@ -493,7 +493,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * restored using the Trash Can UI.
    *
    * <p>If the accounts are not restored before the expiration time, the account and all child
-   * resources (eg: Properties, GoogleAdsLinks, Streams, UserLinks) will be permanently purged.
+   * resources (eg: Properties, GoogleAdsLinks, Streams, AccessBindings) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
    * <p>Returns an error if the target is not found.
@@ -529,7 +529,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * restored using the Trash Can UI.
    *
    * <p>If the accounts are not restored before the expiration time, the account and all child
-   * resources (eg: Properties, GoogleAdsLinks, Streams, UserLinks) will be permanently purged.
+   * resources (eg: Properties, GoogleAdsLinks, Streams, AccessBindings) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
    * <p>Returns an error if the target is not found.
@@ -1145,7 +1145,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * restored using the Trash Can UI.
    *
    * <p>If the properties are not restored before the expiration time, the Property and all child
-   * resources (eg: GoogleAdsLinks, Streams, UserLinks) will be permanently purged.
+   * resources (eg: GoogleAdsLinks, Streams, AccessBindings) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
    * <p>Returns an error if the target is not found, or is not a GA4 Property.
@@ -1183,7 +1183,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * restored using the Trash Can UI.
    *
    * <p>If the properties are not restored before the expiration time, the Property and all child
-   * resources (eg: GoogleAdsLinks, Streams, UserLinks) will be permanently purged.
+   * resources (eg: GoogleAdsLinks, Streams, AccessBindings) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
    * <p>Returns an error if the target is not found, or is not a GA4 Property.
@@ -1220,7 +1220,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * restored using the Trash Can UI.
    *
    * <p>If the properties are not restored before the expiration time, the Property and all child
-   * resources (eg: GoogleAdsLinks, Streams, UserLinks) will be permanently purged.
+   * resources (eg: GoogleAdsLinks, Streams, AccessBindings) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
    * <p>Returns an error if the target is not found, or is not a GA4 Property.
@@ -1258,7 +1258,7 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * restored using the Trash Can UI.
    *
    * <p>If the properties are not restored before the expiration time, the Property and all child
-   * resources (eg: GoogleAdsLinks, Streams, UserLinks) will be permanently purged.
+   * resources (eg: GoogleAdsLinks, Streams, AccessBindings) will be permanently purged.
    * https://support.google.com/analytics/answer/6154772
    *
    * <p>Returns an error if the target is not found, or is not a GA4 Property.
@@ -1379,1074 +1379,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<UpdatePropertyRequest, Property> updatePropertyCallable() {
     return stub.updatePropertyCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets information about a user's link to an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   UserLinkName name = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]");
-   *   UserLink response = analyticsAdminServiceClient.getUserLink(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. Example format: accounts/1234/userLinks/5678
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final UserLink getUserLink(UserLinkName name) {
-    GetUserLinkRequest request =
-        GetUserLinkRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    return getUserLink(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets information about a user's link to an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   String name = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString();
-   *   UserLink response = analyticsAdminServiceClient.getUserLink(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. Example format: accounts/1234/userLinks/5678
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final UserLink getUserLink(String name) {
-    GetUserLinkRequest request = GetUserLinkRequest.newBuilder().setName(name).build();
-    return getUserLink(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets information about a user's link to an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   GetUserLinkRequest request =
-   *       GetUserLinkRequest.newBuilder()
-   *           .setName(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
-   *           .build();
-   *   UserLink response = analyticsAdminServiceClient.getUserLink(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final UserLink getUserLink(GetUserLinkRequest request) {
-    return getUserLinkCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets information about a user's link to an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   GetUserLinkRequest request =
-   *       GetUserLinkRequest.newBuilder()
-   *           .setName(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
-   *           .build();
-   *   ApiFuture<UserLink> future =
-   *       analyticsAdminServiceClient.getUserLinkCallable().futureCall(request);
-   *   // Do something.
-   *   UserLink response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<GetUserLinkRequest, UserLink> getUserLinkCallable() {
-    return stub.getUserLinkCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets information about multiple users' links to an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   BatchGetUserLinksRequest request =
-   *       BatchGetUserLinksRequest.newBuilder()
-   *           .setParent(AccountName.of("[ACCOUNT]").toString())
-   *           .addAllNames(new ArrayList<String>())
-   *           .build();
-   *   BatchGetUserLinksResponse response = analyticsAdminServiceClient.batchGetUserLinks(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final BatchGetUserLinksResponse batchGetUserLinks(BatchGetUserLinksRequest request) {
-    return batchGetUserLinksCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Gets information about multiple users' links to an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   BatchGetUserLinksRequest request =
-   *       BatchGetUserLinksRequest.newBuilder()
-   *           .setParent(AccountName.of("[ACCOUNT]").toString())
-   *           .addAllNames(new ArrayList<String>())
-   *           .build();
-   *   ApiFuture<BatchGetUserLinksResponse> future =
-   *       analyticsAdminServiceClient.batchGetUserLinksCallable().futureCall(request);
-   *   // Do something.
-   *   BatchGetUserLinksResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<BatchGetUserLinksRequest, BatchGetUserLinksResponse>
-      batchGetUserLinksCallable() {
-    return stub.batchGetUserLinksCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists all user links on an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   AccountName parent = AccountName.of("[ACCOUNT]");
-   *   for (UserLink element : analyticsAdminServiceClient.listUserLinks(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param parent Required. Example format: accounts/1234
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListUserLinksPagedResponse listUserLinks(AccountName parent) {
-    ListUserLinksRequest request =
-        ListUserLinksRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
-    return listUserLinks(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists all user links on an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   PropertyName parent = PropertyName.of("[PROPERTY]");
-   *   for (UserLink element : analyticsAdminServiceClient.listUserLinks(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param parent Required. Example format: accounts/1234
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListUserLinksPagedResponse listUserLinks(PropertyName parent) {
-    ListUserLinksRequest request =
-        ListUserLinksRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .build();
-    return listUserLinks(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists all user links on an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   String parent = AccountName.of("[ACCOUNT]").toString();
-   *   for (UserLink element : analyticsAdminServiceClient.listUserLinks(parent).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param parent Required. Example format: accounts/1234
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListUserLinksPagedResponse listUserLinks(String parent) {
-    ListUserLinksRequest request = ListUserLinksRequest.newBuilder().setParent(parent).build();
-    return listUserLinks(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists all user links on an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   ListUserLinksRequest request =
-   *       ListUserLinksRequest.newBuilder()
-   *           .setParent(AccountName.of("[ACCOUNT]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   for (UserLink element : analyticsAdminServiceClient.listUserLinks(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListUserLinksPagedResponse listUserLinks(ListUserLinksRequest request) {
-    return listUserLinksPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists all user links on an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   ListUserLinksRequest request =
-   *       ListUserLinksRequest.newBuilder()
-   *           .setParent(AccountName.of("[ACCOUNT]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   ApiFuture<UserLink> future =
-   *       analyticsAdminServiceClient.listUserLinksPagedCallable().futureCall(request);
-   *   // Do something.
-   *   for (UserLink element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<ListUserLinksRequest, ListUserLinksPagedResponse>
-      listUserLinksPagedCallable() {
-    return stub.listUserLinksPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists all user links on an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   ListUserLinksRequest request =
-   *       ListUserLinksRequest.newBuilder()
-   *           .setParent(AccountName.of("[ACCOUNT]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   while (true) {
-   *     ListUserLinksResponse response =
-   *         analyticsAdminServiceClient.listUserLinksCallable().call(request);
-   *     for (UserLink element : response.getUserLinksList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<ListUserLinksRequest, ListUserLinksResponse> listUserLinksCallable() {
-    return stub.listUserLinksCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists all user links on an account or property, including implicit ones that come from
-   * effective permissions granted by groups or organization admin roles.
-   *
-   * <p>If a returned user link does not have direct permissions, they cannot be removed from the
-   * account or property directly with the DeleteUserLink command. They have to be removed from the
-   * group/etc that gives them permissions, which is currently only usable/discoverable in the GA or
-   * GMP UIs.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   AuditUserLinksRequest request =
-   *       AuditUserLinksRequest.newBuilder()
-   *           .setParent(AccountName.of("[ACCOUNT]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   for (AuditUserLink element :
-   *       analyticsAdminServiceClient.auditUserLinks(request).iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final AuditUserLinksPagedResponse auditUserLinks(AuditUserLinksRequest request) {
-    return auditUserLinksPagedCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists all user links on an account or property, including implicit ones that come from
-   * effective permissions granted by groups or organization admin roles.
-   *
-   * <p>If a returned user link does not have direct permissions, they cannot be removed from the
-   * account or property directly with the DeleteUserLink command. They have to be removed from the
-   * group/etc that gives them permissions, which is currently only usable/discoverable in the GA or
-   * GMP UIs.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   AuditUserLinksRequest request =
-   *       AuditUserLinksRequest.newBuilder()
-   *           .setParent(AccountName.of("[ACCOUNT]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   ApiFuture<AuditUserLink> future =
-   *       analyticsAdminServiceClient.auditUserLinksPagedCallable().futureCall(request);
-   *   // Do something.
-   *   for (AuditUserLink element : future.get().iterateAll()) {
-   *     // doThingsWith(element);
-   *   }
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<AuditUserLinksRequest, AuditUserLinksPagedResponse>
-      auditUserLinksPagedCallable() {
-    return stub.auditUserLinksPagedCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists all user links on an account or property, including implicit ones that come from
-   * effective permissions granted by groups or organization admin roles.
-   *
-   * <p>If a returned user link does not have direct permissions, they cannot be removed from the
-   * account or property directly with the DeleteUserLink command. They have to be removed from the
-   * group/etc that gives them permissions, which is currently only usable/discoverable in the GA or
-   * GMP UIs.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   AuditUserLinksRequest request =
-   *       AuditUserLinksRequest.newBuilder()
-   *           .setParent(AccountName.of("[ACCOUNT]").toString())
-   *           .setPageSize(883849137)
-   *           .setPageToken("pageToken873572522")
-   *           .build();
-   *   while (true) {
-   *     AuditUserLinksResponse response =
-   *         analyticsAdminServiceClient.auditUserLinksCallable().call(request);
-   *     for (AuditUserLink element : response.getUserLinksList()) {
-   *       // doThingsWith(element);
-   *     }
-   *     String nextPageToken = response.getNextPageToken();
-   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
-   *       request = request.toBuilder().setPageToken(nextPageToken).build();
-   *     } else {
-   *       break;
-   *     }
-   *   }
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<AuditUserLinksRequest, AuditUserLinksResponse>
-      auditUserLinksCallable() {
-    return stub.auditUserLinksCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates a user link on an account or property.
-   *
-   * <p>If the user with the specified email already has permissions on the account or property,
-   * then the user's existing permissions will be unioned with the permissions specified in the new
-   * UserLink.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   AccountName parent = AccountName.of("[ACCOUNT]");
-   *   UserLink userLink = UserLink.newBuilder().build();
-   *   UserLink response = analyticsAdminServiceClient.createUserLink(parent, userLink);
-   * }
-   * }</pre>
-   *
-   * @param parent Required. Example format: accounts/1234
-   * @param userLink Required. The user link to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final UserLink createUserLink(AccountName parent, UserLink userLink) {
-    CreateUserLinkRequest request =
-        CreateUserLinkRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setUserLink(userLink)
-            .build();
-    return createUserLink(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates a user link on an account or property.
-   *
-   * <p>If the user with the specified email already has permissions on the account or property,
-   * then the user's existing permissions will be unioned with the permissions specified in the new
-   * UserLink.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   PropertyName parent = PropertyName.of("[PROPERTY]");
-   *   UserLink userLink = UserLink.newBuilder().build();
-   *   UserLink response = analyticsAdminServiceClient.createUserLink(parent, userLink);
-   * }
-   * }</pre>
-   *
-   * @param parent Required. Example format: accounts/1234
-   * @param userLink Required. The user link to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final UserLink createUserLink(PropertyName parent, UserLink userLink) {
-    CreateUserLinkRequest request =
-        CreateUserLinkRequest.newBuilder()
-            .setParent(parent == null ? null : parent.toString())
-            .setUserLink(userLink)
-            .build();
-    return createUserLink(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates a user link on an account or property.
-   *
-   * <p>If the user with the specified email already has permissions on the account or property,
-   * then the user's existing permissions will be unioned with the permissions specified in the new
-   * UserLink.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   String parent = AccountName.of("[ACCOUNT]").toString();
-   *   UserLink userLink = UserLink.newBuilder().build();
-   *   UserLink response = analyticsAdminServiceClient.createUserLink(parent, userLink);
-   * }
-   * }</pre>
-   *
-   * @param parent Required. Example format: accounts/1234
-   * @param userLink Required. The user link to create.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final UserLink createUserLink(String parent, UserLink userLink) {
-    CreateUserLinkRequest request =
-        CreateUserLinkRequest.newBuilder().setParent(parent).setUserLink(userLink).build();
-    return createUserLink(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates a user link on an account or property.
-   *
-   * <p>If the user with the specified email already has permissions on the account or property,
-   * then the user's existing permissions will be unioned with the permissions specified in the new
-   * UserLink.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   CreateUserLinkRequest request =
-   *       CreateUserLinkRequest.newBuilder()
-   *           .setParent(AccountName.of("[ACCOUNT]").toString())
-   *           .setNotifyNewUser(true)
-   *           .setUserLink(UserLink.newBuilder().build())
-   *           .build();
-   *   UserLink response = analyticsAdminServiceClient.createUserLink(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final UserLink createUserLink(CreateUserLinkRequest request) {
-    return createUserLinkCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates a user link on an account or property.
-   *
-   * <p>If the user with the specified email already has permissions on the account or property,
-   * then the user's existing permissions will be unioned with the permissions specified in the new
-   * UserLink.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   CreateUserLinkRequest request =
-   *       CreateUserLinkRequest.newBuilder()
-   *           .setParent(AccountName.of("[ACCOUNT]").toString())
-   *           .setNotifyNewUser(true)
-   *           .setUserLink(UserLink.newBuilder().build())
-   *           .build();
-   *   ApiFuture<UserLink> future =
-   *       analyticsAdminServiceClient.createUserLinkCallable().futureCall(request);
-   *   // Do something.
-   *   UserLink response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<CreateUserLinkRequest, UserLink> createUserLinkCallable() {
-    return stub.createUserLinkCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates information about multiple users' links to an account or property.
-   *
-   * <p>This method is transactional. If any UserLink cannot be created, none of the UserLinks will
-   * be created.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   BatchCreateUserLinksRequest request =
-   *       BatchCreateUserLinksRequest.newBuilder()
-   *           .setParent(AccountName.of("[ACCOUNT]").toString())
-   *           .setNotifyNewUsers(true)
-   *           .addAllRequests(new ArrayList<CreateUserLinkRequest>())
-   *           .build();
-   *   BatchCreateUserLinksResponse response =
-   *       analyticsAdminServiceClient.batchCreateUserLinks(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final BatchCreateUserLinksResponse batchCreateUserLinks(
-      BatchCreateUserLinksRequest request) {
-    return batchCreateUserLinksCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates information about multiple users' links to an account or property.
-   *
-   * <p>This method is transactional. If any UserLink cannot be created, none of the UserLinks will
-   * be created.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   BatchCreateUserLinksRequest request =
-   *       BatchCreateUserLinksRequest.newBuilder()
-   *           .setParent(AccountName.of("[ACCOUNT]").toString())
-   *           .setNotifyNewUsers(true)
-   *           .addAllRequests(new ArrayList<CreateUserLinkRequest>())
-   *           .build();
-   *   ApiFuture<BatchCreateUserLinksResponse> future =
-   *       analyticsAdminServiceClient.batchCreateUserLinksCallable().futureCall(request);
-   *   // Do something.
-   *   BatchCreateUserLinksResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<BatchCreateUserLinksRequest, BatchCreateUserLinksResponse>
-      batchCreateUserLinksCallable() {
-    return stub.batchCreateUserLinksCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Updates a user link on an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   UserLink userLink = UserLink.newBuilder().build();
-   *   UserLink response = analyticsAdminServiceClient.updateUserLink(userLink);
-   * }
-   * }</pre>
-   *
-   * @param userLink Required. The user link to update.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final UserLink updateUserLink(UserLink userLink) {
-    UpdateUserLinkRequest request =
-        UpdateUserLinkRequest.newBuilder().setUserLink(userLink).build();
-    return updateUserLink(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Updates a user link on an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   UpdateUserLinkRequest request =
-   *       UpdateUserLinkRequest.newBuilder().setUserLink(UserLink.newBuilder().build()).build();
-   *   UserLink response = analyticsAdminServiceClient.updateUserLink(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final UserLink updateUserLink(UpdateUserLinkRequest request) {
-    return updateUserLinkCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Updates a user link on an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   UpdateUserLinkRequest request =
-   *       UpdateUserLinkRequest.newBuilder().setUserLink(UserLink.newBuilder().build()).build();
-   *   ApiFuture<UserLink> future =
-   *       analyticsAdminServiceClient.updateUserLinkCallable().futureCall(request);
-   *   // Do something.
-   *   UserLink response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<UpdateUserLinkRequest, UserLink> updateUserLinkCallable() {
-    return stub.updateUserLinkCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Updates information about multiple users' links to an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   BatchUpdateUserLinksRequest request =
-   *       BatchUpdateUserLinksRequest.newBuilder()
-   *           .setParent(AccountName.of("[ACCOUNT]").toString())
-   *           .addAllRequests(new ArrayList<UpdateUserLinkRequest>())
-   *           .build();
-   *   BatchUpdateUserLinksResponse response =
-   *       analyticsAdminServiceClient.batchUpdateUserLinks(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final BatchUpdateUserLinksResponse batchUpdateUserLinks(
-      BatchUpdateUserLinksRequest request) {
-    return batchUpdateUserLinksCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Updates information about multiple users' links to an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   BatchUpdateUserLinksRequest request =
-   *       BatchUpdateUserLinksRequest.newBuilder()
-   *           .setParent(AccountName.of("[ACCOUNT]").toString())
-   *           .addAllRequests(new ArrayList<UpdateUserLinkRequest>())
-   *           .build();
-   *   ApiFuture<BatchUpdateUserLinksResponse> future =
-   *       analyticsAdminServiceClient.batchUpdateUserLinksCallable().futureCall(request);
-   *   // Do something.
-   *   BatchUpdateUserLinksResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<BatchUpdateUserLinksRequest, BatchUpdateUserLinksResponse>
-      batchUpdateUserLinksCallable() {
-    return stub.batchUpdateUserLinksCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a user link on an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   UserLinkName name = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]");
-   *   analyticsAdminServiceClient.deleteUserLink(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. Example format: accounts/1234/userLinks/5678
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteUserLink(UserLinkName name) {
-    DeleteUserLinkRequest request =
-        DeleteUserLinkRequest.newBuilder().setName(name == null ? null : name.toString()).build();
-    deleteUserLink(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a user link on an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   String name = UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString();
-   *   analyticsAdminServiceClient.deleteUserLink(name);
-   * }
-   * }</pre>
-   *
-   * @param name Required. Example format: accounts/1234/userLinks/5678
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteUserLink(String name) {
-    DeleteUserLinkRequest request = DeleteUserLinkRequest.newBuilder().setName(name).build();
-    deleteUserLink(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a user link on an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   DeleteUserLinkRequest request =
-   *       DeleteUserLinkRequest.newBuilder()
-   *           .setName(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
-   *           .build();
-   *   analyticsAdminServiceClient.deleteUserLink(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteUserLink(DeleteUserLinkRequest request) {
-    deleteUserLinkCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a user link on an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   DeleteUserLinkRequest request =
-   *       DeleteUserLinkRequest.newBuilder()
-   *           .setName(UserLinkName.ofAccountUserLinkName("[ACCOUNT]", "[USER_LINK]").toString())
-   *           .build();
-   *   ApiFuture<Empty> future =
-   *       analyticsAdminServiceClient.deleteUserLinkCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<DeleteUserLinkRequest, Empty> deleteUserLinkCallable() {
-    return stub.deleteUserLinkCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes information about multiple users' links to an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   BatchDeleteUserLinksRequest request =
-   *       BatchDeleteUserLinksRequest.newBuilder()
-   *           .setParent(AccountName.of("[ACCOUNT]").toString())
-   *           .addAllRequests(new ArrayList<DeleteUserLinkRequest>())
-   *           .build();
-   *   analyticsAdminServiceClient.batchDeleteUserLinks(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void batchDeleteUserLinks(BatchDeleteUserLinksRequest request) {
-    batchDeleteUserLinksCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes information about multiple users' links to an account or property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   BatchDeleteUserLinksRequest request =
-   *       BatchDeleteUserLinksRequest.newBuilder()
-   *           .setParent(AccountName.of("[ACCOUNT]").toString())
-   *           .addAllRequests(new ArrayList<DeleteUserLinkRequest>())
-   *           .build();
-   *   ApiFuture<Empty> future =
-   *       analyticsAdminServiceClient.batchDeleteUserLinksCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<BatchDeleteUserLinksRequest, Empty> batchDeleteUserLinksCallable() {
-    return stub.batchDeleteUserLinksCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -4937,9 +3869,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Format:
-   *     properties/{property_id}/dataStreams/{dataStream}/sKAdNetworkConversionValueSchema Example:
-   *     properties/1234/dataStreams/5678/sKAdNetworkConversionValueSchema
+   * @param parent Required. The DataStream resource to list schemas for. Format:
+   *     properties/{property_id}/dataStreams/{dataStream} Example: properties/1234/dataStreams/5678
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSKAdNetworkConversionValueSchemasPagedResponse
@@ -4974,9 +3905,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Format:
-   *     properties/{property_id}/dataStreams/{dataStream}/sKAdNetworkConversionValueSchema Example:
-   *     properties/1234/dataStreams/5678/sKAdNetworkConversionValueSchema
+   * @param parent Required. The DataStream resource to list schemas for. Format:
+   *     properties/{property_id}/dataStreams/{dataStream} Example: properties/1234/dataStreams/5678
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListSKAdNetworkConversionValueSchemasPagedResponse
@@ -11158,6 +10088,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *           .setTimeZone("timeZone-2077180903")
    *           .addAllOrderBys(new ArrayList<AccessOrderBy>())
    *           .setReturnEntityQuota(true)
+   *           .setIncludeAllUsers(true)
+   *           .setExpandGroups(true)
    *           .build();
    *   RunAccessReportResponse response = analyticsAdminServiceClient.runAccessReport(request);
    * }
@@ -11207,6 +10139,8 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
    *           .setTimeZone("timeZone-2077180903")
    *           .addAllOrderBys(new ArrayList<AccessOrderBy>())
    *           .setReturnEntityQuota(true)
+   *           .setIncludeAllUsers(true)
+   *           .setExpandGroups(true)
    *           .build();
    *   ApiFuture<RunAccessReportResponse> future =
    *       analyticsAdminServiceClient.runAccessReportCallable().futureCall(request);
@@ -15550,6 +14484,1214 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     return stub.deleteEventCreateRuleCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a DataRedactionSettings on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DataRedactionSettings dataRedactionSettings = DataRedactionSettings.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   DataRedactionSettings response =
+   *       analyticsAdminServiceClient.updateDataRedactionSettings(
+   *           dataRedactionSettings, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param dataRedactionSettings Required. The settings to update. The `name` field is used to
+   *     identify the settings to be updated.
+   * @param updateMask Required. The list of fields to be updated. Field names must be in snake case
+   *     (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataRedactionSettings updateDataRedactionSettings(
+      DataRedactionSettings dataRedactionSettings, FieldMask updateMask) {
+    UpdateDataRedactionSettingsRequest request =
+        UpdateDataRedactionSettingsRequest.newBuilder()
+            .setDataRedactionSettings(dataRedactionSettings)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateDataRedactionSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a DataRedactionSettings on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateDataRedactionSettingsRequest request =
+   *       UpdateDataRedactionSettingsRequest.newBuilder()
+   *           .setDataRedactionSettings(DataRedactionSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   DataRedactionSettings response =
+   *       analyticsAdminServiceClient.updateDataRedactionSettings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataRedactionSettings updateDataRedactionSettings(
+      UpdateDataRedactionSettingsRequest request) {
+    return updateDataRedactionSettingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a DataRedactionSettings on a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateDataRedactionSettingsRequest request =
+   *       UpdateDataRedactionSettingsRequest.newBuilder()
+   *           .setDataRedactionSettings(DataRedactionSettings.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<DataRedactionSettings> future =
+   *       analyticsAdminServiceClient.updateDataRedactionSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   DataRedactionSettings response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateDataRedactionSettingsRequest, DataRedactionSettings>
+      updateDataRedactionSettingsCallable() {
+    return stub.updateDataRedactionSettingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single DataRedactionSettings.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DataRedactionSettingsName name = DataRedactionSettingsName.of("[PROPERTY]", "[DATA_STREAM]");
+   *   DataRedactionSettings response = analyticsAdminServiceClient.getDataRedactionSettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the settings to lookup. Format:
+   *     properties/{property}/dataStreams/{data_stream}/dataRedactionSettings Example:
+   *     "properties/1000/dataStreams/2000/dataRedactionSettings"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataRedactionSettings getDataRedactionSettings(DataRedactionSettingsName name) {
+    GetDataRedactionSettingsRequest request =
+        GetDataRedactionSettingsRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getDataRedactionSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single DataRedactionSettings.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = DataRedactionSettingsName.of("[PROPERTY]", "[DATA_STREAM]").toString();
+   *   DataRedactionSettings response = analyticsAdminServiceClient.getDataRedactionSettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the settings to lookup. Format:
+   *     properties/{property}/dataStreams/{data_stream}/dataRedactionSettings Example:
+   *     "properties/1000/dataStreams/2000/dataRedactionSettings"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataRedactionSettings getDataRedactionSettings(String name) {
+    GetDataRedactionSettingsRequest request =
+        GetDataRedactionSettingsRequest.newBuilder().setName(name).build();
+    return getDataRedactionSettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single DataRedactionSettings.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetDataRedactionSettingsRequest request =
+   *       GetDataRedactionSettingsRequest.newBuilder()
+   *           .setName(DataRedactionSettingsName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+   *           .build();
+   *   DataRedactionSettings response =
+   *       analyticsAdminServiceClient.getDataRedactionSettings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DataRedactionSettings getDataRedactionSettings(
+      GetDataRedactionSettingsRequest request) {
+    return getDataRedactionSettingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single DataRedactionSettings.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetDataRedactionSettingsRequest request =
+   *       GetDataRedactionSettingsRequest.newBuilder()
+   *           .setName(DataRedactionSettingsName.of("[PROPERTY]", "[DATA_STREAM]").toString())
+   *           .build();
+   *   ApiFuture<DataRedactionSettings> future =
+   *       analyticsAdminServiceClient.getDataRedactionSettingsCallable().futureCall(request);
+   *   // Do something.
+   *   DataRedactionSettings response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetDataRedactionSettingsRequest, DataRedactionSettings>
+      getDataRedactionSettingsCallable() {
+    return stub.getDataRedactionSettingsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a roll-up property and all roll-up property source links.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateRollupPropertyRequest request =
+   *       CreateRollupPropertyRequest.newBuilder()
+   *           .setRollupProperty(Property.newBuilder().build())
+   *           .addAllSourceProperties(new ArrayList<String>())
+   *           .build();
+   *   CreateRollupPropertyResponse response =
+   *       analyticsAdminServiceClient.createRollupProperty(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CreateRollupPropertyResponse createRollupProperty(
+      CreateRollupPropertyRequest request) {
+    return createRollupPropertyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a roll-up property and all roll-up property source links.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateRollupPropertyRequest request =
+   *       CreateRollupPropertyRequest.newBuilder()
+   *           .setRollupProperty(Property.newBuilder().build())
+   *           .addAllSourceProperties(new ArrayList<String>())
+   *           .build();
+   *   ApiFuture<CreateRollupPropertyResponse> future =
+   *       analyticsAdminServiceClient.createRollupPropertyCallable().futureCall(request);
+   *   // Do something.
+   *   CreateRollupPropertyResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateRollupPropertyRequest, CreateRollupPropertyResponse>
+      createRollupPropertyCallable() {
+    return stub.createRollupPropertyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single roll-up property source Link. Only roll-up properties can have source
+   * links, so this method will throw an error if used on other types of properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   RollupPropertySourceLinkName name =
+   *       RollupPropertySourceLinkName.of("[PROPERTY]", "[ROLLUP_PROPERTY_SOURCE_LINK]");
+   *   RollupPropertySourceLink response =
+   *       analyticsAdminServiceClient.getRollupPropertySourceLink(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the roll-up property source link to lookup. Format:
+   *     properties/{property_id}/rollupPropertySourceLinks/{rollup_property_source_link_id}
+   *     Example: properties/123/rollupPropertySourceLinks/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RollupPropertySourceLink getRollupPropertySourceLink(
+      RollupPropertySourceLinkName name) {
+    GetRollupPropertySourceLinkRequest request =
+        GetRollupPropertySourceLinkRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getRollupPropertySourceLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single roll-up property source Link. Only roll-up properties can have source
+   * links, so this method will throw an error if used on other types of properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       RollupPropertySourceLinkName.of("[PROPERTY]", "[ROLLUP_PROPERTY_SOURCE_LINK]").toString();
+   *   RollupPropertySourceLink response =
+   *       analyticsAdminServiceClient.getRollupPropertySourceLink(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the roll-up property source link to lookup. Format:
+   *     properties/{property_id}/rollupPropertySourceLinks/{rollup_property_source_link_id}
+   *     Example: properties/123/rollupPropertySourceLinks/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RollupPropertySourceLink getRollupPropertySourceLink(String name) {
+    GetRollupPropertySourceLinkRequest request =
+        GetRollupPropertySourceLinkRequest.newBuilder().setName(name).build();
+    return getRollupPropertySourceLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single roll-up property source Link. Only roll-up properties can have source
+   * links, so this method will throw an error if used on other types of properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetRollupPropertySourceLinkRequest request =
+   *       GetRollupPropertySourceLinkRequest.newBuilder()
+   *           .setName(
+   *               RollupPropertySourceLinkName.of("[PROPERTY]", "[ROLLUP_PROPERTY_SOURCE_LINK]")
+   *                   .toString())
+   *           .build();
+   *   RollupPropertySourceLink response =
+   *       analyticsAdminServiceClient.getRollupPropertySourceLink(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RollupPropertySourceLink getRollupPropertySourceLink(
+      GetRollupPropertySourceLinkRequest request) {
+    return getRollupPropertySourceLinkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single roll-up property source Link. Only roll-up properties can have source
+   * links, so this method will throw an error if used on other types of properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetRollupPropertySourceLinkRequest request =
+   *       GetRollupPropertySourceLinkRequest.newBuilder()
+   *           .setName(
+   *               RollupPropertySourceLinkName.of("[PROPERTY]", "[ROLLUP_PROPERTY_SOURCE_LINK]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<RollupPropertySourceLink> future =
+   *       analyticsAdminServiceClient.getRollupPropertySourceLinkCallable().futureCall(request);
+   *   // Do something.
+   *   RollupPropertySourceLink response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+      getRollupPropertySourceLinkCallable() {
+    return stub.getRollupPropertySourceLinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists roll-up property source Links on a property. Only roll-up properties can have source
+   * links, so this method will throw an error if used on other types of properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (RollupPropertySourceLink element :
+   *       analyticsAdminServiceClient.listRollupPropertySourceLinks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the roll-up property to list roll-up property source links
+   *     under. Format: properties/{property_id} Example: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRollupPropertySourceLinksPagedResponse listRollupPropertySourceLinks(
+      PropertyName parent) {
+    ListRollupPropertySourceLinksRequest request =
+        ListRollupPropertySourceLinksRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listRollupPropertySourceLinks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists roll-up property source Links on a property. Only roll-up properties can have source
+   * links, so this method will throw an error if used on other types of properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   for (RollupPropertySourceLink element :
+   *       analyticsAdminServiceClient.listRollupPropertySourceLinks(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The name of the roll-up property to list roll-up property source links
+   *     under. Format: properties/{property_id} Example: properties/1234
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRollupPropertySourceLinksPagedResponse listRollupPropertySourceLinks(
+      String parent) {
+    ListRollupPropertySourceLinksRequest request =
+        ListRollupPropertySourceLinksRequest.newBuilder().setParent(parent).build();
+    return listRollupPropertySourceLinks(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists roll-up property source Links on a property. Only roll-up properties can have source
+   * links, so this method will throw an error if used on other types of properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListRollupPropertySourceLinksRequest request =
+   *       ListRollupPropertySourceLinksRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (RollupPropertySourceLink element :
+   *       analyticsAdminServiceClient.listRollupPropertySourceLinks(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListRollupPropertySourceLinksPagedResponse listRollupPropertySourceLinks(
+      ListRollupPropertySourceLinksRequest request) {
+    return listRollupPropertySourceLinksPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists roll-up property source Links on a property. Only roll-up properties can have source
+   * links, so this method will throw an error if used on other types of properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListRollupPropertySourceLinksRequest request =
+   *       ListRollupPropertySourceLinksRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<RollupPropertySourceLink> future =
+   *       analyticsAdminServiceClient
+   *           .listRollupPropertySourceLinksPagedCallable()
+   *           .futureCall(request);
+   *   // Do something.
+   *   for (RollupPropertySourceLink element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListRollupPropertySourceLinksRequest, ListRollupPropertySourceLinksPagedResponse>
+      listRollupPropertySourceLinksPagedCallable() {
+    return stub.listRollupPropertySourceLinksPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists roll-up property source Links on a property. Only roll-up properties can have source
+   * links, so this method will throw an error if used on other types of properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListRollupPropertySourceLinksRequest request =
+   *       ListRollupPropertySourceLinksRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListRollupPropertySourceLinksResponse response =
+   *         analyticsAdminServiceClient.listRollupPropertySourceLinksCallable().call(request);
+   *     for (RollupPropertySourceLink element : response.getRollupPropertySourceLinksList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListRollupPropertySourceLinksRequest, ListRollupPropertySourceLinksResponse>
+      listRollupPropertySourceLinksCallable() {
+    return stub.listRollupPropertySourceLinksCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a roll-up property source link. Only roll-up properties can have source links, so this
+   * method will throw an error if used on other types of properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   RollupPropertySourceLink rollupPropertySourceLink =
+   *       RollupPropertySourceLink.newBuilder().build();
+   *   RollupPropertySourceLink response =
+   *       analyticsAdminServiceClient.createRollupPropertySourceLink(
+   *           parent, rollupPropertySourceLink);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: properties/{property_id} Example: properties/1234
+   * @param rollupPropertySourceLink Required. The roll-up property source link to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RollupPropertySourceLink createRollupPropertySourceLink(
+      PropertyName parent, RollupPropertySourceLink rollupPropertySourceLink) {
+    CreateRollupPropertySourceLinkRequest request =
+        CreateRollupPropertySourceLinkRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setRollupPropertySourceLink(rollupPropertySourceLink)
+            .build();
+    return createRollupPropertySourceLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a roll-up property source link. Only roll-up properties can have source links, so this
+   * method will throw an error if used on other types of properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   RollupPropertySourceLink rollupPropertySourceLink =
+   *       RollupPropertySourceLink.newBuilder().build();
+   *   RollupPropertySourceLink response =
+   *       analyticsAdminServiceClient.createRollupPropertySourceLink(
+   *           parent, rollupPropertySourceLink);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Format: properties/{property_id} Example: properties/1234
+   * @param rollupPropertySourceLink Required. The roll-up property source link to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RollupPropertySourceLink createRollupPropertySourceLink(
+      String parent, RollupPropertySourceLink rollupPropertySourceLink) {
+    CreateRollupPropertySourceLinkRequest request =
+        CreateRollupPropertySourceLinkRequest.newBuilder()
+            .setParent(parent)
+            .setRollupPropertySourceLink(rollupPropertySourceLink)
+            .build();
+    return createRollupPropertySourceLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a roll-up property source link. Only roll-up properties can have source links, so this
+   * method will throw an error if used on other types of properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateRollupPropertySourceLinkRequest request =
+   *       CreateRollupPropertySourceLinkRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setRollupPropertySourceLink(RollupPropertySourceLink.newBuilder().build())
+   *           .build();
+   *   RollupPropertySourceLink response =
+   *       analyticsAdminServiceClient.createRollupPropertySourceLink(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final RollupPropertySourceLink createRollupPropertySourceLink(
+      CreateRollupPropertySourceLinkRequest request) {
+    return createRollupPropertySourceLinkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a roll-up property source link. Only roll-up properties can have source links, so this
+   * method will throw an error if used on other types of properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateRollupPropertySourceLinkRequest request =
+   *       CreateRollupPropertySourceLinkRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setRollupPropertySourceLink(RollupPropertySourceLink.newBuilder().build())
+   *           .build();
+   *   ApiFuture<RollupPropertySourceLink> future =
+   *       analyticsAdminServiceClient.createRollupPropertySourceLinkCallable().futureCall(request);
+   *   // Do something.
+   *   RollupPropertySourceLink response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateRollupPropertySourceLinkRequest, RollupPropertySourceLink>
+      createRollupPropertySourceLinkCallable() {
+    return stub.createRollupPropertySourceLinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a roll-up property source link. Only roll-up properties can have source links, so this
+   * method will throw an error if used on other types of properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   RollupPropertySourceLinkName name =
+   *       RollupPropertySourceLinkName.of("[PROPERTY]", "[ROLLUP_PROPERTY_SOURCE_LINK]");
+   *   analyticsAdminServiceClient.deleteRollupPropertySourceLink(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Format:
+   *     properties/{property_id}/rollupPropertySourceLinks/{rollup_property_source_link_id}
+   *     Example: properties/1234/rollupPropertySourceLinks/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteRollupPropertySourceLink(RollupPropertySourceLinkName name) {
+    DeleteRollupPropertySourceLinkRequest request =
+        DeleteRollupPropertySourceLinkRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteRollupPropertySourceLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a roll-up property source link. Only roll-up properties can have source links, so this
+   * method will throw an error if used on other types of properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       RollupPropertySourceLinkName.of("[PROPERTY]", "[ROLLUP_PROPERTY_SOURCE_LINK]").toString();
+   *   analyticsAdminServiceClient.deleteRollupPropertySourceLink(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Format:
+   *     properties/{property_id}/rollupPropertySourceLinks/{rollup_property_source_link_id}
+   *     Example: properties/1234/rollupPropertySourceLinks/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteRollupPropertySourceLink(String name) {
+    DeleteRollupPropertySourceLinkRequest request =
+        DeleteRollupPropertySourceLinkRequest.newBuilder().setName(name).build();
+    deleteRollupPropertySourceLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a roll-up property source link. Only roll-up properties can have source links, so this
+   * method will throw an error if used on other types of properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteRollupPropertySourceLinkRequest request =
+   *       DeleteRollupPropertySourceLinkRequest.newBuilder()
+   *           .setName(
+   *               RollupPropertySourceLinkName.of("[PROPERTY]", "[ROLLUP_PROPERTY_SOURCE_LINK]")
+   *                   .toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteRollupPropertySourceLink(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteRollupPropertySourceLink(DeleteRollupPropertySourceLinkRequest request) {
+    deleteRollupPropertySourceLinkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a roll-up property source link. Only roll-up properties can have source links, so this
+   * method will throw an error if used on other types of properties.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteRollupPropertySourceLinkRequest request =
+   *       DeleteRollupPropertySourceLinkRequest.newBuilder()
+   *           .setName(
+   *               RollupPropertySourceLinkName.of("[PROPERTY]", "[ROLLUP_PROPERTY_SOURCE_LINK]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteRollupPropertySourceLinkCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteRollupPropertySourceLinkRequest, Empty>
+      deleteRollupPropertySourceLinkCallable() {
+    return stub.deleteRollupPropertySourceLinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a subproperty and a subproperty event filter that applies to the created subproperty.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateSubpropertyRequest request =
+   *       CreateSubpropertyRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setSubproperty(Property.newBuilder().build())
+   *           .setSubpropertyEventFilter(SubpropertyEventFilter.newBuilder().build())
+   *           .build();
+   *   CreateSubpropertyResponse response = analyticsAdminServiceClient.createSubproperty(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final CreateSubpropertyResponse createSubproperty(CreateSubpropertyRequest request) {
+    return createSubpropertyCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create a subproperty and a subproperty event filter that applies to the created subproperty.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateSubpropertyRequest request =
+   *       CreateSubpropertyRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setSubproperty(Property.newBuilder().build())
+   *           .setSubpropertyEventFilter(SubpropertyEventFilter.newBuilder().build())
+   *           .build();
+   *   ApiFuture<CreateSubpropertyResponse> future =
+   *       analyticsAdminServiceClient.createSubpropertyCallable().futureCall(request);
+   *   // Do something.
+   *   CreateSubpropertyResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateSubpropertyRequest, CreateSubpropertyResponse>
+      createSubpropertyCallable() {
+    return stub.createSubpropertyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a subproperty event filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SubpropertyEventFilterName name =
+   *       SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]");
+   *   analyticsAdminServiceClient.deleteSubpropertyEventFilter(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the subproperty event filter to delete. Format:
+   *     properties/property_id/subpropertyEventFilters/subproperty_event_filter Example:
+   *     properties/123/subpropertyEventFilters/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSubpropertyEventFilter(SubpropertyEventFilterName name) {
+    DeleteSubpropertyEventFilterRequest request =
+        DeleteSubpropertyEventFilterRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteSubpropertyEventFilter(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a subproperty event filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]").toString();
+   *   analyticsAdminServiceClient.deleteSubpropertyEventFilter(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the subproperty event filter to delete. Format:
+   *     properties/property_id/subpropertyEventFilters/subproperty_event_filter Example:
+   *     properties/123/subpropertyEventFilters/456
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSubpropertyEventFilter(String name) {
+    DeleteSubpropertyEventFilterRequest request =
+        DeleteSubpropertyEventFilterRequest.newBuilder().setName(name).build();
+    deleteSubpropertyEventFilter(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a subproperty event filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteSubpropertyEventFilterRequest request =
+   *       DeleteSubpropertyEventFilterRequest.newBuilder()
+   *           .setName(
+   *               SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]")
+   *                   .toString())
+   *           .build();
+   *   analyticsAdminServiceClient.deleteSubpropertyEventFilter(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteSubpropertyEventFilter(DeleteSubpropertyEventFilterRequest request) {
+    deleteSubpropertyEventFilterCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a subproperty event filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   DeleteSubpropertyEventFilterRequest request =
+   *       DeleteSubpropertyEventFilterRequest.newBuilder()
+   *           .setName(
+   *               SubpropertyEventFilterName.of("[PROPERTY]", "[SUB_PROPERTY_EVENT_FILTER]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsAdminServiceClient.deleteSubpropertyEventFilterCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteSubpropertyEventFilterRequest, Empty>
+      deleteSubpropertyEventFilterCallable() {
+    return stub.deleteSubpropertyEventFilterCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a subproperty Event Filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   SubpropertyEventFilter subpropertyEventFilter = SubpropertyEventFilter.newBuilder().build();
+   *   SubpropertyEventFilter response =
+   *       analyticsAdminServiceClient.createSubpropertyEventFilter(parent, subpropertyEventFilter);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The ordinary property for which to create a subproperty event filter.
+   *     Format: properties/property_id Example: properties/123
+   * @param subpropertyEventFilter Required. The subproperty event filter to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertyEventFilter createSubpropertyEventFilter(
+      PropertyName parent, SubpropertyEventFilter subpropertyEventFilter) {
+    CreateSubpropertyEventFilterRequest request =
+        CreateSubpropertyEventFilterRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setSubpropertyEventFilter(subpropertyEventFilter)
+            .build();
+    return createSubpropertyEventFilter(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a subproperty Event Filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   SubpropertyEventFilter subpropertyEventFilter = SubpropertyEventFilter.newBuilder().build();
+   *   SubpropertyEventFilter response =
+   *       analyticsAdminServiceClient.createSubpropertyEventFilter(parent, subpropertyEventFilter);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The ordinary property for which to create a subproperty event filter.
+   *     Format: properties/property_id Example: properties/123
+   * @param subpropertyEventFilter Required. The subproperty event filter to create.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertyEventFilter createSubpropertyEventFilter(
+      String parent, SubpropertyEventFilter subpropertyEventFilter) {
+    CreateSubpropertyEventFilterRequest request =
+        CreateSubpropertyEventFilterRequest.newBuilder()
+            .setParent(parent)
+            .setSubpropertyEventFilter(subpropertyEventFilter)
+            .build();
+    return createSubpropertyEventFilter(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a subproperty Event Filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateSubpropertyEventFilterRequest request =
+   *       CreateSubpropertyEventFilterRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setSubpropertyEventFilter(SubpropertyEventFilter.newBuilder().build())
+   *           .build();
+   *   SubpropertyEventFilter response =
+   *       analyticsAdminServiceClient.createSubpropertyEventFilter(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertyEventFilter createSubpropertyEventFilter(
+      CreateSubpropertyEventFilterRequest request) {
+    return createSubpropertyEventFilterCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a subproperty Event Filter.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   CreateSubpropertyEventFilterRequest request =
+   *       CreateSubpropertyEventFilterRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setSubpropertyEventFilter(SubpropertyEventFilter.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SubpropertyEventFilter> future =
+   *       analyticsAdminServiceClient.createSubpropertyEventFilterCallable().futureCall(request);
+   *   // Do something.
+   *   SubpropertyEventFilter response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateSubpropertyEventFilterRequest, SubpropertyEventFilter>
+      createSubpropertyEventFilterCallable() {
+    return stub.createSubpropertyEventFilterCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -15812,158 +15954,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     protected ListPropertiesFixedSizeCollection createCollection(
         List<ListPropertiesPage> pages, int collectionSize) {
       return new ListPropertiesFixedSizeCollection(pages, collectionSize);
-    }
-  }
-
-  public static class ListUserLinksPagedResponse
-      extends AbstractPagedListResponse<
-          ListUserLinksRequest,
-          ListUserLinksResponse,
-          UserLink,
-          ListUserLinksPage,
-          ListUserLinksFixedSizeCollection> {
-
-    public static ApiFuture<ListUserLinksPagedResponse> createAsync(
-        PageContext<ListUserLinksRequest, ListUserLinksResponse, UserLink> context,
-        ApiFuture<ListUserLinksResponse> futureResponse) {
-      ApiFuture<ListUserLinksPage> futurePage =
-          ListUserLinksPage.createEmptyPage().createPageAsync(context, futureResponse);
-      return ApiFutures.transform(
-          futurePage,
-          input -> new ListUserLinksPagedResponse(input),
-          MoreExecutors.directExecutor());
-    }
-
-    private ListUserLinksPagedResponse(ListUserLinksPage page) {
-      super(page, ListUserLinksFixedSizeCollection.createEmptyCollection());
-    }
-  }
-
-  public static class ListUserLinksPage
-      extends AbstractPage<
-          ListUserLinksRequest, ListUserLinksResponse, UserLink, ListUserLinksPage> {
-
-    private ListUserLinksPage(
-        PageContext<ListUserLinksRequest, ListUserLinksResponse, UserLink> context,
-        ListUserLinksResponse response) {
-      super(context, response);
-    }
-
-    private static ListUserLinksPage createEmptyPage() {
-      return new ListUserLinksPage(null, null);
-    }
-
-    @Override
-    protected ListUserLinksPage createPage(
-        PageContext<ListUserLinksRequest, ListUserLinksResponse, UserLink> context,
-        ListUserLinksResponse response) {
-      return new ListUserLinksPage(context, response);
-    }
-
-    @Override
-    public ApiFuture<ListUserLinksPage> createPageAsync(
-        PageContext<ListUserLinksRequest, ListUserLinksResponse, UserLink> context,
-        ApiFuture<ListUserLinksResponse> futureResponse) {
-      return super.createPageAsync(context, futureResponse);
-    }
-  }
-
-  public static class ListUserLinksFixedSizeCollection
-      extends AbstractFixedSizeCollection<
-          ListUserLinksRequest,
-          ListUserLinksResponse,
-          UserLink,
-          ListUserLinksPage,
-          ListUserLinksFixedSizeCollection> {
-
-    private ListUserLinksFixedSizeCollection(List<ListUserLinksPage> pages, int collectionSize) {
-      super(pages, collectionSize);
-    }
-
-    private static ListUserLinksFixedSizeCollection createEmptyCollection() {
-      return new ListUserLinksFixedSizeCollection(null, 0);
-    }
-
-    @Override
-    protected ListUserLinksFixedSizeCollection createCollection(
-        List<ListUserLinksPage> pages, int collectionSize) {
-      return new ListUserLinksFixedSizeCollection(pages, collectionSize);
-    }
-  }
-
-  public static class AuditUserLinksPagedResponse
-      extends AbstractPagedListResponse<
-          AuditUserLinksRequest,
-          AuditUserLinksResponse,
-          AuditUserLink,
-          AuditUserLinksPage,
-          AuditUserLinksFixedSizeCollection> {
-
-    public static ApiFuture<AuditUserLinksPagedResponse> createAsync(
-        PageContext<AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLink> context,
-        ApiFuture<AuditUserLinksResponse> futureResponse) {
-      ApiFuture<AuditUserLinksPage> futurePage =
-          AuditUserLinksPage.createEmptyPage().createPageAsync(context, futureResponse);
-      return ApiFutures.transform(
-          futurePage,
-          input -> new AuditUserLinksPagedResponse(input),
-          MoreExecutors.directExecutor());
-    }
-
-    private AuditUserLinksPagedResponse(AuditUserLinksPage page) {
-      super(page, AuditUserLinksFixedSizeCollection.createEmptyCollection());
-    }
-  }
-
-  public static class AuditUserLinksPage
-      extends AbstractPage<
-          AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLink, AuditUserLinksPage> {
-
-    private AuditUserLinksPage(
-        PageContext<AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLink> context,
-        AuditUserLinksResponse response) {
-      super(context, response);
-    }
-
-    private static AuditUserLinksPage createEmptyPage() {
-      return new AuditUserLinksPage(null, null);
-    }
-
-    @Override
-    protected AuditUserLinksPage createPage(
-        PageContext<AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLink> context,
-        AuditUserLinksResponse response) {
-      return new AuditUserLinksPage(context, response);
-    }
-
-    @Override
-    public ApiFuture<AuditUserLinksPage> createPageAsync(
-        PageContext<AuditUserLinksRequest, AuditUserLinksResponse, AuditUserLink> context,
-        ApiFuture<AuditUserLinksResponse> futureResponse) {
-      return super.createPageAsync(context, futureResponse);
-    }
-  }
-
-  public static class AuditUserLinksFixedSizeCollection
-      extends AbstractFixedSizeCollection<
-          AuditUserLinksRequest,
-          AuditUserLinksResponse,
-          AuditUserLink,
-          AuditUserLinksPage,
-          AuditUserLinksFixedSizeCollection> {
-
-    private AuditUserLinksFixedSizeCollection(List<AuditUserLinksPage> pages, int collectionSize) {
-      super(pages, collectionSize);
-    }
-
-    private static AuditUserLinksFixedSizeCollection createEmptyCollection() {
-      return new AuditUserLinksFixedSizeCollection(null, 0);
-    }
-
-    @Override
-    protected AuditUserLinksFixedSizeCollection createCollection(
-        List<AuditUserLinksPage> pages, int collectionSize) {
-      return new AuditUserLinksFixedSizeCollection(pages, collectionSize);
     }
   }
 
@@ -17586,6 +17576,103 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     protected ListEventCreateRulesFixedSizeCollection createCollection(
         List<ListEventCreateRulesPage> pages, int collectionSize) {
       return new ListEventCreateRulesFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListRollupPropertySourceLinksPagedResponse
+      extends AbstractPagedListResponse<
+          ListRollupPropertySourceLinksRequest,
+          ListRollupPropertySourceLinksResponse,
+          RollupPropertySourceLink,
+          ListRollupPropertySourceLinksPage,
+          ListRollupPropertySourceLinksFixedSizeCollection> {
+
+    public static ApiFuture<ListRollupPropertySourceLinksPagedResponse> createAsync(
+        PageContext<
+                ListRollupPropertySourceLinksRequest,
+                ListRollupPropertySourceLinksResponse,
+                RollupPropertySourceLink>
+            context,
+        ApiFuture<ListRollupPropertySourceLinksResponse> futureResponse) {
+      ApiFuture<ListRollupPropertySourceLinksPage> futurePage =
+          ListRollupPropertySourceLinksPage.createEmptyPage()
+              .createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListRollupPropertySourceLinksPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListRollupPropertySourceLinksPagedResponse(ListRollupPropertySourceLinksPage page) {
+      super(page, ListRollupPropertySourceLinksFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListRollupPropertySourceLinksPage
+      extends AbstractPage<
+          ListRollupPropertySourceLinksRequest,
+          ListRollupPropertySourceLinksResponse,
+          RollupPropertySourceLink,
+          ListRollupPropertySourceLinksPage> {
+
+    private ListRollupPropertySourceLinksPage(
+        PageContext<
+                ListRollupPropertySourceLinksRequest,
+                ListRollupPropertySourceLinksResponse,
+                RollupPropertySourceLink>
+            context,
+        ListRollupPropertySourceLinksResponse response) {
+      super(context, response);
+    }
+
+    private static ListRollupPropertySourceLinksPage createEmptyPage() {
+      return new ListRollupPropertySourceLinksPage(null, null);
+    }
+
+    @Override
+    protected ListRollupPropertySourceLinksPage createPage(
+        PageContext<
+                ListRollupPropertySourceLinksRequest,
+                ListRollupPropertySourceLinksResponse,
+                RollupPropertySourceLink>
+            context,
+        ListRollupPropertySourceLinksResponse response) {
+      return new ListRollupPropertySourceLinksPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListRollupPropertySourceLinksPage> createPageAsync(
+        PageContext<
+                ListRollupPropertySourceLinksRequest,
+                ListRollupPropertySourceLinksResponse,
+                RollupPropertySourceLink>
+            context,
+        ApiFuture<ListRollupPropertySourceLinksResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListRollupPropertySourceLinksFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListRollupPropertySourceLinksRequest,
+          ListRollupPropertySourceLinksResponse,
+          RollupPropertySourceLink,
+          ListRollupPropertySourceLinksPage,
+          ListRollupPropertySourceLinksFixedSizeCollection> {
+
+    private ListRollupPropertySourceLinksFixedSizeCollection(
+        List<ListRollupPropertySourceLinksPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListRollupPropertySourceLinksFixedSizeCollection createEmptyCollection() {
+      return new ListRollupPropertySourceLinksFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListRollupPropertySourceLinksFixedSizeCollection createCollection(
+        List<ListRollupPropertySourceLinksPage> pages, int collectionSize) {
+      return new ListRollupPropertySourceLinksFixedSizeCollection(pages, collectionSize);
     }
   }
 }

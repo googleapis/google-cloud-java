@@ -484,4 +484,37 @@ public interface RunAccessReportRequestOrBuilder
    * @return The returnEntityQuota.
    */
   boolean getReturnEntityQuota();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines whether to include users who have never made an API
+   * call in the response. If true, all users with access to the specified
+   * property or account are included in the response, regardless of whether
+   * they have made an API call or not. If false, only the users who have made
+   * an API call will be included.
+   * </pre>
+   *
+   * <code>bool include_all_users = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The includeAllUsers.
+   */
+  boolean getIncludeAllUsers();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Decides whether to return the users within user groups. This
+   * field works only when include_all_users is set to true. If true, it will
+   * return all users with access to the specified property or account.
+   * If false, only the users with direct access will be returned.
+   * </pre>
+   *
+   * <code>bool expand_groups = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The expandGroups.
+   */
+  boolean getExpandGroups();
 }
