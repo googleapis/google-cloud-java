@@ -19,6 +19,8 @@ on:
     - main
   pull_request:
 name: versions check
+permissions:
+  contents: read
 jobs:
   unmanaged-versions-check:
     runs-on: ubuntu-latest
