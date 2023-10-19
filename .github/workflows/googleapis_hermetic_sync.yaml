@@ -2,6 +2,9 @@ name: Googleapis Sync (Hermetic Build)
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   create-pull-request:
     name: Create pull request for recent googleapis changes
