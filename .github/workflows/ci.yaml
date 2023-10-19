@@ -19,6 +19,8 @@ on:
     - main
   pull_request:
 name: ci
+permissions:
+  contents: read
 jobs:
   units:
     runs-on: ubuntu-latest
