@@ -225,43 +225,6 @@ public interface BestSellersProductClusterViewOrBuilder
    *
    *
    * <pre>
-   * Google-assigned id of the product cluster.
-   * </pre>
-   *
-   * <code>optional string id = 5;</code>
-   *
-   * @return Whether the id field is set.
-   */
-  boolean hasId();
-  /**
-   *
-   *
-   * <pre>
-   * Google-assigned id of the product cluster.
-   * </pre>
-   *
-   * <code>optional string id = 5;</code>
-   *
-   * @return The id.
-   */
-  java.lang.String getId();
-  /**
-   *
-   *
-   * <pre>
-   * Google-assigned id of the product cluster.
-   * </pre>
-   *
-   * <code>optional string id = 5;</code>
-   *
-   * @return The bytes for id.
-   */
-  com.google.protobuf.ByteString getIdBytes();
-
-  /**
-   *
-   *
-   * <pre>
    * Title of the product cluster.
    * </pre>
    *
