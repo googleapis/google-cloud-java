@@ -465,7 +465,7 @@ public final class PublisherGrpc {
      *
      * <pre>
      * Creates the given topic with the given name. See the [resource name rules]
-     * (https://cloud.google.com/pubsub/docs/admin#resource_names).
+     * (https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names).
      * </pre>
      */
     default void createTopic(
@@ -640,7 +640,7 @@ public final class PublisherGrpc {
      *
      * <pre>
      * Creates the given topic with the given name. See the [resource name rules]
-     * (https://cloud.google.com/pubsub/docs/admin#resource_names).
+     * (https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names).
      * </pre>
      */
     public void createTopic(
@@ -816,7 +816,7 @@ public final class PublisherGrpc {
      *
      * <pre>
      * Creates the given topic with the given name. See the [resource name rules]
-     * (https://cloud.google.com/pubsub/docs/admin#resource_names).
+     * (https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names).
      * </pre>
      */
     public com.google.pubsub.v1.Topic createTopic(com.google.pubsub.v1.Topic request) {
@@ -963,7 +963,7 @@ public final class PublisherGrpc {
      *
      * <pre>
      * Creates the given topic with the given name. See the [resource name rules]
-     * (https://cloud.google.com/pubsub/docs/admin#resource_names).
+     * (https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names).
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Topic>

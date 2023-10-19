@@ -31,8 +31,8 @@ public interface CreateSnapshotRequestOrBuilder
    * in the request, the server will assign a random name for this snapshot on
    * the same project as the subscription. Note that for REST API requests, you
    * must specify a name.  See the [resource name
-   * rules](https://cloud.google.com/pubsub/docs/admin#resource_names). Format
-   * is `projects/{project}/snapshots/{snap}`.
+   * rules](https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names).
+   * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
    * <code>
@@ -50,8 +50,8 @@ public interface CreateSnapshotRequestOrBuilder
    * in the request, the server will assign a random name for this snapshot on
    * the same project as the subscription. Note that for REST API requests, you
    * must specify a name.  See the [resource name
-   * rules](https://cloud.google.com/pubsub/docs/admin#resource_names). Format
-   * is `projects/{project}/snapshots/{snap}`.
+   * rules](https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names).
+   * Format is `projects/{project}/snapshots/{snap}`.
    * </pre>
    *
    * <code>
