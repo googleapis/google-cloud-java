@@ -746,6 +746,28 @@ public class MockSecurityCenterImpl extends SecurityCenterImplBase {
   }
 
   @Override
+  public void simulateSecurityHealthAnalyticsCustomModule(
+      SimulateSecurityHealthAnalyticsCustomModuleRequest request,
+      StreamObserver<SimulateSecurityHealthAnalyticsCustomModuleResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof SimulateSecurityHealthAnalyticsCustomModuleResponse) {
+      requests.add(request);
+      responseObserver.onNext(((SimulateSecurityHealthAnalyticsCustomModuleResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method SimulateSecurityHealthAnalyticsCustomModule, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  SimulateSecurityHealthAnalyticsCustomModuleResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void updateExternalSystem(
       UpdateExternalSystemRequest request, StreamObserver<ExternalSystem> responseObserver) {
     Object response = responses.poll();

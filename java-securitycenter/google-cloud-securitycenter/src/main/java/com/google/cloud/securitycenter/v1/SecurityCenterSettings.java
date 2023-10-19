@@ -350,6 +350,18 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     return ((SecurityCenterStubSettings) getStubSettings()).testIamPermissionsSettings();
   }
 
+  /**
+   * Returns the object with the settings used for calls to
+   * simulateSecurityHealthAnalyticsCustomModule.
+   */
+  public UnaryCallSettings<
+          SimulateSecurityHealthAnalyticsCustomModuleRequest,
+          SimulateSecurityHealthAnalyticsCustomModuleResponse>
+      simulateSecurityHealthAnalyticsCustomModuleSettings() {
+    return ((SecurityCenterStubSettings) getStubSettings())
+        .simulateSecurityHealthAnalyticsCustomModuleSettings();
+  }
+
   /** Returns the object with the settings used for calls to updateExternalSystem. */
   public UnaryCallSettings<UpdateExternalSystemRequest, ExternalSystem>
       updateExternalSystemSettings() {
@@ -794,6 +806,17 @@ public class SecurityCenterSettings extends ClientSettings<SecurityCenterSetting
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /**
+     * Returns the builder for the settings used for calls to
+     * simulateSecurityHealthAnalyticsCustomModule.
+     */
+    public UnaryCallSettings.Builder<
+            SimulateSecurityHealthAnalyticsCustomModuleRequest,
+            SimulateSecurityHealthAnalyticsCustomModuleResponse>
+        simulateSecurityHealthAnalyticsCustomModuleSettings() {
+      return getStubSettingsBuilder().simulateSecurityHealthAnalyticsCustomModuleSettings();
     }
 
     /** Returns the builder for the settings used for calls to updateExternalSystem. */
