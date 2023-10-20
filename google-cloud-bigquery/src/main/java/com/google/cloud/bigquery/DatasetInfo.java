@@ -74,6 +74,7 @@ public class DatasetInfo implements Serializable {
   private final Long defaultPartitionExpirationMs;
   private final String defaultCollation;
   private final ExternalDatasetReference externalDatasetReference;
+  private final String storageBillingModel;
 
   /** A builder for {@code DatasetInfo} objects. */
   public abstract static class Builder {
@@ -136,6 +137,12 @@ public class DatasetInfo implements Serializable {
         ExternalDatasetReference externalDatasetReference);
 
     /**
+     * Optional. Storage billing model to be used for all tables in the dataset. Can be set to
+     * PHYSICAL. Default is LOGICAL.
+     */
+    public abstract Builder setStorageBillingModel(String storageBillingModel);
+
+    /**
      * The default encryption key for all tables in the dataset. Once this property is set, all
      * newly-created partitioned tables in the dataset will have encryption key set to this value,
      * unless table creation request (or query) overrides the key.
@@ -192,6 +199,7 @@ public class DatasetInfo implements Serializable {
     private Long defaultPartitionExpirationMs;
     private String defaultCollation;
     private ExternalDatasetReference externalDatasetReference;
+    private String storageBillingModel;
 
     BuilderImpl() {}
 
@@ -212,6 +220,7 @@ public class DatasetInfo implements Serializable {
       this.defaultPartitionExpirationMs = datasetInfo.defaultPartitionExpirationMs;
       this.defaultCollation = datasetInfo.defaultCollation;
       this.externalDatasetReference = datasetInfo.externalDatasetReference;
+      this.storageBillingModel = datasetInfo.storageBillingModel;
     }
 
     BuilderImpl(com.google.api.services.bigquery.model.Dataset datasetPb) {
@@ -250,6 +259,7 @@ public class DatasetInfo implements Serializable {
         this.externalDatasetReference =
             ExternalDatasetReference.fromPb(datasetPb.getExternalDatasetReference());
       }
+      this.storageBillingModel = datasetPb.getStorageBillingModel();
     }
 
     @Override
@@ -357,6 +367,12 @@ public class DatasetInfo implements Serializable {
     }
 
     @Override
+    public Builder setStorageBillingModel(String storageBillingModel) {
+      this.storageBillingModel = storageBillingModel;
+      return this;
+    }
+
+    @Override
     public DatasetInfo build() {
       return new DatasetInfo(this);
     }
@@ -379,6 +395,7 @@ public class DatasetInfo implements Serializable {
     defaultPartitionExpirationMs = builder.defaultPartitionExpirationMs;
     defaultCollation = builder.defaultCollation;
     externalDatasetReference = builder.externalDatasetReference;
+    storageBillingModel = builder.storageBillingModel;
   }
 
   /** Returns the dataset identity. */
@@ -508,6 +525,10 @@ public class DatasetInfo implements Serializable {
     return defaultCollation;
   }
 
+  public String getStorageBillingModel() {
+    return storageBillingModel;
+  }
+
   /**
    * Returns information about the external metadata storage where the dataset is defined. Filled
    * out when the dataset type is EXTERNAL.
@@ -540,6 +561,7 @@ public class DatasetInfo implements Serializable {
         .add("defaultPartitionExpirationMs", defaultPartitionExpirationMs)
         .add("defaultCollation", defaultCollation)
         .add("externalDatasetReference", externalDatasetReference)
+        .add("storageBillingModel", storageBillingModel)
         .toString();
   }
 
@@ -620,6 +642,9 @@ public class DatasetInfo implements Serializable {
     }
     if (externalDatasetReference != null) {
       datasetPb.setExternalDatasetReference(externalDatasetReference.toPb());
+    }
+    if (storageBillingModel != null) {
+      datasetPb.setStorageBillingModel(storageBillingModel);
     }
     return datasetPb;
   }

@@ -111,6 +111,11 @@
   </difference>
   <difference>
     <differenceType>7013</differenceType>
+    <className>com/google/cloud/bigquery/DatasetInfo*</className>
+    <method>*setStorageBillingModel(*)</method>
+  </difference>
+  <difference>
+    <differenceType>7013</differenceType>
     <className>com/google/cloud/bigquery/StandardTableDefinition*</className>
     <method>*BigLakeConfiguration(*)</method>
   </difference>

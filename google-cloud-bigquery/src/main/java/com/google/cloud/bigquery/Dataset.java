@@ -159,6 +159,12 @@ public class Dataset extends DatasetInfo {
     }
 
     @Override
+    public Builder setStorageBillingModel(String storageBillingModel) {
+      infoBuilder.setStorageBillingModel(storageBillingModel);
+      return this;
+    }
+
+    @Override
     public Dataset build() {
       return new Dataset(bigquery, infoBuilder);
     }

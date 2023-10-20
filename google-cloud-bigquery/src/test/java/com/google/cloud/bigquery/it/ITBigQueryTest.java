@@ -202,6 +202,7 @@ public class ITBigQueryTest {
   private static final String ROUTINE_DATASET = RemoteBigQueryHelper.generateDatasetName();
   private static final String PROJECT_ID = ServiceOptions.getDefaultProjectId();
   private static final String RANDOM_ID = UUID.randomUUID().toString().substring(0, 8);
+  private static final String STORAGE_BILLING_MODEL = "LOGICAL";
   private static final String CLOUD_SAMPLES_DATA =
       Optional.fromNullable(System.getenv("CLOUD_SAMPLES_DATA_BUCKET")).or("cloud-samples-data");
   private static final Map<String, String> LABELS =
@@ -965,6 +966,7 @@ public class ITBigQueryTest {
     assertNull(dataset.getLastModified());
     assertNull(dataset.getLocation());
     assertNull(dataset.getSelfLink());
+    assertNull(dataset.getStorageBillingModel());
   }
 
   @Test
@@ -980,6 +982,7 @@ public class ITBigQueryTest {
     assertThat(dataset.getDatasetId().getDataset()).isEqualTo(OTHER_DATASET);
     assertThat(dataset.getDescription()).isEqualTo("Some Description");
     assertThat(dataset.getLabels()).containsExactly("a", "b");
+    assertThat(dataset.getStorageBillingModel()).isNull();
 
     Map<String, String> updateLabels = new HashMap<>();
     updateLabels.put("x", "y");
@@ -990,9 +993,11 @@ public class ITBigQueryTest {
                 .toBuilder()
                 .setDescription("Updated Description")
                 .setLabels(updateLabels)
+                .setStorageBillingModel("LOGICAL")
                 .build());
     assertThat(updatedDataset.getDescription()).isEqualTo("Updated Description");
     assertThat(updatedDataset.getLabels()).containsExactly("x", "y");
+    assertThat(updatedDataset.getStorageBillingModel()).isEqualTo("LOGICAL");
 
     updatedDataset = bigquery.update(updatedDataset.toBuilder().setLabels(null).build());
     assertThat(updatedDataset.getLabels()).isEmpty();
@@ -1022,6 +1027,7 @@ public class ITBigQueryTest {
     assertNull(updatedDataset.getLastModified());
     assertNull(updatedDataset.getLocation());
     assertNull(updatedDataset.getSelfLink());
+    assertNull(updatedDataset.getStorageBillingModel());
     assertTrue(dataset.delete());
   }
 
@@ -1281,6 +1287,23 @@ public class ITBigQueryTest {
     Table remoteTable = bigquery.getTable(DATASET, tableName);
     assertEquals(schema, remoteTable.<StandardTableDefinition>getDefinition().getSchema());
     bigquery.delete(tableId);
+  }
+
+  @Test
+  public void testCreateDatasetWithSpecifiedStorageBillingModel() {
+    String billingModelDataset = RemoteBigQueryHelper.generateDatasetName();
+    DatasetInfo info =
+        DatasetInfo.newBuilder(billingModelDataset)
+            .setDescription(DESCRIPTION)
+            .setStorageBillingModel(STORAGE_BILLING_MODEL)
+            .setLabels(LABELS)
+            .build();
+    bigquery.create(info);
+
+    Dataset dataset = bigquery.getDataset(DatasetId.of(billingModelDataset));
+    assertEquals(STORAGE_BILLING_MODEL, dataset.getStorageBillingModel());
+
+    RemoteBigQueryHelper.forceDelete(bigquery, billingModelDataset);
   }
 
   @Test

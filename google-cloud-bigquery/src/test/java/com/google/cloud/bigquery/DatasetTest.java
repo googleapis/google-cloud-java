@@ -66,6 +66,7 @@ public class DatasetTest {
   private static final String SELF_LINK = "http://bigquery/p/d";
   private static final DatasetInfo DATASET_INFO = DatasetInfo.newBuilder(DATASET_ID).build();
   private static final Field FIELD = Field.of("FieldName", LegacySQLTypeName.INTEGER);
+  private static final String STORAGE_BILLING_MODEL = "LOGICAL";
   private static final StandardTableDefinition TABLE_DEFINITION =
       StandardTableDefinition.of(Schema.of(FIELD));
   private static final ViewDefinition VIEW_DEFINITION = ViewDefinition.of("QUERY");
@@ -120,6 +121,7 @@ public class DatasetTest {
             .setLocation(LOCATION)
             .setSelfLink(SELF_LINK)
             .setLabels(LABELS)
+            .setStorageBillingModel(STORAGE_BILLING_MODEL)
             .build();
     assertEquals(DATASET_ID, builtDataset.getDatasetId());
     assertEquals(ACCESS_RULES, builtDataset.getAcl());
@@ -133,6 +135,7 @@ public class DatasetTest {
     assertEquals(LOCATION, builtDataset.getLocation());
     assertEquals(SELF_LINK, builtDataset.getSelfLink());
     assertEquals(LABELS, builtDataset.getLabels());
+    assertEquals(STORAGE_BILLING_MODEL, builtDataset.getStorageBillingModel());
   }
 
   @Test
@@ -340,6 +343,7 @@ public class DatasetTest {
             .setSelfLink(SELF_LINK)
             .setLabels(LABELS)
             .setExternalDatasetReference(EXTERNAL_DATASET_REFERENCE)
+            .setStorageBillingModel(STORAGE_BILLING_MODEL)
             .build();
     assertEquals(
         EXTERNAL_DATASET_REFERENCE,
@@ -369,5 +373,6 @@ public class DatasetTest {
     assertEquals(expected.getDefaultTableLifetime(), value.getDefaultTableLifetime());
     assertEquals(expected.getLastModified(), value.getLastModified());
     assertEquals(expected.getExternalDatasetReference(), value.getExternalDatasetReference());
+    assertEquals(expected.getStorageBillingModel(), value.getStorageBillingModel());
   }
 }

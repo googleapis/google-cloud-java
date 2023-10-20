@@ -58,6 +58,7 @@ public class DatasetInfoTest {
   private static final DatasetId DATASET_ID_COMPLETE = DatasetId.of("project", "dataset");
   private static final EncryptionConfiguration DATASET_ENCRYPTION_CONFIGURATION =
       EncryptionConfiguration.newBuilder().setKmsKeyName("KMS_KEY_1").build();
+  private static final String STORAGE_BILLING_MODEL = "LOGICAL";
 
   private static final ExternalDatasetReference EXTERNAL_DATASET_REFERENCE =
       ExternalDatasetReference.newBuilder()
@@ -79,6 +80,7 @@ public class DatasetInfoTest {
           .setLabels(LABELS)
           .setDefaultEncryptionConfiguration(DATASET_ENCRYPTION_CONFIGURATION)
           .setDefaultPartitionExpirationMs(DEFAULT_PARTITION__EXPIRATION)
+          .setStorageBillingModel(STORAGE_BILLING_MODEL)
           .build();
   private static final DatasetInfo DATASET_INFO_COMPLETE =
       DATASET_INFO
@@ -170,6 +172,7 @@ public class DatasetInfoTest {
     assertEquals(
         EXTERNAL_DATASET_REFERENCE,
         DATASET_INFO_COMPLETE_WITH_EXTERNAL_DATASET_REFERENCE.getExternalDatasetReference());
+    assertEquals(STORAGE_BILLING_MODEL, DATASET_INFO_COMPLETE.getStorageBillingModel());
   }
 
   @Test
@@ -190,6 +193,7 @@ public class DatasetInfoTest {
     assertNull(datasetInfo.getDefaultPartitionExpirationMs());
     assertTrue(datasetInfo.getLabels().isEmpty());
     assertNull(datasetInfo.getExternalDatasetReference());
+    assertNull(datasetInfo.getStorageBillingModel());
 
     datasetInfo = DatasetInfo.of(DATASET_ID);
     assertEquals(DATASET_ID, datasetInfo.getDatasetId());
@@ -207,6 +211,7 @@ public class DatasetInfoTest {
     assertNull(datasetInfo.getDefaultPartitionExpirationMs());
     assertTrue(datasetInfo.getLabels().isEmpty());
     assertNull(datasetInfo.getExternalDatasetReference());
+    assertNull(datasetInfo.getStorageBillingModel());
   }
 
   @Test
@@ -243,5 +248,6 @@ public class DatasetInfoTest {
     assertEquals(
         expected.getDefaultPartitionExpirationMs(), value.getDefaultPartitionExpirationMs());
     assertEquals(expected.getExternalDatasetReference(), value.getExternalDatasetReference());
+    assertEquals(expected.getStorageBillingModel(), value.getStorageBillingModel());
   }
 }
