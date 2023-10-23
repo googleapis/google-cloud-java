@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.17.4](https://github.com/googleapis/java-datastore/compare/v2.17.3...v2.17.4) (2023-10-23)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.18.0 ([#1215](https://github.com/googleapis/java-datastore/issues/1215)) ([aa82f01](https://github.com/googleapis/java-datastore/commit/aa82f019bcf90f99e6d3d2c96a52d8f2b9a8d27a))
+* Update dependency com.google.errorprone:error_prone_core to v2.23.0 ([#1213](https://github.com/googleapis/java-datastore/issues/1213)) ([c57db43](https://github.com/googleapis/java-datastore/commit/c57db43c783ba6ec16a55d470664990e932971ef))
+* Update dependency org.graalvm.buildtools:junit-platform-native to v0.9.28 ([#1216](https://github.com/googleapis/java-datastore/issues/1216)) ([ce4eff2](https://github.com/googleapis/java-datastore/commit/ce4eff24aae8d1e6e02558e627c033dc138891e6))
+* Update dependency org.graalvm.buildtools:native-maven-plugin to v0.9.28 ([#1217](https://github.com/googleapis/java-datastore/issues/1217)) ([7d56b3c](https://github.com/googleapis/java-datastore/commit/7d56b3cee53e0852873896f7fd22a0414d4b7d83))
+
 ## [2.17.3](https://github.com/googleapis/java-datastore/compare/v2.17.2...v2.17.3) (2023-10-10)
 
 
