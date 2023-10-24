@@ -1596,6 +1596,16 @@ public interface BigQuery extends Service<BigQueryOptions> {
    * }
    * </pre>
    *
+   * This method supports query-related preview features via environmental variables (enabled by
+   * setting the {@code QUERY_PREVIEW_ENABLED} environment variable to "TRUE"). Specifically, this
+   * method supports:
+   *
+   * <ul>
+   *   <li><b>Stateless queries</b>: query execution without corresponding job metadata
+   * </ul>
+   *
+   * The behaviour of these preview features is controlled by the bigquery service as well
+   *
    * @throws BigQueryException upon failure
    * @throws InterruptedException if the current thread gets interrupted while waiting for the query
    *     to complete

@@ -73,6 +73,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
   private final List<ConnectionProperty> connectionProperties;
   // maxResults is only used for fast query path
   private final Long maxResults;
+  private final JobCreationMode jobCreationMode;
 
   /**
    * Priority levels for a query. If not specified the priority is assumed to be {@link
@@ -92,6 +93,21 @@ public final class QueryJobConfiguration extends JobConfiguration {
      * Priority#INTERACTIVE}.
      */
     BATCH
+  }
+
+  /** Job Creation Mode provides different options on job creation. */
+  enum JobCreationMode {
+    /** Unspecified JobCreationMode, defaults to JOB_CREATION_REQUIRED. */
+    JOB_CREATION_MODE_UNSPECIFIED,
+    /** Default. Job creation is always required. */
+    JOB_CREATION_REQUIRED,
+    /**
+     * Job creation is optional. Returning immediate results is prioritized. BigQuery will
+     * automatically determine if a Job needs to be created. The conditions under which BigQuery can
+     * decide to not create a Job are subject to change. If Job creation is required,
+     * JOB_CREATION_REQUIRED mode should be used, which is the default.
+     */
+    JOB_CREATION_OPTIONAL,
   }
 
   public static final class Builder
@@ -125,6 +141,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     private RangePartitioning rangePartitioning;
     private List<ConnectionProperty> connectionProperties;
     private Long maxResults;
+    private JobCreationMode jobCreationMode;
 
     private Builder() {
       super(Type.QUERY);
@@ -160,6 +177,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
       this.rangePartitioning = jobConfiguration.rangePartitioning;
       this.connectionProperties = jobConfiguration.connectionProperties;
       this.maxResults = jobConfiguration.maxResults;
+      this.jobCreationMode = jobConfiguration.jobCreationMode;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -655,6 +673,15 @@ public final class QueryJobConfiguration extends JobConfiguration {
       return this;
     }
 
+    /**
+     * Provides different options on job creation. If not specified the job creation mode is assumed
+     * to be {@link JobCreationMode#JOB_CREATION_REQUIRED}.
+     */
+    Builder setJobCreationMode(JobCreationMode jobCreationMode) {
+      this.jobCreationMode = jobCreationMode;
+      return this;
+    }
+
     public QueryJobConfiguration build() {
       return new QueryJobConfiguration(this);
     }
@@ -699,6 +726,7 @@ public final class QueryJobConfiguration extends JobConfiguration {
     this.rangePartitioning = builder.rangePartitioning;
     this.connectionProperties = builder.connectionProperties;
     this.maxResults = builder.maxResults;
+    this.jobCreationMode = builder.jobCreationMode;
   }
 
   /**
@@ -910,6 +938,11 @@ public final class QueryJobConfiguration extends JobConfiguration {
     return maxResults;
   }
 
+  /** Returns the job creation mode. */
+  JobCreationMode getJobCreationMode() {
+    return jobCreationMode;
+  }
+
   @Override
   public Builder toBuilder() {
     return new Builder(this);
@@ -944,7 +977,8 @@ public final class QueryJobConfiguration extends JobConfiguration {
         .add("jobTimeoutMs", jobTimeoutMs)
         .add("labels", labels)
         .add("rangePartitioning", rangePartitioning)
-        .add("connectionProperties", connectionProperties);
+        .add("connectionProperties", connectionProperties)
+        .add("jobCreationMode", jobCreationMode);
   }
 
   @Override

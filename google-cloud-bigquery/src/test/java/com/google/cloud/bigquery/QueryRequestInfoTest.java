@@ -23,6 +23,7 @@ import com.google.api.services.bigquery.model.QueryRequest;
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
+import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.cloud.bigquery.QueryJobConfiguration.Priority;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
@@ -105,6 +106,8 @@ public class QueryRequestInfoTest {
       ImmutableList.of(STRING_PARAMETER, TIMESTAMP_PARAMETER);
   private static final Map<String, QueryParameterValue> NAME_PARAMETER =
       ImmutableMap.of("string", STRING_PARAMETER, "timestamp", TIMESTAMP_PARAMETER);
+  private static final JobCreationMode jobCreationModeRequired =
+      JobCreationMode.JOB_CREATION_REQUIRED;
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION =
       QueryJobConfiguration.newBuilder(QUERY)
           .setUseQueryCache(USE_QUERY_CACHE)
@@ -131,6 +134,7 @@ public class QueryRequestInfoTest {
           .setConnectionProperties(CONNECTION_PROPERTIES)
           .setPositionalParameters(POSITIONAL_PARAMETER)
           .setMaxResults(100L)
+          .setJobCreationMode(jobCreationModeRequired)
           .build();
   QueryRequestInfo REQUEST_INFO = new QueryRequestInfo(QUERY_JOB_CONFIGURATION);
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION_SUPPORTED =
@@ -194,5 +198,6 @@ public class QueryRequestInfoTest {
     assertEquals(expectedQueryReq.getCreateSession(), actualQueryReq.getCreateSession());
     assertEquals(expectedQueryReq.getUseQueryCache(), actualQueryReq.getUseQueryCache());
     assertEquals(expectedQueryReq.getUseLegacySql(), actualQueryReq.getUseLegacySql());
+    assertEquals(expectedQueryReq.get("jobCreationMode"), actualQueryReq.get("jobCreationMode"));
   }
 }

@@ -23,6 +23,7 @@ import static org.junit.Assert.assertNull;
 import com.google.cloud.bigquery.JobInfo.CreateDisposition;
 import com.google.cloud.bigquery.JobInfo.SchemaUpdateOption;
 import com.google.cloud.bigquery.JobInfo.WriteDisposition;
+import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.cloud.bigquery.QueryJobConfiguration.Priority;
 import com.google.cloud.bigquery.TimePartitioning.Type;
 import com.google.common.collect.ImmutableList;
@@ -110,6 +111,7 @@ public class QueryJobConfigurationTest {
   private static final Map<String, QueryParameterValue> NAME_PARAMETER =
       ImmutableMap.of("string", STRING_PARAMETER, "timestamp", TIMESTAMP_PARAMETER);
   private static final String PARAMETER_MODE = "POSITIONAL";
+  private static final JobCreationMode JOB_CREATION_MODE = JobCreationMode.JOB_CREATION_OPTIONAL;
   private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION =
       QueryJobConfiguration.newBuilder(QUERY)
           .setUseQueryCache(USE_QUERY_CACHE)
@@ -150,6 +152,8 @@ public class QueryJobConfigurationTest {
           .setPositionalParameters(ImmutableList.<QueryParameterValue>of())
           .setNamedParameters(NAME_PARAMETER)
           .build();
+  private static final QueryJobConfiguration QUERY_JOB_CONFIGURATION_SET_JOB_CREATION_MODE =
+      QUERY_JOB_CONFIGURATION.toBuilder().setJobCreationMode(JOB_CREATION_MODE).build();
 
   @Test
   public void testToBuilder() {
@@ -228,6 +232,13 @@ public class QueryJobConfigurationTest {
     compareQueryJobConfiguration(
         QUERY_JOB_CONFIGURATION_SET_NAME_PARAMETER,
         QUERY_JOB_CONFIGURATION_SET_NAME_PARAMETER.toBuilder().build());
+  }
+
+  @Test
+  public void testJobCreationMode() {
+    compareQueryJobConfiguration(
+        QUERY_JOB_CONFIGURATION_SET_JOB_CREATION_MODE,
+        QUERY_JOB_CONFIGURATION_SET_JOB_CREATION_MODE.toBuilder().build());
   }
 
   private void compareQueryJobConfiguration(

@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import com.google.api.services.bigquery.model.QueryParameter;
 import com.google.api.services.bigquery.model.QueryRequest;
+import com.google.cloud.bigquery.QueryJobConfiguration.JobCreationMode;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Objects;
 import com.google.common.collect.Lists;
@@ -40,6 +41,7 @@ final class QueryRequestInfo {
   private final Boolean createSession;
   private final Boolean useQueryCache;
   private final Boolean useLegacySql;
+  private final JobCreationMode jobCreationMode;
 
   QueryRequestInfo(QueryJobConfiguration config) {
     this.config = config;
@@ -55,6 +57,7 @@ final class QueryRequestInfo {
     this.createSession = config.createSession();
     this.useLegacySql = config.useLegacySql();
     this.useQueryCache = config.useQueryCache();
+    this.jobCreationMode = config.getJobCreationMode();
   }
 
   boolean isFastQuerySupported(JobId jobId) {
@@ -116,6 +119,9 @@ final class QueryRequestInfo {
     if (useQueryCache != null) {
       request.setUseQueryCache(useQueryCache);
     }
+    if (jobCreationMode != null) {
+      request.setJobCreationMode(jobCreationMode.toString());
+    }
     return request;
   }
 
@@ -134,6 +140,7 @@ final class QueryRequestInfo {
         .add("createSession", createSession)
         .add("useQueryCache", useQueryCache)
         .add("useLegacySql", useLegacySql)
+        .add("jobCreationMode", jobCreationMode)
         .toString();
   }
 
@@ -151,7 +158,8 @@ final class QueryRequestInfo {
         requestId,
         createSession,
         useQueryCache,
-        useLegacySql);
+        useLegacySql,
+        jobCreationMode);
   }
 
   @Override
