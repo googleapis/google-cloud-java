@@ -62,4 +62,5 @@
     <module>proto-google-cloud-rediscluster-v1</module>
     <module>google-cloud-rediscluster-bom</module>
   </modules>
-</project>
+
+  </project>
