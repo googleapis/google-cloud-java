@@ -136,6 +136,7 @@
     <module>java-recaptchaenterprise</module>
     <module>java-recommendations-ai</module>
     <module>java-recommender</module>
+    <module>java-rediscluster</module>
     <module>java-redis</module>
     <module>java-resourcemanager</module>
     <module>java-resource-settings</module>

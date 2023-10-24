@@ -686,3 +686,8 @@ grpc-google-shopping-merchant-reports-v1beta:0.4.0:0.5.0-SNAPSHOT
 proto-google-cloud-alloydb-connectors-v1:0.6.0:0.7.0-SNAPSHOT
 proto-google-cloud-discoveryengine-v1alpha:0.24.0:0.25.0-SNAPSHOT
 grpc-google-cloud-discoveryengine-v1alpha:0.24.0:0.25.0-SNAPSHOT
+google-cloud-rediscluster:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-rediscluster-v1beta1:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-rediscluster-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-rediscluster-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-rediscluster-v1beta1:0.0.0:0.0.1-SNAPSHOT
