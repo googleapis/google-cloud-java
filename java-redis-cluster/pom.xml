@@ -62,4 +62,5 @@
     <module>proto-google-cloud-redis-cluster-v1</module>
     <module>google-cloud-redis-cluster-bom</module>
   </modules>
-</project>
+
+  </project>
