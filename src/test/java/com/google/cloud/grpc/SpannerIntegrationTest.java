@@ -1259,6 +1259,99 @@ public final class SpannerIntegrationTest {
   }
 
   @Test
+  public void testExecuteStreamingSqlWithAffinityDisabledViaContext() throws Exception {
+    SpannerStub stub = getSpannerStub();
+    String sessionName = createAsyncSessions(stub).get(0);
+    AsyncResponseObserver<PartialResultSet> resp = new AsyncResponseObserver<>();
+    stub.executeStreamingSql(
+        ExecuteSqlRequest
+          .newBuilder()
+          .setSession(sessionName)
+          .setSql("select * FROM Users")
+          .build(),
+          resp);
+    // The ChannelRef which is bound with the current affinity key.
+    ChannelRef currentChannel =
+        gcpChannel.affinityKeyToChannelRef.get(sessionName);
+    // Verify the channel is in use.
+    assertEquals(1, currentChannel.getActiveStreamsCount());
+    PartialResultSet response = resp.get();
+    assertEquals(USERNAME, response.getValues(1).getStringValue());
+    assertEquals(0, currentChannel.getActiveStreamsCount());
+
+    Context ctx = Context.current().withValue(GcpManagedChannel.DISABLE_AFFINITY_CTX_KEY, true);
+    List<AsyncResponseObserver<PartialResultSet>> resps = new ArrayList<>();
+    for (int i = 0; i < MAX_CHANNEL; i++) {
+      // Execute the call in the context where affinity is disabled.
+      ctx.run(() -> {
+        AsyncResponseObserver<PartialResultSet> r = new AsyncResponseObserver<>();
+        resps.add(r);
+        stub.executeStreamingSql(
+          ExecuteSqlRequest.newBuilder().setSession(sessionName).setSql("select * FROM Users").build(),
+          r);
+      });
+    }
+    // Verify calls with disabled affinity are distributed accross all channels.
+    for (ChannelRef ch : gcpChannel.channelRefs) {
+      assertEquals(1, ch.getActiveStreamsCount());
+    }
+
+    for (AsyncResponseObserver<PartialResultSet> r : resps) {
+      response = r.get();
+      assertEquals(USERNAME, response.getValues(1).getStringValue());
+      assertEquals(0, currentChannel.getActiveStreamsCount());
+    }
+  }
+
+  @Test
+  public void testExecuteStreamingSqlWithAffinityDisabledViaCallOptions() throws Exception {
+    SpannerStub stub = getSpannerStub();
+    String sessionName = createAsyncSessions(stub).get(0);
+    AsyncResponseObserver<PartialResultSet> resp = new AsyncResponseObserver<>();
+    stub.executeStreamingSql(
+        ExecuteSqlRequest
+          .newBuilder()
+          .setSession(sessionName)
+          .setSql("select * FROM Users")
+          .build(),
+          resp);
+    // The ChannelRef which is bound with the current affinity key.
+    ChannelRef currentChannel =
+        gcpChannel.affinityKeyToChannelRef.get(sessionName);
+    // Verify the channel is in use.
+    assertEquals(1, currentChannel.getActiveStreamsCount());
+    PartialResultSet response = resp.get();
+    assertEquals(USERNAME, response.getValues(1).getStringValue());
+    assertEquals(0, currentChannel.getActiveStreamsCount());
+
+    List<AsyncResponseObserver<PartialResultSet>> resps = new ArrayList<>();
+    for (int i = 0; i < MAX_CHANNEL; i++) {
+      AsyncResponseObserver<PartialResultSet> r = new AsyncResponseObserver<>();
+      resps.add(r);
+      // Execute the call with affinity disabled via call option.
+      stub
+        .withOption(GcpManagedChannel.DISABLE_AFFINITY_KEY, true)
+        .executeStreamingSql(
+          ExecuteSqlRequest
+            .newBuilder()
+            .setSession(sessionName)
+            .setSql("select * FROM Users")
+            .build(),
+          r);
+    }
+    // Verify calls with disabled affinity are distributed accross all channels.
+    for (ChannelRef ch : gcpChannel.channelRefs) {
+      assertEquals(1, ch.getActiveStreamsCount());
+    }
+
+    for (AsyncResponseObserver<PartialResultSet> r : resps) {
+      response = r.get();
+      assertEquals(USERNAME, response.getValues(1).getStringValue());
+      assertEquals(0, currentChannel.getActiveStreamsCount());
+    }
+  }
+
+  @Test
   public void testPartitionQueryAsync() throws Exception {
     SpannerStub stub = getSpannerStub();
     List<String> respNames = createAsyncSessions(stub);

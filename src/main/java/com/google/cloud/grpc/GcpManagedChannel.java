@@ -34,6 +34,7 @@ import com.google.protobuf.TextFormat;
 import io.grpc.CallOptions;
 import io.grpc.ClientCall;
 import io.grpc.ConnectivityState;
+import io.grpc.Context;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.MethodDescriptor;
@@ -72,6 +73,10 @@ public class GcpManagedChannel extends ManagedChannel {
   static final AtomicInteger channelPoolIndex = new AtomicInteger();
   static final int DEFAULT_MAX_CHANNEL = 10;
   static final int DEFAULT_MAX_STREAM = 100;
+  public static final Context.Key<Boolean> DISABLE_AFFINITY_CTX_KEY =
+    Context.keyWithDefault("DisableAffinity", false);
+  public static final CallOptions.Key<Boolean> DISABLE_AFFINITY_KEY =
+    CallOptions.Key.createWithDefault("DisableAffinity", false);
 
   @GuardedBy("this")
   private Integer bindingIndex = -1;
@@ -1224,7 +1229,10 @@ public class GcpManagedChannel extends ManagedChannel {
   public <ReqT, RespT> ClientCall<ReqT, RespT> newCall(
       MethodDescriptor<ReqT, RespT> methodDescriptor, CallOptions callOptions) {
     AffinityConfig affinity = methodToAffinity.get(methodDescriptor.getFullMethodName());
-    if (affinity == null) {
+    if (
+        affinity == null
+        || callOptions.getOption(DISABLE_AFFINITY_KEY)
+        || DISABLE_AFFINITY_CTX_KEY.get(Context.current())) {
       return new GcpClientCall.SimpleGcpClientCall<>(
           getChannelRef(null), methodDescriptor, callOptions);
     }
