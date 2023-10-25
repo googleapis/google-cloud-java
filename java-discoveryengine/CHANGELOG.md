@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.25.0 (2023-10-25)
+
+### Features
+
+* add v1alpha public library for discoveryengine ([#9953](https://github.com/googleapis/google-cloud-java/issues/9953)) ([f4b2dda](https://github.com/googleapis/google-cloud-java/commit/f4b2dda909a384ffcbe55b1498fe4e0259d09bcf))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.6.0 ([#9969](https://github.com/googleapis/google-cloud-java/issues/9969)) ([9e2be39](https://github.com/googleapis/google-cloud-java/commit/9e2be39c5b2d7764421325f65a6d0d06351fcda5))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.18.0 ([#9984](https://github.com/googleapis/google-cloud-java/issues/9984)) ([9814dc0](https://github.com/googleapis/google-cloud-java/commit/9814dc092ad7edb7b1b21f87fa48d76a2423d731))
+
+
 ## 0.24.0 (2023-10-11)
 
 ### Dependencies
