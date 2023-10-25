@@ -1,5 +1,66 @@
 # Changelog
 
+## [1.23.0](https://github.com/googleapis/google-cloud-java/compare/v1.22.0...v1.23.0) (2023-10-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* [analyticsadmin] delete `BatchDeleteUserLinks`, `DeleteUserLink`, `BatchUpdateUserLinks`, `UpdateUserLink`, `BatchCreateUserLinks`, `CreateUserLink`, `AuditUserLinks`, `ListUserLinks`, `BatchGetUserLinks`, `GetUserLink` from the Admin API v1 alph... ([#9982](https://github.com/googleapis/google-cloud-java/issues/9982))
+* [merchantapi] non_product_performance_view table, seller segments in product_performance_view table, and entity ids in best_seller tables are removed ([#9981](https://github.com/googleapis/google-cloud-java/issues/9981))
+* Destination enum is wrapped in a message
+* Update go_package and Go importpath:
+* `destination` field in the `product_performance_view` table is renamed to `marketing_method`
+* `destination` term in the `product_view` table is renamed to `reporting_context`
+* `predicted_gross_profit_change_fraction` and `predicted_monthly_gross_profit_change` fields are removed from the `price_insights_product_view` table
+* `ReportGranularity`, `RelativeDemand`, `RelativeDemandChangeType`, `TrafficSource` enums are wrapped into messages
+* Destination enum is wrapped in a message
+* Update go_package and Go importpath:
+
+### Features
+
+* [batch] expose display_name to batch v1 API ([#9967](https://github.com/googleapis/google-cloud-java/issues/9967)) ([934c929](https://github.com/googleapis/google-cloud-java/commit/934c92940ec76f96aa71b13249a81cde58bab5ee))
+* [clouddeploy] added platform log RolloutUpdateEvent ([#9979](https://github.com/googleapis/google-cloud-java/issues/9979)) ([ebdc309](https://github.com/googleapis/google-cloud-java/commit/ebdc30925e4bf247ede4f393fb268eaa8706eac0))
+* [cloudoptimization] added the route modifiers ([#9963](https://github.com/googleapis/google-cloud-java/issues/9963)) ([1f558b0](https://github.com/googleapis/google-cloud-java/commit/1f558b06a7564d843148fb7a10be94df9d61578f))
+* [discoveryengine] add v1alpha public library for discoveryengine ([#9953](https://github.com/googleapis/google-cloud-java/issues/9953)) ([f4b2dda](https://github.com/googleapis/google-cloud-java/commit/f4b2dda909a384ffcbe55b1498fe4e0259d09bcf))
+* [merchantapi] `channel` field is added to the `product_view` table ([#9956](https://github.com/googleapis/google-cloud-java/issues/9956)) ([2a8403b](https://github.com/googleapis/google-cloud-java/commit/2a8403b4c948f315911384c46c74d33afcb2eb65))
+* [merchantapi] Channel enum is added ([#9957](https://github.com/googleapis/google-cloud-java/issues/9957)) ([9135abe](https://github.com/googleapis/google-cloud-java/commit/9135abe92be0639bde65a98709cd9d9df6385ae7))
+* [redis-cluster] new module for redis-cluster ([#9993](https://github.com/googleapis/google-cloud-java/issues/9993)) ([c280a9c](https://github.com/googleapis/google-cloud-java/commit/c280a9cf2c26e45dfabb60d45318fe40cd67a88a))
+* [securitycenter] Add SimulateSecurityHealthAnalyticsCustomModule API for testing SHA custom module ([#9980](https://github.com/googleapis/google-cloud-java/issues/9980)) ([84afb01](https://github.com/googleapis/google-cloud-java/commit/84afb01dd57588ca316e852143b433d2e1c7fd81))
+* A new message `MarketingMethod` is added ([2a8403b](https://github.com/googleapis/google-cloud-java/commit/2a8403b4c948f315911384c46c74d33afcb2eb65))
+* Channel enum is added ([2a8403b](https://github.com/googleapis/google-cloud-java/commit/2a8403b4c948f315911384c46c74d33afcb2eb65))
+* ReportingContext enum is added ([9135abe](https://github.com/googleapis/google-cloud-java/commit/9135abe92be0639bde65a98709cd9d9df6385ae7))
+* ReportingContext enum is added ([2a8403b](https://github.com/googleapis/google-cloud-java/commit/2a8403b4c948f315911384c46c74d33afcb2eb65))
+
+
+### Bug Fixes
+
+* [analyticsadmin] delete `BatchDeleteUserLinks`, `DeleteUserLink`, `BatchUpdateUserLinks`, `UpdateUserLink`, `BatchCreateUserLinks`, `CreateUserLink`, `AuditUserLinks`, `ListUserLinks`, `BatchGetUserLinks`, `GetUserLink` from the Admin API v1 alph... ([#9982](https://github.com/googleapis/google-cloud-java/issues/9982)) ([75d2527](https://github.com/googleapis/google-cloud-java/commit/75d252766bdf96a47ac40e3ccca2ddcbbb930a11))
+* [merchantapi] non_product_performance_view table, seller segments in product_performance_view table, and entity ids in best_seller tables are removed ([#9981](https://github.com/googleapis/google-cloud-java/issues/9981)) ([f242404](https://github.com/googleapis/google-cloud-java/commit/f242404af5d3a84b84bfd57937a06f9cbb99674c))
+* `destination` field in the `product_performance_view` table is renamed to `marketing_method` ([2a8403b](https://github.com/googleapis/google-cloud-java/commit/2a8403b4c948f315911384c46c74d33afcb2eb65))
+* `destination` term in the `product_view` table is renamed to `reporting_context` ([2a8403b](https://github.com/googleapis/google-cloud-java/commit/2a8403b4c948f315911384c46c74d33afcb2eb65))
+* `predicted_gross_profit_change_fraction` and `predicted_monthly_gross_profit_change` fields are removed from the `price_insights_product_view` table ([2a8403b](https://github.com/googleapis/google-cloud-java/commit/2a8403b4c948f315911384c46c74d33afcb2eb65))
+* `ReportGranularity`, `RelativeDemand`, `RelativeDemandChangeType`, `TrafficSource` enums are wrapped into messages ([2a8403b](https://github.com/googleapis/google-cloud-java/commit/2a8403b4c948f315911384c46c74d33afcb2eb65))
+* convert java-talent integration test to v4 ([#9948](https://github.com/googleapis/google-cloud-java/issues/9948)) ([91c76e0](https://github.com/googleapis/google-cloud-java/commit/91c76e0429ee18cb517d757a06653a64ab904e62))
+* **deps:** update dependency com.google.apis:google-api-services-cloudresourcemanager to v1-rev20231022-2.0.0 ([#9990](https://github.com/googleapis/google-cloud-java/issues/9990)) ([89dd580](https://github.com/googleapis/google-cloud-java/commit/89dd580c90ae8f710d8a0491ca141cc36c2b7d14))
+* **deps:** update dependency com.google.apis:google-api-services-storage to v1-rev20231012-2.0.0 ([#9965](https://github.com/googleapis/google-cloud-java/issues/9965)) ([6accd08](https://github.com/googleapis/google-cloud-java/commit/6accd08c5db92e367973d580bd2764f3a08ca1da))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.125.6 ([#9954](https://github.com/googleapis/google-cloud-java/issues/9954)) ([7104b86](https://github.com/googleapis/google-cloud-java/commit/7104b86b9154e46fa00705c4442047f1dc6ce311))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.125.7 ([#9971](https://github.com/googleapis/google-cloud-java/issues/9971)) ([52b9c23](https://github.com/googleapis/google-cloud-java/commit/52b9c237df8d1c01619a09ad0bb99a7d0bb68313))
+* **deps:** update dependency com.google.cloud:google-cloud-pubsub-bom to v1.125.8 ([#9987](https://github.com/googleapis/google-cloud-java/issues/9987)) ([81180df](https://github.com/googleapis/google-cloud-java/commit/81180df3f6d135417a3072f24c42fc142edb4eec))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.6.0 ([#9969](https://github.com/googleapis/google-cloud-java/issues/9969)) ([9e2be39](https://github.com/googleapis/google-cloud-java/commit/9e2be39c5b2d7764421325f65a6d0d06351fcda5))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.18.0 ([#9984](https://github.com/googleapis/google-cloud-java/issues/9984)) ([9814dc0](https://github.com/googleapis/google-cloud-java/commit/9814dc092ad7edb7b1b21f87fa48d76a2423d731))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.28.0 ([#9959](https://github.com/googleapis/google-cloud-java/issues/9959)) ([0d8d17e](https://github.com/googleapis/google-cloud-java/commit/0d8d17ef1bab873be8f6b34f3c6364d5d18d1198))
+* **deps:** update dependency com.google.cloud:google-cloud-storage to v2.29.0 ([#9988](https://github.com/googleapis/google-cloud-java/issues/9988)) ([82fb240](https://github.com/googleapis/google-cloud-java/commit/82fb24020f6fa3b1572b8bd6d44839981cc47043))
+* Destination enum is wrapped in a message ([9135abe](https://github.com/googleapis/google-cloud-java/commit/9135abe92be0639bde65a98709cd9d9df6385ae7))
+* Destination enum is wrapped in a message ([2a8403b](https://github.com/googleapis/google-cloud-java/commit/2a8403b4c948f315911384c46c74d33afcb2eb65))
+* lenient vision face annotation results ([#9947](https://github.com/googleapis/google-cloud-java/issues/9947)) ([b12f226](https://github.com/googleapis/google-cloud-java/commit/b12f226051bfc264b6f498aaed48ecca18f50196))
+* Update go_package and Go importpath: ([9135abe](https://github.com/googleapis/google-cloud-java/commit/9135abe92be0639bde65a98709cd9d9df6385ae7))
+* Update go_package and Go importpath: ([2a8403b](https://github.com/googleapis/google-cloud-java/commit/2a8403b4c948f315911384c46c74d33afcb2eb65))
+
+
+### Documentation
+
+* [documentai] minor clarification on fields related to page range ([#9955](https://github.com/googleapis/google-cloud-java/issues/9955)) ([ff54c9f](https://github.com/googleapis/google-cloud-java/commit/ff54c9fc8293782dc10af0622ea79f41dbcb007b))
+
 ## [1.22.0](https://github.com/googleapis/google-cloud-java/compare/v1.21.0...v1.22.0) (2023-10-11)
 
 

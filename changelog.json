@@ -5,6 +5,300 @@
       "changes": [
         {
           "type": "fix",
+          "sha": "b12f226051bfc264b6f498aaed48ecca18f50196",
+          "message": "lenient vision face annotation results",
+          "issues": [
+            "9947"
+          ]
+        }
+      ],
+      "version": "1.23.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-vision",
+      "id": "15e433a1-7226-4045-b525-51735771c218",
+      "createTime": "2023-10-25T03:09:16.122Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "91c76e0429ee18cb517d757a06653a64ab904e62",
+          "message": "convert java-talent integration test to v4",
+          "issues": [
+            "9948"
+          ]
+        }
+      ],
+      "version": "1.23.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-talent",
+      "id": "fab0a5c1-e788-42f0-a84a-cebc7ae6f102",
+      "createTime": "2023-10-25T03:09:16.073Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "1f558b06a7564d843148fb7a10be94df9d61578f",
+          "message": "[cloudoptimization] added the route modifiers",
+          "issues": [
+            "9963"
+          ]
+        }
+      ],
+      "version": "1.23.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-optimization",
+      "id": "9824b455-9da8-4457-bdfe-c198f6a265d9",
+      "createTime": "2023-10-25T03:09:16.069Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "934c92940ec76f96aa71b13249a81cde58bab5ee",
+          "message": "[batch] expose display_name to batch v1 API",
+          "issues": [
+            "9967"
+          ]
+        }
+      ],
+      "version": "1.23.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-batch",
+      "id": "941a8f32-9abd-480d-9d1a-857e6d2102c5",
+      "createTime": "2023-10-25T03:09:16.059Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "9135abe92be0639bde65a98709cd9d9df6385ae7",
+          "message": "ReportingContext enum is added",
+          "issues": []
+        },
+        {
+          "type": "fix",
+          "sha": "9135abe92be0639bde65a98709cd9d9df6385ae7",
+          "message": "Destination enum is wrapped in a message",
+          "issues": [],
+          "breakingChangeNote": "Destination enum is wrapped in a message"
+        },
+        {
+          "type": "fix",
+          "sha": "9135abe92be0639bde65a98709cd9d9df6385ae7",
+          "message": "Update go_package and Go importpath:",
+          "issues": [],
+          "breakingChangeNote": "Update go_package and Go importpath:"
+        },
+        {
+          "type": "feat",
+          "sha": "9135abe92be0639bde65a98709cd9d9df6385ae7",
+          "message": "[merchantapi] Channel enum is added",
+          "issues": [
+            "9957"
+          ]
+        }
+      ],
+      "version": "1.23.0",
+      "language": "JAVA",
+      "artifactName": "com.google.shopping:google-shopping-merchant-inventories",
+      "id": "55a79d9a-f8c3-4575-baa3-150f6a53682b",
+      "createTime": "2023-10-25T03:09:16.054Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "docs",
+          "sha": "ff54c9fc8293782dc10af0622ea79f41dbcb007b",
+          "message": "[documentai] minor clarification on fields related to page range",
+          "issues": [
+            "9955"
+          ]
+        }
+      ],
+      "version": "1.23.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-document-ai",
+      "id": "bfd1e4ee-b182-4023-9144-8d98763c4270",
+      "createTime": "2023-10-25T03:09:16.050Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "f4b2dda909a384ffcbe55b1498fe4e0259d09bcf",
+          "message": "[discoveryengine] add v1alpha public library for discoveryengine",
+          "issues": [
+            "9953"
+          ]
+        }
+      ],
+      "version": "1.23.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-discoveryengine",
+      "id": "609d4f85-7bbe-49e2-b763-7fd3c45914a7",
+      "createTime": "2023-10-25T03:09:16.027Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "84afb01dd57588ca316e852143b433d2e1c7fd81",
+          "message": "[securitycenter] Add SimulateSecurityHealthAnalyticsCustomModule API for testing SHA custom module",
+          "issues": [
+            "9980"
+          ]
+        }
+      ],
+      "version": "1.23.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-securitycenter",
+      "id": "eb8bf57e-7971-487a-b074-8d70f19ced54",
+      "createTime": "2023-10-25T03:09:15.946Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "ebdc30925e4bf247ede4f393fb268eaa8706eac0",
+          "message": "[clouddeploy] added platform log RolloutUpdateEvent",
+          "issues": [
+            "9979"
+          ]
+        }
+      ],
+      "version": "1.23.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-deploy",
+      "id": "aa10fb7b-da70-4ed4-82c0-8da1288ba1d9",
+      "createTime": "2023-10-25T03:09:15.934Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "f242404af5d3a84b84bfd57937a06f9cbb99674c",
+          "message": "[merchantapi] non_product_performance_view table, seller segments in product_performance_view table, and entity ids in best_seller tables are removed",
+          "issues": [
+            "9981"
+          ],
+          "breakingChangeNote": "[merchantapi] non_product_performance_view table, seller segments in product_performance_view table, and entity ids in best_seller tables are removed ([#9981](https://github.com/googleapis/google-cloud-java/issues/9981))"
+        },
+        {
+          "type": "feat",
+          "sha": "2a8403b4c948f315911384c46c74d33afcb2eb65",
+          "message": "A new message `MarketingMethod` is added",
+          "issues": []
+        },
+        {
+          "type": "fix",
+          "sha": "2a8403b4c948f315911384c46c74d33afcb2eb65",
+          "message": "`destination` field in the `product_performance_view` table is renamed to `marketing_method`",
+          "issues": [],
+          "breakingChangeNote": "`destination` field in the `product_performance_view` table is renamed to `marketing_method`"
+        },
+        {
+          "type": "fix",
+          "sha": "2a8403b4c948f315911384c46c74d33afcb2eb65",
+          "message": "`destination` term in the `product_view` table is renamed to `reporting_context`",
+          "issues": [],
+          "breakingChangeNote": "`destination` term in the `product_view` table is renamed to `reporting_context`"
+        },
+        {
+          "type": "fix",
+          "sha": "2a8403b4c948f315911384c46c74d33afcb2eb65",
+          "message": "`predicted_gross_profit_change_fraction` and `predicted_monthly_gross_profit_change` fields are removed from the `price_insights_product_view` table",
+          "issues": [],
+          "breakingChangeNote": "`predicted_gross_profit_change_fraction` and `predicted_monthly_gross_profit_change` fields are removed from the `price_insights_product_view` table"
+        },
+        {
+          "type": "fix",
+          "sha": "2a8403b4c948f315911384c46c74d33afcb2eb65",
+          "message": "`ReportGranularity`, `RelativeDemand`, `RelativeDemandChangeType`, `TrafficSource` enums are wrapped into messages",
+          "issues": [],
+          "breakingChangeNote": "`ReportGranularity`, `RelativeDemand`, `RelativeDemandChangeType`, `TrafficSource` enums are wrapped into messages"
+        },
+        {
+          "type": "feat",
+          "sha": "2a8403b4c948f315911384c46c74d33afcb2eb65",
+          "message": "Channel enum is added",
+          "issues": []
+        },
+        {
+          "type": "feat",
+          "sha": "2a8403b4c948f315911384c46c74d33afcb2eb65",
+          "message": "ReportingContext enum is added",
+          "issues": []
+        },
+        {
+          "type": "fix",
+          "sha": "2a8403b4c948f315911384c46c74d33afcb2eb65",
+          "message": "Destination enum is wrapped in a message",
+          "issues": [],
+          "breakingChangeNote": "Destination enum is wrapped in a message"
+        },
+        {
+          "type": "fix",
+          "sha": "2a8403b4c948f315911384c46c74d33afcb2eb65",
+          "message": "Update go_package and Go importpath:",
+          "issues": [],
+          "breakingChangeNote": "Update go_package and Go importpath:"
+        },
+        {
+          "type": "feat",
+          "sha": "2a8403b4c948f315911384c46c74d33afcb2eb65",
+          "message": "[merchantapi] `channel` field is added to the `product_view` table",
+          "issues": [
+            "9956"
+          ]
+        }
+      ],
+      "version": "1.23.0",
+      "language": "JAVA",
+      "artifactName": "com.google.shopping:google-shopping-merchant-reports",
+      "id": "97c35fee-0af0-475d-a2a0-d7222940b155",
+      "createTime": "2023-10-25T03:09:15.922Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
+          "sha": "75d252766bdf96a47ac40e3ccca2ddcbbb930a11",
+          "message": "[analyticsadmin] delete `BatchDeleteUserLinks`, `DeleteUserLink`, `BatchUpdateUserLinks`, `UpdateUserLink`, `BatchCreateUserLinks`, `CreateUserLink`, `AuditUserLinks`, `ListUserLinks`, `BatchGetUserLinks`, `GetUserLink` from the Admin API v1 alph...",
+          "issues": [
+            "9982"
+          ],
+          "breakingChangeNote": "[analyticsadmin] delete `BatchDeleteUserLinks`, `DeleteUserLink`, `BatchUpdateUserLinks`, `UpdateUserLink`, `BatchCreateUserLinks`, `CreateUserLink`, `AuditUserLinks`, `ListUserLinks`, `BatchGetUserLinks`, `GetUserLink` from the Admin API v1 alph... ([#9982](https://github.com/googleapis/google-cloud-java/issues/9982))"
+        }
+      ],
+      "version": "1.23.0",
+      "language": "JAVA",
+      "artifactName": "com.google.analytics:google-analytics-admin",
+      "id": "5c825026-d443-4de1-9297-7ff325d921db",
+      "createTime": "2023-10-25T03:09:15.835Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "feat",
+          "sha": "c280a9cf2c26e45dfabb60d45318fe40cd67a88a",
+          "message": "[redis-cluster] new module for redis-cluster",
+          "issues": [
+            "9993"
+          ]
+        }
+      ],
+      "version": "1.23.0",
+      "language": "JAVA",
+      "artifactName": "com.google.cloud:google-cloud-redis-cluster",
+      "id": "033914c7-f597-4435-b862-7de7b1f24219",
+      "createTime": "2023-10-25T03:09:15.823Z"
+    },
+    {
+      "changes": [
+        {
+          "type": "fix",
           "sha": "237c070a9d0a3ecf6a25387648a4d5dd81d705c2",
           "message": "remove IoT integration tests",
           "issues": [
@@ -12143,5 +12437,5 @@
       "createTime": "2023-02-03T16:27:23.198Z"
     }
   ],
-  "updateTime": "2023-10-11T13:41:33.030Z"
+  "updateTime": "2023-10-25T03:09:16.122Z"
 }
