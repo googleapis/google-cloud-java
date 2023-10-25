@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.33.0 (2023-10-25)
+
+### Features
+
+* minor clarification on fields related to page range ([#9955](https://github.com/googleapis/google-cloud-java/issues/9955)) ([ff54c9f](https://github.com/googleapis/google-cloud-java/commit/ff54c9fc8293782dc10af0622ea79f41dbcb007b))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.6.0 ([#9969](https://github.com/googleapis/google-cloud-java/issues/9969)) ([9e2be39](https://github.com/googleapis/google-cloud-java/commit/9e2be39c5b2d7764421325f65a6d0d06351fcda5))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.18.0 ([#9984](https://github.com/googleapis/google-cloud-java/issues/9984)) ([9814dc0](https://github.com/googleapis/google-cloud-java/commit/9814dc092ad7edb7b1b21f87fa48d76a2423d731))
+
+
 ## 2.32.0 (2023-10-11)
 
 ### Dependencies

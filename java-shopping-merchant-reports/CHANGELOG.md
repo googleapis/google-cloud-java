@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.5.0 (2023-10-25)
+
+### Features
+
+* non_product_performance_view table, seller segments in product_performance_view table, and entity ids in best_seller tables are removed ([#9981](https://github.com/googleapis/google-cloud-java/issues/9981))
+* `channel` field is added to the `product_view` table ([#9956](https://github.com/googleapis/google-cloud-java/issues/9956)) ([2a8403b](https://github.com/googleapis/google-cloud-java/commit/2a8403b4c948f315911384c46c74d33afcb2eb65))
+* Channel enum is added ([#9957](https://github.com/googleapis/google-cloud-java/issues/9957)) ([9135abe](https://github.com/googleapis/google-cloud-java/commit/9135abe92be0639bde65a98709cd9d9df6385ae7))
+* non_product_performance_view table, seller segments in product_performance_view table, and entity ids in best_seller tables are removed ([#9981](https://github.com/googleapis/google-cloud-java/issues/9981)) ([f242404](https://github.com/googleapis/google-cloud-java/commit/f242404af5d3a84b84bfd57937a06f9cbb99674c))
+
+### Dependencies
+
+* **deps:** update dependency com.google.cloud:google-cloud-shared-config to v1.6.0 ([#9969](https://github.com/googleapis/google-cloud-java/issues/9969)) ([9e2be39](https://github.com/googleapis/google-cloud-java/commit/9e2be39c5b2d7764421325f65a6d0d06351fcda5))
+* **deps:** update dependency com.google.cloud:google-cloud-shared-dependencies to v3.18.0 ([#9984](https://github.com/googleapis/google-cloud-java/issues/9984)) ([9814dc0](https://github.com/googleapis/google-cloud-java/commit/9814dc092ad7edb7b1b21f87fa48d76a2423d731))
+
+
 ## 0.4.0 (2023-10-11)
 
 ### Dependencies
