@@ -18,6 +18,7 @@ import synthtool.languages.java as java
 
 java.common_templates(excludes=[
     '.kokoro/nightly/samples.cfg',
+    '.kokoro/nightly/integration.cfg',
     '.kokoro/presubmit/samples.cfg',
     'codecov.yaml',
     'renovate.json',
