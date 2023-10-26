@@ -77,7 +77,7 @@ public interface TableDataProfileOrBuilder
    *
    *
    * <pre>
-   * The GCP project ID that owns the BigQuery dataset.
+   * The Google Cloud project ID that owns the BigQuery dataset.
    * </pre>
    *
    * <code>string dataset_project_id = 24;</code>
@@ -89,7 +89,7 @@ public interface TableDataProfileOrBuilder
    *
    *
    * <pre>
-   * The GCP project ID that owns the BigQuery dataset.
+   * The Google Cloud project ID that owns the BigQuery dataset.
    * </pre>
    *
    * <code>string dataset_project_id = 24;</code>

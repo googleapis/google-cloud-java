@@ -71,4 +71,18 @@ public interface OtherInfoTypeSummaryOrBuilder
    * @return The estimatedPrevalence.
    */
   int getEstimatedPrevalence();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether this infoType was excluded from sensitivity and risk analysis due
+   * to factors such as low prevalence (subject to change).
+   * </pre>
+   *
+   * <code>bool excluded_from_analysis = 3;</code>
+   *
+   * @return The excludedFromAnalysis.
+   */
+  boolean getExcludedFromAnalysis();
 }

@@ -22,8 +22,8 @@ package com.google.privacy.dlp.v2;
  *
  *
  * <pre>
- * Score is a summary of all elements in the data profile.
- * A higher number means more sensitive.
+ * Score is calculated from of all elements in the data profile.
+ * A higher level means the data is more sensitive.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.SensitivityScore}
@@ -67,7 +67,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Various score levels for resources.
+   * Various sensitivity score levels for resources.
    * </pre>
    *
    * Protobuf enum {@code google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel}
@@ -87,7 +87,8 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * No sensitive information detected. Limited access.
+     * No sensitive information detected. The resource isn't publicly
+     * accessible.
      * </pre>
      *
      * <code>SENSITIVITY_LOW = 10;</code>
@@ -97,9 +98,10 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Medium risk - PII, potentially sensitive data, or fields with free-text
-     * data that are at higher risk of having intermittent sensitive data.
-     * Consider limiting access.
+     * Medium risk. Contains personally identifiable information (PII),
+     * potentially sensitive data, or fields with free-text data that are at a
+     * higher risk of having intermittent sensitive data. Consider limiting
+     * access.
      * </pre>
      *
      * <code>SENSITIVITY_MODERATE = 20;</code>
@@ -109,9 +111,10 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * High risk – SPII may be present. Exfiltration of data may lead to user
-     * data loss. Re-identification of users may be possible. Consider limiting
-     * usage and or removing SPII.
+     * High risk. Sensitive personally identifiable information (SPII) can be
+     * present. Exfiltration of data can lead to user data loss.
+     * Re-identification of users might be possible. Consider limiting usage and
+     * or removing SPII.
      * </pre>
      *
      * <code>SENSITIVITY_HIGH = 30;</code>
@@ -134,7 +137,8 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * No sensitive information detected. Limited access.
+     * No sensitive information detected. The resource isn't publicly
+     * accessible.
      * </pre>
      *
      * <code>SENSITIVITY_LOW = 10;</code>
@@ -144,9 +148,10 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Medium risk - PII, potentially sensitive data, or fields with free-text
-     * data that are at higher risk of having intermittent sensitive data.
-     * Consider limiting access.
+     * Medium risk. Contains personally identifiable information (PII),
+     * potentially sensitive data, or fields with free-text data that are at a
+     * higher risk of having intermittent sensitive data. Consider limiting
+     * access.
      * </pre>
      *
      * <code>SENSITIVITY_MODERATE = 20;</code>
@@ -156,9 +161,10 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * High risk – SPII may be present. Exfiltration of data may lead to user
-     * data loss. Re-identification of users may be possible. Consider limiting
-     * usage and or removing SPII.
+     * High risk. Sensitive personally identifiable information (SPII) can be
+     * present. Exfiltration of data can lead to user data loss.
+     * Re-identification of users might be possible. Consider limiting usage and
+     * or removing SPII.
      * </pre>
      *
      * <code>SENSITIVITY_HIGH = 30;</code>
@@ -259,7 +265,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The score applied to the resource.
+   * The sensitivity score applied to the resource.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel score = 1;</code>
@@ -274,7 +280,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The score applied to the resource.
+   * The sensitivity score applied to the resource.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel score = 1;</code>
@@ -459,8 +465,8 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Score is a summary of all elements in the data profile.
-   * A higher number means more sensitive.
+   * Score is calculated from of all elements in the data profile.
+   * A higher level means the data is more sensitive.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.SensitivityScore}
@@ -641,7 +647,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The score applied to the resource.
+     * The sensitivity score applied to the resource.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel score = 1;</code>
@@ -656,7 +662,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The score applied to the resource.
+     * The sensitivity score applied to the resource.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel score = 1;</code>
@@ -674,7 +680,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The score applied to the resource.
+     * The sensitivity score applied to the resource.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel score = 1;</code>
@@ -693,7 +699,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The score applied to the resource.
+     * The sensitivity score applied to the resource.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel score = 1;</code>
@@ -715,7 +721,7 @@ public final class SensitivityScore extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The score applied to the resource.
+     * The sensitivity score applied to the resource.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel score = 1;</code>

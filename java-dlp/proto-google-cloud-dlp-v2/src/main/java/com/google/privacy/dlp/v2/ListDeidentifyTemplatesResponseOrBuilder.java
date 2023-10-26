@@ -84,8 +84,8 @@ public interface ListDeidentifyTemplatesResponseOrBuilder
    *
    *
    * <pre>
-   * If the next page is available then the next page token to be used
-   * in following ListDeidentifyTemplates request.
+   * If the next page is available then the next page token to be used in the
+   * following ListDeidentifyTemplates request.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -97,8 +97,8 @@ public interface ListDeidentifyTemplatesResponseOrBuilder
    *
    *
    * <pre>
-   * If the next page is available then the next page token to be used
-   * in following ListDeidentifyTemplates request.
+   * If the next page is available then the next page token to be used in the
+   * following ListDeidentifyTemplates request.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

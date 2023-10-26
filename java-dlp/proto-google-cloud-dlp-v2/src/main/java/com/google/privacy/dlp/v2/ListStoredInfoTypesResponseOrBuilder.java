@@ -80,7 +80,7 @@ public interface ListStoredInfoTypesResponseOrBuilder
    *
    * <pre>
    * If the next page is available then the next page token to be used
-   * in following ListStoredInfoTypes request.
+   * in the following ListStoredInfoTypes request.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -93,7 +93,7 @@ public interface ListStoredInfoTypesResponseOrBuilder
    *
    * <pre>
    * If the next page is available then the next page token to be used
-   * in following ListStoredInfoTypes request.
+   * in the following ListStoredInfoTypes request.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>

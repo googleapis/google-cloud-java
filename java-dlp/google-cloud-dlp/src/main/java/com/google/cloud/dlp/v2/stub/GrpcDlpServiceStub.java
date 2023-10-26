@@ -17,6 +17,7 @@
 package com.google.cloud.dlp.v2.stub;
 
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDeidentifyTemplatesPagedResponse;
+import static com.google.cloud.dlp.v2.DlpServiceClient.ListDiscoveryConfigsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListDlpJobsPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListInspectTemplatesPagedResponse;
 import static com.google.cloud.dlp.v2.DlpServiceClient.ListJobTriggersPagedResponse;
@@ -33,6 +34,7 @@ import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.privacy.dlp.v2.ActivateJobTriggerRequest;
 import com.google.privacy.dlp.v2.CancelDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.CreateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.CreateDlpJobRequest;
 import com.google.privacy.dlp.v2.CreateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.CreateJobTriggerRequest;
@@ -41,13 +43,16 @@ import com.google.privacy.dlp.v2.DeidentifyContentRequest;
 import com.google.privacy.dlp.v2.DeidentifyContentResponse;
 import com.google.privacy.dlp.v2.DeidentifyTemplate;
 import com.google.privacy.dlp.v2.DeleteDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.DeleteDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.DeleteDlpJobRequest;
 import com.google.privacy.dlp.v2.DeleteInspectTemplateRequest;
 import com.google.privacy.dlp.v2.DeleteJobTriggerRequest;
 import com.google.privacy.dlp.v2.DeleteStoredInfoTypeRequest;
+import com.google.privacy.dlp.v2.DiscoveryConfig;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.FinishDlpJobRequest;
 import com.google.privacy.dlp.v2.GetDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.GetDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.GetDlpJobRequest;
 import com.google.privacy.dlp.v2.GetInspectTemplateRequest;
 import com.google.privacy.dlp.v2.GetJobTriggerRequest;
@@ -61,6 +66,8 @@ import com.google.privacy.dlp.v2.InspectTemplate;
 import com.google.privacy.dlp.v2.JobTrigger;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesRequest;
 import com.google.privacy.dlp.v2.ListDeidentifyTemplatesResponse;
+import com.google.privacy.dlp.v2.ListDiscoveryConfigsRequest;
+import com.google.privacy.dlp.v2.ListDiscoveryConfigsResponse;
 import com.google.privacy.dlp.v2.ListDlpJobsRequest;
 import com.google.privacy.dlp.v2.ListDlpJobsResponse;
 import com.google.privacy.dlp.v2.ListInfoTypesRequest;
@@ -77,6 +84,7 @@ import com.google.privacy.dlp.v2.ReidentifyContentRequest;
 import com.google.privacy.dlp.v2.ReidentifyContentResponse;
 import com.google.privacy.dlp.v2.StoredInfoType;
 import com.google.privacy.dlp.v2.UpdateDeidentifyTemplateRequest;
+import com.google.privacy.dlp.v2.UpdateDiscoveryConfigRequest;
 import com.google.privacy.dlp.v2.UpdateInspectTemplateRequest;
 import com.google.privacy.dlp.v2.UpdateJobTriggerRequest;
 import com.google.privacy.dlp.v2.UpdateStoredInfoTypeRequest;
@@ -325,6 +333,57 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
               .setResponseMarshaller(ProtoUtils.marshaller(DlpJob.getDefaultInstance()))
               .build();
 
+  private static final MethodDescriptor<CreateDiscoveryConfigRequest, DiscoveryConfig>
+      createDiscoveryConfigMethodDescriptor =
+          MethodDescriptor.<CreateDiscoveryConfigRequest, DiscoveryConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/CreateDiscoveryConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateDiscoveryConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DiscoveryConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+      updateDiscoveryConfigMethodDescriptor =
+          MethodDescriptor.<UpdateDiscoveryConfigRequest, DiscoveryConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/UpdateDiscoveryConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateDiscoveryConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DiscoveryConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<GetDiscoveryConfigRequest, DiscoveryConfig>
+      getDiscoveryConfigMethodDescriptor =
+          MethodDescriptor.<GetDiscoveryConfigRequest, DiscoveryConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/GetDiscoveryConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetDiscoveryConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DiscoveryConfig.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>
+      listDiscoveryConfigsMethodDescriptor =
+          MethodDescriptor.<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/ListDiscoveryConfigs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListDiscoveryConfigsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListDiscoveryConfigsResponse.getDefaultInstance()))
+              .build();
+
+  private static final MethodDescriptor<DeleteDiscoveryConfigRequest, Empty>
+      deleteDiscoveryConfigMethodDescriptor =
+          MethodDescriptor.<DeleteDiscoveryConfigRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.privacy.dlp.v2.DlpService/DeleteDiscoveryConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteDiscoveryConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .build();
+
   private static final MethodDescriptor<CreateDlpJobRequest, DlpJob> createDlpJobMethodDescriptor =
       MethodDescriptor.<CreateDlpJobRequest, DlpJob>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -478,6 +537,17 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
       listJobTriggersPagedCallable;
   private final UnaryCallable<DeleteJobTriggerRequest, Empty> deleteJobTriggerCallable;
   private final UnaryCallable<ActivateJobTriggerRequest, DlpJob> activateJobTriggerCallable;
+  private final UnaryCallable<CreateDiscoveryConfigRequest, DiscoveryConfig>
+      createDiscoveryConfigCallable;
+  private final UnaryCallable<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+      updateDiscoveryConfigCallable;
+  private final UnaryCallable<GetDiscoveryConfigRequest, DiscoveryConfig>
+      getDiscoveryConfigCallable;
+  private final UnaryCallable<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>
+      listDiscoveryConfigsCallable;
+  private final UnaryCallable<ListDiscoveryConfigsRequest, ListDiscoveryConfigsPagedResponse>
+      listDiscoveryConfigsPagedCallable;
+  private final UnaryCallable<DeleteDiscoveryConfigRequest, Empty> deleteDiscoveryConfigCallable;
   private final UnaryCallable<CreateDlpJobRequest, DlpJob> createDlpJobCallable;
   private final UnaryCallable<ListDlpJobsRequest, ListDlpJobsResponse> listDlpJobsCallable;
   private final UnaryCallable<ListDlpJobsRequest, ListDlpJobsPagedResponse>
@@ -776,6 +846,60 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<CreateDiscoveryConfigRequest, DiscoveryConfig>
+        createDiscoveryConfigTransportSettings =
+            GrpcCallSettings.<CreateDiscoveryConfigRequest, DiscoveryConfig>newBuilder()
+                .setMethodDescriptor(createDiscoveryConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+        updateDiscoveryConfigTransportSettings =
+            GrpcCallSettings.<UpdateDiscoveryConfigRequest, DiscoveryConfig>newBuilder()
+                .setMethodDescriptor(updateDiscoveryConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetDiscoveryConfigRequest, DiscoveryConfig>
+        getDiscoveryConfigTransportSettings =
+            GrpcCallSettings.<GetDiscoveryConfigRequest, DiscoveryConfig>newBuilder()
+                .setMethodDescriptor(getDiscoveryConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>
+        listDiscoveryConfigsTransportSettings =
+            GrpcCallSettings.<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>newBuilder()
+                .setMethodDescriptor(listDiscoveryConfigsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteDiscoveryConfigRequest, Empty> deleteDiscoveryConfigTransportSettings =
+        GrpcCallSettings.<DeleteDiscoveryConfigRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteDiscoveryConfigMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<CreateDlpJobRequest, DlpJob> createDlpJobTransportSettings =
         GrpcCallSettings.<CreateDlpJobRequest, DlpJob>newBuilder()
             .setMethodDescriptor(createDlpJobMethodDescriptor)
@@ -1008,6 +1132,36 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
             activateJobTriggerTransportSettings,
             settings.activateJobTriggerSettings(),
             clientContext);
+    this.createDiscoveryConfigCallable =
+        callableFactory.createUnaryCallable(
+            createDiscoveryConfigTransportSettings,
+            settings.createDiscoveryConfigSettings(),
+            clientContext);
+    this.updateDiscoveryConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateDiscoveryConfigTransportSettings,
+            settings.updateDiscoveryConfigSettings(),
+            clientContext);
+    this.getDiscoveryConfigCallable =
+        callableFactory.createUnaryCallable(
+            getDiscoveryConfigTransportSettings,
+            settings.getDiscoveryConfigSettings(),
+            clientContext);
+    this.listDiscoveryConfigsCallable =
+        callableFactory.createUnaryCallable(
+            listDiscoveryConfigsTransportSettings,
+            settings.listDiscoveryConfigsSettings(),
+            clientContext);
+    this.listDiscoveryConfigsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDiscoveryConfigsTransportSettings,
+            settings.listDiscoveryConfigsSettings(),
+            clientContext);
+    this.deleteDiscoveryConfigCallable =
+        callableFactory.createUnaryCallable(
+            deleteDiscoveryConfigTransportSettings,
+            settings.deleteDiscoveryConfigSettings(),
+            clientContext);
     this.createDlpJobCallable =
         callableFactory.createUnaryCallable(
             createDlpJobTransportSettings, settings.createDlpJobSettings(), clientContext);
@@ -1209,6 +1363,40 @@ public class GrpcDlpServiceStub extends DlpServiceStub {
   @Override
   public UnaryCallable<ActivateJobTriggerRequest, DlpJob> activateJobTriggerCallable() {
     return activateJobTriggerCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateDiscoveryConfigRequest, DiscoveryConfig>
+      createDiscoveryConfigCallable() {
+    return createDiscoveryConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDiscoveryConfigRequest, DiscoveryConfig>
+      updateDiscoveryConfigCallable() {
+    return updateDiscoveryConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDiscoveryConfigRequest, DiscoveryConfig> getDiscoveryConfigCallable() {
+    return getDiscoveryConfigCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDiscoveryConfigsRequest, ListDiscoveryConfigsResponse>
+      listDiscoveryConfigsCallable() {
+    return listDiscoveryConfigsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDiscoveryConfigsRequest, ListDiscoveryConfigsPagedResponse>
+      listDiscoveryConfigsPagedCallable() {
+    return listDiscoveryConfigsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDiscoveryConfigRequest, Empty> deleteDiscoveryConfigCallable() {
+    return deleteDiscoveryConfigCallable;
   }
 
   @Override

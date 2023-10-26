@@ -1485,16 +1485,14 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Publish the result summary of a DlpJob to the Cloud Security
-   * Command Center (CSCC Alpha).
-   * This action is only available for projects which are parts of
-   * an organization and whitelisted for the alpha Cloud Security Command
-   * Center.
-   * The action will publish the count of finding instances and their info
-   * types. The summary of findings will be persisted in CSCC and are governed
-   * by CSCC service-specific policy, see
-   * https://cloud.google.com/terms/service-terms Only a single instance of this
-   * action can be specified. Compatible with: Inspect
+   * Publish the result summary of a DlpJob to [Security Command
+   * Center](https://cloud.google.com/security-command-center). This action is
+   * available for only projects that belong to an organization. This action
+   * publishes the count of finding instances and their infoTypes. The summary
+   * of findings are persisted in Security Command Center and are governed by
+   * [service-specific policies for Security Command
+   * Center](https://cloud.google.com/terms/service-terms). Only a single
+   * instance of this action can be specified. Compatible with: Inspect
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.Action.PublishSummaryToCscc}
@@ -1688,16 +1686,14 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Publish the result summary of a DlpJob to the Cloud Security
-     * Command Center (CSCC Alpha).
-     * This action is only available for projects which are parts of
-     * an organization and whitelisted for the alpha Cloud Security Command
-     * Center.
-     * The action will publish the count of finding instances and their info
-     * types. The summary of findings will be persisted in CSCC and are governed
-     * by CSCC service-specific policy, see
-     * https://cloud.google.com/terms/service-terms Only a single instance of this
-     * action can be specified. Compatible with: Inspect
+     * Publish the result summary of a DlpJob to [Security Command
+     * Center](https://cloud.google.com/security-command-center). This action is
+     * available for only projects that belong to an organization. This action
+     * publishes the count of finding instances and their infoTypes. The summary
+     * of findings are persisted in Security Command Center and are governed by
+     * [service-specific policies for Security Command
+     * Center](https://cloud.google.com/terms/service-terms). Only a single
+     * instance of this action can be specified. Compatible with: Inspect
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.Action.PublishSummaryToCscc}
@@ -2495,10 +2491,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User settable Cloud Storage bucket and folders to store de-identified
-     * files. This field must be set for cloud storage deidentification. The
-     * output Cloud Storage bucket must be different from the input bucket.
-     * De-identified files will overwrite files in the output path.
+     * Required. User settable Cloud Storage bucket and folders to store
+     * de-identified files. This field must be set for cloud storage
+     * deidentification. The output Cloud Storage bucket must be different
+     * from the input bucket. De-identified files will overwrite files in the
+     * output path.
      *
      * Form of: gs://bucket/folder/ or gs://bucket
      * </pre>
@@ -2512,10 +2509,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User settable Cloud Storage bucket and folders to store de-identified
-     * files. This field must be set for cloud storage deidentification. The
-     * output Cloud Storage bucket must be different from the input bucket.
-     * De-identified files will overwrite files in the output path.
+     * Required. User settable Cloud Storage bucket and folders to store
+     * de-identified files. This field must be set for cloud storage
+     * deidentification. The output Cloud Storage bucket must be different
+     * from the input bucket. De-identified files will overwrite files in the
+     * output path.
      *
      * Form of: gs://bucket/folder/ or gs://bucket
      * </pre>
@@ -2529,10 +2527,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User settable Cloud Storage bucket and folders to store de-identified
-     * files. This field must be set for cloud storage deidentification. The
-     * output Cloud Storage bucket must be different from the input bucket.
-     * De-identified files will overwrite files in the output path.
+     * Required. User settable Cloud Storage bucket and folders to store
+     * de-identified files. This field must be set for cloud storage
+     * deidentification. The output Cloud Storage bucket must be different
+     * from the input bucket. De-identified files will overwrite files in the
+     * output path.
      *
      * Form of: gs://bucket/folder/ or gs://bucket
      * </pre>
@@ -2877,10 +2876,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User settable Cloud Storage bucket and folders to store de-identified
-     * files. This field must be set for cloud storage deidentification. The
-     * output Cloud Storage bucket must be different from the input bucket.
-     * De-identified files will overwrite files in the output path.
+     * Required. User settable Cloud Storage bucket and folders to store
+     * de-identified files. This field must be set for cloud storage
+     * deidentification. The output Cloud Storage bucket must be different
+     * from the input bucket. De-identified files will overwrite files in the
+     * output path.
      *
      * Form of: gs://bucket/folder/ or gs://bucket
      * </pre>
@@ -2896,10 +2896,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User settable Cloud Storage bucket and folders to store de-identified
-     * files. This field must be set for cloud storage deidentification. The
-     * output Cloud Storage bucket must be different from the input bucket.
-     * De-identified files will overwrite files in the output path.
+     * Required. User settable Cloud Storage bucket and folders to store
+     * de-identified files. This field must be set for cloud storage
+     * deidentification. The output Cloud Storage bucket must be different
+     * from the input bucket. De-identified files will overwrite files in the
+     * output path.
      *
      * Form of: gs://bucket/folder/ or gs://bucket
      * </pre>
@@ -2928,10 +2929,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. User settable Cloud Storage bucket and folders to store de-identified
-     * files. This field must be set for cloud storage deidentification. The
-     * output Cloud Storage bucket must be different from the input bucket.
-     * De-identified files will overwrite files in the output path.
+     * Required. User settable Cloud Storage bucket and folders to store
+     * de-identified files. This field must be set for cloud storage
+     * deidentification. The output Cloud Storage bucket must be different
+     * from the input bucket. De-identified files will overwrite files in the
+     * output path.
      *
      * Form of: gs://bucket/folder/ or gs://bucket
      * </pre>
@@ -4091,10 +4093,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. User settable Cloud Storage bucket and folders to store de-identified
-       * files. This field must be set for cloud storage deidentification. The
-       * output Cloud Storage bucket must be different from the input bucket.
-       * De-identified files will overwrite files in the output path.
+       * Required. User settable Cloud Storage bucket and folders to store
+       * de-identified files. This field must be set for cloud storage
+       * deidentification. The output Cloud Storage bucket must be different
+       * from the input bucket. De-identified files will overwrite files in the
+       * output path.
        *
        * Form of: gs://bucket/folder/ or gs://bucket
        * </pre>
@@ -4111,10 +4114,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. User settable Cloud Storage bucket and folders to store de-identified
-       * files. This field must be set for cloud storage deidentification. The
-       * output Cloud Storage bucket must be different from the input bucket.
-       * De-identified files will overwrite files in the output path.
+       * Required. User settable Cloud Storage bucket and folders to store
+       * de-identified files. This field must be set for cloud storage
+       * deidentification. The output Cloud Storage bucket must be different
+       * from the input bucket. De-identified files will overwrite files in the
+       * output path.
        *
        * Form of: gs://bucket/folder/ or gs://bucket
        * </pre>
@@ -4144,10 +4148,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. User settable Cloud Storage bucket and folders to store de-identified
-       * files. This field must be set for cloud storage deidentification. The
-       * output Cloud Storage bucket must be different from the input bucket.
-       * De-identified files will overwrite files in the output path.
+       * Required. User settable Cloud Storage bucket and folders to store
+       * de-identified files. This field must be set for cloud storage
+       * deidentification. The output Cloud Storage bucket must be different
+       * from the input bucket. De-identified files will overwrite files in the
+       * output path.
        *
        * Form of: gs://bucket/folder/ or gs://bucket
        * </pre>
@@ -4177,10 +4182,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. User settable Cloud Storage bucket and folders to store de-identified
-       * files. This field must be set for cloud storage deidentification. The
-       * output Cloud Storage bucket must be different from the input bucket.
-       * De-identified files will overwrite files in the output path.
+       * Required. User settable Cloud Storage bucket and folders to store
+       * de-identified files. This field must be set for cloud storage
+       * deidentification. The output Cloud Storage bucket must be different
+       * from the input bucket. De-identified files will overwrite files in the
+       * output path.
        *
        * Form of: gs://bucket/folder/ or gs://bucket
        * </pre>
@@ -4203,10 +4209,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. User settable Cloud Storage bucket and folders to store de-identified
-       * files. This field must be set for cloud storage deidentification. The
-       * output Cloud Storage bucket must be different from the input bucket.
-       * De-identified files will overwrite files in the output path.
+       * Required. User settable Cloud Storage bucket and folders to store
+       * de-identified files. This field must be set for cloud storage
+       * deidentification. The output Cloud Storage bucket must be different
+       * from the input bucket. De-identified files will overwrite files in the
+       * output path.
        *
        * Form of: gs://bucket/folder/ or gs://bucket
        * </pre>
@@ -4227,10 +4234,11 @@ public final class Action extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. User settable Cloud Storage bucket and folders to store de-identified
-       * files. This field must be set for cloud storage deidentification. The
-       * output Cloud Storage bucket must be different from the input bucket.
-       * De-identified files will overwrite files in the output path.
+       * Required. User settable Cloud Storage bucket and folders to store
+       * de-identified files. This field must be set for cloud storage
+       * deidentification. The output Cloud Storage bucket must be different
+       * from the input bucket. De-identified files will overwrite files in the
+       * output path.
        *
        * Form of: gs://bucket/folder/ or gs://bucket
        * </pre>

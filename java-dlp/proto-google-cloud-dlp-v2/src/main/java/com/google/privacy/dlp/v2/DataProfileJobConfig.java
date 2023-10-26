@@ -199,7 +199,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
    * scanned.
    *
    * For more information, see
-   * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+   * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
    * </pre>
    *
    * <code>repeated string inspect_templates = 7;</code>
@@ -228,7 +228,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
    * scanned.
    *
    * For more information, see
-   * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+   * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
    * </pre>
    *
    * <code>repeated string inspect_templates = 7;</code>
@@ -257,7 +257,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
    * scanned.
    *
    * For more information, see
-   * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+   * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
    * </pre>
    *
    * <code>repeated string inspect_templates = 7;</code>
@@ -287,7 +287,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
    * scanned.
    *
    * For more information, see
-   * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+   * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
    * </pre>
    *
    * <code>repeated string inspect_templates = 7;</code>
@@ -1187,7 +1187,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * scanned.
      *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 7;</code>
@@ -1217,7 +1217,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * scanned.
      *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 7;</code>
@@ -1246,7 +1246,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * scanned.
      *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 7;</code>
@@ -1276,7 +1276,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * scanned.
      *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 7;</code>
@@ -1306,7 +1306,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * scanned.
      *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 7;</code>
@@ -1344,7 +1344,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * scanned.
      *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 7;</code>
@@ -1381,7 +1381,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * scanned.
      *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 7;</code>
@@ -1415,7 +1415,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * scanned.
      *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 7;</code>
@@ -1448,7 +1448,7 @@ public final class DataProfileJobConfig extends com.google.protobuf.GeneratedMes
      * scanned.
      *
      * For more information, see
-     * https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+     * https://cloud.google.com/dlp/docs/data-profiles#data-residency.
      * </pre>
      *
      * <code>repeated string inspect_templates = 7;</code>

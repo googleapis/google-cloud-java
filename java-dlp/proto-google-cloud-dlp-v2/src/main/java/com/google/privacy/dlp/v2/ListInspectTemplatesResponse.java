@@ -143,8 +143,8 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * If the next page is available then the next page token to be used
-   * in following ListInspectTemplates request.
+   * If the next page is available then the next page token to be used in the
+   * following ListInspectTemplates request.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -167,8 +167,8 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * If the next page is available then the next page token to be used
-   * in following ListInspectTemplates request.
+   * If the next page is available then the next page token to be used in the
+   * following ListInspectTemplates request.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
@@ -963,8 +963,8 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * If the next page is available then the next page token to be used
-     * in following ListInspectTemplates request.
+     * If the next page is available then the next page token to be used in the
+     * following ListInspectTemplates request.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -986,8 +986,8 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * If the next page is available then the next page token to be used
-     * in following ListInspectTemplates request.
+     * If the next page is available then the next page token to be used in the
+     * following ListInspectTemplates request.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1009,8 +1009,8 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * If the next page is available then the next page token to be used
-     * in following ListInspectTemplates request.
+     * If the next page is available then the next page token to be used in the
+     * following ListInspectTemplates request.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1031,8 +1031,8 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * If the next page is available then the next page token to be used
-     * in following ListInspectTemplates request.
+     * If the next page is available then the next page token to be used in the
+     * following ListInspectTemplates request.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>
@@ -1049,8 +1049,8 @@ public final class ListInspectTemplatesResponse extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * If the next page is available then the next page token to be used
-     * in following ListInspectTemplates request.
+     * If the next page is available then the next page token to be used in the
+     * following ListInspectTemplates request.
      * </pre>
      *
      * <code>string next_page_token = 2;</code>

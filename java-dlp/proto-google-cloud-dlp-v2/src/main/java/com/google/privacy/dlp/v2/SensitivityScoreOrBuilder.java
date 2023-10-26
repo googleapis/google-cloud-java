@@ -27,7 +27,7 @@ public interface SensitivityScoreOrBuilder
    *
    *
    * <pre>
-   * The score applied to the resource.
+   * The sensitivity score applied to the resource.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel score = 1;</code>
@@ -39,7 +39,7 @@ public interface SensitivityScoreOrBuilder
    *
    *
    * <pre>
-   * The score applied to the resource.
+   * The sensitivity score applied to the resource.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.SensitivityScore.SensitivityScoreLevel score = 1;</code>
