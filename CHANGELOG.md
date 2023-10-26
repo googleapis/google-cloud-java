@@ -1,5 +1,16 @@
 # Changelog
 
+## [2.44.1](https://github.com/googleapis/java-bigquerystorage/compare/v2.44.0...v2.44.1) (2023-10-25)
+
+
+### Dependencies
+
+* Update actions/checkout digest to b4ffde6 ([#2281](https://github.com/googleapis/java-bigquerystorage/issues/2281)) ([8c78515](https://github.com/googleapis/java-bigquerystorage/commit/8c78515979e22a802e70def26dafa9512d785268))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.33.2 ([#2274](https://github.com/googleapis/java-bigquerystorage/issues/2274)) ([d55ce5e](https://github.com/googleapis/java-bigquerystorage/commit/d55ce5edd6f728cfce7ce0d59cf29d6e9d14d80a))
+* Update dependency com.google.cloud:google-cloud-shared-dependencies to v3.18.0 ([#2282](https://github.com/googleapis/java-bigquerystorage/issues/2282)) ([12f3fce](https://github.com/googleapis/java-bigquerystorage/commit/12f3fce59ab95b6b0319c080b86916586e35ce00))
+* Update dependency org.json:json to v20231013 - abandoned ([#2276](https://github.com/googleapis/java-bigquerystorage/issues/2276)) ([0c5a60b](https://github.com/googleapis/java-bigquerystorage/commit/0c5a60b9ead20cbceda08805229ad6fa3f91c7e3))
+* Update dependency org.json:json to v20231013 [security] ([#2278](https://github.com/googleapis/java-bigquerystorage/issues/2278)) ([2b7887d](https://github.com/googleapis/java-bigquerystorage/commit/2b7887d0bab1e0534f1616f3b64a28d7a57518d6))
+
 ## [2.44.0](https://github.com/googleapis/java-bigquerystorage/compare/v2.43.0...v2.44.0) (2023-10-10)
 
 
