@@ -192,6 +192,57 @@ public class BigtableInstanceAdminClientIT {
   }
 
   @Test
+  public void appProfileTestPriority() {
+    String newInstanceId = prefixGenerator.newPrefix();
+    String newClusterId = newInstanceId + "-c1";
+
+    client.createInstance(
+        CreateInstanceRequest.of(newInstanceId)
+            .addCluster(newClusterId, testEnvRule.env().getPrimaryZone(), 1, StorageType.SSD)
+            .setDisplayName("Priority-Instance-Test")
+            .addLabel("state", "readytodelete")
+            .setType(Type.PRODUCTION));
+
+    try {
+      assertThat(client.exists(newInstanceId)).isTrue();
+
+      String testAppProfile = prefixGenerator.newPrefix();
+
+      // This should be created with HIGH priority.
+      CreateAppProfileRequest request =
+          CreateAppProfileRequest.of(newInstanceId, testAppProfile)
+              .setRoutingPolicy(AppProfile.SingleClusterRoutingPolicy.of(newClusterId))
+              .setDescription("This is to test app profile");
+
+      AppProfile newlyCreatedAppProfile = client.createAppProfile(request);
+      AppProfile.StandardIsolationPolicy newlyCreatedAppProfilePolicy =
+          (AppProfile.StandardIsolationPolicy) newlyCreatedAppProfile.getIsolationPolicy();
+      assertThat(newlyCreatedAppProfilePolicy.getPriority()).isEqualTo(AppProfile.Priority.HIGH);
+
+      AppProfile updated =
+          client.updateAppProfile(
+              UpdateAppProfileRequest.of(newlyCreatedAppProfile)
+                  .setIsolationPolicy(
+                      AppProfile.StandardIsolationPolicy.of(AppProfile.Priority.LOW)));
+
+      AppProfile freshAppProfile = client.getAppProfile(newInstanceId, testAppProfile);
+      AppProfile.StandardIsolationPolicy freshAppProfilePolicy =
+          (AppProfile.StandardIsolationPolicy) freshAppProfile.getIsolationPolicy();
+      AppProfile.StandardIsolationPolicy updatedAppProfilePolicy =
+          (AppProfile.StandardIsolationPolicy) updated.getIsolationPolicy();
+
+      assertThat(freshAppProfilePolicy.getPriority()).isEqualTo(AppProfile.Priority.LOW);
+      assertThat(freshAppProfilePolicy).isEqualTo(updatedAppProfilePolicy);
+
+      assertThat(client.listAppProfiles(newInstanceId)).contains(freshAppProfile);
+    } finally {
+      if (client.exists(newInstanceId)) {
+        client.deleteInstance(newInstanceId);
+      }
+    }
+  }
+
+  @Test
   public void iamUpdateTest() {
     Policy policy = client.getIamPolicy(instanceId);
     assertThat(policy).isNotNull();

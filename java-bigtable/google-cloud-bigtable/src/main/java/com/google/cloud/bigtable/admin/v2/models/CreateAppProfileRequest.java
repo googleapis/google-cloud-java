@@ -17,9 +17,11 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
+import com.google.cloud.bigtable.admin.v2.models.AppProfile.IsolationPolicy;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile.MultiClusterRoutingPolicy;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile.RoutingPolicy;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile.SingleClusterRoutingPolicy;
+import com.google.cloud.bigtable.admin.v2.models.AppProfile.StandardIsolationPolicy;
 import com.google.common.base.Preconditions;
 import javax.annotation.Nonnull;
 
@@ -87,6 +89,21 @@ public final class CreateAppProfileRequest {
           .setSingleClusterRouting(((SingleClusterRoutingPolicy) routingPolicy).toProto());
     } else {
       throw new IllegalArgumentException("Unknown policy type: " + routingPolicy);
+    }
+
+    return this;
+  }
+
+  /** Sets the isolation policy for all read/write requests that use this app profile. */
+  public CreateAppProfileRequest setIsolationPolicy(IsolationPolicy isolationPolicy) {
+    Preconditions.checkNotNull(isolationPolicy);
+
+    if (isolationPolicy instanceof StandardIsolationPolicy) {
+      proto
+          .getAppProfileBuilder()
+          .setStandardIsolation(((StandardIsolationPolicy) isolationPolicy).toProto());
+    } else {
+      throw new IllegalArgumentException("Unknown policy type: " + isolationPolicy);
     }
 
     return this;

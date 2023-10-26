@@ -19,7 +19,9 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting;
 import com.google.bigtable.admin.v2.AppProfileName;
+import com.google.cloud.bigtable.admin.v2.models.AppProfile.Priority;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile.SingleClusterRoutingPolicy;
+import com.google.cloud.bigtable.admin.v2.models.AppProfile.StandardIsolationPolicy;
 import com.google.common.collect.ImmutableList;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -90,6 +92,33 @@ public class AppProfileTest {
   }
 
   @Test
+  public void testFromProtoWithStandardIsolation() {
+    AppProfile profile =
+        AppProfile.fromProto(
+            com.google.bigtable.admin.v2.AppProfile.newBuilder()
+                .setName(AppProfileName.of("my-project", "my-instance", "my-profile").toString())
+                .setDescription("my description")
+                .setSingleClusterRouting(
+                    SingleClusterRouting.newBuilder()
+                        .setClusterId("my-cluster")
+                        .setAllowTransactionalWrites(true)
+                        .build())
+                .setStandardIsolation(
+                    com.google.bigtable.admin.v2.AppProfile.StandardIsolation.newBuilder()
+                        .setPriority(
+                            com.google.bigtable.admin.v2.AppProfile.Priority.PRIORITY_MEDIUM)
+                        .build())
+                .setEtag("my-etag")
+                .build());
+
+    assertThat(profile.getInstanceId()).isEqualTo("my-instance");
+    assertThat(profile.getId()).isEqualTo("my-profile");
+    assertThat(profile.getDescription()).isEqualTo("my description");
+    assertThat(profile.getPolicy()).isEqualTo(SingleClusterRoutingPolicy.of("my-cluster", true));
+    assertThat(profile.getIsolationPolicy()).isEqualTo(StandardIsolationPolicy.of(Priority.MEDIUM));
+  }
+
+  @Test
   public void testNoNameError() {
     Exception actualException = null;
 
@@ -126,6 +155,11 @@ public class AppProfileTest {
                     com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.newBuilder()
                         .addAllClusterIds(ImmutableList.of("cluster-id-1", "cluster-id-2"))
                         .build())
+                .setStandardIsolation(
+                    com.google.bigtable.admin.v2.AppProfile.StandardIsolation.newBuilder()
+                        .setPriority(
+                            com.google.bigtable.admin.v2.AppProfile.Priority.PRIORITY_MEDIUM)
+                        .build())
                 .setEtag("my-etag")
                 .build());
 
@@ -142,6 +176,11 @@ public class AppProfileTest {
                 .setMultiClusterRoutingUseAny(
                     com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.newBuilder()
                         .addAllClusterIds(ImmutableList.of("cluster-id-1", "cluster-id-2"))
+                        .build())
+                .setStandardIsolation(
+                    com.google.bigtable.admin.v2.AppProfile.StandardIsolation.newBuilder()
+                        .setPriority(
+                            com.google.bigtable.admin.v2.AppProfile.Priority.PRIORITY_MEDIUM)
                         .build())
                 .setEtag("my-etag")
                 .build());
@@ -161,6 +200,11 @@ public class AppProfileTest {
                     com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.newBuilder()
                         .addAllClusterIds(ImmutableList.of("cluster-id-1", "cluster-id-2"))
                         .build())
+                .setStandardIsolation(
+                    com.google.bigtable.admin.v2.AppProfile.StandardIsolation.newBuilder()
+                        .setPriority(
+                            com.google.bigtable.admin.v2.AppProfile.Priority.PRIORITY_MEDIUM)
+                        .build())
                 .setEtag("my-etag")
                 .build());
 
@@ -177,6 +221,11 @@ public class AppProfileTest {
                 .setMultiClusterRoutingUseAny(
                     com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.newBuilder()
                         .addAllClusterIds(ImmutableList.of("cluster-id-1", "cluster-id-2"))
+                        .build())
+                .setStandardIsolation(
+                    com.google.bigtable.admin.v2.AppProfile.StandardIsolation.newBuilder()
+                        .setPriority(
+                            com.google.bigtable.admin.v2.AppProfile.Priority.PRIORITY_MEDIUM)
                         .build())
                 .setEtag("my-etag")
                 .build());

@@ -43,6 +43,8 @@ import com.google.cloud.bigtable.admin.v2.BaseBigtableInstanceAdminClient.ListAp
 import com.google.cloud.bigtable.admin.v2.internal.NameUtil;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile.MultiClusterRoutingPolicy;
+import com.google.cloud.bigtable.admin.v2.models.AppProfile.Priority;
+import com.google.cloud.bigtable.admin.v2.models.AppProfile.StandardIsolationPolicy;
 import com.google.cloud.bigtable.admin.v2.models.Cluster;
 import com.google.cloud.bigtable.admin.v2.models.ClusterAutoscalingConfig;
 import com.google.cloud.bigtable.admin.v2.models.CreateAppProfileRequest;
@@ -82,7 +84,7 @@ import org.mockito.stubbing.Answer;
 
 @RunWith(JUnit4.class)
 /**
- * Tests for {@link BigtableTableAdminClient}. This test class uses Mockito so it has been
+ * Tests for {@link BigtableInstanceAdminClient}. This test class uses Mockito so it has been
  * explicitly excluded from Native Image testing by not following the naming convention of (IT* and
  * *ClientTest).
  */
@@ -984,6 +986,55 @@ public class BigtableInstanceAdminClientTests {
   }
 
   @Test
+  public void testCreateAppProfileAddPriority() {
+    // Setup
+    Mockito.when(mockStub.createAppProfileCallable()).thenReturn(mockCreateAppProfileCallable);
+
+    com.google.bigtable.admin.v2.CreateAppProfileRequest expectedRequest =
+        com.google.bigtable.admin.v2.CreateAppProfileRequest.newBuilder()
+            .setParent(NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID))
+            .setAppProfileId(APP_PROFILE_ID)
+            .setAppProfile(
+                com.google.bigtable.admin.v2.AppProfile.newBuilder()
+                    .setDescription("my description")
+                    .setMultiClusterRoutingUseAny(
+                        com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
+                            .newBuilder()
+                            .addClusterIds("cluster-id-1"))
+                    .setStandardIsolation(
+                        com.google.bigtable.admin.v2.AppProfile.StandardIsolation.newBuilder()
+                            .setPriority(
+                                com.google.bigtable.admin.v2.AppProfile.Priority.PRIORITY_MEDIUM)))
+            .build();
+
+    com.google.bigtable.admin.v2.AppProfile expectedResponse =
+        com.google.bigtable.admin.v2.AppProfile.newBuilder()
+            .setName(APP_PROFILE_NAME)
+            .setDescription("my description")
+            .setMultiClusterRoutingUseAny(
+                com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny.newBuilder()
+                    .addClusterIds("cluster-id-1"))
+            .setStandardIsolation(
+                com.google.bigtable.admin.v2.AppProfile.StandardIsolation.newBuilder()
+                    .setPriority(com.google.bigtable.admin.v2.AppProfile.Priority.PRIORITY_MEDIUM))
+            .build();
+
+    Mockito.when(mockCreateAppProfileCallable.futureCall(expectedRequest))
+        .thenReturn(ApiFutures.immediateFuture(expectedResponse));
+
+    // Execute
+    AppProfile actualResult =
+        adminClient.createAppProfile(
+            CreateAppProfileRequest.of(INSTANCE_ID, APP_PROFILE_ID)
+                .setDescription("my description")
+                .setRoutingPolicy(MultiClusterRoutingPolicy.of("cluster-id-1"))
+                .setIsolationPolicy(StandardIsolationPolicy.of(Priority.MEDIUM)));
+
+    // Verify
+    assertThat(actualResult).isEqualTo(AppProfile.fromProto(expectedResponse));
+  }
+
+  @Test
   public void testGetAppProfile() {
     // Setup
     Mockito.when(mockStub.getAppProfileCallable()).thenReturn(mockGetAppProfileCallable);
@@ -1096,6 +1147,47 @@ public class BigtableInstanceAdminClientTests {
         adminClient.updateAppProfile(
             UpdateAppProfileRequest.of(INSTANCE_ID, APP_PROFILE_ID)
                 .setDescription("updated description"));
+
+    // Verify
+    assertThat(actualResult).isEqualTo(AppProfile.fromProto(expectedResponse));
+  }
+
+  @Test
+  public void testUpdateAppProfileStandardIsolation() {
+    // Setup
+    Mockito.when(mockStub.updateAppProfileOperationCallable())
+        .thenReturn(mockUpdateAppProfileCallable);
+
+    com.google.bigtable.admin.v2.UpdateAppProfileRequest expectedRequest =
+        com.google.bigtable.admin.v2.UpdateAppProfileRequest.newBuilder()
+            .setAppProfile(
+                com.google.bigtable.admin.v2.AppProfile.newBuilder()
+                    .setName(APP_PROFILE_NAME)
+                    .setStandardIsolation(
+                        com.google.bigtable.admin.v2.AppProfile.StandardIsolation.newBuilder()
+                            .setPriority(
+                                com.google.bigtable.admin.v2.AppProfile.Priority.PRIORITY_LOW)))
+            .setUpdateMask(FieldMask.newBuilder().addPaths("standard_isolation"))
+            .build();
+
+    com.google.bigtable.admin.v2.AppProfile expectedResponse =
+        com.google.bigtable.admin.v2.AppProfile.newBuilder()
+            .setName(APP_PROFILE_NAME)
+            .setMultiClusterRoutingUseAny(
+                com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny
+                    .getDefaultInstance())
+            .setStandardIsolation(
+                com.google.bigtable.admin.v2.AppProfile.StandardIsolation.newBuilder()
+                    .setPriority(com.google.bigtable.admin.v2.AppProfile.Priority.PRIORITY_LOW))
+            .build();
+
+    mockOperationResult(mockUpdateAppProfileCallable, expectedRequest, expectedResponse);
+
+    // Execute
+    AppProfile actualResult =
+        adminClient.updateAppProfile(
+            UpdateAppProfileRequest.of(INSTANCE_ID, APP_PROFILE_ID)
+                .setIsolationPolicy(StandardIsolationPolicy.of(Priority.LOW)));
 
     // Verify
     assertThat(actualResult).isEqualTo(AppProfile.fromProto(expectedResponse));

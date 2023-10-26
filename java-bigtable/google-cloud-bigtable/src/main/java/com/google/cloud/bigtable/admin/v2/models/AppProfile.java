@@ -17,6 +17,8 @@ package com.google.cloud.bigtable.admin.v2.models;
 
 import com.google.api.core.InternalApi;
 import com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny;
+import com.google.bigtable.admin.v2.AppProfile.Priority;
+import com.google.bigtable.admin.v2.AppProfile.StandardIsolation;
 import com.google.bigtable.admin.v2.AppProfileName;
 import com.google.common.base.Objects;
 import com.google.common.base.Preconditions;
@@ -73,6 +75,15 @@ public final class AppProfile {
     } else {
       // Should never happen because the constructor verifies that one must exist.
       throw new VerifyException();
+    }
+  }
+
+  public IsolationPolicy getIsolationPolicy() {
+    if (proto.hasStandardIsolation()) {
+      return new StandardIsolationPolicy(proto.getStandardIsolation());
+    } else {
+      // Should never happen because the constructor verifies that one must exist.
+      throw new IllegalStateException();
     }
   }
 
@@ -284,6 +295,112 @@ public final class AppProfile {
         return false;
       }
       MultiClusterRoutingPolicy that = (MultiClusterRoutingPolicy) o;
+      return Objects.equal(proto, that.proto);
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hashCode(proto);
+    }
+  }
+
+  /** Represents the options for isolating this app profile's traffic from other use cases. */
+  @SuppressWarnings("WeakerAccess")
+  public interface IsolationPolicy {}
+
+  /**
+   * The possible priorities for an app profile. Note that higher priority writes can sometimes
+   * queue behind lower priority writes to the same tablet, as writes must be strictly sequenced in
+   * the durability log.
+   */
+  public static enum Priority {
+    LOW(com.google.bigtable.admin.v2.AppProfile.Priority.PRIORITY_LOW),
+    MEDIUM(com.google.bigtable.admin.v2.AppProfile.Priority.PRIORITY_MEDIUM),
+    HIGH(com.google.bigtable.admin.v2.AppProfile.Priority.PRIORITY_HIGH);
+
+    private final com.google.bigtable.admin.v2.AppProfile.Priority proto;
+
+    /**
+     * Wraps the protobuf. This method is considered an internal implementation detail and not meant
+     * to be used by applications.
+     */
+    @InternalApi
+    public static Priority fromProto(com.google.bigtable.admin.v2.AppProfile.Priority proto) {
+      Preconditions.checkNotNull(proto);
+
+      for (Priority priority : values()) {
+        if (priority.proto.equals(proto)) {
+          return priority;
+        }
+      }
+
+      throw new IllegalArgumentException("Unknown priority: " + proto);
+    }
+
+    Priority(com.google.bigtable.admin.v2.AppProfile.Priority proto) {
+      this.proto = proto;
+    }
+
+    /**
+     * Creates the request protobuf. This method is considered an internal implementation detail and
+     * not meant to be used by applications.
+     */
+    @InternalApi
+    public com.google.bigtable.admin.v2.AppProfile.Priority toProto() {
+      return proto;
+    }
+  }
+
+  /**
+   * A standard {@link IsolationPolicy} for isolating this app profile's traffic from other use
+   * cases. This accomplished by assigning different priorities to app profiles. A request that uses
+   * an app profile with a StandardIsolationPolicy with a HIGH priority will likely run before a
+   * request with a LOW priority.
+   */
+  public static class StandardIsolationPolicy implements IsolationPolicy {
+    private final StandardIsolation proto;
+
+    /** Creates a new instance of {@link StandardIsolationPolicy}. */
+    public static StandardIsolationPolicy of() {
+      return new StandardIsolationPolicy(StandardIsolation.getDefaultInstance());
+    }
+
+    /** Creates a new instance of {@link StandardIsolationPolicy} with the specified priority. */
+    public static StandardIsolationPolicy of(Priority priority) {
+      return new StandardIsolationPolicy(
+          StandardIsolation.newBuilder().setPriority(priority.toProto()).build());
+    }
+
+    /*
+     * Returns the priority for this app profile.
+     */
+    public Priority getPriority() {
+      return Priority.fromProto(proto.getPriority());
+    }
+
+    private StandardIsolationPolicy(
+        com.google.bigtable.admin.v2.AppProfile.StandardIsolation proto) {
+      this.proto = proto;
+    }
+
+    /**
+     * Creates the request protobuf. This method is considered an internal implementation detail and
+     * not meant to be used by applications.
+     */
+    @InternalApi
+    com.google.bigtable.admin.v2.AppProfile.StandardIsolation toProto() {
+      return proto;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      StandardIsolationPolicy that = (StandardIsolationPolicy) o;
       return Objects.equal(proto, that.proto);
     }
 

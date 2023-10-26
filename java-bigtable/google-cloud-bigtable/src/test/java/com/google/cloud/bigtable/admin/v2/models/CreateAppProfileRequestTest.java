@@ -19,9 +19,11 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny;
 import com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting;
+import com.google.bigtable.admin.v2.AppProfile.StandardIsolation;
 import com.google.bigtable.admin.v2.InstanceName;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile.MultiClusterRoutingPolicy;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile.SingleClusterRoutingPolicy;
+import com.google.cloud.bigtable.admin.v2.models.AppProfile.StandardIsolationPolicy;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -70,5 +72,16 @@ public class CreateAppProfileRequestTest {
 
     assertThat(wrapper.toProto("my-project").getAppProfile().getDescription())
         .isEqualTo("my-profile");
+  }
+
+  @Test
+  public void testStandardIsolation() {
+    CreateAppProfileRequest wrapper =
+        CreateAppProfileRequest.of("my-instance", "my-profile")
+            .setRoutingPolicy(MultiClusterRoutingPolicy.of())
+            .setIsolationPolicy(StandardIsolationPolicy.of());
+
+    assertThat(wrapper.toProto("my-project").getAppProfile().getStandardIsolation())
+        .isEqualTo(StandardIsolation.getDefaultInstance());
   }
 }

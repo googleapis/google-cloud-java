@@ -19,7 +19,10 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.bigtable.admin.v2.AppProfile.MultiClusterRoutingUseAny;
 import com.google.bigtable.admin.v2.AppProfile.SingleClusterRouting;
+import com.google.bigtable.admin.v2.AppProfile.StandardIsolation;
+import com.google.cloud.bigtable.admin.v2.models.AppProfile.Priority;
 import com.google.cloud.bigtable.admin.v2.models.AppProfile.SingleClusterRoutingPolicy;
+import com.google.cloud.bigtable.admin.v2.models.AppProfile.StandardIsolationPolicy;
 import com.google.protobuf.FieldMask;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -74,6 +77,38 @@ public class UpdateAppProfileRequestTest {
             com.google.bigtable.admin.v2.UpdateAppProfileRequest.newBuilder()
                 .setAppProfile(existingProto.toBuilder().setDescription("new description"))
                 .setUpdateMask(FieldMask.newBuilder().addPaths("description"))
+                .build());
+  }
+
+  @Test
+  public void testUpdateExistingStandardIsolation() {
+    com.google.bigtable.admin.v2.AppProfile existingProto =
+        com.google.bigtable.admin.v2.AppProfile.newBuilder()
+            .setName("projects/my-project/instances/my-instance/appProfiles/my-profile")
+            .setEtag("my-etag")
+            .setDescription("description")
+            .setMultiClusterRoutingUseAny(MultiClusterRoutingUseAny.getDefaultInstance())
+            .setStandardIsolation(StandardIsolation.getDefaultInstance())
+            .build();
+
+    AppProfile existingWrapper = AppProfile.fromProto(existingProto);
+
+    UpdateAppProfileRequest updateWrapper =
+        UpdateAppProfileRequest.of(existingWrapper)
+            .setIsolationPolicy(StandardIsolationPolicy.of(Priority.LOW));
+
+    assertThat(updateWrapper.toProto("my-project"))
+        .isEqualTo(
+            com.google.bigtable.admin.v2.UpdateAppProfileRequest.newBuilder()
+                .setAppProfile(
+                    existingProto
+                        .toBuilder()
+                        .setStandardIsolation(
+                            StandardIsolation.newBuilder()
+                                .setPriority(
+                                    com.google.bigtable.admin.v2.AppProfile.Priority.PRIORITY_LOW)
+                                .build()))
+                .setUpdateMask(FieldMask.newBuilder().addPaths("standard_isolation"))
                 .build());
   }
 }
