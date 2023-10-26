@@ -508,7 +508,7 @@ Thus, the following are not supported:
 - Android
     - Consider [Firebase](https://firebase.google.com), which includes many of these APIs.
     - It is possible to use these libraries in many cases, although it is unsupported.
-      You can find examples, such as [this one](https://github.com/GoogleCloudPlatform/android-docs-samples/tree/main/speech/SpeechRecognitionClient),
+      You can find examples, such as [this one](https://github.com/GoogleCloudPlatform/android-docs-samples/tree/master/speech/SpeechRecognitionClient),
       in this [example repository](https://github.com/GoogleCloudPlatform/android-docs-samples) but consider the risks carefully before using these libraries in an application.
 - Raspberry Pi (since it runs on the ARM architecture)
 - Google App Engine Standard Java 7
