@@ -128,9 +128,9 @@ public final class ListWorkspacesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. Maximum number of workspaces to return. The server may return fewer
-   * items than requested. If unspecified, the server will pick an appropriate
-   * default.
+   * Optional. Maximum number of workspaces to return. The server may return
+   * fewer items than requested. If unspecified, the server will pick an
+   * appropriate default.
    * </pre>
    *
    * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -209,9 +209,9 @@ public final class ListWorkspacesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. This field only supports ordering by `name`. If unspecified, the server
-   * will choose the ordering. If specified, the default order is ascending for
-   * the `name` field.
+   * Optional. This field only supports ordering by `name`. If unspecified, the
+   * server will choose the ordering. If specified, the default order is
+   * ascending for the `name` field.
    * </pre>
    *
    * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -234,9 +234,9 @@ public final class ListWorkspacesRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Optional. This field only supports ordering by `name`. If unspecified, the server
-   * will choose the ordering. If specified, the default order is ascending for
-   * the `name` field.
+   * Optional. This field only supports ordering by `name`. If unspecified, the
+   * server will choose the ordering. If specified, the default order is
+   * ascending for the `name` field.
    * </pre>
    *
    * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -870,9 +870,9 @@ public final class ListWorkspacesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Maximum number of workspaces to return. The server may return fewer
-     * items than requested. If unspecified, the server will pick an appropriate
-     * default.
+     * Optional. Maximum number of workspaces to return. The server may return
+     * fewer items than requested. If unspecified, the server will pick an
+     * appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -887,9 +887,9 @@ public final class ListWorkspacesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Maximum number of workspaces to return. The server may return fewer
-     * items than requested. If unspecified, the server will pick an appropriate
-     * default.
+     * Optional. Maximum number of workspaces to return. The server may return
+     * fewer items than requested. If unspecified, the server will pick an
+     * appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -908,9 +908,9 @@ public final class ListWorkspacesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. Maximum number of workspaces to return. The server may return fewer
-     * items than requested. If unspecified, the server will pick an appropriate
-     * default.
+     * Optional. Maximum number of workspaces to return. The server may return
+     * fewer items than requested. If unspecified, the server will pick an
+     * appropriate default.
      * </pre>
      *
      * <code>int32 page_size = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1055,9 +1055,9 @@ public final class ListWorkspacesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. This field only supports ordering by `name`. If unspecified, the server
-     * will choose the ordering. If specified, the default order is ascending for
-     * the `name` field.
+     * Optional. This field only supports ordering by `name`. If unspecified, the
+     * server will choose the ordering. If specified, the default order is
+     * ascending for the `name` field.
      * </pre>
      *
      * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1079,9 +1079,9 @@ public final class ListWorkspacesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. This field only supports ordering by `name`. If unspecified, the server
-     * will choose the ordering. If specified, the default order is ascending for
-     * the `name` field.
+     * Optional. This field only supports ordering by `name`. If unspecified, the
+     * server will choose the ordering. If specified, the default order is
+     * ascending for the `name` field.
      * </pre>
      *
      * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1103,9 +1103,9 @@ public final class ListWorkspacesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. This field only supports ordering by `name`. If unspecified, the server
-     * will choose the ordering. If specified, the default order is ascending for
-     * the `name` field.
+     * Optional. This field only supports ordering by `name`. If unspecified, the
+     * server will choose the ordering. If specified, the default order is
+     * ascending for the `name` field.
      * </pre>
      *
      * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1126,9 +1126,9 @@ public final class ListWorkspacesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. This field only supports ordering by `name`. If unspecified, the server
-     * will choose the ordering. If specified, the default order is ascending for
-     * the `name` field.
+     * Optional. This field only supports ordering by `name`. If unspecified, the
+     * server will choose the ordering. If specified, the default order is
+     * ascending for the `name` field.
      * </pre>
      *
      * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1145,9 +1145,9 @@ public final class ListWorkspacesRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Optional. This field only supports ordering by `name`. If unspecified, the server
-     * will choose the ordering. If specified, the default order is ascending for
-     * the `name` field.
+     * Optional. This field only supports ordering by `name`. If unspecified, the
+     * server will choose the ordering. If specified, the default order is
+     * ascending for the `name` field.
      * </pre>
      *
      * <code>string order_by = 4 [(.google.api.field_behavior) = OPTIONAL];</code>

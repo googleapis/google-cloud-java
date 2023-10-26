@@ -127,8 +127,8 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. The directory's full path including directory name, relative to the
-   * workspace root. If left unset, the workspace root is used.
+   * Optional. The directory's full path including directory name, relative to
+   * the workspace root. If left unset, the workspace root is used.
    * </pre>
    *
    * <code>string path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -151,8 +151,8 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. The directory's full path including directory name, relative to the
-   * workspace root. If left unset, the workspace root is used.
+   * Optional. The directory's full path including directory name, relative to
+   * the workspace root. If left unset, the workspace root is used.
    * </pre>
    *
    * <code>string path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -200,8 +200,8 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. Page token received from a previous `QueryDirectoryContents` call.
-   * Provide this to retrieve the subsequent page.
+   * Optional. Page token received from a previous `QueryDirectoryContents`
+   * call. Provide this to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided to
    * `QueryDirectoryContents` must match the call that provided the page
@@ -228,8 +228,8 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
    *
    *
    * <pre>
-   * Optional. Page token received from a previous `QueryDirectoryContents` call.
-   * Provide this to retrieve the subsequent page.
+   * Optional. Page token received from a previous `QueryDirectoryContents`
+   * call. Provide this to retrieve the subsequent page.
    *
    * When paginating, all other parameters provided to
    * `QueryDirectoryContents` must match the call that provided the page
@@ -791,8 +791,8 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The directory's full path including directory name, relative to the
-     * workspace root. If left unset, the workspace root is used.
+     * Optional. The directory's full path including directory name, relative to
+     * the workspace root. If left unset, the workspace root is used.
      * </pre>
      *
      * <code>string path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -814,8 +814,8 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The directory's full path including directory name, relative to the
-     * workspace root. If left unset, the workspace root is used.
+     * Optional. The directory's full path including directory name, relative to
+     * the workspace root. If left unset, the workspace root is used.
      * </pre>
      *
      * <code>string path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -837,8 +837,8 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The directory's full path including directory name, relative to the
-     * workspace root. If left unset, the workspace root is used.
+     * Optional. The directory's full path including directory name, relative to
+     * the workspace root. If left unset, the workspace root is used.
      * </pre>
      *
      * <code>string path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -859,8 +859,8 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The directory's full path including directory name, relative to the
-     * workspace root. If left unset, the workspace root is used.
+     * Optional. The directory's full path including directory name, relative to
+     * the workspace root. If left unset, the workspace root is used.
      * </pre>
      *
      * <code>string path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -877,8 +877,8 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. The directory's full path including directory name, relative to the
-     * workspace root. If left unset, the workspace root is used.
+     * Optional. The directory's full path including directory name, relative to
+     * the workspace root. If left unset, the workspace root is used.
      * </pre>
      *
      * <code>string path = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -961,8 +961,8 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Page token received from a previous `QueryDirectoryContents` call.
-     * Provide this to retrieve the subsequent page.
+     * Optional. Page token received from a previous `QueryDirectoryContents`
+     * call. Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to
      * `QueryDirectoryContents` must match the call that provided the page
@@ -988,8 +988,8 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Page token received from a previous `QueryDirectoryContents` call.
-     * Provide this to retrieve the subsequent page.
+     * Optional. Page token received from a previous `QueryDirectoryContents`
+     * call. Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to
      * `QueryDirectoryContents` must match the call that provided the page
@@ -1015,8 +1015,8 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Page token received from a previous `QueryDirectoryContents` call.
-     * Provide this to retrieve the subsequent page.
+     * Optional. Page token received from a previous `QueryDirectoryContents`
+     * call. Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to
      * `QueryDirectoryContents` must match the call that provided the page
@@ -1041,8 +1041,8 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Page token received from a previous `QueryDirectoryContents` call.
-     * Provide this to retrieve the subsequent page.
+     * Optional. Page token received from a previous `QueryDirectoryContents`
+     * call. Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to
      * `QueryDirectoryContents` must match the call that provided the page
@@ -1063,8 +1063,8 @@ public final class QueryDirectoryContentsRequest extends com.google.protobuf.Gen
      *
      *
      * <pre>
-     * Optional. Page token received from a previous `QueryDirectoryContents` call.
-     * Provide this to retrieve the subsequent page.
+     * Optional. Page token received from a previous `QueryDirectoryContents`
+     * call. Provide this to retrieve the subsequent page.
      *
      * When paginating, all other parameters provided to
      * `QueryDirectoryContents` must match the call that provided the page

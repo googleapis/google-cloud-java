@@ -56,8 +56,8 @@ public interface QueryWorkflowInvocationActionsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Maximum number of workflow invocations to return. The server may return
-   * fewer items than requested. If unspecified, the server will pick an
+   * Optional. Maximum number of workflow invocations to return. The server may
+   * return fewer items than requested. If unspecified, the server will pick an
    * appropriate default.
    * </pre>
    *
@@ -71,8 +71,9 @@ public interface QueryWorkflowInvocationActionsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Page token received from a previous `QueryWorkflowInvocationActions` call.
-   * Provide this to retrieve the subsequent page.
+   * Optional. Page token received from a previous
+   * `QueryWorkflowInvocationActions` call. Provide this to retrieve the
+   * subsequent page.
    *
    * When paginating, all other parameters provided to
    * `QueryWorkflowInvocationActions` must match the call that provided the page
@@ -88,8 +89,9 @@ public interface QueryWorkflowInvocationActionsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Page token received from a previous `QueryWorkflowInvocationActions` call.
-   * Provide this to retrieve the subsequent page.
+   * Optional. Page token received from a previous
+   * `QueryWorkflowInvocationActions` call. Provide this to retrieve the
+   * subsequent page.
    *
    * When paginating, all other parameters provided to
    * `QueryWorkflowInvocationActions` must match the call that provided the page
