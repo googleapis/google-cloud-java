@@ -3,5 +3,8 @@
   "versioning": "always-bump-minor",
   "separate-pull-requests": false,
   "include-component-in-tag": false,
-  "group-pull-request-title-pattern": "chore(${branch}): release ${version}"
+  "group-pull-request-title-pattern": "chore(${branch}): release ${version}",
+  "packages": {
+    ".": {}
+  }
 }
