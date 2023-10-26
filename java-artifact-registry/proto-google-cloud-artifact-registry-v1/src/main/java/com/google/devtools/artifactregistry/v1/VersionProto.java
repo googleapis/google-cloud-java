@@ -48,6 +48,10 @@ public final class VersionProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_artifactregistry_v1_DeleteVersionRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_devtools_artifactregistry_v1_BatchDeleteVersionsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_devtools_artifactregistry_v1_BatchDeleteVersionsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_devtools_artifactregistry_v1_BatchDeleteVersionsMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_devtools_artifactregistry_v1_BatchDeleteVersionsMetadata_fieldAccessorTable;
@@ -87,17 +91,21 @@ public final class VersionProto {
           + "ionRequest\022\014\n\004name\030\001 \001(\t\022>\n\004view\030\002 \001(\01620"
           + ".google.devtools.artifactregistry.v1.Ver"
           + "sionView\"3\n\024DeleteVersionRequest\022\014\n\004name"
-          + "\030\001 \001(\t\022\r\n\005force\030\002 \001(\010\"6\n\033BatchDeleteVers"
-          + "ionsMetadata\022\027\n\017failed_versions\030\002 \003(\t*@\n"
-          + "\013VersionView\022\034\n\030VERSION_VIEW_UNSPECIFIED"
-          + "\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002B\367\001\n\'com.google.d"
-          + "evtools.artifactregistry.v1B\014VersionProt"
-          + "oP\001ZPcloud.google.com/go/artifactregistr"
-          + "y/apiv1/artifactregistrypb;artifactregis"
-          + "trypb\252\002 Google.Cloud.ArtifactRegistry.V1"
-          + "\312\002 Google\\Cloud\\ArtifactRegistry\\V1\352\002#Go"
-          + "ogle::Cloud::ArtifactRegistry::V1b\006proto"
-          + "3"
+          + "\030\001 \001(\t\022\r\n\005force\030\002 \001(\010\"\262\001\n\032BatchDeleteVer"
+          + "sionsRequest\022<\n\006parent\030\001 \001(\tB,\372A)\022\'artif"
+          + "actregistry.googleapis.com/Version\022?\n\005na"
+          + "mes\030\002 \003(\tB0\342A\001\002\372A)\n\'artifactregistry.goo"
+          + "gleapis.com/Version\022\025\n\rvalidate_only\030\003 \001"
+          + "(\010\"6\n\033BatchDeleteVersionsMetadata\022\027\n\017fai"
+          + "led_versions\030\002 \003(\t*@\n\013VersionView\022\034\n\030VER"
+          + "SION_VIEW_UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FU"
+          + "LL\020\002B\367\001\n\'com.google.devtools.artifactreg"
+          + "istry.v1B\014VersionProtoP\001ZPcloud.google.c"
+          + "om/go/artifactregistry/apiv1/artifactreg"
+          + "istrypb;artifactregistrypb\252\002 Google.Clou"
+          + "d.ArtifactRegistry.V1\312\002 Google\\Cloud\\Art"
+          + "ifactRegistry\\V1\352\002#Google::Cloud::Artifa"
+          + "ctRegistry::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -149,8 +157,16 @@ public final class VersionProto {
             new java.lang.String[] {
               "Name", "Force",
             });
-    internal_static_google_devtools_artifactregistry_v1_BatchDeleteVersionsMetadata_descriptor =
+    internal_static_google_devtools_artifactregistry_v1_BatchDeleteVersionsRequest_descriptor =
         getDescriptor().getMessageTypes().get(5);
+    internal_static_google_devtools_artifactregistry_v1_BatchDeleteVersionsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_devtools_artifactregistry_v1_BatchDeleteVersionsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Names", "ValidateOnly",
+            });
+    internal_static_google_devtools_artifactregistry_v1_BatchDeleteVersionsMetadata_descriptor =
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_devtools_artifactregistry_v1_BatchDeleteVersionsMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_devtools_artifactregistry_v1_BatchDeleteVersionsMetadata_descriptor,
@@ -161,6 +177,7 @@ public final class VersionProto {
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
     registry.add(com.google.api.ResourceProto.resource);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();

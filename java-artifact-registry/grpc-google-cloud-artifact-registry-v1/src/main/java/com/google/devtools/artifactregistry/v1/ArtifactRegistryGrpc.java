@@ -1029,6 +1029,55 @@ public final class ArtifactRegistryGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest,
+          com.google.longrunning.Operation>
+      getBatchDeleteVersionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchDeleteVersions",
+      requestType = com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest,
+          com.google.longrunning.Operation>
+      getBatchDeleteVersionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest,
+            com.google.longrunning.Operation>
+        getBatchDeleteVersionsMethod;
+    if ((getBatchDeleteVersionsMethod = ArtifactRegistryGrpc.getBatchDeleteVersionsMethod)
+        == null) {
+      synchronized (ArtifactRegistryGrpc.class) {
+        if ((getBatchDeleteVersionsMethod = ArtifactRegistryGrpc.getBatchDeleteVersionsMethod)
+            == null) {
+          ArtifactRegistryGrpc.getBatchDeleteVersionsMethod =
+              getBatchDeleteVersionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "BatchDeleteVersions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new ArtifactRegistryMethodDescriptorSupplier("BatchDeleteVersions"))
+                      .build();
+        }
+      }
+    }
+    return getBatchDeleteVersionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.devtools.artifactregistry.v1.ListFilesRequest,
           com.google.devtools.artifactregistry.v1.ListFilesResponse>
       getListFilesMethod;
@@ -2046,6 +2095,21 @@ public final class ArtifactRegistryGrpc {
      *
      *
      * <pre>
+     * Deletes multiple versions across a repository. The returned operation will
+     * complete once the versions have been deleted.
+     * </pre>
+     */
+    default void batchDeleteVersions(
+        com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchDeleteVersionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists files.
      * </pre>
      */
@@ -2658,6 +2722,23 @@ public final class ArtifactRegistryGrpc {
      *
      *
      * <pre>
+     * Deletes multiple versions across a repository. The returned operation will
+     * complete once the versions have been deleted.
+     * </pre>
+     */
+    public void batchDeleteVersions(
+        com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchDeleteVersionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists files.
      * </pre>
      */
@@ -3189,6 +3270,20 @@ public final class ArtifactRegistryGrpc {
      *
      *
      * <pre>
+     * Deletes multiple versions across a repository. The returned operation will
+     * complete once the versions have been deleted.
+     * </pre>
+     */
+    public com.google.longrunning.Operation batchDeleteVersions(
+        com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchDeleteVersionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists files.
      * </pre>
      */
@@ -3701,6 +3796,21 @@ public final class ArtifactRegistryGrpc {
      *
      *
      * <pre>
+     * Deletes multiple versions across a repository. The returned operation will
+     * complete once the versions have been deleted.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        batchDeleteVersions(
+            com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchDeleteVersionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists files.
      * </pre>
      */
@@ -3915,20 +4025,21 @@ public final class ArtifactRegistryGrpc {
   private static final int METHODID_LIST_VERSIONS = 18;
   private static final int METHODID_GET_VERSION = 19;
   private static final int METHODID_DELETE_VERSION = 20;
-  private static final int METHODID_LIST_FILES = 21;
-  private static final int METHODID_GET_FILE = 22;
-  private static final int METHODID_LIST_TAGS = 23;
-  private static final int METHODID_GET_TAG = 24;
-  private static final int METHODID_CREATE_TAG = 25;
-  private static final int METHODID_UPDATE_TAG = 26;
-  private static final int METHODID_DELETE_TAG = 27;
-  private static final int METHODID_SET_IAM_POLICY = 28;
-  private static final int METHODID_GET_IAM_POLICY = 29;
-  private static final int METHODID_TEST_IAM_PERMISSIONS = 30;
-  private static final int METHODID_GET_PROJECT_SETTINGS = 31;
-  private static final int METHODID_UPDATE_PROJECT_SETTINGS = 32;
-  private static final int METHODID_GET_VPCSCCONFIG = 33;
-  private static final int METHODID_UPDATE_VPCSCCONFIG = 34;
+  private static final int METHODID_BATCH_DELETE_VERSIONS = 21;
+  private static final int METHODID_LIST_FILES = 22;
+  private static final int METHODID_GET_FILE = 23;
+  private static final int METHODID_LIST_TAGS = 24;
+  private static final int METHODID_GET_TAG = 25;
+  private static final int METHODID_CREATE_TAG = 26;
+  private static final int METHODID_UPDATE_TAG = 27;
+  private static final int METHODID_DELETE_TAG = 28;
+  private static final int METHODID_SET_IAM_POLICY = 29;
+  private static final int METHODID_GET_IAM_POLICY = 30;
+  private static final int METHODID_TEST_IAM_PERMISSIONS = 31;
+  private static final int METHODID_GET_PROJECT_SETTINGS = 32;
+  private static final int METHODID_UPDATE_PROJECT_SETTINGS = 33;
+  private static final int METHODID_GET_VPCSCCONFIG = 34;
+  private static final int METHODID_UPDATE_VPCSCCONFIG = 35;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4072,6 +4183,11 @@ public final class ArtifactRegistryGrpc {
         case METHODID_DELETE_VERSION:
           serviceImpl.deleteVersion(
               (com.google.devtools.artifactregistry.v1.DeleteVersionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
+          break;
+        case METHODID_BATCH_DELETE_VERSIONS:
+          serviceImpl.batchDeleteVersions(
+              (com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         case METHODID_LIST_FILES:
@@ -4317,6 +4433,12 @@ public final class ArtifactRegistryGrpc {
                     com.google.devtools.artifactregistry.v1.DeleteVersionRequest,
                     com.google.longrunning.Operation>(service, METHODID_DELETE_VERSION)))
         .addMethod(
+            getBatchDeleteVersionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.devtools.artifactregistry.v1.BatchDeleteVersionsRequest,
+                    com.google.longrunning.Operation>(service, METHODID_BATCH_DELETE_VERSIONS)))
+        .addMethod(
             getListFilesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -4477,6 +4599,7 @@ public final class ArtifactRegistryGrpc {
                       .addMethod(getListVersionsMethod())
                       .addMethod(getGetVersionMethod())
                       .addMethod(getDeleteVersionMethod())
+                      .addMethod(getBatchDeleteVersionsMethod())
                       .addMethod(getListFilesMethod())
                       .addMethod(getGetFileMethod())
                       .addMethod(getListTagsMethod())

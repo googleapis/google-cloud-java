@@ -72,7 +72,7 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the package, for example:
-   * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1".
+   * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1`.
    * If the package ID part contains slashes, the slashes are escaped.
    * </pre>
    *
@@ -97,7 +97,7 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * The name of the package, for example:
-   * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1".
+   * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1`.
    * If the package ID part contains slashes, the slashes are escaped.
    * </pre>
    *
@@ -698,7 +698,7 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the package, for example:
-     * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1".
+     * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1`.
      * If the package ID part contains slashes, the slashes are escaped.
      * </pre>
      *
@@ -722,7 +722,7 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the package, for example:
-     * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1".
+     * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1`.
      * If the package ID part contains slashes, the slashes are escaped.
      * </pre>
      *
@@ -746,7 +746,7 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the package, for example:
-     * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1".
+     * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1`.
      * If the package ID part contains slashes, the slashes are escaped.
      * </pre>
      *
@@ -769,7 +769,7 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the package, for example:
-     * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1".
+     * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1`.
      * If the package ID part contains slashes, the slashes are escaped.
      * </pre>
      *
@@ -788,7 +788,7 @@ public final class Package extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * The name of the package, for example:
-     * "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1".
+     * `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1`.
      * If the package ID part contains slashes, the slashes are escaped.
      * </pre>
      *
