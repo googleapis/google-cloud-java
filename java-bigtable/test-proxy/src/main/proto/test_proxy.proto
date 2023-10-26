@@ -26,6 +26,16 @@ option go_package = "./testproxypb";
 option java_multiple_files = true;
 option java_package = "com.google.cloud.bigtable.testproxy";
 
+// A config flag that dictates how the optional features should be enabled
+// during the client creation. The optional features customize how the client
+// interacts with the server, and are defined in
+// https://github.com/googleapis/googleapis/blob/master/google/bigtable/v2/feature_flags.proto
+enum OptionalFeatureConfig {
+  OPTIONAL_FEATURE_CONFIG_DEFAULT = 0;
+
+  OPTIONAL_FEATURE_CONFIG_ENABLE_ALL = 1;
+}
+
 // Request to test proxy service to create a client object.
 message CreateClientRequest {
   // A unique ID associated with the client object to be created.
@@ -52,6 +62,10 @@ message CreateClientRequest {
   // the created client. Otherwise, the default timeout from the client library
   // will be used. Note that the override applies to all the methods.
   google.protobuf.Duration per_operation_timeout = 6;
+
+  // Optional config that dictates how the optional features should be enabled
+  // during the client creation. Please check the enum type's docstring above.
+  OptionalFeatureConfig optional_feature_config = 7;
 }
 
 // Response from test proxy service for CreateClientRequest.
