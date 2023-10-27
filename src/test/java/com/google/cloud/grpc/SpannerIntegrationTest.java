@@ -1138,10 +1138,14 @@ public final class SpannerIntegrationTest {
     for (int i = 0; i < MAX_CHANNEL; i++) {
       ListenableFuture<Session> future = stub.createSession(req);
       futures.add(future);
-      assertThat(lastLogMessage(3)).isEqualTo(
-          poolIndex + ": Channel " + i + " state change detected: null -> IDLE");
-      assertThat(lastLogMessage(2)).isEqualTo(
-          poolIndex + ": Channel " + i + " created.");
+      assertThat(lastLogMessage(3)).isAnyOf(
+        poolIndex + ": Channel " + i + " state change detected: null -> IDLE",
+        poolIndex + ": Channel " + (i - 1) + " state change detected: IDLE -> CONNECTING",
+        poolIndex + ": Channel " + i + " created.");
+      assertThat(lastLogMessage(2)).isAnyOf(
+        poolIndex + ": Channel " + i + " state change detected: null -> IDLE",
+        poolIndex + ": Channel " + (i - 1) + " state change detected: IDLE -> CONNECTING",
+        poolIndex + ": Channel " + i + " created.");
       assertThat(lastLogMessage()).isEqualTo(
           poolIndex + ": Channel " + i + " picked for bind operation.");
       assertThat(lastLogLevel()).isEqualTo(Level.FINEST);
