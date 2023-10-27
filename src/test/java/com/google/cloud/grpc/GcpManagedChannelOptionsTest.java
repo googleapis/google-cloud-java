@@ -173,16 +173,16 @@ public final class GcpManagedChannelOptionsTest {
 
   @Test
   public void testPoolOptions() {
-    final GcpManagedChannelOptions opts = GcpManagedChannelOptions.newBuilder()
-        .withChannelPoolOptions(
-            GcpChannelPoolOptions.newBuilder()
-                .setMaxSize(5)
-                .setMinSize(2)
-                .setConcurrentStreamsLowWatermark(10)
-                .setUseRoundRobinOnBind(true)
-                .build()
-        )
-        .build();
+    final GcpManagedChannelOptions opts =
+        GcpManagedChannelOptions.newBuilder()
+            .withChannelPoolOptions(
+                GcpChannelPoolOptions.newBuilder()
+                    .setMaxSize(5)
+                    .setMinSize(2)
+                    .setConcurrentStreamsLowWatermark(10)
+                    .setUseRoundRobinOnBind(true)
+                    .build())
+            .build();
 
     GcpChannelPoolOptions channelPoolOptions = opts.getChannelPoolOptions();
     assertThat(channelPoolOptions).isNotNull();

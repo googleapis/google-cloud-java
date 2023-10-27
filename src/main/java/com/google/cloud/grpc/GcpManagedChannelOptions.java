@@ -20,7 +20,6 @@ import com.google.common.base.Preconditions;
 import io.opencensus.metrics.LabelKey;
 import io.opencensus.metrics.LabelValue;
 import io.opencensus.metrics.MetricRegistry;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -66,10 +65,7 @@ public class GcpManagedChannelOptions {
   public String toString() {
     return String.format(
         "{channelPoolOptions: %s, resiliencyOptions: %s, metricsOptions: %s}",
-        getChannelPoolOptions(),
-        getResiliencyOptions(),
-        getMetricsOptions()
-    );
+        getChannelPoolOptions(), getResiliencyOptions(), getMetricsOptions());
   }
 
   /** Creates a new GcpManagedChannelOptions.Builder. */
@@ -103,7 +99,7 @@ public class GcpManagedChannelOptions {
      * Sets the channel pool configuration for the {@link GcpManagedChannel}.
      *
      * @param channelPoolOptions a {@link GcpChannelPoolOptions} to use as a channel pool
-     *                           configuration.
+     *     configuration.
      */
     public Builder withChannelPoolOptions(GcpChannelPoolOptions channelPoolOptions) {
       this.channelPoolOptions = channelPoolOptions;
@@ -167,7 +163,8 @@ public class GcpManagedChannelOptions {
     // The minimum size of the channel pool. This number of channels will be created and these
     // channels will try to always keep connection to the server.
     private final int minSize;
-    // If every channel in the pool has at least this amount of concurrent streams then a new channel will be created
+    // If every channel in the pool has at least this amount of concurrent streams then a new
+    // channel will be created
     // in the pool unless the pool reached its maximum size.
     private final int concurrentStreamsLowWatermark;
     // Use round-robin channel selection for affinity binding calls.
@@ -210,11 +207,7 @@ public class GcpManagedChannelOptions {
     public String toString() {
       return String.format(
           "{maxSize: %d, minSize: %d, concurrentStreamsLowWatermark: %d, useRoundRobinOnBind: %s}",
-          getMaxSize(),
-          getMinSize(),
-          getConcurrentStreamsLowWatermark(),
-          isUseRoundRobinOnBind()
-      );
+          getMaxSize(), getMinSize(), getConcurrentStreamsLowWatermark(), isUseRoundRobinOnBind());
     }
 
     public static class Builder {
@@ -258,19 +251,19 @@ public class GcpManagedChannelOptions {
        * @param minSize minimum number of channels the pool must have.
        */
       public Builder setMinSize(int minSize) {
-        Preconditions.checkArgument(minSize >= 0,
-            "Channel pool minimum size must be 0 or positive.");
+        Preconditions.checkArgument(
+            minSize >= 0, "Channel pool minimum size must be 0 or positive.");
         this.minSize = minSize;
         return this;
       }
 
       /**
-       * Sets the concurrent streams low watermark.
-       * If every channel in the pool has at least this amount of concurrent streams then a new
-       * channel will be created in the pool unless the pool reached its maximum size.
+       * Sets the concurrent streams low watermark. If every channel in the pool has at least this
+       * amount of concurrent streams then a new channel will be created in the pool unless the pool
+       * reached its maximum size.
        *
-       * @param concurrentStreamsLowWatermark number of streams every channel must reach before adding a new channel
-       *                                      to the pool.
+       * @param concurrentStreamsLowWatermark number of streams every channel must reach before
+       *     adding a new channel to the pool.
        */
       public Builder setConcurrentStreamsLowWatermark(int concurrentStreamsLowWatermark) {
         this.concurrentStreamsLowWatermark = concurrentStreamsLowWatermark;
@@ -328,16 +321,11 @@ public class GcpManagedChannelOptions {
       while (keyIterator.hasNext() && valueIterator.hasNext()) {
         labels.add(
             String.format(
-                "%s: \"%s\"", keyIterator.next().getKey(), valueIterator.next().getValue()
-            )
-        );
+                "%s: \"%s\"", keyIterator.next().getKey(), valueIterator.next().getValue()));
       }
       return String.format(
           "{namePrefix: \"%s\", labels: [%s], metricRegistry: %s}",
-          getNamePrefix(),
-          String.join(", ", labels),
-          getMetricRegistry()
-      );
+          getNamePrefix(), String.join(", ", labels), getMetricRegistry());
     }
 
     /** Creates a new GcpMetricsOptions.Builder. */
@@ -455,13 +443,12 @@ public class GcpManagedChannelOptions {
     @Override
     public String toString() {
       return String.format(
-          "{notReadyFallbackEnabled: %s, unresponsiveDetectionEnabled: %s, " +
-              "unresponsiveDetectionMs: %d, unresponsiveDetectionDroppedCount: %d}",
+          "{notReadyFallbackEnabled: %s, unresponsiveDetectionEnabled: %s, "
+              + "unresponsiveDetectionMs: %d, unresponsiveDetectionDroppedCount: %d}",
           isNotReadyFallbackEnabled(),
           isUnresponsiveDetectionEnabled(),
           getUnresponsiveDetectionMs(),
-          getUnresponsiveDetectionDroppedCount()
-      );
+          getUnresponsiveDetectionDroppedCount());
     }
 
     public static class Builder {

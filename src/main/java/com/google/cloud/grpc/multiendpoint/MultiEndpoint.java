@@ -216,7 +216,9 @@ public final class MultiEndpoint {
   // recovering.
   synchronized void maybeUpdateCurrentEndpoint() {
     Optional<Endpoint> topEndpoint =
-        endpointsMap.values().stream()
+        endpointsMap
+            .values()
+            .stream()
             .filter((c) -> c.getState().equals(EndpointState.AVAILABLE))
             .min(comparingInt(Endpoint::getPriority));
 
@@ -272,7 +274,7 @@ public final class MultiEndpoint {
 
     int fromIdx = -1;
     int toIdx = -1;
-    for (Endpoint e :endpointsMap.values()) {
+    for (Endpoint e : endpointsMap.values()) {
       if (e.getId().equals(fromId)) {
         fromIdx = e.getPriority();
       } else if (e.getId().equals(toId)) {

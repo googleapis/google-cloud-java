@@ -28,9 +28,9 @@ import static com.google.cloud.grpc.GcpMetricsConstants.STATUS_AVAILABLE;
 import static com.google.cloud.grpc.GcpMetricsConstants.STATUS_LABEL;
 import static com.google.cloud.grpc.GcpMetricsConstants.STATUS_LABEL_DESC;
 import static com.google.cloud.grpc.GcpMetricsConstants.STATUS_UNAVAILABLE;
-import static com.google.cloud.grpc.GcpMetricsConstants.TYPE_FALLBACK;
 import static com.google.cloud.grpc.GcpMetricsConstants.SWITCH_TYPE_LABEL;
 import static com.google.cloud.grpc.GcpMetricsConstants.SWITCH_TYPE_LABEL_DESC;
+import static com.google.cloud.grpc.GcpMetricsConstants.TYPE_FALLBACK;
 import static com.google.cloud.grpc.GcpMetricsConstants.TYPE_RECOVER;
 import static com.google.cloud.grpc.GcpMetricsConstants.TYPE_REPLACE;
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
@@ -82,15 +82,15 @@ import java.util.logging.Logger;
  *
  * <ol>
  *   <li>Fallback to an alternative endpoint (host:port) of a gRPC service when the original
- *   endpoint is completely unavailable.
+ *       endpoint is completely unavailable.
  *   <li>Be able to route an RPC call to a specific group of endpoints.
  * </ol>
  *
  * <p>A group of endpoints is called a {@link MultiEndpoint} and is essentially a list of endpoints
  * where priority is defined by the position in the list with the first endpoint having top
  * priority. A MultiEndpoint tracks endpoints' availability. When a MultiEndpoint is picked for an
- * RPC call, it picks the top priority endpoint that is currently available. More information on
- * the {@link MultiEndpoint} class.
+ * RPC call, it picks the top priority endpoint that is currently available. More information on the
+ * {@link MultiEndpoint} class.
  *
  * <p>GcpMultiEndpointChannel can have one or more MultiEndpoint identified by its name -- arbitrary
  * string provided in the {@link GcpMultiEndpointOptions} when configuring MultiEndpoints. This name
@@ -98,46 +98,44 @@ import java.util.logging.Logger;
  * of the RPC {@link CallOptions}.
  *
  * <p>GcpMultiEndpointChannel receives a list of GcpMultiEndpointOptions for initial configuration.
- * An updated configuration can be provided at any time later using
- * {@link GcpMultiEndpointChannel#setMultiEndpoints(List)}. The first item in the
- * GcpMultiEndpointOptions list defines the default MultiEndpoint that will be used when no
- * MultiEndpoint name is provided with an RPC call.
+ * An updated configuration can be provided at any time later using {@link
+ * GcpMultiEndpointChannel#setMultiEndpoints(List)}. The first item in the GcpMultiEndpointOptions
+ * list defines the default MultiEndpoint that will be used when no MultiEndpoint name is provided
+ * with an RPC call.
  *
  * <p>Example:
  *
  * <p>Let's assume we have a service with read and write operations and the following backends:
+ *
  * <ul>
- *   <li>service.example.com -- the main set of backends supporting all operations</li>
- *   <li>service-fallback.example.com -- read-write replica supporting all operations</li>
- *   <li>ro-service.example.com -- read-only replica supporting only read operations</li>
+ *   <li>service.example.com -- the main set of backends supporting all operations
+ *   <li>service-fallback.example.com -- read-write replica supporting all operations
+ *   <li>ro-service.example.com -- read-only replica supporting only read operations
  * </ul>
  *
  * <p>Example configuration:
+ *
  * <ul>
- *   <li>
- *     MultiEndpoint named "default" with endpoints:
- *     <ol>
- *       <li>service.example.com:443</li>
- *       <li>service-fallback.example.com:443</li>
- *     </ol>
- *   </li>
- *   <li>
- *     MultiEndpoint named "read" with endpoints:
- *     <ol>
- *       <li>ro-service.example.com:443</li>
- *       <li>service-fallback.example.com:443</li>
- *       <li>service.example.com:443</li>
- *     </ol>
- *   </li>
+ *   <li>MultiEndpoint named "default" with endpoints:
+ *       <ol>
+ *         <li>service.example.com:443
+ *         <li>service-fallback.example.com:443
+ *       </ol>
+ *   <li>MultiEndpoint named "read" with endpoints:
+ *       <ol>
+ *         <li>ro-service.example.com:443
+ *         <li>service-fallback.example.com:443
+ *         <li>service.example.com:443
+ *       </ol>
  * </ul>
  *
  * <p>With the configuration above GcpMultiEndpointChannel will use the "default" MultiEndpoint by
  * default. It means that RPC calls by default will use the main endpoint and if it is not available
  * then the read-write replica.
  *
- * <p>To offload some read calls to the read-only replica we can specify "read" MultiEndpoint in
- * the CallOptions. Then these calls will use the read-only replica endpoint and if it is not
- * available then the read-write replica and if it is also not available then the main endpoint.
+ * <p>To offload some read calls to the read-only replica we can specify "read" MultiEndpoint in the
+ * CallOptions. Then these calls will use the read-only replica endpoint and if it is not available
+ * then the read-write replica and if it is also not available then the main endpoint.
  *
  * <p>GcpMultiEndpointChannel creates a {@link GcpManagedChannel} channel pool for every unique
  * endpoint. For the example above three channel pools will be created.
@@ -204,21 +202,13 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
       }
 
       endpointStateMetric.createTimeSeries(
-          appendCommonValues(
-              LabelValue.create(endpoint),
-              LabelValue.create(STATUS_AVAILABLE)
-          ),
+          appendCommonValues(LabelValue.create(endpoint), LabelValue.create(STATUS_AVAILABLE)),
           this,
-          EndpointStateMonitor::reportAvailable
-          );
+          EndpointStateMonitor::reportAvailable);
       endpointStateMetric.createTimeSeries(
-          appendCommonValues(
-              LabelValue.create(endpoint),
-              LabelValue.create(STATUS_UNAVAILABLE)
-          ),
+          appendCommonValues(LabelValue.create(endpoint), LabelValue.create(STATUS_UNAVAILABLE)),
           this,
-          EndpointStateMonitor::reportUnavailable
-      );
+          EndpointStateMonitor::reportUnavailable);
     }
 
     private void removeMetrics() {
@@ -226,14 +216,10 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
         return;
       }
 
-      endpointStateMetric.removeTimeSeries(appendCommonValues(
-          LabelValue.create(endpoint),
-          LabelValue.create(STATUS_AVAILABLE)
-      ));
-      endpointStateMetric.removeTimeSeries(appendCommonValues(
-          LabelValue.create(endpoint),
-          LabelValue.create(STATUS_UNAVAILABLE)
-      ));
+      endpointStateMetric.removeTimeSeries(
+          appendCommonValues(LabelValue.create(endpoint), LabelValue.create(STATUS_AVAILABLE)));
+      endpointStateMetric.removeTimeSeries(
+          appendCommonValues(LabelValue.create(endpoint), LabelValue.create(STATUS_UNAVAILABLE)));
     }
 
     private long reportAvailable() {
@@ -271,9 +257,8 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
 
   private GcpManagedChannelOptions prepareGcpManagedChannelConfig(
       GcpManagedChannelOptions gcpOptions, String endpoint) {
-    final GcpMetricsOptions.Builder metricsOptions = GcpMetricsOptions.newBuilder(
-        gcpOptions.getMetricsOptions()
-    );
+    final GcpMetricsOptions.Builder metricsOptions =
+        GcpMetricsOptions.newBuilder(gcpOptions.getMetricsOptions());
 
     final List<LabelKey> labelKeys = new ArrayList<>(metricsOptions.build().getLabelKeys());
     final List<LabelValue> labelValues = new ArrayList<>(metricsOptions.build().getLabelValues());
@@ -284,9 +269,8 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
     // Make sure the pool will have at least 1 channel always connected. If maximum size > 1 then we
     // want at least 2 channels or square root of maximum channels whichever is larger.
     // Do not override if minSize is already specified as > 0.
-    final GcpChannelPoolOptions.Builder poolOptions = GcpChannelPoolOptions.newBuilder(
-        gcpOptions.getChannelPoolOptions()
-    );
+    final GcpChannelPoolOptions.Builder poolOptions =
+        GcpChannelPoolOptions.newBuilder(gcpOptions.getChannelPoolOptions());
     if (poolOptions.build().getMinSize() < 1) {
       int minSize = Math.min(2, poolOptions.build().getMaxSize());
       minSize = Math.max(minSize, ((int) Math.sqrt(poolOptions.build().getMaxSize())));
@@ -338,40 +322,24 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
     String name = options.getName();
     List<String> endpoints = options.getEndpoints();
     endpointSwitchMetric.createTimeSeries(
-        appendCommonValues(
-            LabelValue.create(name),
-            LabelValue.create(TYPE_FALLBACK)
-        ),
+        appendCommonValues(LabelValue.create(name), LabelValue.create(TYPE_FALLBACK)),
         me,
-        MultiEndpoint::getFallbackCnt
-    );
+        MultiEndpoint::getFallbackCnt);
     endpointSwitchMetric.createTimeSeries(
-        appendCommonValues(
-            LabelValue.create(name),
-            LabelValue.create(TYPE_RECOVER)
-        ),
+        appendCommonValues(LabelValue.create(name), LabelValue.create(TYPE_RECOVER)),
         me,
-        MultiEndpoint::getRecoverCnt
-    );
+        MultiEndpoint::getRecoverCnt);
     endpointSwitchMetric.createTimeSeries(
-        appendCommonValues(
-            LabelValue.create(name),
-            LabelValue.create(TYPE_REPLACE)
-        ),
+        appendCommonValues(LabelValue.create(name), LabelValue.create(TYPE_REPLACE)),
         me,
-        MultiEndpoint::getReplaceCnt
-    );
+        MultiEndpoint::getReplaceCnt);
     for (String e : endpoints) {
       CurrentEndpointWatcher watcher = new CurrentEndpointWatcher(me, e);
       currentEndpointWatchers.put(name + ":" + e, watcher);
       currentEndpointMetric.createTimeSeries(
-          appendCommonValues(
-              LabelValue.create(name),
-              LabelValue.create(e)
-          ),
+          appendCommonValues(LabelValue.create(name), LabelValue.create(e)),
           watcher,
-          CurrentEndpointWatcher::getMetricValue
-      );
+          CurrentEndpointWatcher::getMetricValue);
     }
   }
 
@@ -381,11 +349,7 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
     for (String e : existingEndpoints) {
       if (!newEndpoints.contains(e)) {
         currentEndpointMetric.removeTimeSeries(
-            appendCommonValues(
-                LabelValue.create(options.getName()),
-                LabelValue.create(e)
-            )
-        );
+            appendCommonValues(LabelValue.create(options.getName()), LabelValue.create(e)));
         currentEndpointWatchers.remove(options.getName() + ":" + e);
       }
     }
@@ -394,43 +358,23 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
         CurrentEndpointWatcher watcher = new CurrentEndpointWatcher(me, e);
         currentEndpointWatchers.put(options.getName() + ":" + e, watcher);
         currentEndpointMetric.createTimeSeries(
-            appendCommonValues(
-                LabelValue.create(options.getName()),
-                LabelValue.create(e)
-            ),
+            appendCommonValues(LabelValue.create(options.getName()), LabelValue.create(e)),
             watcher,
-            CurrentEndpointWatcher::getMetricValue
-        );
+            CurrentEndpointWatcher::getMetricValue);
       }
     }
   }
 
   private void removeMetricsForMultiEndpoint(String name, MultiEndpoint me) {
     endpointSwitchMetric.removeTimeSeries(
-        appendCommonValues(
-            LabelValue.create(name),
-            LabelValue.create(TYPE_FALLBACK)
-        )
-    );
+        appendCommonValues(LabelValue.create(name), LabelValue.create(TYPE_FALLBACK)));
     endpointSwitchMetric.removeTimeSeries(
-        appendCommonValues(
-            LabelValue.create(name),
-            LabelValue.create(TYPE_RECOVER)
-        )
-    );
+        appendCommonValues(LabelValue.create(name), LabelValue.create(TYPE_RECOVER)));
     endpointSwitchMetric.removeTimeSeries(
-        appendCommonValues(
-            LabelValue.create(name),
-            LabelValue.create(TYPE_REPLACE)
-        )
-    );
+        appendCommonValues(LabelValue.create(name), LabelValue.create(TYPE_REPLACE)));
     for (String e : me.getEndpoints()) {
       currentEndpointMetric.removeTimeSeries(
-          appendCommonValues(
-              LabelValue.create(name),
-              LabelValue.create(e)
-          )
-      );
+          appendCommonValues(LabelValue.create(name), LabelValue.create(e)));
       currentEndpointWatchers.remove(name + ":" + e);
     }
   }
@@ -439,21 +383,23 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
    * Update the list of MultiEndpoint configurations.
    *
    * <p>MultiEndpoints are matched with the current ones by name.
+   *
    * <ul>
-   * <li>If a current MultiEndpoint is missing in the updated list, the MultiEndpoint will be
-   * removed.
-   * <li>A new MultiEndpoint will be created for every new name in the list.
-   * <li>For an existing MultiEndpoint only its endpoints will be updated (no recovery timeout
-   * change).
+   *   <li>If a current MultiEndpoint is missing in the updated list, the MultiEndpoint will be
+   *       removed.
+   *   <li>A new MultiEndpoint will be created for every new name in the list.
+   *   <li>For an existing MultiEndpoint only its endpoints will be updated (no recovery timeout
+   *       change).
    * </ul>
    *
    * <p>Endpoints are matched by the endpoint address (usually in the form of address:port).
+   *
    * <ul>
-   * <li>If an existing endpoint is not used by any MultiEndpoint in the updated list, then the
-   * channel poll for this endpoint will be shutdown.
-   * <li>A channel pool will be created for every new endpoint.
-   * <li>For an existing endpoint nothing will change (the channel pool will not be re-created, thus
-   * no channel credentials change, nor channel configurator change).
+   *   <li>If an existing endpoint is not used by any MultiEndpoint in the updated list, then the
+   *       channel poll for this endpoint will be shutdown.
+   *   <li>A channel pool will be created for every new endpoint.
+   *   <li>For an existing endpoint nothing will change (the channel pool will not be re-created,
+   *       thus no channel credentials change, nor channel configurator change).
    * </ul>
    */
   public synchronized void setMultiEndpoints(List<GcpMultiEndpointOptions> meOptions) {
@@ -463,22 +409,24 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
 
     // Must have all multiendpoints before initializing the pools so that all multiendpoints
     // can get status update of every pool.
-    meOptions.forEach(options -> {
-      currentMultiEndpoints.add(options.getName());
-      // Create or update MultiEndpoint
-      MultiEndpoint existingMe = multiEndpoints.get(options.getName());
-      if (existingMe != null) {
-        updateMetricsForMultiEndpoint(options, existingMe);
-        existingMe.setEndpoints(options.getEndpoints());
-      } else {
-        MultiEndpoint me = new MultiEndpoint.Builder(options.getEndpoints())
-            .withRecoveryTimeout(options.getRecoveryTimeout())
-            .withSwitchingDelay(options.getSwitchingDelay())
-            .build();
-        setUpMetricsForMultiEndpoint(options, me);
-        multiEndpoints.put(options.getName(), me);
-      }
-    });
+    meOptions.forEach(
+        options -> {
+          currentMultiEndpoints.add(options.getName());
+          // Create or update MultiEndpoint
+          MultiEndpoint existingMe = multiEndpoints.get(options.getName());
+          if (existingMe != null) {
+            updateMetricsForMultiEndpoint(options, existingMe);
+            existingMe.setEndpoints(options.getEndpoints());
+          } else {
+            MultiEndpoint me =
+                new MultiEndpoint.Builder(options.getEndpoints())
+                    .withRecoveryTimeout(options.getRecoveryTimeout())
+                    .withSwitchingDelay(options.getSwitchingDelay())
+                    .build();
+            setUpMetricsForMultiEndpoint(options, me);
+            multiEndpoints.put(options.getName(), me);
+          }
+        });
 
     final Set<String> existingPools = new HashSet<>(pools.keySet());
     currentEndpoints.clear();
@@ -486,37 +434,47 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
     //       credentials.
     // TODO: Support different endpoints in the same MultiEndpoint to use different channel
     //       credentials.
-    meOptions.forEach(options -> {
-      // Create missing pools
-      options.getEndpoints().forEach(endpoint -> {
-        currentEndpoints.add(endpoint);
-        pools.computeIfAbsent(endpoint, e -> {
-          ManagedChannelBuilder<?> managedChannelBuilder;
-          if (options.getChannelCredentials() != null) {
-            managedChannelBuilder = Grpc.newChannelBuilder(e, options.getChannelCredentials());
-          } else {
-            managedChannelBuilder = channelBuilderForEndpoint(e);
-          }
-          if (options.getChannelConfigurator() != null) {
-            managedChannelBuilder = options.getChannelConfigurator().apply(managedChannelBuilder);
-          }
+    meOptions.forEach(
+        options -> {
+          // Create missing pools
+          options
+              .getEndpoints()
+              .forEach(
+                  endpoint -> {
+                    currentEndpoints.add(endpoint);
+                    pools.computeIfAbsent(
+                        endpoint,
+                        e -> {
+                          ManagedChannelBuilder<?> managedChannelBuilder;
+                          if (options.getChannelCredentials() != null) {
+                            managedChannelBuilder =
+                                Grpc.newChannelBuilder(e, options.getChannelCredentials());
+                          } else {
+                            managedChannelBuilder = channelBuilderForEndpoint(e);
+                          }
+                          if (options.getChannelConfigurator() != null) {
+                            managedChannelBuilder =
+                                options.getChannelConfigurator().apply(managedChannelBuilder);
+                          }
 
-          GcpManagedChannel channel = new GcpManagedChannel(
-              managedChannelBuilder,
-              apiConfig,
-              // Add endpoint to metric labels.
-              prepareGcpManagedChannelConfig(gcpManagedChannelOptions, e));
-          // Start monitoring the pool state.
-          new EndpointStateMonitor(channel, e);
-          return channel;
+                          GcpManagedChannel channel =
+                              new GcpManagedChannel(
+                                  managedChannelBuilder,
+                                  apiConfig,
+                                  // Add endpoint to metric labels.
+                                  prepareGcpManagedChannelConfig(gcpManagedChannelOptions, e));
+                          // Start monitoring the pool state.
+                          new EndpointStateMonitor(channel, e);
+                          return channel;
+                        });
+                  });
         });
-      });
-    });
     existingPools.retainAll(currentEndpoints);
-    existingPools.forEach(e -> {
-      // Communicate current state to MultiEndpoints.
-      checkPoolState(pools.get(e), e);
-    });
+    existingPools.forEach(
+        e -> {
+          // Communicate current state to MultiEndpoints.
+          checkPoolState(pools.get(e), e);
+        });
     defaultMultiEndpoint = multiEndpoints.get(meOptions.get(0).getName());
 
     // Remove obsolete multiendpoints.
@@ -535,15 +493,14 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
     poolsToRemove.removeIf(currentEndpoints::contains);
     if (!poolsToRemove.isEmpty()) {
       // Get max switching delay.
-      Optional<Duration> maxDelay = meOptions.stream()
-          .map(GcpMultiEndpointOptions::getSwitchingDelay)
-          .max(Comparator.naturalOrder());
+      Optional<Duration> maxDelay =
+          meOptions
+              .stream()
+              .map(GcpMultiEndpointOptions::getSwitchingDelay)
+              .max(Comparator.naturalOrder());
       if (maxDelay.isPresent() && maxDelay.get().toMillis() > 0) {
         executor.schedule(
-            () -> maybeCleanupPools(poolsToRemove),
-            maxDelay.get().toMillis(),
-            MILLISECONDS
-        );
+            () -> maybeCleanupPools(poolsToRemove), maxDelay.get().toMillis(), MILLISECONDS);
       } else {
         maybeCleanupPools(poolsToRemove);
       }
@@ -583,21 +540,17 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
                 "Reports 1 when endpoint is in the status.",
                 COUNT,
                 LabelKey.create(ENDPOINT_LABEL, ENDPOINT_LABEL_DESC),
-                LabelKey.create(STATUS_LABEL, STATUS_LABEL_DESC)
-            )
-        );
+                LabelKey.create(STATUS_LABEL, STATUS_LABEL_DESC)));
 
     endpointSwitchMetric =
         metricRegistry.addDerivedLongCumulative(
             prefix + METRIC_ENDPOINT_SWITCH,
             createMetricOptions(
-                "Reports occurrences of changes of current endpoint for a multi-endpoint with " +
-                    "the name, specifying change type.",
+                "Reports occurrences of changes of current endpoint for a multi-endpoint with "
+                    + "the name, specifying change type.",
                 COUNT,
                 LabelKey.create(ME_NAME_LABEL, ME_NAME_LABEL_DESC),
-                LabelKey.create(SWITCH_TYPE_LABEL, SWITCH_TYPE_LABEL_DESC)
-            )
-        );
+                LabelKey.create(SWITCH_TYPE_LABEL, SWITCH_TYPE_LABEL_DESC)));
 
     currentEndpointMetric =
         metricRegistry.addDerivedLongGauge(
@@ -606,27 +559,23 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
                 "Reports 1 when an endpoint is current for multi-endpoint with the name.",
                 COUNT,
                 LabelKey.create(ME_NAME_LABEL, ME_NAME_LABEL_DESC),
-                LabelKey.create(ENDPOINT_LABEL, ENDPOINT_LABEL_DESC)
-            )
-        );
+                LabelKey.create(ENDPOINT_LABEL, ENDPOINT_LABEL_DESC)));
   }
 
-  private List<LabelValue> appendCommonValues(LabelValue ...labelValues) {
+  private List<LabelValue> appendCommonValues(LabelValue... labelValues) {
     final List<LabelValue> values = new ArrayList<>();
     Collections.addAll(values, labelValues);
-    if (gcpMetricsOptions != null &&
-        gcpMetricsOptions.getLabelValues() != null) {
+    if (gcpMetricsOptions != null && gcpMetricsOptions.getLabelValues() != null) {
       values.addAll(gcpMetricsOptions.getLabelValues());
     }
     return values;
   }
 
   private MetricOptions createMetricOptions(
-      String description, String unit, LabelKey ...labelKeys) {
+      String description, String unit, LabelKey... labelKeys) {
     final List<LabelKey> keys = new ArrayList<>();
     Collections.addAll(keys, labelKeys);
-    if (gcpMetricsOptions != null &&
-        gcpMetricsOptions.getLabelKeys() != null) {
+    if (gcpMetricsOptions != null && gcpMetricsOptions.getLabelKeys() != null) {
       keys.addAll(gcpMetricsOptions.getLabelKeys());
     }
     return MetricOptions.builder()
@@ -713,8 +662,8 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
   }
 
   /**
-   * Check the value of {@link #ME_KEY} key in the {@link CallOptions} and if found use
-   * the MultiEndpoint with the same name for this call.
+   * Check the value of {@link #ME_KEY} key in the {@link CallOptions} and if found use the
+   * MultiEndpoint with the same name for this call.
    *
    * <p>Create a {@link ClientCall} to the remote operation specified by the given {@link
    * MethodDescriptor}. The returned {@link ClientCall} does not trigger any remote behavior until
@@ -743,10 +692,11 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
    * The authority of the current endpoint of the default MultiEndpoint. Typically, this is in the
    * format {@code host:port}.
    *
-   * To get the authority of the current endpoint of another MultiEndpoint use {@link
+   * <p>To get the authority of the current endpoint of another MultiEndpoint use {@link
    * #authorityFor(String)} method.
    *
-   * This may return different values over time because MultiEndpoint may switch between endpoints.
+   * <p>This may return different values over time because MultiEndpoint may switch between
+   * endpoints.
    *
    * @since 1.0.0
    */
@@ -759,7 +709,8 @@ public class GcpMultiEndpointChannel extends ManagedChannel {
    * The authority of the current endpoint of the specified MultiEndpoint. Typically, this is in the
    * format {@code host:port}.
    *
-   * This may return different values over time because MultiEndpoint may switch between endpoints.
+   * <p>This may return different values over time because MultiEndpoint may switch between
+   * endpoints.
    */
   public String authorityFor(String multiEndpointName) {
     MultiEndpoint multiEndpoint = multiEndpoints.get(multiEndpointName);

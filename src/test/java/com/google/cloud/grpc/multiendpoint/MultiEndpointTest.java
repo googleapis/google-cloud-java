@@ -358,7 +358,6 @@ public final class MultiEndpointTest {
     assertThat(multiEndpoint.getRecoverCnt()).isEqualTo(0);
     assertThat(multiEndpoint.getReplaceCnt()).isEqualTo(1);
 
-
     // "fourth" which is under index 0 must become current, because no endpoints available.
     assertThat(multiEndpoint.getCurrentId()).isEqualTo(fourEndpoints.get(0));
   }

@@ -25,8 +25,8 @@ import com.google.cloud.grpc.proto.AffinityConfig;
 import com.google.cloud.grpc.proto.ApiConfig;
 import com.google.cloud.grpc.proto.MethodConfig;
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.google.common.base.Joiner;
+import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.google.errorprone.annotations.concurrent.GuardedBy;
 import com.google.protobuf.Descriptors.FieldDescriptor;
 import com.google.protobuf.MessageOrBuilder;
@@ -74,9 +74,9 @@ public class GcpManagedChannel extends ManagedChannel {
   static final int DEFAULT_MAX_CHANNEL = 10;
   static final int DEFAULT_MAX_STREAM = 100;
   public static final Context.Key<Boolean> DISABLE_AFFINITY_CTX_KEY =
-    Context.keyWithDefault("DisableAffinity", false);
+      Context.keyWithDefault("DisableAffinity", false);
   public static final CallOptions.Key<Boolean> DISABLE_AFFINITY_KEY =
-    CallOptions.Key.createWithDefault("DisableAffinity", false);
+      CallOptions.Key.createWithDefault("DisableAffinity", false);
 
   @GuardedBy("this")
   private Integer bindingIndex = -1;
@@ -101,8 +101,9 @@ public class GcpManagedChannel extends ManagedChannel {
 
   @VisibleForTesting final List<ChannelRef> channelRefs = new CopyOnWriteArrayList<>();
 
-  private final ExecutorService stateNotificationExecutor = Executors.newCachedThreadPool(
-      new ThreadFactoryBuilder().setNameFormat("gcp-mc-state-notifications-%d").build());
+  private final ExecutorService stateNotificationExecutor =
+      Executors.newCachedThreadPool(
+          new ThreadFactoryBuilder().setNameFormat("gcp-mc-state-notifications-%d").build());
 
   // Callbacks to call when state changes.
   @GuardedBy("this")
@@ -172,22 +173,21 @@ public class GcpManagedChannel extends ManagedChannel {
    * @param options the options for GcpManagedChannel.
    */
   public GcpManagedChannel(
-          ManagedChannelBuilder<?> delegateChannelBuilder,
-          ApiConfig apiConfig,
-          GcpManagedChannelOptions options) {
+      ManagedChannelBuilder<?> delegateChannelBuilder,
+      ApiConfig apiConfig,
+      GcpManagedChannelOptions options) {
     loadApiConfig(apiConfig);
     this.delegateChannelBuilder = delegateChannelBuilder;
     this.options = options;
-    logger.finer(log(
-        "Created with api config: %s, and options: %s",
-        apiConfig == null ? "null" : TextFormat.shortDebugString(apiConfig),
-        options
-    ));
+    logger.finer(
+        log(
+            "Created with api config: %s, and options: %s",
+            apiConfig == null ? "null" : TextFormat.shortDebugString(apiConfig), options));
     initOptions();
     if (options.getResiliencyOptions() != null) {
       fallbackEnabled = options.getResiliencyOptions().isNotReadyFallbackEnabled();
       unresponsiveDetectionEnabled =
-              options.getResiliencyOptions().isUnresponsiveDetectionEnabled();
+          options.getResiliencyOptions().isUnresponsiveDetectionEnabled();
       unresponsiveMs = options.getResiliencyOptions().getUnresponsiveDetectionMs();
       unresponsiveDropCount = options.getResiliencyOptions().getUnresponsiveDetectionDroppedCount();
     } else {
@@ -200,10 +200,10 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   /**
-   * Constructor for GcpManagedChannel.
-   * Deprecated. Use the one without the poolSize and set the maximum pool size in options. However, note that if
-   * setting the pool size from options then concurrent streams low watermark (even the default one) will be also taken
-   * from the options and not apiConfig.
+   * Constructor for GcpManagedChannel. Deprecated. Use the one without the poolSize and set the
+   * maximum pool size in options. However, note that if setting the pool size from options then
+   * concurrent streams low watermark (even the default one) will be also taken from the options and
+   * not apiConfig.
    *
    * @param delegateChannelBuilder the underlying delegate ManagedChannelBuilder.
    * @param apiConfig the ApiConfig object for configuring GcpManagedChannel.
@@ -266,16 +266,17 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   private void logChannelsStats() {
-    logger.fine(log(
-        "Active streams counts: [%s]", Joiner.on(", ").join(
-            channelRefs.stream().mapToInt(ChannelRef::getActiveStreamsCount).iterator()
-        )
-    ));
-    logger.fine(log(
-        "Affinity counts: [%s]", Joiner.on(", ").join(
-            channelRefs.stream().mapToInt(ChannelRef::getAffinityCount).iterator()
-        )
-    ));
+    logger.fine(
+        log(
+            "Active streams counts: [%s]",
+            Joiner.on(", ")
+                .join(
+                    channelRefs.stream().mapToInt(ChannelRef::getActiveStreamsCount).iterator())));
+    logger.fine(
+        log(
+            "Affinity counts: [%s]",
+            Joiner.on(", ")
+                .join(channelRefs.stream().mapToInt(ChannelRef::getAffinityCount).iterator())));
   }
 
   private void initMetrics() {
@@ -496,11 +497,13 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   private void logCumulative(String key, long value) {
-    logger.fine(log(() -> {
-      Long prevValue = cumulativeMetricValues.put(key, value);
-      long logValue = prevValue == null ? value : value - prevValue;
-      return String.format("stat: %s = %d", key, logValue);
-    }));
+    logger.fine(
+        log(
+            () -> {
+              Long prevValue = cumulativeMetricValues.put(key, value);
+              long logValue = prevValue == null ? value : value - prevValue;
+              return String.format("stat: %s = %d", key, logValue);
+            }));
   }
 
   @VisibleForTesting
@@ -695,17 +698,17 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   private int reportMinAffinity() {
-    int value = minAffinity.getAndSet(
-        channelRefs.stream().mapToInt(ChannelRef::getAffinityCount).min().orElse(0)
-    );
+    int value =
+        minAffinity.getAndSet(
+            channelRefs.stream().mapToInt(ChannelRef::getAffinityCount).min().orElse(0));
     logGauge(GcpMetricsConstants.METRIC_MIN_AFFINITY, value);
     return value;
   }
 
   private int reportMaxAffinity() {
-    int value = maxAffinity.getAndSet(
-        channelRefs.stream().mapToInt(ChannelRef::getAffinityCount).max().orElse(0)
-    );
+    int value =
+        maxAffinity.getAndSet(
+            channelRefs.stream().mapToInt(ChannelRef::getAffinityCount).max().orElse(0));
     logGauge(GcpMetricsConstants.METRIC_MAX_AFFINITY, value);
     return value;
   }
@@ -739,14 +742,18 @@ public class GcpManagedChannel extends ManagedChannel {
   private LongSummaryStatistics calcStatsAndLog(String logLabel, ToLongFunction<ChannelRef> func) {
     StringBuilder str = new StringBuilder(logLabel + ": [");
     final LongSummaryStatistics stats =
-        channelRefs.stream().mapToLong(ch -> {
-          long count = func.applyAsLong(ch);
-          if (str.charAt(str.length() - 1) != '[') {
-            str.append(", ");
-          }
-          str.append(count);
-          return count;
-        }).summaryStatistics();
+        channelRefs
+            .stream()
+            .mapToLong(
+                ch -> {
+                  long count = func.applyAsLong(ch);
+                  if (str.charAt(str.length() - 1) != '[') {
+                    str.append(", ");
+                  }
+                  str.append(count);
+                  return count;
+                })
+            .summaryStatistics();
 
     str.append("]");
     logger.fine(log(str.toString()));
@@ -759,8 +766,7 @@ public class GcpManagedChannel extends ManagedChannel {
       maxOkReported = false;
       return;
     }
-    final LongSummaryStatistics stats =
-        calcStatsAndLog("Ok calls", ChannelRef::getAndResetOkCalls);
+    final LongSummaryStatistics stats = calcStatsAndLog("Ok calls", ChannelRef::getAndResetOkCalls);
     minOkCalls = stats.getMin();
     maxOkCalls = stats.getMax();
   }
@@ -931,8 +937,7 @@ public class GcpManagedChannel extends ManagedChannel {
       boolean requestConnection = channelId < minSize;
       ConnectivityState newState = channel.getState(requestConnection);
       logger.finer(
-          log("Channel %d state change detected: %s -> %s", channelId, currentState, newState)
-      );
+          log("Channel %d state change detected: %s -> %s", channelId, currentState, newState));
       if (newState == ConnectivityState.READY && currentState != ConnectivityState.READY) {
         incReadyChannels();
         saveReadinessTime(System.nanoTime() - connectingStartNanos);
@@ -1002,18 +1007,18 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   /**
-   * Returns a {@link ChannelRef} from the pool for a binding call.
-   * If round-robin on bind is enabled, uses {@link #getChannelRefRoundRobin()}
-   * otherwise {@link #getChannelRef(String)}
+   * Returns a {@link ChannelRef} from the pool for a binding call. If round-robin on bind is
+   * enabled, uses {@link #getChannelRefRoundRobin()} otherwise {@link #getChannelRef(String)}
    *
    * @return {@link ChannelRef} channel to use for a call.
    */
   protected ChannelRef getChannelRefForBind() {
     ChannelRef channelRef;
-    if (options.getChannelPoolOptions() != null && options.getChannelPoolOptions().isUseRoundRobinOnBind()) {
+    if (options.getChannelPoolOptions() != null
+        && options.getChannelPoolOptions().isUseRoundRobinOnBind()) {
       channelRef = getChannelRefRoundRobin();
-      logger.finest(log(
-          "Channel %d picked for bind operation using round-robin.", channelRef.getId()));
+      logger.finest(
+          log("Channel %d picked for bind operation using round-robin.", channelRef.getId()));
     } else {
       channelRef = getChannelRef(null);
       logger.finest(log("Channel %d picked for bind operation.", channelRef.getId()));
@@ -1022,8 +1027,8 @@ public class GcpManagedChannel extends ManagedChannel {
   }
 
   /**
-   * Returns a {@link ChannelRef} from the pool in round-robin manner.
-   * Creates a new channel in the pool until the pool reaches its max size.
+   * Returns a {@link ChannelRef} from the pool in round-robin manner. Creates a new channel in the
+   * pool until the pool reaches its max size.
    *
    * @return {@link ChannelRef}
    */
@@ -1081,9 +1086,8 @@ public class GcpManagedChannel extends ManagedChannel {
         && channelRef.getActiveStreamsCount() < DEFAULT_MAX_STREAM) {
       // Got a ready and not an overloaded channel.
       if (channelRef.getId() != mappedChannel.getId()) {
-        logger.finest(log(
-            "Setting fallback channel: %d -> %d", mappedChannel.getId(), channelRef.getId()
-        ));
+        logger.finest(
+            log("Setting fallback channel: %d -> %d", mappedChannel.getId(), channelRef.getId()));
         fallbacksSucceeded.incrementAndGet();
         tempMap.put(key, channelRef.getId());
       }
@@ -1193,8 +1197,10 @@ public class GcpManagedChannel extends ManagedChannel {
 
     if (readyCandidate != null) {
       if (!forFallback && readyCandidate.getId() != channelCandidate.getId()) {
-        logger.finest(log(
-            "Picking fallback channel: %d -> %d", channelCandidate.getId(), readyCandidate.getId()));
+        logger.finest(
+            log(
+                "Picking fallback channel: %d -> %d",
+                channelCandidate.getId(), readyCandidate.getId()));
         fallbacksSucceeded.incrementAndGet();
       }
       return readyCandidate;
@@ -1229,8 +1235,7 @@ public class GcpManagedChannel extends ManagedChannel {
   public <ReqT, RespT> ClientCall<ReqT, RespT> newCall(
       MethodDescriptor<ReqT, RespT> methodDescriptor, CallOptions callOptions) {
     AffinityConfig affinity = methodToAffinity.get(methodDescriptor.getFullMethodName());
-    if (
-        affinity == null
+    if (affinity == null
         || callOptions.getOption(DISABLE_AFFINITY_KEY)
         || DISABLE_AFFINITY_CTX_KEY.get(Context.current())) {
       return new GcpClientCall.SimpleGcpClientCall<>(
@@ -1378,12 +1383,10 @@ public class GcpManagedChannel extends ManagedChannel {
     if (channelRef == null || affinityKeys == null) {
       return;
     }
-    logger.finest(log(
-        "Binding %d key(s) to channel %d: [%s]",
-        affinityKeys.size(),
-        channelRef.getId(),
-        String.join(", ", affinityKeys)
-    ));
+    logger.finest(
+        log(
+            "Binding %d key(s) to channel %d: [%s]",
+            affinityKeys.size(), channelRef.getId(), String.join(", ", affinityKeys)));
     for (String affinityKey : affinityKeys) {
       while (affinityKeyToChannelRef.putIfAbsent(affinityKey, channelRef) != null) {
         unbind(Collections.singletonList(affinityKey));
@@ -1645,13 +1648,11 @@ public class GcpManagedChannel extends ManagedChannel {
           && msSinceLastResponse >= unresponsiveMs) {
         recordUnresponsiveDetection(
             System.nanoTime() - lastResponseNanos, deadlineExceededCount.get());
-        logger.finer(log(
-            "Channel %d connection is unresponsive for %d ms and %d deadline exceeded calls. " +
-            "Forcing channel to idle state.",
-            channelId,
-            msSinceLastResponse,
-            deadlineExceededCount.get()
-        ));
+        logger.finer(
+            log(
+                "Channel %d connection is unresponsive for %d ms and %d deadline exceeded calls. "
+                    + "Forcing channel to idle state.",
+                channelId, msSinceLastResponse, deadlineExceededCount.get()));
         delegate.enterIdle();
         lastResponseNanos = System.nanoTime();
         deadlineExceededCount.set(0);

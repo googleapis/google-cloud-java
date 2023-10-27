@@ -25,9 +25,7 @@ import io.grpc.ManagedChannelBuilder;
 import java.time.Duration;
 import java.util.List;
 
-/**
- * {@link MultiEndpoint} configuration for the {@link GcpMultiEndpointChannel}.
- */
+/** {@link MultiEndpoint} configuration for the {@link GcpMultiEndpointChannel}. */
 public class GcpMultiEndpointOptions {
 
   private final String name;
@@ -57,9 +55,7 @@ public class GcpMultiEndpointOptions {
     return new Builder(endpoints);
   }
 
-  /**
-   * Creates a new GcpMultiEndpointOptions.Builder from GcpMultiEndpointOptions.
-   */
+  /** Creates a new GcpMultiEndpointOptions.Builder from GcpMultiEndpointOptions. */
   public static Builder newBuilder(GcpMultiEndpointOptions options) {
     return new Builder(options);
   }
@@ -116,8 +112,7 @@ public class GcpMultiEndpointOptions {
 
     private void setEndpoints(List<String> endpoints) {
       Preconditions.checkNotNull(endpoints);
-      Preconditions.checkArgument(
-          !endpoints.isEmpty(), "At least one endpoint must be specified.");
+      Preconditions.checkArgument(!endpoints.isEmpty(), "At least one endpoint must be specified.");
       Preconditions.checkArgument(
           endpoints.stream().noneMatch(s -> s.trim().isEmpty()), "No empty endpoints allowed.");
       this.endpoints = endpoints;
@@ -149,7 +144,7 @@ public class GcpMultiEndpointOptions {
      * Sets the channel configurator for the MultiEndpoint channel pool.
      *
      * @param channelConfigurator function to perform on the ManagedChannelBuilder in the channel
-     * pool.
+     *     pool.
      */
     @CanIgnoreReturnValue
     public GcpMultiEndpointOptions.Builder withChannelConfigurator(
@@ -183,6 +178,7 @@ public class GcpMultiEndpointOptions {
 
     /**
      * Sets the switching delay for the MultiEndpoint.
+     *
      * <p>When switching between endpoints the MultiEndpoint will stick to previous endpoint for the
      * switching delay.
      *
