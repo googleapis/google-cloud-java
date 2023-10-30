@@ -65,7 +65,7 @@
     <skipITs>true</skipITs>
     <auto-value.version>1.10.4</auto-value.version>
     <surefire.version>3.2.1</surefire.version>
-    <graal-sdk.version>22.3.2</graal-sdk.version>
+    <graal-sdk.version>22.3.3</graal-sdk.version>
     <docRoot>/java/docs/reference/</docRoot>
   </properties>
 
