@@ -221,11 +221,14 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
         == OptionalFeatureConfig.OPTIONAL_FEATURE_CONFIG_ENABLE_ALL) {
       logger.info("Enabling all the optional features");
       try {
-        // Exception will be raised if Application Default Credentials is not found.
         BigtableDataSettings.enableBuiltinMetrics();
       } catch (IOException e) {
-        responseObserver.onError(Status.INTERNAL.withDescription(e.getMessage()).asException());
-        return;
+        // Exception will be raised if Application Default Credentials is not found.
+        // We can ignore it as it doesn't impact the client correctness testing.
+        if (!e.getMessage().toUpperCase().contains("APPLICATION DEFAULT CREDENTIALS")) {
+          responseObserver.onError(Status.INTERNAL.withDescription(e.getMessage()).asException());
+          return;
+        }
       }
       settingsBuilder.stubSettings().bulkMutateRowsSettings().setServerInitiatedFlowControl(true);
     }

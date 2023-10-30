@@ -40,26 +40,50 @@ retry_with_backoff 3 10 \
 RETURN_CODE=0
 set +e
 
-# Build and start the proxy in a separate process
+# Build the proxy
 pushd .
 cd test-proxy
 mvn clean install -DskipTests
-nohup java -Dport=9999 -jar target/google-cloud-bigtable-test-proxy-0.0.1-SNAPSHOT.jar &
-proxyPID=$!
 popd
 
-# Run the conformance test
-pushd .
-cd cloud-bigtable-clients-test/tests
-eval "go test -v -skip `cat ../../test-proxy/known_failures.txt` -proxy_addr=:9999"
-RETURN_CODE=$?
-popd
+declare -a configs=("default" "enable_all")
+for config in "${configs[@]}"
+do
+  # Start the proxy in a separate process
+  nohup java -Dport=9999 -jar test-proxy/target/google-cloud-bigtable-test-proxy-0.0.1-SNAPSHOT.jar &
+  proxyPID=$!
 
-# Stop the proxy
-kill $proxyPID
+  # Run the conformance test
+  if [[ ${config} = "enable_all" ]]
+  then
+    echo "Testing the client with all optional features enabled..."
+    configFlag="--enable_features_all"
+  else
+    echo "Testing the client with default settings for optional features..."
+    configFlag=""
+  fi
+
+  pushd .
+  cd cloud-bigtable-clients-test/tests
+  # If there is known failures, please add
+  # "-skip `cat ../../test-proxy/known_failures.txt`" to the command below.
+  eval "go test -v -proxy_addr=:9999 ${configFlag}"
+  returnCode=$?
+  popd
+
+  # Stop the proxy
+  kill ${proxyPID}
+
+  if [[ ${returnCode} -gt 0 ]]
+  then
+    echo "Conformance test failed for config: ${config}"
+    RETURN_CODE=${returnCode}
+  else
+    echo "Conformance test passed for config: ${config}"
+  fi
+done
 
 # fix output location of logs
 bash .kokoro/coerce_logs.sh
 
-echo "exiting with ${RETURN_CODE}"
 exit ${RETURN_CODE}
