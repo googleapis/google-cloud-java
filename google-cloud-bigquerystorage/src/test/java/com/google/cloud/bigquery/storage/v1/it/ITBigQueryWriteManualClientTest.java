@@ -28,6 +28,7 @@ import com.google.cloud.bigquery.*;
 import com.google.cloud.bigquery.Field.Mode;
 import com.google.cloud.bigquery.Schema;
 import com.google.cloud.bigquery.storage.test.Test.*;
+import com.google.cloud.bigquery.storage.test.TestOptional.*;
 import com.google.cloud.bigquery.storage.v1.*;
 import com.google.cloud.bigquery.storage.v1.AppendRowsRequest.MissingValueInterpretation;
 import com.google.cloud.bigquery.storage.v1.Exceptions.AppendSerializationError;
@@ -207,6 +208,15 @@ public class ITBigQueryWriteManualClientTest {
     return rows.build();
   }
 
+  ProtoRows CreateProtoOptionalRows(String[] messages) {
+    ProtoRows.Builder rows = ProtoRows.newBuilder();
+    for (String message : messages) {
+      FooOptionalType foo = FooOptionalType.newBuilder().setFoo(message).build();
+      rows.addSerializedRows(foo.toByteString());
+    }
+    return rows.build();
+  }
+
   ProtoRows CreateProtoRowsMultipleColumns(String[] messages) {
     ProtoRows.Builder rows = ProtoRows.newBuilder();
     for (String message : messages) {
@@ -270,6 +280,35 @@ public class ITBigQueryWriteManualClientTest {
         streamWriter.append(CreateProtoRows(new String[] {"bbb", "ccc"}), 1);
     ApiFuture<AppendRowsResponse> response2 =
         streamWriter.append(CreateProtoRows(new String[] {"ddd"}), 3);
+    assertEquals(1, response1.get().getAppendResult().getOffset().getValue());
+    assertEquals(3, response2.get().getAppendResult().getOffset().getValue());
+  }
+
+  @Test
+  public void testProto3OptionalBatchWriteWithCommittedStream()
+      throws IOException, InterruptedException, ExecutionException {
+    WriteStream writeStream =
+        client.createWriteStream(
+            CreateWriteStreamRequest.newBuilder()
+                .setParent(tableId)
+                .setWriteStream(
+                    WriteStream.newBuilder().setType(WriteStream.Type.COMMITTED).build())
+                .build());
+    StreamWriter streamWriter =
+        StreamWriter.newBuilder(writeStream.getName())
+            .setWriterSchema(ProtoSchemaConverter.convert(FooOptionalType.getDescriptor()))
+            .build();
+    LOG.info("Sending one message");
+
+    ApiFuture<AppendRowsResponse> response =
+        streamWriter.append(CreateProtoOptionalRows(new String[] {"aaa"}), 0);
+    assertEquals(0, response.get().getAppendResult().getOffset().getValue());
+
+    LOG.info("Sending two more messages");
+    ApiFuture<AppendRowsResponse> response1 =
+        streamWriter.append(CreateProtoOptionalRows(new String[] {"bbb", "ccc"}), 1);
+    ApiFuture<AppendRowsResponse> response2 =
+        streamWriter.append(CreateProtoOptionalRows(new String[] {""}), 3);
     assertEquals(1, response1.get().getAppendResult().getOffset().getValue());
     assertEquals(3, response2.get().getAppendResult().getOffset().getValue());
   }
