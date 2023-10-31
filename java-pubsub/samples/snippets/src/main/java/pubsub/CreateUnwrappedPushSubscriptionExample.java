@@ -16,7 +16,7 @@
 
 package pubsub;
 
-// [START pubsub_create_push_no_wrapper_subscription]
+// [START pubsub_create_unwrapped_push_subscription]
 
 import com.google.cloud.pubsub.v1.SubscriptionAdminClient;
 import com.google.pubsub.v1.PushConfig;
@@ -26,7 +26,7 @@ import com.google.pubsub.v1.SubscriptionName;
 import com.google.pubsub.v1.TopicName;
 import java.io.IOException;
 
-public class CreatePushNoWrapperSubscriptionExample {
+public class CreateUnwrappedPushSubscriptionExample {
   public static void main(String... args) throws Exception {
     // TODO(developer): Replace these variables before running the sample.
     String projectId = "your-project-id";
@@ -60,4 +60,4 @@ public class CreatePushNoWrapperSubscriptionExample {
     }
   }
 }
-// [END pubsub_create_push_no_wrapper_subscription]
+// [END pubsub_create_unwrapped_push_subscription]
