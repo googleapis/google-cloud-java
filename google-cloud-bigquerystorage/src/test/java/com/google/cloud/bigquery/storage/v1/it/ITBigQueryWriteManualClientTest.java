@@ -856,6 +856,72 @@ public class ITBigQueryWriteManualClientTest {
     assertEquals(false, iter.hasNext());
   }
 
+  @Test
+  public void testStreamWriterWithDefaultValue() throws ExecutionException, InterruptedException {
+    String tableName = "streamWriterWithDefaultValue";
+    String exclusiveTableId =
+        String.format(
+            "projects/%s/datasets/%s/tables/%s",
+            ServiceOptions.getDefaultProjectId(), DATASET, tableName);
+    tableInfo =
+        TableInfo.newBuilder(TableId.of(DATASET, tableName), defaultValueTableDefinition).build();
+    bigquery.create(tableInfo);
+    try (StreamWriter streamWriter =
+        StreamWriter.newBuilder(exclusiveTableId + "/_default")
+            .setWriterSchema(
+                ProtoSchemaConverter.convert(SimpleTypeForDefaultValue.getDescriptor()))
+            .setDefaultMissingValueInterpretation(MissingValueInterpretation.DEFAULT_VALUE)
+            .setEnableConnectionPool(true)
+            .build()) {
+      // 1. row has both fields set.
+      SimpleTypeForDefaultValue simpleTypeForDefaultValue1 =
+          SimpleTypeForDefaultValue.newBuilder()
+              .setFooWithDefault("foo_value")
+              .setBarWithoutDefault("bar_value")
+              .setDateWithDefaultToCurrent("2022-02-02 01:02:03")
+              .build();
+
+      // 2. row without any column set, expect default value to be filled
+      SimpleTypeForDefaultValue simpleTypeForDefaultValue2 =
+          SimpleTypeForDefaultValue.newBuilder().build();
+      ProtoRows rows =
+          ProtoRows.newBuilder()
+              .addSerializedRows(simpleTypeForDefaultValue1.toByteString())
+              .addSerializedRows(simpleTypeForDefaultValue2.toByteString())
+              .build();
+
+      // Start insertion and validation.
+      ApiFuture<AppendRowsResponse> response1 = streamWriter.append(rows);
+      response1.get();
+      TableResult result =
+          bigquery.listTableData(
+              tableInfo.getTableId(), BigQuery.TableDataListOption.startIndex(0L));
+      Iterator<FieldValueList> iter = result.getValues().iterator();
+
+      FieldValueList currentRow = iter.next();
+      assertEquals("foo_value", currentRow.get(0).getStringValue());
+      assertEquals("bar_value", currentRow.get(1).getStringValue());
+      assertEquals(
+          Timestamp.valueOf("2022-02-02 01:02:03")
+              .toLocalDateTime()
+              .atZone(ZoneId.of("UTC"))
+              .toInstant()
+              .toEpochMilli(),
+          Double.valueOf(currentRow.get(2).getStringValue()).longValue() * 1000);
+
+      currentRow = iter.next();
+      assertEquals("default_value_for_test", currentRow.get(0).getStringValue());
+      assertEquals(null, currentRow.get(1).getValue());
+      assertFalse(currentRow.get(2).getStringValue().isEmpty());
+      // Check whether the recorded value is up to date enough.
+      Instant parsedInstant =
+          Instant.ofEpochSecond(Double.valueOf(currentRow.get(2).getStringValue()).longValue());
+      assertTrue(parsedInstant.isAfter(Instant.now().minus(1, ChronoUnit.HOURS)));
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
   // This test runs about 1 min.
   @Test
   public void testJsonStreamWriterWithMessagesOver10M()

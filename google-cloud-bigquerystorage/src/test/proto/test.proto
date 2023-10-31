@@ -50,6 +50,12 @@ message ComplicateType {
   optional InnerType inner_type = 2;
 }
 
+message SimpleTypeForDefaultValue {
+  optional string foo_with_default = 1;
+  optional string bar_without_default = 2;
+  optional string date_with_default_to_current = 3;
+}
+
 message ContainsRecursive {
   optional RecursiveType field = 1;
 }
