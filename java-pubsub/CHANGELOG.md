@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.125.10](https://github.com/googleapis/java-pubsub/compare/v1.125.9...v1.125.10) (2023-10-31)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:google-cloud-storage to v2.29.0 ([#1800](https://github.com/googleapis/java-pubsub/issues/1800)) ([8c43cc2](https://github.com/googleapis/java-pubsub/commit/8c43cc2443f333c646c27cee4ee70434167213ba))
+
+
+### Documentation
+
+* Adding a GCS subscription example ([#1762](https://github.com/googleapis/java-pubsub/issues/1762)) ([3ce824c](https://github.com/googleapis/java-pubsub/commit/3ce824c78c7eaf37fc3bc0ed2a4b3b1d952ed9bc))
+* Renaming the CreateUnwrappedPushSubscription File ([#1794](https://github.com/googleapis/java-pubsub/issues/1794)) ([3264290](https://github.com/googleapis/java-pubsub/commit/326429092ac73d184b5e887ce5107220f96199b7))
+
 ## [1.125.9](https://github.com/googleapis/java-pubsub/compare/v1.125.8...v1.125.9) (2023-10-27)
 
 
