@@ -102,6 +102,17 @@ public class ProtoSchemaConverter {
           enumTypes.add(enumFullName);
         }
       }
+      // The protobuf payload will be decoded as proto2 on the server side. The schema is also
+      // specified as proto2. Hence we must clear proto3-only features. This works since proto2 and
+      // proto3 are binary-compatible.
+      if (resultField.hasProto3Optional()) {
+        // Clear proto3-only features
+        resultField.clearProto3Optional();
+      }
+      if (resultField.hasOneofIndex()) {
+        // Clear proto3-only features
+        resultField.clearOneofIndex();
+      }
       resultProto.addField(resultField);
     }
     structTypes.add(protoFullName);
