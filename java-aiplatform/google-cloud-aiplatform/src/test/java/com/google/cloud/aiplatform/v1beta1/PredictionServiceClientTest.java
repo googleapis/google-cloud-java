@@ -356,6 +356,8 @@ public class PredictionServiceClientTest {
     ExplainResponse expectedResponse =
         ExplainResponse.newBuilder()
             .addAllExplanations(new ArrayList<Explanation>())
+            .putAllConcurrentExplanations(
+                new HashMap<String, ExplainResponse.ConcurrentExplanation>())
             .setDeployedModelId("deployedModelId-1817547906")
             .addAllPredictions(new ArrayList<Value>())
             .build();
@@ -408,6 +410,8 @@ public class PredictionServiceClientTest {
     ExplainResponse expectedResponse =
         ExplainResponse.newBuilder()
             .addAllExplanations(new ArrayList<Explanation>())
+            .putAllConcurrentExplanations(
+                new HashMap<String, ExplainResponse.ConcurrentExplanation>())
             .setDeployedModelId("deployedModelId-1817547906")
             .addAllPredictions(new ArrayList<Value>())
             .build();
