@@ -590,7 +590,7 @@ class ConnectionWorker implements AutoCloseable {
 
   @VisibleForTesting
   static long calculateSleepTimeMilli(long retryCount) {
-    return Math.min((long) Math.pow(2, retryCount), 60000);
+    return (long) Math.min(Math.pow(2, retryCount) * 50, 60000);
   }
 
   @VisibleForTesting
