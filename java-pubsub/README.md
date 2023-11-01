@@ -44,7 +44,7 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-pubsub</artifactId>
-  <version>1.125.9</version>
+  <version>1.125.10</version>
 </dependency>
 
 ```
