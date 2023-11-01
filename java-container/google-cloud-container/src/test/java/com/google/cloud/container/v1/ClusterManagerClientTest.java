@@ -47,6 +47,7 @@ import com.google.container.v1.CreateNodePoolRequest;
 import com.google.container.v1.DatabaseEncryption;
 import com.google.container.v1.DeleteClusterRequest;
 import com.google.container.v1.DeleteNodePoolRequest;
+import com.google.container.v1.EnterpriseConfig;
 import com.google.container.v1.FastSocket;
 import com.google.container.v1.Fleet;
 import com.google.container.v1.GcfsConfig;
@@ -332,6 +333,7 @@ public class ClusterManagerClientTest {
             .setFleet(Fleet.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .setEnableK8SBetaApis(K8sBetaAPIConfig.newBuilder().build())
+            .setEnterpriseConfig(EnterpriseConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 
@@ -434,6 +436,7 @@ public class ClusterManagerClientTest {
             .setFleet(Fleet.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
             .setEnableK8SBetaApis(K8sBetaAPIConfig.newBuilder().build())
+            .setEnterpriseConfig(EnterpriseConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 

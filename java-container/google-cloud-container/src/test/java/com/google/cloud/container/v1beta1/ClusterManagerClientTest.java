@@ -48,6 +48,7 @@ import com.google.container.v1beta1.CreateNodePoolRequest;
 import com.google.container.v1beta1.DatabaseEncryption;
 import com.google.container.v1beta1.DeleteClusterRequest;
 import com.google.container.v1beta1.DeleteNodePoolRequest;
+import com.google.container.v1beta1.EnterpriseConfig;
 import com.google.container.v1beta1.FastSocket;
 import com.google.container.v1beta1.Fleet;
 import com.google.container.v1beta1.GcfsConfig;
@@ -314,6 +315,7 @@ public class ClusterManagerClientTest {
             .setEtag("etag3123477")
             .setFleet(Fleet.newBuilder().build())
             .setSecurityPostureConfig(SecurityPostureConfig.newBuilder().build())
+            .setEnterpriseConfig(EnterpriseConfig.newBuilder().build())
             .build();
     mockClusterManager.addResponse(expectedResponse);
 

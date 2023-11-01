@@ -2432,4 +2432,39 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1.K8sBetaAPIConfig enable_k8s_beta_apis = 143;</code>
    */
   com.google.container.v1.K8sBetaAPIConfigOrBuilder getEnableK8SBetaApisOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * GKE Enterprise Configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149;</code>
+   *
+   * @return Whether the enterpriseConfig field is set.
+   */
+  boolean hasEnterpriseConfig();
+  /**
+   *
+   *
+   * <pre>
+   * GKE Enterprise Configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149;</code>
+   *
+   * @return The enterpriseConfig.
+   */
+  com.google.container.v1.EnterpriseConfig getEnterpriseConfig();
+  /**
+   *
+   *
+   * <pre>
+   * GKE Enterprise Configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1.EnterpriseConfig enterprise_config = 149;</code>
+   */
+  com.google.container.v1.EnterpriseConfigOrBuilder getEnterpriseConfigOrBuilder();
 }

@@ -2768,4 +2768,39 @@ public interface ClusterOrBuilder
    * <code>.google.container.v1beta1.SecurityPostureConfig security_posture_config = 145;</code>
    */
   com.google.container.v1beta1.SecurityPostureConfigOrBuilder getSecurityPostureConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * GKE Enterprise Configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.EnterpriseConfig enterprise_config = 149;</code>
+   *
+   * @return Whether the enterpriseConfig field is set.
+   */
+  boolean hasEnterpriseConfig();
+  /**
+   *
+   *
+   * <pre>
+   * GKE Enterprise Configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.EnterpriseConfig enterprise_config = 149;</code>
+   *
+   * @return The enterpriseConfig.
+   */
+  com.google.container.v1beta1.EnterpriseConfig getEnterpriseConfig();
+  /**
+   *
+   *
+   * <pre>
+   * GKE Enterprise Configuration.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.EnterpriseConfig enterprise_config = 149;</code>
+   */
+  com.google.container.v1beta1.EnterpriseConfigOrBuilder getEnterpriseConfigOrBuilder();
 }
