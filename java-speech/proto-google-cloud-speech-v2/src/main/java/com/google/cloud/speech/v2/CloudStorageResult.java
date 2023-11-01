@@ -22,63 +22,95 @@ package com.google.cloud.speech.v2;
  *
  *
  * <pre>
- * Automatically detected decoding parameters.
- * Supported for the following encodings:
- *
- * * WAV_LINEAR16: 16-bit signed little-endian PCM samples in a WAV container.
- *
- * * WAV_MULAW: 8-bit companded mulaw samples in a WAV container.
- *
- * * WAV_ALAW: 8-bit companded alaw samples in a WAV container.
- *
- * * RFC4867_5_AMR: AMR frames with an rfc4867.5 header.
- *
- * * RFC4867_5_AMRWB: AMR-WB frames with an rfc4867.5 header.
- *
- * * FLAC: FLAC frames in the "native FLAC" container format.
- *
- * * MP3: MPEG audio frames with optional (ignored) ID3 metadata.
- *
- * * OGG_OPUS: Opus audio frames in an Ogg container.
- *
- * * WEBM_OPUS: Opus audio frames in a WebM container.
- *
- * * M4A: M4A audio format.
+ * Final results written to Cloud Storage.
  * </pre>
  *
- * Protobuf type {@code google.cloud.speech.v2.AutoDetectDecodingConfig}
+ * Protobuf type {@code google.cloud.speech.v2.CloudStorageResult}
  */
-public final class AutoDetectDecodingConfig extends com.google.protobuf.GeneratedMessageV3
+public final class CloudStorageResult extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.AutoDetectDecodingConfig)
-    AutoDetectDecodingConfigOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.speech.v2.CloudStorageResult)
+    CloudStorageResultOrBuilder {
   private static final long serialVersionUID = 0L;
-  // Use AutoDetectDecodingConfig.newBuilder() to construct.
-  private AutoDetectDecodingConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use CloudStorageResult.newBuilder() to construct.
+  private CloudStorageResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private AutoDetectDecodingConfig() {}
+  private CloudStorageResult() {
+    uri_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new AutoDetectDecodingConfig();
+    return new CloudStorageResult();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.speech.v2.CloudSpeechProto
-        .internal_static_google_cloud_speech_v2_AutoDetectDecodingConfig_descriptor;
+        .internal_static_google_cloud_speech_v2_CloudStorageResult_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.speech.v2.CloudSpeechProto
-        .internal_static_google_cloud_speech_v2_AutoDetectDecodingConfig_fieldAccessorTable
+        .internal_static_google_cloud_speech_v2_CloudStorageResult_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.speech.v2.AutoDetectDecodingConfig.class,
-            com.google.cloud.speech.v2.AutoDetectDecodingConfig.Builder.class);
+            com.google.cloud.speech.v2.CloudStorageResult.class,
+            com.google.cloud.speech.v2.CloudStorageResult.Builder.class);
+  }
+
+  public static final int URI_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage URI to which recognition results were written.
+   * </pre>
+   *
+   * <code>string uri = 1;</code>
+   *
+   * @return The uri.
+   */
+  @java.lang.Override
+  public java.lang.String getUri() {
+    java.lang.Object ref = uri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      uri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The Cloud Storage URI to which recognition results were written.
+   * </pre>
+   *
+   * <code>string uri = 1;</code>
+   *
+   * @return The bytes for uri.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getUriBytes() {
+    java.lang.Object ref = uri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      uri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -95,6 +127,9 @@ public final class AutoDetectDecodingConfig extends com.google.protobuf.Generate
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -104,6 +139,9 @@ public final class AutoDetectDecodingConfig extends com.google.protobuf.Generate
     if (size != -1) return size;
 
     size = 0;
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -114,12 +152,13 @@ public final class AutoDetectDecodingConfig extends com.google.protobuf.Generate
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.speech.v2.AutoDetectDecodingConfig)) {
+    if (!(obj instanceof com.google.cloud.speech.v2.CloudStorageResult)) {
       return super.equals(obj);
     }
-    com.google.cloud.speech.v2.AutoDetectDecodingConfig other =
-        (com.google.cloud.speech.v2.AutoDetectDecodingConfig) obj;
+    com.google.cloud.speech.v2.CloudStorageResult other =
+        (com.google.cloud.speech.v2.CloudStorageResult) obj;
 
+    if (!getUri().equals(other.getUri())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -131,76 +170,78 @@ public final class AutoDetectDecodingConfig extends com.google.protobuf.Generate
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + URI_FIELD_NUMBER;
+    hash = (53 * hash) + getUri().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.speech.v2.AutoDetectDecodingConfig parseFrom(
-      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+  public static com.google.cloud.speech.v2.CloudStorageResult parseFrom(java.nio.ByteBuffer data)
+      throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.speech.v2.AutoDetectDecodingConfig parseFrom(
+  public static com.google.cloud.speech.v2.CloudStorageResult parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.speech.v2.AutoDetectDecodingConfig parseFrom(
+  public static com.google.cloud.speech.v2.CloudStorageResult parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.speech.v2.AutoDetectDecodingConfig parseFrom(
+  public static com.google.cloud.speech.v2.CloudStorageResult parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.speech.v2.AutoDetectDecodingConfig parseFrom(byte[] data)
+  public static com.google.cloud.speech.v2.CloudStorageResult parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.speech.v2.AutoDetectDecodingConfig parseFrom(
+  public static com.google.cloud.speech.v2.CloudStorageResult parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.speech.v2.AutoDetectDecodingConfig parseFrom(
-      java.io.InputStream input) throws java.io.IOException {
+  public static com.google.cloud.speech.v2.CloudStorageResult parseFrom(java.io.InputStream input)
+      throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.speech.v2.AutoDetectDecodingConfig parseFrom(
+  public static com.google.cloud.speech.v2.CloudStorageResult parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.speech.v2.AutoDetectDecodingConfig parseDelimitedFrom(
+  public static com.google.cloud.speech.v2.CloudStorageResult parseDelimitedFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.speech.v2.AutoDetectDecodingConfig parseDelimitedFrom(
+  public static com.google.cloud.speech.v2.CloudStorageResult parseDelimitedFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.speech.v2.AutoDetectDecodingConfig parseFrom(
+  public static com.google.cloud.speech.v2.CloudStorageResult parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.speech.v2.AutoDetectDecodingConfig parseFrom(
+  public static com.google.cloud.speech.v2.CloudStorageResult parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -217,7 +258,7 @@ public final class AutoDetectDecodingConfig extends com.google.protobuf.Generate
     return DEFAULT_INSTANCE.toBuilder();
   }
 
-  public static Builder newBuilder(com.google.cloud.speech.v2.AutoDetectDecodingConfig prototype) {
+  public static Builder newBuilder(com.google.cloud.speech.v2.CloudStorageResult prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -235,52 +276,31 @@ public final class AutoDetectDecodingConfig extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Automatically detected decoding parameters.
-   * Supported for the following encodings:
-   *
-   * * WAV_LINEAR16: 16-bit signed little-endian PCM samples in a WAV container.
-   *
-   * * WAV_MULAW: 8-bit companded mulaw samples in a WAV container.
-   *
-   * * WAV_ALAW: 8-bit companded alaw samples in a WAV container.
-   *
-   * * RFC4867_5_AMR: AMR frames with an rfc4867.5 header.
-   *
-   * * RFC4867_5_AMRWB: AMR-WB frames with an rfc4867.5 header.
-   *
-   * * FLAC: FLAC frames in the "native FLAC" container format.
-   *
-   * * MP3: MPEG audio frames with optional (ignored) ID3 metadata.
-   *
-   * * OGG_OPUS: Opus audio frames in an Ogg container.
-   *
-   * * WEBM_OPUS: Opus audio frames in a WebM container.
-   *
-   * * M4A: M4A audio format.
+   * Final results written to Cloud Storage.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.speech.v2.AutoDetectDecodingConfig}
+   * Protobuf type {@code google.cloud.speech.v2.CloudStorageResult}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.speech.v2.AutoDetectDecodingConfig)
-      com.google.cloud.speech.v2.AutoDetectDecodingConfigOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.speech.v2.CloudStorageResult)
+      com.google.cloud.speech.v2.CloudStorageResultOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.speech.v2.CloudSpeechProto
-          .internal_static_google_cloud_speech_v2_AutoDetectDecodingConfig_descriptor;
+          .internal_static_google_cloud_speech_v2_CloudStorageResult_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.speech.v2.CloudSpeechProto
-          .internal_static_google_cloud_speech_v2_AutoDetectDecodingConfig_fieldAccessorTable
+          .internal_static_google_cloud_speech_v2_CloudStorageResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.speech.v2.AutoDetectDecodingConfig.class,
-              com.google.cloud.speech.v2.AutoDetectDecodingConfig.Builder.class);
+              com.google.cloud.speech.v2.CloudStorageResult.class,
+              com.google.cloud.speech.v2.CloudStorageResult.Builder.class);
     }
 
-    // Construct using com.google.cloud.speech.v2.AutoDetectDecodingConfig.newBuilder()
+    // Construct using com.google.cloud.speech.v2.CloudStorageResult.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -290,23 +310,25 @@ public final class AutoDetectDecodingConfig extends com.google.protobuf.Generate
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      uri_ = "";
       return this;
     }
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.speech.v2.CloudSpeechProto
-          .internal_static_google_cloud_speech_v2_AutoDetectDecodingConfig_descriptor;
+          .internal_static_google_cloud_speech_v2_CloudStorageResult_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.speech.v2.AutoDetectDecodingConfig getDefaultInstanceForType() {
-      return com.google.cloud.speech.v2.AutoDetectDecodingConfig.getDefaultInstance();
+    public com.google.cloud.speech.v2.CloudStorageResult getDefaultInstanceForType() {
+      return com.google.cloud.speech.v2.CloudStorageResult.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.speech.v2.AutoDetectDecodingConfig build() {
-      com.google.cloud.speech.v2.AutoDetectDecodingConfig result = buildPartial();
+    public com.google.cloud.speech.v2.CloudStorageResult build() {
+      com.google.cloud.speech.v2.CloudStorageResult result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -314,11 +336,21 @@ public final class AutoDetectDecodingConfig extends com.google.protobuf.Generate
     }
 
     @java.lang.Override
-    public com.google.cloud.speech.v2.AutoDetectDecodingConfig buildPartial() {
-      com.google.cloud.speech.v2.AutoDetectDecodingConfig result =
-          new com.google.cloud.speech.v2.AutoDetectDecodingConfig(this);
+    public com.google.cloud.speech.v2.CloudStorageResult buildPartial() {
+      com.google.cloud.speech.v2.CloudStorageResult result =
+          new com.google.cloud.speech.v2.CloudStorageResult(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.speech.v2.CloudStorageResult result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.uri_ = uri_;
+      }
     }
 
     @java.lang.Override
@@ -356,17 +388,21 @@ public final class AutoDetectDecodingConfig extends com.google.protobuf.Generate
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.speech.v2.AutoDetectDecodingConfig) {
-        return mergeFrom((com.google.cloud.speech.v2.AutoDetectDecodingConfig) other);
+      if (other instanceof com.google.cloud.speech.v2.CloudStorageResult) {
+        return mergeFrom((com.google.cloud.speech.v2.CloudStorageResult) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.speech.v2.AutoDetectDecodingConfig other) {
-      if (other == com.google.cloud.speech.v2.AutoDetectDecodingConfig.getDefaultInstance())
-        return this;
+    public Builder mergeFrom(com.google.cloud.speech.v2.CloudStorageResult other) {
+      if (other == com.google.cloud.speech.v2.CloudStorageResult.getDefaultInstance()) return this;
+      if (!other.getUri().isEmpty()) {
+        uri_ = other.uri_;
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -393,6 +429,12 @@ public final class AutoDetectDecodingConfig extends com.google.protobuf.Generate
             case 0:
               done = true;
               break;
+            case 10:
+              {
+                uri_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -410,6 +452,114 @@ public final class AutoDetectDecodingConfig extends com.google.protobuf.Generate
       return this;
     }
 
+    private int bitField0_;
+
+    private java.lang.Object uri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage URI to which recognition results were written.
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
+     * @return The uri.
+     */
+    public java.lang.String getUri() {
+      java.lang.Object ref = uri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage URI to which recognition results were written.
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
+     * @return The bytes for uri.
+     */
+    public com.google.protobuf.ByteString getUriBytes() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        uri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage URI to which recognition results were written.
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
+     * @param value The uri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      uri_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage URI to which recognition results were written.
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearUri() {
+      uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The Cloud Storage URI to which recognition results were written.
+     * </pre>
+     *
+     * <code>string uri = 1;</code>
+     *
+     * @param value The bytes for uri to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      uri_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
     @java.lang.Override
     public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFields(unknownFields);
@@ -421,24 +571,24 @@ public final class AutoDetectDecodingConfig extends com.google.protobuf.Generate
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.speech.v2.AutoDetectDecodingConfig)
+    // @@protoc_insertion_point(builder_scope:google.cloud.speech.v2.CloudStorageResult)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.speech.v2.AutoDetectDecodingConfig)
-  private static final com.google.cloud.speech.v2.AutoDetectDecodingConfig DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:google.cloud.speech.v2.CloudStorageResult)
+  private static final com.google.cloud.speech.v2.CloudStorageResult DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.speech.v2.AutoDetectDecodingConfig();
+    DEFAULT_INSTANCE = new com.google.cloud.speech.v2.CloudStorageResult();
   }
 
-  public static com.google.cloud.speech.v2.AutoDetectDecodingConfig getDefaultInstance() {
+  public static com.google.cloud.speech.v2.CloudStorageResult getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AutoDetectDecodingConfig> PARSER =
-      new com.google.protobuf.AbstractParser<AutoDetectDecodingConfig>() {
+  private static final com.google.protobuf.Parser<CloudStorageResult> PARSER =
+      new com.google.protobuf.AbstractParser<CloudStorageResult>() {
         @java.lang.Override
-        public AutoDetectDecodingConfig parsePartialFrom(
+        public CloudStorageResult parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -457,17 +607,17 @@ public final class AutoDetectDecodingConfig extends com.google.protobuf.Generate
         }
       };
 
-  public static com.google.protobuf.Parser<AutoDetectDecodingConfig> parser() {
+  public static com.google.protobuf.Parser<CloudStorageResult> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<AutoDetectDecodingConfig> getParserForType() {
+  public com.google.protobuf.Parser<CloudStorageResult> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.speech.v2.AutoDetectDecodingConfig getDefaultInstanceForType() {
+  public com.google.cloud.speech.v2.CloudStorageResult getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 }

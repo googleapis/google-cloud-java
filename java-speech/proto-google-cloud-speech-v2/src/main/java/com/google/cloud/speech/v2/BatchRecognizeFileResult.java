@@ -62,55 +62,53 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
             com.google.cloud.speech.v2.BatchRecognizeFileResult.Builder.class);
   }
 
-  public static final int URI_FIELD_NUMBER = 1;
+  private int resultCase_ = 0;
 
   @SuppressWarnings("serial")
-  private volatile java.lang.Object uri_ = "";
-  /**
-   *
-   *
-   * <pre>
-   * The Cloud Storage URI to which recognition results were written.
-   * </pre>
-   *
-   * <code>string uri = 1;</code>
-   *
-   * @return The uri.
-   */
-  @java.lang.Override
-  public java.lang.String getUri() {
-    java.lang.Object ref = uri_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      uri_ = s;
-      return s;
+  private java.lang.Object result_;
+
+  public enum ResultCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    CLOUD_STORAGE_RESULT(5),
+    INLINE_RESULT(6),
+    RESULT_NOT_SET(0);
+    private final int value;
+
+    private ResultCase(int value) {
+      this.value = value;
     }
-  }
-  /**
-   *
-   *
-   * <pre>
-   * The Cloud Storage URI to which recognition results were written.
-   * </pre>
-   *
-   * <code>string uri = 1;</code>
-   *
-   * @return The bytes for uri.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString getUriBytes() {
-    java.lang.Object ref = uri_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      uri_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ResultCase valueOf(int value) {
+      return forNumber(value);
     }
+
+    public static ResultCase forNumber(int value) {
+      switch (value) {
+        case 5:
+          return CLOUD_STORAGE_RESULT;
+        case 6:
+          return INLINE_RESULT;
+        case 0:
+          return RESULT_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ResultCase getResultCase() {
+    return ResultCase.forNumber(resultCase_);
   }
 
   public static final int ERROR_FIELD_NUMBER = 2;
@@ -189,23 +187,203 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
         : metadata_;
   }
 
+  public static final int CLOUD_STORAGE_RESULT_FIELD_NUMBER = 5;
+  /**
+   *
+   *
+   * <pre>
+   * Recognition results written to Cloud Storage. This is
+   * populated only when
+   * [GcsOutputConfig][google.cloud.speech.v2.GcsOutputConfig] is set in
+   * the
+   * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.CloudStorageResult cloud_storage_result = 5;</code>
+   *
+   * @return Whether the cloudStorageResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudStorageResult() {
+    return resultCase_ == 5;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Recognition results written to Cloud Storage. This is
+   * populated only when
+   * [GcsOutputConfig][google.cloud.speech.v2.GcsOutputConfig] is set in
+   * the
+   * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.CloudStorageResult cloud_storage_result = 5;</code>
+   *
+   * @return The cloudStorageResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v2.CloudStorageResult getCloudStorageResult() {
+    if (resultCase_ == 5) {
+      return (com.google.cloud.speech.v2.CloudStorageResult) result_;
+    }
+    return com.google.cloud.speech.v2.CloudStorageResult.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Recognition results written to Cloud Storage. This is
+   * populated only when
+   * [GcsOutputConfig][google.cloud.speech.v2.GcsOutputConfig] is set in
+   * the
+   * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.CloudStorageResult cloud_storage_result = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v2.CloudStorageResultOrBuilder getCloudStorageResultOrBuilder() {
+    if (resultCase_ == 5) {
+      return (com.google.cloud.speech.v2.CloudStorageResult) result_;
+    }
+    return com.google.cloud.speech.v2.CloudStorageResult.getDefaultInstance();
+  }
+
+  public static final int INLINE_RESULT_FIELD_NUMBER = 6;
+  /**
+   *
+   *
+   * <pre>
+   * Recognition results. This is populated only when
+   * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
+   * the
+   * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.InlineResult inline_result = 6;</code>
+   *
+   * @return Whether the inlineResult field is set.
+   */
+  @java.lang.Override
+  public boolean hasInlineResult() {
+    return resultCase_ == 6;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Recognition results. This is populated only when
+   * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
+   * the
+   * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.InlineResult inline_result = 6;</code>
+   *
+   * @return The inlineResult.
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v2.InlineResult getInlineResult() {
+    if (resultCase_ == 6) {
+      return (com.google.cloud.speech.v2.InlineResult) result_;
+    }
+    return com.google.cloud.speech.v2.InlineResult.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Recognition results. This is populated only when
+   * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
+   * the
+   * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+   * </pre>
+   *
+   * <code>.google.cloud.speech.v2.InlineResult inline_result = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v2.InlineResultOrBuilder getInlineResultOrBuilder() {
+    if (resultCase_ == 6) {
+      return (com.google.cloud.speech.v2.InlineResult) result_;
+    }
+    return com.google.cloud.speech.v2.InlineResult.getDefaultInstance();
+  }
+
+  public static final int URI_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object uri_ = "";
+  /**
+   *
+   *
+   * <pre>
+   * Deprecated. Use `cloud_storage_result.native_format_uri` instead.
+   * </pre>
+   *
+   * <code>string uri = 1 [deprecated = true];</code>
+   *
+   * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.uri is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=1354
+   * @return The uri.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.lang.String getUri() {
+    java.lang.Object ref = uri_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      uri_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Deprecated. Use `cloud_storage_result.native_format_uri` instead.
+   * </pre>
+   *
+   * <code>string uri = 1 [deprecated = true];</code>
+   *
+   * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.uri is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=1354
+   * @return The bytes for uri.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public com.google.protobuf.ByteString getUriBytes() {
+    java.lang.Object ref = uri_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      uri_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int TRANSCRIPT_FIELD_NUMBER = 4;
   private com.google.cloud.speech.v2.BatchRecognizeResults transcript_;
   /**
    *
    *
    * <pre>
-   * The transcript for the audio file. This is populated only when
-   * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
-   * the
-   * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+   * Deprecated. Use `inline_result.transcript` instead.
    * </pre>
    *
-   * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4;</code>
+   * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.transcript is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=1357
    * @return Whether the transcript field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasTranscript() {
     return transcript_ != null;
   }
@@ -213,17 +391,17 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The transcript for the audio file. This is populated only when
-   * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
-   * the
-   * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+   * Deprecated. Use `inline_result.transcript` instead.
    * </pre>
    *
-   * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4;</code>
+   * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4 [deprecated = true];</code>
    *
+   * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.transcript is deprecated. See
+   *     google/cloud/speech/v2/cloud_speech.proto;l=1357
    * @return The transcript.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.speech.v2.BatchRecognizeResults getTranscript() {
     return transcript_ == null
         ? com.google.cloud.speech.v2.BatchRecognizeResults.getDefaultInstance()
@@ -233,15 +411,13 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The transcript for the audio file. This is populated only when
-   * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
-   * the
-   * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+   * Deprecated. Use `inline_result.transcript` instead.
    * </pre>
    *
-   * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4;</code>
+   * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4 [deprecated = true];</code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.speech.v2.BatchRecognizeResultsOrBuilder getTranscriptOrBuilder() {
     return transcript_ == null
         ? com.google.cloud.speech.v2.BatchRecognizeResults.getDefaultInstance()
@@ -274,6 +450,12 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     if (transcript_ != null) {
       output.writeMessage(4, getTranscript());
     }
+    if (resultCase_ == 5) {
+      output.writeMessage(5, (com.google.cloud.speech.v2.CloudStorageResult) result_);
+    }
+    if (resultCase_ == 6) {
+      output.writeMessage(6, (com.google.cloud.speech.v2.InlineResult) result_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -295,6 +477,16 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     if (transcript_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getTranscript());
     }
+    if (resultCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.speech.v2.CloudStorageResult) result_);
+    }
+    if (resultCase_ == 6) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.cloud.speech.v2.InlineResult) result_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -311,7 +503,6 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     com.google.cloud.speech.v2.BatchRecognizeFileResult other =
         (com.google.cloud.speech.v2.BatchRecognizeFileResult) obj;
 
-    if (!getUri().equals(other.getUri())) return false;
     if (hasError() != other.hasError()) return false;
     if (hasError()) {
       if (!getError().equals(other.getError())) return false;
@@ -320,9 +511,21 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     if (hasMetadata()) {
       if (!getMetadata().equals(other.getMetadata())) return false;
     }
+    if (!getUri().equals(other.getUri())) return false;
     if (hasTranscript() != other.hasTranscript()) return false;
     if (hasTranscript()) {
       if (!getTranscript().equals(other.getTranscript())) return false;
+    }
+    if (!getResultCase().equals(other.getResultCase())) return false;
+    switch (resultCase_) {
+      case 5:
+        if (!getCloudStorageResult().equals(other.getCloudStorageResult())) return false;
+        break;
+      case 6:
+        if (!getInlineResult().equals(other.getInlineResult())) return false;
+        break;
+      case 0:
+      default:
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -335,8 +538,6 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + URI_FIELD_NUMBER;
-    hash = (53 * hash) + getUri().hashCode();
     if (hasError()) {
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getError().hashCode();
@@ -345,9 +546,23 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
     }
+    hash = (37 * hash) + URI_FIELD_NUMBER;
+    hash = (53 * hash) + getUri().hashCode();
     if (hasTranscript()) {
       hash = (37 * hash) + TRANSCRIPT_FIELD_NUMBER;
       hash = (53 * hash) + getTranscript().hashCode();
+    }
+    switch (resultCase_) {
+      case 5:
+        hash = (37 * hash) + CLOUD_STORAGE_RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getCloudStorageResult().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + INLINE_RESULT_FIELD_NUMBER;
+        hash = (53 * hash) + getInlineResult().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -488,7 +703,6 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      uri_ = "";
       error_ = null;
       if (errorBuilder_ != null) {
         errorBuilder_.dispose();
@@ -499,11 +713,20 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
         metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
+      if (cloudStorageResultBuilder_ != null) {
+        cloudStorageResultBuilder_.clear();
+      }
+      if (inlineResultBuilder_ != null) {
+        inlineResultBuilder_.clear();
+      }
+      uri_ = "";
       transcript_ = null;
       if (transcriptBuilder_ != null) {
         transcriptBuilder_.dispose();
         transcriptBuilder_ = null;
       }
+      resultCase_ = 0;
+      result_ = null;
       return this;
     }
 
@@ -534,6 +757,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -541,16 +765,27 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     private void buildPartial0(com.google.cloud.speech.v2.BatchRecognizeFileResult result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.uri_ = uri_;
-      }
-      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000002) != 0)) {
         result.metadata_ = metadataBuilder_ == null ? metadata_ : metadataBuilder_.build();
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.uri_ = uri_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.transcript_ = transcriptBuilder_ == null ? transcript_ : transcriptBuilder_.build();
+      }
+    }
+
+    private void buildPartialOneofs(com.google.cloud.speech.v2.BatchRecognizeFileResult result) {
+      result.resultCase_ = resultCase_;
+      result.result_ = this.result_;
+      if (resultCase_ == 5 && cloudStorageResultBuilder_ != null) {
+        result.result_ = cloudStorageResultBuilder_.build();
+      }
+      if (resultCase_ == 6 && inlineResultBuilder_ != null) {
+        result.result_ = inlineResultBuilder_.build();
       }
     }
 
@@ -600,19 +835,35 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     public Builder mergeFrom(com.google.cloud.speech.v2.BatchRecognizeFileResult other) {
       if (other == com.google.cloud.speech.v2.BatchRecognizeFileResult.getDefaultInstance())
         return this;
-      if (!other.getUri().isEmpty()) {
-        uri_ = other.uri_;
-        bitField0_ |= 0x00000001;
-        onChanged();
-      }
       if (other.hasError()) {
         mergeError(other.getError());
       }
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
       }
+      if (!other.getUri().isEmpty()) {
+        uri_ = other.uri_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       if (other.hasTranscript()) {
         mergeTranscript(other.getTranscript());
+      }
+      switch (other.getResultCase()) {
+        case CLOUD_STORAGE_RESULT:
+          {
+            mergeCloudStorageResult(other.getCloudStorageResult());
+            break;
+          }
+        case INLINE_RESULT:
+          {
+            mergeInlineResult(other.getInlineResult());
+            break;
+          }
+        case RESULT_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -643,27 +894,40 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
             case 10:
               {
                 uri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 10
             case 18:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000001;
                 break;
               } // case 18
             case 26:
               {
                 input.readMessage(getMetadataFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 26
             case 34:
               {
                 input.readMessage(getTranscriptFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getCloudStorageResultFieldBuilder().getBuilder(), extensionRegistry);
+                resultCase_ = 5;
+                break;
+              } // case 42
+            case 50:
+              {
+                input.readMessage(getInlineResultFieldBuilder().getBuilder(), extensionRegistry);
+                resultCase_ = 6;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -681,113 +945,21 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       return this;
     }
 
-    private int bitField0_;
+    private int resultCase_ = 0;
+    private java.lang.Object result_;
 
-    private java.lang.Object uri_ = "";
-    /**
-     *
-     *
-     * <pre>
-     * The Cloud Storage URI to which recognition results were written.
-     * </pre>
-     *
-     * <code>string uri = 1;</code>
-     *
-     * @return The uri.
-     */
-    public java.lang.String getUri() {
-      java.lang.Object ref = uri_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        uri_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
+    public ResultCase getResultCase() {
+      return ResultCase.forNumber(resultCase_);
     }
-    /**
-     *
-     *
-     * <pre>
-     * The Cloud Storage URI to which recognition results were written.
-     * </pre>
-     *
-     * <code>string uri = 1;</code>
-     *
-     * @return The bytes for uri.
-     */
-    public com.google.protobuf.ByteString getUriBytes() {
-      java.lang.Object ref = uri_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        uri_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The Cloud Storage URI to which recognition results were written.
-     * </pre>
-     *
-     * <code>string uri = 1;</code>
-     *
-     * @param value The uri to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUri(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      uri_ = value;
-      bitField0_ |= 0x00000001;
+
+    public Builder clearResult() {
+      resultCase_ = 0;
+      result_ = null;
       onChanged();
       return this;
     }
-    /**
-     *
-     *
-     * <pre>
-     * The Cloud Storage URI to which recognition results were written.
-     * </pre>
-     *
-     * <code>string uri = 1;</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearUri() {
-      uri_ = getDefaultInstance().getUri();
-      bitField0_ = (bitField0_ & ~0x00000001);
-      onChanged();
-      return this;
-    }
-    /**
-     *
-     *
-     * <pre>
-     * The Cloud Storage URI to which recognition results were written.
-     * </pre>
-     *
-     * <code>string uri = 1;</code>
-     *
-     * @param value The bytes for uri to set.
-     * @return This builder for chaining.
-     */
-    public Builder setUriBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      uri_ = value;
-      bitField0_ |= 0x00000001;
-      onChanged();
-      return this;
-    }
+
+    private int bitField0_;
 
     private com.google.rpc.Status error_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -805,7 +977,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      *
@@ -843,7 +1015,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       } else {
         errorBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -862,7 +1034,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -877,7 +1049,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000001) != 0)
             && error_ != null
             && error_ != com.google.rpc.Status.getDefaultInstance()) {
           getErrorBuilder().mergeFrom(value);
@@ -887,7 +1059,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       } else {
         errorBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return this;
     }
@@ -901,7 +1073,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      * <code>.google.rpc.Status error = 2;</code>
      */
     public Builder clearError() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000001);
       error_ = null;
       if (errorBuilder_ != null) {
         errorBuilder_.dispose();
@@ -920,7 +1092,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      * <code>.google.rpc.Status error = 2;</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000001;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
@@ -975,7 +1147,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      * @return Whether the metadata field is set.
      */
     public boolean hasMetadata() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 3;</code>
@@ -1001,7 +1173,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       } else {
         metadataBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -1013,14 +1185,14 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       } else {
         metadataBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /** <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 3;</code> */
     public Builder mergeMetadata(com.google.cloud.speech.v2.RecognitionResponseMetadata value) {
       if (metadataBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000002) != 0)
             && metadata_ != null
             && metadata_
                 != com.google.cloud.speech.v2.RecognitionResponseMetadata.getDefaultInstance()) {
@@ -1031,13 +1203,13 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       } else {
         metadataBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /** <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 3;</code> */
     public Builder clearMetadata() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000002);
       metadata_ = null;
       if (metadataBuilder_ != null) {
         metadataBuilder_.dispose();
@@ -1048,7 +1220,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
     }
     /** <code>.google.cloud.speech.v2.RecognitionResponseMetadata metadata = 3;</code> */
     public com.google.cloud.speech.v2.RecognitionResponseMetadata.Builder getMetadataBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000002;
       onChanged();
       return getMetadataFieldBuilder().getBuilder();
     }
@@ -1080,6 +1252,608 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       return metadataBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v2.CloudStorageResult,
+            com.google.cloud.speech.v2.CloudStorageResult.Builder,
+            com.google.cloud.speech.v2.CloudStorageResultOrBuilder>
+        cloudStorageResultBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Recognition results written to Cloud Storage. This is
+     * populated only when
+     * [GcsOutputConfig][google.cloud.speech.v2.GcsOutputConfig] is set in
+     * the
+     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.CloudStorageResult cloud_storage_result = 5;</code>
+     *
+     * @return Whether the cloudStorageResult field is set.
+     */
+    @java.lang.Override
+    public boolean hasCloudStorageResult() {
+      return resultCase_ == 5;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Recognition results written to Cloud Storage. This is
+     * populated only when
+     * [GcsOutputConfig][google.cloud.speech.v2.GcsOutputConfig] is set in
+     * the
+     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.CloudStorageResult cloud_storage_result = 5;</code>
+     *
+     * @return The cloudStorageResult.
+     */
+    @java.lang.Override
+    public com.google.cloud.speech.v2.CloudStorageResult getCloudStorageResult() {
+      if (cloudStorageResultBuilder_ == null) {
+        if (resultCase_ == 5) {
+          return (com.google.cloud.speech.v2.CloudStorageResult) result_;
+        }
+        return com.google.cloud.speech.v2.CloudStorageResult.getDefaultInstance();
+      } else {
+        if (resultCase_ == 5) {
+          return cloudStorageResultBuilder_.getMessage();
+        }
+        return com.google.cloud.speech.v2.CloudStorageResult.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Recognition results written to Cloud Storage. This is
+     * populated only when
+     * [GcsOutputConfig][google.cloud.speech.v2.GcsOutputConfig] is set in
+     * the
+     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.CloudStorageResult cloud_storage_result = 5;</code>
+     */
+    public Builder setCloudStorageResult(com.google.cloud.speech.v2.CloudStorageResult value) {
+      if (cloudStorageResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        result_ = value;
+        onChanged();
+      } else {
+        cloudStorageResultBuilder_.setMessage(value);
+      }
+      resultCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Recognition results written to Cloud Storage. This is
+     * populated only when
+     * [GcsOutputConfig][google.cloud.speech.v2.GcsOutputConfig] is set in
+     * the
+     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.CloudStorageResult cloud_storage_result = 5;</code>
+     */
+    public Builder setCloudStorageResult(
+        com.google.cloud.speech.v2.CloudStorageResult.Builder builderForValue) {
+      if (cloudStorageResultBuilder_ == null) {
+        result_ = builderForValue.build();
+        onChanged();
+      } else {
+        cloudStorageResultBuilder_.setMessage(builderForValue.build());
+      }
+      resultCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Recognition results written to Cloud Storage. This is
+     * populated only when
+     * [GcsOutputConfig][google.cloud.speech.v2.GcsOutputConfig] is set in
+     * the
+     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.CloudStorageResult cloud_storage_result = 5;</code>
+     */
+    public Builder mergeCloudStorageResult(com.google.cloud.speech.v2.CloudStorageResult value) {
+      if (cloudStorageResultBuilder_ == null) {
+        if (resultCase_ == 5
+            && result_ != com.google.cloud.speech.v2.CloudStorageResult.getDefaultInstance()) {
+          result_ =
+              com.google.cloud.speech.v2.CloudStorageResult.newBuilder(
+                      (com.google.cloud.speech.v2.CloudStorageResult) result_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          result_ = value;
+        }
+        onChanged();
+      } else {
+        if (resultCase_ == 5) {
+          cloudStorageResultBuilder_.mergeFrom(value);
+        } else {
+          cloudStorageResultBuilder_.setMessage(value);
+        }
+      }
+      resultCase_ = 5;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Recognition results written to Cloud Storage. This is
+     * populated only when
+     * [GcsOutputConfig][google.cloud.speech.v2.GcsOutputConfig] is set in
+     * the
+     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.CloudStorageResult cloud_storage_result = 5;</code>
+     */
+    public Builder clearCloudStorageResult() {
+      if (cloudStorageResultBuilder_ == null) {
+        if (resultCase_ == 5) {
+          resultCase_ = 0;
+          result_ = null;
+          onChanged();
+        }
+      } else {
+        if (resultCase_ == 5) {
+          resultCase_ = 0;
+          result_ = null;
+        }
+        cloudStorageResultBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Recognition results written to Cloud Storage. This is
+     * populated only when
+     * [GcsOutputConfig][google.cloud.speech.v2.GcsOutputConfig] is set in
+     * the
+     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.CloudStorageResult cloud_storage_result = 5;</code>
+     */
+    public com.google.cloud.speech.v2.CloudStorageResult.Builder getCloudStorageResultBuilder() {
+      return getCloudStorageResultFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Recognition results written to Cloud Storage. This is
+     * populated only when
+     * [GcsOutputConfig][google.cloud.speech.v2.GcsOutputConfig] is set in
+     * the
+     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.CloudStorageResult cloud_storage_result = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.speech.v2.CloudStorageResultOrBuilder getCloudStorageResultOrBuilder() {
+      if ((resultCase_ == 5) && (cloudStorageResultBuilder_ != null)) {
+        return cloudStorageResultBuilder_.getMessageOrBuilder();
+      } else {
+        if (resultCase_ == 5) {
+          return (com.google.cloud.speech.v2.CloudStorageResult) result_;
+        }
+        return com.google.cloud.speech.v2.CloudStorageResult.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Recognition results written to Cloud Storage. This is
+     * populated only when
+     * [GcsOutputConfig][google.cloud.speech.v2.GcsOutputConfig] is set in
+     * the
+     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.CloudStorageResult cloud_storage_result = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v2.CloudStorageResult,
+            com.google.cloud.speech.v2.CloudStorageResult.Builder,
+            com.google.cloud.speech.v2.CloudStorageResultOrBuilder>
+        getCloudStorageResultFieldBuilder() {
+      if (cloudStorageResultBuilder_ == null) {
+        if (!(resultCase_ == 5)) {
+          result_ = com.google.cloud.speech.v2.CloudStorageResult.getDefaultInstance();
+        }
+        cloudStorageResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.speech.v2.CloudStorageResult,
+                com.google.cloud.speech.v2.CloudStorageResult.Builder,
+                com.google.cloud.speech.v2.CloudStorageResultOrBuilder>(
+                (com.google.cloud.speech.v2.CloudStorageResult) result_,
+                getParentForChildren(),
+                isClean());
+        result_ = null;
+      }
+      resultCase_ = 5;
+      onChanged();
+      return cloudStorageResultBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v2.InlineResult,
+            com.google.cloud.speech.v2.InlineResult.Builder,
+            com.google.cloud.speech.v2.InlineResultOrBuilder>
+        inlineResultBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Recognition results. This is populated only when
+     * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
+     * the
+     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.InlineResult inline_result = 6;</code>
+     *
+     * @return Whether the inlineResult field is set.
+     */
+    @java.lang.Override
+    public boolean hasInlineResult() {
+      return resultCase_ == 6;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Recognition results. This is populated only when
+     * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
+     * the
+     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.InlineResult inline_result = 6;</code>
+     *
+     * @return The inlineResult.
+     */
+    @java.lang.Override
+    public com.google.cloud.speech.v2.InlineResult getInlineResult() {
+      if (inlineResultBuilder_ == null) {
+        if (resultCase_ == 6) {
+          return (com.google.cloud.speech.v2.InlineResult) result_;
+        }
+        return com.google.cloud.speech.v2.InlineResult.getDefaultInstance();
+      } else {
+        if (resultCase_ == 6) {
+          return inlineResultBuilder_.getMessage();
+        }
+        return com.google.cloud.speech.v2.InlineResult.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Recognition results. This is populated only when
+     * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
+     * the
+     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.InlineResult inline_result = 6;</code>
+     */
+    public Builder setInlineResult(com.google.cloud.speech.v2.InlineResult value) {
+      if (inlineResultBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        result_ = value;
+        onChanged();
+      } else {
+        inlineResultBuilder_.setMessage(value);
+      }
+      resultCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Recognition results. This is populated only when
+     * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
+     * the
+     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.InlineResult inline_result = 6;</code>
+     */
+    public Builder setInlineResult(
+        com.google.cloud.speech.v2.InlineResult.Builder builderForValue) {
+      if (inlineResultBuilder_ == null) {
+        result_ = builderForValue.build();
+        onChanged();
+      } else {
+        inlineResultBuilder_.setMessage(builderForValue.build());
+      }
+      resultCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Recognition results. This is populated only when
+     * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
+     * the
+     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.InlineResult inline_result = 6;</code>
+     */
+    public Builder mergeInlineResult(com.google.cloud.speech.v2.InlineResult value) {
+      if (inlineResultBuilder_ == null) {
+        if (resultCase_ == 6
+            && result_ != com.google.cloud.speech.v2.InlineResult.getDefaultInstance()) {
+          result_ =
+              com.google.cloud.speech.v2.InlineResult.newBuilder(
+                      (com.google.cloud.speech.v2.InlineResult) result_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          result_ = value;
+        }
+        onChanged();
+      } else {
+        if (resultCase_ == 6) {
+          inlineResultBuilder_.mergeFrom(value);
+        } else {
+          inlineResultBuilder_.setMessage(value);
+        }
+      }
+      resultCase_ = 6;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Recognition results. This is populated only when
+     * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
+     * the
+     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.InlineResult inline_result = 6;</code>
+     */
+    public Builder clearInlineResult() {
+      if (inlineResultBuilder_ == null) {
+        if (resultCase_ == 6) {
+          resultCase_ = 0;
+          result_ = null;
+          onChanged();
+        }
+      } else {
+        if (resultCase_ == 6) {
+          resultCase_ = 0;
+          result_ = null;
+        }
+        inlineResultBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Recognition results. This is populated only when
+     * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
+     * the
+     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.InlineResult inline_result = 6;</code>
+     */
+    public com.google.cloud.speech.v2.InlineResult.Builder getInlineResultBuilder() {
+      return getInlineResultFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Recognition results. This is populated only when
+     * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
+     * the
+     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.InlineResult inline_result = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.speech.v2.InlineResultOrBuilder getInlineResultOrBuilder() {
+      if ((resultCase_ == 6) && (inlineResultBuilder_ != null)) {
+        return inlineResultBuilder_.getMessageOrBuilder();
+      } else {
+        if (resultCase_ == 6) {
+          return (com.google.cloud.speech.v2.InlineResult) result_;
+        }
+        return com.google.cloud.speech.v2.InlineResult.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Recognition results. This is populated only when
+     * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
+     * the
+     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * </pre>
+     *
+     * <code>.google.cloud.speech.v2.InlineResult inline_result = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v2.InlineResult,
+            com.google.cloud.speech.v2.InlineResult.Builder,
+            com.google.cloud.speech.v2.InlineResultOrBuilder>
+        getInlineResultFieldBuilder() {
+      if (inlineResultBuilder_ == null) {
+        if (!(resultCase_ == 6)) {
+          result_ = com.google.cloud.speech.v2.InlineResult.getDefaultInstance();
+        }
+        inlineResultBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.speech.v2.InlineResult,
+                com.google.cloud.speech.v2.InlineResult.Builder,
+                com.google.cloud.speech.v2.InlineResultOrBuilder>(
+                (com.google.cloud.speech.v2.InlineResult) result_,
+                getParentForChildren(),
+                isClean());
+        result_ = null;
+      }
+      resultCase_ = 6;
+      onChanged();
+      return inlineResultBuilder_;
+    }
+
+    private java.lang.Object uri_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated. Use `cloud_storage_result.native_format_uri` instead.
+     * </pre>
+     *
+     * <code>string uri = 1 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.uri is deprecated. See
+     *     google/cloud/speech/v2/cloud_speech.proto;l=1354
+     * @return The uri.
+     */
+    @java.lang.Deprecated
+    public java.lang.String getUri() {
+      java.lang.Object ref = uri_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        uri_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated. Use `cloud_storage_result.native_format_uri` instead.
+     * </pre>
+     *
+     * <code>string uri = 1 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.uri is deprecated. See
+     *     google/cloud/speech/v2/cloud_speech.proto;l=1354
+     * @return The bytes for uri.
+     */
+    @java.lang.Deprecated
+    public com.google.protobuf.ByteString getUriBytes() {
+      java.lang.Object ref = uri_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        uri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated. Use `cloud_storage_result.native_format_uri` instead.
+     * </pre>
+     *
+     * <code>string uri = 1 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.uri is deprecated. See
+     *     google/cloud/speech/v2/cloud_speech.proto;l=1354
+     * @param value The uri to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder setUri(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      uri_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated. Use `cloud_storage_result.native_format_uri` instead.
+     * </pre>
+     *
+     * <code>string uri = 1 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.uri is deprecated. See
+     *     google/cloud/speech/v2/cloud_speech.proto;l=1354
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder clearUri() {
+      uri_ = getDefaultInstance().getUri();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Deprecated. Use `cloud_storage_result.native_format_uri` instead.
+     * </pre>
+     *
+     * <code>string uri = 1 [deprecated = true];</code>
+     *
+     * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.uri is deprecated. See
+     *     google/cloud/speech/v2/cloud_speech.proto;l=1354
+     * @param value The bytes for uri to set.
+     * @return This builder for chaining.
+     */
+    @java.lang.Deprecated
+    public Builder setUriBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      uri_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
     private com.google.cloud.speech.v2.BatchRecognizeResults transcript_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.speech.v2.BatchRecognizeResults,
@@ -1090,33 +1864,35 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The transcript for the audio file. This is populated only when
-     * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
-     * the
-     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * Deprecated. Use `inline_result.transcript` instead.
      * </pre>
      *
-     * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4;</code>
+     * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.transcript is deprecated. See
+     *     google/cloud/speech/v2/cloud_speech.proto;l=1357
      * @return Whether the transcript field is set.
      */
+    @java.lang.Deprecated
     public boolean hasTranscript() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      *
      *
      * <pre>
-     * The transcript for the audio file. This is populated only when
-     * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
-     * the
-     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * Deprecated. Use `inline_result.transcript` instead.
      * </pre>
      *
-     * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4;</code>
+     * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.speech.v2.BatchRecognizeFileResult.transcript is deprecated. See
+     *     google/cloud/speech/v2/cloud_speech.proto;l=1357
      * @return The transcript.
      */
+    @java.lang.Deprecated
     public com.google.cloud.speech.v2.BatchRecognizeResults getTranscript() {
       if (transcriptBuilder_ == null) {
         return transcript_ == null
@@ -1130,14 +1906,13 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The transcript for the audio file. This is populated only when
-     * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
-     * the
-     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * Deprecated. Use `inline_result.transcript` instead.
      * </pre>
      *
-     * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4;</code>
+     * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setTranscript(com.google.cloud.speech.v2.BatchRecognizeResults value) {
       if (transcriptBuilder_ == null) {
         if (value == null) {
@@ -1147,7 +1922,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       } else {
         transcriptBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1155,14 +1930,13 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The transcript for the audio file. This is populated only when
-     * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
-     * the
-     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * Deprecated. Use `inline_result.transcript` instead.
      * </pre>
      *
-     * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4;</code>
+     * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setTranscript(
         com.google.cloud.speech.v2.BatchRecognizeResults.Builder builderForValue) {
       if (transcriptBuilder_ == null) {
@@ -1170,7 +1944,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       } else {
         transcriptBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1178,17 +1952,16 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The transcript for the audio file. This is populated only when
-     * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
-     * the
-     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * Deprecated. Use `inline_result.transcript` instead.
      * </pre>
      *
-     * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4;</code>
+     * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeTranscript(com.google.cloud.speech.v2.BatchRecognizeResults value) {
       if (transcriptBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && transcript_ != null
             && transcript_
                 != com.google.cloud.speech.v2.BatchRecognizeResults.getDefaultInstance()) {
@@ -1199,7 +1972,7 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
       } else {
         transcriptBuilder_.mergeFrom(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -1207,16 +1980,15 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The transcript for the audio file. This is populated only when
-     * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
-     * the
-     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * Deprecated. Use `inline_result.transcript` instead.
      * </pre>
      *
-     * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4;</code>
+     * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearTranscript() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       transcript_ = null;
       if (transcriptBuilder_ != null) {
         transcriptBuilder_.dispose();
@@ -1229,16 +2001,15 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The transcript for the audio file. This is populated only when
-     * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
-     * the
-     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * Deprecated. Use `inline_result.transcript` instead.
      * </pre>
      *
-     * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4;</code>
+     * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.speech.v2.BatchRecognizeResults.Builder getTranscriptBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getTranscriptFieldBuilder().getBuilder();
     }
@@ -1246,14 +2017,13 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The transcript for the audio file. This is populated only when
-     * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
-     * the
-     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * Deprecated. Use `inline_result.transcript` instead.
      * </pre>
      *
-     * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4;</code>
+     * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.speech.v2.BatchRecognizeResultsOrBuilder getTranscriptOrBuilder() {
       if (transcriptBuilder_ != null) {
         return transcriptBuilder_.getMessageOrBuilder();
@@ -1267,13 +2037,11 @@ public final class BatchRecognizeFileResult extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * The transcript for the audio file. This is populated only when
-     * [InlineOutputConfig][google.cloud.speech.v2.InlineOutputConfig] is set in
-     * the
-     * [RecognitionOutputConfig][[google.cloud.speech.v2.RecognitionOutputConfig].
+     * Deprecated. Use `inline_result.transcript` instead.
      * </pre>
      *
-     * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4;</code>
+     * <code>.google.cloud.speech.v2.BatchRecognizeResults transcript = 4 [deprecated = true];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.speech.v2.BatchRecognizeResults,
