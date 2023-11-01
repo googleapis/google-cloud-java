@@ -1209,5 +1209,6 @@ java.common_templates(
         ".github/workflows/samples.yaml",
         ".kokoro/build.sh",
         ".github/sync-repo-settings.yaml",
+        ".github/blunderbuss.yml",
     ]
 )
