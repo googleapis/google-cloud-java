@@ -43,6 +43,7 @@ public class AsyncGenerateClientCertificate {
               .setRequestId("requestId693933066")
               .setCertDuration(Duration.newBuilder().build())
               .setPublicKey("publicKey1446899510")
+              .setUseMetadataExchange(true)
               .build();
       ApiFuture<GenerateClientCertificateResponse> future =
           alloyDBAdminClient.generateClientCertificateCallable().futureCall(request);
