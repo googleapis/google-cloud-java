@@ -15,8 +15,6 @@
  */
 package com.google.cloud.compute.v1.integration;
 
-import static org.junit.Assert.fail;
-
 import com.google.cloud.compute.v1.Address;
 import com.google.cloud.compute.v1.AddressesClient;
 import com.google.cloud.compute.v1.AddressesScopedList;
@@ -120,7 +118,7 @@ public class ITAddressesTest extends BaseTest {
           .insertAsync(DEFAULT_PROJECT, DEFAULT_REGION, address)
           .get(60, TimeUnit.SECONDS);
     } catch (InterruptedException | ExecutionException | TimeoutException e) {
-      fail("Insert operation failed.");
+      throw new RuntimeException("Insert operation failed.", e);
     }
     addresses.add(address);
   }
