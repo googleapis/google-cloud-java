@@ -69,8 +69,8 @@ public interface ProcessOptionsOrBuilder
    *
    *
    * <pre>
-   * Only process certain pages from the start, process all if the document
-   * has less pages.
+   * Only process certain pages from the start. Process all if the document
+   * has fewer pages.
    * </pre>
    *
    * <code>int32 from_start = 6;</code>
@@ -82,8 +82,8 @@ public interface ProcessOptionsOrBuilder
    *
    *
    * <pre>
-   * Only process certain pages from the start, process all if the document
-   * has less pages.
+   * Only process certain pages from the start. Process all if the document
+   * has fewer pages.
    * </pre>
    *
    * <code>int32 from_start = 6;</code>
