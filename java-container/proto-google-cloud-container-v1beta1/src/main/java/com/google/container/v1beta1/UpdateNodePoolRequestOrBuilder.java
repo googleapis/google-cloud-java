@@ -36,7 +36,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2933
+   *     google/container/v1beta1/cluster_service.proto;l=3013
    * @return The projectId.
    */
   @java.lang.Deprecated
@@ -54,7 +54,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.project_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2933
+   *     google/container/v1beta1/cluster_service.proto;l=3013
    * @return The bytes for projectId.
    */
   @java.lang.Deprecated
@@ -73,7 +73,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2940
+   *     google/container/v1beta1/cluster_service.proto;l=3020
    * @return The zone.
    */
   @java.lang.Deprecated
@@ -91,7 +91,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * <code>string zone = 2 [deprecated = true, (.google.api.field_behavior) = REQUIRED];</code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.zone is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2940
+   *     google/container/v1beta1/cluster_service.proto;l=3020
    * @return The bytes for zone.
    */
   @java.lang.Deprecated
@@ -109,7 +109,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2944
+   *     google/container/v1beta1/cluster_service.proto;l=3024
    * @return The clusterId.
    */
   @java.lang.Deprecated
@@ -126,7 +126,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.cluster_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2944
+   *     google/container/v1beta1/cluster_service.proto;l=3024
    * @return The bytes for clusterId.
    */
   @java.lang.Deprecated
@@ -144,7 +144,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2949
+   *     google/container/v1beta1/cluster_service.proto;l=3029
    * @return The nodePoolId.
    */
   @java.lang.Deprecated
@@ -161,7 +161,7 @@ public interface UpdateNodePoolRequestOrBuilder
    * </code>
    *
    * @deprecated google.container.v1beta1.UpdateNodePoolRequest.node_pool_id is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2949
+   *     google/container/v1beta1/cluster_service.proto;l=3029
    * @return The bytes for nodePoolId.
    */
   @java.lang.Deprecated
@@ -987,4 +987,45 @@ public interface UpdateNodePoolRequestOrBuilder
    * @return The diskSizeGb.
    */
   long getDiskSizeGb();
+
+  /**
+   *
+   *
+   * <pre>
+   * Desired resource manager tag keys and values to be attached to the nodes
+   * for managing Compute Engine firewalls using Network Firewall Policies.
+   * Existing tags will be replaced with new values.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 39;</code>
+   *
+   * @return Whether the resourceManagerTags field is set.
+   */
+  boolean hasResourceManagerTags();
+  /**
+   *
+   *
+   * <pre>
+   * Desired resource manager tag keys and values to be attached to the nodes
+   * for managing Compute Engine firewalls using Network Firewall Policies.
+   * Existing tags will be replaced with new values.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 39;</code>
+   *
+   * @return The resourceManagerTags.
+   */
+  com.google.container.v1beta1.ResourceManagerTags getResourceManagerTags();
+  /**
+   *
+   *
+   * <pre>
+   * Desired resource manager tag keys and values to be attached to the nodes
+   * for managing Compute Engine firewalls using Network Firewall Policies.
+   * Existing tags will be replaced with new values.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 39;</code>
+   */
+  com.google.container.v1beta1.ResourceManagerTagsOrBuilder getResourceManagerTagsOrBuilder();
 }

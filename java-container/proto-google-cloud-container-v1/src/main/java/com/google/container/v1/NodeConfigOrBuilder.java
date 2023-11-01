@@ -1561,4 +1561,39 @@ public interface NodeConfigOrBuilder
    * <code>.google.container.v1.SoleTenantConfig sole_tenant_config = 42;</code>
    */
   com.google.container.v1.SoleTenantConfigOrBuilder getSoleTenantConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * A map of resource manager tag keys and values to be attached to the nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
+   *
+   * @return Whether the resourceManagerTags field is set.
+   */
+  boolean hasResourceManagerTags();
+  /**
+   *
+   *
+   * <pre>
+   * A map of resource manager tag keys and values to be attached to the nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
+   *
+   * @return The resourceManagerTags.
+   */
+  com.google.container.v1.ResourceManagerTags getResourceManagerTags();
+  /**
+   *
+   *
+   * <pre>
+   * A map of resource manager tag keys and values to be attached to the nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1.ResourceManagerTags resource_manager_tags = 45;</code>
+   */
+  com.google.container.v1.ResourceManagerTagsOrBuilder getResourceManagerTagsOrBuilder();
 }

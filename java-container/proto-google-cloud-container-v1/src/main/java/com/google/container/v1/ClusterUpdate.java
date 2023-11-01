@@ -2678,6 +2678,67 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         : desiredK8SBetaApis_;
   }
 
+  public static final int DESIRED_NODE_POOL_AUTO_CONFIG_RESOURCE_MANAGER_TAGS_FIELD_NUMBER = 136;
+  private com.google.container.v1.ResourceManagerTags desiredNodePoolAutoConfigResourceManagerTags_;
+  /**
+   *
+   *
+   * <pre>
+   * The desired resource manager tags that apply to all auto-provisioned node
+   * pools in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ResourceManagerTags desired_node_pool_auto_config_resource_manager_tags = 136;
+   * </code>
+   *
+   * @return Whether the desiredNodePoolAutoConfigResourceManagerTags field is set.
+   */
+  @java.lang.Override
+  public boolean hasDesiredNodePoolAutoConfigResourceManagerTags() {
+    return desiredNodePoolAutoConfigResourceManagerTags_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired resource manager tags that apply to all auto-provisioned node
+   * pools in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ResourceManagerTags desired_node_pool_auto_config_resource_manager_tags = 136;
+   * </code>
+   *
+   * @return The desiredNodePoolAutoConfigResourceManagerTags.
+   */
+  @java.lang.Override
+  public com.google.container.v1.ResourceManagerTags
+      getDesiredNodePoolAutoConfigResourceManagerTags() {
+    return desiredNodePoolAutoConfigResourceManagerTags_ == null
+        ? com.google.container.v1.ResourceManagerTags.getDefaultInstance()
+        : desiredNodePoolAutoConfigResourceManagerTags_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * The desired resource manager tags that apply to all auto-provisioned node
+   * pools in autopilot clusters and node auto-provisioning enabled clusters.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.ResourceManagerTags desired_node_pool_auto_config_resource_manager_tags = 136;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1.ResourceManagerTagsOrBuilder
+      getDesiredNodePoolAutoConfigResourceManagerTagsOrBuilder() {
+    return desiredNodePoolAutoConfigResourceManagerTags_ == null
+        ? com.google.container.v1.ResourceManagerTags.getDefaultInstance()
+        : desiredNodePoolAutoConfigResourceManagerTags_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2841,6 +2902,9 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     }
     if (desiredK8SBetaApis_ != null) {
       output.writeMessage(131, getDesiredK8SBetaApis());
+    }
+    if (desiredNodePoolAutoConfigResourceManagerTags_ != null) {
+      output.writeMessage(136, getDesiredNodePoolAutoConfigResourceManagerTags());
     }
     getUnknownFields().writeTo(output);
   }
@@ -3070,6 +3134,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(131, getDesiredK8SBetaApis());
     }
+    if (desiredNodePoolAutoConfigResourceManagerTags_ != null) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              136, getDesiredNodePoolAutoConfigResourceManagerTags());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -3285,6 +3354,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredK8SBetaApis()) {
       if (!getDesiredK8SBetaApis().equals(other.getDesiredK8SBetaApis())) return false;
     }
+    if (hasDesiredNodePoolAutoConfigResourceManagerTags()
+        != other.hasDesiredNodePoolAutoConfigResourceManagerTags()) return false;
+    if (hasDesiredNodePoolAutoConfigResourceManagerTags()) {
+      if (!getDesiredNodePoolAutoConfigResourceManagerTags()
+          .equals(other.getDesiredNodePoolAutoConfigResourceManagerTags())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3474,6 +3549,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
     if (hasDesiredK8SBetaApis()) {
       hash = (37 * hash) + DESIRED_K8S_BETA_APIS_FIELD_NUMBER;
       hash = (53 * hash) + getDesiredK8SBetaApis().hashCode();
+    }
+    if (hasDesiredNodePoolAutoConfigResourceManagerTags()) {
+      hash = (37 * hash) + DESIRED_NODE_POOL_AUTO_CONFIG_RESOURCE_MANAGER_TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getDesiredNodePoolAutoConfigResourceManagerTags().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3809,6 +3888,11 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredK8SBetaApisBuilder_.dispose();
         desiredK8SBetaApisBuilder_ = null;
       }
+      desiredNodePoolAutoConfigResourceManagerTags_ = null;
+      if (desiredNodePoolAutoConfigResourceManagerTagsBuilder_ != null) {
+        desiredNodePoolAutoConfigResourceManagerTagsBuilder_.dispose();
+        desiredNodePoolAutoConfigResourceManagerTagsBuilder_ = null;
+      }
       return this;
     }
 
@@ -4107,6 +4191,12 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 ? desiredK8SBetaApis_
                 : desiredK8SBetaApisBuilder_.build();
       }
+      if (((from_bitField1_ & 0x00020000) != 0)) {
+        result.desiredNodePoolAutoConfigResourceManagerTags_ =
+            desiredNodePoolAutoConfigResourceManagerTagsBuilder_ == null
+                ? desiredNodePoolAutoConfigResourceManagerTags_
+                : desiredNodePoolAutoConfigResourceManagerTagsBuilder_.build();
+      }
       result.bitField0_ |= to_bitField0_;
     }
 
@@ -4323,6 +4413,10 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasDesiredK8SBetaApis()) {
         mergeDesiredK8SBetaApis(other.getDesiredK8SBetaApis());
+      }
+      if (other.hasDesiredNodePoolAutoConfigResourceManagerTags()) {
+        mergeDesiredNodePoolAutoConfigResourceManagerTags(
+            other.getDesiredNodePoolAutoConfigResourceManagerTags());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -4689,6 +4783,14 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00010000;
                 break;
               } // case 1050
+            case 1090:
+              {
+                input.readMessage(
+                    getDesiredNodePoolAutoConfigResourceManagerTagsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField1_ |= 0x00020000;
+                break;
+              } // case 1090
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -13356,6 +13458,226 @@ public final class ClusterUpdate extends com.google.protobuf.GeneratedMessageV3
         desiredK8SBetaApis_ = null;
       }
       return desiredK8SBetaApisBuilder_;
+    }
+
+    private com.google.container.v1.ResourceManagerTags
+        desiredNodePoolAutoConfigResourceManagerTags_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ResourceManagerTags,
+            com.google.container.v1.ResourceManagerTags.Builder,
+            com.google.container.v1.ResourceManagerTagsOrBuilder>
+        desiredNodePoolAutoConfigResourceManagerTagsBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * The desired resource manager tags that apply to all auto-provisioned node
+     * pools in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ResourceManagerTags desired_node_pool_auto_config_resource_manager_tags = 136;
+     * </code>
+     *
+     * @return Whether the desiredNodePoolAutoConfigResourceManagerTags field is set.
+     */
+    public boolean hasDesiredNodePoolAutoConfigResourceManagerTags() {
+      return ((bitField1_ & 0x00020000) != 0);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired resource manager tags that apply to all auto-provisioned node
+     * pools in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ResourceManagerTags desired_node_pool_auto_config_resource_manager_tags = 136;
+     * </code>
+     *
+     * @return The desiredNodePoolAutoConfigResourceManagerTags.
+     */
+    public com.google.container.v1.ResourceManagerTags
+        getDesiredNodePoolAutoConfigResourceManagerTags() {
+      if (desiredNodePoolAutoConfigResourceManagerTagsBuilder_ == null) {
+        return desiredNodePoolAutoConfigResourceManagerTags_ == null
+            ? com.google.container.v1.ResourceManagerTags.getDefaultInstance()
+            : desiredNodePoolAutoConfigResourceManagerTags_;
+      } else {
+        return desiredNodePoolAutoConfigResourceManagerTagsBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired resource manager tags that apply to all auto-provisioned node
+     * pools in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ResourceManagerTags desired_node_pool_auto_config_resource_manager_tags = 136;
+     * </code>
+     */
+    public Builder setDesiredNodePoolAutoConfigResourceManagerTags(
+        com.google.container.v1.ResourceManagerTags value) {
+      if (desiredNodePoolAutoConfigResourceManagerTagsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        desiredNodePoolAutoConfigResourceManagerTags_ = value;
+      } else {
+        desiredNodePoolAutoConfigResourceManagerTagsBuilder_.setMessage(value);
+      }
+      bitField1_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired resource manager tags that apply to all auto-provisioned node
+     * pools in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ResourceManagerTags desired_node_pool_auto_config_resource_manager_tags = 136;
+     * </code>
+     */
+    public Builder setDesiredNodePoolAutoConfigResourceManagerTags(
+        com.google.container.v1.ResourceManagerTags.Builder builderForValue) {
+      if (desiredNodePoolAutoConfigResourceManagerTagsBuilder_ == null) {
+        desiredNodePoolAutoConfigResourceManagerTags_ = builderForValue.build();
+      } else {
+        desiredNodePoolAutoConfigResourceManagerTagsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField1_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired resource manager tags that apply to all auto-provisioned node
+     * pools in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ResourceManagerTags desired_node_pool_auto_config_resource_manager_tags = 136;
+     * </code>
+     */
+    public Builder mergeDesiredNodePoolAutoConfigResourceManagerTags(
+        com.google.container.v1.ResourceManagerTags value) {
+      if (desiredNodePoolAutoConfigResourceManagerTagsBuilder_ == null) {
+        if (((bitField1_ & 0x00020000) != 0)
+            && desiredNodePoolAutoConfigResourceManagerTags_ != null
+            && desiredNodePoolAutoConfigResourceManagerTags_
+                != com.google.container.v1.ResourceManagerTags.getDefaultInstance()) {
+          getDesiredNodePoolAutoConfigResourceManagerTagsBuilder().mergeFrom(value);
+        } else {
+          desiredNodePoolAutoConfigResourceManagerTags_ = value;
+        }
+      } else {
+        desiredNodePoolAutoConfigResourceManagerTagsBuilder_.mergeFrom(value);
+      }
+      bitField1_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired resource manager tags that apply to all auto-provisioned node
+     * pools in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ResourceManagerTags desired_node_pool_auto_config_resource_manager_tags = 136;
+     * </code>
+     */
+    public Builder clearDesiredNodePoolAutoConfigResourceManagerTags() {
+      bitField1_ = (bitField1_ & ~0x00020000);
+      desiredNodePoolAutoConfigResourceManagerTags_ = null;
+      if (desiredNodePoolAutoConfigResourceManagerTagsBuilder_ != null) {
+        desiredNodePoolAutoConfigResourceManagerTagsBuilder_.dispose();
+        desiredNodePoolAutoConfigResourceManagerTagsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired resource manager tags that apply to all auto-provisioned node
+     * pools in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ResourceManagerTags desired_node_pool_auto_config_resource_manager_tags = 136;
+     * </code>
+     */
+    public com.google.container.v1.ResourceManagerTags.Builder
+        getDesiredNodePoolAutoConfigResourceManagerTagsBuilder() {
+      bitField1_ |= 0x00020000;
+      onChanged();
+      return getDesiredNodePoolAutoConfigResourceManagerTagsFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired resource manager tags that apply to all auto-provisioned node
+     * pools in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ResourceManagerTags desired_node_pool_auto_config_resource_manager_tags = 136;
+     * </code>
+     */
+    public com.google.container.v1.ResourceManagerTagsOrBuilder
+        getDesiredNodePoolAutoConfigResourceManagerTagsOrBuilder() {
+      if (desiredNodePoolAutoConfigResourceManagerTagsBuilder_ != null) {
+        return desiredNodePoolAutoConfigResourceManagerTagsBuilder_.getMessageOrBuilder();
+      } else {
+        return desiredNodePoolAutoConfigResourceManagerTags_ == null
+            ? com.google.container.v1.ResourceManagerTags.getDefaultInstance()
+            : desiredNodePoolAutoConfigResourceManagerTags_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The desired resource manager tags that apply to all auto-provisioned node
+     * pools in autopilot clusters and node auto-provisioning enabled clusters.
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1.ResourceManagerTags desired_node_pool_auto_config_resource_manager_tags = 136;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1.ResourceManagerTags,
+            com.google.container.v1.ResourceManagerTags.Builder,
+            com.google.container.v1.ResourceManagerTagsOrBuilder>
+        getDesiredNodePoolAutoConfigResourceManagerTagsFieldBuilder() {
+      if (desiredNodePoolAutoConfigResourceManagerTagsBuilder_ == null) {
+        desiredNodePoolAutoConfigResourceManagerTagsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.ResourceManagerTags,
+                com.google.container.v1.ResourceManagerTags.Builder,
+                com.google.container.v1.ResourceManagerTagsOrBuilder>(
+                getDesiredNodePoolAutoConfigResourceManagerTags(),
+                getParentForChildren(),
+                isClean());
+        desiredNodePoolAutoConfigResourceManagerTags_ = null;
+      }
+      return desiredNodePoolAutoConfigResourceManagerTagsBuilder_;
     }
 
     @java.lang.Override

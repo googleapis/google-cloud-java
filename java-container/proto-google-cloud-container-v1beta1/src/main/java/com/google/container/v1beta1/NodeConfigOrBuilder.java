@@ -1653,6 +1653,41 @@ public interface NodeConfigOrBuilder
    *
    *
    * <pre>
+   * A map of resource manager tag keys and values to be attached to the nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 45;</code>
+   *
+   * @return Whether the resourceManagerTags field is set.
+   */
+  boolean hasResourceManagerTags();
+  /**
+   *
+   *
+   * <pre>
+   * A map of resource manager tag keys and values to be attached to the nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 45;</code>
+   *
+   * @return The resourceManagerTags.
+   */
+  com.google.container.v1beta1.ResourceManagerTags getResourceManagerTags();
+  /**
+   *
+   *
+   * <pre>
+   * A map of resource manager tag keys and values to be attached to the nodes.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.ResourceManagerTags resource_manager_tags = 45;</code>
+   */
+  com.google.container.v1beta1.ResourceManagerTagsOrBuilder getResourceManagerTagsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Enable confidential storage on Hyperdisk.
    * boot_disk_kms_key is required when enable_confidential_storage is true.
    * This is only available for private preview.

@@ -97,6 +97,7 @@ import com.google.container.v1.OperationProgress;
 import com.google.container.v1.PrivateClusterConfig;
 import com.google.container.v1.ReleaseChannel;
 import com.google.container.v1.ResourceLabels;
+import com.google.container.v1.ResourceManagerTags;
 import com.google.container.v1.ResourceUsageExportConfig;
 import com.google.container.v1.RollbackNodePoolUpgradeRequest;
 import com.google.container.v1.SecurityPostureConfig;
@@ -742,6 +743,7 @@ public class ClusterManagerClientTest {
             .setMachineType("machineType-218117087")
             .setDiskType("diskType279771767")
             .setDiskSizeGb(-757478089)
+            .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
             .build();
 
     Operation actualResponse = client.updateNodePool(request);
@@ -779,6 +781,7 @@ public class ClusterManagerClientTest {
     Assert.assertEquals(request.getMachineType(), actualRequest.getMachineType());
     Assert.assertEquals(request.getDiskType(), actualRequest.getDiskType());
     Assert.assertEquals(request.getDiskSizeGb(), actualRequest.getDiskSizeGb());
+    Assert.assertEquals(request.getResourceManagerTags(), actualRequest.getResourceManagerTags());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -820,6 +823,7 @@ public class ClusterManagerClientTest {
               .setMachineType("machineType-218117087")
               .setDiskType("diskType279771767")
               .setDiskSizeGb(-757478089)
+              .setResourceManagerTags(ResourceManagerTags.newBuilder().build())
               .build();
       client.updateNodePool(request);
       Assert.fail("No exception raised");

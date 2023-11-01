@@ -65,4 +65,50 @@ public interface HostMaintenancePolicyOrBuilder
    * @return The maintenanceInterval.
    */
   com.google.container.v1beta1.HostMaintenancePolicy.MaintenanceInterval getMaintenanceInterval();
+
+  /**
+   *
+   *
+   * <pre>
+   * Strategy that will trigger maintenance on behalf of the customer.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy opportunistic_maintenance_strategy = 2;
+   * </code>
+   *
+   * @return Whether the opportunisticMaintenanceStrategy field is set.
+   */
+  boolean hasOpportunisticMaintenanceStrategy();
+  /**
+   *
+   *
+   * <pre>
+   * Strategy that will trigger maintenance on behalf of the customer.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy opportunistic_maintenance_strategy = 2;
+   * </code>
+   *
+   * @return The opportunisticMaintenanceStrategy.
+   */
+  com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy
+      getOpportunisticMaintenanceStrategy();
+  /**
+   *
+   *
+   * <pre>
+   * Strategy that will trigger maintenance on behalf of the customer.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategy opportunistic_maintenance_strategy = 2;
+   * </code>
+   */
+  com.google.container.v1beta1.HostMaintenancePolicy.OpportunisticMaintenanceStrategyOrBuilder
+      getOpportunisticMaintenanceStrategyOrBuilder();
+
+  com.google.container.v1beta1.HostMaintenancePolicy.MaintenanceStrategyCase
+      getMaintenanceStrategyCase();
 }
